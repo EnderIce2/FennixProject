@@ -1,0 +1,6 @@
+[submodule "Fennix-Kernel"]
+	path = Fennix-Kernel
+	url = https://github.com/EnderIce2/Fennix-Kernel
+[submodule "Fennix-Bootloader"]
+	path = Fennix-Bootloader
+	url = https://github.com/EnderIce2/Fennix-Bootloader
