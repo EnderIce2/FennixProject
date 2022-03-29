@@ -14,11 +14,11 @@ tools:
 
 # build the operating system
 build:
-	make -C Fennix-Kernel build
+	make -C kernel build
 
 # quickly build the operating system (it won't create the ISO file and doxygen documentation)
 quick_build:
-	make -C Fennix-Kernel build
+	make -C kernel build
 
 # build the os and run it
 run: quick_build
@@ -26,4 +26,4 @@ run: quick_build
 # clean
 clean:
 	make -C tools clean
-	make -C Fennix-Kernel clean
+	make -C kernel clean

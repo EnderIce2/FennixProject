@@ -6,13 +6,13 @@
 
 #### The content
 - Fennix Project
-    - Fennix-Bootloader
+    - boot
         - Coming Soon™
-    - Fennix-Kernel
+    - kernel
         - The core components of the operating system.
-    - Fennix-Libc
+    - libc
         - The C standard library.
-    - Fennix-Userspace
+    - userspace
         - The userland of the operating system.
 
 ## Download, compile & run

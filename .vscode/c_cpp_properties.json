@@ -3,7 +3,7 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/Fennix-Kernel/include"
+                "${workspaceFolder}/kernel/include"
             ],
             "compilerPath": "${workspaceFolder}/tools/cross/bin/x86_64-elf-gcc",
             "cStandard": "gnu17",
