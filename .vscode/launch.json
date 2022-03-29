@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "logToFile": true,
+            "name": "Launch with GDB",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/Fennix-Kernel/kernel.fsys",
+            "cwd": "${workspaceRoot}",
+            "args": [],
+            "targetArchitecture": "x64",
+            "MIMode": "gdb",
+            "miDebuggerPath": "${workspaceRoot}/tools/cross/bin/x86_64-elf-gdb",
+            "miDebuggerArgs": "",
+            "externalConsole": false,
+            "additionalSOLibSearchPath": "${workspaceRoot}/Fennix-Kernel",
+            "customLaunchSetupCommands": [
+                {
+                    "text": "target remote localhost:1234",
+                    "description": "Connect to QEMU remote debugger"
+                }
+            ],
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "text": "set breakpoint pending on",
+                    "description": "Make breakpoint pending on future shared library load."
+                },
+                {
+                    "text": "file ${workspaceRoot}/Fennix-Kernel/kernel.fsys",
+                    "description": "Load binary."
+                },
+            ],
+            "preLaunchTask": "Launch QEMU",
+            "postDebugTask": "Make Clean",
+        }
+    ]
+}

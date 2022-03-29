@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/Fennix-Kernel/include"
+            ],
+            "compilerPath": "${workspaceFolder}/tools/cross/bin/x86_64-elf-gcc",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++20",
+            "intelliSenseMode": "gcc-x64",
+            "forcedInclude": [],
+            "browse": {
+                "path": []
+            },
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}

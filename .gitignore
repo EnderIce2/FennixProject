@@ -1,0 +1,13 @@
+tools/binutils-gdb
+tools/limine
+tools/gcc
+tools/build.sh
+tools/build-binutils
+tools/build-gcc
+tools/cross
+*.o
+*.elf
+*.bin
+*.sym
+*.map
+*.fsys

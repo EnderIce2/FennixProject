@@ -4,3 +4,9 @@
 [submodule "Fennix-Bootloader"]
 	path = Fennix-Bootloader
 	url = https://github.com/EnderIce2/Fennix-Bootloader
+[submodule "Fennix-libc"]
+	path = Fennix-Libc
+	url = https://github.com/EnderIce2/Fennix-Libc
+[submodule "Fennix-Userspace"]
+	path = Fennix-Userspace
+	url = https://github.com/EnderIce2/Fennix-Userspace

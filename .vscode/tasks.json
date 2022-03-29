@@ -1,0 +1,20 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Launch QEMU",
+            "type": "shell",
+            "isBackground": true,
+            "linux": {
+                "command": "make vscode_debug"
+            }
+        },
+        {
+            "label": "Make Clean",
+            "type": "shell",
+            "linux": {
+                "command": "make clean && killall qemu-system-x86_64"
+            }
+        }
+    ]
+}
