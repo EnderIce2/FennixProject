@@ -36,6 +36,14 @@ void *memmove(void *dest, const void *src, size_t n)
     return dest;
 }
 
+int memcmp(const void *vl, const void *vr, size_t n)
+{
+    const unsigned char *l = vl, *r = vr;
+    for (; n && *l == *r; n--, l++, r++)
+        ;
+    return n ? *l - *r : 0;
+}
+
 long unsigned strlen(char s[])
 {
     long unsigned i = 0;
