@@ -25,6 +25,11 @@ SECTIONS
 
     . += CONSTANT(MAXPAGESIZE);
 
+    .stivalehdr :
+    {
+        KEEP(*(.stivalehdr))
+    } :rodata
+
     .stivale2hdr :
     {
         KEEP(*(.stivale2hdr))

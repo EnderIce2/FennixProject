@@ -50,10 +50,10 @@ EXTERNC void kernel_entry(void *data)
     // TODO: detect boot protocol.
     if (detect_limine())
         limine_initializator();
-    if (detect_stivale(data))
-        stivale_initializator(static_cast<stivale_struct *>(data));
     else if (detect_stivale2(data))
         stivale2_initializator(static_cast<stivale2_struct *>(data));
+    else if (detect_stivale(data))
+        stivale_initializator(static_cast<stivale_struct *>(data));
     else
         err("No bootloader protocol found. System Halted.");
     CPU_STOP;
