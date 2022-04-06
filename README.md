@@ -75,25 +75,22 @@ make clean
 ## Progress
 
 - [ ] Rolling own bootloader
-- [ ] Stivale Support
-- [x] Stivale2 Support
-- [ ] Multiboot Support
-- [ ] Multiboor2 Support
-- [ ] BOOTBOOT Support
-- [ ] ACPI
-- [ ] Paging
-- [ ] Virtual Memory Manager
-- [ ] Heap Manager
-- [ ] Stack Manager
-- [ ] Global Descriptor Table, Interrupt Descriptor Table & Task State Segment
-- [ ] Timer (HPET & PIC)
+- [x] Stivale2 Protocol Support
+- [ ] Limine Protocol Support
+- [x] ACPI
+- [x] Paging
+- [x] Virtual Memory Manager
+- [x] Heap Manager
+- [x] Stack Manager
+- [x] Global Descriptor Table, Interrupt Descriptor Table & Task State Segment
+- [x] Timer (HPET & PIC)
 - [ ] Symmetric Multiprocessing
-- [ ] PCI
+- [x] PCI
 - [ ] PS2 Keyboard
 - [ ] PS2 Mouse
 - [ ] AHCI Driver
 - [ ] ATA Driver
-- [ ] Floppy Driver
+- [x] Floppy Driver
 - [ ] IDE Driver
 - [ ] USTAR FileSystem
 - [ ] EXT2 FileSystem
@@ -102,7 +99,7 @@ make clean
 - [ ] INITRD FileSystem
 - [ ] ISO9660 FileSystem
 - [ ] FAT32 FileSystem
-- [ ] Tasking
+- [x] Tasking
 - [ ] Loading ELF Files
 - [ ] Loading PE Files
 - [ ] Loading MZ Files
