@@ -6,6 +6,7 @@ tools/build.sh
 tools/build-binutils
 tools/build-gcc
 tools/cross
+tools/qemu
 initrd.tar.gz
 *.log
 *.o

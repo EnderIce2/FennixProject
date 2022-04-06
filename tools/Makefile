@@ -28,7 +28,7 @@ export BUILD_SH
 # make install
 # cd ..
 
-all: update_limine update_gcc create_build
+all: update_limine update_gcc create_build update_qemu
 
 initrd:
 	gcc -w initrd.c -o initrd.elf
@@ -41,6 +41,12 @@ create_build:
 	@echo "$$BUILD_SH" > build.sh
 	chmod +x build.sh
 	$(info Now open terminal in FennixProject/tools/ and run ./build.sh to build the crosscompiler.)
+
+VERSION = qemu-6.2.0
+
+update_qemu:
+	$(info Make sure you installed packages and libraries first. More info at https://wiki.qemu.org/Hosts/Linux .)
+	wget https://download.qemu.org/${VERSION}.tar.xz && tar xvJf ${VERSION}.tar.xz && rm -f ${VERSION}.tar.xz && mv ${VERSION} qemu && cd qemu && bash ./configure --target-list=x86_64-softmmu && make -j$(shell nproc)
 
 update_limine:
 ifneq (,$(wildcard ./limine))

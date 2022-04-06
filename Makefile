@@ -5,7 +5,6 @@ QEMUFLAGS = -vga std \
 			-usb \
 			-usbdevice mouse \
 			-smp $(shell nproc) \
-			-soundhw pcspk,ac97,sb16,hda,es1370 \
 			-net nic,model=rtl8139 \
 			-net nic,model=pcnet \
 			-serial file:serial.log \
@@ -13,13 +12,20 @@ QEMUFLAGS = -vga std \
 			-drive id=disk,file=qemu-disk.img,if=none \
 			-device ahci,id=ahci \
 			-device ide-hd,drive=disk,bus=ahci.0 \
-			-drive file=qemu-disk-ata.img,index=1,if=ide,format=raw
+			-drive file=qemu-disk-ata.img,index=1,if=ide,format=raw \
+			-device AC97 \
+			-device sb16 \
+			-device ES1370 \
+			-device intel-hda -device hda-duplex \
+			-soundhw pcspk \
 
 QEMUHWACCELERATION = -machine q35 -M q35 -enable-kvm
 
 # SYSTEM_MEM = $(shell grep 'MemTotal' /proc/meminfo | sed -e 's/MemTotal://' -e 's/ kB//')
 # I could use $(shell echo ${SYSTEM_MEM}/1024/4 | bc) to specify a small amount (1/4) of memory for the qemu.
 QEMUMEMORY = -m 4G
+
+QEMU = ./${QEMU_PATH}
 
 .PHONY: default tools clean
 
@@ -78,12 +84,12 @@ build_image:
 
 vscode_debug: quick_build build_image
 	rm -f serial.log
-	qemu-system-x86_64 -S -gdb tcp::1234 -d int -no-shutdown -no-reboot -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -m 4G ${QEMUFLAGS}
+	${QEMU} -S -gdb tcp::1234 -d int -no-shutdown -no-reboot -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -m 4G ${QEMUFLAGS}
 
 # build the os and run it
 run: quick_build qemu_vdisk build_image
 	rm -f serial.log
-	qemu-system-x86_64 -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
+	${QEMU} -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
 
 # clean
 clean:
