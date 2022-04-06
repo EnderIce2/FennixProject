@@ -87,44 +87,6 @@ typedef struct _GBPRSDP
     uint8_t Reserved[3];
 } __attribute__((packed)) GBPRSDP;
 
-#define PSF1_MAGIC0 0x36
-#define PSF1_MAGIC1 0x04
-
-typedef struct _GBPPSF1_HEADER
-{
-    uint8_t magic[2];
-    uint8_t mode;
-    uint8_t charsize;
-} GBPPSF1_HEADER;
-
-#define PSF2_MAGIC0 0x72
-#define PSF2_MAGIC1 0xb5
-#define PSF2_MAGIC2 0x4a
-#define PSF2_MAGIC3 0x86
-
-typedef struct _GBPPSF2_HEADER
-{
-    uint8_t magic[4];
-    uint32_t version;
-    uint32_t headersize;
-    uint32_t flags;
-    uint32_t length;
-    uint32_t charsize;
-    uint32_t height, width;
-} GBPPSF2_HEADER;
-
-typedef struct _GBPPSF1_FONT
-{
-    struct _GBPPSF1_HEADER Header;
-    void *GlyphBuffer;
-} GBPPSF1_FONT;
-
-typedef struct _GBPPSF2_FONT
-{
-    GBPPSF2_HEADER Header;
-    uint16_t *GlyphBuffer;
-} GBPPSF2_FONT;
-
 struct GBPSMPInfo
 {
     uint32_t ID;

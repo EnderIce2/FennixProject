@@ -2,7 +2,7 @@
 #include <lock.h>
 #include "../drivers/serial.h"
 #include "../cpu/gdt.h"
-#include "../timer/timer.h"
+#include "../timer.h"
 #include <sys.h>
 #include <interrupts.h>
 #include <io.h>

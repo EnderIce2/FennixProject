@@ -13,7 +13,7 @@ extern "C" void deadlock_handler(LOCK *lock)
     y = CurrentDisplay.CurrentFont->GetFontSize().Height;
     CurrentDisplay.ResetPrintPosition();
     CurrentDisplay.SetPrintColor(0xFF450402);
-    CurrentDisplay.KernelPrint("Potential deadlock in lock '%s' held by '%s'", lock->lock_name, lock->current_holder);
+    printf("Potential deadlock in lock '%s' held by '%s'", lock->lock_name, lock->current_holder);
     CurrentDisplay.ResetPrintColor();
     CurrentDisplay.SetPrintLocation(x, y);
     serial_write_text(COM1, (char *)"Potential deadlock in lock '");

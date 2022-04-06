@@ -11,6 +11,6 @@ EXTERNC void set_yield_schedule(uint64_t timeslice);
 EXTERNC uint64_t get_system_uptime();
 EXTERNC uint32_t get_timer_clock();
 EXTERNC uint64_t counter();
-void init_timer();
+EXTERNC void init_timer();
 
 #endif // !__FENNIX_KERNEL_TIMER_H__

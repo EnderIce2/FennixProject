@@ -37,6 +37,7 @@
         "limine.h": "c",
         "kernel.h": "c",
         "display.h": "c",
-        "idt.h": "c"
+        "idt.h": "c",
+        "string.h": "c"
     }
 }

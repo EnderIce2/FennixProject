@@ -1,7 +1,14 @@
 #include "kernel.h"
+
 #include <display.h>
+#include <string.h>
+
 #include "cpu/gdt.h"
 #include "cpu/idt.h"
+#include "cpu/sse.h"
+#include "timer.h"
+#include "acpi.h"
+#include "pci.h"
 
 // Early params are used only for the most basic functions. After that it may be overwritten with other data.
 GlobalBootParams earlyparams;
@@ -59,12 +66,52 @@ EXTERNC void kernel_entry(void *data)
     CPU_STOP;
 }
 
+void initflags()
+{
+    if (!strstr(bootparams->cmdline, "debug"))
+        sysflags->fennecsarethebest = true;
+    else
+        sysflags->fennecsarethebest = false;
+    if (!strstr(bootparams->cmdline, "rootfs")) // FIXME
+        sysflags->rootfs = "/";
+    else
+        sysflags->rootfs = "/";
+    if (!strstr(bootparams->cmdline, "nogpu"))
+        sysflags->nogpu = true;
+    else
+        sysflags->nogpu = false;
+    if (!strstr(bootparams->cmdline, "nohpet"))
+        sysflags->nohpet = true;
+    else
+        sysflags->nohpet = false;
+    if (!strstr(bootparams->cmdline, "emergency"))
+        sysflags->emergency = true;
+    else
+        sysflags->emergency = false;
+    if (!strstr(bootparams->cmdline, "nomount"))
+        sysflags->nomount = true;
+    else
+        sysflags->nomount = false;
+
+}
+
 void merged_init()
 {
+    initflags();
     CurrentDisplay = DisplayDriver::Display();
+    init_stack();
     init_gdt();
     init_idt();
     init_tss();
+    enable_sse();
+    init_timer();
+    init_acpi();
+    init_pci();
     debug("Hello World!");
+    printf("This is a text to test if the OS is working properly.\n");
+    CurrentDisplay.SetPrintColor(0xFFE85230);
+    printf("The quick brown fox jumps over the lazy dog.\n");
+    CurrentDisplay.SetPrintColor(0xFF1FF2EB);
+    printf("1234567890-=!@#$%%^&*()_+[]\\;',./{}|:\"<>?\n");
     CPU_STOP;
 }

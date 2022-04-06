@@ -13,6 +13,7 @@ OBJCOPY = ../../${COMPILER_PATH}/${COMPILER_ARCH}objcopy
 GDB = ../../${COMPILER_PATH}/${COMPILER_ARCH}gdb
 NASM = /usr/bin/nasm
 
+PSF_SOURCES = $(shell find ./ -type f -name '*.psf')
 ASM_SOURCES = $(shell find ./ -type f -name '*.asm')
 S_SOURCES = $(shell find ./ -type f -name '*.s')
 SS_SOURCES = $(shell find ./ -type f -name '*.S')
@@ -20,7 +21,7 @@ C_SOURCES = $(shell find ./ -type f -name '*.c')
 CPP_SOURCES = $(shell find ./ -type f -name '*.cpp')
 MAKE_DEPS_SOURCES = $(shell find ./ -type f -name '*.d')
 HEADERS = $(sort $(dir $(wildcard ../include/*)))
-OBJ = ${C_SOURCES:.c=.o} ${CPP_SOURCES:.cpp=.o} ${ASM_SOURCES:.asm=.o} ${S_SOURCES:.s=.o} ${SS_SOURCES:.S=.o}
+OBJ = ${C_SOURCES:.c=.o} ${CPP_SOURCES:.cpp=.o} ${ASM_SOURCES:.asm=.o} ${S_SOURCES:.s=.o} ${SS_SOURCES:.S=.o} ${PSF_SOURCES:.psf=.o}
 INCLUDE_DIR = ../include
 KERNEL = kernel.fsys
 
@@ -81,6 +82,11 @@ $(KERNEL): $(OBJ)
 
 %.o: %.S
 	$(AS) -o $@ $<
+
+# I don't understand how assembly works but, I can use this, is not very efficient but works.
+%.o: %.psf
+	$(OBJCOPY) -O elf64-x86-64 -I binary $< $@
+	nm $@
 
 clean:
 	rm -f *.bin *.o *.elf *.fsys *.sym kernel.map initrd.tar.gz ${OBJ} ${MAKE_DEPS_SOURCES}

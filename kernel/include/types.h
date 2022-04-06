@@ -23,7 +23,7 @@ typedef char const *string;
 #define XOR ^
 #define XOR_EQ ^=
 
-#define UNUSED(x) (int)(x)
+#define UNUSED(x) (void)(x)
 
 #define ALIGN_UP(x, align) ((__typeof__(x))(((uint64_t)(x) + ((align)-1)) & (~((align)-1))))
 #define ALIGN_DOWN(x, align) ((__typeof__(x))((x) & (~((align)-1))))

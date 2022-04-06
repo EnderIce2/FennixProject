@@ -1,10 +1,7 @@
 #include "pit.h"
-// #include "../cpu/io.h"
-// #include "../libs/string.h"
 #include <debug.h>
 #include <io.h>
-// #include "../cpu/idt.h"
-#include "timer.h"
+#include "../timer.h"
 
 bool PIC_initialized = false;
 uint64_t TimeSinceBoot = 0;
