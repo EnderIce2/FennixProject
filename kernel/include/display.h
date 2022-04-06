@@ -13,6 +13,50 @@ struct Framebuffer
 
 namespace DisplayDriver
 {
+#define PSF1_MAGIC0 0x36
+#define PSF1_MAGIC1 0x04
+
+#define PSF2_MAGIC0 0x72
+#define PSF2_MAGIC1 0xb5
+#define PSF2_MAGIC2 0x4a
+#define PSF2_MAGIC3 0x86
+
+    typedef struct _PSF1_HEADER
+    {
+        uint8_t magic[2];
+        uint8_t mode;
+        uint8_t charsize;
+    } PSF1_HEADER;
+
+    typedef struct _PSF2_HEADER
+    {
+        uint8_t magic[4];
+        uint32_t version;
+        uint32_t headersize;
+        uint32_t flags;
+        uint32_t length;
+        uint32_t charsize;
+        uint32_t height, width;
+    } PSF2_HEADER;
+
+    typedef struct _PSF1_FONT
+    {
+        struct _PSF1_HEADER Header;
+        void *GlyphBuffer;
+    } PSF1_FONT;
+
+    typedef struct _PSF2_FONT
+    {
+        PSF2_HEADER Header;
+        uint16_t *GlyphBuffer;
+    } PSF2_FONT;
+
+    struct PSFFileInfo
+    {
+        uint64_t *start;
+        uint64_t *end;
+    };
+
     enum FontType
     {
         None,
@@ -31,25 +75,35 @@ namespace DisplayDriver
     class Font
     {
     public:
+        PSFFileInfo PSFFile;
+        PSF1_FONT PSF1Font;
+        PSF2_FONT PSF2Font;
+
         /**
          * @brief Construct a new PC Screen Font object
          * @param address The address of the font
          * @param type The font type
          */
-        Font(uint64_t address, FontType type);
+        Font(uint64_t *Start, uint64_t *End, FontType Type);
         /**
          * @brief Destroy the Font object
          */
         ~Font();
         /**
-         * @brief Get the font size
+         * @brief Get font size
          * @return FontSize (Width, Height)
          */
         FontSize GetFontSize();
+        /**
+         * @brief Get font type
+         * @return FontType
+         */
+        FontType GetFontType();
 
     private:
         uint8_t width;
         uint8_t height;
+        FontType type;
     };
 
     struct DisplayProperties
@@ -57,6 +111,12 @@ namespace DisplayDriver
         // TODO: add more properties
         int Width;
         int Height;
+    };
+
+    struct PrintLocation
+    {
+        unsigned int X;
+        unsigned int Y;
     };
 
     class Display
@@ -79,12 +139,15 @@ namespace DisplayDriver
          */
         ~Display();
         /**
-         * @brief Print on screen text
-         * @brief DEPRECATED: Use printf from printf.h instead
+         * @brief Print a char on screen
          * @param format Format string
          * @param ... Arguments
          */
-        void KernelPrint(string format, ...);
+        char KernelPrint(char Char);
+        /**
+         * @brief Clear the screen
+         */
+        void Clear(uint32_t Color = 0x00000000);
         /**
          * @brief Set print location
          * @param x
@@ -111,10 +174,10 @@ namespace DisplayDriver
         Framebuffer GetFramebuffer();
 
     private:
-        uint32_t x;
-        uint32_t y;
-        uint32_t color;
+        PrintLocation ploc = {.X = 0, .Y = 0};
+        uint32_t color = 0xFFFFFFFF;
         Framebuffer framebuffer;
+        void Scroll();
     };
 }
 
@@ -131,5 +194,8 @@ struct Framebuffer *GetFramebuffer();
 char putchar(char c);
 // compatibility the printf implementation
 void putchar_(char c);
+
+#include <printf.h> // TODO: PRINTF_VISIBILITY??????
+#define printf(format, ...) printf_(format, ##__VA_ARGS__)
 
 END_EXTERNC
