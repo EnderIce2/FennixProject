@@ -6,7 +6,7 @@
             "name": "Launch with GDB",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/kernel/kernel.fsys",
+            "program": "${workspaceRoot}/kernel/src/kernel.fsys",
             "cwd": "${workspaceRoot}",
             "args": [],
             "targetArchitecture": "x64",
@@ -14,7 +14,7 @@
             "miDebuggerPath": "${workspaceRoot}/tools/cross/bin/x86_64-elf-gdb",
             "miDebuggerArgs": "",
             "externalConsole": false,
-            "additionalSOLibSearchPath": "${workspaceRoot}/kernel",
+            "additionalSOLibSearchPath": "${workspaceRoot}/kernel/src",
             "customLaunchSetupCommands": [
                 {
                     "text": "target remote localhost:1234",
@@ -32,7 +32,7 @@
                     "description": "Make breakpoint pending on future shared library load."
                 },
                 {
-                    "text": "file ${workspaceRoot}/kernel/kernel.fsys",
+                    "text": "file ${workspaceRoot}/kernel/src/kernel.fsys",
                     "description": "Load binary."
                 },
             ],

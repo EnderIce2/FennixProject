@@ -46,7 +46,7 @@ update_limine:
 ifneq (,$(wildcard ./limine))
 	$(info Don't forget to update the limine folder by removing it!)
 else
-	git clone https://github.com/limine-bootloader/limine.git --branch=latest-binary --depth=1
+	git clone https://github.com/limine-bootloader/limine.git --branch=v3.0-binary --depth=1
 endif
 
 update_gcc:

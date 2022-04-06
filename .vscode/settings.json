@@ -7,6 +7,8 @@
         "**/tools/build-gcc/**": true,
         "**/tools/build-binutils/**": true,
         "**/tools/cross/**": true,
+        "**/tools/doxygen-doc/**": true,
+
     },
     "cmake.configureOnOpen": false,
     "C_Cpp.autocompleteAddParentheses": true,
@@ -17,5 +19,24 @@
     "C_Cpp.default.cppStandard": "c++20",
     "C_Cpp.intelliSenseMemoryLimit": 16384,
     "editor.smoothScrolling": true,
-    "editor.cursorSmoothCaretAnimation": true
+    "editor.cursorSmoothCaretAnimation": true,
+    "files.associations": {
+        "stddef.h": "c",
+        "ubsan.h": "c",
+        "io.h": "c",
+        "serial.h": "c",
+        "interrupts.h": "c",
+        "types.h": "c",
+        "heap.h": "c",
+        "asm.h": "c",
+        "cpuid.h": "c",
+        "limits.h": "c",
+        "lock.h": "c",
+        "stdint.h": "c",
+        "debug.h": "c",
+        "limine.h": "c",
+        "kernel.h": "c",
+        "display.h": "c",
+        "idt.h": "c"
+    }
 }

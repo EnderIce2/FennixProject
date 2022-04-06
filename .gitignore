@@ -5,9 +5,13 @@ tools/build.sh
 tools/build-binutils
 tools/build-gcc
 tools/cross
+initrd.tar.gz
+*.log
 *.o
 *.elf
 *.bin
 *.sym
 *.map
 *.fsys
+*.img
+*.iso
