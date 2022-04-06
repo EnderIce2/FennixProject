@@ -67,3 +67,20 @@ int strcmp(const char *l, const char *r)
         ;
     return *(unsigned char *)l - *(unsigned char *)r;
 }
+
+char *strstr(const char *haystack, const char *needle)
+{
+    const char *a = haystack, *b = needle;
+    while (1)
+    {
+        if (!*b)
+            return (char *)haystack;
+        if (!*a)
+            return NULL;
+        if (*a++ != *b++)
+        {
+            a = ++haystack;
+            b = needle;
+        }
+    }
+}

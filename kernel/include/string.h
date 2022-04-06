@@ -13,6 +13,7 @@ extern "C"
     long unsigned strlen(char s[]);
     char *strcat(char *destination, const char *source);
     int strcmp(const char *l, const char *r);
+    char *strstr(const char *haystack, const char *needle);
     
 #ifdef __cplusplus
 }
