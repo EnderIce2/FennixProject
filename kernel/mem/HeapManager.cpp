@@ -77,6 +77,7 @@ void *HeapMalloc(size_t Size)
         return liballoc_malloc(Size);
         break;
     case AllocationAlgorithm::LibAlloc11:
+        // TODO: Make that the Liballoc 1.1 start at KERNEL_HEAP_BASE
         return libPREFIX(malloc)(Size);
         break;
     case AllocationAlgorithm::BuddyAlloc:

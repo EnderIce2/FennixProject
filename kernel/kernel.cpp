@@ -21,14 +21,14 @@ GlobalBootParams *bootparams = nullptr;
 SysFlags *sysflags = nullptr;
 uint8_t kernel_stack[STACK_SIZE];
 
-void merged_init();
+void KernelInit();
 
 EXTERNC void stivale_initializator(stivale_struct *bootloaderdata)
 {
     // TODO: support stivale boot protocol.
     init_stivale(bootloaderdata, &earlyparams);
     CPU_STOP;
-    merged_init();
+    KernelInit();
 }
 
 EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
@@ -36,6 +36,7 @@ EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
     init_stivale2(bootloaderdata, &earlyparams, false);
     init_pmm();
     init_vmm();
+    init_kernelpml();
     init_heap(AllocationAlgorithm::LibAlloc11);
     bootparams = (GlobalBootParams *)kcalloc(1, sizeof(GlobalBootParams));
     bootparams->Framebuffer = (GBPFramebuffer *)kcalloc(1, sizeof(GBPFramebuffer));
@@ -44,7 +45,7 @@ EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
     sysflags->rootfs = (string)kcalloc(1, sizeof(string));
     init_stivale2(bootloaderdata, bootparams, true);
 
-    merged_init();
+    KernelInit();
 }
 
 EXTERNC void limine_initializator()
@@ -52,7 +53,7 @@ EXTERNC void limine_initializator()
     // TODO: support limine boot protocol.
     init_limine(&earlyparams);
     CPU_STOP;
-    merged_init();
+    KernelInit();
 }
 
 EXTERNC void kernel_entry(void *data)
@@ -119,25 +120,21 @@ void KernelTask()
     if (!SysCreateProcessFromFile("/bin/finit", true))
     {
         CurrentDisplay->SetPrintColor(0xFFFC4444);
-        printf("Failed to load /bin/finit process. The file is missing or corrupted?\n");
+        printf("Failed to load /bin/finit process. The file is missing or corrupted.\n");
     }
-
     trace("End Of Kernel Task");
-    if (CurrentTaskingMode == TaskingMode::Mono)
-        CPU_STOP;
 }
 
 /* I should make everything in C++ but I use code from older (failed) projects.
    I will probably move the old C code to C++ in the future. */
 
-#include <cwalk.h>
-
-void merged_init()
+void KernelInit()
 {
     trace("early initialization completed");
     initflags();
     CurrentDisplay = new DisplayDriver::Display();
-    init_stack();
+    KernelPageTableAllocator = new PageTableHeap::PageTableHeap();
+    KernelStackAllocator = new StackHeap::StackHeap();
     init_gdt();
     init_idt();
     init_tss();
@@ -152,7 +149,13 @@ void merged_init()
     asm("sti");
 
     vfs = new FileSystem::Virtual();
+    devfs = new FileSystem::Device();
+    mountfs = new FileSystem::Mount();
+    diskmgr = new DiskManager::Disk();
+    partmgr = new DiskManager::Partition();
+
     for (size_t i = 0; i < bootparams->modules.num; i++)
+    {
         if (bootparams->modules.ramdisks[i].type == initrdType::USTAR)
         {
             new FileSystem::USTAR(bootparams->modules.ramdisks[i].start);
@@ -163,10 +166,7 @@ void merged_init()
             new FileSystem::Initrd(bootparams->modules.ramdisks[i].start);
             break;
         }
-    devfs = new FileSystem::Device();
-    mountfs = new FileSystem::Mount();
-    diskmgr = new DiskManager::Disk();
-    partmgr = new DiskManager::Partition();
+    }
 
     new FileSystem::Serial;
     new FileSystem::Random;
@@ -174,7 +174,7 @@ void merged_init()
     new FileSystem::Zero;
     /* ... */
 
-    // I will use this until I find a solution for page faults and triple faults in multitasking mode. (Switching pages is causing issues too but how? On my test OS the code worked without any issues.)
+    // TODO: Page faults using multitasking mode. Is about switching tables? Somehow the PML4 is getting trashed? I don't really understand. But if we don't switch it, there are no issues.
     StartTasking((uint64_t)KernelTask, TaskingMode::Mono);
     // StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
 

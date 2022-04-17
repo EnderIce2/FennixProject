@@ -55,10 +55,10 @@ void init_tss()
     gdt.Entries->TaskStateSegment.Flags2 = 0b00000000;
     tss->IOMapBaseAddressOffset = sizeof(TaskStateSegment);
     ltr(GDT_TSS);
-    tss->StackPointer0 = (uint64_t)AllocateStack();
-    tss->InterruptStackTable1 = (uint64_t)AllocateStack(); // exceptions
-    tss->InterruptStackTable2 = (uint64_t)AllocateStack(); // nmi
-    tss->InterruptStackTable3 = (uint64_t)AllocateStack(); // page fault, double fault, general protection fault
+    tss->StackPointer0 = (uint64_t)RequestPage();
+    tss->InterruptStackTable1 = (uint64_t)RequestPage(); // exceptions
+    tss->InterruptStackTable2 = (uint64_t)RequestPage(); // nmi
+    tss->InterruptStackTable3 = (uint64_t)RequestPage(); // page fault, double fault, general protection fault
     UNLOCK(tss_lock);
 }
 

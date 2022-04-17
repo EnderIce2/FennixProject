@@ -279,38 +279,35 @@ bool init_stivale2(struct stivale2_struct *bootloaderdata, GlobalBootParams *par
     params->kernel.file = kernel->kernel_file;
     params->kernel.size = kernel->kernel_size;
 
-    if (!second)
+    if (rsdp->rsdp != (uint64_t)params->rsdp)
     {
-        if (rsdp->rsdp != (uint64_t)params->rsdp)
-        {
-            err("RSDP mismatch. %016p != %016p",
-                rsdp->rsdp,
-                params->rsdp);
-            term_write("RSDP mismatch.", 14);
-            while (1)
-                __asm__ __volatile__("hlt" ::
-                                         : "memory");
-        }
-        if (tag_memmap->entries != params->mem.Entries)
-        {
-            warn("Memory map entries mismatch. %lld != %lld",
-                 (struct stivale2_struct_tag_memmap *)tag_memmap->entries,
-                 params->mem.Entries);
-            // term_write("Memory map entries mismatch.", 28);
-            // while (1)
-            //     __asm__ __volatile__("hlt" ::
-            //                              : "memory");
-        }
-        if (fb->framebuffer_addr != params->Framebuffer->BaseAddress)
-        {
-            err("Framebuffer base address mismatch. %016p != %016p",
-                fb->framebuffer_addr,
-                params->Framebuffer->BaseAddress);
-            term_write("Framebuffer base address mismatch.", 34);
-            while (1)
-                __asm__ __volatile__("hlt" ::
-                                         : "memory");
-        }
+        err("RSDP mismatch. %016p != %016p",
+            rsdp->rsdp,
+            params->rsdp);
+        term_write("RSDP mismatch.", 14);
+        while (1)
+            __asm__ __volatile__("hlt" ::
+                                     : "memory");
+    }
+    if (tag_memmap->entries != params->mem.Entries)
+    {
+        warn("Memory map entries mismatch. %lld != %lld",
+             (struct stivale2_struct_tag_memmap *)tag_memmap->entries,
+             params->mem.Entries);
+        // term_write("Memory map entries mismatch.", 28);
+        // while (1)
+        //     __asm__ __volatile__("hlt" ::
+        //                              : "memory");
+    }
+    if (fb->framebuffer_addr != params->Framebuffer->BaseAddress)
+    {
+        err("Framebuffer base address mismatch. %016p != %016p",
+            fb->framebuffer_addr,
+            params->Framebuffer->BaseAddress);
+        term_write("Framebuffer base address mismatch.", 34);
+        while (1)
+            __asm__ __volatile__("hlt" ::
+                                     : "memory");
     }
     debug("Stivale2 initialized");
     return true;

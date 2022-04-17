@@ -7,8 +7,6 @@
 #include <lock.h>
 #include "drivers/serial.h"
 
-NEWLOCK(debug_write_lock)
-
 #define MSR_IA32_FSBASE 0xC0000100
 #define MSR_IA32_GSBASE 0xC0000101
 
@@ -49,7 +47,6 @@ void shortdbgprint(const char *format, ...)
 
 int debug_printf(enum debug_type type, const char *message, const char *file, int line, const char *function, ...)
 {
-    SILENT_LOCK(debug_write_lock);
     switch (type)
     {
     case _fixme:
@@ -106,7 +103,6 @@ int debug_printf(enum debug_type type, const char *message, const char *file, in
         serial_write_text(COM1, ": stub!\n");
     }
 cleanup:
-    SILENT_UNLOCK(debug_write_lock);
     if (type == _stub)
     {
         return -1;

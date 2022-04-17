@@ -17,7 +17,7 @@ enum syscalls_enum
     _SystemInfo,
     _SystemTime,
     _SystemTimeSet,
-    
+
     _DebugMessage,
 };
 
@@ -145,17 +145,6 @@ namespace MonoTasking
     {
     public:
         /**
-         * @brief Construct a new Mono Tasking object
-         *
-         * @param firstThread The first Instruction Pointer to be executed
-         */
-        MonoTasking(uint64_t firstThread);
-        /**
-         * @brief Destroy the Mono Tasking object (Make sure that all other processes are destroyed and no stack is used!)
-         *
-         */
-        ~MonoTasking();
-        /**
          * @brief Create a new Task
          *
          * @param rip Instruction Pointer
@@ -164,7 +153,20 @@ namespace MonoTasking
          * @param name The name of the new Task
          * @return The new created Task
          */
-        TaskControlBlock *CreateTask(uint64_t rip, uint64_t args0, uint64_t args1, char *name);
+        TaskControlBlock *CreateTask(uint64_t InstructionPointer, uint64_t FirstArgument, uint64_t SecondArgument, char *Name);
+
+        /**
+         * @brief Construct a new Mono Tasking object
+         *
+         * @param firstThread The first Instruction Pointer to be executed
+         */
+        MonoTasking(uint64_t FirstTask);
+
+        /**
+         * @brief Destroy the Mono Tasking object (Make sure that all other processes are destroyed and no stack is used!)
+         *
+         */
+        ~MonoTasking();
 
     private:
     };
@@ -198,6 +200,13 @@ namespace MultiTasking
     {
     public:
         uint64_t NextPID = 0, NextTID = 0;
+
+        ProcessControlBlock *GetCurrentProcess();
+        ThreadControlBlock *GetCurrentThread();
+
+        ProcessControlBlock *CreateProcess(ProcessControlBlock *parent, char *name);
+        ThreadControlBlock *CreateThread(ProcessControlBlock *parent, uint64_t function, uint64_t args0, uint64_t args1, enum ControlBlockPriority Priority, enum ControlBlockState State, enum ControlBlockPolicy Policy);
+
         void Schedule();
         void ToggleScheduler(bool toggle);
         /**
@@ -210,12 +219,6 @@ namespace MultiTasking
          *
          */
         ~MultiTasking();
-
-        ProcessControlBlock *GetCurrentProcess();
-        ThreadControlBlock *GetCurrentThread();
-
-        ProcessControlBlock *CreateProcess(ProcessControlBlock *parent, char *name);
-        ThreadControlBlock *CreateThread(ProcessControlBlock *parent, uint64_t function, uint64_t args0, uint64_t args1, enum ControlBlockPriority Priority, enum ControlBlockState State, enum ControlBlockPolicy Policy);
 
     private:
     };

@@ -5,7 +5,6 @@
 using namespace PMM;
 using namespace VMM;
 
-PageTable *KernelPML4;
 PageTableManager KernelPageTableManager = NULL;
 
 void PageTableManager::MapMemory(void *VirtualAddress, void *PhysicalAddress, uint64_t Flags)
@@ -86,103 +85,6 @@ void PageTableManager::UnmapMemory(void *VirtualAddress)
     invlpg((uint64_t)VirtualAddress);
 }
 
-PageTable *CreateNewPML4()
-{
-    if (KernelPML4 == NULL)
-    {
-        debug("Kernel VM Start-End: %016p-%016p", &_kernel_start, &_kernel_end);
-        // debug("HHDM Address: %016p", earlyparams.pmr.HHDMAddress);
-        // debug("Kernel Address: V:%016p P:%016p", earlyparams.pmr.KernelVirtualAddress, earlyparams.pmr.KernelPhysicalAddress);
-        // KernelPML4 = (PageTable *)readcr3();
-        KernelPML4 = (PageTable *)KernelAllocator.RequestPage();
-        memset(KernelPML4, 0, PAGE_SIZE);
-        KernelPageTableManager = PageTableManager(KernelPML4);
-
-        // // Reserved memory mapping (BIOS data)
-        // for (uint64_t i = (uint64_t)ALIGN_UP(0x0, PAGE_SIZE); i < (uint64_t)ALIGN_UP(0x000FFFFF, PAGE_SIZE); i += PAGE_SIZE)
-        // {
-        //     KernelPageTableManager.MapMemory((void *)i, (void *)i, PTFlag::RW | PTFlag::PCD);
-        // }
-        // // Free to use RAM (14 MiB)
-        // for (uint64_t i = (uint64_t)ALIGN_UP(0x00100000, PAGE_SIZE); i < (uint64_t)ALIGN_UP(0x00EFFFFF, PAGE_SIZE); i += PAGE_SIZE)
-        // {
-        //     KernelPageTableManager.MapMemory((void *)i, (void *)i, PTFlag::RW | PTFlag::PCD);
-        // }
-        // // Possible memory mapped hardware (1 MiB)
-        // for (uint64_t i = (uint64_t)ALIGN_UP(0x00F00000, PAGE_SIZE); i < (uint64_t)ALIGN_UP(0x00FFFFFF, PAGE_SIZE); i += PAGE_SIZE)
-        // {
-        //     KernelPageTableManager.MapMemory((void *)i, (void *)i, PTFlag::RW | PTFlag::PCD);
-        // }
-        // // Memory mapped PCI devices, PnP NVRAM, IO APIC/s, local APIC/s, BIOS, ... (1 GiB)
-        // for (uint64_t i = (uint64_t)ALIGN_UP(0xC0000000, PAGE_SIZE); i < (uint64_t)ALIGN_UP(0xFFFFFFFF, PAGE_SIZE); i += PAGE_SIZE)
-        // {
-        //     KernelPageTableManager.MapMemory((void *)i, (void *)i, PTFlag::RW | PTFlag::PCD);
-        // }
-
-        for (uint64_t t = 0; t < earlyparams.mem.Size; t += PAGE_SIZE)
-        {
-            KernelPageTableManager.MapMemory((void *)t, (void *)t, PTFlag::RW);
-        }
-
-        uint64_t VirtualOffsetNormalVMA = NORMAL_VMA_OFFSET;
-        for (uint64_t t = 0; t < earlyparams.mem.Size; t += PAGE_SIZE)
-        {
-            KernelPageTableManager.MapMemory((void *)VirtualOffsetNormalVMA, (void *)t, PTFlag::RW);
-            VirtualOffsetNormalVMA += PAGE_SIZE;
-        }
-
-        /* Mapping Framebuffer address */
-        for (uint64_t fb_base = earlyparams.Framebuffer->BaseAddress;
-             fb_base < (earlyparams.Framebuffer->BaseAddress + (earlyparams.Framebuffer->BufferSize + PAGE_SIZE));
-             fb_base += PAGE_SIZE)
-            KernelPageTableManager.MapMemory((void *)fb_base, (void *)(fb_base - NORMAL_VMA_OFFSET), PTFlag::RW);
-
-        /* Kernel mapping */
-
-        uint64_t BaseKernelMapAddress = earlyparams.mem.KernelBasePhysical;
-
-        uint64_t KernelStart = (uint64_t)ALIGN_UP(&_kernel_start, PAGE_SIZE);
-        uint64_t KernelTextEnd = (uint64_t)ALIGN_UP(&_kernel_text_end, PAGE_SIZE);
-        uint64_t KernelRoDataEnd = (uint64_t)ALIGN_UP(&_kernel_rodata_end, PAGE_SIZE);
-        uint64_t KernelEnd = (uint64_t)ALIGN_UP(&_kernel_end, PAGE_SIZE);
-
-        for (uint64_t k = KernelStart; k < KernelTextEnd; k += PAGE_SIZE)
-        {
-            KernelPageTableManager.MapMemory((void *)k, (void *)BaseKernelMapAddress, PTFlag::US);
-            KernelAllocator.LockPage((void *)BaseKernelMapAddress);
-            BaseKernelMapAddress += PAGE_SIZE;
-        }
-
-        for (uint64_t k = KernelTextEnd; k < KernelRoDataEnd; k += PAGE_SIZE)
-        {
-            KernelPageTableManager.MapMemory((void *)k, (void *)BaseKernelMapAddress, PTFlag::P);
-            KernelAllocator.LockPage((void *)BaseKernelMapAddress);
-            BaseKernelMapAddress += PAGE_SIZE;
-        }
-
-        for (uint64_t k = KernelRoDataEnd; k < KernelEnd; k += PAGE_SIZE)
-        {
-            KernelPageTableManager.MapMemory((void *)k, (void *)BaseKernelMapAddress, PTFlag::RW);
-            KernelAllocator.LockPage((void *)BaseKernelMapAddress);
-            BaseKernelMapAddress += PAGE_SIZE;
-        }
-
-        debug("\nStart: %#llx - Text End: %#llx - RoEnd: %#llx - End: %#llx\nStart Physical: %#llx - End Physical: %#llx",
-              KernelStart, KernelTextEnd, KernelRoDataEnd, KernelEnd, earlyparams.mem.KernelBasePhysical, BaseKernelMapAddress);
-
-        /*    KernelStart             KernelTextEnd       KernelRoDataEnd                  KernelEnd
-        Kernel Start & Text Start ------ Text End ------ Kernel Rodata End ------ Kernel Data End & Kernel End
-        */
-
-        return KernelPML4;
-    }
-    PageTable *NewPML4 = (PageTable *)KernelAllocator.RequestPage();
-    memset(NewPML4, 0, PAGE_SIZE);
-    for (uint64_t i = 0; i < 512; i++)
-        NewPML4->Entries[i] = KernelPML4->Entries[i];
-    return NewPML4;
-}
-
 void MapMemory(void *PML4, void *VirtualMemory, void *PhysicalMemory, uint64_t Flags)
 {
     if (PML4 != NULL)
@@ -207,10 +109,5 @@ void MapMemory(void *PML4, void *VirtualMemory, void *PhysicalMemory, uint64_t F
 void init_vmm()
 {
     trace("initializing virtual memory manager");
-    KernelPML4 = CreateNewPML4();
-    debug("applying new page table with address %016p", reinterpret_cast<uintptr_t>(KernelPML4));
-    CR3 CR3PageTable;
-    CR3PageTable.raw = (uint64_t)KernelPML4;
-    writecr3(CR3PageTable);
     KernelPageTableManager.Initalized = true;
 }

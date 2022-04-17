@@ -79,8 +79,34 @@ namespace VMM
     };
 }
 
+namespace PageTableHeap
+{
+    class PageTableHeap
+    {
+    public:
+        VMM::PageTable *NewPageTable();
+        void FreePageTable(VMM::PageTable *PageTable);
+        PageTableHeap();
+        ~PageTableHeap();
+    };
+}
+
+namespace StackHeap
+{
+    class StackHeap
+    {
+    public:
+        void *AllocateStack();
+        void FreeStack(void *Address);
+        StackHeap();
+        ~StackHeap();
+    };
+}
+
 extern PMM::PageFrameAllocator KernelAllocator;
 extern VMM::PageTableManager KernelPageTableManager;
+extern PageTableHeap::PageTableHeap *KernelPageTableAllocator;
+extern StackHeap::StackHeap *KernelStackAllocator;
 
 void *operator new(size_t Size);
 void *operator new[](size_t Size);
@@ -97,13 +123,11 @@ void operator delete[](void *Pointer, long unsigned int n);
 #define NORMAL_VMA_OFFSET 0xFFFF800000000000
 #define KERNEL_VMA_OFFSET 0xFFFFFFFF80000000
 
-// 2GB
-#define KERNEL_HEAP_BASE 0xFFFFC00000000000
-#define KERNEL_HEAP_END 0xFFFFC00080000000
+#define KERNEL_STACK_HEAP_BASE 0xFFFFA00000000000
+#define KERNEL_STACK_HEAP_END 0xFFFFAFFFFFFF0000
 
-// 2GB
-#define KERNEL_STACK_HEAP_BASE 0xFFFFE00000000000
-#define KERNEL_STACK_HEAP_END 0xFFFFE00080000000
+#define KERNEL_HEAP_BASE 0xFFFFB00000000000
+#define KERNEL_HEAP_END 0xFFFFB00080000000
 
 /**
  * @brief https://wiki.osdev.org/images/4/41/64-bit_page_tables1.png
@@ -197,10 +221,6 @@ enum AllocationAlgorithm
 
 START_EXTERNC
 
-void *AllocateStack();
-void FreeStack(void *stack);
-void init_stack();
-
 void *HeapMalloc(size_t Size);
 void *HeapCalloc(size_t n, size_t Size);
 void *HeapRealloc(void *Address, size_t Size);
@@ -240,6 +260,7 @@ void MapMemory(void *PML4, void *VirtualMemory, void *PhysicalMemory, uint64_t F
 
 void init_pmm();
 void init_vmm();
+void init_kernelpml();
 void init_heap(enum AllocationAlgorithm Type);
 
 END_EXTERNC

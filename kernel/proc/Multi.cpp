@@ -10,7 +10,7 @@
 #include <asm.h>
 
 // Comment or uncomment this line to enable/disable the debug messages
-// #define DEBUG_SCHEDULER
+// #define DEBUG_SCHEDULER 1
 
 Vector<ProcessControlBlock *> ListProcess;
 
@@ -76,7 +76,7 @@ namespace MultiTasking
 #ifdef DEBUG_SCHEDULER
         debug("Thread %d terminated", thread->ThreadID);
 #endif
-        FreeStack(thread->Stack);
+        KernelStackAllocator->FreeStack(thread->Stack);
         kfree(thread);
         thread = nullptr;
     }
@@ -89,7 +89,7 @@ namespace MultiTasking
 
         if (process->State == STATE_TERMINATED)
         {
-            for (ThreadControlBlock *thread : process->Threads)
+            foreach (ThreadControlBlock *thread in process->Threads)
             {
                 check_thread(thread);
                 remove_thread(thread);
@@ -104,13 +104,13 @@ namespace MultiTasking
                 }
             }
             debug("Process %d terminated", process->ProcessID);
-            FreePage(process->PageTable);
+            KernelPageTableAllocator->FreePageTable(process->PageTable);
             kfree(process);
             process = nullptr;
         }
         else
         {
-            for (ThreadControlBlock *thread : process->Threads)
+            foreach (ThreadControlBlock *thread in process->Threads)
             {
                 check_thread(thread);
                 if (thread->State == STATE_TERMINATED)
@@ -153,7 +153,7 @@ namespace MultiTasking
         memcpy(process->Name, name, sizeof(process->Name));
         if (parent)
             process->Parent = parent;
-        process->PageTable = CreateNewPML4();
+        process->PageTable = KernelPageTableAllocator->NewPageTable();
 #ifdef DEBUG_SCHEDULER
         debug("%s address space: %#llx", name, process->PageTable);
 #endif
@@ -186,11 +186,13 @@ namespace MultiTasking
         thread->Parent = parent;
         thread->State = State;
         thread->Policy = Policy;
+        thread->Priority = Priority;
         thread->Checksum = THREAD_CHECKSUM;
 
+        memcpy(&thread->Registers, 0, sizeof(REGISTERS));
         if (1) // TODO: kernel & user
         {
-            thread->Stack = AllocateStack();
+            thread->Stack = KernelStackAllocator->AllocateStack();
             thread->Registers.ds = GDT_KERNEL_DATA;
             thread->Registers.cs = GDT_KERNEL_CODE;
             thread->Registers.ss = GDT_KERNEL_DATA;
@@ -240,11 +242,12 @@ namespace MultiTasking
 #endif
         if ((uint64_t)PML != (uint64_t)readcr3().raw)
         {
-            if (PML->Entries->GetAddress() == 0) // TODO: check if the page table is valid
-            {
-                err("Address space %#llx is not valid!", PML);
-                return;
-            }
+            // TODO: check if the page table is valid
+            // if (PML->Entries->GetAddress() == 0)
+            // {
+            //     err("Address space %#llx is not valid!", PML);
+            //     return;
+            // }
             asm volatile("mov %[PML], %%cr3"
                          :
                          : [PML] "q"(PML)
@@ -360,7 +363,7 @@ namespace MultiTasking
 #ifdef DEBUG_SCHEDULER
                 debug("Searching for new process/thread (P:%d T:%d)", CurrentProcess ? 1 : 0, CurrentThread ? 1 : 0);
 #endif
-                for (ProcessControlBlock *process : ListProcess)
+                foreach (ProcessControlBlock *process in ListProcess)
                 {
                     check_process(process);
                     if (process->State != STATE_READY)
@@ -369,7 +372,7 @@ namespace MultiTasking
                         continue;
                     }
 
-                    for (ThreadControlBlock *thread : process->Threads)
+                    foreach (ThreadControlBlock *thread in process->Threads)
                     {
                         check_thread(thread);
                         if (thread->State != STATE_READY)
@@ -417,9 +420,8 @@ namespace MultiTasking
                     if (process->State != STATE_READY)
                         continue;
 
-                    for (uint64_t j = 0; j < process->Threads.size(); j++)
+                    foreach (ThreadControlBlock *thread in process->Threads)
                     {
-                        ThreadControlBlock *thread = process->Threads[j];
                         check_thread(thread);
                         if (thread->State != STATE_READY)
                             continue;
@@ -435,9 +437,7 @@ namespace MultiTasking
                 }
 
                 for (uint64_t i = 0; i < ListProcess.size(); i++)
-                {
                     if (ListProcess[i] == CurrentProcess)
-                    {
                         for (uint64_t p = 0; p < i + 1; p++)
                         {
                             check_process(ListProcess[p]);
@@ -460,8 +460,6 @@ namespace MultiTasking
                                 goto scheduler_success;
                             }
                         }
-                    }
-                }
             }
 
         scheduler_idle:

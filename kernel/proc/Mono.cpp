@@ -74,7 +74,7 @@ namespace MonoTasking
             debug("Last task in queue is %s.", TaskQueue[i]->name);
             return TaskQueue[i];
         }
-        debug("No more tasks in queue. Returning null...");
+        // debug("No more tasks in queue. Returning null...");
         return nullptr;
     }
 
@@ -103,8 +103,8 @@ namespace MonoTasking
             if (TaskQueue[i] == task)
             {
                 debug("Task %s will be removed from queue.", task->name);
-                FreeStack((void *)TaskQueue[i]->stack);
-                FreePage(TaskQueue[i]->pml4);
+                KernelStackAllocator->FreeStack((void *)TaskQueue[i]->stack);
+                KernelPageTableAllocator->FreePageTable((VMM::PageTable *)TaskQueue[i]->pml4);
                 delete TaskQueue[i];
                 memset(TaskQueue[i], 0, sizeof(TaskControlBlock));
                 TaskQueue[i] = FindLastTask();
@@ -138,7 +138,17 @@ namespace MonoTasking
                     goto scheduler_eoi;
                 }
                 else if (TaskQueue[i]->state == TaskState::TaskStateTerminated)
+                {
                     FreeTask(TaskQueue[i]);
+                    if (TaskQueue[i] == nullptr)
+                        while (1)
+                        {
+                            asm volatile("hlt");
+                            TaskControlBlock *task = FindLastTask();
+                            if (task != nullptr)
+                                break;
+                        }
+                }
                 else
                     continue;
             }
@@ -157,15 +167,15 @@ namespace MonoTasking
         CPU_STOP;
     }
 
-    TaskControlBlock *MonoTasking::CreateTask(uint64_t rip, uint64_t args0, uint64_t args1, char *name)
+    TaskControlBlock *MonoTasking::CreateTask(uint64_t InstructionPointer, uint64_t FirstArgument, uint64_t SecondArgument, char *Name)
     {
         TaskControlBlock *task = new TaskControlBlock;
         task->id = TaskIDs++;
-        memcpy(((char *)task->name), name, sizeof(task->name));
+        memcpy(((char *)task->name), Name, sizeof(task->name));
         task->checksum = TASK_CHECKSUM;
         task->state = TaskState::TaskStateWaiting;
-        task->stack = AllocateStack();
-        task->pml4 = CreateNewPML4();
+        task->stack = KernelStackAllocator->AllocateStack();
+        task->pml4 = KernelPageTableAllocator->NewPageTable();
         debug("PML4 %016p for %s has been created.", task->pml4, task->name);
 
         memset(&task->regs, 0, sizeof(REGISTERS));
@@ -176,21 +186,21 @@ namespace MonoTasking
         task->regs.rflags.IF = 1;
         task->regs.rflags.ID = 1;
         task->regs.STACK = (uint64_t)task->stack;
-        task->regs.FUNCTION = (uint64_t)rip;
-        task->regs.ARG0 = (uint64_t)args0;
-        task->regs.ARG1 = (uint64_t)args1;
+        task->regs.FUNCTION = (uint64_t)InstructionPointer;
+        task->regs.ARG0 = (uint64_t)FirstArgument;
+        task->regs.ARG1 = (uint64_t)SecondArgument;
         POKE(uint64_t, task->regs.rsp) = (uint64_t)MonoTaskingTaskExit;
 
-        trace("Task %s has been created. (IP %016p)", task->name, rip);
+        trace("Task %s has been created. (IP %#llx)", task->name, InstructionPointer);
         AllocateTask(task);
         return task;
     }
 
-    MonoTasking::MonoTasking(uint64_t firstThread)
+    MonoTasking::MonoTasking(uint64_t FirstTask)
     {
         for (size_t i = 0; i < MAX_TASKS; i++)
             TaskQueue[i] = nullptr; // Make sure that all tasks have value nullptr
-        CreateTask((uint64_t)firstThread, 0, 0, (char *)"kernel");
+        CreateTask((uint64_t)FirstTask, 0, 0, (char *)"kernel");
         CurrentTaskingMode = TaskingMode::Mono;
         ScheduleInterrupt;
     }
