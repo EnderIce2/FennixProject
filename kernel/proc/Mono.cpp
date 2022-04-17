@@ -106,7 +106,7 @@ namespace MonoTasking
                 FreeStack((void *)TaskQueue[i]->stack);
                 FreePage(TaskQueue[i]->pml4);
                 delete TaskQueue[i];
-                TaskQueue[i] = nullptr; // just to be sure that the garbage will not show that the task is still alive.
+                memset(TaskQueue[i], 0, sizeof(TaskControlBlock));
                 TaskQueue[i] = FindLastTask();
                 debug("Task removed.");
                 break;
@@ -168,6 +168,7 @@ namespace MonoTasking
         task->pml4 = CreateNewPML4();
         debug("PML4 %016p for %s has been created.", task->pml4, task->name);
 
+        memset(&task->regs, 0, sizeof(REGISTERS));
         task->regs.ds = GDT_KERNEL_DATA;
         task->regs.ss = GDT_KERNEL_DATA;
         task->regs.cs = GDT_KERNEL_CODE;
