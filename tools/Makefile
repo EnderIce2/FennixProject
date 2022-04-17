@@ -35,7 +35,7 @@ create_build:
 	$(shell rm -f $$PWD/build.sh)
 	@echo "$$BUILD_SH" > build.sh
 	chmod +x build.sh
-	$(info Now open terminal in FennixProject/tools/ and run ./build.sh to build the crosscompiler.)
+	$(shell ./build.sh)
 
 VERSION = qemu-6.2.0
 
