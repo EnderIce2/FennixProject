@@ -8,6 +8,7 @@ tools/build-gcc
 tools/cross
 tools/qemu
 initrd.tar.gz
+kernel/files/*
 *.log
 *.o
 *.elf

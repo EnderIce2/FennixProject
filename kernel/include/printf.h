@@ -42,6 +42,10 @@
 # include <stdarg.h>
 # include <stddef.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifdef __GNUC__
 # define ATTR_PRINTF(one_based_format_index, first_arg) \
 __attribute__((format(__printf__, (one_based_format_index), (first_arg))))
@@ -186,6 +190,10 @@ int vfctprintf(void (*out)(char c, void* extra_arg), void* extra_arg, const char
 # undef snprintf_
 # undef vsnprintf_
 # undef vprintf_
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif  // PRINTF_H_

@@ -1,18 +1,22 @@
 #pragma once
 
+// Comment or uncomment the following line if you want to log the heap operations
+// #define DEBUG_MEM_ALLOCATION 1
+
 #include <types.h>
 
 extern uint64_t _kernel_start, _kernel_end;
 extern uint64_t _kernel_text_end, _kernel_rodata_end;
 
 #ifdef __cplusplus
-#include <bitmap.h>
+#include <bitmap.hpp>
 
 namespace PMM
 {
     class PageFrameAllocator
     {
     public:
+        bool Initalized = false;
         void ReadMemoryMap();
         Bitmap PageBitmap;
         void FreePage(void *Address);
@@ -67,6 +71,7 @@ namespace VMM
     class PageTableManager
     {
     public:
+        bool Initalized = false;
         PageTable *PML4;
         PageTableManager(PageTable *PML4Address);
         void MapMemory(void *VirtualAddress, void *PhysicalAddress, uint64_t Flags);
@@ -74,23 +79,8 @@ namespace VMM
     };
 }
 
-namespace Heap
-{
-    struct HeapSegHdr
-    {
-        size_t Length;
-        HeapSegHdr *Next;
-        HeapSegHdr *Last;
-        bool IsFree;
-        void CombineForward();
-        void CombineBackward();
-        HeapSegHdr *Split(size_t SplitLength);
-    };
-}
-
 extern PMM::PageFrameAllocator KernelAllocator;
 extern VMM::PageTableManager KernelPageTableManager;
-void ExpandHeap(size_t Length);
 
 void *operator new(size_t Size);
 void *operator new[](size_t Size);
@@ -122,31 +112,31 @@ void operator delete[](void *Pointer, long unsigned int n);
 enum PTFlag
 {
     /** @brief Present */
-    P    = 0x00000000,
+    P = 0x00000000,
 
     /** @brief Read/Write */
-    RW   = 0x00000001,
+    RW = 0x00000001,
 
     /** @brief User/Supervisor */
-    US   = 0x00000002,
+    US = 0x00000002,
 
     /** @brief Write-Through */
-    PWT  = 0x00000003,
+    PWT = 0x00000003,
 
     /** @brief Cache Disable */
-    PCD  = 0x00000004,
+    PCD = 0x00000004,
 
     /** @brief Accessed */
-    A    = 0x00000005,
+    A = 0x00000005,
 
     /** @brief Dirty */
-    D    = 0x00000006,
+    D = 0x00000006,
 
     /** @brief Page Size */
-    PS   = 0x00000007,
+    PS = 0x00000007,
 
     /** @brief Global */
-    G    = 0x00000008,
+    G = 0x00000008,
 
     /** @brief Available 0 */
     AVL0 = 0x00000009,
@@ -158,7 +148,7 @@ enum PTFlag
     AVL2 = 0x00000011,
 
     /** @brief Page Attribute Table */
-    PAT  = 0x00000012,
+    PAT = 0x00000012,
 
     /** @brief Available 3 */
     AVL3 = 0x00000052,
@@ -182,19 +172,27 @@ enum PTFlag
     AVL9 = 0x00000058,
 
     /** @brief Protection Key 0 */
-    PK0  = 0x00000059,
+    PK0 = 0x00000059,
 
     /** @brief Protection Key 1 */
-    PK1  = 0x00000060,
+    PK1 = 0x00000060,
 
     /** @brief Protection Key 2 */
-    PK2  = 0x00000061,
+    PK2 = 0x00000061,
 
     /** @brief Protection Key 3 */
-    PK3  = 0x00000062,
+    PK3 = 0x00000062,
 
     /** @brief Execute Disable */
-    XD   = 0x00000063
+    XD = 0x00000063
+};
+
+enum AllocationAlgorithm
+{
+    Default,
+    LibAlloc,
+    LibAlloc11,
+    BuddyAlloc
 };
 
 START_EXTERNC
@@ -203,10 +201,29 @@ void *AllocateStack();
 void FreeStack(void *stack);
 void init_stack();
 
-void *kmalloc(size_t Size);
-void *kcalloc(size_t n, size_t Size);
-void *krealloc(void *Address, size_t Size);
-void kfree(void *Address);
+void *HeapMalloc(size_t Size);
+void *HeapCalloc(size_t n, size_t Size);
+void *HeapRealloc(void *Address, size_t Size);
+void HeapFree(void *Address);
+
+#ifndef DEBUG_MEM_ALLOCATION
+#define kmalloc(Size) HeapMalloc(Size)
+#define kcalloc(n, Size) HeapCalloc(n, Size)
+#define krealloc(Address, Size) HeapRealloc(Address, Size)
+#define kfree(Address) HeapFree(Address)
+#else
+void *dbg_malloc(size_t Size, string file, int line, string function);
+void dbg_free(void *Address, string file, int line, string function);
+void *dbg_calloc(size_t n, size_t Size, string file, int line, string function);
+void *dbg_realloc(void *Address, size_t Size, string file, int line, string function);
+
+#define kmalloc(Size) dbg_malloc(Size, __FILE__, __LINE__, __FUNCTION__)
+#define kcalloc(n, Size) dbg_calloc(n, Size, __FILE__, __LINE__, __FUNCTION__)
+#define krealloc(Address, Size) dbg_realloc(Address, Size, __FILE__, __LINE__, __FUNCTION__)
+#define kfree(Address) dbg_free(Address, __FILE__, __LINE__, __FUNCTION__)
+
+#endif
+
 void *RequestPage();
 void *RequestPages(uint64_t pages);
 #ifdef __cplusplus
@@ -223,6 +240,6 @@ void MapMemory(void *PML4, void *VirtualMemory, void *PhysicalMemory, uint64_t F
 
 void init_pmm();
 void init_vmm();
-void init_heap(void *HeapAddress, size_t PageCount);
+void init_heap(enum AllocationAlgorithm Type);
 
 END_EXTERNC

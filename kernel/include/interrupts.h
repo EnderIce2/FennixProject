@@ -2,6 +2,7 @@
 #define __FENNIX_KERNEL_INTERRUPTS_H__
 
 #include <types.h>
+#include <cputables.h>
 
 typedef enum
 {
@@ -80,36 +81,6 @@ typedef enum
 
 #ifdef __x86_64__
 
-typedef union
-{
-    struct
-    {
-        uint32_t CF : 1;          // Carry Flag
-        uint32_t always_one : 1;  // Reserved
-        uint32_t PF : 1;          // Parity Flag
-        uint32_t reserved_1 : 1;  // Reserved
-        uint32_t AF : 1;          // Auxiliary Carry Flag
-        uint32_t reserved_2 : 1;  // Reserved
-        uint32_t ZF : 1;          // Zero Flag
-        uint32_t SF : 1;          // Sign Flag
-        uint32_t TF : 1;          // Trap Flag
-        uint32_t IF : 1;          // Interrupt Enable Flag
-        uint32_t DF : 1;          // Direction Flag
-        uint32_t OF : 1;          // Overflow Flag
-        uint32_t IOPL : 2;        // I/O Privilege Level
-        uint32_t NT : 1;          // Nested Task
-        uint32_t reserved_3 : 1;  // Reserved
-        uint32_t RF : 1;          // Resume Flag
-        uint32_t VM : 1;          // Virtual 8086 Mode
-        uint32_t AC : 1;          // Alignment Check
-        uint32_t VIF : 1;         // Virtual Interrupt Flag
-        uint32_t VIP : 1;         // Virtual Interrupt Pending
-        uint32_t ID : 1;          // ID Flag
-        uint32_t reserved_4 : 10; // Reserved
-    };
-    uint64_t raw;
-} RFLAGS;
-
 typedef struct _REGISTERS
 {
     // uint64_t es;         // Extra Segment (used for string operations)
@@ -171,7 +142,7 @@ typedef struct _REGISTERS
 #define CS regs->cs                 // Code Segment
 #define FLAGS regs->rflags          // Register Flags
 #define RSP regs->rsp               // Stack Pointer
-#define SS regs->ss                 // Stack Segment
+#define _SS regs->ss                 // Stack Segment
 
 EXTERNC void EndOfInterrupt(int interrupt);
 
@@ -198,7 +169,7 @@ EXTERNC void EndOfInterrupt(int interrupt);
 #define ICW4_SFNM 0x10       /* Special fully nested (not) */
 
 void PIC_disable();
-void PIC_sendEOI(unsigned char irq);
+EXTERNC void PIC_sendEOI(unsigned char irq);
 void PIC_remap(int offset1, int offset2);
 void IRQ_set_mask(unsigned char IRQline);
 void IRQ_clear_mask(unsigned char IRQline);

@@ -185,11 +185,11 @@ typedef struct _GlobalBootParams
 typedef struct _SysFlags
 {
     /**
-     * @brief Debug mode
+     * @brief Debug mode "debug"
      */
     bool fennecsarethebest;
     /**
-     * @brief The root filesystem
+     * @brief The root filesystem "rootfs=hda0 or something like that"
      */
     string rootfs; // TODO: more info about the disk
     /**
@@ -201,13 +201,18 @@ typedef struct _SysFlags
      */
     bool nohpet;
     /**
-     * @brief Enter in emergency mode
+     * @brief Enter in emergency mode TODO:
      */
     bool emergency;
     /**
      * @brief Do not mount any filesystem or partition
      */
     bool nomount;
+    /**
+     * @brief Do not initialize the boot loading screen
+     */
+    bool noloadingscreen;
+    // there is one more "no4gbcap" flag, but it's not used only in boot initialization code.
 } SysFlags;
 
 #endif // !__GLOBAL_BOOT_PARAMS_H__

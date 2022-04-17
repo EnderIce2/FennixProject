@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <debug.h>
+#include <easyc.h>
 
 typedef char const *string;
 
@@ -40,7 +41,7 @@ typedef char const *string;
 
 #define CPU_STOP \
     for (;;)     \
-        asm volatile("hlt");
+        asm volatile("hlt")
 
 #ifdef __cplusplus
 
@@ -59,8 +60,57 @@ typedef char const *string;
 
 #endif
 
+#ifndef __cplusplus
+
+#ifdef __STDC__
+#ifdef __STDC_VERSION__
+#if (__STDC_VERSION__ >= 201710L)
+#define C_LANGUAGE_STANDARD 2018
+#elif (__STDC_VERSION__ >= 201112L)
+#define C_LANGUAGE_STANDARD 2011
+#elif (__STDC_VERSION__ >= 199901L)
+#define C_LANGUAGE_STANDARD 1999
+#elif (__STDC_VERSION__ >= 199409L)
+#define C_LANGUAGE_STANDARD 1995
+#endif
+#else
+#define C_LANGUAGE_STANDARD 1990
+#endif
+#else
+#define C_LANGUAGE_STANDARD 1972
+#endif
+
+#else
+
+#ifdef __STDC__
+#ifdef __cplusplus
+#if (__cplusplus >= 202100L)
+#define CPP_LANGUAGE_STANDARD 2023
+#elif (__cplusplus >= 202002L)
+#define CPP_LANGUAGE_STANDARD 2020
+#elif (__cplusplus >= 201703L)
+#define CPP_LANGUAGE_STANDARD 2017
+#elif (__cplusplus >= 201402L)
+#define CPP_LANGUAGE_STANDARD 2014
+#elif (__cplusplus >= 201103L)
+#define CPP_LANGUAGE_STANDARD 2011
+#elif (__cplusplus >= 199711L)
+#define CPP_LANGUAGE_STANDARD 1998
+#endif
+#else
+#define CPP_LANGUAGE_STANDARD __cplusplus
+#endif
+#else
+#define CPP_LANGUAGE_STANDARD __cplusplus
+#endif
+
+#endif
+
 #define FENAPI
 #define APICALL __attribute__((__cdecl__))
+
+#define MIN(a, b) (((a) < (b)) ? (a) : (b))
+#define MAX(a, b) (((a) > (b)) ? (a) : (b))
 
 #define VPOKE(type, address) (*((volatile type *)(address)))
 #define POKE(type, address) (*((type *)(address)))

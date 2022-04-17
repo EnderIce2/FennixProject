@@ -10,7 +10,7 @@
             }
         },
         {
-            "label": "Make Clean",
+            "label": "Clean",
             "type": "shell",
             "linux": {
                 "command": "make clean && killall qemu-system-x86_64"

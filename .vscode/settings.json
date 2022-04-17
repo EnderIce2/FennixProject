@@ -38,6 +38,9 @@
         "kernel.h": "c",
         "display.h": "c",
         "idt.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "sys.h": "c",
+        "task.h": "c",
+        "cwalk.h": "c"
     }
 }

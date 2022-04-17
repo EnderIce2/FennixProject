@@ -1,14 +1,25 @@
 #include <types.h>
 #include <interrupts.h>
 #include <heap.h>
+#ifdef __cplusplus
+#include <vector.hpp>
+#endif
 
-/**
- * @brief This is kernel calls for process creation and basic operations.
- *
- */
+enum syscalls_enum
+{
+    _ProcessExit = 1,
+    _ProcessCreate,
+    _ThreadCreate,
+    _GetCurrentProcess,
+    _GetCurrentThread,
+    _Schedule,
 
-#define MAX_PROCESSES 0x10
-#define PROCESS_MAX_THREADS 0x10
+    _SystemInfo,
+    _SystemTime,
+    _SystemTimeSet,
+    
+    _DebugMessage,
+};
 
 enum ControlBlockState
 {
@@ -72,6 +83,11 @@ typedef struct _ProcessControlBlock
     char Name[256];
     enum ControlBlockState State;
     struct _ProcessControlBlock *Parent;
+#ifdef __cplusplus
+    Vector<struct _ProcessControlBlock *> Children;
+#else
+    void *Childern;
+#endif
     uint64_t ExitCode;
 #ifndef __cplusplus
     void *PageTable;
@@ -79,63 +95,26 @@ typedef struct _ProcessControlBlock
     VMM::PageTable *PageTable;
 #endif
     ControlBlockTime *Time;
-    ThreadControlBlock *Threads[PROCESS_MAX_THREADS];
+#ifdef __cplusplus
+    Vector<ThreadControlBlock *> Threads;
+#else
+    void *Threads; // not supported in C
+#endif
     uint32_t Checksum;
 } ProcessControlBlock;
-
-/**
- * @brief Get a running process by PID
- *
- * @param pid Process identifier
- * @return ProcessControlBlock
- */
-EXTERNC ProcessControlBlock *FENAPI SysGetProcessByPID(uint64_t ID);
-
-/**
- * @brief Get current process
- *
- * @return ProcessControlBlock
- */
-EXTERNC ProcessControlBlock *FENAPI SysGetCurrentProcess();
-
-/**
- * @brief Create a new process from a file
- *
- * @param name TODO: more
- * @return ProcessControlBlock
- */
-EXTERNC ProcessControlBlock *FENAPI SysCreateProcessFromFile(const char *File); // TODO: complete
-
-/**
- * @brief Create a new simple process with custom name and address space
- * 
- * @param Name 
- * @param PageTable 
- * @return ProcessControlBlock* 
- */
-EXTERNC ProcessControlBlock *FENAPI SysCreateProcess(const char *Name, void *PageTable);
-
-/**
- * @brief Create a new thread
- * 
- * @param Parent if null is using the current running
- * @param InstructionPointer 
- * @return ThreadControlBlock* 
- */
-EXTERNC ThreadControlBlock *FENAPI SysCreateThread(ProcessControlBlock* Parent, uint64_t InstructionPointer);
 
 #ifdef __cplusplus
 
 enum TaskingMode
 {
     None,
-    Primitive,
-    Advanced
+    Mono,
+    Multi
 };
 
 extern int CurrentTaskingMode;
 
-namespace PrimitiveTasking
+namespace MonoTasking
 {
     enum TaskState
     {
@@ -190,10 +169,10 @@ namespace PrimitiveTasking
     private:
     };
 
-    extern MonoTasking SingleProcessing;
+    extern MonoTasking *SingleProcessing;
 };
 
-namespace AdvancedTasking
+namespace MultiTasking
 {
 #define PROCESS_CHECKSUM 0xCAFEBABE
 #define THREAD_CHECKSUM 0xDEADCAFE
@@ -210,7 +189,6 @@ namespace AdvancedTasking
     if (thread->Checksum != THREAD_CHECKSUM) \
         continue;
 
-    static ProcessControlBlock *ListProcess[MAX_PROCESSES];
     static ProcessControlBlock *CurrentProcess = nullptr;
     static ThreadControlBlock *CurrentThread = nullptr;
     static ProcessControlBlock *IdleProcess = nullptr;
@@ -221,6 +199,7 @@ namespace AdvancedTasking
     public:
         uint64_t NextPID = 0, NextTID = 0;
         void Schedule();
+        void ToggleScheduler(bool toggle);
         /**
          * @brief Construct a new Multi Tasking object
          *
@@ -240,16 +219,59 @@ namespace AdvancedTasking
 
     private:
     };
-    extern MultiTasking MultiProcessing;
+    extern MultiTasking *MultiProcessing;
 };
 
 #endif
 
-
 START_EXTERNC
+
+/**
+ * @brief Get a running process by PID
+ *
+ * @param pid Process identifier
+ * @return ProcessControlBlock
+ */
+ProcessControlBlock *FENAPI SysGetProcessByPID(uint64_t ID);
+
+/**
+ * @brief Get current process
+ *
+ * @return ProcessControlBlock
+ */
+ProcessControlBlock *FENAPI SysGetCurrentProcess();
+
+/**
+ * @brief Create a new process from a file
+ *
+ * @param File TODO: more
+ * @return ProcessControlBlock
+ */
+ProcessControlBlock *FENAPI SysCreateProcessFromFile(const char *File, bool usermode);
+
+/**
+ * @brief Create a new simple process with custom name and address space
+ *
+ * @param Name
+ * @param PageTable
+ * @return ProcessControlBlock*
+ */
+ProcessControlBlock *FENAPI SysCreateProcess(const char *Name, void *PageTable);
+
+/**
+ * @brief Create a new thread
+ *
+ * @param Parent if null is using the current running
+ * @param InstructionPointer
+ * @return ThreadControlBlock*
+ */
+ThreadControlBlock *FENAPI SysCreateThread(ProcessControlBlock *Parent, uint64_t InstructionPointer);
 
 void do_exit(uint64_t code);
 void schedule();
 int thread_page_fault_handler(REGISTERS *regs);
+void StartTasking(uint64_t Address, enum TaskingMode Mode);
+
+void init_syscalls();
 
 END_EXTERNC

@@ -1,8 +1,8 @@
 
 include Makefile.conf
 
-QEMUFLAGS = -vga std \
-			-usb \
+QEMUFLAGS = -vga std -M q35 \
+			-usb -no-reboot \
 			-usbdevice mouse \
 			-smp $(shell nproc) \
 			-net nic,model=rtl8139 \
@@ -12,14 +12,13 @@ QEMUFLAGS = -vga std \
 			-drive id=disk,file=qemu-disk.img,if=none \
 			-device ahci,id=ahci \
 			-device ide-hd,drive=disk,bus=ahci.0 \
-			-drive file=qemu-disk-ata.img,index=1,if=ide,format=raw \
 			-device AC97 \
 			-device sb16 \
 			-device ES1370 \
 			-device intel-hda -device hda-duplex \
 			-soundhw pcspk \
 
-QEMUHWACCELERATION = -machine q35 -M q35 -enable-kvm
+QEMUHWACCELERATION = -machine q35 -enable-kvm
 
 # SYSTEM_MEM = $(shell grep 'MemTotal' /proc/meminfo | sed -e 's/MemTotal://' -e 's/ kB//')
 # I could use $(shell echo ${SYSTEM_MEM}/1024/4 | bc) to specify a small amount (1/4) of memory for the qemu.
@@ -45,33 +44,36 @@ qemu_vdisk:
 ifneq (,$(wildcard ./qemu-disk.img))
 	$(info qemu-disk.img Already exists)
 else
-	dd if=/dev/zero of=qemu-disk.img bs=512 count=93750
-	mformat -i qemu-disk.img -f 2880 ::
-	@for f in $(shell ls resources/qemu_disk); do mcopy -i qemu-disk.img resources/qemu_disk/$${f} ::; done
-	cp qemu-disk.img qemu-disk-ata.img
+	dd if=/dev/zero of=qemu-disk.img bs=1024K count=4000
 endif
 
+# download fonts for the kernel
+fonts:
+	wget https://www.zap.org.au/projects/console-fonts-zap/src/zap-ext-light20.psf -P kernel/files
+	wget https://www.zap.org.au/projects/console-fonts-zap/src/zap-ext-light24.psf -P kernel/files
+	wget https://www.zap.org.au/projects/console-fonts-zap/src/zap-light16.psf -P kernel/files
+	wget https://raw.githubusercontent.com/powerline/fonts/master/Terminus/PSF/ter-powerline-v12n.psf.gz -P kernel/files
+	gzip -d kernel/files/ter-powerline-v12n.psf.gz
+
 # install necessary packages, compile cross-compiler etc..
-tools:
+tools: fonts
 	make --quiet -C tools all
 
-# build the operating system
-build_:
-	tar cf initrd.tar.gz -C resources/initrd/ ./ --format=ustar
-	make --quiet -C kernel build
-
-build: quick_build build_image
+build: build_kernel build_userspace build_image
 
 rebuild: clean build
 
 # quickly build the operating system (it won't create the ISO file and doxygen documentation)
-quick_build:
-	tar cf initrd.tar.gz -C resources/initrd/ ./ --format=ustar
-	make --quiet -C kernel build
+build_kernel:
+	make -j$(shell nproc) --quiet -C kernel build
+
+build_userspace:
+	make --quiet -C userspace build
 
 build_image:
 	mkdir -p limine-bootloader
-	cp kernel/src/kernel.fsys limine.cfg initrd.tar.gz \
+	tar cf initrd.tar.gz -C resources/initrd/ ./ --format=ustar
+	cp kernel/kernel.fsys limine.cfg initrd.tar.gz \
 		${LIMINE_FOLDER}/limine.sys \
 		${LIMINE_FOLDER}/limine-cd.bin \
 		${LIMINE_FOLDER}/limine-cd-efi.bin \
@@ -82,17 +84,20 @@ build_image:
 		-efi-boot-part --efi-boot-image --protective-msdos-label \
 		limine-bootloader -o $(OSNAME).iso
 
-vscode_debug: quick_build build_image
+vscode_debug: build_kernel build_image
 	rm -f serial.log
-	${QEMU} -S -gdb tcp::1234 -d int -no-shutdown -no-reboot -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -m 4G ${QEMUFLAGS}
+	${QEMU} -S -gdb tcp::1234 -d int -no-shutdown -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -m 4G ${QEMUFLAGS}
 
-# build the os and run it
-run: quick_build qemu_vdisk build_image
+qemu: qemu_vdisk
 	rm -f serial.log
 	${QEMU} -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
+
+# build the os and run it
+run: build_kernel build_userspace qemu_vdisk build_image qemu
 
 # clean
 clean:
 	rm -rf doxygen-doc limine-bootloader initrd.tar.gz *.iso
-	make -C tools clean
-	make -C kernel clean
+	make --quiet -C tools clean
+	make --quiet -C kernel clean
+	make --quiet -C userspace clean

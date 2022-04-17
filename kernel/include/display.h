@@ -21,14 +21,14 @@ namespace DisplayDriver
 #define PSF2_MAGIC2 0x4a
 #define PSF2_MAGIC3 0x86
 
-    typedef struct _PSF1_HEADER
+    struct PSF1_HEADER
     {
         uint8_t magic[2];
         uint8_t mode;
         uint8_t charsize;
-    } PSF1_HEADER;
+    };
 
-    typedef struct _PSF2_HEADER
+    struct PSF2_HEADER
     {
         uint8_t magic[4];
         uint32_t version;
@@ -37,18 +37,18 @@ namespace DisplayDriver
         uint32_t length;
         uint32_t charsize;
         uint32_t height, width;
-    } PSF2_HEADER;
+    };
 
     typedef struct _PSF1_FONT
     {
-        struct _PSF1_HEADER Header;
+        PSF1_HEADER *Header;
         void *GlyphBuffer;
     } PSF1_FONT;
 
     typedef struct _PSF2_FONT
     {
-        PSF2_HEADER Header;
-        uint16_t *GlyphBuffer;
+        PSF2_HEADER *Header;
+        void *GlyphBuffer;
     } PSF2_FONT;
 
     struct PSFFileInfo
@@ -76,8 +76,8 @@ namespace DisplayDriver
     {
     public:
         PSFFileInfo PSFFile;
-        PSF1_FONT PSF1Font;
-        PSF2_FONT PSF2Font;
+        PSF1_FONT *PSF1Font;
+        PSF2_FONT *PSF2Font;
 
         /**
          * @brief Construct a new PC Screen Font object
@@ -171,12 +171,14 @@ namespace DisplayDriver
          * @brief Get the Framebuffer object
          * @return Framebuffer
          */
-        Framebuffer GetFramebuffer();
+        Framebuffer *GetFramebuffer();
 
+        void SetPixel(uint32_t X, uint32_t Y, uint32_t Color);
+        uint32_t GetPixel(uint32_t X, uint32_t Y);
     private:
         PrintLocation ploc = {.X = 0, .Y = 0};
         uint32_t color = 0xFFFFFFFF;
-        Framebuffer framebuffer;
+        Framebuffer *framebuffer;
         void Scroll();
     };
 }
@@ -184,7 +186,7 @@ namespace DisplayDriver
 /**
  * @brief Current display information
  */
-extern DisplayDriver::Display CurrentDisplay;
+extern DisplayDriver::Display *CurrentDisplay;
 
 #endif
 

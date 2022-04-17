@@ -182,81 +182,81 @@ static inline void wrmsr(uint32_t msr, uint64_t Value)
 
 static inline CR0 readcr0()
 {
-    uint64_t res;
-    asm volatile("mov %%cr0, %[res]"
-                 : [res] "=q"(res));
-    return (CR0){.raw = res};
+    uint64_t Result;
+    asm volatile("mov %%cr0, %[Result]"
+                 : [Result] "=q"(Result));
+    return (CR0){.raw = Result};
 }
 
-static inline uint64_t readcr2()
+static inline CR2 readcr2()
 {
-    uint64_t res;
-    asm volatile("mov %%cr2, %[res]"
-                 : [res] "=q"(res));
-    return res;
+    uint64_t Result;
+    asm volatile("mov %%cr2, %[Result]"
+                 : [Result] "=q"(Result));
+    return (CR2){.raw = Result};
 }
 
-static inline uint64_t readcr3()
+static inline CR3 readcr3()
 {
-    uint64_t res;
-    asm volatile("mov %%cr3, %[res]"
-                 : [res] "=q"(res));
-    return res;
+    uint64_t Result;
+    asm volatile("mov %%cr3, %[Result]"
+                 : [Result] "=q"(Result));
+    return (CR3){.raw = Result};
 }
 
 static inline CR4 readcr4()
 {
-    uint64_t res;
-    asm volatile("mov %%cr4, %[res]"
-                 : [res] "=q"(res));
-    return (CR4){.raw = res};
+    uint64_t Result;
+    asm volatile("mov %%cr4, %[Result]"
+                 : [Result] "=q"(Result));
+    return (CR4){.raw = Result};
 }
 
-static inline uint64_t readcr8()
+static inline CR8 readcr8()
 {
-    uint64_t res;
-    asm volatile("mov %%cr8, %[res]"
-                 : [res] "=q"(res));
-    return res;
+    uint64_t Result;
+    asm volatile("mov %%cr8, %[Result]"
+                 : [Result] "=q"(Result));
+    return (CR8){.raw = Result};
 }
 
-static inline void writecr0(CR0 base)
+static inline void writecr0(CR0 ControlRegister)
 {
-    asm volatile("mov %[base], %%cr0"
+    asm volatile("mov %[ControlRegister], %%cr0"
                  :
-                 : [base] "q"(base.raw)
+                 : [ControlRegister] "q"(ControlRegister.raw)
                  : "memory");
 }
 
-static inline void writecr2(uint64_t base)
+static inline void writecr2(CR2 ControlRegister)
 {
-    asm volatile("mov %[base], %%cr2"
+    asm volatile("mov %[ControlRegister], %%cr2"
                  :
-                 : [base] "q"(base)
+                 : [ControlRegister] "q"(ControlRegister.raw)
                  : "memory");
 }
 
-static inline void writecr3(uint64_t base)
+static inline void writecr3(CR3 ControlRegister)
 {
-    asm volatile("mov %[base], %%cr3"
+    asm volatile("mov %[ControlRegister], %%cr3"
                  :
-                 : [base] "q"(base)
+                 : [ControlRegister] "q"(ControlRegister.raw)
                  : "memory");
 }
 
-static inline void writecr4(CR4 base)
+static inline void writecr4(CR4 ControlRegister)
 {
-    asm volatile("mov %[base], %%cr4"
+    asm volatile("mov %[ControlRegister], %%cr4"
                  :
-                 : [base] "q"(base.raw)
+                 : [ControlRegister] "q"(ControlRegister.raw)
                  : "memory");
 }
 
-static inline void writecr8(uint64_t base)
+static inline void writecr8(CR8 ControlRegister)
 {
-    asm volatile("mov %[base], %%cr8"
+    asm volatile("mov %[ControlRegister], %%cr8"
                  :
-                 : [base] "q"(base)
+                 : [ControlRegister] "q"(ControlRegister.raw)
                  : "memory");
 }
 

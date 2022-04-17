@@ -23,12 +23,7 @@ cd ..
 endef
 export BUILD_SH
 
-# mkdir -p build-llvm && cd build-llvm
-# cmake -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS=lld -DCMAKE_INSTALL_PREFIX="$$PREFIX" ../llvm-project/llvm
-# make install
-# cd ..
-
-all: update_limine update_gcc create_build update_qemu
+all: update_limine update_gcc update_qemu create_build
 
 initrd:
 	gcc -w initrd.c -o initrd.elf
@@ -45,39 +40,23 @@ create_build:
 VERSION = qemu-6.2.0
 
 update_qemu:
-	$(info Make sure you installed packages and libraries first. More info at https://wiki.qemu.org/Hosts/Linux .)
 	wget https://download.qemu.org/${VERSION}.tar.xz && tar xvJf ${VERSION}.tar.xz && rm -f ${VERSION}.tar.xz && mv ${VERSION} qemu && cd qemu && bash ./configure --target-list=x86_64-softmmu && make -j$(shell nproc)
 
 update_limine:
 ifneq (,$(wildcard ./limine))
 	$(info Don't forget to update the limine folder by removing it!)
 else
-	git clone https://github.com/limine-bootloader/limine.git --branch=v3.0-binary --depth=1
+	git clone https://github.com/limine-bootloader/limine.git --branch=v3.0-branch-binary --depth=1
 endif
 
 update_gcc:
 ifneq (,$(wildcard ./binutils-gdb))
-	cd binutils-gdb && git pull git://sourceware.org/git/binutils-gdb.git && cd ..
+	cd binutils-gdb && git pull 	https://sourceware.org/git/binutils-gdb.git && cd ..
 else
-	git clone git://sourceware.org/git/binutils-gdb.git binutils-gdb
+	git clone 	https://sourceware.org/git/binutils-gdb.git binutils-gdb
 endif
 ifneq (,$(wildcard ./gcc))
-	cd gcc && git pull git://gcc.gnu.org/git/gcc.git && cd ..
+	cd gcc && git pull https://gcc.gnu.org/git/gcc.git && cd ..
 else
-	git clone git://gcc.gnu.org/git/gcc.git gcc
+	git clone https://gcc.gnu.org/git/gcc.git gcc
 endif
-
-# update_llvm:
-# ifneq (,$(wildcard ./llvm-project))
-# 	cd gcc && git pull https://github.com/llvm/llvm-project && cd ..
-# else
-# 	git clone https://github.com/llvm/llvm-project llvm-project
-# endif
-
-# update_tomatoboot:
-# ifneq (,$(wildcard ./tomatoboot))
-# 	cd tomatoboot && make all
-# else
-# 	git clone https://github.com/TomatOrg/TomatBoot.git tomatoboot
-# 	cd tomatoboot && make all
-# endif

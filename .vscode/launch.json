@@ -6,7 +6,7 @@
             "name": "Launch with GDB",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/kernel/src/kernel.fsys",
+            "program": "${workspaceRoot}/kernel/kernel.fsys",
             "cwd": "${workspaceRoot}",
             "args": [],
             "targetArchitecture": "x64",
@@ -32,12 +32,12 @@
                     "description": "Make breakpoint pending on future shared library load."
                 },
                 {
-                    "text": "file ${workspaceRoot}/kernel/src/kernel.fsys",
+                    "text": "file ${workspaceRoot}/kernel/kernel.fsys",
                     "description": "Load binary."
                 },
             ],
             "preLaunchTask": "Launch QEMU",
-            "postDebugTask": "Make Clean",
+            "postDebugTask": "Clean",
         }
     ]
 }
