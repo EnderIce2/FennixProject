@@ -9,25 +9,27 @@ NEWLOCK(serial_lock);
 int init_serial(int serial_port)
 {
     SILENT_LOCK(serial_lock);
-    outb(serial_port + 1, 0x00);                 // Disable all interrupts
-    outb(serial_port + 3, SERIAL_ENABLE_DLAB);   // Enable DLAB (set baud rate divisor)
-    outb(serial_port + 0, SERIAL_RATE_38400_LO); // Set divisor to 3 (lo byte) 38400 baud
-    outb(serial_port + 1, SERIAL_RATE_38400_HI); //                  (hi byte)
-    outb(serial_port + 3, 0x03);                 // 8 bits, no parity, one stop bit
-    outb(serial_port + 2, 0xC7);                 // Enable FIFO, clear them, with 14-byte threshold
-    outb(serial_port + 4, 0x0B);                 // IRQs enabled, RTS/DSR set
-    outb(serial_port + 4, 0x1E);                 // Set in loopback mode, test the serial chip
-    outb(serial_port + 0, 0xAE);                 // Test serial chip (send byte 0xAE and check if serial returns same byte)
+    outb(serial_port + 7, 0x55);
+    if (inb(serial_port + 7) != 0x55)
+    {
+        SILENT_UNLOCK(serial_lock);
+        return -1;
+    }
 
-    // Check if serial is faulty (i.e: not same byte as sent)
+    outb(serial_port + 1, 0x00);
+    outb(serial_port + 3, SERIAL_ENABLE_DLAB);
+    outb(serial_port + 0, 0x01);
+    outb(serial_port + 1, SERIAL_RATE_38400_HI);
+    outb(serial_port + 3, 0x03);
+    outb(serial_port + 2, 0xC7);
+    outb(serial_port + 4, 0x0B);
+
     if (inb(serial_port + 0) != 0xAE)
     {
         SILENT_UNLOCK(serial_lock);
         return -1;
     }
 
-    // If serial is not faulty set it in normal operation mode
-    // (not-loopback with IRQs enabled and OUT#1 and OUT#2 bits enabled)
     outb(serial_port + 4, 0x0F);
     SILENT_UNLOCK(serial_lock);
     return 0;
