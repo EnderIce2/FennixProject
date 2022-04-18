@@ -73,7 +73,7 @@ build_userspace:
 build_image:
 	mkdir -p limine-bootloader
 	tar cf initrd.tar.gz -C resources/initrd/ ./ --format=ustar
-	cp kernel/kernel.fsys limine.cfg initrd.tar.gz \
+	cp kernel/kernel.fsys limine.cfg initrd.tar.gz startup.nsh \
 		${LIMINE_FOLDER}/limine.sys \
 		${LIMINE_FOLDER}/limine-cd.bin \
 		${LIMINE_FOLDER}/limine-cd-efi.bin \
