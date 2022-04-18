@@ -2,6 +2,7 @@
 #include <heap.h>
 #include <string.h>
 #include <elf.h>
+#include <bootscreen.h>
 
 #include "kernel.h"
 
@@ -73,6 +74,7 @@ namespace KernelSymbols
 #else
         }
 #endif
+        BS->IncreaseProgres();
     }
 
     Symbols::~Symbols()

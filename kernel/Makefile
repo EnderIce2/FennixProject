@@ -36,13 +36,13 @@ LDFLAGS := 									\
 WARNCFLAG = -Wall -Wextra -w
 
 # Change march with minimum supported cpu // https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html
-CFLAGS :=															\
-	-I${INCLUDE_DIR}												\
-	-DKERNEL_VERSION='"$(KERNEL_VERSION)"'							\
-	-fstack-protector-all											\
-	-fno-pic -fno-pie -mno-80387									\
-	-mno-80387 -mno-mmx -mno-3dnow -mno-red-zone -mno-sse -mno-sse2	\
-	-march=nehalem -pipe											\
+CFLAGS :=																\
+	-I${INCLUDE_DIR}													\
+	-DKERNEL_NAME='"$(OSNAME)"' -DKERNEL_VERSION='"$(KERNEL_VERSION)"'	\
+	-fstack-protector-all												\
+	-fno-pic -fno-pie -mno-80387										\
+	-mno-80387 -mno-mmx -mno-3dnow -mno-red-zone -mno-sse -mno-sse2		\
+	-march=nehalem -pipe												\
 	-mcmodel=kernel -msoft-float -fno-builtin
 
 ifeq ($(DEBUG), 1)

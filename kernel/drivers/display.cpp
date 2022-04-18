@@ -135,14 +135,6 @@ namespace DisplayDriver
         framebuffer->Height = bootparams->Framebuffer->Height;
         framebuffer->Size = bootparams->Framebuffer->BufferSize;
 
-        // Clear the screen.
-        for (int VerticalScanline = 0; VerticalScanline < framebuffer->Height; VerticalScanline++)
-        {
-            uint64_t PixelPtrBase = framebuffer->Address + ((framebuffer->PixelsPerScanLine * 4) * VerticalScanline);
-            for (uint32_t *PixelPtr = (uint32_t *)PixelPtrBase; PixelPtr < (uint32_t *)(PixelPtrBase + (framebuffer->PixelsPerScanLine * 4)); PixelPtr++)
-                *PixelPtr = 0xFF000000;
-        }
-
         // TODO: Fix PSF1 fonts
         // TODO: Implement an easy way to change psf fonts
         // CurrentFont = new Font(&_binary_files_zap_ext_vga16_psf_start, &_binary_files_zap_ext_vga16_psf_end, FontType::PCScreenFont1);
@@ -201,7 +193,7 @@ namespace DisplayDriver
             {
                 for (unsigned long X = ploc.X; X < ploc.X + CurrentFont->PSF2Font->Header->width; X++)
                     if ((*FontPtr & (0b10000000 >> (X - ploc.X))) > 0)
-                        *(uint32_t *)(PixelPtr + X + (Y * framebuffer->PixelsPerScanLine)) = CurrentDisplay->color;
+                        *(uint32_t *)(PixelPtr + X + (Y * framebuffer->PixelsPerScanLine)) = this->color;
                 FontPtr += bytesperline;
             }
             ploc.X += CurrentFont->PSF2Font->Header->width;
@@ -215,7 +207,7 @@ namespace DisplayDriver
             {
                 for (unsigned long X = ploc.X; X < ploc.X + 8; X++)
                     if ((*FontPtr & (0b10000000 >> (X - ploc.X))) > 0)
-                        *(unsigned int *)(PixelPtr + X + (Y * framebuffer->Width)) = CurrentDisplay->color;
+                        *(unsigned int *)(PixelPtr + X + (Y * framebuffer->Width)) = this->color;
                 FontPtr++;
             }
             ploc.X += 8;

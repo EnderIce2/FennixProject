@@ -5,6 +5,7 @@
 #include <asm.h>
 #include <string.h>
 #include <heap.h>
+#include <bootscreen.h>
 
 #include "timer.h"
 #include "pci.h"
@@ -57,7 +58,7 @@ void shutdown()
     {
         // I should use outportl?
         outb(0xB004, 0x2000); // for qemu
-        outb(0x604, 0x2000); // if qemu not working, bochs and older versions of qemu
+        outb(0x604, 0x2000);  // if qemu not working, bochs and older versions of qemu
         outb(0x4004, 0x3400); // virtual box
         CPU_STOP;
     }
@@ -335,6 +336,10 @@ void init_acpi()
     FindTable(XSDT, (char *)"WDAT");
     FindTable(XSDT, (char *)"WDDT");
     FindTable(XSDT, (char *)"WDRT");
+    
+    BS->IncreaseProgres();
+    if (BGRT)
+        BS->DrawVendorLogo(BGRT);
 
     outb(FADT->SMI_CommandPort, FADT->AcpiEnable);
     while (!(inw(FADT->PM1aControlBlock) & 1))
@@ -343,5 +348,7 @@ void init_acpi()
         madt_init();
     else
         err("MADT not found or null");
+    BS->IncreaseProgres();
     dsdt_init();
+    BS->IncreaseProgres();
 }

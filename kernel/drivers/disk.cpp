@@ -1,5 +1,6 @@
 #include "disk.h"
 #include <filesystem.h>
+#include <bootscreen.h>
 #include <printf.h>
 #include "serial.h"
 #include "../pci.h"
@@ -23,6 +24,7 @@ namespace DiskManager
             if (ahci.back()->PCIBaseAddress == 0)
                 err("AHCI initialization error!");
         }
+        BS->IncreaseProgres();
     }
 
     Disk::~Disk()
@@ -145,6 +147,7 @@ namespace DiskManager
             for (size_t i = 0; i < var->PortCount; i++)
                 AddPartition(var->Ports[i]);
         }
+        BS->IncreaseProgres();
     }
 
     Partition::~Partition()

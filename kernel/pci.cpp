@@ -4,6 +4,7 @@
 #include <string.h>
 #include "drivers/serial.h"
 #include <debug.h>
+#include <bootscreen.h>
 
 using namespace VMM;
 
@@ -45,9 +46,7 @@ namespace PCI
         if (PCIDeviceHdr->DeviceID == 0xFFFF)
             return;
         for (uint64_t Function = 0; Function < 8; Function++)
-        {
             EnumerateFunction(DeviceAddress, Function);
-        }
     }
 
     void EnumerateBus(uint64_t BaseAddress, uint64_t Bus)
@@ -61,9 +60,7 @@ namespace PCI
         if (PCIDeviceHdr->DeviceID == 0xFFFF)
             return;
         for (uint64_t Device = 0; Device < 32; Device++)
-        {
             EnumerateDevice(BusAddress, Device);
-        }
     }
 
     void EnumeratePCI(struct MCFGHeader *MCFG)
@@ -76,9 +73,7 @@ namespace PCI
             trace("PCI entry %d addr:%016p BUS:%#llx-%#llx", t, NewDeviceConfig->BaseAddress,
                   NewDeviceConfig->StartBus, NewDeviceConfig->EndBus);
             for (uint64_t Bus = NewDeviceConfig->StartBus; Bus < NewDeviceConfig->EndBus; Bus++)
-            {
                 EnumerateBus(NewDeviceConfig->BaseAddress, Bus);
-            }
         }
     }
 
@@ -87,9 +82,7 @@ namespace PCI
         Vector<PCIDeviceHeader *> DeviceFound;
         for (auto var : Devices)
             if (var->Class == Class && var->Subclass == Subclass && var->ProgIF == ProgIF)
-            {
                 DeviceFound.push_back(var);
-            }
         return DeviceFound;
     }
 }
@@ -125,4 +118,5 @@ void init_pci()
     {
         err("Error! No PCI support!"); // TODO: add legacy support if MCFG is not available
     }
+    BS->IncreaseProgres();
 }

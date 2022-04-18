@@ -3,6 +3,7 @@
 #include <debug.h>
 #include <asm.h>
 #include <cputables.h>
+#include <bootscreen.h>
 #include "../drivers/serial.h"
 
 static const char *pagefault_message[] = {
@@ -111,13 +112,14 @@ void StartTasking(uint64_t Address, TaskingMode Mode)
     CLI;
     trace("Initializing Syscalls...");
     init_syscalls();
+    BS->IncreaseProgres();
     trace("Starting tasking mode %d", Mode);
     switch (Mode)
     {
     case TaskingMode::Mono:
     {
-        // If we use the single processing, we need to make sure that IT WON'T EXIT!! Always need to have something to run.
         MonoTasking::SingleProcessing = new MonoTasking::MonoTasking(Address);
+        BS->IncreaseProgres();
         break;
     }
     case TaskingMode::Multi:
@@ -129,6 +131,7 @@ void StartTasking(uint64_t Address, TaskingMode Mode)
                                                     ControlBlockState::STATE_READY,
                                                     ControlBlockPolicy::POLICY_KERNEL);
         MultiTasking::MultiProcessing->ToggleScheduler(true);
+        BS->IncreaseProgres();
         break;
     }
     default:

@@ -2,6 +2,7 @@
 #include <string.h>
 #include <cwalk.h>
 #include <lock.h>
+#include <bootscreen.h>
 #include "kernel.h"
 #include "drivers/disk.h"
 
@@ -24,6 +25,7 @@ namespace FileSystem
         FileSystemRoot->Parent = nullptr;
         strcpy(FileSystemRoot->Name, "root");
         cwk_path_set_style(CWK_STYLE_UNIX);
+        BS->IncreaseProgres();
     }
 
     Virtual::~Virtual()
@@ -45,6 +47,7 @@ namespace FileSystem
     {
         trace("Initializing device file system");
         DeviceRootNode->Mode = 0755;
+        BS->IncreaseProgres();
     }
 
     Device::~Device()
@@ -65,7 +68,7 @@ namespace FileSystem
 
     void Mount::DetectAndMountFS(void *drive)
     {
-        foreach (auto partition in ((DiskManager::Partition::Drive *)drive)->Partitions)
+        foreach (auto partition in((DiskManager::Partition::Drive *)drive)->Partitions)
         {
             debug("Mounting File Systems for Partition %d...", partition->Index);
             new EXT2(partition);
@@ -77,6 +80,7 @@ namespace FileSystem
     Mount::Mount()
     {
         trace("Mounting file systems...");
+        BS->IncreaseProgres();
     }
 
     Mount::~Mount()

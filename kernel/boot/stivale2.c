@@ -85,6 +85,9 @@ bool init_stivale2(struct stivale2_struct *bootloaderdata, GlobalBootParams *par
     if (!second)
     {
         init_serial(COM1);
+        init_serial(COM2);
+        init_serial(COM3);
+        init_serial(COM4);
         serial_write_text(COM1, "Initializing Stivale2...\n");
     }
     Stivale2_STRUCT(terminal, STIVALE2_STRUCT_TAG_TERMINAL_ID);

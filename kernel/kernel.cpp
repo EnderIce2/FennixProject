@@ -1,6 +1,7 @@
 #include "kernel.h"
 
 #include <filesystem.h>
+#include <bootscreen.h>
 #include <symbols.hpp>
 #include <display.h>
 #include <string.h>
@@ -117,6 +118,7 @@ void KernelTask()
     printf("Kernel Compiled at: %s %s with C++ Standard: %d\n", __DATE__, __TIME__, CPP_LANGUAGE_STANDARD);
     printf("C++ Language Version (__cplusplus) :%ld\n", __cplusplus);
 #endif
+    BS->Progress(100);
     if (!SysCreateProcessFromFile("/bin/finit", true))
     {
         CurrentDisplay->SetPrintColor(0xFFFC4444);
@@ -131,18 +133,25 @@ void KernelTask()
 void KernelInit()
 {
     trace("early initialization completed");
+    BS = new BootScreen::Screen();
     initflags();
     CurrentDisplay = new DisplayDriver::Display();
     KernelPageTableAllocator = new PageTableHeap::PageTableHeap();
     KernelStackAllocator = new StackHeap::StackHeap();
     init_gdt();
+    BS->IncreaseProgres();
     init_idt();
+    BS->IncreaseProgres();
     init_tss();
+    BS->IncreaseProgres();
     enable_sse();
+    BS->IncreaseProgres();
     SymTbl = new KernelSymbols::Symbols();
     init_acpi();
     init_pci();
     init_timer();
+    BS->IncreaseProgres();
+    BS->Progress(40);
 
     outb(PIC1_DATA, 0b11111000);
     outb(PIC2_DATA, 0b11101111);
@@ -153,6 +162,7 @@ void KernelInit()
     mountfs = new FileSystem::Mount();
     diskmgr = new DiskManager::Disk();
     partmgr = new DiskManager::Partition();
+    BS->Progress(70);
 
     for (size_t i = 0; i < bootparams->modules.num; i++)
     {
@@ -174,6 +184,7 @@ void KernelInit()
     new FileSystem::Zero;
     /* ... */
 
+    BS->Progress(90);
     // TODO: Page faults using multitasking mode. Is about switching tables? Somehow the PML4 is getting trashed? I don't really understand. But if we don't switch it, there are no issues.
     StartTasking((uint64_t)KernelTask, TaskingMode::Mono);
     // StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
