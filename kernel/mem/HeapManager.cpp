@@ -71,18 +71,30 @@ void *HeapMalloc(size_t Size)
     switch (AlgorithmToUse)
     {
     case AllocationAlgorithm::Default:
-        return defPREFIX(malloc)(Size);
-        break;
+    {
+        void *Pointer = defPREFIX(malloc)(Size);
+        memset(Pointer, 0, Size);
+        return Pointer;
+    }
     case AllocationAlgorithm::LibAlloc:
-        return liballoc_malloc(Size);
-        break;
+    {
+        void *Pointer = liballoc_malloc(Size);
+        memset(Pointer, 0, Size);
+        return Pointer;
+    }
     case AllocationAlgorithm::LibAlloc11:
+    {
         // TODO: Make that the Liballoc 1.1 start at KERNEL_HEAP_BASE
-        return libPREFIX(malloc)(Size);
-        break;
+        void *Pointer = libPREFIX(malloc)(Size);
+        memset(Pointer, 0, Size);
+        return Pointer;
+    }
     case AllocationAlgorithm::BuddyAlloc:
-        return buddy_malloc(buddy, Size);
-        break;
+    {
+        void *Pointer = buddy_malloc(buddy, Size);
+        memset(Pointer, 0, Size);
+        return Pointer;
+    }
     default:
         return 0;
     }
@@ -93,17 +105,29 @@ void *HeapCalloc(size_t n, size_t Size)
     switch (AlgorithmToUse)
     {
     case AllocationAlgorithm::Default:
-        return defPREFIX(calloc)(n, Size);
-        break;
+    {
+        void *Pointer = defPREFIX(calloc)(n, Size);
+        memset(Pointer, 0, n * Size);
+        return Pointer;
+    }
     case AllocationAlgorithm::LibAlloc:
-        return liballoc_calloc(n, Size);
-        break;
+    {
+        void *Pointer = liballoc_calloc(n, Size);
+        memset(Pointer, 0, n * Size);
+        return Pointer;
+    }
     case AllocationAlgorithm::LibAlloc11:
-        return libPREFIX(calloc)(n, Size);
-        break;
+    {
+        void *Pointer = libPREFIX(calloc)(n, Size);
+        memset(Pointer, 0, n * Size);
+        return Pointer;
+    }
     case AllocationAlgorithm::BuddyAlloc:
-        return buddy_calloc(buddy, n, Size);
-        break;
+    {
+        void *Pointer = buddy_calloc(buddy, n, Size);
+        memset(Pointer, 0, n * Size);
+        return Pointer;
+    }
     default:
         return 0;
     }
@@ -114,17 +138,29 @@ void *HeapRealloc(void *Address, size_t Size)
     switch (AlgorithmToUse)
     {
     case AllocationAlgorithm::Default:
-        return defPREFIX(realloc)(Address, Size);
-        break;
+    {
+        void *Pointer = defPREFIX(realloc)(Address, Size);
+        memset(Pointer, 0, Size);
+        return Pointer;
+    }
     case AllocationAlgorithm::LibAlloc:
-        return liballoc_realloc(Address, Size);
-        break;
+    {
+        void *Pointer = liballoc_realloc(Address, Size);
+        memset(Pointer, 0, Size);
+        return Pointer;
+    }
     case AllocationAlgorithm::LibAlloc11:
-        return libPREFIX(realloc)(Address, Size);
-        break;
+    {
+        void *Pointer = libPREFIX(realloc)(Address, Size);
+        memset(Pointer, 0, Size);
+        return Pointer;
+    }
     case AllocationAlgorithm::BuddyAlloc:
-        return buddy_realloc(buddy, Address, Size);
-        break;
+    {
+        void *Pointer = buddy_realloc(buddy, Address, Size);
+        memset(Pointer, 0, Size);
+        return Pointer;
+    }
     default:
         return 0;
     }
@@ -179,10 +215,14 @@ void *operator new(size_t Size)
         Size = 1;
 #ifdef DEBUG_MEM_ALLOCATION
     if (void *Pointer = dbg_malloc(Size, __FILE__, __LINE__, __FUNCTION__))
+    {
 #else
     if (void *Pointer = HeapMalloc(Size))
+    {
 #endif
+        memset(Pointer, 0, Size);
         return Pointer;
+    }
     warn("new( %llx ) failed!", Size);
     throw;
 }
@@ -193,10 +233,14 @@ void *operator new[](size_t Size)
         Size = 1;
 #ifdef DEBUG_MEM_ALLOCATION
     if (void *Pointer = dbg_malloc(Size, __FILE__, __LINE__, __FUNCTION__))
+    {
 #else
     if (void *Pointer = HeapMalloc(Size))
+    {
 #endif
+        memset(Pointer, 0, Size);
         return Pointer;
+    }
     warn("new[]( %llx ) failed!", Size);
     throw;
 }

@@ -1,9 +1,13 @@
 #include <task.h>
 #include <heap.h>
 #include <debug.h>
+#include <elf.h>
+#include <filesystem.h>
+#include <printf.h>
 
 using namespace MonoTasking;
 using namespace MultiTasking;
+using namespace FileSystem;
 
 int CurrentTaskingMode = TaskingMode::None;
 
@@ -108,6 +112,46 @@ ThreadControlBlock *APICALL SysCreateThread(ProcessControlBlock *Parent, uint64_
 // TODO: implement for primitive tasking if enabled to suspend the current task and run the created one
 ProcessControlBlock *APICALL SysCreateProcessFromFile(const char *File, bool usermode)
 {
-    const char *arg = File;
+    /* ... Open file ... Parse file ... map elf file ... get rip etc ... */
+    FILE *file = vfs->Open(File);
+    if (file->Status != FILESTATUS::OK)
+        goto error_exit;
+
+    if (file->Node->Flags == NodeFlags::FS_FILE)
+    {
+        Elf64_Ehdr *header = (Elf64_Ehdr *)file->Node->Address;
+        if (header->e_ident[EI_MAG0] != ELFMAG0)
+        {
+            printf_("ELF Header EI_MAG0 incorrect.");
+            goto error_exit;
+        }
+        if (header->e_ident[EI_MAG1] != ELFMAG1)
+        {
+            printf_("ELF Header EI_MAG1 incorrect.");
+            goto error_exit;
+        }
+        if (header->e_ident[EI_MAG2] != ELFMAG2)
+        {
+            printf_("ELF Header EI_MAG2 incorrect.");
+            goto error_exit;
+        }
+        if (header->e_ident[EI_MAG3] != ELFMAG3)
+        {
+            printf_("ELF Header EI_MAG3 incorrect.");
+            goto error_exit;
+        }
+        if (header->e_ident[EI_CLASS] == ELFCLASS32)
+        {
+            printf_("32 bit ELF file not supported for now.");
+            goto error_exit;
+        }
+        if (header->e_ident[EI_CLASS] == ELFCLASS64)
+        {
+            return nullptr;
+            // return SysCreateThread(SysCreateProcess(file->Name, nullptr), (uint64_t)0)->Parent;
+        }
+    }
+error_exit:
+    vfs->Close(file);
     return nullptr;
 }

@@ -35,7 +35,6 @@ const char *u64ToHexString(uint64_t Value)
     // for (uint8_t i = 0; i < Size; i++)
     for (uint8_t i = 0; i < Size / 2 + 1; i++)
     {
-
         Ptr = ((uint8_t *)ValuePtr + i);
         Temp = ((*Ptr & 0xF0) >> 4);
         HexToStringOutput[Size - (i * 2 + 1)] = Temp + (Temp > 9 ? 55 : '0');

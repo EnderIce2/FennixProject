@@ -88,7 +88,7 @@ void __ubsan_handle_type_mismatch_v1(struct type_mismatch_v1_data *type_mismatch
     else
     {
         if (showubsanmsg(location->file, location->line, location->column))
-            ubsan("%s address %016p with insufficient space for object of type %s",
+            ubsan("%s address %#llx with insufficient space for object of type %s",
                   Type_Check_Kinds[type_mismatch->type_check_kind], (void *)pointer, type_mismatch->type->name);
     }
 }

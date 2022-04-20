@@ -224,14 +224,14 @@ void *libPREFIX(malloc)(size_t req_size)
 	// So, ideally, we really want an alignment of 0 or 1 in order
 	// to save space.
 
-	SILENT_LOCK(liballoc11_lock);
+	LOCK(liballoc11_lock);
 	if (size == 0)
 	{
 		l_warningCount += 1;
 #if defined DEBUG || defined INFO
 		warn("malloc( 0 ) called from %llx", __builtin_return_address(0));
 #endif
-		SILENT_UNLOCK(liballoc11_lock);
+		UNLOCK(liballoc11_lock);
 		return libPREFIX(malloc)(1);
 	}
 
@@ -247,7 +247,7 @@ void *libPREFIX(malloc)(size_t req_size)
 		l_memRoot = allocate_new_page(size);
 		if (l_memRoot == NULL)
 		{
-			SILENT_UNLOCK(liballoc11_lock);
+			UNLOCK(liballoc11_lock);
 #ifdef DEBUG
 			err("Initial l_memRoot initialization failed %llp", p);
 #endif
@@ -334,7 +334,7 @@ void *libPREFIX(malloc)(size_t req_size)
 #ifdef DEBUG
 			// printf("CASE 2: returning %llx", p);
 #endif
-			SILENT_UNLOCK(liballoc11_lock); // release the lock
+			UNLOCK(liballoc11_lock); // release the lock
 			return p;
 		}
 
@@ -363,7 +363,7 @@ void *libPREFIX(malloc)(size_t req_size)
 #ifdef DEBUG
 			// printf("CASE 3: returning %llx", p);
 #endif
-			SILENT_UNLOCK(liballoc11_lock); // release the lock
+			UNLOCK(liballoc11_lock); // release the lock
 			return p;
 		}
 #endif
@@ -402,7 +402,7 @@ void *libPREFIX(malloc)(size_t req_size)
 #ifdef DEBUG
 					// printf("CASE 4.1: returning %llx", p);
 #endif
-					SILENT_UNLOCK(liballoc11_lock); // release the lock
+					UNLOCK(liballoc11_lock); // release the lock
 					return p;
 				}
 			}
@@ -436,7 +436,7 @@ void *libPREFIX(malloc)(size_t req_size)
 #ifdef DEBUG
 					// printf("CASE 4.2: returning %llx", p);
 #endif
-					SILENT_UNLOCK(liballoc11_lock); // release the lock
+					UNLOCK(liballoc11_lock); // release the lock
 					return p;
 				}
 			} // min->next != NULL
@@ -466,7 +466,7 @@ void *libPREFIX(malloc)(size_t req_size)
 #endif
 		maj = maj->next;
 	} // while (maj != NULL)
-	SILENT_UNLOCK(liballoc11_lock); // release the lock
+	UNLOCK(liballoc11_lock); // release the lock
 #ifdef DEBUG
 	debug("All cases exhausted. No memory available.");
 #endif
@@ -491,7 +491,7 @@ void libPREFIX(free)(void *ptr)
 		return;
 	}
 	UNALIGN(ptr);
-	SILENT_LOCK(liballoc11_lock); // lockit
+	LOCK(liballoc11_lock); // lockit
 	min = (struct liballoc_minor *)((uintptr_t)ptr - sizeof(struct liballoc_minor));
 	if (min->magic != LIBALLOC_MAGIC)
 	{
@@ -522,7 +522,7 @@ void libPREFIX(free)(void *ptr)
 		}
 
 		// being lied to...
-		SILENT_UNLOCK(liballoc11_lock); // release the lock
+		UNLOCK(liballoc11_lock); // release the lock
 		return;
 	}
 
@@ -572,7 +572,7 @@ void libPREFIX(free)(void *ptr)
 #ifdef DEBUG
 	// printf("OK");
 #endif
-	SILENT_UNLOCK(liballoc11_lock); // release the lock
+	UNLOCK(liballoc11_lock); // release the lock
 }
 
 void *libPREFIX(calloc)(size_t nobj, size_t size)
@@ -605,7 +605,7 @@ void *libPREFIX(realloc)(void *p, size_t size)
 	// Unalign the pointer if required.
 	ptr = p;
 	UNALIGN(ptr);
-	SILENT_LOCK(liballoc11_lock); // lockit
+	LOCK(liballoc11_lock); // lockit
 	min = (struct liballoc_minor *)((uintptr_t)ptr - sizeof(struct liballoc_minor));
 
 	// Ensure it is a valid structure.
@@ -637,7 +637,7 @@ void *libPREFIX(realloc)(void *p, size_t size)
 #endif
 		}
 		// being lied to...
-		SILENT_UNLOCK(liballoc11_lock); // release the lock
+		UNLOCK(liballoc11_lock); // release the lock
 		return NULL;
 	}
 
@@ -646,11 +646,11 @@ void *libPREFIX(realloc)(void *p, size_t size)
 	if (real_size >= size)
 	{
 		min->req_size = size;
-		SILENT_UNLOCK(liballoc11_lock);
+		UNLOCK(liballoc11_lock);
 		return p;
 	}
 
-	SILENT_UNLOCK(liballoc11_lock);
+	UNLOCK(liballoc11_lock);
 
 	// If we got here then we're reallocating to a block bigger than us.
 	ptr = libPREFIX(malloc)(size); // We need to allocate new memory

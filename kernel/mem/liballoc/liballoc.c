@@ -281,7 +281,7 @@ void *liballoc_malloc(size_t size)
 	void *ptr;
 	struct boundary_tag *tag = NULL;
 
-	SILENT_LOCK(liballoc_lock);
+	LOCK(liballoc_lock);
 
 	if (l_initialized == 0)
 	{
@@ -321,7 +321,7 @@ void *liballoc_malloc(size_t size)
 	{
 		if ((tag = allocate_new_tag(size)) == NULL)
 		{
-			SILENT_UNLOCK(liballoc_lock);
+			UNLOCK(liballoc_lock);
 			return NULL;
 		}
 
@@ -375,7 +375,7 @@ void *liballoc_malloc(size_t size)
 	dump_array();
 #endif
 
-	SILENT_UNLOCK(liballoc_lock);
+	UNLOCK(liballoc_lock);
 	return ptr;
 }
 
@@ -387,13 +387,13 @@ void liballoc_free(void *ptr)
 	if (ptr == NULL)
 		return;
 
-	SILENT_LOCK(liballoc_lock);
+	LOCK(liballoc_lock);
 
 	tag = (struct boundary_tag *)((unsigned int)ptr - sizeof(struct boundary_tag));
 
 	if (tag->magic != LIBALLOC_MAGIC)
 	{
-		SILENT_UNLOCK(liballoc_lock); // release the lock
+		UNLOCK(liballoc_lock); // release the lock
 		return;
 	}
 
@@ -448,7 +448,7 @@ void liballoc_free(void *ptr)
 			dump_array();
 #endif
 
-			SILENT_UNLOCK(liballoc_lock);
+			UNLOCK(liballoc_lock);
 			return;
 		}
 
@@ -464,7 +464,7 @@ void liballoc_free(void *ptr)
 	dump_array();
 #endif
 
-	SILENT_UNLOCK(liballoc_lock);
+	UNLOCK(liballoc_lock);
 }
 
 void *liballoc_calloc(size_t nobj, size_t size)
@@ -496,11 +496,11 @@ void *liballoc_realloc(void *p, size_t size)
 		return liballoc_malloc(size);
 
 	// if (liballoc_lock != NULL)
-	SILENT_LOCK(liballoc_lock); // lockit
+	LOCK(liballoc_lock); // lockit
 	tag = (struct boundary_tag *)((unsigned int)p - sizeof(struct boundary_tag));
 	real_size = tag->size;
 	// if (liballoc_unlock != NULL)
-	SILENT_UNLOCK(liballoc_lock);
+	UNLOCK(liballoc_lock);
 
 	if (real_size > size)
 		real_size = size;

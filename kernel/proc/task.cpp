@@ -125,8 +125,8 @@ void StartTasking(uint64_t Address, TaskingMode Mode)
     case TaskingMode::Multi:
     {
         MultiTasking::MultiProcessing = new MultiTasking::MultiTasking();
-        ProcessControlBlock *proc = MultiTasking::MultiProcessing->CreateProcess(nullptr, (char *)"kernel");
-        MultiTasking::MultiProcessing->CreateThread(proc, Address, 0, 0,
+        MultiTasking::MultiProcessing->CreateThread(MultiTasking::MultiProcessing->CreateProcess(nullptr, (char *)"kernel"),
+                                                    Address, 0, 0,
                                                     ControlBlockPriority::PRIORITY_REALTIME,
                                                     ControlBlockState::STATE_READY,
                                                     ControlBlockPolicy::POLICY_KERNEL);

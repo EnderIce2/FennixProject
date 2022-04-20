@@ -12,7 +12,7 @@ typedef volatile struct
     uint32_t count;
 } LOCK;
 
-#define NEWLOCK(name) static LOCK name = {0, 0, 0, 0, 0};
+#define NEWLOCK(name) static LOCK name = {0, 0, 0, 0, 0}
 
 START_EXTERNC
 
@@ -35,6 +35,19 @@ extern uint64_t spinlock_with_timeout(volatile uint32_t *lock, uint64_t iteratio
 #pragma GCC diagnostic ignored "-Wvolatile"
 #endif
 
+#define DBG_LOCK(name)                     \
+    name.attempting_to_get = __FUNCTION__; \
+    name.lock_name = #name;                \
+    spinlock_lock(&name.lock_dat);         \
+    name.current_holder = __FUNCTION__;    \
+    name.count++;                          \
+    debug_redirect_write("locked '%s' +", #name)
+
+#define DBG_UNLOCK(name)             \
+    spinlock_unlock(&name.lock_dat); \
+    name.count--;                    \
+    debug_redirect_write("unlocked '%s' -", name.lock_name)
+
 /**
  * @brief Spinlock lock implementation called by assembly
  *
@@ -44,8 +57,7 @@ extern uint64_t spinlock_with_timeout(volatile uint32_t *lock, uint64_t iteratio
     name.lock_name = #name;                \
     spinlock_lock(&name.lock_dat);         \
     name.current_holder = __FUNCTION__;    \
-    name.count++;                          \
-    debug_redirect_write("locked '%s' +", #name);
+    name.count++
 
 /**
  * @brief Spinlock unlock implementation called by assembly
@@ -53,19 +65,7 @@ extern uint64_t spinlock_with_timeout(volatile uint32_t *lock, uint64_t iteratio
  */
 #define UNLOCK(name)                 \
     spinlock_unlock(&name.lock_dat); \
-    name.count--;                    \
-    debug_redirect_write("unlocked '%s' -", name.lock_name);
-
-// non-verbose version of lock/unlock
-#define SILENT_LOCK(name)                  \
-    name.attempting_to_get = __FUNCTION__; \
-    name.lock_name = #name;                \
-    spinlock_lock(&name.lock_dat);         \
-    name.current_holder = __FUNCTION__;    \
-    name.count++;
-#define SILENT_UNLOCK(name)          \
-    spinlock_unlock(&name.lock_dat); \
-    name.count--;
+    name.count--
 
 END_EXTERNC
 

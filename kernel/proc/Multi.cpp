@@ -125,7 +125,7 @@ namespace MultiTasking
     {
         void do_exit(uint64_t code)
         {
-            SILENT_LOCK(exit_lock);
+            LOCK(exit_lock);
 #ifdef DEBUG_SCHEDULER
             debug("parent:%s tid:%d, code:%016p", CurrentProcess->Name, CurrentThread->ThreadID, code);
 #endif
@@ -133,14 +133,14 @@ namespace MultiTasking
             CurrentProcess->ExitCode = code;
             CurrentThread->ExitCode = code;
             trace("Exiting thread %d...", CurrentThread->ThreadID);
-            SILENT_UNLOCK(exit_lock);
+            UNLOCK(exit_lock);
             CPU_STOP;
         }
     }
 
     ProcessControlBlock *create_process(ProcessControlBlock *parent, char *name)
     {
-        SILENT_LOCK(process_lock);
+        LOCK(process_lock);
 #ifdef DEBUG_SCHEDULER
         debug("name: %s", name);
 #endif
@@ -164,13 +164,13 @@ namespace MultiTasking
 #ifdef DEBUG_SCHEDULER
         debug("New thread created->TID:%d-Time:%02d:%02d:%02d    %02d.%02d.%02d", process->ProcessID, process->Time->h, process->Time->m, process->Time->s, process->Time->d, process->Time->M, process->Time->y);
 #endif
-        SILENT_UNLOCK(process_lock);
+        UNLOCK(process_lock);
         return process;
     }
 
     ThreadControlBlock *create_thread(ProcessControlBlock *parent, uint64_t function, uint64_t args0, uint64_t args1, enum ControlBlockPriority Priority, enum ControlBlockState State, enum ControlBlockPolicy Policy)
     {
-        SILENT_LOCK(thread_lock);
+        LOCK(thread_lock);
         if (parent->Checksum != PROCESS_CHECKSUM)
         {
             err("Thread cannot have a null parent!");
@@ -221,7 +221,7 @@ namespace MultiTasking
 #ifdef DEBUG_SCHEDULER
         debug("New thread created->TID:%d-Time:%02d:%02d:%02d    %02d.%02d.%02d", thread->ThreadID, thread->Time->h, thread->Time->m, thread->Time->s, thread->Time->d, thread->Time->M, thread->Time->y);
 #endif
-        SILENT_UNLOCK(thread_lock);
+        UNLOCK(thread_lock);
         return thread;
     }
 
@@ -354,7 +354,7 @@ namespace MultiTasking
             if (!ScheduleOn)
                 goto scheduler_eoi;
 
-            SILENT_LOCK(scheduler_lock);
+            LOCK(scheduler_lock);
             if (INT_NUM != IRQ11)
                 panic("Something is wrong with Scheduler (corrupted registers)");
 
@@ -474,7 +474,7 @@ namespace MultiTasking
             CurrentProcess = IdleProcess;
             CurrentThread = IdleThread;
             *regs = IdleThread->Registers;
-            SetPageTable(IdleProcess->PageTable);
+            // SetPageTable(IdleProcess->PageTable);
             Yield(timeslice);
             goto scheduler_end;
         scheduler_success:
@@ -485,10 +485,13 @@ namespace MultiTasking
             UpdateProcessTimeUsed(CurrentProcess->Time);
             UpdateProcessTimeUsed(CurrentThread->Time);
             *regs = CurrentThread->Registers;
-            SetPageTable(CurrentProcess->PageTable);
+            // TODO: Fix switching page tables
+            /* Issue: somehow the page table is missing the kernel mapping at some point. not sure if it's about the
+                      allocated page or switching */
+            // SetPageTable(CurrentProcess->PageTable);
             Yield(timeslice);
         scheduler_end:
-            SILENT_UNLOCK(scheduler_lock);
+            UNLOCK(scheduler_lock);
         scheduler_eoi:
             EndOfInterrupt(INT_NUM);
         }

@@ -7,8 +7,10 @@
 #include <string.h>
 #include <task.h>
 #include <io.h>
+#include <vm.h>
 
 #include "drivers/disk.h"
+#include "cpu/cpuid.h"
 #include "cpu/gdt.h"
 #include "cpu/idt.h"
 #include "cpu/sse.h"
@@ -38,7 +40,7 @@ EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
     init_pmm();
     init_vmm();
     init_kernelpml();
-    init_heap(AllocationAlgorithm::LibAlloc11);
+    init_heap(AllocationAlgorithm::Default);
     bootparams = (GlobalBootParams *)kcalloc(1, sizeof(GlobalBootParams));
     bootparams->Framebuffer = (GBPFramebuffer *)kcalloc(1, sizeof(GBPFramebuffer));
     bootparams->rsdp = (GBPRSDP *)kcalloc(1, sizeof(GBPRSDP));
@@ -117,6 +119,40 @@ void KernelTask()
     CurrentDisplay->ResetPrintColor();
     printf("Kernel Compiled at: %s %s with C++ Standard: %d\n", __DATE__, __TIME__, CPP_LANGUAGE_STANDARD);
     printf("C++ Language Version (__cplusplus) :%ld\n", __cplusplus);
+    if (CheckRunningUnderVM())
+    {
+        printf("Running under VM.\n");
+    }
+    else
+    {
+        printf("Running under physical hardware.\n");
+    }
+    FileSystem::FILE *file = vfs->Open("/");
+    if (file->Status == FileSystem::FILESTATUS::OK)
+    {
+        foreach (auto var in file->Node->Children)
+        {
+            printf("|- %s\n", var->Name);
+            foreach (auto var in var->Children)
+            {
+                printf("| \\- %s\n", var->Name);
+                foreach (auto var in var->Children)
+                {
+                    printf("|  \\- %s\n", var->Name);
+                    foreach (auto var in var->Children)
+                    {
+                        printf("|   \\- %s\n", var->Name);
+                    }
+                }
+            }
+        }
+    }
+    else
+        printf("FileSystem error: %d\n", file->Status);
+
+    vfs->Close(file);
+
+    printf("%s", cpu_get_info());
 #endif
     BS->Progress(100);
     if (!SysCreateProcessFromFile("/bin/finit", true))
@@ -158,12 +194,8 @@ void KernelInit()
     asm("sti");
 
     vfs = new FileSystem::Virtual();
-    devfs = new FileSystem::Device();
-    mountfs = new FileSystem::Mount();
-    diskmgr = new DiskManager::Disk();
-    partmgr = new DiskManager::Partition();
-    BS->Progress(70);
 
+    BS->Progress(50);
     for (size_t i = 0; i < bootparams->modules.num; i++)
     {
         if (bootparams->modules.ramdisks[i].type == initrdType::USTAR)
@@ -178,6 +210,12 @@ void KernelInit()
         }
     }
 
+    devfs = new FileSystem::Device();
+    mountfs = new FileSystem::Mount();
+    diskmgr = new DiskManager::Disk();
+    partmgr = new DiskManager::Partition();
+    BS->Progress(70);
+
     new FileSystem::Serial;
     new FileSystem::Random;
     new FileSystem::Null;
@@ -185,9 +223,8 @@ void KernelInit()
     /* ... */
 
     BS->Progress(90);
-    // TODO: Page faults using multitasking mode. Is about switching tables? Somehow the PML4 is getting trashed? I don't really understand. But if we don't switch it, there are no issues.
-    StartTasking((uint64_t)KernelTask, TaskingMode::Mono);
-    // StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
+    // StartTasking((uint64_t)KernelTask, TaskingMode::Mono);
+    StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
 
     err("Unwanted reach.");
     CPU_STOP;

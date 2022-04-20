@@ -8,11 +8,11 @@ NEWLOCK(serial_lock);
 
 int init_serial(int serial_port)
 {
-    SILENT_LOCK(serial_lock);
+    LOCK(serial_lock);
     outb(serial_port + 7, 0x55);
     if (inb(serial_port + 7) != 0x55)
     {
-        SILENT_UNLOCK(serial_lock);
+        UNLOCK(serial_lock);
         return -1;
     }
 
@@ -26,12 +26,12 @@ int init_serial(int serial_port)
 
     if (inb(serial_port + 0) != 0xAE)
     {
-        SILENT_UNLOCK(serial_lock);
+        UNLOCK(serial_lock);
         return -1;
     }
 
     outb(serial_port + 4, 0x0F);
-    SILENT_UNLOCK(serial_lock);
+    UNLOCK(serial_lock);
     return 0;
 }
 
@@ -55,8 +55,8 @@ void write_serial(int serial_port, char a)
 
 void serial_write_text(int serial_port, char *text)
 {
-    // SILENT_LOCK(serial_lock);
+    // LOCK(serial_lock);
     for (int i = 0; i < (strlen(text)); i++)
         write_serial(serial_port, text[i]);
-    // SILENT_UNLOCK(serial_lock);
+    // UNLOCK(serial_lock);
 }

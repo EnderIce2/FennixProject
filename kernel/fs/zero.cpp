@@ -17,7 +17,7 @@ namespace FileSystem
 
     Zero::Zero()
     {
-        devfs->AddFileSystem(&zero, 0666, "zero", FileSystem::CHARDEVICE);
+        devfs->AddFileSystem(&zero, 0666, "zero", NodeFlags::FS_CHARDEVICE);
     }
 
     Zero::~Zero() { warn("Destroyed"); }

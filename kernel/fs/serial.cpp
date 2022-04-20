@@ -37,7 +37,7 @@ namespace FileSystem
 
     Serial::Serial()
     {
-        devfs->AddFileSystem(&serial, 0666, "com1", FileSystem::PIPE); // ? is really a pipe or..? not sure how to categorise this
+        devfs->AddFileSystem(&serial, 0666, "com1", NodeFlags::FS_PIPE); // ? is really a pipe or..? not sure how to categorise this
     }
 
     Serial::~Serial() { warn("Destroyed"); }

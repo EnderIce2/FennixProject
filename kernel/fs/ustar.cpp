@@ -1,4 +1,5 @@
 #include <filesystem.h>
+#include <bootscreen.h>
 
 namespace FileSystem
 {
@@ -32,6 +33,10 @@ namespace FileSystem
               string2int(((FileHeader *)Address)->mode),
               ((FileHeader *)Address)->size);
 
+        vfs->SetRoot(&ustar, "/");
+
+        uint64_t errorsallowed = 20;
+
         for (uint64_t i = 0;; i++)
         {
             FileHeader *header = (FileHeader *)Address;
@@ -41,40 +46,58 @@ namespace FileSystem
             if (header->name[strlen(header->name) - 1] == '/')
                 header->name[strlen(header->name) - 1] = 0;
             uint64_t size = getsize(header->size);
-            trace("%s %dKB", header->name, TO_KB(size));
 
-            FileSystemNode *node = new FileSystemNode;
-            node->Mode = string2int(header->mode);
-            node->Address = (Address + 512);
-            node->Length = size;
-            node->GroupIdentifier = getsize(header->gid);
-            node->UserIdentifier = getsize(header->uid);
-            node->IndexNode = i;
-
-            switch (header->typeflag[0])
+            FileSystemNode *node = vfs->Create(nullptr, header->name);
+            if (node == nullptr)
             {
-            case REGULAR_FILE:
-                node->Flags = NodeFlags::FILE;
-                break;
-            case SYMLINK:
-                node->Flags = NodeFlags::SYMLINK;
-                break;
-            case DIRECTORY:
-                node->Flags = NodeFlags::DIRECTORY;
-                break;
-            case CHARDEV:
-                node->Flags = NodeFlags::CHARDEVICE;
-                break;
-            case BLOCKDEV:
-                node->Flags = NodeFlags::BLOCKDEVICE;
-                break;
-            default:
-                warn("Unknown type: %d", header->typeflag[0]);
-                break;
+                if (errorsallowed > 0)
+                {
+                    errorsallowed--;
+                    goto NextFileAddress;
+                }
+                else
+                {
+                    err("Adding USTAR files failed because too many files were corrputed.");
+                    break;
+                }
             }
-            Address += ((size / 512) + 1) * 512;
-            if (size % 512)
-                Address += 512;
+            else
+            {
+                BS->IncreaseProgres();
+                trace("%s %dKB", header->name, TO_KB(size));
+                node->Mode = string2int(header->mode);
+                node->Address = (Address + 512);
+                node->Length = size;
+                node->GroupIdentifier = getsize(header->gid);
+                node->UserIdentifier = getsize(header->uid);
+                node->IndexNode = i;
+
+                switch (header->typeflag[0])
+                {
+                case REGULAR_FILE:
+                    node->Flags = NodeFlags::FS_FILE;
+                    break;
+                case SYMLINK:
+                    node->Flags = NodeFlags::FS_SYMLINK;
+                    break;
+                case DIRECTORY:
+                    node->Flags = NodeFlags::FS_DIRECTORY;
+                    break;
+                case CHARDEV:
+                    node->Flags = NodeFlags::FS_CHARDEVICE;
+                    break;
+                case BLOCKDEV:
+                    node->Flags = NodeFlags::FS_BLOCKDEVICE;
+                    break;
+                default:
+                    warn("Unknown type: %d", header->typeflag[0]);
+                    break;
+                }
+                NextFileAddress:
+                Address += ((size / 512) + 1) * 512;
+                if (size % 512)
+                    Address += 512;
+            }
         }
     }
 

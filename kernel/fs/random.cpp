@@ -24,7 +24,7 @@ namespace FileSystem
 
     Random::Random()
     {
-        devfs->AddFileSystem(&random, 0444, "random", FileSystem::CHARDEVICE);
+        devfs->AddFileSystem(&random, 0444, "random", NodeFlags::FS_CHARDEVICE);
     }
 
     Random::~Random() { warn("Destroyed"); }

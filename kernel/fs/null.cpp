@@ -19,7 +19,7 @@ namespace FileSystem
 
     Null::Null()
     {
-        devfs->AddFileSystem(&null, 0666, "null", FileSystem::CHARDEVICE);
+        devfs->AddFileSystem(&null, 0666, "null", NodeFlags::FS_CHARDEVICE);
     }
 
     Null::~Null() { warn("Destroyed"); }
