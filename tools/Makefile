@@ -31,13 +31,14 @@ initrd:
 clean:
 	rm -f initrd.elf
 
+# $(shell ./build.sh) is not working as expected.
 create_build:
 	$(shell rm -f $$PWD/build.sh)
 	@echo "$$BUILD_SH" > build.sh
 	chmod +x build.sh
-	$(shell ./build.sh)
+	$(info Now open terminal in FennixProject/tools/ and run ./build.sh to build the crosscompiler.)
 
-VERSION = qemu-6.2.0
+VERSION = qemu-7.0.0
 
 update_qemu:
 	wget https://download.qemu.org/${VERSION}.tar.xz && tar xvJf ${VERSION}.tar.xz && rm -f ${VERSION}.tar.xz && mv ${VERSION} qemu && cd qemu && bash ./configure --target-list=x86_64-softmmu && make -j$(shell nproc)
