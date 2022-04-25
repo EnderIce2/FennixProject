@@ -180,7 +180,7 @@ bool CheckRunningUnderVM()
     }
 
     // TODO: Somehow VirtualBox is still not detected in some circumstances.
-    // TODO: Add more checks.
+    // TODO: Add more checks. (e.g. check for PCI)
     debug("No virtual machine detected");
     return false;
 }

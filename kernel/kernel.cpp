@@ -107,6 +107,36 @@ void initflags()
         sysflags->noloadingscreen = false;
 }
 
+#ifdef DEBUG
+inline void FileListColorHelper(uint64_t type)
+{
+    switch (type)
+    {
+    case FileSystem::NodeFlags::FS_ERROR:
+        CurrentDisplay->SetPrintColor(0xFF0000);
+        break;
+    case FileSystem::NodeFlags::FS_FILE:
+        CurrentDisplay->SetPrintColor(0x01f395);
+        break;
+    case FileSystem::NodeFlags::FS_DIRECTORY:
+        CurrentDisplay->SetPrintColor(0x29a31b);
+        break;
+    case FileSystem::NodeFlags::FS_CHARDEVICE:
+        CurrentDisplay->SetPrintColor(0xa39a1b);
+        break;
+    case FileSystem::NodeFlags::FS_BLOCKDEVICE:
+        CurrentDisplay->SetPrintColor(0x6da31b);
+        break;
+    case FileSystem::NodeFlags::FS_MOUNTPOINT:
+        CurrentDisplay->SetPrintColor(0xa3731b);
+        break;
+    default:
+        CurrentDisplay->SetPrintColor(0xFFFFFF);
+        break;
+    }
+}
+#endif
+
 void KernelTask()
 {
 #ifdef DEBUG
@@ -132,16 +162,30 @@ void KernelTask()
     {
         foreach (auto var in file->Node->Children)
         {
-            printf("|- %s\n", var->Name);
+            FileListColorHelper(var->Flags);
+            printf("\n/%s", var->Name);
             foreach (auto var in var->Children)
             {
-                printf("| \\- %s\n", var->Name);
+                FileListColorHelper(var->Flags);
+                printf("\n  %s", var->Name);
                 foreach (auto var in var->Children)
                 {
-                    printf("|  \\- %s\n", var->Name);
+                    FileListColorHelper(var->Flags);
+                    printf("\n   %s", var->Name);
                     foreach (auto var in var->Children)
                     {
-                        printf("|   \\- %s\n", var->Name);
+                        FileListColorHelper(var->Flags);
+                        printf("\n    %s", var->Name);
+                        foreach (auto var in var->Children)
+                        {
+                            FileListColorHelper(var->Flags);
+                            printf("\n     %s", var->Name);
+                            foreach (auto var in var->Children)
+                            {
+                                FileListColorHelper(var->Flags);
+                                printf("\n      %s", var->Name);
+                            }
+                        }
                     }
                 }
             }
@@ -149,16 +193,16 @@ void KernelTask()
     }
     else
         printf("FileSystem error: %d\n", file->Status);
-
+    printf("\n");
+    FileListColorHelper(-69);
     vfs->Close(file);
-
     printf("%s", cpu_get_info());
 #endif
     BS->Progress(100);
-    if (!SysCreateProcessFromFile("/bin/finit", true))
+    if (!SysCreateProcessFromFile("/system/init", true))
     {
         CurrentDisplay->SetPrintColor(0xFFFC4444);
-        printf("Failed to load /bin/finit process. The file is missing or corrupted.\n");
+        printf("Failed to load /system/init process. The file is missing or corrupted.\n");
     }
     trace("End Of Kernel Task");
 }
@@ -193,11 +237,23 @@ void KernelInit()
     outb(PIC2_DATA, 0b11101111);
     asm("sti");
 
+    if (!strstr(bootparams->cmdline, "novmwarn"))
+        if (!CheckRunningUnderVM())
+        {
+            // TODO: Warn for possible hardware damage.
+            CurrentDisplay->SetPrintColor(0xFFFC4444);
+            printf("WARNING!\nThe kernel has detected that you are booting from a real computer!\nBeaware that this project is not in a stable state and will likely cause problems like, overwriting data on disks or even worse, breaking the entire system!\nIf you REALLY want to continue, write \"YES\" and press enter.\nIf you want to disable this warning add \"novmwarn\" in kernel's cmdline.\n");
+            CurrentDisplay->ResetPrintColor();
+        }
+
     vfs = new FileSystem::Virtual();
 
     BS->Progress(50);
+    // Make sure that after vfs initialization we set the root "/" directory.
+    // TODO: we should check if it's installed in a system disk instead of initrd. this is a must because we need to set first the root and then mount everything else.
     for (size_t i = 0; i < bootparams->modules.num; i++)
     {
+        BS->IncreaseProgres();
         if (bootparams->modules.ramdisks[i].type == initrdType::USTAR)
         {
             new FileSystem::USTAR(bootparams->modules.ramdisks[i].start);

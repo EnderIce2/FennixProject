@@ -16,6 +16,7 @@ namespace FileSystem
     }
 
     FileSystemOpeations ustar = {
+        .Name = "ustar",
         .Read = USTAR_Read,
     };
 
@@ -33,7 +34,7 @@ namespace FileSystem
               string2int(((FileHeader *)Address)->mode),
               ((FileHeader *)Address)->size);
 
-        vfs->SetRoot(&ustar, "/");
+        vfs->CreateRoot(&ustar, "/");
 
         uint64_t errorsallowed = 20;
 
@@ -57,14 +58,14 @@ namespace FileSystem
                 }
                 else
                 {
-                    err("Adding USTAR files failed because too many files were corrputed.");
+                    err("Adding USTAR files failed because too many files were corrputed or invalid.");
                     break;
                 }
             }
             else
             {
                 BS->IncreaseProgres();
-                trace("%s %dKB", header->name, TO_KB(size));
+                trace("%s %dKB Type:%c", header->name, TO_KB(size), header->typeflag[0]);
                 node->Mode = string2int(header->mode);
                 node->Address = (Address + 512);
                 node->Length = size;
@@ -93,7 +94,7 @@ namespace FileSystem
                     warn("Unknown type: %d", header->typeflag[0]);
                     break;
                 }
-                NextFileAddress:
+            NextFileAddress:
                 Address += ((size / 512) + 1) * 512;
                 if (size % 512)
                     Address += 512;
