@@ -150,7 +150,9 @@ ProcessControlBlock *APICALL SysCreateProcessFromFile(const char *File, bool use
         }
         if (header->e_ident[EI_CLASS] == ELFCLASS64)
         {
-            printf_("64 bit ELF file found.");
+            printf_("64 bit ELF file found.\n");
+            if (usermode)
+                printf_("User mode process is not implmented yet.\n");
             return nullptr;
             // return SysCreateThread(SysCreateProcess(file->Name, nullptr), (uint64_t)0)->Parent;
         }

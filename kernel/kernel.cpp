@@ -5,6 +5,7 @@
 #include <symbols.hpp>
 #include <display.h>
 #include <string.h>
+#include <cwalk.h>
 #include <task.h>
 #include <io.h>
 #include <vm.h>
@@ -194,10 +195,32 @@ void KernelTask()
     else
         printf("FileSystem error: %d\n", file->Status);
     printf("\n");
-    FileListColorHelper(-69);
+    FileListColorHelper(-1);
     vfs->Close(file);
     printf("%s", cpu_get_info());
 #endif
+
+    FileSystem::FILE *driverDirectory = vfs->Open("/system/drivers");
+    if (driverDirectory->Status == FileSystem::FILESTATUS::OK)
+    {
+        foreach (auto driver in driverDirectory->Node->Children)
+        {
+            if (cwk_path_has_extension(driver->Name))
+            {
+                const char *extension;
+                cwk_path_get_extension(driver->Name, &extension, nullptr);
+
+                if (!strcmp(extension, ".drv"))
+                {
+                    printf("Loading driver %s...\n", driver->Name);
+                    // TODO: get instruction pointer of the elf entry point.
+                    BS->IncreaseProgres();
+                }
+            }
+        }
+    }
+    vfs->Close(driverDirectory);
+
     BS->Progress(100);
     if (!SysCreateProcessFromFile("/system/init", true))
     {
@@ -278,7 +301,6 @@ void KernelInit()
     new FileSystem::Zero;
     /* ... */
 
-    BS->Progress(90);
     // StartTasking((uint64_t)KernelTask, TaskingMode::Mono);
     StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
 
