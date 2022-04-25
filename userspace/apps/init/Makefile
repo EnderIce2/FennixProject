@@ -1,7 +1,7 @@
 include ../../../Makefile.conf
 
-NAME=finit
-OUTPUT_DIR=../../../resources/initrd/bin/
+NAME=init
+OUTPUT_DIR=../../../resources/initrd/system/
 
 # CC = ../../../${COMPILER_PATH}/${COMPILER_ARCH}g++
 # for testing purposes only!

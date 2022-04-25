@@ -1,5 +1,5 @@
 build:
-	make -C finit build
+	make -C init build
 
 clean:
-	make -C finit clean
+	make -C init clean
