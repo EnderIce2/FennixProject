@@ -12,6 +12,18 @@ Vector<PCI::PCIDeviceHeader *> Devices;
 
 namespace PCI
 {
+#ifdef DEBUG
+    void e(PCIDeviceHeader *hdr)
+    {
+        debug("%s / %s / %s / %s / %s",
+              GetVendorName(hdr->VendorID),
+              GetDeviceName(hdr->VendorID, hdr->DeviceID),
+              DeviceClasses[hdr->Class],
+              GetSubclassName(hdr->Class, hdr->Subclass),
+              GetProgIFName(hdr->Class, hdr->Subclass, hdr->ProgIF));
+    }
+#endif
+
     void EnumerateFunction(uint64_t DeviceAddress, uint64_t Function)
     {
         uint64_t Offset = Function << 12;
@@ -23,16 +35,9 @@ namespace PCI
         if (PCIDeviceHdr->DeviceID == 0xFFFF)
             return;
         Devices.push_back(PCIDeviceHdr);
-        serial_write_text(COM1, (char *)GetVendorName(PCIDeviceHdr->VendorID));
-        serial_write_text(COM1, (char *)" / ");
-        serial_write_text(COM1, (char *)GetDeviceName(PCIDeviceHdr->VendorID, PCIDeviceHdr->DeviceID));
-        serial_write_text(COM1, (char *)" / ");
-        serial_write_text(COM1, (char *)DeviceClasses[PCIDeviceHdr->Class]);
-        serial_write_text(COM1, (char *)" / ");
-        serial_write_text(COM1, (char *)GetSubclassName(PCIDeviceHdr->Class, PCIDeviceHdr->Subclass));
-        serial_write_text(COM1, (char *)" / ");
-        serial_write_text(COM1, (char *)GetProgIFName(PCIDeviceHdr->Class, PCIDeviceHdr->Subclass, PCIDeviceHdr->ProgIF));
-        serial_write_text(COM1, (char *)"\n");
+#ifdef DEBUG
+        e(PCIDeviceHdr);
+#endif
     }
 
     void EnumerateDevice(uint64_t BusAddress, uint64_t Device)
@@ -55,10 +60,18 @@ namespace PCI
         uint64_t BusAddress = BaseAddress + Offset;
         KernelPageTableManager.MapMemory((void *)BusAddress, (void *)BusAddress, PTFlag::RW);
         PCIDeviceHeader *PCIDeviceHdr = (PCIDeviceHeader *)BusAddress;
-        if (PCIDeviceHdr->DeviceID == 0)
-            return;
-        if (PCIDeviceHdr->DeviceID == 0xFFFF)
-            return;
+        if (Bus != 0) // TODO: VirtualBox workaround (UNTESTED ON REAL HARDWARE!)
+        {
+            if (PCIDeviceHdr->DeviceID == 0)
+                return;
+            if (PCIDeviceHdr->DeviceID == 0xFFFF)
+                return;
+        }
+        trace("PCI Bus DeviceID:%#llx VendorID:%#llx BIST:%#llx Cache:%#llx Class:%#llx Cmd:%#llx HdrType:%#llx LatencyTimer:%#llx ProgIF:%#llx RevID:%#llx Status:%#llx SubClass:%#llx ",
+              PCIDeviceHdr->DeviceID, PCIDeviceHdr->VendorID, PCIDeviceHdr->BIST,
+              PCIDeviceHdr->CacheLineSize, PCIDeviceHdr->Class, PCIDeviceHdr->Command,
+              PCIDeviceHdr->HeaderType, PCIDeviceHdr->LatencyTimer, PCIDeviceHdr->ProgIF,
+              PCIDeviceHdr->RevisionID, PCIDeviceHdr->Status, PCIDeviceHdr->Subclass);
         for (uint64_t Device = 0; Device < 32; Device++)
             EnumerateDevice(BusAddress, Device);
     }
@@ -70,7 +83,7 @@ namespace PCI
         {
             struct DeviceConfig *NewDeviceConfig = (struct DeviceConfig *)((uint64_t)MCFG + sizeof(struct MCFGHeader) + (sizeof(struct DeviceConfig) * t));
             KernelPageTableManager.MapMemory((void *)NewDeviceConfig->BaseAddress, (void *)NewDeviceConfig->BaseAddress, PTFlag::RW | PTFlag::PCD);
-            trace("PCI entry %d addr:%016p BUS:%#llx-%#llx", t, NewDeviceConfig->BaseAddress,
+            trace("PCI Entry %d Address:%#llx BUS:%#llx-%#llx", t, NewDeviceConfig->BaseAddress,
                   NewDeviceConfig->StartBus, NewDeviceConfig->EndBus);
             for (uint64_t Bus = NewDeviceConfig->StartBus; Bus < NewDeviceConfig->EndBus; Bus++)
                 EnumerateBus(NewDeviceConfig->BaseAddress, Bus);
@@ -116,7 +129,7 @@ void init_pci()
     }
     else
     {
-        err("Error! No PCI support!"); // TODO: add legacy support if MCFG is not available
+        err("No PCI support!"); // TODO: add legacy support if MCFG is not available
     }
     BS->IncreaseProgres();
 }

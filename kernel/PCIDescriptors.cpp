@@ -57,7 +57,7 @@ namespace PCI
         case 0x8086:
             return "Intel Corporation";
         case 0x1022:
-            return "Advanced Micro Devices, Inc. [AMD]";
+            return "Advanced Micro Devices, Inc.";
         case 0x10DE:
             return "NVIDIA Corporation";
         case 0x1AE0:
@@ -67,6 +67,7 @@ namespace PCI
         case 0x1414:
             return "Microsoft Corporation";
         }
+        fixme("Unkown vendor %04x", VendorID);
         return u16ToHexString(VendorID);
     }
 
@@ -78,7 +79,37 @@ namespace PCI
             switch (DeviceID)
             {
             case 0x1000:
+            case 0x1041:
                 return "Virtio network device";
+            case 0x1001:
+            case 0x1042:
+                return "Virtio block device";
+            case 0x1002:
+            case 0x1045:
+                return "Virtio memory balloon";
+            case 0x1003:
+            case 0x1043:
+                return "Virtio console";
+            case 0x1004:
+            case 0x1048:
+                return "Virtio SCSI";
+            case 0x1005:
+            case 0x1044:
+                return "Virtio RNG";
+            case 0x1009:
+            case 0x1049:
+            case 0x105a:
+                return "Virtio filesystem";
+            case 0x1050:
+                return "Virtio GPU";
+            case 0x1052:
+                return "Virtio input";
+            case 0x1053:
+                return "Virtio socket";
+            case 1110:
+                return "Inter-VM shared memory";
+            case 0x1af41100:
+                return "QEMU Virtual Machine";
             }
             [[fallthrough]];
         case Realtek:
@@ -97,6 +128,10 @@ namespace PCI
                 return "VirtualBox Guest Service";
             case 0xBEEF:
                 return "VirtualBox Graphics Adapter";
+            case 0x0021:
+                return "USB Tablet";
+            case 0x0022:
+                return "Multitouch tablet";
             }
             [[fallthrough]];
         case Ensoniq:
@@ -107,7 +142,7 @@ namespace PCI
             }
             [[fallthrough]];
         case QEMU:
-            switch (VendorID)
+            switch (DeviceID)
             {
             case 0x1111:
                 return "QEMU Display";
@@ -151,10 +186,14 @@ namespace PCI
                 return "82371AB/EB/MB PIIX4 IDE";
             case 0x7113:
                 return "82371AB/EB/MB PIIX4 ACPI";
+            case 0x1e31:
+                return "7 Series/C210 Series Chipset Family USB xHCI Host Controller";
             case 0x100F:
                 return "82545EM Gigabit Ethernet Controller (Copper)";
             case 0x1371:
                 return "ES1371/ES1373 / Creative Labs CT2518";
+            case 0x27b9:
+                return "82801GBM (ICH7-M) LPC Interface Bridge";
             case 0x07E0:
                 return "SATA AHCI controller";
             case 0x2935:
@@ -175,6 +214,8 @@ namespace PCI
                 return "82G33/G31/P35/P31 Express DRAM Controller";
             case 0x2918:
                 return "82801IB (ICH9) LPC Interface Controller";
+            case 0x2829:
+                return "82801HM/HEM (ICH8M/ICH8M-E) SATA Controller [AHCI mode]";
             case 0x2922:
                 return "82801IR/IO/IH (ICH9R/DO/DH) 6 port SATA Controller [AHCI mode]";
             case 0x2930:
@@ -185,9 +226,10 @@ namespace PCI
             switch (DeviceID)
             {
             case 0x2000:
-                return "79c970 [PCnet32 LANCE]";
+                return "79C970 [PCnet32 LANCE]";
             }
         }
+        fixme("Unknown device %04x:%04x", VendorID, DeviceID);
         return u16ToHexString(DeviceID);
     }
 
@@ -214,8 +256,9 @@ namespace PCI
         case 0x08:
             return "Non-Volatile Memory Controller";
         case 0x80:
-            return "Other";
+            return "Other (msc)";
         }
+        fixme("Unknown mass storage controller %02x", SubclassCode);
         return u8ToHexString(SubclassCode);
     }
 
@@ -244,8 +287,9 @@ namespace PCI
         case 0x09:
             return "CANbus";
         case 0x80:
-            return "SerialBusController - Other";
+            return "Other (sbc)";
         }
+        fixme("Unknown serial bus controller %02x", SubclassCode);
         return u8ToHexString(SubclassCode);
     }
 
@@ -276,8 +320,9 @@ namespace PCI
         case 0x0a:
             return "InfiniBand-to-PCI Host Bridge";
         case 0x80:
-            return "Other";
+            return "Other (bds)";
         }
+        fixme("Unknown bridge device %02x", SubclassCode);
         return u8ToHexString(SubclassCode);
     }
 
@@ -299,6 +344,7 @@ namespace PCI
         case 0x0C:
             return SerialBusControllerSubclassName(SubclassCode);
         }
+        fixme("Unknown subclass name %02x:%02x", ClassCode, SubclassCode);
         return u8ToHexString(SubclassCode);
     }
 
@@ -355,6 +401,7 @@ namespace PCI
                 }
             }
         }
+        fixme("Unknown prog IF name %02x:%02x:%02x", ClassCode, SubclassCode, ProgIF);
         return u8ToHexString(ProgIF);
     }
 }
