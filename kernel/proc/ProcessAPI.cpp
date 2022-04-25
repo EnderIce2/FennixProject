@@ -115,7 +115,10 @@ ProcessControlBlock *APICALL SysCreateProcessFromFile(const char *File, bool use
     /* ... Open file ... Parse file ... map elf file ... get rip etc ... */
     FILE *file = vfs->Open(File);
     if (file->Status != FILESTATUS::OK)
+    {
+        err("File status error %d", file->Status);
         goto error_exit;
+    }
 
     if (file->Node->Flags == NodeFlags::FS_FILE)
     {
@@ -147,6 +150,7 @@ ProcessControlBlock *APICALL SysCreateProcessFromFile(const char *File, bool use
         }
         if (header->e_ident[EI_CLASS] == ELFCLASS64)
         {
+            printf_("64 bit ELF file found.");
             return nullptr;
             // return SysCreateThread(SysCreateProcess(file->Name, nullptr), (uint64_t)0)->Parent;
         }

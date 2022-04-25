@@ -102,6 +102,11 @@ namespace FileSystem
         uint64_t Length = 0;
         FileSystemNode *Parent = nullptr;
         FileSystemOpeations *Operator = nullptr;
+        /* For root node:
+        0 - root "/"
+        1 - tba
+        ...
+        */
         Vector<FileSystemNode *> Children;
     };
 
@@ -122,7 +127,7 @@ namespace FileSystem
         uint64_t Read(FILE *File, uint64_t Offset, uint8_t *Buffer, uint64_t Size);
         uint64_t Write(FILE *File, uint64_t Offset, uint8_t *Buffer, uint64_t Size);
         FILESTATUS Close(FILE *File);
-        FILESTATUS SetRoot(FileSystemOpeations *Operator, string RootName);
+        FILESTATUS CreateRoot(FileSystemOpeations *Operator, string RootName);
         FileSystemNode *Create(FileSystemNode *Parent, string Path);
 
         Virtual();

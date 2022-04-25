@@ -112,10 +112,12 @@ namespace FileSystem
         case FAT12:
         // TODO: Implement reading and writing files
             debug("FAT12");
+            mountfs->MountFileSystem(&fat, 0666, "stubfat12");
             break;
         case FAT16:
         // TODO: Implement reading and writing files
             debug("FAT16");
+            mountfs->MountFileSystem(&fat, 0666, "stubfat16");
             break;
         case FAT32:
             debug("FAT32");

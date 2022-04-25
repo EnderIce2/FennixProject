@@ -7,7 +7,7 @@
 #include "drivers/disk.h"
 
 // show debug messages
-#define DEBUG_FILESYSTEM 1
+// #define DEBUG_FILESYSTEM 1
 
 #ifdef DEBUG_FILESYSTEM
 #define vfsdbg(m, ...) debug(m, ##__VA_ARGS__)
@@ -25,19 +25,9 @@ namespace FileSystem
 {
     FileSystemNode *FileSystemRoot = nullptr;
 
-    FILESTATUS FileExists(FileSystemNode *Parent, string Path)
-    {
-        if (isempty((char *)Path))
-            return FILESTATUS::INVALID_PATH;
-        fixme("FileExists: %s", Path);
-        if (Parent == nullptr)
-            Parent = FileSystemRoot;
-        return FILESTATUS::NOT_FOUND;
-    }
-
     char *GetPathFromNode(FileSystemNode *Node)
     {
-        vfsdbg("GetPathFromNode: %s", Node->Name);
+        vfsdbg("GetPathFromNode( \"%s\" )", Node->Name);
         FileSystemNode *Parent = Node;
         Vector<char *> Path;
         size_t Size = 1;
@@ -68,46 +58,126 @@ namespace FileSystem
 
         // for (size_t i = 0; i < Path.size(); i++)
         //     Size += strlen(Path[i]);
-        vfsdbg("FinalPath: %s", FinalPath);
+        vfsdbg("GetPathFromNode()->\"%s\"", FinalPath);
         return FinalPath;
+    }
+
+    FileSystemNode *GetNodeFromPath(FileSystemNode *Parent, string Path)
+    {
+        vfsdbg("GetNodeFromPath( \"%s\" \"%s\" )", Parent->Name, Path);
+
+        if (strcmp(Parent->Name, Path))
+        {
+            cwk_segment segment;
+            if (!cwk_path_get_first_segment(Path, &segment))
+            {
+                err("Path doesn't have any segments.");
+                return nullptr;
+            }
+
+            do
+            {
+                char *SegmentName = new char[segment.end - segment.begin + 1];
+                memcpy(SegmentName, segment.begin, segment.end - segment.begin);
+            GetNodeFromPathNextParent:
+                foreach (auto var in Parent->Children)
+                {
+                    if (!strcmp(var->Name, SegmentName))
+                    {
+                        Parent = var;
+                        goto GetNodeFromPathNextParent;
+                    }
+                }
+            } while (cwk_path_get_next_segment(&segment));
+            const char *basename;
+            cwk_path_get_basename(Path, &basename, nullptr);
+            if (!strcmp(basename, Parent->Name))
+            {
+                vfsdbg("GetNodeFromPath()->\"%s\"", Parent->Name);
+                return Parent;
+            }
+        }
+        else
+        {
+            vfsdbg("GetNodeFromPath()->\"%s\"", Parent->Name);
+            return Parent;
+        }
+
+        vfsdbg("GetNodeFromPath()->\"%s\"", nullptr);
+        return nullptr;
     }
 
     FileSystemNode *AddNewChild(FileSystemNode *Parent, string Name)
     {
-        vfsdbg("AddNewChild: %s", Name);
+        vfsdbg("AddNewChild( \"%s\" \"%s\" )", Parent->Name, Name);
         FileSystemNode *newNode = new FileSystemNode;
         newNode->Parent = Parent;
         strcpy(newNode->Name, Name);
         newNode->Operator = Parent->Operator;
         Parent->Children.push_back(newNode);
-        vfsdbg("AddNewChild return: %s", newNode->Name);
+        vfsdbg("AddNewChild()->\"%s\"", newNode->Name);
         return newNode;
     }
 
     FileSystemNode *GetChild(FileSystemNode *Parent, string Name)
     {
-        vfsdbg("GetChild: %s", Name);
+        vfsdbg("GetChild( \"%s\" \"%s\" )", Parent->Name, Name);
         foreach (auto var in Parent->Children)
             if (strcmp(var->Name, Name) == 0)
             {
-                vfsdbg("GetChild return: %s", var->Name);
+                vfsdbg("GetChild()->\"%s\"", var->Name);
                 return var;
             }
-        vfsdbg("GetChild return: nullptr");
+        vfsdbg("GetChild()->nullptr");
         return nullptr;
     }
 
     FILESTATUS RemoveChild(FileSystemNode *Parent, string Name)
     {
-        vfsdbg("RemoveChild: %s", Name);
+        vfsdbg("RemoveChild( \"%s\" \"%s\" )", Parent->Name, Name);
         for (uint64_t i = 0; i < Parent->Children.size(); i++)
             if (strcmp(Parent->Children[i]->Name, Name) == 0)
             {
                 Parent->Children.remove(i);
-                vfsdbg("RemoveChild STATUS OK");
+                vfsdbg("RemoveChild()->OK");
                 return FILESTATUS::OK;
             }
-        vfsdbg("RemoveChild STATUS NOT_FOUND");
+        vfsdbg("RemoveChild()->NOT_FOUND");
+        return FILESTATUS::NOT_FOUND;
+    }
+
+    char *NormalizePath(FileSystemNode *Parent, string Path)
+    {
+        vfsdbg("NormalizePath( \"%s\" \"%s\" )", Parent->Name, Path);
+        char *NormalizedPath = new char[strlen((char *)Path) + 1];
+        char *RelativePath = nullptr;
+
+        cwk_path_normalize(Path, NormalizedPath, strlen((char *)Path) + 1);
+
+        if (cwk_path_is_relative(NormalizedPath))
+        {
+            size_t PathSize = cwk_path_get_absolute(GetPathFromNode(Parent), NormalizedPath, nullptr, 0);
+            RelativePath = new char[PathSize + 1];
+            cwk_path_get_absolute(GetPathFromNode(Parent), NormalizedPath, RelativePath, PathSize + 1);
+        }
+        else
+        {
+            RelativePath = new char[strlen(NormalizedPath) + 1];
+            strcpy(RelativePath, NormalizedPath);
+        }
+        delete NormalizedPath;
+        vfsdbg("NormalizePath()->\"%s\"", RelativePath);
+        return RelativePath;
+    }
+
+    FILESTATUS FileExists(FileSystemNode *Parent, string Path)
+    {
+        // vfsdbg("FileExists( \"%s\" \"%s\" )", Parent->Name, Path);
+        // TODO: implement FileExists()
+        if (isempty((char *)Path))
+            return FILESTATUS::INVALID_PATH;
+        if (Parent == nullptr)
+            Parent = FileSystemRoot;
         return FILESTATUS::NOT_FOUND;
     }
 
@@ -117,14 +187,15 @@ namespace FileSystem
             return nullptr;
 
         LOCK(VFSLock);
-        vfsdbg("Virtual::Create: %s", Path);
+        vfsdbg("Virtual::Create( \"%s\" \"%s\" )", Parent->Name, Path);
 
         if (Parent == nullptr)
         {
-            if (FileSystemRoot->Children.size() == 1)
-                Parent = FileSystemRoot->Children[0];
+            if (FileSystemRoot->Children.size() >= 1)
+                Parent = FileSystemRoot->Children[0]; // 0 - filesystem root
             else
             {
+                // TODO: check if here is a bug or something...
                 string PathCopy;
                 size_t length;
                 PathCopy = (char *)Path;
@@ -138,31 +209,17 @@ namespace FileSystem
             }
         }
 
-        char *NormalizedPath = new char[strlen((char *)Path) + 1];
-        char *RelativePath = nullptr;
+        char *CleanPath = NormalizePath(Parent, Path);
+        bool parentcheck = false;
 
-        cwk_path_normalize(Path, NormalizedPath, strlen((char *)Path) + 1);
-
-        if (cwk_path_is_relative(NormalizedPath))
-        {
-            size_t PathSize = cwk_path_get_absolute(GetPathFromNode(Parent), NormalizedPath, nullptr, 0);
-            RelativePath = new char[PathSize];
-            cwk_path_get_absolute(GetPathFromNode(Parent), NormalizedPath, RelativePath, PathSize);
-        }
-        else
-        {
-            RelativePath = new char[strlen(NormalizedPath) + 1];
-            strcpy(RelativePath, NormalizedPath);
-        }
-
-        if (FileExists(Parent, Path) != FILESTATUS::NOT_FOUND)
+        if (FileExists(Parent, CleanPath) != FILESTATUS::NOT_FOUND)
         {
             err("File already exists.");
             goto CreatePathError;
         }
 
         cwk_segment segment;
-        if (!cwk_path_get_first_segment(NormalizedPath, &segment))
+        if (!cwk_path_get_first_segment(CleanPath, &segment))
         {
             err("Path doesn't have any segments.");
             goto CreatePathError;
@@ -170,24 +227,34 @@ namespace FileSystem
 
         do
         {
-            if (GetChild(Parent, segment.begin) == nullptr)
-                AddNewChild(Parent, segment.begin);
-            Parent = GetChild(Parent, segment.begin);
+            // TODO: check if this is working properly.
+            char *SegmentName = new char[segment.end - segment.begin + 1];
+            memcpy(SegmentName, segment.begin, segment.end - segment.begin);
+            if (!strcmp(SegmentName, Parent->Name) && !parentcheck)
+            {
+                parentcheck = true;
+                delete[] SegmentName;
+                continue;
+            }
+            if (GetChild(Parent, SegmentName) == nullptr)
+                AddNewChild(Parent, SegmentName);
+            Parent = GetChild(Parent, SegmentName);
+            delete[] SegmentName;
         } while (cwk_path_get_next_segment(&segment));
 
-        vfsdbg("Virtual::Create return: RelativePath: %s NormalizedPath: %s (Node: %s)", RelativePath, NormalizedPath, Parent->Name);
-        delete NormalizedPath;
-        delete RelativePath;
+        delete CleanPath;
+        vfsdbg("Virtual::Create()->\"%s\"", Parent->Name);
         UNLOCK(VFSLock);
         return Parent;
 
     CreatePathError:
-        delete NormalizedPath;
+        vfsdbg("Virtual::Create return: nullptr");
+        delete CleanPath;
         UNLOCK(VFSLock);
         return nullptr;
     }
 
-    FILESTATUS Virtual::SetRoot(FileSystemOpeations *Operator, string RootName)
+    FILESTATUS Virtual::CreateRoot(FileSystemOpeations *Operator, string RootName)
     {
         if (Operator == nullptr)
             return FILESTATUS::INVALID_PARAMETER;
@@ -196,7 +263,7 @@ namespace FileSystem
         strcpy(newNode->Name, RootName);
         newNode->Flags = NodeFlags::FS_DIRECTORY;
         newNode->Operator = Operator;
-        // good idea to support multiple roots?
+        // good idea to support multiple file roots?
         FileSystemRoot->Children.push_back(newNode);
         return FILESTATUS::OK;
     }
@@ -239,10 +306,11 @@ namespace FileSystem
 
         if (Parent == nullptr)
         {
-            if (FileSystemRoot->Children.size() == 1)
-                Parent = FileSystemRoot->Children[0];
+            if (FileSystemRoot->Children.size() >= 1)
+                Parent = FileSystemRoot->Children[0]; // 0 - filesystem root
             else
             {
+                // TODO: check if here is a bug or something...
                 string PathCopy;
                 size_t length;
                 PathCopy = (char *)Path;
@@ -256,27 +324,12 @@ namespace FileSystem
             }
         }
 
-        char *NormalizedPath = new char(strlen((char *)Path) + 1);
-        char *RelativePath = nullptr;
-        cwk_path_normalize(Path, NormalizedPath, strlen((char *)Path) + 1);
-
-        if (cwk_path_is_relative(NormalizedPath))
-        {
-            size_t PathSize = cwk_path_get_absolute(GetPathFromNode(Parent), NormalizedPath, nullptr, 0);
-            RelativePath = new char[PathSize];
-            cwk_path_get_absolute(GetPathFromNode(Parent), NormalizedPath, RelativePath, PathSize);
-        }
-        else
-        {
-            RelativePath = new char[strlen(NormalizedPath) + 1];
-            strcpy(RelativePath, NormalizedPath);
-        }
+        char *CleanPath = NormalizePath(Parent, Path);
 
         FILE *file = new FILE;
-        cwk_path_get_basename(Path, &file->Name, 0);
         FILESTATUS filestatus = FILESTATUS::OK;
         // TODO: NOT IMPLEMENTED YET
-        // filestatus = FileExists(Parent, NormalizedPath);
+        // filestatus = FileExists(Parent, CleanPath);
         /* TODO: Check for other errors */
 
         if (filestatus != FILESTATUS::OK)
@@ -286,23 +339,14 @@ namespace FileSystem
         }
         else
         {
-            file->Status = FILESTATUS::OK;
-            if (strcmp(Parent->Name, RelativePath))
-            {
-                foreach (auto var in Parent->Children)
-                    if (!strcmp(var->Name, RelativePath))
-                    {
-                        file->Node = var;
-                        return file;
-                    }
-            }
-            else
-            {
-                file->Node = Parent;
-                return file;
-            }
+            file->Node = GetNodeFromPath(Parent, CleanPath);
+            if (file->Node == nullptr)
+                file->Status = FILESTATUS::NOT_FOUND;
+            const char *basename;
+            cwk_path_get_basename(CleanPath, &basename, nullptr);
+            file->Name = basename;
+            return file;
         }
-        file->Status = FILESTATUS::NOT_FOUND;
         return file;
     }
 
@@ -395,6 +439,7 @@ namespace FileSystem
     {
         trace("Initializing device file system");
         DeviceRootNode = vfs->Create(nullptr, "/dev");
+        DeviceRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
         DeviceRootNode->Mode = 0755;
         BS->IncreaseProgres();
     }
@@ -415,6 +460,7 @@ namespace FileSystem
         FileSystemNode *newNode = vfs->Create(MountRootNode, Name);
         newNode->Mode = Mode;
         newNode->Operator = Operator;
+        newNode->Flags = NodeFlags::FS_MOUNTPOINT;
         return newNode;
     }
 
@@ -433,6 +479,8 @@ namespace FileSystem
     {
         trace("Mounting file systems...");
         MountRootNode = vfs->Create(nullptr, "/mnt");
+        MountRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
+        MountRootNode->Mode = 0755;
         BS->IncreaseProgres();
     }
 

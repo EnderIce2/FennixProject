@@ -48,8 +48,8 @@ namespace DiskManager
     }
 
     // TODO: implement reading mounted disks
-    FileSystem::FileSystemOpeations stub_disk = {
-        .Name = "StubDisk",
+    FileSystem::FileSystemOpeations sata_disk = {
+        .Name = "SATA Disk",
         .Read = StubDisk_Read,
         .Write = StubDisk_Write};
 
@@ -70,7 +70,7 @@ namespace DiskManager
         Port->ReadWrite(0, 2, drive->Buffer, false);
         memcpy(&drive->Table, drive->Buffer, sizeof(PartitionTable));
 
-        devfs->AddFileSystem(&stub_disk, 0666, drive->Name, FileSystem::NodeFlags::FS_BLOCKDEVICE);
+        devfs->AddFileSystem(&sata_disk, 0666, drive->Name, FileSystem::NodeFlags::FS_BLOCKDEVICE);
 
         if (drive->Table.GPT.Signature == GPT_MAGIC)
         {
@@ -103,7 +103,7 @@ namespace DiskManager
 
                         char *PartitionName = (char *)kmalloc(sizeof(char));
                         sprintf_(PartitionName, "dsk%lldpart%lld", drives.size() - 1, partition->Index);
-                        devfs->AddFileSystem(&stub_disk, 0666, PartitionName, FileSystem::NodeFlags::FS_BLOCKDEVICE);
+                        devfs->AddFileSystem(&sata_disk, 0666, PartitionName, FileSystem::NodeFlags::FS_BLOCKDEVICE);
                     }
                 }
             }
@@ -129,7 +129,7 @@ namespace DiskManager
 
                     char *PartitionName = (char *)kmalloc(sizeof(char));
                     sprintf_(PartitionName, "dsk%lldpart%lld", drives.size() - 1, partition->Index);
-                    devfs->AddFileSystem(&stub_disk, 0666, PartitionName, FileSystem::NodeFlags::FS_BLOCKDEVICE);
+                    devfs->AddFileSystem(&sata_disk, 0666, PartitionName, FileSystem::NodeFlags::FS_BLOCKDEVICE);
                 }
             trace("%d MBR partitions found.", drive->Partitions.size());
         }

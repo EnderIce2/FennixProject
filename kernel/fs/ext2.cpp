@@ -33,11 +33,19 @@ namespace FileSystem
         memcpy(&sb, buffer, sizeof(SuperBlock));
         FreePage(buffer);
 
-        if (sb.Magic == EXT2_MAGIC)
+        if (sb.Magic == EXT2_MAGIC) // FIXME: ext4 is detected as ext2!
         {
             debug("EXT2 Name: \"%s\" Last Mounted In: \"%s\"", sb.VolumeName, sb.LastMounted);
             // TODO: Implement reading and writing files
-            mountfs->MountFileSystem(&ext2, 0666, "stubext2");
+            
+            char CleandVolumeName[16] = {'\0'};
+            for (size_t i = 0; i < strlen(sb.VolumeName); i++)
+                if (sb.VolumeName[i] == '/')
+                    CleandVolumeName[i] = '_';
+                else
+                    CleandVolumeName[i] = sb.VolumeName[i];
+
+            mountfs->MountFileSystem(&ext2, 0666, CleandVolumeName);
         }
     }
 
