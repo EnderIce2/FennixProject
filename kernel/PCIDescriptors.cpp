@@ -132,6 +132,8 @@ namespace PCI
                 return "USB Tablet";
             case 0x0022:
                 return "Multitouch tablet";
+            case 0x4E56:
+                return "NVM Express";
             }
             [[fallthrough]];
         case Ensoniq:
@@ -165,6 +167,8 @@ namespace PCI
                 return "USB2 EHCI Controller";
             case 0x0779:
                 return "USB3 xHCI 1.0 Controller";
+            case 0x07F0:
+                return "NVM Express";
             }
             [[fallthrough]];
         case IntelCorporation:
