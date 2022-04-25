@@ -9,7 +9,6 @@ tools/cross
 tools/qemu
 initrd.tar.gz
 kernel/files/*
-resources/initrd/bin/*
 *.log
 *.o
 *.elf
