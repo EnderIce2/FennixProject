@@ -1,7 +1,19 @@
 
 include Makefile.conf
 
-QEMUFLAGS = -vga std -M q35 \
+# Available display devices
+# None:       -vga none
+# Standard:   -device VGA
+# Bochs:      -device bochs-display
+# VirtIO VGA: -device virtio-vga
+# VirtIO GPU: -device virtio-gpu-pci
+# QXL VGA:    -device qxl-vga
+# QXL:        -device qxl
+# Cirrus VGA: -device cirrus-vga
+# ATI VGA:    -device ati-vga
+# RAMFB:      -device ramfb
+
+QEMUFLAGS = -device bochs-display -M q35 \
 			-usb -no-reboot \
 			-usbdevice mouse \
 			-smp $(shell nproc) \
@@ -84,7 +96,7 @@ build_image:
 		-efi-boot-part --efi-boot-image --protective-msdos-label \
 		limine-bootloader -o $(OSNAME).iso
 
-vscode_debug: build_kernel build_image
+vscode_debug: build_userspace build_kernel build_image
 	rm -f serial.log
 	${QEMU} -S -gdb tcp::1234 -d int -no-shutdown -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -m 4G ${QEMUFLAGS}
 
