@@ -30,7 +30,7 @@ void PageTableManager::MapMemory(void *VirtualAddress, void *PhysicalAddress, ui
         memset(PDP, 0, PAGE_SIZE);
         PDE.SetAddress((uint64_t)PDP >> 12);
         PDE.SetFlag(PTFlag::P, true);
-        PDE.AddFlags(Flags);
+        PDE.AddFlag(Flags);
         this->PML4->Entries[indexer.PDP_i] = PDE;
     }
     else
@@ -45,7 +45,7 @@ void PageTableManager::MapMemory(void *VirtualAddress, void *PhysicalAddress, ui
         memset(PD, 0, PAGE_SIZE);
         PDE.SetAddress((uint64_t)PD >> 12);
         PDE.SetFlag(PTFlag::P, true);
-        PDE.AddFlags(Flags);
+        PDE.AddFlag(Flags);
         PDP->Entries[indexer.PD_i] = PDE;
     }
     else
@@ -60,7 +60,7 @@ void PageTableManager::MapMemory(void *VirtualAddress, void *PhysicalAddress, ui
         memset(PT, 0, PAGE_SIZE);
         PDE.SetAddress((uint64_t)PT >> 12);
         PDE.SetFlag(PTFlag::P, true);
-        PDE.AddFlags(Flags);
+        PDE.AddFlag(Flags);
         PD->Entries[indexer.PT_i] = PDE;
     }
     else
@@ -70,7 +70,7 @@ void PageTableManager::MapMemory(void *VirtualAddress, void *PhysicalAddress, ui
     PDE = PT->Entries[indexer.P_i];
     PDE.SetAddress((uint64_t)PhysicalAddress >> 12);
     PDE.SetFlag(PTFlag::P, true);
-    PDE.AddFlags(Flags);
+    PDE.AddFlag(Flags);
     PT->Entries[indexer.P_i] = PDE;
     // invlpg((uint64_t)VirtualAddress);
 }

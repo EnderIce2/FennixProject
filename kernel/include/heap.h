@@ -53,7 +53,7 @@ namespace VMM
     struct PageDirectoryEntry
     {
         uint64_t Value;
-        void AddFlags(uint64_t Flag);
+        void AddFlag(uint64_t Flag);
         void RemoveFlags(uint64_t Flag);
         void ClearFlags();
         void SetFlag(uint64_t Flag, bool Enabled);
@@ -126,8 +126,11 @@ void operator delete[](void *Pointer, long unsigned int n);
 #define KERNEL_STACK_HEAP_BASE 0xFFFFA00000000000
 #define KERNEL_STACK_HEAP_END 0xFFFFAFFFFFFF0000
 
-#define KERNEL_HEAP_BASE 0xFFFFB00000000000
-#define KERNEL_HEAP_END 0xFFFFB00080000000
+#define USER_STACK_HEAP_BASE 0xFFFFB00000000000
+#define USER_STACK_HEAP_END 0xFFFFBFFFFFFF0000
+
+#define KERNEL_HEAP_BASE 0xFFFFC00000000000
+#define KERNEL_HEAP_END 0xFFFFC00080000000
 
 /**
  * @brief https://wiki.osdev.org/images/4/41/64-bit_page_tables1.png
@@ -136,79 +139,79 @@ void operator delete[](void *Pointer, long unsigned int n);
 enum PTFlag
 {
     /** @brief Present */
-    P = 0x00000000,
+    P = 1 << 0,
 
     /** @brief Read/Write */
-    RW = 0x00000001,
+    RW = 1 << 1,
 
     /** @brief User/Supervisor */
-    US = 0x00000002,
+    US = 1 << 2,
 
     /** @brief Write-Through */
-    PWT = 0x00000003,
+    PWT = 1 << 3,
 
     /** @brief Cache Disable */
-    PCD = 0x00000004,
+    PCD = 1 << 4,
 
     /** @brief Accessed */
-    A = 0x00000005,
+    A = 1 << 5,
 
     /** @brief Dirty */
-    D = 0x00000006,
+    D = 1 << 6,
 
     /** @brief Page Size */
-    PS = 0x00000007,
+    PS = 1 << 7,
 
     /** @brief Global */
-    G = 0x00000008,
+    G = 1 << 8,
 
     /** @brief Available 0 */
-    AVL0 = 0x00000009,
+    AVL0 = 1 << 9,
 
     /** @brief Available 1 */
-    AVL1 = 0x00000010,
+    AVL1 = 1 << 10,
 
     /** @brief Available 2 */
-    AVL2 = 0x00000011,
+    AVL2 = 1 << 11,
 
     /** @brief Page Attribute Table */
-    PAT = 0x00000012,
+    PAT = 1 << 12,
 
     /** @brief Available 3 */
-    AVL3 = 0x00000052,
+    AVL3 = (uint64_t)1 << 52,
 
     /** @brief Available 4 */
-    AVL4 = 0x00000053,
+    AVL4 = (uint64_t)1 << 53,
 
     /** @brief Available 5 */
-    AVL5 = 0x00000054,
+    AVL5 = (uint64_t)1 << 54,
 
     /** @brief Available 6 */
-    AVL6 = 0x00000055,
+    AVL6 = (uint64_t)1 << 55,
 
     /** @brief Available 7 */
-    AVL7 = 0x00000056,
+    AVL7 = (uint64_t)1 << 56,
 
     /** @brief Available 8 */
-    AVL8 = 0x00000057,
+    AVL8 = (uint64_t)1 << 57,
 
     /** @brief Available 9 */
-    AVL9 = 0x00000058,
+    AVL9 = (uint64_t)1 << 58,
 
     /** @brief Protection Key 0 */
-    PK0 = 0x00000059,
+    PK0 = (uint64_t)1 << 59,
 
     /** @brief Protection Key 1 */
-    PK1 = 0x00000060,
+    PK1 = (uint64_t)1 << 60,
 
     /** @brief Protection Key 2 */
-    PK2 = 0x00000061,
+    PK2 = (uint64_t)1 << 61,
 
     /** @brief Protection Key 3 */
-    PK3 = 0x00000062,
+    PK3 = (uint64_t)1 << 62,
 
     /** @brief Execute Disable */
-    XD = 0x00000063
+    XD = (uint64_t)1 << 63
 };
 
 enum AllocationAlgorithm

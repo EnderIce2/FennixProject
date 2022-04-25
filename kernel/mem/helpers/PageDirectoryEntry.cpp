@@ -2,48 +2,24 @@
 
 using namespace VMM;
 
-void PageDirectoryEntry::AddFlags(uint64_t Flag)
-{
-    uint64_t BitSelector = (uint64_t)1 << Flag;
-    this->Value |= BitSelector;
-}
+void PageDirectoryEntry::AddFlag(uint64_t Flag) { this->Value |= Flag; }
 
-void PageDirectoryEntry::RemoveFlags(uint64_t Flag)
-{
-    uint64_t BitSelector = (uint64_t)1 << Flag;
-    this->Value &= ~BitSelector;
-}
+void PageDirectoryEntry::RemoveFlags(uint64_t Flag) { this->Value &= ~Flag; }
 
-void PageDirectoryEntry::ClearFlags()
-{
-    this->Value = 0;
-}
+void PageDirectoryEntry::ClearFlags() { this->Value = 0; }
 
 void PageDirectoryEntry::SetFlag(uint64_t Flag, bool Enabled)
 {
-    uint64_t BitSelector = (uint64_t)1 << Flag;
-    this->Value &= ~BitSelector;
+    this->Value &= ~Flag;
     if (Enabled)
-    {
-        this->Value |= BitSelector;
-    }
+        this->Value |= Flag;
 }
 
-uint64_t PageDirectoryEntry::GetFlag()
-{
-    return this->Value;
-}
+uint64_t PageDirectoryEntry::GetFlag() { return this->Value; }
 
-bool PageDirectoryEntry::GetFlag(uint64_t Flag)
-{
-    uint64_t BitSelector = (uint64_t)1 << Flag;
-    return (this->Value & BitSelector) > 0 ? true : false;
-}
+bool PageDirectoryEntry::GetFlag(uint64_t Flag) { return (this->Value & Flag) > 0 ? true : false; }
 
-uint64_t PageDirectoryEntry::GetAddress()
-{
-    return (this->Value & 0x000FFFFFFFFFF000) >> 12;
-}
+uint64_t PageDirectoryEntry::GetAddress() { return (this->Value & 0x000FFFFFFFFFF000) >> 12; }
 
 void PageDirectoryEntry::SetAddress(uint64_t Address)
 {
