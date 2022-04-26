@@ -112,7 +112,7 @@ make clean
 - [ ] ATA Driver
 - [ ] Floppy Driver
 - [ ] IDE Driver
-- [ ] Virtual FileSystem
+- [x] Virtual FileSystem
 - [x] USTAR FileSystem
 - [ ] EXT2 FileSystem
 - [ ] ECHFS FileSystem
@@ -122,6 +122,6 @@ make clean
 - [ ] FAT16 FileSystem
 - [ ] FAT32 FileSystem
 - [x] Tasking
-- [ ] Loading ELF Files
+- [x] Loading ELF Files
 - [ ] Loading PE Files
 - [ ] Loading MZ Files
