@@ -163,7 +163,7 @@ INTERRUPT_HANDLER interrupt_handlers[256];
         }                                                                           \
         else if (interrupt_handlers[num] == NULL)                                   \
         {                                                                           \
-            err("Empty interrupt handle! %#llx (RIP:%016p)", num, RIP);               \
+            err("Empty interrupt handle! %#llx (RIP:%016p)", num, RIP);             \
         }                                                                           \
         else                                                                        \
         {                                                                           \
@@ -460,7 +460,9 @@ INTERRUPT_HANDLER(0xfa)
 INTERRUPT_HANDLER(0xfb)
 INTERRUPT_HANDLER(0xfc)
 INTERRUPT_HANDLER(0xfd)
-INTERRUPT_HANDLER(0xfe)
+__attribute__((naked)) static void interrupt_handler_0xfe() { asm("pushq $0\npushq $"
+                                                                  "0xfe"
+                                                                  "\njmp syscall_interrpt_handler_helper"); }
 INTERRUPT_HANDLER(0xff)
 
 void init_idt()
@@ -722,7 +724,7 @@ void init_idt()
     set_idt_entry(0xfb, interrupt_handler_0xfb, 0, 0);
     set_idt_entry(0xfc, interrupt_handler_0xfc, 0, 0);
     set_idt_entry(0xfd, interrupt_handler_0xfd, 0, 0);
-    set_idt_entry(0xfe, interrupt_handler_0xfe, 0, 3); // backup for syscall, used in protected mode
+    set_idt_entry(0xfe, interrupt_handler_0xfe, 0, 3);
     set_idt_entry(0xff, interrupt_handler_0xff, 0, 0);
     lidt(idtr);
     PIC_remap(0x20, 0x28);
