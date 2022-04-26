@@ -99,7 +99,7 @@ build_image:
 		-efi-boot-part --efi-boot-image --protective-msdos-label \
 		limine-bootloader -o $(OSNAME).iso
 
-vscode_debug: build_userspace build_kernel build_image
+vscode_debug: build_kernel build_libc build_userspace build_image
 	rm -f serial.log
 	${QEMU} -S -gdb tcp::1234 -d int -no-shutdown -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -m 4G ${QEMUFLAGS}
 
