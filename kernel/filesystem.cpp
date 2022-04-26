@@ -350,7 +350,7 @@ namespace FileSystem
         return file;
     }
 
-    uint64_t Virtual::Read(FILE *File, uint64_t Offset, uint8_t *Buffer, uint64_t Size)
+    uint64_t Virtual::Read(FILE *File, uint64_t Offset, void *Buffer, uint64_t Size)
     {
         if (File == nullptr)
             return 0;
@@ -372,7 +372,7 @@ namespace FileSystem
         return File->Node->Operator->Read(File->Node, Offset, Size, Buffer);
     }
 
-    uint64_t Virtual::Write(FILE *File, uint64_t Offset, uint8_t *Buffer, uint64_t Size)
+    uint64_t Virtual::Write(FILE *File, uint64_t Offset, void *Buffer, uint64_t Size)
     {
         if (File == nullptr)
             return 0;

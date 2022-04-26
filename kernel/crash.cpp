@@ -4,6 +4,7 @@
 #include <string.h>
 #include <asm.h>
 #include <heap.h>
+#include <task.h>
 
 static const char *pagefault_message[] = {
     "Supervisory process tried to read a non-present page entry",
@@ -50,11 +51,22 @@ EXTERNC void isrcrash(REGISTERS *regs)
     CR3 cr3 = readcr3();
     CR4 cr4 = readcr4();
     CR8 cr8 = readcr8();
+    if (CS != 0x23)
+        CurrentDisplay->Clear(0xFF000000);
     switch (INT_NUM)
     {
     case ISR_DivideByZero:
+        if (CS == 0x23)
+        {
+        }
+        else
+        {
+        }
         break;
     case ISR_Debug:
+        SET_PRINT_MID((char *)"Manual Triggered Crash (Debug)", FHeight(2));
+        if (CS == 0x23)
+            return;
         break;
     case ISR_NonMaskableInterrupt:
         break;
@@ -89,57 +101,87 @@ EXTERNC void isrcrash(REGISTERS *regs)
     }
     case ISR_GeneralProtectionFault:
     {
-        SelectorErrorCode SelCode = {.raw = ERROR_CODE};
+        if (CS == 0x23)
+        {
+            err("General Protection Fault caused by an user-mode process.");
+            // TODO: signal the application to stop.
+            SysGetCurrentThread()->State = STATE_TERMINATED;
+            return;
+        }
+        else
+        {
+            SelectorErrorCode SelCode = {.raw = ERROR_CODE};
+        }
         break;
     }
     case ISR_PageFault:
     {
-        CurrentDisplay->Clear(0xFF021c07);
-        PageFaultErrorCode params = {.raw = (uint32_t)ERROR_CODE};
-
-        // We can't use an allocator in exceptions (because that can cause another exception!) so, we'll just use a static buffer.
-        char ret_err[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-        char page_present[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-        char page_write[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-        char page_user[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-        char page_reserved[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-        char page_fetch[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-        char page_protection[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-        char page_shadow[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-        char page_sgx[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-
-        CurrentDisplay->SetPrintColor(0xFFdd2920);
-        SET_PRINT_MID((char *)"System crashed!", FHeight(12));
-        CurrentDisplay->ResetPrintColor();
-
-        sprintf_(ret_err, "An exception occurred at %#lx by %#lx", cr2.PFLA, RIP);
-        SET_PRINT_MID((char *)ret_err, FHeight(11));
-        sprintf_(page_present, "Page: %s", params.P ? "Present" : "Not Present");
-        SET_PRINT_MID((char *)page_present, FHeight(10));
-        sprintf_(page_write, "Write Operation: %s", params.W ? "Read-Only" : "Read-Write");
-        SET_PRINT_MID((char *)page_write, FHeight(9));
-        sprintf_(page_user, "Processor Mode: %s", params.U ? "User-Mode" : "Kernel-Mode");
-        SET_PRINT_MID((char *)page_user, FHeight(8));
-        sprintf_(page_reserved, "CPU Reserved Bits: %s", params.R ? "Reserved" : "Unreserved");
-        SET_PRINT_MID((char *)page_reserved, FHeight(7));
-        sprintf_(page_fetch, "Caused By An Instruction Fetch: %s", params.I ? "Yes" : "No");
-        SET_PRINT_MID((char *)page_fetch, FHeight(6));
-        sprintf_(page_protection, "Caused By A Protection-Key Violation: %s", params.PK ? "Yes" : "No");
-        SET_PRINT_MID((char *)page_protection, FHeight(5));
-        sprintf_(page_shadow, "Caused By A Shadow Stack Access: %s", params.SS ? "Yes" : "No");
-        SET_PRINT_MID((char *)page_shadow, FHeight(4));
-        sprintf_(page_sgx, "Caused By An SGX Violation: %s", params.SGX ? "Yes" : "No");
-        SET_PRINT_MID((char *)page_sgx, FHeight(3));
-
-        if (ERROR_CODE & 0x00000008)
+        if (CS == 0x23)
         {
-            SET_PRINT_MID((char *)"One or more page directory entries contain reserved bits which are set to 1.", FHeight(2));
+            err("Page fault caused by an user-mode process.");
+            uint64_t addr = readcr2().raw;
+            debug("Page fault at address %#llx", addr);
+            PageFaultErrorCode params = {.raw = (uint32_t)ERROR_CODE};
+            err("\nPage: %s\nWrite Operation: %s\nProcessor Mode: %s\nCPU Reserved Bits: %s\nCaused By An Instruction Fetch: %s\nDescription: %s",
+                params.P ? "Present" : "Not Present",
+                params.W ? "Read-Only" : "Read-Write",
+                params.U ? "User-Mode" : "Kernel-Mode",
+                params.R ? "Reserved" : "Unreserved",
+                params.I ? "Yes" : "No",
+                ERROR_CODE & 0x00000008 ? "One or more page directory entries contain reserved bits which are set to 1." : pagefault_message[ERROR_CODE & 0b111]);
+            // TODO: signal the application to stop.
+            SysGetCurrentThread()->State = STATE_TERMINATED;
+            return;
         }
         else
         {
-            SET_PRINT_MID((char *)pagefault_message[ERROR_CODE & 0b111], FHeight(2));
-        }
+            err("Kernel Exception");
+            CurrentDisplay->Clear(0xFF021c07);
+            PageFaultErrorCode params = {.raw = (uint32_t)ERROR_CODE};
 
+            // We can't use an allocator in exceptions (because that can cause another exception!) so, we'll just use a static buffer.
+            char ret_err[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            char page_present[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            char page_write[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            char page_user[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            char page_reserved[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            char page_fetch[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            char page_protection[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            char page_shadow[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            char page_sgx[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+
+            CurrentDisplay->SetPrintColor(0xFFdd2920);
+            SET_PRINT_MID((char *)"System crashed!", FHeight(12));
+            CurrentDisplay->ResetPrintColor();
+
+            sprintf_(ret_err, "An exception occurred at %#lx by %#lx", cr2.PFLA, RIP);
+            SET_PRINT_MID((char *)ret_err, FHeight(11));
+            sprintf_(page_present, "Page: %s", params.P ? "Present" : "Not Present");
+            SET_PRINT_MID((char *)page_present, FHeight(10));
+            sprintf_(page_write, "Write Operation: %s", params.W ? "Read-Only" : "Read-Write");
+            SET_PRINT_MID((char *)page_write, FHeight(9));
+            sprintf_(page_user, "Processor Mode: %s", params.U ? "User-Mode" : "Kernel-Mode");
+            SET_PRINT_MID((char *)page_user, FHeight(8));
+            sprintf_(page_reserved, "CPU Reserved Bits: %s", params.R ? "Reserved" : "Unreserved");
+            SET_PRINT_MID((char *)page_reserved, FHeight(7));
+            sprintf_(page_fetch, "Caused By An Instruction Fetch: %s", params.I ? "Yes" : "No");
+            SET_PRINT_MID((char *)page_fetch, FHeight(6));
+            sprintf_(page_protection, "Caused By A Protection-Key Violation: %s", params.PK ? "Yes" : "No");
+            SET_PRINT_MID((char *)page_protection, FHeight(5));
+            sprintf_(page_shadow, "Caused By A Shadow Stack Access: %s", params.SS ? "Yes" : "No");
+            SET_PRINT_MID((char *)page_shadow, FHeight(4));
+            sprintf_(page_sgx, "Caused By An SGX Violation: %s", params.SGX ? "Yes" : "No");
+            SET_PRINT_MID((char *)page_sgx, FHeight(3));
+
+            if (ERROR_CODE & 0x00000008)
+            {
+                SET_PRINT_MID((char *)"One or more page directory entries contain reserved bits which are set to 1.", FHeight(2));
+            }
+            else
+            {
+                SET_PRINT_MID((char *)pagefault_message[ERROR_CODE & 0b111], FHeight(2));
+            }
+        }
         // TODO: check if the exception is critical and if so, halt the system. Otherwise, continue by setting isrcrashcritical to false.
         break;
     }
@@ -163,7 +205,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
     CurrentDisplay->ResetPrintPosition();
     CurrentDisplay->SetPrintColor(0xFF7981fc);
     printf("Technical Informations:\n");
-    printf("FS =%#lx  GS =%#lx  SS =%#lx  CS =%#lx\n", rdmsr(0xC0000100), rdmsr(0xC0000101), _SS, CS);
+    printf("FS =%#lx  GS =%#lx  SS =%#lx  CS =%#lx\n", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
     printf("R8 =%#lx  R9 =%#lx  R10=%#lx  R11=%#lx\n", R8, R9, R10, R11);
     printf("R12=%#lx  R13=%#lx  R14=%#lx  R15=%#lx\n", R12, R13, R14, R15);
     printf("RAX=%#lx  RBX=%#lx  RCX=%#lx  RDX=%#lx\n", RAX, RBX, RCX, RDX);

@@ -30,15 +30,9 @@ namespace MultiTasking
     static bool AllocProcEnable = true;
     static bool ScheduleOn = false;
 
-    ProcessControlBlock *MultiTasking::GetCurrentProcess()
-    {
-        return CurrentProcess;
-    }
+    ProcessControlBlock *MultiTasking::GetCurrentProcess() { return CurrentProcess; }
 
-    ThreadControlBlock *MultiTasking::GetCurrentThread()
-    {
-        return CurrentThread;
-    }
+    ThreadControlBlock *MultiTasking::GetCurrentThread() { return CurrentThread; }
 
     void SetControlBlockTime(ControlBlockTime *Time)
     {
@@ -73,9 +67,7 @@ namespace MultiTasking
                 thread->Parent->Threads.remove(i);
                 break;
             }
-#ifdef DEBUG_SCHEDULER
         debug("Thread %d terminated", thread->ThreadID);
-#endif
         KernelStackAllocator->FreeStack(thread->Stack);
         kfree(thread);
         thread = nullptr;
@@ -130,7 +122,6 @@ namespace MultiTasking
             debug("parent:%s tid:%d, code:%016p", CurrentProcess->Name, CurrentThread->ThreadID, code);
 #endif
             CurrentThread->State = STATE_TERMINATED;
-            CurrentProcess->ExitCode = code;
             CurrentThread->ExitCode = code;
             trace("Exiting thread %d...", CurrentThread->ThreadID);
             UNLOCK(exit_lock);
@@ -168,7 +159,7 @@ namespace MultiTasking
         return process;
     }
 
-    ThreadControlBlock *create_thread(ProcessControlBlock *parent, uint64_t function, uint64_t args0, uint64_t args1, enum ControlBlockPriority Priority, enum ControlBlockState State, enum ControlBlockPolicy Policy)
+    ThreadControlBlock *create_thread(ProcessControlBlock *parent, uint64_t function, uint64_t args0, uint64_t args1, enum ControlBlockPriority Priority, enum ControlBlockState State, enum ControlBlockPolicy Policy, bool UserMode)
     {
         LOCK(thread_lock);
         if (parent->Checksum != PROCESS_CHECKSUM)
@@ -188,33 +179,42 @@ namespace MultiTasking
         thread->Policy = Policy;
         thread->Priority = Priority;
         thread->Checksum = THREAD_CHECKSUM;
+        thread->UserMode = UserMode;
 
         memcpy(&thread->Registers, 0, sizeof(REGISTERS));
-        if (1) // TODO: kernel & user
+        if (!UserMode)
         {
-            thread->Stack = KernelStackAllocator->AllocateStack();
+            // Kernel Mode
             thread->Registers.ds = GDT_KERNEL_DATA;
             thread->Registers.cs = GDT_KERNEL_CODE;
             thread->Registers.ss = GDT_KERNEL_DATA;
             thread->Registers.rflags.always_one = 1;
             thread->Registers.rflags.IF = 1;
             thread->Registers.rflags.ID = 1;
+            thread->Stack = KernelStackAllocator->AllocateStack();
             thread->Registers.STACK = (uint64_t)thread->Stack;
             POKE(uint64_t, thread->Registers.rsp) = (uint64_t)do_exit;
         }
         else
         {
+            // User Mode
             thread->Registers.ds = GDT_USER_DATA;
             thread->Registers.cs = GDT_USER_CODE;
             thread->Registers.ss = GDT_USER_DATA;
             thread->Registers.rflags.always_one = 1;
             thread->Registers.rflags.IF = 1;
             thread->Registers.rflags.ID = 1;
+            thread->Stack = KernelStackAllocator->AllocateStack(true);
+            thread->Registers.STACK = (uint64_t)thread->Stack;
+            // we can't just call the do_exit here. let the crt make a syscall for exiting
         }
 
         thread->Registers.FUNCTION = (uint64_t)function;
         thread->Registers.ARG0 = (uint64_t)args0; // args0
         thread->Registers.ARG1 = (uint64_t)args1; // args1
+
+        thread->Segment.gs = UserMode ? 0 : (uint64_t)thread;
+        thread->Segment.fs = 0;
 
         SetControlBlockTime(thread->Time);
         parent->Threads.push_back(thread);
@@ -230,9 +230,9 @@ namespace MultiTasking
         return create_process(parent, name);
     }
 
-    ThreadControlBlock *MultiTasking::CreateThread(ProcessControlBlock *parent, uint64_t function, uint64_t args0, uint64_t args1, enum ControlBlockPriority Priority, enum ControlBlockState State, enum ControlBlockPolicy Policy)
+    ThreadControlBlock *MultiTasking::CreateThread(ProcessControlBlock *parent, uint64_t function, uint64_t args0, uint64_t args1, enum ControlBlockPriority Priority, enum ControlBlockState State, enum ControlBlockPolicy Policy, bool UserMode)
     {
-        return create_thread(parent, function, args0, args1, Priority, State, Policy);
+        return create_thread(parent, function, args0, args1, Priority, State, Policy, UserMode);
     }
 
     void SetPageTable(VMM::PageTable *PML)
@@ -391,6 +391,9 @@ namespace MultiTasking
             else
             {
                 CurrentThread->Registers = *regs;
+                CurrentThread->Segment.gs = rdmsr(MSR_SHADOW_GS_BASE);
+                CurrentThread->Segment.fs = rdmsr(MSR_FS_BASE);
+
                 if (CurrentThread->State == STATE_RUNNING)
                     CurrentThread->State = STATE_READY;
 
@@ -469,7 +472,7 @@ namespace MultiTasking
             if (CurrentProcess != nullptr)
                 remove_process(CurrentProcess);
             IdleProcess = create_process(nullptr, (char *)"idle");
-            IdleThread = create_thread(IdleProcess, reinterpret_cast<uint64_t>(IdleProcessLoop), 0, 0, PRIORITY_VERYLOW, STATE_READY, POLICY_KERNEL);
+            IdleThread = create_thread(IdleProcess, reinterpret_cast<uint64_t>(IdleProcessLoop), 0, 0, PRIORITY_VERYLOW, STATE_READY, POLICY_KERNEL, false);
             timeslice = IdleThread->Priority;
             CurrentProcess = IdleProcess;
             CurrentThread = IdleThread;
@@ -489,6 +492,9 @@ namespace MultiTasking
             /* Issue: somehow the page table is missing the kernel mapping at some point. not sure if it's about the
                       allocated page or switching */
             // SetPageTable(CurrentProcess->PageTable);
+            wrmsr(MSR_FS_BASE, CurrentThread->Segment.fs);
+            wrmsr(MSR_GS_BASE, (uint64_t)CurrentThread);
+            wrmsr(MSR_SHADOW_GS_BASE, CurrentThread->UserMode ? CurrentThread->Segment.gs : (uint64_t)CurrentThread);
             Yield(timeslice);
         scheduler_end:
             UNLOCK(scheduler_lock);

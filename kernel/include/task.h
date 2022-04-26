@@ -5,22 +5,6 @@
 #include <vector.hpp>
 #endif
 
-enum syscalls_enum
-{
-    _ProcessExit = 1,
-    _ProcessCreate,
-    _ThreadCreate,
-    _GetCurrentProcess,
-    _GetCurrentThread,
-    _Schedule,
-
-    _SystemInfo,
-    _SystemTime,
-    _SystemTimeSet,
-
-    _DebugMessage,
-};
-
 enum ControlBlockState
 {
     STATE_UNKNOWN,
@@ -63,6 +47,16 @@ typedef struct _ControlBlockTime
     uint64_t s;
 } ControlBlockTime;
 
+typedef struct _Segments
+{
+    uint64_t fs;
+    uint64_t gs;
+    uint64_t cs;
+    uint64_t ss;
+    uint64_t ds;
+    uint64_t es;
+} Segments;
+
 typedef struct _ThreadControlBlock
 {
     uint64_t ThreadID;
@@ -71,7 +65,9 @@ typedef struct _ThreadControlBlock
     enum ControlBlockPriority Priority;
     struct _ProcessControlBlock *Parent;
     void *Stack;
+    bool UserMode;
     REGISTERS Registers;
+    Segments Segment;
     uint64_t ExitCode;
     ControlBlockTime *Time;
     uint32_t Checksum;
@@ -132,6 +128,7 @@ namespace MonoTasking
         uint64_t id;
         void *stack;
         void *pml4;
+        bool UserMode;
         enum TaskState state;
         unsigned int checksum;
     };
@@ -153,7 +150,7 @@ namespace MonoTasking
          * @param name The name of the new Task
          * @return The new created Task
          */
-        TaskControlBlock *CreateTask(uint64_t InstructionPointer, uint64_t FirstArgument, uint64_t SecondArgument, char *Name);
+        TaskControlBlock *CreateTask(uint64_t InstructionPointer, uint64_t FirstArgument, uint64_t SecondArgument, char *Name, bool UserMode);
 
         /**
          * @brief Construct a new Mono Tasking object
@@ -205,7 +202,7 @@ namespace MultiTasking
         ThreadControlBlock *GetCurrentThread();
 
         ProcessControlBlock *CreateProcess(ProcessControlBlock *parent, char *name);
-        ThreadControlBlock *CreateThread(ProcessControlBlock *parent, uint64_t function, uint64_t args0, uint64_t args1, enum ControlBlockPriority Priority, enum ControlBlockState State, enum ControlBlockPolicy Policy);
+        ThreadControlBlock *CreateThread(ProcessControlBlock *parent, uint64_t function, uint64_t args0, uint64_t args1, enum ControlBlockPriority Priority, enum ControlBlockState State, enum ControlBlockPolicy Policy, bool UserMode);
 
         void Schedule();
         void ToggleScheduler(bool toggle);
@@ -245,6 +242,13 @@ ProcessControlBlock *FENAPI SysGetProcessByPID(uint64_t ID);
 ProcessControlBlock *FENAPI SysGetCurrentProcess();
 
 /**
+ * @brief Get current thread
+ *
+ * @return ThreadControlBlock
+ */
+ThreadControlBlock *FENAPI SysGetCurrentThread();
+
+/**
  * @brief Create a new process from a file
  *
  * @param File TODO: more
@@ -268,11 +272,10 @@ ProcessControlBlock *FENAPI SysCreateProcess(const char *Name, void *PageTable);
  * @param InstructionPointer
  * @return ThreadControlBlock*
  */
-ThreadControlBlock *FENAPI SysCreateThread(ProcessControlBlock *Parent, uint64_t InstructionPointer);
+ThreadControlBlock *FENAPI SysCreateThread(ProcessControlBlock *Parent, uint64_t InstructionPointer, bool UserMode);
 
 void do_exit(uint64_t code);
 void schedule();
-int thread_page_fault_handler(REGISTERS *regs);
 void StartTasking(uint64_t Address, enum TaskingMode Mode);
 
 void init_syscalls();

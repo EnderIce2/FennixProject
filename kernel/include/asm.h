@@ -147,18 +147,20 @@ static inline void ENABLE_NX()
             : "eax", "ecx", "edx", "memory");
 }
 
-// static inline uint64_t rdmsr(uint64_t msr)
-// {
-// 	uint32_t low, high;
-// 	asm volatile (
-// 		"rdmsr"
-// 		: "=a"(low), "=d"(high)
-// 		: "c"(msr)
-// 	);
-// 	return ((uint64_t)high << 32) | low;
-// }
+enum MSRID
+{
+    MSR_EFER = 0xc0000080,
+    MSR_STAR = 0xc0000081,           /* legacy SYSCALL */
+    MSR_LSTAR = 0xc0000082,          /* 64bit SYSCALL */
+    MSR_CSTAR = 0xc0000083,          /* compatibility mode SYSCALL */
+    MSR_SYSCALL_MASK = 0xc0000084,   /* EFLAGS mask for syscall */
+    MSR_FS_BASE = 0xc0000100,        /* 64bit FS base */
+    MSR_GS_BASE = 0xc0000101,        /* 64bit GS base */
+    MSR_SHADOW_GS_BASE = 0xc0000102, /* SwapGS GS shadow */
+    MSR_TSC_AUX = 0xc0000103         /* Auxiliary TSC */
+};
 
-static inline uint64_t rdmsr(uint32_t msr)
+static inline uint64_t rdmsr(enum MSRID msr)
 {
     uint32_t low, high;
     asm volatile("rdmsr"
@@ -167,12 +169,7 @@ static inline uint64_t rdmsr(uint32_t msr)
     return ((uint64_t)low) | (((uint64_t)high) << 32);
 }
 
-// static inline void wrmsr(uint32_t msr_id, uint64_t msr_value)
-// {
-//     asm volatile ( "wrmsr" : : "c" (msr_id), "A" (msr_value) );
-// }
-
-static inline void wrmsr(uint32_t msr, uint64_t Value)
+static inline void wrmsr(enum MSRID msr, uint64_t Value)
 {
     uint32_t val1 = Value, val2 = Value >> 32;
     asm volatile("wrmsr"

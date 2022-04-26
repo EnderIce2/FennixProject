@@ -96,7 +96,7 @@ namespace StackHeap
     class StackHeap
     {
     public:
-        void *AllocateStack();
+        void *AllocateStack(bool User = false);
         void FreeStack(void *Address);
         StackHeap();
         ~StackHeap();

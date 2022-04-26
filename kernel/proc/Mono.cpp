@@ -167,16 +167,23 @@ namespace MonoTasking
         CPU_STOP;
     }
 
-    TaskControlBlock *MonoTasking::CreateTask(uint64_t InstructionPointer, uint64_t FirstArgument, uint64_t SecondArgument, char *Name)
+    TaskControlBlock *MonoTasking::CreateTask(uint64_t InstructionPointer, uint64_t FirstArgument, uint64_t SecondArgument, char *Name, bool UserMode)
     {
         TaskControlBlock *task = new TaskControlBlock;
         task->id = TaskIDs++;
         memcpy(((char *)task->name), Name, sizeof(task->name));
         task->checksum = TASK_CHECKSUM;
+        task->UserMode = UserMode;
         task->state = TaskState::TaskStateWaiting;
         task->stack = KernelStackAllocator->AllocateStack();
         task->pml4 = KernelPageTableAllocator->NewPageTable();
         debug("PML4 %016p for %s has been created.", task->pml4, task->name);
+
+        if (UserMode)
+        {
+            fixme("User mode is not implemented yet.");
+            task->UserMode = false;
+        }
 
         memset(&task->regs, 0, sizeof(REGISTERS));
         task->regs.ds = GDT_KERNEL_DATA;
@@ -200,7 +207,7 @@ namespace MonoTasking
     {
         for (size_t i = 0; i < MAX_TASKS; i++)
             TaskQueue[i] = nullptr; // Make sure that all tasks have value nullptr
-        CreateTask((uint64_t)FirstTask, 0, 0, (char *)"kernel");
+        CreateTask((uint64_t)FirstTask, 0, 0, (char *)"kernel", false);
         CurrentTaskingMode = TaskingMode::Mono;
         ScheduleInterrupt;
     }
