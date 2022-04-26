@@ -16,40 +16,41 @@ enum SystemCalls
     _DebugMessage,
 };
 
-#ifdef __x86_64__
-__attribute__((naked)) static inline unsigned long syscall(enum SystemCalls call, ...)
-{
-    asm volatile(
-        "push %rbp \n\t"
-        "mov %rsp, %rbp \n\t"
-        "mov %rdi, %rax \n\t"
-        "mov %rsi, %rdi \n\t"
-        "mov %rdx, %rsi \n\t"
-        "mov %rcx, %rdx \n\t"
-        "mov %r8, %r10 \n\t"
-        "mov %r9, %r8 \n\t"
-        "mov 8(%rsp), %r9 \n\t"
-        "syscall \n\t"
-        "mov %rbp, %rsp \n\t"
-        "pop %rbp \n\t"
-        "ret");
-}
-#else
-__attribute__((naked)) static inline unsigned long syscall(enum SystemCalls call, ...)
-{
-    asm volatile(
-        "push %rbp \n\t"
-        "mov %rsp, %rbp \n\t"
-        "mov %rdi, %rax \n\t"
-        "mov %rsi, %rdi \n\t"
-        "mov %rdx, %rsi \n\t"
-        "mov %rcx, %rdx \n\t"
-        "mov %r8, %r10 \n\t"
-        "mov %r9, %r8 \n\t"
-        "mov 8(%rsp), %r9 \n\t"
-        "int $0xfe \n\t"
-        "mov %rbp, %rsp \n\t"
-        "pop %rbp \n\t"
-        "ret");
-}
+#ifndef asm
+#define asm __asm__
 #endif
+
+// #define INTERRUPT_SYSCALL 1
+
+__attribute__((naked)) static inline unsigned long syscall(enum SystemCalls call, ...)
+{
+#ifndef INTERRUPT_SYSCALL
+    asm volatile("push %rbp\n"
+                 "mov %rsp, %rbp\n"
+                 "mov %rdi, %rax\n"
+                 "mov %rsi, %rdi\n"
+                 "mov %rdx, %rsi\n"
+                 "mov %rcx, %rdx\n"
+                 "mov %r8, %r10\n"
+                 "mov %r9, %r8\n"
+                 "mov 8(%rsp), %r9\n"
+                 "syscall\n"
+                 "mov %rbp, %rsp\n"
+                 "pop %rbp\n"
+                 "ret");
+#else
+    asm volatile("push %rbp\n"
+                 "mov %rsp, %rbp\n"
+                 "mov %rdi, %rax\n"
+                 "mov %rsi, %rdi\n"
+                 "mov %rdx, %rsi\n"
+                 "mov %rcx, %rdx\n"
+                 "mov %r8, %r10\n"
+                 "mov %r9, %r8\n"
+                 "mov 8(%rsp), %r9\n"
+                 "int $0xfe\n"
+                 "mov %rbp, %rsp\n"
+                 "pop %rbp\n"
+                 "ret");
+#endif
+}
