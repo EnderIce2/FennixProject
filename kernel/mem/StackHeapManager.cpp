@@ -14,16 +14,18 @@ namespace StackHeap
 
     uint64_t HeapBase = KERNEL_STACK_HEAP_BASE;
 
-    void *StackHeap::AllocateStack()
+    void *StackHeap::AllocateStack(bool User)
     {
         // TODO: fix stack allocator
 
         // if (HeapBase >= KERNEL_STACK_HEAP_END)
         // {
         // warn("Stack heap is full.");
-        PageTable *pt = (PageTable *)KernelAllocator.RequestPage();
-        // KernelPageTableManager.MapMemory((void *)(pt), (void *)(pt), RW);
-        return pt;
+        void *Address = KernelAllocator.RequestPage();
+        if (User)
+            KernelPageTableManager.MapMemory((void *)(Address), (void *)(Address), PTFlag::RW | PTFlag::US);
+            trace("New stack allocated at %p", Address);
+        return Address;
         // }
         // uint64_t ReturnHeap = HeapBase;
         // KernelPageTableManager.MapMemory((void *)(ReturnHeap), KernelAllocator.RequestPage(), RW);
