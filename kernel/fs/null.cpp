@@ -17,10 +17,7 @@ namespace FileSystem
         .Read = Null_Read,
         .Write = Null_Write};
 
-    Null::Null()
-    {
-        devfs->AddFileSystem(&null, 0666, "null", NodeFlags::FS_CHARDEVICE);
-    }
+    Null::Null() { devfs->AddFileSystem(&null, 0666, "null", NodeFlags::FS_CHARDEVICE); }
 
     Null::~Null() { warn("Destroyed"); }
 }

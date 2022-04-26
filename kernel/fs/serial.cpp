@@ -11,7 +11,7 @@ namespace FileSystem
         uint64_t received = 0;
         while (received < Size)
         {
-            Buffer[received] = read_serial(COM1);
+            ((uint8_t *)Buffer)[received] = read_serial(COM1);
             received++;
         }
         return received;
@@ -22,7 +22,7 @@ namespace FileSystem
         uint64_t sent = 0;
         while (sent < Size)
         {
-            write_serial(COM1, Buffer[sent]);
+            write_serial(COM1, ((uint8_t *)Buffer)[sent]);
             sent++;
         }
         return Size;
@@ -36,7 +36,7 @@ namespace FileSystem
         uint64_t received = 0;
         while (received < Size)
         {
-            Buffer[received] = read_serial(COM2);
+            ((uint8_t *)Buffer)[received] = read_serial(COM2);
             received++;
         }
         return received;
@@ -47,7 +47,7 @@ namespace FileSystem
         uint64_t sent = 0;
         while (sent < Size)
         {
-            write_serial(COM2, Buffer[sent]);
+            write_serial(COM2, ((uint8_t *)Buffer)[sent]);
             sent++;
         }
         return Size;
@@ -61,7 +61,7 @@ namespace FileSystem
         uint64_t received = 0;
         while (received < Size)
         {
-            Buffer[received] = read_serial(COM3);
+            ((uint8_t *)Buffer)[received] = read_serial(COM3);
             received++;
         }
         return received;
@@ -72,7 +72,7 @@ namespace FileSystem
         uint64_t sent = 0;
         while (sent < Size)
         {
-            write_serial(COM3, Buffer[sent]);
+            write_serial(COM3, ((uint8_t *)Buffer)[sent]);
             sent++;
         }
         return Size;
@@ -86,7 +86,7 @@ namespace FileSystem
         uint64_t received = 0;
         while (received < Size)
         {
-            Buffer[received] = read_serial(COM4);
+            ((uint8_t *)Buffer)[received] = read_serial(COM4);
             received++;
         }
         return received;
@@ -97,7 +97,7 @@ namespace FileSystem
         uint64_t sent = 0;
         while (sent < Size)
         {
-            write_serial(COM4, Buffer[sent]);
+            write_serial(COM4, ((uint8_t *)Buffer)[sent]);
             sent++;
         }
         return Size;

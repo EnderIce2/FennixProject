@@ -15,10 +15,7 @@ namespace FileSystem
         .Read = Zero_Read,
         .Write = Zero_Write};
 
-    Zero::Zero()
-    {
-        devfs->AddFileSystem(&zero, 0666, "zero", NodeFlags::FS_CHARDEVICE);
-    }
+    Zero::Zero() { devfs->AddFileSystem(&zero, 0666, "zero", NodeFlags::FS_CHARDEVICE); }
 
     Zero::~Zero() { warn("Destroyed"); }
 }

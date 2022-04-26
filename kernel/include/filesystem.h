@@ -10,8 +10,8 @@ namespace FileSystem
 
     typedef uint64_t (*OperationMount)(const char *, unsigned long, const void *);
     typedef uint64_t (*OperationUmount)(int);
-    typedef uint64_t (*OperationRead)(FileSystemNode *Node, uint64_t Offset, uint64_t Size, uint8_t *Buffer);
-    typedef uint64_t (*OperationWrite)(FileSystemNode *Node, uint64_t Offset, uint64_t Size, uint8_t *Buffer);
+    typedef uint64_t (*OperationRead)(FileSystemNode *Node, uint64_t Offset, uint64_t Size, void *Buffer);
+    typedef uint64_t (*OperationWrite)(FileSystemNode *Node, uint64_t Offset, uint64_t Size, void *Buffer);
     typedef void (*OperationOpen)(FileSystemNode *Node, uint8_t Mode, uint8_t Flags);
     typedef void (*OperationClose)(FileSystemNode *Node);
     typedef uint64_t (*OperationSync)(void);
@@ -21,8 +21,8 @@ namespace FileSystem
 #define MountFSFunction(name) uint64_t name(const char *unknown0, unsigned long unknown1, const void *unknown2)
 #define UMountFSFunction(name) uint64_t name(int unknown0)
 
-#define ReadFSFunction(name) uint64_t name(FileSystem::FileSystemNode *Node, uint64_t Offset, uint64_t Size, uint8_t *Buffer)
-#define WriteFSFunction(name) uint64_t name(FileSystem::FileSystemNode *Node, uint64_t Offset, uint64_t Size, uint8_t *Buffer)
+#define ReadFSFunction(name) uint64_t name(FileSystem::FileSystemNode *Node, uint64_t Offset, uint64_t Size, void *Buffer)
+#define WriteFSFunction(name) uint64_t name(FileSystem::FileSystemNode *Node, uint64_t Offset, uint64_t Size, void *Buffer)
 #define OpenFSFunction(name) void name(FileSystem::FileSystemNode *Node, uint8_t Mode, uint8_t Flags)
 #define CloseFSFunction(name) void name(FileSystem::FileSystemNode *Node)
 #define SyncFSFunction(name) uint64_t name(void)
@@ -121,11 +121,19 @@ namespace FileSystem
     class Virtual
     {
     public:
+        FILE *ConvertNodeToFILE(FileSystemNode *Node)
+        {
+            FILE *File = new FILE();
+            File->Name = Node->Name;
+            File->Status = FILESTATUS::OK;
+            File->Node = Node;
+            return File;
+        }
         FILE *Mount(FileSystemOpeations *Operator, string Path);
         FILESTATUS Unmount(FILE *File);
         FILE *Open(string Path, FileSystemNode *Parent = nullptr);
-        uint64_t Read(FILE *File, uint64_t Offset, uint8_t *Buffer, uint64_t Size);
-        uint64_t Write(FILE *File, uint64_t Offset, uint8_t *Buffer, uint64_t Size);
+        uint64_t Read(FILE *File, uint64_t Offset, void *Buffer, uint64_t Size);
+        uint64_t Write(FILE *File, uint64_t Offset, void *Buffer, uint64_t Size);
         FILESTATUS Close(FILE *File);
         FILESTATUS CreateRoot(FileSystemOpeations *Operator, string RootName);
         FileSystemNode *Create(FileSystemNode *Parent, string Path);

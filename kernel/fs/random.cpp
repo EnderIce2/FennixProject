@@ -8,7 +8,7 @@ namespace FileSystem
         uint64_t s = 0;
         while (s < Size)
         {
-            Buffer[s] = (*rand64()) % 0xFF;
+            ((uint8_t *)Buffer)[s] = (*rand64()) % 0xFF;
             Offset++;
             s++;
         }
@@ -22,10 +22,7 @@ namespace FileSystem
         .Read = &Random_Read,
         .Write = &Random_Write};
 
-    Random::Random()
-    {
-        devfs->AddFileSystem(&random, 0444, "random", NodeFlags::FS_CHARDEVICE);
-    }
+    Random::Random() { devfs->AddFileSystem(&random, 0444, "random", NodeFlags::FS_CHARDEVICE); }
 
     Random::~Random() { warn("Destroyed"); }
 }
