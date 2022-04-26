@@ -12,6 +12,7 @@
 
 #include "drivers/disk.h"
 #include "cpu/cpuid.h"
+#include "driver.hpp"
 #include "cpu/gdt.h"
 #include "cpu/idt.h"
 #include "cpu/sse.h"
@@ -108,36 +109,6 @@ void initflags()
         sysflags->noloadingscreen = false;
 }
 
-#ifdef DEBUG
-inline void FileListColorHelper(uint64_t type)
-{
-    switch (type)
-    {
-    case FileSystem::NodeFlags::FS_ERROR:
-        CurrentDisplay->SetPrintColor(0xFF0000);
-        break;
-    case FileSystem::NodeFlags::FS_FILE:
-        CurrentDisplay->SetPrintColor(0x01f395);
-        break;
-    case FileSystem::NodeFlags::FS_DIRECTORY:
-        CurrentDisplay->SetPrintColor(0x29a31b);
-        break;
-    case FileSystem::NodeFlags::FS_CHARDEVICE:
-        CurrentDisplay->SetPrintColor(0xa39a1b);
-        break;
-    case FileSystem::NodeFlags::FS_BLOCKDEVICE:
-        CurrentDisplay->SetPrintColor(0x6da31b);
-        break;
-    case FileSystem::NodeFlags::FS_MOUNTPOINT:
-        CurrentDisplay->SetPrintColor(0xa3731b);
-        break;
-    default:
-        CurrentDisplay->SetPrintColor(0xFFFFFF);
-        break;
-    }
-}
-#endif
-
 void KernelTask()
 {
 #ifdef DEBUG
@@ -158,65 +129,41 @@ void KernelTask()
     {
         printf("Running under physical hardware.\n");
     }
-    FileSystem::FILE *file = vfs->Open("/");
-    if (file->Status == FileSystem::FILESTATUS::OK)
-    {
-        foreach (auto var in file->Node->Children)
-        {
-            FileListColorHelper(var->Flags);
-            printf("\n/%s", var->Name);
-            foreach (auto var in var->Children)
-            {
-                FileListColorHelper(var->Flags);
-                printf("\n  %s", var->Name);
-                foreach (auto var in var->Children)
-                {
-                    FileListColorHelper(var->Flags);
-                    printf("\n   %s", var->Name);
-                    foreach (auto var in var->Children)
-                    {
-                        FileListColorHelper(var->Flags);
-                        printf("\n    %s", var->Name);
-                        foreach (auto var in var->Children)
-                        {
-                            FileListColorHelper(var->Flags);
-                            printf("\n     %s", var->Name);
-                            foreach (auto var in var->Children)
-                            {
-                                FileListColorHelper(var->Flags);
-                                printf("\n      %s", var->Name);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    else
-        printf("FileSystem error: %d\n", file->Status);
-    printf("\n");
-    FileListColorHelper(-1);
-    vfs->Close(file);
     printf("%s", cpu_get_info());
 #endif
 
+    kdrv = new Driver::KernelDriver;
     FileSystem::FILE *driverDirectory = vfs->Open("/system/drivers");
     if (driverDirectory->Status == FileSystem::FILESTATUS::OK)
     {
         foreach (auto driver in driverDirectory->Node->Children)
         {
-            if (cwk_path_has_extension(driver->Name))
-            {
-                const char *extension;
-                cwk_path_get_extension(driver->Name, &extension, nullptr);
-
-                if (!strcmp(extension, ".drv"))
+            if (driver->Flags == FileSystem::NodeFlags::FS_FILE)
+                if (cwk_path_has_extension(driver->Name))
                 {
-                    printf("Loading driver %s...\n", driver->Name);
-                    // TODO: get instruction pointer of the elf entry point.
-                    BS->IncreaseProgres();
+                    const char *extension;
+                    cwk_path_get_extension(driver->Name, &extension, nullptr);
+
+                    if (!strcmp(extension, ".drv"))
+                    {
+                        CurrentDisplay->SetPrintColor(0xFFCCCCCC);
+                        printf("Loading driver %s... ", driver->Name);
+                        uint64_t ret = kdrv->LoadKernelDriver(driver);
+                        if (ret == 0)
+                        {
+                            CurrentDisplay->SetPrintColor(0xFF058C19);
+                            printf("OK\n");
+                        }
+                        else
+                        {
+                            CurrentDisplay->SetPrintColor(0xFFE85230);
+                            printf("FAILED (%#llx)\n", ret);
+                        }
+                        CurrentDisplay->ResetPrintColor();
+                        // TODO: get instruction pointer of the elf entry point.
+                        BS->IncreaseProgres();
+                    }
                 }
-            }
         }
     }
     vfs->Close(driverDirectory);

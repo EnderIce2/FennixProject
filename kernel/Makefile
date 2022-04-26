@@ -21,8 +21,10 @@ C_SOURCES = $(shell find ./ -type f -name '*.c')
 CPP_SOURCES = $(shell find ./ -type f -name '*.cpp')
 MAKE_DEPS_SOURCES = $(shell find ./ -type f -name '*.d')
 HEADERS = $(sort $(dir $(wildcard ./include/*)))
+HEADERS2 = $(sort $(dir $(wildcard ../include/*)))
 OBJ = ${C_SOURCES:.c=.o} ${CPP_SOURCES:.cpp=.o} ${ASM_SOURCES:.asm=.o} ${S_SOURCES:.s=.o} ${SS_SOURCES:.S=.o} ${PSF_SOURCES:.psf=.o}
 INCLUDE_DIR = ./include
+INCLUDE_DIR2 = ../include
 KERNEL = kernel.fsys
 
 LDFLAGS := 									\
@@ -37,7 +39,7 @@ WARNCFLAG = -Wall -Wextra -w
 
 # Change march with minimum supported cpu // https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html
 CFLAGS :=																\
-	-I${INCLUDE_DIR}													\
+	-I${INCLUDE_DIR} -I${INCLUDE_DIR2}									\
 	-DKERNEL_NAME='"$(OSNAME)"' -DKERNEL_VERSION='"$(KERNEL_VERSION)"'	\
 	-fstack-protector-all												\
 	-fno-pic -fno-pie -mno-80387										\
@@ -60,11 +62,11 @@ build: $(KERNEL)
 $(KERNEL): $(OBJ)
 	$(CC) $(LDFLAGS) $(OBJ) -o $@
 
-%.o: %.c ${HEADERS}
+%.o: %.c ${HEADERS} ${HEADERS2}
 	$(CC) $(CFLAGS) $(WARNCFLAG) $(CFLAGS) -std=c17 -c $< -o $@
 
 # https://gcc.gnu.org/projects/cxx-status.html
-%.o: %.cpp ${HEADERS}
+%.o: %.cpp ${HEADERS} ${HEADERS2}
 	$(CPP) $(CFLAGS) $(WARNCFLAG) $(CFLAGS) -std=c++20 -fexceptions -c $< -o $@ -fno-rtti
 
 %.o: %.asm

@@ -108,12 +108,6 @@ __attribute__((used)) void exception_handler(REGISTERS *regs)
         }
         CPU_STOP;
         return;
-    case ISR14:
-        if (thread_page_fault_handler(regs) != 0)
-        {
-            goto exception_handler;
-        }
-        return;
     default:
         if (INT_NUM <= ISR31)
         {
@@ -466,14 +460,14 @@ INTERRUPT_HANDLER(0xfa)
 INTERRUPT_HANDLER(0xfb)
 INTERRUPT_HANDLER(0xfc)
 INTERRUPT_HANDLER(0xfd)
-INTERRUPT_HANDLER(0xfe) // i could reserve 0xfe for syscalls if the kernel is in protected mode but... for now i will support only long mode
+INTERRUPT_HANDLER(0xfe)
 INTERRUPT_HANDLER(0xff)
 
 void init_idt()
 {
     trace("Initializing IDT");
     set_idt_entry(0x0, interrupt_handler_0x00, 1, 0);
-    set_idt_entry(0x1, interrupt_handler_0x01, 1, 0);
+    set_idt_entry(0x1, interrupt_handler_0x01, 1, 3); // debugging interrupt
     set_idt_entry(0x2, interrupt_handler_0x02, 2, 0);
     set_idt_entry(0x3, interrupt_handler_0x03, 1, 0);
     set_idt_entry(0x4, interrupt_handler_0x04, 1, 0);
@@ -728,7 +722,7 @@ void init_idt()
     set_idt_entry(0xfb, interrupt_handler_0xfb, 0, 0);
     set_idt_entry(0xfc, interrupt_handler_0xfc, 0, 0);
     set_idt_entry(0xfd, interrupt_handler_0xfd, 0, 0);
-    set_idt_entry(0xfe, interrupt_handler_0xfe, 0, 0);
+    set_idt_entry(0xfe, interrupt_handler_0xfe, 0, 3); // backup for syscall, used in protected mode
     set_idt_entry(0xff, interrupt_handler_0xff, 0, 0);
     lidt(idtr);
     PIC_remap(0x20, 0x28);

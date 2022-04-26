@@ -71,7 +71,7 @@ fonts:
 tools: fonts
 	make --quiet -C tools all
 
-build: build_kernel build_userspace build_image
+build: build_kernel build_libc build_userspace build_image
 
 rebuild: clean build
 
@@ -81,6 +81,9 @@ build_kernel:
 
 build_userspace:
 	make --quiet -C userspace build
+
+build_libc:
+	make --quiet -C libc build
 
 build_image:
 	mkdir -p limine-bootloader
@@ -105,7 +108,7 @@ qemu: qemu_vdisk
 	${QEMU} -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
 
 # build the os and run it
-run: build_kernel build_userspace qemu_vdisk build_image qemu
+run: build qemu_vdisk qemu
 
 # clean
 clean:
@@ -113,3 +116,4 @@ clean:
 	make --quiet -C tools clean
 	make --quiet -C kernel clean
 	make --quiet -C userspace clean
+	make --quiet -C libc clean

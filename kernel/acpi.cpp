@@ -235,7 +235,7 @@ void madt_init()
             IOAPIC[apicsnum.ioapic] = (struct MADTIOApic *)ptr;
             trace("%02d-IOAPIC\tfound APICID:%#llx at ADDR:%#llx",
                   apicsnum.ioapic, IOAPIC[apicsnum.ioapic]->APICID, IOAPIC[apicsnum.ioapic]->addr);
-            KernelPageTableManager.MapMemory((void *)(uintptr_t)IOAPIC[apicsnum.ioapic]->addr, (void *)(uintptr_t)IOAPIC[apicsnum.ioapic]->addr, PTFlag::RW | PTFlag::PCD); // Make sure that the address is mapped.
+            KernelPageTableManager.MapMemory((void *)(uintptr_t)IOAPIC[apicsnum.ioapic]->addr, (void *)(uintptr_t)IOAPIC[apicsnum.ioapic]->addr, PTFlag::RW); // Make sure that the address is mapped.
             apicsnum.ioapic++;
             break;
         case 2:
@@ -258,7 +258,7 @@ void madt_init()
             break;
         }
     }
-    KernelPageTableManager.MapMemory((void *)LAPICAddr, (void *)LAPICAddr, PTFlag::RW | PTFlag::PCD); // Make sure that the address is mapped.
+    KernelPageTableManager.MapMemory((void *)LAPICAddr, (void *)LAPICAddr, PTFlag::RW); // Make sure that the address is mapped.
 }
 
 void init_acpi()
