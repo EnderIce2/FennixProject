@@ -10,6 +10,7 @@ tools/qemu
 initrd.tar.gz
 kernel/files/*
 *.log
+*.drv
 *.o
 *.elf
 *.bin
