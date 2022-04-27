@@ -147,13 +147,13 @@ EXTERNC void isrcrash(REGISTERS *regs)
             sprintf_(desc_idx, "%s Index: %#x", desc_tmp, SelCode.Idx);
 
             CurrentDisplay->SetPrintColor(0xFFdd2920);
-            SET_PRINT_MID((char *)"System crashed!", FHeight(12));
+            SET_PRINT_MID((char *)"System crashed!", FHeight(6));
             CurrentDisplay->ResetPrintColor();
-            SET_PRINT_MID((char *)descbuf, FHeight(11));
-            SET_PRINT_MID((char *)"More info about the exception:", FHeight(10));
-            SET_PRINT_MID((char *)desc_ext, FHeight(9));
-            SET_PRINT_MID((char *)desc_table, FHeight(8));
-            SET_PRINT_MID((char *)desc_idx, FHeight(7));
+            SET_PRINT_MID((char *)descbuf, FHeight(5));
+            SET_PRINT_MID((char *)"More info about the exception:", FHeight(4));
+            SET_PRINT_MID((char *)desc_ext, FHeight(3));
+            SET_PRINT_MID((char *)desc_table, FHeight(2));
+            SET_PRINT_MID((char *)desc_idx, FHeight(1));
         }
         break;
     }
