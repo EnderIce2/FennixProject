@@ -122,6 +122,14 @@ make clean
 - [ ] FAT16 FileSystem
 - [ ] FAT32 FileSystem
 - [x] Tasking
-- [x] Loading ELF Files
-- [ ] Loading PE Files
-- [ ] Loading MZ Files
+- [x] Executing ELF Files
+- [ ] Executing PE Files
+- [ ] Executing NE Files
+- [ ] Executing MZ Files
+
+---
+
+## Todo
+- [ ] Figure out how to make the interrupts push es, fs & gs into REGISTERS structure
+- [ ] Change the multitasking implementation with a better one
+- [ ] Fix the multitasking page table switching
