@@ -50,9 +50,32 @@ namespace VMM
         uint64_t P_i;
     };
 
+    typedef union
+    {
+        struct
+        {
+            uint64_t Present : 1;
+            uint64_t ReadWrite : 1;
+            uint64_t UserSupervisor : 1;
+            uint64_t WriteThrough : 1;
+            uint64_t CacheDisable : 1;
+            uint64_t Accessed : 1;
+            uint64_t Dirty : 1;
+            uint64_t PageSize : 1;
+            uint64_t Global : 1;
+            uint64_t Available1 : 3;
+            uint64_t PageAttributeTable : 1;
+            uint64_t Reserved : 39;
+            uint64_t Available2 : 7;
+            uint64_t ProtectionKey : 4;
+            uint64_t ExecuteDisable : 1;
+        };
+        uint64_t raw;
+    } PDEData;
+
     struct PageDirectoryEntry
     {
-        uint64_t Value;
+        PDEData Value;
         void AddFlag(uint64_t Flag);
         void RemoveFlags(uint64_t Flag);
         void ClearFlags();
