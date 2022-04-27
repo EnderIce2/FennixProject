@@ -19,14 +19,14 @@ namespace PageTableHeap
         memset(ReturnHeap, 0, PAGE_SIZE);
         for (uint64_t i = 0; i < 512; i++)
             ReturnHeap->Entries[i] = KernelPML4->Entries[i];
-        trace("New page table allocated at %p", ReturnHeap);
+        // trace("New page table allocated at %p", ReturnHeap);
         return ReturnHeap;
     }
 
     void PageTableHeap::FreePageTable(PageTable *PageTable)
     {
         KernelAllocator.FreePage((void *)PageTable);
-        trace("Page table freed at %p", PageTable);
+        // trace("Page table freed at %p", PageTable);
     }
 
     PageTableHeap::PageTableHeap() { trace("Initialized."); }

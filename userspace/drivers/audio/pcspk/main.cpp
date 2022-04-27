@@ -1,7 +1,6 @@
 
 
-int main(int argc, char **argv)
+int _start()
 {
-    asm volatile("int $0x1");
     return 0;
 }

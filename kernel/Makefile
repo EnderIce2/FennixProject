@@ -32,7 +32,7 @@ LDFLAGS := 									\
 	-Wl,-static,--no-dynamic-linker,-ztext 	\
 	-nostdlib -nodefaultlibs -nolibc  		\
 	-zmax-page-size=0x1000					\
-	-Wl,-Map kernel.map -Tlinker.ld
+	-Wl,-Map kernel.map -Tlinker.ld -shared
 
 # Disable all warnings by adding "-w" in WARNCFLAG and if you want to treat the warnings as errors, add "-Werror"
 WARNCFLAG = -Wall -Wextra -w

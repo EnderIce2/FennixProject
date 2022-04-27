@@ -135,7 +135,7 @@ namespace FileSystem
         uint64_t Read(FILE *File, uint64_t Offset, void *Buffer, uint64_t Size);
         uint64_t Write(FILE *File, uint64_t Offset, void *Buffer, uint64_t Size);
         FILESTATUS Close(FILE *File);
-        FILESTATUS CreateRoot(FileSystemOpeations *Operator, string RootName);
+        FileSystemNode *CreateRoot(FileSystemOpeations *Operator, string RootName);
         FileSystemNode *Create(FileSystemNode *Parent, string Path);
 
         Virtual();

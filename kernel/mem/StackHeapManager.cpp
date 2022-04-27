@@ -24,7 +24,7 @@ namespace StackHeap
         void *Address = KernelAllocator.RequestPage();
         if (User)
             KernelPageTableManager.MapMemory((void *)(Address), (void *)(Address), PTFlag::RW | PTFlag::US);
-            trace("New stack allocated at %p", Address);
+        // trace("New stack allocated at %p", Address);
         return Address;
         // }
         // uint64_t ReturnHeap = HeapBase;
@@ -37,7 +37,6 @@ namespace StackHeap
 
     void StackHeap::FreeStack(void *Address)
     {
-        fixme("Not implemented");
         KernelAllocator.FreePage(Address);
     }
 

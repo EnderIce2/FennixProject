@@ -254,18 +254,17 @@ namespace FileSystem
         return nullptr;
     }
 
-    FILESTATUS Virtual::CreateRoot(FileSystemOpeations *Operator, string RootName)
+    FileSystemNode *Virtual::CreateRoot(FileSystemOpeations *Operator, string RootName)
     {
         if (Operator == nullptr)
-            return FILESTATUS::INVALID_PARAMETER;
+            return nullptr;
         vfsdbg("Setting root to %s", RootName);
         FileSystemNode *newNode = new FileSystemNode;
         strcpy(newNode->Name, RootName);
         newNode->Flags = NodeFlags::FS_DIRECTORY;
         newNode->Operator = Operator;
-        // good idea to support multiple file roots?
         FileSystemRoot->Children.push_back(newNode);
-        return FILESTATUS::OK;
+        return newNode;
     }
 
     FILE *Virtual::Mount(FileSystemOpeations *Operator, string Path)

@@ -121,10 +121,10 @@ namespace MultiTasking
 #ifdef DEBUG_SCHEDULER
             debug("parent:%s tid:%d, code:%016p", CurrentProcess->Name, CurrentThread->ThreadID, code);
 #endif
-            CurrentThread->State = STATE_TERMINATED;
             CurrentThread->ExitCode = code;
             trace("Exiting thread %d...", CurrentThread->ThreadID);
             UNLOCK(exit_lock);
+            CurrentThread->State = STATE_TERMINATED; // it may get stuck in lock if multiple threads are exiting at the same time.
             CPU_STOP;
         }
     }
