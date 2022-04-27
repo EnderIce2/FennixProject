@@ -28,6 +28,8 @@ static const char *pagefault_message[] = {
 
 #define FHeight(x) ((CurrentDisplay->GetFramebuffer()->Height / 2) - (CurrentDisplay->CurrentFont->GetFontSize().Height * x))
 
+#define staticbuffer(name) char name[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+
 EXTERNC void crash(string message)
 {
     // TODO: Add more useful information.
@@ -45,7 +47,6 @@ EXTERNC void crash(string message)
 EXTERNC void isrcrash(REGISTERS *regs)
 {
     CLI;
-    bool isrcrashcritical = true;
     CR0 cr0 = readcr0();
     CR2 cr2 = readcr2();
     CR3 cr3 = readcr3();
@@ -58,13 +59,17 @@ EXTERNC void isrcrash(REGISTERS *regs)
     case ISR_DivideByZero:
         if (CS == 0x23)
         {
+            err("Division by zero in an user-mode process.");
+            // TODO: signal the application to stop.
+            SysGetCurrentThread()->State = STATE_TERMINATED;
+            return;
         }
         else
         {
         }
         break;
     case ISR_Debug:
-        SET_PRINT_MID((char *)"Manual Triggered Crash (Debug)", FHeight(2));
+        SET_PRINT_MID((char *)"Manual Triggered Crash Test (Debug)", FHeight(2));
         if (CS == 0x23)
             return;
         break;
@@ -110,7 +115,45 @@ EXTERNC void isrcrash(REGISTERS *regs)
         }
         else
         {
+            CurrentDisplay->Clear(0xFF1e0500);
+            staticbuffer(descbuf);
+            staticbuffer(desc_ext);
+            staticbuffer(desc_table);
+            staticbuffer(desc_idx);
+            staticbuffer(desc_tmp);
             SelectorErrorCode SelCode = {.raw = ERROR_CODE};
+            switch (SelCode.Table)
+            {
+            case 0b00:
+                memcpy(desc_tmp, "GDT", 3);
+                break;
+            case 0b01:
+                memcpy(desc_tmp, "IDT", 3);
+                break;
+            case 0b10:
+                memcpy(desc_tmp, "LDT", 3);
+                break;
+            case 0b11:
+                memcpy(desc_tmp, "IDT", 3);
+                break;
+            default:
+                memcpy(desc_tmp, "Unknown", 7);
+                break;
+            }
+            debug("external:%d table:%d idx:%#x", SelCode.External, SelCode.Table, SelCode.Idx);
+            sprintf_(descbuf, "Kernel performed an illegal operation at address %#lx", RIP);
+            sprintf_(desc_ext, "External: %d", SelCode.External);
+            sprintf_(desc_table, "Table: %d (%s)", SelCode.Table, desc_tmp);
+            sprintf_(desc_idx, "%s Index: %#x", desc_tmp, SelCode.Idx);
+
+            CurrentDisplay->SetPrintColor(0xFFdd2920);
+            SET_PRINT_MID((char *)"System crashed!", FHeight(12));
+            CurrentDisplay->ResetPrintColor();
+            SET_PRINT_MID((char *)descbuf, FHeight(11));
+            SET_PRINT_MID((char *)"More info about the exception:", FHeight(10));
+            SET_PRINT_MID((char *)desc_ext, FHeight(9));
+            SET_PRINT_MID((char *)desc_table, FHeight(8));
+            SET_PRINT_MID((char *)desc_idx, FHeight(7));
         }
         break;
     }
@@ -140,20 +183,19 @@ EXTERNC void isrcrash(REGISTERS *regs)
             PageFaultErrorCode params = {.raw = (uint32_t)ERROR_CODE};
 
             // We can't use an allocator in exceptions (because that can cause another exception!) so, we'll just use a static buffer.
-            char ret_err[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-            char page_present[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-            char page_write[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-            char page_user[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-            char page_reserved[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-            char page_fetch[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-            char page_protection[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-            char page_shadow[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
-            char page_sgx[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            staticbuffer(ret_err);
+            staticbuffer(page_present);
+            staticbuffer(page_write);
+            staticbuffer(page_user);
+            staticbuffer(page_reserved);
+            staticbuffer(page_fetch);
+            staticbuffer(page_protection);
+            staticbuffer(page_shadow);
+            staticbuffer(page_sgx);
 
             CurrentDisplay->SetPrintColor(0xFFdd2920);
             SET_PRINT_MID((char *)"System crashed!", FHeight(12));
             CurrentDisplay->ResetPrintColor();
-
             sprintf_(ret_err, "An exception occurred at %#lx by %#lx", cr2.PFLA, RIP);
             SET_PRINT_MID((char *)ret_err, FHeight(11));
             sprintf_(page_present, "Page: %s", params.P ? "Present" : "Not Present");
@@ -182,7 +224,6 @@ EXTERNC void isrcrash(REGISTERS *regs)
                 SET_PRINT_MID((char *)pagefault_message[ERROR_CODE & 0b111], FHeight(2));
             }
         }
-        // TODO: check if the exception is critical and if so, halt the system. Otherwise, continue by setting isrcrashcritical to false.
         break;
     }
     case ISR_x87FloatingPoint:
@@ -201,7 +242,6 @@ EXTERNC void isrcrash(REGISTERS *regs)
         CurrentDisplay->Clear(0xFF221160);
         break;
     }
-
     CurrentDisplay->ResetPrintPosition();
     CurrentDisplay->SetPrintColor(0xFF7981fc);
     printf("Technical Informations:\n");
