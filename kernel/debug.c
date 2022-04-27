@@ -11,16 +11,46 @@ void dbg_showregs(void *r, const char *file, int line, const char *function)
 {
     REGISTERS *regs = r;
     CR0 cr0 = readcr0();
-    // CR2 cr2 = readcr2();
-    // CR3 cr3 = readcr3();
+    CR2 cr2 = readcr2();
+    CR3 cr3 = readcr3();
     CR4 cr4 = readcr4();
-    // CR4 cr8 = readcr8();
+    CR8 cr8 = readcr8();
     RFLAGS rflags = FLAGS;
-    debug("\n============================= REGS =============================\nBASIC REGISTERS:\n  FS =%#llx  GS =%#llx  SS =%#llx  CS =%#llx\n  CR0=%#llx  CR2=%#llx  CR3=%#llx  CR4=%#llx\n  R8 =%#llx  R9 =%#llx  R10=%#llx  R11=%#llx\n  R12=%#llx  R13=%#llx  R14=%#llx  R15=%#llx\n  RAX=%#llx  RBX=%#llx  RCX=%#llx  RDX=%#llx\n  RSI=%#llx  RDI=%#llx  RBP=%#llx  RSP=%#llx\n  RIP=%#llx  RFL=%#llx\n  DS =%#llx  INT=%#llx  ERR=%#llx\nRFLAGS:\n  CF =%01p  PF =%01p  AF =%01p  ZF =%01p\n  SF =%01p  TF =%01p  IF =%01p  DF =%01p\n  OF =%01p  NT =%01p  RF =%01p  VM =%01p\n  AC =%01p  ID =%01p  VIF=%01p  VIP=%01p\n  R1 =%01p  R2 =%01p  R3 =%01p  R4 =%010p\n  ALWAYS_ONE=%01p  IOPL=%02p\nCR0 REGISTERS:\n  PE=%01p   MP=%01p   EM=%01p   TS=%01p\n  ET=%01p   NE=%01p   R0=%010p   WP=%01p\n  R1=%01p   AM=%01p   R2=%010p   NW=%01p\n  CD=%01p   PG=%01p\nCR4 REGISTERS:\n  VME=%01p  PVI=%01p  TSD=%01p  DE =%01p\n  PSE=%01p  PAE=%01p  MCE=%01p  PGE=%01p\n  PCE=%01p  PKE=%01p  R3 =%01p  R4 =%01p  R5 =%09p\n  SMEP=%01p  SMAP=%01p  UMIP=%01p  LA57=%01p  \n  OSXSAVE=%01p  OSFXSR=%01p  OSXMMEXCPT=%01p  FSGSBASE=%01p\n  VMXE=%01p  SMXE=%01p  PCIDE=%01p\n================================================================",
-          rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS, cr0.raw, readcr2(), readcr3(), cr4.raw, R8, R9, R10, R11, R12, R13, R14, R15, RAX, RBX, RCX, RDX, RSI, RDI, RBP, RSP, RIP, FLAGS.raw, DS, INT_NUM, ERROR_CODE,
-          rflags.CF, rflags.PF, rflags.AF, rflags.ZF, rflags.SF, rflags.TF, rflags.IF, rflags.DF, rflags.OF, rflags.NT, rflags.RF, rflags.VM, rflags.AC, rflags.ID, rflags.VIF, rflags.VIP, rflags._reserved0, rflags._reserved1, rflags._reserved2, rflags._reserved3, rflags.always_one, rflags.IOPL,
-          cr0.PE, cr0.MP, cr0.EM, cr0.TS, cr0.ET, cr0.NE, cr0._reserved0, cr0.WP, cr0._reserved1, cr0.AM, cr0._reserved2, cr0.NW, cr0.CD, cr0.PG,
-          cr4.VME, cr4.PVI, cr4.TSD, cr4.DE, cr4.PSE, cr4.PAE, cr4.MCE, cr4.PGE, cr4.PCE, cr4.PKE, cr4._reserved0, cr4._reserved1, cr4._reserved2, cr4.SMEP, cr4.SMAP, cr4.UMIP, cr4.LA57, cr4.OSXSAVE, cr4.OSFXSR, cr4.OSXMMEXCPT, cr4.FSGSBASE, cr4.VMXE, cr4.SMXE, cr4.PCIDE);
+    err("\tFS =%#lx  GS =%#lx  SS =%#lx  CS =%#lx", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
+    err("\tR8 =%#lx  R9 =%#lx  R10=%#lx  R11=%#lx", R8, R9, R10, R11);
+    err("\tR12=%#lx  R13=%#lx  R14=%#lx  R15=%#lx", R12, R13, R14, R15);
+    err("\tRAX=%#lx  RBX=%#lx  RCX=%#lx  RDX=%#lx", RAX, RBX, RCX, RDX);
+    err("\tRSI=%#lx  RDI=%#lx  RBP=%#lx  RSP=%#lx", RSI, RDI, RBP, RSP);
+    err("\tRIP=%#lx  RFL=%#lx  DS =%#lx  INT=%#lx  ERR=%#lx", RIP, FLAGS.raw, DS, INT_NUM, ERROR_CODE);
+    err("\tCR0=%#lx  CR2=%#lx  CR3=%#lx  CR4=%#lx  CR8=%#lx", cr0.raw, cr2.raw, cr3.raw, cr4.raw, cr8.raw);
+
+    err("\nCR0: PE:%s     MP:%s     EM:%s     TS:%s\n     ET:%s     NE:%s     WP:%s     AM:%s\n     NW:%s     CD:%s     PG:%s\n     R0:%#x R1:%#x R2:%#x",
+        cr0.PE ? "True " : "False", cr0.MP ? "True " : "False", cr0.EM ? "True " : "False", cr0.TS ? "True " : "False",
+        cr0.ET ? "True " : "False", cr0.NE ? "True " : "False", cr0.WP ? "True " : "False", cr0.AM ? "True " : "False",
+        cr0.NW ? "True " : "False", cr0.CD ? "True " : "False", cr0.PG ? "True " : "False",
+        cr0._reserved0, cr0._reserved1, cr0._reserved2);
+
+    err("\nCR2: PFLA: %#lx", cr2.PFLA);
+
+    err("\nCR3: PWT:%s     PCD:%s    PDBR:%#lx", cr3.PWT ? "True " : "False", cr3.PCD ? "True " : "False", cr3.PDBR);
+
+    err("\nCR4: VME:%s     PVI:%s     TSD:%s      DE:%s\n     PSE:%s     PAE:%s     MCE:%s     PGE:%s\n     PCE:%s    UMIP:%s  OSFXSR:%s OSXMMEXCPT:%s\n    LA57:%s    VMXE:%s    SMXE:%s   PCIDE:%s\n OSXSAVE:%s    SMEP:%s    SMAP:%s     PKE:%s\n     R0:%d R1:%d R2:%d",
+        cr4.VME ? "True " : "False", cr4.PVI ? "True " : "False", cr4.TSD ? "True " : "False", cr4.DE ? "True " : "False",
+        cr4.PSE ? "True " : "False", cr4.PAE ? "True " : "False", cr4.MCE ? "True " : "False", cr4.PGE ? "True " : "False",
+        cr4.PCE ? "True " : "False", cr4.UMIP ? "True " : "False", cr4.OSFXSR ? "True " : "False", cr4.OSXMMEXCPT ? "True " : "False",
+        cr4.LA57 ? "True " : "False", cr4.VMXE ? "True " : "False", cr4.SMXE ? "True " : "False", cr4.PCIDE ? "True " : "False",
+        cr4.OSXSAVE ? "True " : "False", cr4.SMEP ? "True " : "False", cr4.SMAP ? "True " : "False", cr4.PKE ? "True " : "False",
+        cr4._reserved0, cr4._reserved1, cr4._reserved2);
+
+    err("\nCR8: TPL:%d", cr8.TPL);
+
+    err("\nRFL: CF:%s     PF:%s     AF:%s     ZF:%s\n     SF:%s     TF:%s     IF:%s     DF:%s\n     OF:%s   IOPL:%s     NT:%s     RF:%s\n     VM:%s     AC:%s    VIF:%s    VIP:%s\n     ID:%s     AlwaysOne:%d\n     R0:%#x R1:%#x R2:%#x R3:%#x",
+        FLAGS.CF ? "True " : "False", FLAGS.PF ? "True " : "False", FLAGS.AF ? "True " : "False", FLAGS.ZF ? "True " : "False",
+        FLAGS.SF ? "True " : "False", FLAGS.TF ? "True " : "False", FLAGS.IF ? "True " : "False", FLAGS.DF ? "True " : "False",
+        FLAGS.OF ? "True " : "False", FLAGS.IOPL ? "True " : "False", FLAGS.NT ? "True " : "False", FLAGS.RF ? "True " : "False",
+        FLAGS.VM ? "True " : "False", FLAGS.AC ? "True " : "False", FLAGS.VIF ? "True " : "False", FLAGS.VIP ? "True " : "False",
+        FLAGS.ID ? "True " : "False", FLAGS.always_one,
+        FLAGS._reserved0, FLAGS._reserved1, FLAGS._reserved2, FLAGS._reserved3);
 }
 
 static inline void serialwrite_wrapper(char c, void *unused)
