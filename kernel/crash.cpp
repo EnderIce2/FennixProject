@@ -192,6 +192,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
             staticbuffer(page_protection);
             staticbuffer(page_shadow);
             staticbuffer(page_sgx);
+            staticbuffer(page_ksection);
 
             CurrentDisplay->SetPrintColor(0xFFdd2920);
             SET_PRINT_MID((char *)"System crashed!", FHeight(12));
@@ -214,7 +215,6 @@ EXTERNC void isrcrash(REGISTERS *regs)
             SET_PRINT_MID((char *)page_shadow, FHeight(4));
             sprintf_(page_sgx, "Caused By An SGX Violation: %s", params.SGX ? "Yes" : "No");
             SET_PRINT_MID((char *)page_sgx, FHeight(3));
-
             if (ERROR_CODE & 0x00000008)
             {
                 SET_PRINT_MID((char *)"One or more page directory entries contain reserved bits which are set to 1.", FHeight(2));
@@ -223,6 +223,8 @@ EXTERNC void isrcrash(REGISTERS *regs)
             {
                 SET_PRINT_MID((char *)pagefault_message[ERROR_CODE & 0b111], FHeight(2));
             }
+            sprintf_(page_ksection, "%lx<->%lx<->%lx<->%lx", _kernel_start, _kernel_text_end, _kernel_rodata_end, _kernel_end);
+            SET_PRINT_MID((char *)page_ksection, FHeight(1));
         }
         break;
     }

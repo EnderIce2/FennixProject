@@ -104,7 +104,7 @@ namespace MonoTasking
             {
                 debug("Task %s will be removed from queue.", task->name);
                 KernelStackAllocator->FreeStack((void *)TaskQueue[i]->stack);
-                KernelPageTableAllocator->FreePageTable((VMM::PageTable *)TaskQueue[i]->pml4);
+                KernelPageTableAllocator->RemovePageTable((VMM::PageTable *)TaskQueue[i]->pml4);
                 delete TaskQueue[i];
                 memset(TaskQueue[i], 0, sizeof(TaskControlBlock));
                 TaskQueue[i] = FindLastTask();
@@ -176,7 +176,7 @@ namespace MonoTasking
         task->UserMode = UserMode;
         task->state = TaskState::TaskStateWaiting;
         task->stack = KernelStackAllocator->AllocateStack();
-        task->pml4 = KernelPageTableAllocator->NewPageTable();
+        task->pml4 = KernelPageTableAllocator->CreatePageTable();
         debug("PML4 %016p for %s has been created.", task->pml4, task->name);
 
         if (UserMode)

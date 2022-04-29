@@ -11,17 +11,6 @@ void PageTableManager::MapMemory(void *VirtualAddress, void *PhysicalAddress, ui
 {
     PageMapIndexer indexer = PageMapIndexer((uint64_t)VirtualAddress);
     PageDirectoryEntry PDE;
-#ifdef DEBUG
-    static int once = 0;
-    if (!once++)
-        debug("VM: %016p, PM: %016p (PDP:%#llx|PD:%#llx|PT:%#llx|P:%#llx)", VirtualAddress, PhysicalAddress, indexer.PDP_i, indexer.PD_i, indexer.PT_i, indexer.P_i);
-    if (once >= 100000)
-    {
-        once = 0;
-    }
-    else
-        once++;
-#endif
     PDE = this->PML4->Entries[indexer.PDP_i];
     PageTable *PDP;
     if (!PDE.GetFlag(PTFlag::P))
@@ -89,13 +78,13 @@ void MapMemory(void *PML4, void *VirtualMemory, void *PhysicalMemory, uint64_t F
 {
     if (PML4 != NULL)
     {
-        PageTable *curpml = KernelPageTableManager.PML4;
+        PageTable *KernelNewPML = KernelPageTableManager.PML4;
         KernelPageTableManager.PML4 = (PageTable *)PML4;
         if (Flags == 0)
             KernelPageTableManager.MapMemory(VirtualMemory, PhysicalMemory, PTFlag::RW);
         else
             KernelPageTableManager.MapMemory(VirtualMemory, PhysicalMemory, Flags);
-        KernelPageTableManager.PML4 = curpml;
+        KernelPageTableManager.PML4 = KernelNewPML;
     }
     else
     {

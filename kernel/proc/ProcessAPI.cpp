@@ -72,7 +72,7 @@ ProcessControlBlock *APICALL SysCreateProcess(const char *Name, void *PageTable)
         if (PageTable != nullptr)
             proc->PageTable = (VMM::PageTable *)PageTable;
         else
-            proc->PageTable = KernelPageTableAllocator->NewPageTable();
+            proc->PageTable = KernelPageTableAllocator->CreatePageTable();
         return proc;
     }
     case TaskingMode::Multi:

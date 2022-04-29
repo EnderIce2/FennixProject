@@ -107,8 +107,8 @@ namespace PageTableHeap
     class PageTableHeap
     {
     public:
-        VMM::PageTable *NewPageTable();
-        void FreePageTable(VMM::PageTable *PageTable);
+        VMM::PageTable *CreatePageTable();
+        void RemovePageTable(VMM::PageTable *PageTable);
         PageTableHeap();
         ~PageTableHeap();
     };

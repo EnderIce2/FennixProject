@@ -13,17 +13,26 @@ PageTableHeap::PageTableHeap *KernelPageTableAllocator = nullptr;
 
 namespace PageTableHeap
 {
-    PageTable *PageTableHeap::NewPageTable()
+    PageTable *PageTableHeap::CreatePageTable()
     {
-        PageTable *ReturnHeap = (PageTable *)KernelAllocator.RequestPage();
-        memset(ReturnHeap, 0, PAGE_SIZE);
-        for (uint64_t i = 0; i < 512; i++)
-            ReturnHeap->Entries[i] = KernelPML4->Entries[i];
-        // trace("New page table allocated at %p", ReturnHeap);
-        return ReturnHeap;
+        // Not tested yet. Page switching for some reason doesn't trigger any kernel exception when happens (sometimes?). That's strange...
+        PageTable *NewPML = (PageTable *)KernelAllocator.RequestPage();
+        PageTableManager NewPMLMgr = PageTableManager(NewPML);
+        memset(NewPML, 0, PAGE_SIZE);
+        for (uint64_t i = 256; i < 512; i++)
+            NewPML->Entries[i] = KernelPML4->Entries[i];
+
+        uint64_t VirtualOffsetNormalVMA = NORMAL_VMA_OFFSET;
+        for (uint64_t t = 0; t < bootparams->mem.Size; t += PAGE_SIZE)
+        {
+            NewPMLMgr.MapMemory((void *)t, (void *)t, PTFlag::RW | PTFlag::US);
+            NewPMLMgr.MapMemory((void *)VirtualOffsetNormalVMA, (void *)t, PTFlag::RW | PTFlag::US);
+            VirtualOffsetNormalVMA += PAGE_SIZE;
+        }
+        return NewPML;
     }
 
-    void PageTableHeap::FreePageTable(PageTable *PageTable)
+    void PageTableHeap::RemovePageTable(PageTable *PageTable)
     {
         KernelAllocator.FreePage((void *)PageTable);
         // trace("Page table freed at %p", PageTable);

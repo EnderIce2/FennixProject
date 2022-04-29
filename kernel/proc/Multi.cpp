@@ -96,7 +96,7 @@ namespace MultiTasking
                 }
             }
             debug("Process %d terminated", process->ProcessID);
-            KernelPageTableAllocator->FreePageTable(process->PageTable);
+            KernelPageTableAllocator->RemovePageTable(process->PageTable);
             kfree(process);
             process = nullptr;
         }
@@ -144,7 +144,7 @@ namespace MultiTasking
         memcpy(process->Name, name, sizeof(process->Name));
         if (parent)
             process->Parent = parent;
-        process->PageTable = KernelPageTableAllocator->NewPageTable();
+        process->PageTable = KernelPageTableAllocator->CreatePageTable();
 #ifdef DEBUG_SCHEDULER
         debug("%s address space: %#llx", name, process->PageTable);
 #endif
@@ -477,7 +477,7 @@ namespace MultiTasking
             CurrentProcess = IdleProcess;
             CurrentThread = IdleThread;
             *regs = IdleThread->Registers;
-            // SetPageTable(IdleProcess->PageTable);
+            SetPageTable(IdleProcess->PageTable);
             Yield(timeslice);
             goto scheduler_end;
         scheduler_success:
@@ -488,10 +488,7 @@ namespace MultiTasking
             UpdateProcessTimeUsed(CurrentProcess->Time);
             UpdateProcessTimeUsed(CurrentThread->Time);
             *regs = CurrentThread->Registers;
-            // TODO: Fix switching page tables
-            /* Issue: somehow the page table is missing the kernel mapping at some point. not sure if it's about the
-                      allocated page or switching */
-            // SetPageTable(CurrentProcess->PageTable);
+            SetPageTable(CurrentProcess->PageTable);
             wrmsr(MSR_FS_BASE, CurrentThread->Segment.fs);
             wrmsr(MSR_GS_BASE, (uint64_t)CurrentThread);
             wrmsr(MSR_SHADOW_GS_BASE, CurrentThread->UserMode ? CurrentThread->Segment.gs : (uint64_t)CurrentThread);
