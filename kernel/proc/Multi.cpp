@@ -477,7 +477,7 @@ namespace MultiTasking
             CurrentProcess = IdleProcess;
             CurrentThread = IdleThread;
             *regs = IdleThread->Registers;
-            SetPageTable(IdleProcess->PageTable);
+            // SetPageTable(IdleProcess->PageTable);
             Yield(timeslice);
             goto scheduler_end;
         scheduler_success:
@@ -488,7 +488,7 @@ namespace MultiTasking
             UpdateProcessTimeUsed(CurrentProcess->Time);
             UpdateProcessTimeUsed(CurrentThread->Time);
             *regs = CurrentThread->Registers;
-            SetPageTable(CurrentProcess->PageTable);
+            // SetPageTable(CurrentProcess->PageTable);
             wrmsr(MSR_FS_BASE, CurrentThread->Segment.fs);
             wrmsr(MSR_GS_BASE, (uint64_t)CurrentThread);
             wrmsr(MSR_SHADOW_GS_BASE, CurrentThread->UserMode ? CurrentThread->Segment.gs : (uint64_t)CurrentThread);
