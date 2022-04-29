@@ -21,8 +21,8 @@ SECTIONS
     {
         *(.text .text.*)
     } :text
-    _kernel_text_end = .;
 
+    _kernel_text_end = ALIGN(CONSTANT(MAXPAGESIZE));
     . += CONSTANT(MAXPAGESIZE);
 
     .stivalehdr :
@@ -39,8 +39,8 @@ SECTIONS
     {
         *(.rodata .rodata.*)
     } :rodata
-    _kernel_rodata_end = .;
 
+    _kernel_rodata_end = ALIGN(CONSTANT(MAXPAGESIZE));
     . += CONSTANT(MAXPAGESIZE);
 
     .data :
@@ -53,5 +53,7 @@ SECTIONS
         *(COMMON)
         *(.bss .bss.*)
     } :data
-    _kernel_end = .;
+
+    . += CONSTANT(MAXPAGESIZE);
+    _kernel_end = ALIGN(CONSTANT(MAXPAGESIZE));
 }

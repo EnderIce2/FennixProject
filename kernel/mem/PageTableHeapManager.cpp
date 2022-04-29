@@ -45,10 +45,10 @@ void init_kernelpml()
         uint64_t VirtualOffsetNormalVMA = NORMAL_VMA_OFFSET;
         uint64_t BaseKernelMapAddress = earlyparams.mem.KernelBasePhysical;
 
-        uint64_t KernelStart = (uint64_t)ALIGN_UP(&_kernel_start, PAGE_SIZE);
-        uint64_t KernelTextEnd = (uint64_t)ALIGN_UP(&_kernel_text_end, PAGE_SIZE);
-        uint64_t KernelRoDataEnd = (uint64_t)ALIGN_UP(&_kernel_rodata_end, PAGE_SIZE);
-        uint64_t KernelEnd = (uint64_t)ALIGN_UP(&_kernel_end, PAGE_SIZE);
+        uint64_t KernelStart = (uint64_t)&_kernel_start;
+        uint64_t KernelTextEnd = (uint64_t)&_kernel_text_end;
+        uint64_t KernelRoDataEnd = (uint64_t)&_kernel_rodata_end;
+        uint64_t KernelEnd = (uint64_t)&_kernel_end;
 
         for (uint64_t t = 0; t < earlyparams.mem.Size; t += PAGE_SIZE)
         {
@@ -66,7 +66,7 @@ void init_kernelpml()
         /* Kernel mapping */
         for (uint64_t k = KernelStart; k < KernelTextEnd; k += PAGE_SIZE)
         {
-            KernelPageTableManager.MapMemory((void *)k, (void *)BaseKernelMapAddress, PTFlag::US);
+            KernelPageTableManager.MapMemory((void *)k, (void *)BaseKernelMapAddress, PTFlag::RW | PTFlag::US);
             KernelAllocator.LockPage((void *)BaseKernelMapAddress);
             BaseKernelMapAddress += PAGE_SIZE;
         }
@@ -91,7 +91,7 @@ void init_kernelpml()
         /*    KernelStart             KernelTextEnd       KernelRoDataEnd                  KernelEnd
         Kernel Start & Text Start ------ Text End ------ Kernel Rodata End ------ Kernel Data End & Kernel End
         */
-        trace("Aapplying new page table from address %#llx", KernelPML4);
+        trace("Applying new page table from address %#llx", KernelPML4);
         CR3 CR3PageTable;
         CR3PageTable.raw = (uint64_t)KernelPML4;
         writecr3(CR3PageTable);
