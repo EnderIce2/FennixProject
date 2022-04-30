@@ -175,6 +175,7 @@ void KernelTask()
         printf("Failed to load /system/init process. The file is missing or corrupted.\n");
     }
     trace("End Of Kernel Task");
+    CPU_STOP;
 }
 
 /* I should make everything in C++ but I use code from older (failed) projects.
@@ -250,7 +251,5 @@ void KernelInit()
 
     // StartTasking((uint64_t)KernelTask, TaskingMode::Mono);
     StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
-
-    err("Unwanted reach.");
     CPU_STOP;
 }
