@@ -3,7 +3,6 @@
 #include <debug.h>
 #include <elf.h>
 #include <filesystem.h>
-#include <printf.h>
 
 using namespace MonoTasking;
 using namespace MultiTasking;
@@ -137,7 +136,7 @@ ProcessControlBlock *APICALL SysCreateProcessFromFile(const char *File, bool Use
     FILE *file = vfs->Open(File);
     if (file->Status != FILESTATUS::OK)
     {
-        err("File status error %d", file->Status);
+        err("File status error %d for file %s", file->Status, File);
         goto error_exit;
     }
 
@@ -150,37 +149,37 @@ ProcessControlBlock *APICALL SysCreateProcessFromFile(const char *File, bool Use
 
         if (header->e_ident[EI_MAG0] != ELFMAG0)
         {
-            printf_("ELF Header EI_MAG0 incorrect.");
+            err("ELF Header EI_MAG0 incorrect.");
             KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
             goto error_exit;
         }
         if (header->e_ident[EI_MAG1] != ELFMAG1)
         {
-            printf_("ELF Header EI_MAG1 incorrect.");
+            err("ELF Header EI_MAG1 incorrect.");
             KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
             goto error_exit;
         }
         if (header->e_ident[EI_MAG2] != ELFMAG2)
         {
-            printf_("ELF Header EI_MAG2 incorrect.");
+            err("ELF Header EI_MAG2 incorrect.");
             KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
             goto error_exit;
         }
         if (header->e_ident[EI_MAG3] != ELFMAG3)
         {
-            printf_("ELF Header EI_MAG3 incorrect.");
+            err("ELF Header EI_MAG3 incorrect.");
             KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
             goto error_exit;
         }
         if (header->e_ident[EI_CLASS] == ELFCLASS32)
         {
-            printf_("32 bit ELF file not supported for now.");
+            err("32 bit ELF file not supported for now.");
             KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
             goto error_exit;
         }
         if (header->e_ident[EI_CLASS] == ELFCLASS64)
         {
-            printf_("64 bit ELF file found.\n");
+            debug("64 bit ELF file found.");
             Elf64_Phdr *pheader = (Elf64_Phdr *)(((char *)FileBuffer) + header->e_phoff);
             void *addr;
             for (int i = 0; i < header->e_phnum; i++, pheader++)
@@ -202,7 +201,7 @@ ProcessControlBlock *APICALL SysCreateProcessFromFile(const char *File, bool Use
             }
             // process pages -> addr / 0x1000 + 1;
             // KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
-            debug("Process Entry Point: %#llx", (uint64_t)(header->e_entry + (uint64_t)offset));
+            debug("%s Entry Point: %#llx", File, (uint64_t)(header->e_entry + (uint64_t)offset));
             return SysCreateThread(SysCreateProcess(file->Name, nullptr), (uint64_t)(header->e_entry + (uint64_t)offset), UserMode)->Parent;
         }
     }

@@ -149,15 +149,25 @@ static inline void ENABLE_NX()
 
 enum MSRID
 {
+    /** @brief Extended Feature Enable Register (0xc0000080) */
     MSR_EFER = 0xc0000080,
-    MSR_STAR = 0xc0000081,           /* legacy SYSCALL */
-    MSR_LSTAR = 0xc0000082,          /* 64bit SYSCALL */
-    MSR_CSTAR = 0xc0000083,          /* compatibility mode SYSCALL */
-    MSR_SYSCALL_MASK = 0xc0000084,   /* EFLAGS mask for syscall */
-    MSR_FS_BASE = 0xc0000100,        /* 64bit FS base */
-    MSR_GS_BASE = 0xc0000101,        /* 64bit GS base */
-    MSR_SHADOW_GS_BASE = 0xc0000102, /* SwapGS GS shadow */
-    MSR_TSC_AUX = 0xc0000103         /* Auxiliary TSC */
+    /** @brief legacy SYSCALL (0xc0000081) */
+    MSR_STAR = 0xc0000081,
+    /** @brief 64bit SYSCALL (0xc0000082) */
+    MSR_LSTAR = 0xc0000082,
+    /** @brief compatibility mode SYSCALL (0xc0000083) */
+    MSR_CSTAR = 0xc0000083,
+    /** @brief EFLAGS mask for syscall (0xc0000084) */
+    MSR_SYSCALL_MASK = 0xc0000084,
+    /** @brief 64bit FS base (0xc0000100) */
+    MSR_FS_BASE = 0xc0000100,
+    /** @brief 64bit GS base (0xc0000101) */
+    MSR_GS_BASE = 0xc0000101,
+    /** @brief SwapGS GS shadow (0xc0000102) */
+    MSR_SHADOW_GS_BASE = 0xc0000102,
+    /** @brief Auxiliary TSC (0xc0000103) */
+    MSR_TSC_AUX = 0xc0000103
+
 };
 
 static inline uint64_t rdmsr(enum MSRID msr)

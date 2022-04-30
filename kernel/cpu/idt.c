@@ -460,9 +460,7 @@ INTERRUPT_HANDLER(0xfa)
 INTERRUPT_HANDLER(0xfb)
 INTERRUPT_HANDLER(0xfc)
 INTERRUPT_HANDLER(0xfd)
-__attribute__((naked)) static void interrupt_handler_0xfe() { asm("pushq $0\npushq $"
-                                                                  "0xfe"
-                                                                  "\njmp syscall_interrpt_handler_helper"); }
+__attribute__((naked)) static void interrupt_handler_0xfe() { asm("jmp syscall_interrpt_handler_helper"); }
 INTERRUPT_HANDLER(0xff)
 
 void init_idt()

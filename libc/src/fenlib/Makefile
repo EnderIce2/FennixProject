@@ -4,6 +4,7 @@ S_SOURCES = $(shell find ./ -type f -name '*.s')
 ASM_SOURCES = $(shell find ./ -type f -name '*.asm')
 OBJ = ${C_SOURCES:.c=.o} ${ASM_SOURCES:.asm=.o} ${S_SOURCES:.s=.o}
 
+# https://wiki.osdev.org/ELF
 build: $(OBJ)
 	mv $^ ../out/crt/
 
