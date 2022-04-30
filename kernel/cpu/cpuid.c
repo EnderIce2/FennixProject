@@ -5,7 +5,7 @@
 
 CPU_VENDOR cpu_vendor()
 {
-    CPU_VENDOR res = (char *)kmalloc(sizeof(char));
+    CPU_VENDOR res = (char *)kmalloc(sizeof(12));
     cpuid_string(0, (int *)(res));
     return res;
 }
