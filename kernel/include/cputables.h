@@ -15,7 +15,7 @@ typedef struct _TaskStateSegmentEntry
 
 typedef struct _TaskStateSegment
 {
-    uint32_t Reserved1;
+    uint32_t Reserved1 __attribute__((aligned(16)));
     uint64_t StackPointer0;
     uint64_t StackPointer1;
     uint64_t StackPointer2;
@@ -28,6 +28,7 @@ typedef struct _TaskStateSegment
     uint64_t InterruptStackTable6;
     uint64_t InterruptStackTable7;
     uint64_t Reserved3;
+    // uint64_t Reserved4;
     uint32_t IOMapBaseAddressOffset;
 } __attribute__((packed)) TaskStateSegment;
 
