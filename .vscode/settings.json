@@ -41,6 +41,7 @@
         "string.h": "c",
         "sys.h": "c",
         "task.h": "c",
-        "cwalk.h": "c"
+        "cwalk.h": "c",
+        "syscalls.h": "c"
     }
 }
