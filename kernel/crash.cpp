@@ -37,7 +37,7 @@ EXTERNC void crash(string message)
     debug("System crashed with message: %s", message);
     CurrentDisplay->Clear(0xFF221160);
 
-    CurrentDisplay->SetPrintColor(0xFFdd2920);
+    CurrentDisplay->SetPrintColor(0xFFDD2920);
     SET_PRINT_MID((char *)"System crashed!", FHeight(1));
     CurrentDisplay->ResetPrintColor();
     SET_PRINT_MID((char *)message, (CurrentDisplay->GetFramebuffer()->Height / 2));
@@ -101,21 +101,58 @@ EXTERNC void isrcrash(REGISTERS *regs)
     }
     case ISR_StackSegmentFault:
     {
+        CurrentDisplay->Clear(0xFF262100);
+        staticbuffer(descbuf);
+        staticbuffer(desc_ext);
+        staticbuffer(desc_table);
+        staticbuffer(desc_idx);
+        staticbuffer(desc_tmp);
         SelectorErrorCode SelCode = {.raw = ERROR_CODE};
+        switch (SelCode.Table)
+        {
+        case 0b00:
+            memcpy(desc_tmp, "GDT", 3);
+            break;
+        case 0b01:
+            memcpy(desc_tmp, "IDT", 3);
+            break;
+        case 0b10:
+            memcpy(desc_tmp, "LDT", 3);
+            break;
+        case 0b11:
+            memcpy(desc_tmp, "IDT", 3);
+            break;
+        default:
+            memcpy(desc_tmp, "Unknown", 7);
+            break;
+        }
+        debug("external:%d table:%d idx:%#x", SelCode.External, SelCode.Table, SelCode.Idx);
+        sprintf_(descbuf, "Stack segment fault at address %#lx", RIP);
+        SET_PRINT_MID((char *)descbuf, FHeight(5));
+        sprintf_(desc_ext, "External: %d", SelCode.External);
+        SET_PRINT_MID((char *)desc_ext, FHeight(3));
+        sprintf_(desc_table, "Table: %d (%s)", SelCode.Table, desc_tmp);
+        SET_PRINT_MID((char *)desc_table, FHeight(2));
+        sprintf_(desc_idx, "%s Index: %#x", desc_tmp, SelCode.Idx);
+        SET_PRINT_MID((char *)desc_idx, FHeight(1));
+        CurrentDisplay->SetPrintColor(0xFFDD2920);
+        SET_PRINT_MID((char *)"System crashed!", FHeight(6));
+        CurrentDisplay->ResetPrintColor();
+        SET_PRINT_MID((char *)"More info about the exception:", FHeight(4));
         break;
     }
     case ISR_GeneralProtectionFault:
     {
         if (CS == 0x23)
         {
-            err("General Protection Fault caused by an user-mode process.");
+            err("General Protection Fault caused by an user-mode process at %#lx.", RIP);
             // TODO: signal the application to stop.
             SysGetCurrentThread()->State = STATE_TERMINATED;
             return;
         }
         else
         {
-            CurrentDisplay->Clear(0xFF1e0500);
+            CurrentDisplay->Clear(0xFF1E0500);
             staticbuffer(descbuf);
             staticbuffer(desc_ext);
             staticbuffer(desc_table);
@@ -142,18 +179,17 @@ EXTERNC void isrcrash(REGISTERS *regs)
             }
             debug("external:%d table:%d idx:%#x", SelCode.External, SelCode.Table, SelCode.Idx);
             sprintf_(descbuf, "Kernel performed an illegal operation at address %#lx", RIP);
+            SET_PRINT_MID((char *)descbuf, FHeight(5));
             sprintf_(desc_ext, "External: %d", SelCode.External);
+            SET_PRINT_MID((char *)desc_ext, FHeight(3));
             sprintf_(desc_table, "Table: %d (%s)", SelCode.Table, desc_tmp);
+            SET_PRINT_MID((char *)desc_table, FHeight(2));
             sprintf_(desc_idx, "%s Index: %#x", desc_tmp, SelCode.Idx);
-
-            CurrentDisplay->SetPrintColor(0xFFdd2920);
+            SET_PRINT_MID((char *)desc_idx, FHeight(1));
+            CurrentDisplay->SetPrintColor(0xFFDD2920);
             SET_PRINT_MID((char *)"System crashed!", FHeight(6));
             CurrentDisplay->ResetPrintColor();
-            SET_PRINT_MID((char *)descbuf, FHeight(5));
             SET_PRINT_MID((char *)"More info about the exception:", FHeight(4));
-            SET_PRINT_MID((char *)desc_ext, FHeight(3));
-            SET_PRINT_MID((char *)desc_table, FHeight(2));
-            SET_PRINT_MID((char *)desc_idx, FHeight(1));
         }
         break;
     }
@@ -179,7 +215,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
         else
         {
             err("Kernel Exception");
-            CurrentDisplay->Clear(0xFF021c07);
+            CurrentDisplay->Clear(0xFF021C07);
             PageFaultErrorCode params = {.raw = (uint32_t)ERROR_CODE};
 
             // We can't use an allocator in exceptions (because that can cause another exception!) so, we'll just use a static buffer.
@@ -192,9 +228,8 @@ EXTERNC void isrcrash(REGISTERS *regs)
             staticbuffer(page_protection);
             staticbuffer(page_shadow);
             staticbuffer(page_sgx);
-            staticbuffer(page_ksection);
 
-            CurrentDisplay->SetPrintColor(0xFFdd2920);
+            CurrentDisplay->SetPrintColor(0xFFDD2920);
             SET_PRINT_MID((char *)"System crashed!", FHeight(12));
             CurrentDisplay->ResetPrintColor();
             sprintf_(ret_err, "An exception occurred at %#lx by %#lx", cr2.PFLA, RIP);
@@ -223,8 +258,6 @@ EXTERNC void isrcrash(REGISTERS *regs)
             {
                 SET_PRINT_MID((char *)pagefault_message[ERROR_CODE & 0b111], FHeight(2));
             }
-            sprintf_(page_ksection, "%lx<->%lx<->%lx<->%lx", _kernel_start, _kernel_text_end, _kernel_rodata_end, _kernel_end);
-            SET_PRINT_MID((char *)page_ksection, FHeight(1));
         }
         break;
     }
@@ -245,7 +278,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
         break;
     }
     CurrentDisplay->ResetPrintPosition();
-    CurrentDisplay->SetPrintColor(0xFF7981fc);
+    CurrentDisplay->SetPrintColor(0xFF7981FC);
     printf("Technical Informations:\n");
     printf("FS =%#lx  GS =%#lx  SS =%#lx  CS =%#lx\n", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
     printf("R8 =%#lx  R9 =%#lx  R10=%#lx  R11=%#lx\n", R8, R9, R10, R11);
@@ -255,19 +288,19 @@ EXTERNC void isrcrash(REGISTERS *regs)
     printf("RIP=%#lx  RFL=%#lx  DS =%#lx  INT=%#lx  ERR=%#lx\n", RIP, FLAGS.raw, DS, INT_NUM, ERROR_CODE);
     printf("CR0=%#lx  CR2=%#lx  CR3=%#lx  CR4=%#lx  CR8=%#lx\n", cr0.raw, cr2.raw, cr3.raw, cr4.raw, cr8.raw);
 
-    CurrentDisplay->SetPrintColor(0xFFfc797b);
+    CurrentDisplay->SetPrintColor(0xFFFC797B);
     printf("CR0: PE:%s     MP:%s     EM:%s     TS:%s\n     ET:%s     NE:%s     WP:%s     AM:%s\n     NW:%s     CD:%s     PG:%s\n     R0:%#x R1:%#x R2:%#x\n",
            cr0.PE ? "True " : "False", cr0.MP ? "True " : "False", cr0.EM ? "True " : "False", cr0.TS ? "True " : "False",
            cr0.ET ? "True " : "False", cr0.NE ? "True " : "False", cr0.WP ? "True " : "False", cr0.AM ? "True " : "False",
            cr0.NW ? "True " : "False", cr0.CD ? "True " : "False", cr0.PG ? "True " : "False",
            cr0._reserved0, cr0._reserved1, cr0._reserved2);
-    CurrentDisplay->SetPrintColor(0xFFfcdb79);
+    CurrentDisplay->SetPrintColor(0xFFFCBD79);
     printf("CR2: PFLA: %#lx\n",
            cr2.PFLA);
-    CurrentDisplay->SetPrintColor(0xFF79fc84);
+    CurrentDisplay->SetPrintColor(0xFF79FC84);
     printf("CR3: PWT:%s     PCD:%s    PDBR:%#lx\n",
            cr3.PWT ? "True " : "False", cr3.PCD ? "True " : "False", cr3.PDBR);
-    CurrentDisplay->SetPrintColor(0xFFbd79fc);
+    CurrentDisplay->SetPrintColor(0xFFBD79FC);
     printf("CR4: VME:%s     PVI:%s     TSD:%s      DE:%s\n     PSE:%s     PAE:%s     MCE:%s     PGE:%s\n     PCE:%s    UMIP:%s  OSFXSR:%s OSXMMEXCPT:%s\n    LA57:%s    VMXE:%s    SMXE:%s   PCIDE:%s\n OSXSAVE:%s    SMEP:%s    SMAP:%s     PKE:%s\n     R0:%d R1:%d R2:%d\n",
            cr4.VME ? "True " : "False", cr4.PVI ? "True " : "False", cr4.TSD ? "True " : "False", cr4.DE ? "True " : "False",
            cr4.PSE ? "True " : "False", cr4.PAE ? "True " : "False", cr4.MCE ? "True " : "False", cr4.PGE ? "True " : "False",
@@ -275,9 +308,9 @@ EXTERNC void isrcrash(REGISTERS *regs)
            cr4.LA57 ? "True " : "False", cr4.VMXE ? "True " : "False", cr4.SMXE ? "True " : "False", cr4.PCIDE ? "True " : "False",
            cr4.OSXSAVE ? "True " : "False", cr4.SMEP ? "True " : "False", cr4.SMAP ? "True " : "False", cr4.PKE ? "True " : "False",
            cr4._reserved0, cr4._reserved1, cr4._reserved2);
-    CurrentDisplay->SetPrintColor(0xFF79fcf5);
+    CurrentDisplay->SetPrintColor(0xFF79FCF5);
     printf("CR8: TPL:%d\n", cr8.TPL);
-    CurrentDisplay->SetPrintColor(0xFFfcfc02);
+    CurrentDisplay->SetPrintColor(0xFFFCFC02);
     printf("RFL: CF:%s     PF:%s     AF:%s     ZF:%s\n     SF:%s     TF:%s     IF:%s     DF:%s\n     OF:%s   IOPL:%s     NT:%s     RF:%s\n     VM:%s     AC:%s    VIF:%s    VIP:%s\n     ID:%s     AlwaysOne:%d\n     R0:%#x R1:%#x R2:%#x R3:%#x",
            FLAGS.CF ? "True " : "False", FLAGS.PF ? "True " : "False", FLAGS.AF ? "True " : "False", FLAGS.ZF ? "True " : "False",
            FLAGS.SF ? "True " : "False", FLAGS.TF ? "True " : "False", FLAGS.IF ? "True " : "False", FLAGS.DF ? "True " : "False",
