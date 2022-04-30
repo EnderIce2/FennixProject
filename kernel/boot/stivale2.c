@@ -105,6 +105,7 @@ bool init_stivale2(struct stivale2_struct *bootloaderdata, GlobalBootParams *par
     struct stivale2_struct_tag_cmdline *cmdline = (struct stivale2_struct_tag_cmdline *)tag_cmdline;
     if (!second)
     {
+        trace("Bootloader: %s %s", bootloaderdata->bootloader_brand, bootloaderdata->bootloader_version);
         if (strstr((string)cmdline->cmdline, "no4gbcap"))
         {
             debug("Ignoring 4GB memory cap...");
