@@ -1,4 +1,4 @@
-#include <task.h>
+#include <internal_task.h>
 #include <display.h>
 #include <debug.h>
 #include <asm.h>
@@ -33,7 +33,7 @@ void StartTasking(uint64_t Address, TaskingMode Mode)
     }
     case TaskingMode::Multi:
     {
-        MultiTasking::MultiProcessing = new MultiTasking::MultiTasking();
+        MultiTasking::MultiProcessing = new MultiTasking::MultiTasking;
         MultiTasking::MultiProcessing->CreateThread(MultiTasking::MultiProcessing->CreateProcess(nullptr, (char *)"kernel"),
                                                     Address, 0, 0,
                                                     ControlBlockPriority::PRIORITY_REALTIME,

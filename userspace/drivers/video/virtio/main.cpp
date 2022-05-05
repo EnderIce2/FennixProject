@@ -1,6 +1,10 @@
+#include <driver.h>
 
-
-int _start()
+DRIVER_ENTRY
 {
-    return 0;
 }
+
+DRIVER = {
+    .Name = "VirtIO Video Driver",
+    .Type = TYPE_VIDEO,
+    .Bind = {BIND_NULL}};

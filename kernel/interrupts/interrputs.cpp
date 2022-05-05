@@ -1,4 +1,4 @@
-#include <interrupts.h>
+#include <int.h>
 
 void EndOfInterrupt(int interrupt)
 {

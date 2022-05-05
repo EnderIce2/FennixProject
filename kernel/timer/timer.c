@@ -1,6 +1,7 @@
 #include "../timer.h"
-#include <task.h>
+#include <internal_task.h>
 #include <interrupts.h>
+#include <int.h>
 #include "hpet.h"
 #include "pit.h"
 #include "../cpu/idt.h"

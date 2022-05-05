@@ -1,4 +1,5 @@
 #include <interrupts.h>
+#include <int.h>
 #include <asm.h>
 #include <io.h>
 

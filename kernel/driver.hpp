@@ -1,6 +1,7 @@
 #pragma once
 #include <filesystem.h>
 #include <types.h>
+#include <driver.h>
 
 namespace Driver
 {
@@ -11,7 +12,7 @@ namespace Driver
         FileSystem::FileSystemNode *DriverNode;
 
     public:
-        uint64_t LoadKernelDriver(FileSystem::FileSystemNode *Node);
+        uint64_t LoadKernelDriverFromFile(FileSystem::FileSystemNode *Node);
         KernelDriver();
         ~KernelDriver();
     };

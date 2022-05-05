@@ -98,6 +98,9 @@ enum SystemCalls
     _GetCurrentThread,
     _Schedule,
 
+    _RequestPage,
+    _FreePage,
+
     _SystemInfo,
     _SystemTime,
     _SystemTimeSet,
@@ -111,15 +114,35 @@ enum SystemCalls
     _RegisterInterruptHandler,
     _UnregisterInterruptHandler,
 
+    _GetLastKeyboardScanCode,
+
+    _SendMessage,
+    _GetMessageQueue,
+
+    _FileOpen,
+    _FileClose,
+    _FileRead,
+    _FileWrite,
+    _FileSeek,
+    _FileSize,
+    _FileFlush,
+    _FileDelete,
+    _FileRename,
+    _FileExists,
+    _FileCreate,
+
     _DebugMessage,
 };
 
 DEFINE_SYSCALL1(exit, _ProcessExit, int)
-DEFINE_SYSCALL1(createProcess, _ProcessCreate, char *)
-DEFINE_SYSCALL1(createThread, _ThreadCreate, uint64_t)
+DEFINE_SYSCALL3(createProcess, _ProcessCreate, char *, uint64_t, uint64_t)
+DEFINE_SYSCALL3(createThread, _ThreadCreate, uint64_t, uint64_t, uint64_t)
 DEFINE_SYSCALL0(getCurrentProcess, _GetCurrentProcess)
 DEFINE_SYSCALL0(getCurrentThread, _GetCurrentThread)
 DEFINE_SYSCALL0(schedule, _Schedule)
+
+DEFINE_SYSCALL0(requestPage, _RequestPage)
+DEFINE_SYSCALL1(freePage, _FreePage, void *)
 
 DEFINE_SYSCALL0(systemInfo, _SystemInfo)
 DEFINE_SYSCALL0(systemTime, _SystemTime)
@@ -131,7 +154,12 @@ DEFINE_SYSCALL0(displayWidth, _GetFramebufferWidth)
 DEFINE_SYSCALL0(displayHeight, _GetFramebufferHeight)
 DEFINE_SYSCALL0(displayPixelsPerScanLine, _GetFramebufferPixelsPerScanLine)
 
-DEFINE_SYSCALL1(registerinthnd, _RegisterInterruptHandler, void *)
+DEFINE_SYSCALL2(registerinthnd, _RegisterInterruptHandler, int, void *)
 DEFINE_SYSCALL1(unregisterinthnd, _UnregisterInterruptHandler, int)
+
+DEFINE_SYSCALL0(getLastKeyboardScanCode, _GetLastKeyboardScanCode)
+
+DEFINE_SYSCALL2(sendMessage, _SendMessage, uint64_t, void *)
+DEFINE_SYSCALL0(getMessageQueue, _GetMessageQueue)
 
 DEFINE_SYSCALL2(dbg, _DebugMessage, int, char *)

@@ -1,7 +1,5 @@
 #pragma once
 #include <stdint.h>
-#include <heap.h>
-#include <debug.h>
 
 template <class T>
 class Vector

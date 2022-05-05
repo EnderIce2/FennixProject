@@ -1,11 +1,19 @@
-#include <task.h>
-#include <asm.h>
-#include "../cpu/idt.h"
-#include "../cpu/gdt.h"
+#include <internal_task.h>
+
+#include "../drivers/keyboard.hpp"
+#include "../drivers/mouse.hpp"
 #include "../drivers/serial.h"
-#include <stdarg.h>
+#include "../cpu/gdt.h"
+#include "../cpu/idt.h"
+#include "msg.hpp"
+
+#include <critical.hpp>
+#include <filesystem.h>
 #include <syscalls.h>
 #include <display.h>
+#include <stdarg.h>
+#include <task.h>
+#include <asm.h>
 
 static uint64_t internal_unimpl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
 {
@@ -21,16 +29,39 @@ static uint64_t internal_exit(uint64_t code)
     return 0;
 }
 
-static uint64_t internal_createprocess(char *Path) { return SysCreateProcessFromFile(Path, true)->ProcessID; }
-static uint64_t internal_createthread(uint64_t rip) { return SysCreateThread(SysGetCurrentProcess(), rip, true)->ThreadID; }
-static uint64_t internal_getcurrentprocess() { return ((uint64_t)SysGetCurrentProcess()); }
-static uint64_t internal_getcurrentthread() { return ((uint64_t)SysGetCurrentThread()); }
+static ProcessControlBlock *internal_createprocess(char *Path, uint64_t arg0, uint64_t arg1) { return SysCreateProcessFromFile(Path, arg0, arg1, true); }
+static ThreadControlBlock *internal_createthread(uint64_t rip, uint64_t arg0, uint64_t arg1) { return SysCreateThread(SysGetCurrentProcess(), rip, arg0, arg1, true); }
+static ProcessControlBlock *internal_getcurrentprocess() { return SysGetCurrentProcess(); }
+static ThreadControlBlock *internal_getcurrentthread() { return SysGetCurrentThread(); }
+
+static void *internal_requestpage()
+{
+    void *ret = KernelAllocator.RequestPage();
+    KernelPageTableManager.MapMemory(ret, ret, PTFlag::US | PTFlag::RW);
+    return ret;
+}
+static void internal_freepage(void *page)
+{
+    KernelAllocator.FreePage(page);
+    // TOOD: not sure if this is the right thing to do
+    // KernelPageTableManager.UnmapMemory(page);
+}
 
 static uint64_t internal_fbaddress() { return CurrentDisplay->GetFramebuffer()->Address; }
 static uint64_t internal_fbsize() { return CurrentDisplay->GetFramebuffer()->Size; }
 static uint64_t internal_fbwidth() { return CurrentDisplay->GetFramebuffer()->Width; }
 static uint64_t internal_fbheight() { return CurrentDisplay->GetFramebuffer()->Height; }
 static uint64_t internal_fbppsl() { return CurrentDisplay->GetFramebuffer()->PixelsPerScanLine; }
+
+static char internal_getlastkeyboardscancode() { return ps2keyboard->GetLastScanCode(); }
+
+static void internal_sendMessage(uint64_t ThreadID, void *Buffer) { return MessageManager::Send(ThreadID, Buffer); }
+static MessageQueue *internal_getMessageQueue() { return MessageManager::GetMessageQueue(); }
+
+static FileSystem::FILE *internal_fileOpen(char *Path) { return vfs->Open(Path, nullptr); }
+static void internal_fileClose(FileSystem::FILE *File) { vfs->Close(File); }
+static uint64_t internal_fileRead(FileSystem::FILE *File, uint64_t Offset, void *Buffer, uint64_t Size) { return vfs->Read(File, Offset, Buffer, Size); }
+static uint64_t internal_fileWrite(FileSystem::FILE *File, uint64_t Offset, void *Buffer, uint64_t Size) { return vfs->Write(File, Offset, Buffer, Size); }
 
 static uint64_t internal_dbg(int port, char *message)
 {
@@ -48,6 +79,9 @@ static void *syscallsTable[] = {
     [_GetCurrentThread] = (void *)internal_getcurrentthread,
     [_Schedule] = (void *)internal_unimpl,
 
+    [_RequestPage] = (void *)internal_requestpage,
+    [_FreePage] = (void *)internal_freepage,
+
     [_SystemInfo] = (void *)internal_unimpl,
     [_SystemTime] = (void *)internal_unimpl,
     [_SystemTimeSet] = (void *)internal_unimpl,
@@ -61,6 +95,23 @@ static void *syscallsTable[] = {
     [_RegisterInterruptHandler] = (void *)internal_unimpl,
     [_UnregisterInterruptHandler] = (void *)internal_unimpl,
 
+    [_GetLastKeyboardScanCode] = (void *)internal_getlastkeyboardscancode,
+
+    [_SendMessage] = (void *)internal_sendMessage,
+    [_GetMessageQueue] = (void *)internal_getMessageQueue,
+
+    [_FileOpen] = (void *)internal_fileOpen,
+    [_FileClose] = (void *)internal_fileClose,
+    [_FileRead] = (void *)internal_fileRead,
+    [_FileWrite] = (void *)internal_fileWrite,
+    [_FileSeek] = (void *)internal_unimpl,
+    [_FileSize] = (void *)internal_unimpl,
+    [_FileFlush] = (void *)internal_unimpl,
+    [_FileDelete] = (void *)internal_unimpl,
+    [_FileRename] = (void *)internal_unimpl,
+    [_FileExists] = (void *)internal_unimpl,
+    [_FileCreate] = (void *)internal_unimpl,
+
     [_DebugMessage] = (void *)internal_dbg,
     // #endif
 };
@@ -68,6 +119,7 @@ static void *syscallsTable[] = {
 // TODO: fully port the syscall handler to inline assembly
 __attribute__((naked, used, aligned(0x1000))) void syscall_handler_helper()
 {
+    EnterCriticalSection;
     asm("swapgs\n");
     asm("movq %rsp, %gs:0x8\n");
     // asm("movq %gs:0x0, %rsp\n");
@@ -117,6 +169,7 @@ __attribute__((naked, used, aligned(0x1000))) void syscall_handler_helper()
     asm("mov %gs:0x8, %rsp\n");
     asm("swapgs\n");
     asm("sysretq\n");
+    LeaveCriticalSection;
 }
 
 typedef struct _SyscallsRegs

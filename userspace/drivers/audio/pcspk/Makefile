@@ -12,7 +12,7 @@ INCLUDE_DIR = ../../../../include
 build: $(NAME)
 
 $(NAME): $(CPP_SOURCES)
-	$(CC) -I$(INCLUDE_DIR) -nostdlib -fPIC -std=c++2a $(CPP_SOURCES) -o $(OUTPUT_DIR)$(NAME)
+	$(CC) -I$(INCLUDE_DIR) -Tlink.ld -nostdlib -fPIC -std=c++2a $(CPP_SOURCES) -o $(OUTPUT_DIR)$(NAME)
 
 clean:
 	rm -f $(OUTPUT_DIR)$(NAME)

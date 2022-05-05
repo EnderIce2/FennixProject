@@ -122,6 +122,8 @@ make clean
 - [ ] FAT16 FileSystem
 - [ ] FAT32 FileSystem
 - [x] Tasking
+- [x] Usermode
+- [x] Syscalls
 - [x] Executing ELF Files
 - [ ] Executing PE Files
 - [ ] Executing NE Files
@@ -131,5 +133,7 @@ make clean
 
 ## Todo
 - [ ] Figure out how to make the interrupts push es, fs & gs into REGISTERS structure
-- [ ] Change the multitasking implementation with a better one
+- [ ] Replace the multitasking implementation with a better one
 - [ ] Fix the multitasking page table switching
+- [ ] Complete implementation for driver loading
+- [ ] Make a working version of process messaging (IPC)

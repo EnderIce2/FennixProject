@@ -107,6 +107,10 @@ qemu: qemu_vdisk
 	rm -f serial.log
 	${QEMU} -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
 
+qemubios: qemu_vdisk
+	rm -f serial.log
+	${QEMU} -drive file=$(OSNAME).iso -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
+
 # build the os and run it
 run: build qemu_vdisk qemu
 

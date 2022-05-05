@@ -1,5 +1,6 @@
-#include <task.h>
+#include <internal_task.h>
 #include <interrupts.h>
+#include <int.h>
 #include <heap.h>
 #include <debug.h>
 #include <asm.h>

@@ -4,7 +4,7 @@
 #include <string.h>
 #include <asm.h>
 #include <heap.h>
-#include <task.h>
+#include <internal_task.h>
 
 static const char *pagefault_message[] = {
     "Supervisory process tried to read a non-present page entry",

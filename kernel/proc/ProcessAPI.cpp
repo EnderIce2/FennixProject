@@ -1,8 +1,10 @@
-#include <task.h>
-#include <heap.h>
-#include <debug.h>
-#include <elf.h>
+#include <internal_task.h>
+
 #include <filesystem.h>
+#include <critical.hpp>
+#include <debug.h>
+#include <heap.h>
+#include <elf.h>
 
 using namespace MonoTasking;
 using namespace MultiTasking;
@@ -12,8 +14,66 @@ int CurrentTaskingMode = TaskingMode::None;
 
 ProcessControlBlock *APICALL SysGetProcessByPID(uint64_t ID)
 {
-    fixme("%d", ID);
-    return NULL;
+    switch (CurrentTaskingMode)
+    {
+    case TaskingMode::Mono:
+    {
+        ProcessControlBlock *proc = nullptr;
+        fixme("unimplemented for primitive tasking");
+        return proc;
+    }
+    case TaskingMode::Multi:
+    {
+        EnterCriticalSection;
+        foreach (auto var in MultiProcessing->GetVectorProcessList())
+        {
+            if (var->ProcessID == ID)
+            {
+                LeaveCriticalSection;
+                return var;
+            }
+        }
+        LeaveCriticalSection;
+    }
+    case TaskingMode::None:
+        return nullptr;
+    default:
+        return nullptr;
+    }
+    return nullptr;
+}
+
+ThreadControlBlock *APICALL SysGetThreadByTID(uint64_t ID)
+{
+    switch (CurrentTaskingMode)
+    {
+    case TaskingMode::Mono:
+    {
+        err("not supported");
+        return nullptr;
+    }
+    case TaskingMode::Multi:
+    {
+        EnterCriticalSection;
+        foreach (auto var in MultiProcessing->GetVectorProcessList())
+        {
+            foreach (auto var in var->Threads)
+            {
+                if (var->ThreadID == ID)
+                {
+                    LeaveCriticalSection;
+                    return var;
+                }
+            }
+        }
+        LeaveCriticalSection;
+    }
+    case TaskingMode::None:
+        return nullptr;
+    default:
+        return nullptr;
+    }
+    return nullptr;
 }
 
 ProcessControlBlock *APICALL SysGetCurrentProcess()
@@ -69,19 +129,21 @@ ProcessControlBlock *APICALL SysCreateProcess(const char *Name, void *PageTable)
         ProcessControlBlock *proc = new ProcessControlBlock;
         memcpy(proc->Name, Name, sizeof(proc->Name));
         if (PageTable != nullptr)
-            proc->PageTable = (VMM::PageTable *)PageTable;
+            proc->PageTable = PageTable;
         else
             proc->PageTable = KernelPageTableAllocator->CreatePageTable();
         return proc;
     }
     case TaskingMode::Multi:
     {
+        EnterCriticalSection;
         ProcessControlBlock *proc = MultiProcessing->CreateProcess(SysGetCurrentProcess(), (char *)Name);
         if (PageTable != nullptr)
         {
             KernelAllocator.FreePage(proc->PageTable);
             proc->PageTable = (VMM::PageTable *)PageTable;
         }
+        LeaveCriticalSection;
         return proc;
     }
     case TaskingMode::None:
@@ -92,7 +154,7 @@ ProcessControlBlock *APICALL SysCreateProcess(const char *Name, void *PageTable)
     return nullptr;
 }
 
-ThreadControlBlock *APICALL SysCreateThread(ProcessControlBlock *Parent, uint64_t InstructionPointer, bool UserMode)
+ThreadControlBlock *APICALL SysCreateThread(ProcessControlBlock *Parent, uint64_t InstructionPointer, uint64_t arg0, uint64_t arg1, bool UserMode)
 {
     switch (CurrentTaskingMode)
     {
@@ -117,7 +179,7 @@ ThreadControlBlock *APICALL SysCreateThread(ProcessControlBlock *Parent, uint64_
     }
     case TaskingMode::Multi:
     {
-        ThreadControlBlock *thread = MultiProcessing->CreateThread(Parent, InstructionPointer, 0, 0, ControlBlockPriority::PRIORITY_MEDIUM,
+        ThreadControlBlock *thread = MultiProcessing->CreateThread(Parent, InstructionPointer, arg0, arg1, ControlBlockPriority::PRIORITY_MEDIUM,
                                                                    ControlBlockState::STATE_READY, ControlBlockPolicy::POLICY_KERNEL, UserMode);
         return thread;
     }
@@ -130,9 +192,10 @@ ThreadControlBlock *APICALL SysCreateThread(ProcessControlBlock *Parent, uint64_
 }
 
 // TODO: implement for primitive tasking if enabled to suspend the current task and run the created one
-ProcessControlBlock *APICALL SysCreateProcessFromFile(const char *File, bool UserMode)
+ProcessControlBlock *APICALL SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, bool UserMode)
 {
     /* ... Open file ... Parse file ... map elf file ... get rip etc ... */
+    EnterCriticalSection;
     FILE *file = vfs->Open(File);
     if (file->Status != FILESTATUS::OK)
     {
@@ -202,10 +265,13 @@ ProcessControlBlock *APICALL SysCreateProcessFromFile(const char *File, bool Use
             // process pages -> addr / 0x1000 + 1;
             // KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
             debug("%s Entry Point: %#llx", File, (uint64_t)(header->e_entry + (uint64_t)offset));
-            return SysCreateThread(SysCreateProcess(file->Name, nullptr), (uint64_t)(header->e_entry + (uint64_t)offset), UserMode)->Parent;
+            vfs->Close(file);
+            LeaveCriticalSection;
+            return SysCreateThread(SysCreateProcess(file->Name, nullptr), (uint64_t)(header->e_entry + (uint64_t)offset), arg0, arg1, UserMode)->Parent;
         }
     }
 error_exit:
     vfs->Close(file);
+    LeaveCriticalSection;
     return nullptr;
 }

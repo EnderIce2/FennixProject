@@ -1,16 +1,26 @@
-#include <task.h>
-#include <lock.h>
+#include <internal_task.h>
+
 #include "../drivers/serial.h"
 #include "../cpu/gdt.h"
 #include "../timer.h"
-#include <sys.h>
+#include "fxsr.h"
+
 #include <interrupts.h>
-#include <io.h>
+#include <critical.hpp>
 #include <debug.h>
+#include <sys.h>
+#include <int.h>
 #include <asm.h>
+#include <io.h>
 
 // Comment or uncomment this line to enable/disable the debug messages
 // #define DEBUG_SCHEDULER 1
+
+#ifdef DEBUG_SCHEDULER
+#define schedbg(m, ...) debug(m, ##__VA_ARGS__)
+#else
+#define schedbg(m, ...)
+#endif
 
 Vector<ProcessControlBlock *> ListProcess;
 
@@ -19,12 +29,8 @@ namespace MultiTasking
     MultiTasking *MultiProcessing = nullptr;
 
 #define ScheduleInterrupt asm volatile("int $0x2b")
-    NEWLOCK(scheduler_lock);
-    NEWLOCK(exit_lock);
-    NEWLOCK(process_lock);
-    NEWLOCK(thread_lock);
-    static uint64_t upcoming_pid = 0;
-    static uint64_t upcoming_tid = 0;
+    static uint64_t NextPID = 0;
+    static uint64_t NextTID = 0;
     static uint64_t LastCount = 0;
     static bool IdleTrigger = false;
     static bool AllocProcEnable = true;
@@ -33,6 +39,8 @@ namespace MultiTasking
     ProcessControlBlock *MultiTasking::GetCurrentProcess() { return CurrentProcess; }
 
     ThreadControlBlock *MultiTasking::GetCurrentThread() { return CurrentThread; }
+
+    Vector<ProcessControlBlock *> MultiTasking::GetVectorProcessList() { return ListProcess; }
 
     void SetControlBlockTime(ControlBlockTime *Time)
     {
@@ -67,7 +75,7 @@ namespace MultiTasking
                 thread->Parent->Threads.remove(i);
                 break;
             }
-        debug("Thread %d terminated", thread->ThreadID);
+        schedbg("Thread %d terminated", thread->ThreadID);
         KernelStackAllocator->FreeStack(thread->Stack);
         kfree(thread);
         thread = nullptr;
@@ -95,8 +103,8 @@ namespace MultiTasking
                     break;
                 }
             }
-            debug("Process %d terminated", process->ProcessID);
-            KernelPageTableAllocator->RemovePageTable(process->PageTable);
+            schedbg("Process %d terminated", process->ProcessID);
+            KernelPageTableAllocator->RemovePageTable(reinterpret_cast<VMM::PageTable *>(process->PageTable));
             kfree(process);
             process = nullptr;
         }
@@ -113,31 +121,24 @@ namespace MultiTasking
         }
     }
 
-    extern "C"
+    extern "C" void do_exit(uint64_t code)
     {
-        void do_exit(uint64_t code)
-        {
-            LOCK(exit_lock);
-#ifdef DEBUG_SCHEDULER
-            debug("parent:%s tid:%d, code:%016p", CurrentProcess->Name, CurrentThread->ThreadID, code);
-#endif
-            CurrentThread->ExitCode = code;
-            trace("Exiting thread %d...", CurrentThread->ThreadID);
-            UNLOCK(exit_lock);
-            CurrentThread->State = STATE_TERMINATED; // it may get stuck in lock if multiple threads are exiting at the same time.
-            CPU_STOP;
-        }
+        EnterCriticalSection;
+        CurrentThread->State = STATE_TERMINATED;
+        CurrentThread->ExitCode = code;
+        schedbg("parent:%s tid:%d, code:%016p", CurrentProcess->Name, CurrentThread->ThreadID, code);
+        trace("Exiting thread %d...", CurrentThread->ThreadID);
+        LeaveCriticalSection;
+        CPU_STOP;
     }
 
     ProcessControlBlock *create_process(ProcessControlBlock *parent, char *name)
     {
-        LOCK(process_lock);
-#ifdef DEBUG_SCHEDULER
-        debug("name: %s", name);
-#endif
+        EnterCriticalSection;
+        schedbg("name: %s", name);
         ProcessControlBlock *process = new ProcessControlBlock;
 
-        process->ProcessID = upcoming_pid++;
+        process->ProcessID = NextPID++;
         process->Time = new ControlBlockTime;
         process->State = STATE_READY;
         process->Checksum = PROCESS_CHECKSUM;
@@ -145,35 +146,31 @@ namespace MultiTasking
         if (parent)
             process->Parent = parent;
         process->PageTable = KernelPageTableAllocator->CreatePageTable();
-#ifdef DEBUG_SCHEDULER
-        debug("%s address space: %#llx", name, process->PageTable);
-#endif
+        schedbg("%s address space: %#llx", name, process->PageTable);
         SetControlBlockTime(process->Time);
         if (parent != nullptr)
             parent->Children.push_back(process);
         ListProcess.push_back(process);
-#ifdef DEBUG_SCHEDULER
-        debug("New thread created->TID:%d-Time:%02d:%02d:%02d    %02d.%02d.%02d", process->ProcessID, process->Time->h, process->Time->m, process->Time->s, process->Time->d, process->Time->M, process->Time->y);
-#endif
-        UNLOCK(process_lock);
+        schedbg("New process created->TID:%d-Time:%02d:%02d:%02d    %02d.%02d.%02d", process->ProcessID, process->Time->h, process->Time->m, process->Time->s, process->Time->d, process->Time->M, process->Time->y);
+        trace("New process %s created.", name);
+        LeaveCriticalSection;
         return process;
     }
 
     ThreadControlBlock *create_thread(ProcessControlBlock *parent, uint64_t function, uint64_t args0, uint64_t args1, enum ControlBlockPriority Priority, enum ControlBlockState State, enum ControlBlockPolicy Policy, bool UserMode)
     {
-        LOCK(thread_lock);
+        EnterCriticalSection;
         if (parent->Checksum != PROCESS_CHECKSUM)
         {
             err("Thread cannot have a null parent!");
             return nullptr;
         }
-#ifdef DEBUG_SCHEDULER
-        debug("fct: %016p, Priority: %d, State: %d, Policy %d | child of \"%s\"", function, Priority, State, Policy, parent->Name);
-#endif
+        schedbg("fct: %016p, Priority: %d, State: %d, Policy %d | child of \"%s\"", function, Priority, State, Policy, parent->Name);
         ThreadControlBlock *thread = new ThreadControlBlock;
 
         thread->Time = new ControlBlockTime;
-        thread->ThreadID = upcoming_tid++;
+        thread->Msg = new MessageQueue;
+        thread->ThreadID = NextTID++;
         thread->Parent = parent;
         thread->State = State;
         thread->Policy = Policy;
@@ -218,10 +215,9 @@ namespace MultiTasking
 
         SetControlBlockTime(thread->Time);
         parent->Threads.push_back(thread);
-#ifdef DEBUG_SCHEDULER
-        debug("New thread created->TID:%d-Time:%02d:%02d:%02d    %02d.%02d.%02d", thread->ThreadID, thread->Time->h, thread->Time->m, thread->Time->s, thread->Time->d, thread->Time->M, thread->Time->y);
-#endif
-        UNLOCK(thread_lock);
+        schedbg("New thread created->TID:%d-Time:%02d:%02d:%02d    %02d.%02d.%02d", thread->ThreadID, thread->Time->h, thread->Time->m, thread->Time->s, thread->Time->d, thread->Time->M, thread->Time->y);
+        trace("New thread %d created (%s).", thread->ThreadID, parent->Name);
+        LeaveCriticalSection;
         return thread;
     }
 
@@ -235,40 +231,22 @@ namespace MultiTasking
         return create_thread(parent, function, args0, args1, Priority, State, Policy, UserMode);
     }
 
-    void SetPageTable(VMM::PageTable *PML)
+    void SetPageTable(void *PML)
     {
-#ifdef DEBUG_SCHEDULER
-        debug("Setting the new page table %#llx", PML);
-#endif
         if ((uint64_t)PML != (uint64_t)readcr3().raw)
         {
-            // TODO: check if the page table is valid
-            // if (PML->Entries->GetAddress() == 0)
-            // {
-            //     err("Address space %#llx is not valid!", PML);
-            //     return;
-            // }
-            asm volatile("mov %[PML], %%cr3"
-                         :
-                         : [PML] "q"(PML)
-                         : "memory");
-#ifdef DEBUG_SCHEDULER
-            debug("Page table success!");
-#endif
+            // schedbg("Setting the new page table %#llx", PML);
+            // TODO: Page switching issue is only occurred when is running under QEMU. VMware and VirtualBox are not affected by this weird bug.
+            // asm volatile("mov %[PML], %%cr3"
+            //              :
+            //              : [PML] "q"(PML)
+            //              : "memory");
         }
-#ifdef DEBUG_SCHEDULER
-        else
-        {
-            debug("Page table failed! Is the same");
-        }
-#endif
     }
 
     __attribute__((noreturn)) static void IdleProcessLoop()
     {
-#ifdef DEBUG_SCHEDULER
-        debug("Idle process started!");
-#endif
+        schedbg("Idle process started!");
     idle_proc_loop:
         // if (mwait_available)
         // mwait(0, 0);
@@ -348,21 +326,34 @@ namespace MultiTasking
                 "iretq");
         }
 
+        // void fxsave(char *region)
+        // {
+        //     asm volatile("fxsave %0"
+        //                  :
+        //                  : "m"(region));
+        // }
+
+        // void fxrstor(char *region)
+        // {
+        //     asm volatile("fxrstor %0"
+        //                  :
+        //                  : "m"(region));
+        // }
+
         InterruptHandler(multi_scheduler_interrupt_handler)
         {
             uint64_t timeslice = PRIORITY_MEDIUM; // cannot jump from this goto statement to its label on "goto scheduler_eoi;"
+            Critical::CriticalSectionData *CriticalSectionData;
             if (!ScheduleOn)
                 goto scheduler_eoi;
 
-            LOCK(scheduler_lock);
+            CriticalSectionData = Critical::Enter();
             if (INT_NUM != IRQ11)
                 panic("Something is wrong with Scheduler (corrupted registers)");
 
             if (!CurrentProcess || !CurrentThread)
             {
-#ifdef DEBUG_SCHEDULER
-                debug("Searching for new process/thread (P:%d T:%d)", CurrentProcess ? 1 : 0, CurrentThread ? 1 : 0);
-#endif
+                schedbg("Searching for new process/thread (P:%d T:%d)", CurrentProcess ? 1 : 0, CurrentThread ? 1 : 0);
                 foreach (ProcessControlBlock *process in ListProcess)
                 {
                     check_process(process);
@@ -380,9 +371,7 @@ namespace MultiTasking
                         CurrentProcess = process;
                         CurrentThread = thread;
                         timeslice = thread->Priority;
-#ifdef DEBUG_SCHEDULER
-                        debug("Scheduling thread %d parent of %s", thread->ThreadID, thread->Parent->Name);
-#endif
+                        schedbg("Scheduling thread %d parent of %s", thread->ThreadID, thread->Parent->Name);
                         goto scheduler_success;
                     }
                 }
@@ -393,14 +382,15 @@ namespace MultiTasking
                 CurrentThread->Registers = *regs;
                 CurrentThread->Segment.gs = rdmsr(MSR_SHADOW_GS_BASE);
                 CurrentThread->Segment.fs = rdmsr(MSR_FS_BASE);
+                fxsave(CurrentThread->fx_region);
 
                 if (CurrentThread->State == STATE_RUNNING)
                     CurrentThread->State = STATE_READY;
 
-                uint64_t i;
-                for (i = 0; i < CurrentProcess->Threads.size(); i++)
+                for (uint64_t i = 0; i < CurrentProcess->Threads.size(); i++)
                 {
-                    check_thread(CurrentProcess->Threads[i]);
+                    if (CurrentProcess->Threads[i] != CurrentThread)
+                        continue;
                     ThreadControlBlock *thread = CurrentProcess->Threads[(i + 1)];
                     check_thread(thread);
                     if (CurrentProcess->State != STATE_READY)
@@ -409,17 +399,40 @@ namespace MultiTasking
                         continue;
                     CurrentThread = thread;
                     timeslice = CurrentThread->Priority;
-#ifdef DEBUG_SCHEDULER
-                    debug("Scheduling thread %d parent of %s", thread->ThreadID, thread->Parent->Name);
-#endif
+                    schedbg("[thd 0 -> end] Scheduling thread %d parent of %s->%d Procs %d", thread->ThreadID, thread->Parent->Name, CurrentProcess->Threads.size(), ListProcess.size());
                     goto scheduler_success;
                 }
 
                 for (uint64_t i = 0; i < ListProcess.size(); i++)
+                    if (ListProcess[i] == CurrentProcess)
+                    {
+                        check_process(ListProcess[i + 1]);
+                        ProcessControlBlock *process = ListProcess[i + 1];
+                        if (process->Threads.size() == 0)
+                            continue;
+                        if (process->State != STATE_READY)
+                            continue;
+                        for (uint64_t j = 0; j < process->Threads.size(); i++)
+                        {
+                            ThreadControlBlock *thread = process->Threads[j];
+                            check_thread(thread);
+                            if (thread->State != STATE_READY)
+                                continue;
+                            remove_process(CurrentProcess);
+                            CurrentProcess = process;
+                            CurrentThread = thread;
+                            timeslice = CurrentThread->Priority;
+                            schedbg("[cur proc+1 -> first thd] Scheduling thread %d parent of %s->%d (Total Procs %d)", thread->ThreadID, thread->Parent->Name, process->Threads.size(), ListProcess.size());
+                            goto scheduler_success;
+                        }
+                    }
+
+                for (uint64_t i = 0; i < ListProcess.size(); i++)
                 {
-                    check_process(ListProcess[i]);
-                    ProcessControlBlock *process = ListProcess[(i + 1)];
-                    check_process(ListProcess[(i + 1)]);
+                    ProcessControlBlock *process = ListProcess[i];
+                    check_process(process);
+                    if (process->Threads.size() == 0)
+                        continue;
                     if (process->State != STATE_READY)
                         continue;
 
@@ -432,43 +445,14 @@ namespace MultiTasking
                         CurrentProcess = process;
                         CurrentThread = thread;
                         timeslice = CurrentThread->Priority;
-#ifdef DEBUG_SCHEDULER
-                        debug("Scheduling thread %d parent of %s", thread->ThreadID, thread->Parent->Name);
-#endif
+                        schedbg("[proc 0 -> end -> first thd] Scheduling thread %d parent of %s->%d (Procs %d)", thread->ThreadID, thread->Parent->Name, process->Threads.size(), ListProcess.size());
                         goto scheduler_success;
                     }
                 }
-
-                for (uint64_t i = 0; i < ListProcess.size(); i++)
-                    if (ListProcess[i] == CurrentProcess)
-                        for (uint64_t p = 0; p < i + 1; p++)
-                        {
-                            check_process(ListProcess[p]);
-                            ProcessControlBlock *process = ListProcess[p];
-                            if (process->State != STATE_READY)
-                                continue;
-                            for (uint64_t j = 0; j < process->Threads.size(); i++)
-                            {
-                                ThreadControlBlock *thread = process->Threads[j];
-                                check_thread(thread);
-                                if (thread->State != STATE_READY)
-                                    continue;
-                                remove_process(CurrentProcess);
-                                CurrentProcess = process;
-                                CurrentThread = thread;
-                                timeslice = CurrentThread->Priority;
-#ifdef DEBUG_SCHEDULER
-                                debug("Scheduling thread %d parent of %s", thread->ThreadID, thread->Parent->Name);
-#endif
-                                goto scheduler_success;
-                            }
-                        }
             }
 
         scheduler_idle:
-#ifdef DEBUG_SCHEDULER
-            debug("Idling...");
-#endif
+            schedbg("Idling...");
             if (CurrentProcess != nullptr)
                 remove_process(CurrentProcess);
             IdleProcess = create_process(nullptr, (char *)"idle");
@@ -477,24 +461,22 @@ namespace MultiTasking
             CurrentProcess = IdleProcess;
             CurrentThread = IdleThread;
             *regs = IdleThread->Registers;
-            // SetPageTable(IdleProcess->PageTable);
+            SetPageTable(IdleProcess->PageTable);
             Yield(timeslice);
             goto scheduler_end;
         scheduler_success:
-#ifdef DEBUG_SCHEDULER
-            debug("Switching...");
-#endif
             CurrentThread->State = STATE_RUNNING;
             UpdateProcessTimeUsed(CurrentProcess->Time);
             UpdateProcessTimeUsed(CurrentThread->Time);
             *regs = CurrentThread->Registers;
-            // SetPageTable(CurrentProcess->PageTable);
+            SetPageTable(CurrentProcess->PageTable);
             wrmsr(MSR_FS_BASE, CurrentThread->Segment.fs);
             wrmsr(MSR_GS_BASE, (uint64_t)CurrentThread);
             wrmsr(MSR_SHADOW_GS_BASE, CurrentThread->UserMode ? CurrentThread->Segment.gs : (uint64_t)CurrentThread);
+            fxrstor(CurrentThread->fx_region);
             Yield(timeslice);
         scheduler_end:
-            UNLOCK(scheduler_lock);
+            LeaveCriticalSection;
         scheduler_eoi:
             EndOfInterrupt(INT_NUM);
         }

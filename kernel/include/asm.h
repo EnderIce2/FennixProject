@@ -93,7 +93,7 @@ static inline int GetCPUID(uint32_t leaf, uint32_t *rax, uint32_t *rbx, uint32_t
     return 1;
 }
 
-static inline bool interrupts_enabled()
+static inline bool InterruptsEnabled()
 {
     RFLAGS flags;
     asm volatile(
@@ -149,24 +149,27 @@ static inline void ENABLE_NX()
 
 enum MSRID
 {
+    MSR_CR_PAT = 0x00000277,
+
+    MSR_CR_PAT_RESET = 0x0007040600070406ULL,
     /** @brief Extended Feature Enable Register (0xc0000080) */
-    MSR_EFER = 0xc0000080,
-    /** @brief legacy SYSCALL (0xc0000081) */
-    MSR_STAR = 0xc0000081,
-    /** @brief 64bit SYSCALL (0xc0000082) */
-    MSR_LSTAR = 0xc0000082,
-    /** @brief compatibility mode SYSCALL (0xc0000083) */
-    MSR_CSTAR = 0xc0000083,
-    /** @brief EFLAGS mask for syscall (0xc0000084) */
-    MSR_SYSCALL_MASK = 0xc0000084,
-    /** @brief 64bit FS base (0xc0000100) */
-    MSR_FS_BASE = 0xc0000100,
-    /** @brief 64bit GS base (0xc0000101) */
-    MSR_GS_BASE = 0xc0000101,
-    /** @brief SwapGS GS shadow (0xc0000102) */
-    MSR_SHADOW_GS_BASE = 0xc0000102,
-    /** @brief Auxiliary TSC (0xc0000103) */
-    MSR_TSC_AUX = 0xc0000103
+    MSR_EFER = 0xC0000080,
+    /** @brief legacy SYSCALL (0xC0000081) */
+    MSR_STAR = 0xC0000081,
+    /** @brief 64bit SYSCALL (0xC0000082) */
+    MSR_LSTAR = 0xC0000082,
+    /** @brief compatibility mode SYSCALL (0xC0000083) */
+    MSR_CSTAR = 0xC0000083,
+    /** @brief EFLAGS mask for syscall (0xC0000084) */
+    MSR_SYSCALL_MASK = 0xC0000084,
+    /** @brief 64bit FS base (0xC0000100) */
+    MSR_FS_BASE = 0xC0000100,
+    /** @brief 64bit GS base (0xC0000101) */
+    MSR_GS_BASE = 0xC0000101,
+    /** @brief SwapGS GS shadow (0xC0000102) */
+    MSR_SHADOW_GS_BASE = 0xC0000102,
+    /** @brief Auxiliary TSC (0xC0000103) */
+    MSR_TSC_AUX = 0xC0000103
 
 };
 

@@ -1,103 +1,11 @@
 #include <types.h>
 #include <interrupts.h>
 #include <heap.h>
+#include <msg.h>
 #ifdef __cplusplus
 #include <vector.hpp>
 #endif
-
-enum ControlBlockState
-{
-    STATE_UNKNOWN,
-    STATE_READY,
-    STATE_RUNNING,
-    STATE_WAITING,
-    STATE_TERMINATED,
-};
-
-enum ControlBlockPolicy
-{
-    POLICY_UNKNOWN,
-    POLICY_KERNEL,
-    POLICY_SYSTEM,
-    POLICY_USER,
-};
-
-enum ControlBlockPriority
-{
-    PRIORITY_UNKNOWN,
-    PRIORITY_REALTIME,
-    PRIORITY_VERYHIGH,
-    PRIORITY_HIGH,
-    PRIORITY_MEDIUM,
-    PRIORITY_LOW,
-    PRIORITY_VERYLOW,
-    /* ... */
-    PRIORITY_IDLE = 100,
-};
-
-typedef struct _ControlBlockTime
-{
-    uint64_t ticks_used;
-    uint64_t tick;
-    uint64_t y;
-    uint64_t M;
-    uint64_t d;
-    uint64_t h;
-    uint64_t m;
-    uint64_t s;
-} ControlBlockTime;
-
-typedef struct _Segments
-{
-    uint64_t fs;
-    uint64_t gs;
-    uint64_t cs;
-    uint64_t ss;
-    uint64_t ds;
-    uint64_t es;
-} Segments;
-
-typedef struct _ThreadControlBlock
-{
-    uint64_t ThreadID;
-    enum ControlBlockState State;
-    enum ControlBlockPolicy Policy;
-    enum ControlBlockPriority Priority;
-    struct _ProcessControlBlock *Parent;
-    void *Stack;
-    bool UserMode;
-    REGISTERS Registers;
-    Segments Segment;
-    uint64_t ExitCode;
-    ControlBlockTime *Time;
-    uint32_t Checksum;
-} ThreadControlBlock;
-
-typedef struct _ProcessControlBlock
-{
-    uint64_t ProcessID;
-    char Name[256];
-    enum ControlBlockState State;
-    struct _ProcessControlBlock *Parent;
-#ifdef __cplusplus
-    Vector<struct _ProcessControlBlock *> Children;
-#else
-    void *Childern;
-#endif
-    uint64_t ExitCode;
-#ifndef __cplusplus
-    void *PageTable;
-#else
-    VMM::PageTable *PageTable;
-#endif
-    ControlBlockTime *Time;
-#ifdef __cplusplus
-    Vector<ThreadControlBlock *> Threads;
-#else
-    void *Threads; // not supported in C
-#endif
-    uint32_t Checksum;
-} ProcessControlBlock;
+#include <task.h>
 
 #ifdef __cplusplus
 
@@ -105,7 +13,8 @@ enum TaskingMode
 {
     None,
     Mono,
-    Multi
+    Multi,
+    MultiV2
 };
 
 extern int CurrentTaskingMode;
@@ -173,8 +82,11 @@ namespace MonoTasking
 
 namespace MultiTasking
 {
-#define PROCESS_CHECKSUM 0xCAFEBABE
-#define THREAD_CHECKSUM 0xDEADCAFE
+    enum Checksum
+    {
+        PROCESS_CHECKSUM = 0xCAFEBABE,
+        THREAD_CHECKSUM = 0xDEADCAFE
+    };
 
 #define check_process(process)                 \
     if (process == nullptr)                    \
@@ -200,6 +112,7 @@ namespace MultiTasking
 
         ProcessControlBlock *GetCurrentProcess();
         ThreadControlBlock *GetCurrentThread();
+        Vector<ProcessControlBlock *> GetVectorProcessList();
 
         ProcessControlBlock *CreateProcess(ProcessControlBlock *parent, char *name);
         ThreadControlBlock *CreateThread(ProcessControlBlock *parent, uint64_t function, uint64_t args0, uint64_t args1, enum ControlBlockPriority Priority, enum ControlBlockState State, enum ControlBlockPolicy Policy, bool UserMode);
@@ -222,6 +135,46 @@ namespace MultiTasking
     extern MultiTasking *MultiProcessing;
 };
 
+namespace MultiTaskingV2
+{
+    // TODO: For future use. For now it's not important.
+    class MultiTaskingV2
+    {
+    private:
+        enum Checksum
+        {
+            PROCESS_CHECKSUM = 0xCAFEBABE,
+            THREAD_CHECKSUM = 0xDEADCAFE
+        };
+
+    public:
+        uint64_t NextPID = 0, NextTID = 0, NextIndexToSchedule = 0;
+        ProcessControlBlock *CurrentProcess;
+        ThreadControlBlock *GetCurrentThread;
+        Vector<ThreadControlBlock *> ListProcess;
+
+        ProcessControlBlock *CreateProcess(ProcessControlBlock *Parent, char *Name);
+        ThreadControlBlock *CreateThread(ProcessControlBlock *Parent,
+                                         uint64_t InstructionPointer,
+                                         uint64_t Arg0, uint64_t Arg1,
+                                         enum ControlBlockPolicy Policy = POLICY_KERNEL,
+                                         enum ControlBlockPriority Priority = PRIORITY_MEDIUM,
+                                         enum ControlBlockState State = STATE_READY);
+
+        void Schedule();
+        /**
+         * @brief Construct a new Multi Tasking object
+         *
+         */
+        MultiTaskingV2();
+        /**
+         * @brief Destroy the Multi Tasking object
+         *
+         */
+        ~MultiTaskingV2();
+    };
+}
+
 #endif
 
 START_EXTERNC
@@ -233,6 +186,14 @@ START_EXTERNC
  * @return ProcessControlBlock
  */
 ProcessControlBlock *FENAPI SysGetProcessByPID(uint64_t ID);
+
+/**
+ * @brief Get a running thread by PID
+ *
+ * @param pid Thread identifier
+ * @return ThreadControlBlock
+ */
+ThreadControlBlock *FENAPI SysGetThreadByTID(uint64_t ID);
 
 /**
  * @brief Get current process
@@ -254,7 +215,7 @@ ThreadControlBlock *FENAPI SysGetCurrentThread();
  * @param File TODO: more
  * @return ProcessControlBlock
  */
-ProcessControlBlock *FENAPI SysCreateProcessFromFile(const char *File, bool usermode);
+ProcessControlBlock *FENAPI SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, bool usermode);
 
 /**
  * @brief Create a new simple process with custom name and address space
@@ -272,7 +233,7 @@ ProcessControlBlock *FENAPI SysCreateProcess(const char *Name, void *PageTable);
  * @param InstructionPointer
  * @return ThreadControlBlock*
  */
-ThreadControlBlock *FENAPI SysCreateThread(ProcessControlBlock *Parent, uint64_t InstructionPointer, bool UserMode);
+ThreadControlBlock *FENAPI SysCreateThread(ProcessControlBlock *Parent, uint64_t InstructionPointer, uint64_t arg0, uint64_t arg1, bool UserMode);
 
 void do_exit(uint64_t code);
 void schedule();

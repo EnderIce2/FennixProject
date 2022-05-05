@@ -64,12 +64,13 @@ enum CPU_FEATURE
 
     // ? Not sure how to get it.
     CPUID_FEAT_RDX_SMEP = 1 << 7,
+    CPUID_FEAT_RDX_UMIP = 1 << 2,
     CPUID_FEAT_RDX_SYSCALL = 1 << 11,
     CPUID_FEAT_XD = 1 << 20,
     CPUID_FEAT_1GB_PAGE = 1 << 26,
     CPUID_FEAT_RDTSCP = 1 << 27,
     CPUID_FEAT_LONG_MODE = 1 << 29,
-    CPUID_FEAT_RDX_SMAP = 0x00100000
+    CPUID_FEAT_RDX_SMAP = (1 << 20)
 };
 
 #define CPUID_VENDOR_OLDAMD "AMDisbetter!" /* early engineering samples of AMD K5 processor */

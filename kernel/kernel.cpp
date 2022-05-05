@@ -6,16 +6,19 @@
 #include <display.h>
 #include <string.h>
 #include <cwalk.h>
-#include <task.h>
+#include <internal_task.h>
+#include <asm.h>
 #include <io.h>
 #include <vm.h>
 
+#include "drivers/keyboard.hpp"
+#include "drivers/mouse.hpp"
 #include "drivers/disk.h"
+#include "cpu/smp.hpp"
 #include "cpu/cpuid.h"
 #include "driver.hpp"
 #include "cpu/gdt.h"
 #include "cpu/idt.h"
-#include "cpu/sse.h"
 #include "timer.h"
 #include "acpi.h"
 #include "pci.h"
@@ -114,11 +117,16 @@ void KernelTask()
 #ifdef DEBUG
     debug("Hello World!");
     printf("This is a text to test if the OS is working properly.\n");
-    CurrentDisplay->SetPrintColor(0xFFE85230);
-    printf("The quick brown fox jumps over the lazy dog.\n");
-    CurrentDisplay->SetPrintColor(0xFF1FF2EB);
-    printf("1234567890-=!@#$%%^&*()_+[]\\;',./{}|:\"<>?\n");
+    uint32_t test = 0x00FF00;
+    CurrentDisplay->SetPrintColor(test);
+    for (size_t i = 0; i < 128; i++)
+    {
+        if (i != '\n')
+            CurrentDisplay->KernelPrint(i);
+        CurrentDisplay->SetPrintColor(test + i * 2);
+    }
     CurrentDisplay->ResetPrintColor();
+    CurrentDisplay->KernelPrint('\n');
     printf("Kernel Compiled at: %s %s with C++ Standard: %d\n", __DATE__, __TIME__, CPP_LANGUAGE_STANDARD);
     printf("C++ Language Version (__cplusplus) :%ld\n", __cplusplus);
     if (CheckRunningUnderVM())
@@ -148,7 +156,7 @@ void KernelTask()
                     {
                         CurrentDisplay->SetPrintColor(0xFFCCCCCC);
                         printf("Loading driver %s... ", driver->Name);
-                        uint64_t ret = kdrv->LoadKernelDriver(driver);
+                        uint64_t ret = kdrv->LoadKernelDriverFromFile(driver);
                         if (ret == 0)
                         {
                             CurrentDisplay->SetPrintColor(0xFF058C19);
@@ -169,40 +177,65 @@ void KernelTask()
     vfs->Close(driverDirectory);
 
     BS->Progress(100);
-    if (!SysCreateProcessFromFile("/system/init", true))
+    if (!SysCreateProcessFromFile("/system/init", 0, 0, true))
     {
         CurrentDisplay->SetPrintColor(0xFFFC4444);
         printf("Failed to load /system/init process. The file is missing or corrupted.\n");
     }
     trace("End Of Kernel Task");
-    CPU_STOP;
 }
 
 /* I should make everything in C++ but I use code from older (failed) projects.
    I will probably move the old C code to C++ in the future. */
 
+void EnableCPUFeatures()
+{
+    CR0 cr0 = readcr0();
+    CR4 cr4 = readcr4();
+    if (cpu_feature(CPUID_FEAT_RDX_SSE))
+    {
+        debug("Enabling SSE support...");
+        cr0.EM = 0;
+        cr0.MP = 1;
+        cr4.OSFXSR = 1;
+        cr4.OSXMMEXCPT = 1;
+    }
+    // Not really useful at the moment and is causing a general protection fault (maybe because i don't know how to use it properly).
+    // debug("Checking for UMIP, SMEP & SMAP support...");
+    // if (cpu_feature(CPUID_FEAT_RDX_UMIP))
+    //     cr4.UMIP = 1;
+    // if (cpu_feature(CPUID_FEAT_RDX_SMEP))
+    //     cr4.SMEP = 1;
+    // if (cpu_feature(CPUID_FEAT_RDX_SMAP))
+    //     cr4.SMAP = 1;
+    writecr0(cr0);
+    writecr4(cr4);
+    debug("Enabling PAT support...");
+    wrmsr(MSR_CR_PAT, 0x6 | (0x0 << 8) | (0x1 << 16));
+    BS->IncreaseProgres();
+}
+
 void KernelInit()
 {
     trace("early initialization completed");
-    BS = new BootScreen::Screen();
+    BS = new BootScreen::Screen;
     initflags();
-    CurrentDisplay = new DisplayDriver::Display();
-    KernelPageTableAllocator = new PageTableHeap::PageTableHeap();
-    KernelStackAllocator = new StackHeap::StackHeap();
+    CurrentDisplay = new DisplayDriver::Display;
+    KernelPageTableAllocator = new PageTableHeap::PageTableHeap;
+    KernelStackAllocator = new StackHeap::StackHeap;
     init_gdt();
     BS->IncreaseProgres();
     init_idt();
     BS->IncreaseProgres();
     init_tss();
     BS->IncreaseProgres();
-    enable_sse();
-    BS->IncreaseProgres();
-    SymTbl = new KernelSymbols::Symbols();
+    SymTbl = new KernelSymbols::Symbols;
     init_acpi();
     init_pci();
     init_timer();
-    BS->IncreaseProgres();
+    smp = new SymmetricMultiprocessing::SMP;
     BS->Progress(40);
+    EnableCPUFeatures();
 
     outb(PIC1_DATA, 0b11111000);
     outb(PIC2_DATA, 0b11101111);
@@ -217,7 +250,7 @@ void KernelInit()
             CurrentDisplay->ResetPrintColor();
         }
 
-    vfs = new FileSystem::Virtual();
+    vfs = new FileSystem::Virtual;
 
     BS->Progress(50);
     // Make sure that after vfs initialization we set the root "/" directory.
@@ -237,19 +270,24 @@ void KernelInit()
         }
     }
 
-    devfs = new FileSystem::Device();
-    mountfs = new FileSystem::Mount();
-    diskmgr = new DiskManager::Disk();
-    partmgr = new DiskManager::Partition();
+    devfs = new FileSystem::Device;
+    mountfs = new FileSystem::Mount;
+    diskmgr = new DiskManager::Disk;
+    partmgr = new DiskManager::Partition;
     BS->Progress(70);
 
     new FileSystem::Serial;
     new FileSystem::Random;
     new FileSystem::Null;
     new FileSystem::Zero;
-    /* ... */
+
+    ps2keyboard = new PS2Keyboard::PS2KeyboardDriver;
+    BS->IncreaseProgres();
+    ps2mouse = new PS2Mouse::PS2MouseDriver;
+    BS->IncreaseProgres();
 
     // StartTasking((uint64_t)KernelTask, TaskingMode::Mono);
     StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
+    // StartTasking((uint64_t)KernelTask, TaskingMode::MultiV2);
     CPU_STOP;
 }

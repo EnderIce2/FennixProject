@@ -1,6 +1,7 @@
 #include "idt.h"
 #include "gdt.h"
 #include "../drivers/serial.h"
+#include <int.h>
 #include <interrupts.h>
 #include <display.h>
 #include <io.h>

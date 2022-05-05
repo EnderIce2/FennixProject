@@ -77,10 +77,7 @@ bool cpu_feature(enum CPU_FEATURE feature)
 {
     uint32_t rax, rbx, rcx, rdx;
     cpuid(0x01, &rax, &rbx, &rcx, &rdx);
-    // TODO: better detection of RDX or RCX
-    if (rdx & feature)
-        return true;
-    else if (rcx & feature)
+    if (rdx & feature || rcx & feature)
         return true;
     return false;
 }

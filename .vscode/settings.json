@@ -40,7 +40,7 @@
         "idt.h": "c",
         "string.h": "c",
         "sys.h": "c",
-        "task.h": "c",
+        "internal_task.h": "c",
         "cwalk.h": "c",
         "syscalls.h": "c"
     }

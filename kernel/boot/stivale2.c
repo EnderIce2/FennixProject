@@ -162,16 +162,21 @@ bool init_stivale2(struct stivale2_struct *bootloaderdata, GlobalBootParams *par
     }
     else
     {
-        debug("FIRMWARE: %016p", firmware->flags);
+        debug("FIRMWARE: %p", firmware->flags);
     }
 
     struct stivale2_struct_tag_smp *smp = (struct stivale2_struct_tag_smp *)tag_smp;
-    // params->smp = ; // TODO: implement smp support
-    debug("CPU Count: %d", smp->cpu_count);
-    if (smp->cpu_count == 0)
+    params->smp.CPUCount = smp->cpu_count;
+    params->smp.bspLAPICID = smp->bsp_lapic_id;
+    for (size_t i = 0; i < smp->cpu_count; i++)
     {
-        warn("something is not working as expected with STIVALE2 SMP");
+        params->smp.smp[i].ID = smp->smp_info[i].processor_id;
+        params->smp.smp[i].LAPICID = smp->smp_info[i].lapic_id;
+        params->smp.smp[i].TargetStack = smp->smp_info[i].target_stack;
+        params->smp.smp[i].GoToAddress = smp->smp_info[i].goto_address;
+        params->smp.smp[i].ExtraArgument = smp->smp_info[i].extra_argument;
     }
+    debug("CPU Count: %d", smp->cpu_count);
 
     struct stivale2_struct_tag_memmap *memmap = (struct stivale2_struct_tag_memmap *)tag_memmap;
     for (uint64_t i = 0; i < memmap->entries; i++)

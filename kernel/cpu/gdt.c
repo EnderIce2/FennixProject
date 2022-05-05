@@ -45,7 +45,7 @@ void init_tss()
     trace("initializing tss");
     tss = (TaskStateSegment *)kmalloc(sizeof(TaskStateSegment));
     uint64_t tss_base = (uint64_t)tss;
-    DBG_LOCK(tss_lock);
+    LOCK(tss_lock);
     gdt.Entries->TaskStateSegment.Length = tss_base + sizeof(TaskStateSegment);
     gdt.Entries->TaskStateSegment.Low = (uint16_t)(tss_base & 0xFFFF);
     gdt.Entries->TaskStateSegment.Middle = (uint8_t)((tss_base >> 16) & 0xFF);
@@ -58,8 +58,8 @@ void init_tss()
     tss->StackPointer0 = (uint64_t)RequestPage();
     tss->InterruptStackTable1 = (uint64_t)RequestPage(); // exceptions
     tss->InterruptStackTable2 = (uint64_t)RequestPage(); // nmi
-    tss->InterruptStackTable3 = (uint64_t)RequestPage(); // page fault, double fault, general protection fault
-    DBG_UNLOCK(tss_lock);
+    tss->InterruptStackTable3 = (uint64_t)RequestPage(); // page fault, double fault, general protection fault, etc...
+    UNLOCK(tss_lock);
 }
 
 GlobalDescriptorTableDescriptor get_current_gdt()

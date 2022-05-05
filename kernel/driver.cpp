@@ -1,18 +1,88 @@
 #include "driver.hpp"
 
+#include "kernel.h"
+#include "cpu/idt.h"
+
 #include <filesystem.h>
-#include <task.h>
+#include <stdarg.h>
+#include <internal_task.h>
 #include <heap.h>
 #include <elf.h>
 
 Driver::KernelDriver *kdrv = nullptr;
+
+void *FunctionCallHandler(KernelCallType type, ...)
+{
+    int maxargs = 16;
+    int argsn = 0;
+    uint64_t ArgList[maxargs];
+
+    va_list args;
+    va_start(args, maxargs);
+    while (argsn < maxargs)
+    {
+        ArgList[argsn] = va_arg(args, uint64_t);
+        argsn++;
+    }
+    va_end(args);
+
+    switch (type)
+    {
+    case KCALL_REQ_PAGE:
+    {
+        return KernelAllocator.RequestPage();
+    }
+    case KCALL_FREE_PAGE:
+    {
+        KernelAllocator.FreePage((void *)ArgList[0]);
+        return 0;
+    }
+    case KCALL_KMALLOC:
+    {
+        return kmalloc(ArgList[0]);
+    }
+    case KCALL_KFREE:
+    {
+        kfree((void *)ArgList[0]);
+        return 0;
+    }
+    case KCALL_KCALLOC:
+    {
+        return kcalloc(ArgList[0], ArgList[1]);
+    }
+    case KCALL_KCREALLOC:
+    {
+        return krealloc((void *)ArgList[0], ArgList[1]);
+    }
+    case KCALL_GET_BOOTPARAMS:
+    {
+        return (void *)&bootparams;
+    }
+    case KCALL_HOOK_INTERRUPT:
+    {
+        register_interrupt_handler(ArgList[0], (INTERRUPT_HANDLER)ArgList[1]);
+        return 0;
+    }
+    case KCALL_UNHOOK_INTERRUPT:
+        break;
+    case KCALL_END_OF_INTERRUPT:
+    {
+        EndOfInterrupt(ArgList[0]);
+        return 0;
+    }
+    default:
+        fixme("Call %d not implemented.", type);
+        return (void *)deadbeef;
+    }
+    return (void *)badfennec;
+}
 
 namespace Driver
 {
     ProcessControlBlock *DrvMgrProc = nullptr;
     FileSystem::FileSystemNode *DriverNode = nullptr;
 
-    uint64_t KernelDriver::LoadKernelDriver(FileSystem::FileSystemNode *Node)
+    uint64_t KernelDriver::LoadKernelDriverFromFile(FileSystem::FileSystemNode *Node)
     {
         void *DriverBuffer = KernelAllocator.RequestPages(Node->Length / 0x1000 + 1);
         FileSystem::FILE *driverfile = vfs->ConvertNodeToFILE(Node);
@@ -67,21 +137,45 @@ namespace Driver
             }
             // process pages -> addr / 0x1000 + 1;
             // KernelAllocator.FreePages(DriverBuffer, Node->Length / 0x1000 + 1);
-            debug("Driver %s Entry Point: %#llx", Node->Name, (uint64_t)(header->e_entry + (uint64_t)offset));
-            ThreadControlBlock *thread = SysCreateThread(reinterpret_cast<ProcessControlBlock *>(DrvMgrProc), (uint64_t)(header->e_entry + (uint64_t)offset), false);
-            if (thread != nullptr)
+
+            Elf64_Shdr shstrtab;
+            memcpy(&shstrtab, (void *)((uint64_t)DriverBuffer + (header->e_shoff + header->e_shstrndx * header->e_shentsize)), sizeof(Elf64_Shdr));
+            char *names = (char *)kmalloc(shstrtab.sh_size);
+            memcpy(names, (void *)((uint64_t)DriverBuffer + (shstrtab.sh_offset)), shstrtab.sh_size);
+
+            for (uint16_t i = 0; i < header->e_shnum; i++)
             {
-                // TODO: unloaded drivers need to be removed
-                FileSystem::FileSystemNode *drvnode = vfs->Create(DriverNode, Node->Name);
-                drvnode->Mode = 000;
-                drvnode->IndexNode = thread->ThreadID;
-                drvnode->Address = (uint64_t)(header->e_entry + (uint64_t)offset);
-                drvnode->Flags = FileSystem::NodeFlags::FS_PIPE;
-                return 0;
+                struct elf64_shdr section;
+                memcpy(&section, (void *)((uint64_t)DriverBuffer + (header->e_shoff + i * header->e_shentsize)), sizeof(elf64_shdr));
+                if (!strcmp(&names[section.sh_name], ".driverdata"))
+                {
+                    kfree(names);
+                    DriverDefinition def;
+                    DriverKernelMainData kerndata = {.KFctCall = FunctionCallHandler};
+                    memcpy(&def, (void *)((uint64_t)DriverBuffer + (section.sh_offset)), section.sh_size);
+                    void *DriverStartFunction = (void *)(header->e_entry + (Elf64_Addr)offset);
+                    debug("Driver Name: %s", def.Name);
+                    debug("Entry:%#llx + Offset:%#llx -> %#llx", header->e_entry, offset, DriverStartFunction);
+                    uint64_t ret = ((uint64_t(*)(DriverKernelMainData *))(DriverStartFunction))(&kerndata);
+                    if (ret == DRIVER_SUCCESS)
+                    {
+                        // TODO: unloaded drivers need to be removed
+                        FileSystem::FileSystemNode *drvnode = vfs->Create(DriverNode, Node->Name);
+                        drvnode->Mode = 000;
+                        drvnode->Address = (uint64_t)(header->e_entry + (uint64_t)offset);
+                        drvnode->Flags = FileSystem::NodeFlags::FS_PIPE;
+                        return 0;
+                    }
+                    else
+                    {
+                        KernelAllocator.FreePages(DriverBuffer, Node->Length / 0x1000 + 1);
+                        return 0xDF01;
+                    }
+                }
             }
-            else
-                return 0xFC59;
-            // return 0xDEC64;
+            KernelAllocator.FreePages(DriverBuffer, Node->Length / 0x1000 + 1);
+            kfree(names);
+            return 0xDEC64;
         }
         return 0;
     }

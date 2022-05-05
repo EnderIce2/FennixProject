@@ -1,6 +1,10 @@
+#include <driver.h>
 
-
-int _start()
+DRIVER_ENTRY
 {
-    return 0;
 }
+
+DRIVER = {
+    .Name = "AC97 Audio Driver",
+    .Type = TYPE_AUDIO,
+    .Bind = {BIND_NULL}};
