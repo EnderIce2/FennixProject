@@ -26,7 +26,7 @@ export BUILD_SH
 all: update_limine update_gcc update_qemu create_build
 
 appveyor: update_limine
-	wget https://get.station307.com/SiUYgmJ15kt/cross.tar.xz -O cross.tar.xz
+	wget https://dl.dropboxusercontent.com/s/6h3qsmw0ww7nsyd/cross.tar.xz?dl=0 -O cross.tar.xz
 	tar -xvf cross.tar.xz
 
 initrd:
