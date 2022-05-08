@@ -71,6 +71,9 @@ fonts:
 tools: fonts
 	make --quiet -C tools all
 
+tools_appveyor:
+	make --quiet -C tools appveyor
+
 build: build_kernel build_libc build_userspace build_image
 
 rebuild: clean build

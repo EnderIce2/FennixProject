@@ -25,6 +25,11 @@ export BUILD_SH
 
 all: update_limine update_gcc update_qemu create_build
 
+appveyor: update_limine
+	wget https://cdn-121.anonfiles.com/Rdr0e2e3ye/b3b19761-1651973232/cross.tar.gz -P tools/
+	tar -xvzf cross.tar.gz
+	rm -f cross.tar.gz
+
 initrd:
 	gcc -w initrd.c -o initrd.elf
 
