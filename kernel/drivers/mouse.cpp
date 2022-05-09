@@ -3,6 +3,8 @@
 #include "../cpu/idt.h"
 #include "../kernel.h"
 
+#include <display.h>
+#include <filesystem.h>
 #include <interrupts.h>
 #include <int.h>
 #include <io.h>
@@ -11,7 +13,6 @@ PS2Mouse::PS2MouseDriver *ps2mouse = nullptr;
 
 namespace PS2Mouse
 {
-
     enum MouseButton
     {
         MouseNone,
@@ -37,7 +38,7 @@ namespace PS2Mouse
 
     uint8_t Packet[4];
     bool PacketReady = false;
-    __attribute__((aligned(0x1000))) MouseInfo minfo = {MouseNone, 0, 0};
+    MouseInfo minfo = {MouseNone, 0, 0};
 
     void ProcessMousePacket()
     {
@@ -96,13 +97,13 @@ namespace PS2Mouse
 
         if (minfo.X < 0)
             minfo.X = 0;
-        if (minfo.X > bootparams->Framebuffer->Width - 1)
-            minfo.X = bootparams->Framebuffer->Width - 1;
+        if (minfo.X > CurrentDisplay->GetFramebuffer()->Width - 1)
+            minfo.X = CurrentDisplay->GetFramebuffer()->Width - 1;
 
         if (minfo.Y < 0)
             minfo.Y = 0;
-        if (minfo.Y > bootparams->Framebuffer->Height - 1)
-            minfo.Y = bootparams->Framebuffer->Height - 1;
+        if (minfo.Y > CurrentDisplay->GetFramebuffer()->Height - 1)
+            minfo.Y = CurrentDisplay->GetFramebuffer()->Height - 1;
 
         if (Packet[0] & PS2Leftbutton)
             minfo.Buttons = MouseButton::Left;
@@ -149,6 +150,16 @@ namespace PS2Mouse
         }
     }
 
+    ReadFSFunction(Mouse_Read)
+    {
+        memcpy(Buffer, &minfo, Size);
+        return Size;
+    }
+
+    FileSystem::FileSystemOpeations mouse = {
+        .Name = "PS/2 Mouse",
+        .Read = Mouse_Read};
+
     PS2MouseDriver::PS2MouseDriver()
     {
         outb(COMMAND, 0xA8);
@@ -164,6 +175,7 @@ namespace PS2Mouse
         Write(DATA, 0xF4);
         Read();
         register_interrupt_handler(IRQ12, PS2MouseInterruptHandler);
+        devfs->AddFileSystem(&mouse, 0666, "mouse", FileSystem::NodeFlags::FS_PIPE);
     }
 
     PS2MouseDriver::~PS2MouseDriver()
