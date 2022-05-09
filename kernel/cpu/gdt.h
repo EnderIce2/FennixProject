@@ -10,8 +10,9 @@
 #define GDT_USER_CODE (offsetof(GlobalDescriptorTableEntries, UserCode) | 3)
 #define GDT_TSS (offsetof(GlobalDescriptorTableEntries, TaskStateSegment) | 3)
 
+extern GlobalDescriptorTableDescriptor gdt;
+extern TaskStateSegment *tss;
 EXTERNC void init_gdt();
 EXTERNC void init_tss();
-GlobalDescriptorTableDescriptor get_current_gdt();
 
 #endif // !__FENNIX_KERNEL_GDT_H__

@@ -7,6 +7,8 @@
 
 #include "cpuid.h"
 
+extern InterruptDescriptorTableDescriptor idtr;
+
 typedef void (*INTERRUPT_HANDLER)(REGISTERS *);
 
 EXTERNC void set_idt_entry(uint8_t idt, void (*handler)(), uint64_t ist, uint64_t ring);

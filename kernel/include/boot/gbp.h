@@ -100,7 +100,7 @@ struct GBPSMPInfo
 
 typedef struct _GBPSMP
 {
-    uint32_t bspLAPICID;
+    uint32_t BootstrapProcessLAPICID;
     uint64_t CPUCount;
     struct GBPSMPInfo smp[MAX_SMP];
 } GBPSMP;

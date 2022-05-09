@@ -167,7 +167,7 @@ bool init_stivale2(struct stivale2_struct *bootloaderdata, GlobalBootParams *par
 
     struct stivale2_struct_tag_smp *smp = (struct stivale2_struct_tag_smp *)tag_smp;
     params->smp.CPUCount = smp->cpu_count;
-    params->smp.bspLAPICID = smp->bsp_lapic_id;
+    params->smp.BootstrapProcessLAPICID = smp->bsp_lapic_id;
     for (size_t i = 0; i < smp->cpu_count; i++)
     {
         params->smp.smp[i].ID = smp->smp_info[i].processor_id;

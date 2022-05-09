@@ -189,7 +189,6 @@ void set_idt_entry(uint8_t idt, void (*handler)(), uint64_t ist, uint64_t ring)
     idt_entries[idt].P = 1;
     idt_entries[idt].InterruptStackTable = ist;
     idt_entries[idt].Ring = ring;
-    // interrupt_handlers[idt] = handler;
 }
 
 void register_interrupt_handler(uint8_t vector, INTERRUPT_HANDLER handle)

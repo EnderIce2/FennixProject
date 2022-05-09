@@ -1,4 +1,5 @@
 #include "gdt.h"
+#include "../kernel.h"
 #include <heap.h>
 #include <lock.h>
 #include <asm.h>
@@ -37,32 +38,27 @@ void init_gdt()
     debug("KC:%d|KD:%d|UD:%d|UC:%d|TSS:%d", GDT_KERNEL_CODE, GDT_KERNEL_DATA, GDT_USER_DATA, GDT_USER_CODE, GDT_TSS);
 }
 
-static TaskStateSegment *tss;
+TaskStateSegment *tss = NULL;
 NEWLOCK(tss_lock);
 
 void init_tss()
 {
     trace("initializing tss");
-    tss = (TaskStateSegment *)kmalloc(sizeof(TaskStateSegment));
-    uint64_t tss_base = (uint64_t)tss;
     LOCK(tss_lock);
-    gdt.Entries->TaskStateSegment.Length = tss_base + sizeof(TaskStateSegment);
+    tss = (TaskStateSegment *)kcalloc(bootparams->smp.CPUCount, sizeof(TaskStateSegment));
+    uint64_t tss_base = (uint64_t)&tss[0];
+    gdt.Entries->TaskStateSegment.Length = tss_base + sizeof(tss[0]);
     gdt.Entries->TaskStateSegment.Low = (uint16_t)(tss_base & 0xFFFF);
     gdt.Entries->TaskStateSegment.Middle = (uint8_t)((tss_base >> 16) & 0xFF);
     gdt.Entries->TaskStateSegment.High = (uint8_t)((tss_base >> 24) & 0xFF);
     gdt.Entries->TaskStateSegment.Upper32 = (uint32_t)((tss_base >> 32) & 0xFFFFFFFF);
     gdt.Entries->TaskStateSegment.Flags1 = 0b10001001;
     gdt.Entries->TaskStateSegment.Flags2 = 0b00000000;
-    tss->IOMapBaseAddressOffset = sizeof(TaskStateSegment);
+    (&tss[0])->IOMapBaseAddressOffset = sizeof(TaskStateSegment);
     ltr(GDT_TSS);
-    tss->StackPointer0 = (uint64_t)RequestPage();
-    tss->InterruptStackTable1 = (uint64_t)RequestPage(); // exceptions
-    tss->InterruptStackTable2 = (uint64_t)RequestPage(); // nmi
-    tss->InterruptStackTable3 = (uint64_t)RequestPage(); // page fault, double fault, general protection fault, etc...
+    (&tss[0])->StackPointer0 = (uint64_t)kernel_stack;
+    (&tss[0])->InterruptStackTable0 = (uint64_t)RequestPage(); // exceptions
+    (&tss[0])->InterruptStackTable1 = (uint64_t)RequestPage(); // nmi
+    (&tss[0])->InterruptStackTable2 = (uint64_t)RequestPage(); // page fault, double fault, general protection fault, etc...
     UNLOCK(tss_lock);
-}
-
-GlobalDescriptorTableDescriptor get_current_gdt()
-{
-    return gdt;
 }

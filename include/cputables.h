@@ -20,13 +20,13 @@ typedef struct _TaskStateSegment
     uint64_t StackPointer1;
     uint64_t StackPointer2;
     uint64_t Reserved2;
+    uint64_t InterruptStackTable0;
     uint64_t InterruptStackTable1;
     uint64_t InterruptStackTable2;
     uint64_t InterruptStackTable3;
     uint64_t InterruptStackTable4;
     uint64_t InterruptStackTable5;
     uint64_t InterruptStackTable6;
-    uint64_t InterruptStackTable7;
     uint64_t Reserved3;
     // uint64_t Reserved4;
     uint32_t IOMapBaseAddressOffset;
