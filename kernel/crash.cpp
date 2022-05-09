@@ -48,7 +48,8 @@ EXTERNC void crash(string message)
 
 EXTERNC void isrcrash(REGISTERS *regs)
 {
-    CLI;
+    if (CS != 0x23)
+        CLI;
     CR0 cr0 = readcr0();
     CR2 cr2 = readcr2();
     CR3 cr3 = readcr3();
@@ -66,9 +67,6 @@ EXTERNC void isrcrash(REGISTERS *regs)
             SysGetCurrentThread()->State = STATE_TERMINATED;
             return;
         }
-        else
-        {
-        }
         break;
     case ISR_Debug:
         SET_PRINT_MID((char *)"Manual Triggered Crash Test (Debug)", FHeight(2));
@@ -84,6 +82,13 @@ EXTERNC void isrcrash(REGISTERS *regs)
     case ISR_BoundRange:
         break;
     case ISR_InvalidOpcode:
+        if (CS == 0x23)
+        {
+            err("Invalid opcode in an user-mode process.");
+            // TODO: signal the application to stop.
+            SysGetCurrentThread()->State = STATE_TERMINATED;
+            return;
+        }
         break;
     case ISR_DeviceNotAvailable:
         break;
