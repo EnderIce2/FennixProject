@@ -367,7 +367,7 @@ namespace FileSystem
             File->Status = FILESTATUS::INVALID_PARAMETER;
             return 0;
         }
-        vfsdbg("Reading %s", File->Name);
+        vfsdbg("Reading %s out->%016x", File->Name, Buffer);
         return File->Node->Operator->Read(File->Node, Offset, Size, Buffer);
     }
 
@@ -389,7 +389,7 @@ namespace FileSystem
             File->Status = FILESTATUS::INVALID_PARAMETER;
             return 0;
         }
-        vfsdbg("Writing %s", File->Name);
+        vfsdbg("Writing %s out->%016x", File->Name, Buffer);
         return File->Node->Operator->Write(File->Node, Offset, Size, Buffer);
     }
 
