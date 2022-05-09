@@ -11,6 +11,7 @@
 #include <io.h>
 #include <vm.h>
 
+#include "sysrecovery/recovery.hpp"
 #include "drivers/keyboard.hpp"
 #include "drivers/mouse.hpp"
 #include "drivers/disk.h"
@@ -24,8 +25,8 @@
 #include "pci.h"
 
 // Early params are used only for the most basic functions. After that it may be overwritten with other data.
-GlobalBootParams earlyparams;
-GlobalBootParams *bootparams = nullptr;
+__attribute__((aligned(0x1000))) GlobalBootParams earlyparams;
+__attribute__((aligned(0x1000))) GlobalBootParams *bootparams = nullptr;
 SysFlags *sysflags = nullptr;
 uint8_t kernel_stack[STACK_SIZE];
 
@@ -45,10 +46,13 @@ EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
     init_pmm();
     init_vmm();
     init_kernelpml();
-    init_heap(AllocationAlgorithm::Default);
-    bootparams = (GlobalBootParams *)kcalloc(1, sizeof(GlobalBootParams));
-    bootparams->Framebuffer = (GBPFramebuffer *)kcalloc(1, sizeof(GBPFramebuffer));
-    bootparams->rsdp = (GBPRSDP *)kcalloc(1, sizeof(GBPRSDP));
+    init_heap(AllocationAlgorithm::LibAlloc11);
+    bootparams = new GlobalBootParams;
+    bootparams->Framebuffer = new GBPFramebuffer;
+    bootparams->rsdp = new GBPRSDP;
+    debug("bootparams is allocated at %p", bootparams);
+    debug("bootparams framebuffer is allocated at %p", bootparams->Framebuffer);
+    debug("bootparams rsdp is allocated at %p", bootparams->rsdp);
     sysflags = (SysFlags *)kcalloc(1, sizeof(SysFlags));
     sysflags->rootfs = (string)kcalloc(1, sizeof(string));
     init_stivale2(bootloaderdata, bootparams, true);
@@ -111,6 +115,8 @@ void initflags()
     else
         sysflags->noloadingscreen = false;
 }
+
+bool ShowRecoveryScreen = false;
 
 void KernelTask()
 {
@@ -177,6 +183,10 @@ void KernelTask()
     vfs->Close(driverDirectory);
 
     BS->Progress(100);
+
+    if (ShowRecoveryScreen)
+        new SystemRecovery::Recovery;
+
     if (!SysCreateProcessFromFile("/system/init", 0, 0, true))
     {
         CurrentDisplay->SetPrintColor(0xFFFC4444);
@@ -187,33 +197,6 @@ void KernelTask()
 
 /* I should make everything in C++ but I use code from older (failed) projects.
    I will probably move the old C code to C++ in the future. */
-
-void EnableCPUFeatures()
-{
-    CR0 cr0 = readcr0();
-    CR4 cr4 = readcr4();
-    if (cpu_feature(CPUID_FEAT_RDX_SSE))
-    {
-        debug("Enabling SSE support...");
-        cr0.EM = 0;
-        cr0.MP = 1;
-        cr4.OSFXSR = 1;
-        cr4.OSXMMEXCPT = 1;
-    }
-    // Not really useful at the moment and is causing a general protection fault (maybe because i don't know how to use it properly).
-    // debug("Checking for UMIP, SMEP & SMAP support...");
-    // if (cpu_feature(CPUID_FEAT_RDX_UMIP))
-    //     cr4.UMIP = 1;
-    // if (cpu_feature(CPUID_FEAT_RDX_SMEP))
-    //     cr4.SMEP = 1;
-    // if (cpu_feature(CPUID_FEAT_RDX_SMAP))
-    //     cr4.SMAP = 1;
-    writecr0(cr0);
-    writecr4(cr4);
-    debug("Enabling PAT support...");
-    wrmsr(MSR_CR_PAT, 0x6 | (0x0 << 8) | (0x1 << 16));
-    BS->IncreaseProgres();
-}
 
 void KernelInit()
 {
@@ -233,9 +216,9 @@ void KernelInit()
     init_acpi();
     init_pci();
     init_timer();
-    smp = new SymmetricMultiprocessing::SMP;
     BS->Progress(40);
-    EnableCPUFeatures();
+    smp = new SymmetricMultiprocessing::SMP;
+    BS->IncreaseProgres();
 
     outb(PIC1_DATA, 0b11111000);
     outb(PIC2_DATA, 0b11101111);
