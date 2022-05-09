@@ -1,11 +1,9 @@
 #pragma once
-#ifdef __cplusplus
-#include <vector.hpp>
-#endif
 #include <stdint.h>
 
 struct MessageData
 {
+    bool Valid;
     uint64_t SourceTID;
     void *Buffer;
 };
@@ -24,12 +22,12 @@ struct MsgAllowedPrivilegeLevel
     void *SpecialPermission;
 };
 
+#define MAX_MESSAGES 0x100
+
 struct MessageQueue
 {
     struct MsgAllowedPrivilegeLevel AllowedPrivilegeLevel;
 #ifdef __cplusplus
-    Vector<struct MessageData> Messages;
-#else
-    void *Messages;
+    MessageData Messages[MAX_MESSAGES] = {0};
 #endif
 };

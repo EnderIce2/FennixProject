@@ -29,10 +29,12 @@ static uint64_t internal_exit(uint64_t code)
     return 0;
 }
 
-static ProcessControlBlock *internal_createprocess(char *Path, uint64_t arg0, uint64_t arg1) { return SysCreateProcessFromFile(Path, arg0, arg1, true); }
+static uint64_t internal_createprocess(char *Path, uint64_t arg0, uint64_t arg1) { return SysCreateProcessFromFile(Path, arg0, arg1, true)->ProcessID; }
 static ThreadControlBlock *internal_createthread(uint64_t rip, uint64_t arg0, uint64_t arg1) { return SysCreateThread(SysGetCurrentProcess(), rip, arg0, arg1, true); }
 static ProcessControlBlock *internal_getcurrentprocess() { return SysGetCurrentProcess(); }
 static ThreadControlBlock *internal_getcurrentthread() { return SysGetCurrentThread(); }
+static uint64_t internal_getcurrentprocessid() { return SysGetCurrentProcess()->ProcessID; }
+static uint64_t internal_getcurrentthreadid() { return SysGetCurrentThread()->ThreadID; }
 
 static void *internal_requestpage()
 {
@@ -43,8 +45,8 @@ static void *internal_requestpage()
 static void internal_freepage(void *page)
 {
     KernelAllocator.FreePage(page);
-    // TOOD: not sure if this is the right thing to do
-    // KernelPageTableManager.UnmapMemory(page);
+    KernelPageTableManager.UnmapMemory(page);
+    KernelPageTableManager.MapMemory(page, page, PTFlag::RW);
 }
 
 static uint64_t internal_fbaddress() { return CurrentDisplay->GetFramebuffer()->Address; }
@@ -55,8 +57,11 @@ static uint64_t internal_fbppsl() { return CurrentDisplay->GetFramebuffer()->Pix
 
 static char internal_getlastkeyboardscancode() { return ps2keyboard->GetLastScanCode(); }
 
-static void internal_sendMessage(uint64_t ThreadID, void *Buffer) { return MessageManager::Send(ThreadID, Buffer); }
+static void internal_createMessageListener(char *Name) { return MessageManager::CreateListener(Name); }
+static void internal_sendMessageByTID(uint64_t ThreadID, void *Buffer) { return MessageManager::SendByTID(ThreadID, Buffer); }
+static void internal_sendMessageByName(char *Name, void *Buffer) { return MessageManager::SendByName(Name, Buffer); }
 static MessageQueue *internal_getMessageQueue() { return MessageManager::GetMessageQueue(); }
+static void internal_removeMessage(uint64_t Index) { return MessageManager::Remove(Index); }
 
 static FileSystem::FILE *internal_fileOpen(char *Path) { return vfs->Open(Path, nullptr); }
 static void internal_fileClose(FileSystem::FILE *File) { vfs->Close(File); }
@@ -77,6 +82,8 @@ static void *syscallsTable[] = {
     [_ThreadCreate] = (void *)internal_createthread,
     [_GetCurrentProcess] = (void *)internal_getcurrentprocess,
     [_GetCurrentThread] = (void *)internal_getcurrentthread,
+    [_GetCurrentProcessID] = (void *)internal_getcurrentprocessid,
+    [_GetCurrentThreadID] = (void *)internal_getcurrentthreadid,
     [_Schedule] = (void *)internal_unimpl,
 
     [_RequestPage] = (void *)internal_requestpage,
@@ -97,8 +104,11 @@ static void *syscallsTable[] = {
 
     [_GetLastKeyboardScanCode] = (void *)internal_getlastkeyboardscancode,
 
-    [_SendMessage] = (void *)internal_sendMessage,
+    [_CreateMessageListener] = (void *)internal_createMessageListener,
+    [_SendMessageByTID] = (void *)internal_sendMessageByTID,
+    [_SendMessageByName] = (void *)internal_sendMessageByName,
     [_GetMessageQueue] = (void *)internal_getMessageQueue,
+    [_RemoveMessage] = (void *)internal_removeMessage,
 
     [_FileOpen] = (void *)internal_fileOpen,
     [_FileClose] = (void *)internal_fileClose,
