@@ -47,6 +47,12 @@ typedef struct _ControlBlockTime
     uint64_t s;
 } ControlBlockTime;
 
+typedef struct _ControlBlockPerformance
+{
+    uint64_t Usage;
+    // TODO: add more
+} ControlBlockPerformance;
+
 typedef struct _Segments
 {
     uint64_t fs;
@@ -72,6 +78,7 @@ typedef struct _ThreadControlBlock
     Segments Segment;
     uint64_t ExitCode;
     ControlBlockTime *Time;
+    ControlBlockPerformance *Performance;
     uint32_t Checksum;
 } ThreadControlBlock;
 
@@ -89,6 +96,7 @@ typedef struct _ProcessControlBlock
     uint64_t ExitCode;
     void *PageTable;
     ControlBlockTime *Time;
+    ControlBlockPerformance *Performance;
 #ifdef __cplusplus
     Vector<ThreadControlBlock *> Threads;
 #else

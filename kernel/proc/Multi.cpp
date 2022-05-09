@@ -38,7 +38,10 @@ namespace MultiTasking
 #define ScheduleInterrupt asm volatile("int $0x2b")
     static uint64_t NextPID = 0;
     static uint64_t NextTID = 0;
-    static uint64_t LastCount = 0;
+    static uint64_t LastUsedCountP = 0;
+    static uint64_t LastUsedCountT = 0;
+    static uint64_t LastUsageCountP = 0;
+    static uint64_t LastUsageCountT = 0;
     static bool IdleTrigger = false;
     static bool AllocProcEnable = true;
     static bool ScheduleOn = false;
@@ -85,6 +88,8 @@ namespace MultiTasking
         schedbg("Thread %d terminated", thread->ThreadID);
         KernelStackAllocator->FreeStack(thread->Stack);
         KernelAllocator.FreePages(thread->Msg, 2);
+        kfree(thread->Time);
+        kfree(thread->Performance);
         kfree(thread);
         thread = nullptr;
     }
@@ -113,6 +118,8 @@ namespace MultiTasking
             }
             schedbg("Process %d terminated", process->ProcessID);
             KernelPageTableAllocator->RemovePageTable(reinterpret_cast<VMM::PageTable *>(process->PageTable));
+            kfree(process->Time);
+            kfree(process->Performance);
             kfree(process);
             process = nullptr;
         }
@@ -148,6 +155,7 @@ namespace MultiTasking
 
         process->ProcessID = NextPID++;
         process->Time = new ControlBlockTime;
+        process->Performance = new ControlBlockPerformance;
         process->State = STATE_READY;
         process->Checksum = PROCESS_CHECKSUM;
         memcpy(process->Name, name, sizeof(process->Name));
@@ -177,6 +185,7 @@ namespace MultiTasking
         ThreadControlBlock *thread = new ThreadControlBlock;
 
         thread->Time = new ControlBlockTime;
+        thread->Performance = new ControlBlockPerformance;
         thread->Msg = (MessageQueue *)KernelAllocator.RequestPages(2);
         KernelPageTableManager.MapMemory(thread->Msg, thread->Msg, PTFlag::US | PTFlag::RW);
         KernelPageTableManager.MapMemory(thread->Msg + PAGE_SIZE, thread->Msg + PAGE_SIZE, PTFlag::US | PTFlag::RW);
@@ -265,12 +274,40 @@ namespace MultiTasking
         goto idle_proc_loop;
     }
 
-    void UpdateProcessTimeUsed(ControlBlockTime *Time)
+    void UpdateTimeUsed(ControlBlockTime *Time, bool IsProc)
     {
         uint64_t CurrentCount = counter();
-        uint64_t elapsed = CurrentCount - LastCount;
-        LastCount = CurrentCount;
+        uint64_t elapsed = 0;
+        if (IsProc)
+        {
+            elapsed = CurrentCount - LastUsedCountP;
+            LastUsedCountP = CurrentCount;
+        }
+        else
+        {
+            elapsed = CurrentCount - LastUsedCountT;
+            LastUsedCountT = CurrentCount;
+        }
         Time->ticks_used += elapsed;
+    }
+
+    void UpdateUsage(ControlBlockPerformance *Performance, bool IsProc)
+    {
+        uint64_t CurrentCount = counter();
+        uint64_t elapsed = 0;
+        // TODO: Implement this.
+        if (IsProc)
+        {
+            elapsed = CurrentCount - LastUsedCountP;
+            LastUsageCountP = CurrentCount;
+            Performance->Usage = 0; // elapsed / 100;
+        }
+        else
+        {
+            elapsed = CurrentCount - LastUsedCountT;
+            LastUsageCountT = CurrentCount;
+            Performance->Usage = 0; // elapsed / 100;
+        }
     }
 
     void MultiTasking::Schedule()
@@ -305,14 +342,14 @@ namespace MultiTasking
             CurrentDisplay->SetPrintColor(0xFF2200);
             if (Proc1 == CurrentProcess)
                 showarrow = true;
-            printf("%s(%d) %s [%lld/%lld]\n", Proc1->Name, Proc1->ProcessID, showarrow ? "<-" : "  ", Proc1->State, Proc1->Time->ticks_used);
+            printf("%s(%d) %s [%d%%/%lld]\n", Proc1->Name, Proc1->ProcessID, showarrow ? "<-" : "  ", Proc1->Performance->Usage, Proc1->Time->ticks_used);
             foreach (auto thd in Proc1->Threads)
             {
                 showarrow = false;
                 CurrentDisplay->SetPrintColor(0x00FF22);
                 if (thd == CurrentThread)
                     showarrow = true;
-                printf(" \\%s(%d) %s [%lld/%lld]\n", Proc1->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->State, thd->Time->ticks_used);
+                printf(" \\%s(%d) %s [%d%%/%lld]\n", Proc1->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->Performance->Usage, thd->Time->ticks_used);
             }
 
             foreach (auto Proc1Children in Proc1->Children)
@@ -321,14 +358,14 @@ namespace MultiTasking
                 CurrentDisplay->SetPrintColor(0xFF2200);
                 if (Proc1Children == CurrentProcess)
                     showarrow = true;
-                printf(" \\%s(%d) %s [%lld/%lld]\n", Proc1Children->Name, Proc1Children->ProcessID, showarrow ? "<-" : "  ", Proc1Children->State, Proc1Children->Time->ticks_used);
+                printf(" \\%s(%d) %s [%d%%/%lld]\n", Proc1Children->Name, Proc1Children->ProcessID, showarrow ? "<-" : "  ", Proc1Children->Performance->Usage, Proc1Children->Time->ticks_used);
                 foreach (auto thd in Proc1Children->Threads)
                 {
                     showarrow = false;
                     CurrentDisplay->SetPrintColor(0x00FF22);
                     if (thd == CurrentThread)
                         showarrow = true;
-                    printf("  \\%s(%d) %s [%lld/%lld]\n", Proc1Children->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->State, thd->Time->ticks_used);
+                    printf("  \\%s(%d) %s [%d%%/%lld]\n", Proc1Children->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->Performance->Usage, thd->Time->ticks_used);
                 }
 
                 foreach (auto Proc2Children in Proc1Children->Children)
@@ -337,14 +374,14 @@ namespace MultiTasking
                     CurrentDisplay->SetPrintColor(0xFF2200);
                     if (Proc2Children == CurrentProcess)
                         showarrow = true;
-                    printf("  \\%s(%d) %s [%lld/%lld]\n", Proc2Children->Name, Proc2Children->ProcessID, showarrow ? "<-" : "  ", Proc2Children->State, Proc2Children->Time->ticks_used);
+                    printf("  \\%s(%d) %s [%d%%/%lld]\n", Proc2Children->Name, Proc2Children->ProcessID, showarrow ? "<-" : "  ", Proc2Children->Performance->Usage, Proc2Children->Time->ticks_used);
                     foreach (auto thd in Proc2Children->Threads)
                     {
                         showarrow = false;
                         CurrentDisplay->SetPrintColor(0x00FF22);
                         if (thd == CurrentThread)
                             showarrow = true;
-                        printf("   \\%s(%d) %s [%lld/%lld]\n", Proc2Children->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->State, thd->Time->ticks_used);
+                        printf("   \\%s(%d) %s [%d%%/%lld]\n", Proc2Children->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->Performance->Usage, thd->Time->ticks_used);
                     }
 
                     foreach (auto Proc3Children in Proc2Children->Children)
@@ -353,14 +390,14 @@ namespace MultiTasking
                         CurrentDisplay->SetPrintColor(0xFF2200);
                         if (Proc3Children == CurrentProcess)
                             showarrow = true;
-                        printf("   \\%s(%d) %s [%lld/%lld]\n", Proc3Children->Name, Proc3Children->ProcessID, showarrow ? "<-" : "  ", Proc3Children->State, Proc3Children->Time->ticks_used);
+                        printf("   \\%s(%d) %s [%d%%/%lld]\n", Proc3Children->Name, Proc3Children->ProcessID, showarrow ? "<-" : "  ", Proc3Children->Performance->Usage, Proc3Children->Time->ticks_used);
                         foreach (auto thd in Proc3Children->Threads)
                         {
                             showarrow = false;
                             CurrentDisplay->SetPrintColor(0x00FF22);
                             if (thd == CurrentThread)
                                 showarrow = true;
-                            printf("     \\%s(%d) %s [%lld/%lld]\n", Proc3Children->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->State, thd->Time->ticks_used);
+                            printf("     \\%s(%d) %s [%d%%/%lld]\n", Proc3Children->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->Performance->Usage, thd->Time->ticks_used);
                         }
 
                         foreach (auto Proc4Children in Proc3Children->Children)
@@ -369,14 +406,14 @@ namespace MultiTasking
                             CurrentDisplay->SetPrintColor(0xFF2200);
                             if (Proc4Children == CurrentProcess)
                                 showarrow = true;
-                            printf("     \\%s(%d) %s [%lld/%lld]\n", Proc4Children->Name, Proc4Children->ProcessID, showarrow ? "<-" : "  ", Proc4Children->State, Proc4Children->Time->ticks_used);
+                            printf("     \\%s(%d) %s [%d%%/%lld]\n", Proc4Children->Name, Proc4Children->ProcessID, showarrow ? "<-" : "  ", Proc4Children->Performance->Usage, Proc4Children->Time->ticks_used);
                             foreach (auto thd in Proc4Children->Threads)
                             {
                                 showarrow = false;
                                 CurrentDisplay->SetPrintColor(0x00FF22);
                                 if (thd == CurrentThread)
                                     showarrow = true;
-                                printf("      \\%s(%d) %s [%lld/%lld]\n", Proc4Children->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->State, thd->Time->ticks_used);
+                                printf("      \\%s(%d) %s [%d%%/%lld]\n", Proc4Children->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->Performance->Usage, thd->Time->ticks_used);
                             }
 
                             foreach (auto Proc5Children in Proc4Children->Children)
@@ -385,14 +422,14 @@ namespace MultiTasking
                                 CurrentDisplay->SetPrintColor(0xFF2200);
                                 if (Proc5Children == CurrentProcess)
                                     showarrow = true;
-                                printf("      \\%s(%d) %s [%lld/%lld]\n", Proc5Children->Name, Proc5Children->ProcessID, showarrow ? "<-" : "  ", Proc5Children->State, Proc5Children->Time->ticks_used);
+                                printf("      \\%s(%d) %s [%d%%/%lld]\n", Proc5Children->Name, Proc5Children->ProcessID, showarrow ? "<-" : "  ", Proc5Children->Performance->Usage, Proc5Children->Time->ticks_used);
                                 foreach (auto thd in Proc5Children->Threads)
                                 {
                                     showarrow = false;
                                     CurrentDisplay->SetPrintColor(0x00FF22);
                                     if (thd == CurrentThread)
                                         showarrow = true;
-                                    printf("       \\%s(%d) %s [%lld/%lld]\n", Proc5Children->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->State, thd->Time->ticks_used);
+                                    printf("       \\%s(%d) %s [%d%%/%lld]\n", Proc5Children->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->Performance->Usage, thd->Time->ticks_used);
                                 }
                             }
                         }
@@ -595,8 +632,10 @@ namespace MultiTasking
             goto scheduler_end;
         scheduler_success:
             CurrentThread->State = STATE_RUNNING;
-            UpdateProcessTimeUsed(CurrentProcess->Time);
-            UpdateProcessTimeUsed(CurrentThread->Time);
+            UpdateTimeUsed(CurrentProcess->Time, true);
+            UpdateTimeUsed(CurrentThread->Time, false);
+            UpdateUsage(CurrentProcess->Performance, true);
+            UpdateUsage(CurrentThread->Performance, false);
             *regs = CurrentThread->Registers;
             SetPageTable(CurrentProcess->PageTable);
             wrmsr(MSR_FS_BASE, CurrentThread->Segment.fs);
