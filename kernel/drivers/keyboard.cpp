@@ -1,6 +1,7 @@
 #include "keyboard.hpp"
 
 #include "../cpu/idt.h"
+#include "../kernel.h"
 
 #include <interrupts.h>
 #include <io.h>
@@ -18,6 +19,8 @@ namespace PS2Keyboard
         {
             uint8_t scanCode = inb(0x60);
             LastSC = scanCode;
+            if (scanCode == 0x3B)
+                ShowRecoveryScreen = true;
             EndOfInterrupt(INT_NUM);
         }
     }
