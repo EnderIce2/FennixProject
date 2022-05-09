@@ -22,6 +22,13 @@
 #define schedbg(m, ...)
 #endif
 
+// Comment or uncomment this line to enable/disable the debug task manager
+#define DEBUG_TASK_MANAGER 1
+
+#ifdef DEBUG_TASK_MANAGER
+#include <display.h>
+#endif
+
 Vector<ProcessControlBlock *> ListProcess;
 
 namespace MultiTasking
@@ -77,6 +84,7 @@ namespace MultiTasking
             }
         schedbg("Thread %d terminated", thread->ThreadID);
         KernelStackAllocator->FreeStack(thread->Stack);
+        KernelAllocator.FreePages(thread->Msg, 2);
         kfree(thread);
         thread = nullptr;
     }
@@ -117,7 +125,7 @@ namespace MultiTasking
                     remove_thread(thread);
             }
 
-            // Should I remove the process if it's empty with no threads/processes?
+            // Should I remove the process if it's empty with no threads/child processes?
         }
     }
 
@@ -169,7 +177,9 @@ namespace MultiTasking
         ThreadControlBlock *thread = new ThreadControlBlock;
 
         thread->Time = new ControlBlockTime;
-        thread->Msg = new MessageQueue;
+        thread->Msg = (MessageQueue *)KernelAllocator.RequestPages(2);
+        KernelPageTableManager.MapMemory(thread->Msg, thread->Msg, PTFlag::US | PTFlag::RW);
+        KernelPageTableManager.MapMemory(thread->Msg + PAGE_SIZE, thread->Msg + PAGE_SIZE, PTFlag::US | PTFlag::RW);
         thread->ThreadID = NextTID++;
         thread->Parent = parent;
         thread->State = State;
@@ -236,7 +246,7 @@ namespace MultiTasking
         if ((uint64_t)PML != (uint64_t)readcr3().raw)
         {
             // schedbg("Setting the new page table %#llx", PML);
-            // TODO: Page switching issue is only occurred when is running under QEMU. VMware and VirtualBox are not affected by this weird bug.
+            // TODO: Weird behavior (page table gets corrupted)
             // asm volatile("mov %[PML], %%cr3"
             //              :
             //              : [PML] "q"(PML)
@@ -258,7 +268,7 @@ namespace MultiTasking
     void UpdateProcessTimeUsed(ControlBlockTime *Time)
     {
         uint64_t CurrentCount = counter();
-        uint64_t elapsed = LastCount - CurrentCount;
+        uint64_t elapsed = CurrentCount - LastCount;
         LastCount = CurrentCount;
         Time->ticks_used += elapsed;
     }
@@ -275,6 +285,124 @@ namespace MultiTasking
         uint32_t TimerClock = get_timer_clock();
         set_yield_schedule(counter() + ((Timeslice * 10000) * 1000000000) / TimerClock);
     }
+
+#ifdef DEBUG_TASK_MANAGER
+    void drawrectangle(uint64_t X, uint64_t Y, uint64_t W, uint64_t H, uint32_t C)
+    {
+        for (int y = Y; y < Y + H; y++)
+            for (int x = X; x < X + W; x++)
+                CurrentDisplay->SetPixel(x, y, C);
+    }
+
+    void TraceSchedOnScreen()
+    {
+        CurrentDisplay->ResetPrintPosition();
+        drawrectangle(0, 0, 200, CurrentDisplay->GetFramebuffer()->Height, 0x282828);
+        bool showarrow = false;
+        foreach (auto Proc1 in ListProcess)
+        {
+            showarrow = false;
+            CurrentDisplay->SetPrintColor(0xFF2200);
+            if (Proc1 == CurrentProcess)
+                showarrow = true;
+            printf("%s(%d) %s [%lld/%lld]\n", Proc1->Name, Proc1->ProcessID, showarrow ? "<-" : "  ", Proc1->State, Proc1->Time->ticks_used);
+            foreach (auto thd in Proc1->Threads)
+            {
+                showarrow = false;
+                CurrentDisplay->SetPrintColor(0x00FF22);
+                if (thd == CurrentThread)
+                    showarrow = true;
+                printf(" \\%s(%d) %s [%lld/%lld]\n", Proc1->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->State, thd->Time->ticks_used);
+            }
+
+            foreach (auto Proc1Children in Proc1->Children)
+            {
+                showarrow = false;
+                CurrentDisplay->SetPrintColor(0xFF2200);
+                if (Proc1Children == CurrentProcess)
+                    showarrow = true;
+                printf(" \\%s(%d) %s [%lld/%lld]\n", Proc1Children->Name, Proc1Children->ProcessID, showarrow ? "<-" : "  ", Proc1Children->State, Proc1Children->Time->ticks_used);
+                foreach (auto thd in Proc1Children->Threads)
+                {
+                    showarrow = false;
+                    CurrentDisplay->SetPrintColor(0x00FF22);
+                    if (thd == CurrentThread)
+                        showarrow = true;
+                    printf("  \\%s(%d) %s [%lld/%lld]\n", Proc1Children->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->State, thd->Time->ticks_used);
+                }
+
+                foreach (auto Proc2Children in Proc1Children->Children)
+                {
+                    showarrow = false;
+                    CurrentDisplay->SetPrintColor(0xFF2200);
+                    if (Proc2Children == CurrentProcess)
+                        showarrow = true;
+                    printf("  \\%s(%d) %s [%lld/%lld]\n", Proc2Children->Name, Proc2Children->ProcessID, showarrow ? "<-" : "  ", Proc2Children->State, Proc2Children->Time->ticks_used);
+                    foreach (auto thd in Proc2Children->Threads)
+                    {
+                        showarrow = false;
+                        CurrentDisplay->SetPrintColor(0x00FF22);
+                        if (thd == CurrentThread)
+                            showarrow = true;
+                        printf("   \\%s(%d) %s [%lld/%lld]\n", Proc2Children->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->State, thd->Time->ticks_used);
+                    }
+
+                    foreach (auto Proc3Children in Proc2Children->Children)
+                    {
+                        showarrow = false;
+                        CurrentDisplay->SetPrintColor(0xFF2200);
+                        if (Proc3Children == CurrentProcess)
+                            showarrow = true;
+                        printf("   \\%s(%d) %s [%lld/%lld]\n", Proc3Children->Name, Proc3Children->ProcessID, showarrow ? "<-" : "  ", Proc3Children->State, Proc3Children->Time->ticks_used);
+                        foreach (auto thd in Proc3Children->Threads)
+                        {
+                            showarrow = false;
+                            CurrentDisplay->SetPrintColor(0x00FF22);
+                            if (thd == CurrentThread)
+                                showarrow = true;
+                            printf("     \\%s(%d) %s [%lld/%lld]\n", Proc3Children->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->State, thd->Time->ticks_used);
+                        }
+
+                        foreach (auto Proc4Children in Proc3Children->Children)
+                        {
+                            showarrow = false;
+                            CurrentDisplay->SetPrintColor(0xFF2200);
+                            if (Proc4Children == CurrentProcess)
+                                showarrow = true;
+                            printf("     \\%s(%d) %s [%lld/%lld]\n", Proc4Children->Name, Proc4Children->ProcessID, showarrow ? "<-" : "  ", Proc4Children->State, Proc4Children->Time->ticks_used);
+                            foreach (auto thd in Proc4Children->Threads)
+                            {
+                                showarrow = false;
+                                CurrentDisplay->SetPrintColor(0x00FF22);
+                                if (thd == CurrentThread)
+                                    showarrow = true;
+                                printf("      \\%s(%d) %s [%lld/%lld]\n", Proc4Children->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->State, thd->Time->ticks_used);
+                            }
+
+                            foreach (auto Proc5Children in Proc4Children->Children)
+                            {
+                                showarrow = false;
+                                CurrentDisplay->SetPrintColor(0xFF2200);
+                                if (Proc5Children == CurrentProcess)
+                                    showarrow = true;
+                                printf("      \\%s(%d) %s [%lld/%lld]\n", Proc5Children->Name, Proc5Children->ProcessID, showarrow ? "<-" : "  ", Proc5Children->State, Proc5Children->Time->ticks_used);
+                                foreach (auto thd in Proc5Children->Threads)
+                                {
+                                    showarrow = false;
+                                    CurrentDisplay->SetPrintColor(0x00FF22);
+                                    if (thd == CurrentThread)
+                                        showarrow = true;
+                                    printf("       \\%s(%d) %s [%lld/%lld]\n", Proc5Children->Name, thd->ThreadID, showarrow ? "<-" : "  ", thd->State, thd->Time->ticks_used);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            break;
+        }
+    }
+#endif
 
     extern "C"
     {
@@ -326,20 +454,6 @@ namespace MultiTasking
                 "iretq");
         }
 
-        // void fxsave(char *region)
-        // {
-        //     asm volatile("fxsave %0"
-        //                  :
-        //                  : "m"(region));
-        // }
-
-        // void fxrstor(char *region)
-        // {
-        //     asm volatile("fxrstor %0"
-        //                  :
-        //                  : "m"(region));
-        // }
-
         InterruptHandler(multi_scheduler_interrupt_handler)
         {
             uint64_t timeslice = PRIORITY_MEDIUM; // cannot jump from this goto statement to its label on "goto scheduler_eoi;"
@@ -359,6 +473,7 @@ namespace MultiTasking
                     check_process(process);
                     if (process->State != STATE_READY)
                     {
+                        schedbg("Process %s is not ready", process->Name);
                         remove_process(process);
                         continue;
                     }
@@ -367,7 +482,10 @@ namespace MultiTasking
                     {
                         check_thread(thread);
                         if (thread->State != STATE_READY)
+                        {
+                            schedbg("Thread %d is not ready", thread->ThreadID);
                             continue;
+                        }
                         CurrentProcess = process;
                         CurrentThread = thread;
                         timeslice = thread->Priority;
@@ -379,6 +497,7 @@ namespace MultiTasking
             }
             else
             {
+                schedbg("Current thread %d parent of %s", CurrentThread->ThreadID, CurrentThread->Parent->Name);
                 CurrentThread->Registers = *regs;
                 CurrentThread->Segment.gs = rdmsr(MSR_SHADOW_GS_BASE);
                 CurrentThread->Segment.fs = rdmsr(MSR_FS_BASE);
@@ -394,9 +513,15 @@ namespace MultiTasking
                     ThreadControlBlock *thread = CurrentProcess->Threads[(i + 1)];
                     check_thread(thread);
                     if (CurrentProcess->State != STATE_READY)
+                    {
+                        schedbg("Process %s is not ready", CurrentProcess->Name);
                         break;
+                    }
                     if (thread->State != STATE_READY)
+                    {
+                        schedbg("Thread %d is not ready", thread->ThreadID);
                         continue;
+                    }
                     CurrentThread = thread;
                     timeslice = CurrentThread->Priority;
                     schedbg("[thd 0 -> end] Scheduling thread %d parent of %s->%d Procs %d", thread->ThreadID, thread->Parent->Name, CurrentProcess->Threads.size(), ListProcess.size());
@@ -462,6 +587,10 @@ namespace MultiTasking
             CurrentThread = IdleThread;
             *regs = IdleThread->Registers;
             SetPageTable(IdleProcess->PageTable);
+            wrmsr(MSR_FS_BASE, CurrentThread->Segment.fs);
+            wrmsr(MSR_GS_BASE, (uint64_t)CurrentThread);
+            wrmsr(MSR_SHADOW_GS_BASE, CurrentThread->UserMode ? CurrentThread->Segment.gs : (uint64_t)CurrentThread);
+            fxrstor(CurrentThread->fx_region);
             Yield(timeslice);
             goto scheduler_end;
         scheduler_success:
@@ -475,6 +604,9 @@ namespace MultiTasking
             wrmsr(MSR_SHADOW_GS_BASE, CurrentThread->UserMode ? CurrentThread->Segment.gs : (uint64_t)CurrentThread);
             fxrstor(CurrentThread->fx_region);
             Yield(timeslice);
+#ifdef DEBUG_TASK_MANAGER
+            TraceSchedOnScreen();
+#endif
         scheduler_end:
             LeaveCriticalSection;
         scheduler_eoi:
