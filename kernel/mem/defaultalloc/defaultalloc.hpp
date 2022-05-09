@@ -12,7 +12,7 @@ namespace Heap
         void CombineForward();
         void CombineBackward();
         HeapSegHdr *Split(size_t SplitLength);
-    } __attribute__((alligned(16)));
+    } __attribute__((aligned(16)));
 }
 
 #define defPREFIX(func) defk##func
