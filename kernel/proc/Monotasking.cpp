@@ -6,9 +6,9 @@
 #include <asm.h>
 #include "../cpu/gdt.h"
 
-namespace MonoTasking
+namespace Tasking
 {
-    MonoTasking *SingleProcessing = nullptr;
+    Monotasking *monot = nullptr;
 
     extern "C"
     {
@@ -168,7 +168,7 @@ namespace MonoTasking
         CPU_STOP;
     }
 
-    TaskControlBlock *MonoTasking::CreateTask(uint64_t InstructionPointer, uint64_t FirstArgument, uint64_t SecondArgument, char *Name, bool UserMode)
+    TaskControlBlock *Monotasking::CreateTask(uint64_t InstructionPointer, uint64_t FirstArgument, uint64_t SecondArgument, char *Name, bool UserMode)
     {
         TaskControlBlock *task = new TaskControlBlock;
         task->id = TaskIDs++;
@@ -204,7 +204,7 @@ namespace MonoTasking
         return task;
     }
 
-    MonoTasking::MonoTasking(uint64_t FirstTask)
+    Monotasking::Monotasking(uint64_t FirstTask)
     {
         for (size_t i = 0; i < MAX_TASKS; i++)
             TaskQueue[i] = nullptr; // Make sure that all tasks have value nullptr
@@ -213,7 +213,7 @@ namespace MonoTasking
         ScheduleInterrupt;
     }
 
-    MonoTasking::~MonoTasking()
+    Monotasking::~Monotasking()
     {
         for (size_t i = 0; i < MAX_TASKS; i++)
         {

@@ -6,15 +6,7 @@
 #include <bootscreen.h>
 #include "../drivers/serial.h"
 
-static const char *pagefault_message[] = {
-    "Supervisory process tried to read a non-present page entry",
-    "Supervisory process tried to read a page and caused a protection fault",
-    "Supervisory process tried to write to a non-present page entry",
-    "Supervisory process tried to write a page and caused a protection fault",
-    "User process tried to read a non-present page entry",
-    "User process tried to read a page and caused a protection fault",
-    "User process tried to write to a non-present page entry",
-    "User process tried to write a page and caused a protection fault"};
+using namespace Tasking;
 
 void StartTasking(uint64_t Address, TaskingMode Mode)
 {
@@ -27,19 +19,15 @@ void StartTasking(uint64_t Address, TaskingMode Mode)
     {
     case TaskingMode::Mono:
     {
-        MonoTasking::SingleProcessing = new MonoTasking::MonoTasking(Address);
+        monot = new Monotasking(Address);
         BS->IncreaseProgres();
         break;
     }
     case TaskingMode::Multi:
     {
-        MultiTasking::MultiProcessing = new MultiTasking::MultiTasking;
-        MultiTasking::MultiProcessing->CreateThread(MultiTasking::MultiProcessing->CreateProcess(nullptr, (char *)"kernel"),
-                                                    Address, 0, 0,
-                                                    ControlBlockPriority::PRIORITY_REALTIME,
-                                                    ControlBlockState::STATE_READY,
-                                                    ControlBlockPolicy::POLICY_KERNEL, false);
-        MultiTasking::MultiProcessing->ToggleScheduler(true);
+        mt = new Multitasking;
+        mt->CreateThread(mt->CreateProcess(nullptr, (char *)"kernel", ELEVATION::Kernel), Address, 0, 0);
+        MultitaskingSchedulerEnabled = true;
         BS->IncreaseProgres();
         break;
     }

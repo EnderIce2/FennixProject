@@ -106,7 +106,6 @@ typedef char const *string;
 
 #endif
 
-#define FENAPI
 #define APICALL __attribute__((__cdecl__))
 
 #define MIN(a, b) (((a) < (b)) ? (a) : (b))

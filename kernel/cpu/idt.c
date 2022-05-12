@@ -243,12 +243,8 @@ __attribute__((naked)) static void interrupt_handler_0x26() { asm("pushq $0\npus
 INTERRUPT_HANDLER(0x27)
 INTERRUPT_HANDLER(0x28)
 INTERRUPT_HANDLER(0x29)
-__attribute__((naked)) static void interrupt_handler_0x2a() { asm("pushq $0\npushq $"
-                                                                  "0x2a"
-                                                                  "\njmp mono_scheduler_handler_helper"); }
-__attribute__((naked)) static void interrupt_handler_0x2b() { asm("pushq $0\npushq $"
-                                                                  "0x2b"
-                                                                  "\njmp multi_schedule_handler_helper"); }
+INTERRUPT_HANDLER(0x2a)
+INTERRUPT_HANDLER(0x2b)
 INTERRUPT_HANDLER(0x2c)
 INTERRUPT_HANDLER(0x2d)
 INTERRUPT_HANDLER(0x2e)
@@ -459,7 +455,7 @@ INTERRUPT_HANDLER(0xf9)
 INTERRUPT_HANDLER(0xfa)
 INTERRUPT_HANDLER(0xfb)
 INTERRUPT_HANDLER(0xfc)
-INTERRUPT_HANDLER(0xfd)
+__attribute__((naked)) static void interrupt_handler_0xfd() { asm("pushq $0\npushq $0xfd\njmp MultiTaskingV2SchedulerHelper"); }
 __attribute__((naked)) static void interrupt_handler_0xfe() { asm("jmp syscall_interrpt_handler_helper"); }
 INTERRUPT_HANDLER(0xff)
 

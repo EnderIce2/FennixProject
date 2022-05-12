@@ -79,7 +79,7 @@ void *FunctionCallHandler(KernelCallType type, ...)
 
 namespace Driver
 {
-    ProcessControlBlock *DrvMgrProc = nullptr;
+    PCB *DrvMgrProc = nullptr;
     FileSystem::FileSystemNode *DriverNode = nullptr;
 
     uint64_t KernelDriver::LoadKernelDriverFromFile(FileSystem::FileSystemNode *Node)
@@ -197,7 +197,7 @@ namespace Driver
 
     KernelDriver::KernelDriver()
     {
-        DrvMgrProc = SysCreateProcess("Driver Manager", nullptr);
+        DrvMgrProc = SysCreateProcess("Driver Manager", System);
         DriverNode = vfs->CreateRoot(&kdrvfs, "driver");
     }
 

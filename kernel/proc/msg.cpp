@@ -26,7 +26,7 @@ namespace MessageManager
 
     void Remove(uint64_t Index)
     {
-        ThreadControlBlock *thread = SysGetCurrentThread();
+        TCB *thread = SysGetCurrentThread();
         MessageQueue *queue = thread->Msg;
         if (queue)
         {
@@ -38,13 +38,13 @@ namespace MessageManager
 
     void SendByTID(uint64_t ThreadID, void *Buffer)
     {
-        ThreadControlBlock *thread = SysGetThreadByTID(ThreadID);
+        TCB *thread = SysGetThreadByTID(ThreadID);
         if (thread)
         {
             MessageQueue *queue = thread->Msg;
             if (queue)
             {
-                MessageData data = {true, SysGetCurrentThread()->ThreadID, Buffer};
+                MessageData data = {true, SysGetCurrentThread()->ID, Buffer};
                 AddQueue(queue->Messages, data);
             }
         }
@@ -56,13 +56,13 @@ namespace MessageManager
         {
             if (strcmp(var.name, Name) == 0)
             {
-                ThreadControlBlock *thread = SysGetThreadByTID(var.id);
+                TCB *thread = SysGetThreadByTID(var.id);
                 if (thread)
                 {
                     MessageQueue *queue = thread->Msg;
                     if (queue)
                     {
-                        MessageData data = {true, SysGetCurrentThread()->ThreadID, Buffer};
+                        MessageData data = {true, SysGetCurrentThread()->ID, Buffer};
                         AddQueue(queue->Messages, data);
                     }
                 }
@@ -77,6 +77,6 @@ namespace MessageManager
 
     void CreateListener(char *Name)
     {
-        listen.push_back({SysGetCurrentThread()->ThreadID, Name});
+        listen.push_back({SysGetCurrentThread()->ID, Name});
     }
 }

@@ -6,34 +6,37 @@
 #include <heap.h>
 #include <elf.h>
 
-using namespace MonoTasking;
-using namespace MultiTasking;
+using namespace Tasking;
 using namespace FileSystem;
 
 int CurrentTaskingMode = TaskingMode::None;
 
-ProcessControlBlock *APICALL SysGetProcessByPID(uint64_t ID)
+PCB *APICALL SysGetProcessByPID(uint64_t ID)
 {
     switch (CurrentTaskingMode)
     {
     case TaskingMode::Mono:
     {
-        ProcessControlBlock *proc = nullptr;
+        PCB *proc = nullptr;
         fixme("unimplemented for primitive tasking");
         return proc;
     }
     case TaskingMode::Multi:
     {
         EnterCriticalSection;
-        foreach (auto var in MultiProcessing->GetVectorProcessList())
+        foreach (PCB *pcb in mt->ListProcess)
         {
-            if (var->ProcessID == ID)
+            if (pcb == nullptr || pcb->Checksum != Checksum::PROCESS_CHECKSUM || pcb->Elevation == ELEVATION::Idle)
+                continue;
+            if (pcb->ID == ID)
             {
                 LeaveCriticalSection;
-                return var;
+                return pcb;
             }
         }
+
         LeaveCriticalSection;
+        return nullptr;
     }
     case TaskingMode::None:
         return nullptr;
@@ -43,7 +46,7 @@ ProcessControlBlock *APICALL SysGetProcessByPID(uint64_t ID)
     return nullptr;
 }
 
-ThreadControlBlock *APICALL SysGetThreadByTID(uint64_t ID)
+TCB *APICALL SysGetThreadByTID(uint64_t ID)
 {
     switch (CurrentTaskingMode)
     {
@@ -55,18 +58,22 @@ ThreadControlBlock *APICALL SysGetThreadByTID(uint64_t ID)
     case TaskingMode::Multi:
     {
         EnterCriticalSection;
-        foreach (auto var in MultiProcessing->GetVectorProcessList())
+        foreach (PCB *pcb in mt->ListProcess)
         {
-            foreach (auto var in var->Threads)
+            if (pcb == nullptr || pcb->Checksum != Checksum::PROCESS_CHECKSUM || pcb->Elevation == ELEVATION::Idle)
+                continue;
+
+            foreach (TCB *tcb in pcb->Threads)
             {
-                if (var->ThreadID == ID)
+                if (tcb->ID == ID)
                 {
                     LeaveCriticalSection;
-                    return var;
+                    return tcb;
                 }
             }
         }
         LeaveCriticalSection;
+        return nullptr;
     }
     case TaskingMode::None:
         return nullptr;
@@ -76,19 +83,20 @@ ThreadControlBlock *APICALL SysGetThreadByTID(uint64_t ID)
     return nullptr;
 }
 
-ProcessControlBlock *APICALL SysGetCurrentProcess()
+PCB *APICALL SysGetCurrentProcess()
 {
     switch (CurrentTaskingMode)
     {
     case TaskingMode::Mono:
     {
-        ProcessControlBlock *proc = nullptr;
+        PCB *proc = nullptr;
         fixme("unimplemented for primitive tasking");
         return proc;
     }
     case TaskingMode::Multi:
     {
-        return MultiProcessing->GetCurrentProcess();
+        fixme("not implemented");
+        return mt->CurrentProcess;
     }
     case TaskingMode::None:
         return nullptr;
@@ -98,19 +106,20 @@ ProcessControlBlock *APICALL SysGetCurrentProcess()
     return nullptr;
 }
 
-ThreadControlBlock *APICALL SysGetCurrentThread()
+TCB *APICALL SysGetCurrentThread()
 {
     switch (CurrentTaskingMode)
     {
     case TaskingMode::Mono:
     {
-        ThreadControlBlock *proc = nullptr;
+        TCB *proc = nullptr;
         fixme("unimplemented for primitive tasking");
         return proc;
     }
     case TaskingMode::Multi:
     {
-        return MultiProcessing->GetCurrentThread();
+        fixme("not implemented");
+        return mt->CurrentThread;
     }
     case TaskingMode::None:
         return nullptr;
@@ -120,31 +129,20 @@ ThreadControlBlock *APICALL SysGetCurrentThread()
     return nullptr;
 }
 
-ProcessControlBlock *APICALL SysCreateProcess(const char *Name, void *PageTable)
+PCB *APICALL SysCreateProcess(const char *Name, ELEVATION Elevation)
 {
     switch (CurrentTaskingMode)
     {
     case TaskingMode::Mono:
     {
-        ProcessControlBlock *proc = new ProcessControlBlock;
+        PCB *proc = new PCB;
         memcpy(proc->Name, Name, sizeof(proc->Name));
-        if (PageTable != nullptr)
-            proc->PageTable = PageTable;
-        else
-            proc->PageTable = KernelPageTableAllocator->CreatePageTable();
+        fixme("not implemented for mono tasking");
         return proc;
     }
     case TaskingMode::Multi:
     {
-        EnterCriticalSection;
-        ProcessControlBlock *proc = MultiProcessing->CreateProcess(SysGetCurrentProcess(), (char *)Name);
-        if (PageTable != nullptr)
-        {
-            KernelAllocator.FreePage(proc->PageTable);
-            proc->PageTable = (VMM::PageTable *)PageTable;
-        }
-        LeaveCriticalSection;
-        return proc;
+        return mt->CreateProcess(nullptr, (char *)Name, Elevation);
     }
     case TaskingMode::None:
         return nullptr;
@@ -154,34 +152,18 @@ ProcessControlBlock *APICALL SysCreateProcess(const char *Name, void *PageTable)
     return nullptr;
 }
 
-ThreadControlBlock *APICALL SysCreateThread(ProcessControlBlock *Parent, uint64_t InstructionPointer, uint64_t arg0, uint64_t arg1, bool UserMode)
+TCB *APICALL SysCreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t arg0, uint64_t arg1)
 {
     switch (CurrentTaskingMode)
     {
     case TaskingMode::Mono:
     {
-        ThreadControlBlock *thread = new ThreadControlBlock;
-        TaskControlBlock *task = SingleProcessing->CreateTask(InstructionPointer, 0, 0, Parent->Name, UserMode);
-        Parent->ProcessID = task->id;
-        if (!Parent->PageTable)
-            Parent->PageTable = (VMM::PageTable *)task->pml4;
-        thread->Checksum = THREAD_CHECKSUM;
-        thread->ExitCode = 0;
-        thread->Parent = Parent;
-        thread->Policy = POLICY_KERNEL;
-        thread->Priority = PRIORITY_MEDIUM;
-        thread->State = STATE_READY;
-        thread->Registers = task->regs;
-        thread->Stack = task->stack;
-        thread->ThreadID = task->id;
-        Parent->Threads[0] = thread;
+        TCB *thread = new TCB;
         return thread;
     }
     case TaskingMode::Multi:
     {
-        ThreadControlBlock *thread = MultiProcessing->CreateThread(Parent, InstructionPointer, arg0, arg1, ControlBlockPriority::PRIORITY_MEDIUM,
-                                                                   ControlBlockState::STATE_READY, ControlBlockPolicy::POLICY_KERNEL, UserMode);
-        return thread;
+        return mt->CreateThread(Parent, InstructionPointer, arg0, arg1);
     }
     case TaskingMode::None:
         return nullptr;
@@ -192,7 +174,7 @@ ThreadControlBlock *APICALL SysCreateThread(ProcessControlBlock *Parent, uint64_
 }
 
 // TODO: implement for primitive tasking if enabled to suspend the current task and run the created one
-ProcessControlBlock *APICALL SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, bool UserMode)
+PCB *APICALL SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, ELEVATION Elevation)
 {
     /* ... Open file ... Parse file ... map elf file ... get rip etc ... */
     EnterCriticalSection;
@@ -267,7 +249,7 @@ ProcessControlBlock *APICALL SysCreateProcessFromFile(const char *File, uint64_t
             debug("%s Entry Point: %#llx", File, (uint64_t)(header->e_entry + (uint64_t)offset));
             vfs->Close(file);
             LeaveCriticalSection;
-            return SysCreateThread(SysCreateProcess(file->Name, nullptr), (uint64_t)(header->e_entry + (uint64_t)offset), arg0, arg1, UserMode)->Parent;
+            return SysCreateThread(SysCreateProcess(file->Name, Elevation), (uint64_t)(header->e_entry + (uint64_t)offset), arg0, arg1)->Parent;
         }
     }
 error_exit:

@@ -14,7 +14,7 @@ PageTableHeap::PageTableHeap *KernelPageTableAllocator = nullptr;
 namespace PageTableHeap
 {
     static uint64_t MemoryEntries = bootparams->mem.Size;
-    PageTable *PageTableHeap::CreatePageTable()
+    PageTable *PageTableHeap::CreatePageTable(bool User)
     {
         LOCK(pagetable_lock);
         // Not tested yet. Page switching for some reason doesn't trigger any kernel exception when happens (sometimes?). That's strange...
@@ -24,12 +24,16 @@ namespace PageTableHeap
         for (uint64_t i = 256; i < 512; i++)
             NewPML->Entries[i] = KernelPML4->Entries[i];
 
-        uint64_t VirtualOffsetNormalVMA = NORMAL_VMA_OFFSET;
-        for (uint64_t t = 0; t < MemoryEntries; t += PAGE_SIZE)
+        if (!User)
         {
-            NewPMLMgr.MapMemory((void *)t, (void *)t, PTFlag::RW | PTFlag::US);
-            NewPMLMgr.MapMemory((void *)VirtualOffsetNormalVMA, (void *)t, PTFlag::RW | PTFlag::US);
-            VirtualOffsetNormalVMA += PAGE_SIZE;
+            // TODO: do something about this and map only where the process is created.
+            uint64_t VirtualOffsetNormalVMA = NORMAL_VMA_OFFSET;
+            for (uint64_t t = 0; t < MemoryEntries; t += PAGE_SIZE)
+            {
+                NewPMLMgr.MapMemory((void *)t, (void *)t, PTFlag::RW | PTFlag::US);
+                NewPMLMgr.MapMemory((void *)VirtualOffsetNormalVMA, (void *)t, PTFlag::RW | PTFlag::US);
+                VirtualOffsetNormalVMA += PAGE_SIZE;
+            }
         }
         UNLOCK(pagetable_lock);
         return NewPML;

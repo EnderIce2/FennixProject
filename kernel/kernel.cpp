@@ -187,7 +187,7 @@ void KernelTask()
     if (ShowRecoveryScreen)
         new SystemRecovery::Recovery;
 
-    if (!SysCreateProcessFromFile("/system/init", 0, 0, true))
+    if (SysCreateProcessFromFile("/system/init", 0, 0, User))
     {
         CurrentDisplay->SetPrintColor(0xFFFC4444);
         printf("Failed to load /system/init process. The file is missing or corrupted.\n");
@@ -271,6 +271,5 @@ void KernelInit()
 
     // StartTasking((uint64_t)KernelTask, TaskingMode::Mono);
     StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
-    // StartTasking((uint64_t)KernelTask, TaskingMode::MultiV2);
     CPU_STOP;
 }

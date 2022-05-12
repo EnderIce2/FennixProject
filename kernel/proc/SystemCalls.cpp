@@ -23,18 +23,18 @@ static uint64_t internal_unimpl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, 
 
 static uint64_t internal_exit(uint64_t code)
 {
-    trace("Userspace thread (%lld) child of %s exited with code %lld", SysGetCurrentThread()->ThreadID, SysGetCurrentThread()->Parent->Name, code);
-    SysGetCurrentThread()->ExitCode = code;
-    SysGetCurrentThread()->State = STATE_TERMINATED;
+    trace("Userspace thread (%lld) child of %s exited with code %lld", SysGetCurrentThread()->ID, SysGetCurrentThread()->Parent->Name, code);
+    // SysGetCurrentThread()->ExitCode = code;
+    SysGetCurrentThread()->Status = Terminated;
     return 0;
 }
 
-static uint64_t internal_createprocess(char *Path, uint64_t arg0, uint64_t arg1) { return SysCreateProcessFromFile(Path, arg0, arg1, true)->ProcessID; }
-static ThreadControlBlock *internal_createthread(uint64_t rip, uint64_t arg0, uint64_t arg1) { return SysCreateThread(SysGetCurrentProcess(), rip, arg0, arg1, true); }
-static ProcessControlBlock *internal_getcurrentprocess() { return SysGetCurrentProcess(); }
-static ThreadControlBlock *internal_getcurrentthread() { return SysGetCurrentThread(); }
-static uint64_t internal_getcurrentprocessid() { return SysGetCurrentProcess()->ProcessID; }
-static uint64_t internal_getcurrentthreadid() { return SysGetCurrentThread()->ThreadID; }
+static uint64_t internal_createprocess(char *Path, uint64_t arg0, uint64_t arg1) { return SysCreateProcessFromFile(Path, arg0, arg1, User)->ID; }
+static TCB *internal_createthread(uint64_t rip, uint64_t arg0, uint64_t arg1) { return SysCreateThread(SysGetCurrentProcess(), rip, arg0, arg1); }
+static PCB *internal_getcurrentprocess() { return SysGetCurrentProcess(); }
+static TCB *internal_getcurrentthread() { return SysGetCurrentThread(); }
+static uint64_t internal_getcurrentprocessid() { return SysGetCurrentProcess()->ID; }
+static uint64_t internal_getcurrentthreadid() { return SysGetCurrentThread()->ID; }
 
 static void *internal_requestpage()
 {

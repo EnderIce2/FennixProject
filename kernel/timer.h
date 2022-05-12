@@ -7,7 +7,6 @@ extern volatile uint64_t ticks;
 EXTERNC void sleep(uint64_t Seconds);
 EXTERNC void msleep(uint64_t Miliseconds);
 EXTERNC void usleep(uint64_t Microseconds);
-EXTERNC void set_yield_schedule(uint64_t timeslice);
 EXTERNC uint64_t get_system_uptime();
 EXTERNC uint32_t get_timer_clock();
 EXTERNC uint64_t counter();

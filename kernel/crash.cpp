@@ -64,7 +64,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
         {
             err("Division by zero in an user-mode process.");
             // TODO: signal the application to stop.
-            SysGetCurrentThread()->State = STATE_TERMINATED;
+            SysGetCurrentThread()->Status = Terminated;
             return;
         }
         break;
@@ -86,7 +86,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
         {
             err("Invalid opcode in an user-mode process.");
             // TODO: signal the application to stop.
-            SysGetCurrentThread()->State = STATE_TERMINATED;
+            SysGetCurrentThread()->Status = Terminated;
             return;
         }
         break;
@@ -154,7 +154,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
         {
             err("General Protection Fault caused by an user-mode process at %#lx.", RIP);
             // TODO: signal the application to stop.
-            SysGetCurrentThread()->State = STATE_TERMINATED;
+            SysGetCurrentThread()->Status = Terminated;
             return;
         }
         else
@@ -216,7 +216,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
                 params.I ? "Yes" : "No",
                 ERROR_CODE & 0x00000008 ? "One or more page directory entries contain reserved bits which are set to 1." : pagefault_message[ERROR_CODE & 0b111]);
             // TODO: signal the application to stop.
-            SysGetCurrentThread()->State = STATE_TERMINATED;
+            SysGetCurrentThread()->Status = Terminated;
             return;
         }
         else

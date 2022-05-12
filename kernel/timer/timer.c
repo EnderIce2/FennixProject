@@ -1,5 +1,4 @@
 #include "../timer.h"
-#include <internal_task.h>
 #include <interrupts.h>
 #include <int.h>
 #include "hpet.h"
@@ -62,18 +61,10 @@ uint64_t get_system_uptime()
     return systemuptimeseconds;
 }
 
-static uint64_t timeslice_target = 0;
-
-void set_yield_schedule(uint64_t timeslice)
-{
-    timeslice_target = timeslice;
-}
-
 InterruptHandler(timer_interrupt_handler)
 {
     ticks++;
-    if (hpet_read_counter() > timeslice_target)
-        schedule();
+    asm volatile("int $0xfd");
     if (HPET_initialized)
     {
         if (!uptimesettarget)

@@ -1,106 +1,74 @@
 #pragma once
 #include <stdint.h>
 #include <interrupts.h>
-#ifdef __cplusplus
 #include <vector.hpp>
-#endif
 
-enum ControlBlockState
+enum Checksum
 {
-    STATE_UNKNOWN,
-    STATE_READY,
-    STATE_RUNNING,
-    STATE_WAITING,
-    STATE_TERMINATED,
+    PROCESS_CHECKSUM = 0xCAFEBABE,
+    THREAD_CHECKSUM = 0xDEADCAFE
 };
 
-enum ControlBlockPolicy
+enum ELEVATION
 {
-    POLICY_UNKNOWN,
-    POLICY_KERNEL,
-    POLICY_SYSTEM,
-    POLICY_USER,
+    UnknownElevation,
+    Kernel,
+    System,
+    User,
+    Idle
 };
 
-enum ControlBlockPriority
+enum STATUS
 {
-    PRIORITY_UNKNOWN,
-    PRIORITY_REALTIME,
-    PRIORITY_VERYHIGH,
-    PRIORITY_HIGH,
-    PRIORITY_MEDIUM,
-    PRIORITY_LOW,
-    PRIORITY_VERYLOW,
-    /* ... */
-    PRIORITY_IDLE = 500,
+    UnknownStatus,
+    Ready,
+    Running,
+    Waiting,
+    Terminated
 };
 
-typedef struct _ControlBlockTime
+struct GeneralProcessInfo
 {
-    uint64_t ticks_used;
-    uint64_t tick;
-    uint64_t y;
-    uint64_t M;
-    uint64_t d;
-    uint64_t h;
-    uint64_t m;
-    uint64_t s;
-} ControlBlockTime;
+    uint64_t SpawnTick = 0, UserTicks = 0;
+    uint64_t Usage[256];
+    uint64_t Year, Month, Day, Hour, Minute, Second;
+    int Priority;
+};
 
-typedef struct _ControlBlockPerformance
+struct GeneralSecurityInfo
 {
-    uint64_t Usage;
-    // TODO: add more
-} ControlBlockPerformance;
+    uint64_t Token;
+};
 
-typedef struct _Segments
-{
-    uint64_t fs;
-    uint64_t gs;
-    uint64_t cs;
-    uint64_t ss;
-    uint64_t ds;
-    uint64_t es;
-} Segments;
+struct PCB;
 
-typedef struct _ThreadControlBlock
+struct TCB
 {
-    uint64_t ThreadID;
-    enum ControlBlockState State;
-    enum ControlBlockPolicy Policy;
-    enum ControlBlockPriority Priority;
-    struct _ProcessControlBlock *Parent;
+    uint64_t ID;
+    char Name[256];
+    STATUS Status;
+    PCB *Parent;
     struct MessageQueue *Msg;
     void *Stack;
-    bool UserMode;
     REGISTERS Registers;
-    char fx_region[512] __attribute__((aligned(16)));
-    Segments Segment;
-    uint64_t ExitCode;
-    ControlBlockTime *Time;
-    ControlBlockPerformance *Performance;
+    uint64_t fs, gs, cs, ss, ds, es;
+    char FXRegion[512] __attribute__((aligned(16)));
+    GeneralProcessInfo *Info;
+    GeneralSecurityInfo *Security;
     uint32_t Checksum;
-} ThreadControlBlock;
+};
 
-typedef struct _ProcessControlBlock
+struct PCB
 {
-    uint64_t ProcessID;
+    uint64_t ID;
     char Name[256];
-    enum ControlBlockState State;
-    struct _ProcessControlBlock *Parent;
-#ifdef __cplusplus
-    Vector<struct _ProcessControlBlock *> Children;
-#else
-    void *Childern;
-#endif
-    uint64_t ExitCode;
-    void *PageTable;
-    ControlBlockTime *Time;
-    ControlBlockPerformance *Performance;
-#ifdef __cplusplus
-    Vector<ThreadControlBlock *> Threads;
-#else
-    void *Threads; // not supported in C
-#endif
+    STATUS Status;
+    ELEVATION Elevation;
+    struct PCB *Parent;
+    Vector<struct PCB *> Children;
+    CR3 *PageTable;
+    Vector<TCB *> Threads;
+    GeneralProcessInfo *Info;
+    GeneralSecurityInfo *Security;
     uint32_t Checksum;
-} ProcessControlBlock;
+};

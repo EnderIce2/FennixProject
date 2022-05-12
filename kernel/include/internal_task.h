@@ -2,24 +2,18 @@
 #include <interrupts.h>
 #include <heap.h>
 #include <msg.h>
-#ifdef __cplusplus
-#include <vector.hpp>
-#endif
 #include <task.h>
-
-#ifdef __cplusplus
 
 enum TaskingMode
 {
     None,
     Mono,
-    Multi,
-    MultiV2
+    Multi
 };
 
 extern int CurrentTaskingMode;
 
-namespace MonoTasking
+namespace Tasking
 {
     enum TaskState
     {
@@ -47,7 +41,7 @@ namespace MonoTasking
     static TaskControlBlock *CurrentTask = nullptr;
     static TaskControlBlock *TaskQueue[MAX_TASKS];
 
-    class MonoTasking
+    class Monotasking
     {
     public:
         /**
@@ -66,116 +60,40 @@ namespace MonoTasking
          *
          * @param firstThread The first Instruction Pointer to be executed
          */
-        MonoTasking(uint64_t FirstTask);
+        Monotasking(uint64_t FirstTask);
 
         /**
          * @brief Destroy the Mono Tasking object (Make sure that all other processes are destroyed and no stack is used!)
          *
          */
-        ~MonoTasking();
+        ~Monotasking();
 
     private:
     };
 
-    extern MonoTasking *SingleProcessing;
-};
-
-namespace MultiTasking
-{
-    enum Checksum
+    class Multitasking
     {
-        PROCESS_CHECKSUM = 0xCAFEBABE,
-        THREAD_CHECKSUM = 0xDEADCAFE
-    };
-
-#define check_process(process)                 \
-    if (process == nullptr)                    \
-        continue;                              \
-    if (process->Checksum != PROCESS_CHECKSUM) \
-        continue;
-
-#define check_thread(thread)                 \
-    if (thread == nullptr)                   \
-        continue;                            \
-    if (thread->Checksum != THREAD_CHECKSUM) \
-        continue;
-
-    static ProcessControlBlock *CurrentProcess = nullptr;
-    static ThreadControlBlock *CurrentThread = nullptr;
-    static ProcessControlBlock *IdleProcess = nullptr;
-    static ThreadControlBlock *IdleThread = nullptr;
-
-    class MultiTasking
-    {
+    private:
     public:
+        Vector<PCB *> ListProcess;
         uint64_t NextPID = 0, NextTID = 0;
+        PCB *CurrentProcess = nullptr;
+        TCB *CurrentThread = nullptr;
 
-        ProcessControlBlock *GetCurrentProcess();
-        ThreadControlBlock *GetCurrentThread();
-        Vector<ProcessControlBlock *> GetVectorProcessList();
+        PCB *IdleProcess = nullptr;
+        TCB *IdleThread = nullptr;
 
-        ProcessControlBlock *CreateProcess(ProcessControlBlock *parent, char *name);
-        ThreadControlBlock *CreateThread(ProcessControlBlock *parent, uint64_t function, uint64_t args0, uint64_t args1, enum ControlBlockPriority Priority, enum ControlBlockState State, enum ControlBlockPolicy Policy, bool UserMode);
+        PCB *CreateProcess(PCB *Parent, char *Name, ELEVATION Elevation);
+        TCB *CreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t Arg0, uint64_t Arg1);
 
-        void Schedule();
-        void ToggleScheduler(bool toggle);
-        /**
-         * @brief Construct a new Multi Tasking object
-         *
-         */
-        MultiTasking();
-        /**
-         * @brief Destroy the Multi Tasking object
-         *
-         */
-        ~MultiTasking();
-
-    private:
+        Multitasking();
+        ~Multitasking();
     };
-    extern MultiTasking *MultiProcessing;
-};
 
-namespace MultiTaskingV2
-{
-    // TODO: For future use. For now it's not important.
-    class MultiTaskingV2
-    {
-    private:
-        enum Checksum
-        {
-            PROCESS_CHECKSUM = 0xCAFEBABE,
-            THREAD_CHECKSUM = 0xDEADCAFE
-        };
-
-    public:
-        uint64_t NextPID = 0, NextTID = 0, NextIndexToSchedule = 0;
-        ProcessControlBlock *CurrentProcess;
-        ThreadControlBlock *GetCurrentThread;
-        Vector<ThreadControlBlock *> ListProcess;
-
-        ProcessControlBlock *CreateProcess(ProcessControlBlock *Parent, char *Name);
-        ThreadControlBlock *CreateThread(ProcessControlBlock *Parent,
-                                         uint64_t InstructionPointer,
-                                         uint64_t Arg0, uint64_t Arg1,
-                                         enum ControlBlockPolicy Policy = POLICY_KERNEL,
-                                         enum ControlBlockPriority Priority = PRIORITY_MEDIUM,
-                                         enum ControlBlockState State = STATE_READY);
-
-        void Schedule();
-        /**
-         * @brief Construct a new Multi Tasking object
-         *
-         */
-        MultiTaskingV2();
-        /**
-         * @brief Destroy the Multi Tasking object
-         *
-         */
-        ~MultiTaskingV2();
-    };
+    extern bool MultitaskingSchedulerEnabled;
+    extern Monotasking *monot;
+    extern Multitasking *mt;
 }
-
-#endif
 
 START_EXTERNC
 
@@ -183,60 +101,58 @@ START_EXTERNC
  * @brief Get a running process by PID
  *
  * @param pid Process identifier
- * @return ProcessControlBlock
+ * @return PCB
  */
-ProcessControlBlock *FENAPI SysGetProcessByPID(uint64_t ID);
+PCB *SysGetProcessByPID(uint64_t ID);
 
 /**
  * @brief Get a running thread by PID
  *
  * @param pid Thread identifier
- * @return ThreadControlBlock
+ * @return TCB
  */
-ThreadControlBlock *FENAPI SysGetThreadByTID(uint64_t ID);
+TCB *SysGetThreadByTID(uint64_t ID);
 
 /**
  * @brief Get current process
  *
- * @return ProcessControlBlock
+ * @return PCB
  */
-ProcessControlBlock *FENAPI SysGetCurrentProcess();
+PCB *SysGetCurrentProcess();
 
 /**
  * @brief Get current thread
  *
- * @return ThreadControlBlock
+ * @return TCB
  */
-ThreadControlBlock *FENAPI SysGetCurrentThread();
+TCB *SysGetCurrentThread();
 
 /**
  * @brief Create a new process from a file
  *
  * @param File TODO: more
- * @return ProcessControlBlock
+ * @return PCB
  */
-ProcessControlBlock *FENAPI SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, bool usermode);
+PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, ELEVATION Elevation);
 
 /**
  * @brief Create a new simple process with custom name and address space
  *
  * @param Name
  * @param PageTable
- * @return ProcessControlBlock*
+ * @return PCB*
  */
-ProcessControlBlock *FENAPI SysCreateProcess(const char *Name, void *PageTable);
+PCB *SysCreateProcess(const char *Name, ELEVATION Elevation);
 
 /**
  * @brief Create a new thread
  *
  * @param Parent if null is using the current running
  * @param InstructionPointer
- * @return ThreadControlBlock*
+ * @return TCB*
  */
-ThreadControlBlock *FENAPI SysCreateThread(ProcessControlBlock *Parent, uint64_t InstructionPointer, uint64_t arg0, uint64_t arg1, bool UserMode);
+TCB *SysCreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t arg0, uint64_t arg1);
 
-void do_exit(uint64_t code);
-void schedule();
 void StartTasking(uint64_t Address, enum TaskingMode Mode);
 
 void init_syscalls();
