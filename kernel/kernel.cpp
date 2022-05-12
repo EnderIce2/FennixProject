@@ -228,10 +228,10 @@ void KernelInit()
     if (!strstr(bootparams->cmdline, "novmwarn"))
         if (!CheckRunningUnderVM())
         {
-            // TODO: Warn for possible hardware damage.
             CurrentDisplay->SetPrintColor(0xFFFC4444);
             printf("WARNING!\nThe kernel has detected that you are booting from a real computer!\nBeaware that this project is not in a stable state and will likely cause problems like, overwriting data on disks or even worse, breaking the entire system!\nIf you REALLY want to continue, write \"YES\" and press enter.\nIf you want to disable this warning add \"novmwarn\" in kernel's cmdline.\n");
             CurrentDisplay->ResetPrintColor();
+            ps2keyboard->GetLastScanCode(); // TODO: make this a working one
         }
 
     vfs = new FileSystem::Virtual;
