@@ -40,7 +40,7 @@ void init_heap(AllocationAlgorithm Type)
         break;
     }
     default:
-        panic("Unknown allocation algorithm!");
+        panic("Unknown allocation algorithm!", true);
     }
     AlgorithmToUse = Type;
 }

@@ -17,7 +17,7 @@ void PageFrameAllocator::ReadMemoryMap()
     trace("reading memory map %d %d %#llx", earlyparams.mem.Entries, earlyparams.mem.Size, earlyparams.mem.memmap);
     if (Initialized)
     {
-        panic("Memory management was already initialized! Please hard reboot!");
+        panic("Memory management was already initialized! Please hard reboot!", true);
         return;
     }
     Initialized = true;
