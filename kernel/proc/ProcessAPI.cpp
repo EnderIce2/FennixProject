@@ -95,7 +95,6 @@ PCB *APICALL SysGetCurrentProcess()
     }
     case TaskingMode::Multi:
     {
-        fixme("not implemented");
         return mt->CurrentProcess;
     }
     case TaskingMode::None:
@@ -118,7 +117,6 @@ TCB *APICALL SysGetCurrentThread()
     }
     case TaskingMode::Multi:
     {
-        fixme("not implemented");
         return mt->CurrentThread;
     }
     case TaskingMode::None:
@@ -142,7 +140,7 @@ PCB *APICALL SysCreateProcess(const char *Name, ELEVATION Elevation)
     }
     case TaskingMode::Multi:
     {
-        return mt->CreateProcess(nullptr, (char *)Name, Elevation);
+        return mt->CreateProcess(SysGetCurrentProcess(), (char *)Name, Elevation);
     }
     case TaskingMode::None:
         return nullptr;

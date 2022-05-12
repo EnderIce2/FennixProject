@@ -29,7 +29,7 @@ enum STATUS
 
 struct GeneralProcessInfo
 {
-    uint64_t SpawnTick = 0, UserTicks = 0;
+    uint64_t SpawnTick = 0, UsedTicks = 0, StartUsedTicks = 0, LastUsedTicks = 0;
     uint64_t Usage[256];
     uint64_t Year, Month, Day, Hour, Minute, Second;
     int Priority;

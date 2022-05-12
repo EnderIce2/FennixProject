@@ -24,8 +24,8 @@ namespace PageTableHeap
         for (uint64_t i = 256; i < 512; i++)
             NewPML->Entries[i] = KernelPML4->Entries[i];
 
-        if (!User)
-        {
+        // if (!User)
+        // {
             // TODO: do something about this and map only where the process is created.
             uint64_t VirtualOffsetNormalVMA = NORMAL_VMA_OFFSET;
             for (uint64_t t = 0; t < MemoryEntries; t += PAGE_SIZE)
@@ -34,7 +34,7 @@ namespace PageTableHeap
                 NewPMLMgr.MapMemory((void *)VirtualOffsetNormalVMA, (void *)t, PTFlag::RW | PTFlag::US);
                 VirtualOffsetNormalVMA += PAGE_SIZE;
             }
-        }
+        // }
         UNLOCK(pagetable_lock);
         return NewPML;
     }
