@@ -5,11 +5,11 @@
 
 START_EXTERNC
 
-#define assert(x)                       \
-    do                                  \
-    {                                   \
-        if (!(x))                       \
-            panic("Assertion failed!"); \
+#define assert(x)                              \
+    do                                         \
+    {                                          \
+        if (!(x))                              \
+            panic("Assertion failed!", false); \
     } while (0)
 
 #define ASSERT(x) assert(x)
