@@ -14,8 +14,8 @@ enum ELEVATION
     UnknownElevation,
     Kernel,
     System,
-    User,
-    Idle
+    Idle,
+    User
 };
 
 enum STATUS
@@ -66,7 +66,7 @@ struct PCB
     ELEVATION Elevation;
     struct PCB *Parent;
     Vector<struct PCB *> Children;
-    CR3 *PageTable;
+    CR3 PageTable;
     Vector<TCB *> Threads;
     GeneralProcessInfo *Info;
     GeneralSecurityInfo *Security;

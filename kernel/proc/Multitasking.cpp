@@ -45,6 +45,13 @@ namespace Tasking
         CurrentDisplay->ResetPrintPosition();
         drawrectangle(0, 0, 200, CurrentDisplay->GetFramebuffer()->Height, 0x282828);
         bool showarrow = false;
+
+        CurrentDisplay->SetPrintColor(0xF222F2);
+        if (mt->CurrentProcess == mt->IdleProcess)
+            printf("Idle Process Running\n");
+        if (mt->CurrentThread == mt->IdleThread)
+            printf("Idle Thread Running\n");
+
         foreach (auto Proc1 in mt->ListProcess)
         {
             showarrow = false;
@@ -158,7 +165,7 @@ namespace Tasking
         mt->CurrentThread->Status = STATUS::Terminated;
         // mt->CurrentThread->ExitCode = Code;
         schedbg("parent:%s tid:%d, code:%016p", mt->CurrentProcess->Name, mt->CurrentThread->ID, Code);
-        trace("Exiting thread %d...", mt->CurrentThread->ID);
+        trace("Exiting thread %d(%s)...", mt->CurrentThread->ID, mt->CurrentThread->Name);
         LeaveCriticalSection;
         CPU_STOP;
     }
@@ -228,11 +235,13 @@ namespace Tasking
             process->Parent = Parent;
             process->Parent->Children.push_back(process);
         }
+        CR3 cr3;
         if (Elevation == ELEVATION::User)
-            process->PageTable = (CR3 *)KernelPageTableAllocator->CreatePageTable(true);
+            cr3.raw = (uint64_t)KernelPageTableAllocator->CreatePageTable(true);
         else
-            process->PageTable = (CR3 *)KernelPageTableAllocator->CreatePageTable(false);
-        schedbg("Address space for %s has been created at %#llx", Name, process->PageTable);
+            cr3.raw = (uint64_t)KernelPageTableAllocator->CreatePageTable(false);
+        process->PageTable = cr3;
+        schedbg("Address space for %s has been created at %#llx", Name, process->PageTable.raw);
         ListProcess.push_back(process);
         trace("New process %s (%d) created.", process->Name, process->ID);
         LeaveCriticalSection;
@@ -400,7 +409,7 @@ namespace Tasking
             }
 
             trace("pcb %d terminated", pcb->ID);
-            KernelPageTableAllocator->RemovePageTable(reinterpret_cast<VMM::PageTable *>(pcb->PageTable));
+            KernelPageTableAllocator->RemovePageTable(reinterpret_cast<VMM::PageTable *>(pcb->PageTable.raw));
             kfree(pcb->Info);
             kfree(pcb->Security);
             kfree(pcb);
@@ -473,6 +482,8 @@ namespace Tasking
                          "jmp idleloop\n");
         }
 
+        static Critical::CriticalSectionData *CriticalSectionData = new Critical::CriticalSectionData;
+
         InterruptHandler(MultiTaskingV2SchedulerHandler)
         {
             if (!MultitaskingSchedulerEnabled)
@@ -480,15 +491,35 @@ namespace Tasking
                 EndOfInterrupt(INT_NUM);
                 return;
             }
-            EnterCriticalSection;
+            CriticalSectionData->EnableInterrupts = InterruptsEnabled();
+            CLI;
+            LOCK(CriticalSectionData->CriticalLock);
+            static int slowschedule = 0;
+            if (slowschedule < 5)
+            {
+                slowschedule++;
+                UNLOCK(CriticalSectionData->CriticalLock);
+                if (CriticalSectionData->EnableInterrupts)
+                    STI;
+                EndOfInterrupt(INT_NUM);
+                return;
+            }
+            else
+                slowschedule = 0;
 #ifdef DEBUG_TASK_MANAGER
             TraceSchedOnScreen();
 #endif
+            schedbg("Status: 0-ukn | 1-rdy | 2-run | 3-wait | 4-term");
             // Null or invalid process/thread? Let's find a new one to execute.
-            if ((mt->CurrentProcess == nullptr || mt->CurrentProcess->Checksum != Checksum::PROCESS_CHECKSUM) ||
-                (mt->CurrentThread == nullptr || mt->CurrentThread->Checksum != Checksum::THREAD_CHECKSUM))
+            if (InvalidPCB(mt->CurrentProcess) || InvalidTCB(mt->CurrentThread))
             {
                 schedbg("%d processes", mt->ListProcess.size());
+#ifdef DEBUG_SCHEDULER
+                foreach (auto var in mt->ListProcess)
+                {
+                    schedbg("Process %d %s", var->ID, var->Name);
+                }
+#endif
                 // Find a new process to execute.
                 foreach (PCB *pcb in mt->ListProcess)
                 {
@@ -499,13 +530,11 @@ namespace Tasking
                     switch (pcb->Status)
                     {
                     case STATUS::Ready:
+                        schedbg("Ready process (%s)%d", pcb->Name, pcb->ID);
                         break;
-                    case STATUS::Terminated:
-                    {
-                        RemoveProcess(pcb);
-                        continue;
-                    }
                     default:
+                        schedbg("Process %s(%d) status %d", pcb->Name, pcb->ID, pcb->Status);
+                        RemoveProcess(pcb);
                         continue;
                     }
 
@@ -514,6 +543,10 @@ namespace Tasking
                     {
                         if (InvalidTCB(tcb))
                             continue;
+
+                        if (tcb->Status != STATUS::Ready)
+                            continue;
+
                         // Set process and thread as the current one's.
                         mt->CurrentProcess = pcb;
                         mt->CurrentThread = tcb;
@@ -533,7 +566,9 @@ namespace Tasking
                 mt->CurrentThread->fs = rdmsr(MSR_FS_BASE);
                 fxsave(mt->CurrentThread->FXRegion);
 
-                // Set the thread as running.
+                // Set the process & thread as ready if it's running.
+                if (mt->CurrentProcess->Status == STATUS::Running)
+                    mt->CurrentProcess->Status = STATUS::Ready;
                 if (mt->CurrentThread->Status == STATUS::Running)
                     mt->CurrentThread->Status = STATUS::Ready;
 
@@ -645,17 +680,19 @@ namespace Tasking
             wrmsr(MSR_GS_BASE, (uint64_t)mt->CurrentThread);
             wrmsr(MSR_SHADOW_GS_BASE, (uint64_t)mt->CurrentThread);
             fxrstor(mt->CurrentThread->FXRegion);
-            // TODO: Update process info
             goto End;
         }
+        
         Success:
         {
+            schedbg("Success Prc:%s(%d) Thd:%s(%d)",
+                    mt->CurrentProcess->Name, mt->CurrentProcess->ID,
+                    mt->CurrentThread->Name, mt->CurrentThread->ID);
+            mt->CurrentProcess->Status = STATUS::Running;
             mt->CurrentThread->Status = STATUS::Running;
 
             *regs = mt->CurrentThread->Registers;
-            CR3 cr3;
-            cr3.raw = mt->CurrentProcess->PageTable->raw;
-            // writecr3(cr3);
+            // writecr3(mt->CurrentProcess->PageTable);
 
             wrmsr(MSR_FS_BASE, mt->CurrentThread->fs);
             wrmsr(MSR_GS_BASE, (uint64_t)mt->CurrentThread);
@@ -674,15 +711,18 @@ namespace Tasking
                 break;
             }
             fxrstor(mt->CurrentThread->FXRegion);
-            // TODO: Update process info
         }
         End:
+        {
             UpdateTimeUsed(mt->CurrentProcess->Info);
             UpdateTimeUsed(mt->CurrentThread->Info);
             UpdateCPUUsage(mt->CurrentProcess->Info);
             UpdateCPUUsage(mt->CurrentThread->Info);
-            LeaveCriticalSection;
+            UNLOCK(CriticalSectionData->CriticalLock);
+            if (CriticalSectionData->EnableInterrupts)
+                STI;
             EndOfInterrupt(INT_NUM);
+        }
         }
     }
 
