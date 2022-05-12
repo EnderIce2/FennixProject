@@ -7,6 +7,7 @@
 #include <interrupts.h>
 #include <critical.hpp>
 #include <debug.h>
+#include <rand.h>
 #include <sys.h>
 #include <int.h>
 #include <asm.h>
@@ -148,9 +149,7 @@ namespace Tasking
     {
         // https://wiki.osdev.org/Random_Number_Generator
         // TODO: The kernel should have a way to remember what tokens are generated.
-        static uint64_t randseed = 1;
-        randseed = randseed * 1103515245 + 12345;
-        return (uint64_t)(randseed / 65536) % __UINT64_MAX__;
+        return rand64();
     }
 
     extern "C" void ProcessDoExit(uint64_t Code)

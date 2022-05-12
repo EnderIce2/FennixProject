@@ -8,7 +8,7 @@ namespace FileSystem
         uint64_t s = 0;
         while (s < Size)
         {
-            ((uint8_t *)Buffer)[s] = (*rand64()) % 0xFF;
+            ((uint8_t *)Buffer)[s] = (rand64()) % 0xFF;
             Offset++;
             s++;
         }

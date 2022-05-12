@@ -6,7 +6,8 @@
 	],
 	"settings": {
 		"files.associations": {
-			"interrupts.h": "c"
+			"interrupts.h": "c",
+			"rand.h": "c"
 		}
 	}
 }
