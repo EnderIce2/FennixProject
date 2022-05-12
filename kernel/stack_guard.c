@@ -1,16 +1,37 @@
 #include <stdint.h>
 #include <sys.h>
 
-#if UINT32_MAX == UINTPTR_MAX
-#define STACK_CHK_GUARD 0xe2dee396
+#ifndef STACK_CHK_GUARD_VALUE
+#if UINTPTR_MAX == UINT32_MAX
+#define STACK_CHK_GUARD_VALUE 0x25F6CC8D
 #else
-#define STACK_CHK_GUARD 0x595e9fbd94fda766
+#define STACK_CHK_GUARD_VALUE 0xBADFE2EC255A8572
+#endif
 #endif
 
-uint64_t __stack_chk_guard = STACK_CHK_GUARD;
+__attribute__((weak)) uintptr_t __stack_chk_guard = 0;
 
-__attribute__((noreturn)) void __stack_chk_fail(void)
+__attribute__((weak)) uintptr_t __stack_chk_guard_init(void)
 {
-    panic("Stack smashing detected!", false);
+    return STACK_CHK_GUARD_VALUE;
+}
+
+static void __attribute__((constructor, no_stack_protector)) __construct_stk_chk_guard()
+{
+    if (__stack_chk_guard == 0)
+        __stack_chk_guard = __stack_chk_guard_init();
+}
+
+// https://opensource.apple.com/source/xnu/xnu-1504.7.4/libkern/stack_protector.c.auto.html
+// static void __guard_setup(void) __attribute__((constructor));
+
+// static void __guard_setup(void)
+// {
+// read_random(__stack_chk_guard, sizeof(__stack_chk_guard));
+// }
+
+__attribute__((weak, noreturn)) void __stack_chk_fail(void)
+{
+    panic("Stack smashing/overflow detected!", false);
     CPU_STOP;
 }
