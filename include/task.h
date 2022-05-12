@@ -53,8 +53,8 @@ struct TCB
     REGISTERS Registers;
     uint64_t fs, gs, cs, ss, ds, es;
     char FXRegion[512] __attribute__((aligned(16)));
-    GeneralProcessInfo *Info;
-    GeneralSecurityInfo *Security;
+    GeneralProcessInfo Info;
+    GeneralSecurityInfo Security;
     uint32_t Checksum;
 };
 
@@ -68,7 +68,7 @@ struct PCB
     Vector<struct PCB *> Children;
     CR3 PageTable;
     Vector<TCB *> Threads;
-    GeneralProcessInfo *Info;
-    GeneralSecurityInfo *Security;
+    GeneralProcessInfo Info;
+    GeneralSecurityInfo Security;
     uint32_t Checksum;
 };

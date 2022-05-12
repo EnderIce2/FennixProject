@@ -43,7 +43,7 @@ namespace Tasking
     void TraceSchedOnScreen()
     {
         CurrentDisplay->ResetPrintPosition();
-        drawrectangle(0, 0, 200, CurrentDisplay->GetFramebuffer()->Height, 0x282828);
+        drawrectangle(0, 0, 222, CurrentDisplay->GetFramebuffer()->Height / 2, 0x282828);
         bool showarrow = false;
 
         CurrentDisplay->SetPrintColor(0xF222F2);
@@ -58,14 +58,14 @@ namespace Tasking
             CurrentDisplay->SetPrintColor(0xFF2200);
             if (Proc1 == mt->CurrentProcess)
                 showarrow = true;
-            printf("%s(%d) %s [%d%%/%lld]\n", Proc1->Name, Proc1->ID, showarrow ? "<-" : "  ", Proc1->Info->Usage[0], Proc1->Info->UsedTicks);
+            printf("%s(%d) %s [%d%%/%lld]\n", Proc1->Name, Proc1->ID, showarrow ? "<-" : "  ", Proc1->Info.Usage[0], Proc1->Info.UsedTicks);
             foreach (auto thd in Proc1->Threads)
             {
                 showarrow = false;
                 CurrentDisplay->SetPrintColor(0x00FF22);
                 if (thd == mt->CurrentThread)
                     showarrow = true;
-                printf(" \\%s(%d) %s [%d%%/%lld]\n", Proc1->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info->Usage[0], thd->Info->UsedTicks);
+                printf(" \\%s(%d) %s [%d%%/%lld]\n", Proc1->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTicks);
             }
             foreach (auto Proc1Children in Proc1->Children)
             {
@@ -73,14 +73,14 @@ namespace Tasking
                 CurrentDisplay->SetPrintColor(0xFF2200);
                 if (Proc1Children == mt->CurrentProcess)
                     showarrow = true;
-                printf(" \\%s(%d) %s [%d%%/%lld]\n", Proc1Children->Name, Proc1Children->ID, showarrow ? "<-" : "  ", Proc1Children->Info->Usage[0], Proc1Children->Info->UsedTicks);
+                printf(" \\%s(%d) %s [%d%%/%lld]\n", Proc1Children->Name, Proc1Children->ID, showarrow ? "<-" : "  ", Proc1Children->Info.Usage[0], Proc1Children->Info.UsedTicks);
                 foreach (auto thd in Proc1Children->Threads)
                 {
                     showarrow = false;
                     CurrentDisplay->SetPrintColor(0x00FF22);
                     if (thd == mt->CurrentThread)
                         showarrow = true;
-                    printf("  \\%s(%d) %s [%d%%/%lld]\n", Proc1Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info->Usage[0], thd->Info->UsedTicks);
+                    printf("  \\%s(%d) %s [%d%%/%lld]\n", Proc1Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTicks);
                 }
                 foreach (auto Proc2Children in Proc1Children->Children)
                 {
@@ -88,14 +88,14 @@ namespace Tasking
                     CurrentDisplay->SetPrintColor(0xFF2200);
                     if (Proc2Children == mt->CurrentProcess)
                         showarrow = true;
-                    printf("  \\%s(%d) %s [%d%%/%lld]\n", Proc2Children->Name, Proc2Children->ID, showarrow ? "<-" : "  ", Proc2Children->Info->Usage[0], Proc2Children->Info->UsedTicks);
+                    printf("  \\%s(%d) %s [%d%%/%lld]\n", Proc2Children->Name, Proc2Children->ID, showarrow ? "<-" : "  ", Proc2Children->Info.Usage[0], Proc2Children->Info.UsedTicks);
                     foreach (auto thd in Proc2Children->Threads)
                     {
                         showarrow = false;
                         CurrentDisplay->SetPrintColor(0x00FF22);
                         if (thd == mt->CurrentThread)
                             showarrow = true;
-                        printf("   \\%s(%d) %s [%d%%/%lld]\n", Proc2Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info->Usage[0], thd->Info->UsedTicks);
+                        printf("   \\%s(%d) %s [%d%%/%lld]\n", Proc2Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTicks);
                     }
                     foreach (auto Proc3Children in Proc2Children->Children)
                     {
@@ -103,14 +103,14 @@ namespace Tasking
                         CurrentDisplay->SetPrintColor(0xFF2200);
                         if (Proc3Children == mt->CurrentProcess)
                             showarrow = true;
-                        printf("   \\%s(%d) %s [%d%%/%lld]\n", Proc3Children->Name, Proc3Children->ID, showarrow ? "<-" : "  ", Proc3Children->Info->Usage[0], Proc3Children->Info->UsedTicks);
+                        printf("   \\%s(%d) %s [%d%%/%lld]\n", Proc3Children->Name, Proc3Children->ID, showarrow ? "<-" : "  ", Proc3Children->Info.Usage[0], Proc3Children->Info.UsedTicks);
                         foreach (auto thd in Proc3Children->Threads)
                         {
                             showarrow = false;
                             CurrentDisplay->SetPrintColor(0x00FF22);
                             if (thd == mt->CurrentThread)
                                 showarrow = true;
-                            printf("     \\%s(%d) %s [%d%%/%lld]\n", Proc3Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info->Usage[0], thd->Info->UsedTicks);
+                            printf("     \\%s(%d) %s [%d%%/%lld]\n", Proc3Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTicks);
                         }
                         foreach (auto Proc4Children in Proc3Children->Children)
                         {
@@ -118,14 +118,14 @@ namespace Tasking
                             CurrentDisplay->SetPrintColor(0xFF2200);
                             if (Proc4Children == mt->CurrentProcess)
                                 showarrow = true;
-                            printf("     \\%s(%d) %s [%d%%/%lld]\n", Proc4Children->Name, Proc4Children->ID, showarrow ? "<-" : "  ", Proc4Children->Info->Usage[0], Proc4Children->Info->UsedTicks);
+                            printf("     \\%s(%d) %s [%d%%/%lld]\n", Proc4Children->Name, Proc4Children->ID, showarrow ? "<-" : "  ", Proc4Children->Info.Usage[0], Proc4Children->Info.UsedTicks);
                             foreach (auto thd in Proc4Children->Threads)
                             {
                                 showarrow = false;
                                 CurrentDisplay->SetPrintColor(0x00FF22);
                                 if (thd == mt->CurrentThread)
                                     showarrow = true;
-                                printf("      \\%s(%d) %s [%d%%/%lld]\n", Proc4Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info->Usage[0], thd->Info->UsedTicks);
+                                printf("      \\%s(%d) %s [%d%%/%lld]\n", Proc4Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTicks);
                             }
                             foreach (auto Proc5Children in Proc4Children->Children)
                             {
@@ -133,14 +133,14 @@ namespace Tasking
                                 CurrentDisplay->SetPrintColor(0xFF2200);
                                 if (Proc5Children == mt->CurrentProcess)
                                     showarrow = true;
-                                printf("      \\%s(%d) %s [%d%%/%lld]\n", Proc5Children->Name, Proc5Children->ID, showarrow ? "<-" : "  ", Proc5Children->Info->Usage[0], Proc5Children->Info->UsedTicks);
+                                printf("      \\%s(%d) %s [%d%%/%lld]\n", Proc5Children->Name, Proc5Children->ID, showarrow ? "<-" : "  ", Proc5Children->Info.Usage[0], Proc5Children->Info.UsedTicks);
                                 foreach (auto thd in Proc5Children->Threads)
                                 {
                                     showarrow = false;
                                     CurrentDisplay->SetPrintColor(0x00FF22);
                                     if (thd == mt->CurrentThread)
                                         showarrow = true;
-                                    printf("       \\%s(%d) %s [%d%%/%lld]\n", Proc5Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info->Usage[0], thd->Info->UsedTicks);
+                                    printf("       \\%s(%d) %s [%d%%/%lld]\n", Proc5Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTicks);
                                 }
                             }
                         }
@@ -181,7 +181,7 @@ namespace Tasking
     {
         uint64_t CurrentCount = counter();
         // TODO: for Info->Usage[cpu_count] = ...
-        for (size_t i = 0; i < 4; i++)
+        for (size_t i = 0; i < 2; i++)
         {
             Info->Usage[i] = (uint32_t)((CurrentCount - Info->LastUsedTicks) * 100 / (CurrentCount - Info->SpawnTick));
 
@@ -221,11 +221,9 @@ namespace Tasking
         PCB *process = new PCB;
         process->Checksum = Checksum::PROCESS_CHECKSUM;
 
-        process->Security = new GeneralSecurityInfo;
-        process->Info = new GeneralProcessInfo;
-        SetInfo(process->Info);
-        process->Security->Token = CreateToken();
-        trace("New security token created %p", process->Security->Token);
+        SetInfo(&process->Info);
+        process->Security.Token = CreateToken();
+        trace("New security token created %p", process->Security.Token);
         process->ID = this->NextPID++;
         process->Elevation = Elevation;
         process->Status = STATUS::Ready;
@@ -316,8 +314,7 @@ namespace Tasking
         thread->Registers.ARG0 = (uint64_t)Arg0; // args0
         thread->Registers.ARG1 = (uint64_t)Arg1; // args1
 
-        thread->Info = new GeneralProcessInfo;
-        SetInfo(thread->Info);
+        SetInfo(&thread->Info);
 
         thread->Msg = (MessageQueue *)KernelAllocator.RequestPages(2);
         KernelPageTableManager.MapMemory(thread->Msg, thread->Msg, PTFlag::US | PTFlag::RW);
@@ -374,21 +371,17 @@ namespace Tasking
         for (uint64_t i = 0; i < tcb->Parent->Threads.size(); i++)
             if (tcb->Parent->Threads[i] == tcb)
             {
+                trace("Thread %d terminated", tcb->ID);
+                KernelStackAllocator->FreeStack(tcb->Parent->Threads[i]->Stack);
+                tcb->Parent->Threads[i]->Checksum = badfennec;
+                kfree(tcb->Parent->Threads[i]);
                 tcb->Parent->Threads.remove(i);
                 break;
             }
-
-        trace("Thread %d terminated", tcb->ID);
-        KernelStackAllocator->FreeStack(tcb->Stack);
-        KernelAllocator.FreePages(tcb->Msg, 2);
-        kfree(tcb->Info);
-        kfree(tcb);
-        tcb = nullptr;
     }
 
     void RemoveProcess(PCB *pcb)
     {
-        // TODO: Remove everything that this pcb created. No mercy.
         if (pcb == nullptr)
             return;
 
@@ -399,21 +392,23 @@ namespace Tasking
                 RemoveThread(thread);
             }
 
+            foreach (PCB *process in pcb->Children)
+            {
+                RemoveProcess(process);
+            }
+
             for (size_t i = 0; i < mt->ListProcess.size(); i++)
             {
                 if (mt->ListProcess[i] == pcb)
                 {
+                    trace("pcb %d terminated", mt->ListProcess[i]->ID);
+                    KernelPageTableAllocator->RemovePageTable(reinterpret_cast<VMM::PageTable *>(mt->ListProcess[i]->PageTable.raw));
+                    mt->ListProcess[i]->Checksum = badfennec;
+                    kfree(mt->ListProcess[i]);
                     mt->ListProcess.remove(i);
                     break;
                 }
             }
-
-            trace("pcb %d terminated", pcb->ID);
-            KernelPageTableAllocator->RemovePageTable(reinterpret_cast<VMM::PageTable *>(pcb->PageTable.raw));
-            kfree(pcb->Info);
-            kfree(pcb->Security);
-            kfree(pcb);
-            pcb = nullptr;
         }
         else
         {
@@ -432,6 +427,8 @@ namespace Tasking
         if (pt.raw != readcr3().raw)
             writecr3(pt);
     }
+
+    Critical::CriticalSectionData *CriticalSectionData = nullptr;
 
     extern "C"
     {
@@ -489,8 +486,6 @@ namespace Tasking
                          "hlt\n"
                          "jmp idleloop\n");
         }
-
-        static Critical::CriticalSectionData *CriticalSectionData = new Critical::CriticalSectionData;
 
         InterruptHandler(MultiTaskingV2SchedulerHandler)
         {
@@ -580,7 +575,7 @@ namespace Tasking
                 if (mt->CurrentThread->Status == STATUS::Running)
                     mt->CurrentThread->Status = STATUS::Ready;
 
-                // Get first available thread from the list.
+                // Get next available thread from the list.
                 for (uint64_t i = 0; i < mt->CurrentProcess->Threads.size(); i++)
                 {
                     // Loop until we find the current thread from the process thread list.
@@ -591,6 +586,8 @@ namespace Tasking
                     TCB *thread = mt->CurrentProcess->Threads[i + 1];
                     if (InvalidTCB(thread))
                         continue;
+
+                    schedbg("%s(%d) and next thread is %s(%d)", mt->CurrentProcess->Threads[i]->Name, mt->CurrentProcess->Threads[i]->ID, thread->Name, thread->ID);
 
                     // Check if the process is ready to be executed.
                     if (mt->CurrentProcess->Status != STATUS::Ready)
@@ -619,28 +616,36 @@ namespace Tasking
                     if (mt->ListProcess[i] == mt->CurrentProcess)
                     {
                         // Check if the next process is valid. If not, we search until we find.
-                        PCB *process = mt->ListProcess[i + 1];
+                        PCB *pcb = mt->ListProcess[i + 1];
 
-                        if (InvalidPCB(process))
+                        if (InvalidPCB(pcb))
                             continue;
-                        if (process->Status != STATUS::Ready)
+                        if (pcb->Status != STATUS::Ready)
                             continue;
 
                         // Everything good, now search for a thread.
-                        for (uint64_t j = 0; j < process->Threads.size(); j++)
+                        for (uint64_t j = 0; j < pcb->Threads.size(); j++)
                         {
-                            TCB *thread = process->Threads[j];
-                            if (InvalidTCB(thread))
+                            TCB *tcb = pcb->Threads[j];
+                            if (InvalidTCB(tcb))
                                 continue;
-                            if (thread->Status != STATUS::Ready)
+                            if (tcb->Status != STATUS::Ready)
                                 continue;
                             // Success! We set as the current one and restore the stuff.
-                            mt->CurrentProcess = process;
-                            mt->CurrentThread = thread;
-                            schedbg("[cur proc+1 -> first thd] Scheduling thread %d parent of %s->%d (Total Procs %d)", thread->ID, thread->Parent->Name, process->Threads.size(), mt->ListProcess.size());
+                            mt->CurrentProcess = pcb;
+                            mt->CurrentThread = tcb;
+                            schedbg("[cur proc+1 -> first thd] Scheduling thread %d %s->%d (Total Procs %d)", tcb->ID, tcb->Name, pcb->Threads.size(), mt->ListProcess.size());
                             goto Success;
                         }
                     }
+                }
+
+                // Before checking from the beginning, we remove everything that is terminated.
+                foreach (PCB *pcb in mt->ListProcess)
+                {
+                    if (InvalidPCB(pcb))
+                        continue;
+                    // RemoveProcess(pcb); // comment this until i will find a way to handle properly vectors, the memory need to be 0ed after removing.
                 }
 
                 // If we didn't find anything, we check from the start of the list. This is the last chance to find something or we go to idle.
@@ -700,7 +705,7 @@ namespace Tasking
             mt->CurrentThread->Status = STATUS::Running;
 
             *regs = mt->CurrentThread->Registers;
-            // UpdatePageTable(mt->CurrentProcess->PageTable);
+            // UpdatePageTable(mt->CurrentProcess->PageTable); // the page table issue... i don't know how to fix it.
 
             wrmsr(MSR_FS_BASE, mt->CurrentThread->fs);
             wrmsr(MSR_GS_BASE, (uint64_t)mt->CurrentThread);
@@ -722,10 +727,10 @@ namespace Tasking
         }
         End:
         {
-            UpdateTimeUsed(mt->CurrentProcess->Info);
-            UpdateTimeUsed(mt->CurrentThread->Info);
-            UpdateCPUUsage(mt->CurrentProcess->Info);
-            UpdateCPUUsage(mt->CurrentThread->Info);
+            UpdateTimeUsed(&mt->CurrentProcess->Info);
+            UpdateTimeUsed(&mt->CurrentThread->Info);
+            UpdateCPUUsage(&mt->CurrentProcess->Info);
+            UpdateCPUUsage(&mt->CurrentThread->Info);
             UNLOCK(CriticalSectionData->CriticalLock);
             if (CriticalSectionData->EnableInterrupts)
                 STI;
@@ -737,10 +742,12 @@ namespace Tasking
     Multitasking::Multitasking()
     {
         CurrentTaskingMode = TaskingMode::Multi;
+        CriticalSectionData = new Critical::CriticalSectionData;
     }
 
     Multitasking::~Multitasking()
     {
         CurrentTaskingMode = TaskingMode::None;
+        delete CriticalSectionData;
     }
 }

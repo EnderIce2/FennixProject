@@ -81,8 +81,8 @@ InterruptHandler(timer_interrupt_handler)
     {
         systemuptimeseconds += get_freq() / 1000; // TODO: check if this is correct
     }
-    // EndOfInterrupt(INT_NUM);
     asm volatile("int $0xfd");
+    // EndOfInterrupt(INT_NUM);
 }
 
 void init_timer()
