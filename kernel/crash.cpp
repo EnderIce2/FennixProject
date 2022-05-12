@@ -44,13 +44,16 @@ EXTERNC void crash(string message, bool clear)
     SET_PRINT_MID((char *)"System crashed!", FHeight(1));
     CurrentDisplay->ResetPrintColor();
     SET_PRINT_MID((char *)message, (CurrentDisplay->GetFramebuffer()->Height / 2));
+    if (Tasking::mt->CurrentThread != nullptr)
+    {
+        err("\"%s\" happened while running thread %s(%d)", message, Tasking::mt->CurrentThread->Name, Tasking::mt->CurrentThread->ID);
+    }
     CPU_STOP;
 }
 
 EXTERNC void isrcrash(REGISTERS *regs)
 {
-    if (CS != 0x23)
-        CLI;
+    CLI;
     CR0 cr0 = readcr0();
     CR2 cr2 = readcr2();
     CR3 cr3 = readcr3();
@@ -66,13 +69,17 @@ EXTERNC void isrcrash(REGISTERS *regs)
             err("Division by zero in an user-mode thread %s(%d).", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID);
             // TODO: signal the application to stop.
             SysGetCurrentThread()->Status = Terminated;
+            STI;
             return;
         }
         break;
     case ISR_Debug:
         SET_PRINT_MID((char *)"Manual Triggered Crash Test (Debug)", FHeight(2));
         if (CS == 0x23)
+        {
+            STI;
             return;
+        }
         break;
     case ISR_NonMaskableInterrupt:
         break;
@@ -88,6 +95,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
             err("Invalid opcode in an user-mode thread %s(%d).", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID);
             // TODO: signal the application to stop.
             SysGetCurrentThread()->Status = Terminated;
+            STI;
             return;
         }
         break;
@@ -114,6 +122,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
             err("Stack Segment Fault caused by an user-mode thread %s(%d) at %#lx.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, RIP);
             // TODO: signal the application to stop.
             SysGetCurrentThread()->Status = Terminated;
+            STI;
             return;
         }
         else
@@ -166,6 +175,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
             err("General Protection Fault caused by an user-mode thread %s(%d) at %#lx.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, RIP);
             // TODO: signal the application to stop.
             SysGetCurrentThread()->Status = Terminated;
+            STI;
             return;
         }
         else
@@ -228,6 +238,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
                 ERROR_CODE & 0x00000008 ? "One or more page directory entries contain reserved bits which are set to 1." : pagefault_message[ERROR_CODE & 0b111]);
             // TODO: signal the application to stop.
             SysGetCurrentThread()->Status = Terminated;
+            STI;
             return;
         }
         else
