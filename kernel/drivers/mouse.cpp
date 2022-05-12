@@ -6,6 +6,7 @@
 #include <display.h>
 #include <filesystem.h>
 #include <interrupts.h>
+#include <critical.hpp>
 #include <int.h>
 #include <io.h>
 
@@ -119,6 +120,7 @@ namespace PS2Mouse
         uint8_t Cycle = 0;
         InterruptHandler(PS2MouseInterruptHandler)
         {
+            EnterCriticalSection;
             uint8_t Data = inb(0x60);
             ProcessMousePacket();
 
@@ -146,6 +148,7 @@ namespace PS2Mouse
                 break;
             }
             }
+            LeaveCriticalSection;
             EndOfInterrupt(INT_NUM);
         }
     }
