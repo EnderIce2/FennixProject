@@ -23,8 +23,8 @@ static uint64_t internal_unimpl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, 
 
 static uint64_t internal_exit(uint64_t code)
 {
-    trace("Userspace thread %s(%lld) exited with code %lld", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, code);
-    // SysGetCurrentThread()->ExitCode = code;
+    trace("Userspace thread %s(%lld) exited with code %#llx", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, code);
+    SysGetCurrentThread()->ExitCode = code;
     SysGetCurrentThread()->Status = Terminated;
     return 0;
 }

@@ -163,7 +163,7 @@ namespace Tasking
     {
         EnterCriticalSection;
         mt->CurrentThread->Status = STATUS::Terminated;
-        // mt->CurrentThread->ExitCode = Code;
+        mt->CurrentThread->ExitCode = Code;
         schedbg("parent:%s tid:%d, code:%016p", mt->CurrentProcess->Name, mt->CurrentThread->ID, Code);
         trace("Exiting thread %d(%s)...", mt->CurrentThread->ID, mt->CurrentThread->Name);
         LeaveCriticalSection;

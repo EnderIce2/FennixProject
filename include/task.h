@@ -47,6 +47,7 @@ struct TCB
     uint64_t ID;
     char Name[256];
     STATUS Status;
+    uint64_t ExitCode;
     PCB *Parent;
     struct MessageQueue *Msg;
     void *Stack;
@@ -64,6 +65,7 @@ struct PCB
     char Name[256];
     STATUS Status;
     ELEVATION Elevation;
+    uint64_t ExitCode;
     struct PCB *Parent;
     Vector<struct PCB *> Children;
     CR3 PageTable;
