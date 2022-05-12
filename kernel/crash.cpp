@@ -32,14 +32,15 @@ static const char *pagefault_message[] = {
 
 #define staticbuffer(name) char name[] = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
 
-EXTERNC void crash(string message)
+EXTERNC void crash(string message, bool clear)
 {
     // TODO: Add more useful information.
     CLI;
     debug("System crashed with message: %s", message);
-    CurrentDisplay->Clear(0xFF221160);
+    if (clear)
+        CurrentDisplay->Clear(0x121160);
 
-    CurrentDisplay->SetPrintColor(0xFFDD2920);
+    CurrentDisplay->SetPrintColor(0xDD2920);
     SET_PRINT_MID((char *)"System crashed!", FHeight(1));
     CurrentDisplay->ResetPrintColor();
     SET_PRINT_MID((char *)message, (CurrentDisplay->GetFramebuffer()->Height / 2));
@@ -62,7 +63,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
     case ISR_DivideByZero:
         if (CS == 0x23)
         {
-            err("Division by zero in an user-mode process.");
+            err("Division by zero in an user-mode thread %s(%d).", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID);
             // TODO: signal the application to stop.
             SysGetCurrentThread()->Status = Terminated;
             return;
@@ -84,7 +85,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
     case ISR_InvalidOpcode:
         if (CS == 0x23)
         {
-            err("Invalid opcode in an user-mode process.");
+            err("Invalid opcode in an user-mode thread %s(%d).", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID);
             // TODO: signal the application to stop.
             SysGetCurrentThread()->Status = Terminated;
             return;
@@ -108,51 +109,61 @@ EXTERNC void isrcrash(REGISTERS *regs)
     }
     case ISR_StackSegmentFault:
     {
-        CurrentDisplay->Clear(0xFF262100);
-        staticbuffer(descbuf);
-        staticbuffer(desc_ext);
-        staticbuffer(desc_table);
-        staticbuffer(desc_idx);
-        staticbuffer(desc_tmp);
-        SelectorErrorCode SelCode = {.raw = ERROR_CODE};
-        switch (SelCode.Table)
+        if (CS == 0x23)
         {
-        case 0b00:
-            memcpy(desc_tmp, "GDT", 3);
-            break;
-        case 0b01:
-            memcpy(desc_tmp, "IDT", 3);
-            break;
-        case 0b10:
-            memcpy(desc_tmp, "LDT", 3);
-            break;
-        case 0b11:
-            memcpy(desc_tmp, "IDT", 3);
-            break;
-        default:
-            memcpy(desc_tmp, "Unknown", 7);
+            err("Stack Segment Fault caused by an user-mode thread %s(%d) at %#lx.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, RIP);
+            // TODO: signal the application to stop.
+            SysGetCurrentThread()->Status = Terminated;
+            return;
+        }
+        else
+        {
+            CurrentDisplay->Clear(0xFF262100);
+            staticbuffer(descbuf);
+            staticbuffer(desc_ext);
+            staticbuffer(desc_table);
+            staticbuffer(desc_idx);
+            staticbuffer(desc_tmp);
+            SelectorErrorCode SelCode = {.raw = ERROR_CODE};
+            switch (SelCode.Table)
+            {
+            case 0b00:
+                memcpy(desc_tmp, "GDT", 3);
+                break;
+            case 0b01:
+                memcpy(desc_tmp, "IDT", 3);
+                break;
+            case 0b10:
+                memcpy(desc_tmp, "LDT", 3);
+                break;
+            case 0b11:
+                memcpy(desc_tmp, "IDT", 3);
+                break;
+            default:
+                memcpy(desc_tmp, "Unknown", 7);
+                break;
+            }
+            debug("external:%d table:%d idx:%#x", SelCode.External, SelCode.Table, SelCode.Idx);
+            sprintf_(descbuf, "Stack segment fault at address %#lx", RIP);
+            SET_PRINT_MID((char *)descbuf, FHeight(5));
+            sprintf_(desc_ext, "External: %d", SelCode.External);
+            SET_PRINT_MID((char *)desc_ext, FHeight(3));
+            sprintf_(desc_table, "Table: %d (%s)", SelCode.Table, desc_tmp);
+            SET_PRINT_MID((char *)desc_table, FHeight(2));
+            sprintf_(desc_idx, "%s Index: %#x", desc_tmp, SelCode.Idx);
+            SET_PRINT_MID((char *)desc_idx, FHeight(1));
+            CurrentDisplay->SetPrintColor(0xFFDD2920);
+            SET_PRINT_MID((char *)"System crashed!", FHeight(6));
+            CurrentDisplay->ResetPrintColor();
+            SET_PRINT_MID((char *)"More info about the exception:", FHeight(4));
             break;
         }
-        debug("external:%d table:%d idx:%#x", SelCode.External, SelCode.Table, SelCode.Idx);
-        sprintf_(descbuf, "Stack segment fault at address %#lx", RIP);
-        SET_PRINT_MID((char *)descbuf, FHeight(5));
-        sprintf_(desc_ext, "External: %d", SelCode.External);
-        SET_PRINT_MID((char *)desc_ext, FHeight(3));
-        sprintf_(desc_table, "Table: %d (%s)", SelCode.Table, desc_tmp);
-        SET_PRINT_MID((char *)desc_table, FHeight(2));
-        sprintf_(desc_idx, "%s Index: %#x", desc_tmp, SelCode.Idx);
-        SET_PRINT_MID((char *)desc_idx, FHeight(1));
-        CurrentDisplay->SetPrintColor(0xFFDD2920);
-        SET_PRINT_MID((char *)"System crashed!", FHeight(6));
-        CurrentDisplay->ResetPrintColor();
-        SET_PRINT_MID((char *)"More info about the exception:", FHeight(4));
-        break;
     }
     case ISR_GeneralProtectionFault:
     {
         if (CS == 0x23)
         {
-            err("General Protection Fault caused by an user-mode process at %#lx.", RIP);
+            err("General Protection Fault caused by an user-mode thread %s(%d) at %#lx.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, RIP);
             // TODO: signal the application to stop.
             SysGetCurrentThread()->Status = Terminated;
             return;
@@ -204,7 +215,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
     {
         if (CS == 0x23)
         {
-            err("Page fault caused by an user-mode process.");
+            err("Page fault caused by an user-mode thread %s(%d).", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID);
             uint64_t addr = readcr2().raw;
             debug("Page fault at address %#llx", addr);
             PageFaultErrorCode params = {.raw = (uint32_t)ERROR_CODE};
