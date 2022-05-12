@@ -425,6 +425,14 @@ namespace Tasking
         }
     }
 
+    void UpdatePageTable(CR3 pt)
+    {
+        if (pt.raw == 0)
+            return;
+        if (pt.raw != readcr3().raw)
+            writecr3(pt);
+    }
+
     extern "C"
     {
         __attribute__((naked, used)) void MultiTaskingV2SchedulerHelper()
@@ -674,7 +682,7 @@ namespace Tasking
             *regs = mt->CurrentThread->Registers;
             CR3 cr3;
             cr3.raw = (uint64_t)KernelPageTableManager.PML4;
-            writecr3(cr3);
+            UpdatePageTable(cr3);
 
             wrmsr(MSR_FS_BASE, mt->CurrentThread->fs);
             wrmsr(MSR_GS_BASE, (uint64_t)mt->CurrentThread);
@@ -682,7 +690,7 @@ namespace Tasking
             fxrstor(mt->CurrentThread->FXRegion);
             goto End;
         }
-        
+
         Success:
         {
             schedbg("Success Prc:%s(%d) Thd:%s(%d)",
@@ -692,7 +700,7 @@ namespace Tasking
             mt->CurrentThread->Status = STATUS::Running;
 
             *regs = mt->CurrentThread->Registers;
-            // writecr3(mt->CurrentProcess->PageTable);
+            // UpdatePageTable(mt->CurrentProcess->PageTable);
 
             wrmsr(MSR_FS_BASE, mt->CurrentThread->fs);
             wrmsr(MSR_GS_BASE, (uint64_t)mt->CurrentThread);
