@@ -1,6 +1,7 @@
 #include <heap.h>
 #include <asm.h>
 #include "../kernel.h"
+#include "../cpu/smp.hpp"
 
 using namespace PMM;
 using namespace VMM;
@@ -61,7 +62,7 @@ void PageTableManager::MapMemory(void *VirtualAddress, void *PhysicalAddress, ui
     PDE.SetFlag(PTFlag::P, true);
     PDE.AddFlag(Flags);
     PT->Entries[indexer.P_i] = PDE;
-    // invlpg((uint64_t)VirtualAddress);
+    invlpg((uint64_t)VirtualAddress);
 }
 
 void PageTableManager::UnmapMemory(void *VirtualAddress)

@@ -1,6 +1,6 @@
 #include "hpet.h"
 #include <io.h>
-#include "../acpi.h"
+#include "../cpu/acpi.hpp"
 #include <heap.h>
 
 bool HPET_initialized = false;
@@ -37,17 +37,22 @@ void hpet_wait(uint64_t Seconds)
 void init_HPET()
 {
     trace("Initializing HPET timer");
-    if (!HPET)
+    if (!acpi->HPET)
     {
         warn("HPET timer is not supported");
         return;
     }
-    MapMemory(NULL, (void *)HPET->address.Address, (void *)HPET->address.Address, RW | PCD);
-    hpet = (struct HPET *)(HPET->address.Address);
-    debug("%s timer is at address %016p", HPET->header.OEMID, (void *)HPET->address.Address);
+    MapMemory(NULL, (void *)acpi->HPET->address.Address, (void *)acpi->HPET->address.Address, RW | PCD);
+    hpet = (HPET *)(acpi->HPET->address.Address);
+    debug("%s timer is at address %016p", acpi->HPET->header.OEMID, (void *)acpi->HPET->address.Address);
     clk = hpet->general_capabilities >> 32;
     mmoutq(&hpet->general_configuration, 0);
     mmoutq(&hpet->main_counter_value, 0);
     mmoutq(&hpet->general_configuration, 1);
     HPET_initialized = true;
+}
+
+void disable_HPET()
+{
+    HPET_initialized = false;
 }

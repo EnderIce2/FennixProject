@@ -17,11 +17,12 @@ struct HPET
 };
 
 extern bool HPET_initialized;
-uint32_t get_clk();
-uint64_t hpet_read_counter();
-void hpet_uwait(uint64_t Microseconds);
-void hpet_mwait(uint64_t Miliseconds);
-void hpet_wait(uint64_t Seconds);
-void init_HPET();
+EXTERNC uint32_t get_clk();
+EXTERNC uint64_t hpet_read_counter();
+EXTERNC void hpet_uwait(uint64_t Microseconds);
+EXTERNC void hpet_mwait(uint64_t Miliseconds);
+EXTERNC void hpet_wait(uint64_t Seconds);
+EXTERNC void init_HPET();
+EXTERNC void disable_HPET();
 
 #endif // !__FENNIX_KERNEL_HPET_H__

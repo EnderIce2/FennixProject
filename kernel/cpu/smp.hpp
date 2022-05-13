@@ -1,47 +1,42 @@
 #pragma once
 #include "idt.h"
-
+#include "acpi.hpp"
 #include "../kernel.h"
 
-#define CurrentProcessor              \
-    ({ &CPUs[({                       \
-           uint64_t ret;              \
-           asm volatile("movq %%gs:[" \
-                        "0"           \
-                        "], %0"       \
-                        : "=r"(ret)   \
-                        :             \
-                        : "memory");  \
-           ret;                       \
-       })]; })
+struct CPUData
+{
+    uint64_t ID;
+    ACPI::MADT::LocalAPIC LAPIC;
+    uint8_t Stack[STACK_SIZE] __attribute__((aligned(PAGE_SIZE)));
+    CR3 PageTable;
+    GlobalDescriptorTableDescriptor GDT;
+    InterruptDescriptorTableDescriptor IDT;
+    TaskStateSegment TSS;
+};
 
 namespace SymmetricMultiprocessing
 {
     class SMP
     {
     public:
-        struct CPUData
-        {
-            uint64_t ID;
-            uint64_t LAPICID;
-            bool Ready;
-            TaskStateSegment *TSS;
-
-            /* TODO: fxsr implementation */
-            /* TODO: process implementation */
-        };
-        /**
-         * @brief Construct a new SMP object
-         *
-         */
         SMP();
-        /**
-         * @brief Destroy the SMP object
-         *
-         */
         ~SMP();
     };
 }
 
 extern SymmetricMultiprocessing::SMP *smp;
-extern SymmetricMultiprocessing::SMP::CPUData *CPUs;
+
+#define MAX_CPU 256
+extern CPUData CPUs[];
+
+static CPUData *GetCurrentCPU()
+{
+    uint64_t ret = 0;
+    asm volatile("movq %%fs, %0\n"
+                 : "=r"(ret));
+    return &CPUs[ret];
+}
+
+static CPUData *GetCPU(uint64_t id) { return &CPUs[id]; }
+
+#define CurrentCPU GetCurrentCPU()

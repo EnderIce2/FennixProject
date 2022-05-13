@@ -83,8 +83,8 @@ namespace Tasking
         PCB *IdleProcess = nullptr;
         TCB *IdleThread = nullptr;
 
-        PCB *CreateProcess(PCB *Parent, char *Name, ELEVATION Elevation);
-        TCB *CreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t Arg0, uint64_t Arg1);
+        PCB *CreateProcess(PCB *Parent, char *Name, ELEVATION Elevation, int Priority = 100);
+        TCB *CreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t Arg0, uint64_t Arg1, int Priority = 100);
 
         Multitasking();
         ~Multitasking();

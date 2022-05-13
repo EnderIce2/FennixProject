@@ -1,6 +1,6 @@
 #pragma once
 #include <types.h>
-#include "acpi.h"
+#include "cpu/acpi.hpp"
 #include "kernel.h"
 
 #ifdef __cplusplus
@@ -46,6 +46,15 @@ namespace PCI
         uint8_t MinGrant;
         uint8_t MaxLatency;
     };
+
+    struct DeviceConfig
+    {
+        uint64_t BaseAddress;
+        uint16_t PCISegGroup;
+        uint8_t StartBus;
+        uint8_t EndBus;
+        uint32_t Reserved;
+    } __attribute__((packed));
 
     void EnumeratePCI(struct MCFGHeader *MCFG);
     void *FindTable(struct ACPIHeader *ACPIHeader, char *Signature);

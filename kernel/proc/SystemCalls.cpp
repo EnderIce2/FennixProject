@@ -227,5 +227,5 @@ void init_syscalls()
     wrmsr(MSR_STAR, ((uint64_t)(GDT_KERNEL_CODE) << 32) | ((uint64_t)(GDT_KERNEL_DATA | 3) << 48));
     wrmsr(MSR_LSTAR, (uint64_t)syscall_handle);
     wrmsr(MSR_SYSCALL_MASK, 0);
-    trace("Syscalls has been initialized");
+    // debug("Syscalls has been initialized");
 }

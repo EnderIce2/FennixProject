@@ -2,6 +2,7 @@
 #include <asm.h>
 #include <lock.h>
 #include "../kernel.h"
+#include "../cpu/smp.hpp"
 
 using namespace PMM;
 using namespace VMM;
@@ -113,5 +114,6 @@ void init_kernelpml()
         CR3 CR3PageTable;
         CR3PageTable.raw = (uint64_t)KernelPML4;
         writecr3(CR3PageTable);
+        CurrentCPU->PageTable.raw = CR3PageTable.raw;
     }
 }

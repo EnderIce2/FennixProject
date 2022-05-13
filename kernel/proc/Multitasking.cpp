@@ -1,5 +1,6 @@
 #include <internal_task.h>
 
+#include "../cpu/apic.hpp"
 #include "../cpu/gdt.h"
 #include "fxsr.h"
 #include "../timer.h"
@@ -13,6 +14,9 @@
 #include <asm.h>
 #include <io.h>
 
+// IRQ10 == 0x2a
+#define SchedulerInterrupt IRQ10
+
 // #define DEBUG_SCHEDULER 1
 
 #ifdef DEBUG_SCHEDULER
@@ -21,7 +25,7 @@
 #define schedbg(m, ...)
 #endif
 
-#define DEBUG_TASK_MANAGER 1
+// #define DEBUG_TASK_MANAGER 1
 
 #ifdef DEBUG_TASK_MANAGER
 #include <display.h>
@@ -167,27 +171,36 @@ namespace Tasking
         schedbg("parent:%s tid:%d, code:%016p", mt->CurrentProcess->Name, mt->CurrentThread->ID, Code);
         trace("Exiting thread %d(%s)...", mt->CurrentThread->ID, mt->CurrentThread->Name);
         LeaveCriticalSection;
+        apic->OneShot(SchedulerInterrupt, 100);
         CPU_STOP;
     }
 
     void UpdateTimeUsed(GeneralProcessInfo *Info)
     {
         uint64_t CurrentCount = counter();
-        Info->UsedTicks += CurrentCount - Info->LastUsedTicks;
-        Info->LastUsedTicks = CurrentCount;
+        if (Info->LastUsedTicks == 0)
+        {
+            Info->UsedTicks += CurrentCount - Info->SpawnTick;
+            Info->LastUsedTicks = CurrentCount;
+        }
+        else
+        {
+            Info->UsedTicks += CurrentCount - Info->LastUsedTicks;
+            Info->LastUsedTicks = CurrentCount;
+        }
     }
 
     void UpdateCPUUsage(GeneralProcessInfo *Info)
     {
-        uint64_t CurrentCount = counter();
+        // uint64_t CurrentCount = counter();
         // TODO: for Info->Usage[cpu_count] = ...
-        for (size_t i = 0; i < 2; i++)
-        {
-            Info->Usage[i] = (uint32_t)((CurrentCount - Info->LastUsedTicks) * 100 / (CurrentCount - Info->SpawnTick));
+        // for (size_t i = 0; i < 2; i++)
+        // {
+        // Info->Usage[i] = (uint32_t)((CurrentCount - Info->LastUsedTicks) * 100 / (CurrentCount - Info->SpawnTick));
 
-            if (Info->Usage[i] > 100)
-                Info->Usage[i] = 100;
-        }
+        // if (Info->Usage[i] > 100)
+        // Info->Usage[i] = 100;
+        // }
     }
 
     void SetInfo(GeneralProcessInfo *Info)
@@ -215,13 +228,14 @@ namespace Tasking
         Info->Year = ((t & 0x0F) + ((t >> 4) * 10));
     }
 
-    PCB *Multitasking::CreateProcess(PCB *Parent, char *Name, ELEVATION Elevation)
+    PCB *Multitasking::CreateProcess(PCB *Parent, char *Name, ELEVATION Elevation, int Priority)
     {
         EnterCriticalSection;
         PCB *process = new PCB;
         process->Checksum = Checksum::PROCESS_CHECKSUM;
 
         SetInfo(&process->Info);
+        process->Info.Priority = Priority;
         process->Security.Token = CreateToken();
         trace("New security token created %p", process->Security.Token);
         process->ID = this->NextPID++;
@@ -246,7 +260,7 @@ namespace Tasking
         return process;
     }
 
-    TCB *Multitasking::CreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t Arg0, uint64_t Arg1)
+    TCB *Multitasking::CreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t Arg0, uint64_t Arg1, int Priority)
     {
         EnterCriticalSection;
         if (Parent == nullptr || Parent->Checksum != Checksum::PROCESS_CHECKSUM)
@@ -315,6 +329,7 @@ namespace Tasking
         thread->Registers.ARG1 = (uint64_t)Arg1; // args1
 
         SetInfo(&thread->Info);
+        thread->Info.Priority = Priority;
 
         thread->Msg = (MessageQueue *)KernelAllocator.RequestPages(2);
         KernelPageTableManager.MapMemory(thread->Msg, thread->Msg, PTFlag::US | PTFlag::RW);
@@ -432,7 +447,7 @@ namespace Tasking
 
     extern "C"
     {
-        __attribute__((naked, used)) void MultiTaskingV2SchedulerHelper()
+        __attribute__((naked, used)) void MultiTaskingSchedulerHelper()
         {
             asm("cld\n"
                 "pushq %rax\n"
@@ -457,7 +472,7 @@ namespace Tasking
                 "movw %ax, %es\n"
                 "movw %ax, %ss\n"
                 "movq %rsp, %rdi\n"
-                "call MultiTaskingV2SchedulerHandler\n"
+                "call MultiTaskingSchedulerHandler\n"
                 "popq %rax\n"
                 "movw %ax, %ds\n"
                 "movw %ax, %es\n"
@@ -480,36 +495,42 @@ namespace Tasking
                 "iretq");
         }
 
+        static void MakeOneShot() { apic->OneShot(SchedulerInterrupt, 100); }
+
         __attribute__((naked, used)) static void IdleProcessLoop()
         {
             asm volatile("idleloop:\n"
+                         "call MakeOneShot\n"
                          "hlt\n"
                          "jmp idleloop\n");
         }
 
-        InterruptHandler(MultiTaskingV2SchedulerHandler)
+        InterruptHandler(MultiTaskingSchedulerHandler)
         {
             if (!MultitaskingSchedulerEnabled)
             {
-                EndOfInterrupt(INT_NUM);
+                apic->OneShot(SchedulerInterrupt, 100);
+                EndOfInterrupt(INT_NUM); // apic->IPI(0, SchedulerInterrupt);
                 return;
             }
             CriticalSectionData->EnableInterrupts = InterruptsEnabled();
             CLI;
             LOCK(CriticalSectionData->CriticalLock);
+
+#ifdef DEBUG_TASK_MANAGER
             static int slowschedule = 0;
-            if (slowschedule < 5)
+            if (slowschedule < 400)
             {
                 slowschedule++;
                 UNLOCK(CriticalSectionData->CriticalLock);
                 if (CriticalSectionData->EnableInterrupts)
                     STI;
-                EndOfInterrupt(INT_NUM);
+                apic->OneShot(SchedulerInterrupt, 200);
+                EndOfInterrupt(INT_NUM); // apic->IPI(0, SchedulerInterrupt);
                 return;
             }
             else
                 slowschedule = 0;
-#ifdef DEBUG_TASK_MANAGER
             TraceSchedOnScreen();
 #endif
             schedbg("Status: 0-ukn | 1-rdy | 2-run | 3-wait | 4-term");
@@ -734,7 +755,8 @@ namespace Tasking
             UNLOCK(CriticalSectionData->CriticalLock);
             if (CriticalSectionData->EnableInterrupts)
                 STI;
-            EndOfInterrupt(INT_NUM);
+            apic->OneShot(SchedulerInterrupt, mt->CurrentThread->Info.Priority);
+            EndOfInterrupt(INT_NUM); // apic->IPI(0, SchedulerInterrupt);
         }
         }
     }
@@ -743,6 +765,8 @@ namespace Tasking
     {
         CurrentTaskingMode = TaskingMode::Multi;
         CriticalSectionData = new Critical::CriticalSectionData;
+        apic->RedirectIRQ(0, SchedulerInterrupt - 32, 1);
+        apic->OneShot(SchedulerInterrupt, 100);
     }
 
     Multitasking::~Multitasking()

@@ -28,22 +28,22 @@ typedef enum
     ISR_Security = 0x1e
 } ISRExceptions;
 
-#define ISR0 0x00  // Divide-by-zero Error
-#define ISR1 0x01  // Debug
-#define ISR2 0x02  // Non-maskable Interrupt
-#define ISR3 0x03  // Breakpoint
-#define ISR4 0x04  // Overflow
-#define ISR5 0x05  // Bound Range Exceeded
-#define ISR6 0x06  // Invalid Opcode
-#define ISR7 0x07  // Device Not Available
-#define ISR8 0x08  // Double Fault
-#define ISR9 0x09  // Coprocessor Segment Overrun
-#define ISR10 0x0a // Invalid TSS
-#define ISR11 0x0b // Segment Not P
-#define ISR12 0x0c // Stack-Segment Fault
-#define ISR13 0x0d // General Protection Fault
-#define ISR14 0x0e // Page Fault
-#define ISR15 0x0f // Reserved
+#define ISR0 0x0  // Divide-by-zero Error
+#define ISR1 0x1  // Debug
+#define ISR2 0x2  // Non-maskable Interrupt
+#define ISR3 0x3  // Breakpoint
+#define ISR4 0x4  // Overflow
+#define ISR5 0x5  // Bound Range Exceeded
+#define ISR6 0x6  // Invalid Opcode
+#define ISR7 0x7  // Device Not Available
+#define ISR8 0x8  // Double Fault
+#define ISR9 0x9  // Coprocessor Segment Overrun
+#define ISR10 0xa // Invalid TSS
+#define ISR11 0xb // Segment Not P
+#define ISR12 0xc // Stack-Segment Fault
+#define ISR13 0xd // General Protection Fault
+#define ISR14 0xe // Page Fault
+#define ISR15 0xf // Reserved
 #define ISR16 0x10 // x87 Floating-Point Exception
 #define ISR17 0x11 // Alignment Check
 #define ISR18 0x12 // Machine Check

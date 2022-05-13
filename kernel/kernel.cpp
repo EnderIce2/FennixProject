@@ -15,13 +15,14 @@
 #include "drivers/keyboard.hpp"
 #include "drivers/mouse.hpp"
 #include "drivers/disk.h"
+#include "cpu/acpi.hpp"
+#include "cpu/apic.hpp"
 #include "cpu/smp.hpp"
 #include "cpu/cpuid.h"
 #include "driver.hpp"
 #include "cpu/gdt.h"
 #include "cpu/idt.h"
 #include "timer.h"
-#include "acpi.h"
 #include "pci.h"
 
 // Early params are used only for the most basic functions. After that it may be overwritten with other data.
@@ -43,6 +44,10 @@ EXTERNC void stivale_initializator(stivale_struct *bootloaderdata)
 EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
 {
     init_stivale2(bootloaderdata, &earlyparams, false);
+    asm volatile("andq $-16, %rsp");
+    asm volatile("movw $0, %ax");
+    asm volatile("movw %ax, %fs");
+
     init_pmm();
     init_vmm();
     init_kernelpml();
@@ -199,6 +204,8 @@ void KernelTask()
 /* I should make everything in C++ but I use code from older (failed) projects.
    I will probably move the old C code to C++ in the future. */
 
+#include "cpuspeed.hpp"
+
 void KernelInit()
 {
     trace("early initialization completed");
@@ -214,16 +221,30 @@ void KernelInit()
     init_tss();
     BS->IncreaseProgres();
     SymTbl = new KernelSymbols::Symbols;
-    init_acpi();
+    acpi = new ACPI::ACPI;
+    BS->IncreaseProgres();
+    madt = new ACPI::MADT;
+    BS->IncreaseProgres();
+    dsdt = new ACPI::DSDT;
+    BS->IncreaseProgres();
     init_pci();
-    init_timer();
     BS->Progress(40);
+    apic = new APIC::APIC;
+    BS->IncreaseProgres();
     smp = new SymmetricMultiprocessing::SMP;
     BS->IncreaseProgres();
+    init_timer();
+    BS->IncreaseProgres();
+    apic->RedirectIRQs();
 
-    outb(PIC1_DATA, 0b11111000);
-    outb(PIC2_DATA, 0b11101111);
+    if (!apic->APICSupported())
+    {
+        warn("APIC is not supported!");
+        outb(PIC1_DATA, 0b11111000);
+        outb(PIC2_DATA, 0b11101111);
+    }
     asm("sti");
+    dsdt->InitSCI();
 
     if (!strstr(bootparams->cmdline, "novmwarn"))
         if (!CheckRunningUnderVM())

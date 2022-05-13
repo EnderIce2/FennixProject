@@ -1,5 +1,4 @@
 #include "pci.h"
-#include "acpi.h"
 #include <heap.h>
 #include <string.h>
 #include "drivers/serial.h"
@@ -76,12 +75,12 @@ namespace PCI
             EnumerateDevice(BusAddress, Device);
     }
 
-    void EnumeratePCI(struct MCFGHeader *MCFG)
+    void EnumeratePCI(ACPI::ACPI::MCFGHeader *MCFG)
     {
-        int Entries = ((MCFG->Header.Length) - sizeof(struct MCFGHeader)) / sizeof(struct DeviceConfig);
+        int Entries = ((MCFG->Header.Length) - sizeof(ACPI::ACPI::MCFGHeader)) / sizeof(DeviceConfig);
         for (int t = 0; t < Entries; t++)
         {
-            struct DeviceConfig *NewDeviceConfig = (struct DeviceConfig *)((uint64_t)MCFG + sizeof(struct MCFGHeader) + (sizeof(struct DeviceConfig) * t));
+            DeviceConfig *NewDeviceConfig = (DeviceConfig *)((uint64_t)MCFG + sizeof(ACPI::ACPI::MCFGHeader) + (sizeof(DeviceConfig) * t));
             KernelPageTableManager.MapMemory((void *)NewDeviceConfig->BaseAddress, (void *)NewDeviceConfig->BaseAddress, PTFlag::RW);
             trace("PCI Entry %d Address:%#llx BUS:%#llx-%#llx", t, NewDeviceConfig->BaseAddress,
                   NewDeviceConfig->StartBus, NewDeviceConfig->EndBus);
@@ -100,32 +99,12 @@ namespace PCI
     }
 }
 
-void *FindTable(struct ACPIHeader *ACPIHeader, char *Signature)
-{
-    for (long unsigned int t = 0; t < ((ACPIHeader->Length - sizeof(struct ACPIHeader)) / (XSDT_supported ? 8 : 4)); t++)
-    {
-        struct ACPIHeader *SDTHdr = (struct ACPIHeader *)*(uint64_t *)((uint64_t)ACPIHeader + sizeof(struct ACPIHeader) + (t * 8));
-        for (int i = 0; i < 4; i++)
-        {
-            if (SDTHdr->Signature[i] != Signature[i])
-                break;
-            if (i == 3)
-            {
-                trace("%s found!", Signature);
-                return SDTHdr;
-            }
-        }
-    }
-    // WARN("\t%s not found!", Signature);
-    return 0;
-}
-
 void init_pci()
 {
-    debug("%#llx", MCFG);
-    if (MCFG != NULL)
+    debug("%#llx", acpi->MCFG);
+    if (acpi->MCFG != NULL)
     {
-        PCI::EnumeratePCI(MCFG);
+        PCI::EnumeratePCI(acpi->MCFG);
     }
     else
     {

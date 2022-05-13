@@ -211,4 +211,4 @@ extern "C"
 #define inl(Port) inportl(Port)
 #define outb(Port, Data) outportb(Port, Data)
 #define outw(Port, Data) outportw(Port, Data)
-#define outl(Port, Data) outport(Port, Data)
+#define outl(Port, Data) outportl(Port, Data)

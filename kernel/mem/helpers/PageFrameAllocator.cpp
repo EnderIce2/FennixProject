@@ -37,64 +37,8 @@ void PageFrameAllocator::ReadMemoryMap()
     uint64_t MemorySize = earlyparams.mem.Size;
     FreeMemory = MemorySize;
     uint64_t BitmapSize = MemorySize / 4096 / 8 + 1;
-    // uint64_t BitmapSize = ALIGN_UP((MemorySize / 0x1000) / 8, 0x1000);
-    // InitBitmap(BitmapSize, LargestFreeMemorySegment);
     InitBitmap(BitmapSize, LargestFreeMemorySegment);
     ReservePages(0, MemorySize / 4096 + 1);
-    for (uint64_t i = 0; i < earlyparams.mem.Entries; i++)
-    {
-        // switch (earlyparams.mem.memmap[i].Type)
-        // {
-        // case GBP_Error:
-        //     trace("Type: %d [%#llx-%#llx]",
-        //           earlyparams.mem.memmap[i].Type, earlyparams.mem.memmap[i].PhysicalAddress,
-        //           earlyparams.mem.memmap[i].PhysicalAddress + earlyparams.mem.memmap[i].Size);
-        //     break;
-        // case GBP_Free:
-        //     trace("Type: %d [%#llx-%#llx]",
-        //           earlyparams.mem.memmap[i].Type, earlyparams.mem.memmap[i].PhysicalAddress,
-        //           earlyparams.mem.memmap[i].PhysicalAddress + earlyparams.mem.memmap[i].Size);
-        //     break;
-        // case GBP_Reserved:
-        //     trace("Type: %d [%#llx-%#llx]",
-        //           earlyparams.mem.memmap[i].Type, earlyparams.mem.memmap[i].PhysicalAddress,
-        //           earlyparams.mem.memmap[i].PhysicalAddress + earlyparams.mem.memmap[i].Size);
-        //     break;
-        // case GBP_Unusable:
-        //     trace("Type: %d [%#llx-%#llx]",
-        //           earlyparams.mem.memmap[i].Type, earlyparams.mem.memmap[i].PhysicalAddress,
-        //           earlyparams.mem.memmap[i].PhysicalAddress + earlyparams.mem.memmap[i].Size);
-        //     break;
-        // case GBP_ACPIReclaimable:
-        //     trace("Type: %d [%#llx-%#llx]",
-        //           earlyparams.mem.memmap[i].Type, earlyparams.mem.memmap[i].PhysicalAddress,
-        //           earlyparams.mem.memmap[i].PhysicalAddress + earlyparams.mem.memmap[i].Size);
-        //     break;
-        // case GBP_ACPIMemoryNVS:
-        //     trace("Type: %d [%#llx-%#llx]",
-        //           earlyparams.mem.memmap[i].Type, earlyparams.mem.memmap[i].PhysicalAddress,
-        //           earlyparams.mem.memmap[i].PhysicalAddress + earlyparams.mem.memmap[i].Size);
-        //     break;
-        // case GBP_Framebuffer:
-        //     trace("Type: %d [%#llx-%#llx]",
-        //           earlyparams.mem.memmap[i].Type, earlyparams.mem.memmap[i].PhysicalAddress,
-        //           earlyparams.mem.memmap[i].PhysicalAddress + earlyparams.mem.memmap[i].Size);
-        //     break;
-        // case GBP_Kernel:
-        //     trace("Type: %d [%#llx-%#llx]",
-        //           earlyparams.mem.memmap[i].Type, earlyparams.mem.memmap[i].PhysicalAddress,
-        //           earlyparams.mem.memmap[i].PhysicalAddress + earlyparams.mem.memmap[i].Size);
-        //     break;
-        // case GBP_Unknown:
-        //     trace("Type: %d [%#llx-%#llx]",
-        //           earlyparams.mem.memmap[i].Type, earlyparams.mem.memmap[i].PhysicalAddress,
-        //           earlyparams.mem.memmap[i].PhysicalAddress + earlyparams.mem.memmap[i].Size);
-        //     break;
-        // }
-
-        if (earlyparams.mem.memmap[i].Type == GBP_Free)
-            UnreservePages((void *)earlyparams.mem.memmap[i].PhysicalAddress, earlyparams.mem.memmap[i].Pages);
-    }
     for (uint64_t i = 0; i < earlyparams.mem.Entries; i++)
         if (earlyparams.mem.memmap[i].Type == GBP_Free)
             UnreservePages((void *)earlyparams.mem.memmap[i].PhysicalAddress, earlyparams.mem.memmap[i].Pages);

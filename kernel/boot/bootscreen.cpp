@@ -3,7 +3,7 @@
 #include <printf.h>
 #include <heap.h>
 #include <debug.h>
-#include "../acpi.h"
+#include "../cpu/acpi.hpp"
 
 extern uint64_t _binary_files_zap_ext_light20_psf_start;
 extern uint64_t _binary_files_zap_ext_light20_psf_end;
@@ -44,7 +44,7 @@ namespace BootScreen
 
     void Screen::DrawVendorLogo(void *BGRT)
     {
-        BGRTHeader *bgrt = (BGRTHeader *)BGRT;
+        ACPI::ACPI::BGRTHeader *bgrt = (ACPI::ACPI::BGRTHeader *)BGRT;
         if (bgrt->Version >= 1)
         {
             if (bgrt->ImageType == 0)

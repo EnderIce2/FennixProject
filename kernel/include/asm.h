@@ -65,15 +65,6 @@ static inline void cpuid(uint32_t val, uint32_t *rax, uint32_t *rbx, uint32_t *r
     }
 }
 
-/* Function with 2 arguments */
-static inline void cpuid_2(int code, uint32_t *eax, uint32_t *edx)
-{
-    asm volatile("cpuid"
-                 : "=a"(*eax), "=d"(*edx)
-                 : "a"(code)
-                 : "ecx", "ebx");
-}
-
 static inline int GetCPUIDMax(uint32_t leaf, uint32_t *signature)
 {
     // TODO: in 32bit is different?
@@ -149,6 +140,7 @@ static inline void ENABLE_NX()
 
 enum MSRID
 {
+    MSR_APIC = 0x1B,
     MSR_CR_PAT = 0x00000277,
 
     MSR_CR_PAT_RESET = 0x0007040600070406ULL,
