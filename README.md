@@ -98,16 +98,20 @@ make clean
 - [x] Stivale2 Protocol Support
 - [ ] Limine Protocol Support
 - [x] ACPI
+- [x] ACPI Shutdown
+- [x] MADT
+- [x] DSDT
+- [x] APIC
 - [x] Paging
 - [x] Virtual Memory Manager
 - [x] Heap Manager
 - [x] Stack Manager
 - [x] Global Descriptor Table, Interrupt Descriptor Table & Task State Segment
-- [x] Timer (HPET & PIC)
-- [ ] Symmetric Multiprocessing
+- [x] Timer (APIC & HPET & PIC)
+- [x] Symmetric Multiprocessing
 - [x] PCI
-- [ ] PS2 Keyboard
-- [ ] PS2 Mouse
+- [x] PS2 Keyboard
+- [x] PS2 Mouse
 - [x] AHCI Driver
 - [ ] ATA Driver
 - [ ] Floppy Driver
@@ -133,7 +137,7 @@ make clean
 
 ## Todo
 - [ ] Figure out how to make the interrupts push es, fs & gs into REGISTERS structure
-- [ ] Replace the multitasking implementation with a better one
+- [ ] Fix the context switching causing exceptions
 - [ ] Fix the multitasking page table switching
 - [ ] Complete implementation for driver loading
 - [ ] Make a working version of process messaging (IPC)
