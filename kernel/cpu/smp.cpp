@@ -65,8 +65,7 @@ extern "C" void StartCPU()
 
     asm("sti");
     CPUEnabled = true;
-    for (;;)
-        asm volatile("pause");
+    CPU_STOP;
 }
 
 #define TRAMPOLINE_START 0x2000
