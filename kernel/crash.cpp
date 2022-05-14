@@ -493,5 +493,5 @@ EXTERNC void isrcrash(REGISTERS *regs)
            FLAGS.ID ? "True " : "False", FLAGS.always_one,
            FLAGS._reserved0, FLAGS._reserved1, FLAGS._reserved2, FLAGS._reserved3);
 
-    CPU_STOP;
+    CPU_HALT;
 }

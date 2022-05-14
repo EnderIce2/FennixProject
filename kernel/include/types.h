@@ -41,7 +41,24 @@ typedef char const *string;
 
 #define CPU_STOP \
     for (;;)     \
-        asm volatile("hlt")
+    asm volatile("hlt")
+
+/** @brief This function halts the CPU for good. Nothing can be done after this. Even the NMI can't do something. */
+#define CPU_HALT                                    \
+    {                                               \
+        uint8_t ret;                                \
+        asm("in %%dx, %%al"                         \
+            : "=a"(ret)                             \
+            : "d"(0x70));                           \
+        asm volatile("out %%al, %%dx"               \
+                     :                              \
+                     : "a"(ret | 0x80), "d"(0x70)); \
+        asm("in %%dx, %%al"                         \
+            : "=a"(ret)                             \
+            : "d"(0x71));                           \
+        for (;;)                                    \
+            asm volatile("cli\nhlt");               \
+    }
 
 #ifdef __cplusplus
 

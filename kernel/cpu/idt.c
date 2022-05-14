@@ -2,6 +2,7 @@
 #include "gdt.h"
 #include "../drivers/serial.h"
 #include <int.h>
+#include <sys.h>
 #include <interrupts.h>
 #include <display.h>
 #include <io.h>
@@ -107,7 +108,7 @@ __attribute__((used)) void exception_handler(REGISTERS *regs)
                 *PixelPtr = 0xFF6F0000;
             }
         }
-        CPU_STOP;
+        CPU_HALT;
         return;
     default:
         if (INT_NUM <= ISR31)
@@ -137,7 +138,7 @@ exception_handler:
     outb(0x61, tmp1);
 #endif
     isrcrash(regs);
-    CPU_STOP;
+    CPU_HALT;
 }
 
 #define EXCEPTION_HANDLER(num)                                          \
