@@ -64,65 +64,156 @@ EXTERNC void isrcrash(REGISTERS *regs)
     switch (INT_NUM)
     {
     case ISR_DivideByZero:
+    {
         if (CS == 0x23)
         {
-            err("Division by zero in an user-mode thread %s(%d).", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID);
-            // TODO: signal the application to stop.
-            SysGetCurrentThread()->Status = Terminated;
-            STI;
+            TriggerUserModeCrash(regs);
             return;
         }
+        else
+        {
+        }
         break;
+    }
     case ISR_Debug:
-        SET_PRINT_MID((char *)"Manual Triggered Crash Test (Debug)", FHeight(2));
+    {
         if (CS == 0x23)
         {
-            STI;
+            TriggerUserModeCrash(regs);
             return;
         }
+        else
+        {
+        }
         break;
+    }
     case ISR_NonMaskableInterrupt:
-        break;
-    case ISR_Breakpoint:
-        break;
-    case ISR_Overflow:
-        break;
-    case ISR_BoundRange:
-        break;
-    case ISR_InvalidOpcode:
+    {
         if (CS == 0x23)
         {
-            err("Invalid opcode in an user-mode thread %s(%d).", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID);
-            // TODO: signal the application to stop.
-            SysGetCurrentThread()->Status = Terminated;
-            STI;
+            TriggerUserModeCrash(regs);
             return;
         }
+        else
+        {
+        }
         break;
+    }
+    case ISR_Breakpoint:
+    {
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+        }
+        break;
+    }
+    case ISR_Overflow:
+    {
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+        }
+        break;
+    }
+    case ISR_BoundRange:
+    {
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+        }
+        break;
+    }
+    case ISR_InvalidOpcode:
+    {
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+        }
+        break;
+    }
     case ISR_DeviceNotAvailable:
+    {
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+        }
         break;
+    }
     case ISR_DoubleFault:
+    {
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+        }
         break;
+    }
     case ISR_CoprocessorSegmentOverrun:
+    {
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+        }
         break;
+    }
     case ISR_InvalidTSS:
     {
-        SelectorErrorCode SelCode = {.raw = ERROR_CODE};
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+            SelectorErrorCode SelCode = {.raw = ERROR_CODE};
+        }
         break;
     }
     case ISR_SegmentNotPresent:
     {
-        SelectorErrorCode SelCode = {.raw = ERROR_CODE};
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+            SelectorErrorCode SelCode = {.raw = ERROR_CODE};
+        }
         break;
     }
     case ISR_StackSegmentFault:
     {
         if (CS == 0x23)
         {
-            err("Stack Segment Fault caused by an user-mode thread %s(%d) at %#lx.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, RIP);
-            // TODO: signal the application to stop.
-            SysGetCurrentThread()->Status = Terminated;
-            STI;
+            TriggerUserModeCrash(regs);
             return;
         }
         else
@@ -172,11 +263,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
     {
         if (CS == 0x23)
         {
-            err("General Protection Fault caused by an user-mode thread %s(%d) at %#lx.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, RIP);
-            // TODO: signal the application to stop.
-            SysGetCurrentThread()->Status = Terminated;
-            STI;
-            return;
+            TriggerUserModeCrash(regs);
         }
         else
         {
@@ -225,20 +312,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
     {
         if (CS == 0x23)
         {
-            err("Page fault caused by an user-mode thread %s(%d).", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID);
-            uint64_t addr = readcr2().raw;
-            debug("Page fault at address %#llx", addr);
-            PageFaultErrorCode params = {.raw = (uint32_t)ERROR_CODE};
-            err("\nPage: %s\nWrite Operation: %s\nProcessor Mode: %s\nCPU Reserved Bits: %s\nCaused By An Instruction Fetch: %s\nDescription: %s",
-                params.P ? "Present" : "Not Present",
-                params.W ? "Read-Only" : "Read-Write",
-                params.U ? "User-Mode" : "Kernel-Mode",
-                params.R ? "Reserved" : "Unreserved",
-                params.I ? "Yes" : "No",
-                ERROR_CODE & 0x00000008 ? "One or more page directory entries contain reserved bits which are set to 1." : pagefault_message[ERROR_CODE & 0b111]);
-            // TODO: signal the application to stop.
-            SysGetCurrentThread()->Status = Terminated;
-            STI;
+            TriggerUserModeCrash(regs);
             return;
         }
         else
@@ -291,20 +365,90 @@ EXTERNC void isrcrash(REGISTERS *regs)
         break;
     }
     case ISR_x87FloatingPoint:
+    {
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+        }
         break;
+    }
     case ISR_AlignmentCheck:
+    {
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+        }
         break;
+    }
     case ISR_MachineCheck:
+    {
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+        }
         break;
+    }
     case ISR_SIMDFloatingPoint:
+    {
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+        }
         break;
+    }
     case ISR_Virtualization:
+    {
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+        }
         break;
+    }
     case ISR_Security:
+    {
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+        }
         break;
+    }
     default:
-        CurrentDisplay->Clear(0xFF221160);
+    {
+        if (CS == 0x23)
+        {
+            TriggerUserModeCrash(regs);
+            return;
+        }
+        else
+        {
+            CurrentDisplay->Clear(0xFF221160);
+        }
         break;
+    }
     }
     CurrentDisplay->ResetPrintPosition();
     CurrentDisplay->SetPrintColor(0xFF7981FC);
