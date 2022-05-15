@@ -168,7 +168,7 @@ namespace DisplayDriver
             return Char;
         }
         // TODO: add better support for unsupported characters
-        if (Char < 0 || Char > 127)
+        if (Char < 0 || (unsigned char)Char > 127)
             Char = '?';
 
         if (ploc.X + 8 > framebuffer->Width)
@@ -188,7 +188,7 @@ namespace DisplayDriver
             //     Char = CurrentFont->PSF2Font->GlyphBuffer[Char];
             int bytesperline = (CurrentFont->PSF2Font->Header->width + 7) / 8;
             uint32_t *PixelPtr = (uint32_t *)framebuffer->Address;
-            char *FontPtr = (char *)CurrentFont->PSFFile.start + CurrentFont->PSF2Font->Header->headersize + (Char > 0 && Char < CurrentFont->PSF2Font->Header->length ? Char : 0) * CurrentFont->PSF2Font->Header->charsize;
+            char *FontPtr = (char *)CurrentFont->PSFFile.start + CurrentFont->PSF2Font->Header->headersize + (Char > 0 && (unsigned char)Char < CurrentFont->PSF2Font->Header->length ? Char : 0) * CurrentFont->PSF2Font->Header->charsize;
             for (unsigned long Y = ploc.Y; Y < ploc.Y + CurrentFont->PSF2Font->Header->height; Y++)
             {
                 for (unsigned long X = ploc.X; X < ploc.X + CurrentFont->PSF2Font->Header->width; X++)
@@ -232,7 +232,7 @@ namespace DisplayDriver
 
     void Display::Clear(uint32_t Color)
     {
-        for (int VerticalScanline = 0; VerticalScanline < framebuffer->Height; VerticalScanline++)
+        for (uint32_t VerticalScanline = 0; VerticalScanline < framebuffer->Height; VerticalScanline++)
         {
             uint64_t PixelPtrBase = framebuffer->Address + ((framebuffer->PixelsPerScanLine * 4) * VerticalScanline);
             for (uint32_t *PixelPtr = (uint32_t *)PixelPtrBase; PixelPtr < (uint32_t *)(PixelPtrBase + (framebuffer->PixelsPerScanLine * 4)); PixelPtr++)

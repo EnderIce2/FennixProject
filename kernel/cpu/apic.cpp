@@ -90,15 +90,7 @@ namespace APIC
         wrmsr(MSR_APIC, (rdmsr(MSR_APIC) | 0x800) & ~(1 << 10));
         this->Write(APIC_SVR, this->Read(APIC_SVR) | 0x1FF);
 
-        outb(PIC1_DATA, 0xff);
-        do
-        {
-            asm volatile("jmp 1f\n\t"
-                         "1:\n\t"
-                         "    jmp 2f\n\t"
-                         "2:");
-        } while (0);
-        outb(PIC2_DATA, 0xff);
+        PIC_disable();
     }
 
     APIC::~APIC()

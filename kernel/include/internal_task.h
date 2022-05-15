@@ -1,7 +1,6 @@
 #include <types.h>
 #include <interrupts.h>
 #include <heap.h>
-#include <msg.h>
 #include <task.h>
 
 enum TaskingMode
@@ -28,21 +27,22 @@ namespace Tasking
     {
         char name[256];
         REGISTERS regs;
+        uint64_t fs, gs;
         uint64_t id;
         void *stack;
-        void *pml4;
+        CR3 pml4;
         bool UserMode;
         enum TaskState state;
+        uint64_t SpawnTick;
+        uint64_t Year, Month, Day, Hour, Minute, Second;
+        PCB *CompatibiltyProcess;
+        TCB *CompatibiltyThread;
         unsigned int checksum;
     };
 
-#define MAX_TASKS 0x10000
-
-    static TaskControlBlock *CurrentTask = nullptr;
-    static TaskControlBlock *TaskQueue[MAX_TASKS];
-
     class Monotasking
     {
+    private:
     public:
         /**
          * @brief Create a new Task
@@ -56,6 +56,11 @@ namespace Tasking
         TaskControlBlock *CreateTask(uint64_t InstructionPointer, uint64_t FirstArgument, uint64_t SecondArgument, char *Name, bool UserMode);
 
         /**
+         * @brief Kill the current Task
+         */
+        void KillMe();
+
+        /**
          * @brief Construct a new Mono Tasking object
          *
          * @param firstThread The first Instruction Pointer to be executed
@@ -67,8 +72,6 @@ namespace Tasking
          *
          */
         ~Monotasking();
-
-    private:
     };
 
     class Multitasking
@@ -77,8 +80,6 @@ namespace Tasking
     public:
         Vector<PCB *> ListProcess;
         uint64_t NextPID = 0, NextTID = 0;
-        PCB *CurrentProcess = nullptr;
-        TCB *CurrentThread = nullptr;
 
         PCB *IdleProcess = nullptr;
         TCB *IdleThread = nullptr;

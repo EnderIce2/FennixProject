@@ -2,6 +2,7 @@
 #include <string.h>
 #include <sys.h>
 #include <stdalign.h>
+#define syskernel
 #include <assert.h>
 #ifdef DEBUG_MEM_ALLOCATION
 #include <debug.h>

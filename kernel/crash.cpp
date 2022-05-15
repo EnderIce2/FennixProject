@@ -44,9 +44,9 @@ EXTERNC void crash(string message, bool clear)
     SET_PRINT_MID((char *)"System crashed!", FHeight(1));
     CurrentDisplay->ResetPrintColor();
     SET_PRINT_MID((char *)message, (CurrentDisplay->GetFramebuffer()->Height / 2));
-    if (Tasking::mt->CurrentThread != nullptr)
+    if (CurrentCPU->CurrentThread != nullptr)
     {
-        err("\"%s\" happened while running thread %s(%d)", message, Tasking::mt->CurrentThread->Name, Tasking::mt->CurrentThread->ID);
+        err("\"%s\" happened while running thread %s(%d)", message, CurrentCPU->CurrentThread->Name, CurrentCPU->CurrentThread->ID);
     }
     CPU_STOP;
 }
@@ -452,8 +452,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
     }
     CurrentDisplay->ResetPrintPosition();
     CurrentDisplay->SetPrintColor(0xFF7981FC);
-    // printf("Technical Informations on CPU %ld:\n", CurrentProcessor->ID);
-    printf("Technical Informations on CPU 0\n");
+    printf("Technical Informations on CPU %ld:\n", rdmsr(MSR_FS_BASE));
     printf("FS =%#lx  GS =%#lx  SS =%#lx  CS =%#lx\n", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
     printf("R8 =%#lx  R9 =%#lx  R10=%#lx  R11=%#lx\n", R8, R9, R10, R11);
     printf("R12=%#lx  R13=%#lx  R14=%#lx  R15=%#lx\n", R12, R13, R14, R15);

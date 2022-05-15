@@ -7,7 +7,7 @@ void PutRect(int X, int Y, int Width, int Height, int RGB) {}
 void PutLine(int X1, int Y1, int X2, int Y2, int RGB) {}
 void memcpy(uint64_t Dest, uint64_t Source, int Size) {}
 
-void *alloc(uint64_t size) {}
+void *alloc(uint64_t size) { return 0; }
 
 #define rgbWhite 0xFFFFFF
 

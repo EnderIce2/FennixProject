@@ -25,8 +25,8 @@ namespace PS2Mouse
     struct MouseInfo
     {
         MouseButton Buttons;
-        uint32_t X;
-        uint32_t Y;
+        long X;
+        long Y;
     };
 
 #define PS2Leftbutton 0b00000001

@@ -6,27 +6,6 @@
 void PIC_disable()
 {
     debug("Disabling PIC...");
-    // /* Set ICW1 */
-    // outb(PIC1_COMMAND, 0x11);
-    // IOWait();
-    // outb(PIC2_COMMAND, 0x11);
-    // IOWait();
-    // /* Set ICW2 (IRQ base offsets) */
-    // outb(PIC1_DATA, 0xe0);
-    // IOWait();
-    // outb(PIC2_DATA, 0xe8);
-    // IOWait();
-    // /* Set ICW3 */
-    // outb(PIC1_DATA, 4);
-    // IOWait();
-    // outb(PIC2_DATA, 2);
-    // IOWait();
-    // /* Set ICW4 */
-    // outb(PIC1_DATA, 1);
-    // IOWait();
-    // outb(PIC2_DATA, 1);
-    // IOWait();
-    // /* Set OCW1 (interrupt masks) */
     outb(PIC1_DATA, 0xff);
     IOWait();
     outb(PIC2_DATA, 0xff);

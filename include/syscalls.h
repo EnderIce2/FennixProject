@@ -98,10 +98,15 @@ enum SystemCalls
     _GetCurrentThread,
     _GetCurrentProcessID,
     _GetCurrentThreadID,
-    _Schedule,
+
+    _GetScheduleMode,
+
+    _CreateTask,
 
     _RequestPage,
     _FreePage,
+    _RequestPages,
+    _FreePages,
 
     _SystemInfo,
     _SystemTime,
@@ -117,12 +122,6 @@ enum SystemCalls
     _UnregisterInterruptHandler,
 
     _GetLastKeyboardScanCode,
-
-    _CreateMessageListener,
-    _SendMessageByTID,
-    _SendMessageByName,
-    _GetMessageQueue,
-    _RemoveMessage,
 
     _FileOpen,
     _FileClose,
@@ -146,10 +145,14 @@ DEFINE_SYSCALL0(getCurrentProcess, _GetCurrentProcess)
 DEFINE_SYSCALL0(getCurrentThread, _GetCurrentThread)
 DEFINE_SYSCALL0(getCurrentProcessID, _GetCurrentProcessID)
 DEFINE_SYSCALL0(getCurrentThreadID, _GetCurrentThreadID)
-DEFINE_SYSCALL0(schedule, _Schedule)
+DEFINE_SYSCALL0(getScheduleMode, _GetScheduleMode)
+
+DEFINE_SYSCALL4(createTask, _CreateTask, uint64_t, uint64_t, uint64_t, char *)
 
 DEFINE_SYSCALL0(requestPage, _RequestPage)
 DEFINE_SYSCALL1(freePage, _FreePage, void *)
+DEFINE_SYSCALL1(requestPages, _RequestPages, uint64_t)
+DEFINE_SYSCALL2(freePages, _FreePages, void *, uint64_t)
 
 DEFINE_SYSCALL0(systemInfo, _SystemInfo)
 DEFINE_SYSCALL0(systemTime, _SystemTime)
@@ -166,15 +169,10 @@ DEFINE_SYSCALL1(unregisterinthnd, _UnregisterInterruptHandler, int)
 
 DEFINE_SYSCALL0(getLastKeyboardScanCode, _GetLastKeyboardScanCode)
 
-DEFINE_SYSCALL1(createMessageListener, _CreateMessageListener, char *)
-DEFINE_SYSCALL2(sendMessageByTID, _SendMessageByTID, uint64_t, void *)
-DEFINE_SYSCALL2(sendMessageByName, _SendMessageByName, char *, void *)
-DEFINE_SYSCALL0(getMessageQueue, _GetMessageQueue)
-DEFINE_SYSCALL1(removeMessage, _RemoveMessage, uint64_t)
-
 DEFINE_SYSCALL1(FileOpen, _FileOpen, char *)
 DEFINE_SYSCALL1(FileClose, _FileClose, void *)
 DEFINE_SYSCALL4(FileRead, _FileRead, void *, uint64_t, void *, uint64_t)
 DEFINE_SYSCALL4(FileWrite, _FileWrite, void *, uint64_t, void *, uint64_t)
+DEFINE_SYSCALL1(FileSize, _FileSize, void *)
 
 DEFINE_SYSCALL2(dbg, _DebugMessage, int, char *)

@@ -3,6 +3,9 @@
 #include <lock.h>
 #include <heap.h>
 
+#pragma GCC diagnostic ignored "-Wpointer-to-int-cast"
+#pragma GCC diagnostic ignored "-Wsign-compare"
+
 NEWLOCK(liballoc_lock);
 
 /**  Durand's Ridiculously Amazing Super Duper Memory functions.  */
@@ -265,7 +268,7 @@ static struct boundary_tag *allocate_new_tag(unsigned int size)
 	tag->split_right = NULL;
 
 #ifdef DEBUG
-	printf("Resource allocated %x of %i pages (%i bytes) for %i size.\n", tag, pages, pages * l_pageSize, size);
+	printf("Resource allocated %p of %i pages (%i bytes) for %i size.\n", tag, pages, pages * l_pageSize, size);
 
 	l_allocated += pages * l_pageSize;
 
@@ -308,7 +311,7 @@ void *liballoc_malloc(size_t size)
 		if ((tag->real_size - sizeof(struct boundary_tag)) >= (size + sizeof(struct boundary_tag)))
 		{
 #ifdef DEBUG
-			printf("Tag search found %i >= %i\n", (tag->real_size - sizeof(struct boundary_tag)), (size + sizeof(struct boundary_tag)));
+			printf("Tag search found %li >= %li\n", (tag->real_size - sizeof(struct boundary_tag)), (size + sizeof(struct boundary_tag)));
 #endif
 			break;
 		}
@@ -342,7 +345,7 @@ void *liballoc_malloc(size_t size)
 	// Removed... see if we can re-use the excess space.
 
 #ifdef DEBUG
-	printf("Found tag with %i bytes available (requested %i bytes, leaving %i), which has exponent: %i (%i bytes)\n", tag->real_size - sizeof(struct boundary_tag), size, tag->real_size - size - sizeof(struct boundary_tag), index, 1 << index);
+	printf("Found tag with %lx bytes available (requested %li bytes, leaving %li), which has exponent: %i (%i bytes)\n", tag->real_size - sizeof(struct boundary_tag), size, tag->real_size - size - sizeof(struct boundary_tag), index, 1 << index);
 #endif
 
 	unsigned int remainder = tag->real_size - size - sizeof(struct boundary_tag) * 2; // Support a new tag + remainder
@@ -371,7 +374,7 @@ void *liballoc_malloc(size_t size)
 
 #ifdef DEBUG
 	l_inuse += size;
-	printf("liballoc_malloc: %x,  %i, %i\n", ptr, (int)l_inuse / 1024, (int)l_allocated / 1024);
+	printf("liballoc_malloc: %p,  %i, %i\n", ptr, (int)l_inuse / 1024, (int)l_allocated / 1024);
 	dump_array();
 #endif
 
@@ -399,7 +402,7 @@ void liballoc_free(void *ptr)
 
 #ifdef DEBUG
 	l_inuse -= tag->size;
-	printf("liballoc_free: %x, %i, %i\n", ptr, (int)l_inuse / 1024, (int)l_allocated / 1024);
+	printf("liballoc_free: %p, %i, %i\n", ptr, (int)l_inuse / 1024, (int)l_allocated / 1024);
 #endif
 
 	// MELT LEFT...
@@ -444,7 +447,7 @@ void liballoc_free(void *ptr)
 
 #ifdef DEBUG
 			l_allocated -= pages * l_pageSize;
-			printf("Resource freeing %x of %i pages\n", tag, pages);
+			printf("Resource freeing %p of %i pages\n", tag, pages);
 			dump_array();
 #endif
 

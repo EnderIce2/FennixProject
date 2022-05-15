@@ -6,20 +6,21 @@
 #include <heap.h>
 #include <elf.h>
 
+#include "../cpu/smp.hpp"
+
 using namespace Tasking;
 using namespace FileSystem;
 
 int CurrentTaskingMode = TaskingMode::None;
 
-PCB *APICALL SysGetProcessByPID(uint64_t ID)
+PCB *SysGetProcessByPID(uint64_t ID)
 {
     switch (CurrentTaskingMode)
     {
     case TaskingMode::Mono:
     {
-        PCB *proc = nullptr;
-        fixme("unimplemented for primitive tasking");
-        return proc;
+        err("The current tasking mode does not support the request.");
+        return nullptr;
     }
     case TaskingMode::Multi:
     {
@@ -34,25 +35,21 @@ PCB *APICALL SysGetProcessByPID(uint64_t ID)
                 return pcb;
             }
         }
-
         LeaveCriticalSection;
         return nullptr;
     }
-    case TaskingMode::None:
-        return nullptr;
     default:
         return nullptr;
     }
-    return nullptr;
 }
 
-TCB *APICALL SysGetThreadByTID(uint64_t ID)
+TCB *SysGetThreadByTID(uint64_t ID)
 {
     switch (CurrentTaskingMode)
     {
     case TaskingMode::Mono:
     {
-        err("not supported");
+        err("The current tasking mode does not support the request.");
         return nullptr;
     }
     case TaskingMode::Multi:
@@ -75,104 +72,77 @@ TCB *APICALL SysGetThreadByTID(uint64_t ID)
         LeaveCriticalSection;
         return nullptr;
     }
-    case TaskingMode::None:
-        return nullptr;
     default:
         return nullptr;
     }
-    return nullptr;
 }
 
-PCB *APICALL SysGetCurrentProcess()
+PCB *SysGetCurrentProcess()
 {
     switch (CurrentTaskingMode)
     {
     case TaskingMode::Mono:
     {
-        PCB *proc = nullptr;
-        fixme("unimplemented for primitive tasking");
-        return proc;
+        err("The current tasking mode does not support the request.");
+        return nullptr;
     }
     case TaskingMode::Multi:
-    {
-        return mt->CurrentProcess;
-    }
-    case TaskingMode::None:
-        return nullptr;
+        return CurrentCPU->CurrentProcess;
     default:
         return nullptr;
     }
-    return nullptr;
 }
 
-TCB *APICALL SysGetCurrentThread()
+TCB *SysGetCurrentThread()
 {
     switch (CurrentTaskingMode)
     {
     case TaskingMode::Mono:
     {
-        TCB *proc = nullptr;
-        fixme("unimplemented for primitive tasking");
-        return proc;
+        err("The current tasking mode does not support the request.");
+        return nullptr;
     }
     case TaskingMode::Multi:
-    {
-        return mt->CurrentThread;
-    }
-    case TaskingMode::None:
-        return nullptr;
+        return CurrentCPU->CurrentThread;
     default:
         return nullptr;
     }
-    return nullptr;
 }
 
-PCB *APICALL SysCreateProcess(const char *Name, ELEVATION Elevation)
+PCB *SysCreateProcess(const char *Name, ELEVATION Elevation)
 {
     switch (CurrentTaskingMode)
     {
     case TaskingMode::Mono:
     {
-        PCB *proc = new PCB;
-        memcpy(proc->Name, Name, sizeof(proc->Name));
-        fixme("not implemented for mono tasking");
-        return proc;
+        err("The current tasking mode does not support the request.");
+        return nullptr;
     }
     case TaskingMode::Multi:
-    {
         return mt->CreateProcess(SysGetCurrentProcess(), (char *)Name, Elevation);
-    }
-    case TaskingMode::None:
-        return nullptr;
     default:
         return nullptr;
     }
-    return nullptr;
 }
 
-TCB *APICALL SysCreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t arg0, uint64_t arg1)
+TCB *SysCreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t arg0, uint64_t arg1)
 {
     switch (CurrentTaskingMode)
     {
     case TaskingMode::Mono:
     {
-        TCB *thread = new TCB;
-        return thread;
+        err("The current tasking mode does not support the request.");
+        return nullptr;
     }
     case TaskingMode::Multi:
-    {
         return mt->CreateThread(Parent, InstructionPointer, arg0, arg1);
-    }
-    case TaskingMode::None:
-        return nullptr;
     default:
         return nullptr;
     }
-    return nullptr;
 }
 
 // TODO: implement for primitive tasking if enabled to suspend the current task and run the created one
-PCB *APICALL SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, ELEVATION Elevation)
+PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, ELEVATION Elevation)
 {
     /* ... Open file ... Parse file ... map elf file ... get rip etc ... */
     EnterCriticalSection;
@@ -247,7 +217,15 @@ PCB *APICALL SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t 
             debug("%s Entry Point: %#llx", File, (uint64_t)(header->e_entry + (uint64_t)offset));
             vfs->Close(file);
             LeaveCriticalSection;
-            return SysCreateThread(SysCreateProcess(file->Name, Elevation), (uint64_t)(header->e_entry + (uint64_t)offset), arg0, arg1)->Parent;
+            if (CurrentTaskingMode == TaskingMode::Mono)
+            {
+                bool user = false;
+                if (Elevation == ELEVATION::User)
+                    user = true;
+                return (/* data will be invalid but not null */PCB *)monot->CreateTask(header->e_entry + (uint64_t)offset, arg0, arg1, (char *)file->Name, user);
+            }
+            else
+                return SysCreateThread(SysCreateProcess(file->Name, Elevation), (uint64_t)(header->e_entry + (uint64_t)offset), arg0, arg1)->Parent;
         }
     }
 error_exit:

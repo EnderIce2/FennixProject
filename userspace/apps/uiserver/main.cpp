@@ -1,8 +1,6 @@
 #include <syscalls.h>
 #include <task.h>
 
-#include <msg.h>
-
 enum MouseButton
 {
     MouseNone,
@@ -18,26 +16,9 @@ struct MouseInfo
     uint32_t Y;
 };
 
-enum UIServerMsgType
-{
-    UIServerMsgNone,
-    UIServerMsgMouse,
-    UIServerMsgKeyboard,
-};
-
-struct UIServerMsg
-{
-    UIServerMsgType Type;
-    union
-    {
-        MouseInfo Mouse;
-        char Key;
-    } Data;
-};
-
 MouseInfo ReadMouseBuffer()
 {
-    void *mousefile = (void *)syscall_FileOpen("/dev/mouse");
+    void *mousefile = (void *)syscall_FileOpen((char *)"/dev/mouse");
     MouseInfo info = {MouseNone, 0, 0};
     syscall_FileRead(mousefile, 0, &info, sizeof(MouseInfo));
     syscall_FileClose(mousefile);
@@ -46,33 +27,8 @@ MouseInfo ReadMouseBuffer()
 
 void EventListener()
 {
-    syscall_createMessageListener("uiserver");
-
     while (true)
     {
-        MessageQueue *queue = (MessageQueue *)syscall_getMessageQueue();
-        for (uint64_t i = 0; i < MAX_MESSAGES; i++)
-        {
-            if (queue->Messages[i].Valid == false)
-                continue;
-
-            UIServerMsg *msg = (UIServerMsg *)queue->Messages[i].Buffer;
-
-            switch (msg->Type)
-            {
-            case UIServerMsgMouse:
-            {
-                MouseInfo MsgData = ReadMouseBuffer();
-                syscall_sendMessageByTID(queue->Messages[i].SourceTID, (void *)(&MsgData));
-                break;
-            }
-            default:
-                syscall_dbg(0x3F8, (char *)"UIServer: Unknown message received\n");
-                break;
-            }
-
-            syscall_removeMessage(i);
-        }
     }
 }
 

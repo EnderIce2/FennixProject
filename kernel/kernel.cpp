@@ -47,6 +47,7 @@ EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
     asm volatile("andq $-16, %rsp");
     asm volatile("movw $0, %ax");
     asm volatile("movw %ax, %fs");
+    wrmsr(MSR_FS_BASE, 0);
 
     init_pmm();
     init_vmm();
@@ -119,6 +120,10 @@ void initflags()
         sysflags->noloadingscreen = true;
     else
         sysflags->noloadingscreen = false;
+    if (strstr(bootparams->cmdline, "monotasking"))
+        sysflags->monotasking = true;
+    else
+        sysflags->monotasking = false;
 }
 
 bool ShowRecoveryScreen = false;
@@ -151,41 +156,44 @@ void KernelTask()
     printf("%s", cpu_get_info());
 #endif
 
-    kdrv = new Driver::KernelDriver;
-    FileSystem::FILE *driverDirectory = vfs->Open("/system/drivers");
-    if (driverDirectory->Status == FileSystem::FILESTATUS::OK)
+    if (CurrentTaskingMode != TaskingMode::Mono) // for now i'll not load this.
     {
-        foreach (auto driver in driverDirectory->Node->Children)
+        kdrv = new Driver::KernelDriver;
+        FileSystem::FILE *driverDirectory = vfs->Open("/system/drivers");
+        if (driverDirectory->Status == FileSystem::FILESTATUS::OK)
         {
-            if (driver->Flags == FileSystem::NodeFlags::FS_FILE)
-                if (cwk_path_has_extension(driver->Name))
-                {
-                    const char *extension;
-                    cwk_path_get_extension(driver->Name, &extension, nullptr);
-
-                    if (!strcmp(extension, ".drv"))
+            foreach (auto driver in driverDirectory->Node->Children)
+            {
+                if (driver->Flags == FileSystem::NodeFlags::FS_FILE)
+                    if (cwk_path_has_extension(driver->Name))
                     {
-                        CurrentDisplay->SetPrintColor(0xFFCCCCCC);
-                        printf("Loading driver %s... ", driver->Name);
-                        uint64_t ret = kdrv->LoadKernelDriverFromFile(driver);
-                        if (ret == 0)
+                        const char *extension;
+                        cwk_path_get_extension(driver->Name, &extension, nullptr);
+
+                        if (!strcmp(extension, ".drv"))
                         {
-                            CurrentDisplay->SetPrintColor(0xFF058C19);
-                            printf("OK\n");
+                            CurrentDisplay->SetPrintColor(0xFFCCCCCC);
+                            printf("Loading driver %s... ", driver->Name);
+                            uint64_t ret = kdrv->LoadKernelDriverFromFile(driver);
+                            if (ret == 0)
+                            {
+                                CurrentDisplay->SetPrintColor(0xFF058C19);
+                                printf("OK\n");
+                            }
+                            else
+                            {
+                                CurrentDisplay->SetPrintColor(0xFFE85230);
+                                printf("FAILED (%#lx)\n", ret);
+                            }
+                            CurrentDisplay->ResetPrintColor();
+                            // TODO: get instruction pointer of the elf entry point.
+                            BS->IncreaseProgres();
                         }
-                        else
-                        {
-                            CurrentDisplay->SetPrintColor(0xFFE85230);
-                            printf("FAILED (%#llx)\n", ret);
-                        }
-                        CurrentDisplay->ResetPrintColor();
-                        // TODO: get instruction pointer of the elf entry point.
-                        BS->IncreaseProgres();
                     }
-                }
+            }
         }
+        vfs->Close(driverDirectory);
     }
-    vfs->Close(driverDirectory);
 
     BS->Progress(100);
 
@@ -260,7 +268,7 @@ void KernelInit()
     BS->Progress(50);
     // Make sure that after vfs initialization we set the root "/" directory.
     // TODO: we should check if it's installed in a system disk instead of initrd. this is a must because we need to set first the root and then mount everything else.
-    for (size_t i = 0; i < bootparams->modules.num; i++)
+    for (int i = 0; i < bootparams->modules.num; i++)
     {
         BS->IncreaseProgres();
         if (bootparams->modules.ramdisks[i].type == initrdType::USTAR)
@@ -291,7 +299,9 @@ void KernelInit()
     ps2mouse = new PS2Mouse::PS2MouseDriver;
     BS->IncreaseProgres();
 
-    // StartTasking((uint64_t)KernelTask, TaskingMode::Mono);
-    StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
+    if (sysflags->monotasking)
+        StartTasking((uint64_t)KernelTask, TaskingMode::Mono);
+    else
+        StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
     CPU_STOP;
 }

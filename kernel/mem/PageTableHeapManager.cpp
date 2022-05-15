@@ -15,36 +15,39 @@ PageTableHeap::PageTableHeap *KernelPageTableAllocator = nullptr;
 namespace PageTableHeap
 {
     static uint64_t MemoryEntries = bootparams->mem.Size;
-    PageTable *PageTableHeap::CreatePageTable(bool User)
+    CR3 PageTableHeap::CreatePageTable(bool User)
     {
         LOCK(pagetable_lock);
-        // Not tested yet. Page switching for some reason doesn't trigger any kernel exception when happens (sometimes?). That's strange...
-        PageTable *NewPML = (PageTable *)KernelAllocator.RequestPage();
-        PageTableManager NewPMLMgr = PageTableManager(NewPML);
-        memset(NewPML, 0, PAGE_SIZE);
-        for (uint64_t i = 256; i < 512; i++)
-            NewPML->Entries[i] = KernelPML4->Entries[i];
+        // PageTable *NewPML = (PageTable *)KernelAllocator.RequestPage();
+        // PageTableManager NewPMLMgr = PageTableManager(NewPML);
+        // memset(NewPML, 0, PAGE_SIZE);
+        // for (uint64_t i = 256; i < 512; i++)
+        //     NewPML->Entries[i].Value = KernelPML4->Entries[i].Value;
 
         // if (!User)
         // {
-            // TODO: do something about this and map only where the process is created.
-            uint64_t VirtualOffsetNormalVMA = NORMAL_VMA_OFFSET;
-            for (uint64_t t = 0; t < MemoryEntries; t += PAGE_SIZE)
-            {
-                NewPMLMgr.MapMemory((void *)t, (void *)t, PTFlag::RW | PTFlag::US);
-                NewPMLMgr.MapMemory((void *)VirtualOffsetNormalVMA, (void *)t, PTFlag::RW | PTFlag::US);
-                VirtualOffsetNormalVMA += PAGE_SIZE;
-            }
+        // TODO: do something about this and map only where the process is created.
+        // uint64_t VirtualOffsetNormalVMA = NORMAL_VMA_OFFSET;
+        // for (uint64_t t = 0; t < MemoryEntries; t += PAGE_SIZE)
+        // {
+        //     NewPMLMgr.MapMemory((void *)t, (void *)t, PTFlag::RW | PTFlag::US);
+        //     NewPMLMgr.MapMemory((void *)VirtualOffsetNormalVMA, (void *)t, PTFlag::RW | PTFlag::US);
+        //     VirtualOffsetNormalVMA += PAGE_SIZE;
         // }
+        // }
+
+        CR3 cr;
+        // cr.raw = (uint64_t)NewPML;
+        cr.raw = (uint64_t)KernelPML4; // TODO: there is an issue with the code above. I should fix it ASAP.
         UNLOCK(pagetable_lock);
-        return NewPML;
+        return cr;
     }
 
     void PageTableHeap::RemovePageTable(PageTable *PageTable)
     {
-        LOCK(pagetable_lock);
-        KernelAllocator.FreePage((void *)PageTable);
-        UNLOCK(pagetable_lock);
+        // LOCK(pagetable_lock);
+        // KernelAllocator.FreePage((void *)PageTable);
+        // UNLOCK(pagetable_lock);
         // trace("Page table freed at %p", PageTable);
     }
 

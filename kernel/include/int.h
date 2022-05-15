@@ -24,7 +24,7 @@
 #define ICW4_BUF_MASTER 0x0C /* Buffered mode/master */
 #define ICW4_SFNM 0x10       /* Special fully nested (not) */
 
-void PIC_disable();
+EXTERNC void PIC_disable();
 EXTERNC void PIC_sendEOI(unsigned char irq);
 void PIC_remap(int offset1, int offset2);
 void IRQ_set_mask(unsigned char IRQline);

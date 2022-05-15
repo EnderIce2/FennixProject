@@ -9,7 +9,10 @@
 #include <heap.h>
 #include <elf.h>
 
+#pragma GCC diagnostic ignored "-Wvarargs"
+
 Driver::KernelDriver *kdrv = nullptr;
+
 
 void *FunctionCallHandler(KernelCallType type, ...)
 {

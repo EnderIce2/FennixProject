@@ -38,7 +38,7 @@ LDFLAGS := 									\
 NASMFLAGS := -f elf64
 
 # Disable all warnings by adding "-w" in WARNCFLAG and if you want to treat the warnings as errors, add "-Werror"
-WARNCFLAG = -Wall -Wextra -w
+WARNCFLAG = -Wall -Wextra -Wno-comment
 
 # Change march with minimum supported cpu // https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html
 CFLAGS :=																\

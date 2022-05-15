@@ -1,14 +1,23 @@
 #include <internal_task.h>
+
 #include <interrupts.h>
-#include <int.h>
-#include <heap.h>
 #include <debug.h>
+#include <heap.h>
 #include <asm.h>
+#include <int.h>
+#include <io.h>
+
+#include "../cpu/apic.hpp"
 #include "../cpu/gdt.h"
+#include "../timer.h"
 
 namespace Tasking
 {
     Monotasking *monot = nullptr;
+
+#define MAX_TASKS 0x10000
+    TaskControlBlock *CurrentTask = nullptr;
+    TaskControlBlock *TaskQueue[MAX_TASKS];
 
     extern "C"
     {
@@ -60,8 +69,8 @@ namespace Tasking
                 "iretq");
         }
     }
+#define SchedulerInterrupt IRQ11
 
-#define ScheduleInterrupt asm volatile("int $0x2a")
     static uint64_t TaskIDs = 0;
 
     TaskControlBlock *FindLastTask()
@@ -105,7 +114,7 @@ namespace Tasking
             {
                 debug("Task %s will be removed from queue.", task->name);
                 KernelStackAllocator->FreeStack((void *)TaskQueue[i]->stack);
-                KernelPageTableAllocator->RemovePageTable((VMM::PageTable *)TaskQueue[i]->pml4);
+                // KernelPageTableAllocator->RemovePageTable((VMM::PageTable *)TaskQueue[i]->pml4.raw);
                 delete TaskQueue[i];
                 memset(TaskQueue[i], 0, sizeof(TaskControlBlock));
                 TaskQueue[i] = FindLastTask();
@@ -130,9 +139,7 @@ namespace Tasking
                 {
                     TaskQueue[i]->state = TaskState::TaskStateRunning;
                     *regs = TaskQueue[i]->regs;
-                    CR3 CR3PageTable;
-                    CR3PageTable.raw = (uint64_t)TaskQueue[i]->pml4;
-                    writecr3(CR3PageTable);
+                    writecr3(TaskQueue[i]->pml4);
                     CurrentTask = TaskQueue[i];
                     trace("Task %s is now running.", TaskQueue[i]->name);
                     task_changed = true;
@@ -156,7 +163,7 @@ namespace Tasking
         scheduler_eoi:
             EndOfInterrupt(INT_NUM);
             if (!task_changed)
-                ScheduleInterrupt;
+                apic->OneShot(SchedulerInterrupt, 100);
         }
     }
 
@@ -164,7 +171,7 @@ namespace Tasking
     {
         CurrentTask->state = TaskState::TaskStateTerminated;
         trace("Task %s exited.", CurrentTask->name);
-        ScheduleInterrupt;
+        apic->OneShot(SchedulerInterrupt, 100);
         CPU_STOP;
     }
 
@@ -176,32 +183,70 @@ namespace Tasking
         task->checksum = TASK_CHECKSUM;
         task->UserMode = UserMode;
         task->state = TaskState::TaskStateWaiting;
-        task->stack = KernelStackAllocator->AllocateStack();
-        task->pml4 = KernelPageTableAllocator->CreatePageTable();
-        debug("PML4 %016p for %s has been created.", task->pml4, task->name);
-
-        if (UserMode)
-        {
-            fixme("User mode is not implemented yet.");
-            task->UserMode = false;
-        }
+        task->stack = KernelStackAllocator->AllocateStack(UserMode);
+        task->pml4 = KernelPageTableAllocator->CreatePageTable(UserMode);
 
         memset(&task->regs, 0, sizeof(REGISTERS));
-        task->regs.ds = GDT_KERNEL_DATA;
-        task->regs.ss = GDT_KERNEL_DATA;
-        task->regs.cs = GDT_KERNEL_CODE;
-        task->regs.rflags.always_one = 1;
-        task->regs.rflags.IF = 1;
-        task->regs.rflags.ID = 1;
-        task->regs.STACK = (uint64_t)task->stack;
+        if (!UserMode)
+        {
+            task->regs.ds = GDT_KERNEL_DATA;
+            task->regs.ss = GDT_KERNEL_DATA;
+            task->regs.cs = GDT_KERNEL_CODE;
+            task->gs = (uint64_t)task;
+            task->fs = rdmsr(MSR_FS_BASE);
+            task->regs.rflags.always_one = 1;
+            task->regs.rflags.IF = 1;
+            task->regs.rflags.ID = 1;
+            task->regs.STACK = (uint64_t)task->stack;
+            POKE(uint64_t, task->regs.rsp) = (uint64_t)MonoTaskingTaskExit;
+        }
+        else
+        {
+            task->regs.ds = GDT_USER_DATA;
+            task->regs.cs = GDT_USER_CODE;
+            task->regs.ss = GDT_USER_DATA;
+            task->gs = 0;
+            task->fs = rdmsr(MSR_FS_BASE);
+            task->regs.rflags.always_one = 1;
+            task->regs.rflags.IF = 1;
+            task->regs.rflags.ID = 1;
+            task->regs.STACK = (uint64_t)task->stack;
+        }
         task->regs.FUNCTION = (uint64_t)InstructionPointer;
         task->regs.ARG0 = (uint64_t)FirstArgument;
         task->regs.ARG1 = (uint64_t)SecondArgument;
-        POKE(uint64_t, task->regs.rsp) = (uint64_t)MonoTaskingTaskExit;
 
+        task->SpawnTick = counter();
+        uint32_t t = 0;
+        outb(0x70, 0x00);
+        t = inb(0x71);
+        task->Second = ((t & 0x0F) + ((t >> 4) * 10));
+        outb(0x70, 0x02);
+        t = inb(0x71);
+        task->Minute = ((t & 0x0F) + ((t >> 4) * 10));
+        outb(0x70, 0x04);
+        t = inb(0x71);
+        task->Hour = ((t & 0x0F) + ((t >> 4) * 10));
+        outb(0x70, 0x07);
+        t = inb(0x71);
+        task->Day = ((t & 0x0F) + ((t >> 4) * 10));
+        outb(0x70, 0x08);
+        t = inb(0x71);
+        task->Month = ((t & 0x0F) + ((t >> 4) * 10));
+        outb(0x70, 0x09);
+        t = inb(0x71);
+        task->Year = ((t & 0x0F) + ((t >> 4) * 10));
         trace("Task %s has been created. (IP %#llx)", task->name, InstructionPointer);
         AllocateTask(task);
         return task;
+    }
+
+    void Monotasking::KillMe()
+    {
+        CurrentTask->state = TaskState::TaskStateTerminated;
+        trace("Task %s commited suicide.", CurrentTask->name);
+        apic->OneShot(SchedulerInterrupt, 100);
+        CPU_STOP;
     }
 
     Monotasking::Monotasking(uint64_t FirstTask)
@@ -210,7 +255,8 @@ namespace Tasking
             TaskQueue[i] = nullptr; // Make sure that all tasks have value nullptr
         CreateTask((uint64_t)FirstTask, 0, 0, (char *)"kernel", false);
         CurrentTaskingMode = TaskingMode::Mono;
-        ScheduleInterrupt;
+        apic->RedirectIRQ(0, SchedulerInterrupt - 32, 1);
+        apic->OneShot(SchedulerInterrupt, 100);
     }
 
     Monotasking::~Monotasking()
@@ -220,7 +266,7 @@ namespace Tasking
             if (TaskQueue[i] == nullptr)
                 continue;
             if (TaskQueue[i] == CurrentTask)
-                continue; // We ignore the current task because it's finit or the task that invoked the unitialization.
+                continue; // We ignore the current task because it's the task that invoked the unitialization.
             TaskControlBlock *task = TaskQueue[i];
             trace("Task %s has been forcibly terminated and removed.", task->name);
             FreeTask(task);

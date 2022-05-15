@@ -63,6 +63,8 @@ extern "C" void StartCPU()
     wrmsr(MSR_FS_BASE, apicid);
     wrmsr(MSR_SHADOW_GS_BASE, (uintptr_t)CurrentCPU);
 
+    /* ... GDT, IDT, APIC, etc... */
+
     asm("sti");
     CPUEnabled = true;
     CPU_STOP;
@@ -100,8 +102,7 @@ static void InitializeCPU(ACPI::MADT::LocalAPIC *lapic)
     // POKE(volatile uint64_t, _STACK) = (uint64_t)GetCPU(lapic->APICId)->Stack + STACK_SIZE;
     POKE(volatile uint64_t, _STACK) = (uint64_t)KernelAllocator.RequestPage();
 
-    asm volatile(" \n"
-                 "sgdt [0x580]\n"
+    asm volatile("sgdt [0x580]\n"
                  "sidt [0x590]\n");
 
     // start address at 0x520

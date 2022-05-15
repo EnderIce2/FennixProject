@@ -29,6 +29,8 @@ extern "C"
 #include <string.h>
     // #include <sys/types.h>
 
+#pragma GCC diagnostic ignored "-Wmissing-field-initializers"
+
     struct buddy;
 
     /* Returns the size of a buddy required to manage of block of the specified size */

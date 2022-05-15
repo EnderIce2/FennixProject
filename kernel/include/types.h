@@ -50,12 +50,21 @@ typedef char const *string;
         asm("in %%dx, %%al"                         \
             : "=a"(ret)                             \
             : "d"(0x70));                           \
+        asm volatile("outb %%al, $0x80"             \
+                     :                              \
+                     : "a"(0));                     \
         asm volatile("out %%al, %%dx"               \
                      :                              \
                      : "a"(ret | 0x80), "d"(0x70)); \
-        asm("in %%dx, %%al"                         \
-            : "=a"(ret)                             \
-            : "d"(0x71));                           \
+        asm volatile("outb %%al, $0x80"             \
+                     :                              \
+                     : "a"(0));                     \
+        asm volatile("in %%dx, %%al"                \
+                     : "=a"(ret)                    \
+                     : "d"(0x71));                  \
+        asm volatile("outb %%al, $0x80"             \
+                     :                              \
+                     : "a"(0));                     \
         for (;;)                                    \
             asm volatile("cli\nhlt");               \
     }

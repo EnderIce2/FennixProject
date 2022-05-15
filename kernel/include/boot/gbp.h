@@ -212,6 +212,11 @@ typedef struct _SysFlags
      * @brief Do not initialize the boot loading screen
      */
     bool noloadingscreen;
+    /**
+     * @brief Set tasking mode to monotasking
+     * 
+     */
+    bool monotasking;
     // there is one more "no4gbcap" flag, but it's not used only in boot initialization code.
 } SysFlags;
 

@@ -121,7 +121,7 @@ void *PageFrameAllocator::RequestPages(uint64_t PageCount)
             if (PageBitmap[Index] == true)
                 continue;
 
-            for (int i = 0; i < PageCount; i++)
+            for (uint64_t i = 0; i < PageCount; i++)
                 if (PageBitmap[Index + i] == true)
                     goto NextPage;
 

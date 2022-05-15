@@ -9,7 +9,8 @@
 			"interrupts.h": "c",
 			"rand.h": "c",
 			"timer.h": "c",
-			"display.h": "c"
+			"display.h": "c",
+			"loadpsf.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}

@@ -5,7 +5,6 @@
 #include "../drivers/serial.h"
 #include "../cpu/gdt.h"
 #include "../cpu/idt.h"
-#include "msg.hpp"
 
 #include <critical.hpp>
 #include <filesystem.h>
@@ -23,6 +22,11 @@ static uint64_t internal_unimpl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, 
 
 static uint64_t internal_exit(uint64_t code)
 {
+    if (CurrentTaskingMode == TaskingMode::Mono)
+    {
+        Tasking::monot->KillMe();
+        return 0;
+    }
     trace("Userspace thread %s(%lld) exited with code %#llx", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, code);
     SysGetCurrentThread()->ExitCode = code;
     SysGetCurrentThread()->Status = Terminated;
@@ -35,6 +39,8 @@ static PCB *internal_getcurrentprocess() { return SysGetCurrentProcess(); }
 static TCB *internal_getcurrentthread() { return SysGetCurrentThread(); }
 static uint64_t internal_getcurrentprocessid() { return SysGetCurrentProcess()->ID; }
 static uint64_t internal_getcurrentthreadid() { return SysGetCurrentThread()->ID; }
+static int internal_getschedulemode() { return CurrentTaskingMode; }
+static Tasking::TaskControlBlock *internal_createtask(uint64_t rip, uint64_t arg0, uint64_t arg1, char *name) { Tasking::monot->CreateTask(rip, arg0, arg1, name, true); }
 
 static void *internal_requestpage()
 {
@@ -49,6 +55,23 @@ static void internal_freepage(void *page)
     KernelPageTableManager.MapMemory(page, page, PTFlag::RW);
 }
 
+static void *internal_requestpages(uint64_t pages)
+{
+    void *ret = KernelAllocator.RequestPages(pages);
+    for (uint64_t i = (uint64_t)ret; i < ((uint64_t)ret + (pages * PAGE_SIZE)); i += PAGE_SIZE)
+        KernelPageTableManager.MapMemory((void *)i, (void *)i, PTFlag::US | PTFlag::RW);
+    return ret;
+}
+static void internal_freepages(void *page, uint64_t pages)
+{
+    KernelAllocator.FreePages(page, pages);
+    for (uint64_t i = (uint64_t)page; i < ((uint64_t)page + (pages * PAGE_SIZE)); i += PAGE_SIZE)
+    {
+        KernelPageTableManager.UnmapMemory((void *)i);
+        KernelPageTableManager.MapMemory((void *)i, (void *)i, PTFlag::RW);
+    }
+}
+
 static uint64_t internal_fbaddress() { return CurrentDisplay->GetFramebuffer()->Address; }
 static uint64_t internal_fbsize() { return CurrentDisplay->GetFramebuffer()->Size; }
 static uint64_t internal_fbwidth() { return CurrentDisplay->GetFramebuffer()->Width; }
@@ -57,16 +80,11 @@ static uint64_t internal_fbppsl() { return CurrentDisplay->GetFramebuffer()->Pix
 
 static char internal_getlastkeyboardscancode() { return ps2keyboard->GetLastScanCode(); }
 
-static void internal_createMessageListener(char *Name) { return MessageManager::CreateListener(Name); }
-static void internal_sendMessageByTID(uint64_t ThreadID, void *Buffer) { return MessageManager::SendByTID(ThreadID, Buffer); }
-static void internal_sendMessageByName(char *Name, void *Buffer) { return MessageManager::SendByName(Name, Buffer); }
-static MessageQueue *internal_getMessageQueue() { return MessageManager::GetMessageQueue(); }
-static void internal_removeMessage(uint64_t Index) { return MessageManager::Remove(Index); }
-
 static FileSystem::FILE *internal_fileOpen(char *Path) { return vfs->Open(Path, nullptr); }
 static void internal_fileClose(FileSystem::FILE *File) { vfs->Close(File); }
 static uint64_t internal_fileRead(FileSystem::FILE *File, uint64_t Offset, void *Buffer, uint64_t Size) { return vfs->Read(File, Offset, Buffer, Size); }
 static uint64_t internal_fileWrite(FileSystem::FILE *File, uint64_t Offset, void *Buffer, uint64_t Size) { return vfs->Write(File, Offset, Buffer, Size); }
+static uint64_t internal_filesize(FileSystem::FILE *File) { return File->Node->Length; }
 
 static uint64_t internal_dbg(int port, char *message)
 {
@@ -84,10 +102,15 @@ static void *syscallsTable[] = {
     [_GetCurrentThread] = (void *)internal_getcurrentthread,
     [_GetCurrentProcessID] = (void *)internal_getcurrentprocessid,
     [_GetCurrentThreadID] = (void *)internal_getcurrentthreadid,
-    [_Schedule] = (void *)internal_unimpl,
+
+    [_GetScheduleMode] = (void *)internal_getschedulemode,
+
+    [_CreateTask] = (void *)internal_createtask,
 
     [_RequestPage] = (void *)internal_requestpage,
     [_FreePage] = (void *)internal_freepage,
+    [_RequestPages] = (void *)internal_requestpages,
+    [_FreePages] = (void *)internal_freepages,
 
     [_SystemInfo] = (void *)internal_unimpl,
     [_SystemTime] = (void *)internal_unimpl,
@@ -104,18 +127,12 @@ static void *syscallsTable[] = {
 
     [_GetLastKeyboardScanCode] = (void *)internal_getlastkeyboardscancode,
 
-    [_CreateMessageListener] = (void *)internal_createMessageListener,
-    [_SendMessageByTID] = (void *)internal_sendMessageByTID,
-    [_SendMessageByName] = (void *)internal_sendMessageByName,
-    [_GetMessageQueue] = (void *)internal_getMessageQueue,
-    [_RemoveMessage] = (void *)internal_removeMessage,
-
     [_FileOpen] = (void *)internal_fileOpen,
     [_FileClose] = (void *)internal_fileClose,
     [_FileRead] = (void *)internal_fileRead,
     [_FileWrite] = (void *)internal_fileWrite,
     [_FileSeek] = (void *)internal_unimpl,
-    [_FileSize] = (void *)internal_unimpl,
+    [_FileSize] = (void *)internal_filesize,
     [_FileFlush] = (void *)internal_unimpl,
     [_FileDelete] = (void *)internal_unimpl,
     [_FileRename] = (void *)internal_unimpl,

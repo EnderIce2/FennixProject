@@ -49,7 +49,6 @@ struct TCB
     STATUS Status;
     uint64_t ExitCode;
     PCB *Parent;
-    struct MessageQueue *Msg;
     void *Stack;
     REGISTERS Registers;
     uint64_t fs, gs, cs, ss, ds, es;

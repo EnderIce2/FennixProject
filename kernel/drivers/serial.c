@@ -56,7 +56,7 @@ void write_serial(int serial_port, char a)
 void serial_write_text(int serial_port, char *text)
 {
     // LOCK(serial_lock);
-    for (int i = 0; i < (strlen(text)); i++)
+    for (long unsigned i = 0; i < (strlen(text)); i++)
         write_serial(serial_port, text[i]);
     // UNLOCK(serial_lock);
 }

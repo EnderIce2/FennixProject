@@ -72,7 +72,7 @@ void shortdbgprint(const char *format, ...)
     va_end(args);
 }
 
-int debug_printf(enum debug_type type, const char *message, const char *file, int line, const char *function, ...)
+int debug_printf(enum debug_type type, const char *file, int line, const char *function, const char *message, ...)
 {
     switch (type)
     {

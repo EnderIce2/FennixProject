@@ -1,6 +1,8 @@
 #include <stdint.h>
 #include <lock.h>
 
+#pragma GCC diagnostic ignored "-Wsubobject-linkage"
+
 namespace Critical
 {
     struct CriticalSectionData

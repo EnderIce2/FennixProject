@@ -38,7 +38,7 @@ namespace PCI
         NVIDIACorporation = 0x10DE
     };
 
-    const char *GetVendorName(uint16_t VendorID)
+    const char *GetVendorName(uint32_t VendorID)
     {
         switch (VendorID)
         {
@@ -67,11 +67,11 @@ namespace PCI
         case 0x1414:
             return "Microsoft Corporation";
         }
-        fixme("Unkown vendor %04x", VendorID);
-        return u16ToHexString(VendorID);
+        fixme("Unknown vendor %04x", VendorID);
+        return u32ToHexString(VendorID);
     }
 
-    const char *GetDeviceName(uint16_t VendorID, uint16_t DeviceID)
+    const char *GetDeviceName(uint32_t VendorID, uint32_t DeviceID)
     {
         switch (VendorID)
         {
@@ -234,7 +234,7 @@ namespace PCI
             }
         }
         fixme("Unknown device %04x:%04x", VendorID, DeviceID);
-        return u16ToHexString(DeviceID);
+        return u32ToHexString(DeviceID);
     }
 
     const char *MassStorageControllerSubclassName(uint8_t SubclassCode)

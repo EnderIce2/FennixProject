@@ -165,7 +165,7 @@ namespace FileSystem
             RelativePath = new char[strlen(NormalizedPath) + 1];
             strcpy(RelativePath, NormalizedPath);
         }
-        delete NormalizedPath;
+        delete[] NormalizedPath;
         vfsdbg("NormalizePath()->\"%s\"", RelativePath);
         return RelativePath;
     }

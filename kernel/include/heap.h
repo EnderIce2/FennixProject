@@ -4,6 +4,7 @@
 // #define DEBUG_MEM_ALLOCATION 1
 
 #include <types.h>
+#include <cputables.h>
 
 extern uint64_t _kernel_start, _kernel_end;
 extern uint64_t _kernel_text_end, _kernel_rodata_end;
@@ -107,7 +108,7 @@ namespace PageTableHeap
     class PageTableHeap
     {
     public:
-        VMM::PageTable *CreatePageTable(bool User = false);
+        CR3 CreatePageTable(bool User = false);
         void RemovePageTable(VMM::PageTable *PageTable);
         PageTableHeap();
         ~PageTableHeap();

@@ -58,7 +58,7 @@ void TriggerUserModeCrash(REGISTERS *regs)
     {
     case ISR_DivideByZero:
     {
-        err("Division by zero in an user-mode thread %s(%d).", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID);
+        err("Division by zero in an user-mode thread %s(%d) on CPU %ld.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, rdmsr(MSR_FS_BASE));
         // TODO: signal the application to stop.
         SysGetCurrentThread()->Status = Terminated;
         STI;
@@ -86,7 +86,7 @@ void TriggerUserModeCrash(REGISTERS *regs)
     }
     case ISR_InvalidOpcode:
     {
-        err("Invalid opcode in an user-mode thread %s(%d).", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID);
+        err("Invalid opcode in an user-mode thread %s(%d) on CPU %ld.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, rdmsr(MSR_FS_BASE));
         // TODO: signal the application to stop.
         SysGetCurrentThread()->Status = Terminated;
         STI;
@@ -116,7 +116,7 @@ void TriggerUserModeCrash(REGISTERS *regs)
     }
     case ISR_StackSegmentFault:
     {
-        err("Stack Segment Fault caused by an user-mode thread %s(%d) at %#lx.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, RIP);
+        err("Stack Segment Fault caused by an user-mode thread %s(%d) at %#lx on CPU %ld.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, rdmsr(MSR_FS_BASE), RIP);
         // TODO: signal the application to stop.
         SysGetCurrentThread()->Status = Terminated;
         STI;
@@ -124,7 +124,7 @@ void TriggerUserModeCrash(REGISTERS *regs)
     }
     case ISR_GeneralProtectionFault:
     {
-        err("General Protection Fault caused by an user-mode thread %s(%d) at %#lx.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, RIP);
+        err("General Protection Fault caused by an user-mode thread %s(%d) at %#lx on CPU %ld.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, rdmsr(MSR_FS_BASE), RIP);
         // TODO: signal the application to stop.
         SysGetCurrentThread()->Status = Terminated;
         STI;
@@ -132,7 +132,7 @@ void TriggerUserModeCrash(REGISTERS *regs)
     }
     case ISR_PageFault:
     {
-        err("Page fault caused by an user-mode thread %s(%d).", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID);
+        err("Page fault caused by an user-mode thread %s(%d) on CPU %ld.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, rdmsr(MSR_FS_BASE));
         uint64_t addr = readcr2().raw;
         debug("Page fault at address %#llx", addr);
         PageFaultErrorCode params = {.raw = (uint32_t)ERROR_CODE};

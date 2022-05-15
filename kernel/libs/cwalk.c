@@ -22,12 +22,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+#define syskernel
 #include <assert.h>
 #include <ctype.h>
 #include <cwalk.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
+
+#pragma GCC diagnostic ignored "-Wdiscarded-qualifiers"
+#pragma GCC diagnostic ignored "-Wsequence-point"
 
 /**
  * We try to default to a different path style depending on the operating

@@ -86,7 +86,7 @@ namespace AHCI
         void *NewBase = KernelAllocator.RequestPage();
         HBAPortPtr->CommandListBase = (uint32_t)(uint64_t)NewBase;
         HBAPortPtr->CommandListBaseUpper = (uint32_t)((uint64_t)NewBase >> 32);
-        memset((void *)(HBAPortPtr->CommandListBase), 0, 1024);
+        memset(reinterpret_cast<void *>(HBAPortPtr->CommandListBase), 0, 1024);
 
         void *FISBase = KernelAllocator.RequestPage();
         HBAPortPtr->FISBaseAddress = (uint32_t)(uint64_t)FISBase;
@@ -141,7 +141,7 @@ namespace AHCI
 
         HBAPortPtr->InterruptStatus = (uint32_t)-1; // Clear pending interrupt bits
 
-        HBACommandHeader *CommandHeader = (HBACommandHeader *)HBAPortPtr->CommandListBase;
+        HBACommandHeader *CommandHeader = reinterpret_cast<HBACommandHeader *>(HBAPortPtr->CommandListBase);
         CommandHeader->CommandFISLength = sizeof(FIS_REG_H2D) / sizeof(uint32_t);
         if (Write)
             CommandHeader->Write = 1;
@@ -149,7 +149,7 @@ namespace AHCI
             CommandHeader->Write = 0;
         CommandHeader->PRDTLength = 1;
 
-        HBACommandTable *CommandTable = (HBACommandTable *)(CommandHeader->CommandTableBaseAddress);
+        HBACommandTable *CommandTable = reinterpret_cast<HBACommandTable *>(CommandHeader->CommandTableBaseAddress);
         memset(CommandTable, 0, sizeof(HBACommandTable) + (CommandHeader->PRDTLength - 1) * sizeof(HBAPRDTEntry));
 
         CommandTable->PRDTEntry[0].DataBaseAddress = (uint32_t)(uint64_t)Buffer;
@@ -219,7 +219,7 @@ namespace AHCI
     {
         this->PCIBaseAddress = PCIBaseAddress;
         trace("AHCI Driver instance initialized");
-        ABAR = (HBAMemory *)((PCI::PCIHeader0 *)PCIBaseAddress)->BAR5;
+        ABAR = reinterpret_cast<HBAMemory *>(((PCI::PCIHeader0 *)PCIBaseAddress)->BAR5);
         KernelPageTableManager.MapMemory((void *)ABAR, (void *)ABAR, PTFlag::RW);
         ProbePorts();
 

@@ -22,7 +22,7 @@ extern "C"
  * @brief Log stub
  *
  */
-#define fixme(m, ...) debug_printf(_fixme, m, __FILE__, __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define fixme(m, ...) debug_printf(_fixme,__FILE__, __LINE__, __FUNCTION__, m, ##__VA_ARGS__)
 /**
  * @brief Log stub
  *
@@ -32,27 +32,27 @@ extern "C"
  * @brief Log trace
  *
  */
-#define trace(m, ...) debug_printf(_trace, m, __FILE__, __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define trace(m, ...) debug_printf(_trace,__FILE__, __LINE__, __FUNCTION__, m, ##__VA_ARGS__)
 /**
  * @brief Log warning
  *
  */
-#define warn(m, ...) debug_printf(_warn, m, __FILE__, __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define warn(m, ...) debug_printf(_warn,__FILE__, __LINE__, __FUNCTION__, m, ##__VA_ARGS__)
 /**
  * @brief Log error
  *
  */
-#define err(m, ...) debug_printf(_err, m, __FILE__, __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define err(m, ...) debug_printf(_err,__FILE__, __LINE__, __FUNCTION__, m, ##__VA_ARGS__)
 /**
  * @brief Log debug
  *
  */
-#define debug(m, ...) debug_printf(_debug, m, __FILE__, __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define debug(m, ...) debug_printf(_debug,__FILE__, __LINE__, __FUNCTION__, m, ##__VA_ARGS__)
 /**
  * @brief Log debug
  *
  */
-#define ubsan(m, ...) debug_printf(_ubsan, m, __FILE__, __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define ubsan(m, ...) debug_printf(_ubsan,__FILE__, __LINE__, __FUNCTION__, m, ##__VA_ARGS__)
 /**
  * @brief Writes in the debugger CHECKPOINT message.
  *
@@ -64,15 +64,15 @@ extern "C"
 #define fixme(m, ...) (void)(m)
 #define stub ;
 #define trace(m, ...) (void)(m)
-#define warn(m, ...) debug_printf(warn, m, __FILE__, __LINE__, __FUNCTION__, ##__VA_ARGS__)
-#define err(m, ...) debug_printf(err, m, __FILE__, __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define warn(m, ...) debug_printf(warn,__FILE__, __LINE__, __FUNCTION__, m, ##__VA_ARGS__)
+#define err(m, ...) debug_printf(err,__FILE__, __LINE__, __FUNCTION__, m, ##__VA_ARGS__)
 #define debug(m, ...) (void)(m)
 #define ubsan(m, ...) (void)(m)
 #define TRACEREGS(r) (void)(r)
 #endif
 
     void dbg_showregs(void *regs, const char *file, int line, const char *function);
-    int debug_printf(enum debug_type type, const char *message, const char *file, int line, const char *function, ...);
+    int debug_printf(enum debug_type type, const char *file, int line, const char *function, const char *message, ...);
 
 #ifdef __cplusplus
 }

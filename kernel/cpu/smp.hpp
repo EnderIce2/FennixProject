@@ -1,7 +1,10 @@
 #pragma once
-#include "idt.h"
-#include "acpi.hpp"
+#include <task.h>
+
 #include "../kernel.h"
+#include "acpi.hpp"
+#include "fxsr.h"
+#include "idt.h"
 
 struct CPUData
 {
@@ -12,7 +15,14 @@ struct CPUData
     GlobalDescriptorTableDescriptor GDT;
     InterruptDescriptorTableDescriptor IDT;
     TaskStateSegment TSS;
-};
+
+    PCB *CurrentProcess;
+    TCB *CurrentThread;
+
+    void fxsave(char *Buffer) { _fxsave(Buffer); }
+    void fxrstor(char *Buffer) { _fxrstor(Buffer); }
+
+} __attribute__((packed));
 
 namespace SymmetricMultiprocessing
 {
@@ -35,6 +45,14 @@ static CPUData *GetCurrentCPU()
     asm volatile("movq %%fs, %0\n"
                  : "=r"(ret));
     return &CPUs[ret];
+}
+
+static uint64_t GetCurrentCPUID()
+{
+    uint64_t ret = 0;
+    asm volatile("movq %%fs, %0\n"
+                 : "=r"(ret));
+    return ret;
 }
 
 static CPUData *GetCPU(uint64_t id) { return &CPUs[id]; }

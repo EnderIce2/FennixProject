@@ -1,9 +1,11 @@
 #include "acpi.hpp"
+
 #include <io.h>
 
 #include "../timer.h"
-#include "idt.h"
 #include "apic.hpp"
+#include "smp.hpp"
+#include "idt.h"
 
 ACPI::DSDT *dsdt = nullptr;
 
@@ -143,9 +145,10 @@ namespace ACPI
     {
         if (ACPIShutdownSupported)
         {
+            debug("Registering SCI Handler to vector IRQ%d", acpi->FADT->SCI_Interrupt);
             RegisterSCIEvents();
             register_interrupt_handler(acpi->FADT->SCI_Interrupt + 32, SCIHandler);
-            apic->RedirectIRQ(0, acpi->FADT->SCI_Interrupt, 1);
+            apic->RedirectIRQ(CurrentCPU->ID, acpi->FADT->SCI_Interrupt, 1);
         }
     }
 

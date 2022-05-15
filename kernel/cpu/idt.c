@@ -247,7 +247,9 @@ INTERRUPT_HANDLER(0x29)
 __attribute__((naked)) static void interrupt_handler_0x2a() { asm("pushq $0\npushq $"
                                                                   "0x2a"
                                                                   "\njmp MultiTaskingSchedulerHelper"); }
-INTERRUPT_HANDLER(0x2b)
+__attribute__((naked)) static void interrupt_handler_0x2b() { asm("pushq $0\npushq $"
+                                                                  "0x2b"
+                                                                  "\njmp mono_scheduler_handler_helper"); }
 INTERRUPT_HANDLER(0x2c)
 INTERRUPT_HANDLER(0x2d)
 INTERRUPT_HANDLER(0x2e)

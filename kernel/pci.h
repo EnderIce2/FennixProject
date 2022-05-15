@@ -61,8 +61,8 @@ namespace PCI
 
     extern const char *DeviceClasses[];
 
-    const char *GetVendorName(uint16_t VendorID);
-    const char *GetDeviceName(uint16_t VendorID, uint16_t DeviceID);
+    const char *GetVendorName(uint32_t VendorID);
+    const char *GetDeviceName(uint32_t VendorID, uint32_t DeviceID);
     const char *GetSubclassName(uint8_t ClassCode, uint8_t SubclassCode);
     const char *GetProgIFName(uint8_t ClassCode, uint8_t SubclassCode, uint8_t ProgIF);
     Vector<PCIDeviceHeader *> FindPCIDevice(uint8_t Class, uint8_t Subclass, uint8_t ProgIF);

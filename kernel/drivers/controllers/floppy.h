@@ -52,6 +52,7 @@ namespace Floppy
         {
             fixme("Unimplmented function");
             Buffer = 0;
+            UNUSED(Buffer);
             return false;
         }
 
@@ -59,6 +60,7 @@ namespace Floppy
         {
             fixme("Unimplmented function");
             Buffer = 0;
+            UNUSED(Buffer);
         }
     };
 

@@ -88,7 +88,8 @@ bool CheckRunningUnderVM()
     // check #1
     {
         uint32_t m[4];
-        cpuid((int *)m, 1, 0, 0, 0);
+        uint32_t rax, rbx, rcx, rdx;
+        __cpuid((uint32_t *)m, rax, rbx, rcx, rdx);
         if (((m[2] >> 31) & 1) == 1)
             return true;
         debug("CPUID #1 check failed");
@@ -97,12 +98,11 @@ bool CheckRunningUnderVM()
     // check #2
     {
         uint8_t m[2 + 4], rpill[] = "\x0f\x01\x0d\x00\x00\x00\x00\xc3";
-        *((unsigned *)&rpill[3]) = (unsigned)m;
+        *((unsigned *)&rpill[3]) = (unsigned long)m;
         ((void (*)()) & rpill)();
         if (m[5] > 0xd0)
             return true;
         debug("CPUID #2 check failed");
-        // return (m[5] > 0xd0) ? 1 : 0;
     }
 
     // check #3

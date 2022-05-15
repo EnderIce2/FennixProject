@@ -9,6 +9,5 @@ void EndOfInterrupt(int interrupt)
             apic->EOI();
             return;
         }
-    // TODO: implement for APIC too
     PIC_sendEOI(interrupt);
 }
