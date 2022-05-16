@@ -72,8 +72,17 @@ fonts:
 tools: fonts
 	make --quiet -C tools all
 
-tools_appveyor:
-	make --quiet -C tools appveyor
+tools_workflow0: fonts
+	make --quiet -C tools do_initrd
+
+tools_workflow1:
+	make --quiet -C tools do_limine
+
+tools_workflow2:
+	make --quiet -C tools do_binutils
+
+tools_workflow3:
+	make --quiet -C tools do_gcc
 
 build: build_kernel build_libc build_userspace build_image
 
