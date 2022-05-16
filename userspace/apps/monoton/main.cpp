@@ -27,8 +27,7 @@ int main(int argc, char **argv)
     char *fonts12 = "/system/fonts/tamsyn-font-1.11/Tamsyn10x20b.psf";
     char *fonts22 = "/system/fonts/tamsyn-font-1.11/Tamsyn10x20r.psf";
 
-    // /system/fonts/tamsyn-font-1.11/Tamsyn8x15b.psf
-    // LoadFont((char *)"/system/fonts/tamsyn-font-1.11/Tamsyn8x15b.psf");
+    // Default font: /system/fonts/tamsyn-font-1.11/Tamsyn8x16b.psf
     int times = 0;
     while (1)
     {
