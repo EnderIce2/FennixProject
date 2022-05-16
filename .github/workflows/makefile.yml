@@ -18,7 +18,15 @@ jobs:
     - name: Install dependencies
       run: sudo apt-get install xorriso mtools genisoimage ovmf nasm doxygen -y
 
+    - name: Cache cross folder
+      id: cache-cross
+      uses: actions/cache@v3
+      with:
+        path: tools/cross
+        key: ${{ runner.os }}-cross-${{ hashFiles('tools/Makefile') }}
+
     - name: Install binutils & GCC dependencies
+      if: steps.cache-cross.outputs.cache-hit != 'true'
       run: sudo apt-get install build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo -y
 
     - name: Downloading fonts & compiling initrd
@@ -28,9 +36,11 @@ jobs:
       run: make tools_workflow1
 
     - name: Clone and compile binutils
+      if: steps.cache-cross.outputs.cache-hit != 'true'
       run: make tools_workflow2
 
     - name: Clone and compile GCC
+      if: steps.cache-cross.outputs.cache-hit != 'true'
       run: make tools_workflow3
 
     - name: Build Image
