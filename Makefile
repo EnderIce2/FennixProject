@@ -61,6 +61,7 @@ endif
 
 # download fonts for the kernel
 fonts:
+	rm -f ./kernel/files/zap-ext-light20.psf ./kernel/files/zap-ext-light24.psf ./kernel/files/zap-light16.psf ./kernel/files/ter-powerline-v12n.psf
 	wget https://www.zap.org.au/projects/console-fonts-zap/src/zap-ext-light20.psf -P kernel/files
 	wget https://www.zap.org.au/projects/console-fonts-zap/src/zap-ext-light24.psf -P kernel/files
 	wget https://www.zap.org.au/projects/console-fonts-zap/src/zap-light16.psf -P kernel/files
