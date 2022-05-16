@@ -40,6 +40,7 @@ Before doing anything, you must install the following packages:
 | Debian          |
 | --------------- |
 | qemu-system-x86 |
+| xorriso         |
 | mtools          |
 | genisoimage     |
 | ovmf            |
