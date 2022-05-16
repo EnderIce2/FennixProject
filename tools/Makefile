@@ -1,29 +1,4 @@
-# TODO: check if is a new version
-
-define BUILD_SH
-set -e
-export PREFIX="$$PWD/cross"
-export TARGET=x86_64-elf
-export PATH="$$PREFIX/bin:$$PATH"
-clear
-mkdir -p build-binutils && cd build-binutils
-../binutils-gdb/configure --target=$$TARGET --prefix="$$PREFIX" --with-sysroot --disable-werror
-make -j$(shell nproc)
-make install
-cd ..
-which -- $$TARGET-as || echo $$TARGET-as is not in the PATH
-mkdir -p build-gcc && cd build-gcc
-../gcc/configure --target=$$TARGET --prefix="$$PREFIX" --enable-languages=c,c++ --without-headers
-make all-gcc -j$(shell nproc)
-make all-target-libgcc -j$(shell nproc)
-make install-gcc -j$(shell nproc)
-make install-target-libgcc -j$(shell nproc)
-cd ..
-
-endef
-export BUILD_SH
-
-all: update_limine update_gcc update_qemu create_build
+all: update_limine update_gcc update_qemu create_binutils create_gcc
 
 appveyor: update_limine
 	wget https://dl.dropboxusercontent.com/s/6h3qsmw0ww7nsyd/cross.tar.xz?dl=0 -O cross.tar.xz
@@ -35,12 +10,26 @@ initrd:
 clean:
 	rm -f initrd.elf
 
-# $(shell ./build.sh) is not working as expected.
-create_build:
-	$(shell rm -f $$PWD/build.sh)
-	@echo "$$BUILD_SH" > build.sh
-	chmod +x build.sh
-	$(info Now open terminal in FennixProject/tools/ and run ./build.sh to build the crosscompiler.)
+WORKING_DIR = $(shell pwd)
+CROSS_DIR="$(WORKING_DIR)/cross"
+CROSS_TARGET=x86_64-elf
+export PATH := $(CROSS_DIR):$(PATH)
+
+create_binutils:
+	mkdir -p build-binutils && \
+	cd build-binutils && \
+	../binutils-gdb/configure --target=$(CROSS_TARGET) --prefix=$(CROSS_DIR) --with-sysroot --disable-werror && \
+	make -j$(shell nproc) && \
+	make install
+
+create_gcc:
+	mkdir -p build-gcc && \
+	cd build-gcc && \
+	../gcc/configure --target=$(CROSS_TARGET) --prefix=$(CROSS_DIR) --enable-languages=c,c++ --without-headers && \
+	make all-gcc -j$(shell nproc) && \
+	make all-target-libgcc -j$(shell nproc) && \
+	make install-gcc -j$(shell nproc) && \
+	make install-target-libgcc -j$(shell nproc)
 
 VERSION = qemu-7.0.0
 
