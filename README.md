@@ -27,6 +27,14 @@
 
 ---
 
+## Download ISO Image
+
+- Access [Actions page](https://github.com/EnderIce2/FennixProject/actions/workflows/makefile.yml) from the GitHub page.
+- Select the latest run and under "Artifacts" you will find the ISO file (it's ZIP compressed).
+- Unzip it and add it to a virtual machine as CD-ROM.
+
+---
+
 ## Download, compile & run
 
 - Clone this repository using
