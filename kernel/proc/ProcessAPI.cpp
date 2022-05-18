@@ -13,6 +13,26 @@ using namespace FileSystem;
 
 int CurrentTaskingMode = TaskingMode::None;
 
+PCB *nullpcb = new PCB;
+TCB *nulltcb = new TCB;
+
+// TODO: add actual support for this
+void fillemptycbs()
+{
+    static int once;
+    if (!once++)
+    {
+        string StubName = "Mono Task";
+        nullpcb->ID = 0;
+        nullpcb->Parent = nullptr;
+        memcpy(nullpcb->Name, StubName, sizeof(nullpcb->Name));
+
+        nulltcb->ID = 0;
+        nulltcb->Parent = nullpcb;
+        memcpy(nulltcb->Name, StubName, sizeof(nulltcb->Name));
+    }
+}
+
 PCB *SysGetProcessByPID(uint64_t ID)
 {
     switch (CurrentTaskingMode)
@@ -20,7 +40,7 @@ PCB *SysGetProcessByPID(uint64_t ID)
     case TaskingMode::Mono:
     {
         err("The current tasking mode does not support the request.");
-        return nullptr;
+        return nullpcb;
     }
     case TaskingMode::Multi:
     {
@@ -50,7 +70,7 @@ TCB *SysGetThreadByTID(uint64_t ID)
     case TaskingMode::Mono:
     {
         err("The current tasking mode does not support the request.");
-        return nullptr;
+        return nulltcb;
     }
     case TaskingMode::Multi:
     {
@@ -84,7 +104,7 @@ PCB *SysGetCurrentProcess()
     case TaskingMode::Mono:
     {
         err("The current tasking mode does not support the request.");
-        return nullptr;
+        return nullpcb;
     }
     case TaskingMode::Multi:
         return CurrentCPU->CurrentProcess;
@@ -100,7 +120,7 @@ TCB *SysGetCurrentThread()
     case TaskingMode::Mono:
     {
         err("The current tasking mode does not support the request.");
-        return nullptr;
+        return nulltcb;
     }
     case TaskingMode::Multi:
         return CurrentCPU->CurrentThread;
@@ -116,7 +136,7 @@ PCB *SysCreateProcess(const char *Name, ELEVATION Elevation)
     case TaskingMode::Mono:
     {
         err("The current tasking mode does not support the request.");
-        return nullptr;
+        return nullpcb;
     }
     case TaskingMode::Multi:
         return mt->CreateProcess(SysGetCurrentProcess(), (char *)Name, Elevation);
@@ -132,7 +152,7 @@ TCB *SysCreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t arg0, ui
     case TaskingMode::Mono:
     {
         err("The current tasking mode does not support the request.");
-        return nullptr;
+        return nulltcb;
     }
     case TaskingMode::Multi:
         return mt->CreateThread(Parent, InstructionPointer, arg0, arg1);
@@ -144,6 +164,7 @@ TCB *SysCreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t arg0, ui
 // TODO: implement for primitive tasking if enabled to suspend the current task and run the created one
 PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, ELEVATION Elevation)
 {
+    fillemptycbs();
     /* ... Open file ... Parse file ... map elf file ... get rip etc ... */
     EnterCriticalSection;
     FILE *file = vfs->Open(File);
@@ -222,7 +243,7 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
                 bool user = false;
                 if (Elevation == ELEVATION::User)
                     user = true;
-                return (/* data will be invalid but not null */PCB *)monot->CreateTask(header->e_entry + (uint64_t)offset, arg0, arg1, (char *)file->Name, user);
+                return (/* data will be invalid but not null */ PCB *)monot->CreateTask(header->e_entry + (uint64_t)offset, arg0, arg1, (char *)file->Name, user);
             }
             else
                 return SysCreateThread(SysCreateProcess(file->Name, Elevation), (uint64_t)(header->e_entry + (uint64_t)offset), arg0, arg1)->Parent;

@@ -11,7 +11,7 @@ PS2Keyboard::PS2KeyboardDriver *ps2keyboard = nullptr;
 
 namespace PS2Keyboard
 {
-    static char LastSC;
+    static uint8_t LastSC;
 
     extern "C"
     {
@@ -25,7 +25,7 @@ namespace PS2Keyboard
         }
     }
 
-    char PS2KeyboardDriver::GetLastScanCode()
+    uint8_t PS2KeyboardDriver::GetLastScanCode()
     {
         LastSC = 0x0;
         while (!LastSC)

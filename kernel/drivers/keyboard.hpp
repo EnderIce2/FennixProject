@@ -5,7 +5,7 @@ namespace PS2Keyboard
     class PS2KeyboardDriver
     {
     public:
-        char GetLastScanCode();
+        unsigned char GetLastScanCode();
         PS2KeyboardDriver();
         ~PS2KeyboardDriver();
     };

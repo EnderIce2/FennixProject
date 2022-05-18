@@ -1,5 +1,6 @@
 #include <internal_task.h>
 
+#include "../../libc/include/syscalls.h"
 #include "../drivers/keyboard.hpp"
 #include "../drivers/mouse.hpp"
 #include "../drivers/serial.h"
@@ -8,7 +9,6 @@
 
 #include <critical.hpp>
 #include <filesystem.h>
-#include <syscalls.h>
 #include <display.h>
 #include <stdarg.h>
 #include <task.h>
@@ -78,7 +78,7 @@ static uint64_t internal_fbwidth() { return CurrentDisplay->GetFramebuffer()->Wi
 static uint64_t internal_fbheight() { return CurrentDisplay->GetFramebuffer()->Height; }
 static uint64_t internal_fbppsl() { return CurrentDisplay->GetFramebuffer()->PixelsPerScanLine; }
 
-static char internal_getlastkeyboardscancode() { return ps2keyboard->GetLastScanCode(); }
+static uint8_t internal_getlastkeyboardscancode() { return ps2keyboard->GetLastScanCode(); }
 
 static FileSystem::FILE *internal_fileOpen(char *Path) { return vfs->Open(Path, nullptr); }
 static void internal_fileClose(FileSystem::FILE *File) { vfs->Close(File); }
