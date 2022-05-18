@@ -1,7 +1,6 @@
 extern "C" void *malloc(unsigned long s);
 extern "C" void free(void *p);
 extern "C" void *memset(void *dest, int data, unsigned long nbytes);
-extern "C" void __cxa_rethrow();
 
 void *operator new(unsigned long Size)
 {
