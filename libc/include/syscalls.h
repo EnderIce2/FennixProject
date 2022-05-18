@@ -2,7 +2,7 @@
 #include <stdint.h>
 
 #define DEFINE_SYSCALL0(function, n)          \
-    long syscall_##function()                 \
+    static inline long syscall_##function()   \
     {                                         \
         long a = n;                           \
         __asm__ __volatile__("pushq %%r11\n"  \
@@ -16,7 +16,7 @@
     }
 
 #define DEFINE_SYSCALL1(function, n, a1)                        \
-    long syscall_##function(a1 arg1)                            \
+    static inline long syscall_##function(a1 arg1)              \
     {                                                           \
         long result = n;                                        \
         __asm__ __volatile__("pushq %%r11\n"                    \
@@ -30,7 +30,7 @@
     }
 
 #define DEFINE_SYSCALL2(function, n, a1, a2)                                       \
-    long syscall_##function(a1 arg1, a2 arg2)                                      \
+    static inline long syscall_##function(a1 arg1, a2 arg2)                        \
     {                                                                              \
         long result = n;                                                           \
         __asm__ __volatile__("pushq %%r11\n"                                       \
@@ -44,7 +44,7 @@
     }
 
 #define DEFINE_SYSCALL3(function, n, a1, a2, a3)                                                      \
-    long syscall_##function(a1 arg1, a2 arg2, a3 arg3)                                                \
+    static inline long syscall_##function(a1 arg1, a2 arg2, a3 arg3)                                  \
     {                                                                                                 \
         long result = n;                                                                              \
         __asm__ __volatile__("pushq %%r11\n"                                                          \
@@ -58,7 +58,7 @@
     }
 
 #define DEFINE_SYSCALL4(function, n, a1, a2, a3, a4)                                                                     \
-    long syscall_##function(a1 arg1, a2 arg2, a3 arg3, a4 arg4)                                                          \
+    static inline long syscall_##function(a1 arg1, a2 arg2, a3 arg3, a4 arg4)                                            \
     {                                                                                                                    \
         long result = n;                                                                                                 \
         __asm__ __volatile__("pushq %%r11\n"                                                                             \
@@ -72,7 +72,7 @@
     }
 
 // #define DEFINE_SYSCALL5(function, n, a1, a2, a3, a4, a5)                                                                                    \
-//     long syscall_##function(a1 arg1, a2 arg2, a3 arg3, a4 arg4, a5 arg5)                                                                    \
+//     static inline long syscall_##function(a1 arg1, a2 arg2, a3 arg3, a4 arg4, a5 arg5)                                                                    \
 //     {                                                                                                                                       \
 //         long result = n;                                                                                                                    \
 //         __asm__ __volatile__("pushq %%r11\n"                                                                                                \

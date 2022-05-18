@@ -5,10 +5,10 @@ ASM_SOURCES = $(shell find ./ -type f -name '*.asm')
 OBJ = ${C_SOURCES:.c=.o} ${ASM_SOURCES:.asm=.o} ${S_SOURCES:.s=.o}
 
 build: $(OBJ)
-	mv $^ ../out/crt/
+	mv $^ ../../resources/initrd/system/lib/
 
 %.o: %.c
-	$(CC) -std=c17 -c $< -o $@
+	$(CC) -nostdlib -std=c17 -c $< -o $@
 
 %.o: %.asm
 	${NASM} $< -f elf64 -o $@
@@ -17,4 +17,4 @@ build: $(OBJ)
 	${NASM} $< -f elf64 -o $@
 
 clean:
-	rm -f ../out/crt/*.o
+	rm -f ../../resources/initrd/system/lib/*.o

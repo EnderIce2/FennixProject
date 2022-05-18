@@ -1,9 +1,6 @@
-// TODO: https://stackoverflow.com/a/2724377/9352057
-
 long *stckptr;
 static char *argv[20];
 extern int main(int argc, char **argv);
-extern void __cxa_finalize(void *f);
 
 void _start()
 {
@@ -21,7 +18,6 @@ void _start()
     else
         mainret = main(0, (void *)0);
 
-    __cxa_finalize(0);
     unsigned long syscall_return = 0;
     __asm__ __volatile__(
         "pushq %%r11\n"
