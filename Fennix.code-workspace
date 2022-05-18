@@ -10,7 +10,11 @@
 			"rand.h": "c",
 			"timer.h": "c",
 			"display.h": "c",
-			"loadpsf.h": "c"
+			"loadpsf.h": "c",
+			"syscalls.h": "c",
+			"string.h": "c",
+			"stdint.h": "c",
+			"stdlib.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}

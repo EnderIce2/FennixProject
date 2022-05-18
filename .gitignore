@@ -12,6 +12,8 @@ kernel/files/*
 *.log
 *.drv
 *.o
+*.a
+*.so
 *.elf
 *.bin
 *.sym
