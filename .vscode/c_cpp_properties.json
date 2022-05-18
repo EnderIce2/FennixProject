@@ -4,6 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/kernel/include",
+                "${workspaceFolder}/libc/include",
                 "${workspaceFolder}/include"
             ],
             "defines": [
