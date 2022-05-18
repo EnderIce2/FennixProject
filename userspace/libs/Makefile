@@ -1,7 +1,7 @@
 build:
-	make -C monotonwrite build
-	make -C liballoc11 build
+	make -C monoton build
+	make -C scparse build
 
 clean:
-	make -C monotonwrite clean
-	make -C liballoc11 clean
+	make -C monoton clean
+	make -C scparse clean
