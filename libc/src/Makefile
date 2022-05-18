@@ -18,12 +18,12 @@ HEADERS2 = $(sort $(dir $(wildcard ../include/*)))
 INCLUDE2_DIR = ../include
 
 LDFLAGS :=
-CFLAGS := -fPIC -I$(INCLUDE_DIR) -I$(INCLUDE2_DIR)
+CFLAGS := --sysroot=../../resources/initrd/system -fPIC -I$(INCLUDE_DIR) -I$(INCLUDE2_DIR)
 
 build: $(OBJECT_NAME)
 
 $(OBJECT_NAME): $(OBJ)
-	$(AR) rcs  $(OUTPUT_DIR)$@ $(OBJ)
+	$(AR) rcs $(OUTPUT_DIR)$@ $(OBJ)
 %.o: %.c $(HEADERS) $(HEADERS2)
 	$(CC) $(CFLAGS) -std=c17 -c $< -o $@
 
