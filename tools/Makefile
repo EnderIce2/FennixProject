@@ -40,6 +40,4 @@ do_gcc:
 	cd build-gcc && \
 	../gcc/configure --target=$(CROSS_TARGET) --prefix=$(CROSS_DIR) --enable-languages=c,c++ --without-headers && \
 	make all-gcc -j$(shell nproc) && \
-	make all-target-libgcc -j$(shell nproc) && \
-	make install-gcc -j$(shell nproc) && \
-	make install-target-libgcc -j$(shell nproc)
+	make install-gcc -j$(shell nproc)
