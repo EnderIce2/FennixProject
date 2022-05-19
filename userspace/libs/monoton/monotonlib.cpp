@@ -1,6 +1,7 @@
 #include "monotonlib.h"
 #include <syscalls.h>
 #include <stdlib.h>
+#include <string.h>
 
 namespace MonotonLib
 {
@@ -41,8 +42,6 @@ namespace MonotonLib
         FB.PixelsPerScanLine = syscall_displayPixelsPerScanLine();
 
         syscall_FileClose(FontBinary);
-        // free(FontAllocatedData);
-        // free(PSF2Font);
     }
 
     mtl::~mtl()
@@ -53,6 +52,26 @@ namespace MonotonLib
 
     void mtl::SetPrintPosition(PrintPos Position)
     {
+        if (Position.x > FB.Width)
+        {
+            Xpos = FB.Width;
+            return;
+        }
+        else if (Position.y > FB.Height)
+        {
+            Ypos = FB.Height;
+            return;
+        }
+        else if (Position.x < 0)
+        {
+            Xpos = 0;
+            return;
+        }
+        else if (Position.y < 0)
+        {
+            Ypos = 0;
+            return;
+        }
         Xpos = Position.x;
         Ypos = Position.y;
     }
@@ -62,30 +81,129 @@ namespace MonotonLib
         return {Xpos, Ypos};
     }
 
-    long unsigned monotonlib_strlen(char s[])
+    void mtl::Clear()
     {
-        long unsigned i = 0;
-        while (s[i] != '\0')
-            ++i;
-        return i;
+        for (int VerticalScanline = 0; VerticalScanline < FB.Height; VerticalScanline++)
+        {
+            uint64_t PixelPtrBase = FB.Address + ((FB.PixelsPerScanLine * 4) * VerticalScanline);
+            for (uint32_t *PixelPtr = (uint32_t *)PixelPtrBase; PixelPtr < (uint32_t *)(PixelPtrBase + (FB.PixelsPerScanLine * 4)); PixelPtr++)
+                *PixelPtr = Background;
+        }
+        this->SetPrintPosition({0, 0});
     }
 
-    // void Scroll()
-    // {
-    //     memmove((void *)framebuffer->Address, (void *)(framebuffer->Address + framebuffer->Width * CurrentFont->GetFontSize().Height * 4), framebuffer->Width * (framebuffer->Height - CurrentFont->GetFontSize().Height) * 4);
-    // }
+    void mtl::Scroll()
+    {
+        memmove((void *)FB.Address,
+                (void *)(FB.Address + FB.Width * PSF2Font->Header->height * 4),
+                FB.Width * (FB.Height - PSF2Font->Header->height) * 4);
+    }
+
+    void mtl::RemoveChar()
+    {
+        for (unsigned long Y = Ypos; Y < Ypos + PSF2Font->Header->height; Y++)
+            for (unsigned long X = Xpos - PSF2Font->Header->width; X < Xpos; X++)
+                *(unsigned int *)((unsigned int *)FB.Address + X + (Y * FB.PixelsPerScanLine)) = Background;
+        this->SetPrintPosition({Xpos - PSF2Font->Header->width, Ypos});
+    }
+
+    void mtl::RemoveChar(uint32_t x, uint32_t y)
+    {
+        for (unsigned long Y = y; Y < y + PSF2Font->Header->height; Y++)
+            for (unsigned long X = x - PSF2Font->Header->width; X < x; X++)
+                *(unsigned int *)((unsigned int *)FB.Address + X + (Y * FB.PixelsPerScanLine)) = Background;
+    }
+
+    void mtl::printchar(char Char, PrintPos Position)
+    {
+        uint32_t Xi = Position.x, Yi = Position.y;
+
+        if (Char == '\n')
+        {
+            Xi = 0;
+            Yi += PSF2Font->Header->height;
+            this->SetPrintPosition({Xi, Yi});
+            if (Ypos >= (FB.Height - PSF2Font->Header->height))
+            {
+                this->Scroll();
+                this->SetPrintPosition({Xpos, Ypos - PSF2Font->Header->height});
+            }
+            return;
+        }
+        else if (Char == '\r')
+        {
+            Xi = 0;
+            this->SetPrintPosition({Xi, Yi});
+            return;
+        }
+        if (Char < 0 || (unsigned char)Char > 127)
+            Char = '?';
+        int bytesperline = (PSF2Font->Header->width + 7) / 8;
+        uint32_t *PixelPtr = (uint32_t *)FB.Address;
+        char *FontPtr = (char *)PSF2Font->Header + PSF2Font->Header->headersize + (Char > 0 && (unsigned char)Char < PSF2Font->Header->length ? Char : 0) * PSF2Font->Header->charsize;
+        for (unsigned long Y = Yi; Y < Yi + PSF2Font->Header->height; Y++)
+        {
+            for (unsigned long X = Xi; X < Xi + PSF2Font->Header->width; X++)
+                if ((*FontPtr & (0b10000000 >> (X - Xi))) > 0)
+                    *(uint32_t *)(PixelPtr + X + (Y * FB.PixelsPerScanLine)) = Foreground;
+            FontPtr += bytesperline;
+        }
+        Xi += PSF2Font->Header->width;
+        this->SetPrintPosition({Xi, Yi});
+    }
+
+    void mtl::printchar(char Char)
+    {
+        if (Char == '\n')
+        {
+            this->SetPrintPosition({0, Ypos + PSF2Font->Header->height});
+            if (Ypos >= (FB.Height - PSF2Font->Header->height))
+            {
+                this->Scroll();
+                this->SetPrintPosition({Xpos, Ypos - PSF2Font->Header->height});
+            }
+            return;
+        }
+        else if (Char == '\r')
+        {
+            this->SetPrintPosition({0, Ypos});
+            return;
+        }
+        if (Char < 0 || (unsigned char)Char > 127)
+            Char = '?';
+        int bytesperline = (PSF2Font->Header->width + 7) / 8;
+        uint32_t *PixelPtr = (uint32_t *)FB.Address;
+        char *FontPtr = (char *)PSF2Font->Header + PSF2Font->Header->headersize + (Char > 0 && (unsigned char)Char < PSF2Font->Header->length ? Char : 0) * PSF2Font->Header->charsize;
+        for (unsigned long Y = Ypos; Y < Ypos + PSF2Font->Header->height; Y++)
+        {
+            for (unsigned long X = Xpos; X < Xpos + PSF2Font->Header->width; X++)
+                if ((*FontPtr & (0b10000000 >> (X - Xpos))) > 0)
+                    *(uint32_t *)(PixelPtr + X + (Y * FB.PixelsPerScanLine)) = Foreground;
+            FontPtr += bytesperline;
+        }
+        Xpos += PSF2Font->Header->width;
+    }
 
     void mtl::print(const char *Text, PrintPos Position)
     {
-        uint64_t Xi = Position.x, Yi = Position.y;
+        uint32_t Xi = Position.x, Yi = Position.y;
+        long unsigned textlength = 0;
 
-        for (int i = 0; i < monotonlib_strlen((char *)Text); i++)
+        while (Text[textlength] != '\0')
+            ++textlength;
+
+        for (int i = 0; i < textlength; i++)
         {
             char Char = Text[i];
             if (Char == '\n')
             {
                 Xi = 0;
                 Yi += PSF2Font->Header->height;
+                if (Ypos >= (FB.Height - PSF2Font->Header->height))
+                {
+                    this->Scroll();
+                    this->SetPrintPosition({Xpos, Ypos - PSF2Font->Header->height});
+                }
                 continue;
             }
             else if (Char == '\r')
@@ -102,14 +220,12 @@ namespace MonotonLib
             {
                 for (unsigned long X = Xi; X < Xi + PSF2Font->Header->width; X++)
                     if ((*FontPtr & (0b10000000 >> (X - Xi))) > 0)
-                        *(uint32_t *)(PixelPtr + X + (Y * FB.PixelsPerScanLine)) = 0xFFFFFF;
+                        *(uint32_t *)(PixelPtr + X + (Y * FB.PixelsPerScanLine)) = Foreground;
                 FontPtr += bytesperline;
             }
             Xi += PSF2Font->Header->width;
         }
-
-        Xpos = Xi;
-        Ypos = Yi;
+        this->SetPrintPosition({Xi, Yi});
     }
 
     void mtl::print(const char *Text)

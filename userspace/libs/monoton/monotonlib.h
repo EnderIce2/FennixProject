@@ -45,6 +45,7 @@ namespace MonotonLib
         uint32_t Xpos = 0, Ypos = 0;
         PSF2_FONT *PSF2Font = nullptr;
         Framebuffer FB = {0, 0, 0, 0};
+        uint32_t Background = 0x000000, Foreground = 0xFFFFFF;
 
     public:
         mtl(char *FontPath);
@@ -53,6 +54,12 @@ namespace MonotonLib
         void SetPrintPosition(PrintPos Position);
         PrintPos GetPrintPosition();
 
+        void Clear();
+        void Scroll();
+        void RemoveChar();
+        void RemoveChar(uint32_t X, uint32_t Y);
+        void printchar(char Char);
+        void printchar(char Char, PrintPos Position);
         void print(const char *Text, PrintPos Position);
         void print(const char *Text);
     };

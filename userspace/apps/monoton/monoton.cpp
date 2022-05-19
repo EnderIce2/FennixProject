@@ -1,7 +1,30 @@
-#include "../../libs/monoton/monotonlib.h"
-#include "../../libs/scparse/scparse.h"
-#include <string.h>
-#include <syscalls.h>
+#include "monoton.hpp"
+
+MonotonLib::mtl *mono = nullptr;
+static char key_buffer[1024];
+
+void ParseBuffer(char *Buffer)
+{
+    mono->printchar('\n');
+    if (strcmp(Buffer, "help") == 0)
+    {
+        mono->print("Monoton Shell for Fennix\n");
+        mono->print("help          - Show this screen\n");
+        mono->print("clear         - Clear screen\n");
+    }
+    else if (strcmp(Buffer, "clear") == 0)
+    {
+        mono->Clear();
+    }
+    else
+    {
+        mono->print(Buffer);
+        mono->print(": Command not found.");
+    }
+    mono->printchar('\n');
+    mono->print(usr());
+    mono->print((char *)"@fennix:/$ ");
+}
 
 int main(int argc, char **argv)
 {
@@ -13,21 +36,6 @@ int main(int argc, char **argv)
         while (1)
             ;
     }
-
-    char *fonts0 = (char *)"/system/fonts/tamsyn-font-1.11/Tamsyn5x9b.psf";
-    char *fonts1 = (char *)"/system/fonts/tamsyn-font-1.11/Tamsyn5x9r.psf";
-    char *fonts2 = (char *)"/system/fonts/tamsyn-font-1.11/Tamsyn6x12b.psf";
-    char *fonts3 = (char *)"/system/fonts/tamsyn-font-1.11/Tamsyn6x12r.psf";
-    char *fonts4 = (char *)"/system/fonts/tamsyn-font-1.11/Tamsyn7x13b.psf";
-    char *fonts5 = (char *)"/system/fonts/tamsyn-font-1.11/Tamsyn7x13r.psf";
-    char *fonts6 = (char *)"/system/fonts/tamsyn-font-1.11/Tamsyn7x14b.psf";
-    char *fonts7 = (char *)"/system/fonts/tamsyn-font-1.11/Tamsyn7x14r.psf";
-    char *fonts8 = (char *)"/system/fonts/tamsyn-font-1.11/Tamsyn8x15b.psf";
-    char *fonts9 = (char *)"/system/fonts/tamsyn-font-1.11/Tamsyn8x15r.psf";
-    char *fonts10 = (char *)"/system/fonts/tamsyn-font-1.11/Tamsyn8x16b.psf";
-    char *fonts11 = (char *)"/system/fonts/tamsyn-font-1.11/Tamsyn8x16r.psf";
-    char *fonts12 = (char *)"/system/fonts/tamsyn-font-1.11/Tamsyn10x20b.psf";
-    char *fonts22 = (char *)"/system/fonts/tamsyn-font-1.11/Tamsyn10x20r.psf";
 
     uint64_t address = syscall_displayAddress();
     // uint64_t width = syscall_displayWidth();
@@ -41,62 +49,42 @@ int main(int argc, char **argv)
     }
 
     // Default font: /system/fonts/tamsyn-font-1.11/Tamsyn8x16b.psf
-    MonotonLib::mtl *mono = new MonotonLib::mtl((char *)"/system/fonts/tamsyn-font-1.11/Tamsyn8x16b.psf");
-    mono->print("MonotonShell (Testing)\n> ");
+    mono = new MonotonLib::mtl((char *)"/system/fonts/tamsyn-font-1.11/Tamsyn8x16b.psf");
+
+    InitLogin();
+    mono->print((char *)"\n-- This shell is not fully implemented! --\n");
+    mono->print(usr());
+    mono->print((char *)"@fennix:/$ ");
+    int backspacelimit = 0;
 
     while (1)
     {
-        uint8_t scancode = (uint8_t)syscall_getLastKeyboardScanCode();
-        uint32_t key = GetLetterFromScanCode(scancode); // down
+        int key = GetLetterFromScanCode((uint8_t)syscall_getLastKeyboardScanCode());
 
-        // test code
-        static bool testcodeshift = false;
-        if (scancode & 0x80)
-            if (scancode == 0xaa || scancode == 0xb6)
-                testcodeshift = false;
-
-        if (scancode <= 57)
+        if (key != KEY_INVALID)
         {
-            if (scancode == 0x2a ||
-                scancode == 0x36 ||
-                scancode == 0x38 ||
-                scancode == 0xB8)
-                testcodeshift = true;
+            if (key == KEY_D_BACKSPACE)
+            {
+                if (backspacelimit > 0)
+                {
+                    mono->RemoveChar();
+                    backspace(key_buffer);
+                    backspacelimit--;
+                }
+            }
+            else if (key == '\n')
+            {
+                ParseBuffer(key_buffer);
+                backspacelimit = 0;
+                key_buffer[0] = '\0';
+            }
             else
             {
-                static char res[] = {'\0', '\0'};
-                if (scancode == 0x1C) // enter
-                    res[0] = '\n';
-                else
-                {
-                    if (!testcodeshift)
-                    {
-                        res[0] = sc_ascii_low[scancode];
-                    }
-                    else
-                    {
-                        res[0] = sc_ascii_high[scancode];
-                    }
-                }
-                syscall_dbg(0x3F8, (char *)(res));
-                mono->print((char *)(res));
+                append(key_buffer, key);
+                mono->printchar(key);
+                backspacelimit++;
             }
         }
-
-        // if (key < KEY_INVALID)
-        // {
-        // syscall_dbg(0x3F8, (char *)(key));
-        // mono->print((char *)(key));
-        // }
-        // else
-        // {
-        //     if (key == KEY_INVALID)
-        //         syscall_dbg(0x3F8, (char *)"INVALID KEY.\n");
-        //     else
-        //         syscall_dbg(0x3F8, (char *)"Other key pressed.\n");
-        // }
-        // scancode = syscall_getLastKeyboardScanCode();
-        // GetLetterFromScanCode(scancode); // up ---- call this one more time to get shift key
     }
     return 1;
 }
