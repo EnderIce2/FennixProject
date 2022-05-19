@@ -39,6 +39,7 @@ namespace PageTableHeap
         CR3 cr;
         // cr.raw = (uint64_t)NewPML;
         cr.raw = (uint64_t)KernelPML4; // TODO: there is an issue with the code above. I should fix it ASAP.
+        debug("New page table allocated at %#lx", cr.raw);
         UNLOCK(pagetable_lock);
         return cr;
     }
