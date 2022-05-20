@@ -13,8 +13,8 @@ using namespace FileSystem;
 
 int CurrentTaskingMode = TaskingMode::None;
 
-PCB *nullpcb = new PCB;
-TCB *nulltcb = new TCB;
+PCB *nullpcb = nullptr;
+TCB *nulltcb = nullptr;
 
 // TODO: add actual support for this
 void fillemptycbs()
@@ -22,11 +22,15 @@ void fillemptycbs()
     static int once;
     if (!once++)
     {
+        if (CurrentTaskingMode == TaskingMode::Multi)
+            return;
         string StubName = "Mono Task";
+        nullpcb = new PCB;
         nullpcb->ID = 0;
         nullpcb->Parent = nullptr;
         memcpy(nullpcb->Name, StubName, sizeof(nullpcb->Name));
 
+        nulltcb = new TCB;
         nulltcb->ID = 0;
         nulltcb->Parent = nullpcb;
         memcpy(nulltcb->Name, StubName, sizeof(nulltcb->Name));
