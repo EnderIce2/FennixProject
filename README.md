@@ -150,3 +150,5 @@ make clean
 - [ ] Fix the multitasking page table switching
 - [ ] Complete implementation for driver loading
 - [ ] Make a working version of process messaging (IPC)
+- [ ] Add compatibility for linux (libc)
+- [ ] Add compatibility for windows (winapi)
