@@ -41,7 +41,7 @@ void EnableCPUFeatures()
 
 // Inspired from https://github.com/Supercip971/WingOS/blob/master/kernel/arch/x86_64/smp.cpp
 
-extern "C" uint32_t _trampoline_start, _trampoline_end, nstack;
+extern "C" uint64_t _trampoline_start, _trampoline_end, nstack;
 
 volatile bool CPUEnabled = false;
 
