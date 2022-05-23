@@ -56,7 +56,7 @@ extern "C" {
 #include <stdbool.h>
 #include <stdint.h>
 
-#include <printf/printf.h>
+#include "printf.h"
 
 #if PRINTF_ALIAS_STANDARD_FUNCTION_NAMES
 # define printf_    printf
@@ -355,7 +355,7 @@ static inline void append_termination_with_gadget(output_gadget_t* gadget)
 static inline void putchar_wrapper(char c, void* unused)
 {
   (void) unused;
-  putchar_(c);
+  // putchar_(c); // TODO: point to fslout
 }
 
 static inline output_gadget_t discarding_gadget()

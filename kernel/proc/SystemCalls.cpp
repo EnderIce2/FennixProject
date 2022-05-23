@@ -6,6 +6,7 @@
 #include "../drivers/serial.h"
 #include "../cpu/gdt.h"
 #include "../cpu/idt.h"
+#include "../timer.h"
 
 #include <critical.hpp>
 #include <filesystem.h>
@@ -40,7 +41,10 @@ static TCB *internal_getcurrentthread() { return SysGetCurrentThread(); }
 static uint64_t internal_getcurrentprocessid() { return SysGetCurrentProcess()->ID; }
 static uint64_t internal_getcurrentthreadid() { return SysGetCurrentThread()->ID; }
 static int internal_getschedulemode() { return CurrentTaskingMode; }
+
 static Tasking::TaskControlBlock *internal_createtask(uint64_t rip, uint64_t arg0, uint64_t arg1, char *name) { Tasking::monot->CreateTask(rip, arg0, arg1, name, true); }
+static Tasking::TaskControlBlock *internal_pushtask() {}
+static Tasking::TaskControlBlock *internal_poptask() {}
 
 static void *internal_requestpage()
 {
@@ -86,6 +90,8 @@ static uint64_t internal_fileRead(FileSystem::FILE *File, uint64_t Offset, void 
 static uint64_t internal_fileWrite(FileSystem::FILE *File, uint64_t Offset, void *Buffer, uint64_t Size) { return vfs->Write(File, Offset, Buffer, Size); }
 static uint64_t internal_filesize(FileSystem::FILE *File) { return File->Node->Length; }
 
+static void internal_usleep(uint64_t us) { usleep(us); }
+
 static uint64_t internal_dbg(int port, char *message)
 {
     serial_write_text(port, message);
@@ -106,6 +112,8 @@ static void *syscallsTable[] = {
     [_GetScheduleMode] = (void *)internal_getschedulemode,
 
     [_CreateTask] = (void *)internal_createtask,
+    [_PushTask] = (void *)internal_pushtask,
+    [_PopTask] = (void *)internal_poptask,
 
     [_RequestPage] = (void *)internal_requestpage,
     [_FreePage] = (void *)internal_freepage,
@@ -138,6 +146,8 @@ static void *syscallsTable[] = {
     [_FileRename] = (void *)internal_unimpl,
     [_FileExists] = (void *)internal_unimpl,
     [_FileCreate] = (void *)internal_unimpl,
+
+    [_usleep] = (void*)internal_usleep,
 
     [_DebugMessage] = (void *)internal_dbg,
     // #endif

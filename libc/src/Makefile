@@ -24,6 +24,7 @@ build: $(OBJECT_NAME)
 
 $(OBJECT_NAME): $(OBJ)
 	$(AR) rcs $(OUTPUT_DIR)$@ $(OBJ)
+
 %.o: %.c $(HEADERS) $(HEADERS2)
 	$(CC) $(CFLAGS) -std=c17 -c $< -o $@
 

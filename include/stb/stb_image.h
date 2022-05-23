@@ -846,7 +846,7 @@ static void stbi__start_callbacks(stbi__context *s, stbi_io_callbacks *c, void *
 
 static int stbi__stdio_read(void *user, char *data, int size)
 {
-   return (int) fread(data,1,size,(FILE*) user);
+   return (int) FileRead(data,1,size,(FILE*) user);
 }
 
 static void stbi__stdio_skip(void *user, int n)
@@ -1337,7 +1337,7 @@ static FILE *stbi__fopen(char const *filename, char const *mode)
    if (0 != fopen_s(&f, filename, mode))
       f=0;
 #else
-   f = fopen(filename, mode);
+   f = FileOpen(filename, mode);
 #endif
    return f;
 }
@@ -1347,9 +1347,9 @@ STBIDEF stbi_uc *stbi_load(char const *filename, int *x, int *y, int *comp, int 
 {
    FILE *f = stbi__fopen(filename, "rb");
    unsigned char *result;
-   if (!f) return stbi__errpuc("can't fopen", "Unable to open file");
+   if (!f) return stbi__errpuc("can't FileOpen", "Unable to open file");
    result = stbi_load_from_file(f,x,y,comp,req_comp);
-   fclose(f);
+   FileClose(f);
    return result;
 }
 
@@ -1383,9 +1383,9 @@ STBIDEF stbi_us *stbi_load_16(char const *filename, int *x, int *y, int *comp, i
 {
    FILE *f = stbi__fopen(filename, "rb");
    stbi__uint16 *result;
-   if (!f) return (stbi_us *) stbi__errpuc("can't fopen", "Unable to open file");
+   if (!f) return (stbi_us *) stbi__errpuc("can't FileOpen", "Unable to open file");
    result = stbi_load_from_file_16(f,x,y,comp,req_comp);
-   fclose(f);
+   FileClose(f);
    return result;
 }
 
@@ -1474,9 +1474,9 @@ STBIDEF float *stbi_loadf(char const *filename, int *x, int *y, int *comp, int r
 {
    float *result;
    FILE *f = stbi__fopen(filename, "rb");
-   if (!f) return stbi__errpf("can't fopen", "Unable to open file");
+   if (!f) return stbi__errpf("can't FileOpen", "Unable to open file");
    result = stbi_loadf_from_file(f,x,y,comp,req_comp);
-   fclose(f);
+   FileClose(f);
    return result;
 }
 
@@ -1514,7 +1514,7 @@ STBIDEF int      stbi_is_hdr          (char const *filename)
    int result=0;
    if (f) {
       result = stbi_is_hdr_from_file(f);
-      fclose(f);
+      FileClose(f);
    }
    return result;
 }
@@ -1522,7 +1522,7 @@ STBIDEF int      stbi_is_hdr          (char const *filename)
 STBIDEF int stbi_is_hdr_from_file(FILE *f)
 {
    #ifndef STBI_NO_HDR
-   long pos = ftell(f);
+   long pos = FileTell(f);
    int res;
    stbi__context s;
    stbi__start_file(&s,f);
@@ -7601,9 +7601,9 @@ STBIDEF int stbi_info(char const *filename, int *x, int *y, int *comp)
 {
     FILE *f = stbi__fopen(filename, "rb");
     int result;
-    if (!f) return stbi__err("can't fopen", "Unable to open file");
+    if (!f) return stbi__err("can't FileOpen", "Unable to open file");
     result = stbi_info_from_file(f, x, y, comp);
-    fclose(f);
+    FileClose(f);
     return result;
 }
 
@@ -7611,7 +7611,7 @@ STBIDEF int stbi_info_from_file(FILE *f, int *x, int *y, int *comp)
 {
    int r;
    stbi__context s;
-   long pos = ftell(f);
+   long pos = FileTell(f);
    stbi__start_file(&s, f);
    r = stbi__info_main(&s,x,y,comp);
    fseek(f,pos,SEEK_SET);
@@ -7622,9 +7622,9 @@ STBIDEF int stbi_is_16_bit(char const *filename)
 {
     FILE *f = stbi__fopen(filename, "rb");
     int result;
-    if (!f) return stbi__err("can't fopen", "Unable to open file");
+    if (!f) return stbi__err("can't FileOpen", "Unable to open file");
     result = stbi_is_16_bit_from_file(f);
-    fclose(f);
+    FileClose(f);
     return result;
 }
 
@@ -7632,7 +7632,7 @@ STBIDEF int stbi_is_16_bit_from_file(FILE *f)
 {
    int r;
    stbi__context s;
-   long pos = ftell(f);
+   long pos = FileTell(f);
    stbi__start_file(&s, f);
    r = stbi__is_16_main(&s);
    fseek(f,pos,SEEK_SET);

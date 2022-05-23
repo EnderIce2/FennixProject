@@ -6,10 +6,106 @@ static char pwdbuf[1024];
 char *usr() { return usrbuf; }
 char *pwd() { return pwdbuf; }
 
+void clearbuffer()
+{
+    memset(usrbuf, 0, sizeof(usrbuf));
+    memset(pwdbuf, 0, sizeof(pwdbuf));
+}
+
+int isempty(char *str)
+{
+    if (strlen(str) == 0)
+        return 1;
+    while (*str != '\0')
+    {
+        if (!isspace(*str))
+            return 0;
+        str++;
+    }
+    return 1;
+}
+
+int HasIllegalCharacter(char buf[])
+{
+    uint32_t curlen = 0;
+
+    while (buf[curlen] != '\0')
+    {
+        switch (buf[curlen])
+        {
+        case ' ':
+            return ' ';
+        case '!':
+            return '!';
+        case '@':
+            return '@';
+        case '#':
+            return '#';
+        case '$':
+            return '$';
+        case '%':
+            return '%';
+        case '^':
+            return '^';
+        case '&':
+            return '&';
+        case '*':
+            return '*';
+        case '(':
+            return '(';
+        case ')':
+            return ')';
+        case '_':
+            return '_';
+        case '+':
+            return '+';
+        case '`':
+            return '`';
+        case '~':
+            return '~';
+        case '|':
+            return '|';
+        case '/':
+            return '/';
+        case '\\':
+            return '\\';
+        case '\"':
+            return '\"';
+        case '\'':
+            return '\'';
+        case '<':
+            return '<';
+        case '>':
+            return '>';
+        case '?':
+            return '?';
+        case '-':
+            return '-';
+        case '=':
+            return '=';
+        case ';':
+            return ';';
+        case ':':
+            return ':';
+        case '{':
+            return '{';
+        case '}':
+            return '}';
+        case '[':
+            return '[';
+        case ']':
+            return ']';
+        }
+        curlen++;
+    }
+    return 0;
+}
+
 void InitLogin()
 {
     int backspacelimit = 0;
 
+RetryLoginName:
     mono->print("Login as: ");
     while (1)
     {
@@ -40,6 +136,23 @@ void InitLogin()
     }
 
     backspacelimit = 0;
+
+    if (isempty(usrbuf))
+    {
+        mono->print("\nThe username cannot be empty.\n");
+        clearbuffer();
+        goto RetryLoginName;
+    }
+
+    int illegal = HasIllegalCharacter(usrbuf);
+    if (illegal != 0)
+    {
+        mono->print("\nThe username cannot contain \"");
+        mono->printchar(illegal);
+        mono->print("\" characters.\n");
+        clearbuffer();
+        goto RetryLoginName;
+    }
 
     mono->print("\nPassword for ");
     mono->print(usrbuf);

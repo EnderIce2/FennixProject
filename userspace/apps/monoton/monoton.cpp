@@ -1,5 +1,7 @@
 #include "monoton.hpp"
 
+#include <system.h>
+
 MonotonLib::mtl *mono = nullptr;
 static char key_buffer[1024];
 
@@ -16,6 +18,11 @@ void ParseBuffer(char *Buffer)
     {
         mono->Clear();
     }
+    else if (strcmp(Buffer, "doom") == 0)
+    {
+        syscall_createProcess("/system/doom", 0, 0);
+        Exit(0);
+    }
     else
     {
         mono->print(Buffer);
@@ -28,11 +35,11 @@ void ParseBuffer(char *Buffer)
 
 int main(int argc, char **argv)
 {
-    syscall_dbg(0x3F8, (char *)"[MonotonShell] Started.\n");
+    WriteSysDebugger("[MonotonShell] Started.\n");
     // mono 1 - multi 2
     if (syscall_getScheduleMode() == 2)
     {
-        syscall_dbg(0x3F8, (char *)"[MonotonShell] Error! Program launched from multitasking mode.\n");
+        WriteSysDebugger("[MonotonShell] Error! Program launched from multitasking mode.\n");
         while (1)
             ;
     }

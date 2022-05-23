@@ -102,6 +102,8 @@ enum SystemCalls
     _GetScheduleMode,
 
     _CreateTask,
+    _PushTask,
+    _PopTask,
 
     _RequestPage,
     _FreePage,
@@ -134,6 +136,8 @@ enum SystemCalls
     _FileRename,
     _FileExists,
     _FileCreate,
+
+    _usleep,
 
     _DebugMessage,
 };
@@ -174,5 +178,7 @@ DEFINE_SYSCALL1(FileClose, _FileClose, void *)
 DEFINE_SYSCALL4(FileRead, _FileRead, void *, uint64_t, void *, uint64_t)
 DEFINE_SYSCALL4(FileWrite, _FileWrite, void *, uint64_t, void *, uint64_t)
 DEFINE_SYSCALL1(FileSize, _FileSize, void *)
+
+DEFINE_SYSCALL1(usleep, _usleep, unsigned long)
 
 DEFINE_SYSCALL2(dbg, _DebugMessage, int, char *)

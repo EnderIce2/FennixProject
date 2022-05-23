@@ -112,7 +112,6 @@ char *strncpy(char *destination, const char *source, unsigned long num)
     return ptr;
 }
 
-
 int strcmp(const char *l, const char *r)
 {
     for (; *l == *r && *l; l++, r++)
@@ -144,9 +143,7 @@ int isdigit(char c)
 
 int isspace(char c)
 {
-    if (c == ' ')
-        return 1;
-    return 0;
+    return c == ' ' || c == '\t' || c == '\r' || c == '\n' || c == '\f' || c == '\v';
 }
 
 int isempty(char *str)

@@ -14,7 +14,22 @@
 			"syscalls.h": "c",
 			"string.h": "c",
 			"stdint.h": "c",
-			"stdlib.h": "c"
+			"stdlib.h": "c",
+			"stdio.h": "c",
+			"inttypes.h": "c",
+			"config.h": "c",
+			"stddef.h": "c",
+			"ctype.h": "c",
+			"errno.h": "c",
+			"stdarg.h": "c",
+			"cdefs.h": "c",
+			"d_event.h": "c",
+			"z_zone.h": "c",
+			"file.h": "c",
+			"deh_main.h": "c",
+			"deh_misc.h": "c",
+			"time.h": "c",
+			"print.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}

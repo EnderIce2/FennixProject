@@ -1,6 +1,6 @@
 #include "monotonlib.h"
 #include <syscalls.h>
-#include <stdlib.h>
+#include <alloc.h>
 #include <string.h>
 
 namespace MonotonLib

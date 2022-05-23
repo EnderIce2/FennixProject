@@ -1,3 +1,7 @@
+#include <string.h>
+#include <alloc.h>
+
+#include <ctype.h>
 
 long unsigned strlen(char s[])
 {
@@ -89,4 +93,74 @@ char *strstr(const char *haystack, const char *needle)
             b = needle;
         }
     }
+}
+
+char *strdup(const char *String)
+{
+    char *OutBuffer = malloc(strlen((char *)String) + 1);
+    strcpy(OutBuffer, String);
+    return OutBuffer;
+}
+
+char *strchr(const char *String, int Char)
+{
+    while (*String != (char)Char)
+    {
+        if (!*String++)
+            return 0;
+    }
+    return (char *)String;
+}
+
+char *strrchr(const char *String, int Char)
+{
+    char *ret = 0;
+    do
+    {
+        if (*String == (char)Char)
+            ret = (char *)String;
+    } while (*String++);
+    return ret;
+}
+
+int strncasecmp(const char *lhs, const char *rhs, long unsigned int Count)
+{
+    while (Count--)
+    {
+        if (*lhs == 0 || *rhs == 0)
+        {
+            return *(unsigned char *)(lhs) - *(unsigned char *)(rhs);
+        }
+
+        if (tolower(*lhs) != tolower(*rhs))
+        {
+            return *(unsigned char *)(lhs) - *(unsigned char *)(rhs);
+        }
+        lhs++;
+        rhs++;
+    }
+    return 0;
+}
+
+int strcasecmp(const char *lhs, const char *rhs)
+{
+    while (*lhs && (tolower(*lhs) == tolower(*rhs)))
+    {
+        lhs++;
+        rhs++;
+    }
+
+    int lc = tolower(*lhs);
+    int rc = tolower(*rhs);
+    return lc - rc;
+}
+
+int isdigit(char Char)
+{
+    return Char >= '0' && Char <= '9';
+}
+
+int isspace(char Char)
+{
+    return Char == ' ' || Char == '\t' || Char == '\r' || Char == '\n' || Char == '\f' || Char == '\v';
 }
