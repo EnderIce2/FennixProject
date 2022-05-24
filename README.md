@@ -152,3 +152,4 @@ make clean
 - [ ] Make a working version of process messaging (IPC)
 - [ ] Add compatibility for linux (libc)
 - [ ] Add compatibility for windows (winapi)
+- [ ] If APIC is not available, use PIC.

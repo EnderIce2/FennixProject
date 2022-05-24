@@ -8,6 +8,7 @@
 #include <cwalk.h>
 #include <internal_task.h>
 #include <asm.h>
+#include <sys.h>
 #include <io.h>
 #include <vm.h>
 
@@ -247,7 +248,7 @@ void KernelInit()
 
     if (!apic->APICSupported())
     {
-        warn("APIC is not supported!");
+        panic("APIC is not supported!", true);
         outb(PIC1_DATA, 0b11111000);
         outb(PIC2_DATA, 0b11101111);
     }
