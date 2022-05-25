@@ -152,6 +152,8 @@ DEFINE_SYSCALL0(getCurrentThreadID, _GetCurrentThreadID)
 DEFINE_SYSCALL0(getScheduleMode, _GetScheduleMode)
 
 DEFINE_SYSCALL4(createTask, _CreateTask, uint64_t, uint64_t, uint64_t, char *)
+DEFINE_SYSCALL0(pushTask, _PushTask)
+DEFINE_SYSCALL0(popTask, _PopTask)
 
 DEFINE_SYSCALL0(requestPage, _RequestPage)
 DEFINE_SYSCALL1(freePage, _FreePage, void *)

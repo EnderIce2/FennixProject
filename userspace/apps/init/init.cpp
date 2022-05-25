@@ -10,6 +10,9 @@ int main(int argc, char **argv)
         syscall_dbg(0x3F8, (char *)"[INIT] Kernel is running under monotasking mode.\n");
         /* ... do stuff ... */
         syscall_createProcess((char *)"/system/monoton", 0, 0);
+        syscall_pushTask();
+        syscall_dbg(0x3F8, (char *)"[INIT] The shell exited!\n");
+        // TODO: cleanup everything and shutdown beacuse this process should not be killed
         return 0;
     }
     else

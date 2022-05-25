@@ -21,7 +21,7 @@ void ParseBuffer(char *Buffer)
     else if (strcmp(Buffer, "doom") == 0)
     {
         syscall_createProcess("/system/doom", 0, 0);
-        Exit(0);
+        syscall_pushTask();
     }
     else
     {

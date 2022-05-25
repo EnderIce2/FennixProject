@@ -15,6 +15,13 @@
 #include <task.h>
 #include <asm.h>
 
+typedef struct _SyscallsRegs
+{
+    uint64_t r15, r14, r13, r12, r11, r10, r9, r8;
+    uint64_t rbp, rdi, rsi, rdx, rcx, rbx, rax;
+    uint64_t int_num, error_code, rip, cs, rflags, rsp, ss;
+} SyscallsRegs;
+
 static uint64_t internal_unimpl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
 {
     fixme("Unimplemented Syscall: %d %d %d %d %d %d %d", a, b, c, d, e, f, g);
@@ -43,8 +50,8 @@ static uint64_t internal_getcurrentthreadid() { return SysGetCurrentThread()->ID
 static int internal_getschedulemode() { return CurrentTaskingMode; }
 
 static Tasking::TaskControlBlock *internal_createtask(uint64_t rip, uint64_t arg0, uint64_t arg1, char *name) { Tasking::monot->CreateTask(rip, arg0, arg1, name, true); }
-static Tasking::TaskControlBlock *internal_pushtask() {}
-static Tasking::TaskControlBlock *internal_poptask() {}
+static void internal_pushtask(uint64_t a, uint64_t b, uint64_t c, uint64_t d, SyscallsRegs *regs) { Tasking::monot->PushTask(RIP); }
+static void internal_poptask() { Tasking::monot->PopTask(); }
 
 static void *internal_requestpage()
 {
@@ -147,7 +154,7 @@ static void *syscallsTable[] = {
     [_FileExists] = (void *)internal_unimpl,
     [_FileCreate] = (void *)internal_unimpl,
 
-    [_usleep] = (void*)internal_usleep,
+    [_usleep] = (void *)internal_usleep,
 
     [_DebugMessage] = (void *)internal_dbg,
     // #endif
@@ -209,13 +216,6 @@ __attribute__((naked, used, aligned(0x1000))) void syscall_handler_helper()
     LeaveCriticalSection;
 }
 
-typedef struct _SyscallsRegs
-{
-    uint64_t r15, r14, r13, r12, r11, r10, r9, r8;
-    uint64_t rbp, rdi, rsi, rdx, rcx, rbx, rax;
-    uint64_t int_num, error_code, rip, cs, rflags, rsp, ss;
-} SyscallsRegs;
-
 extern "C" uint64_t syscall_handler(SyscallsRegs *regs)
 {
     if (RAX > sizeof(syscallsTable))
@@ -229,7 +229,7 @@ extern "C" uint64_t syscall_handler(SyscallsRegs *regs)
         return failedcall;
     }
     // TODO: i should add a fifth argument to the syscall
-    uint64_t ret = call(RBX, RDX, RSI, RDI, 0);
+    uint64_t ret = call(RBX, RDX, RSI, RDI, regs);
     RAX = ret;
     return ret;
 }

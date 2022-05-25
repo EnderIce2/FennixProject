@@ -17,9 +17,12 @@ namespace Tasking
     enum TaskState
     {
         TaskStateNull,
+        TaskStateReady,
         TaskStateRunning,
         TaskStateWaiting,
         TaskStateTerminated,
+        TaskPushed,
+        TaskPoped,
     };
 
 #define TASK_CHECKSUM 0xDEADCAFE
@@ -59,6 +62,16 @@ namespace Tasking
          * @brief Kill the current Task
          */
         void KillMe();
+
+        /**
+         * @brief Move to the next Task and suspending the current
+         */
+        void PushTask(uint64_t rip);
+
+        /**
+         * @brief Move to the previous Task and suspending the current
+         */
+        void PopTask();
 
         /**
          * @brief Construct a new Mono Tasking object

@@ -128,14 +128,30 @@ namespace Tasking
     {
         InterruptHandler(mono_schedule_interrupt_handler)
         {
+            foreach (auto t in TaskQueue)
+            {
+                if (t->state == TaskState::TaskPushed)
+                {
+                    t->state = TaskState::TaskStateWaiting;
+                    // t->regs = *regs;
+                }
+                else if (t->state == TaskState::TaskPoped)
+                {
+                    t->state = TaskState::TaskStateWaiting;
+                    // *regs = t->regs;
+                }
+            }
+
             bool task_changed = false;
-            for (size_t i = 0; i < MAX_TASKS; i++)
+            for (int i = MAX_TASKS; i > -1; i--)
             {
                 if (TaskQueue[i] == nullptr)
-                    goto scheduler_eoi; // We are at the end of the queue (at FreeTask we get the last added task and replace with the removed one so we don't have to search through the array)
+                    continue;
                 if (TaskQueue[i]->checksum != TASK_CHECKSUM)
-                    goto scheduler_eoi;
-                if (TaskQueue[i]->state == TaskState::TaskStateWaiting)
+                    continue;
+                switch (TaskQueue[i]->state)
+                {
+                case TaskState::TaskStateReady:
                 {
                     TaskQueue[i]->state = TaskState::TaskStateRunning;
                     *regs = TaskQueue[i]->regs;
@@ -145,21 +161,29 @@ namespace Tasking
                     task_changed = true;
                     goto scheduler_eoi;
                 }
-                else if (TaskQueue[i]->state == TaskState::TaskStateTerminated)
+                case TaskState::TaskStateWaiting:
+                {
+                    debug("Task %s is waiting for another task.", TaskQueue[i]->name);
+                    continue;
+                }
+                case TaskState::TaskStateTerminated:
                 {
                     FreeTask(TaskQueue[i]);
-                    if (TaskQueue[i] == nullptr)
-                        while (1)
-                        {
-                            asm volatile("hlt");
-                            TaskControlBlock *task = FindLastTask();
-                            if (task != nullptr)
-                                break;
-                        }
-                }
-                else
+                    if (FindLastTask() == nullptr)
+                    {
+                        err("No more tasks to run! System halted."); // we never want to get here.
+                        CPU_STOP;
+                    }
                     continue;
+                }
+                case TaskState::TaskPushed:
+                case TaskState::TaskPoped:
+                case TaskState::TaskStateRunning:
+                default:
+                    continue;
+                }
             }
+
         scheduler_eoi:
             EndOfInterrupt(INT_NUM);
             if (!task_changed)
@@ -182,7 +206,7 @@ namespace Tasking
         memcpy(((char *)task->name), Name, sizeof(task->name));
         task->checksum = TASK_CHECKSUM;
         task->UserMode = UserMode;
-        task->state = TaskState::TaskStateWaiting;
+        task->state = TaskState::TaskStateReady;
         task->stack = KernelStackAllocator->AllocateStack(UserMode);
         task->pml4 = KernelPageTableAllocator->CreatePageTable(UserMode);
 
@@ -245,14 +269,84 @@ namespace Tasking
     {
         CurrentTask->state = TaskState::TaskStateTerminated;
         trace("Task %s commited suicide.", CurrentTask->name);
+
+        for (uint64_t i = 0; i < MAX_TASKS; i++)
+            if (CurrentTask == TaskQueue[i])
+                if (TaskQueue[i - 1] != nullptr &&
+                    TaskQueue[i - 1]->checksum == TASK_CHECKSUM)
+                    this->PopTask();
+
         apic->OneShot(SchedulerInterrupt, 100);
         CPU_STOP;
     }
 
+    void Monotasking::PushTask(uint64_t rip)
+    {
+        if (FindLastTask() == CurrentTask)
+        {
+            err("The current task is the last task in queue.");
+            return;
+        }
+
+        for (uint64_t i = 0; i < MAX_TASKS; i++)
+        {
+            if (TaskQueue[i] == nullptr)
+                continue;
+            if (TaskQueue[i]->checksum != TASK_CHECKSUM)
+                continue;
+            if (CurrentTask == TaskQueue[i])
+            {
+                if (TaskQueue[i + 1] == nullptr)
+                    continue;
+                if (TaskQueue[i + 1]->checksum != TASK_CHECKSUM)
+                    continue;
+                if (TaskQueue[i]->state != TaskState::TaskStateTerminated)
+                    TaskQueue[i]->state = TaskState::TaskPushed;
+                TaskQueue[i + 1]->state = TaskState::TaskStateReady;
+                // TaskQueue[i + 1]->regs.rip = rip; // i need to find anoter way to get the instruction pointer
+                trace("Task pushed to %s with instruction pointer %#llx.", TaskQueue[i + 1]->name, rip);
+                apic->OneShot(SchedulerInterrupt, 100);
+                return;
+            }
+        }
+        err("Cannot move to the next task.");
+    }
+
+    void Monotasking::PopTask()
+    {
+        if (TaskQueue[0] == CurrentTask)
+        {
+            err("The current task is the first task in queue.");
+            return;
+        }
+
+        for (uint64_t i = 0; i < MAX_TASKS; i++)
+        {
+            if (TaskQueue[i] == nullptr)
+                continue;
+            if (TaskQueue[i]->checksum != TASK_CHECKSUM)
+                continue;
+            if (CurrentTask == TaskQueue[i])
+            {
+                if (TaskQueue[i - 1] == nullptr)
+                    continue;
+                if (TaskQueue[i - 1]->checksum != TASK_CHECKSUM)
+                    continue;
+                if (TaskQueue[i]->state != TaskState::TaskStateTerminated)
+                    TaskQueue[i]->state = TaskState::TaskPoped;
+                TaskQueue[i - 1]->state = TaskState::TaskStateReady;
+                trace("Task popped to %s.", TaskQueue[i - 1]->name);
+                apic->OneShot(SchedulerInterrupt, 100);
+                return;
+            }
+        }
+        err("Cannot move to the previous task.");
+    }
+
     Monotasking::Monotasking(uint64_t FirstTask)
     {
-        for (size_t i = 0; i < MAX_TASKS; i++)
-            TaskQueue[i] = nullptr; // Make sure that all tasks have value nullptr
+        // for (uint64_t i = 0; i < MAX_TASKS; i++)
+        //     TaskQueue[i] = nullptr; // Make sure that all tasks have value nullptr
         CreateTask((uint64_t)FirstTask, 0, 0, (char *)"kernel", false);
         CurrentTaskingMode = TaskingMode::Mono;
         apic->RedirectIRQ(0, SchedulerInterrupt - 32, 1);
@@ -261,7 +355,7 @@ namespace Tasking
 
     Monotasking::~Monotasking()
     {
-        for (size_t i = 0; i < MAX_TASKS; i++)
+        for (uint64_t i = 0; i < MAX_TASKS; i++)
         {
             if (TaskQueue[i] == nullptr)
                 continue;
