@@ -157,7 +157,9 @@ void KernelTask()
     printf("%s", cpu_get_info());
 #endif
 
-    if (CurrentTaskingMode != TaskingMode::Mono) // for now i'll not load this.
+    // for now i'll not load this.
+    // if (CurrentTaskingMode != TaskingMode::Mono)
+    if (0 != 0)
     {
         kdrv = new Driver::KernelDriver;
         FileSystem::FILE *driverDirectory = vfs->Open("/system/drivers");
@@ -208,6 +210,7 @@ void KernelTask()
         CPU_STOP;
     }
     trace("End Of Kernel Task");
+    CPU_STOP;
 }
 
 /* I should make everything in C++ but I use code from older (failed) projects.

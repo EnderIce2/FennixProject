@@ -27,20 +27,11 @@ enum cpuid_requests
  */
 typedef char *CPU_VENDOR;
 
-enum CPU_ARCHITECTURE
-{
-    x0 = 0,
-    x8 = 8,
-    x16 = 16,
-    x32 = 32,
-    x64 = 64
-};
-
 typedef struct _CPU_INFO
 {
     CPU_VENDOR vendor;
     char *name;
-    enum CPU_ARCHITECTURE architecture;
+    int architecture;
     bool temperature_sensor;
     enum CPU_FEATURE feature;
 } CPU_INFO;

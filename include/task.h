@@ -27,11 +27,31 @@ enum STATUS
     Terminated
 };
 
+enum Architecture
+{
+    UnknownArchitecture,
+    x86,
+    x64,
+    ARM,
+    ARM64,
+    MIPS
+};
+
+enum Platform
+{
+    UnknownPlatform,
+    Native,
+    Linux,
+    Windows
+};
+
 struct GeneralProcessInfo
 {
     uint64_t SpawnTick = 0, UsedTicks = 0, StartUsedTicks = 0, EndUsedTicks = 0, LastUsedTicks = 0;
     uint64_t Usage[256];
     uint64_t Year, Month, Day, Hour, Minute, Second;
+    enum Architecture Architecture;
+    enum Platform Platform;
     int Priority;
 };
 

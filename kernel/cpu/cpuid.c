@@ -39,16 +39,16 @@ CPU_INFO *GetCPUInfo()
         cpuid(0x80000001, &rax, &rbx, &rcx, &rdx);
         if (rdx & CPUID_FEAT_LONG_MODE)
         {
-            info->architecture = x64;
+            info->architecture = 64;
         }
         else
         {
-            info->architecture = x32;
+            info->architecture = 32;
         }
     }
     else
     {
-        info->architecture = x0;
+        info->architecture = 0;
     }
     // TODO: add multiple sensor detections
     if (func >= 0x80000007)

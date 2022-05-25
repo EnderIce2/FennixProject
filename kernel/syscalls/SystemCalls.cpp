@@ -105,7 +105,7 @@ static uint64_t internal_dbg(int port, char *message)
     return 0;
 }
 
-static void *syscallsTable[] = {
+static void *FennixSyscallsTable[] = {
     // #ifndef __INTELLISENSE__ // hide "array designators are nonstandard in C/C++(2901)" error in vscode
     [_NullCall] = (void *)internal_unimpl,
     [_ProcessExit] = (void *)internal_exit,
@@ -159,6 +159,10 @@ static void *syscallsTable[] = {
     [_DebugMessage] = (void *)internal_dbg,
     // #endif
 };
+
+static void *LinuxSyscallsTable[] = {};
+
+static void *WindowsSyscallsTable[] = {};
 
 // TODO: fully port the syscall handler to inline assembly
 __attribute__((naked, used, aligned(0x1000))) void syscall_handler_helper()
@@ -218,20 +222,39 @@ __attribute__((naked, used, aligned(0x1000))) void syscall_handler_helper()
 
 extern "C" uint64_t syscall_handler(SyscallsRegs *regs)
 {
-    if (RAX > sizeof(syscallsTable))
+    if (RAX > sizeof(FennixSyscallsTable))
     {
         return internal_unimpl(regs->rax, regs->rbx, regs->rcx, regs->rdx, regs->rsi, regs->rdi, regs->rbp);
     }
-    uint64_t (*call)(uint64_t, ...) = reinterpret_cast<uint64_t (*)(uint64_t, ...)>(syscallsTable[RAX]);
-    if (!call)
+
+    switch (SysGetCurrentThread()->Info.Platform)
     {
-        err("syscall %#llx failed.", RAX);
-        return failedcall;
+    case Platform::UnknownPlatform:
+        err("No platform is specified by the process? Guessing Native...");
+    case Platform::Native:
+    {
+        uint64_t (*call)(uint64_t, ...) = reinterpret_cast<uint64_t (*)(uint64_t, ...)>(FennixSyscallsTable[RAX]);
+        if (!call)
+        {
+            err("syscall %#llx failed.", RAX);
+            return failedcall;
+        }
+        uint64_t ret = call(RBX, RDX, RSI, RDI, regs);
+        RAX = ret;
+        return ret;
     }
-    // TODO: i should add a fifth argument to the syscall
-    uint64_t ret = call(RBX, RDX, RSI, RDI, regs);
-    RAX = ret;
-    return ret;
+    case Platform::Linux:
+    {
+        err("Platform Linux is not supported yet.");
+    }
+    case Platform::Windows:
+    {
+        err("Platform Windows is not supported yet.");
+    }
+    default:
+        return -1;
+    }
+    return -1;
 }
 
 extern "C"

@@ -337,6 +337,8 @@ namespace Tasking
         thread->Registers.ARG1 = (uint64_t)Arg1; // args1
 
         SetInfo(&thread->Info);
+        thread->Info.Architecture = Architecture::x64; // this is for the future
+        thread->Info.Platform = Platform::Native; // this is for the future
         thread->Info.Priority = Priority;
         Parent->Threads.push_back(thread);
         trace("New thread %d created (%s).", thread->ID, thread->Name);
