@@ -453,12 +453,12 @@ EXTERNC void isrcrash(REGISTERS *regs)
     CurrentDisplay->ResetPrintPosition();
     CurrentDisplay->SetPrintColor(0xFF7981FC);
     printf("Technical Informations on CPU %ld:\n", rdmsr(MSR_FS_BASE));
-    printf("FS =%#lx  GS =%#lx  SS =%#lx  CS =%#lx\n", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
-    printf("R8 =%#lx  R9 =%#lx  R10=%#lx  R11=%#lx\n", R8, R9, R10, R11);
+    printf("FS=%#lx  GS=%#lx  SS=%#lx  CS=%#lx\n", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
+    printf("R8=%#lx  R9=%#lx  R10=%#lx  R11=%#lx\n", R8, R9, R10, R11);
     printf("R12=%#lx  R13=%#lx  R14=%#lx  R15=%#lx\n", R12, R13, R14, R15);
     printf("RAX=%#lx  RBX=%#lx  RCX=%#lx  RDX=%#lx\n", RAX, RBX, RCX, RDX);
     printf("RSI=%#lx  RDI=%#lx  RBP=%#lx  RSP=%#lx\n", RSI, RDI, RBP, RSP);
-    printf("RIP=%#lx  RFL=%#lx  DS =%#lx  INT=%#lx  ERR=%#lx\n", RIP, FLAGS.raw, DS, INT_NUM, ERROR_CODE);
+    printf("RIP=%#lx  RFL=%#lx  DS=%#lx  INT=%#lx  ERR=%#lx\n", RIP, FLAGS.raw, DS, INT_NUM, ERROR_CODE);
     printf("CR0=%#lx  CR2=%#lx  CR3=%#lx  CR4=%#lx  CR8=%#lx\n", cr0.raw, cr2.raw, cr3.raw, cr4.raw, cr8.raw);
 
     CurrentDisplay->SetPrintColor(0xFFFC797B);
