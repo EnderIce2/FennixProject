@@ -216,8 +216,6 @@ void KernelTask()
 /* I should make everything in C++ but I use code from older (failed) projects.
    I will probably move the old C code to C++ in the future. */
 
-#include "cpuspeed.hpp"
-
 void KernelInit()
 {
     trace("early initialization completed");
