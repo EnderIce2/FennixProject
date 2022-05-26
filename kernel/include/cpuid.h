@@ -89,7 +89,7 @@ enum CPU_FEATURE
 #define CPUID_VENDOR_VORTEX "Vortex86 SoC"
 #define CPUID_VENDOR_VIA2 "VIA VIA VIA "
 
-/*Vendor-strings from Virtual Machines.*/
+/* Vendor-strings from Virtual Machines. */
 #define CPUID_VENDOR_VMWARE "VMwareVMware"
 #define CPUID_VENDOR_XENHVM "XenVMMXenVMM"
 #define CPUID_VENDOR_MICROSOFT_HV "Microsoft Hv"
