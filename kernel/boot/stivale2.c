@@ -119,7 +119,7 @@ bool init_stivale2(struct stivale2_struct *bootloaderdata, GlobalBootParams *par
 
             if (TO_GB(tmpmemsize) < 4)
             {
-                // TODO: Add support for smaller memory sizes.
+                // The system can run with less than 4GB memory but I didn't test that enough.
                 term_write("Minimum memory requirement is 4GB! System Halted.", 42);
                 while (1)
                     __asm__ __volatile__("hlt" ::
