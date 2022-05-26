@@ -156,6 +156,9 @@ void operator delete[](void *Pointer, long unsigned int n);
 #define KERNEL_HEAP_BASE 0xFFFFC00000000000
 #define KERNEL_HEAP_END 0xFFFFC00080000000
 
+#define USER_HEAP_BASE 0xFFFFD00000000000
+#define USER_HEAP_END 0xFFFFD00080000000
+
 /**
  * @brief https://wiki.osdev.org/images/4/41/64-bit_page_tables1.png
  * @brief https://wiki.osdev.org/images/6/6b/64-bit_page_tables2.png
