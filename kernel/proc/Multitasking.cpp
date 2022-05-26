@@ -732,9 +732,10 @@ namespace Tasking
 
         Success:
         {
-            schedbg("Success Prc:%s(%d) Thd:%s(%d)",
+            schedbg("Success Prc:%s(%d) Thd:%s(%d)->RIP:%#lx-RSP:%#lx(STACK: %#lx)",
                     CurrentCPU->CurrentProcess->Name, CurrentCPU->CurrentProcess->ID,
-                    CurrentCPU->CurrentThread->Name, CurrentCPU->CurrentThread->ID);
+                    CurrentCPU->CurrentThread->Name, CurrentCPU->CurrentThread->ID,
+                    CurrentCPU->CurrentThread->Registers.rip, CurrentCPU->CurrentThread->Registers.rsp, CurrentCPU->CurrentThread->Stack);
             CurrentCPU->CurrentProcess->Status = STATUS::Running;
             CurrentCPU->CurrentThread->Status = STATUS::Running;
 
