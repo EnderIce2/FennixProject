@@ -70,6 +70,8 @@ bool CheckRunningUnderVM()
             return true;
         if (!strcmp(hyper_vendor_id, CPUID_VENDOR_PARALLELS))
             return true;
+        if (!strcmp(hyper_vendor_id, CPUID_VENDOR_TCG))
+            return true;
         debug("CPU vendor check failed");
     }
 
