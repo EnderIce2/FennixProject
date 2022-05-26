@@ -240,6 +240,8 @@ namespace Tasking
 
         SetInfo(&process->Info);
         process->Info.Priority = Priority;
+        process->Info.Architecture = Architecture::UnknownArchitecture;
+        process->Info.Platform = Platform::UnknownPlatform;
         process->ID = this->NextPID++;
         process->Security.Token = CreateToken();
         trace("New security token created %p", process->Security.Token);
