@@ -61,7 +61,6 @@ void TriggerUserModeCrash(REGISTERS *regs)
         err("Division by zero in an user-mode thread %s(%d) on CPU %ld.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, rdmsr(MSR_FS_BASE));
         // TODO: signal the application to stop.
         SysGetCurrentThread()->Status = Terminated;
-        STI;
         break;
     }
     case ISR_Debug:
@@ -89,7 +88,6 @@ void TriggerUserModeCrash(REGISTERS *regs)
         err("Invalid opcode in an user-mode thread %s(%d) on CPU %ld.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, rdmsr(MSR_FS_BASE));
         // TODO: signal the application to stop.
         SysGetCurrentThread()->Status = Terminated;
-        STI;
         break;
     }
     case ISR_DeviceNotAvailable:
@@ -119,7 +117,6 @@ void TriggerUserModeCrash(REGISTERS *regs)
         err("Stack Segment Fault caused by an user-mode thread %s(%d) at %#lx on CPU %ld.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, rdmsr(MSR_FS_BASE), RIP);
         // TODO: signal the application to stop.
         SysGetCurrentThread()->Status = Terminated;
-        STI;
         break;
     }
     case ISR_GeneralProtectionFault:
@@ -127,7 +124,6 @@ void TriggerUserModeCrash(REGISTERS *regs)
         err("General Protection Fault caused by an user-mode thread %s(%d) at %#lx on CPU %ld.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, rdmsr(MSR_FS_BASE), RIP);
         // TODO: signal the application to stop.
         SysGetCurrentThread()->Status = Terminated;
-        STI;
         break;
     }
     case ISR_PageFault:
@@ -145,7 +141,6 @@ void TriggerUserModeCrash(REGISTERS *regs)
             ERROR_CODE & 0x00000008 ? "One or more page directory entries contain reserved bits which are set to 1." : pagefault_message[ERROR_CODE & 0b111]);
         // TODO: signal the application to stop.
         SysGetCurrentThread()->Status = Terminated;
-        STI;
         break;
     }
     case ISR_x87FloatingPoint:
@@ -177,4 +172,9 @@ void TriggerUserModeCrash(REGISTERS *regs)
         break;
     }
     }
+#ifdef DEBUG
+    CurrentDisplay->SetPrintColor(0xFF0000);
+    printf_("Usermode thread %s(%ld) crashed! Check the serial port (COM1) for more info.\n", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID);
+#endif
+    STI;
 }
