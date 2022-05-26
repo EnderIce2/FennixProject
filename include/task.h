@@ -33,8 +33,7 @@ enum Architecture
     x86,
     x64,
     ARM,
-    ARM64,
-    MIPS
+    ARM64
 };
 
 enum Platform
@@ -49,8 +48,8 @@ enum Platform
 struct GeneralProcessInfo
 {
     uint64_t SpawnTick = 0, UsedTicks = 0, StartUsedTicks = 0, EndUsedTicks = 0, LastUsedTicks = 0;
-    uint64_t Usage[256];
     uint64_t Year, Month, Day, Hour, Minute, Second;
+    uint64_t Usage[256];
     enum Architecture Architecture;
     enum Platform Platform;
     int Priority;
@@ -69,11 +68,11 @@ struct TCB
     char Name[256];
     STATUS Status;
     uint64_t ExitCode;
-    PCB *Parent;
+    struct PCB *Parent;
     void *Stack;
+    char FXRegion[512] __attribute__((aligned(16)));
     REGISTERS Registers;
     uint64_t fs, gs, cs, ss, ds, es;
-    char FXRegion[512] __attribute__((aligned(16)));
     GeneralProcessInfo Info;
     GeneralSecurityInfo Security;
     uint32_t Checksum;
@@ -87,10 +86,10 @@ struct PCB
     ELEVATION Elevation;
     uint64_t ExitCode;
     struct PCB *Parent;
-    Vector<struct PCB *> Children;
     CR3 PageTable;
-    Vector<TCB *> Threads;
     GeneralProcessInfo Info;
     GeneralSecurityInfo Security;
+    Vector<TCB *> Threads;
+    Vector<struct PCB *> Children;
     uint32_t Checksum;
 };
