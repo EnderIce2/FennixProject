@@ -338,7 +338,7 @@ namespace Tasking
 
         SetInfo(&thread->Info);
         thread->Info.Architecture = Architecture::x64; // this is for the future
-        thread->Info.Platform = Platform::Native; // this is for the future
+        thread->Info.Platform = Platform::Native;      // this is for the future
         thread->Info.Priority = Priority;
         Parent->Threads.push_back(thread);
         trace("New thread %d created (%s).", thread->ID, thread->Name);
@@ -605,34 +605,35 @@ namespace Tasking
                 for (uint64_t i = 0; i < CurrentCPU->CurrentProcess->Threads.size(); i++)
                 {
                     // Loop until we find the current thread from the process thread list.
-                    if (CurrentCPU->CurrentProcess->Threads[i] != CurrentCPU->CurrentThread)
-                        continue;
-
-                    // Check if the next thread is valid. If not, we search until we find, but if we reach the end of the list, we go to the next process.
-                    TCB *thread = CurrentCPU->CurrentProcess->Threads[i + 1];
-                    if (InvalidTCB(thread))
-                        continue;
-
-                    schedbg("%s(%d) and next thread is %s(%d)", CurrentCPU->CurrentProcess->Threads[i]->Name, CurrentCPU->CurrentProcess->Threads[i]->ID, thread->Name, thread->ID);
-
-                    // Check if the process is ready to be executed.
-                    if (CurrentCPU->CurrentProcess->Status != STATUS::Ready)
+                    if (CurrentCPU->CurrentProcess->Threads[i] == CurrentCPU->CurrentThread)
                     {
-                        schedbg("Process %s is not ready", CurrentCPU->CurrentProcess->Name);
-                        break;
-                    }
+                        // Check if the next thread is valid. If not, we search until we find, but if we reach the end of the list, we go to the next process.
+                        uint64_t tmpidx = i;
+                    RetryAnotherThread:
+                        TCB *thread = CurrentCPU->CurrentProcess->Threads[tmpidx + 1];
+                        if (InvalidTCB(thread))
+                        {
+                            if (tmpidx > CurrentCPU->CurrentProcess->Threads.size())
+                                break;
+                            tmpidx++;
+                            goto RetryAnotherThread;
+                        }
 
-                    // Check if the thread is ready to be executed.
-                    if (thread->Status != STATUS::Ready)
-                    {
-                        schedbg("Thread %d is not ready", thread->ID);
-                        continue;
+                        schedbg("%s(%d) and next thread is %s(%d)", CurrentCPU->CurrentProcess->Threads[i]->Name, CurrentCPU->CurrentProcess->Threads[i]->ID, thread->Name, thread->ID);
+
+                        // Check if the thread is ready to be executed.
+                        if (thread->Status != STATUS::Ready)
+                        {
+                            schedbg("Thread %d is not ready", thread->ID);
+                            goto RetryAnotherThread;
+                        }
+
+                        // Everything is fine, we can set the new thread as the current one.
+                        CurrentCPU->CurrentThread = thread;
+                        schedbg("[thd 0 -> end] Scheduling thread %d parent of %s->%d Procs %d", thread->ID, thread->Parent->Name, CurrentCPU->CurrentProcess->Threads.size(), mt->ListProcess.size());
+                        // Yay! We found a new thread to execute.
+                        goto Success;
                     }
-                    // Everything is fine, we can set the new thread as the current one.
-                    CurrentCPU->CurrentThread = thread;
-                    schedbg("[thd 0 -> end] Scheduling thread %d parent of %s->%d Procs %d", thread->ID, thread->Parent->Name, CurrentCPU->CurrentProcess->Threads.size(), mt->ListProcess.size());
-                    // Yay! We found a new thread to execute.
-                    goto Success;
                 }
 
                 // If the last process didn't find a thread to execute, we search for a new process.
@@ -642,12 +643,19 @@ namespace Tasking
                     if (mt->ListProcess[i] == CurrentCPU->CurrentProcess)
                     {
                         // Check if the next process is valid. If not, we search until we find.
-                        PCB *pcb = mt->ListProcess[i + 1];
-
+                        uint64_t tmpidx = i;
+                    RetryAnotherProcess:
+                        PCB *pcb = mt->ListProcess[tmpidx + 1];
                         if (InvalidPCB(pcb))
-                            continue;
+                        {
+                            if (tmpidx > mt->ListProcess.size())
+                                break;
+                            tmpidx++;
+                            goto RetryAnotherProcess;
+                        }
+
                         if (pcb->Status != STATUS::Ready)
-                            continue;
+                            goto RetryAnotherProcess;
 
                         // Everything good, now search for a thread.
                         for (uint64_t j = 0; j < pcb->Threads.size(); j++)
