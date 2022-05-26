@@ -2,7 +2,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "logToFile": true,
             "name": "Launch with GDB",
             "type": "cppdbg",
             "request": "launch",
@@ -38,6 +37,41 @@
             ],
             "preLaunchTask": "Launch QEMU",
             "postDebugTask": "Clean",
+        },
+        {
+            "name": "Attach to a running QEMU instance",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/kernel/kernel.fsys",
+            "cwd": "${workspaceRoot}",
+            "args": [],
+            "targetArchitecture": "x64",
+            "MIMode": "gdb",
+            "miDebuggerPath": "${workspaceRoot}/tools/cross/bin/x86_64-elf-gdb",
+            "miDebuggerArgs": "",
+            "externalConsole": false,
+            "additionalSOLibSearchPath": "${workspaceRoot}/kernel/src",
+            "customLaunchSetupCommands": [
+                {
+                    "text": "target remote localhost:1234",
+                    "description": "Connect to QEMU remote debugger"
+                }
+            ],
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "text": "set breakpoint pending on",
+                    "description": "Make breakpoint pending on future shared library load."
+                },
+                {
+                    "text": "file ${workspaceRoot}/kernel/kernel.fsys",
+                    "description": "Load binary."
+                },
+            ],
         }
     ]
 }
