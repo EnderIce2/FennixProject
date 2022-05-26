@@ -9,7 +9,7 @@ E void *memmove(void *dest, const void *src, size_t n);
 E int memcmp(const void *vl, const void *vr, size_t n);
 
 E int strncmp(const char *s1, const char *s2, long unsigned int n);
-E long unsigned strlen(char s[]);
+E long unsigned strlen(const char s[]);
 E char *strcat(char *destination, const char *source);
 E char *strcpy(char *destination, const char *source);
 E char *strncpy(char *destination, const char *source, unsigned long num);
@@ -21,5 +21,5 @@ E char *strrchr(const char *String, int Char);
 E int strncasecmp(const char *lhs, const char *rhs, long unsigned int Count);
 E int strcasecmp(const char *lhs, const char *rhs);
 
-E int isdigit(char Char);
-E int isspace(char Char);
+E int isdigit(int Char);
+E int isspace(int Char);

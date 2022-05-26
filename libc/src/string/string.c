@@ -3,7 +3,7 @@
 
 #include <ctype.h>
 
-long unsigned strlen(char s[])
+long unsigned strlen(const char s[])
 {
     long unsigned i = 0;
     while (s[i] != '\0')
@@ -155,12 +155,12 @@ int strcasecmp(const char *lhs, const char *rhs)
     return lc - rc;
 }
 
-int isdigit(char Char)
+int isdigit(int Char)
 {
     return Char >= '0' && Char <= '9';
 }
 
-int isspace(char Char)
+int isspace(int Char)
 {
     return Char == ' ' || Char == '\t' || Char == '\r' || Char == '\n' || Char == '\f' || Char == '\v';
 }

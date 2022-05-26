@@ -46,7 +46,7 @@ int system(const char *Command)
 {
     // mono 1 - multi 2
     if (syscall_getScheduleMode() == 2)
-        return syscall_createProcess(Command, 0, 0);
+        return syscall_createProcess((char *)Command, 0, 0);
     else if (syscall_getScheduleMode() == 1)
         return -1;
 }
@@ -54,4 +54,6 @@ int system(const char *Command)
 void Exit(int Status)
 {
     syscall_exit(Status);
+    while (1)
+        ;
 }

@@ -57,7 +57,7 @@ int strncmp(const char *s1, const char *s2, size_t n)
     return 0;
 }
 
-long unsigned strlen(char s[])
+long unsigned strlen(const char s[])
 {
     long unsigned i = 0;
     while (s[i] != '\0')
@@ -136,12 +136,12 @@ char *strstr(const char *haystack, const char *needle)
     }
 }
 
-int isdigit(char c)
+int isdigit(int c)
 {
     return c >= '0' && c <= '9';
 }
 
-int isspace(char c)
+int isspace(int c)
 {
     return c == ' ' || c == '\t' || c == '\r' || c == '\n' || c == '\f' || c == '\v';
 }

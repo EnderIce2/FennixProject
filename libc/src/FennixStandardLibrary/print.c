@@ -2,8 +2,8 @@
 
 #include "../printf.h"
 
-#include <system.h>
 #include <string.h>
+#include <system.h>
 #include <syscalls.h>
 
 FILE *fslin;
