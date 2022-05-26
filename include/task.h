@@ -42,6 +42,7 @@ enum Platform
     UnknownPlatform,
     Native,
     Linux,
+    POSIX,
     Windows
 };
 
