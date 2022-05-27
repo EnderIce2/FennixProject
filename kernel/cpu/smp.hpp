@@ -10,7 +10,6 @@ struct CPUData
 {
     uint64_t ID;
     ACPI::MADT::LocalAPIC LAPIC;
-    uint8_t Stack[STACK_SIZE] __attribute__((aligned(PAGE_SIZE)));
     CR3 PageTable;
     GlobalDescriptorTableDescriptor GDT;
     InterruptDescriptorTableDescriptor IDT;
@@ -22,6 +21,7 @@ struct CPUData
     void fxsave(char *Buffer) { _fxsave(Buffer); }
     void fxrstor(char *Buffer) { _fxrstor(Buffer); }
 
+    uint8_t Stack[STACK_SIZE] __attribute__((aligned(PAGE_SIZE)));
 } __attribute__((packed));
 
 namespace SymmetricMultiprocessing
