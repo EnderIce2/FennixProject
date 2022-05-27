@@ -53,6 +53,7 @@ struct GeneralProcessInfo
     enum Architecture Architecture;
     enum Platform Platform;
     int Priority;
+    bool Affinity[256];
 };
 
 struct GeneralSecurityInfo
