@@ -27,6 +27,14 @@ enum STATUS
     Terminated
 };
 
+enum TokenTrustLevel
+{
+    UnknownTrustLevel,
+    DoNotTrust,
+    Trusted,
+    TrustedByKernel
+};
+
 enum Architecture
 {
     UnknownArchitecture,
@@ -61,6 +69,32 @@ struct GeneralSecurityInfo
     uint64_t Token;
 };
 
+typedef struct _ThreadRegisters
+{
+    uint64_t r15;        // General purpose
+    uint64_t r14;        // General purpose
+    uint64_t r13;        // General purpose
+    uint64_t r12;        // General purpose
+    uint64_t r11;        // General purpose
+    uint64_t r10;        // General purpose
+    uint64_t r9;         // General purpose
+    uint64_t r8;         // General purpose
+    uint64_t rbp;        // Base Pointer (meant for stack frames)
+    uint64_t rdi;        // First Argument
+    uint64_t rsi;        // Second Argument
+    uint64_t rdx;        // Data (commonly extends the A register)
+    uint64_t rcx;        // Counter
+    uint64_t rbx;        // Base
+    uint64_t rax;        // Accumulator
+    uint64_t int_num;    // Interrupt Number
+    uint64_t error_code; // Error code
+    uint64_t rip;        // Instruction Pointer
+    uint64_t cs;         // Code Segment
+    RFLAGS rflags;       // Register Flags
+    uint64_t rsp;        // Stack Pointer
+    uint64_t ss;         // Stack Segment / Data Segment
+} ThreadRegisters;
+
 struct PCB;
 
 struct TCB
@@ -72,7 +106,7 @@ struct TCB
     struct PCB *Parent;
     void *Stack;
     char FXRegion[512] __attribute__((aligned(16)));
-    REGISTERS Registers;
+    ThreadRegisters Registers;
     uint64_t fs, gs, cs, ss, ds, es;
     GeneralProcessInfo Info;
     GeneralSecurityInfo Security;

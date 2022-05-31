@@ -162,9 +162,9 @@ namespace Tasking
         return rand64();
     }
 
-    void TrustToken(uint64_t Token, bool Process, uint64_t ID)
+    void TrustToken(uint64_t Token, bool Process, uint64_t ID, enum TokenTrustLevel TrustLevel)
     {
-        fixme("TrustToken( %#llx %d %ld )", Token, Process, ID);
+        fixme("TrustToken( %#llx %d %ld %d )", Token, Process, ID, TrustLevel);
     }
 
     extern "C" void ProcessDoExit(uint64_t Code)
@@ -246,7 +246,7 @@ namespace Tasking
         process->Security.Token = CreateToken();
         trace("New security token created %p", process->Security.Token);
         if (Elevation == ELEVATION::Idle || Elevation == ELEVATION::Kernel || Elevation == ELEVATION::System)
-            TrustToken(process->Security.Token, true, process->ID);
+            TrustToken(process->Security.Token, true, process->ID, TokenTrustLevel::TrustedByKernel);
         process->Elevation = Elevation;
         process->Status = STATUS::Ready;
         memcpy(process->Name, Name, sizeof(process->Name));
@@ -297,12 +297,11 @@ namespace Tasking
             [[fallthrough]];
         case ELEVATION::Idle:
         case ELEVATION::Kernel:
-            TrustToken(thread->Security.Token, false, thread->ID);
-            thread->Registers.ds = GDT_KERNEL_DATA;
-            thread->Registers.cs = GDT_KERNEL_CODE;
-            thread->Registers.ss = GDT_KERNEL_DATA;
+            TrustToken(thread->Security.Token, false, thread->ID, TokenTrustLevel::TrustedByKernel);
             thread->gs = (uint64_t)thread;
             thread->fs = rdmsr(MSR_FS_BASE);
+            thread->Registers.cs = GDT_KERNEL_CODE;
+            thread->Registers.ss = GDT_KERNEL_DATA;
             thread->Registers.rflags.always_one = 1;
             thread->Registers.rflags.IF = 1;
             thread->Registers.rflags.ID = 1;
@@ -311,11 +310,11 @@ namespace Tasking
             POKE(uint64_t, thread->Registers.rsp) = (uint64_t)ProcessDoExit;
             break;
         case ELEVATION::User:
-            thread->Registers.ds = GDT_USER_DATA;
-            thread->Registers.cs = GDT_USER_CODE;
-            thread->Registers.ss = GDT_USER_DATA;
+            TrustToken(thread->Security.Token, false, thread->ID, TokenTrustLevel::DoNotTrust);
             thread->gs = 0;
             thread->fs = rdmsr(MSR_FS_BASE);
+            thread->Registers.cs = GDT_USER_CODE;
+            thread->Registers.ss = GDT_USER_DATA;
             thread->Registers.rflags.always_one = 1;
             thread->Registers.rflags.IF = 1;
             thread->Registers.rflags.ID = 1;
@@ -473,17 +472,8 @@ namespace Tasking
                 "pushq %r13\n"
                 "pushq %r14\n"
                 "pushq %r15\n"
-                "movq %ds, %rax\n"
-                "pushq %rax\n"
-                "movw $16, %ax\n"
-                "movw %ax, %ds\n"
-                "movw %ax, %es\n"
-                "movw %ax, %ss\n"
                 "movq %rsp, %rdi\n"
                 "call MultiTaskingSchedulerHandler\n"
-                "popq %rax\n"
-                "movw %ax, %ds\n"
-                "movw %ax, %es\n"
                 "popq %r15\n"
                 "popq %r14\n"
                 "popq %r13\n"
@@ -513,7 +503,7 @@ namespace Tasking
                          "jmp idleloop\n");
         }
 
-        InterruptHandler(MultiTaskingSchedulerHandler)
+        static void MultiTaskingSchedulerHandler(ThreadRegisters *regs)
         {
             if (!MultitaskingSchedulerEnabled)
             {
