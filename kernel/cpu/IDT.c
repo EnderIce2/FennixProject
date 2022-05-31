@@ -57,25 +57,6 @@ __attribute__((naked, used)) void exception_handler_helper()
         "iretq");
 }
 
-// char __HexToStringOutput[128];
-// const char *to_char(uint64_t Value)
-// {
-//     uint64_t *ValuePtr = &Value;
-//     uint8_t *Ptr;
-//     uint8_t Temp;
-//     uint8_t Size = sizeof(Value);
-//     for (uint8_t i = 0; i < Size; i++)
-//     {
-//         Ptr = ((uint8_t *)ValuePtr + i);
-//         Temp = ((*Ptr & 0xF0) >> 4);
-//         __HexToStringOutput[Size - (i * 2 + 1)] = Temp + (Temp > 9 ? 55 : '0');
-//         Temp = ((*Ptr & 0x0F));
-//         __HexToStringOutput[Size - (i * 2)] = Temp + (Temp > 9 ? 55 : '0');
-//     }
-//     __HexToStringOutput[Size + 1] = 0;
-//     return __HexToStringOutput;
-// }
-
 __attribute__((used)) void exception_handler(REGISTERS *regs)
 {
     CLI;
