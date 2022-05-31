@@ -718,6 +718,7 @@ namespace Tasking
                     CurrentCPU->CurrentProcess->Name, CurrentCPU->CurrentProcess->ID,
                     CurrentCPU->CurrentThread->Name, CurrentCPU->CurrentThread->ID,
                     CurrentCPU->CurrentThread->Registers.rip, CurrentCPU->CurrentThread->Registers.rsp, CurrentCPU->CurrentThread->Stack);
+
             CurrentCPU->CurrentProcess->Status = STATUS::Running;
             CurrentCPU->CurrentThread->Status = STATUS::Running;
 
@@ -737,7 +738,7 @@ namespace Tasking
                 wrmsr(MSR_SHADOW_GS_BASE, CurrentCPU->CurrentThread->gs);
                 break;
             default:
-                err("Unknown elevation.");
+                err("Unknown elevation %d.", CurrentCPU->CurrentProcess->Elevation);
                 break;
             }
             CurrentCPU->fxrstor(CurrentCPU->CurrentThread->FXRegion);
