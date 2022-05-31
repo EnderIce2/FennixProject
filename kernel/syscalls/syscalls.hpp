@@ -1,6 +1,6 @@
 #pragma once
 
-#include <internal_task.h>
+#include <stdint.h>
 
 // #define DEBUG_SYSCALLS 1
 

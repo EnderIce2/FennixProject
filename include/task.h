@@ -29,10 +29,10 @@ enum STATUS
 
 enum TokenTrustLevel
 {
-    UnknownTrustLevel,
-    DoNotTrust,
-    Trusted,
-    TrustedByKernel
+    UnknownTrustLevel, // error
+    Untrusted, // process is not trusted by the kernel
+    Trusted, // trusted but have limits
+    TrustedByKernel // can run all syscalls
 };
 
 enum Architecture

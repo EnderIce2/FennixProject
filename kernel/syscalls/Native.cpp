@@ -1,11 +1,13 @@
 #include "syscalls.hpp"
 
+#include "../security/security.hpp"
 #include "../../libc/include/syscalls.h"
 #include "../drivers/keyboard.hpp"
 #include "../drivers/mouse.hpp"
 #include "../drivers/serial.h"
 #include "../timer.h"
 
+#include <internal_task.h>
 #include <filesystem.h>
 #include <display.h>
 
@@ -15,7 +17,7 @@ static uint64_t internal_unimpl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, 
     return deadcall;
 }
 
-static uint64_t internal_exit(uint64_t code)
+static uint64_t internal_exit(SyscallsRegs *regs, uint64_t code)
 {
     if (CurrentTaskingMode == TaskingMode::Mono)
     {
@@ -28,94 +30,120 @@ static uint64_t internal_exit(uint64_t code)
     return 0;
 }
 
-static uint64_t internal_createprocess(char *Path, uint64_t arg0, uint64_t arg1)
+static uint64_t internal_createprocess(SyscallsRegs *regs, char *Path, uint64_t arg0, uint64_t arg1)
 {
     syscldbg("syscall: createprocess( %s %#llx %#llx )", Path, arg0, arg1);
+    if (!CanSyscall(regs))
+        return deniedcall;
     return SysCreateProcessFromFile(Path, arg0, arg1, User)->ID;
 }
 
-static TCB *internal_createthread(uint64_t rip, uint64_t arg0, uint64_t arg1)
+static TCB *internal_createthread(SyscallsRegs *regs, uint64_t rip, uint64_t arg0, uint64_t arg1)
 {
     syscldbg("syscall: createthread( %#llx %#llx %#llx )", rip, arg0, arg1);
+    if (!CanSyscall(regs))
+        return (TCB *)deniedcall;
     return SysCreateThread(SysGetCurrentProcess(), rip, arg0, arg1);
 }
 
-static PCB *internal_getcurrentprocess()
+static PCB *internal_getcurrentprocess(SyscallsRegs *regs)
 {
     syscldbg("syscall: getcurrentprocess()");
+    if (!CanSyscall(regs))
+        return (PCB *)deniedcall;
     return SysGetCurrentProcess();
 }
 
-static TCB *internal_getcurrentthread()
+static TCB *internal_getcurrentthread(SyscallsRegs *regs)
 {
     syscldbg("syscall: getcurrentthread()");
+    if (!CanSyscall(regs))
+        return (TCB *)deniedcall;
     return SysGetCurrentThread();
 }
 
-static uint64_t internal_getcurrentprocessid()
+static uint64_t internal_getcurrentprocessid(SyscallsRegs *regs)
 {
     syscldbg("syscall: getcurrentprocessid()");
+    if (!CanSyscall(regs))
+        return deniedcall;
     return SysGetCurrentProcess()->ID;
 }
 
-static uint64_t internal_getcurrentthreadid()
+static uint64_t internal_getcurrentthreadid(SyscallsRegs *regs)
 {
     syscldbg("syscall: getcurrentthreadid()");
+    if (!CanSyscall(regs))
+        return deniedcall;
     return SysGetCurrentThread()->ID;
 }
 
-static int internal_getschedulemode()
+static int internal_getschedulemode(SyscallsRegs *regs)
 {
     syscldbg("syscall: getschedulemode()");
     return CurrentTaskingMode;
 }
 
-static Tasking::TaskControlBlock *internal_createtask(uint64_t rip, uint64_t arg0, uint64_t arg1, char *name)
+static Tasking::TaskControlBlock *internal_createtask(SyscallsRegs *regs, uint64_t rip, uint64_t arg0, uint64_t arg1, char *name)
 {
     syscldbg("syscall: createtask( %#llx %#llx %#llx %s )", rip, arg0, arg1, name);
+    if (!CanSyscall(regs))
+        return (Tasking::TaskControlBlock *)deniedcall;
     return Tasking::monot->CreateTask(rip, arg0, arg1, name, true);
 }
 
-static void internal_pushtask(uint64_t a, uint64_t b, uint64_t c, uint64_t d, SyscallsRegs *regs)
+static void internal_pushtask(SyscallsRegs *regs, uint64_t a, uint64_t b, uint64_t c, uint64_t d)
 {
     syscldbg("syscall: pushtask( %#llx %#llx %#llx %#llx )", a, b, c, d);
+    if (!CanSyscall(regs))
+        return;
     Tasking::monot->PushTask(RIP);
 }
 
-static void internal_poptask()
+static void internal_poptask(SyscallsRegs *regs)
 {
     syscldbg("syscall: poptask()");
+    if (!CanSyscall(regs))
+        return;
     Tasking::monot->PopTask();
 }
 
-static void *internal_requestpage()
+static void *internal_requestpage(SyscallsRegs *regs)
 {
     syscldbg("syscall: requestpage()");
+    if (!CanSyscall(regs))
+        return (void *)deniedcall;
     void *ret = KernelAllocator.RequestPage();
     KernelPageTableManager.MapMemory(ret, ret, PTFlag::US | PTFlag::RW);
     return ret;
 }
 
-static void internal_freepage(void *page)
+static void internal_freepage(SyscallsRegs *regs, void *page)
 {
     syscldbg("syscall: freepage( %p )", page);
+    if (!CanSyscall(regs))
+        return;
     KernelAllocator.FreePage(page);
     KernelPageTableManager.UnmapMemory(page);
     KernelPageTableManager.MapMemory(page, page, PTFlag::RW);
 }
 
-static void *internal_requestpages(uint64_t pages)
+static void *internal_requestpages(SyscallsRegs *regs, uint64_t pages)
 {
     syscldbg("syscall: requestpages( %#llx )", pages);
+    if (!CanSyscall(regs))
+        return (void *)deniedcall;
     void *ret = KernelAllocator.RequestPages(pages);
     for (uint64_t i = (uint64_t)ret; i < ((uint64_t)ret + (pages * PAGE_SIZE)); i += PAGE_SIZE)
         KernelPageTableManager.MapMemory((void *)i, (void *)i, PTFlag::US | PTFlag::RW);
     return ret;
 }
 
-static void internal_freepages(void *page, uint64_t pages)
+static void internal_freepages(SyscallsRegs *regs, void *page, uint64_t pages)
 {
     syscldbg("syscall: freepages( %p, %#llx )", page, pages);
+    if (!CanSyscall(regs))
+        return;
     KernelAllocator.FreePages(page, pages);
     for (uint64_t i = (uint64_t)page; i < ((uint64_t)page + (pages * PAGE_SIZE)); i += PAGE_SIZE)
     {
@@ -124,81 +152,103 @@ static void internal_freepages(void *page, uint64_t pages)
     }
 }
 
-static uint64_t internal_fbaddress()
+static uint64_t internal_fbaddress(SyscallsRegs *regs)
 {
     syscldbg("syscall: fbaddress()");
+    if (!CanSyscall(regs))
+        return deniedcall;
     return CurrentDisplay->GetFramebuffer()->Address;
 }
 
-static uint64_t internal_fbsize()
+static uint64_t internal_fbsize(SyscallsRegs *regs)
 {
     syscldbg("syscall: fbsize()");
+    if (!CanSyscall(regs))
+        return deniedcall;
     return CurrentDisplay->GetFramebuffer()->Size;
 }
 
-static uint64_t internal_fbwidth()
+static uint64_t internal_fbwidth(SyscallsRegs *regs)
 {
     syscldbg("syscall: fbwidth()");
+    if (!CanSyscall(regs))
+        return deniedcall;
     return CurrentDisplay->GetFramebuffer()->Width;
 }
 
-static uint64_t internal_fbheight()
+static uint64_t internal_fbheight(SyscallsRegs *regs)
 {
     syscldbg("syscall: fbheight()");
+    if (!CanSyscall(regs))
+        return deniedcall;
     return CurrentDisplay->GetFramebuffer()->Height;
 }
 
-static uint64_t internal_fbppsl()
+static uint64_t internal_fbppsl(SyscallsRegs *regs)
 {
     syscldbg("syscall: fbppsl()");
+    if (!CanSyscall(regs))
+        return deniedcall;
     return CurrentDisplay->GetFramebuffer()->PixelsPerScanLine;
 }
 
-static uint8_t internal_getlastkeyboardscancode()
+static uint8_t internal_getlastkeyboardscancode(SyscallsRegs *regs)
 {
     syscldbg("syscall: getlastkeyboardscancode()");
     return ps2keyboard->GetLastScanCode();
 }
 
-static FileSystem::FILE *internal_fileOpen(char *Path)
+static FileSystem::FILE *internal_fileOpen(SyscallsRegs *regs, char *Path)
 {
     syscldbg("syscall: fileOpen( %s )", Path);
+    if (!CanSyscall(regs))
+        return (FileSystem::FILE *)deniedcall;
     return vfs->Open(Path, nullptr);
 }
 
-static void internal_fileClose(FileSystem::FILE *File)
+static void internal_fileClose(SyscallsRegs *regs, FileSystem::FILE *File)
 {
     syscldbg("syscall: fileClose( %p )", File);
+    if (!CanSyscall(regs))
+        return;
     vfs->Close(File);
 }
 
-static uint64_t internal_fileRead(FileSystem::FILE *File, uint64_t Offset, void *Buffer, uint64_t Size)
+static uint64_t internal_fileRead(SyscallsRegs *regs, FileSystem::FILE *File, uint64_t Offset, void *Buffer, uint64_t Size)
 {
     syscldbg("syscall: fileRead( %p, %#llx, %p, %#llx )", File, Offset, Buffer, Size);
+    if (!CanSyscall(regs))
+        return deniedcall;
     return vfs->Read(File, Offset, Buffer, Size);
 }
 
-static uint64_t internal_fileWrite(FileSystem::FILE *File, uint64_t Offset, void *Buffer, uint64_t Size)
+static uint64_t internal_fileWrite(SyscallsRegs *regs, FileSystem::FILE *File, uint64_t Offset, void *Buffer, uint64_t Size)
 {
     syscldbg("syscall: fileWrite( %p, %#llx, %p, %#llx )", File, Offset, Buffer, Size);
+    if (!CanSyscall(regs))
+        return deniedcall;
     return vfs->Write(File, Offset, Buffer, Size);
 }
 
-static uint64_t internal_filesize(FileSystem::FILE *File)
+static uint64_t internal_filesize(SyscallsRegs *regs, FileSystem::FILE *File)
 {
     syscldbg("syscall: filesize( %p )", File);
+    if (!CanSyscall(regs))
+        return deniedcall;
     return File->Node->Length;
 }
 
-static void internal_usleep(uint64_t us)
+static void internal_usleep(SyscallsRegs *regs, uint64_t us)
 {
     syscldbg("syscall: usleep( %#llx )", us);
     usleep(us);
 }
 
-static uint64_t internal_dbg(int port, char *message)
+static uint64_t internal_dbg(SyscallsRegs *regs, int port, char *message)
 {
     syscldbg("syscall: dbg( %d, %s )", port, message);
+    if (!CanSyscall(regs))
+        return deniedcall;
     serial_write_text(port, message);
     return 0;
 }
@@ -269,7 +319,7 @@ uint64_t HandleFennixSyscalls(SyscallsRegs *regs)
         err("Syscall %#llx failed.", RAX);
         return failedcall;
     }
-    uint64_t ret = call(RBX, RDX, RSI, RDI, regs);
+    uint64_t ret = call((uint64_t)regs, RBX, RDX, RSI, RDI);
     RAX = ret;
     return ret;
 }

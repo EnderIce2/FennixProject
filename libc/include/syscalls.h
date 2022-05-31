@@ -87,6 +87,7 @@
 
 #define deadcall -0xdeadca11
 #define failedcall -0xfa11edca11
+#define deniedcall -0xde61edca11
 
 enum SystemCalls
 {

@@ -3,6 +3,7 @@
 #include "../cpu/gdt.h"
 #include "../cpu/idt.h"
 
+#include <internal_task.h>
 #include <critical.hpp>
 #include <stdarg.h>
 #include <task.h>

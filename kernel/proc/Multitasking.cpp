@@ -1,5 +1,6 @@
 #include <internal_task.h>
 
+#include "../security/security.hpp"
 #include "../cpu/apic.hpp"
 #include "../cpu/smp.hpp"
 #include "../cpu/gdt.h"
@@ -8,7 +9,6 @@
 #include <interrupts.h>
 #include <critical.hpp>
 #include <debug.h>
-#include <rand.h>
 #include <sys.h>
 #include <int.h>
 #include <asm.h>
@@ -156,17 +156,6 @@ namespace Tasking
     }
 #endif
 
-    uint64_t CreateToken()
-    {
-        // TODO: The kernel should have a way to remember what tokens are generated.
-        return rand64();
-    }
-
-    void TrustToken(uint64_t Token, bool Process, uint64_t ID, enum TokenTrustLevel TrustLevel)
-    {
-        fixme("TrustToken( %#llx %d %ld %d )", Token, Process, ID, TrustLevel);
-    }
-
     extern "C" void ProcessDoExit(uint64_t Code)
     {
         EnterCriticalSection;
@@ -310,7 +299,7 @@ namespace Tasking
             POKE(uint64_t, thread->Registers.rsp) = (uint64_t)ProcessDoExit;
             break;
         case ELEVATION::User:
-            TrustToken(thread->Security.Token, false, thread->ID, TokenTrustLevel::DoNotTrust);
+            TrustToken(thread->Security.Token, false, thread->ID, TokenTrustLevel::Untrusted);
             thread->gs = 0;
             thread->fs = rdmsr(MSR_FS_BASE);
             thread->Registers.cs = GDT_USER_CODE;
