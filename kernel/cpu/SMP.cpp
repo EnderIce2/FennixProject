@@ -65,6 +65,7 @@ extern "C" void StartCPU()
 
     /* ... GDT, IDT, APIC, etc... */
 
+    CurrentCPU->Checksum = CPU_DATA_CHECKSUM;
     asm("sti");
     CPUEnabled = true;
     CPU_STOP;
@@ -94,7 +95,7 @@ static void InitializeCPU(ACPI::MADT::LocalAPIC *lapic)
 
     memcpy((void *)TRAMPOLINE_START, &_trampoline_start, trampoline_len);
 
-    GetCPU(lapic->APICId)->PageTable = GetCurrentCPU()->PageTable;
+    GetCPU(lapic->APICId)->PageTable = CurrentCPU->PageTable;
     // POKE(volatile uint64_t, PAGE_TABLE) = GetCPU(lapic->APICId)->PageTable.raw;
     POKE(volatile uint64_t, PAGE_TABLE) = readcr3().raw;
     memset(GetCPU(lapic->APICId)->Stack, 0, STACK_SIZE);

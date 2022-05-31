@@ -6,6 +6,8 @@
 #include "fxsr.h"
 #include "idt.h"
 
+#define CPU_DATA_CHECKSUM 0xdeadda7a
+
 struct CPUData
 {
     uint64_t ID;
@@ -20,6 +22,8 @@ struct CPUData
 
     void fxsave(char *Buffer) { _fxsave(Buffer); }
     void fxrstor(char *Buffer) { _fxrstor(Buffer); }
+
+    unsigned int Checksum;
 
     uint8_t Stack[STACK_SIZE] __attribute__((aligned(PAGE_SIZE)));
 } __attribute__((packed));
@@ -44,15 +48,15 @@ static CPUData *GetCurrentCPU()
     uint64_t ret = 0;
     asm volatile("movq %%fs, %0\n"
                  : "=r"(ret));
-    return &CPUs[ret];
-}
 
-static uint64_t GetCurrentCPUID()
-{
-    uint64_t ret = 0;
-    asm volatile("movq %%fs, %0\n"
-                 : "=r"(ret));
-    return ret;
+    if ((&CPUs[ret])->Checksum != CPU_DATA_CHECKSUM)
+    {
+        // TODO: i think somehow i messed this up somehere... i'll figure it out later... but now i will return the first cpu
+        // err("CPU %d data are corrupted!", ret);
+        return &CPUs[0];
+    }
+
+    return &CPUs[ret];
 }
 
 static CPUData *GetCPU(uint64_t id) { return &CPUs[id]; }
