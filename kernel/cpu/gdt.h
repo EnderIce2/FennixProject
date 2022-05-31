@@ -14,5 +14,6 @@ extern GlobalDescriptorTableDescriptor gdt;
 extern TaskStateSegment *tss;
 EXTERNC void init_gdt();
 EXTERNC void init_tss();
+EXTERNC void CreateNewTSS(int CPUCore);
 
 #endif // !__FENNIX_KERNEL_GDT_H__
