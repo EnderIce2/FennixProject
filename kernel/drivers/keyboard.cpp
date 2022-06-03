@@ -4,8 +4,8 @@
 #include "../kernel.h"
 
 #include <interrupts.h>
-#include <io.h>
 #include <int.h>
+#include <io.h>
 
 PS2Keyboard::PS2KeyboardDriver *ps2keyboard = nullptr;
 

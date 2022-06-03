@@ -1,6 +1,11 @@
 #include "recovery.hpp"
-#include <asm.h>
+
 #include <display.h>
+#include <asm.h>
+#include <io.h>
+
+#include "../drivers/keyboard.hpp"
+#include "../cpu/acpi.hpp"
 
 namespace SystemRecovery
 {
@@ -8,7 +13,14 @@ namespace SystemRecovery
     {
         CurrentDisplay->Clear(0x282828);
         printf("TODO");
-        CPU_STOP;
+        while (1)
+        {
+            asm volatile("sti");
+            uint8_t sc = ps2keyboard->GetLastScanCode();
+            if (sc == 0x1) // esc
+                dsdt->reboot();
+        }
+        dsdt->reboot();
     }
 
     Recovery::~Recovery()

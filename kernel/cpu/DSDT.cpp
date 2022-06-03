@@ -85,6 +85,19 @@ namespace ACPI
             while (val & 0x02)
                 val = inb(0x64);
             outb(0x64, 0xFE);
+
+            // second attempt to reboot
+            // https://wiki.osdev.org/Reboot
+            uint8_t temp;
+            asm volatile("cli");
+            do
+            {
+                temp = inb(0x64);
+                if (((temp) & (1 << (0))) != 0)
+                    inb(0x60);
+            } while (((temp) & (1 << (1))) != 0);
+            outb(0x64, 0xFE);
+
             CPU_STOP;
         }
         switch (acpi->FADT->ResetReg.AddressSpace)

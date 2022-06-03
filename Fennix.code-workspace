@@ -30,7 +30,8 @@
 			"deh_misc.h": "c",
 			"time.h": "c",
 			"print.h": "c",
-			"*.tcc": "cpp"
+			"*.tcc": "cpp",
+			"heap.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}
