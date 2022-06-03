@@ -768,7 +768,17 @@ namespace Tasking
 
     Multitasking::~Multitasking()
     {
+        debug("Multitasking destructor called.");
         CurrentTaskingMode = TaskingMode::None;
+        MultitaskingSchedulerEnabled = false;
         delete CriticalSectionData;
+        foreach (PCB *pcb in mt->ListProcess)
+        {
+            if (InvalidPCB(pcb))
+                continue;
+            pcb->Status = STATUS::Terminated;
+            debug("Process %s terminated.", pcb->Name);
+            RemoveProcess(pcb);
+        }
     }
 }
