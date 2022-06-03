@@ -15,3 +15,5 @@ extern bool ShowRecoveryScreen;
 
 EXTERNC void stivale_initializator(struct stivale_struct *bootloaderdata);
 EXTERNC void stivale2_initializator(struct stivale2_struct *bootloaderdata);
+
+void KernelTask();

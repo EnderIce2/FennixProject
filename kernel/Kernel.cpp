@@ -1,12 +1,13 @@
 #include "kernel.h"
 
+#include <internal_task.h>
 #include <filesystem.h>
 #include <bootscreen.h>
 #include <symbols.hpp>
 #include <display.h>
 #include <string.h>
 #include <cwalk.h>
-#include <internal_task.h>
+#include <test.h>
 #include <asm.h>
 #include <sys.h>
 #include <io.h>
@@ -24,6 +25,7 @@
 #include "cpu/gdt.h"
 #include "cpu/idt.h"
 #include "timer.h"
+#include "test.h"
 #include "pci.h"
 
 // Early params are used only for the most basic functions. After that it may be overwritten with other data.
@@ -218,6 +220,9 @@ void KernelTask()
 
 void KernelInit()
 {
+    TEST_TEST();
+    do_libs_test();
+    do_mem_test();
     trace("early initialization completed");
     BS = new BootScreen::Screen;
     initflags();
@@ -301,9 +306,13 @@ void KernelInit()
     ps2mouse = new PS2Mouse::PS2MouseDriver;
     BS->IncreaseProgres();
 
+    do_tasking_test();
+
+#ifndef TESTING
     if (sysflags->monotasking)
         StartTasking((uint64_t)KernelTask, TaskingMode::Mono);
     else
         StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
+#endif
     CPU_STOP;
 }

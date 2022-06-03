@@ -58,6 +58,10 @@ ifeq ($(DEBUG), 1)
 	WARNCFLAG += -Wno-unused-function -Wno-maybe-uninitialized -Wno-builtin-declaration-mismatch -Wno-unknown-pragmas -Wno-unused-parameter -Wno-unused-variable
 endif
 
+ifeq ($(UNIT_TESTS), 1)
+	CFLAGS += -DUNIT_TESTS
+endif
+
 default:
 	$(error "No option specified!")
 

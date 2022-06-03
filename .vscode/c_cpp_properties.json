@@ -10,7 +10,8 @@
             "defines": [
                 "DEBUG",
                 "KERNEL_NAME",
-                "KERNEL_VERSION"
+                "KERNEL_VERSION",
+                "UNIT_TESTS"
             ],
             "compilerPath": "${workspaceFolder}/tools/cross/bin/x86_64-elf-gcc",
             "cStandard": "gnu17",
