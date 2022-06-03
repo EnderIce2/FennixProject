@@ -158,6 +158,12 @@ namespace DisplayDriver
          * @brief Reset text position
          */
         void ResetPrintPosition();
+
+        /**
+         * @brief Get the Print Location object
+         * @return PrintLocation 
+         */
+        PrintLocation GetPrintLocation() { return this->ploc; }
         /**
          * @brief Set print color
          * @param color 0xAARRGGBB
@@ -175,6 +181,7 @@ namespace DisplayDriver
 
         void SetPixel(uint32_t X, uint32_t Y, uint32_t Color);
         uint32_t GetPixel(uint32_t X, uint32_t Y);
+
     private:
         PrintLocation ploc = {.X = 0, .Y = 0};
         uint32_t color = 0xFFFFFFFF;
