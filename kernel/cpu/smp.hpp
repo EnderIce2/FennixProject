@@ -43,6 +43,7 @@ extern SymmetricMultiprocessing::SMP *smp;
 #define MAX_CPU 256
 extern CPUData CPUs[];
 
+// TODO: a better approach is to get lapic id instead of storing the ID in the FS register
 static CPUData *GetCurrentCPU()
 {
     uint64_t ret = 0;
