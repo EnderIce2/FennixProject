@@ -1,10 +1,11 @@
-#include <sys.h>
-#include <types.h>
+#include <internal_task.h>
+#include <symbols.hpp>
 #include <display.h>
 #include <string.h>
-#include <asm.h>
+#include <types.h>
 #include <heap.h>
-#include <internal_task.h>
+#include <sys.h>
+#include <asm.h>
 
 #include "cpu/smp.hpp"
 
@@ -218,7 +219,6 @@ EXTERNC void isrcrash(REGISTERS *regs)
         }
         else
         {
-            CurrentDisplay->Clear(0xFF262100);
             staticbuffer(descbuf);
             staticbuffer(desc_ext);
             staticbuffer(desc_table);
@@ -267,7 +267,6 @@ EXTERNC void isrcrash(REGISTERS *regs)
         }
         else
         {
-            CurrentDisplay->Clear(0xFF1E0500);
             staticbuffer(descbuf);
             staticbuffer(desc_ext);
             staticbuffer(desc_table);
@@ -318,7 +317,6 @@ EXTERNC void isrcrash(REGISTERS *regs)
         else
         {
             err("Kernel Exception");
-            CurrentDisplay->Clear(0xFF021C07);
             PageFaultErrorCode params = {.raw = (uint32_t)ERROR_CODE};
 
             // We can't use an allocator in exceptions (because that can cause another exception!) so, we'll just use a static buffer.
@@ -445,7 +443,6 @@ EXTERNC void isrcrash(REGISTERS *regs)
         }
         else
         {
-            CurrentDisplay->Clear(0xFF221160);
         }
         break;
     }
@@ -467,12 +464,15 @@ EXTERNC void isrcrash(REGISTERS *regs)
            cr0.ET ? "True " : "False", cr0.NE ? "True " : "False", cr0.WP ? "True " : "False", cr0.AM ? "True " : "False",
            cr0.NW ? "True " : "False", cr0.CD ? "True " : "False", cr0.PG ? "True " : "False",
            cr0._reserved0, cr0._reserved1, cr0._reserved2);
+
     CurrentDisplay->SetPrintColor(0xFFFCBD79);
     printf("CR2: PFLA: %#lx\n",
            cr2.PFLA);
+
     CurrentDisplay->SetPrintColor(0xFF79FC84);
     printf("CR3: PWT:%s     PCD:%s    PDBR:%#lx\n",
            cr3.PWT ? "True " : "False", cr3.PCD ? "True " : "False", cr3.PDBR);
+
     CurrentDisplay->SetPrintColor(0xFFBD79FC);
     printf("CR4: VME:%s     PVI:%s     TSD:%s      DE:%s\n     PSE:%s     PAE:%s     MCE:%s     PGE:%s\n     PCE:%s    UMIP:%s  OSFXSR:%s OSXMMEXCPT:%s\n    LA57:%s    VMXE:%s    SMXE:%s   PCIDE:%s\n OSXSAVE:%s    SMEP:%s    SMAP:%s     PKE:%s\n     R0:%d R1:%d R2:%d\n",
            cr4.VME ? "True " : "False", cr4.PVI ? "True " : "False", cr4.TSD ? "True " : "False", cr4.DE ? "True " : "False",
@@ -481,8 +481,10 @@ EXTERNC void isrcrash(REGISTERS *regs)
            cr4.LA57 ? "True " : "False", cr4.VMXE ? "True " : "False", cr4.SMXE ? "True " : "False", cr4.PCIDE ? "True " : "False",
            cr4.OSXSAVE ? "True " : "False", cr4.SMEP ? "True " : "False", cr4.SMAP ? "True " : "False", cr4.PKE ? "True " : "False",
            cr4._reserved0, cr4._reserved1, cr4._reserved2);
+
     CurrentDisplay->SetPrintColor(0xFF79FCF5);
     printf("CR8: TPL:%d\n", cr8.TPL);
+
     CurrentDisplay->SetPrintColor(0xFFFCFC02);
     printf("RFL: CF:%s     PF:%s     AF:%s     ZF:%s\n     SF:%s     TF:%s     IF:%s     DF:%s\n     OF:%s   IOPL:%s     NT:%s     RF:%s\n     VM:%s     AC:%s    VIF:%s    VIP:%s\n     ID:%s     AlwaysOne:%d\n     R0:%#x R1:%#x R2:%#x R3:%#x",
            FLAGS.CF ? "True " : "False", FLAGS.PF ? "True " : "False", FLAGS.AF ? "True " : "False", FLAGS.ZF ? "True " : "False",
@@ -491,6 +493,41 @@ EXTERNC void isrcrash(REGISTERS *regs)
            FLAGS.VM ? "True " : "False", FLAGS.AC ? "True " : "False", FLAGS.VIF ? "True " : "False", FLAGS.VIP ? "True " : "False",
            FLAGS.ID ? "True " : "False", FLAGS.always_one,
            FLAGS._reserved0, FLAGS._reserved1, FLAGS._reserved2, FLAGS._reserved3);
+
+    struct StackFrame
+    {
+        struct StackFrame *rbp;
+        uint64_t rip;
+    };
+
+    struct StackFrame *frames;
+
+    // __builtin_frame_address gets the exception handler too, which is not useful and can be confusing.
+    frames = (struct StackFrame *)RBP;
+    // frames = (struct StackFrame *)__builtin_frame_address(0);
+
+    CurrentDisplay->SetPrintColor(0xFF7981FC);
+    printf("\n\nStack Trace:");
+
+    for (uint64_t frame = 0; frame < 20; ++frame)
+    {
+        if (frames->rip == 0x0)
+            break;
+        printf("\n");
+        CurrentDisplay->SetPrintColor(0xFF2565CC);
+        printf("%#lx", frames->rip);
+        CurrentDisplay->SetPrintColor(0xFF7925CC);
+        printf("-");
+        CurrentDisplay->SetPrintColor(0xFF25CCC9);
+        printf("%s", SymTbl->GetSymbolFromAddress(frames->rip));
+        frames = frames->rbp;
+        static int once = 0;
+        if (!once++)
+        {
+            CurrentDisplay->SetPrintColor(0xFF7981FC);
+            printf(" <- Exception");
+        }
+    }
 
     CPU_HALT;
 }
