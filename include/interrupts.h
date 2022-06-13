@@ -294,9 +294,9 @@ typedef enum
 
 typedef struct _TrapFrame
 {
-    // uint64_t es;  // Extra Segment (used for string operations)
-    // uint64_t fs;  // General-purpose Segment
     // uint64_t gs;  // General-purpose Segment
+    // uint64_t fs;  // General-purpose Segment
+    // uint64_t es;  // Extra Segment (used for string operations)
     // uint64_t ds;  // Data Segment
 
     uint64_t r15; // General purpose

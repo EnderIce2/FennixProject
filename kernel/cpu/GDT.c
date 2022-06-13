@@ -39,11 +39,9 @@ void init_gdt()
 }
 
 TaskStateSegment *tss = NULL;
-NEWLOCK(tss_lock);
 
 void init_tss()
 {
-    LOCK(tss_lock);
     trace("initializing tss");
     tss = (TaskStateSegment *)kcalloc(bootparams->smp.CPUCount, sizeof(TaskStateSegment));
     uint64_t tss_base = (uint64_t)&tss[0];
@@ -60,8 +58,9 @@ void init_tss()
     (&tss[0])->InterruptStackTable0 = (uint64_t)RequestPage(); // exceptions
     (&tss[0])->InterruptStackTable1 = (uint64_t)RequestPage(); // nmi
     (&tss[0])->InterruptStackTable2 = (uint64_t)RequestPage(); // page fault, double fault, general protection fault, etc...
-    UNLOCK(tss_lock);
 }
+
+NEWLOCK(tss_lock);
 
 void CreateNewTSS(int CPUCore)
 {

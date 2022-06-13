@@ -44,7 +44,7 @@ void do_mem_bitmap_print()
 
 void do_mem_test()
 {
-    // return;
+    return;
     TEST_DBG("Kernel Address: Start:%p ---- End:%p [%ldKB/%ldKB]\n", bootparams->kernel.file, bootparams->kernel.file + bootparams->kernel.size, TO_KB(KernelAllocator.GetUsedRAM()), TO_KB(KernelAllocator.GetFreeRAM()));
     for (int repeat = 0; repeat < 16; repeat++)
     {

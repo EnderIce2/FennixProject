@@ -14,7 +14,9 @@ void InitHeap(void *HeapAddress, size_t PageCount)
     void *Position = HeapAddress;
     for (size_t i = 0; i < PageCount; i++)
     {
-        KernelPageTableManager.MapMemory(Position, KernelAllocator.RequestPage(), RW);
+        void *Page = KernelAllocator.RequestPage();
+        KernelPageTableManager.MapMemory(Position, Page, RW);
+        trace("Preallocate Heap Memory (%#llx-%#llx [%#llx])...", Position, (size_t)Position + PAGE_SIZE, Page);
         Position = (void *)((size_t)Position + PAGE_SIZE);
     }
     size_t HeapLength = PageCount * PAGE_SIZE;
@@ -59,7 +61,9 @@ void ExpandHeap(size_t Length)
     HeapSegHdr *NewSegment = (HeapSegHdr *)HeapEnd;
     for (size_t i = 0; i < PageCount; i++)
     {
-        KernelPageTableManager.MapMemory(HeapEnd, KernelAllocator.RequestPage(), RW);
+        void *Page = KernelAllocator.RequestPage();
+        KernelPageTableManager.MapMemory(HeapEnd, Page, RW);
+        trace("Expanding Heap Memory (%#llx-%#llx [%#llx])...", HeapEnd, (size_t)HeapEnd + PAGE_SIZE, Page);
         HeapEnd = (void *)((size_t)HeapEnd + PAGE_SIZE);
     }
     NewSegment->IsFree = true;
@@ -80,9 +84,8 @@ void HeapSegHdr::CombineForward()
     if (Next == LastHdr)
         LastHdr = this;
     if (Next->Next != nullptr)
-    {
         Next->Next->Last = this;
-    }
+
     Length = Length + Next->Length + sizeof(HeapSegHdr);
     Next = Next->Next;
 }
@@ -165,7 +168,7 @@ void *defPREFIX(calloc)(size_t n, size_t Size)
         err("Memory allocation not initialized yet!");
         return 0;
     }
-    void *Block = kmalloc(n * Size);
+    void *Block = defPREFIX(malloc)(n * Size);
     if (Block)
         memset(Block, 0, n * Size);
     return Block;

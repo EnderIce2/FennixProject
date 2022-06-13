@@ -126,7 +126,7 @@ make clean
 ---
 
 ## Todo
-- [ ] Figure out how to make the interrupts push es, fs & gs into TrapFrame structure
+- [x] Figure out how to make the interrupts push ds, es, fs & gs into TrapFrame structure (why?)
 - [ ] Fix the context switching causing exceptions
 - [ ] Fix the multitasking page table switching
 - [ ] Complete implementation for driver loading
