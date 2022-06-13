@@ -40,7 +40,9 @@ void Dock()
 
 int main(int argc, char **argv)
 {
-    syscall_createThread((long)Desktop, 0, 0);
-    syscall_createThread((long)Dock, 0, 0);
+    // syscall_createThread((long)Desktop, 0, 0);
+    // syscall_createThread((long)Dock, 0, 0);
+    while (1)
+        ;
     return 0;
 }
