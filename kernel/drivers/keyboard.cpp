@@ -1,6 +1,5 @@
 #include "keyboard.hpp"
 
-#include "../cpu/idt.h"
 #include "../kernel.h"
 
 #include <interrupts.h>
@@ -21,7 +20,6 @@ namespace PS2Keyboard
             LastSC = scanCode;
             if (scanCode == 0x3B)
                 ShowRecoveryScreen = true;
-            EndOfInterrupt(INT_NUM);
         }
     }
 
@@ -35,7 +33,7 @@ namespace PS2Keyboard
 
     PS2KeyboardDriver::PS2KeyboardDriver()
     {
-        register_interrupt_handler(IRQ1, PS2KeyboardInterruptHandler);
+        RegisterInterrupt(PS2KeyboardInterruptHandler, IRQ1, true);
 
         while (inb(0x64) & 0x1)
             inb(0x60);

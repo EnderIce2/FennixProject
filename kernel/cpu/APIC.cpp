@@ -1,8 +1,11 @@
 #include "apic.hpp"
+
+#include "../interrupts/pic.h"
+#include "smp.hpp"
+
+#include <critical.hpp>
 #include <int.h>
 #include <io.h>
-#include <critical.hpp>
-#include "smp.hpp"
 
 /* Inspired from: https://github.com/Supercip971/WingOS/blob/master/kernel/arch/x86_64/device/apic.cpp */
 
@@ -75,10 +78,13 @@ namespace APIC
         for (uint64_t i = 0; i < madt->iso.size(); i++)
             if (madt->iso[i]->IRQSource == IRQ)
             {
-                debug("(ReqRed IRQ%d) ISO %#lx mapping to IRQ Source:%#lx GSI:%#lx", IRQ, i, madt->iso[i]->IRQSource + 0x20, madt->iso[i]->GSI);
+                debug("[ISO %d] Mapping to source IRQ%#d GSI:%#lx on CPU %d",
+                      i, madt->iso[i]->IRQSource, madt->iso[i]->GSI, CPU);
+
                 this->RawRedirectIRQ(madt->iso[i]->IRQSource + 0x20, madt->iso[i]->GSI, madt->iso[i]->Flags, CPU, Status);
                 return;
             }
+        debug("Mapping IRQ%d on CPU %d", IRQ, CPU);
         this->RawRedirectIRQ(IRQ + 0x20, IRQ, 0, CPU, Status);
     }
 

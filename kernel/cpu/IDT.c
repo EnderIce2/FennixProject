@@ -1,17 +1,20 @@
 #include "idt.h"
-#include "gdt.h"
+
+#include "../interrupts/pic.h"
 #include "../drivers/serial.h"
+#include "gdt.h"
+
+#include <interrupts.h>
+#include <boot/gbp.h>
+#include <display.h>
 #include <int.h>
 #include <sys.h>
-#include <interrupts.h>
-#include <display.h>
-#include <io.h>
-#include <boot/gbp.h>
 #include <asm.h>
+#include <io.h>
 
 __attribute__((naked, used)) void exception_handler_helper()
 {
-    asm("cld\n"
+    asm("cld\n" // clear direction flag
         "pushq %rax\n"
         "pushq %rbx\n"
         "pushq %rcx\n"
@@ -27,17 +30,8 @@ __attribute__((naked, used)) void exception_handler_helper()
         "pushq %r13\n"
         "pushq %r14\n"
         "pushq %r15\n"
-        "movq %ds, %rax\n"
-        "pushq %rax\n"
-        "movw $16, %ax\n"
-        "movw %ax, %ds\n"
-        "movw %ax, %es\n"
-        "movw %ax, %ss\n"
         "movq %rsp, %rdi\n"
         "call exception_handler\n"
-        "popq %rax\n"
-        "movw %ax, %ds\n"
-        "movw %ax, %es\n"
         "popq %r15\n"
         "popq %r14\n"
         "popq %r13\n"
@@ -54,7 +48,7 @@ __attribute__((naked, used)) void exception_handler_helper()
         "popq %rbx\n"
         "popq %rax\n"
         "addq $16, %rsp\n"
-        "iretq");
+        "iretq"); // pop CS RIP RFLAGS SS ESP
 }
 
 __attribute__((used)) void exception_handler(REGISTERS *regs)
@@ -122,40 +116,98 @@ exception_handler:
     CPU_HALT;
 }
 
-#define EXCEPTION_HANDLER(num)                                          \
-    __attribute__((naked)) static void interrupt_handler_##num()        \
-    {                                                                   \
-        asm("pushq $0\npushq $" #num "\njmp exception_handler_helper"); \
+#define EXCEPTION_HANDLER(num)                                   \
+    __attribute__((naked)) static void interrupt_handler_##num() \
+    {                                                            \
+        asm("pushq $0\npushq $" #num "\n"                        \
+            "jmp exception_handler_helper");                     \
     }
 
 #define EXCEPTION_ERROR_HANDLER(num)                             \
     __attribute__((naked)) static void interrupt_handler_##num() \
     {                                                            \
-        asm("pushq $" #num "\njmp exception_handler_helper");    \
+        asm("pushq $" #num "\n"                                  \
+            "jmp exception_handler_helper");                     \
+    }
+
+/* =============================================================================================================================================== */
+
+__attribute__((naked, used)) static void InterruptHandlerStub()
+{
+    asm("cld\n"
+        "pushq %rax\n"
+        "pushq %rbx\n"
+        "pushq %rcx\n"
+        "pushq %rdx\n"
+        "pushq %rsi\n"
+        "pushq %rdi\n"
+        "pushq %rbp\n"
+        "pushq %r8\n"
+        "pushq %r9\n"
+        "pushq %r10\n"
+        "pushq %r11\n"
+        "pushq %r12\n"
+        "pushq %r13\n"
+        "pushq %r14\n"
+        "pushq %r15\n"
+        "mov %rsp, %rdi\n"
+        "call IDTInterruptHandler\n"
+        "popq %r15\n"
+        "popq %r14\n"
+        "popq %r13\n"
+        "popq %r12\n"
+        "popq %r11\n"
+        "popq %r10\n"
+        "popq %r9\n"
+        "popq %r8\n"
+        "popq %rbp\n"
+        "popq %rdi\n"
+        "popq %rsi\n"
+        "popq %rdx\n"
+        "popq %rcx\n"
+        "popq %rbx\n"
+        "popq %rax\n"
+        "addq $16, %rsp\n"
+        "iretq");
+}
+
+#define INTERRUPT_HANDLER(num)                                  \
+    __attribute__((naked, used)) void interrupt_handler_##num() \
+    {                                                           \
+        asm("pushq $0\npushq $" #num "\n"                       \
+            "jmp InterruptHandlerStub\n");                      \
     }
 
 INTERRUPT_HANDLER interrupt_handlers[256];
 
-// TODO: why does sometines i get empty registers here? what's wrong with this function?
-#define INTERRUPT_HANDLER(num)                                                      \
-    __attribute__((interrupt)) static void interrupt_handler_##num(REGISTERS *regs) \
-    {                                                                               \
-        if (num < 0 || num > 0xff)                                                  \
-        {                                                                           \
-            err("Invalid interrupt received %d", num);                              \
-        }                                                                           \
-        else if (interrupt_handlers[num] == NULL)                                   \
-        {                                                                           \
-            err("Empty interrupt handle! %#llx (RIP:%016p)", num, RIP);             \
-        }                                                                           \
-        else                                                                        \
-        {                                                                           \
-            INTERRUPT_HANDLER handle = interrupt_handlers[num];                     \
-            handle(regs);                                                           \
-        }                                                                           \
-        EndOfInterrupt(num);                                                        \
-        return;                                                                     \
+static void IDTInterruptHandler(REGISTERS *regs)
+{
+    if (regs->int_num < 0 || regs->int_num > 0xff)
+    {
+        err("Invalid interrupt received %#llx", regs->int_num);
     }
+    else if (interrupt_handlers[regs->int_num] == NULL)
+    {
+        err("IRQ%d is not registered!", regs->int_num - 32);
+    }
+    else
+        interrupt_handlers[regs->int_num](regs);
+    EndOfInterrupt(regs->int_num);
+}
+
+void register_interrupt_handler(uint8_t vector, INTERRUPT_HANDLER handle)
+{
+    interrupt_handlers[vector] = handle;
+    debug("Vector %#llx(IRQ%d) has been registered to handle %#llx", vector, vector - 32, handle);
+}
+
+void unregister_interrupt_handler(uint8_t vector)
+{
+    interrupt_handlers[vector] = NULL;
+    debug("Vector %#llx(IRQ%d) has been unregistered", vector, vector - 32);
+}
+
+/* =============================================================================================================================================== */
 
 static InterruptDescriptorTableEntry idt_entries[0x100];
 
@@ -168,16 +220,12 @@ void set_idt_entry(uint8_t idt, void (*handler)(), uint64_t ist, uint64_t ring)
     idt_entries[idt].BaseHigh = (uint64_t)((uint64_t)handler >> 16);
     idt_entries[idt].Flags = FlagGate32BIT_TRAP;
     idt_entries[idt].SegmentSelector = GDT_KERNEL_CODE;
-    idt_entries[idt].P = 1;
+    idt_entries[idt].Present = 1;
     idt_entries[idt].InterruptStackTable = ist;
     idt_entries[idt].Ring = ring;
 }
 
-void register_interrupt_handler(uint8_t vector, INTERRUPT_HANDLER handle)
-{
-    interrupt_handlers[vector] = handle;
-    debug("Vector %#llx(IRQ%d) has been registered to handle %#llx", vector, vector - 32, handle);
-}
+/* =============================================================================================================================================== */
 
 // ISR
 EXCEPTION_HANDLER(0x00);
@@ -212,6 +260,7 @@ EXCEPTION_HANDLER(0x1c);
 EXCEPTION_HANDLER(0x1d);
 EXCEPTION_HANDLER(0x1e);
 EXCEPTION_HANDLER(0x1f);
+
 // IRQ
 INTERRUPT_HANDLER(0x20)
 INTERRUPT_HANDLER(0x21)
@@ -219,25 +268,21 @@ INTERRUPT_HANDLER(0x22)
 INTERRUPT_HANDLER(0x23)
 INTERRUPT_HANDLER(0x24)
 INTERRUPT_HANDLER(0x25)
-__attribute__((naked)) static void interrupt_handler_0x26() { asm("pushq $0\npushq $"
-                                                                  "0x26"
-                                                                  "\njmp floppy_driver_handler_helper"); }
+INTERRUPT_HANDLER(0x26)
 INTERRUPT_HANDLER(0x27)
 INTERRUPT_HANDLER(0x28)
 INTERRUPT_HANDLER(0x29)
-__attribute__((naked)) static void interrupt_handler_0x2a() { asm("pushq $0\npushq $"
-                                                                  "0x2a"
-                                                                  "\njmp MultiTaskingSchedulerHelper"); }
-__attribute__((naked)) static void interrupt_handler_0x2b() { asm("pushq $0\npushq $"
-                                                                  "0x2b"
-                                                                  "\njmp mono_scheduler_handler_helper"); }
+INTERRUPT_HANDLER(0x2a)
+INTERRUPT_HANDLER(0x2b)
 INTERRUPT_HANDLER(0x2c)
 INTERRUPT_HANDLER(0x2d)
 INTERRUPT_HANDLER(0x2e)
 INTERRUPT_HANDLER(0x2f)
-// SYSCALL
-INTERRUPT_HANDLER(0x30)
-INTERRUPT_HANDLER(0x31)
+
+__attribute__((naked, used)) void interrupt_handler_0x30() { asm("pushq $0\npushq $0x30\n"
+                                                                 "jmp MultiTaskingSchedulerHelper"); }
+__attribute__((naked, used)) void interrupt_handler_0x31() { asm("pushq $0\npushq $0x31\n"
+                                                                 "jmp MonoTaskingSchedulerHelper"); }
 INTERRUPT_HANDLER(0x32)
 INTERRUPT_HANDLER(0x33)
 INTERRUPT_HANDLER(0x34)
@@ -442,14 +487,16 @@ INTERRUPT_HANDLER(0xfa)
 INTERRUPT_HANDLER(0xfb)
 INTERRUPT_HANDLER(0xfc)
 INTERRUPT_HANDLER(0xfd)
-__attribute__((naked)) static void interrupt_handler_0xfe() { asm("jmp syscall_interrpt_handler_helper"); }
+INTERRUPT_HANDLER(0xfe)
 INTERRUPT_HANDLER(0xff)
+
+/* =============================================================================================================================================== */
 
 void init_idt()
 {
     trace("Initializing IDT");
     set_idt_entry(0x0, interrupt_handler_0x00, 1, 0);
-    set_idt_entry(0x1, interrupt_handler_0x01, 1, 3); // debugging interrupt
+    set_idt_entry(0x1, interrupt_handler_0x01, 1, 3);
     set_idt_entry(0x2, interrupt_handler_0x02, 2, 0);
     set_idt_entry(0x3, interrupt_handler_0x03, 1, 0);
     set_idt_entry(0x4, interrupt_handler_0x04, 1, 0);
@@ -497,7 +544,7 @@ void init_idt()
     set_idt_entry(0x2d, interrupt_handler_0x2d, 0, 0);
     set_idt_entry(0x2e, interrupt_handler_0x2e, 0, 0);
     set_idt_entry(0x2f, interrupt_handler_0x2f, 0, 0);
-    // SYSCALL
+
     set_idt_entry(0x30, interrupt_handler_0x30, 0, 0);
     set_idt_entry(0x31, interrupt_handler_0x31, 0, 0);
     set_idt_entry(0x32, interrupt_handler_0x32, 0, 0);
@@ -704,7 +751,7 @@ void init_idt()
     set_idt_entry(0xfb, interrupt_handler_0xfb, 0, 0);
     set_idt_entry(0xfc, interrupt_handler_0xfc, 0, 0);
     set_idt_entry(0xfd, interrupt_handler_0xfd, 0, 0);
-    set_idt_entry(0xfe, interrupt_handler_0xfe, 0, 3);
+    set_idt_entry(0xfe, interrupt_handler_0xfe, 0, 0);
     set_idt_entry(0xff, interrupt_handler_0xff, 0, 0);
     lidt(idtr);
     PIC_remap(0x20, 0x28);

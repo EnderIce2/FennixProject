@@ -21,7 +21,7 @@ namespace Tasking
 
     extern "C"
     {
-        __attribute__((naked, used)) void mono_scheduler_handler_helper()
+        __attribute__((naked, used)) void MonoTaskingSchedulerHelper()
         {
             asm("cld\n"
                 "pushq %rax\n"
@@ -69,7 +69,7 @@ namespace Tasking
                 "iretq");
         }
     }
-#define SchedulerInterrupt IRQ11
+#define SchedulerInterrupt IRQ17
 
     static uint64_t TaskIDs = 0;
 
@@ -213,7 +213,7 @@ namespace Tasking
         memset(&task->regs, 0, sizeof(REGISTERS));
         if (!UserMode)
         {
-            task->regs.ds = GDT_KERNEL_DATA;
+            // task->regs.ds = GDT_KERNEL_DATA;
             task->regs.ss = GDT_KERNEL_DATA;
             task->regs.cs = GDT_KERNEL_CODE;
             task->gs = (uint64_t)task;
@@ -226,7 +226,7 @@ namespace Tasking
         }
         else
         {
-            task->regs.ds = GDT_USER_DATA;
+            // task->regs.ds = GDT_USER_DATA;
             task->regs.cs = GDT_USER_CODE;
             task->regs.ss = GDT_USER_DATA;
             task->gs = 0;
@@ -345,8 +345,8 @@ namespace Tasking
 
     Monotasking::Monotasking(uint64_t FirstTask)
     {
-        // for (uint64_t i = 0; i < MAX_TASKS; i++)
-        //     TaskQueue[i] = nullptr; // Make sure that all tasks have value nullptr
+        for (uint64_t i = 0; i < MAX_TASKS; i++)
+            TaskQueue[i] = nullptr; // Make sure that all tasks have value nullptr
         CreateTask((uint64_t)FirstTask, 0, 0, (char *)"kernel", false);
         CurrentTaskingMode = TaskingMode::Mono;
         apic->RedirectIRQ(0, SchedulerInterrupt - 32, 1);

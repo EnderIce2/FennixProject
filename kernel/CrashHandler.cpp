@@ -61,7 +61,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
     CR4 cr4 = readcr4();
     CR8 cr8 = readcr8();
     if (CS != 0x23)
-        CurrentDisplay->Clear(0xFF000000);
+        CurrentDisplay->Clear(0x000000);
     switch (INT_NUM)
     {
     case ISR_DivideByZero:
@@ -145,6 +145,10 @@ EXTERNC void isrcrash(REGISTERS *regs)
         }
         else
         {
+            CurrentDisplay->SetPrintColor(0xDD2920);
+            SET_PRINT_MID((char *)"System crashed!", FHeight(2));
+            CurrentDisplay->ResetPrintColor();
+            SET_PRINT_MID((char *)"Kernel tried to execute an invalid opcode.", FHeight(1));
         }
         break;
     }
@@ -252,7 +256,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
             SET_PRINT_MID((char *)desc_table, FHeight(2));
             sprintf_(desc_idx, "%s Index: %#x", desc_tmp, SelCode.Idx);
             SET_PRINT_MID((char *)desc_idx, FHeight(1));
-            CurrentDisplay->SetPrintColor(0xFFDD2920);
+            CurrentDisplay->SetPrintColor(0xDD2920);
             SET_PRINT_MID((char *)"System crashed!", FHeight(6));
             CurrentDisplay->ResetPrintColor();
             SET_PRINT_MID((char *)"More info about the exception:", FHeight(4));
@@ -300,7 +304,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
             SET_PRINT_MID((char *)desc_table, FHeight(2));
             sprintf_(desc_idx, "%s Index: %#x", desc_tmp, SelCode.Idx);
             SET_PRINT_MID((char *)desc_idx, FHeight(1));
-            CurrentDisplay->SetPrintColor(0xFFDD2920);
+            CurrentDisplay->SetPrintColor(0xDD2920);
             SET_PRINT_MID((char *)"System crashed!", FHeight(6));
             CurrentDisplay->ResetPrintColor();
             SET_PRINT_MID((char *)"More info about the exception:", FHeight(4));
@@ -330,7 +334,7 @@ EXTERNC void isrcrash(REGISTERS *regs)
             staticbuffer(page_shadow);
             staticbuffer(page_sgx);
 
-            CurrentDisplay->SetPrintColor(0xFFDD2920);
+            CurrentDisplay->SetPrintColor(0xDD2920);
             SET_PRINT_MID((char *)"System crashed!", FHeight(12));
             CurrentDisplay->ResetPrintColor();
             sprintf_(ret_err, "An exception occurred at %#lx by %#lx", cr2.PFLA, RIP);
@@ -448,32 +452,32 @@ EXTERNC void isrcrash(REGISTERS *regs)
     }
     }
     CurrentDisplay->ResetPrintPosition();
-    CurrentDisplay->SetPrintColor(0xFF7981FC);
+    CurrentDisplay->SetPrintColor(0x7981FC);
     printf("Technical Informations on CPU %ld:\n", rdmsr(MSR_FS_BASE));
     printf("FS=%#lx  GS=%#lx  SS=%#lx  CS=%#lx\n", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
     printf("R8=%#lx  R9=%#lx  R10=%#lx  R11=%#lx\n", R8, R9, R10, R11);
     printf("R12=%#lx  R13=%#lx  R14=%#lx  R15=%#lx\n", R12, R13, R14, R15);
     printf("RAX=%#lx  RBX=%#lx  RCX=%#lx  RDX=%#lx\n", RAX, RBX, RCX, RDX);
     printf("RSI=%#lx  RDI=%#lx  RBP=%#lx  RSP=%#lx\n", RSI, RDI, RBP, RSP);
-    printf("RIP=%#lx  RFL=%#lx  DS=%#lx  INT=%#lx  ERR=%#lx\n", RIP, FLAGS.raw, DS, INT_NUM, ERROR_CODE);
+    printf("RIP=%#lx  RFL=%#lx  INT=%#lx  ERR=%#lx\n", RIP, FLAGS.raw, INT_NUM, ERROR_CODE);
     printf("CR0=%#lx  CR2=%#lx  CR3=%#lx  CR4=%#lx  CR8=%#lx\n", cr0.raw, cr2.raw, cr3.raw, cr4.raw, cr8.raw);
 
-    CurrentDisplay->SetPrintColor(0xFFFC797B);
+    CurrentDisplay->SetPrintColor(0xFC797B);
     printf("CR0: PE:%s     MP:%s     EM:%s     TS:%s\n     ET:%s     NE:%s     WP:%s     AM:%s\n     NW:%s     CD:%s     PG:%s\n     R0:%#x R1:%#x R2:%#x\n",
            cr0.PE ? "True " : "False", cr0.MP ? "True " : "False", cr0.EM ? "True " : "False", cr0.TS ? "True " : "False",
            cr0.ET ? "True " : "False", cr0.NE ? "True " : "False", cr0.WP ? "True " : "False", cr0.AM ? "True " : "False",
            cr0.NW ? "True " : "False", cr0.CD ? "True " : "False", cr0.PG ? "True " : "False",
            cr0._reserved0, cr0._reserved1, cr0._reserved2);
 
-    CurrentDisplay->SetPrintColor(0xFFFCBD79);
+    CurrentDisplay->SetPrintColor(0xFCBD79);
     printf("CR2: PFLA: %#lx\n",
            cr2.PFLA);
 
-    CurrentDisplay->SetPrintColor(0xFF79FC84);
+    CurrentDisplay->SetPrintColor(0x79FC84);
     printf("CR3: PWT:%s     PCD:%s    PDBR:%#lx\n",
            cr3.PWT ? "True " : "False", cr3.PCD ? "True " : "False", cr3.PDBR);
 
-    CurrentDisplay->SetPrintColor(0xFFBD79FC);
+    CurrentDisplay->SetPrintColor(0xBD79FC);
     printf("CR4: VME:%s     PVI:%s     TSD:%s      DE:%s\n     PSE:%s     PAE:%s     MCE:%s     PGE:%s\n     PCE:%s    UMIP:%s  OSFXSR:%s OSXMMEXCPT:%s\n    LA57:%s    VMXE:%s    SMXE:%s   PCIDE:%s\n OSXSAVE:%s    SMEP:%s    SMAP:%s     PKE:%s\n     R0:%d R1:%d R2:%d\n",
            cr4.VME ? "True " : "False", cr4.PVI ? "True " : "False", cr4.TSD ? "True " : "False", cr4.DE ? "True " : "False",
            cr4.PSE ? "True " : "False", cr4.PAE ? "True " : "False", cr4.MCE ? "True " : "False", cr4.PGE ? "True " : "False",
@@ -482,10 +486,10 @@ EXTERNC void isrcrash(REGISTERS *regs)
            cr4.OSXSAVE ? "True " : "False", cr4.SMEP ? "True " : "False", cr4.SMAP ? "True " : "False", cr4.PKE ? "True " : "False",
            cr4._reserved0, cr4._reserved1, cr4._reserved2);
 
-    CurrentDisplay->SetPrintColor(0xFF79FCF5);
+    CurrentDisplay->SetPrintColor(0x79FCF5);
     printf("CR8: TPL:%d\n", cr8.TPL);
 
-    CurrentDisplay->SetPrintColor(0xFFFCFC02);
+    CurrentDisplay->SetPrintColor(0xFCFC02);
     printf("RFL: CF:%s     PF:%s     AF:%s     ZF:%s\n     SF:%s     TF:%s     IF:%s     DF:%s\n     OF:%s   IOPL:%s     NT:%s     RF:%s\n     VM:%s     AC:%s    VIF:%s    VIP:%s\n     ID:%s     AlwaysOne:%d\n     R0:%#x R1:%#x R2:%#x R3:%#x",
            FLAGS.CF ? "True " : "False", FLAGS.PF ? "True " : "False", FLAGS.AF ? "True " : "False", FLAGS.ZF ? "True " : "False",
            FLAGS.SF ? "True " : "False", FLAGS.TF ? "True " : "False", FLAGS.IF ? "True " : "False", FLAGS.DF ? "True " : "False",
@@ -502,31 +506,33 @@ EXTERNC void isrcrash(REGISTERS *regs)
 
     struct StackFrame *frames;
 
-    // __builtin_frame_address gets the exception handler too, which is not useful and can be confusing.
+    // __builtin_frame_address gets the exception handlers too, which is not useful and can be confusing.
     frames = (struct StackFrame *)RBP;
     // frames = (struct StackFrame *)__builtin_frame_address(0);
 
-    CurrentDisplay->SetPrintColor(0xFF7981FC);
-    printf("\n\nStack Trace:");
+    CurrentDisplay->SetPrintColor(0x7981FC);
+    printf("\n\nStack Trace:\n");
+    CurrentDisplay->SetPrintColor(0x2565CC);
+    printf("%p", (void *)RIP);
+    CurrentDisplay->SetPrintColor(0x7925CC);
+    printf("-");
+    CurrentDisplay->SetPrintColor(0xAA25CC);
+    printf("%s", SymTbl->GetSymbolFromAddress(RIP));
+    CurrentDisplay->SetPrintColor(0x7981FC);
+    printf(" <- Exception");
 
     for (uint64_t frame = 0; frame < 20; ++frame)
     {
         if (frames->rip == 0x0)
             break;
         printf("\n");
-        CurrentDisplay->SetPrintColor(0xFF2565CC);
-        printf("%#lx", frames->rip);
-        CurrentDisplay->SetPrintColor(0xFF7925CC);
+        CurrentDisplay->SetPrintColor(0x2565CC);
+        printf("%p", (void *)frames->rip);
+        CurrentDisplay->SetPrintColor(0x7925CC);
         printf("-");
-        CurrentDisplay->SetPrintColor(0xFF25CCC9);
+        CurrentDisplay->SetPrintColor(0x25CCC9);
         printf("%s", SymTbl->GetSymbolFromAddress(frames->rip));
         frames = frames->rbp;
-        static int once = 0;
-        if (!once++)
-        {
-            CurrentDisplay->SetPrintColor(0xFF7981FC);
-            printf(" <- Exception");
-        }
     }
 
     CPU_HALT;

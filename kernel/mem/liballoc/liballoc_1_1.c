@@ -486,7 +486,7 @@ void libPREFIX(free)(void *ptr)
 	{
 		l_warningCount += 1;
 #if defined DEBUG || defined INFO
-		warn("%llx -> free( NULL )", __builtin_return_address(0));
+		warn("free( NULL ) called from %#llx", __builtin_return_address(0));
 #endif
 		return;
 	}

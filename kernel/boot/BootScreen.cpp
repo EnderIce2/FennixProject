@@ -129,23 +129,21 @@ namespace BootScreen
     int curProg = 0;
     void Screen::IncreaseProgres()
     {
-        {
-            this->Progress(curProg);
-            curProg++;
-        }
+        this->Progress(curProg);
+        curProg++;
     }
 
     Screen::Screen()
     {
-        BootDisplay = new Display();
-        delete BootDisplay->CurrentFont;
+        BootDisplay = new Display(false);
         BootDisplay->CurrentFont = new Font(&_binary_files_zap_ext_light20_psf_start,
                                             &_binary_files_zap_ext_light20_psf_end,
                                             FontType::PCScreenFont2);
         BootDisplay->Clear();
-        char *text;
+        char *text = new char;
         sprintf_(text, "%s %s", KERNEL_NAME, KERNEL_VERSION);
         SET_PRINT_RIGHT((char *)text, BootDisplay->GetFramebuffer()->Height - BootDisplay->CurrentFont->GetFontSize().Height);
+        delete text;
     }
 
     Screen::~Screen()

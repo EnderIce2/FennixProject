@@ -39,9 +39,9 @@ void TrustToken(uint64_t Token, bool Process, uint64_t ID, int TrustLevel)
 
 bool CanSyscall(SyscallsRegs *regs)
 {
+    // fixme("CanSyscall( %p %ld )", regs, TmpToken);
+    return true;
     uint64_t TmpToken = SysGetCurrentThread()->Security.Token;
-
-    fixme("CanSyscall( %p %ld )", regs, TmpToken);
 
     foreach (auto var in Tokens)
     {

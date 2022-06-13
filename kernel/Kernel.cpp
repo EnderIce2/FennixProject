@@ -16,6 +16,7 @@
 #include "sysrecovery/recovery.hpp"
 #include "drivers/keyboard.hpp"
 #include "drivers/mouse.hpp"
+#include "interrupts/pic.h"
 #include "drivers/disk.h"
 #include "cpu/acpi.hpp"
 #include "cpu/apic.hpp"
@@ -29,8 +30,8 @@
 #include "pci.h"
 
 // Early params are used only for the most basic functions. After that it may be overwritten with other data.
-__attribute__((aligned(0x1000))) GlobalBootParams earlyparams;
-__attribute__((aligned(0x1000))) GlobalBootParams *bootparams = nullptr;
+GlobalBootParams earlyparams;
+GlobalBootParams *bootparams = nullptr;
 SysFlags *sysflags = nullptr;
 uint8_t kernel_stack[STACK_SIZE];
 
@@ -47,9 +48,9 @@ EXTERNC void stivale_initializator(stivale_struct *bootloaderdata)
 EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
 {
     init_stivale2(bootloaderdata, &earlyparams, false);
-    asm volatile("andq $-16, %rsp");
-    asm volatile("movw $0, %ax");
-    asm volatile("movw %ax, %fs");
+    // asm volatile("andq $-16, %rsp");
+    // asm volatile("movw $0, %ax");
+    // asm volatile("movw %ax, %fs");
     wrmsr(MSR_FS_BASE, 0);
 
     init_pmm();
@@ -57,13 +58,10 @@ EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
     init_kernelpml();
     init_heap(AllocationAlgorithm::LibAlloc11);
     bootparams = new GlobalBootParams;
-    bootparams->Framebuffer = new GBPFramebuffer;
-    bootparams->rsdp = new GBPRSDP;
     debug("bootparams is allocated at %p", bootparams);
     debug("bootparams framebuffer is allocated at %p", bootparams->Framebuffer);
     debug("bootparams rsdp is allocated at %p", bootparams->rsdp);
-    sysflags = (SysFlags *)kcalloc(1, sizeof(SysFlags));
-    sysflags->rootfs = (string)kcalloc(1, sizeof(string));
+    sysflags = new SysFlags;
     init_stivale2(bootloaderdata, bootparams, true);
 
     KernelInit();
@@ -93,16 +91,16 @@ EXTERNC void kernel_entry(void *data)
     CPU_STOP;
 }
 
-void initflags()
+void initializeKernelFlags()
 {
     if (strstr(bootparams->cmdline, "debug"))
         sysflags->fennecsarethebest = true;
     else
         sysflags->fennecsarethebest = false;
     if (strstr(bootparams->cmdline, "rootfs")) // FIXME
-        sysflags->rootfs = "/";
+        sysflags->rootfs[0] = '/';
     else
-        sysflags->rootfs = "/";
+        sysflags->rootfs[0] = '/';
     if (strstr(bootparams->cmdline, "nogpu"))
         sysflags->nogpu = true;
     else
@@ -177,17 +175,17 @@ void KernelTask()
 
                         if (!strcmp(extension, ".drv"))
                         {
-                            CurrentDisplay->SetPrintColor(0xFFCCCCCC);
+                            CurrentDisplay->SetPrintColor(0xCCCCCC);
                             printf("Loading driver %s... ", driver->Name);
                             uint64_t ret = kdrv->LoadKernelDriverFromFile(driver);
                             if (ret == 0)
                             {
-                                CurrentDisplay->SetPrintColor(0xFF058C19);
+                                CurrentDisplay->SetPrintColor(0x058C19);
                                 printf("OK\n");
                             }
                             else
                             {
-                                CurrentDisplay->SetPrintColor(0xFFE85230);
+                                CurrentDisplay->SetPrintColor(0xE85230);
                                 printf("FAILED (%#lx)\n", ret);
                             }
                             CurrentDisplay->ResetPrintColor();
@@ -207,7 +205,7 @@ void KernelTask()
 
     if (!SysCreateProcessFromFile("/system/init", 0, 0, User))
     {
-        CurrentDisplay->SetPrintColor(0xFFFC4444);
+        CurrentDisplay->SetPrintColor(0xFC4444);
         printf("Failed to load /system/init process. The file is missing or corrupted.\n");
         CPU_STOP;
     }
@@ -220,12 +218,14 @@ void KernelTask()
 
 void KernelInit()
 {
+    trace("Early initialization completed.");
     TEST_TEST();
     do_libs_test();
     do_mem_test();
-    trace("early initialization completed");
+    initializeKernelFlags();
     BS = new BootScreen::Screen;
-    initflags();
+    SymTbl = new KernelSymbols::Symbols;
+    BS->IncreaseProgres();
     CurrentDisplay = new DisplayDriver::Display;
     KernelPageTableAllocator = new PageTableHeap::PageTableHeap;
     KernelStackAllocator = new StackHeap::StackHeap;
@@ -235,7 +235,6 @@ void KernelInit()
     BS->IncreaseProgres();
     init_tss();
     BS->IncreaseProgres();
-    SymTbl = new KernelSymbols::Symbols;
     acpi = new ACPI::ACPI;
     BS->IncreaseProgres();
     madt = new ACPI::MADT;
@@ -252,6 +251,8 @@ void KernelInit()
     BS->IncreaseProgres();
     apic->RedirectIRQs();
 
+    do_stacktrace_test();
+
     if (!apic->APICSupported())
     {
         panic("APIC is not supported!", true);
@@ -261,13 +262,62 @@ void KernelInit()
     asm("sti");
     dsdt->InitSCI();
 
+    ps2keyboard = new PS2Keyboard::PS2KeyboardDriver;
+    BS->IncreaseProgres();
+
     if (!strstr(bootparams->cmdline, "novmwarn"))
         if (!CheckRunningUnderVM())
         {
-            CurrentDisplay->SetPrintColor(0xFFFC4444);
-            printf("WARNING!\nThe kernel has detected that you are booting from a real computer!\nBeaware that this project is not in a stable state and will likely cause problems like, overwriting data on disks or even worse, breaking the entire system!\nIf you REALLY want to continue, write \"YES\" and press enter.\nIf you want to disable this warning add \"novmwarn\" in kernel's cmdline.\n");
+            CurrentDisplay->SetPrintColor(0xFC4444);
+            printf("WARNING!\nThe kernel has detected that you are booting from a real computer!\nBeaware that this project is not in a stable state and will likely cause problems like, overwriting data on disks or even worse, breaking the entire system!\nIf you REALLY want to continue, write \"YES\" and press enter.\nIf you want to disable this warning add \"novmwarn\" in kernel's cmdline.\n\n> ");
+            const char scancodes[] = {'?', '?', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', '?', '?', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '?', '?', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', '\'', '`', '?', '\\', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', '?', '?', '?', ' '};
+            char buffer[16];
+            bool done = false;
+            while (1)
+            {
+                if (done)
+                    break;
+                uint8_t c = ps2keyboard->GetLastScanCode();
+                if (!(c & 0x80))
+                {
+                    switch (c)
+                    {
+                    case 0x15: // y
+                        CurrentDisplay->SetPrintColor(0x00FC00);
+                        break;
+                    case 0x12: // e
+                        CurrentDisplay->SetPrintColor(0x00FC00);
+                        break;
+                    case 0x1f: // s
+                        CurrentDisplay->SetPrintColor(0x00FC00);
+                        break;
+                    case 0x1c: // enter
+                        done = true;
+                        [[fallthrough]];
+                    default:
+                        CurrentDisplay->SetPrintColor(0xFC4444);
+                        break;
+                    }
+                    if (c != 0x1c)
+                    {
+                        int len = strlen(buffer);
+                        if (len > 16)
+                            break;
+                        buffer[len] = scancodes[c];
+                        buffer[len + 1] = '\0';
+                        printf("%c", buffer[len]);
+                    }
+                }
+            }
+            if (strcmp("YES", buffer))
+            {
+                CurrentDisplay->SetPrintColor(0xFC4444);
+                printf("\n\nWrong word! Shutting down...");
+                sleep(5);
+                dsdt->shutdown();
+                CPU_STOP;
+            }
             CurrentDisplay->ResetPrintColor();
-            ps2keyboard->GetLastScanCode(); // TODO: make this a working one
         }
 
     vfs = new FileSystem::Virtual;
@@ -301,18 +351,21 @@ void KernelInit()
     new FileSystem::Null;
     new FileSystem::Zero;
 
-    ps2keyboard = new PS2Keyboard::PS2KeyboardDriver;
-    BS->IncreaseProgres();
     ps2mouse = new PS2Mouse::PS2MouseDriver;
     BS->IncreaseProgres();
 
-    do_tasking_test();
+    do_mem_test();
+    do_mem_test();
+    do_mem_test();
+    do_mem_test();
 
-#ifndef TESTING
+    // do_tasking_test();
+
+    // #ifndef TESTING
     if (sysflags->monotasking)
         StartTasking((uint64_t)KernelTask, TaskingMode::Mono);
     else
         StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
-#endif
+    // #endif
     CPU_STOP;
 }

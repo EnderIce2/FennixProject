@@ -81,8 +81,8 @@ void init_kernelpml()
         }
 
         /* Mapping Framebuffer address */
-        for (uint64_t fb_base = earlyparams.Framebuffer->BaseAddress;
-             fb_base < (earlyparams.Framebuffer->BaseAddress + (earlyparams.Framebuffer->BufferSize + PAGE_SIZE));
+        for (uint64_t fb_base = earlyparams.Framebuffer.BaseAddress;
+             fb_base < (earlyparams.Framebuffer.BaseAddress + (earlyparams.Framebuffer.BufferSize + PAGE_SIZE));
              fb_base += PAGE_SIZE)
             KernelPageTableManager.MapMemory((void *)fb_base, (void *)(fb_base - NORMAL_VMA_OFFSET), PTFlag::RW | PTFlag::US);
 

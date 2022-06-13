@@ -1,18 +1,17 @@
 #include "driver.hpp"
 
 #include "kernel.h"
-#include "cpu/idt.h"
 
 #include <filesystem.h>
 #include <stdarg.h>
 #include <internal_task.h>
 #include <heap.h>
 #include <elf.h>
+#include <int.h>
 
 #pragma GCC diagnostic ignored "-Wvarargs"
 
 Driver::KernelDriver *kdrv = nullptr;
-
 
 void *FunctionCallHandler(KernelCallType type, ...)
 {
@@ -63,8 +62,7 @@ void *FunctionCallHandler(KernelCallType type, ...)
     }
     case KCALL_HOOK_INTERRUPT:
     {
-        register_interrupt_handler(ArgList[0], (INTERRUPT_HANDLER)ArgList[1]);
-        return 0;
+        return (void *)RegisterInterrupt((INTERRUPT_HANDLER)ArgList[1], (InterruptVector)ArgList[0], false);
     }
     case KCALL_UNHOOK_INTERRUPT:
         break;

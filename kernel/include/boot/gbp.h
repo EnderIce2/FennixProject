@@ -20,7 +20,7 @@ typedef uint64_t VIRTUAL_ADDRESS;
 /**
  * @brief Framebuffer structure
  */
-typedef struct _GBPFramebuffer
+struct GBPFramebuffer
 {
     /**
      * @brief Base address of the framebuffer
@@ -42,7 +42,7 @@ typedef struct _GBPFramebuffer
      * @brief Pixels per scan line
      */
     uint32_t PixelsPerScanLine;
-} GBPFramebuffer;
+};
 
 /**
  * @brief Root System Description Pointer structure
@@ -98,12 +98,12 @@ struct GBPSMPInfo
 
 #define MAX_SMP 0x100
 
-typedef struct _GBPSMP
+struct GBPSMP
 {
     uint32_t BootstrapProcessLAPICID;
     uint64_t CPUCount;
     struct GBPSMPInfo smp[MAX_SMP];
-} GBPSMP;
+};
 
 enum MemType
 {
@@ -171,13 +171,13 @@ struct kernel_file
 typedef struct _GlobalBootParams
 {
     char *cmdline;
+    GBPRSDP *rsdp;
     uint64_t epoch;
     struct GBPMemory mem;
     struct modules modules;
     struct kernel_file kernel;
-    GBPFramebuffer *Framebuffer;
-    GBPRSDP *rsdp;
-    GBPSMP smp;
+    struct GBPFramebuffer Framebuffer;
+    struct GBPSMP smp;
     uint8_t HigherHalf;
     uint32_t checksum;
 } GlobalBootParams;
@@ -191,7 +191,7 @@ typedef struct _SysFlags
     /**
      * @brief The root filesystem "rootfs=hda0 or something like that"
      */
-    string rootfs; // TODO: more info about the disk
+    char rootfs[512]; // TODO: more info about the disk
     /**
      * @brief No gpu driver
      */

@@ -1,4 +1,5 @@
 #include "floppy.h"
+#include "../../cpu/idt.h"
 #include <interrupts.h>
 #include <io.h>
 #include <asm.h>
@@ -127,65 +128,15 @@ namespace Floppy
         WaitForIRQ();
     }
 
-    extern "C"
+    InterruptHandler(FloppyDriveHandler)
     {
-        InterruptHandler(HandleFloppyDrive)
-        {
-            ReceivedIRQ = true;
-            (void)(regs);
-        }
-
-        __attribute__((naked, used)) void floppy_driver_handler_helper()
-        {
-            asm("cld\n"
-                "pushq %rax\n"
-                "pushq %rbx\n"
-                "pushq %rcx\n"
-                "pushq %rdx\n"
-                "pushq %rsi\n"
-                "pushq %rdi\n"
-                "pushq %rbp\n"
-                "pushq %r8\n"
-                "pushq %r9\n"
-                "pushq %r10\n"
-                "pushq %r11\n"
-                "pushq %r12\n"
-                "pushq %r13\n"
-                "pushq %r14\n"
-                "pushq %r15\n"
-                "movq %ds, %rax\n"
-                "pushq %rax\n"
-                "movw $16, %ax\n"
-                "movw %ax, %ds\n"
-                "movw %ax, %es\n"
-                "movw %ax, %ss\n"
-                "movq %rsp, %rdi\n"
-                "call HandleFloppyDrive\n"
-                "popq %rax\n"
-                "movw %ax, %ds\n"
-                "movw %ax, %es\n"
-                "popq %r15\n"
-                "popq %r14\n"
-                "popq %r13\n"
-                "popq %r12\n"
-                "popq %r11\n"
-                "popq %r10\n"
-                "popq %r9\n"
-                "popq %r8\n"
-                "popq %rbp\n"
-                "popq %rdi\n"
-                "popq %rsi\n"
-                "popq %rdx\n"
-                "popq %rcx\n"
-                "popq %rbx\n"
-                "popq %rax\n"
-                "addq $16, %rsp\n"
-                "iretq");
-        }
+        ReceivedIRQ = true;
+        (void)(regs);
     }
 
     FloppyDriver::FloppyDriver()
     {
+        RegisterInterrupt(FloppyDriveHandler, IRQ6, true);
         unsigned int c;
         outb(0x70, 0x10);
         c = inb(0x71);

@@ -47,13 +47,13 @@ extern CPUData CPUs[];
 static CPUData *GetCurrentCPU()
 {
     uint64_t ret = 0;
-    asm volatile("movq %%fs, %0\n"
-                 : "=r"(ret));
+    // asm volatile("movq %%fs, %0\n"
+    //              : "=r"(ret));
 
     if ((&CPUs[ret])->Checksum != CPU_DATA_CHECKSUM)
     {
         // TODO: i think somehow i messed this up somehere... i'll figure it out later... but now i will return the first cpu
-        // err("CPU %d data are corrupted!", ret);
+        err("CPU %d data are corrupted!", ret);
         return &CPUs[0];
     }
 

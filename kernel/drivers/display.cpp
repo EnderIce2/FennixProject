@@ -29,6 +29,7 @@ namespace DisplayDriver
 {
     Font::Font(uint64_t *Start, uint64_t *End, FontType Type)
     {
+        trace("Initializing font with start %#llx and end %#llx Type: %d", Start, End, Type);
         PSFFile.start = Start;
         PSFFile.end = End;
         type = Type;
@@ -39,7 +40,13 @@ namespace DisplayDriver
                space for object of type 'struct PSF2_HEADER' */
             PSF2Font = new PSF2_FONT;
             uint16_t glyph2 = 0;
-            PSF2_HEADER *font2 = (PSF2_HEADER *)Start;
+
+            uint64_t FontDataLength = End - Start;
+            PSF2_HEADER *font2 = (PSF2_HEADER *)KernelAllocator.RequestPages(FontDataLength / 4096 + 1);
+            for (uint64_t i = 0; i < FontDataLength / 4096 + 1; i++)
+                KernelPageTableManager.MapMemory((void *)(font2 + (i * PAGE_SIZE)), (void *)(font2 + (i * PAGE_SIZE)), PTFlag::RW);
+            memcpy((void *)font2, Start, FontDataLength);
+
             width = font2->width;
             height = font2->height;
             if (font2->magic[0] != PSF2_MAGIC0 || font2->magic[1] != PSF2_MAGIC1 || font2->magic[2] != PSF2_MAGIC2 || font2->magic[3] != PSF2_MAGIC3)
@@ -47,49 +54,6 @@ namespace DisplayDriver
 
             PSF2Font->Header = font2;
             PSF2Font->GlyphBuffer = (Start + sizeof(PSF2_HEADER));
-            // if (font2->flags != 0x01) // HAS UNICODE TABLE
-            // {
-            //     PSF2Font->GlyphBuffer = NULL;
-            //     warn("font2 unicode table not found");
-            // }
-            // else
-            // {
-            //     char *s = (char *)((unsigned char *)Start + font2->headersize + font2->length * font2->charsize);
-            //     PSF2Font->GlyphBuffer = (uint16_t *)kcalloc(USHRT_MAX, 2);
-            //     while ((uint64_t *)s > End)
-            //     {
-            //         // uint16_t uc = (uint16_t)((unsigned char *)s[0]);
-            //         uint16_t uc = s[0];
-            //         if (uc == 0xFF)
-            //         {
-            //             glyph2++;
-            //             s++;
-            //             continue;
-            //         }
-            //         else if (uc & 128)
-            //         {
-            //             if ((uc & 32) == 0)
-            //             {
-            //                 uc = ((s[0] & 0x1F) << 6) + (s[1] & 0x3F);
-            //                 s++;
-            //             }
-            //             else if ((uc & 16) == 0)
-            //             {
-            //                 uc = ((((s[0] & 0xF) << 6) + (s[1] & 0x3F)) << 6) + (s[2] & 0x3F);
-            //                 s += 2;
-            //             }
-            //             else if ((uc & 8) == 0)
-            //             {
-            //                 uc = ((((((s[0] & 0x7) << 6) + (s[1] & 0x3F)) << 6) + (s[2] & 0x3F)) << 6) + (s[3] & 0x3F);
-            //                 s += 3;
-            //             }
-            //             else
-            //                 uc = 0;
-            //         }
-            //         PSF2Font->GlyphBuffer[uc] = glyph2;
-            //         s++;
-            //     }
-            // }
         }
         else if (Type == FontType::PCScreenFont1)
         {
@@ -126,21 +90,26 @@ namespace DisplayDriver
         return type;
     }
 
-    Display::Display()
+    Display::Display(bool LoadDefaultFont)
     {
-        framebuffer = (Framebuffer *)kcalloc(1, sizeof(Framebuffer));
-        framebuffer->Address = bootparams->Framebuffer->BaseAddress;
-        framebuffer->PixelsPerScanLine = bootparams->Framebuffer->PixelsPerScanLine;
-        framebuffer->Width = bootparams->Framebuffer->Width;
-        framebuffer->Height = bootparams->Framebuffer->Height;
-        framebuffer->Size = bootparams->Framebuffer->BufferSize;
+        trace("Initializing Display object...");
+        framebuffer = new Framebuffer;
+        framebuffer->Address = bootparams->Framebuffer.BaseAddress;
+        framebuffer->PixelsPerScanLine = bootparams->Framebuffer.PixelsPerScanLine;
+        framebuffer->Width = bootparams->Framebuffer.Width;
+        framebuffer->Height = bootparams->Framebuffer.Height;
+        framebuffer->Size = bootparams->Framebuffer.BufferSize;
 
-        // TODO: Fix PSF1 fonts
-        // TODO: Implement an easy way to change psf fonts
-        // CurrentFont = new Font(&_binary_files_zap_ext_vga16_psf_start, &_binary_files_zap_ext_vga16_psf_end, FontType::PCScreenFont1);
-        CurrentFont = new Font(&_binary_files_ter_powerline_v12n_psf_start, &_binary_files_ter_powerline_v12n_psf_end, FontType::PCScreenFont2);
-        // CurrentFont = new Font(&_binary_files_zap_ext_light20_psf_start, &_binary_files_zap_ext_light20_psf_end, FontType::PCScreenFont2);
-        // CurrentFont = new Font(&_binary_files_zap_ext_light24_psf_start, &_binary_files_zap_ext_light24_psf_end, FontType::PCScreenFont2);
+        if (LoadDefaultFont)
+        {
+            trace("Loading default font...");
+            // TODO: Fix PSF1 fonts
+            // TODO: Implement an easy way to change psf fonts
+            // CurrentFont = new Font(&_binary_files_zap_ext_vga16_psf_start, &_binary_files_zap_ext_vga16_psf_end, FontType::PCScreenFont1);
+            CurrentFont = new Font(&_binary_files_ter_powerline_v12n_psf_start, &_binary_files_ter_powerline_v12n_psf_end, FontType::PCScreenFont2);
+            // CurrentFont = new Font(&_binary_files_zap_ext_light20_psf_start, &_binary_files_zap_ext_light20_psf_end, FontType::PCScreenFont2);
+            // CurrentFont = new Font(&_binary_files_zap_ext_light24_psf_start, &_binary_files_zap_ext_light24_psf_end, FontType::PCScreenFont2);
+        }
     }
 
     Display::~Display()

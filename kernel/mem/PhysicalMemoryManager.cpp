@@ -10,8 +10,8 @@ void init_pmm()
     trace("initializing pmm");
     uint64_t kernelSize = (uint64_t)&_kernel_end - (uint64_t)&_kernel_start;
     // uint64_t kernelPages = (uint64_t)kernelSize / 4096 + 1;
-    uint64_t fbBase = earlyparams.Framebuffer->BaseAddress;
-    uint64_t fbSize = earlyparams.Framebuffer->BufferSize + 0x1000;
+    uint64_t fbBase = earlyparams.Framebuffer.BaseAddress;
+    uint64_t fbSize = earlyparams.Framebuffer.BufferSize + 0x1000;
     KernelAllocator = PageFrameAllocator();
     KernelAllocator.ReadMemoryMap();
     // KernelAllocator.LockPages(&_kernel_start, kernelPages);

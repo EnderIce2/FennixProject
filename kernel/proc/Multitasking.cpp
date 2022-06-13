@@ -14,8 +14,7 @@
 #include <asm.h>
 #include <io.h>
 
-// IRQ10 == 0x2a
-#define SchedulerInterrupt IRQ10
+#define SchedulerInterrupt IRQ16
 
 // #define DEBUG_SCHEDULER 1
 
@@ -25,7 +24,7 @@
 #define schedbg(m, ...)
 #endif
 
-// #define DEBUG_TASK_MANAGER 1
+#define DEBUG_TASK_MANAGER 1
 
 #ifdef DEBUG_TASK_MANAGER
 #include <display.h>
@@ -340,40 +339,22 @@ namespace Tasking
     inline bool InvalidPCB(PCB *pcb)
     {
         if (pcb == nullptr)
-        {
-            // schedbg("Invalid PCB.");
             return true;
-        }
         else if (pcb->Checksum != Checksum::PROCESS_CHECKSUM)
-        {
-            // schedbg("Invalid PCB checksum.");
             return true;
-        }
         else if (pcb->Elevation == ELEVATION::Idle)
-        {
-            // schedbg("Invalid PCB (Idle process).");
             return true;
-        }
         return false;
     }
 
     inline bool InvalidTCB(TCB *tcb)
     {
         if (tcb == nullptr)
-        {
-            // schedbg("Invalid TCB.");
             return true;
-        }
         else if (tcb->Checksum != Checksum::THREAD_CHECKSUM)
-        {
-            // schedbg("Invalid TCB checksum.");
             return true;
-        }
         else if (tcb->Parent->Elevation == ELEVATION::Idle)
-        {
-            // schedbg("Invalid TCB (Child of Idle process).");
             return true;
-        }
         return false;
     }
 
@@ -762,7 +743,7 @@ namespace Tasking
     {
         CurrentTaskingMode = TaskingMode::Multi;
         CriticalSectionData = new Critical::CriticalSectionData;
-        apic->RedirectIRQ(CurrentCPU->ID, SchedulerInterrupt - 32, 1);
+        apic->RedirectIRQ(CurrentCPU->ID, SchedulerInterrupt - IRQ0, 1);
         apic->OneShot(SchedulerInterrupt, 100);
     }
 

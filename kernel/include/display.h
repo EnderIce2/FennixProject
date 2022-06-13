@@ -133,7 +133,7 @@ namespace DisplayDriver
         /**
          * @brief Construct a new Display object
          */
-        Display();
+        Display(bool LoadDefaultFont = true);
         /**
          * @brief Destroy the Display object
          */

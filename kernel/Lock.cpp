@@ -12,7 +12,7 @@ extern "C" void deadlock_handler(LOCK *lock)
     x = CurrentDisplay->CurrentFont->GetFontSize().Width;
     y = CurrentDisplay->CurrentFont->GetFontSize().Height;
     CurrentDisplay->ResetPrintPosition();
-    CurrentDisplay->SetPrintColor(0xFF450402);
+    CurrentDisplay->SetPrintColor(0x450402);
     printf("Potential deadlock in lock '%s' held by '%s'", lock->lock_name, lock->current_holder);
     CurrentDisplay->ResetPrintColor();
     CurrentDisplay->SetPrintLocation(x, y);

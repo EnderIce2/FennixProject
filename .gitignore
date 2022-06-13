@@ -1,12 +1,8 @@
 limine-bootloader
-tools/binutils-gdb
-tools/limine
-tools/gcc
-tools/build.sh
-tools/build-binutils
-tools/build-gcc
-tools/cross
-tools/qemu
+boot/UEFI/gnu-efi
+tools/*
+!tools/Makefile
+!tools/initrd.c
 initrd.tar.gz
 kernel/files/*
 *.log
@@ -21,3 +17,5 @@ kernel/files/*
 *.fsys
 *.img
 *.iso
+*.EFI
+*.efi

@@ -98,6 +98,8 @@ static inline int TestDbg(const char *Format, ...)
 #define TEST_ASSERT(test)
 #define TEST_EQUAL(expected, actual)
 #define TEST_EQUAL_STR(expected, actual)
+#define TEST_EQUAL_STRN(expected, actual, length)
+#define TEST_DBG(Format, ...)
 
 #endif // UNIT_TESTS
 

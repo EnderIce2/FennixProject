@@ -79,6 +79,7 @@ void *stivale2_get_tag(struct stivale2_struct *stivale2_struct, uint64_t id)
 
 bool init_stivale2(struct stivale2_struct *bootloaderdata, GlobalBootParams *params, bool second)
 {
+    params->checksum = GBP_CHECKSUM;
     uint64_t MemorySizeBytes = 0;
     int mmaptmpcount = 0;
 
@@ -137,11 +138,11 @@ bool init_stivale2(struct stivale2_struct *bootloaderdata, GlobalBootParams *par
 
     params->HigherHalf = true;
     struct stivale2_struct_tag_framebuffer *fb = (struct stivale2_struct_tag_framebuffer *)tag_framebuffer;
-    params->Framebuffer->BaseAddress = fb->framebuffer_addr;
-    params->Framebuffer->BufferSize = fb->framebuffer_pitch * fb->framebuffer_height;
-    params->Framebuffer->Width = fb->framebuffer_width;
-    params->Framebuffer->Height = fb->framebuffer_height;
-    params->Framebuffer->PixelsPerScanLine = fb->framebuffer_pitch / 4;
+    params->Framebuffer.BaseAddress = fb->framebuffer_addr;
+    params->Framebuffer.BufferSize = fb->framebuffer_pitch * fb->framebuffer_height;
+    params->Framebuffer.Width = fb->framebuffer_width;
+    params->Framebuffer.Height = fb->framebuffer_height;
+    params->Framebuffer.PixelsPerScanLine = fb->framebuffer_pitch / 4;
     debug("FRAMEBUFFER: %016p", fb->framebuffer_addr);
 
     struct stivale2_struct_tag_rsdp *rsdp = (struct stivale2_struct_tag_rsdp *)tag_rsdp;
@@ -308,11 +309,11 @@ bool init_stivale2(struct stivale2_struct *bootloaderdata, GlobalBootParams *par
         //     __asm__ __volatile__("hlt" ::
         //                              : "memory");
     }
-    if (fb->framebuffer_addr != params->Framebuffer->BaseAddress)
+    if (fb->framebuffer_addr != params->Framebuffer.BaseAddress)
     {
         err("Framebuffer base address mismatch. %016p != %016p",
             fb->framebuffer_addr,
-            params->Framebuffer->BaseAddress);
+            params->Framebuffer.BaseAddress);
         term_write("Framebuffer base address mismatch.", 34);
         while (1)
             __asm__ __volatile__("hlt" ::

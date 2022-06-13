@@ -84,7 +84,7 @@ typedef struct _InterruptDescriptorTableEntry
     InterruptDescriptorTableFlags Flags : 4;
     uint64_t Reserved2 : 1;
     uint64_t Ring : 2;
-    uint64_t P : 1;
+    uint64_t Present : 1;
     uint64_t BaseHigh : 48;
     uint64_t Reserved3 : 32;
 } __attribute__((packed)) InterruptDescriptorTableEntry;

@@ -45,34 +45,13 @@ git clone --recurse-submodules https://github.com/EnderIce2/FennixProject
 
 Before doing anything, you must install the following packages:
 
-| Debian          |
-| --------------- |
-| qemu-system-x86 |
-| xorriso         |
-| mtools          |
-| genisoimage     |
-| ovmf            |
-| nasm            |
-| doxygen         |
-| build-essential |
-| bison           |
-| flex            |
-| libgmp3-dev     |
-| libmpc-dev      |
-| libmpfr-dev     |
-| texinfo         |
-| libisl-dev      |
-
-And follow this [page](https://wiki.qemu.org/Hosts/Linux#:~:text=for%20both%20variants.-,Building%20QEMU%20for%20Linux,-Most%20Linux%20distributions) to install **ONLY** the required packages for Qemu. If you want to use the one that you have installed, go on `tools/Makefile` and comment `update_qemu` at line 26 (starts with `all:`).
-
-- Ubuntu 20.04 LTS:
 ```bash
-sudo apt-get install qemu-system-x86 mtools genisoimage ovmf nasm doxygen build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo libisl-dev
+# Debian Based Systems
+sudo apt-get install make gcc-mingw-w64-x86-64 gcc-mingw-w64-i686 mingw-w64 qemu qemu-kvm xorriso genisoimage ovmf nasm doxygen build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo mtools
 ```
 
-For other distributions, you have to install qemu, mtools, genisoimage, ovmf, nasm & doxygen. For the crosscompiler follow the instructions on the [osdev page](https://wiki.osdev.org/GCC_Cross-Compiler#:~:text=CLooG%20(optional)-,Installing%20Dependencies,-%E2%86%93%20Dependency%20/%20OS%20%E2%86%92).
-
-Currently it was tested **only** in **Ubuntu 20.04**. I don't guarantee that it will work on other distributions or older versions of Ubuntu.
+And follow this [page](https://wiki.qemu.org/Hosts/Linux#:~:text=for%20both%20variants.-,Building%20QEMU%20for%20Linux,-Most%20Linux%20distributions) to install the required packages for QEMU.
+If you want to use the one that comes with your distribution, go on `tools/Makefile` and remove `do_qemu` at line 11 (starts with `all:`) and update `QEMU_PATH` variable inside `Makefile.conf`.
 
 - Go to the local repository and run the following command
 
@@ -83,6 +62,8 @@ make tools
 This command will download all the required files to compile the operating system.
 
 After that, you should be able to compile the operating system.
+
+- Currently it was tested **only** on **Ubuntu 20.04** and **Ubuntu 22.04**. I don't guarantee that it will work on other distributions or older versions of Ubuntu.
 
 ---
 

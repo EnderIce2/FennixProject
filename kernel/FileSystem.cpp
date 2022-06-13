@@ -2,6 +2,7 @@
 #include <string.h>
 #include <cwalk.h>
 #include <lock.h>
+#include <printf.h>
 #include <bootscreen.h>
 #include "kernel.h"
 #include "drivers/disk.h"
@@ -192,7 +193,13 @@ namespace FileSystem
         if (Parent == nullptr)
         {
             if (FileSystemRoot->Children.size() >= 1)
+            {
+                if (FileSystemRoot->Children[0] == nullptr)
+                {
+                    err("What?");
+                }
                 Parent = FileSystemRoot->Children[0]; // 0 - filesystem root
+            }
             else
             {
                 // TODO: check if here is a bug or something...
@@ -455,6 +462,11 @@ namespace FileSystem
 
     FileSystemNode *Mount::MountFileSystem(FileSystemOpeations *Operator, uint64_t Mode, string Name)
     {
+        if (isempty((char *)Name))
+        {
+            warn("Tried to mount file system with empty name!");
+            sprintf_((char *)Name, "mount_%lu", MountNodeIndexNodeCount);
+        }
         trace("Adding %s to mounted file systems", Name);
         FileSystemNode *newNode = vfs->Create(MountRootNode, Name);
         newNode->Mode = Mode;

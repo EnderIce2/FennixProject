@@ -2,6 +2,9 @@
 #include <string.h>
 #include <sys.h>
 #include <stdalign.h>
+#include <asm.h>
+#include <lock.h>
+#include <symbols.hpp>
 #define syskernel
 #include <assert.h>
 #ifdef DEBUG_MEM_ALLOCATION
@@ -16,11 +19,14 @@
 
 using namespace PMM;
 
+NEWLOCK(heap_lock);
+
 static AllocationAlgorithm AlgorithmToUse;
 static struct buddy *buddy;
 
 void init_heap(AllocationAlgorithm Type)
 {
+    LOCK(heap_lock);
     switch (Type)
     {
     case AllocationAlgorithm::Default:
@@ -44,127 +50,125 @@ void init_heap(AllocationAlgorithm Type)
         panic("Unknown allocation algorithm!", true);
     }
     AlgorithmToUse = Type;
+    UNLOCK(heap_lock);
 }
 
 void HeapFree(void *Address)
 {
+    LOCK(heap_lock);
+    bool inten = InterruptsEnabled();
+    CLI;
     switch (AlgorithmToUse)
     {
     case AllocationAlgorithm::Default:
-        return defPREFIX(free)(Address);
+        defPREFIX(free)(Address);
         break;
     case AllocationAlgorithm::LibAlloc:
-        return liballoc_free(Address);
+        liballoc_free(Address);
         break;
     case AllocationAlgorithm::LibAlloc11:
-        return libPREFIX(free)(Address);
+        libPREFIX(free)(Address);
         break;
     case AllocationAlgorithm::BuddyAlloc:
-        return buddy_free(buddy, Address);
+        buddy_free(buddy, Address);
         break;
-    default:
-        return;
     }
+    UNLOCK(heap_lock);
+    if (inten)
+        STI;
 }
 
 void *HeapMalloc(size_t Size)
 {
+    LOCK(heap_lock);
+    bool inten = InterruptsEnabled();
+    CLI;
+    void *ret;
+
     switch (AlgorithmToUse)
     {
     case AllocationAlgorithm::Default:
-    {
-        void *Pointer = defPREFIX(malloc)(Size);
-        memset(Pointer, 0, Size);
-        return Pointer;
-    }
+        ret = defPREFIX(malloc)(Size);
+        break;
     case AllocationAlgorithm::LibAlloc:
-    {
-        void *Pointer = liballoc_malloc(Size);
-        memset(Pointer, 0, Size);
-        return Pointer;
-    }
-    case AllocationAlgorithm::LibAlloc11:
-    {
-        // TODO: Make that the Liballoc 1.1 start at KERNEL_HEAP_BASE
-        void *Pointer = libPREFIX(malloc)(Size);
-        memset(Pointer, 0, Size);
-        return Pointer;
-    }
+        ret = liballoc_malloc(Size);
+        break;
+    case AllocationAlgorithm::LibAlloc11: // TODO: Make that the Liballoc 1.1 start at KERNEL_HEAP_BASE
+        ret = libPREFIX(malloc)(Size);
+        break;
     case AllocationAlgorithm::BuddyAlloc:
-    {
-        void *Pointer = buddy_malloc(buddy, Size);
-        memset(Pointer, 0, Size);
-        return Pointer;
+        ret = buddy_malloc(buddy, Size);
+        break;
     }
-    default:
-        return 0;
-    }
+
+    memset(ret, 0, Size);
+
+    UNLOCK(heap_lock);
+    if (inten)
+        STI;
+    return ret;
 }
 
 void *HeapCalloc(size_t n, size_t Size)
 {
+    LOCK(heap_lock);
+    bool inten = InterruptsEnabled();
+    CLI;
+    void *ret;
+
     switch (AlgorithmToUse)
     {
     case AllocationAlgorithm::Default:
-    {
-        void *Pointer = defPREFIX(calloc)(n, Size);
-        memset(Pointer, 0, n * Size);
-        return Pointer;
-    }
+        ret = defPREFIX(calloc)(n, Size);
+        break;
     case AllocationAlgorithm::LibAlloc:
-    {
-        void *Pointer = liballoc_calloc(n, Size);
-        memset(Pointer, 0, n * Size);
-        return Pointer;
-    }
+        ret = liballoc_calloc(n, Size);
+        break;
     case AllocationAlgorithm::LibAlloc11:
-    {
-        void *Pointer = libPREFIX(calloc)(n, Size);
-        memset(Pointer, 0, n * Size);
-        return Pointer;
-    }
+        ret = libPREFIX(calloc)(n, Size);
+        break;
     case AllocationAlgorithm::BuddyAlloc:
-    {
-        void *Pointer = buddy_calloc(buddy, n, Size);
-        memset(Pointer, 0, n * Size);
-        return Pointer;
+        ret = buddy_calloc(buddy, n, Size);
+        break;
     }
-    default:
-        return 0;
-    }
+
+    memset(ret, 0, n * Size);
+
+    UNLOCK(heap_lock);
+    if (inten)
+        STI;
+    return ret;
 }
 
 void *HeapRealloc(void *Address, size_t Size)
 {
+    LOCK(heap_lock);
+    bool inten = InterruptsEnabled();
+    CLI;
+    void *ret;
+
     switch (AlgorithmToUse)
     {
     case AllocationAlgorithm::Default:
-    {
-        void *Pointer = defPREFIX(realloc)(Address, Size);
-        memset(Pointer, 0, Size);
-        return Pointer;
-    }
+        ret = defPREFIX(realloc)(Address, Size);
+        break;
     case AllocationAlgorithm::LibAlloc:
-    {
-        void *Pointer = liballoc_realloc(Address, Size);
-        memset(Pointer, 0, Size);
-        return Pointer;
-    }
+        ret = liballoc_realloc(Address, Size);
+        break;
     case AllocationAlgorithm::LibAlloc11:
-    {
-        void *Pointer = libPREFIX(realloc)(Address, Size);
-        memset(Pointer, 0, Size);
-        return Pointer;
-    }
+        ret = libPREFIX(realloc)(Address, Size);
+        break;
     case AllocationAlgorithm::BuddyAlloc:
-    {
-        void *Pointer = buddy_realloc(buddy, Address, Size);
-        memset(Pointer, 0, Size);
-        return Pointer;
+        ret = buddy_realloc(buddy, Address, Size);
+        break;
     }
-    default:
-        return 0;
-    }
+
+    memset(ret, 0, Size);
+
+    UNLOCK(heap_lock);
+    if (inten)
+        STI;
+    return ret;
 }
 
 void *RequestPage() { return KernelAllocator.RequestPage(); }
@@ -213,36 +217,48 @@ void dbg_free(void *Address, string file, int line, string function)
 void *operator new(size_t Size)
 {
     if (Size == 0)
-        Size = 1;
+        warn("Trying to allocate 0 bytes!");
+
 #ifdef DEBUG_MEM_ALLOCATION
     if (void *Pointer = dbg_malloc(Size, __FILE__, __LINE__, __FUNCTION__))
-    {
 #else
     if (void *Pointer = HeapMalloc(Size))
-    {
 #endif
-        memset(Pointer, 0, Size);
         return Pointer;
+
+    warn("new( %llx ) failed! [Request by %s] Trying again...", Size, SymTbl->GetSymbolFromAddress((uint64_t)__builtin_return_address(0)));
+    for (size_t i = 0; i < 16; i++)
+    {
+        if (void *Pointer = HeapMalloc(Size))
+            return Pointer;
+        else
+            warn("new( %llx ) failed! Retrying... (%d)", Size, i);
     }
-    warn("new( %llx ) failed!", Size);
+    err("new( %llx ) failed!", Size);
     throw;
 }
 
 void *operator new[](size_t Size)
 {
     if (Size == 0)
-        Size = 1;
+        warn("Trying to allocate 0 bytes!");
+
 #ifdef DEBUG_MEM_ALLOCATION
     if (void *Pointer = dbg_malloc(Size, __FILE__, __LINE__, __FUNCTION__))
-    {
 #else
     if (void *Pointer = HeapMalloc(Size))
-    {
 #endif
-        memset(Pointer, 0, Size);
         return Pointer;
+
+    warn("new[]( %llx ) failed! [Request by %s] Trying again...", Size, SymTbl->GetSymbolFromAddress((uint64_t)__builtin_return_address(0)));
+    for (size_t i = 0; i < 16; i++)
+    {
+        if (void *Pointer = HeapMalloc(Size))
+            return Pointer;
+        else
+            warn("new[]( %llx ) failed! Retrying... (%d)", Size, i);
     }
-    warn("new[]( %llx ) failed!", Size);
+    err("new[]( %llx ) failed!", Size);
     throw;
 }
 

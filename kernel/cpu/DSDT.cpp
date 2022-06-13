@@ -5,7 +5,8 @@
 #include "../timer.h"
 #include "apic.hpp"
 #include "smp.hpp"
-#include "idt.h"
+
+#include <int.h>
 
 ACPI::DSDT *dsdt = nullptr;
 
@@ -63,9 +64,8 @@ namespace ACPI
             outl(0xB004, 0x2000); // for qemu
             outl(0x604, 0x2000);  // if qemu not working, bochs and older versions of qemu
             outl(0x4004, 0x3400); // virtual box
-            CPU_STOP;
         }
-        if (SCI_EN == 1)
+        else if (SCI_EN == 1)
         {
             outw(acpi->FADT->PM1aControlBlock, (inw(acpi->FADT->PM1aControlBlock) & 0xE3FF) | ((SLP_TYPa << 10) | ACPI_SLEEP));
             if (acpi->FADT->PM1bControlBlock)
@@ -73,8 +73,8 @@ namespace ACPI
             outw(PM1a_CNT, SLP_TYPa | SLP_EN);
             if (PM1b_CNT)
                 outw(PM1b_CNT, SLP_TYPb | SLP_EN);
-            CPU_STOP;
         }
+        CPU_HALT;
     }
 
     void DSDT::reboot()
@@ -98,7 +98,7 @@ namespace ACPI
             } while (((temp) & (1 << (1))) != 0);
             outb(0x64, 0xFE);
 
-            CPU_STOP;
+            CPU_HALT;
         }
         switch (acpi->FADT->ResetReg.AddressSpace)
         {
@@ -120,6 +120,7 @@ namespace ACPI
             */
             break;
         }
+        CPU_HALT;
     }
 
     uint16_t DSDT::GetSCIevent()
@@ -156,12 +157,12 @@ namespace ACPI
 
     void DSDT::InitSCI()
     {
+        // this should be done for all CPUs
         if (ACPIShutdownSupported)
         {
             debug("Registering SCI Handler to vector IRQ%d", acpi->FADT->SCI_Interrupt);
             RegisterSCIEvents();
-            register_interrupt_handler(acpi->FADT->SCI_Interrupt + 32, SCIHandler);
-            apic->RedirectIRQ(CurrentCPU->ID, acpi->FADT->SCI_Interrupt, 1);
+            RegisterInterrupt(SCIHandler, acpi->FADT->SCI_Interrupt + IRQ0, true, true);
         }
     }
 

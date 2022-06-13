@@ -25,31 +25,61 @@ void do_libs_test()
     TEST_EQUAL_STRN("Hello World!", buf, 12);
 }
 
+void do_mem_bitmap_print()
+{
+    TEST_DBG("\nPrinting Bitmap:\n");
+    size_t nl = 1;
+    for (size_t i = 0; i < KernelAllocator.PageBitmap.Size; i++)
+    {
+        nl--;
+        if (nl <= 0)
+        {
+            nl = 148;
+            TEST_DBG("\n%08d: ", i);
+        }
+        TEST_DBG("%d", KernelAllocator.PageBitmap[i] ? 1 : 0);
+    }
+    TEST_DBG("\n");
+}
+
 void do_mem_test()
 {
-    uint64_t ReqAddress1 = (uint64_t)KernelAllocator.RequestPage();
-    KernelAllocator.FreePage((void *)ReqAddress1);
-    for (size_t i = 0; i < 1000; i++)
-        KernelAllocator.FreePage(KernelAllocator.RequestPage());
-    uint64_t ReqAddress2 = (uint64_t)KernelAllocator.RequestPage();
-    TEST_EQUAL(ReqAddress1, ReqAddress2);
-    KernelAllocator.FreePage((void *)ReqAddress2);
+    // return;
+    TEST_DBG("Kernel Address: Start:%p ---- End:%p [%ldKB/%ldKB]\n", bootparams->kernel.file, bootparams->kernel.file + bootparams->kernel.size, TO_KB(KernelAllocator.GetUsedRAM()), TO_KB(KernelAllocator.GetFreeRAM()));
+    for (int repeat = 0; repeat < 16; repeat++)
+    {
+        TEST_DBG("[TEST %d] ", repeat);
+        uint64_t ReqAddress1 = (uint64_t)KernelAllocator.RequestPage();
+        KernelAllocator.FreePage((void *)ReqAddress1);
+        for (size_t i = 0; i < 1000; i++)
+            KernelAllocator.FreePage(KernelAllocator.RequestPage());
+        uint64_t ReqAddress2 = (uint64_t)KernelAllocator.RequestPage();
+        TEST_DBG("RqAddr1: %#lx, RqAddr2: %#lx ", (void *)ReqAddress1, (void *)ReqAddress2);
+        TEST_DBG("[%ldKB] ---- ", TO_KB(KernelAllocator.GetUsedRAM()));
+        TEST_EQUAL(ReqAddress1, ReqAddress2);
+        KernelAllocator.FreePage((void *)ReqAddress2);
 
-    uint64_t ReqAddresses1 = (uint64_t)KernelAllocator.RequestPages(10);
-    KernelAllocator.FreePages((void *)ReqAddresses1, 10);
-    for (size_t i = 0; i < 1000; i++)
-        KernelAllocator.FreePages(KernelAllocator.RequestPages(20), 20);
-    uint64_t ReqAddresses2 = (uint64_t)KernelAllocator.RequestPages(10);
-    TEST_EQUAL(ReqAddresses1, ReqAddresses2);
-    KernelAllocator.FreePages((void *)ReqAddresses2, 10);
+        uint64_t ReqAddresses1 = (uint64_t)KernelAllocator.RequestPages(10);
+        KernelAllocator.FreePages((void *)ReqAddresses1, 10);
+        for (size_t i = 0; i < 1000; i++)
+            KernelAllocator.FreePages(KernelAllocator.RequestPages(20), 20);
+        uint64_t ReqAddresses2 = (uint64_t)KernelAllocator.RequestPages(10);
+        TEST_DBG("RqAddrs1: %#lx, RqAddrs2: %#lx ", (void *)ReqAddresses1, (void *)ReqAddresses2);
+        TEST_DBG("[%ldKB] ---- ", TO_KB(KernelAllocator.GetUsedRAM()));
+        TEST_EQUAL(ReqAddresses1, ReqAddresses2);
+        KernelAllocator.FreePages((void *)ReqAddresses2, 10);
 
-    uint64_t MallocAddress1 = (uint64_t)kmalloc(0x1000);
-    kfree((void *)MallocAddress1);
-    for (size_t i = 0; i < 1000; i++)
-        kfree(kmalloc(0x10000));
-    uint64_t MallocAddress2 = (uint64_t)kmalloc(0x1000);
-    TEST_EQUAL(MallocAddress1, MallocAddress2);
-    kfree((void *)MallocAddress2);
+        uint64_t MallocAddress1 = (uint64_t)kmalloc(0x1000);
+        kfree((void *)MallocAddress1);
+        for (size_t i = 0; i < 1000; i++)
+            kfree(kmalloc(0x10000));
+        uint64_t MallocAddress2 = (uint64_t)kmalloc(0x1000);
+        TEST_DBG("mlc1: %#lx, mlc2: %#lx ", (void *)MallocAddress1, (void *)MallocAddress2);
+        TEST_DBG("[%ldKB]\n", TO_KB(KernelAllocator.GetUsedRAM()));
+        TEST_EQUAL(MallocAddress1, MallocAddress2);
+        kfree((void *)MallocAddress2);
+    }
+    do_mem_bitmap_print();
 }
 
 #define srdy 1
@@ -196,8 +226,7 @@ void test_safescheduler()
     cproc((uint64_t)test_safeschedulerproc);
     cproc((uint64_t)test_safeschedulerproc);
     cproc((uint64_t)test_safeschedulerproc);
-    register_interrupt_handler(IRQ8, safeschedulerhandler);
-    apic->RedirectIRQ(CurrentCPU->ID, IRQ8 - 32, 1);
+    RegisterInterrupt(safeschedulerhandler, IRQ8, true, true);
     apic->OneShot(IRQ8, 100);
 }
 
@@ -205,8 +234,21 @@ using namespace Tasking;
 
 void test_stress_task(int a, int b)
 {
-    TEST_DBG("T->%s(%d)[%d,%d]\n", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, a, b);
-    sleep(10);
+    if (a == 69)
+        TEST_DBG("\n");
+    else
+        TEST_DBG("T->%s(%d)[%d,%d]\n", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, a, b);
+    TEST_DBG("5\n");
+    sleep(1);
+    TEST_DBG("4\n");
+    sleep(1);
+    TEST_DBG("3\n");
+    sleep(1);
+    TEST_DBG("2\n");
+    sleep(1);
+    TEST_DBG("1\n");
+    sleep(1);
+    TEST_DBG("bye\n");
 }
 
 void test_kernelmultitasking(int a, int b)
@@ -244,6 +286,8 @@ void test_kernelmultitasking(int a, int b)
         mt->CreateThread(pcb4, (uint64_t)test_stress_task, 4, i);
     }
 
+    mt->CreateThread(pcb4, (uint64_t)test_stress_task, 69, 0);
+
     TEST_DBG("Multitasking test finished.\n");
     MultitaskingSchedulerEnabled = false;
     delete mt;
@@ -259,4 +303,26 @@ void do_tasking_test()
     // mt = new Multitasking;
     // mt->CreateThread(mt->CreateProcess(nullptr, (char *)"FakeKernel", ELEVATION::Kernel), (uint64_t)test_kernelmultitasking, 1998, 1998);
     // MultitaskingSchedulerEnabled = true;
+}
+
+void test_stack_final()
+{
+    // void *p = (void *)0x567777756886;
+    // ((void(*)())p)();
+    // asm("int $0xd");
+}
+void backtrace9() { test_stack_final(); }
+void backtrace8() { backtrace9(); }
+void backtrace7() { backtrace8(); }
+void backtrace6() { backtrace7(); }
+void backtrace5() { backtrace6(); }
+void backtrace4() { backtrace5(); }
+void backtrace3() { backtrace4(); }
+void backtrace2() { backtrace3(); }
+void backtrace1() { backtrace2(); }
+void backtrace0() { backtrace1(); }
+
+void do_stacktrace_test()
+{
+    backtrace0();
 }

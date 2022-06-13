@@ -16,12 +16,12 @@ void dbg_showregs(void *r, const char *file, int line, const char *function)
     CR4 cr4 = readcr4();
     CR8 cr8 = readcr8();
     RFLAGS rflags = FLAGS;
-    err("\tFS =%#lx  GS =%#lx  SS =%#lx  CS =%#lx", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
-    err("\tR8 =%#lx  R9 =%#lx  R10=%#lx  R11=%#lx", R8, R9, R10, R11);
+    err("\tFS=%#lx  GS=%#lx  SS=%#lx  CS=%#lx", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
+    err("\tR8=%#lx  R9=%#lx  R10=%#lx  R11=%#lx", R8, R9, R10, R11);
     err("\tR12=%#lx  R13=%#lx  R14=%#lx  R15=%#lx", R12, R13, R14, R15);
     err("\tRAX=%#lx  RBX=%#lx  RCX=%#lx  RDX=%#lx", RAX, RBX, RCX, RDX);
     err("\tRSI=%#lx  RDI=%#lx  RBP=%#lx  RSP=%#lx", RSI, RDI, RBP, RSP);
-    err("\tRIP=%#lx  RFL=%#lx  DS =%#lx  INT=%#lx  ERR=%#lx", RIP, FLAGS.raw, DS, INT_NUM, ERROR_CODE);
+    err("\tRIP=%#lx  RFL=%#lx  INT=%#lx  ERR=%#lx", RIP, FLAGS.raw, INT_NUM, ERROR_CODE);
     err("\tCR0=%#lx  CR2=%#lx  CR3=%#lx  CR4=%#lx  CR8=%#lx", cr0.raw, cr2.raw, cr3.raw, cr4.raw, cr8.raw);
 
     err("\nCR0: PE:%s     MP:%s     EM:%s     TS:%s\n     ET:%s     NE:%s     WP:%s     AM:%s\n     NW:%s     CD:%s     PG:%s\n     R0:%#x R1:%#x R2:%#x",

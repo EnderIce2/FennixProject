@@ -1,9 +1,12 @@
 #include <heap.h>
 #include <sys.h>
 #include <debug.h>
+#include <lock.h>
 #include "../../kernel.h"
 
 using namespace PMM;
+
+NEWLOCK(pfa_lock);
 
 uint64_t FreeMemory;
 uint64_t ReservedMemory;
@@ -36,8 +39,9 @@ void PageFrameAllocator::ReadMemoryMap()
             }
     uint64_t MemorySize = earlyparams.mem.Size;
     FreeMemory = MemorySize;
-    uint64_t BitmapSize = MemorySize / 4096 / 8 + 1;
-    InitBitmap(BitmapSize, LargestFreeMemorySegment);
+    // uint64_t BitmapSize = MemorySize / 4096 / 8 + 1;
+    // InitBitmap(BitmapSize, LargestFreeMemorySegment);
+    InitBitmap(ALIGN_UP((MemorySize / 0x1000) / 8, 0x1000), LargestFreeMemorySegment);
     ReservePages(0, MemorySize / 4096 + 1);
     for (uint64_t i = 0; i < earlyparams.mem.Entries; i++)
         if (earlyparams.mem.memmap[i].Type == GBP_Free)
@@ -58,15 +62,7 @@ void PageFrameAllocator::InitBitmap(size_t BitmapSize, void *BufferAddress)
 
 void *PageFrameAllocator::RequestPage()
 {
-#ifdef DEBUG
-    static int once = 0;
-    if (!once++)
-        debug("Current allocation: free: %dMB, used: %dMB, reserved: %dMB (%dGB %dGB %dGB)", TO_MB(FreeMemory), TO_MB(UsedMemory), TO_MB(ReservedMemory), TO_GB(FreeMemory), TO_GB(UsedMemory), TO_GB(ReservedMemory));
-    if (once >= 10000)
-        once = 0;
-    else
-        once++;
-#endif
+    LOCK(pfa_lock);
     for (; PageBitmapIndex < PageBitmap.Size * 8; PageBitmapIndex++)
     {
         if (PageBitmap[PageBitmapIndex] == true)
@@ -76,20 +72,36 @@ void *PageFrameAllocator::RequestPage()
         if (KernelPageTableManager.Initalized)
             debug("Requested page %#llx", (void *)(PageBitmapIndex * 4096));
 #endif
+        UNLOCK(pfa_lock);
         return (void *)(PageBitmapIndex * 4096);
     }
-    err("out of memory (free: %dMB, used: %dMB, reserved: %dMB)", TO_MB(FreeMemory), TO_MB(UsedMemory), TO_MB(ReservedMemory));
+    err("Out of memory (free: %dMB, used: %dMB, reserved: %dMB)", TO_MB(FreeMemory), TO_MB(UsedMemory), TO_MB(ReservedMemory));
+    UNLOCK(pfa_lock);
     return NULL; // TODO: Page Frame Swap to file
 }
 
 void PageFrameAllocator::FreePage(void *Address)
 {
 #ifdef DEBUG_MEM_ALLOCATION
-    debug("Freeing page %016p", Address);
+    if (Address == nullptr)
+    {
+        warn("Null address specified");
+        // return;
+    }
+#endif
+    LOCK(pfa_lock);
+#ifdef DEBUG_MEM_ALLOCATION
+    // debug("Freeing page %016p", Address); // spam
 #endif
     uint64_t Index = (uint64_t)Address / 4096;
     if (PageBitmap[Index] == false)
+    {
+#ifdef DEBUG_MEM_ALLOCATION
+        warn("Trying to free already free page %016p", Address);
+#endif
+        UNLOCK(pfa_lock);
         return;
+    }
     if (PageBitmap.Set(Index, false))
     {
         FreeMemory += 4096;
@@ -97,20 +109,19 @@ void PageFrameAllocator::FreePage(void *Address)
         if (PageBitmapIndex > Index)
             PageBitmapIndex = Index;
     }
+    UNLOCK(pfa_lock);
 }
 
 void *PageFrameAllocator::RequestPages(uint64_t PageCount)
 {
-#ifdef DEBUG
-    static int once = 0;
-    if (!once++)
-        debug("Current allocation: free: %dMB, used: %dMB, reserved: %dMB (%dGB %dGB %dGB)", TO_MB(FreeMemory), TO_MB(UsedMemory), TO_MB(ReservedMemory), TO_GB(FreeMemory), TO_GB(UsedMemory), TO_GB(ReservedMemory));
-    if (once >= 10000)
-        once = 0;
-    else
-        once++;
+#ifdef DEBUG_MEM_ALLOCATION
+    if (PageCount == 0)
+    {
+        warn("Trying to request 0 pages");
+        // PageCount = 1;
+    }
 #endif
-
+    LOCK(pfa_lock);
     for (; PageBitmapIndex < PageBitmap.Size * 8; PageBitmapIndex++)
     {
         if (PageBitmap[PageBitmapIndex] == true)
@@ -129,6 +140,7 @@ void *PageFrameAllocator::RequestPages(uint64_t PageCount)
 #ifdef DEBUG_MEM_ALLOCATION
             debug("Requested pages %016p returning %#lx", PageCount, (void *)(Index * 4096));
 #endif
+            UNLOCK(pfa_lock);
             return (void *)(Index * 4096);
 
         NextPage:
@@ -137,17 +149,32 @@ void *PageFrameAllocator::RequestPages(uint64_t PageCount)
         }
     }
     err("out of memory (free: %dMB, used: %dMB, reserved: %dMB)", TO_MB(FreeMemory), TO_MB(UsedMemory), TO_MB(ReservedMemory));
+    UNLOCK(pfa_lock);
     return NULL;
 }
 
 void PageFrameAllocator::FreePages(void *Address, uint64_t PageCount)
 {
+#ifdef DEBUG_MEM_ALLOCATION
+    if (Address == nullptr || PageCount == 0)
+    {
+        warn("Trying to free %s", Address ? "address" : "", PageCount ? "0 pages" : "");
+        // return;
+    }
+#endif
     for (uint64_t t = 0; t < PageCount; t++)
         FreePage((void *)((uint64_t)Address + (t * 4096)));
 }
 
 void PageFrameAllocator::LockPage(void *Address)
 {
+#ifdef DEBUG_MEM_ALLOCATION
+    if (Address == nullptr)
+    {
+        warn("Trying to lock null address");
+        // return;
+    }
+#endif
     uint64_t Index = (uint64_t)Address / 4096;
     if (PageBitmap[Index] == true)
         return;
@@ -160,15 +187,34 @@ void PageFrameAllocator::LockPage(void *Address)
 
 void PageFrameAllocator::LockPages(void *Address, uint64_t PageCount)
 {
+#ifdef DEBUG_MEM_ALLOCATION
+    if (Address == nullptr || PageCount == 0)
+    {
+        warn("Trying to lock %s", Address ? "address" : "", PageCount ? "0 pages" : "");
+        // return;
+    }
+#endif
     for (uint64_t t = 0; t < PageCount; t++)
         LockPage((void *)((uint64_t)Address + (t * 4096)));
 }
 
 void PageFrameAllocator::UnreservePage(void *Address)
 {
+#ifdef DEBUG_MEM_ALLOCATION
+    if (Address == nullptr)
+    {
+        warn("Trying to unreserve null address");
+        // return;
+    }
+#endif
     uint64_t Index = (uint64_t)Address / 4096;
+#ifdef DEBUG_MEM_ALLOCATION
     if (PageBitmap[Index] == false)
-        return;
+    {
+        // err("Trying to unreserve already unreserved page %016p", Address); // spam
+        // return;
+    }
+#endif
     if (PageBitmap.Set(Index, false))
     {
         FreeMemory += 4096;
@@ -180,15 +226,34 @@ void PageFrameAllocator::UnreservePage(void *Address)
 
 void PageFrameAllocator::UnreservePages(void *Address, uint64_t PageCount)
 {
+#ifdef DEBUG_MEM_ALLOCATION
+    if (Address == nullptr || PageCount == 0)
+    {
+        warn("Trying to unreserve %s", Address ? "address" : "", PageCount ? "0 pages" : "");
+        // return;
+    }
+#endif
     for (uint64_t t = 0; t < PageCount; t++)
         UnreservePage((void *)((uint64_t)Address + (t * 4096)));
 }
 
 void PageFrameAllocator::ReservePage(void *Address)
 {
+#ifdef DEBUG_MEM_ALLOCATION
+    if (Address == nullptr)
+    {
+        warn("Trying to reserve null address");
+        // return;
+    }
+#endif
     uint64_t Index = (uint64_t)Address / 4096;
     if (PageBitmap[Index] == true)
+    {
+#ifdef DEBUG_MEM_ALLOCATION
+        warn("page already reserved");
+#endif
         return;
+    }
     if (PageBitmap.Set(Index, true))
     {
         FreeMemory -= 4096;
@@ -198,6 +263,13 @@ void PageFrameAllocator::ReservePage(void *Address)
 
 void PageFrameAllocator::ReservePages(void *Address, uint64_t PageCount)
 {
+#ifdef DEBUG_MEM_ALLOCATION
+    if (Address == nullptr || PageCount == 0)
+    {
+        warn("Trying to reserve %s", Address ? "address" : "", PageCount ? "0 pages" : "");
+        // return;
+    }
+#endif
     for (uint64_t t = 0; t < PageCount; t++)
         ReservePage((void *)((uint64_t)Address + (t * 4096)));
 }

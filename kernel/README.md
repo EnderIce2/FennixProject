@@ -1,2 +1,2 @@
 # Fennix Kernel
-This is the core component of the operating system.
+This is where the kernel is.

@@ -63,7 +63,7 @@ namespace AHCI
                 if (portType == PortType::SATA || portType == PortType::SATAPI)
                 {
                     trace("%s drive found at port %d", PortTypeName[portType], i);
-                    Ports[PortCount] = new Port();
+                    Ports[PortCount] = new Port;
                     Ports[PortCount]->AHCIPortType = portType;
                     Ports[PortCount]->HBAPortPtr = &ABAR->Ports[i];
                     Ports[PortCount]->PortNumber = PortCount;

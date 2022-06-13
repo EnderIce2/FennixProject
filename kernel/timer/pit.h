@@ -3,7 +3,6 @@
 
 #include <types.h>
 
-// TODO: document defines
 #define PIT_COUNTER0 0x40
 #define PIT_CMD 0x43
 

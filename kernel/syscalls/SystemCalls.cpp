@@ -96,19 +96,6 @@ extern "C" uint64_t syscall_handler(SyscallsRegs *regs)
     return -1;
 }
 
-// TODO: 32 bit syscalls support. I can probably just use compatibility mode from newer AMD cpus but that's not the right way because it's not stable and doesn't work on Intel.
-extern "C"
-{
-    __attribute__((naked, used)) void syscall_interrpt_handler_helper()
-    {
-    }
-
-    static uint64_t syscall_interrpt_handler(REGISTERS *regs)
-    {
-        return 0;
-    }
-}
-
 extern "C" void syscall_handle();
 
 void init_syscalls()

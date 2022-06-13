@@ -149,7 +149,6 @@ namespace PS2Mouse
             }
             }
             LeaveCriticalSection;
-            EndOfInterrupt(INT_NUM);
         }
     }
 
@@ -177,7 +176,7 @@ namespace PS2Mouse
         Write(COMMAND, 0xD4);
         Write(DATA, 0xF4);
         Read();
-        register_interrupt_handler(IRQ12, PS2MouseInterruptHandler);
+        RegisterInterrupt(PS2MouseInterruptHandler, IRQ12, true);
         devfs->AddFileSystem(&mouse, 0666, "mouse", FileSystem::NodeFlags::FS_PIPE);
     }
 

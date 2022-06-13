@@ -14,7 +14,9 @@ namespace ACPI
     {
         for (uint64_t t = 0; t < ((ACPIHeader->Length - sizeof(ACPI::ACPIHeader)) / (XSDTSupported ? 8 : 4)); t++)
         {
-            ACPI::ACPIHeader *SDTHdr = (ACPI::ACPIHeader *)*(uint64_t *)((uint64_t)ACPIHeader + sizeof(ACPI::ACPIHeader) + (t * 8));
+            // Should I be concerned about unaligned memory access?
+            ACPI::ACPIHeader *SDTHdr = (ACPI::ACPIHeader *)(*(uint64_t *)((uint64_t)ACPIHeader + sizeof(ACPI::ACPIHeader) + (t * (XSDTSupported ? 8 : 4))));
+
             for (uint64_t i = 0; i < 4; i++)
             {
                 if (SDTHdr->Signature[i] != Signature[i])
@@ -26,7 +28,7 @@ namespace ACPI
                 }
             }
         }
-        // WARN("%s not found!", Signature);
+        // warn("%s not found!", Signature);
         return 0;
     }
 

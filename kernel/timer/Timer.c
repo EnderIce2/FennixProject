@@ -95,7 +95,11 @@ uint64_t get_system_uptime()
 InterruptHandler(timer_interrupt_handler)
 {
     ticks++;
-    if (HPET_initialized)
+    if (APICTimer_initialized)
+    {
+
+    }
+    else if (HPET_initialized)
     {
         if (!uptimesettarget)
         {
@@ -112,12 +116,11 @@ InterruptHandler(timer_interrupt_handler)
     {
         systemuptimeseconds += get_freq() / 1000; // TODO: check if this is correct
     }
-    EndOfInterrupt(INT_NUM);
 }
 
 void init_timer()
 {
-    register_interrupt_handler(IRQ0, timer_interrupt_handler);
+    CRegisterInterrupt(timer_interrupt_handler, IRQ0, true);
     init_APICTimer();
     if (!APICTimer_initialized)
     {
