@@ -250,7 +250,11 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
                 return (/* data will be invalid but not null */ PCB *)monot->CreateTask(header->e_entry + (uint64_t)offset, arg0, arg1, (char *)file->Name, user);
             }
             else
-                return SysCreateThread(SysCreateProcess(file->Name, Elevation), (uint64_t)(header->e_entry + (uint64_t)offset), arg0, arg1)->Parent;
+            {
+                PCB *pcb = SysCreateProcess(file->Name, Elevation);
+                pcb->Offset = (uint64_t)offset;
+                return SysCreateThread(pcb, (uint64_t)header->e_entry, arg0, arg1)->Parent;
+            }
         }
     }
 error_exit:

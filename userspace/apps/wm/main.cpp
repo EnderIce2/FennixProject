@@ -108,7 +108,7 @@ void InitScreen()
 {
     ScreenBufferSize = VbeModeInfoBlock.XResolution * VbeModeInfoBlock.YResolution * (VbeModeInfoBlock.BitsPerPixel / 8);
     ScreenBackBuffer = alloc(ScreenBufferSize);
-    // syscall_createThread((uint64_t)ScreenRefreshProc, 0, 0);
+    syscall_createThread((uint64_t)ScreenRefreshProc, 0, 0);
 }
 
 int main(int argc, char **argv)

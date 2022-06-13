@@ -134,3 +134,4 @@ make clean
 - [ ] Add compatibility for linux (libc)
 - [ ] Add compatibility for windows (winapi)
 - [ ] If APIC is not available, use PIC.
+- [ ] Fix page fault or invalid opcode in some processes

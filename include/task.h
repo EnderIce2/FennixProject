@@ -120,6 +120,7 @@ struct PCB
     STATUS Status;
     ELEVATION Elevation;
     uint64_t ExitCode;
+    uint64_t Offset;
     struct PCB *Parent;
     CR3 PageTable;
     GeneralProcessInfo Info;

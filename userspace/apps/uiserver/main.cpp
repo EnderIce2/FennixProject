@@ -44,7 +44,7 @@ int main(int argc, char **argv)
         for (uint32_t *PixelPtr = (uint32_t *)PixelPtrBase; PixelPtr < (uint32_t *)(PixelPtrBase + (ppsl * 4)); PixelPtr++)
             *PixelPtr = 0xFF000000;
     }
-    // syscall_createThread((long)EventListener, 0, 0);
+    syscall_createThread((long)EventListener, 0, 0);
     syscall_createProcess((char *)"/system/wm", 0, 0);
     while (1)
         ;

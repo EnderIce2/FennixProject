@@ -231,6 +231,7 @@ namespace Tasking
         process->Info.Architecture = Architecture::UnknownArchitecture;
         process->Info.Platform = Platform::UnknownPlatform;
         process->ID = this->NextPID++;
+        process->Offset = 0;
         process->Security.Token = CreateToken();
         trace("New security token created %p", process->Security.Token);
         if (Elevation == ELEVATION::Idle || Elevation == ELEVATION::Kernel || Elevation == ELEVATION::System)
@@ -322,9 +323,9 @@ namespace Tasking
             return nullptr;
         }
 
-        thread->Registers.FUNCTION = (uint64_t)InstructionPointer;
-        thread->Registers.ARG0 = (uint64_t)Arg0; // args0
-        thread->Registers.ARG1 = (uint64_t)Arg1; // args1
+        thread->Registers.FUNCTION = (InstructionPointer + Parent->Offset);
+        thread->Registers.ARG0 = Arg0; // args0
+        thread->Registers.ARG1 = Arg1; // args1
 
         SetInfo(&thread->Info);
         thread->Info.Architecture = Architecture;
