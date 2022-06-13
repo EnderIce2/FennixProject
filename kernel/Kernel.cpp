@@ -37,14 +37,6 @@ uint8_t kernel_stack[STACK_SIZE];
 
 void KernelInit();
 
-EXTERNC void stivale_initializator(stivale_struct *bootloaderdata)
-{
-    // TODO: support stivale boot protocol.
-    init_stivale(bootloaderdata, &earlyparams);
-    CPU_STOP;
-    KernelInit();
-}
-
 EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
 {
     init_stivale2(bootloaderdata, &earlyparams, false);
@@ -56,7 +48,7 @@ EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
     init_pmm();
     init_vmm();
     init_kernelpml();
-    init_heap(AllocationAlgorithm::LibAlloc11);
+    init_heap(AllocationAlgorithm::Default);
     bootparams = new GlobalBootParams;
     debug("bootparams is allocated at %p", bootparams);
     debug("bootparams framebuffer is allocated at %p", bootparams->Framebuffer);
@@ -84,8 +76,6 @@ EXTERNC void kernel_entry(void *data)
         limine_initializator();
     else if (detect_stivale2(data))
         stivale2_initializator(static_cast<stivale2_struct *>(data));
-    else if (detect_stivale(data))
-        stivale_initializator(static_cast<stivale_struct *>(data));
     else
         err("No bootloader protocol found. System Halted.");
     CPU_STOP;

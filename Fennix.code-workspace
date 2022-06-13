@@ -32,7 +32,8 @@
 			"print.h": "c",
 			"*.tcc": "cpp",
 			"heap.h": "c",
-			"idt.h": "c"
+			"idt.h": "c",
+			"stivale.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}
