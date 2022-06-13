@@ -52,7 +52,7 @@ EXTERNC void crash(string message, bool clear)
     CPU_STOP;
 }
 
-EXTERNC void isrcrash(REGISTERS *regs)
+EXTERNC void isrcrash(TrapFrame *regs)
 {
     CLI;
     CR0 cr0 = readcr0();

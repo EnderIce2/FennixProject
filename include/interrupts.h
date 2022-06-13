@@ -292,7 +292,7 @@ typedef enum
     IRQ223 = 0xff,
 } Interrupts;
 
-typedef struct _REGISTERS
+typedef struct _TrapFrame
 {
     // uint64_t es;  // Extra Segment (used for string operations)
     // uint64_t fs;  // General-purpose Segment
@@ -323,7 +323,7 @@ typedef struct _REGISTERS
     RFLAGS rflags;       // Register Flags
     uint64_t rsp;        // Stack Pointer
     uint64_t ss;         // Stack Segment
-} REGISTERS;
+} TrapFrame;
 
 #define FUNCTION rip
 #define ARG0 rdi
@@ -357,4 +357,4 @@ typedef struct _REGISTERS
 #define RSP regs->rsp               // Stack Pointer
 #define _SS regs->ss                // Stack Segment
 
-#define InterruptHandler(name) static void name(REGISTERS *regs)
+#define InterruptHandler(name) static void name(TrapFrame *regs)

@@ -274,7 +274,7 @@ namespace Tasking
         thread->Security.Token = CreateToken();
         thread->Parent = Parent;
         memcpy(thread->Name, Parent->Name, sizeof(Parent->Name));
-        memset(&thread->Registers, 0, sizeof(REGISTERS));
+        memset(&thread->Registers, 0, sizeof(TrapFrame));
 
         schedbg("Parent elevation is %d", Parent->Elevation);
 

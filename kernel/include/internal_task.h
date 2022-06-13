@@ -29,7 +29,7 @@ namespace Tasking
     struct TaskControlBlock
     {
         char name[256];
-        REGISTERS regs;
+        TrapFrame regs;
         uint64_t fs, gs;
         uint64_t id;
         void *stack;

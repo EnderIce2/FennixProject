@@ -90,7 +90,7 @@ struct t_process
 {
     uint64_t id;
     int tids;
-    REGISTERS regs;
+    TrapFrame regs;
     int status;
 };
 
@@ -145,7 +145,7 @@ void freeproc(t_process *p)
     TEST_DBG("freeproc fail\n");
 }
 
-void safeschedulerhandler(REGISTERS *regs)
+void safeschedulerhandler(TrapFrame *regs)
 {
     if (curp == nullptr)
     {

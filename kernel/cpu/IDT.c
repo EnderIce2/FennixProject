@@ -51,7 +51,7 @@ __attribute__((naked, used)) void exception_handler_helper()
         "iretq"); // pop CS RIP RFLAGS SS ESP
 }
 
-__attribute__((used)) void exception_handler(REGISTERS *regs)
+__attribute__((used)) void exception_handler(TrapFrame *regs)
 {
     CLI;
     serial_write_text(COM1, "An Internal Exception Occurred\n");
@@ -90,12 +90,12 @@ __attribute__((used)) void exception_handler(REGISTERS *regs)
         {
             TRACEREGS(regs);
             err("Fatal error detected (%d)", INT_NUM);
-            goto exception_handler;
+            goto exception_handler_;
         }
         err("Unknown interrupt %d", INT_NUM);
         return;
     }
-exception_handler:
+exception_handler_:
 #ifndef DEBUG
     uint32_t Div;
     uint8_t tmp;
@@ -180,7 +180,7 @@ __attribute__((naked, used)) static void InterruptHandlerStub()
 
 INTERRUPT_HANDLER interrupt_handlers[256];
 
-static void IDTInterruptHandler(REGISTERS *regs)
+static void IDTInterruptHandler(TrapFrame *regs)
 {
     if (regs->int_num < 0 || regs->int_num > 0xff)
     {

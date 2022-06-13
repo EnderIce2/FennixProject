@@ -7,7 +7,7 @@
 
 EXTERNC void EndOfInterrupt(int interrupt);
 
-typedef void (*INTERRUPT_HANDLER)(REGISTERS *);
+typedef void (*INTERRUPT_HANDLER)(TrapFrame *);
 typedef unsigned int InterruptVector;
 
 InterruptVector RegisterInterrupt(INTERRUPT_HANDLER Handler);

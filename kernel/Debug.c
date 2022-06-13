@@ -9,7 +9,7 @@
 
 void dbg_showregs(void *r, const char *file, int line, const char *function)
 {
-    REGISTERS *regs = r;
+    TrapFrame *regs = r;
     CR0 cr0 = readcr0();
     CR2 cr2 = readcr2();
     CR3 cr3 = readcr3();

@@ -19,7 +19,7 @@ ACPI::DSDT *dsdt = nullptr;
 #define ACPI_PCIE_WAKE 0x4000
 #define ACPI_WAKE 0x8000
 
-void SCIHandler(REGISTERS *regs)
+void SCIHandler(TrapFrame *regs)
 {
     debug("SCI Handle Triggered");
     uint16_t event = dsdt->GetSCIevent();

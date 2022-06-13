@@ -52,7 +52,7 @@ static const char *exception_message[] = {
 // TODO: after implementing IPC, this should call the IPC handler from userspace
 // TODO: exception_message it will be used in the future
 
-void TriggerUserModeCrash(REGISTERS *regs)
+void TriggerUserModeCrash(TrapFrame *regs)
 {
     switch (INT_NUM)
     {

@@ -31,7 +31,8 @@
 			"time.h": "c",
 			"print.h": "c",
 			"*.tcc": "cpp",
-			"heap.h": "c"
+			"heap.h": "c",
+			"idt.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}

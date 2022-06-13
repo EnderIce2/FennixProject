@@ -210,7 +210,7 @@ namespace Tasking
         task->stack = KernelStackAllocator->AllocateStack(UserMode);
         task->pml4 = KernelPageTableAllocator->CreatePageTable(UserMode);
 
-        memset(&task->regs, 0, sizeof(REGISTERS));
+        memset(&task->regs, 0, sizeof(TrapFrame));
         if (!UserMode)
         {
             // task->regs.ds = GDT_KERNEL_DATA;
