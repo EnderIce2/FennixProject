@@ -71,6 +71,7 @@ fonts:
 # install necessary packages, compile cross-compiler etc..
 tools: fonts
 	make --quiet -C tools all
+	make --quiet -C boot gnuefi
 
 tools_workflow0: fonts
 	make --quiet -C tools do_initrd
@@ -84,11 +85,19 @@ tools_workflow2:
 tools_workflow3:
 	make --quiet -C tools do_gcc
 
-build: build_kernel build_libc build_userspace build_image
+tools_workflow4:
+	make --quiet -C boot gnuefi
+
+build: build_bootloader build_kernel build_libc build_userspace build_image
 
 rebuild: clean build
 
 # quickly build the operating system (it won't create the ISO file and doxygen documentation)
+build_bootloader:
+ifeq ($(BOOTLOADER), lynx)
+	make --quiet -C boot build
+endif
+
 build_kernel:
 	make -j$(shell nproc) --quiet -C kernel build
 
@@ -99,18 +108,26 @@ build_libc:
 	make --quiet -C libc build
 
 build_image:
-	mkdir -p limine-bootloader
+	mkdir -p iso_tmp_data
 	tar cf initrd.tar.gz -C resources/initrd/ ./ --format=ustar
-	cp kernel/kernel.fsys limine.cfg initrd.tar.gz startup.nsh \
-		${LIMINE_FOLDER}/limine.sys \
-		${LIMINE_FOLDER}/limine-cd.bin \
-		${LIMINE_FOLDER}/limine-cd-efi.bin \
-		limine-bootloader/
+	cp kernel/kernel.fsys initrd.tar.gz startup.nsh \
+		iso_tmp_data/
+ifeq ($(BOOTLOADER), lynx)
+	cp lynx.cfg boot/BIOS/loader.bin boot/UEFI/efi-loader.bin iso_tmp_data/
+	xorriso -as mkisofs -b loader.bin \
+		-no-emul-boot -boot-load-size 4 -boot-info-table \
+		--efi-boot efi-loader.bin \
+		-efi-boot-part --efi-boot-image --protective-msdos-label \
+		iso_tmp_data -o $(OSNAME).iso
+endif
+ifeq ($(BOOTLOADER), limine)
+	cp limine.cfg ${LIMINE_FOLDER}/limine.sys ${LIMINE_FOLDER}/limine-cd.bin ${LIMINE_FOLDER}/limine-cd-efi.bin iso_tmp_data/
 	xorriso -as mkisofs -b limine-cd.bin \
 		-no-emul-boot -boot-load-size 4 -boot-info-table \
 		--efi-boot limine-cd-efi.bin \
 		-efi-boot-part --efi-boot-image --protective-msdos-label \
-		limine-bootloader -o $(OSNAME).iso
+		iso_tmp_data -o $(OSNAME).iso
+endif
 
 vscode_debug: build_kernel build_libc build_userspace build_image
 	rm -f serial.log
@@ -129,7 +146,10 @@ run: build qemu_vdisk qemu
 
 # clean
 clean:
-	rm -rf doxygen-doc limine-bootloader initrd.tar.gz *.iso
+	rm -rf doxygen-doc iso_tmp_data initrd.tar.gz *.iso
+ifeq ($(BOOTLOADER), lynx)
+	make --quiet -C boot clean
+endif
 	make --quiet -C tools clean
 	make --quiet -C kernel clean
 	make --quiet -C userspace clean

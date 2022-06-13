@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/kernel/include",
                 "${workspaceFolder}/libc/include",
-                "${workspaceFolder}/include"
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/boot/UEFI/gnu-efi/inc"
             ],
             "defines": [
                 "DEBUG",

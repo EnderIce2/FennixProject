@@ -25,7 +25,14 @@ jobs:
         path: tools/cross
         key: ${{ runner.os }}-cross-${{ hashFiles('tools/Makefile') }}
 
-    - name: Install GNU Binutils & GNU Compiler Collection Dependencies
+    - name: Cache gnu-efi Folder
+      id: cache-gnuefi
+      uses: actions/cache@v3
+      with:
+        path: boot/UEFI/gnu-efi
+        key: ${{ runner.os }}-gnuefi-${{ hashFiles('boot/Makefile') }}
+
+    - name: Install GNU Binutils & GNU Compiler Collection
       if: steps.cache-cross.outputs.cache-hit != 'true'
       run: sudo apt-get install build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo -y
 
@@ -43,9 +50,28 @@ jobs:
       if: steps.cache-cross.outputs.cache-hit != 'true'
       run: make tools_workflow3
 
-    - name: Build Image
-      run: make build
-      
+    - name: Install MinGW compiler
+      run: sudo apt-get install make gcc-mingw-w64-x86-64 gcc-mingw-w64-i686 mingw-w64 -y
+
+    - name: Get GNU-EFI source code and compile it
+      if: steps.cache-gnuefi.outputs.cache-hit != 'true'
+      run: make tools_workflow4
+
+    - name: Build Bootloader
+      run: make build_bootloader
+
+    - name: Build Kernel
+      run: make build_kernel
+
+    - name: Build LibC
+      run: make build_libc
+
+    - name: Build User-Space Applications
+      run: make build_userspace
+
+    - name: Build ISO Image
+      run: make build_image
+
     - name: Upload Artifact
       uses: actions/upload-artifact@v3.0.0
       with:
