@@ -33,7 +33,8 @@
 			"*.tcc": "cpp",
 			"heap.h": "c",
 			"idt.h": "c",
-			"stivale.h": "c"
+			"stivale.h": "c",
+			"cpuid.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}

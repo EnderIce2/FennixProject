@@ -31,11 +31,26 @@ void Dock()
     uint64_t height = syscall_displayHeight();
 
     drawrectangle(0, height - 20, width, 20, 0xacacac);
-    drawrectangle(2, height - 18, 50, 16, 0x5c5c5c);
-    drawrectangle(3, height - 17, 49, 15, 0x8c8c8c);
+
+    // drawrectangle(2, height - 18, 50, 16, 0x5c5c5c);
+    // drawrectangle(3, height - 17, 49, 15, 0x8c8c8c);
+
+    int color1 = 0x5c5c5c;
+    int color2 = 0x8c8c8c;
 
     while (1)
-        ;
+    {
+        if (color1 > 0xFFFFFF)
+            color1 = 0x5c5c5c;
+        if (color2 > 0xFFFFFF)
+            color2 = 0x8c8c8c;
+        
+        drawrectangle(2, height - 18, 50, 16, color1);
+        drawrectangle(3, height - 17, 49, 15, color2);
+
+        color1 += 0x00000F;
+        color2 += 0x00000F;
+    }
 }
 
 int main(int argc, char **argv)

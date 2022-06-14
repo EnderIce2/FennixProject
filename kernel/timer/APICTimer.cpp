@@ -40,8 +40,6 @@ void apictimer_wait(uint64_t Seconds)
     apictimer_mwait(Seconds * 1000);
 }
 
-extern "C" uint32_t ReadPITCounter();
-
 void init_APICTimer()
 {
     trace("Initializing APIC Timer...");
@@ -62,9 +60,8 @@ void init_APICTimer()
     outb(PIT_COUNTER0, (uint8_t)(Wait100ms & 0xFF));
     outb(PIT_COUNTER0, (uint8_t)((Wait100ms >> 8) & 0xFF));
 
-    while (1)
-        if (ReadPITCounter() == 0)
-            break;
+    // while ((inb(0x61) & 0x20) == 0)
+    //     ;
 
     apic->Write(APIC::APIC::APIC_TIMER, 0x10000);
     apic_timer_ticks = 0xFFFFFFFF - apic->Read(APIC::APIC::APIC_TCCR);
@@ -75,4 +72,6 @@ void init_APICTimer()
     apic->Write(APIC::APIC::APIC_TICR, apic_timer_ticks);
 
     APICTimer_initialized = true;
+    apic_timer_ticks = 32000; // FIXME: This is a hack to make the timer work. (also why if the PIT timer code is commented out the IRQ 2 is used?)
+    trace("APIC timer ticks %lld", apic_timer_ticks);
 }
