@@ -44,8 +44,8 @@ typedef struct _GlobalDescriptorTableEntries
     GlobalDescriptorTableEntry Null;
     GlobalDescriptorTableEntry Code;
     GlobalDescriptorTableEntry Data;
-    GlobalDescriptorTableEntry UserData;
     GlobalDescriptorTableEntry UserCode;
+    GlobalDescriptorTableEntry UserData;
     TaskStateSegmentEntry TaskStateSegment;
 } __attribute__((packed)) GlobalDescriptorTableEntries;
 
