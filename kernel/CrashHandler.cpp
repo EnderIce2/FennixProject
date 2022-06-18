@@ -363,6 +363,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
             {
                 SET_PRINT_MID((char *)pagefault_message[ERROR_CODE & 0b111], FHeight(2));
             }
+            err("\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s", page_present, page_write, page_user, page_reserved, page_fetch, page_protection, page_shadow, page_sgx);
         }
         break;
     }
@@ -512,28 +513,49 @@ EXTERNC void isrcrash(TrapFrame *regs)
 
     CurrentDisplay->SetPrintColor(0x7981FC);
     printf("\n\nStack Trace:\n");
-    CurrentDisplay->SetPrintColor(0x2565CC);
-    printf("%p", (void *)RIP);
-    CurrentDisplay->SetPrintColor(0x7925CC);
-    printf("-");
-    CurrentDisplay->SetPrintColor(0xAA25CC);
-    printf("%s", SymTbl->GetSymbolFromAddress(RIP));
-    CurrentDisplay->SetPrintColor(0x7981FC);
-    printf(" <- Exception");
-
-    for (uint64_t frame = 0; frame < 20; ++frame)
+    // not really working... ubsan is telling me "Null pointer access." and gpf to the code below but here everything is ok... wow...
+    if ((!frames->rip ||
+         !frames->rbp) ||
+        frames->rip == 0x0 ||
+        frames->rbp == 0x0 ||
+        (void *)frames->rip == nullptr ||
+        (void *)frames->rbp == nullptr)
     {
-        if (frames->rip == 0x0)
-            break;
-        printf("\n");
         CurrentDisplay->SetPrintColor(0x2565CC);
-        printf("%p", (void *)frames->rip);
+        printf("%p", (void *)RIP);
         CurrentDisplay->SetPrintColor(0x7925CC);
         printf("-");
-        CurrentDisplay->SetPrintColor(0x25CCC9);
-        printf("%s", SymTbl->GetSymbolFromAddress(frames->rip));
-        frames = frames->rbp;
+        CurrentDisplay->SetPrintColor(0xAA25CC);
+        printf("%s", SymTbl->GetSymbolFromAddress(RIP));
+        CurrentDisplay->SetPrintColor(0x7981FC);
+        printf(" <- Exception");
+        CurrentDisplay->SetPrintColor(0xFF0000);
+        printf("\n< No stack trace available. >\n");
     }
+    else
+    {
+        CurrentDisplay->SetPrintColor(0x2565CC);
+        printf("%p", (void *)RIP);
+        CurrentDisplay->SetPrintColor(0x7925CC);
+        printf("-");
+        CurrentDisplay->SetPrintColor(0xAA25CC);
+        printf("%s", SymTbl->GetSymbolFromAddress(RIP));
+        CurrentDisplay->SetPrintColor(0x7981FC);
+        printf(" <- Exception");
 
+        for (uint64_t frame = 0; frame < 20; ++frame)
+        {
+            if (frames->rip == 0x0)
+                break;
+            printf("\n");
+            CurrentDisplay->SetPrintColor(0x2565CC);
+            printf("%p", (void *)frames->rip);
+            CurrentDisplay->SetPrintColor(0x7925CC);
+            printf("-");
+            CurrentDisplay->SetPrintColor(0x25CCC9);
+            printf("%s", SymTbl->GetSymbolFromAddress(frames->rip));
+            frames = frames->rbp;
+        }
+    }
     CPU_HALT;
 }
