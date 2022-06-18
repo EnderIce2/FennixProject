@@ -19,8 +19,8 @@ typedef struct _TaskStateSegment
     uint64_t StackPointer[3];
     uint64_t Reserved1;
     uint64_t InterruptStackTable[7];
-    uint64_t Reserved2;
-    uint32_t IOMapBaseAddressOffset;
+    uint16_t Reserved2;
+    uint16_t IOMapBaseAddressOffset;
 } __attribute__((packed)) TaskStateSegment;
 
 typedef struct _GlobalDescriptorTableEntry
