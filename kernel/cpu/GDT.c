@@ -54,10 +54,10 @@ void init_tss()
     gdt.Entries->TaskStateSegment.Flags2 = 0b00000000;
     (&tss[0])->IOMapBaseAddressOffset = sizeof(TaskStateSegment);
     ltr(GDT_TSS);
-    (&tss[0])->StackPointer0 = (uint64_t)kernel_stack;
-    (&tss[0])->InterruptStackTable0 = (uint64_t)RequestPage(); // exceptions
-    (&tss[0])->InterruptStackTable1 = (uint64_t)RequestPage(); // nmi
-    (&tss[0])->InterruptStackTable2 = (uint64_t)RequestPage(); // page fault, double fault, general protection fault, etc...
+    (&tss[0])->StackPointer[0] = (uint64_t)kernel_stack;
+    (&tss[0])->InterruptStackTable[0] = (uint64_t)RequestPage(); // exceptions
+    (&tss[0])->InterruptStackTable[1] = (uint64_t)RequestPage(); // nmi
+    (&tss[0])->InterruptStackTable[2] = (uint64_t)RequestPage(); // page fault, double fault, general protection fault, etc...
 }
 
 NEWLOCK(tss_lock);
@@ -66,7 +66,7 @@ void CreateNewTSS(int CPUCore)
 {
     LOCK(tss_lock);
     trace("initializing task state segment for CPU %d", CPUCore);
-    tss = (TaskStateSegment *)kcalloc(bootparams->smp.CPUCount, sizeof(TaskStateSegment));
+    tss = (TaskStateSegment *)kmalloc(sizeof(TaskStateSegment));
     uint64_t tss_base = (uint64_t)&tss[CPUCore];
     gdt.Entries->TaskStateSegment.Length = tss_base + sizeof(tss[CPUCore]);
     gdt.Entries->TaskStateSegment.Low = (uint16_t)(tss_base & 0xFFFF);
