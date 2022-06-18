@@ -77,9 +77,9 @@ void CreateNewTSS(int CPUCore)
     gdt.Entries->TaskStateSegment.Flags2 = 0b00000000;
     (&tss[CPUCore])->IOMapBaseAddressOffset = sizeof(TaskStateSegment);
     ltr(GDT_TSS);
-    (&tss[CPUCore])->StackPointer0 = (uint64_t)kernel_stack;
-    (&tss[CPUCore])->InterruptStackTable0 = (uint64_t)RequestPage(); // exceptions
-    (&tss[CPUCore])->InterruptStackTable1 = (uint64_t)RequestPage(); // nmi
-    (&tss[CPUCore])->InterruptStackTable2 = (uint64_t)RequestPage(); // page fault, double fault, general protection fault, etc...
+    (&tss[CPUCore])->StackPointer[0] = (uint64_t)kernel_stack;
+    (&tss[CPUCore])->InterruptStackTable[0] = (uint64_t)RequestPage(); // exceptions
+    (&tss[CPUCore])->InterruptStackTable[1] = (uint64_t)RequestPage(); // nmi
+    (&tss[CPUCore])->InterruptStackTable[2] = (uint64_t)RequestPage(); // page fault, double fault, general protection fault, etc...
     UNLOCK(tss_lock);
 }
