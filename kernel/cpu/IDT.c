@@ -15,6 +15,10 @@
 __attribute__((naked, used)) void exception_handler_helper()
 {
     asm("cld\n" // clear direction flag
+        "push %rax\n" // push rax
+        "mov $0x100000, %rax\n" // set rax to 0x100000 (the first page of memory)
+        "mov %rax, %cr3\n" // set page directory (if the pd is not 0x100000, we have a problem)
+        "pop %rax\n" // pop rax
         "pushq %rax\n"
         "pushq %rbx\n"
         "pushq %rcx\n"

@@ -34,7 +34,8 @@
 			"heap.h": "c",
 			"idt.h": "c",
 			"stivale.h": "c",
-			"cpuid.h": "c"
+			"cpuid.h": "c",
+			"io.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}

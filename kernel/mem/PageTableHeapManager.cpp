@@ -62,6 +62,11 @@ void init_kernelpml()
     {
         debug("Kernel VM Start-End: %016p-%016p", &_kernel_start, &_kernel_end);
         KernelPML4 = (PageTable *)KernelAllocator.RequestPage();
+        if ((uint64_t)KernelPML4 != 0x100000)
+        {
+            err("Kernel PML4 is not at 0x100000");
+            return;
+        }
         memset(KernelPML4, 0, PAGE_SIZE);
         KernelPageTableManager = PageTableManager(KernelPML4);
 
