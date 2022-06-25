@@ -14,7 +14,7 @@
 
 __attribute__((naked, used)) void exception_handler_helper()
 {
-    // Switching page table if ring 0 is not tested! (source: https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm)
+    // TODO: Switching page table if ring 0 is not tested! (source: https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm)
     asm("cld\n" // clear direction flag
 
         "pushq %rax\n"    // push rax
