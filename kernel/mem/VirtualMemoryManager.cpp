@@ -75,6 +75,30 @@ void PageTableManager::UnmapMemory(void *VirtualAddress)
     invlpg((uint64_t)VirtualAddress);
 }
 
+// https://wiki.osdev.org/Supervisor_Memory_Protection
+void *PageTableManager::umemcpy(void *Destination, void *Source, uint64_t Length, enum CopyOperation Operation)
+{
+    // if (cpu_feature(CPUID_FEAT_RDX_UMIP))
+    // if (cpu_feature(CPUID_FEAT_RDX_SMEP))
+
+    // TODO: Check if the memory is copied to the right location
+    if (Operation == CopyOperation::FromUser)
+    {
+    }
+    else if (Operation == CopyOperation::ToUser)
+    {
+    }
+
+    if (cpu_feature(CPUID_FEAT_RDX_SMAP))
+        stac();
+
+    void *ret = memcpy(Destination, Source, Length);
+
+    if (cpu_feature(CPUID_FEAT_RDX_SMAP))
+        clac();
+    return ret;
+}
+
 void MapMemory(void *PML4, void *VirtualMemory, void *PhysicalMemory, uint64_t Flags)
 {
     if (PML4 != NULL)

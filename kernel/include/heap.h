@@ -95,11 +95,19 @@ namespace VMM
     class PageTableManager
     {
     public:
+        enum CopyOperation
+        {
+            InvalidCopyOperation,
+            FromUser,
+            ToUser
+        };
+
         bool Initalized = false;
         PageTable *PML4;
         PageTableManager(PageTable *PML4Address);
         void MapMemory(void *VirtualAddress, void *PhysicalAddress, uint64_t Flags);
         void UnmapMemory(void *VirtualAddress);
+        void *umemcpy(void *Destination, void *Source, uint64_t Length, enum CopyOperation Operation);
     };
 }
 
