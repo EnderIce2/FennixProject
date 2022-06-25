@@ -30,8 +30,8 @@ namespace PageTableHeap
         // uint64_t VirtualOffsetNormalVMA = NORMAL_VMA_OFFSET;
         // for (uint64_t t = 0; t < MemoryEntries; t += PAGE_SIZE)
         // {
-        //     NewPMLMgr.MapMemory((void *)t, (void *)t, PTFlag::RW | PTFlag::US);
-        //     NewPMLMgr.MapMemory((void *)VirtualOffsetNormalVMA, (void *)t, PTFlag::RW | PTFlag::US);
+        //     NewPMLMgr.MapMemory((void *)t, (void *)t, PTFlag::RW);
+        //     NewPMLMgr.MapMemory((void *)VirtualOffsetNormalVMA, (void *)t, PTFlag::RW);
         //     VirtualOffsetNormalVMA += PAGE_SIZE;
         // }
         // }
@@ -80,21 +80,22 @@ void init_kernelpml()
 
         for (uint64_t t = 0; t < earlyparams.mem.Size; t += PAGE_SIZE)
         {
-            KernelPageTableManager.MapMemory((void *)t, (void *)t, PTFlag::RW | PTFlag::US);
-            KernelPageTableManager.MapMemory((void *)VirtualOffsetNormalVMA, (void *)t, PTFlag::RW | PTFlag::US);
+            KernelPageTableManager.MapMemory((void *)t, (void *)t, PTFlag::RW);
+            KernelPageTableManager.MapMemory((void *)VirtualOffsetNormalVMA, (void *)t, PTFlag::RW);
             VirtualOffsetNormalVMA += PAGE_SIZE;
         }
 
         /* Mapping Framebuffer address */
+        // TODO: Let the user to access the framebuffer?
         for (uint64_t fb_base = earlyparams.Framebuffer.BaseAddress;
              fb_base < (earlyparams.Framebuffer.BaseAddress + (earlyparams.Framebuffer.BufferSize + PAGE_SIZE));
              fb_base += PAGE_SIZE)
-            KernelPageTableManager.MapMemory((void *)fb_base, (void *)(fb_base - NORMAL_VMA_OFFSET), PTFlag::RW | PTFlag::US);
+            KernelPageTableManager.MapMemory((void *)fb_base, (void *)(fb_base - NORMAL_VMA_OFFSET), PTFlag::RW);
 
         /* Kernel mapping */
         for (uint64_t k = KernelStart; k < KernelTextEnd; k += PAGE_SIZE)
         {
-            KernelPageTableManager.MapMemory((void *)k, (void *)BaseKernelMapAddress, PTFlag::RW | PTFlag::US);
+            KernelPageTableManager.MapMemory((void *)k, (void *)BaseKernelMapAddress, PTFlag::RW);
             KernelAllocator.LockPage((void *)BaseKernelMapAddress);
             BaseKernelMapAddress += PAGE_SIZE;
         }
