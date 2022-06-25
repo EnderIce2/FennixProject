@@ -14,11 +14,22 @@
 
 __attribute__((naked, used)) void exception_handler_helper()
 {
+    // Switching page table if ring 0 is not tested! (source: https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm)
     asm("cld\n" // clear direction flag
-        "push %rax\n" // push rax
-        "mov $0x100000, %rax\n" // set rax to 0x100000 (the first page of memory)
-        "mov %rax, %cr3\n" // set page directory (if the pd is not 0x100000, we have a problem)
-        "pop %rax\n" // pop rax
+
+        "pushq %rax\n"    // push rax
+        "mov %cs, %rax\n" // move cs to rax
+
+        "cmp %rax, [0x8]\n"        // compare rax with 0x8
+        "jne .NoPageTableUpdate\n" // if not, skip to next instruction
+        "push %rax\n"              // push rax
+        "mov $0x100000, %rax\n"    // set rax to 0x100000 (the first page of memory)
+        "mov %rax, %cr3\n"         // set page directory (if the pd is not 0x100000, we have a problem)
+        "pop %rax\n"               // pop rax
+        ".NoPageTableUpdate:\n"    // label for jumping to next instruction
+        "popq %rax\n"              // pop rax
+
+        // push all registers
         "pushq %rax\n"
         "pushq %rbx\n"
         "pushq %rcx\n"
@@ -34,8 +45,11 @@ __attribute__((naked, used)) void exception_handler_helper()
         "pushq %r13\n"
         "pushq %r14\n"
         "pushq %r15\n"
+
         "movq %rsp, %rdi\n"
         "call exception_handler\n"
+
+        // pop all registers
         "popq %r15\n"
         "popq %r14\n"
         "popq %r13\n"
@@ -51,6 +65,7 @@ __attribute__((naked, used)) void exception_handler_helper()
         "popq %rcx\n"
         "popq %rbx\n"
         "popq %rax\n"
+
         "addq $16, %rsp\n"
         "iretq"); // pop CS RIP RFLAGS SS ESP
 }
@@ -154,8 +169,10 @@ __attribute__((naked, used)) static void InterruptHandlerStub()
         "pushq %r13\n"
         "pushq %r14\n"
         "pushq %r15\n"
+
         "mov %rsp, %rdi\n"
         "call IDTInterruptHandler\n"
+
         "popq %r15\n"
         "popq %r14\n"
         "popq %r13\n"
@@ -171,6 +188,7 @@ __attribute__((naked, used)) static void InterruptHandlerStub()
         "popq %rcx\n"
         "popq %rbx\n"
         "popq %rax\n"
+
         "addq $16, %rsp\n"
         "iretq");
 }
