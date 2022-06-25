@@ -9,6 +9,9 @@ namespace APIC
 {
     class APIC
     {
+    private:
+        bool x2APICSupported = false;
+
     public:
         enum APICRegisters
         {
@@ -43,64 +46,15 @@ namespace APIC
             APIC_TDCR = 0x3e0,    // Divide Configuration (for Timer)
         };
 
-        uint32_t Read(APICRegisters Register)
-        {
-            return *((volatile uint32_t *)((uintptr_t)madt->LAPICAddr + Register));
-        }
-
-        void Write(APICRegisters Register, uint32_t Value)
-        {
-            *((volatile uint32_t *)(((uintptr_t)madt->LAPICAddr) + Register)) = Value;
-        }
-
-        void IOWrite(uint64_t Base, uint32_t Register, uint32_t Value)
-        {
-            *((volatile uint32_t *)(((uintptr_t)Base))) = Register;
-            *((volatile uint32_t *)(((uintptr_t)Base + 16))) = Value;
-        }
-
-        uint32_t IORead(uint64_t Base, uint32_t Register)
-        {
-            *((volatile uint32_t *)(((uintptr_t)Base))) = Register;
-            return *((volatile uint32_t *)(((uintptr_t)Base + 16)));
-        }
-
-        void EOI()
-        {
-            this->Write(APIC_EOI, 0);
-        }
-
-        void RedirectIRQs(int CPU = 0)
-        {
-            debug("redirecting irqs...");
-            for (int i = 0; i < 16; i++)
-                this->RedirectIRQ(CPU, i, 1);
-            debug("redirecting irqs complete");
-        }
-
-        void IPI(uint8_t CPU, uint32_t InterruptNumber)
-        {
-            InterruptNumber = (1 << 14) | InterruptNumber;
-            this->Write(APIC_ICRHI, (CPU << 24));
-            this->Write(APIC_ICRLO, InterruptNumber);
-        }
-
-        void OneShot(uint32_t Vector, uint64_t Miliseconds)
-        {
-            this->Write(APIC_TDCR, 0x03);
-            this->Write(APIC_TIMER, (APIC::APIC::APICRegisters::APIC_ONESHOT | Vector));
-            this->Write(APIC_TICR, apic_timer_ticks * Miliseconds);
-        }
-
-        bool APICSupported()
-        {
-            if (!madt->LAPICAddr)
-                return false;
-            uint32_t rax, rbx, rcx, rdx;
-            cpuid(1, &rax, &rbx, &rcx, &rdx);
-            return (rdx & CPUID_FEAT_RDX_APIC);
-        }
-
+        uint32_t Read(uint32_t Register);
+        void Write(uint32_t Register, uint32_t Value);
+        void IOWrite(uint64_t Base, uint32_t Register, uint32_t Value);
+        uint32_t IORead(uint64_t Base, uint32_t Register);
+        void EOI();
+        void RedirectIRQs(int CPU = 0);
+        void IPI(uint8_t CPU, uint32_t InterruptNumber);
+        void OneShot(uint32_t Vector, uint64_t Miliseconds);
+        bool APICSupported();
         uint32_t IOGetMaxRedirect(uint32_t APICID);
         void RawRedirectIRQ(uint8_t Vector, uint32_t GSI, uint16_t Flags, int CPU, int Status);
         void RedirectIRQ(int CPU, uint8_t IRQ, int Status);
