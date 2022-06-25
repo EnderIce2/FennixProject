@@ -28,7 +28,7 @@ namespace ACPI
             {
                 ioapic.push_back((MADTIOApic *)ptr);
                 trace("I/O APIC %#llx (Address %#llx) found.", ioapic.back()->APICID, ioapic.back()->addr);
-                KernelPageTableManager.MapMemory((void *)(uintptr_t)ioapic.back()->addr, (void *)(uintptr_t)ioapic.back()->addr, PTFlag::RW); // Make sure that the address is mapped.
+                KernelPageTableManager.MapMemory((void *)(uintptr_t)ioapic.back()->addr, (void *)(uintptr_t)ioapic.back()->addr, PTFlag::RW | PTFlag::PCD); // Make sure that the address is mapped.
                 break;
             }
             case 2:
@@ -53,7 +53,7 @@ namespace ACPI
                 break;
             }
             }
-            KernelPageTableManager.MapMemory((void *)LAPICAddr, (void *)LAPICAddr, PTFlag::RW); // I should map more than one page?
+            KernelPageTableManager.MapMemory((void *)LAPICAddr, (void *)LAPICAddr, PTFlag::RW | PTFlag::PCD); // I should map more than one page?
         }
         trace("Total CPU cores: %d", CPUCores);
     }
