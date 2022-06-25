@@ -8,20 +8,20 @@ void *HeapStart;
 void *HeapEnd;
 HeapSegHdr *LastHdr;
 
-void InitHeap(void *HeapAddress, size_t PageCount)
+void InitHeap(void *HeapAddress, uint64_t PageCount)
 {
     trace("heap initialization %016p, %d", HeapAddress, PageCount);
     void *Position = HeapAddress;
-    for (size_t i = 0; i < PageCount; i++)
+    for (uint64_t i = 0; i < PageCount; i++)
     {
         void *Page = KernelAllocator.RequestPage();
         KernelPageTableManager.MapMemory(Position, Page, RW);
-        trace("Preallocate Heap Memory (%#llx-%#llx [%#llx])...", Position, (size_t)Position + PAGE_SIZE, Page);
-        Position = (void *)((size_t)Position + PAGE_SIZE);
+        trace("Preallocate Heap Memory (%#llx-%#llx [%#llx])...", Position, (uint64_t)Position + PAGE_SIZE, Page);
+        Position = (void *)((uint64_t)Position + PAGE_SIZE);
     }
-    size_t HeapLength = PageCount * PAGE_SIZE;
+    uint64_t HeapLength = PageCount * PAGE_SIZE;
     HeapStart = HeapAddress;
-    HeapEnd = (void *)((size_t)HeapStart + HeapLength);
+    HeapEnd = (void *)((uint64_t)HeapStart + HeapLength);
     HeapSegHdr *StartSegment = (HeapSegHdr *)HeapAddress;
     StartSegment->Length = HeapLength - sizeof(HeapSegHdr);
     StartSegment->Next = nullptr;
@@ -30,14 +30,14 @@ void InitHeap(void *HeapAddress, size_t PageCount)
     LastHdr = StartSegment;
 }
 
-HeapSegHdr *HeapSegHdr::Split(size_t SplitLength)
+HeapSegHdr *HeapSegHdr::Split(uint64_t SplitLength)
 {
     if (SplitLength < 0x10)
         return nullptr;
     int64_t SplitSegmentLength = Length - SplitLength - (sizeof(HeapSegHdr));
     if (SplitSegmentLength < 0x10)
         return nullptr;
-    HeapSegHdr *NewSplitHdr = (HeapSegHdr *)((size_t)this + SplitLength + sizeof(HeapSegHdr));
+    HeapSegHdr *NewSplitHdr = (HeapSegHdr *)((uint64_t)this + SplitLength + sizeof(HeapSegHdr));
     Next->Last = NewSplitHdr;
     NewSplitHdr->Next = Next;
     Next = NewSplitHdr;
@@ -50,21 +50,21 @@ HeapSegHdr *HeapSegHdr::Split(size_t SplitLength)
     return NewSplitHdr;
 }
 
-void ExpandHeap(size_t Length)
+void ExpandHeap(uint64_t Length)
 {
     if (Length % PAGE_SIZE)
     {
         Length -= Length % PAGE_SIZE;
         Length += PAGE_SIZE;
     }
-    size_t PageCount = Length / PAGE_SIZE;
+    uint64_t PageCount = Length / PAGE_SIZE;
     HeapSegHdr *NewSegment = (HeapSegHdr *)HeapEnd;
-    for (size_t i = 0; i < PageCount; i++)
+    for (uint64_t i = 0; i < PageCount; i++)
     {
         void *Page = KernelAllocator.RequestPage();
         KernelPageTableManager.MapMemory(HeapEnd, Page, RW);
-        trace("Expanding Heap Memory (%#llx-%#llx [%#llx])...", HeapEnd, (size_t)HeapEnd + PAGE_SIZE, Page);
-        HeapEnd = (void *)((size_t)HeapEnd + PAGE_SIZE);
+        trace("Expanding Heap Memory (%#llx-%#llx [%#llx])...", HeapEnd, (uint64_t)HeapEnd + PAGE_SIZE, Page);
+        HeapEnd = (void *)((uint64_t)HeapEnd + PAGE_SIZE);
     }
     NewSegment->IsFree = true;
     NewSegment->Last = LastHdr;
@@ -109,12 +109,18 @@ void defPREFIX(free)(void *Address)
     Segment->CombineBackward();
 }
 
-void *defPREFIX(malloc)(size_t Size)
+void *defPREFIX(malloc)(uint64_t Size)
 {
     if (HeapStart == nullptr)
     {
         err("Memory allocation not initialized yet!");
         return 0;
+    }
+
+    if (Size < 0x10)
+    {
+        // warn("Allocation size is too small, using 0x10 instead!");
+        Size = 0x10;
     }
 
     // #ifdef DEBUG
@@ -161,20 +167,27 @@ void *defPREFIX(malloc)(size_t Size)
     return defPREFIX(malloc)(Size);
 }
 
-void *defPREFIX(calloc)(size_t n, size_t Size)
+void *defPREFIX(calloc)(uint64_t n, uint64_t Size)
 {
     if (HeapStart == nullptr)
     {
         err("Memory allocation not initialized yet!");
         return 0;
     }
+
+    if (Size < 0x10)
+    {
+        // warn("Allocation size is too small, using 0x10 instead!");
+        Size = 0x10;
+    }
+
     void *Block = defPREFIX(malloc)(n * Size);
     if (Block)
         memset(Block, 0, n * Size);
     return Block;
 }
 
-void *defPREFIX(realloc)(void *Address, size_t Size)
+void *defPREFIX(realloc)(void *Address, uint64_t Size)
 {
     if (HeapStart == nullptr)
     {
@@ -190,6 +203,13 @@ void *defPREFIX(realloc)(void *Address, size_t Size)
     {
         return defPREFIX(calloc)(Size, sizeof(char));
     }
+
+    if (Size < 0x10)
+    {
+        // warn("Allocation size is too small, using 0x10 instead!");
+        Size = 0x10;
+    }
+
     void *newAddress = defPREFIX(calloc)(Size, sizeof(char));
     memcpy(newAddress, Address, Size);
     return newAddress;
