@@ -43,7 +43,7 @@ EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
     // asm volatile("andq $-16, %rsp");
     // asm volatile("movw $0, %ax");
     // asm volatile("movw %ax, %fs");
-    wrmsr(MSR_FS_BASE, 0);
+    // wrmsr(MSR_FS_BASE, 0);
 
     init_pmm();
     init_vmm();
