@@ -44,7 +44,7 @@ void do_mem_bitmap_print()
 
 void do_mem_test()
 {
-    return;
+    // return;
     TEST_DBG("Kernel Address: Start:%p ---- End:%p [%ldKB/%ldKB]\n", bootparams->kernel.file, bootparams->kernel.file + bootparams->kernel.size, TO_KB(KernelAllocator.GetUsedRAM()), TO_KB(KernelAllocator.GetFreeRAM()));
     for (int repeat = 0; repeat < 16; repeat++)
     {
@@ -71,6 +71,8 @@ void do_mem_test()
 
         uint64_t MallocAddress1 = (uint64_t)kmalloc(0x1000);
         kfree((void *)MallocAddress1);
+        for (size_t i = 0; i < 8192; i++)
+            kfree(kmalloc(i));
         for (size_t i = 0; i < 1000; i++)
             kfree(kmalloc(0x10000));
         uint64_t MallocAddress2 = (uint64_t)kmalloc(0x1000);
@@ -80,6 +82,36 @@ void do_mem_test()
         kfree((void *)MallocAddress2);
     }
     do_mem_bitmap_print();
+}
+
+InterruptHandler(stub_int_hnd)
+{
+    TEST_DBG("Int-%#x-hnd ", INT_NUM);
+    return;
+}
+
+extern "C" void do_interrupts_mem_test()
+{
+    if (InterruptsEnabled())
+        CLI;
+    RegisterInterrupt(stub_int_hnd, IRQ10, true);
+    for (size_t i = 0; i < 256; i++)
+        asm("int $0x2a");
+
+    TEST_DBG("\nTesting interrupt handler again but with sti...\n");
+    if (!InterruptsEnabled())
+        STI;
+    for (size_t i = 0; i < 256; i++)
+        asm("int $0x2a");
+    UnregisterInterrupt(IRQ10);
+    do_mem_test();
+    do_mem_test();
+    do_mem_test();
+    do_mem_test();
+    do_mem_test();
+    do_mem_test();
+    TEST_DBG("\n\n\n\n\n========================================================================================\nTEST COMPLETE! HALTING...\n========================================================================================\n");
+    CPU_HALT;
 }
 
 #define srdy 1
@@ -264,45 +296,30 @@ void test_kernelmultitasking(int a, int b)
     size_t threads = 2;
 
     for (size_t i = 0; i < threads; i++)
-    {
         mt->CreateThread(pcb1, (uint64_t)test_stress_task, 1, i);
-    }
 
     threads *= 2;
     for (size_t i = 0; i < threads; i++)
-    {
         mt->CreateThread(pcb2, (uint64_t)test_stress_task, 2, i);
-    }
 
     threads *= 2;
     for (size_t i = 0; i < threads; i++)
-    {
         mt->CreateThread(pcb3, (uint64_t)test_stress_task, 3, i);
-    }
 
     threads *= 2;
     for (size_t i = 0; i < threads; i++)
-    {
         mt->CreateThread(pcb4, (uint64_t)test_stress_task, 4, i);
-    }
 
     mt->CreateThread(pcb4, (uint64_t)test_stress_task, 69, 0);
 
     TEST_DBG("Multitasking test finished.\n");
-    MultitaskingSchedulerEnabled = false;
-    delete mt;
-    if (sysflags->monotasking)
-        StartTasking((uint64_t)KernelTask, TaskingMode::Mono);
-    else
-        StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
 }
 
 void do_tasking_test()
 {
-    test_safescheduler();
-    // mt = new Multitasking;
-    // mt->CreateThread(mt->CreateProcess(nullptr, (char *)"FakeKernel", ELEVATION::Kernel), (uint64_t)test_kernelmultitasking, 1998, 1998);
-    // MultitaskingSchedulerEnabled = true;
+    // test_safescheduler();
+    StartTasking((uint64_t)test_kernelmultitasking, TaskingMode::Multi);
+    CPU_STOP;
 }
 
 void test_stack_final()
