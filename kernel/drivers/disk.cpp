@@ -139,6 +139,40 @@ namespace DiskManager
         mountfs->DetectAndMountFS(drive);
     }
 
+    uint64_t Partition::Part::Read(uint64_t Offset, uint64_t Count, void *Buffer)
+    {
+        if (Port->HBAPortPtr == nullptr)
+        {
+            err("Port is not initialized");
+            return 0;
+        }
+        if (Offset + Count > Sectors)
+        {
+            err("Attempted to read past end of partition");
+            return 0;
+        }
+        // debug("Reading %lld bytes from sector Start LBA:%lld Offset:%lld(%lld)", Count, StartLBA, Offset, StartLBA + Offset);
+        this->Port->ReadWrite(StartLBA + Offset, Count, Buffer, false);
+        return Count;
+    }
+
+    uint64_t Partition::Part::Write(uint64_t Offset, uint64_t Count, void *Buffer)
+    {
+        if (Port->HBAPortPtr == nullptr)
+        {
+            err("Port is not initialized");
+            return 0;
+        }
+        if (Offset + Count > Sectors)
+        {
+            err("Attempted to write past end of partition");
+            return 0;
+        }
+        // debug("Writing %lld bytes to sector Start LBA:%lld Offset:%lld(%lld)", Count, StartLBA, Offset, StartLBA + Offset);
+        this->Port->ReadWrite(StartLBA + Offset, Count, Buffer, true);
+        return Count;
+    }
+
     Partition::Partition()
     {
         trace("Mounting partitions...");

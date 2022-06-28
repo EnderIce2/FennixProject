@@ -121,39 +121,8 @@ namespace DiskManager
             size_t Index = 0;
             AHCI::Port *Port = nullptr;
 
-            uint64_t Read(uint64_t Offset, uint64_t Count, void *Buffer)
-            {
-                if (Port->HBAPortPtr == nullptr)
-                {
-                    err("Port is not initialized");
-                    return 0;
-                }
-                if (Offset + Count > Sectors)
-                {
-                    err("Attempted to read past end of partition");
-                    return 0;
-                }
-                // trace("Reading %lld bytes from sector Start LBA:%lld Offset:%lld(%lld)", Count, StartLBA, Offset, StartLBA + Offset);
-                this->Port->ReadWrite(StartLBA + Offset, Count, Buffer, false);
-                return Count;
-            }
-
-            uint64_t Write(uint64_t Offset, uint64_t Count, void *Buffer)
-            {
-                if (Port->HBAPortPtr == nullptr)
-                {
-                    err("Port is not initialized");
-                    return 0;
-                }
-                if (Offset + Count > Sectors)
-                {
-                    err("Attempted to write past end of partition");
-                    return 0;
-                }
-                // trace("Writing %lld bytes to sector Start LBA:%lld Offset:%lld(%lld)", Count, StartLBA, Offset, StartLBA + Offset);
-                this->Port->ReadWrite(StartLBA + Offset, Count, Buffer, true);
-                return Count;
-            }
+            uint64_t Read(uint64_t Offset, uint64_t Count, void *Buffer);
+            uint64_t Write(uint64_t Offset, uint64_t Count, void *Buffer);
         };
 
         void AddPartition(AHCI::Port *Port);
