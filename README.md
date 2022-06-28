@@ -7,6 +7,7 @@
 [![Codacy Badge](https://img.shields.io/codacy/grade/d00135a0a6304420a3cd021936f7be50?label=codacy&style=for-the-badge)](https://www.codacy.com/gh/EnderIce2/FennixProject/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EnderIce2/FennixProject&amp;utm_campaign=Badge_Grade)
 ![GitHub](https://img.shields.io/github/license/EnderIce2/FennixProject?style=for-the-badge)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/EnderIce2/FennixProject?style=for-the-badge)
+[![wakatime](https://wakatime.com/badge/user/29fecac7-0d8d-4232-a696-d6f5532c2c2a/project/f73f718c-1223-483f-be6a-b73c5abbe018.svg?style=for-the-badge)](https://wakatime.com/badge/user/29fecac7-0d8d-4232-a696-d6f5532c2c2a/project/f73f718c-1223-483f-be6a-b73c5abbe018.svg?style=for-the-badge)
 
 ---
 
