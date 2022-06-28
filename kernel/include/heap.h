@@ -251,10 +251,12 @@ enum PTFlag
 
 enum AllocationAlgorithm
 {
+    NoAllocationAlgorithm,
     Default,
     LibAlloc,
     LibAlloc11,
-    BuddyAlloc
+    BuddyAlloc,
+    XallocV1
 };
 
 START_EXTERNC

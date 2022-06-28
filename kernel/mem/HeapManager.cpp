@@ -16,13 +16,15 @@
 #include "defaultalloc/defaultalloc.hpp"
 #define BUDDY_ALLOC_IMPLEMENTATION
 #include "buddyalloc/buddy_alloc.h"
+#include "xalloc/Xalloc.hpp"
 
 using namespace PMM;
 
 NEWLOCK(heap_lock);
 
-static AllocationAlgorithm AlgorithmToUse;
-static struct buddy *buddy;
+static AllocationAlgorithm AlgorithmToUse = AllocationAlgorithm::NoAllocationAlgorithm;
+static struct buddy *buddy = nullptr;
+static Xalloc::AllocatorV1 *xalloc = nullptr;
 
 void init_heap(AllocationAlgorithm Type)
 {
@@ -44,6 +46,11 @@ void init_heap(AllocationAlgorithm Type)
             buddy = buddy_init(buddy_buf, data_buf, 4096);
             assert(buddy != NULL);
         }
+        break;
+    }
+    case AllocationAlgorithm::XallocV1:
+    {
+        xalloc = new Xalloc::AllocatorV1((void *)KERNEL_HEAP_BASE, false, false);
         break;
     }
     default:
@@ -72,6 +79,9 @@ void HeapFree(void *Address)
     case AllocationAlgorithm::BuddyAlloc:
         buddy_free(buddy, Address);
         break;
+    case AllocationAlgorithm::XallocV1:
+        xalloc->Free(Address);
+        break;
     }
     UNLOCK(heap_lock);
     if (inten)
@@ -98,6 +108,9 @@ void *HeapMalloc(size_t Size)
         break;
     case AllocationAlgorithm::BuddyAlloc:
         ret = buddy_malloc(buddy, Size);
+        break;
+    case AllocationAlgorithm::XallocV1:
+        ret = xalloc->Malloc(Size);
         break;
     }
 
@@ -130,6 +143,9 @@ void *HeapCalloc(size_t n, size_t Size)
     case AllocationAlgorithm::BuddyAlloc:
         ret = buddy_calloc(buddy, n, Size);
         break;
+    case AllocationAlgorithm::XallocV1:
+        ret = xalloc->Calloc(n, Size);
+        break;
     }
 
     memset(ret, 0, n * Size);
@@ -160,6 +176,9 @@ void *HeapRealloc(void *Address, size_t Size)
         break;
     case AllocationAlgorithm::BuddyAlloc:
         ret = buddy_realloc(buddy, Address, Size);
+        break;
+    case AllocationAlgorithm::XallocV1:
+        ret = xalloc->Realloc(Address, Size);
         break;
     }
 
@@ -216,6 +235,14 @@ void dbg_free(void *Address, string file, int line, string function)
 
 void *operator new(size_t Size)
 {
+    if (AlgorithmToUse == AllocationAlgorithm::NoAllocationAlgorithm)
+    {
+        if (Size == 0)
+            Size = 1;
+        warn("No allocator specified. Requesting %d page(s)...", Size / PAGE_SIZE + 1);
+        return KernelAllocator.RequestPages(Size / PAGE_SIZE + 1);
+    }
+
     if (Size == 0)
         warn("Trying to allocate 0 bytes!");
 
@@ -240,6 +267,14 @@ void *operator new(size_t Size)
 
 void *operator new[](size_t Size)
 {
+    if (AlgorithmToUse == AllocationAlgorithm::NoAllocationAlgorithm)
+    {
+        if (Size == 0)
+            Size = 1;
+        warn("No allocator specified. Requesting %d page(s)...", Size / PAGE_SIZE + 1);
+        return KernelAllocator.RequestPages(Size / PAGE_SIZE + 1);
+    }
+
     if (Size == 0)
         warn("Trying to allocate 0 bytes!");
 
@@ -264,6 +299,11 @@ void *operator new[](size_t Size)
 
 void operator delete(void *Pointer)
 {
+    if (AlgorithmToUse == AllocationAlgorithm::NoAllocationAlgorithm)
+    {
+        warn("No allocator specified. Aborting...");
+        return;
+    }
 #ifdef DEBUG_MEM_ALLOCATION
     dbg_free(Pointer, __FILE__, __LINE__, __FUNCTION__);
 #else
@@ -273,6 +313,11 @@ void operator delete(void *Pointer)
 
 void operator delete[](void *Pointer)
 {
+    if (AlgorithmToUse == AllocationAlgorithm::NoAllocationAlgorithm)
+    {
+        warn("No allocator specified. Aborting...");
+        return;
+    }
 #ifdef DEBUG_MEM_ALLOCATION
     dbg_free(Pointer, __FILE__, __LINE__, __FUNCTION__);
 #else
@@ -282,6 +327,11 @@ void operator delete[](void *Pointer)
 
 void operator delete(void *Pointer, long unsigned int n)
 {
+    if (AlgorithmToUse == AllocationAlgorithm::NoAllocationAlgorithm)
+    {
+        warn("No allocator specified. Aborting...");
+        return;
+    }
 #ifdef DEBUG_MEM_ALLOCATION
     dbg_free(Pointer, __FILE__, __LINE__, __FUNCTION__);
 #else
@@ -291,6 +341,11 @@ void operator delete(void *Pointer, long unsigned int n)
 
 void operator delete[](void *Pointer, long unsigned int n)
 {
+    if (AlgorithmToUse == AllocationAlgorithm::NoAllocationAlgorithm)
+    {
+        warn("No allocator specified. Aborting...");
+        return;
+    }
 #ifdef DEBUG_MEM_ALLOCATION
     dbg_free(Pointer, __FILE__, __LINE__, __FUNCTION__);
 #else
