@@ -48,7 +48,7 @@ EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
     init_pmm();
     init_vmm();
     init_kernelpml();
-    init_heap(AllocationAlgorithm::Default);
+    init_heap(AllocationAlgorithm::XallocV1);
     bootparams = new GlobalBootParams;
     debug("bootparams is allocated at %p", bootparams);
     debug("bootparams framebuffer is allocated at %p", bootparams->Framebuffer);
@@ -78,7 +78,7 @@ EXTERNC void kernel_entry(void *data)
         stivale2_initializator(static_cast<stivale2_struct *>(data));
     else
         err("No bootloader protocol found. System Halted.");
-    CPU_STOP;
+    CPU_HALT;
 }
 
 void initializeKernelFlags()
@@ -238,6 +238,7 @@ void KernelInit()
     smp = new SymmetricMultiprocessing::SMP;
     BS->IncreaseProgres();
     init_timer();
+    do_interrupts_mem_test();
     BS->IncreaseProgres();
     apic->RedirectIRQs();
 
@@ -249,7 +250,7 @@ void KernelInit()
         outb(PIC1_DATA, 0b11111000);
         outb(PIC2_DATA, 0b11101111);
     }
-    asm("sti");
+    STI;
     dsdt->InitSCI();
 
     ps2keyboard = new PS2Keyboard::PS2KeyboardDriver;
@@ -311,10 +312,8 @@ void KernelInit()
         }
 
     vfs = new FileSystem::Virtual;
-
     BS->Progress(50);
-    // Make sure that after vfs initialization we set the root "/" directory.
-    // TODO: we should check if it's installed in a system disk instead of initrd. this is a must because we need to set first the root and then mount everything else.
+
     for (int i = 0; i < bootparams->modules.num; i++)
     {
         BS->IncreaseProgres();
@@ -329,7 +328,6 @@ void KernelInit()
             break;
         }
     }
-
     devfs = new FileSystem::Device;
     mountfs = new FileSystem::Mount;
     diskmgr = new DiskManager::Disk;
@@ -345,11 +343,7 @@ void KernelInit()
     BS->IncreaseProgres();
 
     do_mem_test();
-    do_mem_test();
-    do_mem_test();
-    do_mem_test();
-
-    // do_tasking_test();
+    do_tasking_test();
 
     // #ifndef TESTING
     if (sysflags->monotasking)

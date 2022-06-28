@@ -25,20 +25,9 @@ void apictimer_nwait(uint64_t Nanoseconds)
     outb(PIT_COUNTER0, (uint8_t)((Wait100ms >> 8) & 0xFF));
 }
 
-void apictimer_uwait(uint64_t Microseconds)
-{
-    apictimer_nwait(Microseconds * 1000);
-}
-
-void apictimer_mwait(uint64_t Miliseconds)
-{
-    apictimer_uwait(Miliseconds * 1000);
-}
-
-void apictimer_wait(uint64_t Seconds)
-{
-    apictimer_mwait(Seconds * 1000);
-}
+void apictimer_uwait(uint64_t Microseconds) { apictimer_nwait(Microseconds * 1000); }
+void apictimer_mwait(uint64_t Miliseconds) { apictimer_uwait(Miliseconds * 1000); }
+void apictimer_wait(uint64_t Seconds) { apictimer_mwait(Seconds * 1000); }
 
 void init_APICTimer()
 {
