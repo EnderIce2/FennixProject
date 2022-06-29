@@ -42,44 +42,115 @@ void do_mem_bitmap_print()
     TEST_DBG("\n");
 }
 
+class test_mem_new_delete
+{
+public:
+    test_mem_new_delete();
+    ~test_mem_new_delete();
+};
+
+test_mem_new_delete::test_mem_new_delete()
+{
+    for (char i = 0; i < 2; i++)
+        ;
+}
+
+test_mem_new_delete::~test_mem_new_delete()
+{
+    for (char i = 0; i < 2; i++)
+        ;
+}
+
+#define MEMTEST_ITERATIONS 1024
+
 void do_mem_test()
 {
     // return;
     TEST_DBG("Kernel Address: Start:%p ---- End:%p [%ldKB/%ldKB]\n", bootparams->kernel.file, bootparams->kernel.file + bootparams->kernel.size, TO_KB(KernelAllocator.GetUsedRAM()), TO_KB(KernelAllocator.GetFreeRAM()));
     for (int repeat = 0; repeat < 16; repeat++)
     {
-        TEST_DBG("[TEST %d] ", repeat);
+        TEST_DBG("---------------[TEST %d]---------------\n", repeat);
+
+        TEST_DBG("Single Page Request Test");
+
         uint64_t ReqAddress1 = (uint64_t)KernelAllocator.RequestPage();
         KernelAllocator.FreePage((void *)ReqAddress1);
-        for (size_t i = 0; i < 1000; i++)
+
+        for (size_t i = 0; i < MEMTEST_ITERATIONS; i++)
             KernelAllocator.FreePage(KernelAllocator.RequestPage());
+
         uint64_t ReqAddress2 = (uint64_t)KernelAllocator.RequestPage();
-        TEST_DBG("RqAddr1: %#lx, RqAddr2: %#lx ", (void *)ReqAddress1, (void *)ReqAddress2);
-        TEST_DBG("[%ldKB] ---- ", TO_KB(KernelAllocator.GetUsedRAM()));
-        TEST_EQUAL(ReqAddress1, ReqAddress2);
         KernelAllocator.FreePage((void *)ReqAddress2);
+
+        TEST_DBG(" Result:\t\t1-[%#lx]; 2-[%#lx]\n", (void *)ReqAddress1, (void *)ReqAddress2);
+        TEST_EQUAL(ReqAddress1, ReqAddress2);
+
+        // Next Test
+
+        TEST_DBG("Multiple Page Request Test");
 
         uint64_t ReqAddresses1 = (uint64_t)KernelAllocator.RequestPages(10);
         KernelAllocator.FreePages((void *)ReqAddresses1, 10);
-        for (size_t i = 0; i < 1000; i++)
+
+        for (size_t i = 0; i < MEMTEST_ITERATIONS; i++)
             KernelAllocator.FreePages(KernelAllocator.RequestPages(20), 20);
+
         uint64_t ReqAddresses2 = (uint64_t)KernelAllocator.RequestPages(10);
-        TEST_DBG("RqAddrs1: %#lx, RqAddrs2: %#lx ", (void *)ReqAddresses1, (void *)ReqAddresses2);
-        TEST_DBG("[%ldKB] ---- ", TO_KB(KernelAllocator.GetUsedRAM()));
-        TEST_EQUAL(ReqAddresses1, ReqAddresses2);
         KernelAllocator.FreePages((void *)ReqAddresses2, 10);
+
+        TEST_DBG(" Result:\t\t1-[%#lx]; 2-[%#lx]\n", (void *)ReqAddresses1, (void *)ReqAddresses2);
+        TEST_EQUAL(ReqAddresses1, ReqAddresses2);
+
+        // Next Test
+
+        TEST_DBG("Multiple Fixed Malloc Test");
 
         uint64_t MallocAddress1 = (uint64_t)kmalloc(0x1000);
         kfree((void *)MallocAddress1);
-        for (size_t i = 0; i < 8192; i++)
-            kfree(kmalloc(i));
-        for (size_t i = 0; i < 1000; i++)
+
+        for (size_t i = 0; i < MEMTEST_ITERATIONS; i++)
             kfree(kmalloc(0x10000));
+
         uint64_t MallocAddress2 = (uint64_t)kmalloc(0x1000);
-        TEST_DBG("mlc1: %#lx, mlc2: %#lx ", (void *)MallocAddress1, (void *)MallocAddress2);
-        TEST_DBG("[%ldKB]\n", TO_KB(KernelAllocator.GetUsedRAM()));
-        TEST_EQUAL(MallocAddress1, MallocAddress2);
         kfree((void *)MallocAddress2);
+
+        TEST_DBG(" Result:\t\t1-[%#lx]; 2-[%#lx]\n", (void *)MallocAddress1, (void *)MallocAddress2);
+        TEST_EQUAL(MallocAddress1, MallocAddress2);
+
+        // Next Test
+
+        TEST_DBG("Multiple Dynamic Malloc Test");
+
+        uint64_t MallocAddress_1 = (uint64_t)kmalloc(0x1000);
+        kfree((void *)MallocAddress_1);
+
+        for (size_t i = 0; i < MEMTEST_ITERATIONS; i++)
+            kfree(kmalloc(i));
+
+        uint64_t MallocAddress_2 = (uint64_t)kmalloc(0x1000);
+        kfree((void *)MallocAddress_2);
+
+        TEST_DBG(" Result:\t1-[%#lx]; 2-[%#lx]\n", (void *)MallocAddress_1, (void *)MallocAddress_2);
+        TEST_EQUAL(MallocAddress_1, MallocAddress_2);
+
+        // Next Test
+
+        TEST_DBG("New/Delete Test");
+
+        uint64_t MallocAddress__1 = (uint64_t)kmalloc(0x1000);
+        kfree((void *)MallocAddress__1);
+
+        for (size_t i = 0; i < MEMTEST_ITERATIONS; i++)
+        {
+            test_mem_new_delete *t = new test_mem_new_delete();
+            delete t;
+        }
+
+        uint64_t MallocAddress__2 = (uint64_t)kmalloc(0x1000);
+        kfree((void *)MallocAddress__2);
+
+        TEST_DBG(" Result:               \t1-[%#lx]; 2-[%#lx]\n", (void *)MallocAddress__1, (void *)MallocAddress__2);
+        TEST_EQUAL(MallocAddress__1, MallocAddress__2);
     }
     do_mem_bitmap_print();
 }
