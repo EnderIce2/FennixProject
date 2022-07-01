@@ -204,7 +204,7 @@ INTERRUPT_HANDLER interrupt_handlers[256];
 
 static void IDTInterruptHandler(TrapFrame *regs)
 {
-    if (regs->int_num < 0 || regs->int_num > 0xff)
+    if (((long)((int32_t)regs->int_num)) < 0 || regs->int_num > 0xff)
     {
         err("Invalid interrupt received %#llx", regs->int_num);
     }
