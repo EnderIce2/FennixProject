@@ -238,6 +238,7 @@ void KernelInit()
     smp = new SymmetricMultiprocessing::SMP;
     BS->IncreaseProgres();
     init_timer();
+    // TODO: after APIC timer is initialized the memory gets corrupted, or there is another function that breaks the memory
     do_interrupts_mem_test();
     BS->IncreaseProgres();
     apic->RedirectIRQs();
