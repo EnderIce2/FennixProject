@@ -9,7 +9,7 @@ namespace KernelSymbols
         struct SymbolTable
         {
             uint64_t Address;
-            string FunctionName;
+            char *FunctionName;
         };
 
         Symbols();
