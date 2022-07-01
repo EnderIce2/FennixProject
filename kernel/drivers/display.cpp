@@ -54,6 +54,7 @@ namespace DisplayDriver
 
             PSF2Font->Header = font2;
             PSF2Font->GlyphBuffer = (Start + sizeof(PSF2_HEADER));
+            KernelAllocator.FreePages(font2, FontDataLength / 4096 + 1);
         }
         else if (Type == FontType::PCScreenFont1)
         {
