@@ -38,8 +38,8 @@ namespace Tasking
 #ifdef DEBUG_TASK_MANAGER
     void drawrectangle(uint64_t X, uint64_t Y, uint64_t W, uint64_t H, uint32_t C)
     {
-        for (int y = Y; y < Y + H; y++)
-            for (int x = X; x < X + W; x++)
+        for (uint64_t y = Y; y < Y + H; y++)
+            for (uint64_t x = X; x < X + W; x++)
                 CurrentDisplay->SetPixel(x, y, C);
     }
 
