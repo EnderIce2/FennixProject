@@ -28,8 +28,8 @@ void do_libs_test()
 void do_mem_bitmap_print()
 {
     TEST_DBG("\nPrinting Bitmap:\n");
-    size_t nl = 1;
-    for (size_t i = 0; i < KernelAllocator.PageBitmap.Size; i++)
+    uint64_t nl = 1;
+    for (uint64_t i = 0; i < KernelAllocator.PageBitmap.Size; i++)
     {
         nl--;
         if (nl <= 0)
@@ -76,7 +76,7 @@ void do_mem_test()
         uint64_t ReqAddress1 = (uint64_t)KernelAllocator.RequestPage();
         KernelAllocator.FreePage((void *)ReqAddress1);
 
-        for (size_t i = 0; i < MEMTEST_ITERATIONS; i++)
+        for (uint64_t i = 0; i < MEMTEST_ITERATIONS; i++)
             KernelAllocator.FreePage(KernelAllocator.RequestPage());
 
         uint64_t ReqAddress2 = (uint64_t)KernelAllocator.RequestPage();
@@ -92,7 +92,7 @@ void do_mem_test()
         uint64_t ReqAddresses1 = (uint64_t)KernelAllocator.RequestPages(10);
         KernelAllocator.FreePages((void *)ReqAddresses1, 10);
 
-        for (size_t i = 0; i < MEMTEST_ITERATIONS; i++)
+        for (uint64_t i = 0; i < MEMTEST_ITERATIONS; i++)
             KernelAllocator.FreePages(KernelAllocator.RequestPages(20), 20);
 
         uint64_t ReqAddresses2 = (uint64_t)KernelAllocator.RequestPages(10);
@@ -108,7 +108,7 @@ void do_mem_test()
         uint64_t MallocAddress1 = (uint64_t)kmalloc(0x1000);
         kfree((void *)MallocAddress1);
 
-        for (size_t i = 0; i < MEMTEST_ITERATIONS; i++)
+        for (uint64_t i = 0; i < MEMTEST_ITERATIONS; i++)
             kfree(kmalloc(0x10000));
 
         uint64_t MallocAddress2 = (uint64_t)kmalloc(0x1000);
@@ -124,7 +124,7 @@ void do_mem_test()
         uint64_t MallocAddress_1 = (uint64_t)kmalloc(0x1000);
         kfree((void *)MallocAddress_1);
 
-        for (size_t i = 0; i < MEMTEST_ITERATIONS; i++)
+        for (uint64_t i = 0; i < MEMTEST_ITERATIONS; i++)
             kfree(kmalloc(i));
 
         uint64_t MallocAddress_2 = (uint64_t)kmalloc(0x1000);
@@ -140,7 +140,7 @@ void do_mem_test()
         uint64_t MallocAddress__1 = (uint64_t)kmalloc(0x1000);
         kfree((void *)MallocAddress__1);
 
-        for (size_t i = 0; i < MEMTEST_ITERATIONS; i++)
+        for (uint64_t i = 0; i < MEMTEST_ITERATIONS; i++)
         {
             test_mem_new_delete *t = new test_mem_new_delete();
             delete t;
@@ -151,6 +151,46 @@ void do_mem_test()
 
         TEST_DBG(" Result:               \t1-[%#lx]; 2-[%#lx]\n", (void *)MallocAddress__1, (void *)MallocAddress__2);
         TEST_EQUAL(MallocAddress__1, MallocAddress__2);
+
+        // Next Test
+
+        TEST_DBG("New/Delete Fixed Array Test");
+
+        uint64_t MallocAddress___1 = (uint64_t)kmalloc(0x1000);
+        kfree((void *)MallocAddress___1);
+
+        for (uint64_t i = 0; i < MEMTEST_ITERATIONS; i++)
+        {
+            char *t = new char[128];
+            delete[] t;
+        }
+
+        uint64_t MallocAddress___2 = (uint64_t)kmalloc(0x1000);
+        kfree((void *)MallocAddress___2);
+
+        TEST_DBG(" Result:    \t1-[%#lx]; 2-[%#lx]\n", (void *)MallocAddress___1, (void *)MallocAddress___2);
+        TEST_EQUAL(MallocAddress___1, MallocAddress___2);
+
+        // Next Test
+
+        TEST_DBG("New/Delete Dynamic Array Test");
+
+        uint64_t MallocAddress____1 = (uint64_t)kmalloc(0x1000);
+        kfree((void *)MallocAddress____1);
+
+        for (uint64_t i = 0; i < MEMTEST_ITERATIONS; i++)
+        {
+            if (i == 0)
+                continue;
+            char *t = new char[i];
+            delete[] t;
+        }
+
+        uint64_t MallocAddress____2 = (uint64_t)kmalloc(0x1000);
+        kfree((void *)MallocAddress____2);
+
+        TEST_DBG(" Result:\t1-[%#lx]; 2-[%#lx]\n", (void *)MallocAddress____1, (void *)MallocAddress____2);
+        TEST_EQUAL(MallocAddress____1, MallocAddress____2);
     }
     do_mem_bitmap_print();
 }
@@ -166,13 +206,13 @@ extern "C" void do_interrupts_mem_test()
     if (InterruptsEnabled())
         CLI;
     RegisterInterrupt(stub_int_hnd, IRQ10, true);
-    for (size_t i = 0; i < 256; i++)
+    for (uint64_t i = 0; i < 256; i++)
         asm("int $0x2a");
 
     TEST_DBG("\nTesting interrupt handler again but with sti...\n");
     if (!InterruptsEnabled())
         STI;
-    for (size_t i = 0; i < 256; i++)
+    for (uint64_t i = 0; i < 256; i++)
         asm("int $0x2a");
     UnregisterInterrupt(IRQ10);
     do_mem_test();
@@ -203,7 +243,7 @@ t_process *curp = nullptr;
 t_process *getnext(t_process *p)
 {
     if (p != nullptr)
-        for (size_t i = 0; i < 256; i++)
+        for (uint64_t i = 0; i < 256; i++)
         {
             if (processes[i] == p)
             {
@@ -214,17 +254,18 @@ t_process *getnext(t_process *p)
                 }
             }
         }
-    for (size_t i = 0; i < 256; i++)
+    for (uint64_t i = 0; i < 256; i++)
     {
         if (processes[i] != nullptr)
             return processes[i];
     }
     TEST_DBG("getnext fail\n");
+    return nullptr;
 }
 
 void allocproc(t_process *p)
 {
-    for (size_t i = 0; i < 256; i++)
+    for (uint64_t i = 0; i < 256; i++)
     {
         if (processes[i] == nullptr)
         {
@@ -237,7 +278,7 @@ void allocproc(t_process *p)
 
 void freeproc(t_process *p)
 {
-    for (size_t i = 0; i < 256; i++)
+    for (uint64_t i = 0; i < 256; i++)
     {
         if (processes[i] == p)
         {
@@ -364,21 +405,21 @@ void test_kernelmultitasking(int a, int b)
     PCB *pcb3 = mt->CreateProcess(nullptr, (char *)"test", ELEVATION::Kernel);
     PCB *pcb4 = mt->CreateProcess(nullptr, (char *)"test", ELEVATION::Kernel);
 
-    size_t threads = 2;
+    uint64_t threads = 2;
 
-    for (size_t i = 0; i < threads; i++)
+    for (uint64_t i = 0; i < threads; i++)
         mt->CreateThread(pcb1, (uint64_t)test_stress_task, 1, i);
 
     threads *= 2;
-    for (size_t i = 0; i < threads; i++)
+    for (uint64_t i = 0; i < threads; i++)
         mt->CreateThread(pcb2, (uint64_t)test_stress_task, 2, i);
 
     threads *= 2;
-    for (size_t i = 0; i < threads; i++)
+    for (uint64_t i = 0; i < threads; i++)
         mt->CreateThread(pcb3, (uint64_t)test_stress_task, 3, i);
 
     threads *= 2;
-    for (size_t i = 0; i < threads; i++)
+    for (uint64_t i = 0; i < threads; i++)
         mt->CreateThread(pcb4, (uint64_t)test_stress_task, 4, i);
 
     mt->CreateThread(pcb4, (uint64_t)test_stress_task, 69, 0);
