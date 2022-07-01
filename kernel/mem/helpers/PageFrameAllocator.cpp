@@ -2,6 +2,7 @@
 #include <sys.h>
 #include <debug.h>
 #include <lock.h>
+#include <printf.h>
 #include "../../kernel.h"
 
 using namespace PMM;
@@ -75,9 +76,13 @@ void *PageFrameAllocator::RequestPage()
         UNLOCK(pfa_lock);
         return (void *)(PageBitmapIndex * 4096);
     }
-    err("Out of memory (free: %dMB, used: %dMB, reserved: %dMB)", TO_MB(FreeMemory), TO_MB(UsedMemory), TO_MB(ReservedMemory));
+    // TODO: Page Frame Swap to file
+    
+    char buf[256] = {'\0'};
+    sprintf_(buf, "Out of memory! (Free: %ldMB; Used: %ldMB; Reserved: %ldMB)", TO_MB(FreeMemory), TO_MB(UsedMemory), TO_MB(ReservedMemory));
+    panic(buf, true);
     UNLOCK(pfa_lock);
-    return NULL; // TODO: Page Frame Swap to file
+    return NULL;
 }
 
 void PageFrameAllocator::FreePage(void *Address)
