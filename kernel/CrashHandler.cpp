@@ -38,6 +38,11 @@ EXTERNC void crash(string message, bool clear)
     // TODO: Add more useful information.
     CLI;
     debug("System crashed with message: %s", message);
+    if (CurrentDisplay == nullptr)
+    {
+        debug("No display found. Cannot display crash message.");
+        CPU_HALT;
+    }
     if (clear)
         CurrentDisplay->Clear(0x121160);
 
@@ -49,7 +54,7 @@ EXTERNC void crash(string message, bool clear)
     {
         err("\"%s\" happened while running thread %s(%d)", message, CurrentCPU->CurrentThread->Name, CurrentCPU->CurrentThread->ID);
     }
-    CPU_STOP;
+    CPU_HALT;
 }
 
 EXTERNC void isrcrash(TrapFrame *regs)
