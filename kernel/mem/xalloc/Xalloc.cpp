@@ -55,7 +55,7 @@ namespace Xalloc
                 Xalloc_MAP_MEMORY(this->HeapEnd, Page, Xalloc_MAP_MEMORY_READ_WRITE | Xalloc_MAP_MEMORY_USER);
             else
                 Xalloc_MAP_MEMORY(this->HeapEnd, Page, Xalloc_MAP_MEMORY_READ_WRITE);
-            Xalloc_trace("Expanding Heap Memory (%#llx-%#llx [%#llx])...", this->HeapEnd, (Xuint64_t)this->HeapEnd + Xalloc_PAGE_SIZE, Page);
+            // Xalloc_trace("Expanding Heap Memory (%#llx-%#llx [%#llx])...", this->HeapEnd, (Xuint64_t)this->HeapEnd + Xalloc_PAGE_SIZE, Page);
             this->HeapEnd = (void *)((Xuint64_t)this->HeapEnd + Xalloc_PAGE_SIZE);
         }
         NewSegment->IsFree = true;
