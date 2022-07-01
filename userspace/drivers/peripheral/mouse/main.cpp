@@ -2,6 +2,7 @@
 
 DRIVER_ENTRY
 {
+    return 0;
 }
 
 DRIVER = {
