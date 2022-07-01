@@ -82,6 +82,12 @@ void HeapFree(void *Address)
     case AllocationAlgorithm::XallocV1:
         xalloc->Free(Address);
         break;
+    case AllocationAlgorithm::NoAllocationAlgorithm:
+        panic("HeapFree called before heap initialized!", true);
+        break;
+    default:
+        panic("Unknown allocation algorithm!", true);
+        break;
     }
     UNLOCK(heap_lock);
     if (inten)
@@ -93,7 +99,7 @@ void *HeapMalloc(size_t Size)
     LOCK(heap_lock);
     bool inten = InterruptsEnabled();
     CLI;
-    void *ret;
+    void *ret = nullptr;
 
     switch (AlgorithmToUse)
     {
@@ -112,6 +118,12 @@ void *HeapMalloc(size_t Size)
     case AllocationAlgorithm::XallocV1:
         ret = xalloc->Malloc(Size);
         break;
+    case AllocationAlgorithm::NoAllocationAlgorithm:
+        panic("HeapFree called before heap initialized!", true);
+        break;
+    default:
+        panic("Unknown allocation algorithm!", true);
+        break;
     }
 
     memset(ret, 0, Size);
@@ -127,7 +139,7 @@ void *HeapCalloc(size_t n, size_t Size)
     LOCK(heap_lock);
     bool inten = InterruptsEnabled();
     CLI;
-    void *ret;
+    void *ret = nullptr;
 
     switch (AlgorithmToUse)
     {
@@ -146,6 +158,12 @@ void *HeapCalloc(size_t n, size_t Size)
     case AllocationAlgorithm::XallocV1:
         ret = xalloc->Calloc(n, Size);
         break;
+    case AllocationAlgorithm::NoAllocationAlgorithm:
+        panic("HeapFree called before heap initialized!", true);
+        break;
+    default:
+        panic("Unknown allocation algorithm!", true);
+        break;
     }
 
     memset(ret, 0, n * Size);
@@ -161,7 +179,7 @@ void *HeapRealloc(void *Address, size_t Size)
     LOCK(heap_lock);
     bool inten = InterruptsEnabled();
     CLI;
-    void *ret;
+    void *ret = nullptr;
 
     switch (AlgorithmToUse)
     {
@@ -179,6 +197,12 @@ void *HeapRealloc(void *Address, size_t Size)
         break;
     case AllocationAlgorithm::XallocV1:
         ret = xalloc->Realloc(Address, Size);
+        break;
+    case AllocationAlgorithm::NoAllocationAlgorithm:
+        panic("HeapFree called before heap initialized!", true);
+        break;
+    default:
+        panic("Unknown allocation algorithm!", true);
         break;
     }
 
