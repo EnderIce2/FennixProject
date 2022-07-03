@@ -164,6 +164,7 @@ namespace PS2Mouse
 
     PS2MouseDriver::PS2MouseDriver()
     {
+        RegisterInterrupt(PS2MouseInterruptHandler, IRQ12, true);
         outb(COMMAND, 0xA8);
         Write(COMMAND, READ_CONFIG);
         uint8_t Status = Read();
@@ -176,7 +177,6 @@ namespace PS2Mouse
         Write(COMMAND, 0xD4);
         Write(DATA, 0xF4);
         Read();
-        RegisterInterrupt(PS2MouseInterruptHandler, IRQ12, true);
         devfs->AddFileSystem(&mouse, 0666, "mouse", FileSystem::NodeFlags::FS_PIPE);
     }
 
