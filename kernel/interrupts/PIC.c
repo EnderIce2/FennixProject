@@ -1,5 +1,6 @@
 #include <interrupts.h>
 #include "pic.h"
+#include "../timer/pit.h"
 #include <int.h>
 #include <asm.h>
 #include <io.h>
@@ -10,6 +11,11 @@ void IRQ_clear_mask(unsigned char IRQline);
 void PIC_disable()
 {
     debug("Disabling PIC...");
+    // set PIC to one-shot mode
+    outb(PIT_CMD, 0x28);
+    IOWait();
+    outb(PIT_COUNTER0, CMD_MODE0);
+    IOWait();
     // make sure all IRQs are masked
     IRQ_set_mask(0);
     IRQ_set_mask(1);
