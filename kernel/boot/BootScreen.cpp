@@ -4,6 +4,7 @@
 #include <heap.h>
 #include <debug.h>
 #include "../cpu/acpi.hpp"
+#include "../timer.h"
 
 extern uint64_t _binary_files_zap_ext_light20_psf_start;
 extern uint64_t _binary_files_zap_ext_light20_psf_end;
@@ -219,9 +220,7 @@ namespace BootScreen
 
         RedrawLogo:
             trace("Drawing logo %d", LogoID);
-            // TODO: implement accurate sleep function
-            for (int i = 0; i < 100000; i++)
-                asm volatile("nop");
+            msleep(50);
 
             uint8_t ImageHeader[54];
             int BufferRead = 54;

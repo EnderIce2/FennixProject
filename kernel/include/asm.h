@@ -37,7 +37,9 @@ static inline void ltr(uint16_t segment)
 
 static inline void invlpg(uint64_t address)
 {
-    asm volatile("invlpg (%0);" ::"r"(address)
+    asm volatile("invlpg (%0)"
+                 :
+                 : "r"(address)
                  : "memory");
 }
 
@@ -645,4 +647,12 @@ static inline void clac()
                  :
                  :
                  : "cc");
+}
+
+static inline uint64_t tsc()
+{
+    uint64_t rax, rdx;
+    asm volatile("rdtsc"
+                 : "=a"(rax), "=d"(rdx));
+    return (rdx << 32) | rax;
 }

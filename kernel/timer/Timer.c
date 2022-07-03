@@ -1,45 +1,12 @@
 #include "../timer.h"
 #include <interrupts.h>
 #include <int.h>
+#include <asm.h>
 #include "apic_timer.h"
 #include "hpet.h"
 #include "pit.h"
+#include "tsc.h"
 #include "../cpu/idt.h"
-
-void sleep(uint64_t Seconds)
-{
-    if (APICTimer_initialized)
-        apictimer_wait(Seconds);
-    else if (HPET_initialized)
-        hpet_wait(Seconds);
-    else
-        pit_wait(Seconds * 1000);
-}
-
-void msleep(uint64_t Miliseconds)
-{
-    if (APICTimer_initialized)
-        apictimer_mwait(Miliseconds);
-    else if (HPET_initialized)
-        hpet_mwait(Miliseconds);
-    else
-        pit_wait(Miliseconds);
-}
-
-void usleep(uint64_t Microseconds)
-{
-    if (APICTimer_initialized)
-        apictimer_uwait(Microseconds);
-    else if (HPET_initialized)
-        hpet_uwait(Microseconds);
-    else
-    {
-        static int once = 0;
-        if (!once++)
-            warn("PIT is not supposed to work with microseconds!");
-        pit_wait(Microseconds / 1000);
-    }
-}
 
 void nsleep(uint64_t Nanoseconds)
 {
@@ -52,13 +19,58 @@ void nsleep(uint64_t Nanoseconds)
             warn("HPET is not supposed to work with nanoseconds!");
         hpet_uwait(Nanoseconds);
     }
-    else
+    else if (PIC_initialized)
     {
         static int once = 0;
         if (!once++)
             warn("PIT is not supposed to work with nanoseconds!");
         pit_wait(Nanoseconds / 1000);
     }
+    else
+    {
+        TSC_sleep(Nanoseconds);
+    }
+}
+
+void usleep(uint64_t Microseconds)
+{
+    if (APICTimer_initialized)
+        apictimer_uwait(Microseconds);
+    else if (HPET_initialized)
+        hpet_uwait(Microseconds);
+    else if (PIC_initialized)
+    {
+        static int once = 0;
+        if (!once++)
+            warn("PIT is not supposed to work with microseconds!");
+        pit_wait(Microseconds / 1000);
+    }
+    else
+        nsleep(Microseconds * 1000);
+}
+
+void msleep(uint64_t Miliseconds)
+{
+    if (APICTimer_initialized)
+        apictimer_mwait(Miliseconds);
+    else if (HPET_initialized)
+        hpet_mwait(Miliseconds);
+    else if (PIC_initialized)
+        pit_wait(Miliseconds);
+    else
+        usleep(Miliseconds * 1000);
+}
+
+void sleep(uint64_t Seconds)
+{
+    if (APICTimer_initialized)
+        apictimer_wait(Seconds);
+    else if (HPET_initialized)
+        hpet_wait(Seconds);
+    else if (PIC_initialized)
+        pit_wait(Seconds * 1000);
+    else
+        msleep(Seconds * 1000000);
 }
 
 volatile uint64_t ticks = 0;
@@ -97,7 +109,6 @@ InterruptHandler(timer_interrupt_handler)
     ticks++;
     if (APICTimer_initialized)
     {
-
     }
     else if (HPET_initialized)
     {
