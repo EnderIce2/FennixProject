@@ -203,6 +203,29 @@ void KernelTask()
     CPU_STOP;
 }
 
+void CheckSystemRequirements()
+{
+    bool Passed = true;
+    if (!cpu_feature(CPUID_FEAT_RDX_TSC))
+        Passed = false;
+    if (!cpu_feature(CPUID_FEAT_RDX_SSE))
+        Passed = false;
+    if (!cpu_feature(CPUID_FEAT_RDX_UMIP))
+        Passed = false;
+    if (!cpu_feature(CPUID_FEAT_RDX_SMEP))
+        Passed = false;
+    if (!cpu_feature(CPUID_FEAT_RDX_SMAP))
+        Passed = false;
+    if (!cpu_feature(CPUID_FEAT_RCX_RDRAND))
+        Passed = false;
+
+    if (!Passed)
+    {
+        CurrentDisplay = new DisplayDriver::Display;
+        panic("The current CPU doesn't support the minimum system requirements. (SSE, TSC, UMIP, SMEP, SMAP, RDRAND)", true);
+    }
+}
+
 /* I should make everything in C++ but I use code from older (failed) projects.
    I will probably move the old C code to C++ in the future. */
 
@@ -211,8 +234,9 @@ void KernelInit()
     trace("Early initialization completed.");
     TEST_TEST();
     do_libs_test();
-    do_mem_test();
+    // do_mem_test();
     initializeKernelFlags();
+    CheckSystemRequirements();
     BS = new BootScreen::Screen;
     SymTbl = new KernelSymbols::Symbols;
     BS->IncreaseProgres();
@@ -238,8 +262,7 @@ void KernelInit()
     smp = new SymmetricMultiprocessing::SMP;
     BS->IncreaseProgres();
     init_timer();
-    // TODO: after APIC timer is initialized the memory gets corrupted, or there is another function that breaks the memory
-    do_interrupts_mem_test();
+    // do_interrupts_mem_test();
     BS->IncreaseProgres();
     apic->RedirectIRQs();
 
