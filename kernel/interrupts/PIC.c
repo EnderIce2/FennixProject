@@ -4,9 +4,29 @@
 #include <asm.h>
 #include <io.h>
 
+void IRQ_set_mask(unsigned char IRQline);
+void IRQ_clear_mask(unsigned char IRQline);
+
 void PIC_disable()
 {
     debug("Disabling PIC...");
+    // make sure all IRQs are masked
+    IRQ_set_mask(0);
+    IRQ_set_mask(1);
+    IRQ_set_mask(2);
+    IRQ_set_mask(3);
+    IRQ_set_mask(4);
+    IRQ_set_mask(5);
+    IRQ_set_mask(6);
+    IRQ_set_mask(7);
+    IRQ_set_mask(8);
+    IRQ_set_mask(9);
+    IRQ_set_mask(10);
+    IRQ_set_mask(11);
+    IRQ_set_mask(12);
+    IRQ_set_mask(13);
+    IRQ_set_mask(14);
+    IRQ_set_mask(15);
     outb(PIC1_DATA, 0xff);
     IOWait();
     outb(PIC2_DATA, 0xff);
