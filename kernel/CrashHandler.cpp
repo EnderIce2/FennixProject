@@ -65,6 +65,26 @@ EXTERNC void isrcrash(TrapFrame *regs)
     CR3 cr3 = readcr3();
     CR4 cr4 = readcr4();
     CR8 cr8 = readcr8();
+    EFER efer;
+    efer.raw = rdmsr(MSR_EFER);
+
+    uint64_t dr0, dr1, dr2, dr3, dr6;
+    DR7 dr7;
+
+    // store debug registers
+    asm volatile("movq %%dr0, %0"
+                 : "=r"(dr0));
+    asm volatile("movq %%dr1, %0"
+                 : "=r"(dr1));
+    asm volatile("movq %%dr2, %0"
+                 : "=r"(dr2));
+    asm volatile("movq %%dr3, %0"
+                 : "=r"(dr3));
+    asm volatile("movq %%dr6, %0"
+                 : "=r"(dr6));
+    asm volatile("movq %%dr7, %0"
+                 : "=r"(dr7));
+
     if (CS != 0x23)
         CurrentDisplay->Clear(0x000000);
     switch (INT_NUM)
@@ -90,6 +110,10 @@ EXTERNC void isrcrash(TrapFrame *regs)
         }
         else
         {
+            CurrentDisplay->SetPrintColor(0xDD2920);
+            SET_PRINT_MID((char *)"System crashed!", FHeight(2));
+            CurrentDisplay->ResetPrintColor();
+            SET_PRINT_MID((char *)"Kernel triggered debug exception.", FHeight(1));
         }
         break;
     }
@@ -465,8 +489,9 @@ EXTERNC void isrcrash(TrapFrame *regs)
     printf("R12=%#lx  R13=%#lx  R14=%#lx  R15=%#lx\n", R12, R13, R14, R15);
     printf("RAX=%#lx  RBX=%#lx  RCX=%#lx  RDX=%#lx\n", RAX, RBX, RCX, RDX);
     printf("RSI=%#lx  RDI=%#lx  RBP=%#lx  RSP=%#lx\n", RSI, RDI, RBP, RSP);
-    printf("RIP=%#lx  RFL=%#lx  INT=%#lx  ERR=%#lx\n", RIP, FLAGS.raw, INT_NUM, ERROR_CODE);
+    printf("RIP=%#lx  RFL=%#lx  INT=%#lx  ERR=%#lx  EFER=%#lx\n", RIP, FLAGS.raw, INT_NUM, ERROR_CODE, efer.raw);
     printf("CR0=%#lx  CR2=%#lx  CR3=%#lx  CR4=%#lx  CR8=%#lx\n", cr0.raw, cr2.raw, cr3.raw, cr4.raw, cr8.raw);
+    printf("DR0=%#lx  DR1=%#lx  DR2=%#lx  DR3=%#lx  DR6=%#lx  DR7=%#lx\n", dr0, dr1, dr2, dr3, dr6, dr7.raw);
 
     CurrentDisplay->SetPrintColor(0xFC797B);
     printf("CR0: PE:%s     MP:%s     EM:%s     TS:%s\n     ET:%s     NE:%s     WP:%s     AM:%s\n     NW:%s     CD:%s     PG:%s\n     R0:%#x R1:%#x R2:%#x\n",
@@ -484,7 +509,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
            cr3.PWT ? "True " : "False", cr3.PCD ? "True " : "False", cr3.PDBR);
 
     CurrentDisplay->SetPrintColor(0xBD79FC);
-    printf("CR4: VME:%s     PVI:%s     TSD:%s      DE:%s\n     PSE:%s     PAE:%s     MCE:%s     PGE:%s\n     PCE:%s    UMIP:%s  OSFXSR:%s OSXMMEXCPT:%s\n    LA57:%s    VMXE:%s    SMXE:%s   PCIDE:%s\n OSXSAVE:%s    SMEP:%s    SMAP:%s     PKE:%s\n     R0:%d R1:%d R2:%d\n",
+    printf("CR4: VME:%s     PVI:%s     TSD:%s      DE:%s\n     PSE:%s     PAE:%s     MCE:%s     PGE:%s\n     PCE:%s    UMIP:%s  OSFXSR:%s OSXMMEXCPT:%s\n    LA57:%s    VMXE:%s    SMXE:%s   PCIDE:%s\n OSXSAVE:%s    SMEP:%s    SMAP:%s     PKE:%s\n     R0:%#x R1:%#x R2:%#x\n",
            cr4.VME ? "True " : "False", cr4.PVI ? "True " : "False", cr4.TSD ? "True " : "False", cr4.DE ? "True " : "False",
            cr4.PSE ? "True " : "False", cr4.PAE ? "True " : "False", cr4.MCE ? "True " : "False", cr4.PGE ? "True " : "False",
            cr4.PCE ? "True " : "False", cr4.UMIP ? "True " : "False", cr4.OSFXSR ? "True " : "False", cr4.OSXMMEXCPT ? "True " : "False",
@@ -496,13 +521,47 @@ EXTERNC void isrcrash(TrapFrame *regs)
     printf("CR8: TPL:%d\n", cr8.TPL);
 
     CurrentDisplay->SetPrintColor(0xFCFC02);
-    printf("RFL: CF:%s     PF:%s     AF:%s     ZF:%s\n     SF:%s     TF:%s     IF:%s     DF:%s\n     OF:%s   IOPL:%s     NT:%s     RF:%s\n     VM:%s     AC:%s    VIF:%s    VIP:%s\n     ID:%s     AlwaysOne:%d\n     R0:%#x R1:%#x R2:%#x R3:%#x",
+    printf("RFL: CF:%s     PF:%s     AF:%s     ZF:%s\n     SF:%s     TF:%s     IF:%s     DF:%s\n     OF:%s   IOPL:%s     NT:%s     RF:%s\n     VM:%s     AC:%s    VIF:%s    VIP:%s\n     ID:%s     AlwaysOne:%d\n     R0:%#x R1:%#x R2:%#x R3:%#x\n",
            FLAGS.CF ? "True " : "False", FLAGS.PF ? "True " : "False", FLAGS.AF ? "True " : "False", FLAGS.ZF ? "True " : "False",
            FLAGS.SF ? "True " : "False", FLAGS.TF ? "True " : "False", FLAGS.IF ? "True " : "False", FLAGS.DF ? "True " : "False",
            FLAGS.OF ? "True " : "False", FLAGS.IOPL ? "True " : "False", FLAGS.NT ? "True " : "False", FLAGS.RF ? "True " : "False",
            FLAGS.VM ? "True " : "False", FLAGS.AC ? "True " : "False", FLAGS.VIF ? "True " : "False", FLAGS.VIP ? "True " : "False",
            FLAGS.ID ? "True " : "False", FLAGS.always_one,
            FLAGS._reserved0, FLAGS._reserved1, FLAGS._reserved2, FLAGS._reserved3);
+
+    CurrentDisplay->SetPrintColor(0xA0F0F0);
+    printf("DR7: LDR0:%s     GDR0:%s     LDR1:%s     GDR1:%s\n     LDR2:%s     GDR2:%s     LDR3:%s     GDR3:%s\n     CDR0:%s     SDR0:%s     CDR1:%s     SDR1:%s\n     CDR2:%s     SDR2:%s     CDR3:%s     SDR3:%s\n     R:%#x\n",
+           dr7.LocalDR0 ? "True " : "False", dr7.GlobalDR0 ? "True " : "False", dr7.LocalDR1 ? "True " : "False", dr7.GlobalDR1 ? "True " : "False",
+           dr7.LocalDR2 ? "True " : "False", dr7.GlobalDR2 ? "True " : "False", dr7.LocalDR3 ? "True " : "False", dr7.GlobalDR3 ? "True " : "False",
+           dr7.ConditionsDR0 ? "True " : "False", dr7.SizeDR0 ? "True " : "False", dr7.ConditionsDR1 ? "True " : "False", dr7.SizeDR1 ? "True " : "False",
+           dr7.ConditionsDR2 ? "True " : "False", dr7.SizeDR2 ? "True " : "False", dr7.ConditionsDR3 ? "True " : "False", dr7.SizeDR3 ? "True " : "False",
+           dr7.Reserved);
+
+    CurrentDisplay->SetPrintColor(0x009FF0);
+    printf("EFER: SCE:%s      LME:%s      LMA:%s      NXE:%s\n     SVME:%s    LMSLE:%s    FFXSR:%s      TCE:%s\n     R0:%#x R1:%#x R2:%#x\n",
+           efer.SCE ? "True " : "False", efer.LME ? "True " : "False", efer.LMA ? "True " : "False", efer.NXE ? "True " : "False",
+           efer.SVME ? "True " : "False", efer.LMSLE ? "True " : "False", efer.FFXSR ? "True " : "False", efer.TCE ? "True " : "False",
+           efer.Reserved0, efer.Reserved1, efer.Reserved2);
+
+    // restore debug registers
+    asm volatile("movq %0, %%dr0"
+                 :
+                 : "r"(dr0));
+    asm volatile("movq %0, %%dr1"
+                 :
+                 : "r"(dr1));
+    asm volatile("movq %0, %%dr2"
+                 :
+                 : "r"(dr2));
+    asm volatile("movq %0, %%dr3"
+                 :
+                 : "r"(dr3));
+    asm volatile("movq %0, %%dr6"
+                 :
+                 : "r"(dr6));
+    asm volatile("movq %0, %%dr7"
+                 :
+                 : "r"(dr7));
 
     struct StackFrame
     {
@@ -517,7 +576,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     // frames = (struct StackFrame *)__builtin_frame_address(0);
 
     CurrentDisplay->SetPrintColor(0x7981FC);
-    printf("\n\nStack Trace:\n");
+    printf("\nStack Trace:\n");
     // not really working... ubsan is telling me "Null pointer access." and gpf to the code below but here everything is ok... wow...
     if ((!frames->rip ||
          !frames->rbp) ||

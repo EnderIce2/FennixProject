@@ -234,7 +234,7 @@ void KernelInit()
     trace("Early initialization completed.");
     TEST_TEST();
     do_libs_test();
-    // do_mem_test();
+    do_mem_test();
     initializeKernelFlags();
     CheckSystemRequirements();
     BS = new BootScreen::Screen;
@@ -262,7 +262,6 @@ void KernelInit()
     smp = new SymmetricMultiprocessing::SMP;
     BS->IncreaseProgres();
     init_timer();
-    // do_interrupts_mem_test();
     BS->IncreaseProgres();
     apic->RedirectIRQs();
 
@@ -335,6 +334,7 @@ void KernelInit()
             CurrentDisplay->ResetPrintColor();
         }
 
+    // do_interrupts_mem_test();
     vfs = new FileSystem::Virtual;
     BS->Progress(50);
 
