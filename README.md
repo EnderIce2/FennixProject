@@ -127,6 +127,7 @@ make clean
 ---
 
 ## Todo
+- [ ] !!! Memory allocator is not working as expected!
 - [x] Figure out how to make the interrupts push ds, es, fs & gs into TrapFrame structure (why?)
 - [ ] Fix the context switching causing exceptions
 - [ ] Fix the multitasking page table switching
