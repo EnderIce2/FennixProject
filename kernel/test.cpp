@@ -12,6 +12,7 @@
 
 void do_libs_test()
 {
+#ifdef UNIT_TESTS
     TEST_ASSERT(strcmp("String Compare.", "String Compare.") == 0);
     TEST_ASSERT(strncmp("1 Test?", "1 Test?", 0) == 0);
     TEST_ASSERT(memcmp("No, 2 Tests.", "No, 2 Tests.", 0) == 0);
@@ -23,10 +24,12 @@ void do_libs_test()
     TEST_EQUAL_STRN("\0\0\0\0\0\0\0\0\0\0\0\0\0", buf, 12);
     memmove(buf, "Hello World!", 12);
     TEST_EQUAL_STRN("Hello World!", buf, 12);
+#endif
 }
 
 void do_mem_bitmap_print()
 {
+#ifdef UNIT_TESTS
     TEST_DBG("\nPrinting Bitmap:\n");
     uint64_t nl = 1;
     for (uint64_t i = 0; i < KernelAllocator.PageBitmap.Size; i++)
@@ -40,8 +43,10 @@ void do_mem_bitmap_print()
         TEST_DBG("%d", KernelAllocator.PageBitmap[i] ? 1 : 0);
     }
     TEST_DBG("\n");
+#endif
 }
 
+#ifdef UNIT_TESTS
 class test_mem_new_delete
 {
 public:
@@ -63,8 +68,11 @@ test_mem_new_delete::~test_mem_new_delete()
 
 #define MEMTEST_ITERATIONS 1024
 
+#endif
+
 void do_mem_test()
 {
+#ifdef UNIT_TESTS
     // return;
 
     void *tmpAlloc1 = kmalloc(176);
@@ -203,16 +211,20 @@ void do_mem_test()
     kfree(tmpAlloc3);
     kfree(tmpAlloc4);
     do_mem_bitmap_print();
+#endif
 }
 
+#ifdef UNIT_TESTS
 InterruptHandler(stub_int_hnd)
 {
     TEST_DBG("Int-%#x-hnd ", INT_NUM);
     return;
 }
+#endif
 
 extern "C" void do_interrupts_mem_test()
 {
+#ifdef UNIT_TESTS
     kmalloc(176);
     kmalloc(511);
     kmalloc(1027);
@@ -237,7 +249,10 @@ extern "C" void do_interrupts_mem_test()
     do_mem_test();
     TEST_DBG("\n\n\n\n\n========================================================================================\nTEST COMPLETE! HALTING...\n========================================================================================\n");
     CPU_HALT;
+#endif
 }
+
+#ifdef UNIT_TESTS
 
 #define srdy 1
 #define sliv 2
@@ -441,13 +456,18 @@ void test_kernelmultitasking(int a, int b)
     TEST_DBG("Multitasking test finished.\n");
 }
 
+#endif
+
 void do_tasking_test()
 {
+#ifdef UNIT_TESTS
     // test_safescheduler();
     StartTasking((uint64_t)test_kernelmultitasking, TaskingMode::Multi);
     CPU_STOP;
+#endif
 }
 
+#ifdef UNIT_TESTS
 void test_stack_final()
 {
     // void *p = (void *)0x567777756886;
@@ -464,8 +484,11 @@ void backtrace3() { backtrace4(); }
 void backtrace2() { backtrace3(); }
 void backtrace1() { backtrace2(); }
 void backtrace0() { backtrace1(); }
+#endif
 
 void do_stacktrace_test()
 {
+#ifdef UNIT_TESTS
     backtrace0();
+#endif
 }
