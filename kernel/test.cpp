@@ -66,6 +66,11 @@ test_mem_new_delete::~test_mem_new_delete()
 void do_mem_test()
 {
     // return;
+
+    void *tmpAlloc1 = kmalloc(176);
+    void *tmpAlloc2 = kmalloc(511);
+    void *tmpAlloc3 = kmalloc(1027);
+    void *tmpAlloc4 = kmalloc(1569);
     TEST_DBG("Kernel Address: Start:%p ---- End:%p [%ldKB/%ldKB]\n", bootparams->kernel.file, bootparams->kernel.file + bootparams->kernel.size, TO_KB(KernelAllocator.GetUsedRAM()), TO_KB(KernelAllocator.GetFreeRAM()));
     for (int repeat = 0; repeat < 16; repeat++)
     {
@@ -192,6 +197,11 @@ void do_mem_test()
         TEST_DBG(" Result:\t1-[%#lx]; 2-[%#lx]\n", (void *)MallocAddress____1, (void *)MallocAddress____2);
         TEST_EQUAL(MallocAddress____1, MallocAddress____2);
     }
+
+    kfree(tmpAlloc1);
+    kfree(tmpAlloc2);
+    kfree(tmpAlloc3);
+    kfree(tmpAlloc4);
     do_mem_bitmap_print();
 }
 
@@ -203,6 +213,10 @@ InterruptHandler(stub_int_hnd)
 
 extern "C" void do_interrupts_mem_test()
 {
+    kmalloc(176);
+    kmalloc(511);
+    kmalloc(1027);
+    kmalloc(1569);
     if (InterruptsEnabled())
         CLI;
     RegisterInterrupt(stub_int_hnd, IRQ10, true);
