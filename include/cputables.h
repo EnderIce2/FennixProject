@@ -313,3 +313,77 @@ typedef union SelectorErrorCode
     };
     uint64_t raw;
 } SelectorErrorCode;
+
+// ! TODO: UNTESTED!
+typedef union DR7
+{
+    struct
+    {
+        /** @brief Local DR0 Breakpoint (0) */
+        uint64_t LocalDR0 : 1;
+        /** @brief Global DR0 Breakpoint (1) */
+        uint64_t GlobalDR0 : 1;
+        /** @brief Local DR1 Breakpoint (2) */
+        uint64_t LocalDR1 : 1;
+        /** @brief Global DR1 Breakpoint (3) */
+        uint64_t GlobalDR1 : 1;
+        /** @brief Local DR2 Breakpoint (4) */
+        uint64_t LocalDR2 : 1;
+        /** @brief Global DR2 Breakpoint (5) */
+        uint64_t GlobalDR2 : 1;
+        /** @brief Local DR3 Breakpoint (6) */
+        uint64_t LocalDR3 : 1;
+        /** @brief Global DR3 Breakpoint (7) */
+        uint64_t GlobalDR3 : 1;
+        /** @brief Reserved [7 - (16-17)] */
+        uint64_t Reserved : 9;
+        /** @brief Conditions for DR0 (16-17) */
+        uint64_t ConditionsDR0 : 1;
+        /** @brief Size of DR0 Breakpoint (18-19) */
+        uint64_t SizeDR0 : 1;
+        /** @brief Conditions for DR1 (20-21) */
+        uint64_t ConditionsDR1 : 1;
+        /** @brief Size of DR1 Breakpoint (22-23) */
+        uint64_t SizeDR1 : 1;
+        /** @brief Conditions for DR2 (24-25) */
+        uint64_t ConditionsDR2 : 1;
+        /** @brief Size of DR2 Breakpoint (26-27) */
+        uint64_t SizeDR2 : 1;
+        /** @brief Conditions for DR3 (28-29) */
+        uint64_t ConditionsDR3 : 1;
+        /** @brief Size of DR3 Breakpoint (30-31) */
+        uint64_t SizeDR3 : 1;
+    };
+    uint64_t raw;
+} DR7;
+
+// ! TODO: UNTESTED!
+typedef union EFER
+{
+    struct
+    {
+        /** @brief Enable syscall & sysret instructions in 64-bit mode. */
+        uint32_t SCE : 1;
+        /** @brief Reserved */
+        uint32_t Reserved0 : 7;
+        /** @brief Enable long mode. */
+        uint32_t LME : 1;
+        /** @brief Reserved */
+        uint32_t Reserved1 : 1;
+        /** @brief Indicates long. */
+        uint32_t LMA : 1;
+        /** @brief Enable No-Execute Bit */
+        uint32_t NXE : 1;
+        /** @brief Enable Secure Virtual Machine */
+        uint64_t SVME : 1;
+        /** @brief Enable Long Mode Segment Limit */
+        uint64_t LMSLE : 1;
+        /** @brief Enable Fast FXSAVE/FXRSTOR */
+        uint64_t FFXSR : 1;
+        /** @brief Enable Translation Cache Extension */
+        uint64_t TCE : 1;
+        /** @brief Reserved */
+        uint32_t Reserved2 : 32;
+    };
+    uint64_t raw;
+} __attribute__((packed)) EFER;
