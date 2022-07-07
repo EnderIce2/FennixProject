@@ -46,6 +46,7 @@ namespace ACPI
         TCPA = (TCPAHeader *)FindTable(XSDT, (char *)"TCPA");
         WAET = (WAETHeader *)FindTable(XSDT, (char *)"WAET");
         MADT = (MADTHeader *)FindTable(XSDT, (char *)"APIC");
+        HEST = (HESTHeader *)FindTable(XSDT, (char *)"HEST");
         FindTable(XSDT, (char *)"BERT");
         FindTable(XSDT, (char *)"CPEP");
         FindTable(XSDT, (char *)"DSDT");
@@ -53,7 +54,6 @@ namespace ACPI
         FindTable(XSDT, (char *)"EINJ");
         FindTable(XSDT, (char *)"ERST");
         FindTable(XSDT, (char *)"FACS");
-        FindTable(XSDT, (char *)"HEST");
         FindTable(XSDT, (char *)"MSCT");
         FindTable(XSDT, (char *)"MPST");
         FindTable(XSDT, (char *)"OEMx");

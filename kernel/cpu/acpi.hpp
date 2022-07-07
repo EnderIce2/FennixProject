@@ -149,6 +149,12 @@ namespace ACPI
             uint32_t Flags;
         };
 
+        struct HESTHeader
+        {
+            ACPIHeader Header;
+            uint32_t ErrorSourceCount;
+        };
+
         struct MADTHeader
         {
             ACPIHeader Header;
@@ -167,6 +173,7 @@ namespace ACPI
         TCPAHeader *TCPA = nullptr;
         WAETHeader *WAET = nullptr;
         MADTHeader *MADT = nullptr;
+        HESTHeader *HEST = nullptr;
         bool XSDTSupported = false;
 
         void *FindTable(ACPIHeader *ACPIHeader, char *Signature);
