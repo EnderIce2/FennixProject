@@ -325,6 +325,10 @@ EXTERNC void isrcrash(TrapFrame *regs)
                 break;
             }
             debug("external:%d table:%d idx:%#x", SelCode.External, SelCode.Table, SelCode.Idx);
+            CurrentDisplay->SetPrintColor(0xDD2920);
+            SET_PRINT_MID((char *)"System crashed!", FHeight(6));
+            CurrentDisplay->ResetPrintColor();
+            SET_PRINT_MID((char *)"More info about the exception:", FHeight(4));
             sprintf_(descbuf, "Kernel performed an illegal operation at address %#lx", RIP);
             SET_PRINT_MID((char *)descbuf, FHeight(5));
             sprintf_(desc_ext, "External: %d", SelCode.External);
@@ -333,10 +337,6 @@ EXTERNC void isrcrash(TrapFrame *regs)
             SET_PRINT_MID((char *)desc_table, FHeight(2));
             sprintf_(desc_idx, "%s Index: %#x", desc_tmp, SelCode.Idx);
             SET_PRINT_MID((char *)desc_idx, FHeight(1));
-            CurrentDisplay->SetPrintColor(0xDD2920);
-            SET_PRINT_MID((char *)"System crashed!", FHeight(6));
-            CurrentDisplay->ResetPrintColor();
-            SET_PRINT_MID((char *)"More info about the exception:", FHeight(4));
         }
         break;
     }
