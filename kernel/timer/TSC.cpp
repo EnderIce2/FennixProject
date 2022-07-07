@@ -17,3 +17,8 @@ void TSC_sleep(uint64_t Nanoseconds)
         warn("RDTSC is not supported.");
     }
 }
+
+void TSC_oneshot(uint32_t Vector, uint64_t Miliseconds)
+{
+    err("TSC One-Shot is not implemented!");
+}

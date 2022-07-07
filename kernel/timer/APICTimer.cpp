@@ -12,7 +12,7 @@
 #include "pit.h"
 
 bool APICTimer_initialized = false;
-uint64_t apic_timer_ticks = 0;
+uint64_t apic_timer_ticks = 32000;
 
 uint64_t apictimer_read_counter() { return 0xFFFFFFFF - apic->Read(APIC::APIC::APIC_TCCR); }
 uint64_t apictimer_read_clock() { return apic_timer_ticks; }
@@ -27,20 +27,27 @@ void init_APICTimer()
 
     // Initializing the APIC timer corrups the memory? Or something else?
 
-    // apic->Write(APIC::APIC::APIC_TDCR, 0x3);
-    // apic->Write(APIC::APIC::APIC_TICR, 0xFFFFFFFF);
+    apic->Write(APIC::APIC::APIC_TIMER, apic->Read(APIC::APIC::APIC_TIMER) & ~(1 << 0x10));
 
-    // apictimer_mwait(100);
+    apic->Write(APIC::APIC::APIC_TDCR, 0x3);
+    apic->Write(APIC::APIC::APIC_TICR, 0xFFFFFFFF);
 
-    // apic->Write(APIC::APIC::APIC_TIMER, 0x10000);
-    // apic_timer_ticks = 0xFFFFFFFF - apic->Read(APIC::APIC::APIC_TCCR);
-    // apic_timer_ticks /= 100;
+    apictimer_mwait(100);
 
-    // apic->Write(APIC::APIC::APIC_TIMER, 32 | APIC::APIC::APICRegisters::APIC_PERIODIC);
-    // apic->Write(APIC::APIC::APIC_TDCR, 0x3);
-    // apic->Write(APIC::APIC::APIC_TICR, apic_timer_ticks);
+    apic->Write(APIC::APIC::APIC_TIMER, 0x10000);
+    apic_timer_ticks = 0xFFFFFFFF - apic->Read(APIC::APIC::APIC_TCCR);
+    apic_timer_ticks /= 100;
+
+    apic->Write(APIC::APIC::APIC_TIMER, 32 | APIC::APIC::APICRegisters::APIC_PERIODIC);
+    apic->Write(APIC::APIC::APIC_TDCR, 0x3);
+    apic->Write(APIC::APIC::APIC_TICR, apic_timer_ticks);
 
     APICTimer_initialized = true;
-    apic_timer_ticks = 32000; // FIXME: This is a hack to make the timer work.
     trace("APIC timer ticks %lld", apic_timer_ticks);
+    apic->Write(APIC::APIC::APIC_TIMER, apic->Read(APIC::APIC::APIC_TIMER) | (1 << 0x10));
+}
+
+void APIC_oneshot(uint32_t Vector, uint64_t Miliseconds)
+{
+    apic->OneShot(Vector, Miliseconds);
 }

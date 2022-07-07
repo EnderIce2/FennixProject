@@ -28,5 +28,6 @@ uint32_t get_freq();
 void init_pit();
 void pit_wait(uint32_t miliseconds);
 uint64_t pit_get_uptime();
+void pit_oneshot(uint32_t Vector, uint64_t Miliseconds);
 
 #endif // !__FENNIX_KERNEL_APIC_PIT_H__

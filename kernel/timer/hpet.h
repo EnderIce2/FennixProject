@@ -23,6 +23,7 @@ EXTERNC void hpet_uwait(uint64_t Microseconds);
 EXTERNC void hpet_mwait(uint64_t Miliseconds);
 EXTERNC void hpet_wait(uint64_t Seconds);
 EXTERNC void init_HPET();
+EXTERNC void HPET_oneshot(uint32_t Vector, uint64_t Miliseconds);
 EXTERNC void disable_HPET();
 
 #endif // !__FENNIX_KERNEL_HPET_H__

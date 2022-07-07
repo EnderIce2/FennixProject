@@ -8,6 +8,8 @@
 #include "tsc.h"
 #include "../cpu/idt.h"
 
+struct ActiveTimers active_timers;
+
 void nsleep(uint64_t Nanoseconds)
 {
     if (APICTimer_initialized)
@@ -95,38 +97,26 @@ uint32_t get_timer_clock()
         return get_freq();
 }
 
-uint64_t systemuptimeseconds = 0;
-bool uptimesettarget = false;
-uint64_t uptimecurrenttarget = 0;
-
-uint64_t get_system_uptime()
-{
-    return systemuptimeseconds;
-}
-
 InterruptHandler(timer_interrupt_handler)
 {
-    ticks++;
     if (APICTimer_initialized)
-    {
-    }
+        return;
     else if (HPET_initialized)
-    {
-        if (!uptimesettarget)
-        {
-            uptimecurrenttarget = hpet_read_counter() + ((uint64_t)1000000 * (uint64_t)1000000000) / get_clk();
-            uptimesettarget = true;
-        }
-        if (hpet_read_counter() > uptimecurrenttarget)
-        {
-            systemuptimeseconds++;
-            uptimesettarget = false;
-        }
-    }
+        return;
+    else if (PIC_initialized)
+        ticks++;
+}
+
+void TimerOneShot(uint32_t Vector, uint64_t Miliseconds)
+{
+    if (APICTimer_initialized)
+        APIC_oneshot(Vector, Miliseconds);
+    else if (HPET_initialized)
+        HPET_oneshot(Vector, Miliseconds);
+    else if (PIC_initialized)
+        pit_oneshot(Vector, Miliseconds);
     else
-    {
-        systemuptimeseconds += get_freq() / 1000; // TODO: check if this is correct
-    }
+        TSC_oneshot(Vector, Miliseconds);
 }
 
 void init_timer()
@@ -138,5 +128,26 @@ void init_timer()
         init_HPET();
         if (!HPET_initialized)
             init_pit();
+    }
+
+    if (APICTimer_initialized)
+    {
+        active_timers.APIC = true;
+        debug("APIC timer is supported.");
+    }
+    else if (HPET_initialized)
+    {
+        active_timers.HPET = true;
+        debug("HPET timer is supported.");
+    }
+    else if (PIC_initialized)
+    {
+        active_timers.PIT = true;
+        debug("PIT timer is supported.");
+    }
+    else
+    {
+        active_timers.TSC = true;
+        debug("TSC timer is supported.");
     }
 }

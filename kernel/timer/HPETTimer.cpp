@@ -52,6 +52,11 @@ void init_HPET()
     HPET_initialized = true;
 }
 
+void HPET_oneshot(uint32_t Vector, uint64_t Miliseconds)
+{
+    err("HPET One-Shot is not implemented!");
+}
+
 void disable_HPET()
 {
     HPET_initialized = false;

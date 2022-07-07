@@ -10,3 +10,4 @@ EXTERNC void apictimer_uwait(uint64_t Microseconds);
 EXTERNC void apictimer_mwait(uint64_t Miliseconds);
 EXTERNC void apictimer_wait(uint64_t Seconds);
 EXTERNC void init_APICTimer();
+EXTERNC void APIC_oneshot(uint32_t Vector, uint64_t Miliseconds);

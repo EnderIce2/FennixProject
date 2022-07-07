@@ -47,6 +47,11 @@ uint64_t pit_get_uptime()
     return TimeSinceBoot;
 }
 
+void pit_oneshot(uint32_t Vector, uint64_t Miliseconds)
+{
+    err("PIT One-Shot mode is not implemented!");
+}
+
 // double TimeSinceBoot = 0;
 // const uint64_t BaseFrequency = 1193182;
 // uint16_t Divisor = 65535;
