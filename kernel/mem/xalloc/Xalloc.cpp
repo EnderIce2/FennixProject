@@ -10,7 +10,7 @@ namespace Xalloc
         UserMapping = UserMode;
         SMAPUsed = SMAPEnabled;
         Xstac();
-        for (Xuint64_t i = 0; i < 16; i++)
+        for (Xuint64_t i = 0; i < 0x20; i++)
         {
             void *Page = Xalloc_REQUEST_PAGE();
             if (UserMapping)
