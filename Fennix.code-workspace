@@ -36,7 +36,9 @@
 			"stivale.h": "c",
 			"cpuid.h": "c",
 			"io.h": "c",
-			"int.h": "c"
+			"int.h": "c",
+			"pit.h": "c",
+			"types.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}

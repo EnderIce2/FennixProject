@@ -231,6 +231,8 @@ extern "C" void do_interrupts_mem_test()
     kmalloc(1569);
     if (InterruptsEnabled())
         CLI;
+    TEST_DBG("Testing memory without interrupts...\n");
+    do_mem_test();
     RegisterInterrupt(stub_int_hnd, IRQ10, true);
     for (uint64_t i = 0; i < 256; i++)
         asm("int $0x2a");
@@ -241,6 +243,7 @@ extern "C" void do_interrupts_mem_test()
     for (uint64_t i = 0; i < 256; i++)
         asm("int $0x2a");
     UnregisterInterrupt(IRQ10);
+    TEST_DBG("Now testing memory without interrupts...\n");
     do_mem_test();
     do_mem_test();
     do_mem_test();
