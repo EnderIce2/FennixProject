@@ -25,17 +25,30 @@ void EnableCPUFeatures()
     cr0.CD = 0;
 
     debug("Checking for UMIP, SMEP & SMAP support...");
-    if (cpu_feature(CPUID_FEAT_RDX_UMIP))
+
+    uint32_t rax, rbx, rcx, rdx;
+    char HyperVendor[13];
+    cpuid(0x40000000, &rax, &rbx, &rcx, &rdx);
+    memcpy(HyperVendor + 0, &rbx, 4);
+    memcpy(HyperVendor + 4, &rcx, 4);
+    memcpy(HyperVendor + 8, &rdx, 4);
+    HyperVendor[12] = '\0';
+    debug("Hyper Vendor: %s", HyperVendor);
+    if (!strcmp(HyperVendor, CPUID_VENDOR_VIRTUALBOX))
     {
-        fixme("Not going to enable UMIP.");
-        // cr4.UMIP = 1;
+        err("VirtualBox Hypervisor detected, disabling UMIP, SMEP & SMAP support...");
+        if (cpu_feature(CPUID_FEAT_RDX_UMIP))
+        {
+            fixme("Not going to enable UMIP.");
+            // cr4.UMIP = 1;
+        }
+        if (cpu_feature(CPUID_FEAT_RDX_SMEP))
+            cr4.SMEP = 1;
+        if (cpu_feature(CPUID_FEAT_RDX_SMAP))
+            cr4.SMAP = 1;
+        writecr0(cr0);
+        writecr4(cr4);
     }
-    if (cpu_feature(CPUID_FEAT_RDX_SMEP))
-        cr4.SMEP = 1;
-    if (cpu_feature(CPUID_FEAT_RDX_SMAP))
-        cr4.SMAP = 1;
-    writecr0(cr0);
-    writecr4(cr4);
     debug("Enabling PAT support...");
     wrmsr(MSR_CR_PAT, 0x6 | (0x0 << 8) | (0x1 << 16));
 }
@@ -152,6 +165,23 @@ namespace SymmetricMultiprocessing
     SMP::SMP()
     {
         trace("Initializing symmetric multiprocessing (%d Cores)", madt->CPUCores);
+
+        uint32_t rax, rbx, rcx, rdx;
+        char HyperVendor[13];
+        cpuid(0x40000000, &rax, &rbx, &rcx, &rdx);
+        memcpy(HyperVendor + 0, &rbx, 4);
+        memcpy(HyperVendor + 4, &rcx, 4);
+        memcpy(HyperVendor + 8, &rdx, 4);
+        HyperVendor[12] = '\0';
+        debug("Hyper Vendor: %s", HyperVendor);
+        if (!strcmp(HyperVendor, CPUID_VENDOR_VIRTUALBOX))
+        {
+            err("VirtualBox Hypervisor detected, disabling SMP support...");
+            EnableCPUFeatures();
+            return;
+        }
+
+        // TODO: VBox doesn't like this.
 
         for (size_t i = 0; i < madt->CPUCores; i++)
             if ((apic->Read(APIC::APIC::APIC_ID) >> 24) != madt->lapic[i]->ACPIProcessorId)
