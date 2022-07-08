@@ -38,7 +38,7 @@ void init_APICTimer()
     apic_timer_ticks = 0xFFFFFFFF - apic->Read(APIC::APIC::APIC_TCCR);
     apic_timer_ticks /= 100;
 
-    apic->Write(APIC::APIC::APIC_TIMER, 32 | APIC::APIC::APICRegisters::APIC_PERIODIC);
+    apic->Write(APIC::APIC::APIC_TIMER, IRQ0 | APIC::APIC::APICRegisters::APIC_PERIODIC);
     apic->Write(APIC::APIC::APIC_TDCR, 0x3);
     apic->Write(APIC::APIC::APIC_TICR, apic_timer_ticks);
 

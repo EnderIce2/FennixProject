@@ -155,6 +155,12 @@ namespace Tasking
     }
 #endif
 
+    void TriggerOneShot(uint32_t Vector, uint64_t Miliseconds)
+    {
+        schedbg("TriggerOneShot(IRQ%d, %d)", Vector - 32, Miliseconds);
+        TimerOneShot(Vector, Miliseconds);
+    }
+
     extern "C" void ProcessDoExit(uint64_t Code)
     {
         EnterCriticalSection;
@@ -163,7 +169,7 @@ namespace Tasking
         schedbg("parent:%s tid:%d, code:%016p", CurrentCPU->CurrentProcess->Name, CurrentCPU->CurrentThread->ID, Code);
         trace("Exiting thread %d(%s)...", CurrentCPU->CurrentThread->ID, CurrentCPU->CurrentThread->Name);
         LeaveCriticalSection;
-        apic->OneShot(SchedulerInterrupt, 100);
+        TriggerOneShot(SchedulerInterrupt, 100);
         CPU_STOP;
     }
 
@@ -464,7 +470,7 @@ namespace Tasking
                 "iretq");
         }
 
-        static void MakeOneShot() { apic->OneShot(SchedulerInterrupt, 100); }
+        static void MakeOneShot() { TriggerOneShot(SchedulerInterrupt, 100); }
 
         __attribute__((naked, used)) static void IdleProcessLoop()
         {
@@ -476,9 +482,10 @@ namespace Tasking
 
         static void MultiTaskingSchedulerHandler(ThreadRegisters *regs)
         {
+            schedbg("MultiTaskingSchedulerHandler called.");
             if (!MultitaskingSchedulerEnabled)
             {
-                apic->OneShot(SchedulerInterrupt, 100);
+                TriggerOneShot(SchedulerInterrupt, 100);
                 EndOfInterrupt(INT_NUM); // apic->IPI(CurrentCPU->ID, SchedulerInterrupt);
                 return;
             }
@@ -494,7 +501,7 @@ namespace Tasking
             //     UNLOCK(CriticalSectionData->CriticalLock);
             //     if (CriticalSectionData->EnableInterrupts)
             //         STI;
-            //     apic->OneShot(SchedulerInterrupt, 200);
+            //     TriggerOneShot(SchedulerInterrupt, 200);
             //     EndOfInterrupt(INT_NUM); // apic->IPI(CurrentCPU->ID, SchedulerInterrupt);
             //     return;
             // }
@@ -734,7 +741,8 @@ namespace Tasking
             UNLOCK(CriticalSectionData->CriticalLock);
             if (CriticalSectionData->EnableInterrupts)
                 STI;
-            apic->OneShot(SchedulerInterrupt, CurrentCPU->CurrentThread->Info.Priority);
+            TriggerOneShot(SchedulerInterrupt, CurrentCPU->CurrentThread->Info.Priority);
+            schedbg("Scheduler end");
             EndOfInterrupt(INT_NUM); // apic->IPI(CurrentCPU->ID, SchedulerInterrupt);
         }
         }
@@ -745,7 +753,7 @@ namespace Tasking
         CurrentTaskingMode = TaskingMode::Multi;
         CriticalSectionData = new Critical::CriticalSectionData;
         apic->RedirectIRQ(CurrentCPU->ID, SchedulerInterrupt - IRQ0, 1);
-        apic->OneShot(SchedulerInterrupt, 100);
+        TriggerOneShot(SchedulerInterrupt, 100);
     }
 
     Multitasking::~Multitasking()

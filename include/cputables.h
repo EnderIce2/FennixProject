@@ -270,7 +270,7 @@ typedef union PageFaultErrorCode
     {
         /** @brief When set, the page fault was caused by a page-protection violation. When not set, it was caused by a non-present page. */
         uint64_t P : 1;
-        /** @brief 	When set, the page fault was caused by a write access. When not set, it was caused by a read access. */
+        /** @brief When set, the page fault was caused by a write access. When not set, it was caused by a read access. */
         uint64_t W : 1;
         /** @brief When set, the page fault was caused while CPL = 3. This does not necessarily mean that the page fault was a privilege violation. */
         uint64_t U : 1;

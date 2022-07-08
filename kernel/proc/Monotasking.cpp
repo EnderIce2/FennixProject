@@ -60,7 +60,8 @@ namespace Tasking
                 "iretq");
         }
     }
-#define SchedulerInterrupt IRQ17
+// IRQ17 = 0x31
+#define SchedulerInterrupt __asm__ volatile("int $0x31")
 
     static uint64_t TaskIDs = 0;
 
@@ -119,6 +120,7 @@ namespace Tasking
     {
         InterruptHandler(mono_schedule_interrupt_handler)
         {
+            debug("Mono scheduler called.");
             foreach (auto t in TaskQueue)
             {
                 if (t->state == TaskState::TaskPushed)
@@ -163,7 +165,7 @@ namespace Tasking
                     if (FindLastTask() == nullptr)
                     {
                         err("No more tasks to run! System halted."); // we never want to get here.
-                        CPU_STOP;
+                        CPU_HALT;
                     }
                     continue;
                 }
@@ -178,7 +180,7 @@ namespace Tasking
         scheduler_eoi:
             EndOfInterrupt(INT_NUM);
             if (!task_changed)
-                apic->OneShot(SchedulerInterrupt, 100);
+                SchedulerInterrupt;
         }
     }
 
@@ -186,7 +188,7 @@ namespace Tasking
     {
         CurrentTask->state = TaskState::TaskStateTerminated;
         trace("Task %s exited.", CurrentTask->name);
-        apic->OneShot(SchedulerInterrupt, 100);
+        SchedulerInterrupt;
         CPU_STOP;
     }
 
@@ -204,7 +206,6 @@ namespace Tasking
         memset(&task->regs, 0, sizeof(TrapFrame));
         if (!UserMode)
         {
-            // task->regs.ds = GDT_KERNEL_DATA;
             task->regs.ss = GDT_KERNEL_DATA;
             task->regs.cs = GDT_KERNEL_CODE;
             task->gs = (uint64_t)task;
@@ -217,7 +218,6 @@ namespace Tasking
         }
         else
         {
-            // task->regs.ds = GDT_USER_DATA;
             task->regs.cs = GDT_USER_CODE;
             task->regs.ss = GDT_USER_DATA;
             task->gs = 0;
@@ -267,7 +267,7 @@ namespace Tasking
                     TaskQueue[i - 1]->checksum == TASK_CHECKSUM)
                     this->PopTask();
 
-        apic->OneShot(SchedulerInterrupt, 100);
+        SchedulerInterrupt;
         CPU_STOP;
     }
 
@@ -296,7 +296,7 @@ namespace Tasking
                 TaskQueue[i + 1]->state = TaskState::TaskStateReady;
                 // TaskQueue[i + 1]->regs.rip = rip; // i need to find anoter way to get the instruction pointer
                 trace("Task pushed to %s with instruction pointer %#llx.", TaskQueue[i + 1]->name, rip);
-                apic->OneShot(SchedulerInterrupt, 100);
+                SchedulerInterrupt;
                 return;
             }
         }
@@ -327,7 +327,7 @@ namespace Tasking
                     TaskQueue[i]->state = TaskState::TaskPoped;
                 TaskQueue[i - 1]->state = TaskState::TaskStateReady;
                 trace("Task popped to %s.", TaskQueue[i - 1]->name);
-                apic->OneShot(SchedulerInterrupt, 100);
+                SchedulerInterrupt;
                 return;
             }
         }
@@ -340,8 +340,8 @@ namespace Tasking
             TaskQueue[i] = nullptr; // Make sure that all tasks have value nullptr
         CreateTask((uint64_t)FirstTask, 0, 0, (char *)"kernel", false);
         CurrentTaskingMode = TaskingMode::Mono;
-        apic->RedirectIRQ(0, SchedulerInterrupt - 32, 1);
-        apic->OneShot(SchedulerInterrupt, 100);
+        // apic->RedirectIRQ(0, SchedulerInterrupt - 32, 1);
+        SchedulerInterrupt;
     }
 
     Monotasking::~Monotasking()

@@ -39,7 +39,13 @@ namespace APIC
 
     uint32_t APIC::Read(uint32_t Register)
     {
-        debug("APIC::Read(%#lx)", Register);
+        // Too repetitive
+        if (Register != APIC_EOI &&
+            Register != APIC_TIMER &&
+            Register != APIC_TDCR &&
+            Register != APIC_TICR &&
+            Register != APIC_TCCR)
+            debug("APIC::Read(%#lx)", Register);
         if (x2APICSupported)
         {
             if (Register != APIC_ICRHI)
@@ -53,7 +59,12 @@ namespace APIC
 
     void APIC::Write(uint32_t Register, uint32_t Value)
     {
-        if (Register != APIC_EOI)
+        // Too repetitive
+        if (Register != APIC_EOI &&
+            Register != APIC_TIMER &&
+            Register != APIC_TDCR &&
+            Register != APIC_TICR &&
+            Register != APIC_TCCR)
             debug("APIC::Write(%#lx, %#lx)", Register, Value);
         if (x2APICSupported)
         {
@@ -109,9 +120,11 @@ namespace APIC
 
     void APIC::OneShot(uint32_t Vector, uint64_t Miliseconds)
     {
+        apic->Write(APIC::APIC::APIC_TIMER, apic->Read(APIC::APIC::APIC_TIMER) & ~(1 << 0x10));
         this->Write(APIC_TDCR, 0x03);
         this->Write(APIC_TIMER, (APIC::APIC::APICRegisters::APIC_ONESHOT | Vector));
         this->Write(APIC_TICR, apic_timer_ticks * Miliseconds);
+        apic->Write(APIC::APIC::APIC_TIMER, apic->Read(APIC::APIC::APIC_TIMER) | (1 << 0x10));
     }
 
     bool APIC::APICSupported()
@@ -193,15 +206,18 @@ namespace APIC
             // trace("x2APIC Supported!");
             // x2APICSupported = true;
             trace("x2APIC is supported by the system but disabled because of an unknown error.");
-            wrmsr(MSR_APIC_BASE, (rdmsr(MSR_APIC_BASE) | (1 << 11)) & ~(1 << 10));
+            // wrmsr(MSR_APIC_BASE, (rdmsr(MSR_APIC_BASE) | (1 << 11)) & ~(1 << 10));
+            wrmsr(MSR_APIC_BASE, (rdmsr(MSR_APIC_BASE) | (1 << 11)));
         }
         else
         {
             wrmsr(MSR_APIC_BASE, (rdmsr(MSR_APIC_BASE) | (1 << 11)));
         }
 
+        debug("APIC Base Address is %#lx", rdmsr(MSR_APIC_BASE));
+
         this->Write(APIC_TPR, 0x0);
-        this->Write(APIC_SVR, this->Read(APIC_SVR) | 0x100); // 0x1FF or 0x100 ?
+        this->Write(APIC_SVR, this->Read(APIC_SVR) | 0x100); // 0x1FF or 0x100 ? on https://wiki.osdev.org/APIC is 0x100
 
         if (!x2APICSupported)
         {

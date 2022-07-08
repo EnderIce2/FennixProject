@@ -53,10 +53,10 @@ void init_tss()
     gdt.Entries->TaskStateSegment.Flags1 = 0b10001001;
     gdt.Entries->TaskStateSegment.Flags2 = 0b00000000;
     (&tss[0])->IOMapBaseAddressOffset = sizeof(TaskStateSegment);
-    (&tss[0])->StackPointer[0] = (uint64_t)RequestPage() + STACK_SIZE;
-    (&tss[0])->InterruptStackTable[0] = (uint64_t)RequestPage() + STACK_SIZE; // exceptions
-    (&tss[0])->InterruptStackTable[1] = (uint64_t)RequestPage() + STACK_SIZE; // nmi
-    (&tss[0])->InterruptStackTable[2] = (uint64_t)RequestPage() + STACK_SIZE; // page fault, double fault, general protection fault, etc...
+    (&tss[0])->StackPointer[0] = (uint64_t)RequestPage();
+    (&tss[0])->InterruptStackTable[0] = (uint64_t)RequestPage(); // exceptions
+    (&tss[0])->InterruptStackTable[1] = (uint64_t)RequestPage(); // nmi
+    (&tss[0])->InterruptStackTable[2] = (uint64_t)RequestPage(); // page fault, double fault, general protection fault, etc...
 
     ltr(GDT_TSS);
     asm volatile("mov %%rsp, %0" : "=r"((&tss[0])->StackPointer[0]));

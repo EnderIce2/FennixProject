@@ -21,7 +21,7 @@ namespace StackHeap
         // if (HeapBase >= KERNEL_STACK_HEAP_END)
         // {
         // warn("Stack heap is full.");
-        void *Address = (void *)((uint64_t)KernelAllocator.RequestPage() + STACK_SIZE);
+        void *Address = (void *)((uint64_t)KernelAllocator.RequestPage());
         if (User)
             KernelPageTableManager.MapMemory((void *)(Address), (void *)(Address), PTFlag::RW | PTFlag::US);
         debug("New stack allocated at %p", Address);

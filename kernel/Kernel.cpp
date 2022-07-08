@@ -48,7 +48,8 @@ EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
     init_pmm();
     init_vmm();
     init_kernelpml();
-    init_heap(AllocationAlgorithm::XallocV1);
+    // init_heap(AllocationAlgorithm::XallocV1);
+    init_heap(AllocationAlgorithm::LibAlloc11);
     bootparams = new GlobalBootParams;
     debug("bootparams is allocated at %p", bootparams);
     debug("bootparams framebuffer is allocated at %p", bootparams->Framebuffer);
@@ -197,33 +198,31 @@ void KernelTask()
     {
         CurrentDisplay->SetPrintColor(0xFC4444);
         printf("Failed to load /system/init process. The file is missing or corrupted.\n");
-        CPU_STOP;
+        CPU_HALT;
     }
     trace("End Of Kernel Task");
-    CPU_STOP;
+    if (CurrentTaskingMode != TaskingMode::Mono)
+        CPU_STOP;
 }
 
 void CheckSystemRequirements()
 {
-    bool Passed = true;
+#ifndef DEBUG
+    CurrentDisplay = new DisplayDriver::Display;
     if (!cpu_feature(CPUID_FEAT_RDX_TSC))
-        Passed = false;
+        panic("The current CPU doesn't support the minimum system requirements. (TSC)", true);
     if (!cpu_feature(CPUID_FEAT_RDX_SSE))
-        Passed = false;
+        panic("The current CPU doesn't support the minimum system requirements. (SSE)", true);
     if (!cpu_feature(CPUID_FEAT_RDX_UMIP))
-        Passed = false;
+        panic("The current CPU doesn't support the minimum system requirements. (UMIP)", true);
     if (!cpu_feature(CPUID_FEAT_RDX_SMEP))
-        Passed = false;
+        panic("The current CPU doesn't support the minimum system requirements. (SMEP)", true);
     if (!cpu_feature(CPUID_FEAT_RDX_SMAP))
-        Passed = false;
+        panic("The current CPU doesn't support the minimum system requirements. (SMAP)", true);
     if (!cpu_feature(CPUID_FEAT_RCX_RDRAND))
-        Passed = false;
-
-    if (!Passed)
-    {
-        CurrentDisplay = new DisplayDriver::Display;
-        panic("The current CPU doesn't support the minimum system requirements. (SSE, TSC, UMIP, SMEP, SMAP, RDRAND)", true);
-    }
+        panic("The current CPU doesn't support the minimum system requirements. (RDRAND)", true);
+    delete CurrentDisplay;
+#endif
 }
 
 /* I should make everything in C++ but I use code from older (failed) projects.
@@ -234,7 +233,7 @@ void KernelInit()
     trace("Early initialization completed.");
     TEST_TEST();
     do_libs_test();
-    do_mem_test();
+    // do_mem_test();
     initializeKernelFlags();
     CheckSystemRequirements();
     BS = new BootScreen::Screen;
@@ -261,9 +260,10 @@ void KernelInit()
     BS->IncreaseProgres();
     smp = new SymmetricMultiprocessing::SMP;
     BS->IncreaseProgres();
-    init_timer();
-    BS->IncreaseProgres();
     apic->RedirectIRQs();
+    BS->IncreaseProgres();
+    init_timer();
+    // do_interrupts_mem_test();
 
     do_stacktrace_test();
 
@@ -334,7 +334,6 @@ void KernelInit()
             CurrentDisplay->ResetPrintColor();
         }
 
-    // do_interrupts_mem_test();
     vfs = new FileSystem::Virtual;
     BS->Progress(50);
 
@@ -366,8 +365,8 @@ void KernelInit()
     ps2mouse = new PS2Mouse::PS2MouseDriver;
     BS->IncreaseProgres();
 
-    do_mem_test();
-    do_tasking_test();
+    // do_mem_test();
+    // do_tasking_test();
 
     // #ifndef TESTING
     if (sysflags->monotasking)

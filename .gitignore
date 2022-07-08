@@ -3,6 +3,7 @@ boot/UEFI/gnu-efi
 tools/*
 !tools/Makefile
 !tools/initrd.c
+!tools/pf.cpp
 initrd.tar.gz
 kernel/files/ter-powerline-v12n.psf
 kernel/files/zap-ext-light20.psf
