@@ -7,13 +7,16 @@ GCC_CROSS_TARGET=x86_64-elf
 
 QEMU_VERSION = qemu-7.0.0
 
-all: do_initrd do_limine do_binutils do_gcc do_qemu
+all: do_initrd do_pf do_limine do_binutils do_gcc do_qemu
 
 clean:
-	rm -f initrd.elf
+	rm -f initrd.elf pf.elf
 
 do_initrd:
 	gcc -w initrd.c -o initrd.elf
+
+do_pf:
+	g++ -w pf.cpp -o pf.elf
 
 do_qemu:
 	wget https://download.qemu.org/${QEMU_VERSION}.tar.xz && \
