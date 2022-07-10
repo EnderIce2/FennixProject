@@ -235,7 +235,6 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
             for (uint64_t i = 0; i < file->Node->Length / 0x1000 + 1; i++)
             {
                 KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
-                debug("Mapped %p", (void *)MappedAddrs);
                 MappedAddrs += PAGE_SIZE;
             }
 
