@@ -150,7 +150,6 @@ clean:
 ifeq ($(BOOTLOADER), lynx)
 	make --quiet -C boot clean
 endif
-	make --quiet -C tools clean
 	make --quiet -C kernel clean
 	make --quiet -C userspace clean
 	make --quiet -C libc clean
