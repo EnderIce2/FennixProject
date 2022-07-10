@@ -543,7 +543,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
            efer.SVME ? "True " : "False", efer.LMSLE ? "True " : "False", efer.FFXSR ? "True " : "False", efer.TCE ? "True " : "False",
            efer.Reserved0, efer.Reserved1, efer.Reserved2);
 
-    // restore debug registers
+    // restore debug registers (do i really have to do this?)
     asm volatile("movq %0, %%dr0"
                  :
                  : "r"(dr0));
