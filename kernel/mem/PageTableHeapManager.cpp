@@ -80,8 +80,9 @@ void init_kernelpml()
 
         for (uint64_t t = 0; t < earlyparams.mem.Size; t += PAGE_SIZE)
         {
-            KernelPageTableManager.MapMemory((void *)t, (void *)t, PTFlag::RW);
-            KernelPageTableManager.MapMemory((void *)VirtualOffsetNormalVMA, (void *)t, PTFlag::RW);
+            // TODO: remove US flag
+            KernelPageTableManager.MapMemory((void *)t, (void *)t, PTFlag::RW | US);
+            KernelPageTableManager.MapMemory((void *)VirtualOffsetNormalVMA, (void *)t, PTFlag::RW | US);
             VirtualOffsetNormalVMA += PAGE_SIZE;
         }
 
