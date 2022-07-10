@@ -231,11 +231,14 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
         {
             debug("64 bit ELF file found.");
 
-            uint64_t MappedAddrs = (uint64_t)FileBuffer;
-            for (uint64_t i = 0; i < file->Node->Length / 0x1000 + 1; i++)
+            if (Elevation == ELEVATION::User)
             {
-                KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
-                MappedAddrs += PAGE_SIZE;
+                uint64_t MappedAddrs = (uint64_t)FileBuffer;
+                for (uint64_t i = 0; i < file->Node->Length / 0x1000 + 1; i++)
+                {
+                    KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
+                    MappedAddrs += PAGE_SIZE;
+                }
             }
 
             Elf64_Phdr *pheader = (Elf64_Phdr *)(((char *)FileBuffer) + header->e_phoff);
@@ -248,11 +251,14 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
             }
             void *offset = KernelAllocator.RequestPages((uint64_t)addr / 0x1000 + 1);
 
-            uint64_t MappedAddrs1 = (uint64_t)offset;
-            for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
+            if (Elevation == ELEVATION::User)
             {
-                KernelPageTableManager.MapMemory((void *)MappedAddrs1, (void *)MappedAddrs1, PTFlag::RW | PTFlag::US);
-                MappedAddrs1 += PAGE_SIZE;
+                uint64_t MappedAddrs1 = (uint64_t)offset;
+                for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
+                {
+                    KernelPageTableManager.MapMemory((void *)MappedAddrs1, (void *)MappedAddrs1, PTFlag::RW | PTFlag::US);
+                    MappedAddrs1 += PAGE_SIZE;
+                }
             }
 
             pheader = (Elf64_Phdr *)(((char *)FileBuffer) + header->e_phoff);
