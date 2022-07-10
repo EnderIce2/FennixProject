@@ -41,11 +41,12 @@ NASMFLAGS := -f elf64
 # Disable all warnings by adding "-w" in WARNCFLAG and if you want to treat the warnings as errors, add "-Werror"
 WARNCFLAG = -Wall -Wextra -Wno-comment
 
+CFLAG_STACK_PROTECTOR := -fstack-protector-all
+
 # Change march with minimum supported cpu // https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html
 CFLAGS :=																\
 	-I$(INCLUDE_DIR) -I$(INCLUDE_DIR2)									\
 	-DKERNEL_NAME='"$(OSNAME)"' -DKERNEL_VERSION='"$(KERNEL_VERSION)"'	\
-	-fstack-protector-all												\
 	-fno-pic -fno-pie -mno-80387										\
 	-mno-80387 -mno-mmx -mno-3dnow -mno-red-zone -mno-sse -mno-sse2		\
 	-march=nehalem -pipe												\
@@ -71,13 +72,16 @@ build: $(KERNEL)
 
 $(KERNEL): $(OBJ)
 	$(CC) $(LDFLAGS) $(OBJ) -o $@
-
+# cpu/IDT.c
 %.o: %.c $(HEADERS) $(HEADERS2)
-	$(CC) $(CFLAGS) $(WARNCFLAG) $(CFLAGS) -std=c17 -c $< -o $@
+	$(CC) $(CFLAGS) $(CFLAG_STACK_PROTECTOR) $(WARNCFLAG) -std=c17 -c $< -o $@
+
+cpu/IDT.o: cpu/IDT.c $(HEADERS) $(HEADERS2)
+	$(CC) $(CFLAGS) $(WARNCFLAG) -fno-stack-protector -std=c17 -c $< -o $@
 
 # https://gcc.gnu.org/projects/cxx-status.html
 %.o: %.cpp $(HEADERS) $(HEADERS2)
-	$(CPP) $(CFLAGS) $(WARNCFLAG) $(CFLAGS) -std=c++20 -fexceptions -c $< -o $@ -fno-rtti
+	$(CPP) $(CFLAGS) $(CFLAG_STACK_PROTECTOR) $(WARNCFLAG) -std=c++20 -fexceptions -c $< -o $@ -fno-rtti
 
 %.o: %.asm
 	$(NASM) $< $(NASMFLAGS) -o $@

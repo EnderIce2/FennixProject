@@ -12,7 +12,7 @@
 #include <asm.h>
 #include <io.h>
 
-__attribute__((naked, used)) void exception_handler_helper()
+__attribute__((naked, used, no_stack_protector)) void exception_handler_helper()
 {
     // TODO: Switching page table if ring 0 is not tested! (source: https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm)
     asm("cld\n" // clear direction flag
@@ -135,11 +135,11 @@ exception_handler_:
     CPU_HALT;
 }
 
-#define EXCEPTION_HANDLER(num)                                   \
-    __attribute__((naked)) static void interrupt_handler_##num() \
-    {                                                            \
-        asm("pushq $0\npushq $" #num "\n"                        \
-            "jmp exception_handler_helper");                     \
+#define EXCEPTION_HANDLER(num)                                                       \
+    __attribute__((naked, no_stack_protector)) static void interrupt_handler_##num() \
+    {                                                                                \
+        asm("pushq $0\npushq $" #num "\n"                                            \
+            "jmp exception_handler_helper");                                         \
     }
 
 #define EXCEPTION_ERROR_HANDLER(num)                             \
@@ -151,7 +151,7 @@ exception_handler_:
 
 /* =============================================================================================================================================== */
 
-__attribute__((naked, used)) static void InterruptHandlerStub()
+__attribute__((naked, used, no_stack_protector)) static void InterruptHandlerStub()
 {
     asm("cld\n"
         "pushq %rax\n"
@@ -193,11 +193,11 @@ __attribute__((naked, used)) static void InterruptHandlerStub()
         "iretq");
 }
 
-#define INTERRUPT_HANDLER(num)                                  \
-    __attribute__((naked, used)) void interrupt_handler_##num() \
-    {                                                           \
-        asm("pushq $0\npushq $" #num "\n"                       \
-            "jmp InterruptHandlerStub\n");                      \
+#define INTERRUPT_HANDLER(num)                                                      \
+    __attribute__((naked, used, no_stack_protector)) void interrupt_handler_##num() \
+    {                                                                               \
+        asm("pushq $0\npushq $" #num "\n"                                           \
+            "jmp InterruptHandlerStub\n");                                          \
     }
 
 INTERRUPT_HANDLER interrupt_handlers[256];
@@ -301,10 +301,10 @@ INTERRUPT_HANDLER(0x2d)
 INTERRUPT_HANDLER(0x2e)
 INTERRUPT_HANDLER(0x2f)
 
-__attribute__((naked, used)) void interrupt_handler_0x30() { asm("pushq $0\npushq $0x30\n"
-                                                                 "jmp MultiTaskingSchedulerHelper"); }
-__attribute__((naked, used)) void interrupt_handler_0x31() { asm("pushq $0\npushq $0x31\n"
-                                                                 "jmp MonoTaskingSchedulerHelper"); }
+__attribute__((naked, used, no_stack_protector)) void interrupt_handler_0x30() { asm("pushq $0\npushq $0x30\n"
+                                                                                     "jmp MultiTaskingSchedulerHelper"); }
+__attribute__((naked, used, no_stack_protector)) void interrupt_handler_0x31() { asm("pushq $0\npushq $0x31\n"
+                                                                                     "jmp MonoTaskingSchedulerHelper"); }
 INTERRUPT_HANDLER(0x32)
 INTERRUPT_HANDLER(0x33)
 INTERRUPT_HANDLER(0x34)
