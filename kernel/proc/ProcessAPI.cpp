@@ -43,7 +43,9 @@ PCB *SysGetProcessByPID(uint64_t ID)
     {
     case TaskingMode::Mono:
     {
-        err("The current tasking mode does not support the request.");
+        static int once = 0;
+        if (!once++)
+            err("The current tasking mode does not support the request.");
         return nullpcb;
     }
     case TaskingMode::Multi:
@@ -73,7 +75,9 @@ TCB *SysGetThreadByTID(uint64_t ID)
     {
     case TaskingMode::Mono:
     {
-        err("The current tasking mode does not support the request.");
+        static int once = 0;
+        if (!once++)
+            err("The current tasking mode does not support the request.");
         return nulltcb;
     }
     case TaskingMode::Multi:
@@ -107,7 +111,9 @@ PCB *SysGetCurrentProcess()
     {
     case TaskingMode::Mono:
     {
-        err("The current tasking mode does not support the request.");
+        static int once = 0;
+        if (!once++)
+            err("The current tasking mode does not support the request.");
         return nullpcb;
     }
     case TaskingMode::Multi:
@@ -123,7 +129,9 @@ TCB *SysGetCurrentThread()
     {
     case TaskingMode::Mono:
     {
-        err("The current tasking mode does not support the request.");
+        static int once = 0;
+        if (!once++)
+            err("The current tasking mode does not support the request.");
         return nulltcb;
     }
     case TaskingMode::Multi:
@@ -139,7 +147,9 @@ PCB *SysCreateProcess(const char *Name, ELEVATION Elevation)
     {
     case TaskingMode::Mono:
     {
-        err("The current tasking mode does not support the request.");
+        static int once = 0;
+        if (!once++)
+            err("The current tasking mode does not support the request.");
         return nullpcb;
     }
     case TaskingMode::Multi:
@@ -155,7 +165,9 @@ TCB *SysCreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t arg0, ui
     {
     case TaskingMode::Mono:
     {
-        err("The current tasking mode does not support the request.");
+        static int once = 0;
+        if (!once++)
+            err("The current tasking mode does not support the request.");
         return nulltcb;
     }
     case TaskingMode::Multi:
@@ -218,6 +230,15 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
         if (header->e_ident[EI_CLASS] == ELFCLASS64)
         {
             debug("64 bit ELF file found.");
+
+            uint64_t MappedAddrs = (uint64_t)FileBuffer;
+            for (uint64_t i = 0; i < file->Node->Length / 0x1000 + 1; i++)
+            {
+                KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
+                debug("Mapped %p", (void *)MappedAddrs);
+                MappedAddrs += PAGE_SIZE;
+            }
+
             Elf64_Phdr *pheader = (Elf64_Phdr *)(((char *)FileBuffer) + header->e_phoff);
             void *addr;
             for (int i = 0; i < header->e_phnum; i++, pheader++)
@@ -227,6 +248,13 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
                 addr = (void *)((uint64_t)pheader->p_vaddr + pheader->p_memsz);
             }
             void *offset = KernelAllocator.RequestPages((uint64_t)addr / 0x1000 + 1);
+
+            uint64_t MappedAddrs1 = (uint64_t)offset;
+            for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
+            {
+                KernelPageTableManager.MapMemory((void *)MappedAddrs1, (void *)MappedAddrs1, PTFlag::RW | PTFlag::US);
+                MappedAddrs1 += PAGE_SIZE;
+            }
 
             pheader = (Elf64_Phdr *)(((char *)FileBuffer) + header->e_phoff);
             for (int i = 0; i < header->e_phnum; i++, pheader++)

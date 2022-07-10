@@ -70,7 +70,9 @@ extern "C" uint64_t syscall_handler(SyscallsRegs *regs)
     switch (SysGetCurrentThread()->Info.Platform)
     {
     case Platform::UnknownPlatform:
-        err("No platform is specified by the process? Guessing Native...");
+        static int once = 0;
+        if (!once++)
+            err("No platform is specified by the process? Guessing Native...");
         [[fallthrough]];
     case Platform::Native:
     {
