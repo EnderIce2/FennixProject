@@ -15,7 +15,11 @@ namespace ACPI
         for (uint64_t t = 0; t < ((ACPIHeader->Length - sizeof(ACPI::ACPIHeader)) / (XSDTSupported ? 8 : 4)); t++)
         {
             // Should I be concerned about unaligned memory access?
-            ACPI::ACPIHeader *SDTHdr = (ACPI::ACPIHeader *)(*(uint64_t *)((uint64_t)ACPIHeader + sizeof(ACPI::ACPIHeader) + (t * (XSDTSupported ? 8 : 4))));
+            ACPI::ACPIHeader *SDTHdr = nullptr;
+            if (XSDTSupported)
+                SDTHdr = (ACPI::ACPIHeader *)(*(uint64_t *)((uint64_t)ACPIHeader + sizeof(ACPI::ACPIHeader) + (t * 8)));
+            else
+                SDTHdr = (ACPI::ACPIHeader *)(*(uint32_t *)((uint64_t)ACPIHeader + sizeof(ACPI::ACPIHeader) + (t * 4)));
 
             for (uint64_t i = 0; i < 4; i++)
             {
@@ -104,6 +108,7 @@ namespace ACPI
         if (bootparams->rsdp->Revision >= 2 && bootparams->rsdp->XSDTAddress)
         {
             debug("XSDT supported");
+            XSDTSupported = true;
             XSDT = (ACPIHeader *)(bootparams->rsdp->XSDTAddress);
         }
         else
@@ -111,15 +116,13 @@ namespace ACPI
             debug("RSDT supported");
             XSDT = (ACPIHeader *)(uintptr_t)bootparams->rsdp->RSDTAddress;
         }
-        if (bootparams->rsdp->Revision >= 2 && bootparams->rsdp->XSDTAddress)
-            XSDTSupported = true;
 
         this->SearchTables(XSDT);
-    #ifdef UNIT_TESTS
+#ifdef UNIT_TESTS
         BS->DrawVendorLogo(nullptr);
-    #else
+#else
         BS->DrawVendorLogo(BGRT);
-    #endif
+#endif
 
         outb(FADT->SMI_CommandPort, FADT->AcpiEnable);
         while (!(inw(FADT->PM1aControlBlock) & 1))
