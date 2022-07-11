@@ -102,7 +102,44 @@ jobs:
       with:
         languages: ${{ matrix.language }}
 
-  # Here should be build the project? Or it works without?
+    - name: Build1
+      run: sudo apt-get update && sudo apt-get install xorriso mtools genisoimage ovmf nasm doxygen make gcc-mingw-w64-x86-64 gcc-mingw-w64-i686 mingw-w64 build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo -y
+
+    - name: Cache cross Folder
+      id: cache-cross
+      uses: actions/cache@v3
+      with:
+        path: tools/cross
+        key: ${{ runner.os }}-cross-${{ hashFiles('tools/Makefile') }}
+
+    - name: Cache gnu-efi Folder
+      id: cache-gnuefi
+      uses: actions/cache@v3
+      with:
+        path: boot/UEFI/gnu-efi
+        key: ${{ runner.os }}-gnuefi-${{ hashFiles('boot/Makefile') }}
+
+    - name: Clone and Compile GNU Binutils
+      if: steps.cache-cross.outputs.cache-hit != 'true'
+      run: make tools_workflow2
+
+    - name: Clone and Compile GNU Compiler Collection
+      if: steps.cache-cross.outputs.cache-hit != 'true'
+      run: make tools_workflow3
+
+    - name: Get GNU-EFI source code and compile it
+      if: steps.cache-gnuefi.outputs.cache-hit != 'true'
+      run: make tools_workflow4
+
+    - name: Build Bootloader
+      run: |
+        make tools_workflow0
+        make tools_workflow1
+        make build_bootloader
+        make build_kernel
+        make build_libc
+        make build_userspace
+        make build_image
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
