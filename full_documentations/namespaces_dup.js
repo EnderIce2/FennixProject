@@ -1,0 +1,27 @@
+var namespaces_dup =
+[
+    [ "ACPI", "df/d22/namespaceACPI.html", null ],
+    [ "AHCI", "d6/d7c/namespaceAHCI.html", null ],
+    [ "anonymous_namespace{atomic.hpp}", "d4/d56/namespaceanonymous__namespace_02atomic_8hpp_03.html", null ],
+    [ "APIC", "d3/d88/namespaceAPIC.html", null ],
+    [ "BootScreen", "d9/deb/namespaceBootScreen.html", null ],
+    [ "CPUSpeed", "df/dc0/namespaceCPUSpeed.html", null ],
+    [ "Critical", "d6/d86/namespaceCritical.html", null ],
+    [ "DiskManager", "de/dd9/namespaceDiskManager.html", null ],
+    [ "DisplayDriver", "d1/d69/namespaceDisplayDriver.html", null ],
+    [ "Driver", "d1/d48/namespaceDriver.html", null ],
+    [ "FileSystem", "d6/df5/namespaceFileSystem.html", null ],
+    [ "Floppy", "d6/d87/namespaceFloppy.html", null ],
+    [ "Heap", "db/d18/namespaceHeap.html", null ],
+    [ "KernelSymbols", "d9/d45/namespaceKernelSymbols.html", null ],
+    [ "MonotonLib", "d7/dfa/namespaceMonotonLib.html", null ],
+    [ "PageTableHeap", "de/de6/namespacePageTableHeap.html", null ],
+    [ "PCI", "d0/d8f/namespacePCI.html", null ],
+    [ "PS2Keyboard", "d5/d22/namespacePS2Keyboard.html", null ],
+    [ "PS2Mouse", "d9/dbb/namespacePS2Mouse.html", null ],
+    [ "StackHeap", "dc/da6/namespaceStackHeap.html", null ],
+    [ "SymmetricMultiprocessing", "d0/d35/namespaceSymmetricMultiprocessing.html", null ],
+    [ "SystemRecovery", "dc/d52/namespaceSystemRecovery.html", null ],
+    [ "Tasking", "d9/d3e/namespaceTasking.html", null ],
+    [ "Xalloc", "dc/d0a/namespaceXalloc.html", null ]
+];

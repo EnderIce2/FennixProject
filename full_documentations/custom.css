@@ -1,0 +1,67 @@
+:root {
+    --primary-color: #00559f;
+    --primary-dark-color: #1982d2;
+    --primary-light-color: #4779ac;
+    --primary-lighter-color: #191e21;
+    --primary-lightest-color: #191a1c;
+
+    --box-shadow: 0 2px 10px 0 rgba(0,0,0,.35);
+
+    --odd-color: rgba(0,0,0,.1);
+
+    --menu-selected-background: rgba(0,0,0,.4);
+
+    --page-background-color: #1C1D1F;
+    --page-foreground-color: #d2dbde;
+    --page-secondary-foreground-color: #859399;
+    --separator-color: #000000;
+    --side-nav-background: #252628;
+
+    --code-background: #2a2c2f;
+
+    --tablehead-background: #2a2c2f;
+
+    --blockquote-background: #1f2022;
+    --blockquote-foreground: #77848a;
+
+    --warning-color: #b61825;
+    --warning-color-dark: #510a02;
+    --warning-color-darker: #f5b1aa;
+    --note-color: rgb(255, 183, 0);
+    --note-color-dark: #9f7300;
+    --note-color-darker: #fff6df;
+    --deprecated-color: rgb(88, 90, 96);
+    --deprecated-color-dark: #262e37;
+    --deprecated-color-darker: #a0a5b0;
+    --bug-color: rgb(248, 113, 0);
+    --bug-color-dark: #812a00;
+    --bug-color-darker: #ffd3be;
+}
+
+div.contents div.dyncontent img {
+    filter: hue-rotate(180deg) invert();
+}
+
+.iconfopen, .iconfclosed {
+    filter: hue-rotate(180deg) invert();
+}
+
+#nav-path li.navelem:after {
+    text-shadow: 3px 0 0 var(--separator-color), 8px 0 6px rgba(0,0,0,0.4);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(40, 40, 40);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
