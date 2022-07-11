@@ -8,6 +8,7 @@ on:
 
 jobs:
   compile:
+    name: Compile OS
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -81,6 +82,7 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
+    needs: compile
     permissions:
       actions: read
       contents: read
