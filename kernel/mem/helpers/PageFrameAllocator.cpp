@@ -16,6 +16,21 @@ bool Initialized = false;
 PageFrameAllocator KernelAllocator;
 uint64_t PageBitmapIndex = 0;
 
+#ifdef DEBUG
+static string MemTypeString[] =
+    {
+        "Error",           // 0
+        "Free",            // 1
+        "Reserved",        // 2
+        "Unusable",        // 3
+        "ACPIReclaimable", // 4
+        "ACPIMemoryNVS",   // 5
+        "Framebuffer",     // 6
+        "Kernel",          // 7
+        "Unknown"          // 8
+};
+#endif
+
 void PageFrameAllocator::ReadMemoryMap()
 {
     trace("reading memory map %d %d %#llx", earlyparams.mem.Entries, earlyparams.mem.Size, earlyparams.mem.memmap);
@@ -44,6 +59,10 @@ void PageFrameAllocator::ReadMemoryMap()
     // InitBitmap(BitmapSize, LargestFreeMemorySegment);
     InitBitmap(ALIGN_UP((MemorySize / 0x1000) / 8, 0x1000), LargestFreeMemorySegment);
     ReservePages(0, MemorySize / 4096 + 1);
+#ifdef DEBUG
+    for (uint64_t i = 0; i < earlyparams.mem.Entries; i++)
+        debug("%p %d\t\t%s", earlyparams.mem.memmap[i].PhysicalAddress, earlyparams.mem.memmap[i].Pages, MemTypeString[earlyparams.mem.memmap[i].Type]);
+#endif
     for (uint64_t i = 0; i < earlyparams.mem.Entries; i++)
         if (earlyparams.mem.memmap[i].Type == GBP_Free)
             UnreservePages((void *)earlyparams.mem.memmap[i].PhysicalAddress, earlyparams.mem.memmap[i].Pages);
@@ -77,7 +96,7 @@ void *PageFrameAllocator::RequestPage()
         return (void *)(PageBitmapIndex * 4096);
     }
     // TODO: Page Frame Swap to file
-    
+
     char buf[256] = {'\0'};
     sprintf_(buf, "Out of memory! (Free: %ldMB; Used: %ldMB; Reserved: %ldMB)", TO_MB(FreeMemory), TO_MB(UsedMemory), TO_MB(ReservedMemory));
     panic(buf, true);
