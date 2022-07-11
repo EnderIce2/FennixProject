@@ -12,6 +12,11 @@ void PageTableManager::MapMemory(void *VirtualAddress, void *PhysicalAddress, ui
 {
     PageMapIndexer indexer = PageMapIndexer((uint64_t)VirtualAddress);
     PageDirectoryEntry PDE;
+    if (!this->PML4)
+    {
+        err("PML4 is null!");
+        CPU_HALT;
+    }
     PDE = this->PML4->Entries[indexer.PDP_i];
     PageTable *PDP;
     if (!PDE.GetFlag(PTFlag::P))
