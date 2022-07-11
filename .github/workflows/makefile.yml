@@ -164,7 +164,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Doxygen
-        run: sudo apt-get install doxygen -y
+        run: sudo apt-get install doxygen make -y
+
+      - name: Generate Documentation
+        run: make doxygen
 
       - name: Deploy documentation
         uses: JamesIves/github-pages-deploy-action@v4
