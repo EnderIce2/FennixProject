@@ -169,6 +169,9 @@ jobs:
       - name: Generate Documentation
         run: make doxygen
 
+      - name: Copy GitHub Pages Website
+        run: cp -r tools/website/* doxygen-doc/
+
       - name: Deploy documentation
         uses: JamesIves/github-pages-deploy-action@v4
         with:
