@@ -64,8 +64,9 @@ void init_kernelpml()
         KernelPML4 = (PageTable *)KernelAllocator.RequestPage();
         if ((uint64_t)KernelPML4 != 0x100000)
         {
-            err("Kernel PML4 is not at 0x100000");
-            return;
+            // TODO: on pc-i440fx-6.2 (or only on gnome boxes and virtualbox? didn't tested enough) the first page is at 0x122000.
+            err("Kernel PML4 is at %#lx (expected 0x100000)", KernelPML4);
+            CPU_HALT;
         }
         memset(KernelPML4, 0, PAGE_SIZE);
         KernelPageTableManager = PageTableManager(KernelPML4);
