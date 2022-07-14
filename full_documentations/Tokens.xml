@@ -3097,26 +3097,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>cpu_vendor</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>db/d2a/CPUID_8c.html</Path>
-    <Anchor>a8aa5485b682285fe00145eefc26b0036</Anchor>
-    <DeclaredIn>CPUID.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>GetCPUInfo</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>db/d2a/CPUID_8c.html</Path>
-    <Anchor>accbe1b934ce4148d5505f57c776fd6d0</Anchor>
-    <DeclaredIn>CPUID.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>cpu_feature</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -3138,43 +3118,12 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>CPU_VENDOR</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-    <Anchor>aaf99efc07e96cb8aff32e1717e6e50e8</Anchor>
-    <Abstract>Char array that should be 12 or 13 characters.</Abstract>
-    <DeclaredIn>cpuid.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CPU_INFO</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-    <Anchor>a9bc04c1f5e2116264dea9e863f2b93ec</Anchor>
-    <DeclaredIn>cpuid.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>cpuid_string</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
     <Anchor>ab009ffb3020578bb96000663b00da2d6</Anchor>
-    <DeclaredIn>cpuid.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>cpu_vendor</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-    <Anchor>a8aa5485b682285fe00145eefc26b0036</Anchor>
     <DeclaredIn>cpuid.h</DeclaredIn>
   </Token>
   <Token>

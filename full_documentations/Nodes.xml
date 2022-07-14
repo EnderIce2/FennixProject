@@ -4061,38 +4061,6 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>_CPU_INFO</Name>
-            <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-            <Anchor>d7/d2d/struct__CPU__INFO</Anchor>
-            <Subnodes>
-             <Node>
-              <Name>architecture</Name>
-              <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-              <Anchor>aaf9c6fe1adc1eb6bd233dbb2a0f5ae52</Anchor>
-             </Node>
-             <Node>
-              <Name>feature</Name>
-              <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-              <Anchor>a89231ab166853cb34589c9c41bdf43e2</Anchor>
-             </Node>
-             <Node>
-              <Name>name</Name>
-              <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-              <Anchor>a1c5f988b80ac9e2e4c855f227691ff3b</Anchor>
-             </Node>
-             <Node>
-              <Name>temperature_sensor</Name>
-              <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-              <Anchor>aabac12b379b0f3994d880c5452d35ffe</Anchor>
-             </Node>
-             <Node>
-              <Name>vendor</Name>
-              <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-              <Anchor>a649c0465f895c266e8fa612820176dec</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
             <Name>_FILE</Name>
             <Path>d2/d4d/file_8h.html</Path>
             <Anchor>de/d3c/struct__FILE</Anchor>
@@ -7370,23 +7338,6 @@
             <Anchor>d2/d1b/structmultiboot__info_8____unnamed_____8____unnamed____</Anchor>
             <Subnodes>
              <Node>
-              <Name>framebuffer_palette_addr</Name>
-              <Path>d1/dc0/multiboot_8h.html</Path>
-              <Anchor>ab4a160c025f0db5470ddced0d2c99de3</Anchor>
-             </Node>
-             <Node>
-              <Name>framebuffer_palette_num_colors</Name>
-              <Path>d1/dc0/multiboot_8h.html</Path>
-              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>multiboot_info.__unnamed__.__unnamed__</Name>
-            <Path>d1/dc0/multiboot_8h.html</Path>
-            <Anchor>d2/d1b/structmultiboot__info_8____unnamed_____8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
               <Name>framebuffer_blue_field_position</Name>
               <Path>d1/dc0/multiboot_8h.html</Path>
               <Anchor>ace107d23f7f4af6fd8d969926c5c9d16</Anchor>
@@ -7415,6 +7366,23 @@
               <Name>framebuffer_red_mask_size</Name>
               <Path>d1/dc0/multiboot_8h.html</Path>
               <Anchor>a0d868424e2b703471e3d73c0a72bc75c</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>multiboot_info.__unnamed__.__unnamed__</Name>
+            <Path>d1/dc0/multiboot_8h.html</Path>
+            <Anchor>d2/d1b/structmultiboot__info_8____unnamed_____8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>framebuffer_palette_addr</Name>
+              <Path>d1/dc0/multiboot_8h.html</Path>
+              <Anchor>ab4a160c025f0db5470ddced0d2c99de3</Anchor>
+             </Node>
+             <Node>
+              <Name>framebuffer_palette_num_colors</Name>
+              <Path>d1/dc0/multiboot_8h.html</Path>
+              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -7814,6 +7782,23 @@
             <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
             <Subnodes>
              <Node>
+              <Name>framebuffer_palette</Name>
+              <Path>d5/dba/multiboot2_8h.html</Path>
+              <Anchor>ac7df1fdfee327da3c205ba9086e4802a</Anchor>
+             </Node>
+             <Node>
+              <Name>framebuffer_palette_num_colors</Name>
+              <Path>d5/dba/multiboot2_8h.html</Path>
+              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>multiboot_tag_framebuffer.__unnamed__.__unnamed__</Name>
+            <Path>d5/dba/multiboot2_8h.html</Path>
+            <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
               <Name>framebuffer_blue_field_position</Name>
               <Path>d5/dba/multiboot2_8h.html</Path>
               <Anchor>ace107d23f7f4af6fd8d969926c5c9d16</Anchor>
@@ -7842,23 +7827,6 @@
               <Name>framebuffer_red_mask_size</Name>
               <Path>d5/dba/multiboot2_8h.html</Path>
               <Anchor>a0d868424e2b703471e3d73c0a72bc75c</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>multiboot_tag_framebuffer.__unnamed__.__unnamed__</Name>
-            <Path>d5/dba/multiboot2_8h.html</Path>
-            <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
-              <Name>framebuffer_palette</Name>
-              <Path>d5/dba/multiboot2_8h.html</Path>
-              <Anchor>ac7df1fdfee327da3c205ba9086e4802a</Anchor>
-             </Node>
-             <Node>
-              <Name>framebuffer_palette_num_colors</Name>
-              <Path>d5/dba/multiboot2_8h.html</Path>
-              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -9873,6 +9841,23 @@
             <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
             <Subnodes>
              <Node>
+              <Name>bx</Name>
+              <Path>d1/dac/VMDetect_8c.html</Path>
+              <Anchor>a6f5770d50b01a0abbce803768d3592b0</Anchor>
+             </Node>
+             <Node>
+              <Name>size</Name>
+              <Path>d1/dac/VMDetect_8c.html</Path>
+              <Anchor>af7bd60b75b29d79b660a2859395c1a24</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>VMwareCMD.__unnamed__</Name>
+            <Path>d1/dac/VMDetect_8c.html</Path>
+            <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
               <Name>command</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
               <Anchor>a1dccadfed7bcbb036c56a4afb97e906f</Anchor>
@@ -9898,23 +9883,6 @@
               <Name>port</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
               <Anchor>a901555fb06e346cb065ceb9808dcfc25</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>VMwareCMD.__unnamed__</Name>
-            <Path>d1/dac/VMDetect_8c.html</Path>
-            <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
-              <Name>bx</Name>
-              <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>a6f5770d50b01a0abbce803768d3592b0</Anchor>
-             </Node>
-             <Node>
-              <Name>size</Name>
-              <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>af7bd60b75b29d79b660a2859395c1a24</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -13471,64 +13439,12 @@
                   <Path>db/d2a/CPUID_8c.html</Path>
                   <Anchor>af41b677d488d822ce064c534acf415fb</Anchor>
                  </Node>
-                 <Node>
-                  <Name>cpu_vendor</Name>
-                  <Path>db/d2a/CPUID_8c.html</Path>
-                  <Anchor>a8aa5485b682285fe00145eefc26b0036</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>GetCPUInfo</Name>
-                  <Path>db/d2a/CPUID_8c.html</Path>
-                  <Anchor>accbe1b934ce4148d5505f57c776fd6d0</Anchor>
-                 </Node>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>cpuid.h</Name>
                 <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
                 <Subnodes>
-                 <Node>
-                  <Name>_CPU_INFO</Name>
-                  <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-                  <Anchor>d7/d2d/struct__CPU__INFO</Anchor>
-                  <Subnodes>
-                   <Node>
-                    <Name>architecture</Name>
-                    <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-                    <Anchor>aaf9c6fe1adc1eb6bd233dbb2a0f5ae52</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>feature</Name>
-                    <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-                    <Anchor>a89231ab166853cb34589c9c41bdf43e2</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>name</Name>
-                    <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-                    <Anchor>a1c5f988b80ac9e2e4c855f227691ff3b</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>temperature_sensor</Name>
-                    <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-                    <Anchor>aabac12b379b0f3994d880c5452d35ffe</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>vendor</Name>
-                    <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-                    <Anchor>a649c0465f895c266e8fa612820176dec</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>CPU_INFO</Name>
-                  <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-                  <Anchor>a9bc04c1f5e2116264dea9e863f2b93ec</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>CPU_VENDOR</Name>
-                  <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-                  <Anchor>aaf99efc07e96cb8aff32e1717e6e50e8</Anchor>
-                 </Node>
                  <Node>
                   <Name>cpuid_requests</Name>
                   <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
@@ -13590,11 +13506,6 @@
                   <Name>cpu_get_info</Name>
                   <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
                   <Anchor>ad1af2b013dd94f94350f774cdd089648</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>cpu_vendor</Name>
-                  <Path>d6/d2d/cpu_2cpuid_8h.html</Path>
-                  <Anchor>a8aa5485b682285fe00145eefc26b0036</Anchor>
                  </Node>
                  <Node>
                   <Name>cpuid_string</Name>
