@@ -21,21 +21,6 @@ enum cpuid_requests
 
 // https://wiki.osdev.org/CPUID
 
-/**
- * @brief Char array that should be 12 or 13 characters
- *
- */
-typedef char *CPU_VENDOR;
-
-typedef struct _CPU_INFO
-{
-    CPU_VENDOR vendor;
-    char *name;
-    int architecture;
-    bool temperature_sensor;
-    enum CPU_FEATURE feature;
-} CPU_INFO;
-
 static inline int cpuid_string(int code, int where[4])
 {
     asm volatile("cpuid"
@@ -45,7 +30,6 @@ static inline int cpuid_string(int code, int where[4])
     return (int)where[0];
 }
 
-CPU_VENDOR cpu_vendor();
 /**
  * @brief Check if the specified CPU feature is supported.
  *

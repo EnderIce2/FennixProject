@@ -3,76 +3,6 @@
 #include <string.h>
 #include <heap.h>
 
-CPU_VENDOR cpu_vendor()
-{
-    CPU_VENDOR res = (char *)kmalloc(sizeof(12));
-    cpuid_string(0, (int *)(res));
-    return res;
-}
-
-CPU_INFO *GetCPUInfo()
-{
-    CPU_INFO *info = NULL;
-    uint32_t rax, rbx, rcx, rdx;
-    uint32_t func;
-    info->vendor = cpu_vendor();
-    cpuid(0x80000000, &func, &rbx, &rcx, &rdx);
-    if (func >= 0x80000004)
-    {
-        char name_cpuid[48];
-        cpuid(0x80000002, (uint32_t *)(name_cpuid + 0), (uint32_t *)(name_cpuid + 4), (uint32_t *)(name_cpuid + 8), (uint32_t *)(name_cpuid + 12));
-        cpuid(0x80000003, (uint32_t *)(name_cpuid + 16), (uint32_t *)(name_cpuid + 20), (uint32_t *)(name_cpuid + 24), (uint32_t *)(name_cpuid + 28));
-        cpuid(0x80000004, (uint32_t *)(name_cpuid + 32), (uint32_t *)(name_cpuid + 36), (uint32_t *)(name_cpuid + 40), (uint32_t *)(name_cpuid + 44));
-        char *space = name_cpuid;
-        while (*space == ' ')
-        {
-            ++space;
-        }
-        info->name = space;
-    }
-    else
-    {
-        info->name = "Unknown";
-    }
-    if (func >= 0x80000001)
-    {
-        cpuid(0x80000001, &rax, &rbx, &rcx, &rdx);
-        if (rdx & CPUID_FEAT_LONG_MODE)
-        {
-            info->architecture = 64;
-        }
-        else
-        {
-            info->architecture = 32;
-        }
-    }
-    else
-    {
-        info->architecture = 0;
-    }
-    // TODO: add multiple sensor detections
-    if (func >= 0x80000007)
-    {
-        info->temperature_sensor = true;
-    }
-    else
-    {
-        info->temperature_sensor = false;
-    }
-    cpuid(0x01, &rax, &rbx, &rcx, &rdx);
-    for (enum CPU_FEATURE i = CPUID_FEAT_RCX_SSE3; i < CPUID_FEAT_RCX_RDRAND; i++)
-    {
-        if (rcx & i)
-            info->feature = i; // TODO: this really works???????
-    }
-    for (enum CPU_FEATURE i = CPUID_FEAT_RDX_FPU; i < CPUID_FEAT_RDX_PBE; i++)
-    {
-        if (rdx & i)
-            info->feature = i; // TODO: this really works???????
-    }
-    return 0;
-}
-
 bool cpu_feature(enum CPU_FEATURE feature)
 {
     uint32_t rax, rbx, rcx, rdx;
@@ -87,7 +17,9 @@ char *cpu_get_info()
     static char res[512] = "\0";
     uint32_t rax, rbx, rcx, rdx;
     strcat(res, "CPU Vendor: ");
-    strcat(res, cpu_vendor());
+    static char cpu_vendor[12] = "\0";
+    cpuid_string(0, (int *)(cpu_vendor));
+    strcat(res, cpu_vendor);
     uint32_t func;
     cpuid(0x80000000, &func, &rbx, &rcx, &rdx);
     strcat(res, "\nCPU Name: ");
