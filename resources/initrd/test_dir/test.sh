@@ -1,3 +1,5 @@
+#!/bin/bash
+
 for i in {1..2048}
 do
    touch $i.txt
