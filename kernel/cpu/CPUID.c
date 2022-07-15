@@ -17,7 +17,7 @@ char *cpu_get_info()
     static char res[512] = "\0";
     uint32_t rax, rbx, rcx, rdx;
     strcat(res, "CPU Vendor: ");
-    static char cpu_vendor[12] = "\0";
+    static char cpu_vendor[16] = "\0";
     cpuid_string(0, (int *)(cpu_vendor));
     strcat(res, cpu_vendor);
     uint32_t func;
