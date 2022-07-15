@@ -53,7 +53,7 @@ namespace DisplayDriver
                 err("Font2 magic mismatch.");
 
             PSF2Font->Header = font2;
-            PSF2Font->GlyphBuffer = (Start + sizeof(PSF2_HEADER));
+            PSF2Font->GlyphBuffer = reinterpret_cast<void *>(reinterpret_cast<uint64_t>(Start) + sizeof(PSF2_HEADER));
             KernelAllocator.FreePages(font2, FontDataLength / 4096 + 1);
         }
         else if (Type == FontType::PCScreenFont1)
@@ -65,7 +65,7 @@ namespace DisplayDriver
             uint32_t glyphBufferSize = font1->charsize * 256;
             if (font1->mode == 1) // 512 glyph mode
                 glyphBufferSize = font1->charsize * 512;
-            void *glyphBuffer = (Start + sizeof(PSF1_HEADER));
+            void *glyphBuffer = reinterpret_cast<void *>(reinterpret_cast<uint64_t>(Start) + sizeof(PSF1_HEADER));
             PSF1Font->Header = font1;
             PSF1Font->GlyphBuffer = glyphBuffer;
             UNUSED(glyphBufferSize); // TODO: Use this in the future?
