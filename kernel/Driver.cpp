@@ -140,14 +140,14 @@ namespace Driver
             // KernelAllocator.FreePages(DriverBuffer, Node->Length / 0x1000 + 1);
 
             Elf64_Shdr shstrtab;
-            memcpy(&shstrtab, (void *)((uint64_t)DriverBuffer + (header->e_shoff + header->e_shstrndx * header->e_shentsize)), sizeof(Elf64_Shdr));
+            memcpy(&shstrtab, (void *)((uint64_t)DriverBuffer + (header->e_shoff + static_cast<uint64_t>(header->e_shstrndx) * header->e_shentsize)), sizeof(Elf64_Shdr));
             char *names = (char *)kmalloc(shstrtab.sh_size);
             memcpy(names, (void *)((uint64_t)DriverBuffer + (shstrtab.sh_offset)), shstrtab.sh_size);
 
             for (uint16_t i = 0; i < header->e_shnum; i++)
             {
                 struct elf64_shdr section;
-                memcpy(&section, (void *)((uint64_t)DriverBuffer + (header->e_shoff + i * header->e_shentsize)), sizeof(elf64_shdr));
+                memcpy(&section, (void *)((uint64_t)DriverBuffer + (header->e_shoff + (uint64_t)i * header->e_shentsize)), sizeof(elf64_shdr));
                 if (!strcmp(&names[section.sh_name], ".driverdata"))
                 {
                     kfree(names);

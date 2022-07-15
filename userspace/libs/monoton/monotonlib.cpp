@@ -95,8 +95,8 @@ namespace MonotonLib
     void mtl::Scroll()
     {
         memmove((void *)FB.Address,
-                (void *)(FB.Address + FB.Width * PSF2Font->Header->height * 4),
-                FB.Width * (FB.Height - PSF2Font->Header->height) * 4);
+                (void *)(FB.Address + static_cast<uint64_t>(FB.Width) * PSF2Font->Header->height * 4),
+                static_cast<uint64_t>(FB.Width) * (FB.Height - PSF2Font->Header->height) * 4);
     }
 
     void mtl::RemoveChar()

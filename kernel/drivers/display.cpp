@@ -118,7 +118,7 @@ namespace DisplayDriver
         delete CurrentFont;
     }
 
-    void Display::Scroll() { memmove((void *)framebuffer->Address, (void *)(framebuffer->Address + framebuffer->Width * CurrentFont->GetFontSize().Height * 4), framebuffer->Width * (framebuffer->Height - CurrentFont->GetFontSize().Height) * 4); }
+    void Display::Scroll() { memmove((void *)framebuffer->Address, (void *)(framebuffer->Address + framebuffer->Width * CurrentFont->GetFontSize().Height * 4), static_cast<uint64_t>(framebuffer->Width) * (framebuffer->Height - CurrentFont->GetFontSize().Height) * 4); }
 
     char Display::KernelPrint(char Char)
     {

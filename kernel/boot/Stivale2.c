@@ -139,7 +139,7 @@ bool init_stivale2(struct stivale2_struct *bootloaderdata, GlobalBootParams *par
     params->HigherHalf = true;
     struct stivale2_struct_tag_framebuffer *fb = (struct stivale2_struct_tag_framebuffer *)tag_framebuffer;
     params->Framebuffer.BaseAddress = fb->framebuffer_addr;
-    params->Framebuffer.BufferSize = fb->framebuffer_pitch * fb->framebuffer_height;
+    params->Framebuffer.BufferSize = (uint64_t)fb->framebuffer_pitch * fb->framebuffer_height;
     params->Framebuffer.Width = fb->framebuffer_width;
     params->Framebuffer.Height = fb->framebuffer_height;
     params->Framebuffer.PixelsPerScanLine = fb->framebuffer_pitch / 4;
