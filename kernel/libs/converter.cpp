@@ -33,7 +33,7 @@ const char *u64ToHexString(uint64_t Value)
     uint8_t Temp;
     uint8_t Size = 8 * 2 - 1;
     // for (uint8_t i = 0; i < Size; i++)
-    for (uint8_t i = 0; i < Size / 2 + 1; i++)
+    for (int i = 0; i < Size / 2 + 1; i++)
     {
         Ptr = ((uint8_t *)ValuePtr + i);
         Temp = ((*Ptr & 0xF0) >> 4);

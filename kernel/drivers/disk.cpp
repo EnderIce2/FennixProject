@@ -77,10 +77,10 @@ namespace DiskManager
             drive->Style = GPT;
             uint32_t Entries = 512 / drive->Table.GPT.EntrySize;
             uint32_t Sectors = drive->Table.GPT.PartCount / Entries;
-            for (uint8_t Block = 0; Block < Sectors; Block++)
+            for (uint32_t Block = 0; Block < Sectors; Block++)
             {
                 Port->ReadWrite(2 + Block, 1, drive->Buffer, false);
-                for (uint8_t e = 0; e < Entries; e++)
+                for (uint32_t e = 0; e < Entries; e++)
                 {
                     GUIDPartitionTablePartition GPTPartition = reinterpret_cast<GUIDPartitionTablePartition *>(drive->Buffer)[e];
                     if (GPTPartition.TypeLow || GPTPartition.TypeHigh)
