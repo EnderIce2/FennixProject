@@ -38,7 +38,10 @@
 			"io.h": "c",
 			"int.h": "c",
 			"pit.h": "c",
-			"types.h": "c"
+			"types.h": "c",
+			"efilib.h": "c",
+			"efi.h": "c",
+			"fileloader.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}

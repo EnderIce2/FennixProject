@@ -1,3 +1,4 @@
+include ../../Makefile.conf
 
 NAME=efi-loader.bin
 CC = gcc

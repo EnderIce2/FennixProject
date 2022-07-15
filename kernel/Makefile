@@ -46,7 +46,8 @@ CFLAG_STACK_PROTECTOR := -fstack-protector-all
 # Change march with minimum supported cpu // https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html
 CFLAGS :=																\
 	-I$(INCLUDE_DIR) -I$(INCLUDE_DIR2)									\
-	-DKERNEL_NAME='"$(OSNAME)"' -DKERNEL_VERSION='"$(KERNEL_VERSION)"'	\
+	-DKERNEL_NAME='"$(OSNAME)"' 										\
+	-DKERNEL_VERSION='"$(KERNEL_VERSION)"'								\
 	-fno-pic -fno-pie -mno-80387										\
 	-mno-80387 -mno-mmx -mno-3dnow -mno-red-zone -mno-sse -mno-sse2		\
 	-march=nehalem -pipe												\
@@ -72,7 +73,7 @@ build: $(KERNEL)
 
 $(KERNEL): $(OBJ)
 	$(CC) $(LDFLAGS) $(OBJ) -o $@
-# cpu/IDT.c
+
 %.o: %.c $(HEADERS) $(HEADERS2)
 	$(CC) $(CFLAGS) $(CFLAG_STACK_PROTECTOR) $(WARNCFLAG) -std=c17 -c $< -o $@
 

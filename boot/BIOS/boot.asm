@@ -6,7 +6,7 @@ start:
     nop
 
 times 8-($-$$) db 0
-    ;   Boot Information Table
+    ; Boot Information Table
     bi_PrimaryVolumeDescriptor      dd 0 ; LBA of the Primary Volume Descriptor
     bi_BootFileLocation             dd 0 ; LBA of the Boot File
     bi_BootFileLength               dd 0 ; Length of the boot file in bytes
@@ -36,4 +36,4 @@ NextChar:
 Exit:
     ret
 
-UnsupportedString db "BIOS boot is not supported.",0 
+UnsupportedString db "BIOS boot is not supported.", 0 
