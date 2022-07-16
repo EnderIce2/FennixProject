@@ -13,6 +13,7 @@ var annotated_dup =
     [ "_DriverBind.__unnamed__.Process", "db/de4/driver_8h.html#d0/d1c/struct__DriverBind_8____unnamed_____8Process", "db/de4/driver_8h_d0/d1c/struct__DriverBind_8____unnamed_____8Process" ],
     [ "_DriverDefinition", "db/de4/driver_8h.html#dc/def/struct__DriverDefinition", "db/de4/driver_8h_dc/def/struct__DriverDefinition" ],
     [ "_FILE", "d2/d4d/file_8h.html#de/d3c/struct__FILE", "d2/d4d/file_8h_de/d3c/struct__FILE" ],
+    [ "_File", "d2/d6e/syscalls_8h.html#d6/dbc/struct__File", "d2/d6e/syscalls_8h_d6/dbc/struct__File" ],
     [ "_GBPRSDP", "d3/d41/gbp_8h.html#d4/d44/struct__GBPRSDP", "d3/d41/gbp_8h_d4/d44/struct__GBPRSDP" ],
     [ "_GlobalBootParams", "d3/d41/gbp_8h.html#da/da6/struct__GlobalBootParams", "d3/d41/gbp_8h_da/da6/struct__GlobalBootParams" ],
     [ "_GlobalDescriptorTableDescriptor", "d1/d57/cputables_8h.html#dd/df8/struct__GlobalDescriptorTableDescriptor", "d1/d57/cputables_8h_dd/df8/struct__GlobalDescriptorTableDescriptor" ],

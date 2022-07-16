@@ -113,7 +113,7 @@ var searchData=
   ['_5fdebugmessage_110',['_DebugMessage',['../d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda72d74f32cb7226e96b077d3873cd7912',1,'syscalls.h']]],
   ['_5fdefault_5fval_111',['_default_val',['../db/d16/debug_8h.html#afa15f519d43f35f35676db4d1adee122a8b37bb62d941ab94e65a4a385c63db0d',1,'debug.h']]],
   ['_5ferr_112',['_err',['../db/d16/debug_8h.html#afa15f519d43f35f35676db4d1adee122acca09de6dbf43ebbc9d9fee56011e023',1,'debug.h']]],
-  ['_5ffile_113',['_FILE',['../d2/d4d/file_8h.html#de/d3c/struct__FILE',1,'']]],
+  ['_5ffile_113',['_FILE',['../d2/d4d/file_8h.html#de/d3c/struct__FILE',1,'_FILE'],['../d2/d6e/syscalls_8h.html#d6/dbc/struct__File',1,'_File']]],
   ['_5ffileclose_114',['_FileClose',['../d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda15e3975fb867399d1db643978b54eef7',1,'syscalls.h']]],
   ['_5ffilecreate_115',['_FileCreate',['../d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda5c47a221950c1bced7c4dff3ce415c80',1,'syscalls.h']]],
   ['_5ffiledelete_116',['_FileDelete',['../d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda5ccf55ab6fc6689e884b57278f1f4557',1,'syscalls.h']]],

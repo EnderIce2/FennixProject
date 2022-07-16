@@ -85,7 +85,7 @@ var searchData=
   ['green_5fmask_5fshift_1274',['green_mask_shift',['../de/d6b/structlimine__framebuffer.html#a3acea0b874c92b46cb2de5b8c8fa9cf1',1,'limine_framebuffer::green_mask_shift()'],['../d5/ddf/include_2boot_2protocols_2stivale2_8h.html#aabcaeb952b9bb892c2ca1aee67c86948',1,'stivale2_struct_tag_framebuffer::green_mask_shift()']]],
   ['green_5fmask_5fsize_1275',['green_mask_size',['../de/d6b/structlimine__framebuffer.html#ad2844bcfc736a1a8ea33892d273048e7',1,'limine_framebuffer::green_mask_size()'],['../d5/ddf/include_2boot_2protocols_2stivale2_8h.html#a5d473c9dad5b4a188582b36310498e94',1,'stivale2_struct_tag_framebuffer::green_mask_size()']]],
   ['group_1276',['group',['../d0/df0/classFileSystem_1_1USTAR.html#a016b8fbba10b7b1047897f846aa6f09e',1,'FileSystem::USTAR::FileHeader']]],
-  ['groupidentifier_1277',['GroupIdentifier',['../d6/df5/namespaceFileSystem.html#a0f704d8bf39664615c99f2215f3e57fe',1,'FileSystem::FileSystemNode']]],
+  ['groupidentifier_1277',['GroupIdentifier',['../d6/df5/namespaceFileSystem.html#a0f704d8bf39664615c99f2215f3e57fe',1,'FileSystem::FileSystemNode::GroupIdentifier()'],['../d2/d6e/syscalls_8h.html#a0d74ac8d8bede15d1ad924f86572bb45',1,'_File::GroupIdentifier()']]],
   ['gs_1278',['gs',['../d9/d3e/namespaceTasking.html#a16b576738e828e834c158ff4654cbf4d',1,'Tasking::TaskControlBlock']]],
   ['gsi_1279',['GSI',['../da/db9/classACPI_1_1MADT.html#ab7fa69180ff52b67e8f902a07ba40237',1,'ACPI::MADT::MADTIso::GSI()'],['../d1/d90/acpi_8hpp.html#a59fc67ad4352e63763e8828f55bf0001',1,'GSI():&#160;acpi.hpp']]],
   ['gsib_1280',['gsib',['../da/db9/classACPI_1_1MADT.html#a0616b43a73a7846033c7cd19c66e3112',1,'ACPI::MADT::MADTIOApic::gsib()'],['../d1/d90/acpi_8hpp.html#addfd7e17710854a065b0651980d7a5f5',1,'gsib():&#160;acpi.hpp']]],

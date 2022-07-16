@@ -93,11 +93,12 @@ $(document).ready(function(){initNavTree('d9/d76/Native_8cpp.html','../../'); in
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d0/d35/syscalls_8hpp_source.html">syscalls.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d8/dc0/security_8hpp_source.html">../security/security.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d2/d6e/syscalls_8h_source.html">../../libc/include/syscalls.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/dc0/security_8hpp_source.html">../security/security.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../dd/d39/keyboard_8hpp_source.html">../drivers/keyboard.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../dc/d43/mouse_8hpp_source.html">../drivers/mouse.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../db/d11/serial_8h_source.html">../drivers/serial.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d0/daa/kernel_8h_source.html">../kernel.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/dd0/timer_8h_source.html">../timer.h</a>&quot;</code><br />
 <code>#include &lt;<a class="el" href="../../d6/d75/internal__task_8h_source.html">internal_task.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>&gt;</code><br />
@@ -151,16 +152,16 @@ Functions</h2></td></tr>
 <tr class="separator:ac7d701cf7d29f13d19760f811d03ce7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a016399d3deea146c4d9931954bfb9195"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d76/Native_8cpp.html#a016399d3deea146c4d9931954bfb9195">internal_getlastkeyboardscancode</a> (<a class="el" href="../../d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2">SyscallsRegs</a> *regs)</td></tr>
 <tr class="separator:a016399d3deea146c4d9931954bfb9195"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23d9e4ce6ba9b0b2cf943cf794c16b68"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d76/Native_8cpp.html#a23d9e4ce6ba9b0b2cf943cf794c16b68">internal_fileOpen</a> (<a class="el" href="../../d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2">SyscallsRegs</a> *regs, char *Path)</td></tr>
-<tr class="separator:a23d9e4ce6ba9b0b2cf943cf794c16b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a032b75d2182b8523996b315459072b96"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d76/Native_8cpp.html#a032b75d2182b8523996b315459072b96">internal_fileClose</a> (<a class="el" href="../../d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2">SyscallsRegs</a> *regs, <a class="el" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a> *File)</td></tr>
-<tr class="separator:a032b75d2182b8523996b315459072b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0116c00692a33aa129a5fd9f435a84df"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d76/Native_8cpp.html#a0116c00692a33aa129a5fd9f435a84df">internal_fileRead</a> (<a class="el" href="../../d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2">SyscallsRegs</a> *regs, <a class="el" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a> *File, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Offset, void *Buffer, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Size)</td></tr>
-<tr class="separator:a0116c00692a33aa129a5fd9f435a84df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a730834bd5fcb80e49c78c07d3d984f54"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d76/Native_8cpp.html#a730834bd5fcb80e49c78c07d3d984f54">internal_fileWrite</a> (<a class="el" href="../../d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2">SyscallsRegs</a> *regs, <a class="el" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a> *File, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Offset, void *Buffer, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Size)</td></tr>
-<tr class="separator:a730834bd5fcb80e49c78c07d3d984f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a222b0a53b5d150cb7306ea88f7ed4b2f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d76/Native_8cpp.html#a222b0a53b5d150cb7306ea88f7ed4b2f">internal_filesize</a> (<a class="el" href="../../d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2">SyscallsRegs</a> *regs, <a class="el" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a> *File)</td></tr>
-<tr class="separator:a222b0a53b5d150cb7306ea88f7ed4b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc87d5c02f67f087945558b6c9a764c4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d76/Native_8cpp.html#acc87d5c02f67f087945558b6c9a764c4">internal_fileOpen</a> (<a class="el" href="../../d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2">SyscallsRegs</a> *regs, char *Path)</td></tr>
+<tr class="separator:acc87d5c02f67f087945558b6c9a764c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebe0b576627494b45a5e8fe2d6d4cdb2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d76/Native_8cpp.html#aebe0b576627494b45a5e8fe2d6d4cdb2">internal_fileClose</a> (<a class="el" href="../../d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2">SyscallsRegs</a> *regs, <a class="el" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a> *F)</td></tr>
+<tr class="separator:aebe0b576627494b45a5e8fe2d6d4cdb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae6bc1b61959cc3c3852101debe9701"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d76/Native_8cpp.html#adae6bc1b61959cc3c3852101debe9701">internal_fileRead</a> (<a class="el" href="../../d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2">SyscallsRegs</a> *regs, <a class="el" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a> *F, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Offset, void *Buffer, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Size)</td></tr>
+<tr class="separator:adae6bc1b61959cc3c3852101debe9701"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2edfc0199406bdab89c230ba79183052"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d76/Native_8cpp.html#a2edfc0199406bdab89c230ba79183052">internal_fileWrite</a> (<a class="el" href="../../d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2">SyscallsRegs</a> *regs, <a class="el" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a> *F, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Offset, void *Buffer, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Size)</td></tr>
+<tr class="separator:a2edfc0199406bdab89c230ba79183052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7783876516eb86aa9c5b9cadb270a7ea"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d76/Native_8cpp.html#a7783876516eb86aa9c5b9cadb270a7ea">internal_filesize</a> (<a class="el" href="../../d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2">SyscallsRegs</a> *regs, <a class="el" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a> *<a class="el" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a>)</td></tr>
+<tr class="separator:a7783876516eb86aa9c5b9cadb270a7ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68377bf36f19185f5351e037432f977d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d76/Native_8cpp.html#a68377bf36f19185f5351e037432f977d">internal_usleep</a> (<a class="el" href="../../d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2">SyscallsRegs</a> *regs, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> us)</td></tr>
 <tr class="separator:a68377bf36f19185f5351e037432f977d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b355cef718e0e87305f0c37c6294cf4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d76/Native_8cpp.html#a9b355cef718e0e87305f0c37c6294cf4">internal_dbg</a> (<a class="el" href="../../d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2">SyscallsRegs</a> *regs, int port, char *message)</td></tr>
@@ -190,25 +191,25 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00309">309</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;{</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">if</span> (RAX &gt; <span class="keyword">sizeof</span>(<a class="code" href="../../d9/d76/Native_8cpp.html#ad86490591a2b1dd70b5f10df0a3814f5">FennixSyscallsTable</a>))</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    {</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d9/d76/Native_8cpp.html#af1bc609d5ab66964d0f6a16130846176">internal_unimpl</a>(regs-&gt;<a class="code" href="../../d0/d35/syscalls_8hpp.html#a93b3d345fd404ed1c3c12396868ec5db">rax</a>, regs-&gt;<a class="code" href="../../d0/d35/syscalls_8hpp.html#abd4468b220aede53da28532ce69d8dca">rbx</a>, regs-&gt;<a class="code" href="../../d0/d35/syscalls_8hpp.html#a971daacb2b12468817960348c1510bab">rcx</a>, regs-&gt;<a class="code" href="../../d0/d35/syscalls_8hpp.html#a73bb92219f7f23ee470f72b7ade1eff9">rdx</a>, regs-&gt;<a class="code" href="../../d0/d35/syscalls_8hpp.html#a61cb6f52858053278a3595829628a8c5">rsi</a>, regs-&gt;<a class="code" href="../../d0/d35/syscalls_8hpp.html#ac5a0fecc9d3e0b25728648a21a8690a5">rdi</a>, regs-&gt;<a class="code" href="../../d0/d35/syscalls_8hpp.html#a6c466d3d7eb7249226436ce1e30636cb">rbp</a>);</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    }</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> (*call)(<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>, ...) = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> (*)(<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>, ...)<span class="keyword">&gt;</span>(<a class="code" href="../../d9/d76/Native_8cpp.html#ad86490591a2b1dd70b5f10df0a3814f5">FennixSyscallsTable</a>[RAX]);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">if</span> (!call)</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;Syscall %#llx failed.&quot;</span>, RAX);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#ace10381511c391a6154671a5360ad795">failedcall</a>;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    }</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> ret = call((<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)regs, RBX, RDX, RSI, RDI);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    RAX = ret;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00352">352</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;{</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keywordflow">if</span> (RAX &gt; <span class="keyword">sizeof</span>(<a class="code" href="../../d9/d76/Native_8cpp.html#ad86490591a2b1dd70b5f10df0a3814f5">FennixSyscallsTable</a>))</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d9/d76/Native_8cpp.html#af1bc609d5ab66964d0f6a16130846176">internal_unimpl</a>(regs-&gt;<a class="code" href="../../d0/d35/syscalls_8hpp.html#a93b3d345fd404ed1c3c12396868ec5db">rax</a>, regs-&gt;<a class="code" href="../../d0/d35/syscalls_8hpp.html#abd4468b220aede53da28532ce69d8dca">rbx</a>, regs-&gt;<a class="code" href="../../d0/d35/syscalls_8hpp.html#a971daacb2b12468817960348c1510bab">rcx</a>, regs-&gt;<a class="code" href="../../d0/d35/syscalls_8hpp.html#a73bb92219f7f23ee470f72b7ade1eff9">rdx</a>, regs-&gt;<a class="code" href="../../d0/d35/syscalls_8hpp.html#a61cb6f52858053278a3595829628a8c5">rsi</a>, regs-&gt;<a class="code" href="../../d0/d35/syscalls_8hpp.html#ac5a0fecc9d3e0b25728648a21a8690a5">rdi</a>, regs-&gt;<a class="code" href="../../d0/d35/syscalls_8hpp.html#a6c466d3d7eb7249226436ce1e30636cb">rbp</a>);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> (*call)(<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>, ...) = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> (*)(<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>, ...)<span class="keyword">&gt;</span>(<a class="code" href="../../d9/d76/Native_8cpp.html#ad86490591a2b1dd70b5f10df0a3814f5">FennixSyscallsTable</a>[RAX]);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keywordflow">if</span> (!call)</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    {</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;Syscall %#llx failed.&quot;</span>, RAX);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#ace10381511c391a6154671a5360ad795">failedcall</a>;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    }</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> ret = call((<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)regs, RBX, RDX, RSI, RDI);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    RAX = ret;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../db/d16/debug_8h_source.html#l00068">err</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00089">failedcall</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00256">FennixSyscallsTable</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00014">internal_unimpl()</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00016">_SyscallsRegs::rax</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00016">_SyscallsRegs::rbp</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00016">_SyscallsRegs::rbx</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00016">_SyscallsRegs::rcx</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00016">_SyscallsRegs::rdi</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00016">_SyscallsRegs::rdx</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00016">_SyscallsRegs::rsi</a>.</p>
+<p class="reference">References <a class="el" href="../../db/d16/debug_8h_source.html#l00068">err</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00089">failedcall</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00299">FennixSyscallsTable</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00015">internal_unimpl()</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00016">_SyscallsRegs::rax</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00016">_SyscallsRegs::rbp</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00016">_SyscallsRegs::rbx</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00016">_SyscallsRegs::rcx</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00016">_SyscallsRegs::rdi</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00016">_SyscallsRegs::rdx</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00016">_SyscallsRegs::rsi</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d1/de6/SystemCalls_8cpp_source.html#l00068">syscall_handler()</a>.</p>
 
@@ -260,13 +261,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00033">33</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: createprocess( %s %#llx %#llx )&quot;</span>, Path, arg0, arg1);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d75/internal__task_8h.html#aaaed5189c104c1e8b6acf162a61d3db8">SysCreateProcessFromFile</a>(Path, arg0, arg1, User)-&gt;ID;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00034">34</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: createprocess( %s %#llx %#llx )&quot;</span>, Path, arg0, arg1);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d75/internal__task_8h.html#aaaed5189c104c1e8b6acf162a61d3db8">SysCreateProcessFromFile</a>(Path, arg0, arg1, User)-&gt;ID;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, and <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00181">SysCreateProcessFromFile()</a>.</p>
 
@@ -324,13 +325,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00087">87</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: createtask( %#llx %#llx %#llx %s )&quot;</span>, rip, arg0, arg1, name);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="../../d9/d3e/namespaceTasking.html#da/d21/structTasking_1_1TaskControlBlock">Tasking::TaskControlBlock</a> *)<a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d9/d3e/namespaceTasking.html#af11988ae5ac332837099db072aa486e7">Tasking::monot</a>-&gt;<a class="code" href="../../d5/da2/classTasking_1_1Monotasking.html#a6b74d9c9ed758dbddef61ef3ff497ef0">CreateTask</a>(rip, arg0, arg1, name, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00088">88</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: createtask( %#llx %#llx %#llx %s )&quot;</span>, rip, arg0, arg1, name);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="../../d9/d3e/namespaceTasking.html#da/d21/structTasking_1_1TaskControlBlock">Tasking::TaskControlBlock</a> *)<a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d9/d3e/namespaceTasking.html#af11988ae5ac332837099db072aa486e7">Tasking::monot</a>-&gt;<a class="code" href="../../d5/da2/classTasking_1_1Monotasking.html#a6b74d9c9ed758dbddef61ef3ff497ef0">CreateTask</a>(rip, arg0, arg1, name, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html#l00195">Tasking::Monotasking::CreateTask()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html#l00016">Tasking::monot</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>.</p>
 
@@ -382,13 +383,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00041">41</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: createthread( %#llx %#llx %#llx )&quot;</span>, rip, arg0, arg1);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> (TCB *)<a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d75/internal__task_8h.html#a3e9463b4cc18e87fc111e5262f113bc7">SysCreateThread</a>(<a class="code" href="../../d6/d75/internal__task_8h.html#aba344b9066be19457df7e936aca3351c">SysGetCurrentProcess</a>(), rip, arg0, arg1);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00042">42</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: createthread( %#llx %#llx %#llx )&quot;</span>, rip, arg0, arg1);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> (TCB *)<a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d75/internal__task_8h.html#a3e9463b4cc18e87fc111e5262f113bc7">SysCreateThread</a>(<a class="code" href="../../d6/d75/internal__task_8h.html#aba344b9066be19457df7e936aca3351c">SysGetCurrentProcess</a>(), rip, arg0, arg1);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00162">SysCreateThread()</a>, and <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00108">SysGetCurrentProcess()</a>.</p>
 
@@ -434,14 +435,14 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00247">247</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;{</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: dbg( %d, %s )&quot;</span>, port, message);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <a class="code" href="../../d8/d90/serial_8c.html#a708b346863815b06e3ad626dcf621a0f">serial_write_text</a>(port, message);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00290">290</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;{</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: dbg( %d, %s )&quot;</span>, port, message);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <a class="code" href="../../d8/d90/serial_8c.html#a708b346863815b06e3ad626dcf621a0f">serial_write_text</a>(port, message);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d8/d90/serial_8c_source.html#l00056">serial_write_text()</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>.</p>
 
@@ -481,18 +482,18 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00020">20</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d75/internal__task_8h.html#a24b42fd6c165e22f3c4cc751efee137b">CurrentTaskingMode</a> == <a class="code" href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fa1b6b2929659177f6e04cdebdb6c80dab">TaskingMode::Mono</a>)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="../../d9/d3e/namespaceTasking.html#af11988ae5ac332837099db072aa486e7">Tasking::monot</a>-&gt;<a class="code" href="../../d5/da2/classTasking_1_1Monotasking.html#aca278385dfe53ca1b3e3bcdd82df0add">KillMe</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#a87de2fca12ef8f7205584b972c8b1f16">trace</a>(<span class="stringliteral">&quot;Userspace thread %s(%lld) exited with code %#llx&quot;</span>, <a class="code" href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">SysGetCurrentThread</a>()-&gt;Name, <a class="code" href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">SysGetCurrentThread</a>()-&gt;<a class="code" href="../../d4/d33/smp_8hpp.html#a3bd97f3df8bfa82b683821eeace4b3d6">ID</a>, code);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">SysGetCurrentThread</a>()-&gt;ExitCode = code;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">SysGetCurrentThread</a>()-&gt;Status = Terminated;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00021">21</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d75/internal__task_8h.html#a24b42fd6c165e22f3c4cc751efee137b">CurrentTaskingMode</a> == <a class="code" href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fa1b6b2929659177f6e04cdebdb6c80dab">TaskingMode::Mono</a>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="../../d9/d3e/namespaceTasking.html#af11988ae5ac332837099db072aa486e7">Tasking::monot</a>-&gt;<a class="code" href="../../d5/da2/classTasking_1_1Monotasking.html#aca278385dfe53ca1b3e3bcdd82df0add">KillMe</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#a87de2fca12ef8f7205584b972c8b1f16">trace</a>(<span class="stringliteral">&quot;Userspace thread %s(%lld) exited with code %#llx&quot;</span>, <a class="code" href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">SysGetCurrentThread</a>()-&gt;Name, <a class="code" href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">SysGetCurrentThread</a>()-&gt;<a class="code" href="../../d4/d33/smp_8hpp.html#a3bd97f3df8bfa82b683821eeace4b3d6">ID</a>, code);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">SysGetCurrentThread</a>()-&gt;ExitCode = code;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">SysGetCurrentThread</a>()-&gt;Status = Terminated;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00014">CurrentTaskingMode</a>, <a class="el" href="../../d4/d33/smp_8hpp_source.html#l00002">ID</a>, <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html#l00259">Tasking::Monotasking::KillMe()</a>, <a class="el" href="../../d6/d75/internal__task_8h_source.html#l00009">Mono</a>, <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html#l00016">Tasking::monot</a>, <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00126">SysGetCurrentThread()</a>, and <a class="el" href="../../db/d16/debug_8h_source.html#l00066">trace</a>.</p>
 
@@ -522,13 +523,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00155">155</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fbaddress()&quot;</span>);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d86/display_8cpp.html#aa2f1b53d110989bb09f7fc5d29709f71">CurrentDisplay</a>-&gt;GetFramebuffer()-&gt;Address;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00156">156</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fbaddress()&quot;</span>);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d86/display_8cpp.html#aa2f1b53d110989bb09f7fc5d29709f71">CurrentDisplay</a>-&gt;GetFramebuffer()-&gt;Address;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../db/d86/display_8cpp_source.html#l00026">CurrentDisplay</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>.</p>
 
@@ -558,13 +559,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00179">179</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fbheight()&quot;</span>);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d86/display_8cpp.html#aa2f1b53d110989bb09f7fc5d29709f71">CurrentDisplay</a>-&gt;GetFramebuffer()-&gt;Height;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00180">180</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fbheight()&quot;</span>);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d86/display_8cpp.html#aa2f1b53d110989bb09f7fc5d29709f71">CurrentDisplay</a>-&gt;GetFramebuffer()-&gt;Height;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../db/d86/display_8cpp_source.html#l00026">CurrentDisplay</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>.</p>
 
@@ -594,13 +595,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00187">187</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;{</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fbppsl()&quot;</span>);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d86/display_8cpp.html#aa2f1b53d110989bb09f7fc5d29709f71">CurrentDisplay</a>-&gt;GetFramebuffer()-&gt;PixelsPerScanLine;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00188">188</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;{</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fbppsl()&quot;</span>);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d86/display_8cpp.html#aa2f1b53d110989bb09f7fc5d29709f71">CurrentDisplay</a>-&gt;GetFramebuffer()-&gt;PixelsPerScanLine;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../db/d86/display_8cpp_source.html#l00026">CurrentDisplay</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>.</p>
 
@@ -630,13 +631,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00163">163</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;{</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fbsize()&quot;</span>);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d86/display_8cpp.html#aa2f1b53d110989bb09f7fc5d29709f71">CurrentDisplay</a>-&gt;GetFramebuffer()-&gt;Size;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00164">164</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fbsize()&quot;</span>);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d86/display_8cpp.html#aa2f1b53d110989bb09f7fc5d29709f71">CurrentDisplay</a>-&gt;GetFramebuffer()-&gt;Size;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../db/d86/display_8cpp_source.html#l00026">CurrentDisplay</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>.</p>
 
@@ -666,20 +667,20 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00171">171</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;{</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fbwidth()&quot;</span>);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d86/display_8cpp.html#aa2f1b53d110989bb09f7fc5d29709f71">CurrentDisplay</a>-&gt;GetFramebuffer()-&gt;Width;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00172">172</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;{</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fbwidth()&quot;</span>);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d86/display_8cpp.html#aa2f1b53d110989bb09f7fc5d29709f71">CurrentDisplay</a>-&gt;GetFramebuffer()-&gt;Width;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../db/d86/display_8cpp_source.html#l00026">CurrentDisplay</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>.</p>
 
 </div>
 </div>
-<a id="a032b75d2182b8523996b315459072b96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a032b75d2182b8523996b315459072b96">&#9670;&nbsp;</a></span>internal_fileClose()</h2>
+<a id="aebe0b576627494b45a5e8fe2d6d4cdb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebe0b576627494b45a5e8fe2d6d4cdb2">&#9670;&nbsp;</a></span>internal_fileClose()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -696,8 +697,8 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a> *&#160;</td>
-          <td class="paramname"><em>File</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a> *&#160;</td>
+          <td class="paramname"><em>F</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -712,20 +713,22 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00209">209</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fileClose( %p )&quot;</span>, File);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <a class="code" href="../../d3/d50/FileSystem_8cpp.html#aace8e8569f67aa3e86be6cefa47a71f7">vfs</a>-&gt;<a class="code" href="../../d0/d99/classFileSystem_1_1Virtual.html#abc41047ab325b1695bd9c22a076b0ccd">Close</a>(File);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00232">232</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;{</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fileClose( %p )&quot;</span>, F);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <a class="code" href="../../d2/d00/Kernel_8cpp.html#a4c013cc30022e7dd29dca340c6740648">UserAllocator</a>-&gt;<a class="code" href="../../d2/da8/classXalloc_1_1AllocatorV1.html#a8032bb777951367e8ffc13031fdb128b">Xstac</a>();</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <a class="code" href="../../d3/d50/FileSystem_8cpp.html#aace8e8569f67aa3e86be6cefa47a71f7">vfs</a>-&gt;<a class="code" href="../../d0/d99/classFileSystem_1_1Virtual.html#abc41047ab325b1695bd9c22a076b0ccd">Close</a>((<a class="code" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a> *)F-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#a9953c20fa947199f89224ef8df9cf5aa">Handle</a>);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <a class="code" href="../../d2/d00/Kernel_8cpp.html#a4c013cc30022e7dd29dca340c6740648">UserAllocator</a>-&gt;<a class="code" href="../../d2/da8/classXalloc_1_1AllocatorV1.html#a2400fd8f66e2dab7aee1bd8c9f4d2986">Xclac</a>();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00403">FileSystem::Virtual::Close()</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, and <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00021">vfs</a>.</p>
+<p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00403">FileSystem::Virtual::Close()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00211">_File::Handle</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00038">UserAllocator</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00021">vfs</a>, <a class="el" href="../../d8/d12/Xalloc_8hpp_source.html#l00113">Xalloc::AllocatorV1::Xclac()</a>, and <a class="el" href="../../d8/d12/Xalloc_8hpp_source.html#l00106">Xalloc::AllocatorV1::Xstac()</a>.</p>
 
 </div>
 </div>
-<a id="a23d9e4ce6ba9b0b2cf943cf794c16b68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23d9e4ce6ba9b0b2cf943cf794c16b68">&#9670;&nbsp;</a></span>internal_fileOpen()</h2>
+<a id="acc87d5c02f67f087945558b6c9a764c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc87d5c02f67f087945558b6c9a764c4">&#9670;&nbsp;</a></span>internal_fileOpen()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -734,7 +737,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a>* internal_fileOpen </td>
+          <td class="memname">static <a class="el" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a>* internal_fileOpen </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2">SyscallsRegs</a> *&#160;</td>
           <td class="paramname"><em>regs</em>, </td>
@@ -758,20 +761,42 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00201">201</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;{</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fileOpen( %s )&quot;</span>, Path);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a> *)<a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d3/d50/FileSystem_8cpp.html#aace8e8569f67aa3e86be6cefa47a71f7">vfs</a>-&gt;<a class="code" href="../../d0/d99/classFileSystem_1_1Virtual.html#a462e81b93784da517ef808b4c4a1cc6d">Open</a>(Path, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00202">202</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fileOpen( %s )&quot;</span>, Path);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">File</a> *)<a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">File</a> *f = (<a class="code" href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">File</a> *)<a class="code" href="../../d2/d00/Kernel_8cpp.html#a4c013cc30022e7dd29dca340c6740648">UserAllocator</a>-&gt;<a class="code" href="../../d2/da8/classXalloc_1_1AllocatorV1.html#a05ec1e250517a231d1c4ef2b72f330be">Malloc</a>(<span class="keyword">sizeof</span>(<a class="code" href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">File</a>));</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <a class="code" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a> *fo = <a class="code" href="../../d3/d50/FileSystem_8cpp.html#aace8e8569f67aa3e86be6cefa47a71f7">vfs</a>-&gt;<a class="code" href="../../d0/d99/classFileSystem_1_1Virtual.html#a462e81b93784da517ef808b4c4a1cc6d">Open</a>(Path, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <a class="code" href="../../d2/d00/Kernel_8cpp.html#a4c013cc30022e7dd29dca340c6740648">UserAllocator</a>-&gt;<a class="code" href="../../d2/da8/classXalloc_1_1AllocatorV1.html#a8032bb777951367e8ffc13031fdb128b">Xstac</a>();</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    f-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#ae07fb6f39a6bef7b383042d06ec2144a">Status</a> = <span class="keyword">static_cast&lt;</span><a class="code" href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40c">FileStatus</a><span class="keyword">&gt;</span>(fo-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#aa939a6d48cca46855f870b3163680e17">Status</a>);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <a class="code" href="../../d1/d69/kernel_2include_2string_8h.html#a992514d25cc10baafaac987c5852680c">memcpy</a>(f-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#a5f0c99bd95971306ea3bfc4f90556741">Name</a>, fo-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#ab952ea1d4056f584ee7f9ed1d9ea51f3">Name</a>, <span class="keyword">sizeof</span>(f-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#a5f0c99bd95971306ea3bfc4f90556741">Name</a>));</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">if</span> (fo)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        f-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#aa51be0c19313aa5fb2cc7ee2517f1f8a">IndexNode</a> = fo-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#ab937a636c170ccea021282ae104d3fd0">Node</a>-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#a36f250d7cd65f7b4d8a74361200ae9d6">IndexNode</a>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        f-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#aa5818e5d128547da03b28cd87a51dca6">Mask</a> = fo-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#ab937a636c170ccea021282ae104d3fd0">Node</a>-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#adbe65bc01d368886037f73f2a61905d2">Mask</a>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        f-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#ae650be3c2a352322477493b728898ad5">Mode</a> = fo-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#ab937a636c170ccea021282ae104d3fd0">Node</a>-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#ab8ec2e45904a9122af92052c4ddcfc03">Mode</a>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        f-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#aafb4e24f0f1e50917fa7af0e9bc36d91">Flags</a> = fo-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#ab937a636c170ccea021282ae104d3fd0">Node</a>-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#a457a01a68e5a92262e8fba071acecce5">Flags</a>;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        f-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#ab01b23adeadbfb02b41317e027867f81">UserIdentifier</a> = fo-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#ab937a636c170ccea021282ae104d3fd0">Node</a>-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#a575f911342ac4068ffbd2213fd2f2c0e">UserIdentifier</a>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        f-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#a0d74ac8d8bede15d1ad924f86572bb45">GroupIdentifier</a> = fo-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#ab937a636c170ccea021282ae104d3fd0">Node</a>-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#a0f704d8bf39664615c99f2215f3e57fe">GroupIdentifier</a>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        f-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#a531f06675796b2e51bc31cf9caf83dcb">Address</a> = fo-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#ab937a636c170ccea021282ae104d3fd0">Node</a>-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#ac7eec7e2fcdb79b87082842372bae65e">Address</a>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        f-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#a803298a4ae3a321c729013be5ccdaed9">Length</a> = fo-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#ab937a636c170ccea021282ae104d3fd0">Node</a>-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#acf0dbb0baa790ccf29cc3843d1fc62c5">Length</a>;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        f-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#a68a5cde2f650733c0b79f8fecf8e2fbc">Parent</a> = fo-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#ab937a636c170ccea021282ae104d3fd0">Node</a>-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#a82da203e43ed7e0eb53431ada71846fb">Parent</a>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        f-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#a0ba7748d16ae06bbd3971947207142c1">Operator</a> = fo-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#ab937a636c170ccea021282ae104d3fd0">Node</a>-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#ad519bbc0ce7d78da2c51693c61577079">Operator</a>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <a class="code" href="../../d2/d00/Kernel_8cpp.html#a4c013cc30022e7dd29dca340c6740648">UserAllocator</a>-&gt;<a class="code" href="../../d2/da8/classXalloc_1_1AllocatorV1.html#a2400fd8f66e2dab7aee1bd8c9f4d2986">Xclac</a>();</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">return</span> f;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00309">FileSystem::Virtual::Open()</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, and <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00021">vfs</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00101">FileSystem::FileSystemNode::Address</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00205">_File::Address</a>, <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00099">FileSystem::FileSystemNode::Flags</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00203">_File::Flags</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00100">FileSystem::FileSystemNode::GroupIdentifier</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00204">_File::GroupIdentifier</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00096">FileSystem::FileSystemNode::IndexNode</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00200">_File::IndexNode</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00102">FileSystem::FileSystemNode::Length</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00206">_File::Length</a>, <a class="el" href="../../d7/d4a/Xalloc_8cpp_source.html#l00070">Xalloc::AllocatorV1::Malloc()</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00097">FileSystem::FileSystemNode::Mask</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00201">_File::Mask</a>, <a class="el" href="../../d4/db5/String_8c_source.html#l00005">memcpy()</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00098">FileSystem::FileSystemNode::Mode</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00202">_File::Mode</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00115">FileSystem::FILE::Name</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00197">_File::Name</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00117">FileSystem::FILE::Node</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00309">FileSystem::Virtual::Open()</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00104">FileSystem::FileSystemNode::Operator</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00209">_File::Operator</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00103">FileSystem::FileSystemNode::Parent</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00208">_File::Parent</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00116">FileSystem::FILE::Status</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00198">_File::Status</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00038">UserAllocator</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00100">FileSystem::FileSystemNode::UserIdentifier</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00204">_File::UserIdentifier</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00021">vfs</a>, <a class="el" href="../../d8/d12/Xalloc_8hpp_source.html#l00113">Xalloc::AllocatorV1::Xclac()</a>, and <a class="el" href="../../d8/d12/Xalloc_8hpp_source.html#l00106">Xalloc::AllocatorV1::Xstac()</a>.</p>
 
 </div>
 </div>
-<a id="a0116c00692a33aa129a5fd9f435a84df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0116c00692a33aa129a5fd9f435a84df">&#9670;&nbsp;</a></span>internal_fileRead()</h2>
+<a id="adae6bc1b61959cc3c3852101debe9701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adae6bc1b61959cc3c3852101debe9701">&#9670;&nbsp;</a></span>internal_fileRead()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -788,8 +813,8 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a> *&#160;</td>
-          <td class="paramname"><em>File</em>, </td>
+          <td class="paramtype"><a class="el" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a> *&#160;</td>
+          <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -822,20 +847,23 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00217">217</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;{</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fileRead( %p, %#llx, %p, %#llx )&quot;</span>, File, Offset, Buffer, Size);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d3/d50/FileSystem_8cpp.html#aace8e8569f67aa3e86be6cefa47a71f7">vfs</a>-&gt;<a class="code" href="../../d0/d99/classFileSystem_1_1Virtual.html#a892dd91880c8a471c3b2d2ed21c3c42c">Read</a>(File, Offset, Buffer, Size);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00242">242</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;{</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fileRead( %p, %#llx, %p, %#llx )&quot;</span>, F, Offset, Buffer, Size);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <a class="code" href="../../d2/d00/Kernel_8cpp.html#a4c013cc30022e7dd29dca340c6740648">UserAllocator</a>-&gt;<a class="code" href="../../d2/da8/classXalloc_1_1AllocatorV1.html#a8032bb777951367e8ffc13031fdb128b">Xstac</a>();</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> ret = <a class="code" href="../../d3/d50/FileSystem_8cpp.html#aace8e8569f67aa3e86be6cefa47a71f7">vfs</a>-&gt;<a class="code" href="../../d0/d99/classFileSystem_1_1Virtual.html#a892dd91880c8a471c3b2d2ed21c3c42c">Read</a>((<a class="code" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a> *)F-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#a9953c20fa947199f89224ef8df9cf5aa">Handle</a>, Offset, Buffer, Size);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <a class="code" href="../../d2/d00/Kernel_8cpp.html#a4c013cc30022e7dd29dca340c6740648">UserAllocator</a>-&gt;<a class="code" href="../../d2/da8/classXalloc_1_1AllocatorV1.html#a2400fd8f66e2dab7aee1bd8c9f4d2986">Xclac</a>();</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00359">FileSystem::Virtual::Read()</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, and <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00021">vfs</a>.</p>
+<p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00211">_File::Handle</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00359">FileSystem::Virtual::Read()</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00038">UserAllocator</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00021">vfs</a>, <a class="el" href="../../d8/d12/Xalloc_8hpp_source.html#l00113">Xalloc::AllocatorV1::Xclac()</a>, and <a class="el" href="../../d8/d12/Xalloc_8hpp_source.html#l00106">Xalloc::AllocatorV1::Xstac()</a>.</p>
 
 </div>
 </div>
-<a id="a222b0a53b5d150cb7306ea88f7ed4b2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a222b0a53b5d150cb7306ea88f7ed4b2f">&#9670;&nbsp;</a></span>internal_filesize()</h2>
+<a id="a7783876516eb86aa9c5b9cadb270a7ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7783876516eb86aa9c5b9cadb270a7ea">&#9670;&nbsp;</a></span>internal_filesize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -852,7 +880,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a> *&#160;</td>
           <td class="paramname"><em>File</em>&#160;</td>
         </tr>
         <tr>
@@ -868,20 +896,23 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00233">233</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;{</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: filesize( %p )&quot;</span>, File);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">return</span> File-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#ab937a636c170ccea021282ae104d3fd0">Node</a>-&gt;<a class="code" href="../../d6/df5/namespaceFileSystem.html#acf0dbb0baa790ccf29cc3843d1fc62c5">Length</a>;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00264">264</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;{</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: filesize( %p )&quot;</span>, <a class="code" href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">File</a>);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <a class="code" href="../../d2/d00/Kernel_8cpp.html#a4c013cc30022e7dd29dca340c6740648">UserAllocator</a>-&gt;<a class="code" href="../../d2/da8/classXalloc_1_1AllocatorV1.html#a8032bb777951367e8ffc13031fdb128b">Xstac</a>();</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> ret = ((<a class="code" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a> *)<a class="code" href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">File</a>-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#a9953c20fa947199f89224ef8df9cf5aa">Handle</a>)-&gt;Node-&gt;Length;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <a class="code" href="../../d2/d00/Kernel_8cpp.html#a4c013cc30022e7dd29dca340c6740648">UserAllocator</a>-&gt;<a class="code" href="../../d2/da8/classXalloc_1_1AllocatorV1.html#a2400fd8f66e2dab7aee1bd8c9f4d2986">Xclac</a>();</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00102">FileSystem::FileSystemNode::Length</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00117">FileSystem::FILE::Node</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>.</p>
+<p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00211">_File::Handle</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00038">UserAllocator</a>, <a class="el" href="../../d8/d12/Xalloc_8hpp_source.html#l00113">Xalloc::AllocatorV1::Xclac()</a>, and <a class="el" href="../../d8/d12/Xalloc_8hpp_source.html#l00106">Xalloc::AllocatorV1::Xstac()</a>.</p>
 
 </div>
 </div>
-<a id="a730834bd5fcb80e49c78c07d3d984f54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a730834bd5fcb80e49c78c07d3d984f54">&#9670;&nbsp;</a></span>internal_fileWrite()</h2>
+<a id="a2edfc0199406bdab89c230ba79183052"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2edfc0199406bdab89c230ba79183052">&#9670;&nbsp;</a></span>internal_fileWrite()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -898,8 +929,8 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a> *&#160;</td>
-          <td class="paramname"><em>File</em>, </td>
+          <td class="paramtype"><a class="el" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a> *&#160;</td>
+          <td class="paramname"><em>F</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -932,15 +963,18 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00225">225</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;{</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fileWrite( %p, %#llx, %p, %#llx )&quot;</span>, File, Offset, Buffer, Size);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d3/d50/FileSystem_8cpp.html#aace8e8569f67aa3e86be6cefa47a71f7">vfs</a>-&gt;<a class="code" href="../../d0/d99/classFileSystem_1_1Virtual.html#a358be68a0a9062318506347a3d2f8613">Write</a>(File, Offset, Buffer, Size);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00253">253</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;{</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: fileWrite( %p, %#llx, %p, %#llx )&quot;</span>, F, Offset, Buffer, Size);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <a class="code" href="../../d2/d00/Kernel_8cpp.html#a4c013cc30022e7dd29dca340c6740648">UserAllocator</a>-&gt;<a class="code" href="../../d2/da8/classXalloc_1_1AllocatorV1.html#a8032bb777951367e8ffc13031fdb128b">Xstac</a>();</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> ret = <a class="code" href="../../d3/d50/FileSystem_8cpp.html#aace8e8569f67aa3e86be6cefa47a71f7">vfs</a>-&gt;<a class="code" href="../../d0/d99/classFileSystem_1_1Virtual.html#a358be68a0a9062318506347a3d2f8613">Write</a>((<a class="code" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a> *)F-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#a9953c20fa947199f89224ef8df9cf5aa">Handle</a>, Offset, Buffer, Size);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <a class="code" href="../../d2/d00/Kernel_8cpp.html#a4c013cc30022e7dd29dca340c6740648">UserAllocator</a>-&gt;<a class="code" href="../../d2/da8/classXalloc_1_1AllocatorV1.html#a2400fd8f66e2dab7aee1bd8c9f4d2986">Xclac</a>();</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00021">vfs</a>, and <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00381">FileSystem::Virtual::Write()</a>.</p>
+<p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00211">_File::Handle</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00038">UserAllocator</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00021">vfs</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00381">FileSystem::Virtual::Write()</a>, <a class="el" href="../../d8/d12/Xalloc_8hpp_source.html#l00113">Xalloc::AllocatorV1::Xclac()</a>, and <a class="el" href="../../d8/d12/Xalloc_8hpp_source.html#l00106">Xalloc::AllocatorV1::Xstac()</a>.</p>
 
 </div>
 </div>
@@ -978,15 +1012,15 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00121">121</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: freepage( %p )&quot;</span>, page);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="../../d2/ddc/PageFrameAllocator_8cpp.html#a27f255129e7d068084cc717639b02837">KernelAllocator</a>.FreePage(page);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.UnmapMemory(page);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.MapMemory(page, page, <a class="code" href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5aec2497e0c8af01c04bec31ec0d1d7847">PTFlag::RW</a>);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00122">122</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: freepage( %p )&quot;</span>, page);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="../../d2/ddc/PageFrameAllocator_8cpp.html#a27f255129e7d068084cc717639b02837">KernelAllocator</a>.FreePage(page);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.UnmapMemory(page);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.MapMemory(page, page, <a class="code" href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5aec2497e0c8af01c04bec31ec0d1d7847">PTFlag::RW</a>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/ddc/PageFrameAllocator_8cpp_source.html#l00016">KernelAllocator</a>, <a class="el" href="../../d8/d49/VirtualMemoryManager_8cpp_source.html#l00009">KernelPageTableManager</a>, <a class="el" href="../../da/ddb/heap_8h_source.html#l00180">RW</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>.</p>
 
@@ -1032,18 +1066,18 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00142">142</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;{</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: freepages( %p, %#llx )&quot;</span>, page, pages);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="../../d2/ddc/PageFrameAllocator_8cpp.html#a27f255129e7d068084cc717639b02837">KernelAllocator</a>.FreePages(page, pages);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> i = (<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)page; i &lt; ((<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)page + (pages * <a class="code" href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>)); i += <a class="code" href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>)</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.UnmapMemory((<span class="keywordtype">void</span> *)i);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.MapMemory((<span class="keywordtype">void</span> *)i, (<span class="keywordtype">void</span> *)i, <a class="code" href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5aec2497e0c8af01c04bec31ec0d1d7847">PTFlag::RW</a>);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00143">143</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: freepages( %p, %#llx )&quot;</span>, page, pages);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="../../d2/ddc/PageFrameAllocator_8cpp.html#a27f255129e7d068084cc717639b02837">KernelAllocator</a>.FreePages(page, pages);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> i = (<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)page; i &lt; ((<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)page + (pages * <a class="code" href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>)); i += <a class="code" href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>)</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.UnmapMemory((<span class="keywordtype">void</span> *)i);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.MapMemory((<span class="keywordtype">void</span> *)i, (<span class="keywordtype">void</span> *)i, <a class="code" href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5aec2497e0c8af01c04bec31ec0d1d7847">PTFlag::RW</a>);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/ddc/PageFrameAllocator_8cpp_source.html#l00016">KernelAllocator</a>, <a class="el" href="../../d8/d49/VirtualMemoryManager_8cpp_source.html#l00009">KernelPageTableManager</a>, <a class="el" href="../../da/ddb/heap_8h_source.html#l00153">PAGE_SIZE</a>, <a class="el" href="../../da/ddb/heap_8h_source.html#l00180">RW</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>.</p>
 
@@ -1073,13 +1107,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00049">49</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: getcurrentprocess()&quot;</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> (PCB *)<a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d75/internal__task_8h.html#aba344b9066be19457df7e936aca3351c">SysGetCurrentProcess</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00050">50</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: getcurrentprocess()&quot;</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> (PCB *)<a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d75/internal__task_8h.html#aba344b9066be19457df7e936aca3351c">SysGetCurrentProcess</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, and <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00108">SysGetCurrentProcess()</a>.</p>
 
@@ -1109,13 +1143,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00065">65</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: getcurrentprocessid()&quot;</span>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d75/internal__task_8h.html#aba344b9066be19457df7e936aca3351c">SysGetCurrentProcess</a>()-&gt;ID;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00066">66</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: getcurrentprocessid()&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d75/internal__task_8h.html#aba344b9066be19457df7e936aca3351c">SysGetCurrentProcess</a>()-&gt;ID;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, and <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00108">SysGetCurrentProcess()</a>.</p>
 
@@ -1145,13 +1179,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00057">57</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: getcurrentthread()&quot;</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> (TCB *)<a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">SysGetCurrentThread</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00058">58</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: getcurrentthread()&quot;</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">return</span> (TCB *)<a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">SysGetCurrentThread</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, and <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00126">SysGetCurrentThread()</a>.</p>
 
@@ -1181,13 +1215,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00073">73</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: getcurrentthreadid()&quot;</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">SysGetCurrentThread</a>()-&gt;ID;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00074">74</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: getcurrentthreadid()&quot;</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">SysGetCurrentThread</a>()-&gt;ID;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, and <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00126">SysGetCurrentThread()</a>.</p>
 
@@ -1217,11 +1251,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00195">195</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;{</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: getlastkeyboardscancode()&quot;</span>);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/df5/keyboard_8cpp.html#a1bc7e64f2142b1441fdbd2f8ceebd4c8">ps2keyboard</a>-&gt;<a class="code" href="../../d1/d4e/classPS2Keyboard_1_1PS2KeyboardDriver.html#ac70aaacd685bf90b1f04060983870b5a">GetLastScanCode</a>();</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00196">196</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;{</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: getlastkeyboardscancode()&quot;</span>);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/df5/keyboard_8cpp.html#a1bc7e64f2142b1441fdbd2f8ceebd4c8">ps2keyboard</a>-&gt;<a class="code" href="../../d1/d4e/classPS2Keyboard_1_1PS2KeyboardDriver.html#ac70aaacd685bf90b1f04060983870b5a">GetLastScanCode</a>();</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d7/df5/keyboard_8cpp_source.html#l00026">PS2Keyboard::PS2KeyboardDriver::GetLastScanCode()</a>, <a class="el" href="../../d7/df5/keyboard_8cpp_source.html#l00009">ps2keyboard</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>.</p>
 
@@ -1251,11 +1285,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00081">81</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: getschedulemode()&quot;</span>);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d75/internal__task_8h.html#a24b42fd6c165e22f3c4cc751efee137b">CurrentTaskingMode</a>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00082">82</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: getschedulemode()&quot;</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/d75/internal__task_8h.html#a24b42fd6c165e22f3c4cc751efee137b">CurrentTaskingMode</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00014">CurrentTaskingMode</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>.</p>
 
@@ -1285,13 +1319,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00103">103</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: poptask()&quot;</span>);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="../../d9/d3e/namespaceTasking.html#af11988ae5ac332837099db072aa486e7">Tasking::monot</a>-&gt;<a class="code" href="../../d5/da2/classTasking_1_1Monotasking.html#a01eff614d7dd323993411104c1a49a0a">PopTask</a>();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00104">104</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: poptask()&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="../../d9/d3e/namespaceTasking.html#af11988ae5ac332837099db072aa486e7">Tasking::monot</a>-&gt;<a class="code" href="../../d5/da2/classTasking_1_1Monotasking.html#a01eff614d7dd323993411104c1a49a0a">PopTask</a>();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html#l00016">Tasking::monot</a>, <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html#l00306">Tasking::Monotasking::PopTask()</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>.</p>
 
@@ -1349,13 +1383,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00095">95</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: pushtask( %#llx %#llx %#llx %#llx )&quot;</span>, a, b, c, d);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="../../d9/d3e/namespaceTasking.html#af11988ae5ac332837099db072aa486e7">Tasking::monot</a>-&gt;<a class="code" href="../../d5/da2/classTasking_1_1Monotasking.html#aeb6adb83431c526d1914bf9eba3cf030">PushTask</a>(RIP);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00096">96</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: pushtask( %#llx %#llx %#llx %#llx )&quot;</span>, a, b, c, d);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="../../d9/d3e/namespaceTasking.html#af11988ae5ac332837099db072aa486e7">Tasking::monot</a>-&gt;<a class="code" href="../../d5/da2/classTasking_1_1Monotasking.html#aeb6adb83431c526d1914bf9eba3cf030">PushTask</a>(RIP);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html#l00016">Tasking::monot</a>, <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html#l00274">Tasking::Monotasking::PushTask()</a>, and <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>.</p>
 
@@ -1385,15 +1419,15 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00111">111</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;{</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: requestpage()&quot;</span>);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">void</span> *)<a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">void</span> *ret = <a class="code" href="../../d2/ddc/PageFrameAllocator_8cpp.html#a27f255129e7d068084cc717639b02837">KernelAllocator</a>.RequestPage();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.MapMemory(ret, ret, <a class="code" href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5a56de89a713ba25cddd89edd52fdf2eaa">PTFlag::US</a> | <a class="code" href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5aec2497e0c8af01c04bec31ec0d1d7847">PTFlag::RW</a>);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00112">112</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: requestpage()&quot;</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">void</span> *)<a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> *ret = <a class="code" href="../../d2/ddc/PageFrameAllocator_8cpp.html#a27f255129e7d068084cc717639b02837">KernelAllocator</a>.RequestPage();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.MapMemory(ret, ret, <a class="code" href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5a56de89a713ba25cddd89edd52fdf2eaa">PTFlag::US</a> | <a class="code" href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5aec2497e0c8af01c04bec31ec0d1d7847">PTFlag::RW</a>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d2/ddc/PageFrameAllocator_8cpp_source.html#l00016">KernelAllocator</a>, <a class="el" href="../../d8/d49/VirtualMemoryManager_8cpp_source.html#l00009">KernelPageTableManager</a>, <a class="el" href="../../da/ddb/heap_8h_source.html#l00180">RW</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, and <a class="el" href="../../da/ddb/heap_8h_source.html#l00183">US</a>.</p>
 
@@ -1433,16 +1467,16 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00131">131</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;{</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: requestpages( %#llx )&quot;</span>, pages);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">void</span> *)<a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">void</span> *ret = <a class="code" href="../../d2/ddc/PageFrameAllocator_8cpp.html#a27f255129e7d068084cc717639b02837">KernelAllocator</a>.RequestPages(pages);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> i = (<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)ret; i &lt; ((<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)ret + (pages * <a class="code" href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>)); i += <a class="code" href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>)</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.MapMemory((<span class="keywordtype">void</span> *)i, (<span class="keywordtype">void</span> *)i, <a class="code" href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5a56de89a713ba25cddd89edd52fdf2eaa">PTFlag::US</a> | <a class="code" href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5aec2497e0c8af01c04bec31ec0d1d7847">PTFlag::RW</a>);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00132">132</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: requestpages( %#llx )&quot;</span>, pages);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a>(regs))</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">void</span> *)<a class="code" href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> *ret = <a class="code" href="../../d2/ddc/PageFrameAllocator_8cpp.html#a27f255129e7d068084cc717639b02837">KernelAllocator</a>.RequestPages(pages);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> i = (<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)ret; i &lt; ((<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)ret + (pages * <a class="code" href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>)); i += <a class="code" href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>)</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.MapMemory((<span class="keywordtype">void</span> *)i, (<span class="keywordtype">void</span> *)i, <a class="code" href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5a56de89a713ba25cddd89edd52fdf2eaa">PTFlag::US</a> | <a class="code" href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5aec2497e0c8af01c04bec31ec0d1d7847">PTFlag::RW</a>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00040">CanSyscall()</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00090">deniedcall</a>, <a class="el" href="../../d2/ddc/PageFrameAllocator_8cpp_source.html#l00016">KernelAllocator</a>, <a class="el" href="../../d8/d49/VirtualMemoryManager_8cpp_source.html#l00009">KernelPageTableManager</a>, <a class="el" href="../../da/ddb/heap_8h_source.html#l00153">PAGE_SIZE</a>, <a class="el" href="../../da/ddb/heap_8h_source.html#l00180">RW</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, and <a class="el" href="../../da/ddb/heap_8h_source.html#l00183">US</a>.</p>
 
@@ -1512,15 +1546,15 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00014">14</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="../../d2/dca/cxa_8cpp.html#af11296e79c8839a302f71294836c91cc">fixme</a>(<span class="stringliteral">&quot;Unimplemented Syscall: %d %d %d %d %d %d %d&quot;</span>, a, b, c, d, e, f, g);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a88d9d9eed7c093cc18faba716db81af3">deadcall</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00015">15</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../d2/dca/cxa_8cpp.html#af11296e79c8839a302f71294836c91cc">fixme</a>(<span class="stringliteral">&quot;Unimplemented Syscall: %d %d %d %d %d %d %d&quot;</span>, a, b, c, d, e, f, g);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a88d9d9eed7c093cc18faba716db81af3">deadcall</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00088">deadcall</a>, and <a class="el" href="../../d2/dca/cxa_8cpp_source.html#l00054">fixme()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00309">HandleFennixSyscalls()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00352">HandleFennixSyscalls()</a>.</p>
 
 </div>
 </div>
@@ -1558,13 +1592,22 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00241">241</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;{</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: usleep( %#llx )&quot;</span>, us);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="../../d4/d20/tester_8cpp.html#a44ed0f898da2dd3ada04f222e0dce283">usleep</a>(us);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00275">275</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;{</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <a class="code" href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a>(<span class="stringliteral">&quot;syscall: usleep( %#llx )&quot;</span>, us);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d75/internal__task_8h.html#a24b42fd6c165e22f3c4cc751efee137b">CurrentTaskingMode</a> == <a class="code" href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fa1b6b2929659177f6e04cdebdb6c80dab">TaskingMode::Mono</a>)</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <a class="code" href="../../d4/d20/tester_8cpp.html#a44ed0f898da2dd3ada04f222e0dce283">usleep</a>(us);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    }</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d6/d75/internal__task_8h.html#a24b42fd6c165e22f3c4cc751efee137b">CurrentTaskingMode</a> == <a class="code" href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fa6d3272154843979d20e3004a5db07df3">TaskingMode::Multi</a>)</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <a class="code" href="../../db/d16/debug_8h.html#a188ea7036db9c1d3fc1062750f3cab77">warn</a>(<span class="stringliteral">&quot;Sleeping in multi-tasking mode is not implemented yet!&quot;</span>);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, and <a class="el" href="../../d4/d20/tester_8cpp_source.html#l00008">usleep</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00014">CurrentTaskingMode</a>, <a class="el" href="../../d6/d75/internal__task_8h_source.html#l00009">Mono</a>, <a class="el" href="../../d6/d75/internal__task_8h_source.html#l00010">Multi</a>, <a class="el" href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscldbg</a>, <a class="el" href="../../d4/d20/tester_8cpp_source.html#l00008">usleep</a>, and <a class="el" href="../../db/d16/debug_8h_source.html#l00067">warn</a>.</p>
 
 </div>
 </div>
@@ -1589,20 +1632,27 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00256">256</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00299">299</a> of file <a class="el" href="../../d9/d76/Native_8cpp_source.html">Native.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00309">HandleFennixSyscalls()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00352">HandleFennixSyscalls()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="ainternal__task_8h_html_a429ab8a23f23061fc5ef9ff05f14749fa6d3272154843979d20e3004a5db07df3"><div class="ttname"><a href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fa6d3272154843979d20e3004a5db07df3">Multi</a></div><div class="ttdeci">@ Multi</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d75/internal__task_8h_source.html#l00010">internal_task.h:10</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_aa5818e5d128547da03b28cd87a51dca6"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#aa5818e5d128547da03b28cd87a51dca6">_File::Mask</a></div><div class="ttdeci">uint64_t Mask</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00201">syscalls.h:201</a></div></div>
 <div class="ttc" id="anamespaceFileSystem_html_acf0dbb0baa790ccf29cc3843d1fc62c5"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#acf0dbb0baa790ccf29cc3843d1fc62c5">FileSystem::FileSystemNode::Length</a></div><div class="ttdeci">uint64_t Length</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00102">filesystem.h:102</a></div></div>
+<div class="ttc" id="aKernel_8cpp_html_a4c013cc30022e7dd29dca340c6740648"><div class="ttname"><a href="../../d2/d00/Kernel_8cpp.html#a4c013cc30022e7dd29dca340c6740648">UserAllocator</a></div><div class="ttdeci">Xalloc::AllocatorV1 * UserAllocator</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d00/Kernel_8cpp_source.html#l00038">Kernel.cpp:38</a></div></div>
 <div class="ttc" id="asyscalls_8hpp_html_a73bb92219f7f23ee470f72b7ade1eff9"><div class="ttname"><a href="../../d0/d35/syscalls_8hpp.html#a73bb92219f7f23ee470f72b7ade1eff9">_SyscallsRegs::rdx</a></div><div class="ttdeci">uint64_t rdx</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d35/syscalls_8hpp_source.html#l00016">syscalls.hpp:16</a></div></div>
+<div class="ttc" id="akernel_2include_2string_8h_html_a992514d25cc10baafaac987c5852680c"><div class="ttname"><a href="../../d1/d69/kernel_2include_2string_8h.html#a992514d25cc10baafaac987c5852680c">memcpy</a></div><div class="ttdeci">void * memcpy(void *__restrict__ dest, const void *__restrict__ src, size_t n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00005">String.c:5</a></div></div>
 <div class="ttc" id="asyscalls_8h_html_a88d9d9eed7c093cc18faba716db81af3"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a88d9d9eed7c093cc18faba716db81af3">deadcall</a></div><div class="ttdeci">#define deadcall</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00088">syscalls.h:88</a></div></div>
-<div class="ttc" id="aNative_8cpp_html_ad86490591a2b1dd70b5f10df0a3814f5"><div class="ttname"><a href="../../d9/d76/Native_8cpp.html#ad86490591a2b1dd70b5f10df0a3814f5">FennixSyscallsTable</a></div><div class="ttdeci">static void * FennixSyscallsTable[]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d76/Native_8cpp_source.html#l00256">Native.cpp:256</a></div></div>
+<div class="ttc" id="anamespaceFileSystem_html_a457a01a68e5a92262e8fba071acecce5"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#a457a01a68e5a92262e8fba071acecce5">FileSystem::FileSystemNode::Flags</a></div><div class="ttdeci">uint64_t Flags</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00099">filesystem.h:99</a></div></div>
+<div class="ttc" id="aNative_8cpp_html_ad86490591a2b1dd70b5f10df0a3814f5"><div class="ttname"><a href="../../d9/d76/Native_8cpp.html#ad86490591a2b1dd70b5f10df0a3814f5">FennixSyscallsTable</a></div><div class="ttdeci">static void * FennixSyscallsTable[]</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d76/Native_8cpp_source.html#l00299">Native.cpp:299</a></div></div>
 <div class="ttc" id="aclassFileSystem_1_1Virtual_html_a892dd91880c8a471c3b2d2ed21c3c42c"><div class="ttname"><a href="../../d0/d99/classFileSystem_1_1Virtual.html#a892dd91880c8a471c3b2d2ed21c3c42c">FileSystem::Virtual::Read</a></div><div class="ttdeci">uint64_t Read(FILE *File, uint64_t Offset, void *Buffer, uint64_t Size)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d50/FileSystem_8cpp_source.html#l00359">FileSystem.cpp:359</a></div></div>
 <div class="ttc" id="ainternal__task_8h_html_a24b42fd6c165e22f3c4cc751efee137b"><div class="ttname"><a href="../../d6/d75/internal__task_8h.html#a24b42fd6c165e22f3c4cc751efee137b">CurrentTaskingMode</a></div><div class="ttdeci">int CurrentTaskingMode</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d27/ProcessAPI_8cpp_source.html#l00014">ProcessAPI.cpp:14</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_a0ba7748d16ae06bbd3971947207142c1"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a0ba7748d16ae06bbd3971947207142c1">_File::Operator</a></div><div class="ttdeci">void * Operator</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00209">syscalls.h:209</a></div></div>
+<div class="ttc" id="aclassXalloc_1_1AllocatorV1_html_a05ec1e250517a231d1c4ef2b72f330be"><div class="ttname"><a href="../../d2/da8/classXalloc_1_1AllocatorV1.html#a05ec1e250517a231d1c4ef2b72f330be">Xalloc::AllocatorV1::Malloc</a></div><div class="ttdeci">void * Malloc(Xuint64_t Size)</div><div class="ttdoc">Allocate a new memory block.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d4a/Xalloc_8cpp_source.html#l00070">Xalloc.cpp:70</a></div></div>
 <div class="ttc" id="adebug_8h_html_a87de2fca12ef8f7205584b972c8b1f16"><div class="ttname"><a href="../../db/d16/debug_8h.html#a87de2fca12ef8f7205584b972c8b1f16">trace</a></div><div class="ttdeci">#define trace(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/debug_8h_source.html#l00066">debug.h:66</a></div></div>
 <div class="ttc" id="atester_8cpp_html_a44ed0f898da2dd3ada04f222e0dce283"><div class="ttname"><a href="../../d4/d20/tester_8cpp.html#a44ed0f898da2dd3ada04f222e0dce283">usleep</a></div><div class="ttdeci">#define usleep(x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d20/tester_8cpp_source.html#l00008">tester.cpp:8</a></div></div>
 <div class="ttc" id="asyscalls_8hpp_html_aab2c624d9827beac61fa08f5d390b44a"><div class="ttname"><a href="../../d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a">syscldbg</a></div><div class="ttdeci">#define syscldbg(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d35/syscalls_8hpp_source.html#l00010">syscalls.hpp:10</a></div></div>
@@ -1610,42 +1660,68 @@ Variables</h2></td></tr>
 <div class="ttc" id="adisplay_8cpp_html_aa2f1b53d110989bb09f7fc5d29709f71"><div class="ttname"><a href="../../db/d86/display_8cpp.html#aa2f1b53d110989bb09f7fc5d29709f71">CurrentDisplay</a></div><div class="ttdeci">DisplayDriver::Display * CurrentDisplay</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d86/display_8cpp_source.html#l00026">display.cpp:26</a></div></div>
 <div class="ttc" id="asyscalls_8h_html_a568f7df0a8a3fb192f9032413088c6cc"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc">deniedcall</a></div><div class="ttdeci">#define deniedcall</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00090">syscalls.h:90</a></div></div>
 <div class="ttc" id="aclassPS2Keyboard_1_1PS2KeyboardDriver_html_ac70aaacd685bf90b1f04060983870b5a"><div class="ttname"><a href="../../d1/d4e/classPS2Keyboard_1_1PS2KeyboardDriver.html#ac70aaacd685bf90b1f04060983870b5a">PS2Keyboard::PS2KeyboardDriver::GetLastScanCode</a></div><div class="ttdeci">unsigned char GetLastScanCode()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/df5/keyboard_8cpp_source.html#l00026">keyboard.cpp:26</a></div></div>
-<div class="ttc" id="aNative_8cpp_html_af1bc609d5ab66964d0f6a16130846176"><div class="ttname"><a href="../../d9/d76/Native_8cpp.html#af1bc609d5ab66964d0f6a16130846176">internal_unimpl</a></div><div class="ttdeci">static uint64_t internal_unimpl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d76/Native_8cpp_source.html#l00014">Native.cpp:14</a></div></div>
+<div class="ttc" id="aNative_8cpp_html_af1bc609d5ab66964d0f6a16130846176"><div class="ttname"><a href="../../d9/d76/Native_8cpp.html#af1bc609d5ab66964d0f6a16130846176">internal_unimpl</a></div><div class="ttdeci">static uint64_t internal_unimpl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d76/Native_8cpp_source.html#l00015">Native.cpp:15</a></div></div>
 <div class="ttc" id="anamespaceFileSystem_html_ab937a636c170ccea021282ae104d3fd0"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#ab937a636c170ccea021282ae104d3fd0">FileSystem::FILE::Node</a></div><div class="ttdeci">FileSystemNode * Node</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00117">filesystem.h:117</a></div></div>
 <div class="ttc" id="ainternal__task_8h_html_aba344b9066be19457df7e936aca3351c"><div class="ttname"><a href="../../d6/d75/internal__task_8h.html#aba344b9066be19457df7e936aca3351c">SysGetCurrentProcess</a></div><div class="ttdeci">PCB * SysGetCurrentProcess()</div><div class="ttdoc">Get current process.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d27/ProcessAPI_8cpp_source.html#l00108">ProcessAPI.cpp:108</a></div></div>
 <div class="ttc" id="aclassFileSystem_1_1Virtual_html_a358be68a0a9062318506347a3d2f8613"><div class="ttname"><a href="../../d0/d99/classFileSystem_1_1Virtual.html#a358be68a0a9062318506347a3d2f8613">FileSystem::Virtual::Write</a></div><div class="ttdeci">uint64_t Write(FILE *File, uint64_t Offset, void *Buffer, uint64_t Size)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d50/FileSystem_8cpp_source.html#l00381">FileSystem.cpp:381</a></div></div>
 <div class="ttc" id="anamespaceFileSystem_html_d0/d13/structFileSystem_1_1FILE"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FileSystem::FILE</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00113">filesystem.h:113</a></div></div>
 <div class="ttc" id="anamespaceTasking_html_da/d21/structTasking_1_1TaskControlBlock"><div class="ttname"><a href="../../d9/d3e/namespaceTasking.html#da/d21/structTasking_1_1TaskControlBlock">Tasking::TaskControlBlock</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d75/internal__task_8h_source.html#l00029">internal_task.h:29</a></div></div>
+<div class="ttc" id="anamespaceFileSystem_html_ab8ec2e45904a9122af92052c4ddcfc03"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#ab8ec2e45904a9122af92052c4ddcfc03">FileSystem::FileSystemNode::Mode</a></div><div class="ttdeci">uint64_t Mode</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00098">filesystem.h:98</a></div></div>
 <div class="ttc" id="astdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
 <div class="ttc" id="aVirtualMemoryManager_8cpp_html_a8ce8e0631e09a82a06670cab06e76f81"><div class="ttname"><a href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a></div><div class="ttdeci">PageTableManager KernelPageTableManager</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d49/VirtualMemoryManager_8cpp_source.html#l00009">VirtualMemoryManager.cpp:9</a></div></div>
 <div class="ttc" id="aclassFileSystem_1_1Virtual_html_a462e81b93784da517ef808b4c4a1cc6d"><div class="ttname"><a href="../../d0/d99/classFileSystem_1_1Virtual.html#a462e81b93784da517ef808b4c4a1cc6d">FileSystem::Virtual::Open</a></div><div class="ttdeci">FILE * Open(string Path, FileSystemNode *Parent=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d50/FileSystem_8cpp_source.html#l00309">FileSystem.cpp:309</a></div></div>
 <div class="ttc" id="aclassTasking_1_1Monotasking_html_aeb6adb83431c526d1914bf9eba3cf030"><div class="ttname"><a href="../../d5/da2/classTasking_1_1Monotasking.html#aeb6adb83431c526d1914bf9eba3cf030">Tasking::Monotasking::PushTask</a></div><div class="ttdeci">void PushTask(uint64_t rip)</div><div class="ttdoc">Move to the next Task and suspending the current.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd4/Monotasking_8cpp_source.html#l00274">Monotasking.cpp:274</a></div></div>
+<div class="ttc" id="anamespaceFileSystem_html_a575f911342ac4068ffbd2213fd2f2c0e"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#a575f911342ac4068ffbd2213fd2f2c0e">FileSystem::FileSystemNode::UserIdentifier</a></div><div class="ttdeci">uint64_t UserIdentifier</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00100">filesystem.h:100</a></div></div>
 <div class="ttc" id="asyscalls_8h_html_ace10381511c391a6154671a5360ad795"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#ace10381511c391a6154671a5360ad795">failedcall</a></div><div class="ttdeci">#define failedcall</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00089">syscalls.h:89</a></div></div>
 <div class="ttc" id="aSecurity_8cpp_html_a476bb785c0a4ec8512926a0e43207ab2"><div class="ttname"><a href="../../de/dc7/Security_8cpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a></div><div class="ttdeci">bool CanSyscall(SyscallsRegs *regs)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dc7/Security_8cpp_source.html#l00040">Security.cpp:40</a></div></div>
+<div class="ttc" id="anamespaceFileSystem_html_ab952ea1d4056f584ee7f9ed1d9ea51f3"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#ab952ea1d4056f584ee7f9ed1d9ea51f3">FileSystem::FILE::Name</a></div><div class="ttdeci">string Name</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00115">filesystem.h:115</a></div></div>
+<div class="ttc" id="aclassXalloc_1_1AllocatorV1_html_a2400fd8f66e2dab7aee1bd8c9f4d2986"><div class="ttname"><a href="../../d2/da8/classXalloc_1_1AllocatorV1.html#a2400fd8f66e2dab7aee1bd8c9f4d2986">Xalloc::AllocatorV1::Xclac</a></div><div class="ttdeci">void Xclac()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d12/Xalloc_8hpp_source.html#l00113">Xalloc.hpp:113</a></div></div>
 <div class="ttc" id="aclassTasking_1_1Monotasking_html_a6b74d9c9ed758dbddef61ef3ff497ef0"><div class="ttname"><a href="../../d5/da2/classTasking_1_1Monotasking.html#a6b74d9c9ed758dbddef61ef3ff497ef0">Tasking::Monotasking::CreateTask</a></div><div class="ttdeci">TaskControlBlock * CreateTask(uint64_t InstructionPointer, uint64_t FirstArgument, uint64_t SecondArgument, char *Name, bool UserMode)</div><div class="ttdoc">Create a new Task.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd4/Monotasking_8cpp_source.html#l00195">Monotasking.cpp:195</a></div></div>
 <div class="ttc" id="asyscalls_8hpp_html_ac5a0fecc9d3e0b25728648a21a8690a5"><div class="ttname"><a href="../../d0/d35/syscalls_8hpp.html#ac5a0fecc9d3e0b25728648a21a8690a5">_SyscallsRegs::rdi</a></div><div class="ttdeci">uint64_t rdi</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d35/syscalls_8hpp_source.html#l00016">syscalls.hpp:16</a></div></div>
 <div class="ttc" id="aheap_8h_html_a01615b7fec8f37b8215dda294f13d4a5a56de89a713ba25cddd89edd52fdf2eaa"><div class="ttname"><a href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5a56de89a713ba25cddd89edd52fdf2eaa">US</a></div><div class="ttdeci">@ US</div><div class="ttdoc">User/Supervisor.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddb/heap_8h_source.html#l00183">heap.h:183</a></div></div>
+<div class="ttc" id="anamespaceFileSystem_html_aa939a6d48cca46855f870b3163680e17"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#aa939a6d48cca46855f870b3163680e17">FileSystem::FILE::Status</a></div><div class="ttdeci">FILESTATUS Status</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00116">filesystem.h:116</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_aa51be0c19313aa5fb2cc7ee2517f1f8a"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#aa51be0c19313aa5fb2cc7ee2517f1f8a">_File::IndexNode</a></div><div class="ttdeci">uint64_t IndexNode</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00200">syscalls.h:200</a></div></div>
+<div class="ttc" id="anamespaceFileSystem_html_a36f250d7cd65f7b4d8a74361200ae9d6"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#a36f250d7cd65f7b4d8a74361200ae9d6">FileSystem::FileSystemNode::IndexNode</a></div><div class="ttdeci">uint64_t IndexNode</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00096">filesystem.h:96</a></div></div>
 <div class="ttc" id="asmp_8hpp_html_a3bd97f3df8bfa82b683821eeace4b3d6"><div class="ttname"><a href="../../d4/d33/smp_8hpp.html#a3bd97f3df8bfa82b683821eeace4b3d6">ID</a></div><div class="ttdeci">uint64_t ID</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/smp_8hpp_source.html#l00002">smp.hpp:2</a></div></div>
 <div class="ttc" id="acxa_8cpp_html_af11296e79c8839a302f71294836c91cc"><div class="ttname"><a href="../../d2/dca/cxa_8cpp.html#af11296e79c8839a302f71294836c91cc">fixme</a></div><div class="ttdeci">void fixme(char *m)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dca/cxa_8cpp_source.html#l00054">cxa.cpp:54</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_a531f06675796b2e51bc31cf9caf83dcb"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a531f06675796b2e51bc31cf9caf83dcb">_File::Address</a></div><div class="ttdeci">uint64_t Address</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00205">syscalls.h:205</a></div></div>
 <div class="ttc" id="ainternal__task_8h_html_aaaed5189c104c1e8b6acf162a61d3db8"><div class="ttname"><a href="../../d6/d75/internal__task_8h.html#aaaed5189c104c1e8b6acf162a61d3db8">SysCreateProcessFromFile</a></div><div class="ttdeci">PCB * SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, ELEVATION Elevation)</div><div class="ttdoc">Create a new process from a file.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d27/ProcessAPI_8cpp_source.html#l00181">ProcessAPI.cpp:181</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_a9953c20fa947199f89224ef8df9cf5aa"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a9953c20fa947199f89224ef8df9cf5aa">_File::Handle</a></div><div class="ttdeci">void * Handle</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00211">syscalls.h:211</a></div></div>
 <div class="ttc" id="asyscalls_8hpp_html_a971daacb2b12468817960348c1510bab"><div class="ttname"><a href="../../d0/d35/syscalls_8hpp.html#a971daacb2b12468817960348c1510bab">_SyscallsRegs::rcx</a></div><div class="ttdeci">uint64_t rcx</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d35/syscalls_8hpp_source.html#l00016">syscalls.hpp:16</a></div></div>
 <div class="ttc" id="asyscalls_8hpp_html_abd4468b220aede53da28532ce69d8dca"><div class="ttname"><a href="../../d0/d35/syscalls_8hpp.html#abd4468b220aede53da28532ce69d8dca">_SyscallsRegs::rbx</a></div><div class="ttdeci">uint64_t rbx</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d35/syscalls_8hpp_source.html#l00016">syscalls.hpp:16</a></div></div>
 <div class="ttc" id="ainternal__task_8h_html_a3e9463b4cc18e87fc111e5262f113bc7"><div class="ttname"><a href="../../d6/d75/internal__task_8h.html#a3e9463b4cc18e87fc111e5262f113bc7">SysCreateThread</a></div><div class="ttdeci">TCB * SysCreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t arg0, uint64_t arg1)</div><div class="ttdoc">Create a new thread.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d27/ProcessAPI_8cpp_source.html#l00162">ProcessAPI.cpp:162</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_d6/dbc/struct__File"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">_File</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00194">syscalls.h:194</a></div></div>
 <div class="ttc" id="anamespaceTasking_html_af11988ae5ac332837099db072aa486e7"><div class="ttname"><a href="../../d9/d3e/namespaceTasking.html#af11988ae5ac332837099db072aa486e7">Tasking::monot</a></div><div class="ttdeci">Monotasking * monot</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd4/Monotasking_8cpp_source.html#l00016">Monotasking.cpp:16</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_ab01b23adeadbfb02b41317e027867f81"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#ab01b23adeadbfb02b41317e027867f81">_File::UserIdentifier</a></div><div class="ttdeci">uint64_t UserIdentifier</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00204">syscalls.h:204</a></div></div>
+<div class="ttc" id="anamespaceFileSystem_html_adbe65bc01d368886037f73f2a61905d2"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#adbe65bc01d368886037f73f2a61905d2">FileSystem::FileSystemNode::Mask</a></div><div class="ttdeci">uint64_t Mask</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00097">filesystem.h:97</a></div></div>
+<div class="ttc" id="anamespaceFileSystem_html_a82da203e43ed7e0eb53431ada71846fb"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#a82da203e43ed7e0eb53431ada71846fb">FileSystem::FileSystemNode::Parent</a></div><div class="ttdeci">FileSystemNode * Parent</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00103">filesystem.h:103</a></div></div>
 <div class="ttc" id="aPageFrameAllocator_8cpp_html_a27f255129e7d068084cc717639b02837"><div class="ttname"><a href="../../d2/ddc/PageFrameAllocator_8cpp.html#a27f255129e7d068084cc717639b02837">KernelAllocator</a></div><div class="ttdeci">PageFrameAllocator KernelAllocator</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/ddc/PageFrameAllocator_8cpp_source.html#l00016">PageFrameAllocator.cpp:16</a></div></div>
 <div class="ttc" id="aclassTasking_1_1Monotasking_html_aca278385dfe53ca1b3e3bcdd82df0add"><div class="ttname"><a href="../../d5/da2/classTasking_1_1Monotasking.html#aca278385dfe53ca1b3e3bcdd82df0add">Tasking::Monotasking::KillMe</a></div><div class="ttdeci">void KillMe()</div><div class="ttdoc">Kill the current Task.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd4/Monotasking_8cpp_source.html#l00259">Monotasking.cpp:259</a></div></div>
+<div class="ttc" id="aclassXalloc_1_1AllocatorV1_html_a8032bb777951367e8ffc13031fdb128b"><div class="ttname"><a href="../../d2/da8/classXalloc_1_1AllocatorV1.html#a8032bb777951367e8ffc13031fdb128b">Xalloc::AllocatorV1::Xstac</a></div><div class="ttdeci">void Xstac()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d12/Xalloc_8hpp_source.html#l00106">Xalloc.hpp:106</a></div></div>
 <div class="ttc" id="aserial_8c_html_a708b346863815b06e3ad626dcf621a0f"><div class="ttname"><a href="../../d8/d90/serial_8c.html#a708b346863815b06e3ad626dcf621a0f">serial_write_text</a></div><div class="ttdeci">void serial_write_text(int serial_port, char *text)</div><div class="ttdoc">Sends a text to the serial port (Used by the debug system, don't use this!!)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d90/serial_8c_source.html#l00056">serial.c:56</a></div></div>
 <div class="ttc" id="asyscalls_8hpp_html_a61cb6f52858053278a3595829628a8c5"><div class="ttname"><a href="../../d0/d35/syscalls_8hpp.html#a61cb6f52858053278a3595829628a8c5">_SyscallsRegs::rsi</a></div><div class="ttdeci">uint64_t rsi</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d35/syscalls_8hpp_source.html#l00016">syscalls.hpp:16</a></div></div>
 <div class="ttc" id="aclassFileSystem_1_1Virtual_html_abc41047ab325b1695bd9c22a076b0ccd"><div class="ttname"><a href="../../d0/d99/classFileSystem_1_1Virtual.html#abc41047ab325b1695bd9c22a076b0ccd">FileSystem::Virtual::Close</a></div><div class="ttdeci">FILESTATUS Close(FILE *File)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d50/FileSystem_8cpp_source.html#l00403">FileSystem.cpp:403</a></div></div>
 <div class="ttc" id="aheap_8h_html_a7d467c1d283fdfa1f2081ba1e0d01b6e"><div class="ttname"><a href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a></div><div class="ttdeci">#define PAGE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddb/heap_8h_source.html#l00153">heap.h:153</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_ae07fb6f39a6bef7b383042d06ec2144a"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#ae07fb6f39a6bef7b383042d06ec2144a">_File::Status</a></div><div class="ttdeci">enum FileStatus Status</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00198">syscalls.h:198</a></div></div>
 <div class="ttc" id="ainternal__task_8h_html_a429ab8a23f23061fc5ef9ff05f14749fa1b6b2929659177f6e04cdebdb6c80dab"><div class="ttname"><a href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fa1b6b2929659177f6e04cdebdb6c80dab">Mono</a></div><div class="ttdeci">@ Mono</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d75/internal__task_8h_source.html#l00009">internal_task.h:9</a></div></div>
+<div class="ttc" id="adebug_8h_html_a188ea7036db9c1d3fc1062750f3cab77"><div class="ttname"><a href="../../db/d16/debug_8h.html#a188ea7036db9c1d3fc1062750f3cab77">warn</a></div><div class="ttdeci">#define warn(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/debug_8h_source.html#l00067">debug.h:67</a></div></div>
 <div class="ttc" id="akeyboard_8cpp_html_a1bc7e64f2142b1441fdbd2f8ceebd4c8"><div class="ttname"><a href="../../d7/df5/keyboard_8cpp.html#a1bc7e64f2142b1441fdbd2f8ceebd4c8">ps2keyboard</a></div><div class="ttdeci">PS2Keyboard::PS2KeyboardDriver * ps2keyboard</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/df5/keyboard_8cpp_source.html#l00009">keyboard.cpp:9</a></div></div>
+<div class="ttc" id="anamespaceFileSystem_html_ac7eec7e2fcdb79b87082842372bae65e"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#ac7eec7e2fcdb79b87082842372bae65e">FileSystem::FileSystemNode::Address</a></div><div class="ttdeci">uint64_t Address</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00101">filesystem.h:101</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_a5f0c99bd95971306ea3bfc4f90556741"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a5f0c99bd95971306ea3bfc4f90556741">_File::Name</a></div><div class="ttdeci">char Name[256]</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00197">syscalls.h:197</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_ae650be3c2a352322477493b728898ad5"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#ae650be3c2a352322477493b728898ad5">_File::Mode</a></div><div class="ttdeci">uint64_t Mode</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00202">syscalls.h:202</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_a68a5cde2f650733c0b79f8fecf8e2fbc"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a68a5cde2f650733c0b79f8fecf8e2fbc">_File::Parent</a></div><div class="ttdeci">void * Parent</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00208">syscalls.h:208</a></div></div>
 <div class="ttc" id="asyscalls_8hpp_html_a93b3d345fd404ed1c3c12396868ec5db"><div class="ttname"><a href="../../d0/d35/syscalls_8hpp.html#a93b3d345fd404ed1c3c12396868ec5db">_SyscallsRegs::rax</a></div><div class="ttdeci">uint64_t rax</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d35/syscalls_8hpp_source.html#l00016">syscalls.hpp:16</a></div></div>
 <div class="ttc" id="adebug_8h_html_aea447f57f81a2f5ee19ef8a1dd9e5d92"><div class="ttname"><a href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a></div><div class="ttdeci">#define err(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/debug_8h_source.html#l00068">debug.h:68</a></div></div>
 <div class="ttc" id="asyscalls_8hpp_html_a6c466d3d7eb7249226436ce1e30636cb"><div class="ttname"><a href="../../d0/d35/syscalls_8hpp.html#a6c466d3d7eb7249226436ce1e30636cb">_SyscallsRegs::rbp</a></div><div class="ttdeci">uint64_t rbp</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d35/syscalls_8hpp_source.html#l00016">syscalls.hpp:16</a></div></div>
 <div class="ttc" id="ainternal__task_8h_html_a249c9d235bdb42f4e30cc660ab205659"><div class="ttname"><a href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">SysGetCurrentThread</a></div><div class="ttdeci">TCB * SysGetCurrentThread()</div><div class="ttdoc">Get current thread.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d27/ProcessAPI_8cpp_source.html#l00126">ProcessAPI.cpp:126</a></div></div>
 <div class="ttc" id="aheap_8h_html_a01615b7fec8f37b8215dda294f13d4a5aec2497e0c8af01c04bec31ec0d1d7847"><div class="ttname"><a href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5aec2497e0c8af01c04bec31ec0d1d7847">RW</a></div><div class="ttdeci">@ RW</div><div class="ttdoc">Read/Write.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddb/heap_8h_source.html#l00180">heap.h:180</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_aafb4e24f0f1e50917fa7af0e9bc36d91"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#aafb4e24f0f1e50917fa7af0e9bc36d91">_File::Flags</a></div><div class="ttdeci">uint64_t Flags</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00203">syscalls.h:203</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_a0d74ac8d8bede15d1ad924f86572bb45"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a0d74ac8d8bede15d1ad924f86572bb45">_File::GroupIdentifier</a></div><div class="ttdeci">uint64_t GroupIdentifier</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00204">syscalls.h:204</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_a0a785734a2e4d29ff32532d92a03b40c"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40c">FileStatus</a></div><div class="ttdeci">FileStatus</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00146">syscalls.h:146</a></div></div>
+<div class="ttc" id="anamespaceFileSystem_html_ad519bbc0ce7d78da2c51693c61577079"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#ad519bbc0ce7d78da2c51693c61577079">FileSystem::FileSystemNode::Operator</a></div><div class="ttdeci">FileSystemOpeations * Operator</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00104">filesystem.h:104</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_a803298a4ae3a321c729013be5ccdaed9"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a803298a4ae3a321c729013be5ccdaed9">_File::Length</a></div><div class="ttdeci">uint64_t Length</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00206">syscalls.h:206</a></div></div>
 <div class="ttc" id="aclassTasking_1_1Monotasking_html_a01eff614d7dd323993411104c1a49a0a"><div class="ttname"><a href="../../d5/da2/classTasking_1_1Monotasking.html#a01eff614d7dd323993411104c1a49a0a">Tasking::Monotasking::PopTask</a></div><div class="ttdeci">void PopTask()</div><div class="ttdoc">Move to the previous Task and suspending the current.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd4/Monotasking_8cpp_source.html#l00306">Monotasking.cpp:306</a></div></div>
+<div class="ttc" id="anamespaceFileSystem_html_a0f704d8bf39664615c99f2215f3e57fe"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#a0f704d8bf39664615c99f2215f3e57fe">FileSystem::FileSystemNode::GroupIdentifier</a></div><div class="ttdeci">uint64_t GroupIdentifier</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00100">filesystem.h:100</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

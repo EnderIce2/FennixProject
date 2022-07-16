@@ -21,7 +21,7 @@ var searchData=
   ['_5fdriverbind_2e_5f_5funnamed_5f_5f_2eprocess_18',['_DriverBind.__unnamed__.Process',['../db/de4/driver_8h.html#d0/d1c/struct__DriverBind_8____unnamed_____8Process',1,'']]],
   ['_5fdriverdefinition_19',['_DriverDefinition',['../db/de4/driver_8h.html#dc/def/struct__DriverDefinition',1,'']]],
   ['_5ferr_20',['_err',['../db/d16/debug_8h.html#afa15f519d43f35f35676db4d1adee122acca09de6dbf43ebbc9d9fee56011e023',1,'debug.h']]],
-  ['_5ffile_21',['_FILE',['../d2/d4d/file_8h.html#de/d3c/struct__FILE',1,'']]],
+  ['_5ffile_21',['_FILE',['../d2/d4d/file_8h.html#de/d3c/struct__FILE',1,'_FILE'],['../d2/d6e/syscalls_8h.html#d6/dbc/struct__File',1,'_File']]],
   ['_5ffileclose_22',['_FileClose',['../d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda15e3975fb867399d1db643978b54eef7',1,'syscalls.h']]],
   ['_5ffilecreate_23',['_FileCreate',['../d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda5c47a221950c1bced7c4dff3ce415c80',1,'syscalls.h']]],
   ['_5ffiledelete_24',['_FileDelete',['../d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda5ccf55ab6fc6689e884b57278f1f4557',1,'syscalls.h']]],

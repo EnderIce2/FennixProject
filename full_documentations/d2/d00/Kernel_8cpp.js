@@ -11,5 +11,6 @@ var Kernel_8cpp =
     [ "earlyparams", "d2/d00/Kernel_8cpp.html#ae7b517f08e3d7e7ef71af810e3cab1a8", null ],
     [ "kernel_stack", "d2/d00/Kernel_8cpp.html#a83fa9cb1fe251bf1ad79f45fcd15877d", null ],
     [ "ShowRecoveryScreen", "d2/d00/Kernel_8cpp.html#a78de668afe436bb1e16edb9954a5b0da", null ],
-    [ "sysflags", "d2/d00/Kernel_8cpp.html#aebb24bb7f3b139aecb4ef6d91ed08fc0", null ]
+    [ "sysflags", "d2/d00/Kernel_8cpp.html#aebb24bb7f3b139aecb4ef6d91ed08fc0", null ],
+    [ "UserAllocator", "d2/d00/Kernel_8cpp.html#a4c013cc30022e7dd29dca340c6740648", null ]
 ];

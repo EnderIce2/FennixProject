@@ -79,7 +79,7 @@ var searchData=
   ['converter_2ecpp_526',['converter.cpp',['../db/dc8/converter_8cpp.html',1,'']]],
   ['converter_2eh_527',['converter.h',['../de/d27/converter_8h.html',1,'']]],
   ['convertnodetofile_528',['ConvertNodeToFILE',['../d0/d99/classFileSystem_1_1Virtual.html#a9e2f2fb6df5e515098df312024c3de44',1,'FileSystem::Virtual']]],
-  ['copy_5ffile_5frange_529',['copy_file_range',['../d5/de2/POSIX_8cpp.html#ad8321e44e345d67ec9d2aa916f68070d',1,'POSIX.cpp']]],
+  ['copy_5ffile_5frange_529',['copy_file_range',['../db/d9e/Linux_8cpp.html#ad8321e44e345d67ec9d2aa916f68070d',1,'Linux.cpp']]],
   ['count_530',['count',['../dd/d42/lock_8h.html#a285712e4118035a84dcda79ec4e5908e',1,'LOCK']]],
   ['counter_531',['counter',['../de/dcd/Timer_8c.html#a674c0937ff93161a08973a16fb0a8afb',1,'counter():&#160;Timer.c'],['../d5/dd0/timer_8h.html#a5da51167be030624b12d99bb84fcc5ab',1,'counter():&#160;Timer.c']]],
   ['counter_5fsize_532',['counter_size',['../d3/d21/classACPI_1_1ACPI.html#ab4ffa3d803cc335fb50587d1d7af3b95',1,'ACPI::ACPI::HPETHeader::counter_size()'],['../d1/d90/acpi_8hpp.html#ab645bb8a04ce16b6ab3c843dd4d1c177',1,'counter_size():&#160;acpi.hpp']]],

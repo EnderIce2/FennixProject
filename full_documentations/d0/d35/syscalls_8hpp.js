@@ -27,5 +27,5 @@ var syscalls_8hpp =
     [ "syscldbg", "d0/d35/syscalls_8hpp.html#aab2c624d9827beac61fa08f5d390b44a", null ],
     [ "SyscallsRegs", "d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2", null ],
     [ "HandleFennixSyscalls", "d0/d35/syscalls_8hpp.html#a972108fde2e0c6c1d69c92212189db8c", null ],
-    [ "HandlePOSIXSyscalls", "d0/d35/syscalls_8hpp.html#a4acc76e9676624b31545b1551315b2f1", null ]
+    [ "HandleLinuxSyscalls", "d0/d35/syscalls_8hpp.html#abdca722b675d11088cdaa1241afe8321", null ]
 ];

@@ -20,6 +20,7 @@ var annotated_dup =
     [ "Tasking", "d9/d3e/namespaceTasking.html", "d9/d3e/namespaceTasking" ],
     [ "Xalloc", "dc/d0a/namespaceXalloc.html", "dc/d0a/namespaceXalloc" ],
     [ "_FILE", "d2/d4d/file_8h.html#de/d3c/struct__FILE", "d2/d4d/file_8h_de/d3c/struct__FILE" ],
+    [ "_File", "d2/d6e/syscalls_8h.html#d6/dbc/struct__File", "d2/d6e/syscalls_8h_d6/dbc/struct__File" ],
     [ "_GBPRSDP", "d3/d41/gbp_8h.html#d4/d44/struct__GBPRSDP", "d3/d41/gbp_8h_d4/d44/struct__GBPRSDP" ],
     [ "_GlobalBootParams", "d3/d41/gbp_8h.html#da/da6/struct__GlobalBootParams", "d3/d41/gbp_8h_da/da6/struct__GlobalBootParams" ],
     [ "_pack", "db/dc7/bootboot_8h.html#d9/d87/struct__pack", "db/dc7/bootboot_8h_d9/d87/struct__pack" ],
