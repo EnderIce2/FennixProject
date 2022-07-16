@@ -78,14 +78,10 @@ extern "C" uint64_t syscall_handler(SyscallsRegs *regs)
     {
         return HandleFennixSyscalls(regs);
     }
-    case Platform::POSIX:
-    {
-        return HandlePOSIXSyscalls(regs);
-    }
+    case Platform::POSIX: // TODO: add support for POSIX
     case Platform::Linux:
     {
-        err("Platform Linux is not supported yet.");
-        return -1;
+        return HandleLinuxSyscalls(regs);
     }
     case Platform::Windows:
     {

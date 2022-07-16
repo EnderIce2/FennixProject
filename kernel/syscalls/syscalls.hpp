@@ -18,4 +18,4 @@ typedef struct _SyscallsRegs
 } SyscallsRegs;
 
 uint64_t HandleFennixSyscalls(SyscallsRegs *regs);
-uint64_t HandlePOSIXSyscalls(SyscallsRegs *regs);
+uint64_t HandleLinuxSyscalls(SyscallsRegs *regs);

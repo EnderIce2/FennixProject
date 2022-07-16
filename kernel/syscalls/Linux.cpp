@@ -349,7 +349,7 @@ static uint64_t pkey_mprotect_(uint64_t a, uint64_t b, uint64_t c, uint64_t d, u
 
 // Syscalls list: https://filippo.io/linux-syscall-table/ https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/
 
-static void *POSIXSyscallsTable[] = {
+static void *LinuxSyscallsTable[] = {
     [0] = (void *)sys_read,
     [1] = (void *)sys_write,
     [2] = (void *)sys_open,
@@ -688,14 +688,14 @@ static void *POSIXSyscallsTable[] = {
     [335] = (void *)pkey_mprotect_,
 };
 
-uint64_t HandlePOSIXSyscalls(SyscallsRegs *regs)
+uint64_t HandleLinuxSyscalls(SyscallsRegs *regs)
 {
-    if (RAX > sizeof(POSIXSyscallsTable))
+    if (RAX > sizeof(LinuxSyscallsTable))
     {
         return internal_unimpl(regs->rax, regs->rbx, regs->rcx, regs->rdx, regs->rsi, regs->rdi, regs->rbp);
     }
 
-    uint64_t (*call)(uint64_t, ...) = reinterpret_cast<uint64_t (*)(uint64_t, ...)>(POSIXSyscallsTable[RAX]);
+    uint64_t (*call)(uint64_t, ...) = reinterpret_cast<uint64_t (*)(uint64_t, ...)>(LinuxSyscallsTable[RAX]);
     if (!call)
     {
         err("Syscall %#llx failed.", RAX);
