@@ -85,20 +85,6 @@ namespace Xalloc
 
         void ExpandHeap(Xuint64_t Length);
 
-        inline void Xstac()
-        {
-            if (this->SMAPUsed)
-                asm volatile("stac" ::
-                                 : "cc");
-        }
-
-        inline void Xclac()
-        {
-            if (this->SMAPUsed)
-                asm volatile("clac" ::
-                                 : "cc");
-        }
-
         static inline void *Xmemcpy(void *__restrict__ Destination, const void *__restrict__ Source, Xuint64_t Length)
         {
             unsigned char *dst = (unsigned char *)Destination;
@@ -117,6 +103,20 @@ namespace Xalloc
         }
 
     public:
+        inline void Xstac()
+        {
+            if (this->SMAPUsed)
+                asm volatile("stac" ::
+                                 : "cc");
+        }
+
+        inline void Xclac()
+        {
+            if (this->SMAPUsed)
+                asm volatile("clac" ::
+                                 : "cc");
+        }
+
         /**
          * @brief Construct a new Allocator V1 object
          *

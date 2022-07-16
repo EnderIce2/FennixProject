@@ -17,7 +17,7 @@ struct MouseInfo
 
 MouseInfo ReadMouseBuffer()
 {
-    void *mousefile = (void *)syscall_FileOpen((char *)"/dev/mouse");
+    File *mousefile = (File *)syscall_FileOpen((char *)"/dev/mouse");
     MouseInfo info = {MouseNone, 0, 0};
     syscall_FileRead(mousefile, 0, &info, sizeof(MouseInfo));
     syscall_FileClose(mousefile);

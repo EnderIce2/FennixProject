@@ -35,6 +35,8 @@ GlobalBootParams *bootparams = nullptr;
 SysFlags *sysflags = nullptr;
 uint8_t kernel_stack[STACK_SIZE];
 
+Xalloc::AllocatorV1 *UserAllocator = nullptr; // TODO: Fix this allocator or modify liballoc11
+
 void KernelInit();
 
 EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
@@ -50,6 +52,7 @@ EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
     init_kernelpml();
     // init_heap(AllocationAlgorithm::XallocV1);
     init_heap(AllocationAlgorithm::LibAlloc11);
+    UserAllocator = new Xalloc::AllocatorV1((void *)USER_HEAP_BASE, true, true);
     bootparams = new GlobalBootParams;
     debug("bootparams is allocated at %p", bootparams);
     debug("bootparams framebuffer is allocated at %p", bootparams->Framebuffer);

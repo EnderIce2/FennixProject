@@ -1,10 +1,11 @@
 #include "syscalls.hpp"
 
-#include "../security/security.hpp"
 #include "../../libc/include/syscalls.h"
+#include "../security/security.hpp"
 #include "../drivers/keyboard.hpp"
 #include "../drivers/mouse.hpp"
 #include "../drivers/serial.h"
+#include "../kernel.h"
 #include "../timer.h"
 
 #include <internal_task.h>
@@ -198,50 +199,92 @@ static uint8_t internal_getlastkeyboardscancode(SyscallsRegs *regs)
     return ps2keyboard->GetLastScanCode();
 }
 
-static FileSystem::FILE *internal_fileOpen(SyscallsRegs *regs, char *Path)
+static File *internal_fileOpen(SyscallsRegs *regs, char *Path)
 {
     syscldbg("syscall: fileOpen( %s )", Path);
     if (!CanSyscall(regs))
-        return (FileSystem::FILE *)deniedcall;
-    return vfs->Open(Path, nullptr);
+        return (File *)deniedcall;
+
+    File *f = (File *)UserAllocator->Malloc(sizeof(File));
+    FileSystem::FILE *fo = vfs->Open(Path, nullptr);
+
+    UserAllocator->Xstac();
+    f->Status = static_cast<FileStatus>(fo->Status);
+    memcpy(f->Name, fo->Name, sizeof(f->Name));
+    if (fo)
+    {
+        f->IndexNode = fo->Node->IndexNode;
+        f->Mask = fo->Node->Mask;
+        f->Mode = fo->Node->Mode;
+        f->Flags = fo->Node->Flags;
+        f->UserIdentifier = fo->Node->UserIdentifier;
+        f->GroupIdentifier = fo->Node->GroupIdentifier;
+        f->Address = fo->Node->Address;
+        f->Length = fo->Node->Length;
+        f->Parent = fo->Node->Parent;
+        f->Operator = fo->Node->Operator;
+    }
+
+    UserAllocator->Xclac();
+    return f;
 }
 
-static void internal_fileClose(SyscallsRegs *regs, FileSystem::FILE *File)
+static void internal_fileClose(SyscallsRegs *regs, File *F)
 {
-    syscldbg("syscall: fileClose( %p )", File);
+    syscldbg("syscall: fileClose( %p )", F);
     if (!CanSyscall(regs))
         return;
-    vfs->Close(File);
+    UserAllocator->Xstac();
+    vfs->Close((FileSystem::FILE *)F->Handle);
+    UserAllocator->Xclac();
 }
 
-static uint64_t internal_fileRead(SyscallsRegs *regs, FileSystem::FILE *File, uint64_t Offset, void *Buffer, uint64_t Size)
+static uint64_t internal_fileRead(SyscallsRegs *regs, File *F, uint64_t Offset, void *Buffer, uint64_t Size)
 {
-    syscldbg("syscall: fileRead( %p, %#llx, %p, %#llx )", File, Offset, Buffer, Size);
+    syscldbg("syscall: fileRead( %p, %#llx, %p, %#llx )", F, Offset, Buffer, Size);
     if (!CanSyscall(regs))
         return deniedcall;
-    return vfs->Read(File, Offset, Buffer, Size);
+    UserAllocator->Xstac();
+    uint64_t ret = vfs->Read((FileSystem::FILE *)F->Handle, Offset, Buffer, Size);
+    UserAllocator->Xclac();
+    return ret;
 }
 
-static uint64_t internal_fileWrite(SyscallsRegs *regs, FileSystem::FILE *File, uint64_t Offset, void *Buffer, uint64_t Size)
+static uint64_t internal_fileWrite(SyscallsRegs *regs, File *F, uint64_t Offset, void *Buffer, uint64_t Size)
 {
-    syscldbg("syscall: fileWrite( %p, %#llx, %p, %#llx )", File, Offset, Buffer, Size);
+    syscldbg("syscall: fileWrite( %p, %#llx, %p, %#llx )", F, Offset, Buffer, Size);
     if (!CanSyscall(regs))
         return deniedcall;
-    return vfs->Write(File, Offset, Buffer, Size);
+    UserAllocator->Xstac();
+    uint64_t ret = vfs->Write((FileSystem::FILE *)F->Handle, Offset, Buffer, Size);
+    UserAllocator->Xclac();
+    return ret;
 }
 
-static uint64_t internal_filesize(SyscallsRegs *regs, FileSystem::FILE *File)
+static uint64_t internal_filesize(SyscallsRegs *regs, File *File)
 {
     syscldbg("syscall: filesize( %p )", File);
     if (!CanSyscall(regs))
         return deniedcall;
-    return File->Node->Length;
+    UserAllocator->Xstac();
+    uint64_t ret = ((FileSystem::FILE *)File->Handle)->Node->Length;
+    UserAllocator->Xclac();
+    return ret;
 }
 
 static void internal_usleep(SyscallsRegs *regs, uint64_t us)
 {
     syscldbg("syscall: usleep( %#llx )", us);
-    usleep(us);
+    if (CurrentTaskingMode == TaskingMode::Mono)
+    {
+        usleep(us);
+        return;
+    }
+    else if (CurrentTaskingMode == TaskingMode::Multi)
+    {
+        warn("Sleeping in multi-tasking mode is not implemented yet!");
+        return;
+    }
 }
 
 static uint64_t internal_dbg(SyscallsRegs *regs, int port, char *message)

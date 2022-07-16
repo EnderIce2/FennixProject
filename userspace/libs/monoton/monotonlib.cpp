@@ -8,7 +8,7 @@ namespace MonotonLib
     mtl::mtl(char *FontPath)
     {
         syscall_dbg(0x3F8, (char *)"[MonotonLib] Started.\n");
-        void *FontBinary = (void *)syscall_FileOpen(FontPath);
+        File *FontBinary = (File *)syscall_FileOpen(FontPath);
         if (FontBinary == nullptr)
         {
             syscall_dbg(0x3F8, (char *)"[LoadFont] Error! Could not open file.\n");
@@ -16,7 +16,7 @@ namespace MonotonLib
             return;
         }
         syscall_dbg(0x3F8, (char *)"[LoadFont] File opened.\n");
-        uint64_t FontFileSize = syscall_FileSize(FontBinary);
+        uint64_t FontFileSize = FontBinary->Length;
         void *FontAllocatedData = malloc(FontFileSize);
         syscall_FileRead(FontBinary, 0, FontAllocatedData, FontFileSize);
 
