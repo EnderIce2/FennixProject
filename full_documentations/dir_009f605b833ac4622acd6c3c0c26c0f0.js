@@ -10,7 +10,7 @@ var dir_009f605b833ac4622acd6c3c0c26c0f0 =
     [ "cpuid.h", "d7/d70/include_2cpuid_8h.html", "d7/d70/include_2cpuid_8h" ],
     [ "critical.hpp", "d1/d30/critical_8hpp.html", "d1/d30/critical_8hpp" ],
     [ "ctype.h", "de/d51/kernel_2include_2ctype_8h.html", "de/d51/kernel_2include_2ctype_8h" ],
-    [ "cwalk.h", "da/d7d/cwalk_8h.html", "da/d7d/cwalk_8h" ],
+    [ "cwalk.h", "dc/d3a/kernel_2include_2cwalk_8h.html", "dc/d3a/kernel_2include_2cwalk_8h" ],
     [ "debug.h", "db/d16/debug_8h.html", "db/d16/debug_8h" ],
     [ "display.h", "d4/d68/display_8h.html", "d4/d68/display_8h" ],
     [ "easyc.h", "de/d89/easyc_8h.html", null ],

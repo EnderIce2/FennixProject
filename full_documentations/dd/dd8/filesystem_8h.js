@@ -33,6 +33,7 @@ var filesystem_8h =
     [ "Virtual", "d0/d99/classFileSystem_1_1Virtual.html", "d0/d99/classFileSystem_1_1Virtual" ],
     [ "Device", "db/d00/classFileSystem_1_1Device.html", "db/d00/classFileSystem_1_1Device" ],
     [ "Mount", "dc/d19/classFileSystem_1_1Mount.html", "dc/d19/classFileSystem_1_1Mount" ],
+    [ "Process", "d8/dfc/classFileSystem_1_1Process.html", "d8/dfc/classFileSystem_1_1Process" ],
     [ "USTAR", "d0/df0/classFileSystem_1_1USTAR.html", "d0/df0/classFileSystem_1_1USTAR" ],
     [ "FileHeader", "d0/df0/classFileSystem_1_1USTAR.html#de/d80/structFileSystem_1_1USTAR_1_1FileHeader", [
       [ "chksum", "d0/df0/classFileSystem_1_1USTAR.html#a99dc642f2a1ac4717ed3430d3ddb9b4b", null ],
@@ -208,6 +209,7 @@ var filesystem_8h =
     [ "NumberOfFATs", "dd/dd8/filesystem_8h.html#afe1f6ef0e1e42f946a5114c05ffe69e4", null ],
     [ "NumberOfHeads", "dd/dd8/filesystem_8h.html#a3f776641be20acddf4750403983b9256", null ],
     [ "OEM", "dd/dd8/filesystem_8h.html#a3ceadcc2252a62915c4b7ee60dffeb46", null ],
+    [ "procfs", "dd/dd8/filesystem_8h.html#a591e7b9ac0327c7dee746d266fc09b29", null ],
     [ "ReservedSectors", "dd/dd8/filesystem_8h.html#a513ae2ab174740c67d72e22e40b104d5", null ],
     [ "RootDirectoryEntries", "dd/dd8/filesystem_8h.html#a672e99c7fb497ece14f73b76a4ee6815", null ],
     [ "Sectors16", "dd/dd8/filesystem_8h.html#ab223f980775b7b0978bfddb1e156469a", null ],

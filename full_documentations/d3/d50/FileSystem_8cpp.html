@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('d3/d50/FileSystem_8cpp.html','../../')
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../da/d7d/cwalk_8h_source.html">cwalk.h</a>&gt;</code><br />
+<code>#include &lt;cwalk.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dd/d42/lock_8h_source.html">lock.h</a>&gt;</code><br />
 <code>#include &lt;printf.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d6/d7e/bootscreen_8h_source.html">bootscreen.h</a>&gt;</code><br />
@@ -119,18 +119,12 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a126ae3ebc1440b0298351dfeeb1ded08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d50/FileSystem_8cpp.html#a126ae3ebc1440b0298351dfeeb1ded08">NEWLOCK</a> (VFSLock)</td></tr>
 <tr class="separator:a126ae3ebc1440b0298351dfeeb1ded08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51083e20e163d9e733f81a8bd59d4285"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a51083e20e163d9e733f81a8bd59d4285">FileSystem::GetPathFromNode</a> (FileSystemNode *Node)</td></tr>
-<tr class="separator:a51083e20e163d9e733f81a8bd59d4285"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6e88fe9669aa34a031374db196ec58e"><td class="memItemLeft" align="right" valign="top">FileSystemNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#ad6e88fe9669aa34a031374db196ec58e">FileSystem::GetNodeFromPath</a> (FileSystemNode *Parent, <a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a> Path)</td></tr>
-<tr class="separator:ad6e88fe9669aa34a031374db196ec58e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae21db18a1dd4359b807a76f4e166890b"><td class="memItemLeft" align="right" valign="top">FileSystemNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#ae21db18a1dd4359b807a76f4e166890b">FileSystem::AddNewChild</a> (FileSystemNode *Parent, <a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a> Name)</td></tr>
 <tr class="separator:ae21db18a1dd4359b807a76f4e166890b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0fe5c96dcf502d8c7992a51d714c1c0"><td class="memItemLeft" align="right" valign="top">FileSystemNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#ae0fe5c96dcf502d8c7992a51d714c1c0">FileSystem::GetChild</a> (FileSystemNode *Parent, <a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a> Name)</td></tr>
 <tr class="separator:ae0fe5c96dcf502d8c7992a51d714c1c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca394c7c50562fc4cddd6cd8922d6186"><td class="memItemLeft" align="right" valign="top">FILESTATUS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#aca394c7c50562fc4cddd6cd8922d6186">FileSystem::RemoveChild</a> (FileSystemNode *Parent, <a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a> Name)</td></tr>
 <tr class="separator:aca394c7c50562fc4cddd6cd8922d6186"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a834ba26cdf6ebaa14f95cb023e21348e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a834ba26cdf6ebaa14f95cb023e21348e">FileSystem::NormalizePath</a> (FileSystemNode *Parent, <a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a> Path)</td></tr>
-<tr class="separator:a834ba26cdf6ebaa14f95cb023e21348e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a362da94b2a7853d328aaf0fedd9851a3"><td class="memItemLeft" align="right" valign="top">FILESTATUS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a362da94b2a7853d328aaf0fedd9851a3">FileSystem::FileExists</a> (FileSystemNode *Parent, <a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a> Path)</td></tr>
 <tr class="separator:a362da94b2a7853d328aaf0fedd9851a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -142,6 +136,8 @@ Variables</h2></td></tr>
 <tr class="separator:a60d49784066fe3a8c836568f9683617b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26a35588e5151a977eac3968909fadb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d19/classFileSystem_1_1Mount.html">FileSystem::Mount</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d50/FileSystem_8cpp.html#a26a35588e5151a977eac3968909fadb5">mountfs</a> = nullptr</td></tr>
 <tr class="separator:a26a35588e5151a977eac3968909fadb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a591e7b9ac0327c7dee746d266fc09b29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/dfc/classFileSystem_1_1Process.html">FileSystem::Process</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d50/FileSystem_8cpp.html#a591e7b9ac0327c7dee746d266fc09b29">procfs</a> = nullptr</td></tr>
+<tr class="separator:a591e7b9ac0327c7dee746d266fc09b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae5511c8e6bade602158f8dcbec0f620"><td class="memItemLeft" align="right" valign="top">FileSystemNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#aae5511c8e6bade602158f8dcbec0f620">FileSystem::FileSystemRoot</a> = nullptr</td></tr>
 <tr class="separator:aae5511c8e6bade602158f8dcbec0f620"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fa18a092def46b44f18b5ccc94b53a2"><td class="memItemLeft" align="right" valign="top">FileSystemNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a1fa18a092def46b44f18b5ccc94b53a2">FileSystem::DeviceRootNode</a></td></tr>
@@ -150,6 +146,8 @@ Variables</h2></td></tr>
 <tr class="separator:ac3e2c3c485cfe2cf0114665be4359eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5a637d364a1c2609df2bc8c73c1510a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#ae5a637d364a1c2609df2bc8c73c1510a">FileSystem::MountNodeIndexNodeCount</a> = 0</td></tr>
 <tr class="separator:ae5a637d364a1c2609df2bc8c73c1510a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98849b8c7eccec7ad212eddb4bd2b62d"><td class="memItemLeft" align="right" valign="top">FileSystemNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a98849b8c7eccec7ad212eddb4bd2b62d">FileSystem::ProcessRootNode</a> = nullptr</td></tr>
+<tr class="separator:a98849b8c7eccec7ad212eddb4bd2b62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a47d194f70ad5f06b3343aef4eb235442"></a>
@@ -238,6 +236,24 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a591e7b9ac0327c7dee746d266fc09b29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a591e7b9ac0327c7dee746d266fc09b29">&#9670;&nbsp;</a></span>procfs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/dfc/classFileSystem_1_1Process.html">FileSystem::Process</a>* procfs = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00024">24</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00233">KernelInit()</a>.</p>
+
+</div>
+</div>
 <a id="aace8e8569f67aa3e86be6cefa47a71f7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aace8e8569f67aa3e86be6cefa47a71f7">&#9670;&nbsp;</a></span>vfs</h2>
 
@@ -252,7 +268,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00021">21</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00434">FileSystem::Device::AddFileSystem()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00444">FileSystem::Device::Device()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00233">internal_fileClose()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00202">internal_fileOpen()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00243">internal_fileRead()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00254">internal_fileWrite()</a>, <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00199">Driver::KernelDriver::KernelDriver()</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00233">KernelInit()</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00125">KernelTask()</a>, <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00086">Driver::KernelDriver::LoadKernelDriverFromFile()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00489">FileSystem::Mount::Mount()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00463">FileSystem::Mount::MountFileSystem()</a>, <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00181">SysCreateProcessFromFile()</a>, and <a class="el" href="../../d9/db9/ustar_8cpp_source.html#l00023">FileSystem::USTAR::USTAR()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00435">FileSystem::Device::AddFileSystem()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00445">FileSystem::Device::Device()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00264">internal_fileClose()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00307">internal_filefullpath()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00202">internal_fileOpen()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00233">internal_fileOpenWithParent()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00274">internal_fileRead()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00285">internal_fileWrite()</a>, <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00199">Driver::KernelDriver::KernelDriver()</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00233">KernelInit()</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00125">KernelTask()</a>, <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00086">Driver::KernelDriver::LoadKernelDriverFromFile()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00490">FileSystem::Mount::Mount()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00464">FileSystem::Mount::MountFileSystem()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00507">FileSystem::Process::Process()</a>, <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00181">SysCreateProcessFromFile()</a>, and <a class="el" href="../../d9/db9/ustar_8cpp_source.html#l00023">FileSystem::USTAR::USTAR()</a>.</p>
 
 </div>
 </div>

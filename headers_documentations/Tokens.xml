@@ -18928,6 +18928,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>procfs</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dd/dd8/filesystem_8h.html</Path>
+    <Anchor>a591e7b9ac0327c7dee746d266fc09b29</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>STACK_SIZE</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -22422,6 +22432,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>_FileOpenWithParent</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7ddaa0d504b72616eeaf6e8767e6c42d3477</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>_FileClose</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -22518,6 +22538,16 @@
     </TokenIdentifier>
     <Path>d2/d6e/syscalls_8h.html</Path>
     <Anchor>a16c10255fbc3692d24e41969a899c7dda5c47a221950c1bced7c4dff3ce415c80</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_FileFullPath</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7ddae2eac3387d5c9d44cd72ba64bbdc59a5</Anchor>
     <DeclaredIn>syscalls.h</DeclaredIn>
   </Token>
   <Token>
@@ -26015,6 +26045,38 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>FileSystem::Process</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>FileSystem::Process</Scope>
+    </TokenIdentifier>
+    <Path>d8/dfc/classFileSystem_1_1Process.html</Path>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Process</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::Process</Scope>
+    </TokenIdentifier>
+    <Path>d8/dfc/classFileSystem_1_1Process.html</Path>
+    <Anchor>a57e86b3419d9f66953ae22c69838e154</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~Process</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::Process</Scope>
+    </TokenIdentifier>
+    <Path>d8/dfc/classFileSystem_1_1Process.html</Path>
+    <Anchor>aab189b9df166487d356097b23bd93ded</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>FileSystem::Random</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -26220,6 +26282,39 @@
     </TokenIdentifier>
     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
     <Anchor>a9e2f2fb6df5e515098df312024c3de44</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetPathFromNode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::Virtual</Scope>
+    </TokenIdentifier>
+    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+    <Anchor>aaab2e2228d10f6286d33ec397c3b438b</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetNodeFromPath</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::Virtual</Scope>
+    </TokenIdentifier>
+    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+    <Anchor>a64f281b2983459dca561576fca5048cf</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NormalizePath</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::Virtual</Scope>
+    </TokenIdentifier>
+    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+    <Anchor>ac49b3d90cd905c1c1b620ec10206ae52</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>

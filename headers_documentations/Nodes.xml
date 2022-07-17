@@ -843,6 +843,22 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>Process</Name>
+              <Path>d8/dfc/classFileSystem_1_1Process.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>Process</Name>
+                <Path>d8/dfc/classFileSystem_1_1Process.html</Path>
+                <Anchor>a57e86b3419d9f66953ae22c69838e154</Anchor>
+               </Node>
+               <Node>
+                <Name>~Process</Name>
+                <Path>d8/dfc/classFileSystem_1_1Process.html</Path>
+                <Anchor>aab189b9df166487d356097b23bd93ded</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>Random</Name>
               <Path>d2/d47/classFileSystem_1_1Random.html</Path>
               <Subnodes>
@@ -1069,9 +1085,24 @@
                 <Anchor>a8cfd4e2543f352b94beefa3121255102</Anchor>
                </Node>
                <Node>
+                <Name>GetNodeFromPath</Name>
+                <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                <Anchor>a64f281b2983459dca561576fca5048cf</Anchor>
+               </Node>
+               <Node>
+                <Name>GetPathFromNode</Name>
+                <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                <Anchor>aaab2e2228d10f6286d33ec397c3b438b</Anchor>
+               </Node>
+               <Node>
                 <Name>Mount</Name>
                 <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
                 <Anchor>a39b256bf1a13a8df9293485419140454</Anchor>
+               </Node>
+               <Node>
+                <Name>NormalizePath</Name>
+                <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                <Anchor>ac49b3d90cd905c1c1b620ec10206ae52</Anchor>
                </Node>
                <Node>
                 <Name>Open</Name>
@@ -5293,23 +5324,6 @@
             <Anchor>d2/d1b/structmultiboot__info_8____unnamed_____8____unnamed____</Anchor>
             <Subnodes>
              <Node>
-              <Name>framebuffer_palette_addr</Name>
-              <Path>d1/dc0/multiboot_8h.html</Path>
-              <Anchor>ab4a160c025f0db5470ddced0d2c99de3</Anchor>
-             </Node>
-             <Node>
-              <Name>framebuffer_palette_num_colors</Name>
-              <Path>d1/dc0/multiboot_8h.html</Path>
-              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>multiboot_info.__unnamed__.__unnamed__</Name>
-            <Path>d1/dc0/multiboot_8h.html</Path>
-            <Anchor>d2/d1b/structmultiboot__info_8____unnamed_____8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
               <Name>framebuffer_blue_field_position</Name>
               <Path>d1/dc0/multiboot_8h.html</Path>
               <Anchor>ace107d23f7f4af6fd8d969926c5c9d16</Anchor>
@@ -5338,6 +5352,23 @@
               <Name>framebuffer_red_mask_size</Name>
               <Path>d1/dc0/multiboot_8h.html</Path>
               <Anchor>a0d868424e2b703471e3d73c0a72bc75c</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>multiboot_info.__unnamed__.__unnamed__</Name>
+            <Path>d1/dc0/multiboot_8h.html</Path>
+            <Anchor>d2/d1b/structmultiboot__info_8____unnamed_____8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>framebuffer_palette_addr</Name>
+              <Path>d1/dc0/multiboot_8h.html</Path>
+              <Anchor>ab4a160c025f0db5470ddced0d2c99de3</Anchor>
+             </Node>
+             <Node>
+              <Name>framebuffer_palette_num_colors</Name>
+              <Path>d1/dc0/multiboot_8h.html</Path>
+              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -5737,23 +5768,6 @@
             <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
             <Subnodes>
              <Node>
-              <Name>framebuffer_palette</Name>
-              <Path>d5/dba/multiboot2_8h.html</Path>
-              <Anchor>ac7df1fdfee327da3c205ba9086e4802a</Anchor>
-             </Node>
-             <Node>
-              <Name>framebuffer_palette_num_colors</Name>
-              <Path>d5/dba/multiboot2_8h.html</Path>
-              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>multiboot_tag_framebuffer.__unnamed__.__unnamed__</Name>
-            <Path>d5/dba/multiboot2_8h.html</Path>
-            <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
               <Name>framebuffer_blue_field_position</Name>
               <Path>d5/dba/multiboot2_8h.html</Path>
               <Anchor>ace107d23f7f4af6fd8d969926c5c9d16</Anchor>
@@ -5782,6 +5796,23 @@
               <Name>framebuffer_red_mask_size</Name>
               <Path>d5/dba/multiboot2_8h.html</Path>
               <Anchor>a0d868424e2b703471e3d73c0a72bc75c</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>multiboot_tag_framebuffer.__unnamed__.__unnamed__</Name>
+            <Path>d5/dba/multiboot2_8h.html</Path>
+            <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>framebuffer_palette</Name>
+              <Path>d5/dba/multiboot2_8h.html</Path>
+              <Anchor>ac7df1fdfee327da3c205ba9086e4802a</Anchor>
+             </Node>
+             <Node>
+              <Name>framebuffer_palette_num_colors</Name>
+              <Path>d5/dba/multiboot2_8h.html</Path>
+              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -23679,9 +23710,24 @@
                     <Anchor>a8cfd4e2543f352b94beefa3121255102</Anchor>
                    </Node>
                    <Node>
+                    <Name>GetNodeFromPath</Name>
+                    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                    <Anchor>a64f281b2983459dca561576fca5048cf</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>GetPathFromNode</Name>
+                    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                    <Anchor>aaab2e2228d10f6286d33ec397c3b438b</Anchor>
+                   </Node>
+                   <Node>
                     <Name>Mount</Name>
                     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
                     <Anchor>a39b256bf1a13a8df9293485419140454</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>NormalizePath</Name>
+                    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                    <Anchor>ac49b3d90cd905c1c1b620ec10206ae52</Anchor>
                    </Node>
                    <Node>
                     <Name>Open</Name>
@@ -23749,6 +23795,22 @@
                     <Name>MountFileSystem</Name>
                     <Path>dc/d19/classFileSystem_1_1Mount.html</Path>
                     <Anchor>a9b71a5fa01a4cb470a46bff7df16f474</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>Process</Name>
+                  <Path>d8/dfc/classFileSystem_1_1Process.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>Process</Name>
+                    <Path>d8/dfc/classFileSystem_1_1Process.html</Path>
+                    <Anchor>a57e86b3419d9f66953ae22c69838e154</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>~Process</Name>
+                    <Path>d8/dfc/classFileSystem_1_1Process.html</Path>
+                    <Anchor>aab189b9df166487d356097b23bd93ded</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -25242,6 +25304,11 @@
                   <Name>OEM</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
                   <Anchor>a3ceadcc2252a62915c4b7ee60dffeb46</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>procfs</Name>
+                  <Path>dd/dd8/filesystem_8h.html</Path>
+                  <Anchor>a591e7b9ac0327c7dee746d266fc09b29</Anchor>
                  </Node>
                  <Node>
                   <Name>ReservedSectors</Name>
@@ -28661,6 +28728,11 @@
                     <Anchor>a16c10255fbc3692d24e41969a899c7dda67d50a6c2fcc2c0de3a215f606866a5c</Anchor>
                    </Node>
                    <Node>
+                    <Name>_FileOpenWithParent</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7ddaa0d504b72616eeaf6e8767e6c42d3477</Anchor>
+                   </Node>
+                   <Node>
                     <Name>_FileClose</Name>
                     <Path>d2/d6e/syscalls_8h.html</Path>
                     <Anchor>a16c10255fbc3692d24e41969a899c7dda15e3975fb867399d1db643978b54eef7</Anchor>
@@ -28709,6 +28781,11 @@
                     <Name>_FileCreate</Name>
                     <Path>d2/d6e/syscalls_8h.html</Path>
                     <Anchor>a16c10255fbc3692d24e41969a899c7dda5c47a221950c1bced7c4dff3ce415c80</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>_FileFullPath</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7ddae2eac3387d5c9d44cd72ba64bbdc59a5</Anchor>
                    </Node>
                    <Node>
                     <Name>_usleep</Name>

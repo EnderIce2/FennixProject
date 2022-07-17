@@ -9,6 +9,7 @@ var namespaceFileSystem =
     [ "Initrd", "d9/d12/classFileSystem_1_1Initrd.html", "d9/d12/classFileSystem_1_1Initrd" ],
     [ "Mount", "dc/d19/classFileSystem_1_1Mount.html", "dc/d19/classFileSystem_1_1Mount" ],
     [ "Null", "de/dc3/classFileSystem_1_1Null.html", "de/dc3/classFileSystem_1_1Null" ],
+    [ "Process", "d8/dfc/classFileSystem_1_1Process.html", "d8/dfc/classFileSystem_1_1Process" ],
     [ "Random", "d2/d47/classFileSystem_1_1Random.html", "d2/d47/classFileSystem_1_1Random" ],
     [ "Serial", "dd/dd0/classFileSystem_1_1Serial.html", "dd/dd0/classFileSystem_1_1Serial" ],
     [ "USTAR", "d0/df0/classFileSystem_1_1USTAR.html", "d0/df0/classFileSystem_1_1USTAR" ],

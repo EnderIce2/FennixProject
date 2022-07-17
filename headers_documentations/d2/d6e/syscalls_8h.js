@@ -97,6 +97,7 @@ var syscalls_8h =
       [ "_UnregisterInterruptHandler", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda08e47f2c54fde5d7b6e2416eb5ec4bca", null ],
       [ "_GetLastKeyboardScanCode", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda230bd1aa2022e9bfbdb2690d4255ca58", null ],
       [ "_FileOpen", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda67d50a6c2fcc2c0de3a215f606866a5c", null ],
+      [ "_FileOpenWithParent", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddaa0d504b72616eeaf6e8767e6c42d3477", null ],
       [ "_FileClose", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda15e3975fb867399d1db643978b54eef7", null ],
       [ "_FileRead", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda85355d1f0b9f7daf155306243f0e82f3", null ],
       [ "_FileWrite", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddaee6aec2259a35613db3755d03491b161", null ],
@@ -107,6 +108,7 @@ var syscalls_8h =
       [ "_FileRename", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda1a33f7168084998d689df83af516965d", null ],
       [ "_FileExists", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddadbd60dad7656ada530267c4e124429d8", null ],
       [ "_FileCreate", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda5c47a221950c1bced7c4dff3ce415c80", null ],
+      [ "_FileFullPath", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddae2eac3387d5c9d44cd72ba64bbdc59a5", null ],
       [ "_usleep", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda75975d7f4982d52e685b7a4a1ef48ac6", null ],
       [ "_DebugMessage", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda72d74f32cb7226e96b077d3873cd7912", null ]
     ] ]

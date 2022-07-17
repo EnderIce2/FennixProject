@@ -10,6 +10,14 @@
         <Path>dc/d88/md_kernel_README.html</Path>
        </Node>
        <Node>
+        <Name>LICENSE</Name>
+        <Path>d9/da7/md_userspace_libs_cargs_LICENSE.html</Path>
+       </Node>
+       <Node>
+        <Name>LICENSE</Name>
+        <Path>d1/d6c/md_userspace_libs_cwalk_LICENSE.html</Path>
+       </Node>
+       <Node>
         <Name>Namespaces</Name>
         <Path>namespaces.html</Path>
         <Subnodes>
@@ -2862,6 +2870,22 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>Process</Name>
+              <Path>d8/dfc/classFileSystem_1_1Process.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>Process</Name>
+                <Path>d8/dfc/classFileSystem_1_1Process.html</Path>
+                <Anchor>a57e86b3419d9f66953ae22c69838e154</Anchor>
+               </Node>
+               <Node>
+                <Name>~Process</Name>
+                <Path>d8/dfc/classFileSystem_1_1Process.html</Path>
+                <Anchor>aab189b9df166487d356097b23bd93ded</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>Random</Name>
               <Path>d2/d47/classFileSystem_1_1Random.html</Path>
               <Subnodes>
@@ -3088,9 +3112,24 @@
                 <Anchor>ad3aba1b2941bed48d02257c6befcd61b</Anchor>
                </Node>
                <Node>
+                <Name>GetNodeFromPath</Name>
+                <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                <Anchor>a3b201953752ddf5837c5620576417998</Anchor>
+               </Node>
+               <Node>
+                <Name>GetPathFromNode</Name>
+                <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                <Anchor>a2d383e2254c1bde70f9f9f2032ca97fb</Anchor>
+               </Node>
+               <Node>
                 <Name>Mount</Name>
                 <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
                 <Anchor>a0f5fde2f47d3002087613ca6ee9c817e</Anchor>
+               </Node>
+               <Node>
+                <Name>NormalizePath</Name>
+                <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                <Anchor>a6d3bcafa44ad2e8db3d47a5d115d08ad</Anchor>
                </Node>
                <Node>
                 <Name>Open</Name>
@@ -4811,6 +4850,90 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>cag_option</Name>
+            <Path>d1/d37/cargs_8h.html</Path>
+            <Anchor>d8/ddb/structcag__option</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>access_letters</Name>
+              <Path>d1/d37/cargs_8h.html</Path>
+              <Anchor>a74db259148d40beb3f1fcdbbecf22b22</Anchor>
+             </Node>
+             <Node>
+              <Name>access_name</Name>
+              <Path>d1/d37/cargs_8h.html</Path>
+              <Anchor>a2d81aa9a9215027cf7087b3be2190326</Anchor>
+             </Node>
+             <Node>
+              <Name>description</Name>
+              <Path>d1/d37/cargs_8h.html</Path>
+              <Anchor>aa3a294dc3fe76344cf07d538bad90a76</Anchor>
+             </Node>
+             <Node>
+              <Name>identifier</Name>
+              <Path>d1/d37/cargs_8h.html</Path>
+              <Anchor>aee723c931719a2e5b84fce5f251ddec7</Anchor>
+             </Node>
+             <Node>
+              <Name>value_name</Name>
+              <Path>d1/d37/cargs_8h.html</Path>
+              <Anchor>a82eeae2b3e62b12a47d255548814f0d3</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>cag_option_context</Name>
+            <Path>d1/d37/cargs_8h.html</Path>
+            <Anchor>d3/df1/structcag__option__context</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>argc</Name>
+              <Path>d1/d37/cargs_8h.html</Path>
+              <Anchor>afe65d1e8f058680fa8ba11b74d055928</Anchor>
+             </Node>
+             <Node>
+              <Name>argv</Name>
+              <Path>d1/d37/cargs_8h.html</Path>
+              <Anchor>a022f13ab3df1d4baf7ebf637f344c47a</Anchor>
+             </Node>
+             <Node>
+              <Name>forced_end</Name>
+              <Path>d1/d37/cargs_8h.html</Path>
+              <Anchor>aefd1a51115d5345509fd4b681e0397fa</Anchor>
+             </Node>
+             <Node>
+              <Name>identifier</Name>
+              <Path>d1/d37/cargs_8h.html</Path>
+              <Anchor>a79b4913443e932701b0c92e4d2eed826</Anchor>
+             </Node>
+             <Node>
+              <Name>index</Name>
+              <Path>d1/d37/cargs_8h.html</Path>
+              <Anchor>a579ece2d9da71176678c2d1be2091dd2</Anchor>
+             </Node>
+             <Node>
+              <Name>inner_index</Name>
+              <Path>d1/d37/cargs_8h.html</Path>
+              <Anchor>af27b24ee98f8d3a06faa91fb1b8b8017</Anchor>
+             </Node>
+             <Node>
+              <Name>option_count</Name>
+              <Path>d1/d37/cargs_8h.html</Path>
+              <Anchor>aba929e53194dbf701855e031dfed8fc7</Anchor>
+             </Node>
+             <Node>
+              <Name>options</Name>
+              <Path>d1/d37/cargs_8h.html</Path>
+              <Anchor>abf08062c8871250d75a5d44adb94eb99</Anchor>
+             </Node>
+             <Node>
+              <Name>value</Name>
+              <Path>d1/d37/cargs_8h.html</Path>
+              <Anchor>a5fb840d6294e740ae97be12dfee745cd</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>CPUData</Name>
             <Path>de/df9/structCPUData.html</Path>
             <Subnodes>
@@ -4878,54 +5001,54 @@
            </Node>
            <Node>
             <Name>cwk_segment</Name>
-            <Path>da/d7d/cwalk_8h.html</Path>
+            <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
             <Anchor>d5/daa/structcwk__segment</Anchor>
             <Subnodes>
              <Node>
               <Name>begin</Name>
-              <Path>da/d7d/cwalk_8h.html</Path>
-              <Anchor>acc24c21171a2e2d9ab77a479576545a4</Anchor>
+              <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+              <Anchor>af091380741c08e3a24ecf0b407c70fb2</Anchor>
              </Node>
              <Node>
               <Name>end</Name>
-              <Path>da/d7d/cwalk_8h.html</Path>
-              <Anchor>af5c12c59eb51f5530578dc2a5665fd47</Anchor>
+              <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+              <Anchor>ac45c7e4bbd667065ba28819be3034849</Anchor>
              </Node>
              <Node>
               <Name>path</Name>
-              <Path>da/d7d/cwalk_8h.html</Path>
-              <Anchor>a5ee666d32052bfe2d025add23029cae9</Anchor>
+              <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+              <Anchor>a10444973b52135654c24e7a5860a33ef</Anchor>
              </Node>
              <Node>
               <Name>segments</Name>
-              <Path>da/d7d/cwalk_8h.html</Path>
-              <Anchor>a59492a14e2f869b3b159f2bcde5a0904</Anchor>
+              <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+              <Anchor>a5f8e50048e43b4ded04cef354dafcf31</Anchor>
              </Node>
              <Node>
               <Name>size</Name>
-              <Path>da/d7d/cwalk_8h.html</Path>
+              <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
               <Anchor>afb2c298ee1b44ea23e97b7408d535cc2</Anchor>
              </Node>
             </Subnodes>
            </Node>
            <Node>
             <Name>cwk_segment_joined</Name>
-            <Path>d3/dc4/cwalk_8c.html</Path>
+            <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
             <Anchor>d7/d07/structcwk__segment__joined</Anchor>
             <Subnodes>
              <Node>
               <Name>path_index</Name>
-              <Path>d3/dc4/cwalk_8c.html</Path>
+              <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
               <Anchor>aba0b6e03666a942dfd8866f166c0f66c</Anchor>
              </Node>
              <Node>
               <Name>paths</Name>
-              <Path>d3/dc4/cwalk_8c.html</Path>
-              <Anchor>a813aa5d7ad55830bd7d66db2e060bd3b</Anchor>
+              <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+              <Anchor>af3554e0874c49d48631d99a917cb468f</Anchor>
              </Node>
              <Node>
               <Name>segment</Name>
-              <Path>d3/dc4/cwalk_8c.html</Path>
+              <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
               <Anchor>a17de2ef0ce93d44c29caa5dd58a293b9</Anchor>
              </Node>
             </Subnodes>
@@ -7410,23 +7533,6 @@
             <Anchor>d2/d1b/structmultiboot__info_8____unnamed_____8____unnamed____</Anchor>
             <Subnodes>
              <Node>
-              <Name>framebuffer_palette_addr</Name>
-              <Path>d1/dc0/multiboot_8h.html</Path>
-              <Anchor>ab4a160c025f0db5470ddced0d2c99de3</Anchor>
-             </Node>
-             <Node>
-              <Name>framebuffer_palette_num_colors</Name>
-              <Path>d1/dc0/multiboot_8h.html</Path>
-              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>multiboot_info.__unnamed__.__unnamed__</Name>
-            <Path>d1/dc0/multiboot_8h.html</Path>
-            <Anchor>d2/d1b/structmultiboot__info_8____unnamed_____8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
               <Name>framebuffer_blue_field_position</Name>
               <Path>d1/dc0/multiboot_8h.html</Path>
               <Anchor>ace107d23f7f4af6fd8d969926c5c9d16</Anchor>
@@ -7455,6 +7561,23 @@
               <Name>framebuffer_red_mask_size</Name>
               <Path>d1/dc0/multiboot_8h.html</Path>
               <Anchor>a0d868424e2b703471e3d73c0a72bc75c</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>multiboot_info.__unnamed__.__unnamed__</Name>
+            <Path>d1/dc0/multiboot_8h.html</Path>
+            <Anchor>d2/d1b/structmultiboot__info_8____unnamed_____8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>framebuffer_palette_addr</Name>
+              <Path>d1/dc0/multiboot_8h.html</Path>
+              <Anchor>ab4a160c025f0db5470ddced0d2c99de3</Anchor>
+             </Node>
+             <Node>
+              <Name>framebuffer_palette_num_colors</Name>
+              <Path>d1/dc0/multiboot_8h.html</Path>
+              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -9896,23 +10019,6 @@
             <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
             <Subnodes>
              <Node>
-              <Name>command</Name>
-              <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>a1dccadfed7bcbb036c56a4afb97e906f</Anchor>
-             </Node>
-             <Node>
-              <Name>cx</Name>
-              <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>a0bdff8095c8bf1b38775bf35547a1317</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>VMwareCMD.__unnamed__</Name>
-            <Path>d1/dac/VMDetect_8c.html</Path>
-            <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
               <Name>bx</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
               <Anchor>a6f5770d50b01a0abbce803768d3592b0</Anchor>
@@ -9930,14 +10036,14 @@
             <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
             <Subnodes>
              <Node>
-              <Name>dx</Name>
+              <Name>command</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>aacd2b09d39705a84bff035c18c9faea9</Anchor>
+              <Anchor>a1dccadfed7bcbb036c56a4afb97e906f</Anchor>
              </Node>
              <Node>
-              <Name>port</Name>
+              <Name>cx</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>a901555fb06e346cb065ceb9808dcfc25</Anchor>
+              <Anchor>a0bdff8095c8bf1b38775bf35547a1317</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -9955,6 +10061,23 @@
               <Name>magic</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
               <Anchor>a2f3a4fccca6406e35bcf33e92dd93135</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>VMwareCMD.__unnamed__</Name>
+            <Path>d1/dac/VMDetect_8c.html</Path>
+            <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>dx</Name>
+              <Path>d1/dac/VMDetect_8c.html</Path>
+              <Anchor>aacd2b09d39705a84bff035c18c9faea9</Anchor>
+             </Node>
+             <Node>
+              <Name>port</Name>
+              <Path>d1/dac/VMDetect_8c.html</Path>
+              <Anchor>a901555fb06e346cb065ceb9808dcfc25</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -25274,227 +25397,277 @@
                </Node>
                <Node>
                 <Name>cwalk.h</Name>
-                <Path>da/d7d/cwalk_8h.html</Path>
+                <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>cwk_segment</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
                   <Anchor>d5/daa/structcwk__segment</Anchor>
                   <Subnodes>
                    <Node>
                     <Name>begin</Name>
-                    <Path>da/d7d/cwalk_8h.html</Path>
-                    <Anchor>acc24c21171a2e2d9ab77a479576545a4</Anchor>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>af091380741c08e3a24ecf0b407c70fb2</Anchor>
                    </Node>
                    <Node>
                     <Name>end</Name>
-                    <Path>da/d7d/cwalk_8h.html</Path>
-                    <Anchor>af5c12c59eb51f5530578dc2a5665fd47</Anchor>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>ac45c7e4bbd667065ba28819be3034849</Anchor>
                    </Node>
                    <Node>
                     <Name>path</Name>
-                    <Path>da/d7d/cwalk_8h.html</Path>
-                    <Anchor>a5ee666d32052bfe2d025add23029cae9</Anchor>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a10444973b52135654c24e7a5860a33ef</Anchor>
                    </Node>
                    <Node>
                     <Name>segments</Name>
-                    <Path>da/d7d/cwalk_8h.html</Path>
-                    <Anchor>a59492a14e2f869b3b159f2bcde5a0904</Anchor>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a5f8e50048e43b4ded04cef354dafcf31</Anchor>
                    </Node>
                    <Node>
                     <Name>size</Name>
-                    <Path>da/d7d/cwalk_8h.html</Path>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
                     <Anchor>afb2c298ee1b44ea23e97b7408d535cc2</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>CWK_EXPORT</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>af5b9d6c5afeb02541963faaa15d24b29</Anchor>
                  </Node>
                  <Node>
                   <Name>CWK_IMPORT</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>aebd784c18b95ed6a15cdbe974749b25d</Anchor>
                  </Node>
                  <Node>
                   <Name>CWK_LIBRARY_H</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a418674d8e5d6cf699039c4912786817b</Anchor>
                  </Node>
                  <Node>
                   <Name>CWK_PUBLIC</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a1557461a3dd64c516ec9eb8bf08de382</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_style</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35</Anchor>
                   <Subnodes>
                    <Node>
                     <Name>CWK_STYLE_WINDOWS</Name>
-                    <Path>da/d7d/cwalk_8h.html</Path>
+                    <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                     <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
                    </Node>
                    <Node>
                     <Name>CWK_STYLE_UNIX</Name>
-                    <Path>da/d7d/cwalk_8h.html</Path>
+                    <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                    <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_STYLE_WINDOWS</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_STYLE_UNIX</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_STYLE_WINDOWS</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_STYLE_UNIX</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
                     <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>cwk_segment_type</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a6108f90d2ae646d1b255bea8be6cd66c</Anchor>
                   <Subnodes>
                    <Node>
                     <Name>CWK_NORMAL</Name>
-                    <Path>da/d7d/cwalk_8h.html</Path>
+                    <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                     <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
                    </Node>
                    <Node>
                     <Name>CWK_CURRENT</Name>
-                    <Path>da/d7d/cwalk_8h.html</Path>
+                    <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                     <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
                    </Node>
                    <Node>
                     <Name>CWK_BACK</Name>
-                    <Path>da/d7d/cwalk_8h.html</Path>
+                    <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                    <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_NORMAL</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_CURRENT</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_BACK</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_NORMAL</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_CURRENT</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_BACK</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
                     <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>cwk_path_change_basename</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a13992aee0f81f3d51e1c793a97fb780a</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_change_extension</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>aac7343e7b15f517d9cfdfa0d6e4e1160</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_change_root</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a8e8d1717f2dcf7dbfe8a54a03be22b58</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_change_segment</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a38033b645a7a0fa1c43921a64af51acd</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_absolute</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a0e6b3622394c68a0286085b8907cf5b2</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_basename</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>aa5e93482b11e37af62bb9f605c8866a0</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_dirname</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>ad02629bf5420bb515fb6c95633b7b164</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_extension</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>ab66834fcf9a98403ae027f888cacd25d</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_first_segment</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a97e64700e1df97572fb7df1f6ce3a1f3</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_intersection</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>ab38ede3863e727db5611ce9d23d2e990</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_last_segment</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>ac2d95a40e07cd4bc3e3af28ae366259b</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_next_segment</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a5d7659aaa8b1a7f8e9c1097e7b4dc912</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_previous_segment</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a62cfd570a00de9811417dc8b32bd1465</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_relative</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a383836841603aad4712029e5f42de6bb</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_root</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>ac5ac1f6c3505a13cf6af679b3e1075ab</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_segment_type</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a5779262b292913597c5d5ab2c055b9e7</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_style</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a2ba934a4a37f1d5911faa140e4e2c46c</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_guess_style</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a9b4517f492f5d5859f599a963cf1026a</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_has_extension</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>aa917d03c0659fdefe8575493295e18d1</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_is_absolute</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>aae129e02017ddd7ad9c7d7d24f107079</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_is_relative</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>ab734e7277e96ea5d5acec4fbbd2fc402</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_is_separator</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a2703a5d58bd1fd5aea8302c413660a27</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_join</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a2b0ad7a91b604b5fff516499b84c97d7</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_join_multiple</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>ac032cd6779d648b793ef66efbb6219d6</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_normalize</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a670897583339fbff8befc11da880018c</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_set_style</Name>
-                  <Path>da/d7d/cwalk_8h.html</Path>
+                  <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
                   <Anchor>a3e75a1f14754498a0079bb11f9ddca9a</Anchor>
                  </Node>
                 </Subnodes>
@@ -26985,9 +27158,24 @@
                     <Anchor>ad3aba1b2941bed48d02257c6befcd61b</Anchor>
                    </Node>
                    <Node>
+                    <Name>GetNodeFromPath</Name>
+                    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                    <Anchor>a3b201953752ddf5837c5620576417998</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>GetPathFromNode</Name>
+                    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                    <Anchor>a2d383e2254c1bde70f9f9f2032ca97fb</Anchor>
+                   </Node>
+                   <Node>
                     <Name>Mount</Name>
                     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
                     <Anchor>a0f5fde2f47d3002087613ca6ee9c817e</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>NormalizePath</Name>
+                    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                    <Anchor>a6d3bcafa44ad2e8db3d47a5d115d08ad</Anchor>
                    </Node>
                    <Node>
                     <Name>Open</Name>
@@ -27055,6 +27243,22 @@
                     <Name>MountFileSystem</Name>
                     <Path>dc/d19/classFileSystem_1_1Mount.html</Path>
                     <Anchor>a6c3e54ed3cb0e42d6ed5b03af3740904</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>Process</Name>
+                  <Path>d8/dfc/classFileSystem_1_1Process.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>Process</Name>
+                    <Path>d8/dfc/classFileSystem_1_1Process.html</Path>
+                    <Anchor>a57e86b3419d9f66953ae22c69838e154</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>~Process</Name>
+                    <Path>d8/dfc/classFileSystem_1_1Process.html</Path>
+                    <Anchor>aab189b9df166487d356097b23bd93ded</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -28548,6 +28752,11 @@
                   <Name>OEM</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
                   <Anchor>a3ceadcc2252a62915c4b7ee60dffeb46</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>procfs</Name>
+                  <Path>dd/dd8/filesystem_8h.html</Path>
+                  <Anchor>a591e7b9ac0327c7dee746d266fc09b29</Anchor>
                  </Node>
                  <Node>
                   <Name>ReservedSectors</Name>
@@ -30530,293 +30739,293 @@
                </Node>
                <Node>
                 <Name>cwalk.c</Name>
-                <Path>d3/dc4/cwalk_8c.html</Path>
+                <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>cwk_segment_joined</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
                   <Anchor>d7/d07/structcwk__segment__joined</Anchor>
                   <Subnodes>
                    <Node>
                     <Name>path_index</Name>
-                    <Path>d3/dc4/cwalk_8c.html</Path>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
                     <Anchor>aba0b6e03666a942dfd8866f166c0f66c</Anchor>
                    </Node>
                    <Node>
                     <Name>paths</Name>
-                    <Path>d3/dc4/cwalk_8c.html</Path>
-                    <Anchor>a813aa5d7ad55830bd7d66db2e060bd3b</Anchor>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>af3554e0874c49d48631d99a917cb468f</Anchor>
                    </Node>
                    <Node>
                     <Name>segment</Name>
-                    <Path>d3/dc4/cwalk_8c.html</Path>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
                     <Anchor>a17de2ef0ce93d44c29caa5dd58a293b9</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>syskernel</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a7bb4fd78cc5c56b19c93484c250033aa</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_change_basename</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a2e579c3c6b74e488a0170d2bd80a5a49</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_change_extension</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a2a04acb86aee8898e935cd9d056e7859</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_change_root</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a60ae05adcc035bd0f06a8244d4ad7500</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_change_segment</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>acdc8c69218f67780f4b8e167a41e1995</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_find_next_stop</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a67a63e3978a34a02d116cff7d06c4c73</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_find_previous_stop</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>afaa21620b71c743a0e59b9f1138bcb7e</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_absolute</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a7f26ae82c88d2561438ce511d4114244</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_basename</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>aebab254407554e6b19d1e5ecdd4b619e</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_dirname</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a0c697dadb5c17db6253c42d713364565</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_extension</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a01bddf6e55305f34c31f720d5c09e149</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_first_segment</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>ad7f13a9126b2159c07b031a496d654fe</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_first_segment_joined</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a1a43318c3244e8b93d3c686c35821e09</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_first_segment_without_root</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>aa1280f7545ff0215f95b65f7ac60155f</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_intersection</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>ab34ac18259b215d184759bc044aa4832</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_last_segment</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a2268310f7bba59fe263365ab73b74c83</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_last_segment_without_root</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>aaf12f585ced2b3fcfe70531641a6fadd</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_next_segment</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>acfd833c41dae993e90dba669564a63f4</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_next_segment_joined</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a2ba74980728c6b7c0757fe4ed6491071</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_previous_segment</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a167a371d2add021c078add363006d813</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_previous_segment_joined</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a3bda14d20595e25ba1db0bf61c5da1a0</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_relative</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>abd1d5366163d7220c6b0891bc90d264a</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_root</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>ab85b1ed4f5b36fd22d1e0f0d65be03a1</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_root_unix</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a0b534513ae6fe9f4ec742f161da022c0</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_root_windows</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a717ab7b9a683fefc6f2038a1c0e2e57b</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_segment_type</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a9ab5f0bebf3dc5aa6d4780e6002fd9ea</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_get_style</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a243dd2bfd37ea28867e893fb4044bf1e</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_guess_style</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a4eaff34866380542bc682cb76d9742b0</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_has_extension</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a1ece84c0bbe6e950005264de819c9cb0</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_is_absolute</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a805349f9c4f2783187e34a236cedb9b6</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_is_relative</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a57a7822bf8af4f0f978579825c24ea33</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_is_root_absolute</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a7031ed4abfd806cc68acd9ace2d23120</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_is_separator</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>abe0da5227916fc94608ab66a92daf59f</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_is_string_equal</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a94681354e2648fec4ce13153a78339b3</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_join</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>ad3590f6588b2461fcf8f3ad84bfc5d42</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_join_and_normalize_multiple</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>ac88ffacd0f2aa502b9f67c6d5acc9b65</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_join_multiple</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a940c081e6d90d13c77aa41a3bd36e94f</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_normalize</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a438b605066e389e36ed368ce85c69604</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_output</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>aa69c39acc427954362db13d3f4a726a9</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_output_back</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>add919e716831dc9a27b441389d960305</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_output_current</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a45f6de9e9493fe9ef2771fcace3b5b4e</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_output_dot</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a3092b83cdcf9746b82022873267c9679</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_output_separator</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a6bfc63dd7ba77d04a03cb1dbc2d5524a</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_output_sized</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>ae44a699be828ffe58b636e8c6ab13dc0</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_segment_back_will_be_removed</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>ac3369d5a83cb4ff98173e3caf6767643</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_segment_joined_skip_invisible</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a642ae7f0b4af0374c203cbebb03a1ff1</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_segment_normal_will_be_removed</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a7e02691026e505e824f250e9b39c68cf</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_segment_will_be_removed</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a27ea86b6d7730a32eec5de82c21429f8</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_set_style</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a1b5f8f116d5f20ea682feb16f4fa6721</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_skip_segments_until_diverge</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>a0af52b6862a6bd25e8678ab004ebf841</Anchor>
                  </Node>
                  <Node>
                   <Name>cwk_path_terminate_output</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>aa5d775df33238d8c1dc6c24d577bcfd9</Anchor>
                  </Node>
                  <Node>
                   <Name>path_style</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>aeef7cc01e8dfcb89adcb6f31ac8139e8</Anchor>
                  </Node>
                  <Node>
                   <Name>separators</Name>
-                  <Path>d3/dc4/cwalk_8c.html</Path>
+                  <Path>d1/dbb/kernel_2libs_2cwalk_8c.html</Path>
                   <Anchor>aa6cb61edbcc7e317d61aafbe5a13fc80</Anchor>
                  </Node>
                 </Subnodes>
@@ -35099,9 +35308,19 @@
                   <Anchor>aebe0b576627494b45a5e8fe2d6d4cdb2</Anchor>
                  </Node>
                  <Node>
+                  <Name>internal_filefullpath</Name>
+                  <Path>d9/d76/Native_8cpp.html</Path>
+                  <Anchor>a925af61fd2d437379d4d2c22809fede9</Anchor>
+                 </Node>
+                 <Node>
                   <Name>internal_fileOpen</Name>
                   <Path>d9/d76/Native_8cpp.html</Path>
                   <Anchor>acc87d5c02f67f087945558b6c9a764c4</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>internal_fileOpenWithParent</Name>
+                  <Path>d9/d76/Native_8cpp.html</Path>
+                  <Anchor>a33c92d8da64c136fc413df631a48ca76</Anchor>
                  </Node>
                  <Node>
                   <Name>internal_fileRead</Name>
@@ -35166,7 +35385,7 @@
                  <Node>
                   <Name>internal_pushtask</Name>
                   <Path>d9/d76/Native_8cpp.html</Path>
-                  <Anchor>ac8bc94673fa67e1b6f995303384fa692</Anchor>
+                  <Anchor>a9d9563339a8a0634d3dade19f82307c2</Anchor>
                  </Node>
                  <Node>
                   <Name>internal_requestpage</Name>
@@ -36216,24 +36435,9 @@
                 <Anchor>ae0fe5c96dcf502d8c7992a51d714c1c0</Anchor>
                </Node>
                <Node>
-                <Name>GetNodeFromPath</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>ad6e88fe9669aa34a031374db196ec58e</Anchor>
-               </Node>
-               <Node>
-                <Name>GetPathFromNode</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>a51083e20e163d9e733f81a8bd59d4285</Anchor>
-               </Node>
-               <Node>
                 <Name>NEWLOCK</Name>
                 <Path>d3/d50/FileSystem_8cpp.html</Path>
                 <Anchor>a126ae3ebc1440b0298351dfeeb1ded08</Anchor>
-               </Node>
-               <Node>
-                <Name>NormalizePath</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>a834ba26cdf6ebaa14f95cb023e21348e</Anchor>
                </Node>
                <Node>
                 <Name>RemoveChild</Name>
@@ -36269,6 +36473,16 @@
                 <Name>MountRootNode</Name>
                 <Path>d3/d50/FileSystem_8cpp.html</Path>
                 <Anchor>ac3e2c3c485cfe2cf0114665be4359eec</Anchor>
+               </Node>
+               <Node>
+                <Name>ProcessRootNode</Name>
+                <Path>d3/d50/FileSystem_8cpp.html</Path>
+                <Anchor>a98849b8c7eccec7ad212eddb4bd2b62d</Anchor>
+               </Node>
+               <Node>
+                <Name>procfs</Name>
+                <Path>d3/d50/FileSystem_8cpp.html</Path>
+                <Anchor>a591e7b9ac0327c7dee746d266fc09b29</Anchor>
                </Node>
                <Node>
                 <Name>vfs</Name>
@@ -39084,6 +39298,11 @@
                     <Anchor>a16c10255fbc3692d24e41969a899c7dda67d50a6c2fcc2c0de3a215f606866a5c</Anchor>
                    </Node>
                    <Node>
+                    <Name>_FileOpenWithParent</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7ddaa0d504b72616eeaf6e8767e6c42d3477</Anchor>
+                   </Node>
+                   <Node>
                     <Name>_FileClose</Name>
                     <Path>d2/d6e/syscalls_8h.html</Path>
                     <Anchor>a16c10255fbc3692d24e41969a899c7dda15e3975fb867399d1db643978b54eef7</Anchor>
@@ -39132,6 +39351,11 @@
                     <Name>_FileCreate</Name>
                     <Path>d2/d6e/syscalls_8h.html</Path>
                     <Anchor>a16c10255fbc3692d24e41969a899c7dda5c47a221950c1bced7c4dff3ce415c80</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>_FileFullPath</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7ddae2eac3387d5c9d44cd72ba64bbdc59a5</Anchor>
                    </Node>
                    <Node>
                     <Name>_usleep</Name>
@@ -40782,6 +41006,11 @@
                     <Path>d0/dc9/init_8cpp.html</Path>
                     <Anchor>a3c04138a5bfe5d72780bb7e82a18e627</Anchor>
                    </Node>
+                   <Node>
+                    <Name>monotasking_shell_exit</Name>
+                    <Path>d0/dc9/init_8cpp.html</Path>
+                    <Anchor>ae652cea119536949677aa58728b70310</Anchor>
+                   </Node>
                   </Subnodes>
                  </Node>
                  <Node>
@@ -40794,6 +41023,283 @@
                 <Name>monoton</Name>
                 <Path>dir_62143f0ea6d4a7dddc4cf109eccaf914.html</Path>
                 <Subnodes>
+                 <Node>
+                  <Name>cwalk.h</Name>
+                  <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>cwk_segment</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>d5/daa/structcwk__segment</Anchor>
+                    <Subnodes>
+                     <Node>
+                      <Name>begin</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>af091380741c08e3a24ecf0b407c70fb2</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>end</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>ac45c7e4bbd667065ba28819be3034849</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>path</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>a10444973b52135654c24e7a5860a33ef</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>segments</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>a5f8e50048e43b4ded04cef354dafcf31</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>size</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>afb2c298ee1b44ea23e97b7408d535cc2</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>CWK_EXPORT</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>af5b9d6c5afeb02541963faaa15d24b29</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_IMPORT</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>aebd784c18b95ed6a15cdbe974749b25d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_LIBRARY_H</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a418674d8e5d6cf699039c4912786817b</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_PUBLIC</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a1557461a3dd64c516ec9eb8bf08de382</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_style</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35</Anchor>
+                    <Subnodes>
+                     <Node>
+                      <Name>CWK_STYLE_WINDOWS</Name>
+                      <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_STYLE_UNIX</Name>
+                      <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_STYLE_WINDOWS</Name>
+                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_STYLE_UNIX</Name>
+                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_STYLE_WINDOWS</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_STYLE_UNIX</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>cwk_segment_type</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a6108f90d2ae646d1b255bea8be6cd66c</Anchor>
+                    <Subnodes>
+                     <Node>
+                      <Name>CWK_NORMAL</Name>
+                      <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_CURRENT</Name>
+                      <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_BACK</Name>
+                      <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_NORMAL</Name>
+                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_CURRENT</Name>
+                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_BACK</Name>
+                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_NORMAL</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_CURRENT</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_BACK</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_change_basename</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a13992aee0f81f3d51e1c793a97fb780a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_change_extension</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>aac7343e7b15f517d9cfdfa0d6e4e1160</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_change_root</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a8e8d1717f2dcf7dbfe8a54a03be22b58</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_change_segment</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a38033b645a7a0fa1c43921a64af51acd</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_absolute</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a0e6b3622394c68a0286085b8907cf5b2</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_basename</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>aa5e93482b11e37af62bb9f605c8866a0</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_dirname</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>ad02629bf5420bb515fb6c95633b7b164</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_extension</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>ab66834fcf9a98403ae027f888cacd25d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_first_segment</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a97e64700e1df97572fb7df1f6ce3a1f3</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_intersection</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>ab38ede3863e727db5611ce9d23d2e990</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_last_segment</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>ac2d95a40e07cd4bc3e3af28ae366259b</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_next_segment</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a5d7659aaa8b1a7f8e9c1097e7b4dc912</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_previous_segment</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a62cfd570a00de9811417dc8b32bd1465</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_relative</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a383836841603aad4712029e5f42de6bb</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_root</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>ac5ac1f6c3505a13cf6af679b3e1075ab</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_segment_type</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a5779262b292913597c5d5ab2c055b9e7</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_style</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a2ba934a4a37f1d5911faa140e4e2c46c</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_guess_style</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a9b4517f492f5d5859f599a963cf1026a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_has_extension</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>aa917d03c0659fdefe8575493295e18d1</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_is_absolute</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>aae129e02017ddd7ad9c7d7d24f107079</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_is_relative</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>ab734e7277e96ea5d5acec4fbbd2fc402</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_is_separator</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a2703a5d58bd1fd5aea8302c413660a27</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_join</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a2b0ad7a91b604b5fff516499b84c97d7</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_join_multiple</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>ac032cd6779d648b793ef66efbb6219d6</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_normalize</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a670897583339fbff8befc11da880018c</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_set_style</Name>
+                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Anchor>a3e75a1f14754498a0079bb11f9ddca9a</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
                  <Node>
                   <Name>login.cpp</Name>
                   <Path>db/d50/login_8cpp.html</Path>
@@ -40849,6 +41355,16 @@
                   <Path>dd/dda/monoton_8cpp.html</Path>
                   <Subnodes>
                    <Node>
+                    <Name>isempty1</Name>
+                    <Path>dd/dda/monoton_8cpp.html</Path>
+                    <Anchor>a5d0c7adc6f971284ec3d6144b7b8454a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>loop</Name>
+                    <Path>dd/dda/monoton_8cpp.html</Path>
+                    <Anchor>afe461d27b9c48d5921c00d521181f12f</Anchor>
+                   </Node>
+                   <Node>
                     <Name>main</Name>
                     <Path>dd/dda/monoton_8cpp.html</Path>
                     <Anchor>a3c04138a5bfe5d72780bb7e82a18e627</Anchor>
@@ -40857,6 +41373,26 @@
                     <Name>ParseBuffer</Name>
                     <Path>dd/dda/monoton_8cpp.html</Path>
                     <Anchor>a447fa0a591dd74a68f672a0031f712a4</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>trimwhitespace</Name>
+                    <Path>dd/dda/monoton_8cpp.html</Path>
+                    <Anchor>a205c8acb2ef70f038f32e5fe361cc8d9</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>AlreadyInitialized</Name>
+                    <Path>dd/dda/monoton_8cpp.html</Path>
+                    <Anchor>a011953b4b315d1da5c09d5a396306dd0</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CurrentFullPath</Name>
+                    <Path>dd/dda/monoton_8cpp.html</Path>
+                    <Anchor>ad587268c18ad49e06e5b15ef42e9ffad</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CurrentPath</Name>
+                    <Path>dd/dda/monoton_8cpp.html</Path>
+                    <Anchor>abb09c1489f772afead1e9269537126f0</Anchor>
                    </Node>
                    <Node>
                     <Name>key_buffer</Name>
@@ -41451,6 +41987,862 @@
                  <Node>
                   <Name>Makefile</Name>
                   <Path>de/d07/userspace_2libs_2algo_2Makefile.html</Path>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>cargs</Name>
+                <Path>dir_40c7f2de0803603074ab74d954abfa73.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>cargs.c</Name>
+                  <Path>db/d92/cargs_8c.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>CAG_OPTION_PRINT_DISTANCE</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a3754a9e91ea720ce360ff5cd275f525f</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CAG_OPTION_PRINT_MIN_INDENTION</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a4cc20758b028cfb9a6a6c80d6c9cdf41</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_fetch</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a74528d0c224851c3725466b7b2a02658</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_find_by_letter</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a593cd1a6cb413f9a68ff19e5111b367d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_find_by_name</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a20011cf48a536dc454b08be9658b002d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_find_next</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a2d30a56505e743b5f6307ae2087f888b</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_get</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a0aaaeb4ebe7eb184212b2d1fbc35b033</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_get_index</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a163dea3a7d465f174ad9de0845284790</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_get_print_indention</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a36b055ef9b4dfd576e29e51db61d7569</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_get_value</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a25f15d507596cd0b1bcae14799255043</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_is_argument_string</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>ab85da9927049f454c34b4335d1d7f003</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_parse_access_letter</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a05346d489bdec91fe9029f8e467b0039</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_parse_access_name</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>aea30f6010e565ed46ec5e6b0a3059176</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_parse_value</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>adffec98cc5db69eb419c110b1ce49ec1</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_prepare</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a52c3b8334e38bc71cd2855486f346c3f</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_print</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a12a15673d601286954487733996a630b</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_print_letters</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>ade785dfd2ea84feeb0fb4c67e287f67d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_print_name</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a5d36116f9004798db34615a12497bc54</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_print_value</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a8e3d1db4c1c8cdd8b293d8f476d98605</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_shift</Name>
+                    <Path>db/d92/cargs_8c.html</Path>
+                    <Anchor>a09872a4289ebc4bd42f14f372eae3c66</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>cargs.h</Name>
+                  <Path>d1/d37/cargs_8h.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>cag_option</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>d8/ddb/structcag__option</Anchor>
+                    <Subnodes>
+                     <Node>
+                      <Name>access_letters</Name>
+                      <Path>d1/d37/cargs_8h.html</Path>
+                      <Anchor>a74db259148d40beb3f1fcdbbecf22b22</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>access_name</Name>
+                      <Path>d1/d37/cargs_8h.html</Path>
+                      <Anchor>a2d81aa9a9215027cf7087b3be2190326</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>description</Name>
+                      <Path>d1/d37/cargs_8h.html</Path>
+                      <Anchor>aa3a294dc3fe76344cf07d538bad90a76</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>identifier</Name>
+                      <Path>d1/d37/cargs_8h.html</Path>
+                      <Anchor>aee723c931719a2e5b84fce5f251ddec7</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>value_name</Name>
+                      <Path>d1/d37/cargs_8h.html</Path>
+                      <Anchor>a82eeae2b3e62b12a47d255548814f0d3</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_context</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>d3/df1/structcag__option__context</Anchor>
+                    <Subnodes>
+                     <Node>
+                      <Name>argc</Name>
+                      <Path>d1/d37/cargs_8h.html</Path>
+                      <Anchor>afe65d1e8f058680fa8ba11b74d055928</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>argv</Name>
+                      <Path>d1/d37/cargs_8h.html</Path>
+                      <Anchor>a022f13ab3df1d4baf7ebf637f344c47a</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>forced_end</Name>
+                      <Path>d1/d37/cargs_8h.html</Path>
+                      <Anchor>aefd1a51115d5345509fd4b681e0397fa</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>identifier</Name>
+                      <Path>d1/d37/cargs_8h.html</Path>
+                      <Anchor>a79b4913443e932701b0c92e4d2eed826</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>index</Name>
+                      <Path>d1/d37/cargs_8h.html</Path>
+                      <Anchor>a579ece2d9da71176678c2d1be2091dd2</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>inner_index</Name>
+                      <Path>d1/d37/cargs_8h.html</Path>
+                      <Anchor>af27b24ee98f8d3a06faa91fb1b8b8017</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>option_count</Name>
+                      <Path>d1/d37/cargs_8h.html</Path>
+                      <Anchor>aba929e53194dbf701855e031dfed8fc7</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>options</Name>
+                      <Path>d1/d37/cargs_8h.html</Path>
+                      <Anchor>abf08062c8871250d75a5d44adb94eb99</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>value</Name>
+                      <Path>d1/d37/cargs_8h.html</Path>
+                      <Anchor>a5fb840d6294e740ae97be12dfee745cd</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>CAG_ARRAY_SIZE</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>afa765c7170d039d75c15dd7ca4a5df10</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CAG_EXPORT</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>a02c4b66f3e1449f12ecb1f21d0f0023a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CAG_IMPORT</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>a6da2acbee0a830533fc296a0af29c451</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CAG_LIBRARY_H</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>ac2fe41d2e6afacfe188b6ff3f0205411</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CAG_PUBLIC</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>a8c664b8d7097c5cae516736084e3f67a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>af074c7743355aa43d38b209b9f30cdc3</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_context</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>a3807c9e412641303b1a61728751ecf8f</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>FILE</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>a902af5423095a3a7c5c865f381ea2e93</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_fetch</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>a2b1ed33caeb9298127af2a395037b114</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_get</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>a182c34456ce2654ab5c1475ee6f1f6da</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_get_index</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>a5cf196ffbde8da22abc44fedf0fada53</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_get_value</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>a0a5f9321202b899b6dd4c56ca77dc02e</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_prepare</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>a1c4ad2bb1e897d5f00ab4add05e5e5e3</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cag_option_print</Name>
+                    <Path>d1/d37/cargs_8h.html</Path>
+                    <Anchor>afb322b0c732fa9df19f6b767b170774e</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>Makefile</Name>
+                  <Path>d6/dc3/userspace_2libs_2cargs_2Makefile.html</Path>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>cwalk</Name>
+                <Path>dir_b713373dcbcff2fbe58e4e14ae66d066.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>cwalk.c</Name>
+                  <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>cwk_segment_joined</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>d7/d07/structcwk__segment__joined</Anchor>
+                    <Subnodes>
+                     <Node>
+                      <Name>path_index</Name>
+                      <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                      <Anchor>aba0b6e03666a942dfd8866f166c0f66c</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>paths</Name>
+                      <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                      <Anchor>af3554e0874c49d48631d99a917cb468f</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>segment</Name>
+                      <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                      <Anchor>a17de2ef0ce93d44c29caa5dd58a293b9</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_change_basename</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a2e579c3c6b74e488a0170d2bd80a5a49</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_change_extension</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a2a04acb86aee8898e935cd9d056e7859</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_change_root</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a60ae05adcc035bd0f06a8244d4ad7500</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_change_segment</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>acdc8c69218f67780f4b8e167a41e1995</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_find_next_stop</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a67a63e3978a34a02d116cff7d06c4c73</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_find_previous_stop</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>afaa21620b71c743a0e59b9f1138bcb7e</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_fix_root</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a20dabefe00c58aba5b5dfcc64f16b258</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_absolute</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a7f26ae82c88d2561438ce511d4114244</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_basename</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>aebab254407554e6b19d1e5ecdd4b619e</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_dirname</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a0c697dadb5c17db6253c42d713364565</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_extension</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a01bddf6e55305f34c31f720d5c09e149</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_first_segment</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>ad7f13a9126b2159c07b031a496d654fe</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_first_segment_joined</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a1a43318c3244e8b93d3c686c35821e09</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_first_segment_without_root</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>aa1280f7545ff0215f95b65f7ac60155f</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_intersection</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>ab34ac18259b215d184759bc044aa4832</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_last_segment</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a2268310f7bba59fe263365ab73b74c83</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_last_segment_without_root</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>aaf12f585ced2b3fcfe70531641a6fadd</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_next_segment</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>acfd833c41dae993e90dba669564a63f4</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_next_segment_joined</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a2ba74980728c6b7c0757fe4ed6491071</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_previous_segment</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a167a371d2add021c078add363006d813</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_previous_segment_joined</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a3bda14d20595e25ba1db0bf61c5da1a0</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_relative</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>abd1d5366163d7220c6b0891bc90d264a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_root</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>ab85b1ed4f5b36fd22d1e0f0d65be03a1</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_root_unix</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a0b534513ae6fe9f4ec742f161da022c0</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_root_windows</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a717ab7b9a683fefc6f2038a1c0e2e57b</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_segment_type</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a9ab5f0bebf3dc5aa6d4780e6002fd9ea</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_style</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a243dd2bfd37ea28867e893fb4044bf1e</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_guess_style</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a4eaff34866380542bc682cb76d9742b0</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_has_extension</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a1ece84c0bbe6e950005264de819c9cb0</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_is_absolute</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a805349f9c4f2783187e34a236cedb9b6</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_is_relative</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a57a7822bf8af4f0f978579825c24ea33</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_is_root_absolute</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a7031ed4abfd806cc68acd9ace2d23120</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_is_separator</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>abe0da5227916fc94608ab66a92daf59f</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_is_string_equal</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a94681354e2648fec4ce13153a78339b3</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_join</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>ad3590f6588b2461fcf8f3ad84bfc5d42</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_join_and_normalize_multiple</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>ac88ffacd0f2aa502b9f67c6d5acc9b65</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_join_multiple</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a940c081e6d90d13c77aa41a3bd36e94f</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_normalize</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a438b605066e389e36ed368ce85c69604</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_output</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>aa69c39acc427954362db13d3f4a726a9</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_output_back</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>add919e716831dc9a27b441389d960305</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_output_current</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a45f6de9e9493fe9ef2771fcace3b5b4e</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_output_dot</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a3092b83cdcf9746b82022873267c9679</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_output_separator</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a6bfc63dd7ba77d04a03cb1dbc2d5524a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_output_sized</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>ae44a699be828ffe58b636e8c6ab13dc0</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_segment_back_will_be_removed</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>ac3369d5a83cb4ff98173e3caf6767643</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_segment_joined_skip_invisible</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a642ae7f0b4af0374c203cbebb03a1ff1</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_segment_normal_will_be_removed</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a7e02691026e505e824f250e9b39c68cf</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_segment_will_be_removed</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a27ea86b6d7730a32eec5de82c21429f8</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_set_style</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a1b5f8f116d5f20ea682feb16f4fa6721</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_skip_segments_until_diverge</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>a0af52b6862a6bd25e8678ab004ebf841</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_terminate_output</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>aa5d775df33238d8c1dc6c24d577bcfd9</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>path_style</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>aeef7cc01e8dfcb89adcb6f31ac8139e8</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>separators</Name>
+                    <Path>de/d75/userspace_2libs_2cwalk_2cwalk_8c.html</Path>
+                    <Anchor>aa6cb61edbcc7e317d61aafbe5a13fc80</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>cwalk.h</Name>
+                  <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>cwk_segment</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>d5/daa/structcwk__segment</Anchor>
+                    <Subnodes>
+                     <Node>
+                      <Name>begin</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>af091380741c08e3a24ecf0b407c70fb2</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>end</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>ac45c7e4bbd667065ba28819be3034849</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>path</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>a10444973b52135654c24e7a5860a33ef</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>segments</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>a5f8e50048e43b4ded04cef354dafcf31</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>size</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>afb2c298ee1b44ea23e97b7408d535cc2</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>CWK_EXPORT</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>af5b9d6c5afeb02541963faaa15d24b29</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_IMPORT</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>aebd784c18b95ed6a15cdbe974749b25d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_LIBRARY_H</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a418674d8e5d6cf699039c4912786817b</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>CWK_PUBLIC</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a1557461a3dd64c516ec9eb8bf08de382</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_style</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35</Anchor>
+                    <Subnodes>
+                     <Node>
+                      <Name>CWK_STYLE_WINDOWS</Name>
+                      <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_STYLE_UNIX</Name>
+                      <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_STYLE_WINDOWS</Name>
+                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_STYLE_UNIX</Name>
+                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_STYLE_WINDOWS</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_STYLE_UNIX</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>cwk_segment_type</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a6108f90d2ae646d1b255bea8be6cd66c</Anchor>
+                    <Subnodes>
+                     <Node>
+                      <Name>CWK_NORMAL</Name>
+                      <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_CURRENT</Name>
+                      <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_BACK</Name>
+                      <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_NORMAL</Name>
+                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_CURRENT</Name>
+                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_BACK</Name>
+                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_NORMAL</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_CURRENT</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_BACK</Name>
+                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_change_basename</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a13992aee0f81f3d51e1c793a97fb780a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_change_extension</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>aac7343e7b15f517d9cfdfa0d6e4e1160</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_change_root</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a8e8d1717f2dcf7dbfe8a54a03be22b58</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_change_segment</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a38033b645a7a0fa1c43921a64af51acd</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_absolute</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a0e6b3622394c68a0286085b8907cf5b2</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_basename</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>aa5e93482b11e37af62bb9f605c8866a0</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_dirname</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>ad02629bf5420bb515fb6c95633b7b164</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_extension</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>ab66834fcf9a98403ae027f888cacd25d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_first_segment</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a97e64700e1df97572fb7df1f6ce3a1f3</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_intersection</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>ab38ede3863e727db5611ce9d23d2e990</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_last_segment</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>ac2d95a40e07cd4bc3e3af28ae366259b</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_next_segment</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a5d7659aaa8b1a7f8e9c1097e7b4dc912</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_previous_segment</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a62cfd570a00de9811417dc8b32bd1465</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_relative</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a383836841603aad4712029e5f42de6bb</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_root</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>ac5ac1f6c3505a13cf6af679b3e1075ab</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_segment_type</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a5779262b292913597c5d5ab2c055b9e7</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_get_style</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a2ba934a4a37f1d5911faa140e4e2c46c</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_guess_style</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a9b4517f492f5d5859f599a963cf1026a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_has_extension</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>aa917d03c0659fdefe8575493295e18d1</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_is_absolute</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>aae129e02017ddd7ad9c7d7d24f107079</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_is_relative</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>ab734e7277e96ea5d5acec4fbbd2fc402</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_is_separator</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a2703a5d58bd1fd5aea8302c413660a27</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_join</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a2b0ad7a91b604b5fff516499b84c97d7</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_join_multiple</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>ac032cd6779d648b793ef66efbb6219d6</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_normalize</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a670897583339fbff8befc11da880018c</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>cwk_path_set_style</Name>
+                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                    <Anchor>a3e75a1f14754498a0079bb11f9ddca9a</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>Makefile</Name>
+                  <Path>d9/da9/userspace_2libs_2cwalk_2Makefile.html</Path>
                  </Node>
                 </Subnodes>
                </Node>

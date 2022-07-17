@@ -92,36 +92,42 @@ $(document).ready(function(){initNavTree('d0/dc9/init_8cpp_source.html','../../'
 <a href="../../d0/dc9/init_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/dac/io_8h.html">io.h</a>&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d2/d6e/syscalls_8h.html">syscalls.h</a>&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="../../d0/dc9/init_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">    4</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/dc9/init_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **<a class="code" href="../../d8/def/crt0_8c.html#a8c6923b50b593219f778bcaa56306446">argv</a>)</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="../../d0/dc9/init_8cpp.html#ae652cea119536949677aa58728b70310">    4</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/dc9/init_8cpp.html#ae652cea119536949677aa58728b70310">monotasking_shell_exit</a>()</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    syscall_dbg(0x3F8, (<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;[INIT] This is a test so we can know if the syscalls are working as expected.\n&quot;</span>);</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="comment">// mono 1 - multi 2</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">if</span> (syscall_getScheduleMode() == 1)</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        syscall_dbg(0x3F8, (<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;[INIT] Kernel is running under monotasking mode.\n&quot;</span>);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="comment">/* ... do stuff ... */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        syscall_createProcess((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;/system/monoton&quot;</span>, 0, 0);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        syscall_pushTask();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        syscall_dbg(0x3F8, (<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;[INIT] The shell exited!\n&quot;</span>);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="comment">// TODO: cleanup everything and shutdown beacuse this process should not be killed</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        syscall_dbg(0x3F8, (<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;[INIT] Kernel is running under multitasking mode.\n&quot;</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">/* ... do stuff ... */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        syscall_createProcess((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;/system/uiserver&quot;</span>, 0, 0);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">while</span> (1)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            ;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    syscall_dbg(0x3F8, (<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;[INIT] The shell exited!\n&quot;</span>);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="comment">// TODO: cleanup everything and shutdown beacuse this process should not be killed</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../d0/dc9/init_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">   10</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/dc9/init_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **<a class="code" href="../../d8/def/crt0_8c.html#a8c6923b50b593219f778bcaa56306446">argv</a>)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    syscall_dbg(0x3F8, (<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;[INIT] This is a test so we can know if the syscalls are working as expected.\n&quot;</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">// mono 1 - multi 2</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">if</span> (syscall_getScheduleMode() == 1)</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        syscall_dbg(0x3F8, (<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;[INIT] Kernel is running under monotasking mode.\n&quot;</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="comment">/* ... do stuff ... */</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        syscall_createProcess((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;/system/monoton&quot;</span>, 0, 0);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        syscall_pushTask((<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)<a class="code" href="../../d0/dc9/init_8cpp.html#ae652cea119536949677aa58728b70310">monotasking_shell_exit</a>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        syscall_dbg(0x3F8, (<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;[INIT] Kernel is running under multitasking mode.\n&quot;</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">/* ... do stuff ... */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        syscall_createProcess((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;/system/uiserver&quot;</span>, 0, 0);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">while</span> (1)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            ;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="asyscalls_8h_html"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html">syscalls.h</a></div></div>
-<div class="ttc" id="ainit_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="../../d0/dc9/init_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dc9/init_8cpp_source.html#l00004">init.cpp:4</a></div></div>
+<div class="ttc" id="ainit_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="../../d0/dc9/init_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dc9/init_8cpp_source.html#l00010">init.cpp:10</a></div></div>
+<div class="ttc" id="astdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
 <div class="ttc" id="acrt0_8c_html_a8c6923b50b593219f778bcaa56306446"><div class="ttname"><a href="../../d8/def/crt0_8c.html#a8c6923b50b593219f778bcaa56306446">argv</a></div><div class="ttdeci">static char * argv[20]</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/def/crt0_8c_source.html#l00002">crt0.c:2</a></div></div>
+<div class="ttc" id="ainit_8cpp_html_ae652cea119536949677aa58728b70310"><div class="ttname"><a href="../../d0/dc9/init_8cpp.html#ae652cea119536949677aa58728b70310">monotasking_shell_exit</a></div><div class="ttdeci">void monotasking_shell_exit()</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dc9/init_8cpp_source.html#l00004">init.cpp:4</a></div></div>
 <div class="ttc" id="aio_8h_html"><div class="ttname"><a href="../../dc/dac/io_8h.html">io.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -98,6 +98,12 @@ $(document).ready(function(){initNavTree('d0/d99/classFileSystem_1_1Virtual.html
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9e2f2fb6df5e515098df312024c3de44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FILE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d99/classFileSystem_1_1Virtual.html#a9e2f2fb6df5e515098df312024c3de44">ConvertNodeToFILE</a> (<a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a> *Node)</td></tr>
 <tr class="separator:a9e2f2fb6df5e515098df312024c3de44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaab2e2228d10f6286d33ec397c3b438b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d99/classFileSystem_1_1Virtual.html#aaab2e2228d10f6286d33ec397c3b438b">GetPathFromNode</a> (<a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a> *Node)</td></tr>
+<tr class="separator:aaab2e2228d10f6286d33ec397c3b438b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64f281b2983459dca561576fca5048cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d99/classFileSystem_1_1Virtual.html#a64f281b2983459dca561576fca5048cf">GetNodeFromPath</a> (<a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a> *Parent, <a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a> Path)</td></tr>
+<tr class="separator:a64f281b2983459dca561576fca5048cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac49b3d90cd905c1c1b620ec10206ae52"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d99/classFileSystem_1_1Virtual.html#ac49b3d90cd905c1c1b620ec10206ae52">NormalizePath</a> (<a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a> *Parent, <a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a> Path)</td></tr>
+<tr class="separator:ac49b3d90cd905c1c1b620ec10206ae52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39b256bf1a13a8df9293485419140454"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FILE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d99/classFileSystem_1_1Virtual.html#a39b256bf1a13a8df9293485419140454">Mount</a> (<a class="el" href="../../d6/df5/namespaceFileSystem.html#dd/d34/structFileSystem_1_1FileSystemOpeations">FileSystemOpeations</a> *Operator, <a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a> Path)</td></tr>
 <tr class="separator:a39b256bf1a13a8df9293485419140454"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f06108378c9e0fd35490faf3ad06b49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a0e4b3ce70b25bbac7d9be4eb6a328e66">FILESTATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d99/classFileSystem_1_1Virtual.html#a7f06108378c9e0fd35490faf3ad06b49">Unmount</a> (<a class="el" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FILE</a> *<a class="el" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a>)</td></tr>
@@ -209,7 +215,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a>;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00095">FileSystem::FileSystemNode::Name</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00197">_File::Name</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00148">OK</a>, and <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00198">_File::Status</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00095">FileSystem::FileSystemNode::Name</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00199">_File::Name</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00150">OK</a>, and <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00200">_File::Status</a>.</p>
 
 </div>
 </div>
@@ -269,6 +275,52 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a64f281b2983459dca561576fca5048cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64f281b2983459dca561576fca5048cf">&#9670;&nbsp;</a></span>GetNodeFromPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a>* FileSystem::Virtual::GetNodeFromPath </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a> *&#160;</td>
+          <td class="paramname"><em>Parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a>&#160;</td>
+          <td class="paramname"><em>Path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaab2e2228d10f6286d33ec397c3b438b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaab2e2228d10f6286d33ec397c3b438b">&#9670;&nbsp;</a></span>GetPathFromNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* FileSystem::Virtual::GetPathFromNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a> *&#160;</td>
+          <td class="paramname"><em>Node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a39b256bf1a13a8df9293485419140454"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a39b256bf1a13a8df9293485419140454">&#9670;&nbsp;</a></span>Mount()</h2>
 
@@ -280,6 +332,34 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d6/df5/namespaceFileSystem.html#dd/d34/structFileSystem_1_1FileSystemOpeations">FileSystemOpeations</a> *&#160;</td>
           <td class="paramname"><em>Operator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a>&#160;</td>
+          <td class="paramname"><em>Path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac49b3d90cd905c1c1b620ec10206ae52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac49b3d90cd905c1c1b620ec10206ae52">&#9670;&nbsp;</a></span>NormalizePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* FileSystem::Virtual::NormalizePath </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a> *&#160;</td>
+          <td class="paramname"><em>Parent</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -430,11 +510,11 @@ Public Member Functions</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="afile_8h_html_a175abb747ea3b78aa8da87355dcec473"><div class="ttname"><a href="../../d2/d4d/file_8h.html#a175abb747ea3b78aa8da87355dcec473">FILE</a></div><div class="ttdeci">struct _FILE FILE</div></div>
 <div class="ttc" id="afile_8h_html_de/d3c/struct__FILE"><div class="ttname"><a href="../../d2/d4d/file_8h.html#de/d3c/struct__FILE">_FILE</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d4d/file_8h_source.html#l00007">file.h:7</a></div></div>
-<div class="ttc" id="asyscalls_8h_html_a0a785734a2e4d29ff32532d92a03b40ca2bc49ec37d6a5715dd23e85f1ff5bb59"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</a></div><div class="ttdeci">@ OK</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00148">syscalls.h:148</a></div></div>
-<div class="ttc" id="asyscalls_8h_html_d6/dbc/struct__File"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">_File</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00194">syscalls.h:194</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_a0a785734a2e4d29ff32532d92a03b40ca2bc49ec37d6a5715dd23e85f1ff5bb59"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</a></div><div class="ttdeci">@ OK</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00150">syscalls.h:150</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_d6/dbc/struct__File"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">_File</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00196">syscalls.h:196</a></div></div>
 <div class="ttc" id="asyscalls_8h_html_ac4a14a70488d04bbaea65b252b4fc71e"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a></div><div class="ttdeci">struct _File File</div></div>
-<div class="ttc" id="asyscalls_8h_html_ae07fb6f39a6bef7b383042d06ec2144a"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#ae07fb6f39a6bef7b383042d06ec2144a">_File::Status</a></div><div class="ttdeci">enum FileStatus Status</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00198">syscalls.h:198</a></div></div>
-<div class="ttc" id="asyscalls_8h_html_a5f0c99bd95971306ea3bfc4f90556741"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a5f0c99bd95971306ea3bfc4f90556741">_File::Name</a></div><div class="ttdeci">char Name[256]</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00197">syscalls.h:197</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_ae07fb6f39a6bef7b383042d06ec2144a"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#ae07fb6f39a6bef7b383042d06ec2144a">_File::Status</a></div><div class="ttdeci">enum FileStatus Status</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00200">syscalls.h:200</a></div></div>
+<div class="ttc" id="asyscalls_8h_html_a5f0c99bd95971306ea3bfc4f90556741"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a5f0c99bd95971306ea3bfc4f90556741">_File::Name</a></div><div class="ttdeci">char Name[256]</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00199">syscalls.h:199</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
