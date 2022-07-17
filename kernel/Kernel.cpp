@@ -52,7 +52,6 @@ EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
     init_kernelpml();
     // init_heap(AllocationAlgorithm::XallocV1);
     init_heap(AllocationAlgorithm::LibAlloc11);
-    UserAllocator = new Xalloc::AllocatorV1((void *)USER_HEAP_BASE, true, true);
     bootparams = new GlobalBootParams;
     debug("bootparams is allocated at %p", bootparams);
     debug("bootparams framebuffer is allocated at %p", bootparams->Framebuffer);
@@ -276,6 +275,10 @@ void KernelInit()
         outb(PIC1_DATA, 0b11111000);
         outb(PIC2_DATA, 0b11101111);
     }
+    bool smap = false;
+    if (cpu_feature(CPUID_FEAT_RDX_SMAP))
+        smap = true;
+    UserAllocator = new Xalloc::AllocatorV1((void *)USER_HEAP_BASE, true, smap);
     STI;
     dsdt->InitSCI();
 
