@@ -21,6 +21,7 @@ NEWLOCK(VFSLock);
 FileSystem::Virtual *vfs = nullptr;
 FileSystem::Device *devfs = nullptr;
 FileSystem::Mount *mountfs = nullptr;
+FileSystem::Process *procfs = nullptr;
 
 namespace FileSystem
 {
@@ -444,7 +445,7 @@ namespace FileSystem
     Device::Device()
     {
         trace("Initializing device file system");
-        DeviceRootNode = vfs->Create(nullptr, "/dev");
+        DeviceRootNode = vfs->Create(nullptr, "/system/dev");
         DeviceRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
         DeviceRootNode->Mode = 0755;
         BS->IncreaseProgres();
@@ -489,7 +490,7 @@ namespace FileSystem
     Mount::Mount()
     {
         trace("Mounting file systems...");
-        MountRootNode = vfs->Create(nullptr, "/mnt");
+        MountRootNode = vfs->Create(nullptr, "/system/mnt");
         MountRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
         MountRootNode->Mode = 0755;
         BS->IncreaseProgres();
@@ -498,4 +499,22 @@ namespace FileSystem
     Mount::~Mount()
     {
     }
+
+    /* -------------------------------------------------------------------------------------------------------------------------------- */
+
+    FileSystemNode *ProcessRootNode = nullptr;
+
+    Process::Process()
+    {
+        trace("Mounting file systems...");
+        ProcessRootNode = vfs->Create(nullptr, "/system/proc");
+        ProcessRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
+        ProcessRootNode->Mode = 0755;
+        BS->IncreaseProgres();
+    }
+
+    Process::~Process()
+    {
+    }
+
 }

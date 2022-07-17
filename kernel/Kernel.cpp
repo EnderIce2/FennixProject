@@ -359,6 +359,7 @@ void KernelInit()
     }
     devfs = new FileSystem::Device;
     mountfs = new FileSystem::Mount;
+    procfs = new FileSystem::Process;
     diskmgr = new DiskManager::Disk;
     partmgr = new DiskManager::Partition;
     BS->Progress(70);

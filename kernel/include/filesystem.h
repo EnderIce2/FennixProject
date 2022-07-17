@@ -146,7 +146,7 @@ namespace FileSystem
         ~Virtual();
     };
 
-    /* Manage /dev */
+    /* Manage /system/dev */
     class Device
     {
     public:
@@ -155,7 +155,7 @@ namespace FileSystem
         ~Device();
     };
 
-    /* Manage /mnt */
+    /* Manage /system/mnt */
     class Mount
     {
     public:
@@ -163,6 +163,14 @@ namespace FileSystem
         void DetectAndMountFS(void *drive);
         Mount();
         ~Mount();
+    };
+
+    /* Manage /system/proc */
+    class Process
+    {
+    public:
+        Process();
+        ~Process();
     };
 
     class USTAR
@@ -389,3 +397,4 @@ namespace FileSystem
 extern FileSystem::Virtual *vfs;
 extern FileSystem::Device *devfs;
 extern FileSystem::Mount *mountfs;
+extern FileSystem::Process *procfs;
