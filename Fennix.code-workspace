@@ -41,7 +41,8 @@
 			"types.h": "c",
 			"efilib.h": "c",
 			"efi.h": "c",
-			"fileloader.h": "c"
+			"fileloader.h": "c",
+			"assert.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}
