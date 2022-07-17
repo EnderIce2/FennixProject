@@ -31,8 +31,6 @@ void ParseBuffer(char *Buffer)
     mono->printchar('\n');
     mono->print(usr());
     mono->print((char *)"@fennix:/$ ");
-    File *f = (File *)syscall_FileOpen("/system/doom");
-    mono->print(f->Name);
 }
 
 int main(int argc, char **argv)
