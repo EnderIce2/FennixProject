@@ -137,6 +137,7 @@ enum SystemCalls
     _FileRename,
     _FileExists,
     _FileCreate,
+    _FileFullPath,
 
     _usleep,
 
@@ -221,7 +222,7 @@ DEFINE_SYSCALL0(getCurrentThreadID, _GetCurrentThreadID)
 DEFINE_SYSCALL0(getScheduleMode, _GetScheduleMode)
 
 DEFINE_SYSCALL4(createTask, _CreateTask, uint64_t, uint64_t, uint64_t, char *)
-DEFINE_SYSCALL0(pushTask, _PushTask)
+DEFINE_SYSCALL1(pushTask, _PushTask, uint64_t)
 DEFINE_SYSCALL0(popTask, _PopTask)
 
 DEFINE_SYSCALL0(requestPage, _RequestPage)
@@ -249,6 +250,7 @@ DEFINE_SYSCALL1(FileClose, _FileClose, File *)
 DEFINE_SYSCALL4(FileRead, _FileRead, File *, uint64_t, void *, uint64_t)
 DEFINE_SYSCALL4(FileWrite, _FileWrite, File *, uint64_t, void *, uint64_t)
 DEFINE_SYSCALL1(FileSize, _FileSize, File *)
+DEFINE_SYSCALL1(FileFullPath, _FileFullPath, File *)
 
 DEFINE_SYSCALL1(usleep, _usleep, unsigned long)
 

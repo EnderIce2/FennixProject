@@ -93,12 +93,12 @@ static Tasking::TaskControlBlock *internal_createtask(SyscallsRegs *regs, uint64
     return Tasking::monot->CreateTask(rip, arg0, arg1, name, true);
 }
 
-static void internal_pushtask(SyscallsRegs *regs, uint64_t a, uint64_t b, uint64_t c, uint64_t d)
+static void internal_pushtask(SyscallsRegs *regs, uint64_t jumpbackIP)
 {
-    syscldbg("syscall: pushtask( %#llx %#llx %#llx %#llx )", a, b, c, d);
+    syscldbg("syscall: pushtask( %#llx )", jumpbackIP);
     if (!CanSyscall(regs))
         return;
-    Tasking::monot->PushTask(RIP);
+    Tasking::monot->PushTask(jumpbackIP);
 }
 
 static void internal_poptask(SyscallsRegs *regs)
@@ -273,6 +273,20 @@ static uint64_t internal_filesize(SyscallsRegs *regs, File *File)
     return ret;
 }
 
+static char *internal_filefullpath(SyscallsRegs *regs, File *File)
+{
+    syscldbg("syscall: filefullpath( %p )", File);
+    if (!CanSyscall(regs))
+        return (char *)deniedcall;
+    UserAllocator->Xstac();
+    char *retmp = vfs->GetPathFromNode(((FileSystem::FILE *)File->Handle)->Node);
+    char *ret = (char *)UserAllocator->Malloc(strlen(retmp) + 1);
+    strcpy(ret, retmp);
+    delete[] retmp;
+    UserAllocator->Xclac();
+    return ret;
+}
+
 static void internal_usleep(SyscallsRegs *regs, uint64_t us)
 {
     syscldbg("syscall: usleep( %#llx )", us);
@@ -344,6 +358,7 @@ static void *FennixSyscallsTable[] = {
     [_FileRename] = (void *)internal_unimpl,
     [_FileExists] = (void *)internal_unimpl,
     [_FileCreate] = (void *)internal_unimpl,
+    [_FileFullPath] = (void *)internal_filefullpath,
 
     [_usleep] = (void *)internal_usleep,
 
