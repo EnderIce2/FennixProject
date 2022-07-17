@@ -1,7 +1,5 @@
 #include "cargs.h"
 
-typedef void * FILE;
-
 #include <assert.h>
 // #include <memory.h>
 // #include <stdio.h>
