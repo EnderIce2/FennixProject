@@ -230,6 +230,37 @@ static File *internal_fileOpen(SyscallsRegs *regs, char *Path)
     return f;
 }
 
+static File *internal_fileOpenWithParent(SyscallsRegs *regs, char *Path, File *Parent)
+{
+    syscldbg("syscall: fileOpenWithParent( %s, %p )", Path, Parent);
+    if (!CanSyscall(regs))
+        return (File *)deniedcall;
+
+    File *f = (File *)UserAllocator->Malloc(sizeof(File));
+    FileSystem::FILE *fo = vfs->Open(Path, (FileSystem::FileSystemNode *)Parent->Handle);
+
+    UserAllocator->Xstac();
+    f->Status = static_cast<FileStatus>(fo->Status);
+    memcpy(f->Name, fo->Name, sizeof(f->Name));
+    if (fo)
+    {
+        f->Handle = fo;
+        f->IndexNode = fo->Node->IndexNode;
+        f->Mask = fo->Node->Mask;
+        f->Mode = fo->Node->Mode;
+        f->Flags = fo->Node->Flags;
+        f->UserIdentifier = fo->Node->UserIdentifier;
+        f->GroupIdentifier = fo->Node->GroupIdentifier;
+        f->Address = fo->Node->Address;
+        f->Length = fo->Node->Length;
+        f->Parent = fo->Node->Parent;
+        f->Operator = fo->Node->Operator;
+    }
+
+    UserAllocator->Xclac();
+    return f;
+}
+
 static void internal_fileClose(SyscallsRegs *regs, File *F)
 {
     syscldbg("syscall: fileClose( %p )", F);
@@ -348,6 +379,7 @@ static void *FennixSyscallsTable[] = {
     [_GetLastKeyboardScanCode] = (void *)internal_getlastkeyboardscancode,
 
     [_FileOpen] = (void *)internal_fileOpen,
+    [_FileOpenWithParent] = (void *)internal_fileOpenWithParent,
     [_FileClose] = (void *)internal_fileClose,
     [_FileRead] = (void *)internal_fileRead,
     [_FileWrite] = (void *)internal_fileWrite,

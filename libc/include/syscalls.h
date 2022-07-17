@@ -127,6 +127,7 @@ enum SystemCalls
     _GetLastKeyboardScanCode,
 
     _FileOpen,
+    _FileOpenWithParent,
     _FileClose,
     _FileRead,
     _FileWrite,
@@ -246,6 +247,7 @@ DEFINE_SYSCALL1(unregisterinthnd, _UnregisterInterruptHandler, int)
 DEFINE_SYSCALL0(getLastKeyboardScanCode, _GetLastKeyboardScanCode)
 
 DEFINE_SYSCALL1(FileOpen, _FileOpen, char *)
+DEFINE_SYSCALL2(FileOpenWithParent, _FileOpenWithParent, char *, File *)
 DEFINE_SYSCALL1(FileClose, _FileClose, File *)
 DEFINE_SYSCALL4(FileRead, _FileRead, File *, uint64_t, void *, uint64_t)
 DEFINE_SYSCALL4(FileWrite, _FileWrite, File *, uint64_t, void *, uint64_t)
