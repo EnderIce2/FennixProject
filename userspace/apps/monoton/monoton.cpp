@@ -1,6 +1,9 @@
 #include "monoton.hpp"
 
+#include "cwalk.h"
+
 #include <system.h>
+#include <alloc.h>
 
 MonotonLib::mtl *mono = nullptr;
 File *CurrentPath = nullptr;
@@ -92,6 +95,40 @@ void ParseBuffer(char *Buffer)
     {
         char *arg = trimwhitespace(Buffer + 4);
         mono->print(arg);
+    }
+    else if (strncmp(Buffer, "cd", 2) == 0)
+    {
+        char *arg = trimwhitespace(Buffer + 2);
+
+        if (isempty1(arg))
+            strcpy(arg, "/");
+
+        char *path = (char *)malloc(strlen(arg) + 1);
+        cwk_path_normalize(arg, path, strlen(arg) + 1);
+        File *node = (File *)syscall_FileOpenWithParent(path, CurrentPath);
+        bool success = true;
+        if (!node)
+        {
+            mono->print("No such file directory!");
+            free(path);
+            success = false;
+        }
+        if ((node->Flags & 0x07) != FS_DIRECTORY)
+        {
+            mono->print(path);
+            mono->print(" is not a directory!");
+            free(path);
+            success = false;
+        }
+        if (success)
+        {
+            char *curpath = (char *)syscall_FileFullPath(node);
+            strcpy(CurrentFullPath, curpath);
+            if (isempty1(CurrentFullPath))
+                strcpy(CurrentFullPath, "/");
+            CurrentPath = node;
+        }
+        free(path);
     }
     else
     {
