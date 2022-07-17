@@ -26,7 +26,7 @@ namespace FileSystem
 {
     FileSystemNode *FileSystemRoot = nullptr;
 
-    char *GetPathFromNode(FileSystemNode *Node)
+    char *Virtual::GetPathFromNode(FileSystemNode *Node)
     {
         vfsdbg("GetPathFromNode( \"%s\" )", Node->Name);
         FileSystemNode *Parent = Node;
@@ -63,7 +63,7 @@ namespace FileSystem
         return FinalPath;
     }
 
-    FileSystemNode *GetNodeFromPath(FileSystemNode *Parent, string Path)
+    FileSystemNode *Virtual::GetNodeFromPath(FileSystemNode *Parent, string Path)
     {
         vfsdbg("GetNodeFromPath( \"%s\" \"%s\" )", Parent->Name, Path);
 
@@ -147,7 +147,7 @@ namespace FileSystem
         return FILESTATUS::NOT_FOUND;
     }
 
-    char *NormalizePath(FileSystemNode *Parent, string Path)
+    char *Virtual::NormalizePath(FileSystemNode *Parent, string Path)
     {
         vfsdbg("NormalizePath( \"%s\" \"%s\" )", Parent->Name, Path);
         char *NormalizedPath = new char[strlen((char *)Path) + 1];

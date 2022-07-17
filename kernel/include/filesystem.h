@@ -129,6 +129,10 @@ namespace FileSystem
             File->Node = Node;
             return File;
         }
+        char *GetPathFromNode(FileSystemNode *Node);
+        FileSystemNode *GetNodeFromPath(FileSystemNode *Parent, string Path);
+        char *NormalizePath(FileSystemNode *Parent, string Path);
+
         FILE *Mount(FileSystemOpeations *Operator, string Path);
         FILESTATUS Unmount(FILE *File);
         FILE *Open(string Path, FileSystemNode *Parent = nullptr);
