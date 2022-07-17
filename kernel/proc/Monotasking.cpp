@@ -294,7 +294,7 @@ namespace Tasking
                 if (TaskQueue[i]->state != TaskState::TaskStateTerminated)
                     TaskQueue[i]->state = TaskState::TaskPushed;
                 TaskQueue[i + 1]->state = TaskState::TaskStateReady;
-                // TaskQueue[i + 1]->regs.rip = rip; // i need to find anoter way to get the instruction pointer
+                // CurrentTask->regs.rip = rip; // i need to find anoter way to get the instruction pointer
                 trace("Task pushed to %s with instruction pointer %#llx.", TaskQueue[i + 1]->name, rip);
                 SchedulerInterrupt;
                 return;
