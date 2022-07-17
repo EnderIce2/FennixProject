@@ -213,6 +213,7 @@ static File *internal_fileOpen(SyscallsRegs *regs, char *Path)
     memcpy(f->Name, fo->Name, sizeof(f->Name));
     if (fo)
     {
+        f->Handle = fo;
         f->IndexNode = fo->Node->IndexNode;
         f->Mask = fo->Node->Mask;
         f->Mode = fo->Node->Mode;
@@ -362,6 +363,7 @@ uint64_t HandleFennixSyscalls(SyscallsRegs *regs)
         err("Syscall %#llx failed.", RAX);
         return failedcall;
     }
+    syscldbg("SYSCALL->CALLDATA->(r:%lx a:%lx b:%lx c:%lx d:%lx S:%lx D:%lx)[CALLID:%d]", regs, RAX, RBX, RCX, RDX, RSI, RDI, RAX);
     uint64_t ret = call((uint64_t)regs, RBX, RDX, RSI, RDI);
     RAX = ret;
     return ret;
