@@ -5,6 +5,7 @@
 #include "../drivers/keyboard.hpp"
 #include "../drivers/mouse.hpp"
 #include "../drivers/serial.h"
+#include "../cpu/acpi.hpp"
 #include "../kernel.h"
 #include "../timer.h"
 
@@ -153,6 +154,22 @@ static void internal_freepages(SyscallsRegs *regs, void *page, uint64_t pages)
     }
 }
 
+static void internal_shutdown(SyscallsRegs *regs)
+{
+    syscldbg("syscall: shutdown()");
+    if (!CanSyscall(regs))
+        return;
+    dsdt->shutdown();
+    }
+
+static void internal_reboot(SyscallsRegs *regs)
+{
+    syscldbg("syscall: reboot()");
+    if (!CanSyscall(regs))
+        return;
+    dsdt->reboot();
+}
+
 static uint64_t internal_fbaddress(SyscallsRegs *regs)
 {
     syscldbg("syscall: fbaddress()");
@@ -214,16 +231,20 @@ static File *internal_fileOpen(SyscallsRegs *regs, char *Path)
     if (fo)
     {
         f->Handle = fo;
-        f->IndexNode = fo->Node->IndexNode;
-        f->Mask = fo->Node->Mask;
-        f->Mode = fo->Node->Mode;
-        f->Flags = fo->Node->Flags;
-        f->UserIdentifier = fo->Node->UserIdentifier;
-        f->GroupIdentifier = fo->Node->GroupIdentifier;
-        f->Address = fo->Node->Address;
-        f->Length = fo->Node->Length;
-        f->Parent = fo->Node->Parent;
-        f->Operator = fo->Node->Operator;
+        if (fo->Node)
+        {
+            f->IndexNode = fo->Node->IndexNode;
+            f->Mask = fo->Node->Mask;
+            f->Mode = fo->Node->Mode;
+            f->Flags = fo->Node->Flags;
+            f->UserIdentifier = fo->Node->UserIdentifier;
+            f->GroupIdentifier = fo->Node->GroupIdentifier;
+            f->Address = fo->Node->Address;
+            f->Length = fo->Node->Length;
+
+            f->Parent = fo->Node->Parent;
+            f->Operator = fo->Node->Operator;
+        }
     }
 
     UserAllocator->Xclac();
@@ -237,24 +258,28 @@ static File *internal_fileOpenWithParent(SyscallsRegs *regs, char *Path, File *P
         return (File *)deniedcall;
 
     File *f = (File *)UserAllocator->Malloc(sizeof(File));
-    FileSystem::FILE *fo = vfs->Open(Path, (FileSystem::FileSystemNode *)Parent->Handle);
-
     UserAllocator->Xstac();
+    FileSystem::FILE *fo = vfs->Open(Path, static_cast<FileSystem::FILE *>(Parent->Handle)->Node);
+
     f->Status = static_cast<FileStatus>(fo->Status);
     memcpy(f->Name, fo->Name, sizeof(f->Name));
     if (fo)
     {
         f->Handle = fo;
-        f->IndexNode = fo->Node->IndexNode;
-        f->Mask = fo->Node->Mask;
-        f->Mode = fo->Node->Mode;
-        f->Flags = fo->Node->Flags;
-        f->UserIdentifier = fo->Node->UserIdentifier;
-        f->GroupIdentifier = fo->Node->GroupIdentifier;
-        f->Address = fo->Node->Address;
-        f->Length = fo->Node->Length;
-        f->Parent = fo->Node->Parent;
-        f->Operator = fo->Node->Operator;
+        if (fo->Node)
+        {
+            f->IndexNode = fo->Node->IndexNode;
+            f->Mask = fo->Node->Mask;
+            f->Mode = fo->Node->Mode;
+            f->Flags = fo->Node->Flags;
+            f->UserIdentifier = fo->Node->UserIdentifier;
+            f->GroupIdentifier = fo->Node->GroupIdentifier;
+            f->Address = fo->Node->Address;
+            f->Length = fo->Node->Length;
+
+            f->Parent = fo->Node->Parent;
+            f->Operator = fo->Node->Operator;
+        }
     }
 
     UserAllocator->Xclac();
@@ -267,7 +292,7 @@ static void internal_fileClose(SyscallsRegs *regs, File *F)
     if (!CanSyscall(regs))
         return;
     UserAllocator->Xstac();
-    vfs->Close((FileSystem::FILE *)F->Handle);
+    vfs->Close(static_cast<FileSystem::FILE *>(F->Handle));
     UserAllocator->Xclac();
 }
 
@@ -277,7 +302,7 @@ static uint64_t internal_fileRead(SyscallsRegs *regs, File *F, uint64_t Offset, 
     if (!CanSyscall(regs))
         return deniedcall;
     UserAllocator->Xstac();
-    uint64_t ret = vfs->Read((FileSystem::FILE *)F->Handle, Offset, Buffer, Size);
+    uint64_t ret = vfs->Read(static_cast<FileSystem::FILE *>(F->Handle), Offset, Buffer, Size);
     UserAllocator->Xclac();
     return ret;
 }
@@ -288,7 +313,7 @@ static uint64_t internal_fileWrite(SyscallsRegs *regs, File *F, uint64_t Offset,
     if (!CanSyscall(regs))
         return deniedcall;
     UserAllocator->Xstac();
-    uint64_t ret = vfs->Write((FileSystem::FILE *)F->Handle, Offset, Buffer, Size);
+    uint64_t ret = vfs->Write(static_cast<FileSystem::FILE *>(F->Handle), Offset, Buffer, Size);
     UserAllocator->Xclac();
     return ret;
 }
@@ -299,7 +324,7 @@ static uint64_t internal_filesize(SyscallsRegs *regs, File *File)
     if (!CanSyscall(regs))
         return deniedcall;
     UserAllocator->Xstac();
-    uint64_t ret = ((FileSystem::FILE *)File->Handle)->Node->Length;
+    uint64_t ret = static_cast<FileSystem::FILE *>(File->Handle)->Node->Length;
     UserAllocator->Xclac();
     return ret;
 }
@@ -310,12 +335,58 @@ static char *internal_filefullpath(SyscallsRegs *regs, File *File)
     if (!CanSyscall(regs))
         return (char *)deniedcall;
     UserAllocator->Xstac();
-    char *retmp = vfs->GetPathFromNode(((FileSystem::FILE *)File->Handle)->Node);
+    char *retmp = vfs->GetPathFromNode(static_cast<FileSystem::FILE *>(File->Handle)->Node);
+    UserAllocator->Xclac();
     char *ret = (char *)UserAllocator->Malloc(strlen(retmp) + 1);
+    UserAllocator->Xstac();
     strcpy(ret, retmp);
     delete[] retmp;
     UserAllocator->Xclac();
     return ret;
+}
+
+static uint64_t internal_filechildrensize(SyscallsRegs *regs, File *File)
+{
+    syscldbg("syscall: filechildrensize( %p )", File);
+    if (!CanSyscall(regs))
+        return deniedcall;
+    UserAllocator->Xstac();
+    uint64_t ret = static_cast<FileSystem::FILE *>(File->Handle)->Node->Children.size();
+    UserAllocator->Xclac();
+    return ret;
+}
+
+static File *internal_filegetchildren(SyscallsRegs *regs, File *F, uint64_t Index)
+{
+    syscldbg("syscall: filegetchildren( %p, %#llx )", F, Index);
+    if (!CanSyscall(regs))
+        return (File *)deniedcall;
+    File *f = (File *)UserAllocator->Malloc(sizeof(File));
+    UserAllocator->Xstac();
+    FileSystem::FileSystemNode *node = static_cast<FileSystem::FILE *>(F->Handle)->Node->Children[Index];
+
+    memcpy(f->Name, node->Name, sizeof(f->Name));
+    if (node)
+    {
+        f->Status = FileStatus::OK;
+        f->Handle = (void *)deadbeef;
+        f->IndexNode = node->IndexNode;
+        f->Mask = node->Mask;
+        f->Mode = node->Mode;
+        f->Flags = node->Flags;
+        f->UserIdentifier = node->UserIdentifier;
+        f->GroupIdentifier = node->GroupIdentifier;
+        f->Address = node->Address;
+        f->Length = node->Length;
+
+        f->Parent = node->Parent;
+        f->Operator = node->Operator;
+    }
+    else
+        f->Status = FileStatus::NOT_SUPPORTED;
+
+    UserAllocator->Xclac();
+    return f;
 }
 
 static void internal_usleep(SyscallsRegs *regs, uint64_t us)
@@ -366,6 +437,8 @@ static void *FennixSyscallsTable[] = {
     [_SystemInfo] = (void *)internal_unimpl,
     [_SystemTime] = (void *)internal_unimpl,
     [_SystemTimeSet] = (void *)internal_unimpl,
+    [_Shutdown] = (void *)internal_shutdown,
+    [_Reboot] = (void *)internal_reboot,
 
     [_GetFramebufferAddress] = (void *)internal_fbaddress,
     [_GetFramebufferSize] = (void *)internal_fbsize,
@@ -391,6 +464,8 @@ static void *FennixSyscallsTable[] = {
     [_FileExists] = (void *)internal_unimpl,
     [_FileCreate] = (void *)internal_unimpl,
     [_FileFullPath] = (void *)internal_filefullpath,
+    [_FileChildrenSize] = (void *)internal_filechildrensize,
+    [_FileGetChildren] = (void *)internal_filegetchildren,
 
     [_usleep] = (void *)internal_usleep,
 

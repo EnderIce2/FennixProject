@@ -114,6 +114,8 @@ enum SystemCalls
     _SystemInfo,
     _SystemTime,
     _SystemTimeSet,
+    _Shutdown,
+    _Reboot,
 
     _GetFramebufferAddress,
     _GetFramebufferSize,
@@ -139,6 +141,8 @@ enum SystemCalls
     _FileExists,
     _FileCreate,
     _FileFullPath,
+    _FileChildrenSize,
+    _FileGetChildren,
 
     _usleep,
 
@@ -234,6 +238,8 @@ DEFINE_SYSCALL2(freePages, _FreePages, void *, uint64_t)
 DEFINE_SYSCALL0(systemInfo, _SystemInfo)
 DEFINE_SYSCALL0(systemTime, _SystemTime)
 DEFINE_SYSCALL1(systemTimeSet, _SystemTimeSet, uint64_t)
+DEFINE_SYSCALL0(shutdown, _Shutdown)
+DEFINE_SYSCALL0(reboot, _Reboot)
 
 DEFINE_SYSCALL0(displayAddress, _GetFramebufferAddress)
 DEFINE_SYSCALL0(displaySize, _GetFramebufferSize)
@@ -253,6 +259,8 @@ DEFINE_SYSCALL4(FileRead, _FileRead, File *, uint64_t, void *, uint64_t)
 DEFINE_SYSCALL4(FileWrite, _FileWrite, File *, uint64_t, void *, uint64_t)
 DEFINE_SYSCALL1(FileSize, _FileSize, File *)
 DEFINE_SYSCALL1(FileFullPath, _FileFullPath, File *)
+DEFINE_SYSCALL1(FileChildrenSize, _FileChildrenSize, File *)
+DEFINE_SYSCALL2(FileGetChildren, _FileGetChildren, File *, uint64_t)
 
 DEFINE_SYSCALL1(usleep, _usleep, unsigned long)
 

@@ -86,15 +86,71 @@ void ParseBuffer(char *Buffer)
     {
         mono->Clear();
     }
-    else if (strcmp(Buffer, "doom") == 0)
-    {
-        syscall_createProcess((char *)"/system/doom", 0, 0);
-        syscall_pushTask((uint64_t)&loop);
-    }
     else if (strncmp(Buffer, "echo", 4) == 0)
     {
         char *arg = trimwhitespace(Buffer + 4);
         mono->print(arg);
+    }
+    else if (strncmp(Buffer, "ls", 2) == 0)
+    {
+        char *arg = trimwhitespace(Buffer + 2);
+        char *path = (char *)malloc(strlen(arg) + 1);
+        cwk_path_normalize(arg, path, strlen(arg) + 1);
+        bool success = true;
+        File *node = (File *)syscall_FileOpenWithParent(path, CurrentPath);
+        if (node->Status != FileStatus::OK)
+            success = false;
+        if (!node)
+        {
+            mono->print("No such file or directory!");
+            free(path);
+            success = false;
+        }
+        if ((node->Flags & 0x07) != FS_DIRECTORY)
+        {
+            WriteSysDebugger("%s is not a directory (%d)", node->Name, node->Flags);
+            mono->print(node->Name);
+            mono->print(" is not a directory!");
+            free(path);
+            success = false;
+        }
+        if (success)
+            free(path);
+
+        if (success)
+            for (uint64_t i = 0; i < syscall_FileChildrenSize(CurrentPath); i++)
+            {
+                File *n = (File *)syscall_FileGetChildren(CurrentPath, i);
+                // DEBUG("name:%s addr:%016p len:%d", n->name, n->address, n->length);
+                mono->print("  ");
+                switch (n->Flags & 0x07)
+                {
+                case FS_FILE:
+                    mono->print(n->Name);
+                    break;
+                case FS_DIRECTORY:
+                    mono->print(n->Name);
+                    break;
+                case FS_CHARDEVICE:
+                    mono->print(n->Name);
+                    break;
+                case FS_BLOCKDEVICE:
+                    mono->print(n->Name);
+                    break;
+                case FS_PIPE:
+                    mono->print(n->Name);
+                    break;
+                case FS_SYMLINK:
+                    mono->print(n->Name);
+                    break;
+                case FS_MOUNTPOINT:
+                    mono->print(n->Name);
+                    break;
+                default:
+                    mono->print(n->Name);
+                    break;
+                }
+            }
     }
     else if (strncmp(Buffer, "cd", 2) == 0)
     {
@@ -120,6 +176,8 @@ void ParseBuffer(char *Buffer)
             free(path);
             success = false;
         }
+        if (node->Status != FileStatus::OK)
+            success = false;
         if (success)
         {
             char *curpath = (char *)syscall_FileFullPath(node);
@@ -199,6 +257,7 @@ int main(int argc, char **argv)
 
     // Default font: /system/fonts/tamsyn-font-1.11/Tamsyn8x16b.psf
     mono = new MonotonLib::mtl((char *)"/system/fonts/tamsyn-font-1.11/Tamsyn8x16b.psf");
+    CurrentPath = (File *)syscall_FileOpen((char *)"/");
 
     InitLogin();
     mono->print((char *)"\n-- This shell is not fully implemented! --\n");

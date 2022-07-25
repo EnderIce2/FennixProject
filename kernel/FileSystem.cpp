@@ -309,10 +309,11 @@ namespace FileSystem
 
     FILE *Virtual::Open(string Path, FileSystemNode *Parent)
     {
-        vfsdbg("Opening %s", Path);
+        vfsdbg("Opening %s with parent %s", Path, Parent->Name);
 
         if (Parent == nullptr)
         {
+            debug("Parent is null");
             if (FileSystemRoot->Children.size() >= 1)
                 Parent = FileSystemRoot->Children[0]; // 0 - filesystem root
             else

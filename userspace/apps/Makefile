@@ -4,6 +4,8 @@ build:
 	make -C uiserver build
 	make -C wm build
 	make -C fesktop build
+	make -C shutdown build
+	make -C reboot build
 ifneq (,$(wildcard doomgeneric))
 	make -j$(shell nproc) -C doomgeneric build
 else
@@ -18,6 +20,8 @@ clean:
 	make -C uiserver clean
 	make -C wm clean
 	make -C fesktop clean
+	make -C shutdown clean
+	make -C reboot clean
 ifneq (,$(wildcard doomgeneric))
 	make -j$(shell nproc) -C doomgeneric clean
 else
