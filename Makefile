@@ -99,7 +99,7 @@ ifeq ($(BOOTLOADER), lynx)
 endif
 
 build_kernel:
-	make -j$(shell nproc) --quiet -C kernel build
+	make -j$(shell nproc) --quiet -C kernel build GIT_COMMIT=$(shell git rev-parse HEAD) GIT_COMMIT_SHORT=$(shell git rev-parse --short HEAD)
 
 build_userspace:
 	make --quiet -C userspace build

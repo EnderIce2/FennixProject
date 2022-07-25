@@ -14,6 +14,9 @@ OBJDUMP = ../$(COMPILER_PATH)/$(COMPILER_ARCH)objdump
 GDB = ../$(COMPILER_PATH)/$(COMPILER_ARCH)gdb
 NASM = /usr/bin/nasm
 
+GIT_COMMIT ?= unknown
+GIT_COMMIT_SHORT ?= unknown
+
 BMP_SOURCES = $(shell find ./ -type f -name '*.bmp')
 PSF_SOURCES = $(shell find ./ -type f -name '*.psf')
 ASM_SOURCES = $(shell find ./ -type f -name '*.asm')
@@ -48,6 +51,8 @@ CFLAGS :=																\
 	-I$(INCLUDE_DIR) -I$(INCLUDE_DIR2)									\
 	-DKERNEL_NAME='"$(OSNAME)"' 										\
 	-DKERNEL_VERSION='"$(KERNEL_VERSION)"'								\
+	-DGIT_COMMIT='"$(GIT_COMMIT)"'										\
+	-DGIT_COMMIT_SHORT='"$(GIT_COMMIT_SHORT)"'							\
 	-fno-pic -fno-pie -mno-80387										\
 	-mno-80387 -mno-mmx -mno-3dnow -mno-red-zone -mno-sse -mno-sse2		\
 	-march=nehalem -pipe												\

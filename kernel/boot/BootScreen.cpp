@@ -350,7 +350,11 @@ namespace BootScreen
                                             FontType::PCScreenFont2);
         BootDisplay->Clear();
         char *text = new char[128];
+#ifdef DEBUG
+        sprintf_(text, "%s git-%s", KERNEL_NAME, GIT_COMMIT_SHORT);
+#else
         sprintf_(text, "%s %s", KERNEL_NAME, KERNEL_VERSION);
+#endif
         SET_PRINT_RIGHT((char *)text, BootDisplay->GetFramebuffer()->Height - BootDisplay->CurrentFont->GetFontSize().Height);
         delete[] text;
     }

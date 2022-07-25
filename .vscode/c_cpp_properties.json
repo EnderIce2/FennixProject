@@ -12,6 +12,8 @@
                 "DEBUG",
                 "KERNEL_NAME",
                 "KERNEL_VERSION",
+                "GIT_COMMIT",
+                "GIT_COMMIT_SHORT",
                 "UNIT_TESTS"
             ],
             "compilerPath": "${workspaceFolder}/tools/cross/bin/x86_64-elf-gcc",
