@@ -3,6 +3,45 @@
 
 #include <ctype.h>
 
+int isdigit(int Char)
+{
+    return Char >= '0' && Char <= '9';
+}
+
+int isspace(int Char)
+{
+    return Char == ' ' || Char == '\t' || Char == '\r' || Char == '\n' || Char == '\f' || Char == '\v';
+}
+
+int isempty(char *str)
+{
+    long unsigned i = 0;
+    while (str[i] != '\0')
+        ++i;
+
+    if (i == 0)
+        return 1;
+
+    while (*str != '\0')
+    {
+        if (!isspace(*str))
+            return 0;
+        str++;
+    }
+    return 1;
+}
+
+unsigned int isdelim(char c, char *delim)
+{
+    while (*delim != '\0')
+    {
+        if (c == *delim)
+            return 1;
+        delim++;
+    }
+    return 0;
+}
+
 long unsigned strlen(const char s[])
 {
     long unsigned i = 0;
@@ -155,12 +194,42 @@ int strcasecmp(const char *lhs, const char *rhs)
     return lc - rc;
 }
 
-int isdigit(int Char)
+char *strtok(char *src, const char *delim)
 {
-    return Char >= '0' && Char <= '9';
-}
+    static char *src1;
+    if (!src)
+        src = src1;
 
-int isspace(int Char)
-{
-    return Char == ' ' || Char == '\t' || Char == '\r' || Char == '\n' || Char == '\f' || Char == '\v';
+    if (!src)
+        return NULL;
+
+    while (1)
+    {
+        if (isdelim(*src, delim))
+        {
+            src++;
+            continue;
+        }
+        if (*src == '\0')
+            return NULL;
+
+        break;
+    }
+    char *ret = src;
+    while (1)
+    {
+        if (*src == '\0')
+        {
+            src1 = src;
+            return ret;
+        }
+        if (isdelim(*src, delim))
+        {
+            *src = '\0';
+            src1 = src + 1;
+            return ret;
+        }
+        src++;
+    }
+    return NULL;
 }

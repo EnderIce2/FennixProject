@@ -42,7 +42,8 @@
 			"efilib.h": "c",
 			"efi.h": "c",
 			"fileloader.h": "c",
-			"assert.h": "c"
+			"assert.h": "c",
+			"printf.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}
