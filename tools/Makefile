@@ -1,10 +1,8 @@
-
 WORKING_DIR = $(shell pwd)
 CROSS_DIR="$(WORKING_DIR)/cross"
 export PATH := $(CROSS_DIR):$(PATH)
 
 GCC_CROSS_TARGET=x86_64-elf
-
 QEMU_VERSION = qemu-7.0.0
 
 all: do_initrd do_e do_limine do_binutils do_gcc do_qemu

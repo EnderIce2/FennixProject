@@ -59,7 +59,7 @@ else
 	dd if=/dev/zero of=qemu-disk.img bs=1024K count=4000
 endif
 
-# download fonts for the kernel
+# Download fonts for the kernel.
 fonts:
 	rm -f ./kernel/files/zap-ext-light20.psf ./kernel/files/zap-ext-light24.psf ./kernel/files/zap-light16.psf ./kernel/files/ter-powerline-v12n.psf
 	wget https://www.zap.org.au/projects/console-fonts-zap/src/zap-ext-light20.psf -P kernel/files
@@ -68,7 +68,7 @@ fonts:
 	wget https://raw.githubusercontent.com/powerline/fonts/master/Terminus/PSF/ter-powerline-v12n.psf.gz -P kernel/files
 	gzip -d kernel/files/ter-powerline-v12n.psf.gz
 
-# install necessary packages, compile cross-compiler etc..
+# Install necessary packages, build cross-compiler etc...
 tools: fonts
 	make --quiet -C tools all
 	make --quiet -C boot gnuefi
@@ -92,7 +92,7 @@ build: build_bootloader build_kernel build_libc build_userspace build_image
 
 rebuild: clean build
 
-# quickly build the operating system (it won't create the ISO file and doxygen documentation)
+# Quickly build the operating system (it won't create the ISO file and doxygen documentation)
 build_bootloader:
 ifeq ($(BOOTLOADER), lynx)
 	make --quiet -C boot build
