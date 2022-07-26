@@ -4,7 +4,7 @@ GNUEFI_RELEASE_VERSION=3.0.14
 NASM = /usr/bin/nasm
 
 gnuefi:
-	wget https://deac-ams.dl.sourceforge.net/project/gnu-efi/gnu-efi-$(GNUEFI_RELEASE_VERSION).tar.bz2
+	wget https://archive.org/download/gnu-efi-$(GNUEFI_RELEASE_VERSION).tar/gnu-efi-$(GNUEFI_RELEASE_VERSION)tar.bz2
 	tar -xf gnu-efi-$(GNUEFI_RELEASE_VERSION).tar.bz2 -C UEFI
 	rm gnu-efi-$(GNUEFI_RELEASE_VERSION).tar.bz2
 	mv UEFI/gnu-efi-$(GNUEFI_RELEASE_VERSION) UEFI/gnu-efi
