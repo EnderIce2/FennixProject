@@ -18940,6 +18940,46 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>isdigit</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>a3fa45b35c8abf67a950b6d3d4063dede</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isspace</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>a56be4166e4673843042a548a7f513dbc</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isempty</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>a75b852b562036f85800f7e155266bd58</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isdelim</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>a44795c9b72669ec9dcea14f56fe37b2a</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>memcpy</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -18980,22 +19020,22 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>strncmp</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
-    <Anchor>a47f2f249c3bc43745c744bb5e724c608</Anchor>
-    <DeclaredIn>string.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>strlen</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d1/d69/kernel_2include_2string_8h.html</Path>
     <Anchor>a7dcc610f4b04a8ee418f03a6d9256629</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>strncmp</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>a9afae77e412a26e6c01e26b89d5c2b47</Anchor>
     <DeclaredIn>string.h</DeclaredIn>
   </Token>
   <Token>
@@ -19050,32 +19090,62 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isdigit</Name>
+      <Name>strdup</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d1/d69/kernel_2include_2string_8h.html</Path>
-    <Anchor>a3fa45b35c8abf67a950b6d3d4063dede</Anchor>
+    <Anchor>a73d3b899fd0ce1012c7cc634f62401ed</Anchor>
     <DeclaredIn>string.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isspace</Name>
+      <Name>strchr</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d1/d69/kernel_2include_2string_8h.html</Path>
-    <Anchor>a56be4166e4673843042a548a7f513dbc</Anchor>
+    <Anchor>a88b07011b83b06b8856027f02d55a880</Anchor>
     <DeclaredIn>string.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isempty</Name>
+      <Name>strrchr</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d1/d69/kernel_2include_2string_8h.html</Path>
-    <Anchor>a75b852b562036f85800f7e155266bd58</Anchor>
+    <Anchor>a104a20698dd8f00e7d2711c811ea72ac</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>strncasecmp</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>ade7c903cf6af190b441dc5e59372afed</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>strcasecmp</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>a3d8dd47ed6e64abdd742b81e73b6f2f2</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>strtok</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>a54bb533b3489b429fa4bab0d45312fd2</Anchor>
     <DeclaredIn>string.h</DeclaredIn>
   </Token>
   <Token>
@@ -30477,6 +30547,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>internal_shutdown</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d9/d76/Native_8cpp.html</Path>
+    <Anchor>a0681e34ebc57354a3bd2fd2235e4bec9</Anchor>
+    <DeclaredIn>Native.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>internal_reboot</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d9/d76/Native_8cpp.html</Path>
+    <Anchor>a8a43b6352f86ead07db5c234b28a5c99</Anchor>
+    <DeclaredIn>Native.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>internal_fbaddress</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -30603,6 +30693,26 @@
     </TokenIdentifier>
     <Path>d9/d76/Native_8cpp.html</Path>
     <Anchor>a925af61fd2d437379d4d2c22809fede9</Anchor>
+    <DeclaredIn>Native.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>internal_filechildrensize</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d9/d76/Native_8cpp.html</Path>
+    <Anchor>a4ee6f3d08e1dd4a07fb0e6536f4bb831</Anchor>
+    <DeclaredIn>Native.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>internal_filegetchildren</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d9/d76/Native_8cpp.html</Path>
+    <Anchor>ae746d99e450ca5cb657ddab238da62b1</Anchor>
     <DeclaredIn>Native.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -34635,6 +34745,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>_Shutdown</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7dda52224be4e4cdc0b58f11e57e065311da</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_Reboot</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7dda3f438c11799cb45916538d5e26efe139</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>_GetFramebufferAddress</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -34841,6 +34971,26 @@
     </TokenIdentifier>
     <Path>d2/d6e/syscalls_8h.html</Path>
     <Anchor>a16c10255fbc3692d24e41969a899c7ddae2eac3387d5c9d44cd72ba64bbdc59a5</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_FileChildrenSize</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7ddaa4247e8634a3e0d6e5c1ac38da229ce8</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_FileGetChildren</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7dda6dbd4a9831f4cac80882f991f4bfb97b</Anchor>
     <DeclaredIn>syscalls.h</DeclaredIn>
   </Token>
   <Token>
@@ -35850,6 +36000,46 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>isdigit</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/db0/string_8c.html</Path>
+    <Anchor>a85a6ae4b61c996ac0005046f1079c4a0</Anchor>
+    <DeclaredIn>string.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isspace</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/db0/string_8c.html</Path>
+    <Anchor>a59fd3321ae4cd78dff63c8aae34d99c8</Anchor>
+    <DeclaredIn>string.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isempty</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/db0/string_8c.html</Path>
+    <Anchor>a75b852b562036f85800f7e155266bd58</Anchor>
+    <DeclaredIn>string.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isdelim</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/db0/string_8c.html</Path>
+    <Anchor>a44795c9b72669ec9dcea14f56fe37b2a</Anchor>
+    <DeclaredIn>string.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>strlen</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -35970,22 +36160,12 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isdigit</Name>
+      <Name>strtok</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d1/db0/string_8c.html</Path>
-    <Anchor>a85a6ae4b61c996ac0005046f1079c4a0</Anchor>
-    <DeclaredIn>string.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>isspace</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>d1/db0/string_8c.html</Path>
-    <Anchor>a59fd3321ae4cd78dff63c8aae34d99c8</Anchor>
+    <Anchor>ab0ad8275543a34aae52b7bcd02e79753</Anchor>
     <DeclaredIn>string.c</DeclaredIn>
   </Token>
   <Token>
@@ -36490,16 +36670,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isempty</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>db/d50/login_8cpp.html</Path>
-    <Anchor>a75b852b562036f85800f7e155266bd58</Anchor>
-    <DeclaredIn>login.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>HasIllegalCharacter</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -36540,22 +36710,22 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>PrintShellPrefix</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>dd/dda/monoton_8cpp.html</Path>
+    <Anchor>a98d5da1dda5905f437b68bc01f54b812</Anchor>
+    <DeclaredIn>monoton.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>trimwhitespace</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>dd/dda/monoton_8cpp.html</Path>
     <Anchor>a205c8acb2ef70f038f32e5fe361cc8d9</Anchor>
-    <DeclaredIn>monoton.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>isempty1</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>dd/dda/monoton_8cpp.html</Path>
-    <Anchor>a5d0c7adc6f971284ec3d6144b7b8454a</Anchor>
     <DeclaredIn>monoton.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -36660,6 +36830,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>isempty_1</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d6/da7/monoton_8hpp.html</Path>
+    <Anchor>a2cdba60f5d4d64b07b0a323f00aee9cc</Anchor>
+    <DeclaredIn>monoton.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>usr</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -36697,6 +36877,26 @@
     <Path>d6/da7/monoton_8hpp.html</Path>
     <Anchor>a8d6989dc736b678d41dc8a58446fab96</Anchor>
     <DeclaredIn>monoton.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>main</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d9/d41/reboot_8cpp.html</Path>
+    <Anchor>a3c04138a5bfe5d72780bb7e82a18e627</Anchor>
+    <DeclaredIn>reboot.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>main</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>df/d04/shutdown_8cpp.html</Path>
+    <Anchor>a3c04138a5bfe5d72780bb7e82a18e627</Anchor>
+    <DeclaredIn>shutdown.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -45581,6 +45781,28 @@
     </TokenIdentifier>
     <Path>d2/d83/classMonotonLib_1_1mtl.html</Path>
     <Anchor>a077bee6d817cd91a284efa44e52d6e24</Anchor>
+    <DeclaredIn>monotonlib.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetBackgroundColor</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>MonotonLib::mtl</Scope>
+    </TokenIdentifier>
+    <Path>d2/d83/classMonotonLib_1_1mtl.html</Path>
+    <Anchor>abcfe84fbf143a110b1022cf500db8a91</Anchor>
+    <DeclaredIn>monotonlib.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetForegroundColor</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>MonotonLib::mtl</Scope>
+    </TokenIdentifier>
+    <Path>d2/d83/classMonotonLib_1_1mtl.html</Path>
+    <Anchor>ae94a0e914c328cfe5a5e206f9ed70023</Anchor>
     <DeclaredIn>monotonlib.h</DeclaredIn>
   </Token>
   <Token>

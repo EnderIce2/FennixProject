@@ -7779,6 +7779,46 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>isdigit</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>a3fa45b35c8abf67a950b6d3d4063dede</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isspace</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>a56be4166e4673843042a548a7f513dbc</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isempty</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>a75b852b562036f85800f7e155266bd58</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isdelim</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>a44795c9b72669ec9dcea14f56fe37b2a</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>memcpy</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -7819,22 +7859,22 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>strncmp</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
-    <Anchor>a47f2f249c3bc43745c744bb5e724c608</Anchor>
-    <DeclaredIn>string.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>strlen</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d1/d69/kernel_2include_2string_8h.html</Path>
     <Anchor>a7dcc610f4b04a8ee418f03a6d9256629</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>strncmp</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>a9afae77e412a26e6c01e26b89d5c2b47</Anchor>
     <DeclaredIn>string.h</DeclaredIn>
   </Token>
   <Token>
@@ -7889,32 +7929,62 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isdigit</Name>
+      <Name>strdup</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d1/d69/kernel_2include_2string_8h.html</Path>
-    <Anchor>a3fa45b35c8abf67a950b6d3d4063dede</Anchor>
+    <Anchor>a73d3b899fd0ce1012c7cc634f62401ed</Anchor>
     <DeclaredIn>string.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isspace</Name>
+      <Name>strchr</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d1/d69/kernel_2include_2string_8h.html</Path>
-    <Anchor>a56be4166e4673843042a548a7f513dbc</Anchor>
+    <Anchor>a88b07011b83b06b8856027f02d55a880</Anchor>
     <DeclaredIn>string.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isempty</Name>
+      <Name>strrchr</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d1/d69/kernel_2include_2string_8h.html</Path>
-    <Anchor>a75b852b562036f85800f7e155266bd58</Anchor>
+    <Anchor>a104a20698dd8f00e7d2711c811ea72ac</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>strncasecmp</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>ade7c903cf6af190b441dc5e59372afed</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>strcasecmp</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>a3d8dd47ed6e64abdd742b81e73b6f2f2</Anchor>
+    <DeclaredIn>string.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>strtok</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+    <Anchor>a54bb533b3489b429fa4bab0d45312fd2</Anchor>
     <DeclaredIn>string.h</DeclaredIn>
   </Token>
   <Token>
@@ -22342,6 +22412,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>_Shutdown</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7dda52224be4e4cdc0b58f11e57e065311da</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_Reboot</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7dda3f438c11799cb45916538d5e26efe139</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>_GetFramebufferAddress</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -22548,6 +22638,26 @@
     </TokenIdentifier>
     <Path>d2/d6e/syscalls_8h.html</Path>
     <Anchor>a16c10255fbc3692d24e41969a899c7ddae2eac3387d5c9d44cd72ba64bbdc59a5</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_FileChildrenSize</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7ddaa4247e8634a3e0d6e5c1ac38da229ce8</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_FileGetChildren</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7dda6dbd4a9831f4cac80882f991f4bfb97b</Anchor>
     <DeclaredIn>syscalls.h</DeclaredIn>
   </Token>
   <Token>

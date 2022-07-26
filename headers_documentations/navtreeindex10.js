@@ -1,5 +1,16 @@
 var NAVTREEINDEX10 =
 {
+"d9/d86/limits_8h.html#ae8a44c5a7436466221e0f3859d02420f":[2,0,1,0,17,8],
+"d9/d86/limits_8h_source.html":[2,0,1,0,17],
+"d9/d87/sys_8h.html":[2,0,1,0,25],
+"d9/d87/sys_8h.html#a398cc7eb9242509878d658cf3169d1ca":[2,0,1,0,25,3],
+"d9/d87/sys_8h.html#a6223e79d1dbac2fc6f74b3bb9bdeb264":[2,0,1,0,25,0],
+"d9/d87/sys_8h.html#a7827fa4eb9a46dd6d5b07a921560abf2":[2,0,1,0,25,2],
+"d9/d87/sys_8h.html#aea3a8b853edc9985983da6672df808d6":[2,0,1,0,25,1],
+"d9/d87/sys_8h_source.html":[2,0,1,0,25],
+"d9/da3/structlimine__efi__system__table__response.html":[1,0,73],
+"d9/da3/structlimine__efi__system__table__response.html#a350904c35686e178bad482b200aedb20":[1,0,73,0],
+"d9/da3/structlimine__efi__system__table__response.html#ad9336f62f307c005ac9fe90af805b97d":[1,0,73,1],
 "d9/dae/emmintrin_8h.html":[2,0,0,4],
 "d9/dae/emmintrin_8h_source.html":[2,0,0,4],
 "d9/deb/namespaceBootScreen.html":[0,0,1],
@@ -238,16 +249,5 @@ var NAVTREEINDEX10 =
 "da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a121b5697dfedde5609485a4fc2413ba9":[2,0,1,0,5,62,53],
 "da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a16c5f80588788d6c007378b88224b8b9":[2,0,1,0,5,62,57],
 "da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a1a30ac2a77a6467a89299722f0c7ec52":[2,0,1,0,5,62,21],
-"da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a23374255151d500ac19e4937df89b72e":[2,0,1,0,5,62,55],
-"da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a239d75748b837b9929d311272d888248":[2,0,1,0,5,62,44],
-"da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a2fecac8f3f4949fdd20ceefb431ab275":[2,0,1,0,5,62,12],
-"da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a302ff6068b618254b517e610338b6259":[2,0,1,0,5,62,10],
-"da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a334066bc61350da6153c73065165b3d9":[2,0,1,0,5,62,9],
-"da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a374492042142b2eba8e262effd6dbf07":[2,0,1,0,5,62,33],
-"da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a39040a1204f8d65d0f93b255b975d551":[2,0,1,0,5,62,2],
-"da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a39210b9ef0ec802e28d288991b327e0a":[2,0,1,0,5,62,25],
-"da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a3ec76411d7fd75f55fe1872f36c3ab34":[2,0,1,0,5,62,28],
-"da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a40d278d0f63c4e3ad1ee698eeba23957":[2,0,1,0,5,62,17],
-"da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a43c3685ba0a7d823c5a33837f3d635f8":[2,0,1,0,5,62,5],
-"da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a46d16699ba772ea0cacb5c7d2037eee2":[2,0,1,0,5,62,61]
+"da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a23374255151d500ac19e4937df89b72e":[2,0,1,0,5,62,55]
 };

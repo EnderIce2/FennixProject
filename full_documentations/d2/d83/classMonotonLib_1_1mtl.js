@@ -32,6 +32,8 @@ var classMonotonLib_1_1mtl =
     [ "RemoveChar", "d2/d83/classMonotonLib_1_1mtl.html#a4ea0c96d573a7fca9a6dc722f709d2aa", null ],
     [ "RemoveChar", "d2/d83/classMonotonLib_1_1mtl.html#abc039e08ba96f88de940c9a608df795c", null ],
     [ "Scroll", "d2/d83/classMonotonLib_1_1mtl.html#a50bca5a37f9ccb392986b750d76d0399", null ],
+    [ "SetBackgroundColor", "d2/d83/classMonotonLib_1_1mtl.html#abcfe84fbf143a110b1022cf500db8a91", null ],
+    [ "SetForegroundColor", "d2/d83/classMonotonLib_1_1mtl.html#ae94a0e914c328cfe5a5e206f9ed70023", null ],
     [ "SetPrintPosition", "d2/d83/classMonotonLib_1_1mtl.html#a093b2626c8ba7d1b9da4c18ae520e020", null ],
     [ "Background", "d2/d83/classMonotonLib_1_1mtl.html#a8f58fa18a992a916f8deee5f570fdc0f", null ],
     [ "FB", "d2/d83/classMonotonLib_1_1mtl.html#a2b949a032f392c65ca58a182129aeb38", null ],

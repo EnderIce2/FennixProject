@@ -108,23 +108,43 @@ $(document).ready(function(){initNavTree('d6/da7/monoton_8hpp_source.html','../.
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    s[<a class="code" href="../../d1/dc0/multiboot_8h.html#a6de3a6d27a7e07942958b912d39792e6">len</a> + 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">extern</span> <a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html">MonotonLib::mtl</a> *<a class="code" href="../../d6/da7/monoton_8hpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="../../d6/da7/monoton_8hpp.html#aa045615acba69379136f2846fcea6d12">usr</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="../../d6/da7/monoton_8hpp.html#a7a8e98611cd2044f91732950bd1c303b">pwd</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/da7/monoton_8hpp.html#a7b3c0a5cd0c4f0f7cd64a3610711e172">InitLogin</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d6/da7/monoton_8hpp.html#a2cdba60f5d4d64b07b0a323f00aee9cc">   20</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../d6/da7/monoton_8hpp.html#a2cdba60f5d4d64b07b0a323f00aee9cc">isempty_1</a>(<span class="keywordtype">char</span> *str)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> i = 0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">while</span> (str[i] != <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        ++i;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (i == 0)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">while</span> (*str != <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../d1/d69/kernel_2include_2string_8h.html#a56be4166e4673843042a548a7f513dbc">isspace</a>(*str))</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        str++;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">extern</span> <a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html">MonotonLib::mtl</a> *<a class="code" href="../../d6/da7/monoton_8hpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="../../d6/da7/monoton_8hpp.html#aa045615acba69379136f2846fcea6d12">usr</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="../../d6/da7/monoton_8hpp.html#a7a8e98611cd2044f91732950bd1c303b">pwd</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d6/da7/monoton_8hpp.html#a7b3c0a5cd0c4f0f7cd64a3610711e172">InitLogin</a>();</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassMonotonLib_1_1mtl_html"><div class="ttname"><a href="../../d2/d83/classMonotonLib_1_1mtl.html">MonotonLib::mtl</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d9a/monotonlib_8h_source.html#l00013">monotonlib.h:13</a></div></div>
 <div class="ttc" id="asyscalls_8h_html"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html">syscalls.h</a></div></div>
 <div class="ttc" id="akernel_2include_2string_8h_html_a7dcc610f4b04a8ee418f03a6d9256629"><div class="ttname"><a href="../../d1/d69/kernel_2include_2string_8h.html#a7dcc610f4b04a8ee418f03a6d9256629">strlen</a></div><div class="ttdeci">long unsigned strlen(const char s[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00060">String.c:60</a></div></div>
-<div class="ttc" id="amonoton_8hpp_html_a8d6989dc736b678d41dc8a58446fab96"><div class="ttname"><a href="../../d6/da7/monoton_8hpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a></div><div class="ttdeci">MonotonLib::mtl * mono</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dda/monoton_8cpp_source.html#l00008">monoton.cpp:8</a></div></div>
-<div class="ttc" id="amonoton_8hpp_html_a7b3c0a5cd0c4f0f7cd64a3610711e172"><div class="ttname"><a href="../../d6/da7/monoton_8hpp.html#a7b3c0a5cd0c4f0f7cd64a3610711e172">InitLogin</a></div><div class="ttdeci">void InitLogin()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d50/login_8cpp_source.html#l00104">login.cpp:104</a></div></div>
+<div class="ttc" id="amonoton_8hpp_html_a8d6989dc736b678d41dc8a58446fab96"><div class="ttname"><a href="../../d6/da7/monoton_8hpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a></div><div class="ttdeci">MonotonLib::mtl * mono</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dda/monoton_8cpp_source.html#l00010">monoton.cpp:10</a></div></div>
+<div class="ttc" id="amonoton_8hpp_html_a7b3c0a5cd0c4f0f7cd64a3610711e172"><div class="ttname"><a href="../../d6/da7/monoton_8hpp.html#a7b3c0a5cd0c4f0f7cd64a3610711e172">InitLogin</a></div><div class="ttdeci">void InitLogin()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d50/login_8cpp_source.html#l00091">login.cpp:91</a></div></div>
 <div class="ttc" id="amonoton_8hpp_html_a6ea87d031ef388097959887799e9e779"><div class="ttname"><a href="../../d6/da7/monoton_8hpp.html#a6ea87d031ef388097959887799e9e779">backspace</a></div><div class="ttdeci">static void backspace(char s[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da7/monoton_8hpp_source.html#l00007">monoton.hpp:7</a></div></div>
+<div class="ttc" id="amonoton_8hpp_html_a2cdba60f5d4d64b07b0a323f00aee9cc"><div class="ttname"><a href="../../d6/da7/monoton_8hpp.html#a2cdba60f5d4d64b07b0a323f00aee9cc">isempty_1</a></div><div class="ttdeci">static int isempty_1(char *str)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da7/monoton_8hpp_source.html#l00020">monoton.hpp:20</a></div></div>
 <div class="ttc" id="amonoton_8hpp_html_aa045615acba69379136f2846fcea6d12"><div class="ttname"><a href="../../d6/da7/monoton_8hpp.html#aa045615acba69379136f2846fcea6d12">usr</a></div><div class="ttdeci">char * usr()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d50/login_8cpp_source.html#l00006">login.cpp:6</a></div></div>
 <div class="ttc" id="amultiboot_8h_html_a6de3a6d27a7e07942958b912d39792e6"><div class="ttname"><a href="../../d1/dc0/multiboot_8h.html#a6de3a6d27a7e07942958b912d39792e6">len</a></div><div class="ttdeci">multiboot_uint64_t len</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc0/multiboot_8h_source.html#l00100">multiboot.h:100</a></div></div>
 <div class="ttc" id="amonoton_8hpp_html_a7a8e98611cd2044f91732950bd1c303b"><div class="ttname"><a href="../../d6/da7/monoton_8hpp.html#a7a8e98611cd2044f91732950bd1c303b">pwd</a></div><div class="ttdeci">char * pwd()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d50/login_8cpp_source.html#l00007">login.cpp:7</a></div></div>
 <div class="ttc" id="amonoton_8hpp_html_a17091b21b245979785afed043c5a62d8"><div class="ttname"><a href="../../d6/da7/monoton_8hpp.html#a17091b21b245979785afed043c5a62d8">append</a></div><div class="ttdeci">static void append(char s[], char n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da7/monoton_8hpp_source.html#l00013">monoton.hpp:13</a></div></div>
+<div class="ttc" id="akernel_2include_2string_8h_html_a56be4166e4673843042a548a7f513dbc"><div class="ttname"><a href="../../d1/d69/kernel_2include_2string_8h.html#a56be4166e4673843042a548a7f513dbc">isspace</a></div><div class="ttdeci">int isspace(int c)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00144">String.c:144</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

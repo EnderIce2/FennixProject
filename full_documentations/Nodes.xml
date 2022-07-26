@@ -3515,6 +3515,16 @@
                 <Anchor>a50bca5a37f9ccb392986b750d76d0399</Anchor>
                </Node>
                <Node>
+                <Name>SetBackgroundColor</Name>
+                <Path>d2/d83/classMonotonLib_1_1mtl.html</Path>
+                <Anchor>abcfe84fbf143a110b1022cf500db8a91</Anchor>
+               </Node>
+               <Node>
+                <Name>SetForegroundColor</Name>
+                <Path>d2/d83/classMonotonLib_1_1mtl.html</Path>
+                <Anchor>ae94a0e914c328cfe5a5e206f9ed70023</Anchor>
+               </Node>
+               <Node>
                 <Name>SetPrintPosition</Name>
                 <Path>d2/d83/classMonotonLib_1_1mtl.html</Path>
                 <Anchor>a093b2626c8ba7d1b9da4c18ae520e020</Anchor>
@@ -29985,6 +29995,11 @@
                 <Path>d1/d69/kernel_2include_2string_8h.html</Path>
                 <Subnodes>
                  <Node>
+                  <Name>isdelim</Name>
+                  <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+                  <Anchor>a44795c9b72669ec9dcea14f56fe37b2a</Anchor>
+                 </Node>
+                 <Node>
                   <Name>isdigit</Name>
                   <Path>d1/d69/kernel_2include_2string_8h.html</Path>
                   <Anchor>a3fa45b35c8abf67a950b6d3d4063dede</Anchor>
@@ -30020,9 +30035,19 @@
                   <Anchor>a1fd0ab453722ae471fc94da8bdc41661</Anchor>
                  </Node>
                  <Node>
+                  <Name>strcasecmp</Name>
+                  <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+                  <Anchor>a3d8dd47ed6e64abdd742b81e73b6f2f2</Anchor>
+                 </Node>
+                 <Node>
                   <Name>strcat</Name>
                   <Path>d1/d69/kernel_2include_2string_8h.html</Path>
                   <Anchor>afca62bf1b7f91b44ba5c2ada54444fc9</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>strchr</Name>
+                  <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+                  <Anchor>a88b07011b83b06b8856027f02d55a880</Anchor>
                  </Node>
                  <Node>
                   <Name>strcmp</Name>
@@ -30035,14 +30060,24 @@
                   <Anchor>ac137d536ff0037b3856083cb8a1c19a7</Anchor>
                  </Node>
                  <Node>
+                  <Name>strdup</Name>
+                  <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+                  <Anchor>a73d3b899fd0ce1012c7cc634f62401ed</Anchor>
+                 </Node>
+                 <Node>
                   <Name>strlen</Name>
                   <Path>d1/d69/kernel_2include_2string_8h.html</Path>
                   <Anchor>a7dcc610f4b04a8ee418f03a6d9256629</Anchor>
                  </Node>
                  <Node>
+                  <Name>strncasecmp</Name>
+                  <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+                  <Anchor>ade7c903cf6af190b441dc5e59372afed</Anchor>
+                 </Node>
+                 <Node>
                   <Name>strncmp</Name>
                   <Path>d1/d69/kernel_2include_2string_8h.html</Path>
-                  <Anchor>a47f2f249c3bc43745c744bb5e724c608</Anchor>
+                  <Anchor>a9afae77e412a26e6c01e26b89d5c2b47</Anchor>
                  </Node>
                  <Node>
                   <Name>strncpy</Name>
@@ -30050,9 +30085,19 @@
                   <Anchor>a12f4a7953a24e197c8d26bf0493f8225</Anchor>
                  </Node>
                  <Node>
+                  <Name>strrchr</Name>
+                  <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+                  <Anchor>a104a20698dd8f00e7d2711c811ea72ac</Anchor>
+                 </Node>
+                 <Node>
                   <Name>strstr</Name>
                   <Path>d1/d69/kernel_2include_2string_8h.html</Path>
                   <Anchor>a4a710d86541afc6b7dafddcdb4b1c94f</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>strtok</Name>
+                  <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+                  <Anchor>a54bb533b3489b429fa4bab0d45312fd2</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -35303,6 +35348,11 @@
                   <Anchor>a00c3489f712deb526846158c8c84f027</Anchor>
                  </Node>
                  <Node>
+                  <Name>internal_filechildrensize</Name>
+                  <Path>d9/d76/Native_8cpp.html</Path>
+                  <Anchor>a4ee6f3d08e1dd4a07fb0e6536f4bb831</Anchor>
+                 </Node>
+                 <Node>
                   <Name>internal_fileClose</Name>
                   <Path>d9/d76/Native_8cpp.html</Path>
                   <Anchor>aebe0b576627494b45a5e8fe2d6d4cdb2</Anchor>
@@ -35311,6 +35361,11 @@
                   <Name>internal_filefullpath</Name>
                   <Path>d9/d76/Native_8cpp.html</Path>
                   <Anchor>a925af61fd2d437379d4d2c22809fede9</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>internal_filegetchildren</Name>
+                  <Path>d9/d76/Native_8cpp.html</Path>
+                  <Anchor>ae746d99e450ca5cb657ddab238da62b1</Anchor>
                  </Node>
                  <Node>
                   <Name>internal_fileOpen</Name>
@@ -35388,6 +35443,11 @@
                   <Anchor>a9d9563339a8a0634d3dade19f82307c2</Anchor>
                  </Node>
                  <Node>
+                  <Name>internal_reboot</Name>
+                  <Path>d9/d76/Native_8cpp.html</Path>
+                  <Anchor>a8a43b6352f86ead07db5c234b28a5c99</Anchor>
+                 </Node>
+                 <Node>
                   <Name>internal_requestpage</Name>
                   <Path>d9/d76/Native_8cpp.html</Path>
                   <Anchor>a0f2e486ad80cb0d9ac33389553240e9f</Anchor>
@@ -35396,6 +35456,11 @@
                   <Name>internal_requestpages</Name>
                   <Path>d9/d76/Native_8cpp.html</Path>
                   <Anchor>ac8ef39feb4a36eb01167e9af5811c777</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>internal_shutdown</Name>
+                  <Path>d9/d76/Native_8cpp.html</Path>
+                  <Anchor>a0681e34ebc57354a3bd2fd2235e4bec9</Anchor>
                  </Node>
                  <Node>
                   <Name>internal_unimpl</Name>
@@ -39253,6 +39318,16 @@
                     <Anchor>a16c10255fbc3692d24e41969a899c7ddadbc3be2aa1cc426806cfcc9403bfa61e</Anchor>
                    </Node>
                    <Node>
+                    <Name>_Shutdown</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7dda52224be4e4cdc0b58f11e57e065311da</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>_Reboot</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7dda3f438c11799cb45916538d5e26efe139</Anchor>
+                   </Node>
+                   <Node>
                     <Name>_GetFramebufferAddress</Name>
                     <Path>d2/d6e/syscalls_8h.html</Path>
                     <Anchor>a16c10255fbc3692d24e41969a899c7dda72b65500f499a61fa0e0dad34ba35fea</Anchor>
@@ -39356,6 +39431,16 @@
                     <Name>_FileFullPath</Name>
                     <Path>d2/d6e/syscalls_8h.html</Path>
                     <Anchor>a16c10255fbc3692d24e41969a899c7ddae2eac3387d5c9d44cd72ba64bbdc59a5</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>_FileChildrenSize</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7ddaa4247e8634a3e0d6e5c1ac38da229ce8</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>_FileGetChildren</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7dda6dbd4a9831f4cac80882f991f4bfb97b</Anchor>
                    </Node>
                    <Node>
                     <Name>_usleep</Name>
@@ -40266,9 +40351,19 @@
                   <Path>d1/db0/string_8c.html</Path>
                   <Subnodes>
                    <Node>
+                    <Name>isdelim</Name>
+                    <Path>d1/db0/string_8c.html</Path>
+                    <Anchor>a44795c9b72669ec9dcea14f56fe37b2a</Anchor>
+                   </Node>
+                   <Node>
                     <Name>isdigit</Name>
                     <Path>d1/db0/string_8c.html</Path>
                     <Anchor>a85a6ae4b61c996ac0005046f1079c4a0</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>isempty</Name>
+                    <Path>d1/db0/string_8c.html</Path>
+                    <Anchor>a75b852b562036f85800f7e155266bd58</Anchor>
                    </Node>
                    <Node>
                     <Name>isspace</Name>
@@ -40334,6 +40429,11 @@
                     <Name>strstr</Name>
                     <Path>d1/db0/string_8c.html</Path>
                     <Anchor>a4a710d86541afc6b7dafddcdb4b1c94f</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>strtok</Name>
+                    <Path>d1/db0/string_8c.html</Path>
+                    <Anchor>ab0ad8275543a34aae52b7bcd02e79753</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -41320,11 +41420,6 @@
                     <Anchor>a7b3c0a5cd0c4f0f7cd64a3610711e172</Anchor>
                    </Node>
                    <Node>
-                    <Name>isempty</Name>
-                    <Path>db/d50/login_8cpp.html</Path>
-                    <Anchor>a75b852b562036f85800f7e155266bd58</Anchor>
-                   </Node>
-                   <Node>
                     <Name>pwd</Name>
                     <Path>db/d50/login_8cpp.html</Path>
                     <Anchor>a7a8e98611cd2044f91732950bd1c303b</Anchor>
@@ -41355,11 +41450,6 @@
                   <Path>dd/dda/monoton_8cpp.html</Path>
                   <Subnodes>
                    <Node>
-                    <Name>isempty1</Name>
-                    <Path>dd/dda/monoton_8cpp.html</Path>
-                    <Anchor>a5d0c7adc6f971284ec3d6144b7b8454a</Anchor>
-                   </Node>
-                   <Node>
                     <Name>loop</Name>
                     <Path>dd/dda/monoton_8cpp.html</Path>
                     <Anchor>afe461d27b9c48d5921c00d521181f12f</Anchor>
@@ -41373,6 +41463,11 @@
                     <Name>ParseBuffer</Name>
                     <Path>dd/dda/monoton_8cpp.html</Path>
                     <Anchor>a447fa0a591dd74a68f672a0031f712a4</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>PrintShellPrefix</Name>
+                    <Path>dd/dda/monoton_8cpp.html</Path>
+                    <Anchor>a98d5da1dda5905f437b68bc01f54b812</Anchor>
                    </Node>
                    <Node>
                     <Name>trimwhitespace</Name>
@@ -41426,6 +41521,11 @@
                     <Anchor>a7b3c0a5cd0c4f0f7cd64a3610711e172</Anchor>
                    </Node>
                    <Node>
+                    <Name>isempty_1</Name>
+                    <Path>d6/da7/monoton_8hpp.html</Path>
+                    <Anchor>a2cdba60f5d4d64b07b0a323f00aee9cc</Anchor>
+                   </Node>
+                   <Node>
                     <Name>pwd</Name>
                     <Path>d6/da7/monoton_8hpp.html</Path>
                     <Anchor>a7a8e98611cd2044f91732950bd1c303b</Anchor>
@@ -41441,6 +41541,56 @@
                     <Anchor>a8d6989dc736b678d41dc8a58446fab96</Anchor>
                    </Node>
                   </Subnodes>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>reboot</Name>
+                <Path>dir_7b258dad6735743411e8d228e018ef87.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>Makefile</Name>
+                  <Path>d2/d5d/userspace_2apps_2reboot_2Makefile.html</Path>
+                 </Node>
+                 <Node>
+                  <Name>reboot.cpp</Name>
+                  <Path>d9/d41/reboot_8cpp.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>main</Name>
+                    <Path>d9/d41/reboot_8cpp.html</Path>
+                    <Anchor>a3c04138a5bfe5d72780bb7e82a18e627</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>reboot.hpp</Name>
+                  <Path>df/d5b/reboot_8hpp.html</Path>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>shutdown</Name>
+                <Path>dir_6290f27f80c88b1060534d42347f56e4.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>Makefile</Name>
+                  <Path>d1/d09/userspace_2apps_2shutdown_2Makefile.html</Path>
+                 </Node>
+                 <Node>
+                  <Name>shutdown.cpp</Name>
+                  <Path>df/d04/shutdown_8cpp.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>main</Name>
+                    <Path>df/d04/shutdown_8cpp.html</Path>
+                    <Anchor>a3c04138a5bfe5d72780bb7e82a18e627</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>shutdown.hpp</Name>
+                  <Path>dd/d7f/shutdown_8hpp.html</Path>
                  </Node>
                 </Subnodes>
                </Node>
@@ -43057,6 +43207,16 @@
                       <Name>Scroll</Name>
                       <Path>d2/d83/classMonotonLib_1_1mtl.html</Path>
                       <Anchor>a50bca5a37f9ccb392986b750d76d0399</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>SetBackgroundColor</Name>
+                      <Path>d2/d83/classMonotonLib_1_1mtl.html</Path>
+                      <Anchor>abcfe84fbf143a110b1022cf500db8a91</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>SetForegroundColor</Name>
+                      <Path>d2/d83/classMonotonLib_1_1mtl.html</Path>
+                      <Anchor>ae94a0e914c328cfe5a5e206f9ed70023</Anchor>
                      </Node>
                      <Node>
                       <Name>SetPrintPosition</Name>

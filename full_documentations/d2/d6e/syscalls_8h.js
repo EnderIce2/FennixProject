@@ -88,6 +88,8 @@ var syscalls_8h =
       [ "_SystemInfo", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda604d69aea7fd61464be8e3543608c8a3", null ],
       [ "_SystemTime", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda7cc82beb5b3de65cf6b39a549e5994b7", null ],
       [ "_SystemTimeSet", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddadbc3be2aa1cc426806cfcc9403bfa61e", null ],
+      [ "_Shutdown", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda52224be4e4cdc0b58f11e57e065311da", null ],
+      [ "_Reboot", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda3f438c11799cb45916538d5e26efe139", null ],
       [ "_GetFramebufferAddress", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda72b65500f499a61fa0e0dad34ba35fea", null ],
       [ "_GetFramebufferSize", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddaf3dc1134e56360e52d8641147c168913", null ],
       [ "_GetFramebufferWidth", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda7aec3f3eb0e6f29747d782eca11a0a16", null ],
@@ -109,6 +111,8 @@ var syscalls_8h =
       [ "_FileExists", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddadbd60dad7656ada530267c4e124429d8", null ],
       [ "_FileCreate", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda5c47a221950c1bced7c4dff3ce415c80", null ],
       [ "_FileFullPath", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddae2eac3387d5c9d44cd72ba64bbdc59a5", null ],
+      [ "_FileChildrenSize", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddaa4247e8634a3e0d6e5c1ac38da229ce8", null ],
+      [ "_FileGetChildren", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda6dbd4a9831f4cac80882f991f4bfb97b", null ],
       [ "_usleep", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda75975d7f4982d52e685b7a4a1ef48ac6", null ],
       [ "_DebugMessage", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda72d74f32cb7226e96b077d3873cd7912", null ]
     ] ]

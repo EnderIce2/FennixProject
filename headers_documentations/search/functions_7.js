@@ -1,15 +1,15 @@
 var searchData=
 [
-  ['get_3196',['Get',['../d3/d19/classBitmap.html#a9f96c621ef1f5b2217d6c63b20af246e',1,'Bitmap']]],
-  ['getcpuid_3197',['GetCPUID',['../de/d21/asm_8h.html#a40505a3833567ff998b603215181563d',1,'asm.h']]],
-  ['getcpuidmax_3198',['GetCPUIDMax',['../de/d21/asm_8h.html#a6c5e9dcf540a4b57071523620d5aa7cb',1,'asm.h']]],
-  ['getfattype_3199',['GetFATType',['../df/d19/classFileSystem_1_1FAT.html#af9fc90437ce8bba950b83b2c6cbf5dca',1,'FileSystem::FAT']]],
-  ['getframebuffer_3200',['GetFramebuffer',['../d4/d68/display_8h.html#ac08a69f517a23ca1f0ec5e5e1133f2cb',1,'display.h']]],
-  ['getfreememory_3201',['GetFreeMemory',['../da/ddb/heap_8h.html#ac41e9aa9301d794ea6ef4e093e15ffb3',1,'heap.h']]],
-  ['getnodefrompath_3202',['GetNodeFromPath',['../d0/d99/classFileSystem_1_1Virtual.html#a64f281b2983459dca561576fca5048cf',1,'FileSystem::Virtual']]],
-  ['getpathfromnode_3203',['GetPathFromNode',['../d0/d99/classFileSystem_1_1Virtual.html#aaab2e2228d10f6286d33ec397c3b438b',1,'FileSystem::Virtual']]],
-  ['getreservedmemory_3204',['GetReservedMemory',['../da/ddb/heap_8h.html#aa6230aa45893d5603217f0ef19a605bc',1,'heap.h']]],
-  ['getsize_3205',['getsize',['../d0/df0/classFileSystem_1_1USTAR.html#a33068586585434a9ea30d363fd1186dd',1,'FileSystem::USTAR']]],
-  ['getsymbolfromaddress_3206',['GetSymbolFromAddress',['../dd/dcb/classKernelSymbols_1_1Symbols.html#a1055f68b87533c7ab230c982f6beb503',1,'KernelSymbols::Symbols']]],
-  ['getusedmemory_3207',['GetUsedMemory',['../da/ddb/heap_8h.html#a011b78e3b746239e234aeae3888f3372',1,'heap.h']]]
+  ['get_3202',['Get',['../d3/d19/classBitmap.html#a9f96c621ef1f5b2217d6c63b20af246e',1,'Bitmap']]],
+  ['getcpuid_3203',['GetCPUID',['../de/d21/asm_8h.html#a40505a3833567ff998b603215181563d',1,'asm.h']]],
+  ['getcpuidmax_3204',['GetCPUIDMax',['../de/d21/asm_8h.html#a6c5e9dcf540a4b57071523620d5aa7cb',1,'asm.h']]],
+  ['getfattype_3205',['GetFATType',['../df/d19/classFileSystem_1_1FAT.html#af9fc90437ce8bba950b83b2c6cbf5dca',1,'FileSystem::FAT']]],
+  ['getframebuffer_3206',['GetFramebuffer',['../d4/d68/display_8h.html#ac08a69f517a23ca1f0ec5e5e1133f2cb',1,'display.h']]],
+  ['getfreememory_3207',['GetFreeMemory',['../da/ddb/heap_8h.html#ac41e9aa9301d794ea6ef4e093e15ffb3',1,'heap.h']]],
+  ['getnodefrompath_3208',['GetNodeFromPath',['../d0/d99/classFileSystem_1_1Virtual.html#a64f281b2983459dca561576fca5048cf',1,'FileSystem::Virtual']]],
+  ['getpathfromnode_3209',['GetPathFromNode',['../d0/d99/classFileSystem_1_1Virtual.html#aaab2e2228d10f6286d33ec397c3b438b',1,'FileSystem::Virtual']]],
+  ['getreservedmemory_3210',['GetReservedMemory',['../da/ddb/heap_8h.html#aa6230aa45893d5603217f0ef19a605bc',1,'heap.h']]],
+  ['getsize_3211',['getsize',['../d0/df0/classFileSystem_1_1USTAR.html#a33068586585434a9ea30d363fd1186dd',1,'FileSystem::USTAR']]],
+  ['getsymbolfromaddress_3212',['GetSymbolFromAddress',['../dd/dcb/classKernelSymbols_1_1Symbols.html#a1055f68b87533c7ab230c982f6beb503',1,'KernelSymbols::Symbols']]],
+  ['getusedmemory_3213',['GetUsedMemory',['../da/ddb/heap_8h.html#a011b78e3b746239e234aeae3888f3372',1,'heap.h']]]
 ];

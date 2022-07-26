@@ -26537,6 +26537,11 @@
                 <Path>d1/d69/kernel_2include_2string_8h.html</Path>
                 <Subnodes>
                  <Node>
+                  <Name>isdelim</Name>
+                  <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+                  <Anchor>a44795c9b72669ec9dcea14f56fe37b2a</Anchor>
+                 </Node>
+                 <Node>
                   <Name>isdigit</Name>
                   <Path>d1/d69/kernel_2include_2string_8h.html</Path>
                   <Anchor>a3fa45b35c8abf67a950b6d3d4063dede</Anchor>
@@ -26572,9 +26577,19 @@
                   <Anchor>a1fd0ab453722ae471fc94da8bdc41661</Anchor>
                  </Node>
                  <Node>
+                  <Name>strcasecmp</Name>
+                  <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+                  <Anchor>a3d8dd47ed6e64abdd742b81e73b6f2f2</Anchor>
+                 </Node>
+                 <Node>
                   <Name>strcat</Name>
                   <Path>d1/d69/kernel_2include_2string_8h.html</Path>
                   <Anchor>afca62bf1b7f91b44ba5c2ada54444fc9</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>strchr</Name>
+                  <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+                  <Anchor>a88b07011b83b06b8856027f02d55a880</Anchor>
                  </Node>
                  <Node>
                   <Name>strcmp</Name>
@@ -26587,14 +26602,24 @@
                   <Anchor>ac137d536ff0037b3856083cb8a1c19a7</Anchor>
                  </Node>
                  <Node>
+                  <Name>strdup</Name>
+                  <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+                  <Anchor>a73d3b899fd0ce1012c7cc634f62401ed</Anchor>
+                 </Node>
+                 <Node>
                   <Name>strlen</Name>
                   <Path>d1/d69/kernel_2include_2string_8h.html</Path>
                   <Anchor>a7dcc610f4b04a8ee418f03a6d9256629</Anchor>
                  </Node>
                  <Node>
+                  <Name>strncasecmp</Name>
+                  <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+                  <Anchor>ade7c903cf6af190b441dc5e59372afed</Anchor>
+                 </Node>
+                 <Node>
                   <Name>strncmp</Name>
                   <Path>d1/d69/kernel_2include_2string_8h.html</Path>
-                  <Anchor>a47f2f249c3bc43745c744bb5e724c608</Anchor>
+                  <Anchor>a9afae77e412a26e6c01e26b89d5c2b47</Anchor>
                  </Node>
                  <Node>
                   <Name>strncpy</Name>
@@ -26602,9 +26627,19 @@
                   <Anchor>a12f4a7953a24e197c8d26bf0493f8225</Anchor>
                  </Node>
                  <Node>
+                  <Name>strrchr</Name>
+                  <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+                  <Anchor>a104a20698dd8f00e7d2711c811ea72ac</Anchor>
+                 </Node>
+                 <Node>
                   <Name>strstr</Name>
                   <Path>d1/d69/kernel_2include_2string_8h.html</Path>
                   <Anchor>a4a710d86541afc6b7dafddcdb4b1c94f</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>strtok</Name>
+                  <Path>d1/d69/kernel_2include_2string_8h.html</Path>
+                  <Anchor>a54bb533b3489b429fa4bab0d45312fd2</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -28683,6 +28718,16 @@
                     <Anchor>a16c10255fbc3692d24e41969a899c7ddadbc3be2aa1cc426806cfcc9403bfa61e</Anchor>
                    </Node>
                    <Node>
+                    <Name>_Shutdown</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7dda52224be4e4cdc0b58f11e57e065311da</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>_Reboot</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7dda3f438c11799cb45916538d5e26efe139</Anchor>
+                   </Node>
+                   <Node>
                     <Name>_GetFramebufferAddress</Name>
                     <Path>d2/d6e/syscalls_8h.html</Path>
                     <Anchor>a16c10255fbc3692d24e41969a899c7dda72b65500f499a61fa0e0dad34ba35fea</Anchor>
@@ -28786,6 +28831,16 @@
                     <Name>_FileFullPath</Name>
                     <Path>d2/d6e/syscalls_8h.html</Path>
                     <Anchor>a16c10255fbc3692d24e41969a899c7ddae2eac3387d5c9d44cd72ba64bbdc59a5</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>_FileChildrenSize</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7ddaa4247e8634a3e0d6e5c1ac38da229ce8</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>_FileGetChildren</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7dda6dbd4a9831f4cac80882f991f4bfb97b</Anchor>
                    </Node>
                    <Node>
                     <Name>_usleep</Name>

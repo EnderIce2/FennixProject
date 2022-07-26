@@ -1,6 +1,8 @@
 var string_8c =
 [
+    [ "isdelim", "d1/db0/string_8c.html#a44795c9b72669ec9dcea14f56fe37b2a", null ],
     [ "isdigit", "d1/db0/string_8c.html#a85a6ae4b61c996ac0005046f1079c4a0", null ],
+    [ "isempty", "d1/db0/string_8c.html#a75b852b562036f85800f7e155266bd58", null ],
     [ "isspace", "d1/db0/string_8c.html#a59fd3321ae4cd78dff63c8aae34d99c8", null ],
     [ "strcasecmp", "d1/db0/string_8c.html#a3d8dd47ed6e64abdd742b81e73b6f2f2", null ],
     [ "strcat", "d1/db0/string_8c.html#afca62bf1b7f91b44ba5c2ada54444fc9", null ],
@@ -13,5 +15,6 @@ var string_8c =
     [ "strncmp", "d1/db0/string_8c.html#a9afae77e412a26e6c01e26b89d5c2b47", null ],
     [ "strncpy", "d1/db0/string_8c.html#a12f4a7953a24e197c8d26bf0493f8225", null ],
     [ "strrchr", "d1/db0/string_8c.html#a104a20698dd8f00e7d2711c811ea72ac", null ],
-    [ "strstr", "d1/db0/string_8c.html#a4a710d86541afc6b7dafddcdb4b1c94f", null ]
+    [ "strstr", "d1/db0/string_8c.html#a4a710d86541afc6b7dafddcdb4b1c94f", null ],
+    [ "strtok", "d1/db0/string_8c.html#ab0ad8275543a34aae52b7bcd02e79753", null ]
 ];

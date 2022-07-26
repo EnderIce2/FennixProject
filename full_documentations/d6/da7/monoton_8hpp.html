@@ -105,6 +105,8 @@ Functions</h2></td></tr>
 <tr class="separator:a6ea87d031ef388097959887799e9e779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17091b21b245979785afed043c5a62d8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da7/monoton_8hpp.html#a17091b21b245979785afed043c5a62d8">append</a> (char s[], char n)</td></tr>
 <tr class="separator:a17091b21b245979785afed043c5a62d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cdba60f5d4d64b07b0a323f00aee9cc"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da7/monoton_8hpp.html#a2cdba60f5d4d64b07b0a323f00aee9cc">isempty_1</a> (char *str)</td></tr>
+<tr class="separator:a2cdba60f5d4d64b07b0a323f00aee9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa045615acba69379136f2846fcea6d12"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da7/monoton_8hpp.html#aa045615acba69379136f2846fcea6d12">usr</a> ()</td></tr>
 <tr class="separator:aa045615acba69379136f2846fcea6d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a8e98611cd2044f91732950bd1c303b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da7/monoton_8hpp.html#a7a8e98611cd2044f91732950bd1c303b">pwd</a> ()</td></tr>
@@ -161,7 +163,7 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/dc0/multiboot_8h_source.html#l00100">len</a>, and <a class="el" href="../../d4/db5/String_8c_source.html#l00060">strlen()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../db/d50/login_8cpp_source.html#l00104">InitLogin()</a>, and <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00042">loop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/d50/login_8cpp_source.html#l00091">InitLogin()</a>, and <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00048">loop()</a>.</p>
 
 </div>
 </div>
@@ -197,7 +199,7 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/dc0/multiboot_8h_source.html#l00100">len</a>, and <a class="el" href="../../d4/db5/String_8c_source.html#l00060">strlen()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../db/d50/login_8cpp_source.html#l00104">InitLogin()</a>, and <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00042">loop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/d50/login_8cpp_source.html#l00091">InitLogin()</a>, and <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00048">loop()</a>.</p>
 
 </div>
 </div>
@@ -216,95 +218,143 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d50/login_8cpp_source.html#l00104">104</a> of file <a class="el" href="../../db/d50/login_8cpp_source.html">login.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> backspacelimit = 0;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;RetryLoginName:</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<span class="stringliteral">&quot;Login as: &quot;</span>);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">while</span> (1)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">int</span> key = <a class="code" href="../../d4/dad/scparse_8h.html#a2bd55a4591cd65f1a1e891a857bdd34d">GetLetterFromScanCode</a>((<a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a>)syscall_getLastKeyboardScanCode());</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">if</span> (key != <a class="code" href="../../d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bca90b0b0f6a79820267fd83f5babf1bd36">KEY_INVALID</a>)</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">if</span> (key == <a class="code" href="../../d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bcad24060fb684a06058e27b33d9351f22e">KEY_D_BACKSPACE</a>)</div>
+<p class="definition">Definition at line <a class="el" href="../../db/d50/login_8cpp_source.html#l00091">91</a> of file <a class="el" href="../../db/d50/login_8cpp_source.html">login.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">int</span> backspacelimit = 0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;RetryLoginName:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<span class="stringliteral">&quot;Login as: &quot;</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">while</span> (1)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">int</span> key = <a class="code" href="../../d4/dad/scparse_8h.html#a2bd55a4591cd65f1a1e891a857bdd34d">GetLetterFromScanCode</a>((<a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a>)syscall_getLastKeyboardScanCode());</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">if</span> (key != <a class="code" href="../../d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bca90b0b0f6a79820267fd83f5babf1bd36">KEY_INVALID</a>)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">if</span> (key == <a class="code" href="../../d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bcad24060fb684a06058e27b33d9351f22e">KEY_D_BACKSPACE</a>)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordflow">if</span> (backspacelimit &gt; 0)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                    <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a4ea0c96d573a7fca9a6dc722f709d2aa">RemoveChar</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    <a class="code" href="../../d6/da7/monoton_8hpp.html#a6ea87d031ef388097959887799e9e779">backspace</a>(<a class="code" href="../../db/d50/login_8cpp.html#a055983231748a9eb36e624222f280dc4">usrbuf</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    backspacelimit--;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <span class="charliteral">&#39;\n&#39;</span>)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <span class="keywordflow">if</span> (backspacelimit &gt; 0)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a4ea0c96d573a7fca9a6dc722f709d2aa">RemoveChar</a>();</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    <a class="code" href="../../d6/da7/monoton_8hpp.html#a6ea87d031ef388097959887799e9e779">backspace</a>(<a class="code" href="../../db/d50/login_8cpp.html#a055983231748a9eb36e624222f280dc4">usrbuf</a>);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    backspacelimit--;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <span class="charliteral">&#39;\n&#39;</span>)</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <a class="code" href="../../d6/da7/monoton_8hpp.html#a17091b21b245979785afed043c5a62d8">append</a>(<a class="code" href="../../db/d50/login_8cpp.html#a055983231748a9eb36e624222f280dc4">usrbuf</a>, key);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a7b5f8b9ab35837163d460a886b7dd21f">printchar</a>(key);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                backspacelimit++;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    backspacelimit = 0;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../db/d50/login_8cpp.html#a75b852b562036f85800f7e155266bd58">isempty</a>(<a class="code" href="../../db/d50/login_8cpp.html#a055983231748a9eb36e624222f280dc4">usrbuf</a>))</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<span class="stringliteral">&quot;\nThe username cannot be empty.\n&quot;</span>);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <a class="code" href="../../db/d50/login_8cpp.html#a86b2aed312bc193fa86ffa3516f5f96b">clearbuffer</a>();</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">goto</span> RetryLoginName;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">int</span> illegal = <a class="code" href="../../db/d50/login_8cpp.html#afd0850cc2852cfc39f3c38ebcfed8a97">HasIllegalCharacter</a>(<a class="code" href="../../db/d50/login_8cpp.html#a055983231748a9eb36e624222f280dc4">usrbuf</a>);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">if</span> (illegal != 0)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <a class="code" href="../../d6/da7/monoton_8hpp.html#a17091b21b245979785afed043c5a62d8">append</a>(<a class="code" href="../../db/d50/login_8cpp.html#a055983231748a9eb36e624222f280dc4">usrbuf</a>, key);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a7b5f8b9ab35837163d460a886b7dd21f">printchar</a>(key);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                backspacelimit++;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    backspacelimit = 0;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/da7/monoton_8hpp.html#a2cdba60f5d4d64b07b0a323f00aee9cc">isempty_1</a>(<a class="code" href="../../db/d50/login_8cpp.html#a055983231748a9eb36e624222f280dc4">usrbuf</a>))</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<span class="stringliteral">&quot;\nThe username cannot be empty.\n&quot;</span>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="../../db/d50/login_8cpp.html#a86b2aed312bc193fa86ffa3516f5f96b">clearbuffer</a>();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">goto</span> RetryLoginName;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">int</span> illegal = <a class="code" href="../../db/d50/login_8cpp.html#afd0850cc2852cfc39f3c38ebcfed8a97">HasIllegalCharacter</a>(<a class="code" href="../../db/d50/login_8cpp.html#a055983231748a9eb36e624222f280dc4">usrbuf</a>);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">if</span> (illegal != 0)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<span class="stringliteral">&quot;\nThe username cannot contain \&quot;&quot;</span>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a7b5f8b9ab35837163d460a886b7dd21f">printchar</a>(illegal);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<span class="stringliteral">&quot;\&quot; characters.\n&quot;</span>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <a class="code" href="../../db/d50/login_8cpp.html#a86b2aed312bc193fa86ffa3516f5f96b">clearbuffer</a>();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">goto</span> RetryLoginName;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<span class="stringliteral">&quot;\nPassword for &quot;</span>);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<a class="code" href="../../db/d50/login_8cpp.html#a055983231748a9eb36e624222f280dc4">usrbuf</a>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<span class="stringliteral">&quot;: &quot;</span>);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">while</span> (1)</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<span class="stringliteral">&quot;\nThe username cannot contain \&quot;&quot;</span>);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a7b5f8b9ab35837163d460a886b7dd21f">printchar</a>(illegal);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<span class="stringliteral">&quot;\&quot; characters.\n&quot;</span>);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="../../db/d50/login_8cpp.html#a86b2aed312bc193fa86ffa3516f5f96b">clearbuffer</a>();</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">goto</span> RetryLoginName;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<span class="stringliteral">&quot;\nPassword for &quot;</span>);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<a class="code" href="../../db/d50/login_8cpp.html#a055983231748a9eb36e624222f280dc4">usrbuf</a>);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<span class="stringliteral">&quot;: &quot;</span>);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">while</span> (1)</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    {</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordtype">int</span> key = <a class="code" href="../../d4/dad/scparse_8h.html#a2bd55a4591cd65f1a1e891a857bdd34d">GetLetterFromScanCode</a>((<a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a>)syscall_getLastKeyboardScanCode());</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">if</span> (key != <a class="code" href="../../d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bca90b0b0f6a79820267fd83f5babf1bd36">KEY_INVALID</a>)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">if</span> (key == <a class="code" href="../../d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bcad24060fb684a06058e27b33d9351f22e">KEY_D_BACKSPACE</a>)</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordtype">int</span> key = <a class="code" href="../../d4/dad/scparse_8h.html#a2bd55a4591cd65f1a1e891a857bdd34d">GetLetterFromScanCode</a>((<a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a>)syscall_getLastKeyboardScanCode());</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">if</span> (key != <a class="code" href="../../d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bca90b0b0f6a79820267fd83f5babf1bd36">KEY_INVALID</a>)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">if</span> (key == <a class="code" href="../../d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bcad24060fb684a06058e27b33d9351f22e">KEY_D_BACKSPACE</a>)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                <span class="keywordflow">if</span> (backspacelimit &gt; 0)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                    <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a4ea0c96d573a7fca9a6dc722f709d2aa">RemoveChar</a>();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    <a class="code" href="../../d6/da7/monoton_8hpp.html#a6ea87d031ef388097959887799e9e779">backspace</a>(<a class="code" href="../../db/d50/login_8cpp.html#a7eba21fef79f40271c0bea3ba77f22c1">pwdbuf</a>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    backspacelimit--;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <span class="charliteral">&#39;\n&#39;</span>)</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                <span class="keywordflow">if</span> (backspacelimit &gt; 0)</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                    <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a4ea0c96d573a7fca9a6dc722f709d2aa">RemoveChar</a>();</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    <a class="code" href="../../d6/da7/monoton_8hpp.html#a6ea87d031ef388097959887799e9e779">backspace</a>(<a class="code" href="../../db/d50/login_8cpp.html#a7eba21fef79f40271c0bea3ba77f22c1">pwdbuf</a>);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                    backspacelimit--;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <span class="charliteral">&#39;\n&#39;</span>)</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            }</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <a class="code" href="../../d6/da7/monoton_8hpp.html#a17091b21b245979785afed043c5a62d8">append</a>(<a class="code" href="../../db/d50/login_8cpp.html#a7eba21fef79f40271c0bea3ba77f22c1">pwdbuf</a>, key);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a7b5f8b9ab35837163d460a886b7dd21f">printchar</a>(<span class="charliteral">&#39;*&#39;</span>);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                backspacelimit++;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            }</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        }</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                <a class="code" href="../../d6/da7/monoton_8hpp.html#a17091b21b245979785afed043c5a62d8">append</a>(<a class="code" href="../../db/d50/login_8cpp.html#a7eba21fef79f40271c0bea3ba77f22c1">pwdbuf</a>, key);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <a class="code" href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a7b5f8b9ab35837163d460a886b7dd21f">printchar</a>(<span class="charliteral">&#39;*&#39;</span>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                backspacelimit++;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/da7/monoton_8hpp_source.html#l00013">append()</a>, <a class="el" href="../../d6/da7/monoton_8hpp_source.html#l00007">backspace()</a>, <a class="el" href="../../db/d50/login_8cpp_source.html#l00009">clearbuffer()</a>, <a class="el" href="../../d4/dad/scparse_8h_source.html#l00208">GetLetterFromScanCode()</a>, <a class="el" href="../../db/d50/login_8cpp_source.html#l00028">HasIllegalCharacter()</a>, <a class="el" href="../../db/d50/login_8cpp_source.html#l00015">isempty()</a>, <a class="el" href="../../d4/dad/scparse_8h_source.html#l00038">KEY_D_BACKSPACE</a>, <a class="el" href="../../d4/dad/scparse_8h_source.html#l00024">KEY_INVALID</a>, <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00008">mono</a>, <a class="el" href="../../d6/d9a/monotonlib_8cpp_source.html#l00187">MonotonLib::mtl::print()</a>, <a class="el" href="../../d6/d9a/monotonlib_8cpp_source.html#l00155">MonotonLib::mtl::printchar()</a>, <a class="el" href="../../db/d50/login_8cpp_source.html#l00004">pwdbuf</a>, <a class="el" href="../../d6/d9a/monotonlib_8cpp_source.html#l00102">MonotonLib::mtl::RemoveChar()</a>, and <a class="el" href="../../db/d50/login_8cpp_source.html#l00003">usrbuf</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/da7/monoton_8hpp_source.html#l00013">append()</a>, <a class="el" href="../../d6/da7/monoton_8hpp_source.html#l00007">backspace()</a>, <a class="el" href="../../db/d50/login_8cpp_source.html#l00009">clearbuffer()</a>, <a class="el" href="../../d4/dad/scparse_8h_source.html#l00208">GetLetterFromScanCode()</a>, <a class="el" href="../../db/d50/login_8cpp_source.html#l00015">HasIllegalCharacter()</a>, <a class="el" href="../../d6/da7/monoton_8hpp_source.html#l00020">isempty_1()</a>, <a class="el" href="../../d4/dad/scparse_8h_source.html#l00038">KEY_D_BACKSPACE</a>, <a class="el" href="../../d4/dad/scparse_8h_source.html#l00024">KEY_INVALID</a>, <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00010">mono</a>, <a class="el" href="../../d6/d9a/monotonlib_8cpp_source.html#l00197">MonotonLib::mtl::print()</a>, <a class="el" href="../../d6/d9a/monotonlib_8cpp_source.html#l00165">MonotonLib::mtl::printchar()</a>, <a class="el" href="../../db/d50/login_8cpp_source.html#l00004">pwdbuf</a>, <a class="el" href="../../d6/d9a/monotonlib_8cpp_source.html#l00112">MonotonLib::mtl::RemoveChar()</a>, and <a class="el" href="../../db/d50/login_8cpp_source.html#l00003">usrbuf</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00168">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00294">main()</a>.</p>
+
+</div>
+</div>
+<a id="a2cdba60f5d4d64b07b0a323f00aee9cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cdba60f5d4d64b07b0a323f00aee9cc">&#9670;&nbsp;</a></span>isempty_1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int isempty_1 </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d6/da7/monoton_8hpp_source.html#l00020">20</a> of file <a class="el" href="../../d6/da7/monoton_8hpp_source.html">monoton.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> i = 0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">while</span> (str[i] != <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        ++i;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (i == 0)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">while</span> (*str != <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../d1/d69/kernel_2include_2string_8h.html#a56be4166e4673843042a548a7f513dbc">isspace</a>(*str))</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        str++;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/db5/String_8c_source.html#l00144">isspace()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d50/login_8cpp_source.html#l00091">InitLogin()</a>, and <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00082">ParseBuffer()</a>.</p>
 
 </div>
 </div>
@@ -350,7 +400,7 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../db/d50/login_8cpp_source.html#l00003">usrbuf</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00168">main()</a>, and <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00076">ParseBuffer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00015">PrintShellPrefix()</a>.</p>
 
 </div>
 </div>
@@ -367,9 +417,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00008">8</a> of file <a class="el" href="../../dd/dda/monoton_8cpp_source.html">monoton.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00010">10</a> of file <a class="el" href="../../dd/dda/monoton_8cpp_source.html">monoton.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../db/d50/login_8cpp_source.html#l00104">InitLogin()</a>, <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00042">loop()</a>, <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00168">main()</a>, and <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00076">ParseBuffer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/d50/login_8cpp_source.html#l00091">InitLogin()</a>, <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00048">loop()</a>, <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00294">main()</a>, <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00082">ParseBuffer()</a>, and <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00015">PrintShellPrefix()</a>.</p>
 
 </div>
 </div>
@@ -380,18 +430,19 @@ Variables</h2></td></tr>
 <div class="ttc" id="akernel_2include_2string_8h_html_a7dcc610f4b04a8ee418f03a6d9256629"><div class="ttname"><a href="../../d1/d69/kernel_2include_2string_8h.html#a7dcc610f4b04a8ee418f03a6d9256629">strlen</a></div><div class="ttdeci">long unsigned strlen(const char s[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00060">String.c:60</a></div></div>
 <div class="ttc" id="ascparse_8h_html_a0ada92b8263d776ca3c779d2a0e031bca90b0b0f6a79820267fd83f5babf1bd36"><div class="ttname"><a href="../../d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bca90b0b0f6a79820267fd83f5babf1bd36">KEY_INVALID</a></div><div class="ttdeci">@ KEY_INVALID</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dad/scparse_8h_source.html#l00024">scparse.h:24</a></div></div>
 <div class="ttc" id="astdint_8h_html_a3cb4a16b0e8d6af0af86d4fd6ba5fd9d"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></div><div class="ttdeci">__UINT8_TYPE__ uint8_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00007">stdint.h:7</a></div></div>
-<div class="ttc" id="amonoton_8cpp_html_a8d6989dc736b678d41dc8a58446fab96"><div class="ttname"><a href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a></div><div class="ttdeci">MonotonLib::mtl * mono</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dda/monoton_8cpp_source.html#l00008">monoton.cpp:8</a></div></div>
+<div class="ttc" id="amonoton_8cpp_html_a8d6989dc736b678d41dc8a58446fab96"><div class="ttname"><a href="../../dd/dda/monoton_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a></div><div class="ttdeci">MonotonLib::mtl * mono</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dda/monoton_8cpp_source.html#l00010">monoton.cpp:10</a></div></div>
 <div class="ttc" id="amonoton_8hpp_html_a6ea87d031ef388097959887799e9e779"><div class="ttname"><a href="../../d6/da7/monoton_8hpp.html#a6ea87d031ef388097959887799e9e779">backspace</a></div><div class="ttdeci">static void backspace(char s[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da7/monoton_8hpp_source.html#l00007">monoton.hpp:7</a></div></div>
 <div class="ttc" id="alogin_8cpp_html_a055983231748a9eb36e624222f280dc4"><div class="ttname"><a href="../../db/d50/login_8cpp.html#a055983231748a9eb36e624222f280dc4">usrbuf</a></div><div class="ttdeci">static char usrbuf[1024]</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d50/login_8cpp_source.html#l00003">login.cpp:3</a></div></div>
-<div class="ttc" id="aclassMonotonLib_1_1mtl_html_a7b5f8b9ab35837163d460a886b7dd21f"><div class="ttname"><a href="../../d2/d83/classMonotonLib_1_1mtl.html#a7b5f8b9ab35837163d460a886b7dd21f">MonotonLib::mtl::printchar</a></div><div class="ttdeci">void printchar(char Char)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d9a/monotonlib_8cpp_source.html#l00155">monotonlib.cpp:155</a></div></div>
-<div class="ttc" id="alogin_8cpp_html_afd0850cc2852cfc39f3c38ebcfed8a97"><div class="ttname"><a href="../../db/d50/login_8cpp.html#afd0850cc2852cfc39f3c38ebcfed8a97">HasIllegalCharacter</a></div><div class="ttdeci">int HasIllegalCharacter(char buf[])</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d50/login_8cpp_source.html#l00028">login.cpp:28</a></div></div>
+<div class="ttc" id="aclassMonotonLib_1_1mtl_html_a7b5f8b9ab35837163d460a886b7dd21f"><div class="ttname"><a href="../../d2/d83/classMonotonLib_1_1mtl.html#a7b5f8b9ab35837163d460a886b7dd21f">MonotonLib::mtl::printchar</a></div><div class="ttdeci">void printchar(char Char)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d9a/monotonlib_8cpp_source.html#l00165">monotonlib.cpp:165</a></div></div>
+<div class="ttc" id="alogin_8cpp_html_afd0850cc2852cfc39f3c38ebcfed8a97"><div class="ttname"><a href="../../db/d50/login_8cpp.html#afd0850cc2852cfc39f3c38ebcfed8a97">HasIllegalCharacter</a></div><div class="ttdeci">int HasIllegalCharacter(char buf[])</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d50/login_8cpp_source.html#l00015">login.cpp:15</a></div></div>
+<div class="ttc" id="amonoton_8hpp_html_a2cdba60f5d4d64b07b0a323f00aee9cc"><div class="ttname"><a href="../../d6/da7/monoton_8hpp.html#a2cdba60f5d4d64b07b0a323f00aee9cc">isempty_1</a></div><div class="ttdeci">static int isempty_1(char *str)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da7/monoton_8hpp_source.html#l00020">monoton.hpp:20</a></div></div>
 <div class="ttc" id="ascparse_8h_html_a2bd55a4591cd65f1a1e891a857bdd34d"><div class="ttname"><a href="../../d4/dad/scparse_8h.html#a2bd55a4591cd65f1a1e891a857bdd34d">GetLetterFromScanCode</a></div><div class="ttdeci">static int GetLetterFromScanCode(uint8_t ScanCode)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dad/scparse_8h_source.html#l00208">scparse.h:208</a></div></div>
 <div class="ttc" id="amultiboot_8h_html_a6de3a6d27a7e07942958b912d39792e6"><div class="ttname"><a href="../../d1/dc0/multiboot_8h.html#a6de3a6d27a7e07942958b912d39792e6">len</a></div><div class="ttdeci">multiboot_uint64_t len</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc0/multiboot_8h_source.html#l00100">multiboot.h:100</a></div></div>
 <div class="ttc" id="amonoton_8hpp_html_a17091b21b245979785afed043c5a62d8"><div class="ttname"><a href="../../d6/da7/monoton_8hpp.html#a17091b21b245979785afed043c5a62d8">append</a></div><div class="ttdeci">static void append(char s[], char n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da7/monoton_8hpp_source.html#l00013">monoton.hpp:13</a></div></div>
 <div class="ttc" id="alogin_8cpp_html_a7eba21fef79f40271c0bea3ba77f22c1"><div class="ttname"><a href="../../db/d50/login_8cpp.html#a7eba21fef79f40271c0bea3ba77f22c1">pwdbuf</a></div><div class="ttdeci">static char pwdbuf[1024]</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d50/login_8cpp_source.html#l00004">login.cpp:4</a></div></div>
-<div class="ttc" id="aclassMonotonLib_1_1mtl_html_a4ea0c96d573a7fca9a6dc722f709d2aa"><div class="ttname"><a href="../../d2/d83/classMonotonLib_1_1mtl.html#a4ea0c96d573a7fca9a6dc722f709d2aa">MonotonLib::mtl::RemoveChar</a></div><div class="ttdeci">void RemoveChar()</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d9a/monotonlib_8cpp_source.html#l00102">monotonlib.cpp:102</a></div></div>
-<div class="ttc" id="aclassMonotonLib_1_1mtl_html_a861669a95df7305785b45e242278c779"><div class="ttname"><a href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">MonotonLib::mtl::print</a></div><div class="ttdeci">void print(const char *Text, PrintPos Position)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d9a/monotonlib_8cpp_source.html#l00187">monotonlib.cpp:187</a></div></div>
-<div class="ttc" id="alogin_8cpp_html_a75b852b562036f85800f7e155266bd58"><div class="ttname"><a href="../../db/d50/login_8cpp.html#a75b852b562036f85800f7e155266bd58">isempty</a></div><div class="ttdeci">int isempty(char *str)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d50/login_8cpp_source.html#l00015">login.cpp:15</a></div></div>
+<div class="ttc" id="aclassMonotonLib_1_1mtl_html_a4ea0c96d573a7fca9a6dc722f709d2aa"><div class="ttname"><a href="../../d2/d83/classMonotonLib_1_1mtl.html#a4ea0c96d573a7fca9a6dc722f709d2aa">MonotonLib::mtl::RemoveChar</a></div><div class="ttdeci">void RemoveChar()</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d9a/monotonlib_8cpp_source.html#l00112">monotonlib.cpp:112</a></div></div>
+<div class="ttc" id="aclassMonotonLib_1_1mtl_html_a861669a95df7305785b45e242278c779"><div class="ttname"><a href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">MonotonLib::mtl::print</a></div><div class="ttdeci">void print(const char *Text, PrintPos Position)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d9a/monotonlib_8cpp_source.html#l00197">monotonlib.cpp:197</a></div></div>
+<div class="ttc" id="akernel_2include_2string_8h_html_a56be4166e4673843042a548a7f513dbc"><div class="ttname"><a href="../../d1/d69/kernel_2include_2string_8h.html#a56be4166e4673843042a548a7f513dbc">isspace</a></div><div class="ttdeci">int isspace(int c)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00144">String.c:144</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
