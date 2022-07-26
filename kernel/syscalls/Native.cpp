@@ -160,7 +160,7 @@ static void internal_shutdown(SyscallsRegs *regs)
     if (!CanSyscall(regs))
         return;
     dsdt->shutdown();
-    }
+}
 
 static void internal_reboot(SyscallsRegs *regs)
 {
@@ -292,7 +292,8 @@ static void internal_fileClose(SyscallsRegs *regs, File *F)
     if (!CanSyscall(regs))
         return;
     UserAllocator->Xstac();
-    vfs->Close(static_cast<FileSystem::FILE *>(F->Handle));
+    if (static_cast<FileSystem::FILE *>(F->Handle) != (void *)deadbeef)
+        vfs->Close(static_cast<FileSystem::FILE *>(F->Handle));
     UserAllocator->Xclac();
 }
 
