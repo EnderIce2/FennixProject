@@ -3,12 +3,31 @@
 #include "cwalk.h"
 
 #include <system.h>
+#include <string.h>
+#include <print.h>
 #include <alloc.h>
 
 MonotonLib::mtl *mono = nullptr;
 File *CurrentPath = nullptr;
 static char CurrentFullPath[255] = {'/', '\0'};
 static char key_buffer[1024];
+
+void PrintShellPrefix()
+{
+    mono->SetForegroundColor(0x6BFBF5);
+    mono->print(usr());
+    mono->SetForegroundColor(0xFFDF8F);
+    mono->print((char *)"@");
+    mono->SetForegroundColor(0x6BFBF5);
+    mono->print((char *)"fennix");
+    mono->SetForegroundColor(0xFFDF8F);
+    mono->printchar(':');
+    mono->SetForegroundColor(0xADFF54);
+    mono->print(CurrentFullPath);
+    mono->SetForegroundColor(0xFFDF8F);
+    mono->print("$ ");
+    mono->SetForegroundColor();
+}
 
 char *trimwhitespace(char *str)
 {
@@ -22,19 +41,6 @@ char *trimwhitespace(char *str)
         end--;
     *(end + 1) = 0;
     return str;
-}
-
-int isempty1(char *str)
-{
-    if (strlen(str) == 0)
-        return 1;
-    while (*str != '\0')
-    {
-        if (!isspace(*str))
-            return 0;
-        str++;
-    }
-    return 1;
 }
 
 void ParseBuffer(char *Buffer);
@@ -99,7 +105,10 @@ void ParseBuffer(char *Buffer)
         bool success = true;
         File *node = (File *)syscall_FileOpenWithParent(path, CurrentPath);
         if (node->Status != FileStatus::OK)
+        {
+            mono->print("Node failed.");
             success = false;
+        }
         if (!node)
         {
             mono->print("No such file or directory!");
@@ -118,45 +127,99 @@ void ParseBuffer(char *Buffer)
             free(path);
 
         if (success)
-            for (uint64_t i = 0; i < syscall_FileChildrenSize(CurrentPath); i++)
+            for (uint64_t i = 0; i < syscall_FileChildrenSize(node); i++)
             {
-                File *n = (File *)syscall_FileGetChildren(CurrentPath, i);
-                // DEBUG("name:%s addr:%016p len:%d", n->name, n->address, n->length);
+                File *n = (File *)syscall_FileGetChildren(node, i);
                 mono->print("  ");
                 switch (n->Flags & 0x07)
                 {
                 case FS_FILE:
+                    mono->SetForegroundColor(0x66E8E6);
                     mono->print(n->Name);
                     break;
                 case FS_DIRECTORY:
+                    mono->SetForegroundColor(0x6689E8);
                     mono->print(n->Name);
                     break;
                 case FS_CHARDEVICE:
+                    mono->SetForegroundColor(0x91E866);
                     mono->print(n->Name);
                     break;
                 case FS_BLOCKDEVICE:
+                    mono->SetForegroundColor(0xE8CE66);
                     mono->print(n->Name);
                     break;
                 case FS_PIPE:
+                    mono->SetForegroundColor(0xBD66E8);
                     mono->print(n->Name);
                     break;
                 case FS_SYMLINK:
+                    mono->SetForegroundColor(0x2B2FFF);
                     mono->print(n->Name);
                     break;
                 case FS_MOUNTPOINT:
+                    mono->SetForegroundColor(0x2A87DE);
                     mono->print(n->Name);
                     break;
                 default:
+                    mono->SetForegroundColor(0xB3172E);
                     mono->print(n->Name);
                     break;
                 }
+                mono->SetForegroundColor();
+                mono->SetBackgroundColor();
+                syscall_FileClose(n);
             }
+        syscall_FileClose(node);
+    }
+    else if (strncmp(Buffer, "cat", 3) == 0)
+    {
+        char *arg = trimwhitespace(Buffer + 2);
+        char *path = (char *)malloc(strlen(arg) + 1);
+        cwk_path_normalize(arg, path, strlen(arg) + 1);
+        bool success = true;
+        File *node = (File *)syscall_FileOpenWithParent(path, CurrentPath);
+        if (!node)
+        {
+            mono->print("No such file or directory!");
+            success = false;
+        }
+        else if (node->Status != FileStatus::OK)
+        {
+            WriteSysDebugger("%s node error %#x", node->Name, node->Flags);
+            mono->print("Could not open file!");
+            success = false;
+        }
+        if (success)
+        {
+            switch (node->Flags & 0x07)
+            {
+            case FS_FILE:
+            case FS_CHARDEVICE:
+            {
+                uint64_t size = 50;
+                if (node->Length)
+                    size = node->Length;
+                char *txt = (char *)(calloc(size, sizeof(char)));
+                syscall_FileRead(node, 0, txt, size);
+                for (uint64_t i = 0; i < size; i++)
+                    mono->printchar(txt[i]);
+                free(txt);
+                break;
+            }
+            default:
+                mono->print("Cannot read from file.");
+                break;
+            }
+        }
+        syscall_FileClose(node);
+        free(path);
     }
     else if (strncmp(Buffer, "cd", 2) == 0)
     {
         char *arg = trimwhitespace(Buffer + 2);
 
-        if (isempty1(arg))
+        if (isempty_1(arg))
             strcpy(arg, "/");
 
         char *path = (char *)malloc(strlen(arg) + 1);
@@ -166,23 +229,26 @@ void ParseBuffer(char *Buffer)
         if (!node)
         {
             mono->print("No such file directory!");
-            free(path);
+            syscall_FileClose(node);
             success = false;
         }
-        if ((node->Flags & 0x07) != FS_DIRECTORY)
+        else if ((node->Flags & 0x07) != FS_DIRECTORY)
         {
             mono->print(path);
             mono->print(" is not a directory!");
-            free(path);
+            syscall_FileClose(node);
             success = false;
         }
-        if (node->Status != FileStatus::OK)
+        else if (node->Status != FileStatus::OK)
+        {
+            syscall_FileClose(node);
             success = false;
+        }
         if (success)
         {
             char *curpath = (char *)syscall_FileFullPath(node);
             strcpy(CurrentFullPath, curpath);
-            if (isempty1(CurrentFullPath))
+            if (isempty_1(CurrentFullPath))
                 strcpy(CurrentFullPath, "/");
             CurrentPath = node;
         }
@@ -194,9 +260,12 @@ void ParseBuffer(char *Buffer)
         strcpy(filepath, "/system/");
         strcat(filepath, Buffer);
         File *f = (File *)syscall_FileOpen(filepath);
+        if (f->Status != FileStatus::OK)
+            f = (File *)syscall_FileOpenWithParent(Buffer, CurrentPath);
+
         if (f->Status == FileStatus::OK)
         {
-            if (!isempty1(Buffer))
+            if (!isempty_1(Buffer))
             {
                 syscall_createProcess((char *)filepath, 0, 0);
                 syscall_pushTask((uint64_t)&loop);
@@ -204,21 +273,20 @@ void ParseBuffer(char *Buffer)
             else
             {
                 mono->print(Buffer);
-                mono->print(": Command not found.");
+                if (strlen(Buffer) > 1)
+                    mono->print(": Command not found.");
             }
         }
         else
         {
             mono->print(Buffer);
-            mono->print(": Command not found.");
+            if (strlen(Buffer) > 1)
+                mono->print(": Command not found.");
         }
         syscall_FileClose(f);
     }
     mono->printchar('\n');
-    mono->print(usr());
-    mono->print((char *)"@fennix:");
-    mono->print(CurrentFullPath);
-    mono->print("$ ");
+    PrintShellPrefix();
 }
 
 static bool AlreadyInitialized = false;
@@ -228,10 +296,7 @@ int main(int argc, char **argv)
     if (AlreadyInitialized)
     {
         WriteSysDebugger("[MonotonShell] Restored.\n");
-        mono->print(usr());
-        mono->print((char *)"@fennix:");
-        mono->print(CurrentFullPath);
-        mono->print("$ ");
+        PrintShellPrefix();
         key_buffer[0] = '\0';
         loop();
     }
@@ -260,11 +325,9 @@ int main(int argc, char **argv)
     CurrentPath = (File *)syscall_FileOpen((char *)"/");
 
     InitLogin();
+    mono->SetForegroundColor(0xDE2A39);
     mono->print((char *)"\n-- This shell is not fully implemented! --\n");
-    mono->print(usr());
-    mono->print((char *)"@fennix:");
-    mono->print(CurrentFullPath);
-    mono->print("$ ");
+    PrintShellPrefix();
 
     AlreadyInitialized = true;
 

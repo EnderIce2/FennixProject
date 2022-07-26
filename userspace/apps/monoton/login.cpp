@@ -12,19 +12,6 @@ void clearbuffer()
     memset(pwdbuf, 0, sizeof(pwdbuf));
 }
 
-int isempty(char *str)
-{
-    if (strlen(str) == 0)
-        return 1;
-    while (*str != '\0')
-    {
-        if (!isspace(*str))
-            return 0;
-        str++;
-    }
-    return 1;
-}
-
 int HasIllegalCharacter(char buf[])
 {
     uint32_t curlen = 0;
@@ -137,7 +124,7 @@ RetryLoginName:
 
     backspacelimit = 0;
 
-    if (isempty(usrbuf))
+    if (isempty_1(usrbuf))
     {
         mono->print("\nThe username cannot be empty.\n");
         clearbuffer();
