@@ -50,6 +50,16 @@ namespace MonotonLib
         delete PSF2Font;
     }
 
+    void mtl::SetBackgroundColor(uint32_t Color)
+    {
+        this->Background = Color;
+    }
+
+    void mtl::SetForegroundColor(uint32_t Color)
+    {
+        this->Foreground = Color;
+    }
+
     void mtl::SetPrintPosition(PrintPos Position)
     {
         if (Position.x > FB.Width)

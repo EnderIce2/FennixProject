@@ -53,6 +53,8 @@ namespace MonotonLib
 
         void SetPrintPosition(PrintPos Position);
         PrintPos GetPrintPosition();
+        void SetBackgroundColor(uint32_t Color = 0x000000);
+        void SetForegroundColor(uint32_t Color = 0xFFFFFF);
 
         void Clear();
         void Scroll();
