@@ -3,6 +3,22 @@
 #include <stdint.h>
 #include <string.h>
 
+int abs(int i) { return i < 0 ? -i : i; }
+
+void swap(char *x, char *y)
+{
+    char t = *x;
+    *x = *y;
+    *y = t;
+}
+
+char *reverse(char *Buffer, int i, int j)
+{
+    while (i < j)
+        swap(&Buffer[i++], &Buffer[j--]);
+    return Buffer;
+}
+
 int atoi(const char *String)
 {
     uint64_t Length = strlen((char *)String);
@@ -64,4 +80,32 @@ double atof(const char *String)
         e++;
     }
     return a;
+}
+
+char *itoa(int Value, char *Buffer, int Base)
+{
+    if (Base < 2 || Base > 32)
+        return Buffer;
+
+    int n = abs(Value);
+    int i = 0;
+
+    while (n)
+    {
+        int r = n % Base;
+        if (r >= 10)
+            Buffer[i++] = 65 + (r - 10);
+        else
+            Buffer[i++] = 48 + r;
+        n = n / Base;
+    }
+
+    if (i == 0)
+        Buffer[i++] = '0';
+
+    if (Value < 0 && Base == 10)
+        Buffer[i++] = '-';
+
+    Buffer[i] = '\0';
+    return reverse(Buffer, 0, i - 1);
 }

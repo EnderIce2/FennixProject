@@ -43,7 +43,8 @@
 			"efi.h": "c",
 			"fileloader.h": "c",
 			"assert.h": "c",
-			"printf.h": "c"
+			"printf.h": "c",
+			"convert.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}
