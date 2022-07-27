@@ -9,6 +9,7 @@ E FILE *fslout;
 E FILE *fslerr;
 
 E int fprintf(FILE *Stream, const char *Format, ...);
+E int sprintf(char *s, const char *format, ...);
 E int printf(const char *Format, ...);
 E int vfprintf(FILE *Stream, const char *Format, va_list Args);
 E int vprintf(const char *Format, va_list Args);

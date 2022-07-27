@@ -32,6 +32,12 @@ int fprintf(FILE *Stream, const char *Format, ...)
     return 0;
 }
 
+int sprintf(char *s, const char *format, ...)
+{
+    WriteSysDebugger("sprintf( %p %s ) stub\n", s, format);
+    return 0;
+}
+
 int printf(const char *Format, ...)
 {
     va_list Args;
