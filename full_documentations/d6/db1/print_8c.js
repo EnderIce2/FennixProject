@@ -9,6 +9,7 @@ var print_8c =
     [ "putchar", "d6/db1/print_8c.html#acbc7565e1d96fc7ff5f17a7ec3f28a93", null ],
     [ "puts", "d6/db1/print_8c.html#a7b84041e435163fe8993c91b705606b9", null ],
     [ "snprintf", "d6/db1/print_8c.html#a1b1c902025a66682172a47f7fb138925", null ],
+    [ "sprintf", "d6/db1/print_8c.html#a9cafd44c2e1bfa384f71d56949e3b3fc", null ],
     [ "sscanf", "d6/db1/print_8c.html#a89ef106643e54925e01e214c1bdb9423", null ],
     [ "syswritedbgprint_wrapper", "d6/db1/print_8c.html#a5026dd2cd1d2dfadce9aa4d843fabfaa", null ],
     [ "vfprintf", "d6/db1/print_8c.html#a1461f63bd9206e39065ac90aa97622ee", null ],

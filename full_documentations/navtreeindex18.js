@@ -1,10 +1,16 @@
 var NAVTREEINDEX18 =
 {
+"da/db9/classACPI_1_1MADT.html#ab8678c6dd4e041de94179d5dc1951914":[5,0,0,1,1,15,1],
+"da/db9/classACPI_1_1MADT.html#ab8678c6dd4e041de94179d5dc1951914":[4,0,0,2,3,1],
+"da/db9/classACPI_1_1MADT.html#ac2dd3a8c98941ab4aae35078f80ab27b":[5,0,0,1,1,16,1],
+"da/db9/classACPI_1_1MADT.html#ac2dd3a8c98941ab4aae35078f80ab27b":[4,0,0,2,4,1],
+"da/db9/classACPI_1_1MADT.html#ad763f6010fcc3ee8061e14fec7decb93":[4,0,0,2,12],
+"da/db9/classACPI_1_1MADT.html#ae4ab5f08ee0202ae1eda983dfbb820d7":[5,0,0,1,1,17,3],
 "da/db9/classACPI_1_1MADT.html#ae4ab5f08ee0202ae1eda983dfbb820d7":[4,0,0,2,5,3],
 "da/db9/classACPI_1_1MADT.html#ae6acd59d57ea8cb94f3c52e942835c7d":[4,0,0,2,18],
 "da/db9/classACPI_1_1MADT.html#aeeb632b76d17409e74d79be334751fde":[4,0,0,2,6],
-"da/db9/classACPI_1_1MADT.html#af18d34a127d960f7fb9c9f40df0b04b9":[4,0,0,2,1,2],
 "da/db9/classACPI_1_1MADT.html#af18d34a127d960f7fb9c9f40df0b04b9":[5,0,0,1,1,19,2],
+"da/db9/classACPI_1_1MADT.html#af18d34a127d960f7fb9c9f40df0b04b9":[4,0,0,2,1,2],
 "da/db9/classACPI_1_1MADT.html#af1d83b4b92df09a9ec73c44543050b33":[5,0,0,1,1,15,0],
 "da/db9/classACPI_1_1MADT.html#af1d83b4b92df09a9ec73c44543050b33":[4,0,0,2,3,0],
 "da/db9/classACPI_1_1MADT.html#af91b914886f1afdb1c8b96dc15160600":[4,0,0,2,9],
@@ -243,11 +249,5 @@ var NAVTREEINDEX18 =
 "db/d19/libc_2src_2printf_8c.html#a8feb1c2df10a747b975a3444176d633f":[5,0,1,3,5,49],
 "db/d19/libc_2src_2printf_8c.html#a919498e81481493683af3e75218e7a07":[5,0,1,3,5,63],
 "db/d19/libc_2src_2printf_8c.html#a94334afb8b94c3d48b42d972925a9b4d":[5,0,1,3,5,31],
-"db/d19/libc_2src_2printf_8c.html#a974e6c4c3f16de1b8382bc1bcbb3b65f":[5,0,1,3,5,87],
-"db/d19/libc_2src_2printf_8c.html#a9d4a10dcdc829ae96fb79bb912da57e2":[5,0,1,3,5,45],
-"db/d19/libc_2src_2printf_8c.html#aa068905bf5228a7be958460b0f048d36":[5,0,0,7,5,0,2],
-"db/d19/libc_2src_2printf_8c.html#aa068905bf5228a7be958460b0f048d36":[5,0,1,3,5,0,2],
-"db/d19/libc_2src_2printf_8c.html#aaca7659393e36c4bb7e91ac41fefb305":[5,0,1,3,5,73],
-"db/d19/libc_2src_2printf_8c.html#aad65182c266c7f3d5d1a9c76d67f7776":[5,0,0,7,5,3,2],
-"db/d19/libc_2src_2printf_8c.html#aad65182c266c7f3d5d1a9c76d67f7776":[5,0,1,3,5,3,2]
+"db/d19/libc_2src_2printf_8c.html#a974e6c4c3f16de1b8382bc1bcbb3b65f":[5,0,1,3,5,87]
 };

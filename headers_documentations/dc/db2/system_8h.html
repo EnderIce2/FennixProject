@@ -98,12 +98,16 @@ $(document).ready(function(){initNavTree('dc/db2/system_8h.html','../../'); init
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6fda8683b098e50994ca10038d3774c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d92/cdefs_8h.html#a07484107e6d9fdf38b53edf631d6511d">E</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db2/system_8h.html#a6fda8683b098e50994ca10038d3774c5">WriteSysDebugger</a> (const char *Format,...)</td></tr>
+<tr class="memdesc:a6fda8683b098e50994ca10038d3774c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to the system debugger.  <a href="../../dc/db2/system_8h.html#a6fda8683b098e50994ca10038d3774c5">More...</a><br /></td></tr>
 <tr class="separator:a6fda8683b098e50994ca10038d3774c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3eecf5da1acd77794647dcb56c506fa7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d92/cdefs_8h.html#a07484107e6d9fdf38b53edf631d6511d">E</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db2/system_8h.html#a3eecf5da1acd77794647dcb56c506fa7">usleep</a> (unsigned long Microseconds)</td></tr>
+<tr class="memdesc:a3eecf5da1acd77794647dcb56c506fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sleep for a given number of microseconds.  <a href="../../dc/db2/system_8h.html#a3eecf5da1acd77794647dcb56c506fa7">More...</a><br /></td></tr>
 <tr class="separator:a3eecf5da1acd77794647dcb56c506fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a860b08d4b031173c594554431158a6e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d92/cdefs_8h.html#a07484107e6d9fdf38b53edf631d6511d">E</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db2/system_8h.html#a860b08d4b031173c594554431158a6e7">system</a> (const char *Command)</td></tr>
+<tr class="memdesc:a860b08d4b031173c594554431158a6e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a command in the system shell.  <a href="../../dc/db2/system_8h.html#a860b08d4b031173c594554431158a6e7">More...</a><br /></td></tr>
 <tr class="separator:a860b08d4b031173c594554431158a6e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa3901d882174de1f3a0aea5c1cbbbe6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d92/cdefs_8h.html#a07484107e6d9fdf38b53edf631d6511d">E</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db2/system_8h.html#afa3901d882174de1f3a0aea5c1cbbbe6">Exit</a> (int Status) <a class="el" href="../../d6/d92/cdefs_8h.html#ac43aa267ff756b6fa200413637b7e391">NO_THROW</a> <a class="el" href="../../d6/d92/cdefs_8h.html#a9bc43e3ee0ae83643b65e07fe1fd0132">NO_RETURN</a></td></tr>
+<tr class="memdesc:afa3901d882174de1f3a0aea5c1cbbbe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exit the program with a status code.  <a href="../../dc/db2/system_8h.html#afa3901d882174de1f3a0aea5c1cbbbe6">More...</a><br /></td></tr>
 <tr class="separator:afa3901d882174de1f3a0aea5c1cbbbe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -123,6 +127,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Exit the program with a status code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Status</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
 </div>
 </div>
 <a id="a860b08d4b031173c594554431158a6e7"></a>
@@ -141,6 +154,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Execute a command in the system shell. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Command</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
 </div>
 </div>
 <a id="a3eecf5da1acd77794647dcb56c506fa7"></a>
@@ -158,6 +180,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sleep for a given number of microseconds. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Microseconds</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -186,6 +217,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Write to the system debugger. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Format</td><td></td></tr>
+    <tr><td class="paramname">...</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>

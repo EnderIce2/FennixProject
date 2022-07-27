@@ -49,8 +49,12 @@ var NAVTREEINDEX7 =
 "d3/d81/userspace_2drivers_2video_2bochs_2Makefile.html":[5,0,2,1,3,0,1],
 "d3/d81/userspace_2drivers_2video_2bochs_2Makefile_source.html":[5,0,2,1,3,0,1],
 "d3/d82/convert_8h.html":[5,0,1,1,4],
-"d3/d82/convert_8h.html#a26a04833cddcced165c13b10dfa051e8":[5,0,1,1,4,1],
-"d3/d82/convert_8h.html#affdab6c351a2420289c027c3bceb83ee":[5,0,1,1,4,0],
+"d3/d82/convert_8h.html#a1334bded3ef304c843a78ab999914d00":[5,0,1,1,4,4],
+"d3/d82/convert_8h.html#a26a04833cddcced165c13b10dfa051e8":[5,0,1,1,4,2],
+"d3/d82/convert_8h.html#a3c9537f26bf84186b50c0ea15b53432c":[5,0,1,1,4,5],
+"d3/d82/convert_8h.html#a4ed6e9a32ab259d00dd6af552fb24442":[5,0,1,1,4,0],
+"d3/d82/convert_8h.html#af1f1944f12c8978382bef6ac7263fa5f":[5,0,1,1,4,3],
+"d3/d82/convert_8h.html#affdab6c351a2420289c027c3bceb83ee":[5,0,1,1,4,1],
 "d3/d82/convert_8h_source.html":[5,0,1,1,4],
 "d3/d88/bitmap_8hpp.html":[5,0,0,5,3],
 "d3/d88/bitmap_8hpp_source.html":[5,0,0,5,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX7 =
 "d4/da9/classAPIC_1_1APIC.html#a65d6da8a13f6e0dbab5f4b8fd64ae26ba189e47346ad8011276140d445e7c0d2f":[4,0,2,0,0,26],
 "d4/da9/classAPIC_1_1APIC.html#a65d6da8a13f6e0dbab5f4b8fd64ae26ba1e8da3f2ca7c3692cf1ae73b9e688bcd":[4,0,2,0,0,27],
 "d4/da9/classAPIC_1_1APIC.html#a65d6da8a13f6e0dbab5f4b8fd64ae26ba26e4c64eb343df1af38574e7e14186e0":[4,0,2,0,0,5],
-"d4/da9/classAPIC_1_1APIC.html#a65d6da8a13f6e0dbab5f4b8fd64ae26ba349ca708bf6cce05bf9389feee399df2":[4,0,2,0,0,20],
-"d4/da9/classAPIC_1_1APIC.html#a65d6da8a13f6e0dbab5f4b8fd64ae26ba37cf5de4472adbdddf67bd12a637fb49":[4,0,2,0,0,14],
-"d4/da9/classAPIC_1_1APIC.html#a65d6da8a13f6e0dbab5f4b8fd64ae26ba48238c88a05482d3bae2814bb9ec1044":[4,0,2,0,0,4],
-"d4/da9/classAPIC_1_1APIC.html#a65d6da8a13f6e0dbab5f4b8fd64ae26ba4a6210879c3650f8d73501cbf0f9f47a":[4,0,2,0,0,16],
-"d4/da9/classAPIC_1_1APIC.html#a65d6da8a13f6e0dbab5f4b8fd64ae26ba65d90cb54cb9b24f55e9644fdb50ffde":[4,0,2,0,0,22]
+"d4/da9/classAPIC_1_1APIC.html#a65d6da8a13f6e0dbab5f4b8fd64ae26ba349ca708bf6cce05bf9389feee399df2":[4,0,2,0,0,20]
 };

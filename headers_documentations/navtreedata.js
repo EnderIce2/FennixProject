@@ -68,19 +68,19 @@ var NAVTREEINDEX =
 "d1/d9e/elf_8h.html#abb068619f9fae94dc5cd7ec6eacd4c42",
 "d1/dc0/multiboot_8h.html#a87bed62f532b2e2e73ab41df40069e2a",
 "d3/d41/gbp_8h.html#a242e86d715a7086b90f62e79205b38cb",
-"d5/d6c/atomic_8hpp.html",
-"d5/dba/multiboot2_8h.html#a7a28a2d525d43caef08e4cd02de6d318",
-"d6/d75/internal__task_8h.html#a92e43f9a21bae91a5e28d78160fa0386a4e69a0f5d09a480b77d54d6289acd635",
-"d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a96047dbc979d1521a71e1f0fd655c586",
-"d7/db1/libc_2include_2io_8h.html#a584137bf7da65026934ac5dee92064ac",
-"d9/d86/limits_8h.html#ae8a44c5a7436466221e0f3859d02420f",
-"da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a239d75748b837b9929d311272d888248",
-"db/dc7/bootboot_8h.html#a60d3fa5821886f5ada2011cc5e778dd0",
-"dc/da4/libc_2include_2string_8h.html#afc3ea9906e8820afd08f610c8312814e",
-"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa32efcab677f4c269264b79aca3b956ec",
-"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fae01a168edac48dd13471212faa006ec4",
-"df/d17/stivale2_8h.html#ac876e6a931a2066774b33898e5a974df",
-"globals_func_e.html"
+"d5/d66/rand_8h.html#a67c2e61f77f3cc38e78ee987126bf241",
+"d5/dba/multiboot2_8h.html#a6f9d2fe9f40f166aca2369649380f0f5",
+"d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fac9d3e887722f2bc482bcca9d41c512af",
+"d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a91dcb515ac8f33e66aac67723a826dbb",
+"d7/db1/libc_2include_2io_8h.html#a391e9b8bf10e07c26f6db68c10d008cf",
+"d9/d86/limits_8h.html#a8c13fdd8c2840edf0cb04a65297037bb",
+"da/ddd/cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a0f4711701ad592e82e481dc14a7b0453",
+"db/dc7/bootboot_8h.html#a45edf5bb2b97bafc5234b734178d8a4f",
+"dc/da4/libc_2include_2string_8h.html#acb8cebad9eea46c4cd76586f17c08c51",
+"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa2ceab02e477e348e76b628ea12258f58",
+"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fade653e08b07cb23c7929ab060d1b07ef",
+"df/d17/stivale2_8h.html#ac3c9ceb9612537a02b4a9f33c6ea5a38",
+"globals_func.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -38,6 +38,7 @@
     </TokenIdentifier>
     <Path>d5/da2/libc_2include_2assert_8h.html</Path>
     <Anchor>af576bf8ffa22a44e53018c67095ffbf0</Anchor>
+    <Abstract>Evaluate assertion.</Abstract>
     <DeclaredIn>assert.h</DeclaredIn>
   </Token>
   <Token>
@@ -16658,6 +16659,7 @@
     </TokenIdentifier>
     <Path>d3/d6c/libc_2include_2ctype_8h.html</Path>
     <Anchor>adda03014c30b02d7b496fce96f37951b</Anchor>
+    <Abstract>Convert lowercase letter to uppercase.</Abstract>
     <DeclaredIn>ctype.h</DeclaredIn>
   </Token>
   <Token>
@@ -16668,6 +16670,7 @@
     </TokenIdentifier>
     <Path>d3/d6c/libc_2include_2ctype_8h.html</Path>
     <Anchor>a422175620f52b1ca4dbc39d627296d83</Anchor>
+    <Abstract>Convert uppercase letter to lowercase.</Abstract>
     <DeclaredIn>ctype.h</DeclaredIn>
   </Token>
   <Token>
@@ -21428,12 +21431,45 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>abs</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d3/d82/convert_8h.html</Path>
+    <Anchor>a4ed6e9a32ab259d00dd6af552fb24442</Anchor>
+    <Abstract>Returns the absolute value of an integer.</Abstract>
+    <DeclaredIn>convert.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>swap</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d3/d82/convert_8h.html</Path>
+    <Anchor>a3c9537f26bf84186b50c0ea15b53432c</Anchor>
+    <Abstract>Exchange values of two objects.</Abstract>
+    <DeclaredIn>convert.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>reverse</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d3/d82/convert_8h.html</Path>
+    <Anchor>a1334bded3ef304c843a78ab999914d00</Anchor>
+    <DeclaredIn>convert.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>atoi</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d3/d82/convert_8h.html</Path>
     <Anchor>a26a04833cddcced165c13b10dfa051e8</Anchor>
+    <Abstract>Convert string to integer.</Abstract>
     <DeclaredIn>convert.h</DeclaredIn>
   </Token>
   <Token>
@@ -21444,6 +21480,18 @@
     </TokenIdentifier>
     <Path>d3/d82/convert_8h.html</Path>
     <Anchor>affdab6c351a2420289c027c3bceb83ee</Anchor>
+    <Abstract>Convert string to double.</Abstract>
+    <DeclaredIn>convert.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>itoa</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d3/d82/convert_8h.html</Path>
+    <Anchor>af1f1944f12c8978382bef6ac7263fa5f</Anchor>
+    <Abstract>Convert integer to string.</Abstract>
     <DeclaredIn>convert.h</DeclaredIn>
   </Token>
   <Token>
@@ -21588,6 +21636,16 @@
     </TokenIdentifier>
     <Path>d5/d77/print_8h.html</Path>
     <Anchor>a14e9c112bd60ecb322b958febb8b67da</Anchor>
+    <DeclaredIn>print.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sprintf</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d5/d77/print_8h.html</Path>
+    <Anchor>ad41d2de2bcdea99d2ec94e849c3c5bcb</Anchor>
     <DeclaredIn>print.h</DeclaredIn>
   </Token>
   <Token>
@@ -22688,6 +22746,7 @@
     </TokenIdentifier>
     <Path>dc/db2/system_8h.html</Path>
     <Anchor>a6fda8683b098e50994ca10038d3774c5</Anchor>
+    <Abstract>Write to the system debugger.</Abstract>
     <DeclaredIn>system.h</DeclaredIn>
   </Token>
   <Token>
@@ -22698,6 +22757,7 @@
     </TokenIdentifier>
     <Path>dc/db2/system_8h.html</Path>
     <Anchor>a3eecf5da1acd77794647dcb56c506fa7</Anchor>
+    <Abstract>Sleep for a given number of microseconds.</Abstract>
     <DeclaredIn>system.h</DeclaredIn>
   </Token>
   <Token>
@@ -22708,6 +22768,7 @@
     </TokenIdentifier>
     <Path>dc/db2/system_8h.html</Path>
     <Anchor>a860b08d4b031173c594554431158a6e7</Anchor>
+    <Abstract>Execute a command in the system shell.</Abstract>
     <DeclaredIn>system.h</DeclaredIn>
   </Token>
   <Token>
@@ -22718,6 +22779,7 @@
     </TokenIdentifier>
     <Path>dc/db2/system_8h.html</Path>
     <Anchor>afa3901d882174de1f3a0aea5c1cbbbe6</Anchor>
+    <Abstract>Exit the program with a status code.</Abstract>
     <DeclaredIn>system.h</DeclaredIn>
   </Token>
   <Token>

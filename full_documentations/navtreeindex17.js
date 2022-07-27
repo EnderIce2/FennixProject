@@ -1,5 +1,11 @@
 var NAVTREEINDEX17 =
 {
+"d9/de0/DSDT_8cpp.html#aeb8431f0cf8dffcf3da55607fb0760b7":[5,0,0,1,6,1],
+"d9/de0/DSDT_8cpp.html#af4e00151aea6bb1131e1631ce2300366":[5,0,0,1,6,7],
+"d9/de0/DSDT_8cpp_source.html":[5,0,0,1,6],
+"d9/de6/MADT_8cpp.html":[5,0,0,1,13],
+"d9/de6/MADT_8cpp.html#acc2d03eab79b01749eec6abf69ac5260":[5,0,0,1,13,0],
+"d9/de6/MADT_8cpp_source.html":[5,0,0,1,13],
 "d9/deb/namespaceBootScreen.html":[3,0,4],
 "d9/deb/namespaceBootScreen.html":[4,0,3],
 "da/d06/hpet_8h.html":[5,0,0,13,2],
@@ -213,8 +219,8 @@ var NAVTREEINDEX17 =
 "da/db9/classACPI_1_1MADT.html#a2b9ebafea3795c4c5b76321893111187":[4,0,0,2,14],
 "da/db9/classACPI_1_1MADT.html#a392d39da4d8105027a3e55e887dd0df0":[5,0,0,1,1,17,2],
 "da/db9/classACPI_1_1MADT.html#a392d39da4d8105027a3e55e887dd0df0":[4,0,0,2,5,2],
-"da/db9/classACPI_1_1MADT.html#a3ca5951daf3150a384bb4b04b48fd63a":[5,0,0,1,1,14,1],
 "da/db9/classACPI_1_1MADT.html#a3ca5951daf3150a384bb4b04b48fd63a":[4,0,0,2,0,1],
+"da/db9/classACPI_1_1MADT.html#a3ca5951daf3150a384bb4b04b48fd63a":[5,0,0,1,1,14,1],
 "da/db9/classACPI_1_1MADT.html#a48f07223409c1502999f85129f91a1fe":[5,0,0,1,1,18,2],
 "da/db9/classACPI_1_1MADT.html#a48f07223409c1502999f85129f91a1fe":[4,0,0,2,2,2],
 "da/db9/classACPI_1_1MADT.html#a6a93402239b14696f4cbff5ae6f34b0c":[4,0,0,2,16],
@@ -240,14 +246,8 @@ var NAVTREEINDEX17 =
 "da/db9/classACPI_1_1MADT.html#ab134ddf2fa66b68f267dbf3c554b49a8":[5,0,0,1,1,15,4],
 "da/db9/classACPI_1_1MADT.html#ab134ddf2fa66b68f267dbf3c554b49a8":[4,0,0,2,3,4],
 "da/db9/classACPI_1_1MADT.html#ab3332c09d72ed13968aae28ecacf64c6":[4,0,0,2,11],
-"da/db9/classACPI_1_1MADT.html#ab51fa0bca1107b2c1e8bd8fcbfe42f6c":[4,0,0,2,1,1],
 "da/db9/classACPI_1_1MADT.html#ab51fa0bca1107b2c1e8bd8fcbfe42f6c":[5,0,0,1,1,19,1],
+"da/db9/classACPI_1_1MADT.html#ab51fa0bca1107b2c1e8bd8fcbfe42f6c":[4,0,0,2,1,1],
 "da/db9/classACPI_1_1MADT.html#ab7fa69180ff52b67e8f902a07ba40237":[5,0,0,1,1,16,2],
-"da/db9/classACPI_1_1MADT.html#ab7fa69180ff52b67e8f902a07ba40237":[4,0,0,2,4,2],
-"da/db9/classACPI_1_1MADT.html#ab8678c6dd4e041de94179d5dc1951914":[5,0,0,1,1,15,1],
-"da/db9/classACPI_1_1MADT.html#ab8678c6dd4e041de94179d5dc1951914":[4,0,0,2,3,1],
-"da/db9/classACPI_1_1MADT.html#ac2dd3a8c98941ab4aae35078f80ab27b":[5,0,0,1,1,16,1],
-"da/db9/classACPI_1_1MADT.html#ac2dd3a8c98941ab4aae35078f80ab27b":[4,0,0,2,4,1],
-"da/db9/classACPI_1_1MADT.html#ad763f6010fcc3ee8061e14fec7decb93":[4,0,0,2,12],
-"da/db9/classACPI_1_1MADT.html#ae4ab5f08ee0202ae1eda983dfbb820d7":[5,0,0,1,1,17,3]
+"da/db9/classACPI_1_1MADT.html#ab7fa69180ff52b67e8f902a07ba40237":[4,0,0,2,4,2]
 };

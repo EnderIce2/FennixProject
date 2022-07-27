@@ -27157,6 +27157,11 @@
                 <Path>d3/d82/convert_8h.html</Path>
                 <Subnodes>
                  <Node>
+                  <Name>abs</Name>
+                  <Path>d3/d82/convert_8h.html</Path>
+                  <Anchor>a4ed6e9a32ab259d00dd6af552fb24442</Anchor>
+                 </Node>
+                 <Node>
                   <Name>atof</Name>
                   <Path>d3/d82/convert_8h.html</Path>
                   <Anchor>affdab6c351a2420289c027c3bceb83ee</Anchor>
@@ -27165,6 +27170,21 @@
                   <Name>atoi</Name>
                   <Path>d3/d82/convert_8h.html</Path>
                   <Anchor>a26a04833cddcced165c13b10dfa051e8</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>itoa</Name>
+                  <Path>d3/d82/convert_8h.html</Path>
+                  <Anchor>af1f1944f12c8978382bef6ac7263fa5f</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>reverse</Name>
+                  <Path>d3/d82/convert_8h.html</Path>
+                  <Anchor>a1334bded3ef304c843a78ab999914d00</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>swap</Name>
+                  <Path>d3/d82/convert_8h.html</Path>
+                  <Anchor>a3c9537f26bf84186b50c0ea15b53432c</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -27656,6 +27676,11 @@
                   <Name>snprintf</Name>
                   <Path>d5/d77/print_8h.html</Path>
                   <Anchor>af90cf95986591cd426047ed0caefcdd5</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>sprintf</Name>
+                  <Path>d5/d77/print_8h.html</Path>
+                  <Anchor>ad41d2de2bcdea99d2ec94e849c3c5bcb</Anchor>
                  </Node>
                  <Node>
                   <Name>sscanf</Name>

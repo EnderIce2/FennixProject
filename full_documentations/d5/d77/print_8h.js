@@ -8,6 +8,7 @@ var print_8h =
     [ "putchar", "d5/d77/print_8h.html#afdbe1a5db408fa0c9acf360ac98bcb57", null ],
     [ "puts", "d5/d77/print_8h.html#af9f3d29a58dbbf72154c52465e95818e", null ],
     [ "snprintf", "d5/d77/print_8h.html#af90cf95986591cd426047ed0caefcdd5", null ],
+    [ "sprintf", "d5/d77/print_8h.html#ad41d2de2bcdea99d2ec94e849c3c5bcb", null ],
     [ "sscanf", "d5/d77/print_8h.html#aec90c3c0d3f94e6f46a66748d9aa2a92", null ],
     [ "vfprintf", "d5/d77/print_8h.html#a77cc7d2e1d1e8a6f282660fe83e298a8", null ],
     [ "vprintf", "d5/d77/print_8h.html#ac48561915a3250691241229e88e5c99b", null ],
