@@ -1,5 +1,11 @@
 #pragma once
 
+// TODO: assert should call abort();
+
+/**
+ * @brief Evaluate assertion
+ * 
+ */
 #define assert(x)     \
     do                \
     {                 \
