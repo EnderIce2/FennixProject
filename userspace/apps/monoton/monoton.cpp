@@ -2,6 +2,7 @@
 
 #include "cwalk.h"
 
+#include <convert.h>
 #include <system.h>
 #include <string.h>
 #include <print.h>
@@ -115,9 +116,11 @@ void ParseBuffer(char *Buffer)
             free(path);
             success = false;
         }
-        if ((node->Flags & 0x07) != FS_DIRECTORY)
+        if (node->Flags != FS_DIRECTORY &&
+            node->Flags != FS_BLOCKDEVICE &&
+            node->Flags != FS_MOUNTPOINT)
         {
-            WriteSysDebugger("%s is not a directory (%d)", node->Name, node->Flags);
+            WriteSysDebugger("%s is not a directory (%d)\n", node->Name, node->Flags);
             mono->print(node->Name);
             mono->print(" is not a directory!");
             free(path);
@@ -131,7 +134,7 @@ void ParseBuffer(char *Buffer)
             {
                 File *n = (File *)syscall_FileGetChildren(node, i);
                 mono->print("  ");
-                switch (n->Flags & 0x07)
+                switch (n->Flags)
                 {
                 case FS_FILE:
                     mono->SetForegroundColor(0x66E8E6);
@@ -192,7 +195,7 @@ void ParseBuffer(char *Buffer)
         }
         if (success)
         {
-            switch (node->Flags & 0x07)
+            switch (node->Flags)
             {
             case FS_FILE:
             case FS_CHARDEVICE:
@@ -232,7 +235,9 @@ void ParseBuffer(char *Buffer)
             syscall_FileClose(node);
             success = false;
         }
-        else if ((node->Flags & 0x07) != FS_DIRECTORY)
+        else if (node->Flags != FS_DIRECTORY &&
+                 node->Flags != FS_BLOCKDEVICE &&
+                 node->Flags != FS_MOUNTPOINT)
         {
             mono->print(path);
             mono->print(" is not a directory!");
@@ -252,6 +257,56 @@ void ParseBuffer(char *Buffer)
                 strcpy(CurrentFullPath, "/");
             CurrentPath = node;
         }
+        free(path);
+    }
+    else if (strncmp(Buffer, "finfo", 5) == 0)
+    {
+        char *arg = trimwhitespace(Buffer + 2);
+        char *path = (char *)malloc(strlen(arg) + 1);
+        cwk_path_normalize(arg, path, strlen(arg) + 1);
+        File *node = (File *)syscall_FileOpenWithParent(path, CurrentPath);
+        if (!node)
+        {
+            mono->print("No such file or directory!");
+        }
+        else
+        {
+            char str[100];
+            mono->print("File Info for ");
+            char *fpath = (char *)syscall_FileFullPath(node);
+            mono->print(fpath);
+            mono->print("\nName: ");
+            mono->print(node->Name);
+            mono->print("\nStatus: 0x");
+            itoa(node->Status, str, 16);
+            mono->print(str);
+            mono->print("\nIndex: ");
+            itoa(node->IndexNode, str, 10);
+            mono->print(str);
+            mono->print("\nMask: ");
+            itoa(node->Mask, str, 10);
+            mono->print(str);
+            mono->print("\nMode: ");
+            itoa(node->Mode, str, 10);
+            mono->print(str);
+            mono->print("\nFlags: 0x");
+            itoa(node->Flags, str, 16);
+            mono->print(str);
+            mono->print("\nUserID: ");
+            itoa(node->UserIdentifier, str, 10);
+            mono->print(str);
+            mono->print("\nGroupID: ");
+            itoa(node->GroupIdentifier, str, 10);
+            mono->print(str);
+            mono->print("\nAddress: 0x");
+            itoa(node->Address, str, 16);
+            mono->print(str);
+            mono->print("\nLength: ");
+            itoa(node->Length, str, 10);
+            mono->print(str);
+            mono->printchar('\n');
+        }
+        syscall_FileClose(node);
         free(path);
     }
     else
