@@ -313,7 +313,6 @@ namespace FileSystem
 
         if (Parent == nullptr)
         {
-            debug("Parent is null");
             if (FileSystemRoot->Children.size() >= 1)
                 Parent = FileSystemRoot->Children[0]; // 0 - filesystem root
             else
