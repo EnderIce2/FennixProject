@@ -86,8 +86,9 @@ void ParseBuffer(char *Buffer)
     if (strcmp(Buffer, "help") == 0)
     {
         mono->print("Monoton Shell for Fennix\n");
-        mono->print("help          - Show this screen\n");
-        mono->print("clear         - Clear screen\n");
+        mono->print("------------------------\n");
+        mono->print("help  clear  echo  ls  cat  cd  finfo\n");
+        mono->print("For more information, use [command] --help");
     }
     else if (strcmp(Buffer, "clear") == 0)
     {
