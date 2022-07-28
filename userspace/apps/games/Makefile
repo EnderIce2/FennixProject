@@ -1,4 +1,5 @@
 build:
+	make -C tictactoe build
 ifneq (,$(wildcard doomgeneric))
 	make -j$(shell nproc) -C doomgeneric build
 else
@@ -7,6 +8,7 @@ else
 endif
 
 clean:
+	make -C tictactoe clean
 ifneq (,$(wildcard doomgeneric))
 	make -j$(shell nproc) -C doomgeneric clean
 else
