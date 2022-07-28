@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['x_4146',['X',['../d9/dbb/namespacePS2Mouse.html#a3eabb5221cf6227d920ae0a7aa86757b',1,'PS2Mouse::MouseInfo::X()'],['../d8/df2/apps_2uiserver_2main_8cpp.html#adf55e9abaca87300df8284c7149f72f2',1,'MouseInfo::X()'],['../da/dd3/apps_2wm_2main_8cpp.html#a70fb8712ef79f011984c708f4e33f85b',1,'ms::X()'],['../d7/dfa/namespaceMonotonLib.html#aad68be16434b9bed37b4ce34e1ace4dc',1,'MonotonLib::PrintPos::x()']]],
+  ['x_4146',['X',['../d9/dbb/namespacePS2Mouse.html#a3eabb5221cf6227d920ae0a7aa86757b',1,'PS2Mouse::MouseInfo::X()'],['../d7/de2/apps_2system_2uiserver_2main_8cpp.html#adf55e9abaca87300df8284c7149f72f2',1,'MouseInfo::X()'],['../df/daa/apps_2system_2wm_2main_8cpp.html#a70fb8712ef79f011984c708f4e33f85b',1,'ms::X()'],['../d7/dfa/namespaceMonotonLib.html#aad68be16434b9bed37b4ce34e1ace4dc',1,'MonotonLib::PrintPos::x()']]],
   ['x2apicsupported_4147',['x2APICSupported',['../d4/da9/classAPIC_1_1APIC.html#ad537d0271f378655538534d827b2321b',1,'APIC::APIC']]],
   ['x_5fdsdt_4148',['X_Dsdt',['../d3/d21/classACPI_1_1ACPI.html#a8a732809581d10faab4f9fb156825c1d',1,'ACPI::ACPI::FADTHeader::X_Dsdt()'],['../d1/d90/acpi_8hpp.html#a07482b1889986b36f97627520d8244be',1,'X_Dsdt():&#160;acpi.hpp']]],
   ['x_5ffirmwarecontrol_4149',['X_FirmwareControl',['../d3/d21/classACPI_1_1ACPI.html#aa9395f9c93b3116babc2b4bc252568fc',1,'ACPI::ACPI::FADTHeader::X_FirmwareControl()'],['../d1/d90/acpi_8hpp.html#af7f5f67616d83ec31a4e158d3825ebe2',1,'X_FirmwareControl():&#160;acpi.hpp']]],
@@ -35,7 +35,7 @@ var searchData=
   ['xor_4178',['XOR',['../d7/dfc/kernel_2include_2types_8h.html#a45cd11034d1a7d86c3a88d36f5e7f1ab',1,'types.h']]],
   ['xor_5feq_4179',['XOR_EQ',['../d7/dfc/kernel_2include_2types_8h.html#a2746c6091234cfceb278ac89b5c3a986',1,'types.h']]],
   ['xpos_4180',['Xpos',['../d2/d83/classMonotonLib_1_1mtl.html#a58687daf5c7743e1ad19e90b253f5098',1,'MonotonLib::mtl']]],
-  ['xresolution_4181',['XResolution',['../da/dd3/apps_2wm_2main_8cpp.html#a140a7180b5438e816c95bb25fefc1d35',1,'vbe']]],
+  ['xresolution_4181',['XResolution',['../df/daa/apps_2system_2wm_2main_8cpp.html#a140a7180b5438e816c95bb25fefc1d35',1,'vbe']]],
   ['xsdt_4182',['XSDT',['../d3/d21/classACPI_1_1ACPI.html#abe8f0938762de12632f38114ace6a052',1,'ACPI::ACPI']]],
   ['xsdtaddress_4183',['XSDTAddress',['../d3/d41/gbp_8h.html#a142006e46e231f10c101448090b46bc0',1,'_GBPRSDP::XSDTAddress()'],['../d3/d41/gbp_8h.html#a8504478b22881f20d7d4ed464680c6f1',1,'XSDTAddress():&#160;gbp.h']]],
   ['xsdtsupported_4184',['XSDTSupported',['../d3/d21/classACPI_1_1ACPI.html#a3940f990fad12d14a63db6643377fe67',1,'ACPI::ACPI']]],

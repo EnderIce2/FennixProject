@@ -16,6 +16,6 @@ var searchData=
   ['regular_5ffile_7712',['REGULAR_FILE',['../d0/df0/classFileSystem_1_1USTAR.html#a536a5362b91a01a39de243aebbb115e8a9827081f4c9f5c6e504c658d56a74774',1,'FileSystem::USTAR']]],
   ['relaxed_7713',['Relaxed',['../d4/d56/namespaceanonymous__namespace_02atomic_8hpp_03.html#a44c87fe87692477d78c1b35e76de0f13aa0a8257b3a2db9db1b92cc768b69476f',1,'anonymous_namespace{atomic.hpp}']]],
   ['release_7714',['Release',['../d4/d56/namespaceanonymous__namespace_02atomic_8hpp_03.html#a44c87fe87692477d78c1b35e76de0f13a38f91f9cb432084175b93ea46f92612e',1,'anonymous_namespace{atomic.hpp}']]],
-  ['right_7715',['Right',['../d9/dbb/namespacePS2Mouse.html#a23cca52e28a3c304a70b45a951d2ed7da50417b37756f5da09e24927865ab4bbb',1,'PS2Mouse::Right()'],['../d8/df2/apps_2uiserver_2main_8cpp.html#ac1ec3647c005eacad401b06e7e18f711ad48f7af8c070184f3774c8e85854eb66',1,'Right():&#160;main.cpp']]],
+  ['right_7715',['Right',['../d9/dbb/namespacePS2Mouse.html#a23cca52e28a3c304a70b45a951d2ed7da50417b37756f5da09e24927865ab4bbb',1,'PS2Mouse::Right()'],['../d7/de2/apps_2system_2uiserver_2main_8cpp.html#ac1ec3647c005eacad401b06e7e18f711ad48f7af8c070184f3774c8e85854eb66',1,'Right():&#160;main.cpp']]],
   ['rw_7716',['RW',['../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5aec2497e0c8af01c04bec31ec0d1d7847',1,'heap.h']]]
 ];

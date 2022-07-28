@@ -2,7 +2,7 @@ var searchData=
 [
   ['scaling_5ffactor_4423',['scaling_factor',['../db/d19/libc_2src_2printf_8c.html#db/dfc/structscaling__factor',1,'']]],
   ['screen_4424',['Screen',['../d4/dfa/classBootScreen_1_1Screen.html',1,'BootScreen']]],
-  ['scren_4425',['scren',['../da/dd3/apps_2wm_2main_8cpp.html#d4/d00/structscren',1,'']]],
+  ['scren_4425',['scren',['../df/daa/apps_2system_2wm_2main_8cpp.html#d4/d00/structscren',1,'']]],
   ['serial_4426',['Serial',['../dd/dd0/classFileSystem_1_1Serial.html',1,'FileSystem']]],
   ['shift_5fout_5fof_5fbounds_5fdata_4427',['shift_out_of_bounds_data',['../d0/d1f/ubsan_8h.html#d3/d4f/structshift__out__of__bounds__data',1,'']]],
   ['smp_4428',['SMP',['../d1/dbb/classSymmetricMultiprocessing_1_1SMP.html',1,'SymmetricMultiprocessing']]],

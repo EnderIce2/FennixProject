@@ -14,8 +14,8 @@ var userspace_2libs_2cwalk_2cwalk_8h =
     [ "cwk_path_style", "d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#af41b6d6cf436770b89a71c7b0dfb8c35", [
       [ "CWK_STYLE_WINDOWS", "dc/d3a/kernel_2include_2cwalk_8h.html#af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5", null ],
       [ "CWK_STYLE_UNIX", "dc/d3a/kernel_2include_2cwalk_8h.html#af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2", null ],
-      [ "CWK_STYLE_WINDOWS", "d3/d51/userspace_2apps_2monoton_2cwalk_8h.html#af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5", null ],
-      [ "CWK_STYLE_UNIX", "d3/d51/userspace_2apps_2monoton_2cwalk_8h.html#af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2", null ],
+      [ "CWK_STYLE_WINDOWS", "de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5", null ],
+      [ "CWK_STYLE_UNIX", "de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2", null ],
       [ "CWK_STYLE_WINDOWS", "d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5", null ],
       [ "CWK_STYLE_UNIX", "d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2", null ]
     ] ],
@@ -23,9 +23,9 @@ var userspace_2libs_2cwalk_2cwalk_8h =
       [ "CWK_NORMAL", "dc/d3a/kernel_2include_2cwalk_8h.html#a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905", null ],
       [ "CWK_CURRENT", "dc/d3a/kernel_2include_2cwalk_8h.html#a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7", null ],
       [ "CWK_BACK", "dc/d3a/kernel_2include_2cwalk_8h.html#a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b", null ],
-      [ "CWK_NORMAL", "d3/d51/userspace_2apps_2monoton_2cwalk_8h.html#a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905", null ],
-      [ "CWK_CURRENT", "d3/d51/userspace_2apps_2monoton_2cwalk_8h.html#a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7", null ],
-      [ "CWK_BACK", "d3/d51/userspace_2apps_2monoton_2cwalk_8h.html#a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b", null ],
+      [ "CWK_NORMAL", "de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905", null ],
+      [ "CWK_CURRENT", "de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7", null ],
+      [ "CWK_BACK", "de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b", null ],
       [ "CWK_NORMAL", "d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905", null ],
       [ "CWK_CURRENT", "d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7", null ],
       [ "CWK_BACK", "d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b", null ]

@@ -17,7 +17,7 @@ var searchData=
   ['bitmapalogrithm_5896',['BitmapAlogrithm',['../d1/db8/classFileSystem_1_1EXT2.html#aa84d2930aefe157751879bbc99194c8b',1,'FileSystem::EXT2::SuperBlock']]],
   ['bitoffset_5897',['BitOffset',['../d3/d21/classACPI_1_1ACPI.html#ad32a56f37ec49df90c6ad477809e0541',1,'ACPI::ACPI::GenericAddressStructure::BitOffset()'],['../d1/d90/acpi_8hpp.html#aa5d0d10e48424ca558a29c03f43ffea8',1,'BitOffset():&#160;acpi.hpp']]],
   ['bits_5898',['bits',['../d8/dc7/stivale_8h.html#a1c538237886298a7f8f366684a5540cb',1,'stivale_anchor::bits()'],['../d6/da6/structstivale2__anchor.html#aead72a48eab540541666e3f83384fba0',1,'stivale2_anchor::bits()']]],
-  ['bitsperpixel_5899',['BitsPerPixel',['../da/dd3/apps_2wm_2main_8cpp.html#a3034fc7245aff5718f44244e2027be3d',1,'vbe']]],
+  ['bitsperpixel_5899',['BitsPerPixel',['../df/daa/apps_2system_2wm_2main_8cpp.html#a3034fc7245aff5718f44244e2027be3d',1,'vbe']]],
   ['bitwidth_5900',['BitWidth',['../d3/d21/classACPI_1_1ACPI.html#adb73c091bf61a9727f7b85477138176f',1,'ACPI::ACPI::GenericAddressStructure::BitWidth()'],['../d1/d90/acpi_8hpp.html#a38681bbafb91226657bd64bb33830cb2',1,'BitWidth():&#160;acpi.hpp']]],
   ['block_5901',['block',['../d3/dae/libc_2src_2alloc_2liballoc__1__1_8c.html#aff17c469cb0dcbc1f8320b8342075b1d',1,'liballoc_minor']]],
   ['blockgroups_5902',['BlockGroups',['../d1/db8/classFileSystem_1_1EXT2.html#a97fee0b507c364abc2f765ebbf2476da',1,'FileSystem::EXT2::SuperBlock']]],
@@ -45,8 +45,8 @@ var searchData=
   ['buffer_5924',['buffer',['../d0/d3e/structoutput__gadget__t.html#a9eae862be7d26c6e88234f75ba72a679',1,'output_gadget_t::buffer()'],['../de/df4/classDiskManager_1_1Partition.html#aeafcca6a7cc2cee7d671d76a5a84f1a7',1,'DiskManager::Partition::Drive::Buffer()'],['../d3/d19/classBitmap.html#a751ccc209d0511ad550350ac31f27f39',1,'Bitmap::Buffer()']]],
   ['buffersize_5925',['BufferSize',['../d3/d41/gbp_8h.html#a3447851b3b8249adcf60a0bb3b0fed6c',1,'GBPFramebuffer']]],
   ['bussource_5926',['BuSSource',['../da/db9/classACPI_1_1MADT.html#a161e308ebeab1bfc0249170519efb729',1,'ACPI::MADT::MADTIso::BuSSource()'],['../d1/d90/acpi_8hpp.html#af6cf7eab4715a5a96aa57e20496495a7',1,'BuSSource():&#160;acpi.hpp']]],
-  ['buttons_5927',['Buttons',['../d9/dbb/namespacePS2Mouse.html#adf0e11796f5b3eb8719e39548ea111c0',1,'PS2Mouse::MouseInfo::Buttons()'],['../d8/df2/apps_2uiserver_2main_8cpp.html#a8280e1592140d844b20917fe3f8c7c8a',1,'MouseInfo::Buttons()']]],
+  ['buttons_5927',['Buttons',['../d9/dbb/namespacePS2Mouse.html#adf0e11796f5b3eb8719e39548ea111c0',1,'PS2Mouse::MouseInfo::Buttons()'],['../d7/de2/apps_2system_2uiserver_2main_8cpp.html#a8280e1592140d844b20917fe3f8c7c8a',1,'MouseInfo::Buttons()']]],
   ['bytes_5fper_5fchar_5928',['bytes_per_char',['../d5/ddf/include_2boot_2protocols_2stivale2_8h.html#a3d59ecb261b82eec3e5292e69c4890f7',1,'stivale2_struct_tag_textmode']]],
-  ['bytesperscanline_5929',['BytesPerScanLine',['../da/dd3/apps_2wm_2main_8cpp.html#a553d8e119871b1f24dcb9b9326b1d105',1,'vbe']]],
+  ['bytesperscanline_5929',['BytesPerScanLine',['../df/daa/apps_2system_2wm_2main_8cpp.html#a553d8e119871b1f24dcb9b9326b1d105',1,'vbe']]],
   ['bytespersector_5930',['BytesPerSector',['../df/d19/classFileSystem_1_1FAT.html#a637b6ad1461e6fd5d032e1e7f7dd9b42',1,'FileSystem::FAT::BIOSParameterBlock::BytesPerSector()'],['../dd/dd8/filesystem_8h.html#a8150302ac60578f80916785444da77aa',1,'BytesPerSector():&#160;filesystem.h']]]
 ];

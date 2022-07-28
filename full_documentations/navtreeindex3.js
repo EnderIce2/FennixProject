@@ -1,7 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"d1/dbb/kernel_2libs_2cwalk_8c.html#a60ae05adcc035bd0f06a8244d4ad7500":[5,0,0,7,3,4],
-"d1/dbb/kernel_2libs_2cwalk_8c.html#a642ae7f0b4af0374c203cbebb03a1ff1":[5,0,0,7,3,46],
 "d1/dbb/kernel_2libs_2cwalk_8c.html#a67a63e3978a34a02d116cff7d06c4c73":[5,0,0,7,3,6],
 "d1/dbb/kernel_2libs_2cwalk_8c.html#a6bfc63dd7ba77d04a03cb1dbc2d5524a":[5,0,0,7,3,43],
 "d1/dbb/kernel_2libs_2cwalk_8c.html#a7031ed4abfd806cc68acd9ace2d23120":[5,0,0,7,3,32],
@@ -214,12 +212,6 @@ var NAVTREEINDEX3 =
 "d2/d00/Kernel_8cpp.html#aeb0fc96c939de7a18e00f08b15efcf8a":[5,0,0,22,1],
 "d2/d00/Kernel_8cpp.html#aebb24bb7f3b139aecb4ef6d91ed08fc0":[5,0,0,22,11],
 "d2/d00/Kernel_8cpp_source.html":[5,0,0,22],
-"d2/d0c/apps_2fesktop_2main_8cpp.html":[5,0,2,0,0,0],
-"d2/d0c/apps_2fesktop_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[5,0,2,0,0,0,3],
-"d2/d0c/apps_2fesktop_2main_8cpp.html#a5a3a59189878c25bfc9c42016130572b":[5,0,2,0,0,0,0],
-"d2/d0c/apps_2fesktop_2main_8cpp.html#a5dc3d5a9aadf78b1e050c951ba4d759b":[5,0,2,0,0,0,1],
-"d2/d0c/apps_2fesktop_2main_8cpp.html#a5ffa3e3e9f60afd8aa3ea5e3955f2b81":[5,0,2,0,0,0,2],
-"d2/d0c/apps_2fesktop_2main_8cpp_source.html":[5,0,2,0,0,0],
 "d2/d47/classFileSystem_1_1Random.html":[4,0,8,10],
 "d2/d47/classFileSystem_1_1Random.html#a49754317238a2f1af2bcfff841df232d":[4,0,8,10,1],
 "d2/d47/classFileSystem_1_1Random.html#af72a83eeacd59ec1b73635b059a04f42":[4,0,8,10,0],
@@ -249,5 +241,13 @@ var NAVTREEINDEX3 =
 "d2/d50/disk_8h.html#a2357226cf548d69d530128bf648dae0c":[5,0,0,2,2,17],
 "d2/d50/disk_8h.html#a3125070250ce744bbd6c774a1e102cb2":[5,0,0,2,2,27],
 "d2/d50/disk_8h.html#a33f897f8ff93759ee7ce6c0e222dc48d":[5,0,0,2,2,34],
-"d2/d50/disk_8h.html#a43fae5b728aa075b9475bbe49a5738ef":[5,0,0,2,2,38]
+"d2/d50/disk_8h.html#a43fae5b728aa075b9475bbe49a5738ef":[5,0,0,2,2,38],
+"d2/d50/disk_8h.html#a44062af40e97abbcc6b0d0eaef496c3f":[5,0,0,2,2,14],
+"d2/d50/disk_8h.html#a440a2b91da55fb360a33714d726e6832":[5,0,0,2,2,45],
+"d2/d50/disk_8h.html#a48bf79fe389fb5b6aeda00b912d6ca36":[5,0,0,2,2,29],
+"d2/d50/disk_8h.html#a4cdb534525ae87719aa38b323323f18e":[5,0,0,2,2,30],
+"d2/d50/disk_8h.html#a4da9f7a63ffa63eb15dd926a4cf0252f":[5,0,0,2,2,28],
+"d2/d50/disk_8h.html#a56b9563c5cc9f14ae056cb82bccce523":[5,0,0,2,2,37],
+"d2/d50/disk_8h.html#a5c74cc1551095c8a9faa7cd8267eb7d2":[5,0,0,2,2,12],
+"d2/d50/disk_8h.html#a60cc0ce96c154dcb84a2e55d40ca9689":[5,0,0,2,2,10]
 };

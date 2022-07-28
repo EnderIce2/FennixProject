@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['g_5fscreenbuffer_6125',['g_ScreenBuffer',['../da/dd3/apps_2wm_2main_8cpp.html#a205d015ebedc76a4daa3e5239bcbf33c',1,'main.cpp']]],
+  ['g_5fscreenbuffer_6125',['g_ScreenBuffer',['../df/daa/apps_2system_2wm_2main_8cpp.html#a205d015ebedc76a4daa3e5239bcbf33c',1,'main.cpp']]],
   ['gdt_6126',['GDT',['../de/df9/structCPUData.html#a13ff8e794ef229d8d9a18788d1ca5db1',1,'CPUData::GDT()'],['../db/d61/GDT_8c.html#a91561ba391b103af6678919836269b18',1,'gdt():&#160;GDT.c'],['../d5/d4a/gdt_8h.html#a91561ba391b103af6678919836269b18',1,'gdt():&#160;GDT.c'],['../d4/d33/smp_8hpp.html#a053d2c07529011a16699ebe30a79a407',1,'GDT():&#160;smp.hpp']]],
   ['gdt_5fentries_6127',['GDT_Entries',['../db/d61/GDT_8c.html#aa5c84bba5c36d430185ed859dcd40472',1,'GDT.c']]],
   ['general_5fcapabilities_6128',['general_capabilities',['../da/d06/hpet_8h.html#ae1d0382fb85eaa47f2c4d5cc8b170aec',1,'HPET']]],

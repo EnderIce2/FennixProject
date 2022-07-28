@@ -6900,39 +6900,39 @@
            </Node>
            <Node>
             <Name>MouseInfo</Name>
-            <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
+            <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
             <Anchor>df/df2/structMouseInfo</Anchor>
             <Subnodes>
              <Node>
               <Name>Buttons</Name>
-              <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
+              <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
               <Anchor>a8280e1592140d844b20917fe3f8c7c8a</Anchor>
              </Node>
              <Node>
               <Name>X</Name>
-              <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
+              <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
               <Anchor>adf55e9abaca87300df8284c7149f72f2</Anchor>
              </Node>
              <Node>
               <Name>Y</Name>
-              <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
+              <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
               <Anchor>a1ab4d13347504e0ec9497137a08f0052</Anchor>
              </Node>
             </Subnodes>
            </Node>
            <Node>
             <Name>ms</Name>
-            <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
+            <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
             <Anchor>d3/d84/structms</Anchor>
             <Subnodes>
              <Node>
               <Name>X</Name>
-              <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
+              <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
               <Anchor>a70fb8712ef79f011984c708f4e33f85b</Anchor>
              </Node>
              <Node>
               <Name>Y</Name>
-              <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
+              <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
               <Anchor>a4f31844c452c485829d75f6e44a87090</Anchor>
              </Node>
             </Subnodes>
@@ -8673,17 +8673,17 @@
            </Node>
            <Node>
             <Name>scren</Name>
-            <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
+            <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
             <Anchor>d4/d00/structscren</Anchor>
             <Subnodes>
              <Node>
               <Name>Height</Name>
-              <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
+              <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
               <Anchor>a28d37d1711e9f78f8d583e4e974aac10</Anchor>
              </Node>
              <Node>
               <Name>Width</Name>
-              <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
+              <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
               <Anchor>aba4b442b537a2d4e070cb75ec387efb8</Anchor>
              </Node>
             </Subnodes>
@@ -9976,32 +9976,32 @@
            </Node>
            <Node>
             <Name>vbe</Name>
-            <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
+            <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
             <Anchor>d4/d68/structvbe</Anchor>
             <Subnodes>
              <Node>
               <Name>BitsPerPixel</Name>
-              <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
+              <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
               <Anchor>a3034fc7245aff5718f44244e2027be3d</Anchor>
              </Node>
              <Node>
               <Name>BytesPerScanLine</Name>
-              <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
+              <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
               <Anchor>a553d8e119871b1f24dcb9b9326b1d105</Anchor>
              </Node>
              <Node>
               <Name>VideoBaseAddr</Name>
-              <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
+              <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
               <Anchor>ab5a1fb64a0e4011a5a8350b08845a30f</Anchor>
              </Node>
              <Node>
               <Name>XResolution</Name>
-              <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
+              <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
               <Anchor>a140a7180b5438e816c95bb25fefc1d35</Anchor>
              </Node>
              <Node>
               <Name>YResolution</Name>
-              <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
+              <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
               <Anchor>a4efdb211cd715411827ca277666b36e1</Anchor>
              </Node>
             </Subnodes>
@@ -25478,12 +25478,12 @@
                    </Node>
                    <Node>
                     <Name>CWK_STYLE_WINDOWS</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
                     <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
                    </Node>
                    <Node>
                     <Name>CWK_STYLE_UNIX</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
                     <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
                    </Node>
                    <Node>
@@ -25520,17 +25520,17 @@
                    </Node>
                    <Node>
                     <Name>CWK_NORMAL</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
                     <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
                    </Node>
                    <Node>
                     <Name>CWK_CURRENT</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
                     <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
                    </Node>
                    <Node>
                     <Name>CWK_BACK</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                    <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
                     <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
                    </Node>
                    <Node>
@@ -41108,833 +41108,868 @@
               <Path>dir_da467f081c72169f5d504b415d319bdc.html</Path>
               <Subnodes>
                <Node>
-                <Name>fesktop</Name>
-                <Path>dir_da36df80cc02fb1f02dda11be5041f87.html</Path>
+                <Name>games</Name>
+                <Path>dir_5aa10496fb66619d77c58367fa0c5823.html</Path>
                 <Subnodes>
                  <Node>
-                  <Name>main.cpp</Name>
-                  <Path>d2/d0c/apps_2fesktop_2main_8cpp.html</Path>
+                  <Name>tictactoe</Name>
+                  <Path>dir_ca8ef232e945bff7cdd7db0be151eae7.html</Path>
                   <Subnodes>
                    <Node>
-                    <Name>Desktop</Name>
-                    <Path>d2/d0c/apps_2fesktop_2main_8cpp.html</Path>
-                    <Anchor>a5a3a59189878c25bfc9c42016130572b</Anchor>
+                    <Name>Makefile</Name>
+                    <Path>d2/dd5/userspace_2apps_2games_2tictactoe_2Makefile.html</Path>
                    </Node>
                    <Node>
-                    <Name>Dock</Name>
-                    <Path>d2/d0c/apps_2fesktop_2main_8cpp.html</Path>
-                    <Anchor>a5dc3d5a9aadf78b1e050c951ba4d759b</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>drawrectangle</Name>
-                    <Path>d2/d0c/apps_2fesktop_2main_8cpp.html</Path>
-                    <Anchor>a5ffa3e3e9f60afd8aa3ea5e3955f2b81</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>main</Name>
-                    <Path>d2/d0c/apps_2fesktop_2main_8cpp.html</Path>
-                    <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
+                    <Name>tictactoe.cpp</Name>
+                    <Path>df/d7b/tictactoe_8cpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>main</Name>
+                      <Path>df/d7b/tictactoe_8cpp.html</Path>
+                      <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
+                     </Node>
+                    </Subnodes>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>Makefile</Name>
-                  <Path>d7/da9/userspace_2apps_2fesktop_2Makefile.html</Path>
+                  <Path>d5/d9d/userspace_2apps_2games_2Makefile.html</Path>
                  </Node>
                 </Subnodes>
                </Node>
                <Node>
-                <Name>init</Name>
-                <Path>dir_9e293955226e70f9ae572de499a6c843.html</Path>
+                <Name>system</Name>
+                <Path>dir_943004f45d321f880cc7c7db01b4b71e.html</Path>
                 <Subnodes>
                  <Node>
-                  <Name>init.cpp</Name>
-                  <Path>d0/dc9/init_8cpp.html</Path>
+                  <Name>fesktop</Name>
+                  <Path>dir_15832304b267ed0d7b4229697987eb15.html</Path>
                   <Subnodes>
                    <Node>
-                    <Name>main</Name>
+                    <Name>main.cpp</Name>
+                    <Path>de/d87/apps_2system_2fesktop_2main_8cpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>Desktop</Name>
+                      <Path>de/d87/apps_2system_2fesktop_2main_8cpp.html</Path>
+                      <Anchor>a5a3a59189878c25bfc9c42016130572b</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>Dock</Name>
+                      <Path>de/d87/apps_2system_2fesktop_2main_8cpp.html</Path>
+                      <Anchor>a5dc3d5a9aadf78b1e050c951ba4d759b</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>drawrectangle</Name>
+                      <Path>de/d87/apps_2system_2fesktop_2main_8cpp.html</Path>
+                      <Anchor>a5ffa3e3e9f60afd8aa3ea5e3955f2b81</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>main</Name>
+                      <Path>de/d87/apps_2system_2fesktop_2main_8cpp.html</Path>
+                      <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>Makefile</Name>
+                    <Path>d6/de3/userspace_2apps_2system_2fesktop_2Makefile.html</Path>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>init</Name>
+                  <Path>dir_515c02b66bf6652cc74ec69146c7a2ca.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>init.cpp</Name>
                     <Path>d0/dc9/init_8cpp.html</Path>
-                    <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>monotasking_shell_exit</Name>
-                    <Path>d0/dc9/init_8cpp.html</Path>
-                    <Anchor>ae652cea119536949677aa58728b70310</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Makefile</Name>
-                  <Path>d1/d1f/userspace_2apps_2init_2Makefile.html</Path>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>monoton</Name>
-                <Path>dir_62143f0ea6d4a7dddc4cf109eccaf914.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>cwalk.h</Name>
-                  <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>cwk_segment</Name>
-                    <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
-                    <Anchor>d5/daa/structcwk__segment</Anchor>
                     <Subnodes>
                      <Node>
-                      <Name>begin</Name>
-                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
-                      <Anchor>af091380741c08e3a24ecf0b407c70fb2</Anchor>
+                      <Name>main</Name>
+                      <Path>d0/dc9/init_8cpp.html</Path>
+                      <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
                      </Node>
                      <Node>
-                      <Name>end</Name>
-                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
-                      <Anchor>ac45c7e4bbd667065ba28819be3034849</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>path</Name>
-                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
-                      <Anchor>a10444973b52135654c24e7a5860a33ef</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>segments</Name>
-                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
-                      <Anchor>a5f8e50048e43b4ded04cef354dafcf31</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>size</Name>
-                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
-                      <Anchor>afb2c298ee1b44ea23e97b7408d535cc2</Anchor>
+                      <Name>monotasking_shell_exit</Name>
+                      <Path>d0/dc9/init_8cpp.html</Path>
+                      <Anchor>ae652cea119536949677aa58728b70310</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
                    <Node>
-                    <Name>CWK_EXPORT</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>af5b9d6c5afeb02541963faaa15d24b29</Anchor>
+                    <Name>Makefile</Name>
+                    <Path>de/dbb/userspace_2apps_2system_2init_2Makefile.html</Path>
                    </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>monoton</Name>
+                  <Path>dir_8d5e54bfadd42f9251d52d65f3bb1765.html</Path>
+                  <Subnodes>
                    <Node>
-                    <Name>CWK_IMPORT</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>aebd784c18b95ed6a15cdbe974749b25d</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>CWK_LIBRARY_H</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a418674d8e5d6cf699039c4912786817b</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>CWK_PUBLIC</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a1557461a3dd64c516ec9eb8bf08de382</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_style</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35</Anchor>
+                    <Name>cwalk.h</Name>
+                    <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
                     <Subnodes>
                      <Node>
-                      <Name>CWK_STYLE_WINDOWS</Name>
-                      <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
-                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>CWK_STYLE_UNIX</Name>
-                      <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
-                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>CWK_STYLE_WINDOWS</Name>
-                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>CWK_STYLE_UNIX</Name>
-                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>CWK_STYLE_WINDOWS</Name>
+                      <Name>cwk_segment</Name>
                       <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
-                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
+                      <Anchor>d5/daa/structcwk__segment</Anchor>
+                      <Subnodes>
+                       <Node>
+                        <Name>begin</Name>
+                        <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                        <Anchor>af091380741c08e3a24ecf0b407c70fb2</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>end</Name>
+                        <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                        <Anchor>ac45c7e4bbd667065ba28819be3034849</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>path</Name>
+                        <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                        <Anchor>a10444973b52135654c24e7a5860a33ef</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>segments</Name>
+                        <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                        <Anchor>a5f8e50048e43b4ded04cef354dafcf31</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>size</Name>
+                        <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                        <Anchor>afb2c298ee1b44ea23e97b7408d535cc2</Anchor>
+                       </Node>
+                      </Subnodes>
                      </Node>
                      <Node>
-                      <Name>CWK_STYLE_UNIX</Name>
-                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
-                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
+                      <Name>CWK_EXPORT</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>af5b9d6c5afeb02541963faaa15d24b29</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_IMPORT</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>aebd784c18b95ed6a15cdbe974749b25d</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_LIBRARY_H</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a418674d8e5d6cf699039c4912786817b</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CWK_PUBLIC</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a1557461a3dd64c516ec9eb8bf08de382</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_style</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35</Anchor>
+                      <Subnodes>
+                       <Node>
+                        <Name>CWK_STYLE_WINDOWS</Name>
+                        <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                        <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CWK_STYLE_UNIX</Name>
+                        <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                        <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CWK_STYLE_WINDOWS</Name>
+                        <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                        <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CWK_STYLE_UNIX</Name>
+                        <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                        <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CWK_STYLE_WINDOWS</Name>
+                        <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                        <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CWK_STYLE_UNIX</Name>
+                        <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                        <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>cwk_segment_type</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66c</Anchor>
+                      <Subnodes>
+                       <Node>
+                        <Name>CWK_NORMAL</Name>
+                        <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                        <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CWK_CURRENT</Name>
+                        <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                        <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CWK_BACK</Name>
+                        <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
+                        <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CWK_NORMAL</Name>
+                        <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                        <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CWK_CURRENT</Name>
+                        <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                        <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CWK_BACK</Name>
+                        <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                        <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CWK_NORMAL</Name>
+                        <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                        <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CWK_CURRENT</Name>
+                        <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                        <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CWK_BACK</Name>
+                        <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
+                        <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_change_basename</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a13992aee0f81f3d51e1c793a97fb780a</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_change_extension</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>aac7343e7b15f517d9cfdfa0d6e4e1160</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_change_root</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a8e8d1717f2dcf7dbfe8a54a03be22b58</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_change_segment</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a38033b645a7a0fa1c43921a64af51acd</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_get_absolute</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a0e6b3622394c68a0286085b8907cf5b2</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_get_basename</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>aa5e93482b11e37af62bb9f605c8866a0</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_get_dirname</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>ad02629bf5420bb515fb6c95633b7b164</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_get_extension</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>ab66834fcf9a98403ae027f888cacd25d</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_get_first_segment</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a97e64700e1df97572fb7df1f6ce3a1f3</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_get_intersection</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>ab38ede3863e727db5611ce9d23d2e990</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_get_last_segment</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>ac2d95a40e07cd4bc3e3af28ae366259b</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_get_next_segment</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a5d7659aaa8b1a7f8e9c1097e7b4dc912</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_get_previous_segment</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a62cfd570a00de9811417dc8b32bd1465</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_get_relative</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a383836841603aad4712029e5f42de6bb</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_get_root</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>ac5ac1f6c3505a13cf6af679b3e1075ab</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_get_segment_type</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a5779262b292913597c5d5ab2c055b9e7</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_get_style</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a2ba934a4a37f1d5911faa140e4e2c46c</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_guess_style</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a9b4517f492f5d5859f599a963cf1026a</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_has_extension</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>aa917d03c0659fdefe8575493295e18d1</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_is_absolute</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>aae129e02017ddd7ad9c7d7d24f107079</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_is_relative</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>ab734e7277e96ea5d5acec4fbbd2fc402</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_is_separator</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a2703a5d58bd1fd5aea8302c413660a27</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_join</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a2b0ad7a91b604b5fff516499b84c97d7</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_join_multiple</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>ac032cd6779d648b793ef66efbb6219d6</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_normalize</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a670897583339fbff8befc11da880018c</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>cwk_path_set_style</Name>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
+                      <Anchor>a3e75a1f14754498a0079bb11f9ddca9a</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
                    <Node>
-                    <Name>cwk_segment_type</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a6108f90d2ae646d1b255bea8be6cd66c</Anchor>
+                    <Name>login.cpp</Name>
+                    <Path>db/d50/login_8cpp.html</Path>
                     <Subnodes>
                      <Node>
-                      <Name>CWK_NORMAL</Name>
-                      <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
-                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
+                      <Name>clearbuffer</Name>
+                      <Path>db/d50/login_8cpp.html</Path>
+                      <Anchor>a86b2aed312bc193fa86ffa3516f5f96b</Anchor>
                      </Node>
                      <Node>
-                      <Name>CWK_CURRENT</Name>
-                      <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
-                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
+                      <Name>HasIllegalCharacter</Name>
+                      <Path>db/d50/login_8cpp.html</Path>
+                      <Anchor>afd0850cc2852cfc39f3c38ebcfed8a97</Anchor>
                      </Node>
                      <Node>
-                      <Name>CWK_BACK</Name>
-                      <Path>dc/d3a/kernel_2include_2cwalk_8h.html</Path>
-                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
+                      <Name>InitLogin</Name>
+                      <Path>db/d50/login_8cpp.html</Path>
+                      <Anchor>a7b3c0a5cd0c4f0f7cd64a3610711e172</Anchor>
                      </Node>
                      <Node>
-                      <Name>CWK_NORMAL</Name>
-                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
+                      <Name>pwd</Name>
+                      <Path>db/d50/login_8cpp.html</Path>
+                      <Anchor>a7a8e98611cd2044f91732950bd1c303b</Anchor>
                      </Node>
                      <Node>
-                      <Name>CWK_CURRENT</Name>
-                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
+                      <Name>usr</Name>
+                      <Path>db/d50/login_8cpp.html</Path>
+                      <Anchor>aa045615acba69379136f2846fcea6d12</Anchor>
                      </Node>
                      <Node>
-                      <Name>CWK_BACK</Name>
-                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
+                      <Name>pwdbuf</Name>
+                      <Path>db/d50/login_8cpp.html</Path>
+                      <Anchor>a7eba21fef79f40271c0bea3ba77f22c1</Anchor>
                      </Node>
                      <Node>
-                      <Name>CWK_NORMAL</Name>
-                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
-                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>CWK_CURRENT</Name>
-                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
-                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>CWK_BACK</Name>
-                      <Path>d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html</Path>
-                      <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
+                      <Name>usrbuf</Name>
+                      <Path>db/d50/login_8cpp.html</Path>
+                      <Anchor>a055983231748a9eb36e624222f280dc4</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
                    <Node>
-                    <Name>cwk_path_change_basename</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a13992aee0f81f3d51e1c793a97fb780a</Anchor>
+                    <Name>Makefile</Name>
+                    <Path>de/dea/userspace_2apps_2system_2monoton_2Makefile.html</Path>
                    </Node>
                    <Node>
-                    <Name>cwk_path_change_extension</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>aac7343e7b15f517d9cfdfa0d6e4e1160</Anchor>
+                    <Name>monoton.cpp</Name>
+                    <Path>dd/dda/monoton_8cpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>loop</Name>
+                      <Path>dd/dda/monoton_8cpp.html</Path>
+                      <Anchor>afe461d27b9c48d5921c00d521181f12f</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>main</Name>
+                      <Path>dd/dda/monoton_8cpp.html</Path>
+                      <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>ParseBuffer</Name>
+                      <Path>dd/dda/monoton_8cpp.html</Path>
+                      <Anchor>a447fa0a591dd74a68f672a0031f712a4</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>PrintShellPrefix</Name>
+                      <Path>dd/dda/monoton_8cpp.html</Path>
+                      <Anchor>a98d5da1dda5905f437b68bc01f54b812</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>trimwhitespace</Name>
+                      <Path>dd/dda/monoton_8cpp.html</Path>
+                      <Anchor>a205c8acb2ef70f038f32e5fe361cc8d9</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>AlreadyInitialized</Name>
+                      <Path>dd/dda/monoton_8cpp.html</Path>
+                      <Anchor>a011953b4b315d1da5c09d5a396306dd0</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CurrentFullPath</Name>
+                      <Path>dd/dda/monoton_8cpp.html</Path>
+                      <Anchor>ad587268c18ad49e06e5b15ef42e9ffad</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CurrentPath</Name>
+                      <Path>dd/dda/monoton_8cpp.html</Path>
+                      <Anchor>abb09c1489f772afead1e9269537126f0</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>key_buffer</Name>
+                      <Path>dd/dda/monoton_8cpp.html</Path>
+                      <Anchor>ae851f75b5a9392103587b6fc8289190b</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>mono</Name>
+                      <Path>dd/dda/monoton_8cpp.html</Path>
+                      <Anchor>a8d6989dc736b678d41dc8a58446fab96</Anchor>
+                     </Node>
+                    </Subnodes>
                    </Node>
                    <Node>
-                    <Name>cwk_path_change_root</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a8e8d1717f2dcf7dbfe8a54a03be22b58</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_change_segment</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a38033b645a7a0fa1c43921a64af51acd</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_get_absolute</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a0e6b3622394c68a0286085b8907cf5b2</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_get_basename</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>aa5e93482b11e37af62bb9f605c8866a0</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_get_dirname</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>ad02629bf5420bb515fb6c95633b7b164</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_get_extension</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>ab66834fcf9a98403ae027f888cacd25d</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_get_first_segment</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a97e64700e1df97572fb7df1f6ce3a1f3</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_get_intersection</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>ab38ede3863e727db5611ce9d23d2e990</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_get_last_segment</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>ac2d95a40e07cd4bc3e3af28ae366259b</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_get_next_segment</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a5d7659aaa8b1a7f8e9c1097e7b4dc912</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_get_previous_segment</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a62cfd570a00de9811417dc8b32bd1465</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_get_relative</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a383836841603aad4712029e5f42de6bb</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_get_root</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>ac5ac1f6c3505a13cf6af679b3e1075ab</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_get_segment_type</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a5779262b292913597c5d5ab2c055b9e7</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_get_style</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a2ba934a4a37f1d5911faa140e4e2c46c</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_guess_style</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a9b4517f492f5d5859f599a963cf1026a</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_has_extension</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>aa917d03c0659fdefe8575493295e18d1</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_is_absolute</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>aae129e02017ddd7ad9c7d7d24f107079</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_is_relative</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>ab734e7277e96ea5d5acec4fbbd2fc402</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_is_separator</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a2703a5d58bd1fd5aea8302c413660a27</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_join</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a2b0ad7a91b604b5fff516499b84c97d7</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_join_multiple</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>ac032cd6779d648b793ef66efbb6219d6</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_normalize</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a670897583339fbff8befc11da880018c</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>cwk_path_set_style</Name>
-                    <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
-                    <Anchor>a3e75a1f14754498a0079bb11f9ddca9a</Anchor>
+                    <Name>monoton.hpp</Name>
+                    <Path>d6/da7/monoton_8hpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>append</Name>
+                      <Path>d6/da7/monoton_8hpp.html</Path>
+                      <Anchor>a17091b21b245979785afed043c5a62d8</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>backspace</Name>
+                      <Path>d6/da7/monoton_8hpp.html</Path>
+                      <Anchor>a6ea87d031ef388097959887799e9e779</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>InitLogin</Name>
+                      <Path>d6/da7/monoton_8hpp.html</Path>
+                      <Anchor>a7b3c0a5cd0c4f0f7cd64a3610711e172</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>isempty_1</Name>
+                      <Path>d6/da7/monoton_8hpp.html</Path>
+                      <Anchor>a2cdba60f5d4d64b07b0a323f00aee9cc</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>pwd</Name>
+                      <Path>d6/da7/monoton_8hpp.html</Path>
+                      <Anchor>a7a8e98611cd2044f91732950bd1c303b</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>usr</Name>
+                      <Path>d6/da7/monoton_8hpp.html</Path>
+                      <Anchor>aa045615acba69379136f2846fcea6d12</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>mono</Name>
+                      <Path>d6/da7/monoton_8hpp.html</Path>
+                      <Anchor>a8d6989dc736b678d41dc8a58446fab96</Anchor>
+                     </Node>
+                    </Subnodes>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
-                  <Name>login.cpp</Name>
-                  <Path>db/d50/login_8cpp.html</Path>
+                  <Name>reboot</Name>
+                  <Path>dir_6e31d17261b2eb0ddb5570a4e114ff71.html</Path>
                   <Subnodes>
                    <Node>
-                    <Name>clearbuffer</Name>
-                    <Path>db/d50/login_8cpp.html</Path>
-                    <Anchor>a86b2aed312bc193fa86ffa3516f5f96b</Anchor>
+                    <Name>Makefile</Name>
+                    <Path>db/d08/userspace_2apps_2system_2reboot_2Makefile.html</Path>
                    </Node>
                    <Node>
-                    <Name>HasIllegalCharacter</Name>
-                    <Path>db/d50/login_8cpp.html</Path>
-                    <Anchor>afd0850cc2852cfc39f3c38ebcfed8a97</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>InitLogin</Name>
-                    <Path>db/d50/login_8cpp.html</Path>
-                    <Anchor>a7b3c0a5cd0c4f0f7cd64a3610711e172</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>pwd</Name>
-                    <Path>db/d50/login_8cpp.html</Path>
-                    <Anchor>a7a8e98611cd2044f91732950bd1c303b</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>usr</Name>
-                    <Path>db/d50/login_8cpp.html</Path>
-                    <Anchor>aa045615acba69379136f2846fcea6d12</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>pwdbuf</Name>
-                    <Path>db/d50/login_8cpp.html</Path>
-                    <Anchor>a7eba21fef79f40271c0bea3ba77f22c1</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>usrbuf</Name>
-                    <Path>db/d50/login_8cpp.html</Path>
-                    <Anchor>a055983231748a9eb36e624222f280dc4</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Makefile</Name>
-                  <Path>d1/d28/userspace_2apps_2monoton_2Makefile.html</Path>
-                 </Node>
-                 <Node>
-                  <Name>monoton.cpp</Name>
-                  <Path>dd/dda/monoton_8cpp.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>loop</Name>
-                    <Path>dd/dda/monoton_8cpp.html</Path>
-                    <Anchor>afe461d27b9c48d5921c00d521181f12f</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>main</Name>
-                    <Path>dd/dda/monoton_8cpp.html</Path>
-                    <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>ParseBuffer</Name>
-                    <Path>dd/dda/monoton_8cpp.html</Path>
-                    <Anchor>a447fa0a591dd74a68f672a0031f712a4</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>PrintShellPrefix</Name>
-                    <Path>dd/dda/monoton_8cpp.html</Path>
-                    <Anchor>a98d5da1dda5905f437b68bc01f54b812</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>trimwhitespace</Name>
-                    <Path>dd/dda/monoton_8cpp.html</Path>
-                    <Anchor>a205c8acb2ef70f038f32e5fe361cc8d9</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>AlreadyInitialized</Name>
-                    <Path>dd/dda/monoton_8cpp.html</Path>
-                    <Anchor>a011953b4b315d1da5c09d5a396306dd0</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>CurrentFullPath</Name>
-                    <Path>dd/dda/monoton_8cpp.html</Path>
-                    <Anchor>ad587268c18ad49e06e5b15ef42e9ffad</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>CurrentPath</Name>
-                    <Path>dd/dda/monoton_8cpp.html</Path>
-                    <Anchor>abb09c1489f772afead1e9269537126f0</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>key_buffer</Name>
-                    <Path>dd/dda/monoton_8cpp.html</Path>
-                    <Anchor>ae851f75b5a9392103587b6fc8289190b</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>mono</Name>
-                    <Path>dd/dda/monoton_8cpp.html</Path>
-                    <Anchor>a8d6989dc736b678d41dc8a58446fab96</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>monoton.hpp</Name>
-                  <Path>d6/da7/monoton_8hpp.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>append</Name>
-                    <Path>d6/da7/monoton_8hpp.html</Path>
-                    <Anchor>a17091b21b245979785afed043c5a62d8</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>backspace</Name>
-                    <Path>d6/da7/monoton_8hpp.html</Path>
-                    <Anchor>a6ea87d031ef388097959887799e9e779</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>InitLogin</Name>
-                    <Path>d6/da7/monoton_8hpp.html</Path>
-                    <Anchor>a7b3c0a5cd0c4f0f7cd64a3610711e172</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>isempty_1</Name>
-                    <Path>d6/da7/monoton_8hpp.html</Path>
-                    <Anchor>a2cdba60f5d4d64b07b0a323f00aee9cc</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>pwd</Name>
-                    <Path>d6/da7/monoton_8hpp.html</Path>
-                    <Anchor>a7a8e98611cd2044f91732950bd1c303b</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>usr</Name>
-                    <Path>d6/da7/monoton_8hpp.html</Path>
-                    <Anchor>aa045615acba69379136f2846fcea6d12</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>mono</Name>
-                    <Path>d6/da7/monoton_8hpp.html</Path>
-                    <Anchor>a8d6989dc736b678d41dc8a58446fab96</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>reboot</Name>
-                <Path>dir_7b258dad6735743411e8d228e018ef87.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>Makefile</Name>
-                  <Path>d2/d5d/userspace_2apps_2reboot_2Makefile.html</Path>
-                 </Node>
-                 <Node>
-                  <Name>reboot.cpp</Name>
-                  <Path>d9/d41/reboot_8cpp.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>main</Name>
+                    <Name>reboot.cpp</Name>
                     <Path>d9/d41/reboot_8cpp.html</Path>
-                    <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
+                    <Subnodes>
+                     <Node>
+                      <Name>main</Name>
+                      <Path>d9/d41/reboot_8cpp.html</Path>
+                      <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>reboot.hpp</Name>
+                    <Path>df/d5b/reboot_8hpp.html</Path>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
-                  <Name>reboot.hpp</Name>
-                  <Path>df/d5b/reboot_8hpp.html</Path>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>shutdown</Name>
-                <Path>dir_6290f27f80c88b1060534d42347f56e4.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>Makefile</Name>
-                  <Path>d1/d09/userspace_2apps_2shutdown_2Makefile.html</Path>
-                 </Node>
-                 <Node>
-                  <Name>shutdown.cpp</Name>
-                  <Path>df/d04/shutdown_8cpp.html</Path>
+                  <Name>shutdown</Name>
+                  <Path>dir_3b4bc0dc6c61bc7847ca6e42ba2b4ead.html</Path>
                   <Subnodes>
                    <Node>
-                    <Name>main</Name>
+                    <Name>Makefile</Name>
+                    <Path>d5/d50/userspace_2apps_2system_2shutdown_2Makefile.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>shutdown.cpp</Name>
                     <Path>df/d04/shutdown_8cpp.html</Path>
-                    <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>shutdown.hpp</Name>
-                  <Path>dd/d7f/shutdown_8hpp.html</Path>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>tester</Name>
-                <Path>dir_9e2597afd8ca261da6cabe459b1ad0b6.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>tester.cpp</Name>
-                  <Path>d4/d20/tester_8cpp.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>msleep</Name>
-                    <Path>d4/d20/tester_8cpp.html</Path>
-                    <Anchor>afc667e628791a6638ffb927a13efb942</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>sleep</Name>
-                    <Path>d4/d20/tester_8cpp.html</Path>
-                    <Anchor>a82b8e21bd452d01ad6d32a0d73fbfdc8</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>usleep</Name>
-                    <Path>d4/d20/tester_8cpp.html</Path>
-                    <Anchor>a44ed0f898da2dd3ada04f222e0dce283</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>DisplayPixelTest</Name>
-                    <Path>d4/d20/tester_8cpp.html</Path>
-                    <Anchor>a1bd04b5df4f01f19bfebf7abba3b0947</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>main</Name>
-                    <Path>d4/d20/tester_8cpp.html</Path>
-                    <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>SierpinskiTriangle</Name>
-                    <Path>d4/d20/tester_8cpp.html</Path>
-                    <Anchor>a6358c9fb5430040275888fcd9fb5c871</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>uiserver</Name>
-                <Path>dir_af55c7ce90868d5ea9e8db3257e48da4.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>main.cpp</Name>
-                  <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>MouseInfo</Name>
-                    <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
-                    <Anchor>df/df2/structMouseInfo</Anchor>
                     <Subnodes>
                      <Node>
-                      <Name>Buttons</Name>
-                      <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
-                      <Anchor>a8280e1592140d844b20917fe3f8c7c8a</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>X</Name>
-                      <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
-                      <Anchor>adf55e9abaca87300df8284c7149f72f2</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>Y</Name>
-                      <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
-                      <Anchor>a1ab4d13347504e0ec9497137a08f0052</Anchor>
+                      <Name>main</Name>
+                      <Path>df/d04/shutdown_8cpp.html</Path>
+                      <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
                    <Node>
-                    <Name>MouseButton</Name>
-                    <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
-                    <Anchor>ac1ec3647c005eacad401b06e7e18f711</Anchor>
+                    <Name>shutdown.hpp</Name>
+                    <Path>dd/d7f/shutdown_8hpp.html</Path>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>uiserver</Name>
+                  <Path>dir_2dda5827703ef5c7d4d0ec07f4cb8309.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>main.cpp</Name>
+                    <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
                     <Subnodes>
                      <Node>
-                      <Name>MouseNone</Name>
-                      <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
-                      <Anchor>ac1ec3647c005eacad401b06e7e18f711a6d9010d3f3b828f34ee6712ca60de64a</Anchor>
+                      <Name>MouseInfo</Name>
+                      <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
+                      <Anchor>df/df2/structMouseInfo</Anchor>
+                      <Subnodes>
+                       <Node>
+                        <Name>Buttons</Name>
+                        <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
+                        <Anchor>a8280e1592140d844b20917fe3f8c7c8a</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>X</Name>
+                        <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
+                        <Anchor>adf55e9abaca87300df8284c7149f72f2</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Y</Name>
+                        <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
+                        <Anchor>a1ab4d13347504e0ec9497137a08f0052</Anchor>
+                       </Node>
+                      </Subnodes>
                      </Node>
                      <Node>
-                      <Name>Right</Name>
-                      <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
-                      <Anchor>ac1ec3647c005eacad401b06e7e18f711ad48f7af8c070184f3774c8e85854eb66</Anchor>
+                      <Name>MouseButton</Name>
+                      <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
+                      <Anchor>ac1ec3647c005eacad401b06e7e18f711</Anchor>
+                      <Subnodes>
+                       <Node>
+                        <Name>MouseNone</Name>
+                        <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
+                        <Anchor>ac1ec3647c005eacad401b06e7e18f711a6d9010d3f3b828f34ee6712ca60de64a</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Right</Name>
+                        <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
+                        <Anchor>ac1ec3647c005eacad401b06e7e18f711ad48f7af8c070184f3774c8e85854eb66</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Middle</Name>
+                        <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
+                        <Anchor>ac1ec3647c005eacad401b06e7e18f711a673e6efef9aafe98078c5552e99c923c</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Left</Name>
+                        <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
+                        <Anchor>ac1ec3647c005eacad401b06e7e18f711a9d4d8b0b72fc2659da772d761a3c5ecb</Anchor>
+                       </Node>
+                      </Subnodes>
                      </Node>
                      <Node>
-                      <Name>Middle</Name>
-                      <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
-                      <Anchor>ac1ec3647c005eacad401b06e7e18f711a673e6efef9aafe98078c5552e99c923c</Anchor>
+                      <Name>EventListener</Name>
+                      <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
+                      <Anchor>ae2eaea232aac0f46a48b528cdaa171b3</Anchor>
                      </Node>
                      <Node>
-                      <Name>Left</Name>
-                      <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
-                      <Anchor>ac1ec3647c005eacad401b06e7e18f711a9d4d8b0b72fc2659da772d761a3c5ecb</Anchor>
+                      <Name>main</Name>
+                      <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
+                      <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>ReadMouseBuffer</Name>
+                      <Path>d7/de2/apps_2system_2uiserver_2main_8cpp.html</Path>
+                      <Anchor>a99a1277631f29ee802c84b1efc92b38a</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
                    <Node>
-                    <Name>EventListener</Name>
-                    <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
-                    <Anchor>ae2eaea232aac0f46a48b528cdaa171b3</Anchor>
+                    <Name>Makefile</Name>
+                    <Path>db/d17/userspace_2apps_2system_2uiserver_2Makefile.html</Path>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>wm</Name>
+                  <Path>dir_0260d302de4e40e5a351f44c9391f7cc.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>main.cpp</Name>
+                    <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>vbe</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>d4/d68/structvbe</Anchor>
+                      <Subnodes>
+                       <Node>
+                        <Name>BitsPerPixel</Name>
+                        <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                        <Anchor>a3034fc7245aff5718f44244e2027be3d</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>BytesPerScanLine</Name>
+                        <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                        <Anchor>a553d8e119871b1f24dcb9b9326b1d105</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>VideoBaseAddr</Name>
+                        <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                        <Anchor>ab5a1fb64a0e4011a5a8350b08845a30f</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>XResolution</Name>
+                        <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                        <Anchor>a140a7180b5438e816c95bb25fefc1d35</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>YResolution</Name>
+                        <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                        <Anchor>a4efdb211cd715411827ca277666b36e1</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>ms</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>d3/d84/structms</Anchor>
+                      <Subnodes>
+                       <Node>
+                        <Name>X</Name>
+                        <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                        <Anchor>a70fb8712ef79f011984c708f4e33f85b</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Y</Name>
+                        <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                        <Anchor>a4f31844c452c485829d75f6e44a87090</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>scren</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>d4/d00/structscren</Anchor>
+                      <Subnodes>
+                       <Node>
+                        <Name>Height</Name>
+                        <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                        <Anchor>a28d37d1711e9f78f8d583e4e974aac10</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>Width</Name>
+                        <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                        <Anchor>aba4b442b537a2d4e070cb75ec387efb8</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>rgbWhite</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>a2780a42da9b66bbff1ac959c14982f24</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>alloc</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>ab609387d1ff657a83bbdb763b36d446c</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>InitScreen</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>a369dad67fb742159484bb51cf8d2efb6</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>main</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>memcpy</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>ae187e20a949f1b54aca881dd82d0bc0e</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>PaintCursor</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>af46b01e7a99d44c49e448363fd770c8f</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>PaintDesktop</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>abdc3d426211081d075084fe6914dcb90</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>PutLine</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>aee06a5c839ed04b521fb40103bbd2533</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>PutPixel</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>a6687965e4bf21836a5166b5447bf2031</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>PutRect</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>a8059eab14fb2cbbbfbacae9eae6e77b6</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>ScreenRefreshProc</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>a79b989a7863d2f0fafd51102ec2fb85a</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>g_ScreenBuffer</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>a205d015ebedc76a4daa3e5239bcbf33c</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>Mouse</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>a9804638ae660f1e3747e536a43dca2ed</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>Screen</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>ad47cdae7e6d529929ad549b6acf31722</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>ScreenBackBuffer</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>a083a3fd025089f3303d56e3248687e17</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>ScreenBufferSize</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>aeac07a8a03d692e1d02f0cdca0b977d6</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>ScreenZBuffer</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>a67d6d04a7b753154ca64c4bd26573e80</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>VbeModeInfoBlock</Name>
+                      <Path>df/daa/apps_2system_2wm_2main_8cpp.html</Path>
+                      <Anchor>a589361590b1e699466adef5b027411e3</Anchor>
+                     </Node>
+                    </Subnodes>
                    </Node>
                    <Node>
-                    <Name>main</Name>
-                    <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
-                    <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>ReadMouseBuffer</Name>
-                    <Path>d8/df2/apps_2uiserver_2main_8cpp.html</Path>
-                    <Anchor>a99a1277631f29ee802c84b1efc92b38a</Anchor>
+                    <Name>Makefile</Name>
+                    <Path>d4/d09/userspace_2apps_2system_2wm_2Makefile.html</Path>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>Makefile</Name>
-                  <Path>df/dff/userspace_2apps_2uiserver_2Makefile.html</Path>
+                  <Path>d9/d00/userspace_2apps_2system_2Makefile.html</Path>
                  </Node>
                 </Subnodes>
                </Node>
                <Node>
-                <Name>wm</Name>
-                <Path>dir_c687bed9c90a881988e85c271bfc220e.html</Path>
+                <Name>user</Name>
+                <Path>dir_e03a5cae35d8570cfe742fca142e86eb.html</Path>
                 <Subnodes>
                  <Node>
-                  <Name>main.cpp</Name>
-                  <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
+                  <Name>brainfuckcompiler</Name>
+                  <Path>dir_91dcce37871b7f8fd6ad3d714e095cc9.html</Path>
                   <Subnodes>
                    <Node>
-                    <Name>vbe</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>d4/d68/structvbe</Anchor>
+                    <Name>brainfuck.c</Name>
+                    <Path>d0/d2b/brainfuck_8c.html</Path>
                     <Subnodes>
                      <Node>
-                      <Name>BitsPerPixel</Name>
-                      <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                      <Anchor>a3034fc7245aff5718f44244e2027be3d</Anchor>
+                      <Name>brainfuck</Name>
+                      <Path>d0/d2b/brainfuck_8c.html</Path>
+                      <Anchor>a92dc3f71fd6adfd1bb72778ba0ad272c</Anchor>
                      </Node>
                      <Node>
-                      <Name>BytesPerScanLine</Name>
-                      <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                      <Anchor>a553d8e119871b1f24dcb9b9326b1d105</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>VideoBaseAddr</Name>
-                      <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                      <Anchor>ab5a1fb64a0e4011a5a8350b08845a30f</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>XResolution</Name>
-                      <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                      <Anchor>a140a7180b5438e816c95bb25fefc1d35</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>YResolution</Name>
-                      <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                      <Anchor>a4efdb211cd715411827ca277666b36e1</Anchor>
+                      <Name>main</Name>
+                      <Path>d0/d2b/brainfuck_8c.html</Path>
+                      <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
                    <Node>
-                    <Name>ms</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>d3/d84/structms</Anchor>
-                    <Subnodes>
-                     <Node>
-                      <Name>X</Name>
-                      <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                      <Anchor>a70fb8712ef79f011984c708f4e33f85b</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>Y</Name>
-                      <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                      <Anchor>a4f31844c452c485829d75f6e44a87090</Anchor>
-                     </Node>
-                    </Subnodes>
-                   </Node>
-                   <Node>
-                    <Name>scren</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>d4/d00/structscren</Anchor>
-                    <Subnodes>
-                     <Node>
-                      <Name>Height</Name>
-                      <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                      <Anchor>a28d37d1711e9f78f8d583e4e974aac10</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>Width</Name>
-                      <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                      <Anchor>aba4b442b537a2d4e070cb75ec387efb8</Anchor>
-                     </Node>
-                    </Subnodes>
-                   </Node>
-                   <Node>
-                    <Name>rgbWhite</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>a2780a42da9b66bbff1ac959c14982f24</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>alloc</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>ab609387d1ff657a83bbdb763b36d446c</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>InitScreen</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>a369dad67fb742159484bb51cf8d2efb6</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>main</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>memcpy</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>ae187e20a949f1b54aca881dd82d0bc0e</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>PaintCursor</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>af46b01e7a99d44c49e448363fd770c8f</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>PaintDesktop</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>abdc3d426211081d075084fe6914dcb90</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>PutLine</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>aee06a5c839ed04b521fb40103bbd2533</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>PutPixel</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>a6687965e4bf21836a5166b5447bf2031</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>PutRect</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>a8059eab14fb2cbbbfbacae9eae6e77b6</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>ScreenRefreshProc</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>a79b989a7863d2f0fafd51102ec2fb85a</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>g_ScreenBuffer</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>a205d015ebedc76a4daa3e5239bcbf33c</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Mouse</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>a9804638ae660f1e3747e536a43dca2ed</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Screen</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>ad47cdae7e6d529929ad549b6acf31722</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>ScreenBackBuffer</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>a083a3fd025089f3303d56e3248687e17</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>ScreenBufferSize</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>aeac07a8a03d692e1d02f0cdca0b977d6</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>ScreenZBuffer</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>a67d6d04a7b753154ca64c4bd26573e80</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>VbeModeInfoBlock</Name>
-                    <Path>da/dd3/apps_2wm_2main_8cpp.html</Path>
-                    <Anchor>a589361590b1e699466adef5b027411e3</Anchor>
+                    <Name>Makefile</Name>
+                    <Path>df/d39/userspace_2apps_2user_2brainfuckcompiler_2Makefile.html</Path>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>Makefile</Name>
-                  <Path>da/d84/userspace_2apps_2wm_2Makefile.html</Path>
+                  <Path>da/de3/userspace_2apps_2user_2Makefile.html</Path>
                  </Node>
                 </Subnodes>
                </Node>
@@ -42836,12 +42871,12 @@
                      </Node>
                      <Node>
                       <Name>CWK_STYLE_WINDOWS</Name>
-                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
                       <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35a68d37c9e4d4aead2f08321a484ba2da5</Anchor>
                      </Node>
                      <Node>
                       <Name>CWK_STYLE_UNIX</Name>
-                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
                       <Anchor>af41b6d6cf436770b89a71c7b0dfb8c35ac8ff48d59e9f7ee95937a81d9eb550e2</Anchor>
                      </Node>
                      <Node>
@@ -42878,17 +42913,17 @@
                      </Node>
                      <Node>
                       <Name>CWK_NORMAL</Name>
-                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
                       <Anchor>a6108f90d2ae646d1b255bea8be6cd66cac059231d4bfff9efb6c9ca8500fd1905</Anchor>
                      </Node>
                      <Node>
                       <Name>CWK_CURRENT</Name>
-                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
                       <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca1f03d98e62d4069cca7110ef82664ff7</Anchor>
                      </Node>
                      <Node>
                       <Name>CWK_BACK</Name>
-                      <Path>d3/d51/userspace_2apps_2monoton_2cwalk_8h.html</Path>
+                      <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>
                       <Anchor>a6108f90d2ae646d1b255bea8be6cd66ca7f5cc99da0786d172da65e718652357b</Anchor>
                      </Node>
                      <Node>
