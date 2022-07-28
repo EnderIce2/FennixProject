@@ -53,7 +53,7 @@ void Dock()
     }
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     syscall_createThread((long)Desktop, 0, 0);
     syscall_createThread((long)Dock, 0, 0);

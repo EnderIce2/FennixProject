@@ -1,6 +1,6 @@
 long *stckptr;
 static char *argv[20];
-extern int main(int argc, char **argv);
+extern int main(int argc, char *argv[]);
 
 void _start()
 {

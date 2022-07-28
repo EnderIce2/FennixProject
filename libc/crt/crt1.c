@@ -2,7 +2,7 @@
 
 long *stckptr;
 static char *argv[20];
-extern int main(int argc, char **argv);
+extern int main(int argc, char *argv[]);
 extern void __cxa_finalize(void *f);
 
 void _start()

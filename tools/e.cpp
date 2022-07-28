@@ -201,7 +201,7 @@ static const char *pagefault_message[] = {
     "User process tried to write to a non-present page entry",
     "User process tried to write a page and caused a protection fault"};
 
-int main(char argc, char **argv)
+int main(char argc, char *argv[])
 {
     clear;
 

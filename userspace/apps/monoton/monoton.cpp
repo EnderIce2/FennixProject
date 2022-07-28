@@ -346,7 +346,7 @@ void ParseBuffer(char *Buffer)
 
 static bool AlreadyInitialized = false;
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     if (AlreadyInitialized)
     {

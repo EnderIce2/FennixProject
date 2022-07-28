@@ -10,7 +10,7 @@ struct initrd_header
     unsigned int length;
 };
 
-int main(char argc, char **argv)
+int main(char argc, char *argv[])
 {
     int nheaders = (argc - 1) / 2;
     struct initrd_header headers[64];

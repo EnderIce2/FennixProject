@@ -31,7 +31,7 @@ void EventListener()
     }
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     uint64_t address = syscall_displayAddress();
     uint64_t width = syscall_displayWidth();

@@ -111,7 +111,7 @@ void InitScreen()
     syscall_createThread((uint64_t)ScreenRefreshProc, 0, 0);
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     PutRect(0, 0, Screen.Width, Screen.Height, 0x282828);
     /* ... show login screen and wait for user input ... */

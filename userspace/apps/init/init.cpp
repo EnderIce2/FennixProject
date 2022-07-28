@@ -7,7 +7,7 @@ void monotasking_shell_exit()
     // TODO: cleanup everything and shutdown beacuse this process should not be killed
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     syscall_dbg(0x3F8, (char *)"[INIT] This is a test so we can know if the syscalls are working as expected.\n");
     // mono 1 - multi 2

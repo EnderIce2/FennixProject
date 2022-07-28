@@ -226,7 +226,7 @@ void DisplayPixelTest()
     sleep(10);
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     CurrentDisplay->Clear();
     SierpinskiTriangle(2);
