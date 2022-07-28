@@ -312,12 +312,50 @@ void ParseBuffer(char *Buffer)
     }
     else
     {
-        char filepath[128] = {'\0'};
-        strcpy(filepath, "/system/");
+        int tried = 0;
+    FilesSearch:
+        const char *searchpath[] = {
+            "/system/",
+            "/home/default/apps/",
+            "/home/default/games/",
+        };
+        char filepath[256] = {'\0'};
+        switch (tried)
+        {
+        case 0:
+            strcpy(filepath, searchpath[0]);
+            break;
+        case 1:
+            strcpy(filepath, searchpath[1]);
+            break;
+        case 2:
+            strcpy(filepath, searchpath[2]);
+            break;
+        case 3:
+            strcat(filepath, "/home/");
+            strcat(filepath, usr());
+            strcat(filepath, "/apps/");
+            break;
+        case 4:
+            strcat(filepath, "/home/");
+            strcat(filepath, usr());
+            strcat(filepath, "/games/");
+            break;
+        default:
+            break;
+        }
+        tried++;
         strcat(filepath, Buffer);
+        WriteSysDebugger("[MonotonShell] Searching file %s...\n", filepath);
         File *f = (File *)syscall_FileOpen(filepath);
         if (f->Status != FileStatus::OK)
-            f = (File *)syscall_FileOpenWithParent(Buffer, CurrentPath);
+        {
+            syscall_FileClose(f);
+            if (tried < 5)
+                goto FilesSearch;
+            else
+                f = (File *)syscall_FileOpenWithParent(Buffer, CurrentPath);
+        }
 
         if (f->Status == FileStatus::OK)
         {
