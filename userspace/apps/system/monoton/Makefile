@@ -1,18 +1,18 @@
-include ../../../Makefile.conf
+include ../../../../Makefile.conf
 
 NAME=monoton
-OUTPUT_DIR=../../../resources/initrd/system/
+OUTPUT_DIR=../../../../resources/initrd/system/
 
-CC = ../../../$(COMPILER_PATH)/$(COMPILER_ARCH)gcc
-LD = ../../../$(COMPILER_PATH)/$(COMPILER_ARCH)ld
+CC = ../../../../$(COMPILER_PATH)/$(COMPILER_ARCH)gcc
+LD = ../../../../$(COMPILER_PATH)/$(COMPILER_ARCH)ld
 
 C_SOURCES = $(shell find ./ -type f -name '*.c')
 CPP_SOURCES = $(shell find ./ -type f -name '*.cpp')
 OBJ = $(C_SOURCES:.c=.o) $(CPP_SOURCES:.cpp=.o)
-HEADERS = $(sort $(dir $(wildcard ../../../libc/include/*)))
-INCLUDE_DIR = ../../../libc/include
+HEADERS = $(sort $(dir $(wildcard ../../../../libc/include/*)))
+INCLUDE_DIR = ../../../../libc/include
 
-LDFLAGS := --sysroot=../../../resources/initrd/system/
+LDFLAGS := --sysroot=../../../../resources/initrd/system/
 CFLAGS := -fPIC -I$(INCLUDE_DIR)
 
 build: $(NAME)

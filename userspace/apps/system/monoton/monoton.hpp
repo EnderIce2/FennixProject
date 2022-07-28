@@ -1,6 +1,6 @@
 #pragma once
-#include "../../libs/monoton/monotonlib.h"
-#include "../../libs/scparse/scparse.h"
+#include "../../../libs/monoton/monotonlib.h"
+#include "../../../libs/scparse/scparse.h"
 #include <string.h>
 #include <syscalls.h>
 
