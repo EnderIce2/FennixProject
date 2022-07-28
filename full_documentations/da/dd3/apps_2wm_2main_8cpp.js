@@ -18,7 +18,7 @@ var apps_2wm_2main_8cpp =
     [ "rgbWhite", "da/dd3/apps_2wm_2main_8cpp.html#a2780a42da9b66bbff1ac959c14982f24", null ],
     [ "alloc", "da/dd3/apps_2wm_2main_8cpp.html#ab609387d1ff657a83bbdb763b36d446c", null ],
     [ "InitScreen", "da/dd3/apps_2wm_2main_8cpp.html#a369dad67fb742159484bb51cf8d2efb6", null ],
-    [ "main", "da/dd3/apps_2wm_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627", null ],
+    [ "main", "da/dd3/apps_2wm_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97", null ],
     [ "memcpy", "da/dd3/apps_2wm_2main_8cpp.html#ae187e20a949f1b54aca881dd82d0bc0e", null ],
     [ "PaintCursor", "da/dd3/apps_2wm_2main_8cpp.html#af46b01e7a99d44c49e448363fd770c8f", null ],
     [ "PaintDesktop", "da/dd3/apps_2wm_2main_8cpp.html#abdc3d426211081d075084fe6914dcb90", null ],

@@ -82,7 +82,7 @@ var NAVTREEINDEX =
 "d7/d62/floppy_8h.html",
 "d7/db0/include_2elf_8h.html#a4324ae029dfd1967979b984a2f3e14e4",
 "d7/dfc/TSC_8cpp.html#a396ab2f9bf55abcf2fe2740343027f61",
-"d8/df2/apps_2uiserver_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",
+"d8/df2/apps_2uiserver_2main_8cpp.html#a1ab4d13347504e0ec9497137a08f0052",
 "d9/de0/DSDT_8cpp.html#aeb8431f0cf8dffcf3da55607fb0760b7",
 "da/db9/classACPI_1_1MADT.html#ab8678c6dd4e041de94179d5dc1951914",
 "db/d19/libc_2src_2printf_8c.html#a9d4a10dcdc829ae96fb79bb912da57e2",

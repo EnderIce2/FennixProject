@@ -12,6 +12,6 @@ var apps_2uiserver_2main_8cpp =
       [ "Left", "d8/df2/apps_2uiserver_2main_8cpp.html#ac1ec3647c005eacad401b06e7e18f711a9d4d8b0b72fc2659da772d761a3c5ecb", null ]
     ] ],
     [ "EventListener", "d8/df2/apps_2uiserver_2main_8cpp.html#ae2eaea232aac0f46a48b528cdaa171b3", null ],
-    [ "main", "d8/df2/apps_2uiserver_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627", null ],
+    [ "main", "d8/df2/apps_2uiserver_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97", null ],
     [ "ReadMouseBuffer", "d8/df2/apps_2uiserver_2main_8cpp.html#a99a1277631f29ee802c84b1efc92b38a", null ]
 ];
