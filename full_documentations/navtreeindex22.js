@@ -1,5 +1,8 @@
 var NAVTREEINDEX22 =
 {
+"dd/d4d/structlimine__file.html#a557ab86b3cac99a59c9f5fc4de645df3":[4,0,74,5],
+"dd/d4d/structlimine__file.html#a76f0d8f40ecbfb3fad45d035baf4cdc6":[4,0,74,7],
+"dd/d4d/structlimine__file.html#a808aa0304880f6cb22da41a139a33ef2":[4,0,74,9],
 "dd/d4d/structlimine__file.html#a88f3e551b32e49b182f9e47b215fe20b":[4,0,74,8],
 "dd/d4d/structlimine__file.html#a949f13c2f063dee81d733bbf380c16fb":[4,0,74,12],
 "dd/d4d/structlimine__file.html#a9a712fe0344396f6d48113ad15b5dd0d":[4,0,74,3],
@@ -110,12 +113,12 @@ var NAVTREEINDEX22 =
 "dd/dcb/classKernelSymbols_1_1Symbols.html#a1055f68b87533c7ab230c982f6beb503":[4,0,11,0,3],
 "dd/dcb/classKernelSymbols_1_1Symbols.html#a3623ac61053ef633111eecced43cd943":[5,0,0,5,24,1,0],
 "dd/dcb/classKernelSymbols_1_1Symbols.html#a3623ac61053ef633111eecced43cd943":[4,0,11,0,0,0],
-"dd/dcb/classKernelSymbols_1_1Symbols.html#a9550f81f742191e2a11a7cb1eadfec29":[5,0,0,5,24,1,1],
 "dd/dcb/classKernelSymbols_1_1Symbols.html#a9550f81f742191e2a11a7cb1eadfec29":[4,0,11,0,0,1],
+"dd/dcb/classKernelSymbols_1_1Symbols.html#a9550f81f742191e2a11a7cb1eadfec29":[5,0,0,5,24,1,1],
 "dd/dcb/classKernelSymbols_1_1Symbols.html#ac2f615392eaee129c2e5e9cbe9d7720f":[4,0,11,0,2],
 "dd/dcb/classKernelSymbols_1_1Symbols.html#ae1da51bf12af9f3de3d21acf542f78d5":[4,0,11,0,1],
-"dd/dcb/classKernelSymbols_1_1Symbols.html#dd/d09/structKernelSymbols_1_1Symbols_1_1SymbolTable":[5,0,0,5,24,1],
 "dd/dcb/classKernelSymbols_1_1Symbols.html#dd/d09/structKernelSymbols_1_1Symbols_1_1SymbolTable":[4,0,11,0,0],
+"dd/dcb/classKernelSymbols_1_1Symbols.html#dd/d09/structKernelSymbols_1_1Symbols_1_1SymbolTable":[5,0,0,5,24,1],
 "dd/dd0/classFileSystem_1_1Serial.html":[4,0,8,11],
 "dd/dd0/classFileSystem_1_1Serial.html#a197b7c1e38a9bac6b2f9e254444b07df":[4,0,8,11,0],
 "dd/dd0/classFileSystem_1_1Serial.html#a9c2daff22fc6e7d23b18e70e87a378b7":[4,0,8,11,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX22 =
 "dd/de7/recovery_8hpp.html":[5,0,0,12,1],
 "dd/de7/recovery_8hpp_source.html":[5,0,0,12,1],
 "dd/df2/structlimine__module__response.html":[4,0,88],
-"dd/df2/structlimine__module__response.html#a115826eb71620af287fb0376f75d6895":[4,0,88,1],
-"dd/df2/structlimine__module__response.html#af2cf2ea18a8c4b5a4e0186308d7e1701":[4,0,88,0],
-"dd/df2/structlimine__module__response.html#afa2734dc4c7cf4e2b5a491551a7f5a43":[4,0,88,2],
-"dd/df4/structstivale2__tag.html":[4,0,201]
+"dd/df2/structlimine__module__response.html#a115826eb71620af287fb0376f75d6895":[4,0,88,1]
 };

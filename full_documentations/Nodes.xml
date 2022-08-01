@@ -14132,6 +14132,11 @@
                   <Anchor>ad75e6e6240aeaf933d10434c64927e56</Anchor>
                  </Node>
                  <Node>
+                  <Name>SetKernelPageTableAddress</Name>
+                  <Path>da/d11/IDT_8c.html</Path>
+                  <Anchor>a3010f07cbb29bf488ae3d6cf092aefa9</Anchor>
+                 </Node>
+                 <Node>
                   <Name>unregister_interrupt_handler</Name>
                   <Path>da/d11/IDT_8c.html</Path>
                   <Anchor>a83135d314c4063e187c7d42b7847dc2d</Anchor>
@@ -14150,6 +14155,11 @@
                   <Name>interrupt_handlers</Name>
                   <Path>da/d11/IDT_8c.html</Path>
                   <Anchor>a71fc4f440b7ae2c9a301ad72ab18fa5f</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>KPML4Address</Name>
+                  <Path>da/d11/IDT_8c.html</Path>
+                  <Anchor>a70261d75a55609b04616591fe85b227b</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -14171,6 +14181,11 @@
                   <Name>set_idt_entry</Name>
                   <Path>d4/d35/idt_8h.html</Path>
                   <Anchor>aacc8cf78461c5f81928c6b5eb6d772b1</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>SetKernelPageTableAddress</Name>
+                  <Path>d4/d35/idt_8h.html</Path>
+                  <Anchor>a3f3a4e085143aa8f9f0d19425eb778e4</Anchor>
                  </Node>
                  <Node>
                   <Name>unregister_interrupt_handler</Name>

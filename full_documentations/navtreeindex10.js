@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"d5/dba/multiboot2_8h.html#abc2579d314db9a050c48043a1b7f5ea9":[5,0,0,5,0,0,3,36,3],
 "d5/dba/multiboot2_8h.html#abc554da6e5184d34e039b551177434ba":[5,0,0,5,0,0,3,46],
 "d5/dba/multiboot2_8h.html#abdadfb40a63d8fbf8b2771c3f70b344c":[5,0,0,5,0,0,3,26,3],
 "d5/dba/multiboot2_8h.html#abe83621d3f54ab2868c75a6396b25729":[5,0,0,5,0,0,3,26,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#abbf7d9b13d391939c2aabd19eaad4e65":[5,0,0,5,0,0,5,62],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#abbfdee21e2ef126d8ac5ca998489de60":[5,0,0,5,0,0,5,31,0],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#ac018f3f7656b9f4861b6cdcada3dc785":[5,0,0,5,0,0,5,64],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#ac287c4f155678957471ee286f1f2b7e7":[5,0,0,5,0,0,5,19,0],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#ac355034dfb2846a18e62daf8e922e52d":[5,0,0,5,0,0,5,93]
+"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#ac287c4f155678957471ee286f1f2b7e7":[5,0,0,5,0,0,5,19,0]
 };

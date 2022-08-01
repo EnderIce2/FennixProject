@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"d6/da2/UserCrashHandler_8cpp.html#a398cc7eb9242509878d658cf3169d1ca":[5,0,0,37,0],
 "d6/da2/UserCrashHandler_8cpp.html#a412158419ae12fe27427143f09bce82b":[5,0,0,37,1],
 "d6/da2/UserCrashHandler_8cpp_source.html":[5,0,0,37],
 "d6/da6/structstivale2__anchor.html":[4,0,165],
@@ -155,8 +156,8 @@ var NAVTREEINDEX12 =
 "d6/de3/userspace_2apps_2system_2fesktop_2Makefile_source.html":[5,0,2,0,1,0,1],
 "d6/df2/libs_2proclib_2main_8cpp.html":[5,0,2,2,6,0],
 "d6/df2/libs_2proclib_2main_8cpp_source.html":[5,0,2,2,6,0],
-"d6/df5/namespaceFileSystem.html":[3,0,10],
 "d6/df5/namespaceFileSystem.html":[4,0,8],
+"d6/df5/namespaceFileSystem.html":[3,0,10],
 "d6/df5/namespaceFileSystem.html#a0f704d8bf39664615c99f2215f3e57fe":[5,0,0,5,13,1,3],
 "d6/df5/namespaceFileSystem.html#a1479b4a247102b45f2ea98abf7356afd":[5,0,0,5,13,0,7],
 "d6/df5/namespaceFileSystem.html#a1e2b4b2ba79bc48181134dc0381a95ee":[5,0,0,5,13,0,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX12 =
 "d7/d70/include_2cpuid_8h.html#a4a8f5860c46feefe309f61d2dbc1c417":[5,0,0,5,5,14],
 "d7/d70/include_2cpuid_8h.html#a4c65f683bafbe7ac750b02249275bcf3":[5,0,0,5,5,13],
 "d7/d70/include_2cpuid_8h.html#a4ec3657d125dcbc089e85e59c1f203e9":[5,0,0,5,5,52],
-"d7/d70/include_2cpuid_8h.html#a4fd18295e0816fdd1fbfe3baa481764f":[5,0,0,5,5,37],
-"d7/d70/include_2cpuid_8h.html#a500f49e94c2df9199c46fb326fc37eef":[5,0,0,5,5,11]
+"d7/d70/include_2cpuid_8h.html#a4fd18295e0816fdd1fbfe3baa481764f":[5,0,0,5,5,37]
 };

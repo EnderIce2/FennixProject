@@ -4900,6 +4900,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>SetKernelPageTableAddress</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>da/d11/IDT_8c.html</Path>
+    <Anchor>a3010f07cbb29bf488ae3d6cf092aefa9</Anchor>
+    <DeclaredIn>IDT.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>__attribute__</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -5290,6 +5300,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>KPML4Address</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>da/d11/IDT_8c.html</Path>
+    <Anchor>a70261d75a55609b04616591fe85b227b</Anchor>
+    <DeclaredIn>IDT.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>interrupt_handlers</Name>
       <APILanguage>c</APILanguage>
       <Type>data</Type>
@@ -5317,6 +5337,16 @@
     <Path>da/d11/IDT_8c.html</Path>
     <Anchor>a1383c2a6a0b52fd26255f10b6a845445</Anchor>
     <DeclaredIn>IDT.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetKernelPageTableAddress</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d4/d35/idt_8h.html</Path>
+    <Anchor>a3f3a4e085143aa8f9f0d19425eb778e4</Anchor>
+    <DeclaredIn>idt.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>

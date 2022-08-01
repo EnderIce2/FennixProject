@@ -41,8 +41,10 @@ var IDT_8c =
     [ "init_idt", "da/d11/IDT_8c.html#a35fe413107af682030ab7a4b6dff19b8", null ],
     [ "register_interrupt_handler", "da/d11/IDT_8c.html#a69d8f1fbf39714db28369bd410410867", null ],
     [ "set_idt_entry", "da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56", null ],
+    [ "SetKernelPageTableAddress", "da/d11/IDT_8c.html#a3010f07cbb29bf488ae3d6cf092aefa9", null ],
     [ "unregister_interrupt_handler", "da/d11/IDT_8c.html#a83135d314c4063e187c7d42b7847dc2d", null ],
     [ "idt_entries", "da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca", null ],
     [ "idtr", "da/d11/IDT_8c.html#a1383c2a6a0b52fd26255f10b6a845445", null ],
-    [ "interrupt_handlers", "da/d11/IDT_8c.html#a71fc4f440b7ae2c9a301ad72ab18fa5f", null ]
+    [ "interrupt_handlers", "da/d11/IDT_8c.html#a71fc4f440b7ae2c9a301ad72ab18fa5f", null ],
+    [ "KPML4Address", "da/d11/IDT_8c.html#a70261d75a55609b04616591fe85b227b", null ]
 ];

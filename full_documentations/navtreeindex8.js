@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bca236c641effe6e7d07fdb1ba9f3d3bc78":[5,0,2,2,7,2,0,133],
 "d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bca24526fa0cdc90a2d7683f35e7f6f60c0":[5,0,2,2,7,2,0,169],
 "d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bca27e48b69a7399d4c0d5c2ab9365cb1a6":[5,0,2,2,7,2,0,24],
 "d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bca296664004f82174c5c2f6864e3ea83f4":[5,0,2,2,7,2,0,45],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "d5/d22/userspace_2drivers_2peripheral_2keyboard_2Makefile_source.html":[5,0,2,1,2,0,1],
 "d5/d4a/gdt_8h.html":[5,0,0,1,10],
 "d5/d4a/gdt_8h.html#a1b5a711dc01ab783bb986902240f1cce":[5,0,0,1,10,1],
-"d5/d4a/gdt_8h.html#a263ede50deff86cb7b6bf618f3dd26e7":[5,0,0,1,10,6],
-"d5/d4a/gdt_8h.html#a274c8baf8fc6f138370405f8c85696ba":[5,0,0,1,10,5]
+"d5/d4a/gdt_8h.html#a263ede50deff86cb7b6bf618f3dd26e7":[5,0,0,1,10,6]
 };

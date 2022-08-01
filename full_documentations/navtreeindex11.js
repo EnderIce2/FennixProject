@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#ac355034dfb2846a18e62daf8e922e52d":[5,0,0,5,0,0,5,93],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#ac3c9ceb9612537a02b4a9f33c6ea5a38":[5,0,0,5,0,0,5,97],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#ac4a356fdc65c442d3b690af90a8b6c90":[5,0,0,5,0,0,5,44],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#ac5a9ce0d95537f4b5382547118e7185f":[5,0,0,5,0,0,5,39],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "d6/d9a/monotonlib_8cpp.html":[5,0,2,2,5,1],
 "d6/d9a/monotonlib_8cpp_source.html":[5,0,2,2,5,1],
 "d6/da2/UserCrashHandler_8cpp.html":[5,0,0,37],
-"d6/da2/UserCrashHandler_8cpp.html#a241bd6de09bb7ad731385de12cf6790a":[5,0,0,37,2],
-"d6/da2/UserCrashHandler_8cpp.html#a398cc7eb9242509878d658cf3169d1ca":[5,0,0,37,0]
+"d6/da2/UserCrashHandler_8cpp.html#a241bd6de09bb7ad731385de12cf6790a":[5,0,0,37,2]
 };

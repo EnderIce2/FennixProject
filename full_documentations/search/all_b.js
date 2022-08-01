@@ -213,5 +213,6 @@ var searchData=
   ['killme_1815',['KillMe',['../d5/da2/classTasking_1_1Monotasking.html#aca278385dfe53ca1b3e3bcdd82df0add',1,'Tasking::Monotasking']]],
   ['kind_1816',['kind',['../d0/d1f/ubsan_8h.html#a20fe55e8840e6d55cd596609613cbc5c',1,'type_descriptor::kind()'],['../d0/d1f/ubsan_8h.html#aaa398000599d719b9b1fcca18b24d259',1,'invalid_builtin_data::kind()']]],
   ['kmalloc_1817',['kmalloc',['../da/ddb/heap_8h.html#aa700d7a085f4fa2439650b7675228b88',1,'heap.h']]],
-  ['krealloc_1818',['krealloc',['../da/ddb/heap_8h.html#a2c1f3b7e5e4c2c928206834a68a75b6c',1,'heap.h']]]
+  ['kpml4address_1818',['KPML4Address',['../da/d11/IDT_8c.html#a70261d75a55609b04616591fe85b227b',1,'IDT.c']]],
+  ['krealloc_1819',['krealloc',['../da/ddb/heap_8h.html#a2c1f3b7e5e4c2c928206834a68a75b6c',1,'heap.h']]]
 ];

@@ -1,5 +1,6 @@
 var NAVTREEINDEX15 =
 {
+"d7/dfc/kernel_2include_2types_8h.html#aee637f34b1af3b758f29ea5de4a08a70":[5,0,0,5,27,32],
 "d7/dfc/kernel_2include_2types_8h.html#aee8709ee07ed0f36dd776f41b1fe9ee3":[5,0,0,5,27,7],
 "d7/dfc/kernel_2include_2types_8h.html#af9c7b957c3a7b9662eb72a29a096c283":[5,0,0,5,27,19],
 "d7/dfc/kernel_2include_2types_8h.html#afa99ec4acc4ecb2dc3c2d05da15d0e3f":[5,0,0,5,27,24],
@@ -223,8 +224,8 @@ var NAVTREEINDEX15 =
 "d9/d12/classFileSystem_1_1Initrd.html#acfc3d93f7a125978912f1f3195c0e2fe":[5,0,0,5,13,10,0],
 "d9/d12/classFileSystem_1_1Initrd.html#d9/d9f/structFileSystem_1_1Initrd_1_1InitrdFileHeader":[4,0,8,6,0],
 "d9/d12/classFileSystem_1_1Initrd.html#d9/d9f/structFileSystem_1_1Initrd_1_1InitrdFileHeader":[5,0,0,5,13,11],
-"d9/d12/classFileSystem_1_1Initrd.html#de/dcb/structFileSystem_1_1Initrd_1_1InitrdHeader":[5,0,0,5,13,10],
 "d9/d12/classFileSystem_1_1Initrd.html#de/dcb/structFileSystem_1_1Initrd_1_1InitrdHeader":[4,0,8,6,1],
+"d9/d12/classFileSystem_1_1Initrd.html#de/dcb/structFileSystem_1_1Initrd_1_1InitrdHeader":[5,0,0,5,13,10],
 "d9/d26/PCI_8cpp.html":[5,0,0,27],
 "d9/d26/PCI_8cpp.html#a3771e632b9b1a69e13f64a19446a4df0":[5,0,0,27,1],
 "d9/d26/PCI_8cpp.html#a5b7d018a691c9ecb0cc34e9fdfab05f6":[5,0,0,27,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX15 =
 "d9/d3e/namespaceTasking.html#a1faa55a1d6d4b6ee9cbe9b870d637e9c":[5,0,0,5,16,0,11],
 "d9/d3e/namespaceTasking.html#a22bf4cfc01a8c9fdbe86b403f3986ca2":[5,0,0,5,16,0,2],
 "d9/d3e/namespaceTasking.html#a2e0c3210aac25551eebf061b8822e883":[5,0,0,5,16,0,14],
-"d9/d3e/namespaceTasking.html#a421105ffe89668303be37f2b64a0b748":[5,0,0,5,16,0,7],
-"d9/d3e/namespaceTasking.html#a45d898ad60449841c386e15638aaf410":[5,0,0,5,16,0,13]
+"d9/d3e/namespaceTasking.html#a421105ffe89668303be37f2b64a0b748":[5,0,0,5,16,0,7]
 };
