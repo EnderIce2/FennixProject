@@ -87,7 +87,7 @@ void ParseBuffer(char *Buffer)
     {
         mono->print("Monoton Shell for Fennix\n");
         mono->print("------------------------\n");
-        mono->print("help  clear  echo  ls  cat  cd  finfo\n");
+        mono->print("help  clear  echo  ls  cat  cd  finfo elfinfo\n");
         mono->print("For more information, use [command] --help");
     }
     else if (strcmp(Buffer, "clear") == 0)
@@ -306,6 +306,23 @@ void ParseBuffer(char *Buffer)
             itoa(node->Length, str, 10);
             mono->print(str);
             mono->printchar('\n');
+        }
+        syscall_FileClose(node);
+        free(path);
+    }
+    else if (strncmp(Buffer, "elfinfo", 7) == 0)
+    {
+        char *arg = trimwhitespace(Buffer + 2);
+        char *path = (char *)malloc(strlen(arg) + 1);
+        cwk_path_normalize(arg, path, strlen(arg) + 1);
+        File *node = (File *)syscall_FileOpenWithParent(path, CurrentPath);
+        if (!node)
+        {
+            mono->print("No such file or directory!");
+        }
+        else
+        {
+            mono->print("not implemented yet");
         }
         syscall_FileClose(node);
         free(path);
