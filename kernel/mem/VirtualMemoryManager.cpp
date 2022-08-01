@@ -89,9 +89,11 @@ void *PageTableManager::umemcpy(void *Destination, void *Source, uint64_t Length
     // TODO: Check if the memory is copied to the right location
     if (Operation == CopyOperation::FromUser)
     {
+        fixme("Copy from user");
     }
     else if (Operation == CopyOperation::ToUser)
     {
+        fixme("Copy to user");
     }
 
     if (cpu_feature(CPUID_FEAT_RDX_SMAP))
