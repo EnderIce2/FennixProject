@@ -12,6 +12,14 @@
 #include <asm.h>
 #include <io.h>
 
+void *KPML4Address = NULL;
+
+void SetKernelPageTableAddress(void *Address)
+{
+    KPML4Address = Address;
+    trace("Kernel page table address set to %p", KPML4Address);
+}
+
 __attribute__((naked, used, no_stack_protector)) void exception_handler_helper()
 {
     // TODO: Switching page table if ring 0 is not tested! (source: https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm)
@@ -22,12 +30,18 @@ __attribute__((naked, used, no_stack_protector)) void exception_handler_helper()
 
         "cmp %rax, [0x8]\n"        // compare rax with 0x8
         "jne .NoPageTableUpdate\n" // if not, skip to next instruction
-        "push %rax\n"              // push rax
-        "mov $0x100000, %rax\n"    // set rax to 0x100000 (the first page of memory)
-        "mov %rax, %cr3\n"         // set page directory (if the pd is not 0x100000, we have a problem)
-        "pop %rax\n"               // pop rax
-        ".NoPageTableUpdate:\n"    // label for jumping to next instruction
-        "popq %rax\n"              // pop rax
+        "push %rax\n");            // push rax
+
+    // "mov $0x100000, %rax\n"    // set rax to kernel pml4 of memory
+    asm volatile("mov %[KPML4Address], %%rax" /* Not sure if it will work but I didn't had any issues. */
+                 :
+                 : [KPML4Address] "q"(KPML4Address)
+                 : "memory");
+
+    asm("mov %rax, %cr3\n"      // set page directory
+        "pop %rax\n"            // pop rax
+        ".NoPageTableUpdate:\n" // label for jumping to next instruction
+        "popq %rax\n"           // pop rax
 
         // push all registers
         "pushq %rax\n"
