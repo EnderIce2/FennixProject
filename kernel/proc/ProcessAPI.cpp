@@ -229,64 +229,97 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
         }
         if (header->e_ident[EI_CLASS] == ELFCLASS64)
         {
-            debug("64 bit ELF file found.");
+            if (header->e_type == ET_EXEC)
+            {
+                debug("64 bit ELF file found.");
 
-            if (Elevation == ELEVATION::User)
-            {
-                uint64_t MappedAddrs = (uint64_t)FileBuffer;
-                for (uint64_t i = 0; i < file->Node->Length / 0x1000 + 1; i++)
-                {
-                    KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
-                    MappedAddrs += PAGE_SIZE;
-                }
-            }
-
-            Elf64_Phdr *pheader = (Elf64_Phdr *)(((char *)FileBuffer) + header->e_phoff);
-            void *addr;
-            for (int i = 0; i < header->e_phnum; i++, pheader++)
-            {
-                if (pheader->p_type != PT_LOAD)
-                    continue;
-                addr = (void *)((uint64_t)pheader->p_vaddr + pheader->p_memsz);
-            }
-            void *offset = KernelAllocator.RequestPages((uint64_t)addr / 0x1000 + 1);
-
-            if (Elevation == ELEVATION::User)
-            {
-                uint64_t MappedAddrs1 = (uint64_t)offset;
-                for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
-                {
-                    KernelPageTableManager.MapMemory((void *)MappedAddrs1, (void *)MappedAddrs1, PTFlag::RW | PTFlag::US);
-                    MappedAddrs1 += PAGE_SIZE;
-                }
-            }
-
-            pheader = (Elf64_Phdr *)(((char *)FileBuffer) + header->e_phoff);
-            for (int i = 0; i < header->e_phnum; i++, pheader++)
-            {
-                if (pheader->p_type != PT_LOAD)
-                    continue;
-                void *dst = (void *)((uint64_t)pheader->p_vaddr + (uint64_t)offset);
-                memset(dst, 0, pheader->p_memsz);
-                memcpy(dst, ((char *)FileBuffer) + pheader->p_offset, pheader->p_filesz);
-            }
-            // process pages -> addr / 0x1000 + 1;
-            // KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
-            debug("%s Entry Point: %#llx", File, (uint64_t)(header->e_entry + (uint64_t)offset));
-            vfs->Close(file);
-            LeaveCriticalSection;
-            if (CurrentTaskingMode == TaskingMode::Mono)
-            {
-                bool user = false;
                 if (Elevation == ELEVATION::User)
-                    user = true;
-                return (/* data will be invalid but not null */ PCB *)monot->CreateTask(header->e_entry + (uint64_t)offset, arg0, arg1, (char *)file->Name, user);
+                {
+                    uint64_t MappedAddrs = (uint64_t)FileBuffer;
+                    for (uint64_t i = 0; i < file->Node->Length / 0x1000 + 1; i++)
+                    {
+                        KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
+                        MappedAddrs += PAGE_SIZE;
+                    }
+                }
+                else if (Elevation == ELEVATION::Kernel)
+                {
+                    uint64_t MappedAddrs = (uint64_t)FileBuffer;
+                    for (uint64_t i = 0; i < file->Node->Length / 0x1000 + 1; i++)
+                    {
+                        KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW);
+                        MappedAddrs += PAGE_SIZE;
+                    }
+                }
+
+                Elf64_Phdr *pheader = (Elf64_Phdr *)(((char *)FileBuffer) + header->e_phoff);
+                void *addr;
+                for (int i = 0; i < header->e_phnum; i++, pheader++)
+                {
+                    if (pheader->p_type != PT_LOAD)
+                        continue;
+                    addr = (void *)((uint64_t)pheader->p_vaddr + pheader->p_memsz);
+                }
+                void *offset = KernelAllocator.RequestPages((uint64_t)addr / 0x1000 + 1);
+
+                if (Elevation == ELEVATION::User)
+                {
+                    uint64_t MappedAddrs = (uint64_t)offset;
+                    for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
+                    {
+                        KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
+                        MappedAddrs += PAGE_SIZE;
+                    }
+                }
+                else if (Elevation == ELEVATION::Kernel)
+                {
+                    uint64_t MappedAddrs = (uint64_t)offset;
+                    for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
+                    {
+                        KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW);
+                        MappedAddrs += PAGE_SIZE;
+                    }
+                }
+
+                pheader = (Elf64_Phdr *)(((char *)FileBuffer) + header->e_phoff);
+                for (int i = 0; i < header->e_phnum; i++, pheader++)
+                {
+                    if (pheader->p_type != PT_LOAD)
+                        continue;
+                    void *dst = (void *)((uint64_t)pheader->p_vaddr + (uint64_t)offset);
+                    memset(dst, 0, pheader->p_memsz);
+                    memcpy(dst, ((char *)FileBuffer) + pheader->p_offset, pheader->p_filesz);
+                }
+                // process pages -> addr / 0x1000 + 1;
+                // KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
+                debug("%s Entry Point: %#llx", File, (uint64_t)(header->e_entry + (uint64_t)offset));
+                vfs->Close(file);
+                LeaveCriticalSection;
+                if (CurrentTaskingMode == TaskingMode::Mono)
+                {
+                    bool user = false;
+                    if (Elevation == ELEVATION::User)
+                        user = true;
+                    return (/* data will be invalid but not null */ PCB *)monot->CreateTask(header->e_entry + (uint64_t)offset, arg0, arg1, (char *)file->Name, user);
+                }
+                else
+                {
+                    PCB *pcb = SysCreateProcess(file->Name, Elevation);
+                    pcb->Offset = (uint64_t)offset;
+                    return SysCreateThread(pcb, (uint64_t)header->e_entry, arg0, arg1)->Parent;
+                }
+            }
+            else if (header->e_type == ET_DYN)
+            {
+                err("Dynamic ELF file not supported for now.");
+                KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
+                goto error_exit;
             }
             else
             {
-                PCB *pcb = SysCreateProcess(file->Name, Elevation);
-                pcb->Offset = (uint64_t)offset;
-                return SysCreateThread(pcb, (uint64_t)header->e_entry, arg0, arg1)->Parent;
+                err("Unknown ELF file type.");
+                KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
+                goto error_exit;
             }
         }
     }
