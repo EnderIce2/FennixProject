@@ -74,7 +74,7 @@ typedef struct _IMAGE_DOS_HEADER
     WORD e_oemid;
     WORD e_oeminfo;
     WORD e_res2[10];
-    LONG e_lfanew;
+    WORD e_lfanew;
 } IMAGE_DOS_HEADER, *PIMAGE_DOS_HEADER;
 
 typedef struct _IMAGE_OS2_HEADER
