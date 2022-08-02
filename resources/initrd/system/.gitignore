@@ -1,8 +1,10 @@
 *
 !.gitkeep
 !.gitignore
-!config
-!drivers
-!fonts
-!lib
-!wallpapers
+!config/kernel.cfg
+!config/nic.json
+!drivers/driver.cfg
+!fonts/*
+!lib/.gitkeep
+!wallpapers/*
+!*/
