@@ -66,6 +66,7 @@ namespace PCI
     const char *GetSubclassName(uint8_t ClassCode, uint8_t SubclassCode);
     const char *GetProgIFName(uint8_t ClassCode, uint8_t SubclassCode, uint8_t ProgIF);
     Vector<PCIDeviceHeader *> FindPCIDevice(uint8_t Class, uint8_t Subclass, uint8_t ProgIF);
+    Vector<PCIDeviceHeader *> FindPCIDevice(int VendorID, int DeviceID);
 }
 
 #else

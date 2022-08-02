@@ -97,6 +97,15 @@ namespace PCI
                 DeviceFound.push_back(var);
         return DeviceFound;
     }
+
+    Vector<PCIDeviceHeader *> FindPCIDevice(int VendorID, int DeviceID)
+    {
+        Vector<PCIDeviceHeader *> DeviceFound;
+        for (auto var : Devices)
+            if (var->VendorID == VendorID && var->DeviceID == DeviceID)
+                DeviceFound.push_back(var);
+        return DeviceFound;
+    }
 }
 
 void init_pci()
