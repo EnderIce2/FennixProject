@@ -13,6 +13,7 @@
 #include <io.h>
 #include <vm.h>
 
+#include "network/NetworkController.hpp"
 #include "sysrecovery/recovery.hpp"
 #include "drivers/keyboard.hpp"
 #include "drivers/mouse.hpp"
@@ -362,6 +363,7 @@ void KernelInit()
     procfs = new FileSystem::Process;
     diskmgr = new DiskManager::Disk;
     partmgr = new DiskManager::Partition;
+    nimgr = new NetworkInterfaceManager::NetworkInterface;
     BS->Progress(70);
 
     new FileSystem::Serial;
