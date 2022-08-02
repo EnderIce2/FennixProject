@@ -79,8 +79,8 @@ var NAVTREEINDEX =
 "dc/da4/libc_2include_2string_8h.html#acb8cebad9eea46c4cd76586f17c08c51",
 "de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa2ceab02e477e348e76b628ea12258f58",
 "de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fade653e08b07cb23c7929ab060d1b07ef",
-"df/d17/stivale2_8h.html#ac3c9ceb9612537a02b4a9f33c6ea5a38",
-"globals_func.html"
+"de/d6b/structlimine__framebuffer.html#a36b1a1a603b64941306b64aab8cde484",
+"df/d17/stivale2_8h.html#df/db0/structstivale2__struct__tag__boot__volume"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
