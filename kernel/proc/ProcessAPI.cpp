@@ -314,7 +314,6 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
                 trace("File %s is a MZ file", File);
                 IMAGE_NT_HEADERS *PEHeader = (IMAGE_NT_HEADERS *)(((char *)FileBuffer) + MZHeader->e_lfanew);
                 IMAGE_OS2_HEADER *NEHeader = (IMAGE_OS2_HEADER *)(((char *)FileBuffer) + MZHeader->e_lfanew);
-                trace("PE Hdr address %#lx; NE Hdr address %#lx | filebuf: %#lx", (uint64_t)PEHeader, (uint64_t)NEHeader, (uint64_t)FileBuffer);
                 if (NEHeader->ne_magic == IMAGE_OS2_SIGNATURE)
                 {
                     trace("File %s is a NE file", File);
@@ -328,7 +327,7 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
                         KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
                         goto error_exit;
                     }
-                    else if (PEHeader->FileHeader.Machine == IMAGE_FILE_MACHINE_IA64)
+                    else if (PEHeader->FileHeader.Machine == IMAGE_FILE_MACHINE_AMD64)
                     {
                         debug("64 bit PE file found.");
                         if (Elevation == ELEVATION::User)
@@ -352,6 +351,7 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
                         IMAGE_SECTION_HEADER *section = (IMAGE_SECTION_HEADER *)(((char *)PEHeader) + sizeof(IMAGE_NT_HEADERS));
                         for (int i = 0; i < PEHeader->FileHeader.NumberOfSections; i++, section++)
                         {
+                            fixme("there are %ld cocks in your area and %ld bitches away from you", PEHeader->FileHeader.NumberOfSections, section->SizeOfRawData);
                             if (section->SizeOfRawData == 0)
                                 continue;
                             void *addr = (void *)((uint64_t)section->VirtualAddress + (uint64_t)FileBuffer);
@@ -378,10 +378,16 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
                         }
                         debug("%s Entry Point: %#llx", File, (uint64_t)(PEHeader->OptionalHeader.AddressOfEntryPoint + (uint64_t)FileBuffer));
                     }
+                    else
+                    {
+                        err("Unknown Machine: %#lx", PEHeader->FileHeader.Machine);
+                        KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
+                        goto error_exit;
+                    }
                 }
                 else
                 {
-                    err("Unknown PE file type.");
+                    err("Unknown file type.");
                     KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
                     goto error_exit;
                 }
