@@ -13,6 +13,9 @@ File *CurrentPath = nullptr;
 static char CurrentFullPath[255] = {'/', '\0'};
 static char key_buffer[1024];
 
+static char history_buffer[1024][1024];
+static int history_index = 0;
+
 void PrintShellPrefix()
 {
     mono->SetForegroundColor(0x6BFBF5);
@@ -51,7 +54,55 @@ void loop()
     int backspacelimit = 0;
     while (1)
     {
-        int key = GetLetterFromScanCode((uint8_t)syscall_getLastKeyboardScanCode());
+        uint8_t sc = (uint8_t)syscall_getLastKeyboardScanCode();
+        // WriteSysDebugger("%#lx\n", sc);
+
+        if (sc == KEY_D_TAB ||
+            sc == KEY_D_LCTRL ||
+            sc == KEY_D_LALT ||
+            sc == KEY_U_LCTRL ||
+            sc == KEY_U_LALT)
+        {
+            continue;
+        }
+        else if (sc == KEY_D_UP)
+        {
+            while (strlen(key_buffer) > 0)
+            {
+                WriteSysDebugger("-");
+                mono->RemoveChar();
+                backspace(key_buffer);
+                backspacelimit--;
+            }
+            if (history_index > 0)
+            {
+                WriteSysDebugger("[");
+                history_index--;
+                strcpy(key_buffer, history_buffer[history_index]);
+                mono->print(key_buffer);
+            }
+            WriteSysDebugger("Up\n");
+        }
+        else if (sc == KEY_D_DOWN)
+        {
+            while (strlen(key_buffer) > 0)
+            {
+                WriteSysDebugger("+");
+                mono->RemoveChar();
+                backspace(key_buffer);
+                backspacelimit--;
+            }
+            if (history_index < 0)
+            {
+                WriteSysDebugger("]");
+                history_index++;
+                strcpy(key_buffer, history_buffer[history_index]);
+                mono->print(key_buffer);
+            }
+            WriteSysDebugger("Down\n");
+        }
+
+        int key = GetLetterFromScanCode(sc);
 
         if (key != KEY_INVALID)
         {
@@ -66,6 +117,7 @@ void loop()
             }
             else if (key == '\n')
             {
+                strcpy(history_buffer[history_index++], key_buffer);
                 ParseBuffer(key_buffer);
                 backspacelimit = 0;
                 key_buffer[0] = '\0';
@@ -223,6 +275,22 @@ void ParseBuffer(char *Buffer)
     {
         char *arg = trimwhitespace(Buffer + 2);
 
+        if (strcmp(arg, "~") == 0)
+        {
+            char *tmp_user_path = (char *)malloc(5 + strlen(usr()));
+            strcpy(tmp_user_path, "/home/");
+            strcat(tmp_user_path, usr());
+
+            File *node = (File *)syscall_FileOpen(tmp_user_path);
+            if (node->Status == FileStatus::OK)
+                strcpy(arg, tmp_user_path);
+            else
+                strcpy(arg, "/home/default");
+
+            free(tmp_user_path);
+            syscall_FileClose(node);
+        }
+
         if (isempty_1(arg))
             strcpy(arg, "/");
 
@@ -230,7 +298,7 @@ void ParseBuffer(char *Buffer)
         cwk_path_normalize(arg, path, strlen(arg) + 1);
         File *node = (File *)syscall_FileOpenWithParent(path, CurrentPath);
         bool success = true;
-        if (!node)
+        if (node->Status == FileStatus::NOT_FOUND)
         {
             mono->print("No such file directory!");
             syscall_FileClose(node);
@@ -334,8 +402,8 @@ void ParseBuffer(char *Buffer)
         const char *searchpath[] = {
             "/",
             "/system/",
-            "/home/default/apps/",
-            "/home/default/games/",
+            "/home/default/Apps/",
+            "/home/default/Games/",
         };
         char filepath[256] = {'\0'};
         switch (tried)
@@ -352,12 +420,12 @@ void ParseBuffer(char *Buffer)
         case 3:
             strcat(filepath, "/home/");
             strcat(filepath, usr());
-            strcat(filepath, "/apps/");
+            strcat(filepath, "/Apps/");
             break;
         case 4:
             strcat(filepath, "/home/");
             strcat(filepath, usr());
-            strcat(filepath, "/games/");
+            strcat(filepath, "/Games/");
             break;
         default:
             break;
