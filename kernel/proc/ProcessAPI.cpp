@@ -5,6 +5,7 @@
 #include <debug.h>
 #include <heap.h>
 #include <elf.h>
+#include <msexec.h>
 
 #include "../cpu/smp.hpp"
 
@@ -195,131 +196,195 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
         void *FileBuffer = KernelAllocator.RequestPages(file->Node->Length / 0x1000 + 1);
 
         vfs->Read(file, 0, FileBuffer, file->Node->Length);
-        Elf64_Ehdr *header = (Elf64_Ehdr *)FileBuffer;
+        Elf64_Ehdr *ELFHeader = (Elf64_Ehdr *)FileBuffer;
 
-        if (header->e_ident[EI_MAG0] != ELFMAG0)
+        if (ELFHeader->e_ident[EI_MAG0] == ELFMAG0 &&
+            ELFHeader->e_ident[EI_MAG1] == ELFMAG1 &&
+            ELFHeader->e_ident[EI_MAG2] == ELFMAG2 &&
+            ELFHeader->e_ident[EI_MAG3] == ELFMAG3)
         {
-            err("ELF Header EI_MAG0 incorrect.");
-            KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
-            goto error_exit;
-        }
-        if (header->e_ident[EI_MAG1] != ELFMAG1)
-        {
-            err("ELF Header EI_MAG1 incorrect.");
-            KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
-            goto error_exit;
-        }
-        if (header->e_ident[EI_MAG2] != ELFMAG2)
-        {
-            err("ELF Header EI_MAG2 incorrect.");
-            KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
-            goto error_exit;
-        }
-        if (header->e_ident[EI_MAG3] != ELFMAG3)
-        {
-            err("ELF Header EI_MAG3 incorrect.");
-            KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
-            goto error_exit;
-        }
-        if (header->e_ident[EI_CLASS] == ELFCLASS32)
-        {
-            err("32 bit ELF file not supported for now.");
-            KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
-            goto error_exit;
-        }
-        if (header->e_ident[EI_CLASS] == ELFCLASS64)
-        {
-            if (header->e_type == ET_EXEC)
+            if (ELFHeader->e_ident[EI_CLASS] == ELFCLASS32)
             {
-                debug("64 bit ELF file found.");
+                err("32 bit ELF file not supported for now.");
+                KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
+                goto error_exit;
+            }
+            if (ELFHeader->e_ident[EI_CLASS] == ELFCLASS64)
+            {
+                if (ELFHeader->e_type == ET_EXEC)
+                {
+                    debug("64 bit ELF file found.");
 
-                if (Elevation == ELEVATION::User)
-                {
-                    uint64_t MappedAddrs = (uint64_t)FileBuffer;
-                    for (uint64_t i = 0; i < file->Node->Length / 0x1000 + 1; i++)
-                    {
-                        KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
-                        MappedAddrs += PAGE_SIZE;
-                    }
-                }
-                else if (Elevation == ELEVATION::Kernel)
-                {
-                    uint64_t MappedAddrs = (uint64_t)FileBuffer;
-                    for (uint64_t i = 0; i < file->Node->Length / 0x1000 + 1; i++)
-                    {
-                        KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW);
-                        MappedAddrs += PAGE_SIZE;
-                    }
-                }
-
-                Elf64_Phdr *pheader = (Elf64_Phdr *)(((char *)FileBuffer) + header->e_phoff);
-                void *addr;
-                for (int i = 0; i < header->e_phnum; i++, pheader++)
-                {
-                    if (pheader->p_type != PT_LOAD)
-                        continue;
-                    addr = (void *)((uint64_t)pheader->p_vaddr + pheader->p_memsz);
-                }
-                void *offset = KernelAllocator.RequestPages((uint64_t)addr / 0x1000 + 1);
-
-                if (Elevation == ELEVATION::User)
-                {
-                    uint64_t MappedAddrs = (uint64_t)offset;
-                    for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
-                    {
-                        KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
-                        MappedAddrs += PAGE_SIZE;
-                    }
-                }
-                else if (Elevation == ELEVATION::Kernel)
-                {
-                    uint64_t MappedAddrs = (uint64_t)offset;
-                    for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
-                    {
-                        KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW);
-                        MappedAddrs += PAGE_SIZE;
-                    }
-                }
-
-                pheader = (Elf64_Phdr *)(((char *)FileBuffer) + header->e_phoff);
-                for (int i = 0; i < header->e_phnum; i++, pheader++)
-                {
-                    if (pheader->p_type != PT_LOAD)
-                        continue;
-                    void *dst = (void *)((uint64_t)pheader->p_vaddr + (uint64_t)offset);
-                    memset(dst, 0, pheader->p_memsz);
-                    memcpy(dst, ((char *)FileBuffer) + pheader->p_offset, pheader->p_filesz);
-                }
-                // process pages -> addr / 0x1000 + 1;
-                // KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
-                debug("%s Entry Point: %#llx", File, (uint64_t)(header->e_entry + (uint64_t)offset));
-                vfs->Close(file);
-                LeaveCriticalSection;
-                if (CurrentTaskingMode == TaskingMode::Mono)
-                {
-                    bool user = false;
                     if (Elevation == ELEVATION::User)
-                        user = true;
-                    return (/* data will be invalid but not null */ PCB *)monot->CreateTask(header->e_entry + (uint64_t)offset, arg0, arg1, (char *)file->Name, user);
+                    {
+                        uint64_t MappedAddrs = (uint64_t)FileBuffer;
+                        for (uint64_t i = 0; i < file->Node->Length / 0x1000 + 1; i++)
+                        {
+                            KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
+                            MappedAddrs += PAGE_SIZE;
+                        }
+                    }
+                    else if (Elevation == ELEVATION::Kernel)
+                    {
+                        uint64_t MappedAddrs = (uint64_t)FileBuffer;
+                        for (uint64_t i = 0; i < file->Node->Length / 0x1000 + 1; i++)
+                        {
+                            KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW);
+                            MappedAddrs += PAGE_SIZE;
+                        }
+                    }
+
+                    Elf64_Phdr *pheader = (Elf64_Phdr *)(((char *)FileBuffer) + ELFHeader->e_phoff);
+                    void *addr;
+                    for (int i = 0; i < ELFHeader->e_phnum; i++, pheader++)
+                    {
+                        if (pheader->p_type != PT_LOAD)
+                            continue;
+                        addr = (void *)((uint64_t)pheader->p_vaddr + pheader->p_memsz);
+                    }
+                    void *offset = KernelAllocator.RequestPages((uint64_t)addr / 0x1000 + 1);
+
+                    if (Elevation == ELEVATION::User)
+                    {
+                        uint64_t MappedAddrs = (uint64_t)offset;
+                        for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
+                        {
+                            KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
+                            MappedAddrs += PAGE_SIZE;
+                        }
+                    }
+                    else if (Elevation == ELEVATION::Kernel)
+                    {
+                        uint64_t MappedAddrs = (uint64_t)offset;
+                        for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
+                        {
+                            KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW);
+                            MappedAddrs += PAGE_SIZE;
+                        }
+                    }
+
+                    pheader = (Elf64_Phdr *)(((char *)FileBuffer) + ELFHeader->e_phoff);
+                    for (int i = 0; i < ELFHeader->e_phnum; i++, pheader++)
+                    {
+                        if (pheader->p_type != PT_LOAD)
+                            continue;
+                        void *dst = (void *)((uint64_t)pheader->p_vaddr + (uint64_t)offset);
+                        memset(dst, 0, pheader->p_memsz);
+                        memcpy(dst, ((char *)FileBuffer) + pheader->p_offset, pheader->p_filesz);
+                    }
+                    // process pages -> addr / 0x1000 + 1;
+                    // KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
+                    debug("%s Entry Point: %#llx", File, (uint64_t)(ELFHeader->e_entry + (uint64_t)offset));
+                    vfs->Close(file);
+                    LeaveCriticalSection;
+                    if (CurrentTaskingMode == TaskingMode::Mono)
+                    {
+                        bool user = false;
+                        if (Elevation == ELEVATION::User)
+                            user = true;
+                        return (/* data will be invalid but not null */ PCB *)monot->CreateTask(ELFHeader->e_entry + (uint64_t)offset, arg0, arg1, (char *)file->Name, user);
+                    }
+                    else
+                    {
+                        PCB *pcb = SysCreateProcess(file->Name, Elevation);
+                        pcb->Offset = (uint64_t)offset;
+                        return SysCreateThread(pcb, (uint64_t)ELFHeader->e_entry, arg0, arg1)->Parent;
+                    }
+                }
+                else if (ELFHeader->e_type == ET_DYN)
+                {
+                    err("Dynamic ELF file not supported for now.");
+                    KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
+                    goto error_exit;
                 }
                 else
                 {
-                    PCB *pcb = SysCreateProcess(file->Name, Elevation);
-                    pcb->Offset = (uint64_t)offset;
-                    return SysCreateThread(pcb, (uint64_t)header->e_entry, arg0, arg1)->Parent;
+                    err("Unknown ELF file type.");
+                    KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
+                    goto error_exit;
                 }
             }
-            else if (header->e_type == ET_DYN)
+        }
+        else
+        {
+            trace("File %s is not an elf file", File);
+            IMAGE_DOS_HEADER *MZHeader = (IMAGE_DOS_HEADER *)FileBuffer;
+            if (MZHeader->e_magic == IMAGE_DOS_SIGNATURE)
             {
-                err("Dynamic ELF file not supported for now.");
-                KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
-                goto error_exit;
-            }
-            else
-            {
-                err("Unknown ELF file type.");
-                KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
-                goto error_exit;
+                trace("File %s is a MZ file", File);
+                IMAGE_NT_HEADERS *PEHeader = (IMAGE_NT_HEADERS *)(((char *)FileBuffer) + MZHeader->e_lfanew);
+                IMAGE_OS2_HEADER *NEHeader = (IMAGE_OS2_HEADER *)(((char *)FileBuffer) + MZHeader->e_lfanew);
+                trace("PE Hdr address %#lx; NE Hdr address %#lx | filebuf: %#lx", (uint64_t)PEHeader, (uint64_t)NEHeader, (uint64_t)FileBuffer);
+                if (NEHeader->ne_magic == IMAGE_OS2_SIGNATURE)
+                {
+                    trace("File %s is a NE file", File);
+                }
+                if (PEHeader->Signature == IMAGE_NT_SIGNATURE)
+                {
+                    trace("File %s is a PE file", File);
+                    if (PEHeader->FileHeader.Machine == IMAGE_FILE_MACHINE_I386)
+                    {
+                        err("32 bit PE file not supported for now.");
+                        KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
+                        goto error_exit;
+                    }
+                    else if (PEHeader->FileHeader.Machine == IMAGE_FILE_MACHINE_IA64)
+                    {
+                        debug("64 bit PE file found.");
+                        if (Elevation == ELEVATION::User)
+                        {
+                            uint64_t MappedAddrs = (uint64_t)FileBuffer;
+                            for (uint64_t i = 0; i < file->Node->Length / 0x1000 + 1; i++)
+                            {
+                                KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
+                                MappedAddrs += PAGE_SIZE;
+                            }
+                        }
+                        else if (Elevation == ELEVATION::Kernel)
+                        {
+                            uint64_t MappedAddrs = (uint64_t)FileBuffer;
+                            for (uint64_t i = 0; i < file->Node->Length / 0x1000 + 1; i++)
+                            {
+                                KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW);
+                                MappedAddrs += PAGE_SIZE;
+                            }
+                        }
+                        IMAGE_SECTION_HEADER *section = (IMAGE_SECTION_HEADER *)(((char *)PEHeader) + sizeof(IMAGE_NT_HEADERS));
+                        for (int i = 0; i < PEHeader->FileHeader.NumberOfSections; i++, section++)
+                        {
+                            if (section->SizeOfRawData == 0)
+                                continue;
+                            void *addr = (void *)((uint64_t)section->VirtualAddress + (uint64_t)FileBuffer);
+                            void *offset = KernelAllocator.RequestPages((uint64_t)addr / 0x1000 + 1);
+                            if (Elevation == ELEVATION::User)
+                            {
+                                uint64_t MappedAddrs = (uint64_t)offset;
+                                for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
+                                {
+                                    KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
+                                    MappedAddrs += PAGE_SIZE;
+                                }
+                            }
+                            else if (Elevation == ELEVATION::Kernel)
+                            {
+                                uint64_t MappedAddrs = (uint64_t)offset;
+                                for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
+                                {
+                                    KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW);
+                                    MappedAddrs += PAGE_SIZE;
+                                }
+                            }
+                            memcpy(addr, ((char *)FileBuffer) + section->PointerToRawData, section->SizeOfRawData);
+                        }
+                        debug("%s Entry Point: %#llx", File, (uint64_t)(PEHeader->OptionalHeader.AddressOfEntryPoint + (uint64_t)FileBuffer));
+                    }
+                }
+                else
+                {
+                    err("Unknown PE file type.");
+                    KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
+                    goto error_exit;
+                }
             }
         }
     }
