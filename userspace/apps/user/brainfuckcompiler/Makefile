@@ -1,7 +1,7 @@
 include ../../../../Makefile.conf
 
 NAME=bfc
-OUTPUT_DIR=../../../../resources/initrd/home/default/apps/
+OUTPUT_DIR=../../../../resources/initrd/home/default/Apps/
 
 CC = ../../../../$(COMPILER_PATH)/$(COMPILER_ARCH)gcc
 

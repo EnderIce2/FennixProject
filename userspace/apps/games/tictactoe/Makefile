@@ -1,7 +1,7 @@
 include ../../../../Makefile.conf
 
 NAME=ttt
-OUTPUT_DIR=../../../../resources/initrd/home/default/games/
+OUTPUT_DIR=../../../../resources/initrd/home/default/Games/
 
 CC = ../../../../$(COMPILER_PATH)/$(COMPILER_ARCH)gcc
 LD = ../../../../$(COMPILER_PATH)/$(COMPILER_ARCH)ld
