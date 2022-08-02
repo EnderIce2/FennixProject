@@ -332,6 +332,7 @@ void ParseBuffer(char *Buffer)
         int tried = 0;
     FilesSearch:
         const char *searchpath[] = {
+            "/",
             "/system/",
             "/home/default/apps/",
             "/home/default/games/",
