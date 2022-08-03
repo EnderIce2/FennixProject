@@ -1,5 +1,6 @@
 var NAVTREEINDEX16 =
 {
+"de/d6b/structlimine__framebuffer.html#a1d82bd152fd367936d221128df3a9e7f":[1,0,85,13],
 "de/d6b/structlimine__framebuffer.html#a36b1a1a603b64941306b64aab8cde484":[1,0,85,12],
 "de/d6b/structlimine__framebuffer.html#a3acea0b874c92b46cb2de5b8c8fa9cf1":[1,0,85,6],
 "de/d6b/structlimine__framebuffer.html#a3d9da38f5708cee3b478f5c7babfcc44":[1,0,85,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX16 =
 "df/d17/stivale2_8h.html#dc/d5c/structstivale2__struct__tag__cmdline":[2,0,1,0,0,0,5,12],
 "df/d17/stivale2_8h.html#dc/df2/structstivale2__header__tag__any__video":[2,0,1,0,0,0,5,3],
 "df/d17/stivale2_8h.html#dd/d87/structstivale2__struct__tag__smbios":[2,0,1,0,0,0,5,30],
-"df/d17/stivale2_8h.html#de/daa/structstivale2__struct__tag__pxe__server__info":[2,0,1,0,0,0,5,33],
-"df/d17/stivale2_8h.html#df/d80/structstivale2__struct__tag__framebuffer":[2,0,1,0,0,0,5,15]
+"df/d17/stivale2_8h.html#de/daa/structstivale2__struct__tag__pxe__server__info":[2,0,1,0,0,0,5,33]
 };

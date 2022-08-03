@@ -1834,7 +1834,7 @@
              <Node>
               <Name>e_lfanew</Name>
               <Path>de/d63/msexec_8h.html</Path>
-              <Anchor>adf342409a54c9b3acdfc2aaeb1f10ba8</Anchor>
+              <Anchor>ad5ba03bdc63b26e67bad2b036c8addf2</Anchor>
              </Node>
              <Node>
               <Name>e_lfarlc</Name>
@@ -27042,7 +27042,7 @@
                    <Node>
                     <Name>e_lfanew</Name>
                     <Path>de/d63/msexec_8h.html</Path>
-                    <Anchor>adf342409a54c9b3acdfc2aaeb1f10ba8</Anchor>
+                    <Anchor>ad5ba03bdc63b26e67bad2b036c8addf2</Anchor>
                    </Node>
                    <Node>
                     <Name>e_lfarlc</Name>
@@ -27669,6 +27669,11 @@
                   <Name>IMAGE_FILE_MACHINE_ALPHA64</Name>
                   <Path>de/d63/msexec_8h.html</Path>
                   <Anchor>a1504808ef1e16deb0012aa50c336fb80</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>IMAGE_FILE_MACHINE_AMD64</Name>
+                  <Path>de/d63/msexec_8h.html</Path>
+                  <Anchor>a95a1332c20d1536ba0db8f7edcff10e3</Anchor>
                  </Node>
                  <Node>
                   <Name>IMAGE_FILE_MACHINE_ARM</Name>

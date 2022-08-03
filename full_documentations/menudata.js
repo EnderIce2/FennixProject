@@ -98,6 +98,7 @@ var menudata={children:[
 {text:"e",url:"namespacemembers_eval.html#index_e"},
 {text:"f",url:"namespacemembers_eval.html#index_f"},
 {text:"g",url:"namespacemembers_eval.html#index_g"},
+{text:"h",url:"namespacemembers_eval.html#index_h"},
 {text:"i",url:"namespacemembers_eval.html#index_i"},
 {text:"l",url:"namespacemembers_eval.html#index_l"},
 {text:"m",url:"namespacemembers_eval.html#index_m"},
@@ -114,6 +115,7 @@ var menudata={children:[
 {text:"Data Structures",url:"annotated.html",children:[
 {text:"Data Structures",url:"annotated.html"},
 {text:"Data Structure Index",url:"classes.html"},
+{text:"Class Hierarchy",url:"hierarchy.html"},
 {text:"Data Fields",url:"functions.html",children:[
 {text:"All",url:"functions.html",children:[
 {text:"_",url:"functions.html#index__5F"},
@@ -304,7 +306,21 @@ var menudata={children:[
 {text:"v",url:"globals_type.html#index_v"},
 {text:"w",url:"globals_type.html#index_w"},
 {text:"x",url:"globals_type.html#index_x"}]},
-{text:"Enumerations",url:"globals_enum.html"},
+{text:"Enumerations",url:"globals_enum.html",children:[
+{text:"_",url:"globals_enum.html#index__5F"},
+{text:"a",url:"globals_enum.html#index_a"},
+{text:"c",url:"globals_enum.html#index_c"},
+{text:"d",url:"globals_enum.html#index_d"},
+{text:"e",url:"globals_enum.html#index_e"},
+{text:"f",url:"globals_enum.html#index_f"},
+{text:"i",url:"globals_enum.html#index_i"},
+{text:"k",url:"globals_enum.html#index_k"},
+{text:"m",url:"globals_enum.html#index_m"},
+{text:"n",url:"globals_enum.html#index_n"},
+{text:"p",url:"globals_enum.html#index_p"},
+{text:"r",url:"globals_enum.html#index_r"},
+{text:"s",url:"globals_enum.html#index_s"},
+{text:"t",url:"globals_enum.html#index_t"}]},
 {text:"Enumerator",url:"globals_eval.html",children:[
 {text:"_",url:"globals_eval.html#index__5F"},
 {text:"a",url:"globals_eval_a.html#index_a"},

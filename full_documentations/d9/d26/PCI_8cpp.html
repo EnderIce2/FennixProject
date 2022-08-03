@@ -119,6 +119,8 @@ Functions</h2></td></tr>
 <tr class="separator:aa19b724d539a187537b5e6840897406f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad60ef65648b471a7309dfe5291ac01c1"><td class="memItemLeft" align="right" valign="top">Vector&lt; <a class="el" href="../../d9/d97/pci_8h.html#d8/dbb/structPCIDeviceHeader">PCIDeviceHeader</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d8f/namespacePCI.html#ad60ef65648b471a7309dfe5291ac01c1">PCI::FindPCIDevice</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> Class, <a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> Subclass, <a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> ProgIF)</td></tr>
 <tr class="separator:ad60ef65648b471a7309dfe5291ac01c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad923c589d3479d0f3c1870a1714f681b"><td class="memItemLeft" align="right" valign="top">Vector&lt; <a class="el" href="../../d9/d97/pci_8h.html#d8/dbb/structPCIDeviceHeader">PCIDeviceHeader</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d8f/namespacePCI.html#ad923c589d3479d0f3c1870a1714f681b">PCI::FindPCIDevice</a> (int VendorID, int DeviceID)</td></tr>
+<tr class="separator:ad923c589d3479d0f3c1870a1714f681b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1163b8d93711c6fa01dfbffd2b4f0bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d26/PCI_8cpp.html#ac1163b8d93711c6fa01dfbffd2b4f0bf">init_pci</a> ()</td></tr>
 <tr class="separator:ac1163b8d93711c6fa01dfbffd2b4f0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -143,23 +145,23 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d26/PCI_8cpp_source.html#l00102">102</a> of file <a class="el" href="../../d9/d26/PCI_8cpp_source.html">PCI.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#a7ad5641dbc2b4cdb4d83352a62ce2f41">debug</a>(<span class="stringliteral">&quot;%#llx&quot;</span>, <a class="code" href="../../de/d2c/ACPI_8cpp.html#aba0c4283c1f237d6d7283166b9bc9a53">acpi</a>-&gt;<a class="code" href="../../d3/d21/classACPI_1_1ACPI.html#a96c56fd4742407151b8d8533053e7005">MCFG</a>);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d2c/ACPI_8cpp.html#aba0c4283c1f237d6d7283166b9bc9a53">acpi</a>-&gt;<a class="code" href="../../d3/d21/classACPI_1_1ACPI.html#a96c56fd4742407151b8d8533053e7005">MCFG</a> != NULL)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="../../d0/d8f/namespacePCI.html#aa19b724d539a187537b5e6840897406f">PCI::EnumeratePCI</a>(<a class="code" href="../../de/d2c/ACPI_8cpp.html#aba0c4283c1f237d6d7283166b9bc9a53">acpi</a>-&gt;<a class="code" href="../../d3/d21/classACPI_1_1ACPI.html#a96c56fd4742407151b8d8533053e7005">MCFG</a>);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;No PCI support!&quot;</span>); <span class="comment">// TODO: add legacy support if MCFG is not available</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="../../d6/db3/BootScreen_8cpp.html#ad82da8195cc1c57cd9ed0e935707f7fe">BS</a>-&gt;<a class="code" href="../../d4/dfa/classBootScreen_1_1Screen.html#a4d7a5aac71f5b39f065d2984bb493ed6">IncreaseProgres</a>();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d9/d26/PCI_8cpp_source.html#l00111">111</a> of file <a class="el" href="../../d9/d26/PCI_8cpp_source.html">PCI.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;{</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#a7ad5641dbc2b4cdb4d83352a62ce2f41">debug</a>(<span class="stringliteral">&quot;%#llx&quot;</span>, <a class="code" href="../../de/d2c/ACPI_8cpp.html#aba0c4283c1f237d6d7283166b9bc9a53">acpi</a>-&gt;<a class="code" href="../../d3/d21/classACPI_1_1ACPI.html#a96c56fd4742407151b8d8533053e7005">MCFG</a>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d2c/ACPI_8cpp.html#aba0c4283c1f237d6d7283166b9bc9a53">acpi</a>-&gt;<a class="code" href="../../d3/d21/classACPI_1_1ACPI.html#a96c56fd4742407151b8d8533053e7005">MCFG</a> != NULL)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="../../d0/d8f/namespacePCI.html#aa19b724d539a187537b5e6840897406f">PCI::EnumeratePCI</a>(<a class="code" href="../../de/d2c/ACPI_8cpp.html#aba0c4283c1f237d6d7283166b9bc9a53">acpi</a>-&gt;<a class="code" href="../../d3/d21/classACPI_1_1ACPI.html#a96c56fd4742407151b8d8533053e7005">MCFG</a>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;No PCI support!&quot;</span>); <span class="comment">// TODO: add legacy support if MCFG is not available</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="../../d6/db3/BootScreen_8cpp.html#ad82da8195cc1c57cd9ed0e935707f7fe">BS</a>-&gt;<a class="code" href="../../d4/dfa/classBootScreen_1_1Screen.html#a4d7a5aac71f5b39f065d2984bb493ed6">IncreaseProgres</a>();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/d2c/ACPI_8cpp_source.html#l00009">acpi</a>, <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00014">BS</a>, <a class="el" href="../../db/d16/debug_8h_source.html#l00069">debug</a>, <a class="el" href="../../d9/d26/PCI_8cpp_source.html#l00078">PCI::EnumeratePCI()</a>, <a class="el" href="../../db/d16/debug_8h_source.html#l00068">err</a>, <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00339">BootScreen::Screen::IncreaseProgres()</a>, and <a class="el" href="../../d1/d90/acpi_8hpp_source.html#l00167">ACPI::ACPI::MCFG</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00233">KernelInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00234">KernelInit()</a>.</p>
 
 </div>
 </div>

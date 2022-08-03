@@ -1,6 +1,7 @@
 var dir_0de1d64efa6df97eacc8f5b0f9da3e59 =
 [
-    [ "controllers", "dir_51ddf8a104d1d2ae25ca0509e2b76922.html", "dir_51ddf8a104d1d2ae25ca0509e2b76922" ],
+    [ "network", "dir_eb6e3246ff193e68f007dfa901db29df.html", "dir_eb6e3246ff193e68f007dfa901db29df" ],
+    [ "storage", "dir_a134a2fb5e172a94925fa8b74d28947c.html", "dir_a134a2fb5e172a94925fa8b74d28947c" ],
     [ "disk.cpp", "d4/db6/disk_8cpp.html", "d4/db6/disk_8cpp" ],
     [ "disk.h", "d2/d50/disk_8h.html", "d2/d50/disk_8h" ],
     [ "display.cpp", "db/d86/display_8cpp.html", "db/d86/display_8cpp" ],

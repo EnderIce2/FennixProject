@@ -20769,6 +20769,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>IMAGE_FILE_MACHINE_AMD64</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>de/d63/msexec_8h.html</Path>
+    <Anchor>a95a1332c20d1536ba0db8f7edcff10e3</Anchor>
+    <DeclaredIn>msexec.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>IMAGE_FILE_MACHINE_CEF</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>

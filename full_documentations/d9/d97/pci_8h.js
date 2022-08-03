@@ -36,6 +36,5 @@ var pci_8h =
       [ "SubsystemVendorID", "d9/d97/pci_8h.html#aff859496d929c800d6a85bf362af4b23", null ]
     ] ],
     [ "FindTable", "d9/d97/pci_8h.html#a0ced765930f13902b8bec54d7b197039", null ],
-    [ "init_pci", "d9/d97/pci_8h.html#a9d10cc9de7696c01a4733daf6059cea3", null ],
-    [ "__attribute__", "d9/d97/pci_8h.html#adca5d0da48cd8d172b32eaac1e01ef9f", null ]
+    [ "init_pci", "d9/d97/pci_8h.html#a9d10cc9de7696c01a4733daf6059cea3", null ]
 ];

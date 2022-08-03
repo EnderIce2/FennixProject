@@ -9,6 +9,7 @@ var dir_dc43877d82dd332f9fb2071fcca799d6 =
     [ "interrupts", "dir_60d7b417c3a5d3dab150611c1e2a79d4.html", "dir_60d7b417c3a5d3dab150611c1e2a79d4" ],
     [ "libs", "dir_1a7bf676cd63d08aeb9ce81532f6940c.html", "dir_1a7bf676cd63d08aeb9ce81532f6940c" ],
     [ "mem", "dir_539c600d05e734858cfd9a589845008d.html", "dir_539c600d05e734858cfd9a589845008d" ],
+    [ "network", "dir_c6d19b41412d71a951b4376398473928.html", "dir_c6d19b41412d71a951b4376398473928" ],
     [ "proc", "dir_afe766e3af9a89d485242b31631c9c37.html", "dir_afe766e3af9a89d485242b31631c9c37" ],
     [ "security", "dir_e0f12d11ee8794789db6f4130c7a1d20.html", "dir_e0f12d11ee8794789db6f4130c7a1d20" ],
     [ "syscalls", "dir_b1a5c2c7cae3ee164731081041130760.html", "dir_b1a5c2c7cae3ee164731081041130760" ],
