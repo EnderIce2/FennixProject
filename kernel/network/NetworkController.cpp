@@ -42,30 +42,79 @@ namespace NetworkInterfaceManager
 
         if (!e1000)
             foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x100E))
+            {
                 e1000 = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+                if (!ValidMAC(e1000->GetMAC()))
+                {
+                    delete e1000;
+                    err("E1000: Invalid MAC address!");
+                }
+                break;
+            }
 
         if (!e1000)
             foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x153A))
+            {
                 e1000 = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+                if (!ValidMAC(e1000->GetMAC()))
+                {
+                    delete e1000;
+                    err("E1000: Invalid MAC address!");
+                }
+                break;
+            }
 
         if (!e1000)
             foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x10EA))
+            {
                 e1000 = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+                if (!ValidMAC(e1000->GetMAC()))
+                {
+                    delete e1000;
+                    err("E1000: Invalid MAC address!");
+                }
+                break;
+            }
 
         if (!e1000)
             foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x109A))
+            {
                 e1000 = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+                if (!ValidMAC(e1000->GetMAC()))
+                {
+                    delete e1000;
+                    err("E1000: Invalid MAC address!");
+                }
+                break;
+            }
 
         if (!e1000)
             foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x100F))
+            {
                 e1000 = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+                if (!ValidMAC(e1000->GetMAC()))
+                {
+                    delete e1000;
+                    err("E1000: Invalid MAC address!");
+                }
+                break;
+            }
 
-        RegisterInterrupt(E1000StubInterruptHandler, IRQ11, true);
-        e1000->Start();
-
-        MediaAccessControl mac = e1000->GetMAC();
-        netdbg("MAC: %02x:%02x:%02x:%02x:%02x:%02x",
-               mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
+        if (e1000)
+        {
+            RegisterInterrupt(E1000StubInterruptHandler, IRQ11, true);
+            e1000->Start();
+            MediaAccessControl mac = e1000->GetMAC();
+            if (!ValidMAC(mac))
+            {
+                err("E1000: MAC address is invalid %x:%x:%x:%x:%x:%x",
+                    mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
+                delete e1000;
+            }
+            else
+                netdbg("E1000: MAC: %02x:%02x:%02x:%02x:%02x:%02x",
+                       mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
+        }
     }
 
     NetworkInterface::~NetworkInterface()

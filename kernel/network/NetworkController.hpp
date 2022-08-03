@@ -53,6 +53,15 @@ static inline bool CompareMAC(MediaAccessControl MAC1, MediaAccessControl MAC2)
     return true;
 }
 
+static inline bool ValidMAC(MediaAccessControl MAC)
+{
+    if (CompareMAC(MAC, {.Address = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}}))
+        return false;
+    if (CompareMAC(MAC, {.Address = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00}}))
+        return false;
+    return true;
+}
+
 namespace NetworkInterfaceManager
 {
     struct DeviceInterface
