@@ -211,7 +211,6 @@ namespace NetworkIPv4
 
 namespace NetworkIPv6
 {
-
     struct IPv6Header
     {
         uint32_t Version;
