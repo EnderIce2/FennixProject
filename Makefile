@@ -18,6 +18,11 @@ QEMUFLAGS = -device bochs-display -M q35 \
 			-usbdevice mouse \
 			-smp $(shell nproc) \
 			-net nic,model=rtl8139 \
+			-net nic,model=e1000 \
+			-net nic,model=e1000e \
+			-net nic,model=i82550 \
+			-net nic,model=ne2k_pci \
+			-net nic,model=virtio-net-pci \
 			-net nic,model=pcnet \
 			-serial file:serial.log \
 			-net user \
