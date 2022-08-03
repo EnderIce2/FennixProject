@@ -148,6 +148,7 @@ namespace E1000
         InternetProtocol IP;
         uint32_t CurrentPacket;
         BARData BAR;
+        void E1000InterruptHandler();
 
     public:
         MediaAccessControl GetMAC();
@@ -157,6 +158,5 @@ namespace E1000
         ~NetworkInterfaceController();
         void Send(void *Data, uint64_t Length);
         void Receive();
-        void E1000InterruptHandler();
     };
 }

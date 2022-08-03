@@ -20,6 +20,7 @@ namespace RTL8139
         InternetProtocol IP;
         uint32_t CurrentPacket;
         BARData BAR;
+        void RTL8139InterruptHandler();
 
     public:
         MediaAccessControl GetMAC();
@@ -29,6 +30,5 @@ namespace RTL8139
         ~NetworkInterfaceController();
         void Send(void *Data, uint64_t Length);
         void Receive();
-        void RTL8139InterruptHandler();
     };
 }
