@@ -335,4 +335,12 @@ namespace NetworkICMPv6
     };
 }
 
+namespace NetworkTCP
+{
+}
+
+namespace NetworkUDP
+{
+}
+
 extern NetworkInterfaceManager::NetworkInterface *nimgr;
