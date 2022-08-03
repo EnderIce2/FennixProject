@@ -38,19 +38,21 @@ namespace NetworkARP
             delete tmp;
             return nullptr;
         case DA_SEARCH:
+            delete tmp;
             for (int i = 0; i < DiscoveredAddresses.size(); i++)
                 if (CompareIP(DiscoveredAddresses[i]->IP, IP, CompareIPv4))
+                {
                     return DiscoveredAddresses[i];
-            delete tmp;
+                }
             return nullptr;
         case DA_UPDATE:
+            delete tmp;
             for (int i = 0; i < DiscoveredAddresses.size(); i++)
                 if (CompareIP(DiscoveredAddresses[i]->IP, IP, CompareIPv4))
                 {
                     DiscoveredAddresses[i]->MAC = MAC;
                     return DiscoveredAddresses[i];
                 }
-            delete tmp;
             return nullptr;
         }
         delete tmp;
