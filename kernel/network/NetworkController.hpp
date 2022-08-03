@@ -125,6 +125,11 @@ namespace NetworkEthernet
     };
 }
 
+namespace NetworkDHCP
+{
+    
+}
+
 namespace NetworkARP
 {
     /* https://en.wikipedia.org/wiki/Address_Resolution_Protocol */
