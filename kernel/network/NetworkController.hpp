@@ -60,6 +60,11 @@ namespace NetworkInterfaceManager
         {
             return;
         }
+
+        virtual void Receive(void *Data)
+        {
+            return;
+        }
     };
 
     class NetworkInterface
