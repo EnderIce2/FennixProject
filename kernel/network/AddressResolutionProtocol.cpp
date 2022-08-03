@@ -75,7 +75,7 @@ namespace NetworkARP
         Header->ProtocolType = NetworkEthernet::ProtocolType::ETYPE_IPV4;
         Header->HardwareSize = 6;
         Header->ProtocolSize = 4;
-        Header->Operation = ARPOperation::REQUEST;
+        Header->Operation = NetworkOperation::REQUEST;
         Header->SenderMAC = Interface->MAC;
         Header->SenderIP = Interface->IP;
         Header->TargetMAC = TargetMAC;
@@ -105,16 +105,16 @@ namespace NetworkARP
 
         switch (Header->Operation)
         {
-        case ARPOperation::REQUEST:
+        case NetworkOperation::REQUEST:
             netdbg("ARP: Received request for %d.%d.%d.%d", Header->TargetIP.v4Address[0], Header->TargetIP.v4Address[1], Header->TargetIP.v4Address[2], Header->TargetIP.v4Address[3]);
             Header->TargetMAC = Header->SenderMAC;
             Header->TargetIP = Header->SenderIP;
             Header->SenderMAC = Interface->MAC;
             Header->SenderIP = Interface->IP;
-            Header->Operation = ARPOperation::REPLY;
+            Header->Operation = NetworkOperation::REPLY;
             NetworkEthernet::Ethernet(Interface).Send(Header, sizeof(ARPHeader), {.MAC = Header->TargetMAC, .Type = NetworkEthernet::ProtocolType::ETYPE_ARP});
             break;
-        case ARPOperation::REPLY:
+        case NetworkOperation::REPLY:
             fixme("ARP: Received reply for %d.%d.%d.%d", Header->TargetIP.v4Address[0], Header->TargetIP.v4Address[1], Header->TargetIP.v4Address[2], Header->TargetIP.v4Address[3]);
             break;
         }

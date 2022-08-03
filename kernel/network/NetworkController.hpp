@@ -11,6 +11,12 @@
 #define netdbg(m, ...)
 #endif
 
+enum NetworkOperation
+{
+    REQUEST = 1,
+    REPLY = 2
+};
+
 struct MediaAccessControl
 {
     uint8_t Address[6];
@@ -127,7 +133,41 @@ namespace NetworkEthernet
 
 namespace NetworkDHCP
 {
-    
+    struct DHCPHeader
+    {
+        uint8_t Opcode;
+        uint8_t HardwareType;
+        uint8_t HardwareAddressLength;
+        uint8_t Hops;
+        uint32_t TransactionID;
+        uint16_t Seconds;
+        uint16_t Flags;
+        uint32_t ClientIP;
+        uint32_t YourIP;
+        uint32_t ServerIP;
+        uint32_t GatewayIP;
+        uint8_t ClientHardwareAddress[16];
+        uint8_t ServerHostName[64];
+        uint8_t BootFileName[128];
+        uint32_t Options[64];
+    };
+
+    struct DHCPData
+    {
+        InternetProtocol IP;
+        uint32_t Gateway;
+        uint32_t Subnetwork;
+        uint32_t DomainNameSystem;
+    };
+
+    class DHCP
+    {
+    public:
+        DHCP(NetworkInterfaceManager::DeviceInterface *Interface);
+        ~DHCP();
+        void Request();
+        void Request(InternetProtocol IP);
+    };
 }
 
 namespace NetworkARP
@@ -146,12 +186,6 @@ namespace NetworkARP
         HTYPE_FIBRE_CHANNEL = 18,
         HTYPE_ATM_2 = 19,
         HTYPE_SERIAL_LINE = 20
-    };
-
-    enum ARPOperation
-    {
-        REQUEST = 1,
-        REPLY = 2
     };
 
     struct ARPHeader
