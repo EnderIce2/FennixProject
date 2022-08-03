@@ -224,6 +224,36 @@ namespace NetworkARP
     };
 }
 
+namespace NetworkNTP
+{
+    struct NTPHeader
+    {
+        uint8_t LIv;
+        uint8_t VN;
+        uint8_t Mode;
+        uint8_t Stratum;
+        uint8_t Poll;
+        uint8_t Precision;
+        uint32_t RootDelay;
+        uint32_t RootDispersion;
+        uint32_t ReferenceID;
+        uint32_t ReferenceTimestamp;
+        uint32_t OriginateTimestamp;
+        uint32_t ReceiveTimestamp;
+        uint32_t TransmitTimestamp;
+    };
+
+    class NTP
+    {
+    private:
+        NetworkInterfaceManager::DeviceInterface *Interface;
+
+    public:
+        NTP(NetworkInterfaceManager::DeviceInterface *Interface);
+        ~NTP();
+    };
+}
+
 namespace NetworkIPv4
 {
     struct IPv4Header
