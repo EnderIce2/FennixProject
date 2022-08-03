@@ -1,15 +1,16 @@
 #pragma once
 
+#include <debug.h>
+#include <stdint.h>
+
 #define DEBUG_NETWORK 1
 
 #ifdef DEBUG_NETWORK
-#include <debug.h>
 #define netdbg(m, ...) debug(m, ##__VA_ARGS__)
 #else
 #define netdbg(m, ...)
 #endif
 
-#include <stdint.h>
 
 struct MediaAccessControl
 {
@@ -58,12 +59,12 @@ namespace NetworkInterfaceManager
 
         virtual void Send(void *Data, uint64_t Length)
         {
-            return;
+            warn("Not implemented.");
         }
 
         virtual void Receive(void *Data)
         {
-            return;
+            warn("Not implemented.");
         }
     };
 
