@@ -56,7 +56,10 @@ namespace NetworkInterfaceManager
         MediaAccessControl MAC;
         InternetProtocol IP;
 
-        void Send(void *Data, uint64_t Length);
+        virtual void Send(void *Data, uint64_t Length)
+        {
+            return;
+        }
     };
 
     class NetworkInterface
