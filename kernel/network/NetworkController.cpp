@@ -1,5 +1,7 @@
 #include "NetworkController.hpp"
 
+#include <int.h>
+
 #include "../drivers/network/RTL8139/RTL8139.hpp"
 #include "../drivers/network/RTL8169/RTL8169.hpp"
 #include "../drivers/network/E1000/E1000.hpp"
@@ -10,6 +12,11 @@ NetworkInterfaceManager::NetworkInterface *nimgr = nullptr;
 RTL8139::NetworkInterfaceController *rtl8139 = nullptr;
 RTL8169::NetworkInterfaceController *rtl8169 = nullptr;
 E1000::NetworkInterfaceController *e1000 = nullptr;
+
+InterruptHandler(E1000StubInterruptHandler)
+{
+    e1000->E1000InterruptHandler(regs);
+}
 
 namespace NetworkInterfaceManager
 {
@@ -24,26 +31,41 @@ namespace NetworkInterfaceManager
         // "E1000", 0x8086, 0x100F,
         // "AMD PCNET", 0x1022, 0x2000
 
-        foreach (auto PCIData in PCI::FindPCIDevice(0x10EC, 0x8139))
-            rtl8139 = new RTL8139::NetworkInterfaceController(PCIData, CardIDs++);
+        // TODO: initialize more cards at once
+        if (!rtl8139)
+            foreach (auto PCIData in PCI::FindPCIDevice(0x10EC, 0x8139))
+                rtl8139 = new RTL8139::NetworkInterfaceController(PCIData, CardIDs++);
 
-        foreach (auto PCIData in PCI::FindPCIDevice(0x10EC, 0x8169))
-            rtl8169 = new RTL8169::NetworkInterfaceController(PCIData, CardIDs++);
+        if (!rtl8169)
+            foreach (auto PCIData in PCI::FindPCIDevice(0x10EC, 0x8169))
+                rtl8169 = new RTL8169::NetworkInterfaceController(PCIData, CardIDs++);
 
-        foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x100E))
-            e1000 = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+        if (!e1000)
+            foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x100E))
+                e1000 = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
 
-        foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x153A))
-            e1000 = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+        if (!e1000)
+            foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x153A))
+                e1000 = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
 
-        foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x10EA))
-            e1000 = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+        if (!e1000)
+            foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x10EA))
+                e1000 = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
 
-        foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x109A))
-            e1000 = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+        if (!e1000)
+            foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x109A))
+                e1000 = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
 
-        foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x100F))
-            e1000 = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+        if (!e1000)
+            foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x100F))
+                e1000 = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+
+        RegisterInterrupt(E1000StubInterruptHandler, IRQ11, true);
+        e1000->Start();
+
+        MediaAccessControl mac = e1000->GetMAC();
+        netdbg("MAC: %02x:%02x:%02x:%02x:%02x:%02x",
+               mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
     }
 
     NetworkInterface::~NetworkInterface()
