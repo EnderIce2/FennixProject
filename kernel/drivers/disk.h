@@ -1,8 +1,8 @@
 #pragma once
 #include <types.h>
 #include <vector.hpp>
-#include "controllers/ahci.h"
-#include "controllers/floppy.h"
+#include "storage/ahci.h"
+#include "storage/floppy.h"
 
 extern Vector<AHCI::AHCIDriver *> ahci;
 extern Floppy::FloppyDriver *floppy;
