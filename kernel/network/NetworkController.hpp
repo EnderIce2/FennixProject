@@ -11,7 +11,6 @@
 #define netdbg(m, ...)
 #endif
 
-
 struct MediaAccessControl
 {
     uint8_t Address[6];
@@ -70,6 +69,9 @@ namespace NetworkInterfaceManager
 
     class NetworkInterface
     {
+    private:
+        int CardIDs = 0;
+
     public:
         NetworkInterface();
         ~NetworkInterface();
