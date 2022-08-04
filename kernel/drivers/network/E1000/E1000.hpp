@@ -160,6 +160,8 @@ namespace E1000
         void writeCommand(uint16_t p_address, uint32_t p_value);
         uint32_t readCommand(uint16_t p_address);
 
+        void StartLink();
+
         bool DetectEEPROM();
         uint32_t ReadEEPROM(uint8_t addr);
         void rxinit();

@@ -208,12 +208,18 @@ namespace E1000
         writeCommand(REG::TIPG, 0x0060200A);
     }
 
+    void NetworkInterfaceController::StartLink()
+    {
+        uint32_t ret = readCommand(REG::CTRL);
+        writeCommand(REG::CTRL, ret | ECTRL::SLU);
+    }
+
     bool NetworkInterfaceController::Start()
     {
         DetectEEPROM();
         // if (!readMACAddress())
         //     return false;
-        // startLink();
+        StartLink();
 
         for (int i = 0; i < 0x80; i++)
             writeCommand(0x5200 + i * 4, 0);
@@ -279,8 +285,7 @@ namespace E1000
         uint32_t status = readCommand(0xc0);
         if (status & 0x04)
         {
-            // startLink();
-            fixme("Start link");
+            StartLink();
         }
         else if (status & 0x10)
         {
