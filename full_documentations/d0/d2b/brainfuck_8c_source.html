@@ -94,13 +94,13 @@ $(document).ready(function(){initNavTree('d0/d2b/brainfuck_8c_source.html','../.
 <div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="../../d0/d2b/brainfuck_8c.html#a92dc3f71fd6adfd1bb72778ba0ad272c">    3</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d2b/brainfuck_8c.html#a92dc3f71fd6adfd1bb72778ba0ad272c">brainfuck</a>(<span class="keywordtype">char</span> *Data, <span class="keywordtype">char</span> *Input)</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordtype">int</span> BracketFlag;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">char</span> Command;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">char</span> <a class="code" href="../../da/d3f/E1000_8hpp.html#acb11b7f64dca443c2d6fcaeca8f5c17d">Command</a>;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">char</span> CodeData[1001] = {0};</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">char</span> *TempBuffer;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    TempBuffer = &amp;CodeData[500];</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">while</span> (Command = *Data++)</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">switch</span> (Command)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="../../da/d3f/E1000_8hpp.html#acb11b7f64dca443c2d6fcaeca8f5c17d">Command</a> = *Data++)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">switch</span> (<a class="code" href="../../da/d3f/E1000_8hpp.html#acb11b7f64dca443c2d6fcaeca8f5c17d">Command</a>)</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">case</span> <span class="charliteral">&#39;&gt;&#39;</span>:</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
@@ -180,6 +180,7 @@ $(document).ready(function(){initNavTree('d0/d2b/brainfuck_8c_source.html','../.
 </div><!-- doc-content -->
 <div class="ttc" id="abrainfuck_8c_html_a92dc3f71fd6adfd1bb72778ba0ad272c"><div class="ttname"><a href="../../d0/d2b/brainfuck_8c.html#a92dc3f71fd6adfd1bb72778ba0ad272c">brainfuck</a></div><div class="ttdeci">void brainfuck(char *Data, char *Input)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2b/brainfuck_8c_source.html#l00003">brainfuck.c:3</a></div></div>
 <div class="ttc" id="abrainfuck_8c_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="../../d0/d2b/brainfuck_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2b/brainfuck_8c_source.html#l00074">brainfuck.c:74</a></div></div>
+<div class="ttc" id="aE1000_8hpp_html_acb11b7f64dca443c2d6fcaeca8f5c17d"><div class="ttname"><a href="../../da/d3f/E1000_8hpp.html#acb11b7f64dca443c2d6fcaeca8f5c17d">Command</a></div><div class="ttdeci">volatile uint8_t Command</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d3f/E1000_8hpp_source.html#l00005">E1000.hpp:5</a></div></div>
 <div class="ttc" id="acrt0_8c_html_a8c6923b50b593219f778bcaa56306446"><div class="ttname"><a href="../../d8/def/crt0_8c.html#a8c6923b50b593219f778bcaa56306446">argv</a></div><div class="ttdeci">static char * argv[20]</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/def/crt0_8c_source.html#l00002">crt0.c:2</a></div></div>
 <div class="ttc" id="aprint_8h_html"><div class="ttname"><a href="../../d5/d77/print_8h.html">print.h</a></div></div>
 <div class="ttc" id="adisplay_8h_html_a0f459d16901ef591acaafa4b67fd4be5"><div class="ttname"><a href="../../d4/d68/display_8h.html#a0f459d16901ef591acaafa4b67fd4be5">printf</a></div><div class="ttdeci">#define printf(format,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d68/display_8h_source.html#l00208">display.h:208</a></div></div>

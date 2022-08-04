@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kernelsymbols_4805',['KernelSymbols',['../d9/d45/namespaceKernelSymbols.html',1,'']]]
+  ['heap_4978',['Heap',['../db/d18/namespaceHeap.html',1,'']]]
 ];

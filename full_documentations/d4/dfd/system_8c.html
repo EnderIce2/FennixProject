@@ -110,10 +110,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ab14c738819544946430b036b48fb7081"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/system_8c.html#ab14c738819544946430b036b48fb7081">usleep</a> (unsigned long Microseconds)</td></tr>
 <tr class="memdesc:ab14c738819544946430b036b48fb7081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sleep for a given number of microseconds.  <a href="../../d4/dfd/system_8c.html#ab14c738819544946430b036b48fb7081">More...</a><br /></td></tr>
 <tr class="separator:ab14c738819544946430b036b48fb7081"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73b441a94caad7873bb342021cdd187e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/system_8c.html#a73b441a94caad7873bb342021cdd187e">system</a> (const char *Command)</td></tr>
+<tr class="memitem:a73b441a94caad7873bb342021cdd187e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/system_8c.html#a73b441a94caad7873bb342021cdd187e">system</a> (const char *<a class="el" href="../../da/d3f/E1000_8hpp.html#acb11b7f64dca443c2d6fcaeca8f5c17d">Command</a>)</td></tr>
 <tr class="memdesc:a73b441a94caad7873bb342021cdd187e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a command in the system shell.  <a href="../../d4/dfd/system_8c.html#a73b441a94caad7873bb342021cdd187e">More...</a><br /></td></tr>
 <tr class="separator:a73b441a94caad7873bb342021cdd187e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7510622b552ba5c6c273714f3452e4d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/system_8c.html#a7510622b552ba5c6c273714f3452e4d7">Exit</a> (int Status)</td></tr>
+<tr class="memitem:a7510622b552ba5c6c273714f3452e4d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dfd/system_8c.html#a7510622b552ba5c6c273714f3452e4d7">Exit</a> (int <a class="el" href="../../da/d3f/E1000_8hpp.html#a92878db22f254667b79af022bb56e137">Status</a>)</td></tr>
 <tr class="memdesc:a7510622b552ba5c6c273714f3452e4d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exit the program with a status code.  <a href="../../d4/dfd/system_8c.html#a7510622b552ba5c6c273714f3452e4d7">More...</a><br /></td></tr>
 <tr class="separator:a7510622b552ba5c6c273714f3452e4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -201,11 +201,13 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/dfd/system_8c_source.html#l00054">54</a> of file <a class="el" href="../../d4/dfd/system_8c_source.html">system.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    syscall_exit(Status);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    syscall_exit(<a class="code" href="../../da/d3f/E1000_8hpp.html#a92878db22f254667b79af022bb56e137">Status</a>);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">while</span> (1)</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        ;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d3f/E1000_8hpp_source.html#l00005">Status</a>.</p>
+
 </div>
 </div>
 <a id="a73b441a94caad7873bb342021cdd187e"></a>
@@ -237,11 +239,13 @@ Variables</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// mono 1 - multi 2</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (syscall_getScheduleMode() == 2)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> syscall_createProcess((<span class="keywordtype">char</span> *)Command, 0, 0);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> syscall_createProcess((<span class="keywordtype">char</span> *)<a class="code" href="../../da/d3f/E1000_8hpp.html#acb11b7f64dca443c2d6fcaeca8f5c17d">Command</a>, 0, 0);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (syscall_getScheduleMode() == 1)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d3f/E1000_8hpp_source.html#l00005">Command</a>.</p>
+
 </div>
 </div>
 <a id="a5026dd2cd1d2dfadce9aa4d843fabfaa"></a>
@@ -401,6 +405,8 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="asystem_8c_html_ada1939ea676c22a08e4f0547b28b9ae8"><div class="ttname"><a href="../../d4/dfd/system_8c.html#ada1939ea676c22a08e4f0547b28b9ae8">syswritedbgbuf</a></div><div class="ttdeci">char syswritedbgbuf[2048]</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/system_8c_source.html#l00006">system.c:6</a></div></div>
+<div class="ttc" id="aE1000_8hpp_html_a92878db22f254667b79af022bb56e137"><div class="ttname"><a href="../../da/d3f/E1000_8hpp.html#a92878db22f254667b79af022bb56e137">Status</a></div><div class="ttdeci">volatile uint8_t Status</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d3f/E1000_8hpp_source.html#l00005">E1000.hpp:5</a></div></div>
+<div class="ttc" id="aE1000_8hpp_html_acb11b7f64dca443c2d6fcaeca8f5c17d"><div class="ttname"><a href="../../da/d3f/E1000_8hpp.html#acb11b7f64dca443c2d6fcaeca8f5c17d">Command</a></div><div class="ttdeci">volatile uint8_t Command</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d3f/E1000_8hpp_source.html#l00005">E1000.hpp:5</a></div></div>
 <div class="ttc" id="asystem_8c_html_a5026dd2cd1d2dfadce9aa4d843fabfaa"><div class="ttname"><a href="../../d4/dfd/system_8c.html#a5026dd2cd1d2dfadce9aa4d843fabfaa">syswritedbgprint_wrapper</a></div><div class="ttdeci">static void syswritedbgprint_wrapper(char c, void *unused)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/system_8c_source.html#l00019">system.c:19</a></div></div>
 <div class="ttc" id="akernel_2include_2printf_8h_html_a47c8d7b7f2120352c780f49b0212a13d"><div class="ttname"><a href="../../d8/d01/kernel_2include_2printf_8h.html#a47c8d7b7f2120352c780f49b0212a13d">vfctprintf</a></div><div class="ttdeci">PRINTF_VISIBILITY int PRINTF_VISIBILITY int vfctprintf(void(*out)(char c, void *extra_arg), void *extra_arg, const char *format, va_list arg) ATTR_VPRINTF(3)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d02/kernel_2libs_2printf_8c_source.html#l01367">printf.c:1367</a></div></div>
 <div class="ttc" id="astdarg_8h_html_af53f622e3b6c080daeb167c1955d7ec1"><div class="ttname"><a href="../../d1/d2d/stdarg_8h.html#af53f622e3b6c080daeb167c1955d7ec1">va_list</a></div><div class="ttdeci">__builtin_va_list va_list</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d2d/stdarg_8h_source.html#l00012">stdarg.h:12</a></div></div>

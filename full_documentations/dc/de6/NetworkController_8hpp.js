@@ -23,6 +23,30 @@ var NetworkController_8hpp =
       [ "MAC", "d7/d50/classNetworkEthernet_1_1Ethernet.html#af838418584e698a3706d3e94a52b53c1", null ],
       [ "Type", "d7/d50/classNetworkEthernet_1_1Ethernet.html#a3503a2c9d92a64f847f8cc507aa82ebe", null ]
     ] ],
+    [ "DHCPHeader", "dd/d53/namespaceNetworkDHCP.html#d4/dde/structNetworkDHCP_1_1DHCPHeader", [
+      [ "BootFileName", "dd/d53/namespaceNetworkDHCP.html#a4b5cc0b18d993714f7b3124af3ee5cec", null ],
+      [ "ClientHardwareAddress", "dd/d53/namespaceNetworkDHCP.html#a144b81a6d857d6b0a8634ffad551404e", null ],
+      [ "ClientIP", "dd/d53/namespaceNetworkDHCP.html#a95adbbcf33c7c3dcc403a09c85d19c9e", null ],
+      [ "Flags", "dd/d53/namespaceNetworkDHCP.html#aabb96ee87e3c1b88e02b1f79f06305a5", null ],
+      [ "GatewayIP", "dd/d53/namespaceNetworkDHCP.html#a5f1292c3ae4d293a655be246dce16406", null ],
+      [ "HardwareAddressLength", "dd/d53/namespaceNetworkDHCP.html#a7061662de825122d28022719a16e81e3", null ],
+      [ "HardwareType", "dd/d53/namespaceNetworkDHCP.html#a5616472d9d4953da524ce2e278053686", null ],
+      [ "Hops", "dd/d53/namespaceNetworkDHCP.html#a7f2721f6eab585e9480ea72fcade6ea5", null ],
+      [ "Opcode", "dd/d53/namespaceNetworkDHCP.html#a502aa135f8fdbada66db92961b114368", null ],
+      [ "Options", "dd/d53/namespaceNetworkDHCP.html#a84d529d3b48ea8cabe9e48c1d7436923", null ],
+      [ "Seconds", "dd/d53/namespaceNetworkDHCP.html#abc09a874f9e83e64e80a4202c3f83205", null ],
+      [ "ServerHostName", "dd/d53/namespaceNetworkDHCP.html#a8c27aeaae7325b4923c750d2ef1de63c", null ],
+      [ "ServerIP", "dd/d53/namespaceNetworkDHCP.html#a6976c29ed2aab3ba419a3710b558033a", null ],
+      [ "TransactionID", "dd/d53/namespaceNetworkDHCP.html#a53ad700cc1fa136722e374df5c35fd17", null ],
+      [ "YourIP", "dd/d53/namespaceNetworkDHCP.html#a072574ecb4dd4387280e52728dfa4cea", null ]
+    ] ],
+    [ "DHCPData", "dd/d53/namespaceNetworkDHCP.html#d1/deb/structNetworkDHCP_1_1DHCPData", [
+      [ "DomainNameSystem", "dd/d53/namespaceNetworkDHCP.html#aeca38dcd8180850b4246a6e9777bf909", null ],
+      [ "Gateway", "dd/d53/namespaceNetworkDHCP.html#ad376d6cfee594d4bd41b68d0198610dc", null ],
+      [ "IP", "dd/d53/namespaceNetworkDHCP.html#a25b7c2c3fbf7c349c1cf2b0e301188f5", null ],
+      [ "Subnetwork", "dd/d53/namespaceNetworkDHCP.html#a188b3b1eae6066da1249c15b3a02850d", null ]
+    ] ],
+    [ "DHCP", "db/dd7/classNetworkDHCP_1_1DHCP.html", "db/dd7/classNetworkDHCP_1_1DHCP" ],
     [ "ARPHeader", "d2/df9/namespaceNetworkARP.html#d7/dcf/structNetworkARP_1_1ARPHeader", [
       [ "HardwareSize", "d2/df9/namespaceNetworkARP.html#a118b24618b73be6848316abfbc8bc9be", null ],
       [ "HardwareType", "d2/df9/namespaceNetworkARP.html#a599c12da4e63939b4ddca37bda3793b5", null ],
@@ -39,6 +63,22 @@ var NetworkController_8hpp =
       [ "MAC", "d2/df9/namespaceNetworkARP.html#a8e78248e4147ba0f272c3d1b71563ab6", null ]
     ] ],
     [ "ARP", "d9/d9b/classNetworkARP_1_1ARP.html", "d9/d9b/classNetworkARP_1_1ARP" ],
+    [ "NTPHeader", "db/dfe/namespaceNetworkNTP.html#df/d24/structNetworkNTP_1_1NTPHeader", [
+      [ "LIv", "db/dfe/namespaceNetworkNTP.html#a042345cbcc7221b417c9d0d0e5bedd54", null ],
+      [ "Mode", "db/dfe/namespaceNetworkNTP.html#ab244f1e1967be676fee488926c829bc0", null ],
+      [ "OriginateTimestamp", "db/dfe/namespaceNetworkNTP.html#ac0cea9ce6d9e69f613572e4aca5abdc6", null ],
+      [ "Poll", "db/dfe/namespaceNetworkNTP.html#a163964738a5da9e02445f452449cfb37", null ],
+      [ "Precision", "db/dfe/namespaceNetworkNTP.html#addde4cc460ba232a6a6698e78f3791eb", null ],
+      [ "ReceiveTimestamp", "db/dfe/namespaceNetworkNTP.html#af41cc3a3cbbceb8b27c09ffec146aa46", null ],
+      [ "ReferenceID", "db/dfe/namespaceNetworkNTP.html#abad5bc2f830f26b969429562e090539f", null ],
+      [ "ReferenceTimestamp", "db/dfe/namespaceNetworkNTP.html#a0f8237b60033eafb8d942fa04591c3ac", null ],
+      [ "RootDelay", "db/dfe/namespaceNetworkNTP.html#a729742f09fe58c9bd8fa356716d995ef", null ],
+      [ "RootDispersion", "db/dfe/namespaceNetworkNTP.html#ab27d3e2c00a0adb65f620f8d20c3c826", null ],
+      [ "Stratum", "db/dfe/namespaceNetworkNTP.html#a37a3aaf04019a805a2f60e226755d3ed", null ],
+      [ "TransmitTimestamp", "db/dfe/namespaceNetworkNTP.html#a8d6983ab96763b4c829fb984e8d3e952", null ],
+      [ "VN", "db/dfe/namespaceNetworkNTP.html#a85a203576b0515f0b78238d0c68e68f6", null ]
+    ] ],
+    [ "NTP", "d7/d0d/classNetworkNTP_1_1NTP.html", "d7/d0d/classNetworkNTP_1_1NTP" ],
     [ "IPv4Header", "df/d2a/namespaceNetworkIPv4.html#d0/d99/structNetworkIPv4_1_1IPv4Header", [
       [ "Checksum", "df/d2a/namespaceNetworkIPv4.html#a5336fb8540a9a1a4b0926971b6b5ad63", null ],
       [ "DestinationIP", "df/d2a/namespaceNetworkIPv4.html#ac0bdf72bda347518d446f758809426a9", null ],
@@ -105,13 +145,13 @@ var NetworkController_8hpp =
       [ "HTYPE_ATM_2", "dc/de6/NetworkController_8hpp.html#aa7b28d3da26dbb0fb38fc7c9ca31735cabc50ddeee45f6096ca7907e7d3feb464", null ],
       [ "HTYPE_SERIAL_LINE", "dc/de6/NetworkController_8hpp.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca1895f5278dbed846fb0024c964f21ff0", null ]
     ] ],
-    [ "ARPOperation", "dc/de6/NetworkController_8hpp.html#aeb09ccefe69677574f3e16c6ff2c375b", [
-      [ "REQUEST", "dc/de6/NetworkController_8hpp.html#aeb09ccefe69677574f3e16c6ff2c375ba6d76f6fa7a69b2a1ab2cbf061e8ec4ec", null ],
-      [ "REPLY", "dc/de6/NetworkController_8hpp.html#aeb09ccefe69677574f3e16c6ff2c375bafad19e0558b612421b8234f6649eef6e", null ]
-    ] ],
     [ "CompareIPType", "dc/de6/NetworkController_8hpp.html#a9d6da551632f30b9fc5b6904a7cf51a1", [
       [ "CompareIPv4", "dc/de6/NetworkController_8hpp.html#a9d6da551632f30b9fc5b6904a7cf51a1a61f6eb6619f946066a077f723454effb", null ],
       [ "CompareIPv6", "dc/de6/NetworkController_8hpp.html#a9d6da551632f30b9fc5b6904a7cf51a1ad8c87188c6666b7058d46c6df1894757", null ]
+    ] ],
+    [ "NetworkOperation", "dc/de6/NetworkController_8hpp.html#ab1b009d1c18214fd7d4703eadba9c1e3", [
+      [ "REQUEST", "dc/de6/NetworkController_8hpp.html#ab1b009d1c18214fd7d4703eadba9c1e3abaf6b8e08edf0e9d2eb38551fed1fb39", null ],
+      [ "REPLY", "dc/de6/NetworkController_8hpp.html#ab1b009d1c18214fd7d4703eadba9c1e3a6bd05ac0fc10609a9dae953dc42a7a76", null ]
     ] ],
     [ "ProtocolType", "dc/de6/NetworkController_8hpp.html#adbe3a0a6b58142a5032384ac0008620b", [
       [ "ETYPE_IPV4", "dc/de6/NetworkController_8hpp.html#adbe3a0a6b58142a5032384ac0008620ba693123e814b6e36c7b0fe5d96409cc20", null ],
@@ -121,5 +161,6 @@ var NetworkController_8hpp =
     ] ],
     [ "CompareIP", "dc/de6/NetworkController_8hpp.html#a42794af3a607e0a9b415b6ee550b31e9", null ],
     [ "CompareMAC", "dc/de6/NetworkController_8hpp.html#ac96f1dccdad0c637c3f801f1fcd65dc2", null ],
+    [ "ValidMAC", "dc/de6/NetworkController_8hpp.html#a231064dc1d9d152943735fe878ea97e6", null ],
     [ "nimgr", "dc/de6/NetworkController_8hpp.html#a2d4bde208a6e8b2b23da3fda2a2d6984", null ]
 ];
