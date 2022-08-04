@@ -363,8 +363,8 @@ void KernelInit()
     procfs = new FileSystem::Process;
     diskmgr = new DiskManager::Disk;
     partmgr = new DiskManager::Partition;
-    nimgr = new NetworkInterfaceManager::NetworkInterface;
     BS->Progress(70);
+    nimgr = new NetworkInterfaceManager::NetworkInterface;
 
     new FileSystem::Serial;
     new FileSystem::Random;

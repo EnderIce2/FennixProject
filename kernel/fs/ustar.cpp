@@ -64,7 +64,6 @@ namespace FileSystem
             }
             else
             {
-                BS->IncreaseProgres();
                 trace("%s %dKB Type:%c", header->name, TO_KB(size), header->typeflag[0]);
                 node->Mode = string2int(header->mode);
                 node->Address = (Address + 512);
