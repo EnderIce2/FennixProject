@@ -23,6 +23,7 @@ int e1000Count = 0;
 InterruptHandler(E1000StubInterruptHandler)
 {
     // TODO: support more
+    fixme("E1000 stub interrupt: Received IRQ%d", regs->int_num - 32);
     e1000[0]->E1000InterruptHandler(regs);
 }
 
