@@ -76,7 +76,7 @@ namespace NetworkInterfaceManager
             warn("Not implemented.");
         }
 
-        virtual void Receive(void *Data)
+        virtual void Receive()
         {
             warn("Not implemented.");
         }

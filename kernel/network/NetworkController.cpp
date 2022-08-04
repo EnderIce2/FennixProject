@@ -146,5 +146,5 @@ namespace NetworkInterfaceManager
     }
 
     void NetworkInterface::Send(DeviceInterface Interface, void *Data, int Length) { Interface.Send(Data, Length); }
-    void NetworkInterface::Receive(DeviceInterface Interface, void *Data, int Length) { Interface.Receive(Data); }
+    void NetworkInterface::Receive(DeviceInterface Interface, void *Data, int Length) { Interface.Receive(); }
 }
