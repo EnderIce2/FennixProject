@@ -82,10 +82,14 @@ namespace NetworkInterfaceManager
         }
     };
 
+#define MAX_INTERFACES 32
+
     class NetworkInterface
     {
     private:
         int CardIDs = 0;
+        DeviceInterface *Devices[MAX_INTERFACES];
+        void TraceCards();
 
     public:
         NetworkInterface();

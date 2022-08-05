@@ -27,71 +27,53 @@ InterruptHandler(E1000StubInterruptHandler)
     e1000[0]->E1000InterruptHandler(regs);
 }
 
-void TraceCards()
-{
-    int rtl8139CardCount = 0;
-    foreach (auto card in rtl8139)
-    {
-        if (card)
-        {
-            MediaAccessControl mac = card->GetMAC();
-            if (!ValidMAC(mac))
-            {
-                err("RTL-8139[%d]: MAC address is invalid %x:%x:%x:%x:%x:%x", rtl8139CardCount,
-                    mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
-            }
-            else
-                netdbg("RTL-8139[%d]: MAC: %02x:%02x:%02x:%02x:%02x:%02x", rtl8139CardCount,
-                       mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
-        }
-        else
-            err("RTL-8139[%d]: Card not found", rtl8139CardCount);
-        rtl8139CardCount++;
-    }
-
-    int rtl8169CardCount = 0;
-    foreach (auto card in rtl8169)
-    {
-        if (card)
-        {
-            MediaAccessControl mac = card->GetMAC();
-            if (!ValidMAC(mac))
-            {
-                err("RTL-8169[%d]: MAC address is invalid %x:%x:%x:%x:%x:%x", rtl8169CardCount,
-                    mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
-            }
-            else
-                netdbg("RTL-8169[%d]: MAC: %02x:%02x:%02x:%02x:%02x:%02x", rtl8169CardCount,
-                       mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
-        }
-        else
-            err("RTL-8169[%d]: Card not found", rtl8169CardCount);
-        rtl8169CardCount++;
-    }
-
-    int e1000CardCount = 0;
-    foreach (auto card in e1000)
-    {
-        if (card)
-        {
-            MediaAccessControl mac = card->GetMAC();
-            if (!ValidMAC(mac))
-            {
-                err("E1000[%d]: MAC address is invalid %x:%x:%x:%x:%x:%x", e1000CardCount,
-                    mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
-            }
-            else
-                netdbg("E1000[%d]: MAC: %02x:%02x:%02x:%02x:%02x:%02x", e1000CardCount,
-                       mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
-        }
-        else
-            err("E1000[%d]: Card not found", e1000CardCount);
-        e1000CardCount++;
-    }
-}
-
 namespace NetworkInterfaceManager
 {
+    void NetworkInterface::TraceCards()
+    {
+        int rtl8139CardCount = 0;
+        foreach (auto card in rtl8139)
+            if (card)
+            {
+                MediaAccessControl mac = card->GetMAC();
+                if (ValidMAC(mac))
+                {
+                    netdbg("RTL-8139[%d]: MAC: %02x:%02x:%02x:%02x:%02x:%02x", rtl8139CardCount,
+                           mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
+                    Devices[CardIDs++] = card;
+                }
+                rtl8139CardCount++;
+            }
+
+        int rtl8169CardCount = 0;
+        foreach (auto card in rtl8169)
+            if (card)
+            {
+                MediaAccessControl mac = card->GetMAC();
+                if (ValidMAC(mac))
+                {
+                    netdbg("RTL-8169[%d]: MAC: %02x:%02x:%02x:%02x:%02x:%02x", rtl8169CardCount,
+                           mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
+                    Devices[CardIDs++] = card;
+                }
+                rtl8169CardCount++;
+            }
+
+        int e1000CardCount = 0;
+        foreach (auto card in e1000)
+            if (card)
+            {
+                MediaAccessControl mac = card->GetMAC();
+                if (ValidMAC(mac))
+                {
+                    netdbg("E1000[%d]: MAC: %02x:%02x:%02x:%02x:%02x:%02x", e1000CardCount,
+                           mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
+                    Devices[CardIDs++] = card;
+                }
+                e1000CardCount++;
+            }
+    }
+
     NetworkInterface::NetworkInterface()
     {
         // "RTL-8139", 0x10EC, 0x8139,
@@ -103,27 +85,32 @@ namespace NetworkInterfaceManager
         // "E1000", 0x8086, 0x100F,
         // "AMD PCNET", 0x1022, 0x2000
 
-        // TODO: initialize more cards at once
-        foreach (auto PCIData in PCI::FindPCIDevice(0x10EC, 0x8139))
-            rtl8139[rtl8139Count++] = new RTL8139::NetworkInterfaceController(PCIData, CardIDs++);
+        // RTL-81**
+        {
+            foreach (auto PCIData in PCI::FindPCIDevice(0x10EC, 0x8139))
+                rtl8139[rtl8139Count++] = new RTL8139::NetworkInterfaceController(PCIData, CardIDs++);
 
-        foreach (auto PCIData in PCI::FindPCIDevice(0x10EC, 0x8169))
-            rtl8169[rtl8169Count++] = new RTL8169::NetworkInterfaceController(PCIData, CardIDs++);
+            foreach (auto PCIData in PCI::FindPCIDevice(0x10EC, 0x8169))
+                rtl8169[rtl8169Count++] = new RTL8169::NetworkInterfaceController(PCIData, CardIDs++);
+        }
 
-        foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x100E))
-            e1000[e1000Count++] = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+        // E1000
+        {
+            foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x100E))
+                e1000[e1000Count++] = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
 
-        foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x153A))
-            e1000[e1000Count++] = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+            foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x153A))
+                e1000[e1000Count++] = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
 
-        foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x10EA))
-            e1000[e1000Count++] = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+            foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x10EA))
+                e1000[e1000Count++] = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
 
-        foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x109A))
-            e1000[e1000Count++] = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+            foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x109A))
+                e1000[e1000Count++] = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
 
-        foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x100F))
-            e1000[e1000Count++] = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+            foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x100F))
+                e1000[e1000Count++] = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
+        }
 
         if (e1000[0])
         {
@@ -134,6 +121,7 @@ namespace NetworkInterfaceManager
         }
 
         TraceCards();
+        // CPU_HALT; // debugging
     }
 
     NetworkInterface::~NetworkInterface()
