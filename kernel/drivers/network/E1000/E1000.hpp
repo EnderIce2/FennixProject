@@ -156,14 +156,13 @@ namespace E1000
         RXDescriptor *RXDescriptor[E1000_NUM_RX_DESC];
         TXDescriptor *TXDescriptor[E1000_NUM_TX_DESC];
 
-        // Send Commands and read results From NICs either using MMIO or IO Ports
-        void writeCommand(uint16_t p_address, uint32_t p_value);
-        uint32_t readCommand(uint16_t p_address);
+        void OutCMD(uint16_t Address, uint32_t Value);
+        uint32_t InCMD(uint16_t Address);
 
         void StartLink();
 
         bool DetectEEPROM();
-        uint32_t ReadEEPROM(uint8_t addr);
+        uint32_t ReadEEPROM(uint8_t Address);
         void rxinit();
         void txinit();
 

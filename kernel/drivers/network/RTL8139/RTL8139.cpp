@@ -39,7 +39,7 @@ namespace RTL8139
             netdbg("Not a RTL-8139 network card");
             return;
         }
-        netdbg("Found RTL-8139 network card");
+        netdbg("Found %s network card", PCI::GetDeviceName(PCIBaseAddress->VendorID, PCIBaseAddress->DeviceID));
         uint32_t PCIBAR = ((PCI::PCIHeader0 *)PCIBaseAddress)->BAR0;
         BAR.Type = PCIBAR & 1;
         BAR.IOBase = PCIBAR & (~3);
