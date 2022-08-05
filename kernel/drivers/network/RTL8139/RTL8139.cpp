@@ -34,7 +34,7 @@ namespace RTL8139
 
     NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID)
     {
-        if (PCIBaseAddress->VendorID != 0x10EC || PCIBaseAddress->DeviceID != 0x8139)
+        if (PCIBaseAddress->VendorID != 0x10EC && PCIBaseAddress->DeviceID != 0x8139)
         {
             netdbg("Not a RTL-8139 network card");
             return;

@@ -21,7 +21,7 @@ namespace RTL8169
 
     NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID)
     {
-        if (PCIBaseAddress->VendorID != 0x10EC || PCIBaseAddress->DeviceID != 0x8169)
+        if (PCIBaseAddress->VendorID != 0x10EC && PCIBaseAddress->DeviceID != 0x8169)
         {
             netdbg("Not a RTL-8169 network card");
             return;
