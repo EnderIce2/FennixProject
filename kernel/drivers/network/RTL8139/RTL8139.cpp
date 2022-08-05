@@ -60,10 +60,6 @@ namespace RTL8139
         outportw(BAR.IOBase + 0x3C, 0x0005);
         outportl(BAR.IOBase + 0x44, 0xf | (1 << 7));
         outportb(BAR.IOBase + 0x37, 0x0C);
-
-        MediaAccessControl mac = GetMAC();
-        netdbg("MAC: %02x:%02x:%02x:%02x:%02x:%02x",
-               mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
     }
 
     NetworkInterfaceController::~NetworkInterfaceController() { KernelAllocator.FreePages(RXBuffer, 2); }
