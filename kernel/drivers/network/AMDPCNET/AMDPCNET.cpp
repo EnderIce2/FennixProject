@@ -21,7 +21,7 @@ namespace AMDPCNET
 
     NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID)
     {
-        if (PCIBaseAddress->VendorID != 0x10EC || PCIBaseAddress->DeviceID != 0x8169)
+        if (PCIBaseAddress->VendorID != 0x1022 && PCIBaseAddress->DeviceID != 0x2000)
         {
             netdbg("Not a AMD PCNET network card");
             return;
