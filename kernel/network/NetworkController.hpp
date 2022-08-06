@@ -181,13 +181,16 @@ namespace NetworkEthernetFrame
 
     class EthernetFrame
     {
+    private:
+        NetworkInterfaceManager::DeviceInterface *Interface;
+
     public:
         Vector<Events *> Events;
 
         EthernetFrame(NetworkInterfaceManager::DeviceInterface *Interface);
         ~EthernetFrame();
 
-        void Send();
+        void Send(MediaAccessControl MAC, FrameType Type, void *Data, uint64_t Length);
         void Receive(void *Data, uint64_t Length);
     };
 }
