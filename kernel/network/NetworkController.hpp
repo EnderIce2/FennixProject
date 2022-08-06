@@ -107,8 +107,8 @@ namespace NetworkInterfaceManager
         NetworkInterface();
         ~NetworkInterface();
         void Scan();
-        void Send(DeviceInterface Interface, void *Data, int Length);
-        void Receive(DeviceInterface Interface, void *Data, int Length);
+        void Send(DeviceInterface Interface, void *Data, uint64_t Length);
+        void Receive(DeviceInterface Interface, void *Data, uint64_t Length);
     };
 }
 
@@ -151,9 +151,45 @@ namespace NetworkEthernet
 
         Ethernet(NetworkInterfaceManager::DeviceInterface *Interface);
         ~Ethernet();
-        void Send(void *Data, int Length, SendInfo Info);
+        void Send(void *Data, uint64_t Length, SendInfo Info);
         void Receive(void *Data);
     };
+}
+
+namespace NetworkEthernetFrame
+{
+    enum FrameType
+    {
+        FRAME_IPV4 = 0x0800,
+        FRAME_ARP = 0x0806,
+        FRAME_RARP = 0x8035,
+        FRAME_IPV6 = 0x86DD
+    };
+
+    struct EthernetFrameHeader
+    {
+        uint64_t DestinationMAC : 48;
+        uint64_t SourceMAC : 48;
+        uint64_t Type;
+    } __attribute__((packed));
+
+    class Events
+    {
+    public:
+        virtual void OnReceive(EthernetFrameHeader Header, void *Data, uint64_t Length);
+    };
+
+    class EthernetFrame
+    {
+    public:
+        Vector<Events *> Events;
+
+        EthernetFrame(NetworkInterfaceManager::DeviceInterface *Interface);
+        ~EthernetFrame();
+
+        void Send();
+        void Receive(void *Data, uint64_t Length);
+    }
 }
 
 namespace NetworkDHCP
@@ -271,6 +307,22 @@ namespace NetworkIPv4
         IPv4Header Header;
         uint8_t Data[];
     };
+
+    class IPv4
+    {
+    public:
+        IPv4(NetworkInterfaceManager::DeviceInterface *Interface);
+        ~IPv4();
+        void Send(void *Data, uint64_t Length, InternetProtocol DestinationIP);
+    };
+
+    class Events
+    {
+    public:
+        Events(NetworkInterfaceManager::DeviceInterface *Interface);
+        ~Events();
+        virtual void OnIPv4MessageReceived();
+    };
 }
 
 namespace NetworkIPv6
@@ -365,7 +417,7 @@ namespace NetworkICMPv6
     public:
         ICMPv6(NetworkInterfaceManager::DeviceInterface *Interface);
         ~ICMPv6();
-        void Send(void *Data, int Length);
+        void Send(void *Data, uint64_t Length);
         void Receive(void *Data);
     };
 }
@@ -440,7 +492,7 @@ namespace NetworkUDP
     public:
         Events();
         ~Events();
-        virtual void OnUDPMessageReceived(Socket *Socket, void *Data, uint64_t Length);
+        virtual void OnReceive(Socket *Socket, void *Data, uint64_t Length);
     };
 }
 
@@ -472,7 +524,7 @@ namespace NetworkNTP
         NTP(NetworkUDP::Socket *Socket);
         ~NTP();
 
-        virtual void OnUDPMessageReceived(NetworkUDP::Socket *Socket, void *Data, uint64_t Length);
+        virtual void OnReceive(NetworkUDP::Socket *Socket, void *Data, uint64_t Length);
         void ReadTime();
     };
 }

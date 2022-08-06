@@ -2,6 +2,7 @@
 
 namespace NetworkIPv4
 {
+
 }
 
 namespace NetworkIPv6

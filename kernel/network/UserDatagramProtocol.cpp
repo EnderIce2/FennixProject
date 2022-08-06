@@ -43,7 +43,7 @@ namespace NetworkUDP
         netdbg("Events destroyed.");
     }
 
-    void OnUDPMessageReceived(Socket *Socket, void *Data, uint64_t Length)
+    void OnReceive(Socket *Socket, void *Data, uint64_t Length)
     {
         warn("Unhandled message");
     }

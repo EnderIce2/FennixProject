@@ -10,9 +10,9 @@ namespace NetworkNTP
     {
     }
 
-    void OnUDPMessageReceived(NetworkUDP::Socket *Socket, void *Data, uint64_t Length)
+    void OnReceive(NetworkUDP::Socket *Socket, void *Data, uint64_t Length)
     {
-        fixme("OnUDPMessageReceived( %p %p %ld )", Socket, Data, Length);
+        fixme("OnReceive( %p %p %ld )", Socket, Data, Length);
     }
 
     void ReadTime()
