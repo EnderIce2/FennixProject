@@ -2,13 +2,14 @@
 
 namespace NetworkNTP
 {
-    NTP::NTP(NetworkUDP::Socket *Socket)
-    {
-    }
+    // NTP::NTP(NetworkUDP::Socket *Socket)
+    // {
+    //     this->Socket = Socket;
+    // }
 
-    NTP::~NTP()
-    {
-    }
+    // NTP::~NTP()
+    // {
+    // }
 
     void OnReceive(NetworkUDP::Socket *Socket, void *Data, uint64_t Length)
     {

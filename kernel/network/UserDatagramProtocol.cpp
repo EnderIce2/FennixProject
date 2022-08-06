@@ -21,27 +21,27 @@ namespace NetworkUDP
 
     /* -------------------------------------------------------------------------------------------------------------------------------- */
 
-    Provider::Provider()
-    {
-        netdbg("New provider created.");
-    }
+    // Provider::Provider()
+    // {
+    //     netdbg("New provider created.");
+    // }
 
-    Provider::~Provider()
-    {
-        netdbg("Provider destroyed.");
-    }
+    // Provider::~Provider()
+    // {
+    //     netdbg("Provider destroyed.");
+    // }
 
     /* -------------------------------------------------------------------------------------------------------------------------------- */
 
-    Events::Events()
-    {
-        netdbg("New events created.");
-    }
+    // Events::Events()
+    // {
+    //     netdbg("New events created.");
+    // }
 
-    Events::~Events()
-    {
-        netdbg("Events destroyed.");
-    }
+    // Events::~Events()
+    // {
+    //     netdbg("Events destroyed.");
+    // }
 
     void OnReceive(Socket *Socket, void *Data, uint64_t Length)
     {
