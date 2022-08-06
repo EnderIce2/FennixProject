@@ -1,7 +1,6 @@
 #pragma once
 
 #include <debug.h>
-#include <stdint.h>
 #include <vector.hpp>
 
 #define DEBUG_NETWORK 1

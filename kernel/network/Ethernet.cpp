@@ -9,7 +9,7 @@ namespace NetworkEthernet
 
     Ethernet::~Ethernet() {}
 
-    void Ethernet::Send(void *Data, int Length, SendInfo Info)
+    void Ethernet::Send(void *Data, uint64_t Length, SendInfo Info)
     {
         uint64_t PacketLength = sizeof(EthernetPacket) + Length;
         EthernetPacket *Packet = (EthernetPacket *)kmalloc(PacketLength);

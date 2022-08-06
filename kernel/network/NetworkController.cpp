@@ -183,6 +183,6 @@ namespace NetworkInterfaceManager
         fixme("Scan for network interfaces");
     }
 
-    void NetworkInterface::Send(DeviceInterface Interface, void *Data, int Length) { Interface.Send(Data, Length); }
-    void NetworkInterface::Receive(DeviceInterface Interface, void *Data, int Length) { Interface.Receive(); }
+    void NetworkInterface::Send(DeviceInterface Interface, void *Data, uint64_t Length) { Interface.Send(Data, Length); }
+    void NetworkInterface::Receive(DeviceInterface Interface, void *Data, uint64_t Length) { Interface.Receive(); }
 }

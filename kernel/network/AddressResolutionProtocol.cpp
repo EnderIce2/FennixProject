@@ -2,7 +2,6 @@
 
 #include <debug.h>
 #include <string.h>
-#include <vector.hpp>
 
 Vector<NetworkARP::DiscoveredAddress *> DiscoveredAddresses;
 
