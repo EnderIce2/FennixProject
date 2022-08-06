@@ -1,6 +1,7 @@
 #pragma once
 
 #include <debug.h>
+#include <string.h>
 #include <vector.hpp>
 
 #define DEBUG_NETWORK 1
@@ -184,7 +185,7 @@ namespace NetworkEthernetFrame
         NetworkInterfaceManager::DeviceInterface *Interface;
 
     public:
-        Vector<Events *> Events;
+        Vector<Events *> EthernetEvents;
 
         EthernetFrame(NetworkInterfaceManager::DeviceInterface *Interface);
         ~EthernetFrame();
@@ -472,7 +473,7 @@ namespace NetworkUDP
     public:
         struct BindInfo
         {
-            Socket *Socket;
+            Socket *Socket_;
             uint16_t Port;
         };
 

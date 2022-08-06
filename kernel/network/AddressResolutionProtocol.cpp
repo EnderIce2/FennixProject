@@ -1,7 +1,6 @@
 #include "NetworkController.hpp"
 
 #include <debug.h>
-#include <string.h>
 
 Vector<NetworkARP::DiscoveredAddress *> DiscoveredAddresses;
 
@@ -27,7 +26,7 @@ namespace NetworkARP
             DiscoveredAddresses.push_back(tmp);
             return tmp;
         case DA_DEL:
-            for (int i = 0; i < DiscoveredAddresses.size(); i++)
+            for (uint64_t i = 0; i < DiscoveredAddresses.size(); i++)
                 if (CompareIP(DiscoveredAddresses[i]->IP, IP, CompareIPv4))
                 {
                     DiscoveredAddress *tmp = DiscoveredAddresses[i];
@@ -38,7 +37,7 @@ namespace NetworkARP
             return nullptr;
         case DA_SEARCH:
             delete tmp;
-            for (int i = 0; i < DiscoveredAddresses.size(); i++)
+            for (uint64_t i = 0; i < DiscoveredAddresses.size(); i++)
                 if (CompareIP(DiscoveredAddresses[i]->IP, IP, CompareIPv4))
                 {
                     return DiscoveredAddresses[i];
@@ -46,7 +45,7 @@ namespace NetworkARP
             return nullptr;
         case DA_UPDATE:
             delete tmp;
-            for (int i = 0; i < DiscoveredAddresses.size(); i++)
+            for (uint64_t i = 0; i < DiscoveredAddresses.size(); i++)
                 if (CompareIP(DiscoveredAddresses[i]->IP, IP, CompareIPv4))
                 {
                     DiscoveredAddresses[i]->MAC = MAC;
