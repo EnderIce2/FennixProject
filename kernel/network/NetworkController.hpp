@@ -18,9 +18,13 @@ enum NetworkOperation
     REPLY = 2
 };
 
-struct MediaAccessControl
+union MediaAccessControl
 {
-    uint8_t Address[6];
+    struct
+    {
+        uint8_t Address[6];
+    };
+    uint64_t raw;
 };
 
 struct InternetProtocol
@@ -166,6 +170,7 @@ namespace NetworkEthernetFrame
         FRAME_IPV6 = 0x86DD
     };
 
+    /* https://www.ciscopress.com/articles/article.asp?p=3089352&seqNum=5 */
     struct EthernetFrameHeader
     {
         uint64_t DestinationMAC : 48;
