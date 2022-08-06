@@ -121,15 +121,6 @@ namespace NetworkInterfaceManager
 
     NetworkInterface::NetworkInterface()
     {
-        // "RTL-8139", 0x10EC, 0x8139,
-        // "RTL-8169", 0x10EC, 0x8169,
-        // "E1000", 0x8086, 0x100E,
-        // "E1000", 0x8086, 0x153A,
-        // "E1000", 0x8086, 0x10EA,
-        // "E1000", 0x8086, 0x109A,
-        // "E1000", 0x8086, 0x100F,
-        // "AMD PCNET", 0x1022, 0x2000
-
         // RTL-81**
         {
             foreach (auto PCIData in PCI::FindPCIDevice(0x10EC, 0x8139))
@@ -179,7 +170,6 @@ namespace NetworkInterfaceManager
         }
 
         TraceCards();
-        // CPU_HALT; // debugging
     }
 
     NetworkInterface::~NetworkInterface()
