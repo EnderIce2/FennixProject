@@ -78,6 +78,11 @@ static inline uint16_t CalculateChecksum(void *Data, uint64_t Length)
     return (uint16_t)~Checksum;
 }
 
+static inline uint64_t MacToHex(MediaAccessControl MAC)
+{
+    return ((uint64_t)MAC.Address[0] << 40) | ((uint64_t)MAC.Address[1] << 32) | ((uint64_t)MAC.Address[2] << 24) | ((uint64_t)MAC.Address[3] << 16) | ((uint64_t)MAC.Address[4] << 8) | ((uint64_t)MAC.Address[5]);
+}
+
 namespace NetworkInterfaceManager
 {
     struct DeviceInterface
