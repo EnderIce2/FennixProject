@@ -174,6 +174,8 @@ namespace NetworkInterfaceManager
 
     NetworkInterface::~NetworkInterface()
     {
+        for (int i = 0; i < CardIDs; i++)
+            delete Devices[i];
     }
 
     void NetworkInterface::Scan()
