@@ -20,6 +20,13 @@ namespace AMDPCNET
         InternetProtocol IP;
         uint32_t CurrentPacket;
         BARData BAR;
+
+        void WriteRAP32(uint32_t Value);
+        void WriteRAP16(uint16_t Value);
+        uint32_t ReadCSR32(uint32_t CSR);
+        uint16_t ReadCSR16(uint16_t CSR);
+        void WriteCSR32(uint32_t CSR, uint32_t Value);
+        void WriteCSR16(uint16_t CSR, uint16_t Value);
         void AMDPCNETInterruptHandler();
 
     public:
