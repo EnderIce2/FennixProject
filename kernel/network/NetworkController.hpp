@@ -18,13 +18,9 @@ enum NetworkOperation
     REPLY = 2
 };
 
-union MediaAccessControl
+struct MediaAccessControl
 {
-    struct
-    {
-        uint8_t Address[6];
-    };
-    uint64_t raw;
+    uint8_t Address[6];
 };
 
 struct InternetProtocol
