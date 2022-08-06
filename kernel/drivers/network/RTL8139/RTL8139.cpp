@@ -32,7 +32,7 @@ namespace RTL8139
         fixme("NetworkInterfaceController::SetIP( %d.%d.%d.%d )", IP.v4Address[0], IP.v4Address[1], IP.v4Address[2], IP.v4Address[3]);
     }
 
-    NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID)
+    NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID) : DriverInterrupts::Register(((PCI::PCIHeader0 *)PCIBaseAddress)->InterruptLine + IRQ0)
     {
         if (PCIBaseAddress->VendorID != 0x10EC && PCIBaseAddress->DeviceID != 0x8139)
         {
@@ -81,12 +81,9 @@ namespace RTL8139
         uint32_t DataLength = *(Data + 1);
         Data = Data + 2;
 
-        if (nimgr)
-        {
-            // TODO
-            // nimgr->Receive(NetworkInterfaceManager::DeviceInterface(), (void *)Data, DataLength);
-            // Send((uint8_t *)Data, DataLength);
-        }
+        // TODO
+        // nimgr->Receive(NetworkInterfaceManager::DeviceInterface(), (void *)Data, DataLength);
+        // Send((uint8_t *)Data, DataLength);
 
         CurrentPacket = (CurrentPacket + DataLength + 4 + 3) & (~3);
 
@@ -96,7 +93,7 @@ namespace RTL8139
         outportw(BAR.IOBase + 0x38, CurrentPacket - 0x10);
     }
 
-    void NetworkInterfaceController::RTL8139InterruptHandler()
+    void NetworkInterfaceController::HandleInterrupt()
     {
         uint16_t status = inportw(BAR.IOBase + 0x3e);
         outportw(BAR.IOBase + 0x3E, 0x5);

@@ -5,7 +5,7 @@
 #include "../../../network/NetworkController.hpp"
 #include "../../../pci.h"
 
-namespace AMDPCNET
+namespace VirtioNetwork
 {
     class NetworkInterfaceController : public NetworkInterfaceManager::DeviceInterface, public DriverInterrupts::Register
     {
@@ -23,13 +23,6 @@ namespace AMDPCNET
         uint32_t CurrentPacket;
         BARData BAR;
 
-        void WriteRAP32(uint32_t Value);
-        void WriteRAP16(uint16_t Value);
-        uint32_t ReadCSR32(uint32_t CSR);
-        uint16_t ReadCSR16(uint16_t CSR);
-        void WriteCSR32(uint32_t CSR, uint32_t Value);
-        void WriteCSR16(uint16_t CSR, uint16_t Value);
-
     public:
         MediaAccessControl GetMAC();
         InternetProtocol GetIP();
@@ -41,6 +34,6 @@ namespace AMDPCNET
         void Send(void *Data, uint64_t Length);
         void Receive();
 
-        void HandleInterrupt();
+        virtual void HandleInterrupt();
     };
 }

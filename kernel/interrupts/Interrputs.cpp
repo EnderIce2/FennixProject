@@ -15,6 +15,74 @@ void EndOfInterrupt(int interrupt)
     PIC_sendEOI(interrupt);
 }
 
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+
+INTERRUPT_HANDLER MainRegisteredInterrupts[256];
+DriverInterrupts::Register *MainDriverRegisteredInterrupts[256];
+
+extern "C" void MainInterruptHandler(TrapFrame *regs)
+{
+    if (((long)((int32_t)regs->int_num)) < ISR0 || regs->int_num > IRQ223)
+    {
+        err("Invalid interrupt received %#llx", regs->int_num);
+        goto EndOfHandler;
+    }
+
+    if (MainDriverRegisteredInterrupts[regs->int_num] != nullptr)
+    {
+        MainDriverRegisteredInterrupts[regs->int_num]->HandleInterrupt(regs);
+        goto EndOfHandler;
+    }
+
+    if (MainRegisteredInterrupts[regs->int_num] != nullptr)
+    {
+        MainRegisteredInterrupts[regs->int_num](regs);
+        goto EndOfHandler;
+    }
+
+    err("IRQ%d is not registered!", regs->int_num - IRQ0);
+
+EndOfHandler:
+    EndOfInterrupt(regs->int_num);
+}
+
+void MainRegisterInterrupt(uint8_t vector, INTERRUPT_HANDLER handle)
+{
+    MainRegisteredInterrupts[vector] = handle;
+    debug("Vector %#llx(IRQ%d) has been registered to handle %#llx", vector, vector - IRQ0, handle);
+}
+
+void MainUnregisterInterrupt(uint8_t vector)
+{
+    MainRegisteredInterrupts[vector] = nullptr;
+    debug("Vector %#llx(IRQ%d) has been unregistered", vector, vector - IRQ0);
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+
+namespace DriverInterrupts
+{
+    Register::Register(InterruptVector Vector)
+    {
+        IVector = Vector;
+        debug("Registering driver interrupt handler for IRQ%d.", Vector - IRQ0);
+        MainDriverRegisteredInterrupts[Vector] = this;
+    }
+
+    Register::~Register()
+    {
+        debug("Unregistering driver interrupt handler for IRQ%d.", IVector - IRQ0);
+        MainDriverRegisteredInterrupts[IVector] = nullptr;
+    }
+
+    void Register::HandleInterrupt(TrapFrame *regs)
+    {
+        warn("Unhandled interrupt %#lx.", regs->int_num);
+    }
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+
 static bool RegisteredInterrupts[255];
 
 InterruptVector RegisterInterrupt(INTERRUPT_HANDLER Handler)
@@ -23,7 +91,7 @@ InterruptVector RegisterInterrupt(INTERRUPT_HANDLER Handler)
         if (!RegisteredInterrupts[i])
         {
             RegisteredInterrupts[i] = true;
-            register_interrupt_handler(i, Handler);
+            MainRegisterInterrupt(i, Handler);
             apic->RedirectIRQ(CurrentCPU->ID, i - IRQ0, 1);
             trace("Registered interrupt handler for IRQ%d.", i - IRQ0);
             return i;
@@ -43,13 +111,13 @@ bool RegisterInterrupt(INTERRUPT_HANDLER Handler, InterruptVector Vector, bool O
     if (!RegisteredInterrupts[Vector])
     {
         RegisteredInterrupts[Vector] = true;
-        register_interrupt_handler(Vector, Handler);
+        MainRegisterInterrupt(Vector, Handler);
         goto Success;
     }
     else if (Override)
     {
         RegisteredInterrupts[Vector] = true;
-        register_interrupt_handler(Vector, Handler);
+        MainRegisterInterrupt(Vector, Handler);
         goto Success;
     }
     err("No available interrupt for vector IRQ%d found (override? %s).",
@@ -78,7 +146,7 @@ bool UnregisterInterrupt(InterruptVector Vector)
     if (Vector < IRQ18 || Vector > IRQ223)
         return false;
     RegisteredInterrupts[Vector] = false;
-    unregister_interrupt_handler(Vector);
+    MainUnregisterInterrupt(Vector);
     trace("IRQ%d unregistered.", Vector - IRQ0);
     return true;
 }

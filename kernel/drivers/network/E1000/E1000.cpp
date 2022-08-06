@@ -41,15 +41,13 @@ namespace E1000
     InternetProtocol NetworkInterfaceController::GetIP() { return IP; }
     void NetworkInterfaceController::SetIP(InternetProtocol IP) { this->IP = IP; }
 
-    NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID)
+    NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID) : DriverInterrupts::Register(((PCI::PCIHeader0 *)PCIBaseAddress)->InterruptLine + IRQ0)
     {
-        if (PCIBaseAddress->VendorID != 0x8086)
-            if (PCIBaseAddress->DeviceID != 0x100E && PCIBaseAddress->DeviceID != 0x153A &&
-                PCIBaseAddress->DeviceID != 0x10EA && PCIBaseAddress->DeviceID != 0x109A && PCIBaseAddress->DeviceID != 0x100F)
-            {
-                netdbg("Not a Intel-Ethernet-i217 network card");
-                return;
-            }
+        if (PCIBaseAddress->VendorID != 0x8086 && PCIBaseAddress->DeviceID != 0x100E && PCIBaseAddress->DeviceID != 0x153A && PCIBaseAddress->DeviceID != 0x10EA)
+        {
+            netdbg("Not a Intel-Ethernet-i217 network card");
+            return;
+        }
         netdbg("Found %s network card", PCI::GetDeviceName(PCIBaseAddress->VendorID, PCIBaseAddress->DeviceID));
         PCIAddress = PCIBaseAddress;
 
@@ -59,21 +57,8 @@ namespace E1000
         BAR.IOBase = PCIBAR & (~3);
         BAR.MemoryBase = PCIBAR & (~15);
         netdbg("BAR Type: %d - BAR IOBase: %#x - BAR MemoryBase: %#x", BAR.Type, BAR.IOBase, BAR.MemoryBase);
-
-        // On osdev.org variant
-        // BAR.Type = PCIBAR->getPCIBarType(0);
-        // BAR.IOBase = PCIBAR->getPCIBar(PCI_BAR_IO) & ~1;
-        // BAR.MemoryBase= PCIBAR->getPCIBar(PCI_BAR_MEM) & ~3;
-
-        // PCIBAR->enablePCIBusMastering();
-
         this->EEPROMAvailable = false;
-
-        // this->Start();
-
-        // MediaAccessControl mac = GetMAC();
-        // netdbg("MAC: %02x:%02x:%02x:%02x:%02x:%02x",
-        //        mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
+        this->Start();
     }
 
     NetworkInterfaceController::~NetworkInterfaceController()
@@ -83,9 +68,7 @@ namespace E1000
     void NetworkInterfaceController::OutCMD(uint16_t Address, uint32_t Value)
     {
         if (BAR.Type == 0)
-        {
             mmioout32(BAR.MemoryBase + Address, Value);
-        }
         else
         {
             outportl(BAR.IOBase, Address);
@@ -202,17 +185,15 @@ namespace E1000
     bool NetworkInterfaceController::Start()
     {
         DetectEEPROM();
-        // if (!readMACAddress())
-        //     return false;
+        if (!ValidMAC(this->GetMAC()))
+            return false;
         StartLink();
 
         for (int i = 0; i < 0x80; i++)
             OutCMD(0x5200 + i * 4, 0);
 
-        // if (interruptManager->registerInterrupt(IRQ0 + PCIAddress->getIntLine(), this))
+        // if (RegisterInterrupt(this->HandleInterrupt, IRQ0 + ((PCI::PCIHeader0 *)PCIAddress)->InterruptLine, true))
         // {
-
-        // Enable interrupts
         OutCMD(REG::IMASK, 0x1F6DC);
         OutCMD(REG::IMASK, 0xff & ~4);
         InCMD(0xc0);
@@ -243,10 +224,10 @@ namespace E1000
     {
         while ((RXDescriptor[RXCurrent]->Status & 0x1))
         {
-            uint8_t *buf = (uint8_t *)RXDescriptor[RXCurrent]->Address;
-            uint16_t len = RXDescriptor[RXCurrent]->Length;
+            uint8_t *Data = (uint8_t *)RXDescriptor[RXCurrent]->Address;
+            uint16_t DataLength = RXDescriptor[RXCurrent]->Length;
 
-            fixme("Received packet of length %d", len);
+            fixme("Received packet of length %d", DataLength);
 
             // Here you should inject the received packet into your network stack
 
@@ -257,12 +238,9 @@ namespace E1000
         }
     }
 
-    void NetworkInterfaceController::E1000InterruptHandler(TrapFrame *regs)
+    void NetworkInterfaceController::HandleInterrupt(TrapFrame *regs)
     {
-        // if (regs->getInteruptNumber() == pciConfigHeader->getIntLine() + IRQ0)
-        // {
-        /* This might be needed here if your handler doesn't clear interrupts from each device and must be done before EOI if using the PIC.
-           Without this, the card will spam interrupts as the int-line will stay high. */
+        netdbg("Handle interrupt IRQ%d", regs->int_num - IRQ0);
         OutCMD(REG::IMASK, 0x1);
 
         uint32_t status = InCMD(0xc0);
@@ -272,13 +250,11 @@ namespace E1000
         }
         else if (status & 0x10)
         {
-            // good threshold
-            fixme("Good threshold");
+            fixme("Good threshold"); // ?????
         }
         else if (status & 0x80)
         {
             this->Receive();
         }
-        // }
     }
 }

@@ -1,11 +1,13 @@
 #pragma once
 
+#include <int.h>
+
 #include "../../../network/NetworkController.hpp"
 #include "../../../pci.h"
 
 namespace Intel8254x
 {
-    class NetworkInterfaceController : public NetworkInterfaceManager::DeviceInterface
+    class NetworkInterfaceController : public NetworkInterfaceManager::DeviceInterface, public DriverInterrupts::Register
     {
     private:
         struct BARData
@@ -17,15 +19,18 @@ namespace Intel8254x
 
         InternetProtocol IP;
         BARData BAR;
-        void Intel8254xInterruptHandler();
 
     public:
         MediaAccessControl GetMAC();
         InternetProtocol GetIP();
         void SetIP(InternetProtocol IP);
+
         NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID);
         ~NetworkInterfaceController();
+
         void Send(void *Data, uint64_t Length);
         void Receive();
+
+        virtual void HandleInterrupt();
     };
 }

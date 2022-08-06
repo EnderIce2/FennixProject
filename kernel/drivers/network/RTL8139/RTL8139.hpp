@@ -1,11 +1,13 @@
 #pragma once
 
+#include <int.h>
+
 #include "../../../network/NetworkController.hpp"
 #include "../../../pci.h"
 
 namespace RTL8139
 {
-    class NetworkInterfaceController : public NetworkInterfaceManager::DeviceInterface
+    class NetworkInterfaceController : public NetworkInterfaceManager::DeviceInterface, public DriverInterrupts::Register
     {
     private:
         struct BARData
@@ -20,15 +22,18 @@ namespace RTL8139
         InternetProtocol IP;
         uint32_t CurrentPacket;
         BARData BAR;
-        void RTL8139InterruptHandler();
 
     public:
         MediaAccessControl GetMAC();
         InternetProtocol GetIP();
         void SetIP(InternetProtocol IP);
+
         NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID);
         ~NetworkInterfaceController();
+
         void Send(void *Data, uint64_t Length);
         void Receive();
+
+        virtual void HandleInterrupt();
     };
 }

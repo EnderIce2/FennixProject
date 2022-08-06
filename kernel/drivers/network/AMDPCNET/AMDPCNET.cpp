@@ -55,7 +55,7 @@ namespace AMDPCNET
         this->IP = IP;
     }
 
-    NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID)
+    NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID) : DriverInterrupts::Register(((PCI::PCIHeader0 *)PCIBaseAddress)->InterruptLine + IRQ0)
     {
         if (PCIBaseAddress->VendorID != 0x1022 && PCIBaseAddress->DeviceID != 0x2000 && PCIBaseAddress->DeviceID != 0x2001)
         {
@@ -85,7 +85,7 @@ namespace AMDPCNET
     {
     }
 
-    void NetworkInterfaceController::AMDPCNETInterruptHandler()
+    void NetworkInterfaceController::HandleInterrupt()
     {
     }
 }

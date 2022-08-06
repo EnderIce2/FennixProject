@@ -1,13 +1,13 @@
 #pragma once
 
-#include <interrupts.h>
+#include <int.h>
 
 #include "../../../network/NetworkController.hpp"
 #include "../../../pci.h"
 
 namespace E1000
 {
-    class NetworkInterfaceController : public NetworkInterfaceManager::DeviceInterface
+    class NetworkInterfaceController : public NetworkInterfaceManager::DeviceInterface, public DriverInterrupts::Register
     {
     private:
 #define INTEL_VEND 0x8086    // Vendor ID for Intel
@@ -170,6 +170,7 @@ namespace E1000
         MediaAccessControl GetMAC();
         InternetProtocol GetIP();
         void SetIP(InternetProtocol IP);
+
         NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID);
         ~NetworkInterfaceController();
         bool Start();
@@ -177,6 +178,6 @@ namespace E1000
         void Send(void *Data, uint64_t Length);
         void Receive();
 
-        void E1000InterruptHandler(TrapFrame *regs);
+        virtual void HandleInterrupt(TrapFrame *regs);
     };
 }

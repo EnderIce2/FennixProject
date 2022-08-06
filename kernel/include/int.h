@@ -10,11 +10,17 @@ EXTERNC void EndOfInterrupt(int interrupt);
 typedef void (*INTERRUPT_HANDLER)(TrapFrame *);
 typedef unsigned int InterruptVector;
 
+/**
+ * @brief Register interrupt to an interrupt handler.
+ *
+ * @param Handler Handler
+ * @return Interrupt vector
+ */
 InterruptVector RegisterInterrupt(INTERRUPT_HANDLER Handler);
 #ifdef __cplusplus
 /**
  * @brief Register interrupt to an interrupt handler.
- * 
+ *
  * @param Handler Handler
  * @param Vector Vector to register
  * @param Override Override if already registered (Some interrupts are unable to be registered even if this is set to true)
@@ -24,8 +30,42 @@ InterruptVector RegisterInterrupt(INTERRUPT_HANDLER Handler);
  */
 bool RegisterInterrupt(INTERRUPT_HANDLER Handler, InterruptVector Vector, bool Override, bool RedirectIRQ = false, InterruptVector RedirectVector = 0xDEADBEEF);
 #else
+/**
+ * @brief Register interrupt to an interrupt handler.
+ *
+ * @param Handler Handler
+ * @param Vector Vector to register
+ * @param Override Override if already registered (Some interrupts are unable to be registered even if this is set to true)
+ * @return true if successful, false otherwise
+ */
 bool CRegisterInterrupt(INTERRUPT_HANDLER Handler, InterruptVector Vector, bool Override);
 #endif
+/**
+ * @brief Unregister interrupt from an interrupt handler.
+ *
+ * @param Vector Vector to unregister
+ * @return true if successful, false otherwise
+ */
 bool UnregisterInterrupt(InterruptVector vector);
+
+#ifdef __cplusplus
+
+namespace DriverInterrupts
+{
+    class Register
+    {
+    private:
+        InterruptVector IVector;
+
+    protected:
+        Register(InterruptVector Vector);
+        ~Register();
+
+    public:
+        virtual void HandleInterrupt(TrapFrame *regs);
+    };
+}
+
+#endif // __cplusplus
 
 #endif // !__FENNIX_KERNEL_INTERRUPTS_H__

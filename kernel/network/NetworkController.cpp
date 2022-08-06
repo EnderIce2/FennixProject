@@ -1,7 +1,8 @@
 #include "NetworkController.hpp"
 
-#include <int.h>
-
+#include "../drivers/network/VirtioNetwork/VirtioNetwork.hpp"
+#include "../drivers/network/Intel8254x/Intel8254x.hpp"
+#include "../drivers/network/AMDPCNET/AMDPCNET.hpp"
 #include "../drivers/network/RTL8139/RTL8139.hpp"
 #include "../drivers/network/RTL8169/RTL8169.hpp"
 #include "../drivers/network/E1000/E1000.hpp"
@@ -11,21 +12,23 @@
 
 NetworkInterfaceManager::NetworkInterface *nimgr = nullptr;
 
-RTL8139::NetworkInterfaceController *rtl8139[8];
 int rtl8139Count = 0;
+RTL8139::NetworkInterfaceController *rtl8139[8];
 
-RTL8169::NetworkInterfaceController *rtl8169[8];
 int rtl8169Count = 0;
+RTL8169::NetworkInterfaceController *rtl8169[8];
 
-E1000::NetworkInterfaceController *e1000[8];
 int e1000Count = 0;
+E1000::NetworkInterfaceController *e1000[8];
 
-InterruptHandler(E1000StubInterruptHandler)
-{
-    // TODO: support more
-    fixme("E1000 stub interrupt: Received IRQ%d", regs->int_num - 32);
-    e1000[0]->E1000InterruptHandler(regs);
-}
+int i8254xCount = 0;
+Intel8254x::NetworkInterfaceController *i8254x[8];
+
+int pcnetCount = 0;
+AMDPCNET::NetworkInterfaceController *pcnet[8];
+
+int virtioCount = 0;
+VirtioNetwork::NetworkInterfaceController *virtio[8];
 
 namespace NetworkInterfaceManager
 {
@@ -72,6 +75,48 @@ namespace NetworkInterfaceManager
                 }
                 e1000CardCount++;
             }
+
+        int i8254xCardCount = 0;
+        foreach (auto card in i8254x)
+            if (card)
+            {
+                MediaAccessControl mac = card->GetMAC();
+                if (ValidMAC(mac))
+                {
+                    netdbg("i8254x[%d]: MAC: %02x:%02x:%02x:%02x:%02x:%02x", i8254xCardCount,
+                           mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
+                    Devices[CardIDs++] = card;
+                }
+                i8254xCardCount++;
+            }
+
+        int pcnetCardCount = 0;
+        foreach (auto card in pcnet)
+            if (card)
+            {
+                MediaAccessControl mac = card->GetMAC();
+                if (ValidMAC(mac))
+                {
+                    netdbg("PCNET[%d]: MAC: %02x:%02x:%02x:%02x:%02x:%02x", pcnetCardCount,
+                           mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
+                    Devices[CardIDs++] = card;
+                }
+                pcnetCardCount++;
+            }
+
+        int virtioCardCount = 0;
+        foreach (auto card in virtio)
+            if (card)
+            {
+                MediaAccessControl mac = card->GetMAC();
+                if (ValidMAC(mac))
+                {
+                    netdbg("Virtio[%d]: MAC: %02x:%02x:%02x:%02x:%02x:%02x", virtioCardCount,
+                           mac.Address[0], mac.Address[1], mac.Address[2], mac.Address[3], mac.Address[4], mac.Address[5]);
+                    Devices[CardIDs++] = card;
+                }
+                virtioCardCount++;
+            }
     }
 
     NetworkInterface::NetworkInterface()
@@ -104,20 +149,33 @@ namespace NetworkInterfaceManager
 
             foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x10EA))
                 e1000[e1000Count++] = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
-
-            foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x109A))
-                e1000[e1000Count++] = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
-
-            foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x100F))
-                e1000[e1000Count++] = new E1000::NetworkInterfaceController(PCIData, CardIDs++);
         }
 
-        if (e1000[0])
+        // 8254x
         {
-            /* FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME */
-            RegisterInterrupt(E1000StubInterruptHandler, IRQ10, true); // TODO: ASSIGN INTERRUPT PROPERLY!
-            RegisterInterrupt(E1000StubInterruptHandler, IRQ11, true); // TODO: ASSIGN INTERRUPT PROPERLY!
-            e1000[0]->Start();
+            foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x109A))
+                i8254x[i8254xCount++] = new Intel8254x::NetworkInterfaceController(PCIData, CardIDs++);
+
+            foreach (auto PCIData in PCI::FindPCIDevice(0x8086, 0x100F))
+                i8254x[i8254xCount++] = new Intel8254x::NetworkInterfaceController(PCIData, CardIDs++);
+        }
+
+        // 79C970 (AMD PCNET)
+        {
+            foreach (auto PCIData in PCI::FindPCIDevice(0x1022, 0x2000))
+                pcnet[pcnetCount++] = new AMDPCNET::NetworkInterfaceController(PCIData, CardIDs++);
+
+            foreach (auto PCIData in PCI::FindPCIDevice(0x1022, 0x2001))
+                pcnet[pcnetCount++] = new AMDPCNET::NetworkInterfaceController(PCIData, CardIDs++);
+        }
+
+        // Virtio
+        {
+            foreach (auto PCIData in PCI::FindPCIDevice(0x1AF4, 0x1000))
+                virtio[virtioCount++] = new VirtioNetwork::NetworkInterfaceController(PCIData, CardIDs++);
+
+            foreach (auto PCIData in PCI::FindPCIDevice(0x1AF4, 0x1041))
+                virtio[virtioCount++] = new VirtioNetwork::NetworkInterfaceController(PCIData, CardIDs++);
         }
 
         TraceCards();

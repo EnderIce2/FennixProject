@@ -1,8 +1,6 @@
-#include "RTL8169.hpp"
+#include "VirtioNetwork.hpp"
 
-/* https://wiki.osdev.org/RTL8169 */
-
-namespace RTL8169
+namespace VirtioNetwork
 {
     MediaAccessControl NetworkInterfaceController::GetMAC()
     {
@@ -21,9 +19,9 @@ namespace RTL8169
 
     NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID) : DriverInterrupts::Register(((PCI::PCIHeader0 *)PCIBaseAddress)->InterruptLine + IRQ0)
     {
-        if (PCIBaseAddress->VendorID != 0x10EC && PCIBaseAddress->DeviceID != 0x8169)
+        if (PCIBaseAddress->VendorID != 0x1AF4 && PCIBaseAddress->DeviceID != 0x1000 && PCIBaseAddress->DeviceID != 0x1041)
         {
-            netdbg("Not a RTL-8169 network card");
+            netdbg("Not a Virtio network card");
             return;
         }
         netdbg("Found %s network card", PCI::GetDeviceName(PCIBaseAddress->VendorID, PCIBaseAddress->DeviceID));

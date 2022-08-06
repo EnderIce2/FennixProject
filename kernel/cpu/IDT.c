@@ -185,7 +185,7 @@ __attribute__((naked, used, no_stack_protector)) static void InterruptHandlerStu
         "pushq %r15\n"
 
         "mov %rsp, %rdi\n"
-        "call IDTInterruptHandler\n"
+        "call MainInterruptHandler\n"
 
         "popq %r15\n"
         "popq %r14\n"
@@ -213,35 +213,6 @@ __attribute__((naked, used, no_stack_protector)) static void InterruptHandlerStu
         asm("pushq $0\npushq $" #num "\n"                                           \
             "jmp InterruptHandlerStub\n");                                          \
     }
-
-INTERRUPT_HANDLER interrupt_handlers[256];
-
-static void IDTInterruptHandler(TrapFrame *regs)
-{
-    if (((long)((int32_t)regs->int_num)) < 0 || regs->int_num > 0xff)
-    {
-        err("Invalid interrupt received %#llx", regs->int_num);
-    }
-    else if (interrupt_handlers[regs->int_num] == NULL)
-    {
-        err("IRQ%d is not registered!", regs->int_num - 32);
-    }
-    else
-        interrupt_handlers[regs->int_num](regs);
-    EndOfInterrupt(regs->int_num);
-}
-
-void register_interrupt_handler(uint8_t vector, INTERRUPT_HANDLER handle)
-{
-    interrupt_handlers[vector] = handle;
-    debug("Vector %#llx(IRQ%d) has been registered to handle %#llx", vector, vector - 32, handle);
-}
-
-void unregister_interrupt_handler(uint8_t vector)
-{
-    interrupt_handlers[vector] = NULL;
-    debug("Vector %#llx(IRQ%d) has been unregistered", vector, vector - 32);
-}
 
 /* =============================================================================================================================================== */
 
