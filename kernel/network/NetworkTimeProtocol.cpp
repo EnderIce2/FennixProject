@@ -2,7 +2,7 @@
 
 namespace NetworkNTP
 {
-    NTP::NTP(NetworkInterfaceManager::DeviceInterface *Interface)
+    NTP::NTP(NetworkUDP::Socket *Socket)
     {
     }
 
@@ -10,4 +10,13 @@ namespace NetworkNTP
     {
     }
 
+    void OnUDPMessageReceived(NetworkUDP::Socket *Socket, void *Data, uint64_t Length)
+    {
+        fixme("OnUDPMessageReceived( %p %p %ld )", Socket, Data, Length);
+    }
+
+    void ReadTime()
+    {
+        fixme("ReadTime()");
+    }
 }

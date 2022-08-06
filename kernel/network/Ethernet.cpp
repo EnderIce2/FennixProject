@@ -28,10 +28,8 @@ namespace NetworkEthernet
     {
         EthernetPacket *Packet = (EthernetPacket *)Data;
 
-        MediaAccessControl InvalidMAC = {.Address = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}};
-
         if (!CompareMAC(Packet->Header.DestinationMAC, Interface->MAC) &&
-            !CompareMAC(Packet->Header.DestinationMAC, InvalidMAC))
+            !CompareMAC(Packet->Header.DestinationMAC, {.Address = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}}))
         {
             netdbg("ETH: Received data from %#x:%#x:%#x:%#x:%#x:%#x", Packet->Header.SourceMAC.Address[0], Packet->Header.SourceMAC.Address[1], Packet->Header.SourceMAC.Address[2], Packet->Header.SourceMAC.Address[3], Packet->Header.SourceMAC.Address[4], Packet->Header.SourceMAC.Address[5]);
             switch (Packet->Header.Type)

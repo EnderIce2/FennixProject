@@ -2,6 +2,7 @@
 
 #include <debug.h>
 #include <stdint.h>
+#include <vector.hpp>
 
 #define DEBUG_NETWORK 1
 
@@ -60,6 +61,17 @@ static inline bool ValidMAC(MediaAccessControl MAC)
     if (CompareMAC(MAC, {.Address = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00}}))
         return false;
     return true;
+}
+
+static inline uint16_t CalculateChecksum(void *Data, uint64_t Length)
+{
+    uint16_t *Data16 = (uint16_t *)Data;
+    uint64_t Checksum = 0;
+    for (uint64_t i = 0; i < Length; i += 2)
+        Checksum += Data16[i];
+    Checksum = (Checksum >> 16) + (Checksum & 0xFFFF);
+    Checksum += (Checksum >> 16);
+    return (uint16_t)~Checksum;
 }
 
 namespace NetworkInterfaceManager
@@ -237,36 +249,6 @@ namespace NetworkARP
     };
 }
 
-namespace NetworkNTP
-{
-    struct NTPHeader
-    {
-        uint8_t LIv;
-        uint8_t VN;
-        uint8_t Mode;
-        uint8_t Stratum;
-        uint8_t Poll;
-        uint8_t Precision;
-        uint32_t RootDelay;
-        uint32_t RootDispersion;
-        uint32_t ReferenceID;
-        uint32_t ReferenceTimestamp;
-        uint32_t OriginateTimestamp;
-        uint32_t ReceiveTimestamp;
-        uint32_t TransmitTimestamp;
-    };
-
-    class NTP
-    {
-    private:
-        NetworkInterfaceManager::DeviceInterface *Interface;
-
-    public:
-        NTP(NetworkInterfaceManager::DeviceInterface *Interface);
-        ~NTP();
-    };
-}
-
 namespace NetworkIPv4
 {
     struct IPv4Header
@@ -314,6 +296,22 @@ namespace NetworkIPv6
 
 namespace NetworkICMPv4
 {
+    /* https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml */
+    enum ICMPv4Type
+    {
+        TYPE_ECHO_REPLY = 0,
+        TYPE_DESTINATION_UNREACHABLE = 3,
+        TYPE_SOURCE_QUENCH = 4,
+        TYPE_REDIRECT = 5,
+        TYPE_ECHO = 8,
+        TYPE_ROUTER_ADVERTISEMENT = 9,
+        TYPE_ROUTER_SELECTION = 10,
+        TYPE_TIME_EXCEEDED = 11,
+        TYPE_PARAMETER_PROBLEM = 12,
+        TYPE_TIMESTAMP = 13,
+        TYPE_TIMESTAMP_REPLY = 14
+    };
+
     struct ICMPHeader
     {
         uint8_t Type;
@@ -327,6 +325,18 @@ namespace NetworkICMPv4
     {
         ICMPHeader Header;
         uint8_t Data[];
+    };
+
+    class ICMPv4
+    {
+    private:
+        NetworkInterfaceManager::DeviceInterface *Interface;
+
+    public:
+        ICMPv4(NetworkInterfaceManager::DeviceInterface *Interface);
+        ~ICMPv4();
+        void Send(/* ???? */);
+        void Receive(ICMPPacket *Packet, NetworkIPv4::IPv4Packet *IPv4Packet);
     };
 }
 
@@ -346,6 +356,18 @@ namespace NetworkICMPv6
         ICMPHeader Header;
         uint8_t Data[];
     };
+
+    class ICMPv6
+    {
+    private:
+        NetworkInterfaceManager::DeviceInterface *Interface;
+
+    public:
+        ICMPv6(NetworkInterfaceManager::DeviceInterface *Interface);
+        ~ICMPv6();
+        void Send(void *Data, int Length);
+        void Receive(void *Data);
+    };
 }
 
 namespace NetworkTCP
@@ -354,6 +376,105 @@ namespace NetworkTCP
 
 namespace NetworkUDP
 {
+    struct UDPHeader
+    {
+        uint16_t SourcePort;
+        uint16_t DestinationPort;
+        uint16_t Length;
+        uint16_t Checksum;
+    } __attribute__((packed));
+
+    class Provider;
+    class Events;
+
+    class Socket
+    {
+    public:
+        struct SocketInfo
+        {
+            InternetProtocol LocalIP =
+                {.v4Address = {0, 0, 0, 0},
+                 .v6Address = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+            uint16_t LocalPort = 0;
+            InternetProtocol RemoteIP =
+                {.v4Address = {0, 0, 0, 0},
+                 .v6Address = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+            uint16_t RemotePort = 0;
+            bool Listening = false;
+            Events *EventHandler = nullptr;
+            Provider *SocketProvider = nullptr;
+        };
+
+        SocketInfo Info;
+
+        Socket(Provider *Provider);
+        ~Socket();
+
+        virtual void Send(void *Data, uint64_t Length);
+    };
+
+    class Provider
+    {
+    public:
+        struct BindInfo
+        {
+            Socket *Socket;
+            uint16_t Port;
+        };
+
+        Vector<BindInfo> Binds;
+
+        Provider();
+        ~Provider();
+
+        virtual Socket *Connect(InternetProtocol IP, uint16_t Port);
+        virtual Socket *Listen(uint16_t Port);
+        virtual void Disconnect(Socket *Socket);
+
+        virtual void Send(Socket *Socket, void *Data, uint64_t Length);
+        virtual void Bind(Socket *Socket, Events *EventHandler);
+    };
+
+    class Events
+    {
+    public:
+        Events();
+        ~Events();
+        virtual void OnUDPMessageReceived(Socket *Socket, void *Data, uint64_t Length);
+    };
+}
+
+namespace NetworkNTP
+{
+    struct NTPHeader
+    {
+        uint8_t LIv;
+        uint8_t VN;
+        uint8_t Mode;
+        uint8_t Stratum;
+        uint8_t Poll;
+        uint8_t Precision;
+        uint32_t RootDelay;
+        uint32_t RootDispersion;
+        uint32_t ReferenceID;
+        uint32_t ReferenceTimestamp;
+        uint32_t OriginateTimestamp;
+        uint32_t ReceiveTimestamp;
+        uint32_t TransmitTimestamp;
+    } __attribute__((packed));
+
+    class NTP : public NetworkUDP::Events
+    {
+    private:
+        NetworkUDP::Socket *Socket;
+
+    public:
+        NTP(NetworkUDP::Socket *Socket);
+        ~NTP();
+
+        virtual void OnUDPMessageReceived(NetworkUDP::Socket *Socket, void *Data, uint64_t Length);
+        void ReadTime();
+    };
 }
 
 extern NetworkInterfaceManager::NetworkInterface *nimgr;
