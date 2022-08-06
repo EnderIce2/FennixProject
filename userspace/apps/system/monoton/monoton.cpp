@@ -418,11 +418,14 @@ void ParseBuffer(char *Buffer)
             strcpy(filepath, searchpath[2]);
             break;
         case 3:
+            strcpy(filepath, searchpath[3]);
+            break;
+        case 4:
             strcat(filepath, "/home/");
             strcat(filepath, usr());
             strcat(filepath, "/Apps/");
             break;
-        case 4:
+        case 5:
             strcat(filepath, "/home/");
             strcat(filepath, usr());
             strcat(filepath, "/Games/");
