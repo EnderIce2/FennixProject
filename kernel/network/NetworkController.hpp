@@ -189,7 +189,7 @@ namespace NetworkEthernetFrame
 
         void Send();
         void Receive(void *Data, uint64_t Length);
-    }
+    };
 }
 
 namespace NetworkDHCP
