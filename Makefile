@@ -17,7 +17,8 @@ QEMUFLAGS = -device bochs-display -M q35 \
 			-usb -no-reboot \
 			-usbdevice mouse \
 			-smp $(shell nproc) \
-			-net nic,model=e1000 \
+    		-netdev user,id=usernet0,hostfwd=tcp::11111-:22 \
+    		-device e1000,netdev=usernet0,mac=00:69:96:00:42:00 \
 			-serial file:serial.log \
 			-net user \
 			-drive id=disk,file=qemu-disk.img,if=none \
