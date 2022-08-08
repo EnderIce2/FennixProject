@@ -19,6 +19,7 @@ QEMUFLAGS = -device bochs-display -M q35 \
 			-smp $(shell nproc) \
     		-netdev user,id=usernet0,hostfwd=tcp::11111-:22 \
     		-device e1000,netdev=usernet0,mac=00:69:96:00:42:00 \
+			-object filter-dump,id=usernet0,netdev=usernet0,file=network.log,maxlen=1024 \
 			-serial file:serial.log \
 			-net user \
 			-drive id=disk,file=qemu-disk.img,if=none \
@@ -130,15 +131,15 @@ ifeq ($(BOOTLOADER), limine)
 endif
 
 vscode_debug: build_kernel build_libc build_userspace build_image
-	rm -f serial.log
+	rm -f serial.log network.log
 	${QEMU} -S -gdb tcp::1234 -d int -no-shutdown -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -m 4G ${QEMUFLAGS}
 
 qemu: qemu_vdisk
-	rm -f serial.log
+	rm -f serial.log network.log
 	${QEMU} -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
 
 qemubios: qemu_vdisk
-	rm -f serial.log
+	rm -f serial.log network.log
 	${QEMU} -drive file=$(OSNAME).iso -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
 
 # build the os and run it
