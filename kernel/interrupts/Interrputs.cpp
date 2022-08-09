@@ -64,6 +64,11 @@ namespace DriverInterrupts
 {
     Register::Register(InterruptVector Vector)
     {
+        if (Vector < ISR0 || Vector > IRQ223)
+        {
+            err("Invalid interrupt vector %#llx", Vector);
+            return;
+        }
         IVector = Vector;
         debug("Registering driver interrupt handler for IRQ%d.", Vector - IRQ0);
         MainDriverRegisteredInterrupts[Vector] = this;
