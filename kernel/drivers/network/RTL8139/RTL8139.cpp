@@ -40,10 +40,14 @@ namespace RTL8139
             return;
         }
         netdbg("Found %s network card", PCI::GetDeviceName(PCIBaseAddress->VendorID, PCIBaseAddress->DeviceID));
-        uint32_t PCIBAR = ((PCI::PCIHeader0 *)PCIBaseAddress)->BAR0;
-        BAR.Type = PCIBAR & 1;
-        BAR.IOBase = PCIBAR & (~3);
-        BAR.MemoryBase = PCIBAR & (~15);
+        // Making sure that bus master is enabled
+        PCIBaseAddress->Command |= PCI::PCI_COMMAND_MASTER | PCI::PCI_COMMAND_IO | PCI::PCI_COMMAND_MEMORY;
+        uint32_t PCIBAR0 = ((PCI::PCIHeader0 *)PCIBaseAddress)->BAR0;
+        uint32_t PCIBAR1 = ((PCI::PCIHeader0 *)PCIBaseAddress)->BAR1;
+
+        BAR.Type = PCIBAR0 & 1;
+        BAR.IOBase = PCIBAR1 & (~3);
+        BAR.MemoryBase = PCIBAR0 & (~15);
         netdbg("BAR Type: %d - BAR IOBase: %#x - BAR MemoryBase: %#x", BAR.Type, BAR.IOBase, BAR.MemoryBase);
         memcpy(this->Name, "RTL-8139 Network Driver", sizeof(this->Name));
 
@@ -67,7 +71,7 @@ namespace RTL8139
 
     NetworkInterfaceController::~NetworkInterfaceController() { KernelAllocator.FreePages(RXBuffer, 2); }
 
-    void NetworkInterfaceController::Send(uint8_t *Data, uint64_t Length)
+    void NetworkInterfaceController::Send(void *Data, uint64_t Length)
     {
         outportl(BAR.IOBase + TSAD[TXCurrent], (uint32_t)(uint64_t)Data);
         outportl(BAR.IOBase + TSD[TXCurrent++], Length);
@@ -92,7 +96,7 @@ namespace RTL8139
         outportw(BAR.IOBase + 0x38, CurrentPacket - 0x10);
     }
 
-    void NetworkInterfaceController::HandleInterrupt()
+    void NetworkInterfaceController::HandleInterrupt(TrapFrame *regs)
     {
         uint16_t status = inportw(BAR.IOBase + 0x3e);
         outportw(BAR.IOBase + 0x3E, 0x5);

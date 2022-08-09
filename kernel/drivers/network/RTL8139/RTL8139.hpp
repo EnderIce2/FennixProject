@@ -31,9 +31,9 @@ namespace RTL8139
         NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress);
         ~NetworkInterfaceController();
 
-        void Send(uint8_t *Data, uint64_t Length);
+        void Send(void *Data, uint64_t Length);
         void Receive();
 
-        virtual void HandleInterrupt();
+        virtual void HandleInterrupt(TrapFrame *regs);
     };
 }

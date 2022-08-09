@@ -55,10 +55,10 @@ namespace E1000
         // Making sure that bus master is enabled
         PCIBaseAddress->Command |= PCI::PCI_COMMAND_MASTER | PCI::PCI_COMMAND_IO | PCI::PCI_COMMAND_MEMORY;
         uint32_t PCIBAR0 = ((PCI::PCIHeader0 *)PCIBaseAddress)->BAR0;
-        uint32_t PCIBAR2 = ((PCI::PCIHeader0 *)PCIBaseAddress)->BAR2;
+        uint32_t PCIBAR1 = ((PCI::PCIHeader0 *)PCIBaseAddress)->BAR1;
 
         BAR.Type = PCIBAR0 & 1;
-        BAR.IOBase = PCIBAR2 & (~3);
+        BAR.IOBase = PCIBAR1 & (~3);
         BAR.MemoryBase = PCIBAR0 & (~15);
         netdbg("BAR Type: %d - BAR IOBase: %#x - BAR MemoryBase: %#x", BAR.Type, BAR.IOBase, BAR.MemoryBase);
         this->EEPROMAvailable = false;
