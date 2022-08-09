@@ -7,14 +7,13 @@
 
 namespace RTL8139
 {
-    /* http://realtek.info/pdf/rtl8139cp.pdf */
     uint8_t TSAD[4] = {0x20, 0x24, 0x28, 0x2C};
     uint8_t TSD[4] = {0x10, 0x14, 0x18, 0x1C};
 
     MediaAccessControl NetworkInterfaceController::GetMAC()
     {
-        uint32_t MAC1 = inportl(BAR.IOBase + 0x00);
-        uint16_t MAC2 = inportw(BAR.IOBase + 0x04);
+        uint32_t MAC1 = RTLIL(0x0);
+        uint16_t MAC2 = RTLIW(0x04);
         MediaAccessControl mac = {
             mac.Address[0] = MAC1,
             mac.Address[1] = (MAC1 >> 8),
@@ -45,27 +44,23 @@ namespace RTL8139
         uint32_t PCIBAR0 = ((PCI::PCIHeader0 *)PCIBaseAddress)->BAR0;
         uint32_t PCIBAR1 = ((PCI::PCIHeader0 *)PCIBaseAddress)->BAR1;
 
-        BAR.Type = PCIBAR0 & 1;
-        BAR.IOBase = PCIBAR1 & (~3);
-        BAR.MemoryBase = PCIBAR0 & (~15);
+        BAR.Type = PCIBAR1 & 1;
+        BAR.IOBase = PCIBAR0 & (~3);
+        BAR.MemoryBase = PCIBAR1 & (~15);
         netdbg("BAR Type: %d - BAR IOBase: %#x - BAR MemoryBase: %#x", BAR.Type, BAR.IOBase, BAR.MemoryBase);
         memcpy(this->Name, "RTL-8139 Network Driver", sizeof(this->Name));
 
-        // https://wiki.osdev.org/RTL8139
-        outportb(BAR.IOBase + 0x52, 0x0);
-        outportb(BAR.IOBase + 0x37, 0x10);
-        while ((inb(BAR.IOBase + 0x37) & 0x10) != 0)
-            PAUSE;
-
-        RXBuffer = (char *)KernelAllocator.RequestPages(2);
-        assert(!((uint64_t)RXBuffer > 0xffffffff));
-        memset(RXBuffer, 0x0, 8192 + 16 + 1500);
-
-        outportl(BAR.IOBase + 0x30, (uintptr_t)RXBuffer);
-        outportw(BAR.IOBase + 0x3C, 0x0005);
-        outportl(BAR.IOBase + 0x44, 0xf | (1 << 7));
-        outportb(BAR.IOBase + 0x37, 0x0C);
-
+        RXBuffer = (uint8_t *)KernelAllocator.RequestPages(2);
+        RTLOB(0x52, 0x0);
+        RTLOB(0x37, (1 << 4));
+        while ((RTLIB(0x37) & (1 << 4)))
+            ;
+        RTLOL(0x30, static_cast<uint32_t>(reinterpret_cast<uint64_t>(RXBuffer)));
+        RTLOW(0x3C, ((1 << 0) | (1 << 1) | (1 << 2) | (1 << 3) |
+                     (1 << 4) | (1 << 5) | (1 << 6) | (1 << 13) |
+                     (1 << 14) | (1 << 15)));
+        RTLOL(0x44, ((1 << 0) | (1 << 1) | (1 << 2) | (1 << 3) | (1 << 7)));
+        RTLOB(0x37, 0x0C);
         this->MAC = this->GetMAC();
     }
 
@@ -73,41 +68,42 @@ namespace RTL8139
 
     void NetworkInterfaceController::Send(void *Data, uint64_t Length)
     {
-        outportl(BAR.IOBase + TSAD[TXCurrent], (uint32_t)(uint64_t)Data);
-        outportl(BAR.IOBase + TSD[TXCurrent++], Length);
+        RTLOL(TSAD[TXCurrent], static_cast<uint32_t>(reinterpret_cast<uint64_t>(Data)));
+        RTLOL(TSD[TXCurrent++], Length);
         if (TXCurrent > 3)
             TXCurrent = 0;
-        netdbg("Sent %d bytes", Length);
     }
 
     void NetworkInterfaceController::Receive()
     {
-        uint32_t *Data = (uint32_t *)(RXBuffer + CurrentPacket);
-        uint32_t DataLength = *(Data + 1);
+        uint16_t *Data = (uint16_t *)(RXBuffer + CurrentPacket);
+        uint16_t DataLength = *(Data + 1);
         Data = Data + 2;
-
         nimgr->Receive(this, (uint8_t *)Data, DataLength);
-
         CurrentPacket = (CurrentPacket + DataLength + 4 + 3) & (~3);
-
         if (CurrentPacket > 8192)
             CurrentPacket -= 8192;
-
-        outportw(BAR.IOBase + 0x38, CurrentPacket - 0x10);
+        RTLOW(0x38, CurrentPacket - 0x10);
     }
 
     void NetworkInterfaceController::HandleInterrupt(TrapFrame *regs)
     {
-        uint16_t status = inportw(BAR.IOBase + 0x3e);
-        outportw(BAR.IOBase + 0x3E, 0x5);
+        uint16_t status = RTLIW(0x3e);
+
+        char *dbgmsg = (char *)"ERROR";
 
         if (status & (1 << 2)) // TOK
-            netdbg("Packet sent");
-
-        if (status & (1 << 0)) // ROK
+            dbgmsg = (char *)"I=>O";
+        else if (status & (1 << 0)) // ROK
         {
-            netdbg("Received packet");
+            dbgmsg = (char *)"I<=O";
             this->Receive();
         }
+        else
+        {
+            netdbg("Unknown status %#lx", status);
+        }
+        netdbg("IRQ%d: [%s]", regs->int_num - IRQ0, dbgmsg);
+        RTLOW(0x3E, (1 << 0) | (1 << 2));
     }
 }
