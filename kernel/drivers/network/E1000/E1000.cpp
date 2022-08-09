@@ -197,8 +197,6 @@ namespace E1000
         for (int i = 0; i < 0x80; i++)
             OutCMD(0x5200 + i * 4, 0);
 
-        // if (RegisterInterrupt(this->HandleInterrupt, IRQ0 + ((PCI::PCIHeader0 *)PCIAddress)->InterruptLine, true))
-        // {
         OutCMD(REG::IMASK, 0x1F6DC);
         OutCMD(REG::IMASK, 0xff & ~4);
         InCMD(0xc0);
@@ -207,9 +205,6 @@ namespace E1000
         txinit();
         netdbg("E1000 Started");
         return true;
-        // }
-        // else
-        // return false;
     }
 
     void NetworkInterfaceController::Send(void *Data, uint64_t Length)
