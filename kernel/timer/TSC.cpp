@@ -7,7 +7,9 @@ void TSC_sleep(uint64_t Nanoseconds)
     if (cpu_feature(CPUID_FEAT_RDX_TSC))
     {
         // TODO: Calibrate the TSC timer
-        warn("Sleeping using TSC is not fully supported.");
+        static int once = 0;
+        if (!once++)
+            warn("Sleeping using TSC is not fully supported.");
         uint64_t start = tsc();
         while (tsc() - start < Nanoseconds)
             ;
