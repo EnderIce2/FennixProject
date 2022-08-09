@@ -10,7 +10,7 @@ namespace NetworkICMPv4
         fixme("Unimplemented");
     }
 
-    void ICMPv4::Receive(ICMPPacket *Packet, NetworkIPv4::IPv4Packet *IPv4Packet)
+    void ICMPv4::Receive(ICMPPacket *Packet)
     {
         if (Packet->Header.Type == ICMPv4Type::TYPE_ECHO)
         {
@@ -18,8 +18,8 @@ namespace NetworkICMPv4
             netdbg("ICMPv4: Echo Request");
             Packet->Header.Type = ICMPv4Type::TYPE_ECHO_REPLY;
             Packet->Header.Code = 0x0;
-            Packet->Header.Checksum = CalculateChecksum(Packet, sizeof(ICMPHeader));
-            this->Interface->Send(Packet, sizeof(ICMPHeader) + IPv4Packet->Header.TotalLength);
+            Packet->Header.Checksum = CalculateChecksum((uint16_t *)Packet, sizeof(ICMPHeader));
+            this->Interface->Send((uint8_t *)Packet, sizeof(ICMPHeader) + 0);
         }
         else
         {
@@ -33,6 +33,6 @@ namespace NetworkICMPv6
     ICMPv6::ICMPv6(NetworkInterfaceManager::DeviceInterface *Interface) { this->Interface = Interface; }
     ICMPv6::~ICMPv6() {}
 
-    void ICMPv6::Send(void *Data, uint64_t Length) { fixme("Unimplemented"); }
-    void ICMPv6::Receive(void *Data) { fixme("Unimplemented"); }
+    void ICMPv6::Send(uint8_t *Data, uint64_t Length) { fixme("Unimplemented"); }
+    void ICMPv6::Receive(uint8_t *Data) { fixme("Unimplemented"); }
 }
