@@ -8,6 +8,33 @@
 
 namespace PCI
 {
+    /* https://sites.uclouvain.be/SystInfo/usr/include/linux/pci_regs.h.html */
+    enum PCICommands
+    {
+        /** @brief Enable response in I/O space */
+        PCI_COMMAND_IO = 0x1,
+        /** @brief Enable response in Memory space */
+        PCI_COMMAND_MEMORY = 0x2,
+        /** @brief Enable bus mastering */
+        PCI_COMMAND_MASTER = 0x4,
+        /** @brief Enable response to special cycles */
+        PCI_COMMAND_SPECIAL = 0x8,
+        /** @brief Use memory write and invalidate */
+        PCI_COMMAND_INVALIDATE = 0x10,
+        /** @brief Enable palette snooping */
+        PCI_COMMAND_VGA_PALETTE = 0x20,
+        /** @brief Enable parity checking */
+        PCI_COMMAND_PARITY = 0x40,
+        /** @brief Enable address/data stepping */
+        PCI_COMMAND_WAIT = 0x80,
+        /** @brief Enable SERR */
+        PCI_COMMAND_SERR = 0x100,
+        /** @brief Enable back-to-back writes */
+        PCI_COMMAND_FAST_BACK = 0x200,
+        /** @brief INTx Emulation Disable */
+        PCI_COMMAND_INTX_DISABLE = 0x400
+    };
+
     struct PCIDeviceHeader
     {
         uint16_t VendorID;
