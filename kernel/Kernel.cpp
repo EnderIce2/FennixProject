@@ -364,7 +364,10 @@ void KernelInit()
     diskmgr = new DiskManager::Disk;
     partmgr = new DiskManager::Partition;
     BS->Progress(70);
+    do_network_test();
     nimgr = new NetworkInterfaceManager::NetworkInterface;
+    nimgr->StartNetworkStack();
+    BS->Progress(75);
 
     new FileSystem::Serial;
     new FileSystem::Random;
