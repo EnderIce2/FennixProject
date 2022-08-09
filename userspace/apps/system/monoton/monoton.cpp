@@ -1,5 +1,6 @@
 #include "monoton.hpp"
 
+#include "dumper.hpp"
 #include "cwalk.h"
 
 #include <convert.h>
@@ -394,6 +395,24 @@ void ParseBuffer(char *Buffer)
         }
         syscall_FileClose(node);
         free(path);
+    }
+    else if (strncmp(Buffer, "dump", 4) == 0)
+    {
+        char *arg = trimwhitespace(Buffer + 2);
+        char *path = (char *)malloc(strlen(arg) + 1);
+        cwk_path_normalize(arg, path, strlen(arg) + 1);
+        File *node = (File *)syscall_FileOpenWithParent(path, CurrentPath);
+        if (!node)
+        {
+            mono->print("No such file or directory!");
+        }
+        else
+        {
+            void *Buffer = malloc(node->Length);
+            syscall_FileRead(node, 0, Buffer, node->Length);
+            DumpData(node->Name, Buffer, node->Length);
+            free(Buffer);
+        }
     }
     else
     {
