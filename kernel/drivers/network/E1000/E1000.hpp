@@ -141,11 +141,11 @@ namespace E1000
         struct BARData
         {
             uint8_t Type;
-            uint16_t IOBase;
-            uint32_t MemoryBase;
+            uint64_t IOBase;
+            uint64_t MemoryBase;
         };
 
-        InternetProtocol IP;
+        InternetProtocol4 IP;
         uint32_t CurrentPacket;
         BARData BAR;
         bool EEPROMAvailable;
@@ -168,10 +168,10 @@ namespace E1000
 
     public:
         MediaAccessControl GetMAC();
-        InternetProtocol GetIP();
-        void SetIP(InternetProtocol IP);
+        InternetProtocol4 GetIP();
+        void SetIP(InternetProtocol4 IP);
 
-        NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID);
+        NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress);
         ~NetworkInterfaceController();
         bool Start();
 

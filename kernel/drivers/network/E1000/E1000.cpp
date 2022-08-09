@@ -38,10 +38,10 @@ namespace E1000
         return mac;
     }
 
-    InternetProtocol NetworkInterfaceController::GetIP() { return IP; }
-    void NetworkInterfaceController::SetIP(InternetProtocol IP) { this->IP = IP; }
+    InternetProtocol4 NetworkInterfaceController::GetIP() { return IP; }
+    void NetworkInterfaceController::SetIP(InternetProtocol4 IP) { this->IP = IP; }
 
-    NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID) : DriverInterrupts::Register(((PCI::PCIHeader0 *)PCIBaseAddress)->InterruptLine + IRQ0)
+    NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress) : DriverInterrupts::Register(((PCI::PCIHeader0 *)PCIBaseAddress)->InterruptLine + IRQ0)
     {
         if (PCIBaseAddress->VendorID != 0x8086 && PCIBaseAddress->DeviceID != 0x100E && PCIBaseAddress->DeviceID != 0x153A && PCIBaseAddress->DeviceID != 0x10EA)
         {
@@ -50,12 +50,16 @@ namespace E1000
         }
         netdbg("Found %s network card", PCI::GetDeviceName(PCIBaseAddress->VendorID, PCIBaseAddress->DeviceID));
         PCIAddress = PCIBaseAddress;
+        memcpy(this->Name, "E1000 Network Driver", sizeof(this->Name));
 
-        uint32_t PCIBAR = ((PCI::PCIHeader0 *)PCIBaseAddress)->BAR0;
+        // Making sure that bus master is enabled
+        PCIBaseAddress->Command |= PCI::PCI_COMMAND_MASTER | PCI::PCI_COMMAND_IO | PCI::PCI_COMMAND_MEMORY;
+        uint32_t PCIBAR0 = ((PCI::PCIHeader0 *)PCIBaseAddress)->BAR0;
+        uint32_t PCIBAR2 = ((PCI::PCIHeader0 *)PCIBaseAddress)->BAR2;
 
-        BAR.Type = PCIBAR & 1;
-        BAR.IOBase = PCIBAR & (~3);
-        BAR.MemoryBase = PCIBAR & (~15);
+        BAR.Type = PCIBAR0 & 1;
+        BAR.IOBase = PCIBAR2 & (~3);
+        BAR.MemoryBase = PCIBAR0 & (~15);
         netdbg("BAR Type: %d - BAR IOBase: %#x - BAR MemoryBase: %#x", BAR.Type, BAR.IOBase, BAR.MemoryBase);
         this->EEPROMAvailable = false;
         this->Start();
@@ -185,8 +189,9 @@ namespace E1000
     bool NetworkInterfaceController::Start()
     {
         DetectEEPROM();
-        if (!ValidMAC(this->GetMAC()))
+        if (!this->GetMAC().Valid())
             return false;
+        this->MAC = this->GetMAC();
         StartLink();
 
         for (int i = 0; i < 0x80; i++)
@@ -226,11 +231,7 @@ namespace E1000
         {
             uint8_t *Data = (uint8_t *)RXDescriptor[RXCurrent]->Address;
             uint16_t DataLength = RXDescriptor[RXCurrent]->Length;
-
-            fixme("Received packet of length %d", DataLength);
-
-            // Here you should inject the received packet into your network stack
-
+            nimgr->Receive(this, Data, DataLength);
             RXDescriptor[RXCurrent]->Status = 0;
             uint16_t OldRXCurrent = RXCurrent;
             RXCurrent = (RXCurrent + 1) % E1000_NUM_RX_DESC;
@@ -240,21 +241,34 @@ namespace E1000
 
     void NetworkInterfaceController::HandleInterrupt(TrapFrame *regs)
     {
-        netdbg("Handle interrupt IRQ%d", regs->int_num - IRQ0);
         OutCMD(REG::IMASK, 0x1);
+        uint32_t status = InCMD(0xC0);
 
-        uint32_t status = InCMD(0xc0);
+        char *dbgmsg = (char *)"ERROR";
+
+        if (status & 0x01)
+        {
+            dbgmsg = (char *)"I=>O";
+        }
         if (status & 0x04)
         {
+            dbgmsg = (char *)"LINK";
             StartLink();
         }
         else if (status & 0x10)
         {
-            fixme("Good threshold"); // ?????
+            dbgmsg = (char *)"Good Threshold"; // ?????
         }
         else if (status & 0x80)
         {
+            dbgmsg = (char *)"I<=O";
             this->Receive();
         }
+        else
+        {
+            netdbg("Unknown status: %x", status);
+        }
+
+        netdbg("IRQ%d: [%s]", regs->int_num - IRQ0, dbgmsg);
     }
 }

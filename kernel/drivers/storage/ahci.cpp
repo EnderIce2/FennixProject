@@ -161,7 +161,7 @@ namespace AHCI
 
         CommandFIS->FISType = FIS_TYPE_REG_H2D;
         CommandFIS->CommandControl = 1;
-                if (Write)
+        if (Write)
             CommandFIS->Command = ATA_CMD_WRITE_DMA_EX;
         else
             CommandFIS->Command = ATA_CMD_READ_DMA_EX;
