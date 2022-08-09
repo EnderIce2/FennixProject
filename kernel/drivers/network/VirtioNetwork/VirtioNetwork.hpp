@@ -19,19 +19,19 @@ namespace VirtioNetwork
 
         char *RXBuffer;
         int TXCurrent;
-        InternetProtocol IP;
+        InternetProtocol4 IP;
         uint32_t CurrentPacket;
         BARData BAR;
 
     public:
         MediaAccessControl GetMAC();
-        InternetProtocol GetIP();
-        void SetIP(InternetProtocol IP);
+        InternetProtocol4 GetIP();
+        void SetIP(InternetProtocol4 IP);
 
-        NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID);
+        NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress);
         ~NetworkInterfaceController();
 
-        void Send(void *Data, uint64_t Length);
+        void Send(uint8_t *Data, uint64_t Length);
         void Receive();
 
         virtual void HandleInterrupt();

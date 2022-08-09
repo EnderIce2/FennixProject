@@ -25,14 +25,14 @@ namespace RTL8139
         return mac;
     }
 
-    InternetProtocol NetworkInterfaceController::GetIP() { return IP; }
+    InternetProtocol4 NetworkInterfaceController::GetIP() { return IP; }
 
-    void NetworkInterfaceController::SetIP(InternetProtocol IP)
+    void NetworkInterfaceController::SetIP(InternetProtocol4 IP)
     {
-        fixme("NetworkInterfaceController::SetIP( %d.%d.%d.%d )", IP.v4Address[0], IP.v4Address[1], IP.v4Address[2], IP.v4Address[3]);
+        fixme("NetworkInterfaceController::SetIP( %d.%d.%d.%d )", IP.Address[0], IP.Address[1], IP.Address[2], IP.Address[3]);
     }
 
-    NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID) : DriverInterrupts::Register(((PCI::PCIHeader0 *)PCIBaseAddress)->InterruptLine + IRQ0)
+    NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress) : DriverInterrupts::Register(((PCI::PCIHeader0 *)PCIBaseAddress)->InterruptLine + IRQ0)
     {
         if (PCIBaseAddress->VendorID != 0x10EC && PCIBaseAddress->DeviceID != 0x8139)
         {
@@ -45,6 +45,7 @@ namespace RTL8139
         BAR.IOBase = PCIBAR & (~3);
         BAR.MemoryBase = PCIBAR & (~15);
         netdbg("BAR Type: %d - BAR IOBase: %#x - BAR MemoryBase: %#x", BAR.Type, BAR.IOBase, BAR.MemoryBase);
+        memcpy(this->Name, "RTL-8139 Network Driver", sizeof(this->Name));
 
         // https://wiki.osdev.org/RTL8139
         outportb(BAR.IOBase + 0x52, 0x0);
@@ -60,14 +61,14 @@ namespace RTL8139
         outportw(BAR.IOBase + 0x3C, 0x0005);
         outportl(BAR.IOBase + 0x44, 0xf | (1 << 7));
         outportb(BAR.IOBase + 0x37, 0x0C);
+
+        this->MAC = this->GetMAC();
     }
 
     NetworkInterfaceController::~NetworkInterfaceController() { KernelAllocator.FreePages(RXBuffer, 2); }
 
-    void NetworkInterfaceController::Send(void *Data, uint64_t Length)
+    void NetworkInterfaceController::Send(uint8_t *Data, uint64_t Length)
     {
-        assert(!((uint64_t)Data > 0xffffffff));
-
         outportl(BAR.IOBase + TSAD[TXCurrent], (uint32_t)(uint64_t)Data);
         outportl(BAR.IOBase + TSD[TXCurrent++], Length);
         if (TXCurrent > 3)
@@ -81,9 +82,7 @@ namespace RTL8139
         uint32_t DataLength = *(Data + 1);
         Data = Data + 2;
 
-        // TODO
-        // nimgr->Receive(NetworkInterfaceManager::DeviceInterface(), (void *)Data, DataLength);
-        // Send((uint8_t *)Data, DataLength);
+        nimgr->Receive(this, (uint8_t *)Data, DataLength);
 
         CurrentPacket = (CurrentPacket + DataLength + 4 + 3) & (~3);
 

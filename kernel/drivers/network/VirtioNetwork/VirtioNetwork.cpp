@@ -7,17 +7,17 @@ namespace VirtioNetwork
         return MediaAccessControl();
     }
 
-    InternetProtocol NetworkInterfaceController::GetIP()
+    InternetProtocol4 NetworkInterfaceController::GetIP()
     {
         return IP;
     }
 
-    void NetworkInterfaceController::SetIP(InternetProtocol IP)
+    void NetworkInterfaceController::SetIP(InternetProtocol4 IP)
     {
         this->IP = IP;
     }
 
-    NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress, int ID) : DriverInterrupts::Register(((PCI::PCIHeader0 *)PCIBaseAddress)->InterruptLine + IRQ0)
+    NetworkInterfaceController::NetworkInterfaceController(PCI::PCIDeviceHeader *PCIBaseAddress) : DriverInterrupts::Register(((PCI::PCIHeader0 *)PCIBaseAddress)->InterruptLine + IRQ0)
     {
         if (PCIBaseAddress->VendorID != 0x1AF4 && PCIBaseAddress->DeviceID != 0x1000 && PCIBaseAddress->DeviceID != 0x1041)
         {
@@ -36,7 +36,7 @@ namespace VirtioNetwork
     {
     }
 
-    void NetworkInterfaceController::Send(void *Data, uint64_t Length)
+    void NetworkInterfaceController::Send(uint8_t *Data, uint64_t Length)
     {
     }
 
