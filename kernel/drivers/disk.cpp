@@ -97,8 +97,14 @@ namespace DiskManager
                         if (GPTPartition.Attributes & 1)
                             partition->Flags |= EFISystemPartition;
                         partition->Index = drive->Partitions.size();
-                        // TODO: Clean the Label (remove spaces, etc) and make it char* or string
-                        trace("GPT partition \"%s\" found with %lld sectors", GPTPartition.Label, partition->Sectors);
+                        // why there is \0 between every char?????
+                        char PartName[72];
+                        memcpy(PartName, GPTPartition.Label, 72);
+                        for (uint32_t i = 0; i < 72; i++)
+                            if (PartName[i] == '\0')
+                                PartName[i] = ' ';
+                        PartName[71] = '\0';
+                        trace("GPT partition \"%s\" found with %lld sectors", PartName, partition->Sectors);
                         drive->Partitions.push_back(partition);
 
                         char *PartitionName = (char *)kmalloc(sizeof(char));
