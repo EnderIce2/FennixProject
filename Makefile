@@ -13,11 +13,13 @@ include Makefile.conf
 # ATI VGA:    -device ati-vga
 # RAMFB:      -device ramfb
 
+# For tap0
+# -netdev tap,id=usernet0,ifname=tap0,script=no,downscript=no
 QEMUFLAGS = -device bochs-display -M q35 \
 			-usb -no-reboot \
 			-usbdevice mouse \
 			-smp $(shell nproc) \
-    		-netdev user,id=usernet0,hostfwd=tcp::11111-:22 \
+    		-netdev user,id=usernet0 \
     		-device e1000,netdev=usernet0,mac=00:69:96:00:42:00 \
 			-object filter-dump,id=usernet0,netdev=usernet0,file=network.log,maxlen=1024 \
 			-serial file:serial.log \
