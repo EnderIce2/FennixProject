@@ -129,10 +129,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/TSC_8cpp_source.html#l00021">21</a> of file <a class="el" href="../../d7/dfc/TSC_8cpp_source.html">TSC.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;TSC One-Shot is not implemented!&quot;</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/TSC_8cpp_source.html#l00023">23</a> of file <a class="el" href="../../d7/dfc/TSC_8cpp_source.html">TSC.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;TSC One-Shot is not implemented!&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../db/d16/debug_8h_source.html#l00068">err</a>.</p>
 
@@ -161,16 +161,18 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../db/d2a/CPUID_8c.html#afca7b4daf3c9d4057a906333d3f0fdff">cpu_feature</a>(<a class="code" href="../../d7/d70/include_2cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0a60b329db2aeb4653eeddd0ff0bc3b2fd">CPUID_FEAT_RDX_TSC</a>))</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="comment">// TODO: Calibrate the TSC timer</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="../../db/d16/debug_8h.html#a188ea7036db9c1d3fc1062750f3cab77">warn</a>(<span class="stringliteral">&quot;Sleeping using TSC is not fully supported.&quot;</span>);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> start = <a class="code" href="../../de/d21/asm_8h.html#a03d0f35e9e0c2c286a3adbfa793171c4">tsc</a>();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">while</span> (<a class="code" href="../../de/d21/asm_8h.html#a03d0f35e9e0c2c286a3adbfa793171c4">tsc</a>() - start &lt; Nanoseconds)</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            ;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="../../db/d16/debug_8h.html#a188ea7036db9c1d3fc1062750f3cab77">warn</a>(<span class="stringliteral">&quot;RDTSC is not supported.&quot;</span>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> once = 0;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">if</span> (!once++)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <a class="code" href="../../db/d16/debug_8h.html#a188ea7036db9c1d3fc1062750f3cab77">warn</a>(<span class="stringliteral">&quot;Sleeping using TSC is not fully supported.&quot;</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> start = <a class="code" href="../../de/d21/asm_8h.html#a03d0f35e9e0c2c286a3adbfa793171c4">tsc</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">while</span> (<a class="code" href="../../de/d21/asm_8h.html#a03d0f35e9e0c2c286a3adbfa793171c4">tsc</a>() - start &lt; Nanoseconds)</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            ;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="../../db/d16/debug_8h.html#a188ea7036db9c1d3fc1062750f3cab77">warn</a>(<span class="stringliteral">&quot;RDTSC is not supported.&quot;</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../db/d2a/CPUID_8c_source.html#l00006">cpu_feature()</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00038">CPUID_FEAT_RDX_TSC</a>, <a class="el" href="../../de/d21/asm_8h_source.html#l00652">tsc()</a>, and <a class="el" href="../../db/d16/debug_8h_source.html#l00067">warn</a>.</p>
 

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['tasking_5001',['Tasking',['../d9/d3e/namespaceTasking.html',1,'']]]
+  ['stackheap_5233',['StackHeap',['../dc/da6/namespaceStackHeap.html',1,'']]],
+  ['symmetricmultiprocessing_5234',['SymmetricMultiprocessing',['../d0/d35/namespaceSymmetricMultiprocessing.html',1,'']]],
+  ['systemrecovery_5235',['SystemRecovery',['../dc/d52/namespaceSystemRecovery.html',1,'']]]
 ];

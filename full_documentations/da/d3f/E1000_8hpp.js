@@ -19,8 +19,8 @@ var E1000_8hpp =
       [ "Status", "da/d6e/classE1000_1_1NetworkInterfaceController.html#a34d8a06ea469a2076f0e69a728317095", null ]
     ] ],
     [ "BARData", "da/d6e/classE1000_1_1NetworkInterfaceController.html#d3/d5c/structE1000_1_1NetworkInterfaceController_1_1BARData", [
-      [ "IOBase", "da/d6e/classE1000_1_1NetworkInterfaceController.html#a5c39681f2e48ba9a6cb2de593d1a3020", null ],
-      [ "MemoryBase", "da/d6e/classE1000_1_1NetworkInterfaceController.html#aea925537e68e79d5b4cd678bae8bde39", null ],
+      [ "IOBase", "da/d6e/classE1000_1_1NetworkInterfaceController.html#a22d9883c6a368afc8884c9b748c01e76", null ],
+      [ "MemoryBase", "da/d6e/classE1000_1_1NetworkInterfaceController.html#a20373b645e5b3d1998d8eaae0df0e51c", null ],
       [ "Type", "da/d6e/classE1000_1_1NetworkInterfaceController.html#a0e95b2efdb3670917f9a0b170bf89da2", null ]
     ] ],
     [ "E1000_82577LM", "da/d3f/E1000_8hpp.html#a2f6b24febdf809da6dc1eb3eb442ffbc", null ],

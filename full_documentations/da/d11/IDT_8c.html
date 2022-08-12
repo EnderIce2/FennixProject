@@ -124,12 +124,6 @@ Functions</h2></td></tr>
 <tr class="separator:ae9ef9358e344e6c571c18834f979c681"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08a5bd6c9e05dcc56233cebc470c63e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d11/IDT_8c.html#a08a5bd6c9e05dcc56233cebc470c63e9">__attribute__</a> ((used))</td></tr>
 <tr class="separator:a08a5bd6c9e05dcc56233cebc470c63e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29297117a3a4ac8340abb5bd6d5605d8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d11/IDT_8c.html#a29297117a3a4ac8340abb5bd6d5605d8">IDTInterruptHandler</a> (TrapFrame *regs)</td></tr>
-<tr class="separator:a29297117a3a4ac8340abb5bd6d5605d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69d8f1fbf39714db28369bd410410867"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d11/IDT_8c.html#a69d8f1fbf39714db28369bd410410867">register_interrupt_handler</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> vector, <a class="el" href="../../d3/d7e/int_8h.html#a46d9431511b0767b74e06ed231035fd4">INTERRUPT_HANDLER</a> handle)</td></tr>
-<tr class="separator:a69d8f1fbf39714db28369bd410410867"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83135d314c4063e187c7d42b7847dc2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d11/IDT_8c.html#a83135d314c4063e187c7d42b7847dc2d">unregister_interrupt_handler</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> vector)</td></tr>
-<tr class="separator:a83135d314c4063e187c7d42b7847dc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad75e6e6240aeaf933d10434c64927e56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> idt, void(*handler)(), <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> ist, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> ring)</td></tr>
 <tr class="separator:ad75e6e6240aeaf933d10434c64927e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6996f01d517264d24c9f18b040f9b7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d11/IDT_8c.html#ac6996f01d517264d24c9f18b040f9b7b">EXCEPTION_HANDLER</a> (0x00)</td></tr>
@@ -203,8 +197,6 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a70261d75a55609b04616591fe85b227b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d11/IDT_8c.html#a70261d75a55609b04616591fe85b227b">KPML4Address</a> = NULL</td></tr>
 <tr class="separator:a70261d75a55609b04616591fe85b227b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71fc4f440b7ae2c9a301ad72ab18fa5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d7e/int_8h.html#a46d9431511b0767b74e06ed231035fd4">INTERRUPT_HANDLER</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d11/IDT_8c.html#a71fc4f440b7ae2c9a301ad72ab18fa5f">interrupt_handlers</a> [256]</td></tr>
-<tr class="separator:a71fc4f440b7ae2c9a301ad72ab18fa5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50848395e116d9cffdc062c5a7d638ca"><td class="memItemLeft" align="right" valign="top">static InterruptDescriptorTableEntry&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a> [0x100]</td></tr>
 <tr class="separator:a50848395e116d9cffdc062c5a7d638ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1383c2a6a0b52fd26255f10b6a845445"><td class="memItemLeft" align="right" valign="top">InterruptDescriptorTableDescriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d11/IDT_8c.html#a1383c2a6a0b52fd26255f10b6a845445">idtr</a></td></tr>
@@ -1032,49 +1024,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a29297117a3a4ac8340abb5bd6d5605d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29297117a3a4ac8340abb5bd6d5605d8">&#9670;&nbsp;</a></span>IDTInterruptHandler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void IDTInterruptHandler </td>
-          <td>(</td>
-          <td class="paramtype">TrapFrame *&#160;</td>
-          <td class="paramname"><em>regs</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../da/d11/IDT_8c_source.html#l00219">219</a> of file <a class="el" href="../../da/d11/IDT_8c_source.html">IDT.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;{</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordflow">if</span> (((<span class="keywordtype">long</span>)((<a class="code" href="../../df/dd8/stdint_8h.html#a0c18914b3041c2f583aba76f418399c2">int32_t</a>)regs-&gt;int_num)) &lt; 0 || regs-&gt;int_num &gt; 0xff)</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;Invalid interrupt received %#llx&quot;</span>, regs-&gt;int_num);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    }</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../da/d11/IDT_8c.html#a71fc4f440b7ae2c9a301ad72ab18fa5f">interrupt_handlers</a>[regs-&gt;int_num] == NULL)</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;IRQ%d is not registered!&quot;</span>, regs-&gt;int_num - 32);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    }</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <a class="code" href="../../da/d11/IDT_8c.html#a71fc4f440b7ae2c9a301ad72ab18fa5f">interrupt_handlers</a>[regs-&gt;int_num](regs);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <a class="code" href="../../d3/d7e/int_8h.html#a4ee4551ab63edbfcc20602c9c287051e">EndOfInterrupt</a>(regs-&gt;int_num);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00007">EndOfInterrupt()</a>, <a class="el" href="../../db/d16/debug_8h_source.html#l00068">err</a>, and <a class="el" href="../../da/d11/IDT_8c_source.html#l00217">interrupt_handlers</a>.</p>
-
-</div>
-</div>
 <a id="a35fe413107af682030ab7a4b6dff19b8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35fe413107af682030ab7a4b6dff19b8">&#9670;&nbsp;</a></span>init_idt()</h2>
 
@@ -1090,312 +1039,274 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d11/IDT_8c_source.html#l00531">531</a> of file <a class="el" href="../../da/d11/IDT_8c_source.html">IDT.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;{</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#a87de2fca12ef8f7205584b972c8b1f16">trace</a>(<span class="stringliteral">&quot;Initializing IDT&quot;</span>);</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x0, interrupt_handler_0x00, 1, 0);</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x1, interrupt_handler_0x01, 1, 3);</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x2, interrupt_handler_0x02, 2, 0);</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x3, interrupt_handler_0x03, 1, 0);</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x4, interrupt_handler_0x04, 1, 0);</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x5, interrupt_handler_0x05, 1, 0);</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x6, interrupt_handler_0x06, 1, 0);</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x7, interrupt_handler_0x07, 1, 0);</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x8, interrupt_handler_0x08, 3, 0);</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x9, interrupt_handler_0x09, 1, 0);</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa, interrupt_handler_0x0a, 1, 0);</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb, interrupt_handler_0x0b, 1, 0);</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc, interrupt_handler_0x0c, 3, 0);</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd, interrupt_handler_0x0d, 3, 0);</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe, interrupt_handler_0x0e, 3, 0);</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf, interrupt_handler_0x0f, 1, 0);</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x10, interrupt_handler_0x10, 1, 0);</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x11, interrupt_handler_0x11, 1, 0);</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x12, interrupt_handler_0x12, 1, 0);</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x13, interrupt_handler_0x13, 1, 0);</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x14, interrupt_handler_0x14, 1, 0);</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x15, interrupt_handler_0x15, 1, 0);</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x16, interrupt_handler_0x16, 1, 0);</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x17, interrupt_handler_0x17, 1, 0);</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x18, interrupt_handler_0x18, 1, 0);</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x19, interrupt_handler_0x19, 1, 0);</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x1a, interrupt_handler_0x1a, 1, 0);</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x1b, interrupt_handler_0x1b, 1, 0);</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x1c, interrupt_handler_0x1c, 1, 0);</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x1d, interrupt_handler_0x1d, 1, 0);</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x1e, interrupt_handler_0x1e, 1, 0);</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x1f, interrupt_handler_0x1f, 1, 0);</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    <span class="comment">// IRQ</span></div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x20, interrupt_handler_0x20, 0, 0);</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x21, interrupt_handler_0x21, 0, 0);</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x22, interrupt_handler_0x22, 0, 0);</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x23, interrupt_handler_0x23, 0, 0);</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x24, interrupt_handler_0x24, 0, 0);</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x25, interrupt_handler_0x25, 0, 0);</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x26, interrupt_handler_0x26, 0, 0);</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x27, interrupt_handler_0x27, 0, 0);</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x28, interrupt_handler_0x28, 0, 0);</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x29, interrupt_handler_0x29, 0, 0);</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x2a, interrupt_handler_0x2a, 0, 0);</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x2b, interrupt_handler_0x2b, 0, 0);</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x2c, interrupt_handler_0x2c, 0, 0);</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x2d, interrupt_handler_0x2d, 0, 0);</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x2e, interrupt_handler_0x2e, 0, 0);</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x2f, interrupt_handler_0x2f, 0, 0);</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x30, interrupt_handler_0x30, 0, 0);</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x31, interrupt_handler_0x31, 0, 0);</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x32, interrupt_handler_0x32, 0, 0);</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x33, interrupt_handler_0x33, 0, 0);</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x34, interrupt_handler_0x34, 0, 0);</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x35, interrupt_handler_0x35, 0, 0);</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x36, interrupt_handler_0x36, 0, 0);</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x37, interrupt_handler_0x37, 0, 0);</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x38, interrupt_handler_0x38, 0, 0);</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x39, interrupt_handler_0x39, 0, 0);</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x3a, interrupt_handler_0x3a, 0, 0);</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x3b, interrupt_handler_0x3b, 0, 0);</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x3c, interrupt_handler_0x3c, 0, 0);</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x3d, interrupt_handler_0x3d, 0, 0);</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x3e, interrupt_handler_0x3e, 0, 0);</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x3f, interrupt_handler_0x3f, 0, 0);</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x40, interrupt_handler_0x40, 0, 0);</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x41, interrupt_handler_0x41, 0, 0);</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x42, interrupt_handler_0x42, 0, 0);</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x43, interrupt_handler_0x43, 0, 0);</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x44, interrupt_handler_0x44, 0, 0);</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x45, interrupt_handler_0x45, 0, 0);</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x46, interrupt_handler_0x46, 0, 0);</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x47, interrupt_handler_0x47, 0, 0);</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x48, interrupt_handler_0x48, 0, 0);</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x49, interrupt_handler_0x49, 0, 0);</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x4a, interrupt_handler_0x4a, 0, 0);</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x4b, interrupt_handler_0x4b, 0, 0);</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x4c, interrupt_handler_0x4c, 0, 0);</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x4d, interrupt_handler_0x4d, 0, 0);</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x4e, interrupt_handler_0x4e, 0, 0);</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x4f, interrupt_handler_0x4f, 0, 0);</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x50, interrupt_handler_0x50, 0, 0);</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x51, interrupt_handler_0x51, 0, 0);</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x52, interrupt_handler_0x52, 0, 0);</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x53, interrupt_handler_0x53, 0, 0);</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x54, interrupt_handler_0x54, 0, 0);</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x55, interrupt_handler_0x55, 0, 0);</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x56, interrupt_handler_0x56, 0, 0);</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x57, interrupt_handler_0x57, 0, 0);</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x58, interrupt_handler_0x58, 0, 0);</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x59, interrupt_handler_0x59, 0, 0);</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x5a, interrupt_handler_0x5a, 0, 0);</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x5b, interrupt_handler_0x5b, 0, 0);</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x5c, interrupt_handler_0x5c, 0, 0);</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x5d, interrupt_handler_0x5d, 0, 0);</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x5e, interrupt_handler_0x5e, 0, 0);</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x5f, interrupt_handler_0x5f, 0, 0);</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x60, interrupt_handler_0x60, 0, 0);</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x61, interrupt_handler_0x61, 0, 0);</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x62, interrupt_handler_0x62, 0, 0);</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x63, interrupt_handler_0x63, 0, 0);</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x64, interrupt_handler_0x64, 0, 0);</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x65, interrupt_handler_0x65, 0, 0);</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x66, interrupt_handler_0x66, 0, 0);</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x67, interrupt_handler_0x67, 0, 0);</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x68, interrupt_handler_0x68, 0, 0);</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x69, interrupt_handler_0x69, 0, 0);</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x6a, interrupt_handler_0x6a, 0, 0);</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x6b, interrupt_handler_0x6b, 0, 0);</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x6c, interrupt_handler_0x6c, 0, 0);</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x6d, interrupt_handler_0x6d, 0, 0);</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x6e, interrupt_handler_0x6e, 0, 0);</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x6f, interrupt_handler_0x6f, 0, 0);</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x70, interrupt_handler_0x70, 0, 0);</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x71, interrupt_handler_0x71, 0, 0);</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x72, interrupt_handler_0x72, 0, 0);</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x73, interrupt_handler_0x73, 0, 0);</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x74, interrupt_handler_0x74, 0, 0);</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x75, interrupt_handler_0x75, 0, 0);</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x76, interrupt_handler_0x76, 0, 0);</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x77, interrupt_handler_0x77, 0, 0);</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x78, interrupt_handler_0x78, 0, 0);</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x79, interrupt_handler_0x79, 0, 0);</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x7a, interrupt_handler_0x7a, 0, 0);</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x7b, interrupt_handler_0x7b, 0, 0);</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x7c, interrupt_handler_0x7c, 0, 0);</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x7d, interrupt_handler_0x7d, 0, 0);</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x7e, interrupt_handler_0x7e, 0, 0);</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x7f, interrupt_handler_0x7f, 0, 0);</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x80, interrupt_handler_0x80, 0, 0);</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x81, interrupt_handler_0x81, 0, 0);</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x82, interrupt_handler_0x82, 0, 0);</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x83, interrupt_handler_0x83, 0, 0);</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x84, interrupt_handler_0x84, 0, 0);</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x85, interrupt_handler_0x85, 0, 0);</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x86, interrupt_handler_0x86, 0, 0);</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x87, interrupt_handler_0x87, 0, 0);</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x88, interrupt_handler_0x88, 0, 0);</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x89, interrupt_handler_0x89, 0, 0);</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x8a, interrupt_handler_0x8a, 0, 0);</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x8b, interrupt_handler_0x8b, 0, 0);</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x8c, interrupt_handler_0x8c, 0, 0);</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x8d, interrupt_handler_0x8d, 0, 0);</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x8e, interrupt_handler_0x8e, 0, 0);</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x8f, interrupt_handler_0x8f, 0, 0);</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x90, interrupt_handler_0x90, 0, 0);</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x91, interrupt_handler_0x91, 0, 0);</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x92, interrupt_handler_0x92, 0, 0);</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x93, interrupt_handler_0x93, 0, 0);</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x94, interrupt_handler_0x94, 0, 0);</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x95, interrupt_handler_0x95, 0, 0);</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x96, interrupt_handler_0x96, 0, 0);</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x97, interrupt_handler_0x97, 0, 0);</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x98, interrupt_handler_0x98, 0, 0);</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x99, interrupt_handler_0x99, 0, 0);</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x9a, interrupt_handler_0x9a, 0, 0);</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x9b, interrupt_handler_0x9b, 0, 0);</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x9c, interrupt_handler_0x9c, 0, 0);</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x9d, interrupt_handler_0x9d, 0, 0);</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x9e, interrupt_handler_0x9e, 0, 0);</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x9f, interrupt_handler_0x9f, 0, 0);</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa0, interrupt_handler_0xa0, 0, 0);</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa1, interrupt_handler_0xa1, 0, 0);</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa2, interrupt_handler_0xa2, 0, 0);</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa3, interrupt_handler_0xa3, 0, 0);</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa4, interrupt_handler_0xa4, 0, 0);</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa5, interrupt_handler_0xa5, 0, 0);</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa6, interrupt_handler_0xa6, 0, 0);</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa7, interrupt_handler_0xa7, 0, 0);</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa8, interrupt_handler_0xa8, 0, 0);</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa9, interrupt_handler_0xa9, 0, 0);</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xaa, interrupt_handler_0xaa, 0, 0);</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xab, interrupt_handler_0xab, 0, 0);</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xac, interrupt_handler_0xac, 0, 0);</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xad, interrupt_handler_0xad, 0, 0);</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xae, interrupt_handler_0xae, 0, 0);</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xaf, interrupt_handler_0xaf, 0, 0);</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb0, interrupt_handler_0xb0, 0, 0);</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb1, interrupt_handler_0xb1, 0, 0);</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb2, interrupt_handler_0xb2, 0, 0);</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb3, interrupt_handler_0xb3, 0, 0);</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb4, interrupt_handler_0xb4, 0, 0);</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb5, interrupt_handler_0xb5, 0, 0);</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb6, interrupt_handler_0xb6, 0, 0);</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb7, interrupt_handler_0xb7, 0, 0);</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb8, interrupt_handler_0xb8, 0, 0);</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb9, interrupt_handler_0xb9, 0, 0);</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xba, interrupt_handler_0xba, 0, 0);</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xbb, interrupt_handler_0xbb, 0, 0);</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xbc, interrupt_handler_0xbc, 0, 0);</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xbd, interrupt_handler_0xbd, 0, 0);</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xbe, interrupt_handler_0xbe, 0, 0);</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xbf, interrupt_handler_0xbf, 0, 0);</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc0, interrupt_handler_0xc0, 0, 0);</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc1, interrupt_handler_0xc1, 0, 0);</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc2, interrupt_handler_0xc2, 0, 0);</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc3, interrupt_handler_0xc3, 0, 0);</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc4, interrupt_handler_0xc4, 0, 0);</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc5, interrupt_handler_0xc5, 0, 0);</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc6, interrupt_handler_0xc6, 0, 0);</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc7, interrupt_handler_0xc7, 0, 0);</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc8, interrupt_handler_0xc8, 0, 0);</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc9, interrupt_handler_0xc9, 0, 0);</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xca, interrupt_handler_0xca, 0, 0);</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xcb, interrupt_handler_0xcb, 0, 0);</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xcc, interrupt_handler_0xcc, 0, 0);</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xcd, interrupt_handler_0xcd, 0, 0);</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xce, interrupt_handler_0xce, 0, 0);</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xcf, interrupt_handler_0xcf, 0, 0);</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd0, interrupt_handler_0xd0, 0, 0);</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd1, interrupt_handler_0xd1, 0, 0);</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd2, interrupt_handler_0xd2, 0, 0);</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd3, interrupt_handler_0xd3, 0, 0);</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd4, interrupt_handler_0xd4, 0, 0);</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd5, interrupt_handler_0xd5, 0, 0);</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd6, interrupt_handler_0xd6, 0, 0);</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd7, interrupt_handler_0xd7, 0, 0);</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd8, interrupt_handler_0xd8, 0, 0);</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd9, interrupt_handler_0xd9, 0, 0);</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xda, interrupt_handler_0xda, 0, 0);</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xdb, interrupt_handler_0xdb, 0, 0);</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xdc, interrupt_handler_0xdc, 0, 0);</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xdd, interrupt_handler_0xdd, 0, 0);</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xde, interrupt_handler_0xde, 0, 0);</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xdf, interrupt_handler_0xdf, 0, 0);</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe0, interrupt_handler_0xe0, 0, 0);</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe1, interrupt_handler_0xe1, 0, 0);</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe2, interrupt_handler_0xe2, 0, 0);</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe3, interrupt_handler_0xe3, 0, 0);</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe4, interrupt_handler_0xe4, 0, 0);</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe5, interrupt_handler_0xe5, 0, 0);</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe6, interrupt_handler_0xe6, 0, 0);</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe7, interrupt_handler_0xe7, 0, 0);</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe8, interrupt_handler_0xe8, 0, 0);</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe9, interrupt_handler_0xe9, 0, 0);</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xea, interrupt_handler_0xea, 0, 0);</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xeb, interrupt_handler_0xeb, 0, 0);</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xec, interrupt_handler_0xec, 0, 0);</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xed, interrupt_handler_0xed, 0, 0);</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xee, interrupt_handler_0xee, 0, 0);</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xef, interrupt_handler_0xef, 0, 0);</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf0, interrupt_handler_0xf0, 0, 0);</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf1, interrupt_handler_0xf1, 0, 0);</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf2, interrupt_handler_0xf2, 0, 0);</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf3, interrupt_handler_0xf3, 0, 0);</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf4, interrupt_handler_0xf4, 0, 0);</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf5, interrupt_handler_0xf5, 0, 0);</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf6, interrupt_handler_0xf6, 0, 0);</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf7, interrupt_handler_0xf7, 0, 0);</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf8, interrupt_handler_0xf8, 0, 0);</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf9, interrupt_handler_0xf9, 0, 0);</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xfa, interrupt_handler_0xfa, 0, 0);</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xfb, interrupt_handler_0xfb, 0, 0);</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xfc, interrupt_handler_0xfc, 0, 0);</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xfd, interrupt_handler_0xfd, 0, 0);</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xfe, interrupt_handler_0xfe, 0, 0);</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xff, interrupt_handler_0xff, 0, 0);</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    <a class="code" href="../../de/d21/asm_8h.html#a10413c641ec7ad2cba180ab7a4860964">lidt</a>(<a class="code" href="../../da/d11/IDT_8c.html#a1383c2a6a0b52fd26255f10b6a845445">idtr</a>);</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    <a class="code" href="../../de/d4c/PIC_8c.html#ab5ed5530bfeaffadd8cd88c06d797f31">PIC_remap</a>(0x20, 0x28);</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d11/IDT_8c_source.html#l00502">502</a> of file <a class="el" href="../../da/d11/IDT_8c_source.html">IDT.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;{</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#a87de2fca12ef8f7205584b972c8b1f16">trace</a>(<span class="stringliteral">&quot;Initializing IDT&quot;</span>);</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x0, interrupt_handler_0x00, 1, 0);</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x1, interrupt_handler_0x01, 1, 3);</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x2, interrupt_handler_0x02, 2, 0);</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x3, interrupt_handler_0x03, 1, 0);</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x4, interrupt_handler_0x04, 1, 0);</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x5, interrupt_handler_0x05, 1, 0);</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x6, interrupt_handler_0x06, 1, 0);</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x7, interrupt_handler_0x07, 1, 0);</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x8, interrupt_handler_0x08, 3, 0);</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x9, interrupt_handler_0x09, 1, 0);</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa, interrupt_handler_0x0a, 1, 0);</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb, interrupt_handler_0x0b, 1, 0);</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc, interrupt_handler_0x0c, 3, 0);</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd, interrupt_handler_0x0d, 3, 0);</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe, interrupt_handler_0x0e, 3, 0);</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf, interrupt_handler_0x0f, 1, 0);</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x10, interrupt_handler_0x10, 1, 0);</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x11, interrupt_handler_0x11, 1, 0);</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x12, interrupt_handler_0x12, 1, 0);</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x13, interrupt_handler_0x13, 1, 0);</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x14, interrupt_handler_0x14, 1, 0);</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x15, interrupt_handler_0x15, 1, 0);</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x16, interrupt_handler_0x16, 1, 0);</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x17, interrupt_handler_0x17, 1, 0);</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x18, interrupt_handler_0x18, 1, 0);</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x19, interrupt_handler_0x19, 1, 0);</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x1a, interrupt_handler_0x1a, 1, 0);</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x1b, interrupt_handler_0x1b, 1, 0);</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x1c, interrupt_handler_0x1c, 1, 0);</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x1d, interrupt_handler_0x1d, 1, 0);</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x1e, interrupt_handler_0x1e, 1, 0);</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x1f, interrupt_handler_0x1f, 1, 0);</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <span class="comment">// IRQ</span></div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x20, interrupt_handler_0x20, 0, 0);</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x21, interrupt_handler_0x21, 0, 0);</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x22, interrupt_handler_0x22, 0, 0);</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x23, interrupt_handler_0x23, 0, 0);</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x24, interrupt_handler_0x24, 0, 0);</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x25, interrupt_handler_0x25, 0, 0);</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x26, interrupt_handler_0x26, 0, 0);</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x27, interrupt_handler_0x27, 0, 0);</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x28, interrupt_handler_0x28, 0, 0);</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x29, interrupt_handler_0x29, 0, 0);</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x2a, interrupt_handler_0x2a, 0, 0);</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x2b, interrupt_handler_0x2b, 0, 0);</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x2c, interrupt_handler_0x2c, 0, 0);</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x2d, interrupt_handler_0x2d, 0, 0);</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x2e, interrupt_handler_0x2e, 0, 0);</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x2f, interrupt_handler_0x2f, 0, 0);</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160; </div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x30, interrupt_handler_0x30, 0, 0);</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x31, interrupt_handler_0x31, 0, 0);</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x32, interrupt_handler_0x32, 0, 0);</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x33, interrupt_handler_0x33, 0, 0);</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x34, interrupt_handler_0x34, 0, 0);</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x35, interrupt_handler_0x35, 0, 0);</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x36, interrupt_handler_0x36, 0, 0);</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x37, interrupt_handler_0x37, 0, 0);</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x38, interrupt_handler_0x38, 0, 0);</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x39, interrupt_handler_0x39, 0, 0);</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x3a, interrupt_handler_0x3a, 0, 0);</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x3b, interrupt_handler_0x3b, 0, 0);</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x3c, interrupt_handler_0x3c, 0, 0);</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x3d, interrupt_handler_0x3d, 0, 0);</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x3e, interrupt_handler_0x3e, 0, 0);</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x3f, interrupt_handler_0x3f, 0, 0);</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x40, interrupt_handler_0x40, 0, 0);</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x41, interrupt_handler_0x41, 0, 0);</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x42, interrupt_handler_0x42, 0, 0);</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x43, interrupt_handler_0x43, 0, 0);</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x44, interrupt_handler_0x44, 0, 0);</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x45, interrupt_handler_0x45, 0, 0);</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x46, interrupt_handler_0x46, 0, 0);</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x47, interrupt_handler_0x47, 0, 0);</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x48, interrupt_handler_0x48, 0, 0);</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x49, interrupt_handler_0x49, 0, 0);</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x4a, interrupt_handler_0x4a, 0, 0);</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x4b, interrupt_handler_0x4b, 0, 0);</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x4c, interrupt_handler_0x4c, 0, 0);</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x4d, interrupt_handler_0x4d, 0, 0);</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x4e, interrupt_handler_0x4e, 0, 0);</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x4f, interrupt_handler_0x4f, 0, 0);</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x50, interrupt_handler_0x50, 0, 0);</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x51, interrupt_handler_0x51, 0, 0);</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x52, interrupt_handler_0x52, 0, 0);</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x53, interrupt_handler_0x53, 0, 0);</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x54, interrupt_handler_0x54, 0, 0);</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x55, interrupt_handler_0x55, 0, 0);</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x56, interrupt_handler_0x56, 0, 0);</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x57, interrupt_handler_0x57, 0, 0);</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x58, interrupt_handler_0x58, 0, 0);</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x59, interrupt_handler_0x59, 0, 0);</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x5a, interrupt_handler_0x5a, 0, 0);</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x5b, interrupt_handler_0x5b, 0, 0);</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x5c, interrupt_handler_0x5c, 0, 0);</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x5d, interrupt_handler_0x5d, 0, 0);</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x5e, interrupt_handler_0x5e, 0, 0);</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x5f, interrupt_handler_0x5f, 0, 0);</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x60, interrupt_handler_0x60, 0, 0);</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x61, interrupt_handler_0x61, 0, 0);</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x62, interrupt_handler_0x62, 0, 0);</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x63, interrupt_handler_0x63, 0, 0);</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x64, interrupt_handler_0x64, 0, 0);</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x65, interrupt_handler_0x65, 0, 0);</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x66, interrupt_handler_0x66, 0, 0);</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x67, interrupt_handler_0x67, 0, 0);</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x68, interrupt_handler_0x68, 0, 0);</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x69, interrupt_handler_0x69, 0, 0);</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x6a, interrupt_handler_0x6a, 0, 0);</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x6b, interrupt_handler_0x6b, 0, 0);</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x6c, interrupt_handler_0x6c, 0, 0);</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x6d, interrupt_handler_0x6d, 0, 0);</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x6e, interrupt_handler_0x6e, 0, 0);</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x6f, interrupt_handler_0x6f, 0, 0);</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x70, interrupt_handler_0x70, 0, 0);</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x71, interrupt_handler_0x71, 0, 0);</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x72, interrupt_handler_0x72, 0, 0);</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x73, interrupt_handler_0x73, 0, 0);</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x74, interrupt_handler_0x74, 0, 0);</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x75, interrupt_handler_0x75, 0, 0);</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x76, interrupt_handler_0x76, 0, 0);</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x77, interrupt_handler_0x77, 0, 0);</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x78, interrupt_handler_0x78, 0, 0);</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x79, interrupt_handler_0x79, 0, 0);</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x7a, interrupt_handler_0x7a, 0, 0);</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x7b, interrupt_handler_0x7b, 0, 0);</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x7c, interrupt_handler_0x7c, 0, 0);</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x7d, interrupt_handler_0x7d, 0, 0);</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x7e, interrupt_handler_0x7e, 0, 0);</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x7f, interrupt_handler_0x7f, 0, 0);</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x80, interrupt_handler_0x80, 0, 0);</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x81, interrupt_handler_0x81, 0, 0);</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x82, interrupt_handler_0x82, 0, 0);</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x83, interrupt_handler_0x83, 0, 0);</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x84, interrupt_handler_0x84, 0, 0);</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x85, interrupt_handler_0x85, 0, 0);</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x86, interrupt_handler_0x86, 0, 0);</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x87, interrupt_handler_0x87, 0, 0);</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x88, interrupt_handler_0x88, 0, 0);</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x89, interrupt_handler_0x89, 0, 0);</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x8a, interrupt_handler_0x8a, 0, 0);</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x8b, interrupt_handler_0x8b, 0, 0);</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x8c, interrupt_handler_0x8c, 0, 0);</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x8d, interrupt_handler_0x8d, 0, 0);</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x8e, interrupt_handler_0x8e, 0, 0);</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x8f, interrupt_handler_0x8f, 0, 0);</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x90, interrupt_handler_0x90, 0, 0);</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x91, interrupt_handler_0x91, 0, 0);</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x92, interrupt_handler_0x92, 0, 0);</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x93, interrupt_handler_0x93, 0, 0);</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x94, interrupt_handler_0x94, 0, 0);</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x95, interrupt_handler_0x95, 0, 0);</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x96, interrupt_handler_0x96, 0, 0);</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x97, interrupt_handler_0x97, 0, 0);</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x98, interrupt_handler_0x98, 0, 0);</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x99, interrupt_handler_0x99, 0, 0);</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x9a, interrupt_handler_0x9a, 0, 0);</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x9b, interrupt_handler_0x9b, 0, 0);</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x9c, interrupt_handler_0x9c, 0, 0);</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x9d, interrupt_handler_0x9d, 0, 0);</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x9e, interrupt_handler_0x9e, 0, 0);</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0x9f, interrupt_handler_0x9f, 0, 0);</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa0, interrupt_handler_0xa0, 0, 0);</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa1, interrupt_handler_0xa1, 0, 0);</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa2, interrupt_handler_0xa2, 0, 0);</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa3, interrupt_handler_0xa3, 0, 0);</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa4, interrupt_handler_0xa4, 0, 0);</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa5, interrupt_handler_0xa5, 0, 0);</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa6, interrupt_handler_0xa6, 0, 0);</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa7, interrupt_handler_0xa7, 0, 0);</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa8, interrupt_handler_0xa8, 0, 0);</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xa9, interrupt_handler_0xa9, 0, 0);</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xaa, interrupt_handler_0xaa, 0, 0);</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xab, interrupt_handler_0xab, 0, 0);</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xac, interrupt_handler_0xac, 0, 0);</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xad, interrupt_handler_0xad, 0, 0);</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xae, interrupt_handler_0xae, 0, 0);</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xaf, interrupt_handler_0xaf, 0, 0);</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb0, interrupt_handler_0xb0, 0, 0);</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb1, interrupt_handler_0xb1, 0, 0);</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb2, interrupt_handler_0xb2, 0, 0);</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb3, interrupt_handler_0xb3, 0, 0);</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb4, interrupt_handler_0xb4, 0, 0);</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb5, interrupt_handler_0xb5, 0, 0);</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb6, interrupt_handler_0xb6, 0, 0);</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb7, interrupt_handler_0xb7, 0, 0);</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb8, interrupt_handler_0xb8, 0, 0);</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xb9, interrupt_handler_0xb9, 0, 0);</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xba, interrupt_handler_0xba, 0, 0);</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xbb, interrupt_handler_0xbb, 0, 0);</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xbc, interrupt_handler_0xbc, 0, 0);</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xbd, interrupt_handler_0xbd, 0, 0);</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xbe, interrupt_handler_0xbe, 0, 0);</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xbf, interrupt_handler_0xbf, 0, 0);</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc0, interrupt_handler_0xc0, 0, 0);</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc1, interrupt_handler_0xc1, 0, 0);</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc2, interrupt_handler_0xc2, 0, 0);</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc3, interrupt_handler_0xc3, 0, 0);</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc4, interrupt_handler_0xc4, 0, 0);</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc5, interrupt_handler_0xc5, 0, 0);</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc6, interrupt_handler_0xc6, 0, 0);</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc7, interrupt_handler_0xc7, 0, 0);</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc8, interrupt_handler_0xc8, 0, 0);</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xc9, interrupt_handler_0xc9, 0, 0);</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xca, interrupt_handler_0xca, 0, 0);</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xcb, interrupt_handler_0xcb, 0, 0);</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xcc, interrupt_handler_0xcc, 0, 0);</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xcd, interrupt_handler_0xcd, 0, 0);</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xce, interrupt_handler_0xce, 0, 0);</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xcf, interrupt_handler_0xcf, 0, 0);</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd0, interrupt_handler_0xd0, 0, 0);</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd1, interrupt_handler_0xd1, 0, 0);</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd2, interrupt_handler_0xd2, 0, 0);</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd3, interrupt_handler_0xd3, 0, 0);</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd4, interrupt_handler_0xd4, 0, 0);</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd5, interrupt_handler_0xd5, 0, 0);</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd6, interrupt_handler_0xd6, 0, 0);</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd7, interrupt_handler_0xd7, 0, 0);</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd8, interrupt_handler_0xd8, 0, 0);</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xd9, interrupt_handler_0xd9, 0, 0);</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xda, interrupt_handler_0xda, 0, 0);</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xdb, interrupt_handler_0xdb, 0, 0);</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xdc, interrupt_handler_0xdc, 0, 0);</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xdd, interrupt_handler_0xdd, 0, 0);</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xde, interrupt_handler_0xde, 0, 0);</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xdf, interrupt_handler_0xdf, 0, 0);</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe0, interrupt_handler_0xe0, 0, 0);</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe1, interrupt_handler_0xe1, 0, 0);</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe2, interrupt_handler_0xe2, 0, 0);</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe3, interrupt_handler_0xe3, 0, 0);</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe4, interrupt_handler_0xe4, 0, 0);</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe5, interrupt_handler_0xe5, 0, 0);</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe6, interrupt_handler_0xe6, 0, 0);</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe7, interrupt_handler_0xe7, 0, 0);</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe8, interrupt_handler_0xe8, 0, 0);</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xe9, interrupt_handler_0xe9, 0, 0);</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xea, interrupt_handler_0xea, 0, 0);</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xeb, interrupt_handler_0xeb, 0, 0);</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xec, interrupt_handler_0xec, 0, 0);</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xed, interrupt_handler_0xed, 0, 0);</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xee, interrupt_handler_0xee, 0, 0);</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xef, interrupt_handler_0xef, 0, 0);</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf0, interrupt_handler_0xf0, 0, 0);</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf1, interrupt_handler_0xf1, 0, 0);</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf2, interrupt_handler_0xf2, 0, 0);</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf3, interrupt_handler_0xf3, 0, 0);</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf4, interrupt_handler_0xf4, 0, 0);</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf5, interrupt_handler_0xf5, 0, 0);</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf6, interrupt_handler_0xf6, 0, 0);</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf7, interrupt_handler_0xf7, 0, 0);</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf8, interrupt_handler_0xf8, 0, 0);</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xf9, interrupt_handler_0xf9, 0, 0);</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xfa, interrupt_handler_0xfa, 0, 0);</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xfb, interrupt_handler_0xfb, 0, 0);</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xfc, interrupt_handler_0xfc, 0, 0);</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xfd, interrupt_handler_0xfd, 0, 0);</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xfe, interrupt_handler_0xfe, 0, 0);</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a>(0xff, interrupt_handler_0xff, 0, 0);</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    <a class="code" href="../../de/d21/asm_8h.html#a10413c641ec7ad2cba180ab7a4860964">lidt</a>(<a class="code" href="../../da/d11/IDT_8c.html#a1383c2a6a0b52fd26255f10b6a845445">idtr</a>);</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    <a class="code" href="../../de/d4c/PIC_8c.html#ab5ed5530bfeaffadd8cd88c06d797f31">PIC_remap</a>(0x20, 0x28);</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../da/d11/IDT_8c_source.html#l00250">idtr</a>, <a class="el" href="../../de/d21/asm_8h_source.html#l00024">lidt()</a>, <a class="el" href="../../de/d4c/PIC_8c_source.html#l00049">PIC_remap()</a>, <a class="el" href="../../da/d11/IDT_8c_source.html#l00253">set_idt_entry()</a>, and <a class="el" href="../../db/d16/debug_8h_source.html#l00066">trace</a>.</p>
+<p class="reference">References <a class="el" href="../../da/d11/IDT_8c_source.html#l00221">idtr</a>, <a class="el" href="../../de/d21/asm_8h_source.html#l00024">lidt()</a>, <a class="el" href="../../de/d4c/PIC_8c_source.html#l00049">PIC_remap()</a>, <a class="el" href="../../da/d11/IDT_8c_source.html#l00224">set_idt_entry()</a>, and <a class="el" href="../../db/d16/debug_8h_source.html#l00066">trace</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00234">KernelInit()</a>.</p>
-
-</div>
-</div>
-<a id="a69d8f1fbf39714db28369bd410410867"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69d8f1fbf39714db28369bd410410867">&#9670;&nbsp;</a></span>register_interrupt_handler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void register_interrupt_handler </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a>&#160;</td>
-          <td class="paramname"><em>vector</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d3/d7e/int_8h.html#a46d9431511b0767b74e06ed231035fd4">INTERRUPT_HANDLER</a>&#160;</td>
-          <td class="paramname"><em>handle</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../da/d11/IDT_8c_source.html#l00234">234</a> of file <a class="el" href="../../da/d11/IDT_8c_source.html">IDT.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;{</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a71fc4f440b7ae2c9a301ad72ab18fa5f">interrupt_handlers</a>[vector] = handle;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#a7ad5641dbc2b4cdb4d83352a62ce2f41">debug</a>(<span class="stringliteral">&quot;Vector %#llx(IRQ%d) has been registered to handle %#llx&quot;</span>, vector, vector - 32, handle);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../db/d16/debug_8h_source.html#l00069">debug</a>, and <a class="el" href="../../da/d11/IDT_8c_source.html#l00217">interrupt_handlers</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00020">RegisterInterrupt()</a>.</p>
 
 </div>
 </div>
@@ -1437,20 +1348,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d11/IDT_8c_source.html#l00253">253</a> of file <a class="el" href="../../da/d11/IDT_8c_source.html">IDT.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;{</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>[idt].BaseLow = (<a class="code" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a>)((<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)handler &amp; 0xFFFF);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>[idt].BaseHigh = (<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)((<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)handler &gt;&gt; 16);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>[idt].Flags = FlagGate32BIT_TRAP;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>[idt].SegmentSelector = <a class="code" href="../../d5/d4a/gdt_8h.html#ab0bd808397c97f7db4701ca69009a547">GDT_KERNEL_CODE</a>;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>[idt].Present = 1;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>[idt].InterruptStackTable = ist;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>[idt].Ring = ring;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d11/IDT_8c_source.html#l00224">224</a> of file <a class="el" href="../../da/d11/IDT_8c_source.html">IDT.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;{</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>[idt].BaseLow = (<a class="code" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a>)((<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)handler &amp; 0xFFFF);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>[idt].BaseHigh = (<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)((<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)handler &gt;&gt; 16);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>[idt].Flags = FlagGate32BIT_TRAP;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>[idt].SegmentSelector = <a class="code" href="../../d5/d4a/gdt_8h.html#ab0bd808397c97f7db4701ca69009a547">GDT_KERNEL_CODE</a>;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>[idt].Present = 1;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>[idt].InterruptStackTable = ist;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>[idt].Ring = ring;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d5/d4a/gdt_8h_source.html#l00007">GDT_KERNEL_CODE</a>, and <a class="el" href="../../da/d11/IDT_8c_source.html#l00248">idt_entries</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d4a/gdt_8h_source.html#l00007">GDT_KERNEL_CODE</a>, and <a class="el" href="../../da/d11/IDT_8c_source.html#l00219">idt_entries</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/d11/IDT_8c_source.html#l00531">init_idt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/d11/IDT_8c_source.html#l00502">init_idt()</a>.</p>
 
 </div>
 </div>
@@ -1482,34 +1393,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a83135d314c4063e187c7d42b7847dc2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83135d314c4063e187c7d42b7847dc2d">&#9670;&nbsp;</a></span>unregister_interrupt_handler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unregister_interrupt_handler </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a>&#160;</td>
-          <td class="paramname"><em>vector</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../da/d11/IDT_8c_source.html#l00240">240</a> of file <a class="el" href="../../da/d11/IDT_8c_source.html">IDT.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;{</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <a class="code" href="../../da/d11/IDT_8c.html#a71fc4f440b7ae2c9a301ad72ab18fa5f">interrupt_handlers</a>[vector] = NULL;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#a7ad5641dbc2b4cdb4d83352a62ce2f41">debug</a>(<span class="stringliteral">&quot;Vector %#llx(IRQ%d) has been unregistered&quot;</span>, vector, vector - 32);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../db/d16/debug_8h_source.html#l00069">debug</a>, and <a class="el" href="../../da/d11/IDT_8c_source.html#l00217">interrupt_handlers</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00076">UnregisterInterrupt()</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a50848395e116d9cffdc062c5a7d638ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a50848395e116d9cffdc062c5a7d638ca">&#9670;&nbsp;</a></span>idt_entries</h2>
@@ -1531,9 +1414,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d11/IDT_8c_source.html#l00248">248</a> of file <a class="el" href="../../da/d11/IDT_8c_source.html">IDT.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d11/IDT_8c_source.html#l00219">219</a> of file <a class="el" href="../../da/d11/IDT_8c_source.html">IDT.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/d11/IDT_8c_source.html#l00253">set_idt_entry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/d11/IDT_8c_source.html#l00224">set_idt_entry()</a>.</p>
 
 </div>
 </div>
@@ -1551,27 +1434,9 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= {.Length = <span class="keyword">sizeof</span>(<a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>) - 1,</div>
 <div class="line">                                           .<a class="code" href="../../d1/d90/acpi_8hpp.html#abbb89ef5101949c8bb742a068871510a">Entries</a> = <a class="code" href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a>}</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="../../da/d11/IDT_8c_source.html#l00250">250</a> of file <a class="el" href="../../da/d11/IDT_8c_source.html">IDT.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d11/IDT_8c_source.html#l00221">221</a> of file <a class="el" href="../../da/d11/IDT_8c_source.html">IDT.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/d11/IDT_8c_source.html#l00531">init_idt()</a>.</p>
-
-</div>
-</div>
-<a id="a71fc4f440b7ae2c9a301ad72ab18fa5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71fc4f440b7ae2c9a301ad72ab18fa5f">&#9670;&nbsp;</a></span>interrupt_handlers</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d3/d7e/int_8h.html#a46d9431511b0767b74e06ed231035fd4">INTERRUPT_HANDLER</a> interrupt_handlers[256]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../da/d11/IDT_8c_source.html#l00217">217</a> of file <a class="el" href="../../da/d11/IDT_8c_source.html">IDT.c</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../da/d11/IDT_8c_source.html#l00219">IDTInterruptHandler()</a>, <a class="el" href="../../da/d11/IDT_8c_source.html#l00234">register_interrupt_handler()</a>, and <a class="el" href="../../da/d11/IDT_8c_source.html#l00240">unregister_interrupt_handler()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../da/d11/IDT_8c_source.html#l00502">init_idt()</a>.</p>
 
 </div>
 </div>
@@ -1597,25 +1462,21 @@ Variables</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="aio_8h_html_a391e9b8bf10e07c26f6db68c10d008cf"><div class="ttname"><a href="../../dc/dac/io_8h.html#a391e9b8bf10e07c26f6db68c10d008cf">inb</a></div><div class="ttdeci">#define inb(Port)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dac/io_8h_source.html#l00209">io.h:209</a></div></div>
 <div class="ttc" id="aCrashHandler_8cpp_html_a7827fa4eb9a46dd6d5b07a921560abf2"><div class="ttname"><a href="../../db/de7/CrashHandler_8cpp.html#a7827fa4eb9a46dd6d5b07a921560abf2">isrcrash</a></div><div class="ttdeci">EXTERNC void isrcrash(TrapFrame *regs)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/de7/CrashHandler_8cpp_source.html#l00060">CrashHandler.cpp:60</a></div></div>
-<div class="ttc" id="aIDT_8c_html_ad75e6e6240aeaf933d10434c64927e56"><div class="ttname"><a href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a></div><div class="ttdeci">void set_idt_entry(uint8_t idt, void(*handler)(), uint64_t ist, uint64_t ring)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d11/IDT_8c_source.html#l00253">IDT.c:253</a></div></div>
+<div class="ttc" id="aIDT_8c_html_ad75e6e6240aeaf933d10434c64927e56"><div class="ttname"><a href="../../da/d11/IDT_8c.html#ad75e6e6240aeaf933d10434c64927e56">set_idt_entry</a></div><div class="ttdeci">void set_idt_entry(uint8_t idt, void(*handler)(), uint64_t ist, uint64_t ring)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d11/IDT_8c_source.html#l00224">IDT.c:224</a></div></div>
 <div class="ttc" id="aIDT_8c_html_ae9ef9358e344e6c571c18834f979c681"><div class="ttname"><a href="../../da/d11/IDT_8c.html#ae9ef9358e344e6c571c18834f979c681">__attribute__</a></div><div class="ttdeci">__attribute__((naked, used, no_stack_protector))</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d11/IDT_8c_source.html#l00023">IDT.c:23</a></div></div>
 <div class="ttc" id="aIDT_8c_html_a70261d75a55609b04616591fe85b227b"><div class="ttname"><a href="../../da/d11/IDT_8c.html#a70261d75a55609b04616591fe85b227b">KPML4Address</a></div><div class="ttdeci">void * KPML4Address</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d11/IDT_8c_source.html#l00015">IDT.c:15</a></div></div>
 <div class="ttc" id="aacpi_8hpp_html_a6fc2b8ed8be1aa26731a45000f43b8cc"><div class="ttname"><a href="../../d1/d90/acpi_8hpp.html#a6fc2b8ed8be1aa26731a45000f43b8cc">Address</a></div><div class="ttdeci">uint64_t Address</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d90/acpi_8hpp_source.html#l00285">acpi.hpp:285</a></div></div>
 <div class="ttc" id="adisplay_8h_html_de/dcd/structFramebuffer"><div class="ttname"><a href="../../d4/d68/display_8h.html#de/dcd/structFramebuffer">Framebuffer</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d68/display_8h_source.html#l00004">display.h:4</a></div></div>
 <div class="ttc" id="adebug_8h_html_a87de2fca12ef8f7205584b972c8b1f16"><div class="ttname"><a href="../../db/d16/debug_8h.html#a87de2fca12ef8f7205584b972c8b1f16">trace</a></div><div class="ttdeci">#define trace(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/debug_8h_source.html#l00066">debug.h:66</a></div></div>
-<div class="ttc" id="aint_8h_html_a4ee4551ab63edbfcc20602c9c287051e"><div class="ttname"><a href="../../d3/d7e/int_8h.html#a4ee4551ab63edbfcc20602c9c287051e">EndOfInterrupt</a></div><div class="ttdeci">EXTERNC void EndOfInterrupt(int interrupt)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dae/Interrputs_8cpp_source.html#l00007">Interrputs.cpp:7</a></div></div>
 <div class="ttc" id="astdint_8h_html_a3cb4a16b0e8d6af0af86d4fd6ba5fd9d"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></div><div class="ttdeci">__UINT8_TYPE__ uint8_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00007">stdint.h:7</a></div></div>
 <div class="ttc" id="akernel_2include_2types_8h_html_ac8aced6808c793d9f7f4dbce9f5b0305"><div class="ttname"><a href="../../d7/dfc/kernel_2include_2types_8h.html#ac8aced6808c793d9f7f4dbce9f5b0305">CPU_HALT</a></div><div class="ttdeci">#define CPU_HALT</div><div class="ttdoc">This function halts the CPU for good. Nothing can be done after this. Even the NMI can't do something...</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00047">types.h:47</a></div></div>
 <div class="ttc" id="adisplay_8h_html_a5cb08d2ea466eac7410758f68888e205"><div class="ttname"><a href="../../d4/d68/display_8h.html#a5cb08d2ea466eac7410758f68888e205">Framebuffer::Address</a></div><div class="ttdeci">uint64_t Address</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d68/display_8h_source.html#l00006">display.h:6</a></div></div>
 <div class="ttc" id="aasm_8h_html_a1171212a040f76ad9630f030efb1653e"><div class="ttname"><a href="../../de/d21/asm_8h.html#a1171212a040f76ad9630f030efb1653e">STI</a></div><div class="ttdeci">#define STI</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00101">asm.h:101</a></div></div>
 <div class="ttc" id="agdt_8h_html_ab0bd808397c97f7db4701ca69009a547"><div class="ttname"><a href="../../d5/d4a/gdt_8h.html#ab0bd808397c97f7db4701ca69009a547">GDT_KERNEL_CODE</a></div><div class="ttdeci">#define GDT_KERNEL_CODE</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d4a/gdt_8h_source.html#l00007">gdt.h:7</a></div></div>
-<div class="ttc" id="adebug_8h_html_a7ad5641dbc2b4cdb4d83352a62ce2f41"><div class="ttname"><a href="../../db/d16/debug_8h.html#a7ad5641dbc2b4cdb4d83352a62ce2f41">debug</a></div><div class="ttdeci">#define debug(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/debug_8h_source.html#l00069">debug.h:69</a></div></div>
-<div class="ttc" id="aIDT_8c_html_a71fc4f440b7ae2c9a301ad72ab18fa5f"><div class="ttname"><a href="../../da/d11/IDT_8c.html#a71fc4f440b7ae2c9a301ad72ab18fa5f">interrupt_handlers</a></div><div class="ttdeci">INTERRUPT_HANDLER interrupt_handlers[256]</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d11/IDT_8c_source.html#l00217">IDT.c:217</a></div></div>
 <div class="ttc" id="astdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
 <div class="ttc" id="astdint_8h_html_a0a8582351ac627ee8bde2973c825e47f"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></div><div class="ttdeci">__UINT32_TYPE__ uint32_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00009">stdint.h:9</a></div></div>
 <div class="ttc" id="aserial_8h_html_a00dbb3ab1c59e14699be9393693e2248"><div class="ttname"><a href="../../db/d11/serial_8h.html#a00dbb3ab1c59e14699be9393693e2248">COM1</a></div><div class="ttdeci">#define COM1</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/serial_8h_source.html#l00007">serial.h:7</a></div></div>
 <div class="ttc" id="aPIC_8c_html_ab5ed5530bfeaffadd8cd88c06d797f31"><div class="ttname"><a href="../../de/d4c/PIC_8c.html#ab5ed5530bfeaffadd8cd88c06d797f31">PIC_remap</a></div><div class="ttdeci">void PIC_remap(int offset1, int offset2)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d4c/PIC_8c_source.html#l00049">PIC.c:49</a></div></div>
-<div class="ttc" id="astdint_8h_html_a0c18914b3041c2f583aba76f418399c2"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a0c18914b3041c2f583aba76f418399c2">int32_t</a></div><div class="ttdeci">__INT32_TYPE__ int32_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00005">stdint.h:5</a></div></div>
 <div class="ttc" id="adisplay_8cpp_html_a4a15d3fdcdd370eec2cc304e52f9b368"><div class="ttname"><a href="../../db/d86/display_8cpp.html#a4a15d3fdcdd370eec2cc304e52f9b368">GetFramebuffer</a></div><div class="ttdeci">EXTERNC struct Framebuffer * GetFramebuffer()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d86/display_8cpp_source.html#l00242">display.cpp:242</a></div></div>
 <div class="ttc" id="aio_8h_html_a3529f17f415c111e731ea02f24f115ba"><div class="ttname"><a href="../../dc/dac/io_8h.html#a3529f17f415c111e731ea02f24f115ba">outb</a></div><div class="ttdeci">#define outb(Port, Data)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dac/io_8h_source.html#l00212">io.h:212</a></div></div>
 <div class="ttc" id="aasm_8h_html_a10413c641ec7ad2cba180ab7a4860964"><div class="ttname"><a href="../../de/d21/asm_8h.html#a10413c641ec7ad2cba180ab7a4860964">lidt</a></div><div class="ttdeci">static void lidt(InterruptDescriptorTableDescriptor idt)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00024">asm.h:24</a></div></div>
@@ -1623,8 +1484,8 @@ Variables</h2></td></tr>
 <div class="ttc" id="aTimer_8c_html_abe7cc7b0f8c654e119c6c2379e997eec"><div class="ttname"><a href="../../de/dcd/Timer_8c.html#abe7cc7b0f8c654e119c6c2379e997eec">msleep</a></div><div class="ttdeci">void msleep(uint64_t Miliseconds)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dcd/Timer_8c_source.html#l00054">Timer.c:54</a></div></div>
 <div class="ttc" id="aacpi_8hpp_html_abbb89ef5101949c8bb742a068871510a"><div class="ttname"><a href="../../d1/d90/acpi_8hpp.html#abbb89ef5101949c8bb742a068871510a">Entries</a></div><div class="ttdeci">char Entries[]</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d90/acpi_8hpp_source.html#l00284">acpi.hpp:284</a></div></div>
 <div class="ttc" id="aserial_8c_html_a708b346863815b06e3ad626dcf621a0f"><div class="ttname"><a href="../../d8/d90/serial_8c.html#a708b346863815b06e3ad626dcf621a0f">serial_write_text</a></div><div class="ttdeci">void serial_write_text(int serial_port, char *text)</div><div class="ttdoc">Sends a text to the serial port (Used by the debug system, don't use this!!)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d90/serial_8c_source.html#l00056">serial.c:56</a></div></div>
-<div class="ttc" id="aIDT_8c_html_a1383c2a6a0b52fd26255f10b6a845445"><div class="ttname"><a href="../../da/d11/IDT_8c.html#a1383c2a6a0b52fd26255f10b6a845445">idtr</a></div><div class="ttdeci">InterruptDescriptorTableDescriptor idtr</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d11/IDT_8c_source.html#l00250">IDT.c:250</a></div></div>
-<div class="ttc" id="aIDT_8c_html_a50848395e116d9cffdc062c5a7d638ca"><div class="ttname"><a href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a></div><div class="ttdeci">static InterruptDescriptorTableEntry idt_entries[0x100]</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d11/IDT_8c_source.html#l00248">IDT.c:248</a></div></div>
+<div class="ttc" id="aIDT_8c_html_a1383c2a6a0b52fd26255f10b6a845445"><div class="ttname"><a href="../../da/d11/IDT_8c.html#a1383c2a6a0b52fd26255f10b6a845445">idtr</a></div><div class="ttdeci">InterruptDescriptorTableDescriptor idtr</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d11/IDT_8c_source.html#l00221">IDT.c:221</a></div></div>
+<div class="ttc" id="aIDT_8c_html_a50848395e116d9cffdc062c5a7d638ca"><div class="ttname"><a href="../../da/d11/IDT_8c.html#a50848395e116d9cffdc062c5a7d638ca">idt_entries</a></div><div class="ttdeci">static InterruptDescriptorTableEntry idt_entries[0x100]</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d11/IDT_8c_source.html#l00219">IDT.c:219</a></div></div>
 <div class="ttc" id="adisplay_8h_html_a9cec2b7d067abb47b84a024374825fc2"><div class="ttname"><a href="../../d4/d68/display_8h.html#a9cec2b7d067abb47b84a024374825fc2">Framebuffer::Height</a></div><div class="ttdeci">uint32_t Height</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d68/display_8h_source.html#l00008">display.h:8</a></div></div>
 <div class="ttc" id="adebug_8h_html_aea447f57f81a2f5ee19ef8a1dd9e5d92"><div class="ttname"><a href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a></div><div class="ttdeci">#define err(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/debug_8h_source.html#l00068">debug.h:68</a></div></div>
 <div class="ttc" id="aasm_8h_html_a7806d82cb41c78b6d2a9a236e60bf19c"><div class="ttname"><a href="../../de/d21/asm_8h.html#a7806d82cb41c78b6d2a9a236e60bf19c">CLI</a></div><div class="ttdeci">#define CLI</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00099">asm.h:99</a></div></div>

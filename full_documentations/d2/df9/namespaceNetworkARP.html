@@ -106,12 +106,10 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ac0a4f1592f6a2b87489742ad94310c60"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60">DAType</a> { <a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60aa20500d98166e02a22feb144e26939da">DA_ADD</a> = 1, 
-<a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60a016f96b8189c3d24f321b659a449544e">DA_DEL</a> = 2, 
-<a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60a9ecc48d0e1335768701d5867e8ca1f37">DA_SEARCH</a> = 3, 
-<a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60aefef2b632465b5fb92c378e4f51ebfa1">DA_UPDATE</a> = 4
+<tr class="memitem:aeb09ccefe69677574f3e16c6ff2c375b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#aeb09ccefe69677574f3e16c6ff2c375b">ARPOperation</a> { <a class="el" href="../../d2/df9/namespaceNetworkARP.html#aeb09ccefe69677574f3e16c6ff2c375ba6d76f6fa7a69b2a1ab2cbf061e8ec4ec">REQUEST</a> = 0x1, 
+<a class="el" href="../../d2/df9/namespaceNetworkARP.html#aeb09ccefe69677574f3e16c6ff2c375bafad19e0558b612421b8234f6649eef6e">REPLY</a> = 0x2
  }</td></tr>
-<tr class="separator:ac0a4f1592f6a2b87489742ad94310c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aeb09ccefe69677574f3e16c6ff2c375b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7b28d3da26dbb0fb38fc7c9ca31735c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735c">ARPHardwareType</a> { <br />
 &#160;&#160;<a class="el" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca9510db1022337add6664fea36b3392ed">HTYPE_ETHERNET</a> = 1, 
 <a class="el" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca452db3bbe8c26c0a8e9ad26c940eed72">HTYPE_802_3</a> = 6, 
@@ -130,13 +128,19 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a346d8ecaa7beeb22c6584080a7dcaff9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#d7/d56/structNetworkARP_1_1DiscoveredAddress">DiscoveredAddress</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#a346d8ecaa7beeb22c6584080a7dcaff9">ManageDA</a> (<a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60">DAType</a> <a class="el" href="../../d2/d50/disk_8h.html#aeff746a68ed515a1d9f0c40a38dd200b">Type</a>, <a class="el" href="../../dc/de6/NetworkController_8hpp.html#d8/d38/structInternetProtocol">InternetProtocol</a> IP, <a class="el" href="../../dc/de6/NetworkController_8hpp.html#d0/d48/structMediaAccessControl">MediaAccessControl</a> MAC)</td></tr>
-<tr class="separator:a346d8ecaa7beeb22c6584080a7dcaff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6186215ca5c5c07ae454a12ddb40035"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="../../d2/df9/namespaceNetworkARP.html#d7/dcf/structNetworkARP_1_1ARPHeader">NetworkARP::ARPHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#ab6186215ca5c5c07ae454a12ddb40035">__attribute__</a> ((packed))</td></tr>
+<tr class="separator:ab6186215ca5c5c07ae454a12ddb40035"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a5350876db1b3a5becc7738ba74cb4e46"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60">NetworkARP::DAType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#a5350876db1b3a5becc7738ba74cb4e46">__attribute__</a></td></tr>
-<tr class="separator:a5350876db1b3a5becc7738ba74cb4e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aca9e566091f1cf920995cf612e328d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d48/structMediaAccessControl.html">MediaAccessControl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#a5aca9e566091f1cf920995cf612e328d">InvalidMAC</a> = {.<a class="el" href="../../da/d3f/E1000_8hpp.html#a6fc2b8ed8be1aa26731a45000f43b8cc">Address</a> = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}}</td></tr>
+<tr class="separator:a5aca9e566091f1cf920995cf612e328d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7bad1a5f789936decb5663017e2bfbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d1e/structInternetProtocol4.html">InternetProtocol4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#af7bad1a5f789936decb5663017e2bfbe">InvalidIP</a> = {.<a class="el" href="../../da/d3f/E1000_8hpp.html#a6fc2b8ed8be1aa26731a45000f43b8cc">Address</a> = {0xFF, 0xFF, 0xFF, 0xFF}}</td></tr>
+<tr class="separator:af7bad1a5f789936decb5663017e2bfbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc52637e86e4e5625907cfeb20a3c62b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#d7/d56/structNetworkARP_1_1DiscoveredAddress">DiscoveredAddress</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#adc52637e86e4e5625907cfeb20a3c62b">InvalidRet</a> = {.MAC = <a class="el" href="../../d2/df9/namespaceNetworkARP.html#a5aca9e566091f1cf920995cf612e328d">InvalidMAC</a>, .IP = <a class="el" href="../../d2/df9/namespaceNetworkARP.html#af7bad1a5f789936decb5663017e2bfbe">InvalidIP</a>}</td></tr>
+<tr class="separator:adc52637e86e4e5625907cfeb20a3c62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37c42968503419cfbf3214eb33899fe6"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="../../d2/df9/namespaceNetworkARP.html#d7/d56/structNetworkARP_1_1DiscoveredAddress">NetworkARP::DiscoveredAddress</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#a37c42968503419cfbf3214eb33899fe6">__attribute__</a></td></tr>
+<tr class="separator:a37c42968503419cfbf3214eb33899fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="d7/dcf/structNetworkARP_1_1ARPHeader" id="d7/dcf/structNetworkARP_1_1ARPHeader"></a>
@@ -151,7 +155,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00200">200</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00327">327</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -161,7 +165,7 @@ HardwareSize</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a599c12da4e63939b4ddca37bda3793b5"></a><a class="el" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735c">ARPHardwareType</a></td>
+<a id="a0394a6a045efd9ae15c945fc69afd614"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 HardwareType</td>
 <td class="fielddoc">
@@ -179,33 +183,33 @@ ProtocolSize</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a0eae759282fa10cdc64f39926a4838c5"></a>ProtocolType</td>
+<a id="a58c2665cd07712829ed653ffffe9da3a"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 ProtocolType</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a9c2db8459d06562db4f86c22acf3259d"></a><a class="el" href="../../dc/de6/NetworkController_8hpp.html#d8/d38/structInternetProtocol">InternetProtocol</a></td>
+<a id="aeda257479b294761e1bc0740c43c4b7d"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 SenderIP</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="aadde80b3f302f230369ceb449a871c16"></a><a class="el" href="../../dc/de6/NetworkController_8hpp.html#d0/d48/structMediaAccessControl">MediaAccessControl</a></td>
+<a id="aabe82e8693caf22fa63992d0b13e86a5"></a><a class="el" href="../../dc/de6/NetworkController_8hpp.html#a25baf26b50bc73c25d21005f30ca33b6">uint48_t</a></td>
 <td class="fieldname">
-SenderMAC</td>
+SenderMAC: 48</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a487c8463e00fdd46cd4bfab3087fcd40"></a><a class="el" href="../../dc/de6/NetworkController_8hpp.html#d8/d38/structInternetProtocol">InternetProtocol</a></td>
+<a id="ae2c0cf58f25d2c0316b169c6f79e2d7d"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 TargetIP</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="aed4b26252cd62c2b9321650196455e20"></a><a class="el" href="../../dc/de6/NetworkController_8hpp.html#d0/d48/structMediaAccessControl">MediaAccessControl</a></td>
+<a id="aba59acf7e00b364685f35ecb8591d4f2"></a><a class="el" href="../../dc/de6/NetworkController_8hpp.html#a25baf26b50bc73c25d21005f30ca33b6">uint48_t</a></td>
 <td class="fieldname">
-TargetMAC</td>
+TargetMAC: 48</td>
 <td class="fielddoc">
 </td></tr>
 </table>
@@ -224,17 +228,17 @@ TargetMAC</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00213">213</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00340">340</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="a1c99aecfe749aaa991cb0d7ba6006d6b"></a><a class="el" href="../../dc/de6/NetworkController_8hpp.html#d8/d38/structInternetProtocol">InternetProtocol</a></td>
+<a id="a537a57a3fa615d0234e07f469243d34f"></a><a class="el" href="../../d0/d1e/structInternetProtocol4.html">InternetProtocol4</a></td>
 <td class="fieldname">
 IP</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a8e78248e4147ba0f272c3d1b71563ab6"></a><a class="el" href="../../dc/de6/NetworkController_8hpp.html#d0/d48/structMediaAccessControl">MediaAccessControl</a></td>
+<a id="a8e78248e4147ba0f272c3d1b71563ab6"></a><a class="el" href="../../d0/d48/structMediaAccessControl.html">MediaAccessControl</a></td>
 <td class="fieldname">
 MAC</td>
 <td class="fielddoc">
@@ -267,165 +271,142 @@ MAC</td>
 <tr><td class="fieldname"><a id="aa7b28d3da26dbb0fb38fc7c9ca31735ca1895f5278dbed846fb0024c964f21ff0"></a>HTYPE_SERIAL_LINE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00187">187</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca9510db1022337add6664fea36b3392ed">HTYPE_ETHERNET</a> = 1,</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca452db3bbe8c26c0a8e9ad26c940eed72">HTYPE_802_3</a> = 6,</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca6a289608980ba86980373136c722c3fb">HTYPE_ARCNET</a> = 7,</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca8e2b5088a3f4e98e3e5f450251bf2114">HTYPE_FRAME_RELAY</a> = 15,</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca4eb07a2da9da4160637968d42f1e9922">HTYPE_ATM</a> = 16,</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca4b9552fcc7350c84eeea5df5d8e786d2">HTYPE_HDLC</a> = 17,</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca58dbdda400480d3b8c4c03f85bbfcbb6">HTYPE_FIBRE_CHANNEL</a> = 18,</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735cabc50ddeee45f6096ca7907e7d3feb464">HTYPE_ATM_2</a> = 19,</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca1895f5278dbed846fb0024c964f21ff0">HTYPE_SERIAL_LINE</a> = 20</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    };</div>
+<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00314">314</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca9510db1022337add6664fea36b3392ed">HTYPE_ETHERNET</a> = 1,</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca452db3bbe8c26c0a8e9ad26c940eed72">HTYPE_802_3</a> = 6,</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca6a289608980ba86980373136c722c3fb">HTYPE_ARCNET</a> = 7,</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca8e2b5088a3f4e98e3e5f450251bf2114">HTYPE_FRAME_RELAY</a> = 15,</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca4eb07a2da9da4160637968d42f1e9922">HTYPE_ATM</a> = 16,</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca4b9552fcc7350c84eeea5df5d8e786d2">HTYPE_HDLC</a> = 17,</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca58dbdda400480d3b8c4c03f85bbfcbb6">HTYPE_FIBRE_CHANNEL</a> = 18,</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735cabc50ddeee45f6096ca7907e7d3feb464">HTYPE_ATM_2</a> = 19,</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca1895f5278dbed846fb0024c964f21ff0">HTYPE_SERIAL_LINE</a> = 20</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    };</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ac0a4f1592f6a2b87489742ad94310c60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0a4f1592f6a2b87489742ad94310c60">&#9670;&nbsp;</a></span>DAType</h2>
+<a id="aeb09ccefe69677574f3e16c6ff2c375b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb09ccefe69677574f3e16c6ff2c375b">&#9670;&nbsp;</a></span>ARPOperation</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60">NetworkARP::DAType</a></td>
+          <td class="memname">enum <a class="el" href="../../d2/df9/namespaceNetworkARP.html#aeb09ccefe69677574f3e16c6ff2c375b">NetworkARP::ARPOperation</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac0a4f1592f6a2b87489742ad94310c60aa20500d98166e02a22feb144e26939da"></a>DA_ADD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac0a4f1592f6a2b87489742ad94310c60a016f96b8189c3d24f321b659a449544e"></a>DA_DEL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac0a4f1592f6a2b87489742ad94310c60a9ecc48d0e1335768701d5867e8ca1f37"></a>DA_SEARCH&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac0a4f1592f6a2b87489742ad94310c60aefef2b632465b5fb92c378e4f51ebfa1"></a>DA_UPDATE&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aeb09ccefe69677574f3e16c6ff2c375ba6d76f6fa7a69b2a1ab2cbf061e8ec4ec"></a>REQUEST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeb09ccefe69677574f3e16c6ff2c375bafad19e0558b612421b8234f6649eef6e"></a>REPLY&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00011">11</a> of file <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html">AddressResolutionProtocol.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60aa20500d98166e02a22feb144e26939da">DA_ADD</a> = 1,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60a016f96b8189c3d24f321b659a449544e">DA_DEL</a> = 2,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60a9ecc48d0e1335768701d5867e8ca1f37">DA_SEARCH</a> = 3,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60aefef2b632465b5fb92c378e4f51ebfa1">DA_UPDATE</a> = 4</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    };</div>
+<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00308">308</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aeb09ccefe69677574f3e16c6ff2c375ba6d76f6fa7a69b2a1ab2cbf061e8ec4ec">REQUEST</a> = 0x1,</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <a class="code" href="../../d2/df9/namespaceNetworkARP.html#aeb09ccefe69677574f3e16c6ff2c375bafad19e0558b612421b8234f6649eef6e">REPLY</a> = 0x2</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    };</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a346d8ecaa7beeb22c6584080a7dcaff9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a346d8ecaa7beeb22c6584080a7dcaff9">&#9670;&nbsp;</a></span>ManageDA()</h2>
+<a id="ab6186215ca5c5c07ae454a12ddb40035"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6186215ca5c5c07ae454a12ddb40035">&#9670;&nbsp;</a></span>__attribute__()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#d7/d56/structNetworkARP_1_1DiscoveredAddress">DiscoveredAddress</a>* NetworkARP::ManageDA </td>
+          <td class="memname">struct <a class="el" href="../../d2/df9/namespaceNetworkARP.html#d7/dcf/structNetworkARP_1_1ARPHeader">NetworkARP::ARPHeader</a> NetworkARP::__attribute__ </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60">DAType</a>&#160;</td>
-          <td class="paramname"><em>Type</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">(packed)&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../dc/de6/NetworkController_8hpp.html#d8/d38/structInternetProtocol">InternetProtocol</a>&#160;</td>
-          <td class="paramname"><em>IP</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../dc/de6/NetworkController_8hpp.html#d0/d48/structMediaAccessControl">MediaAccessControl</a>&#160;</td>
-          <td class="paramname"><em>MAC</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00019">19</a> of file <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html">AddressResolutionProtocol.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">// TODO: Compare IPv6 too.</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        DiscoveredAddress *tmp = <span class="keyword">new</span> DiscoveredAddress;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">switch</span> (<a class="code" href="../../d1/d90/acpi_8hpp.html#aeff746a68ed515a1d9f0c40a38dd200b">Type</a>)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60aa20500d98166e02a22feb144e26939da">DA_ADD</a>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            tmp-&gt;IP = IP;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            tmp-&gt;MAC = MAC;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="../../d3/d3b/AddressResolutionProtocol_8cpp.html#aec880ec5c00bc28e6355c81ad5697f6c">DiscoveredAddresses</a>.push_back(tmp);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60a016f96b8189c3d24f321b659a449544e">DA_DEL</a>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../d3/d3b/AddressResolutionProtocol_8cpp.html#aec880ec5c00bc28e6355c81ad5697f6c">DiscoveredAddresses</a>.size(); i++)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="../../dc/de6/NetworkController_8hpp.html#a42794af3a607e0a9b415b6ee550b31e9">CompareIP</a>(<a class="code" href="../../d3/d3b/AddressResolutionProtocol_8cpp.html#aec880ec5c00bc28e6355c81ad5697f6c">DiscoveredAddresses</a>[i]-&gt;IP, IP, <a class="code" href="../../dc/de6/NetworkController_8hpp.html#a9d6da551632f30b9fc5b6904a7cf51a1a61f6eb6619f946066a077f723454effb">CompareIPv4</a>))</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    DiscoveredAddress *tmp = <a class="code" href="../../d3/d3b/AddressResolutionProtocol_8cpp.html#aec880ec5c00bc28e6355c81ad5697f6c">DiscoveredAddresses</a>[i];</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <a class="code" href="../../d3/d3b/AddressResolutionProtocol_8cpp.html#aec880ec5c00bc28e6355c81ad5697f6c">DiscoveredAddresses</a>.remove(i);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keyword">delete</span> tmp;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60a9ecc48d0e1335768701d5867e8ca1f37">DA_SEARCH</a>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">delete</span> tmp;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../d3/d3b/AddressResolutionProtocol_8cpp.html#aec880ec5c00bc28e6355c81ad5697f6c">DiscoveredAddresses</a>.size(); i++)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="../../dc/de6/NetworkController_8hpp.html#a42794af3a607e0a9b415b6ee550b31e9">CompareIP</a>(<a class="code" href="../../d3/d3b/AddressResolutionProtocol_8cpp.html#aec880ec5c00bc28e6355c81ad5697f6c">DiscoveredAddresses</a>[i]-&gt;IP, IP, <a class="code" href="../../dc/de6/NetworkController_8hpp.html#a9d6da551632f30b9fc5b6904a7cf51a1a61f6eb6619f946066a077f723454effb">CompareIPv4</a>))</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="../../d3/d3b/AddressResolutionProtocol_8cpp.html#aec880ec5c00bc28e6355c81ad5697f6c">DiscoveredAddresses</a>[i];</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60aefef2b632465b5fb92c378e4f51ebfa1">DA_UPDATE</a>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">delete</span> tmp;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../d3/d3b/AddressResolutionProtocol_8cpp.html#aec880ec5c00bc28e6355c81ad5697f6c">DiscoveredAddresses</a>.size(); i++)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="../../dc/de6/NetworkController_8hpp.html#a42794af3a607e0a9b415b6ee550b31e9">CompareIP</a>(<a class="code" href="../../d3/d3b/AddressResolutionProtocol_8cpp.html#aec880ec5c00bc28e6355c81ad5697f6c">DiscoveredAddresses</a>[i]-&gt;IP, IP, <a class="code" href="../../dc/de6/NetworkController_8hpp.html#a9d6da551632f30b9fc5b6904a7cf51a1a61f6eb6619f946066a077f723454effb">CompareIPv4</a>))</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    <a class="code" href="../../d3/d3b/AddressResolutionProtocol_8cpp.html#aec880ec5c00bc28e6355c81ad5697f6c">DiscoveredAddresses</a>[i]-&gt;MAC = MAC;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="../../d3/d3b/AddressResolutionProtocol_8cpp.html#aec880ec5c00bc28e6355c81ad5697f6c">DiscoveredAddresses</a>[i];</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">delete</span> tmp;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00037">CompareIP()</a>, <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00033">CompareIPv4</a>, <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00013">DA_ADD</a>, <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00014">DA_DEL</a>, <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00015">DA_SEARCH</a>, <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00016">DA_UPDATE</a>, <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00007">DiscoveredAddresses</a>, <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00216">NetworkARP::DiscoveredAddress::IP</a>, <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00215">NetworkARP::DiscoveredAddress::MAC</a>, and <a class="el" href="../../d1/d90/acpi_8hpp_source.html#l00285">Type</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00086">NetworkARP::ARP::Receive()</a>, <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00066">NetworkARP::ARP::Search()</a>, and <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00068">NetworkARP::ARP::Update()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a5350876db1b3a5becc7738ba74cb4e46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5350876db1b3a5becc7738ba74cb4e46">&#9670;&nbsp;</a></span>__attribute__</h2>
+<a id="a37c42968503419cfbf3214eb33899fe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37c42968503419cfbf3214eb33899fe6">&#9670;&nbsp;</a></span>__attribute__</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60">NetworkARP::DAType</a> NetworkARP::__attribute__</td>
+          <td class="memname">struct <a class="el" href="../../d2/df9/namespaceNetworkARP.html#d7/d56/structNetworkARP_1_1DiscoveredAddress">NetworkARP::DiscoveredAddress</a> NetworkARP::__attribute__</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="af7bad1a5f789936decb5663017e2bfbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7bad1a5f789936decb5663017e2bfbe">&#9670;&nbsp;</a></span>InvalidIP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d1e/structInternetProtocol4.html">InternetProtocol4</a> NetworkARP::InvalidIP = {.<a class="el" href="../../da/d3f/E1000_8hpp.html#a6fc2b8ed8be1aa26731a45000f43b8cc">Address</a> = {0xFF, 0xFF, 0xFF, 0xFF}}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00063">63</a> of file <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html">AddressResolutionProtocol.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5aca9e566091f1cf920995cf612e328d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aca9e566091f1cf920995cf612e328d">&#9670;&nbsp;</a></span>InvalidMAC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d48/structMediaAccessControl.html">MediaAccessControl</a> NetworkARP::InvalidMAC = {.<a class="el" href="../../da/d3f/E1000_8hpp.html#a6fc2b8ed8be1aa26731a45000f43b8cc">Address</a> = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00062">62</a> of file <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html">AddressResolutionProtocol.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adc52637e86e4e5625907cfeb20a3c62b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc52637e86e4e5625907cfeb20a3c62b">&#9670;&nbsp;</a></span>InvalidRet</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#d7/d56/structNetworkARP_1_1DiscoveredAddress">DiscoveredAddress</a> NetworkARP::InvalidRet = {.MAC = <a class="el" href="../../d2/df9/namespaceNetworkARP.html#a5aca9e566091f1cf920995cf612e328d">InvalidMAC</a>, .IP = <a class="el" href="../../d2/df9/namespaceNetworkARP.html#af7bad1a5f789936decb5663017e2bfbe">InvalidIP</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00064">64</a> of file <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html">AddressResolutionProtocol.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00066">NetworkARP::ARP::Search()</a>, and <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00075">NetworkARP::ARP::Update()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735cabc50ddeee45f6096ca7907e7d3feb464"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735cabc50ddeee45f6096ca7907e7d3feb464">NetworkARP::HTYPE_ATM_2</a></div><div class="ttdeci">@ HTYPE_ATM_2</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00196">NetworkController.hpp:196</a></div></div>
-<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca4b9552fcc7350c84eeea5df5d8e786d2"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca4b9552fcc7350c84eeea5df5d8e786d2">NetworkARP::HTYPE_HDLC</a></div><div class="ttdeci">@ HTYPE_HDLC</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00194">NetworkController.hpp:194</a></div></div>
-<div class="ttc" id="anamespaceNetworkARP_html_ac0a4f1592f6a2b87489742ad94310c60aefef2b632465b5fb92c378e4f51ebfa1"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60aefef2b632465b5fb92c378e4f51ebfa1">NetworkARP::DA_UPDATE</a></div><div class="ttdeci">@ DA_UPDATE</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00016">AddressResolutionProtocol.cpp:16</a></div></div>
-<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca6a289608980ba86980373136c722c3fb"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca6a289608980ba86980373136c722c3fb">NetworkARP::HTYPE_ARCNET</a></div><div class="ttdeci">@ HTYPE_ARCNET</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00191">NetworkController.hpp:191</a></div></div>
-<div class="ttc" id="anamespaceNetworkARP_html_ac0a4f1592f6a2b87489742ad94310c60a016f96b8189c3d24f321b659a449544e"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60a016f96b8189c3d24f321b659a449544e">NetworkARP::DA_DEL</a></div><div class="ttdeci">@ DA_DEL</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00014">AddressResolutionProtocol.cpp:14</a></div></div>
-<div class="ttc" id="anamespaceNetworkARP_html_ac0a4f1592f6a2b87489742ad94310c60a9ecc48d0e1335768701d5867e8ca1f37"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60a9ecc48d0e1335768701d5867e8ca1f37">NetworkARP::DA_SEARCH</a></div><div class="ttdeci">@ DA_SEARCH</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00015">AddressResolutionProtocol.cpp:15</a></div></div>
-<div class="ttc" id="aNetworkController_8hpp_html_a42794af3a607e0a9b415b6ee550b31e9"><div class="ttname"><a href="../../dc/de6/NetworkController_8hpp.html#a42794af3a607e0a9b415b6ee550b31e9">CompareIP</a></div><div class="ttdeci">static bool CompareIP(InternetProtocol IP1, InternetProtocol IP2, CompareIPType Type)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00037">NetworkController.hpp:37</a></div></div>
-<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca452db3bbe8c26c0a8e9ad26c940eed72"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca452db3bbe8c26c0a8e9ad26c940eed72">NetworkARP::HTYPE_802_3</a></div><div class="ttdeci">@ HTYPE_802_3</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00190">NetworkController.hpp:190</a></div></div>
-<div class="ttc" id="aacpi_8hpp_html_aeff746a68ed515a1d9f0c40a38dd200b"><div class="ttname"><a href="../../d1/d90/acpi_8hpp.html#aeff746a68ed515a1d9f0c40a38dd200b">Type</a></div><div class="ttdeci">uint8_t Type</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d90/acpi_8hpp_source.html#l00285">acpi.hpp:285</a></div></div>
-<div class="ttc" id="anamespaceNetworkARP_html_ac0a4f1592f6a2b87489742ad94310c60aa20500d98166e02a22feb144e26939da"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60aa20500d98166e02a22feb144e26939da">NetworkARP::DA_ADD</a></div><div class="ttdeci">@ DA_ADD</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00013">AddressResolutionProtocol.cpp:13</a></div></div>
-<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca4eb07a2da9da4160637968d42f1e9922"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca4eb07a2da9da4160637968d42f1e9922">NetworkARP::HTYPE_ATM</a></div><div class="ttdeci">@ HTYPE_ATM</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00193">NetworkController.hpp:193</a></div></div>
-<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca1895f5278dbed846fb0024c964f21ff0"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca1895f5278dbed846fb0024c964f21ff0">NetworkARP::HTYPE_SERIAL_LINE</a></div><div class="ttdeci">@ HTYPE_SERIAL_LINE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00197">NetworkController.hpp:197</a></div></div>
-<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca58dbdda400480d3b8c4c03f85bbfcbb6"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca58dbdda400480d3b8c4c03f85bbfcbb6">NetworkARP::HTYPE_FIBRE_CHANNEL</a></div><div class="ttdeci">@ HTYPE_FIBRE_CHANNEL</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00195">NetworkController.hpp:195</a></div></div>
-<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca9510db1022337add6664fea36b3392ed"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca9510db1022337add6664fea36b3392ed">NetworkARP::HTYPE_ETHERNET</a></div><div class="ttdeci">@ HTYPE_ETHERNET</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00189">NetworkController.hpp:189</a></div></div>
-<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca8e2b5088a3f4e98e3e5f450251bf2114"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca8e2b5088a3f4e98e3e5f450251bf2114">NetworkARP::HTYPE_FRAME_RELAY</a></div><div class="ttdeci">@ HTYPE_FRAME_RELAY</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00192">NetworkController.hpp:192</a></div></div>
-<div class="ttc" id="aNetworkController_8hpp_html_a9d6da551632f30b9fc5b6904a7cf51a1a61f6eb6619f946066a077f723454effb"><div class="ttname"><a href="../../dc/de6/NetworkController_8hpp.html#a9d6da551632f30b9fc5b6904a7cf51a1a61f6eb6619f946066a077f723454effb">CompareIPv4</a></div><div class="ttdeci">@ CompareIPv4</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00033">NetworkController.hpp:33</a></div></div>
-<div class="ttc" id="aAddressResolutionProtocol_8cpp_html_aec880ec5c00bc28e6355c81ad5697f6c"><div class="ttname"><a href="../../d3/d3b/AddressResolutionProtocol_8cpp.html#aec880ec5c00bc28e6355c81ad5697f6c">DiscoveredAddresses</a></div><div class="ttdeci">Vector&lt; NetworkARP::DiscoveredAddress * &gt; DiscoveredAddresses</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00007">AddressResolutionProtocol.cpp:7</a></div></div>
+<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735cabc50ddeee45f6096ca7907e7d3feb464"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735cabc50ddeee45f6096ca7907e7d3feb464">NetworkARP::HTYPE_ATM_2</a></div><div class="ttdeci">@ HTYPE_ATM_2</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00323">NetworkController.hpp:323</a></div></div>
+<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca4b9552fcc7350c84eeea5df5d8e786d2"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca4b9552fcc7350c84eeea5df5d8e786d2">NetworkARP::HTYPE_HDLC</a></div><div class="ttdeci">@ HTYPE_HDLC</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00321">NetworkController.hpp:321</a></div></div>
+<div class="ttc" id="anamespaceNetworkARP_html_aeb09ccefe69677574f3e16c6ff2c375ba6d76f6fa7a69b2a1ab2cbf061e8ec4ec"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aeb09ccefe69677574f3e16c6ff2c375ba6d76f6fa7a69b2a1ab2cbf061e8ec4ec">NetworkARP::REQUEST</a></div><div class="ttdeci">@ REQUEST</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00310">NetworkController.hpp:310</a></div></div>
+<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca6a289608980ba86980373136c722c3fb"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca6a289608980ba86980373136c722c3fb">NetworkARP::HTYPE_ARCNET</a></div><div class="ttdeci">@ HTYPE_ARCNET</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00318">NetworkController.hpp:318</a></div></div>
+<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca452db3bbe8c26c0a8e9ad26c940eed72"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca452db3bbe8c26c0a8e9ad26c940eed72">NetworkARP::HTYPE_802_3</a></div><div class="ttdeci">@ HTYPE_802_3</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00317">NetworkController.hpp:317</a></div></div>
+<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca4eb07a2da9da4160637968d42f1e9922"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca4eb07a2da9da4160637968d42f1e9922">NetworkARP::HTYPE_ATM</a></div><div class="ttdeci">@ HTYPE_ATM</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00320">NetworkController.hpp:320</a></div></div>
+<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca1895f5278dbed846fb0024c964f21ff0"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca1895f5278dbed846fb0024c964f21ff0">NetworkARP::HTYPE_SERIAL_LINE</a></div><div class="ttdeci">@ HTYPE_SERIAL_LINE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00324">NetworkController.hpp:324</a></div></div>
+<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca58dbdda400480d3b8c4c03f85bbfcbb6"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca58dbdda400480d3b8c4c03f85bbfcbb6">NetworkARP::HTYPE_FIBRE_CHANNEL</a></div><div class="ttdeci">@ HTYPE_FIBRE_CHANNEL</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00322">NetworkController.hpp:322</a></div></div>
+<div class="ttc" id="anamespaceNetworkARP_html_aeb09ccefe69677574f3e16c6ff2c375bafad19e0558b612421b8234f6649eef6e"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aeb09ccefe69677574f3e16c6ff2c375bafad19e0558b612421b8234f6649eef6e">NetworkARP::REPLY</a></div><div class="ttdeci">@ REPLY</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00311">NetworkController.hpp:311</a></div></div>
+<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca9510db1022337add6664fea36b3392ed"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca9510db1022337add6664fea36b3392ed">NetworkARP::HTYPE_ETHERNET</a></div><div class="ttdeci">@ HTYPE_ETHERNET</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00316">NetworkController.hpp:316</a></div></div>
+<div class="ttc" id="anamespaceNetworkARP_html_aa7b28d3da26dbb0fb38fc7c9ca31735ca8e2b5088a3f4e98e3e5f450251bf2114"><div class="ttname"><a href="../../d2/df9/namespaceNetworkARP.html#aa7b28d3da26dbb0fb38fc7c9ca31735ca8e2b5088a3f4e98e3e5f450251bf2114">NetworkARP::HTYPE_FRAME_RELAY</a></div><div class="ttdeci">@ HTYPE_FRAME_RELAY</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00319">NetworkController.hpp:319</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -2,6 +2,7 @@ var namespaces_dup =
 [
     [ "ACPI", "df/d22/namespaceACPI.html", null ],
     [ "AHCI", "d6/d7c/namespaceAHCI.html", null ],
+    [ "AMDPCNET", "d1/dbb/namespaceAMDPCNET.html", null ],
     [ "anonymous_namespace{atomic.hpp}", "d4/d56/namespaceanonymous__namespace_02atomic_8hpp_03.html", null ],
     [ "APIC", "d3/d88/namespaceAPIC.html", null ],
     [ "BootScreen", "d9/deb/namespaceBootScreen.html", null ],
@@ -10,10 +11,12 @@ var namespaces_dup =
     [ "DiskManager", "de/dd9/namespaceDiskManager.html", null ],
     [ "DisplayDriver", "d1/d69/namespaceDisplayDriver.html", null ],
     [ "Driver", "d1/d48/namespaceDriver.html", null ],
+    [ "DriverInterrupts", "d0/d35/namespaceDriverInterrupts.html", null ],
     [ "E1000", "db/d18/namespaceE1000.html", null ],
     [ "FileSystem", "d6/df5/namespaceFileSystem.html", null ],
     [ "Floppy", "d6/d87/namespaceFloppy.html", null ],
     [ "Heap", "db/d18/namespaceHeap.html", null ],
+    [ "Intel8254x", "d2/db9/namespaceIntel8254x.html", null ],
     [ "KernelSymbols", "d9/d45/namespaceKernelSymbols.html", null ],
     [ "MonotonLib", "d7/dfa/namespaceMonotonLib.html", null ],
     [ "NetworkARP", "d2/df9/namespaceNetworkARP.html", null ],
@@ -37,5 +40,6 @@ var namespaces_dup =
     [ "SymmetricMultiprocessing", "d0/d35/namespaceSymmetricMultiprocessing.html", null ],
     [ "SystemRecovery", "dc/d52/namespaceSystemRecovery.html", null ],
     [ "Tasking", "d9/d3e/namespaceTasking.html", null ],
+    [ "VirtioNetwork", "de/da1/namespaceVirtioNetwork.html", null ],
     [ "Xalloc", "dc/d0a/namespaceXalloc.html", null ]
 ];

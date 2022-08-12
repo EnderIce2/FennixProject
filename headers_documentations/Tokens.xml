@@ -19762,6 +19762,7 @@
     </TokenIdentifier>
     <Path>d3/d7e/int_8h.html</Path>
     <Anchor>a82ff29be9b9e427e81dac56660d946c8</Anchor>
+    <Abstract>Register interrupt to an interrupt handler.</Abstract>
     <DeclaredIn>int.h</DeclaredIn>
   </Token>
   <Token>
@@ -19772,6 +19773,7 @@
     </TokenIdentifier>
     <Path>d3/d7e/int_8h.html</Path>
     <Anchor>ac6922babf1704eede0d03864a2322bb8</Anchor>
+    <Abstract>Register interrupt to an interrupt handler.</Abstract>
     <DeclaredIn>int.h</DeclaredIn>
   </Token>
   <Token>
@@ -19782,6 +19784,7 @@
     </TokenIdentifier>
     <Path>d3/d7e/int_8h.html</Path>
     <Anchor>a67cf9ad996acf355aa2fd0f2d4dc6007</Anchor>
+    <Abstract>Unregister interrupt from an interrupt handler.</Abstract>
     <DeclaredIn>int.h</DeclaredIn>
   </Token>
   <Token>

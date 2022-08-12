@@ -86,7 +86,10 @@ $(document).ready(function(){initNavTree('dd/d53/namespaceNetworkDHCP.html','../
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">NetworkDHCP Namespace Reference</div>  </div>
 </div><!--header-->
@@ -96,55 +99,136 @@ $(document).ready(function(){initNavTree('dd/d53/namespaceNetworkDHCP.html','../
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd7/classNetworkDHCP_1_1DHCP.html">DHCP</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d1/deb/structNetworkDHCP_1_1DHCPData"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#d1/deb/structNetworkDHCP_1_1DHCPData">DHCPData</a></td></tr>
-<tr class="separator:d1/deb/structNetworkDHCP_1_1DHCPData"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:d4/dde/structNetworkDHCP_1_1DHCPHeader"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#d4/dde/structNetworkDHCP_1_1DHCPHeader">DHCPHeader</a></td></tr>
 <tr class="separator:d4/dde/structNetworkDHCP_1_1DHCPHeader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a9a6e69d30835fac1c460b04ad0f894d2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a9a6e69d30835fac1c460b04ad0f894d2">DHCPOperation</a> { <a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a9a6e69d30835fac1c460b04ad0f894d2ab456f31342ce9ace24f2c17f1a2ce84f">DHCP_OP_BOOTREQUEST</a> = 1, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a9a6e69d30835fac1c460b04ad0f894d2ac567d21f8e817731b5fa5fbf6a0bee30">DHCP_OP_BOOTREPLY</a> = 2
+ }</td></tr>
+<tr class="separator:a9a6e69d30835fac1c460b04ad0f894d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42afac4eee371cb0e894d6d68da1181a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181a">DHCPOption</a> { <br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa79c6d1a43386f4dfbf3a6b81074d1a21">DHCP_OPTION_PAD</a> = 0, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaa72849786ab0b644232e6f0e261deb8f">DHCP_OPTION_SUBNETMASK</a> = 1, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aac8a748aff36dce5fc1897ad313f45776">DHCP_OPTION_TIME_OFFSET</a> = 2, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa93591bc3ae2485a2c15d1b8b1e85603b">DHCP_OPTION_ROUTER</a> = 3, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aab2f94a8e45fc0ac1d8011b4384255685">DHCP_OPTION_TIME_SERVER</a> = 4, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaad34a9bbe8d34ab947cd1e315fd5353c">DHCP_OPTION_NAME_SERVER</a> = 5, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa02bbc6275308d906ac6ec8a71eebd894">DHCP_OPTION_DOMAIN_NAME_SERVER</a> = 6, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aae3a24599fc343a8da07b45db99406159">DHCP_OPTION_LOG_SERVER</a> = 7, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa5bd6bd2a690b0726437877a09adfec85">DHCP_OPTION_COOKIE_SERVER</a> = 8, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaabf947d08f325cf6f2822e01199eddb6">DHCP_OPTION_LPR_SERVER</a> = 9, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa1fbb8e4e8615509b6e6cd96f4ffc31fc">DHCP_OPTION_IMPRESS_SERVER</a> = 10, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa1f5d08abb3230648691f7a283fe5efbb">DHCP_OPTION_RESOURCE_LOCATION_SERVER</a> = 11, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa9172f3aa509af4a85f271cab5516fcfa">DHCP_OPTION_HOST_NAME</a> = 12, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aad33f58f3393a6ff2d97fe0dc579ddcc7">DHCP_OPTION_BOOT_FILE_SIZE</a> = 13, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa699cd1c93369817212ef975dbbdefa1c">DHCP_OPTION_MERIT_DUMP_FILE</a> = 14, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa36c8c5ea40cb64a47756ec9b02d2bf63">DHCP_OPTION_DOMAIN_NAME</a> = 15, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaaad4b0ee81f9179e39c22223338b7c6d">DHCP_OPTION_SWAP_SERVER</a> = 16, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa08463a65f1359100fc1ee426d14c75a6">DHCP_OPTION_ROOT_PATH</a> = 17, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa6935939170f428718e4ab144c5ad4744">DHCP_OPTION_EXTENSION_PATH</a> = 18, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa45cf769c8c56f505a130239ac2177541">DHCP_OPTION_IP_FORWARDING</a> = 19, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa64184499635031f69a630d177fb0f568">DHCP_OPTION_NON_LOCAL_SOURCE_ROUTING</a> = 20, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aae4cd3bdfe887ac16a63c1fdaeceeb978">DHCP_OPTION_POLICY_FILTER</a> = 21, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa0867d1b2339851556f305531942b09ac">DHCP_OPTION_MAX_DATAGRAM_REASSEMBLY_SIZE</a> = 22, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aacb17efd98ee2613a6d018702fd24fc33">DHCP_OPTION_DEFAULT_IP_TTL</a> = 23, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa34fe42343cf5c6b9527b3ee0ac926023">DHCP_OPTION_PATH_MTU_AGING_TIMEOUT</a> = 24, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa8f2cf01e9bfce56e710f721810943df9">DHCP_OPTION_PATH_MTU_PLATEAU_TABLE</a> = 25, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa6fb08577185fd660a886fdccc955abc7">DHCP_OPTION_INTERFACE_MTU</a> = 26, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aacba30d96036c9c8858dcf4fc6018853c">DHCP_OPTION_ALL_SUBNETS_ARE_LOCAL</a> = 27, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa68a72968153ae4a2f5f3d66f1d2fabf2">DHCP_OPTION_BROADCAST_ADDRESS</a> = 28, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aafde70687d636a3b4ad5420c59076331d">DHCP_OPTION_PERFORM_MASK_DISCOVERY</a> = 29, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa173f0cf97df22811e38a0d8c41baa908">DHCP_OPTION_MASK_SUPPLIER</a> = 30, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa44502f1a59733deb8061fedaad5523f2">DHCP_OPTION_ROUTER_DISCOVERY</a> = 31, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa2202aa3100714e0a0872f02ee41cac6a">DHCP_OPTION_ROUTER_SOLICITATION_ADDRESS</a> = 32, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aad38372b3df38925b5b40f4388bbe1cfd">DHCP_OPTION_STATIC_ROUTE</a> = 33, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aabc8c40a05fe19779ee9d850a00fd201e">DHCP_OPTION_TRAILER_ENCAPSULATION</a> = 34, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa25b9a0a92cb57eefad29950bd2837ffd">DHCP_OPTION_ARP_CACHE_TIMEOUT</a> = 35, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa9c960eff6d545cbe2c11a873b3e2badb">DHCP_OPTION_ETHERNET_ENCAPSULATION</a> = 36, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aadba0deb1c260ffc82f451d1ba3e4b7b0">DHCP_OPTION_DEFAULT_TCP_TTL</a> = 37, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aae8597f125a36e9832cd84ee01bdeff42">DHCP_OPTION_TCP_KEEPALIVE_INTERVAL</a> = 38, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa07e5a8cccb33fd3562f12ff8a9bf16cd">DHCP_OPTION_TCP_KEEPALIVE_GARBAGE</a> = 39, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aac2a6967aeba78749bcdc13900d71b12f">DHCP_OPTION_NIS_DOMAIN</a> = 40, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaa151708e8b370a935f6188ac94bf07c5">DHCP_OPTION_NIS_SERVERS</a> = 41, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aad956b00448b0dce64467a55b92de0d85">DHCP_OPTION_NTP_SERVERS</a> = 42, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aac34e8e949b1d7f3c994dc50208b7a5ed">DHCP_OPTION_VENDOR_SPECIFIC</a> = 43, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa30490eeb20e7210467474e26e06e4bb8">DHCP_OPTION_NETBIOS_NAME_SERVERS</a> = 44, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa5443cec6ca2abcc0b96c7c3612880621">DHCP_OPTION_NETBIOS_DD_SERVER</a> = 45, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa010556dbed908782f209227e475fc1b0">DHCP_OPTION_NETBIOS_NODE_TYPE</a> = 46, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaf91bcfeeb5d156cb220f6a0d8152e5a0">DHCP_OPTION_NETBIOS_SCOPE</a> = 47, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa4d48aecaa33f6ed88e71ef70f2c0c079">DHCP_OPTION_X_FONT_SERVERS</a> = 48, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa2e3eaaf6fb04d23cbdcbda8401c9a2f6">DHCP_OPTION_X_DISPLAY_MANAGER</a> = 49, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa91da8efa8f93a45793844d3e3b0c5056">DHCP_OPTION_REQUESTED_IP</a> = 50, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aacc9b750ec190dd6351d3ce9930ae7dea">DHCP_OPTION_IP_LEASE_TIME</a> = 51, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaf54383fb8a3366c09baa5805f5b028d5">DHCP_OPTION_OPTION_OVERLOAD</a> = 52, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aac632824b3dd4edc0713c71bbd8aaf431">DHCP_OPTION_MESSAGE_TYPE</a> = 53, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa3428b122ec421e4f4aee26cfcd5caf51">DHCP_OPTION_SERVER_IDENTIFIER</a> = 54, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa0a39d53cd1778263f36ddd0870d847e9">DHCP_OPTION_PARAMETER_REQUEST_LIST</a> = 55, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa0e508d2e20c008d9330cb7950dbdb549">DHCP_OPTION_MESSAGE</a> = 56, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa8ba00e7b443d168299d4dfdb3cb0a910">DHCP_OPTION_MAX_MESSAGE_SIZE</a> = 57, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aad6a63dbdf421623f0e5d0b3a4e5d2f3f">DHCP_OPTION_T1_TIMEOUT</a> = 58, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aae8f23f080407fdafc19d7acb009d68b6">DHCP_OPTION_T2_TIMEOUT</a> = 59, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa54486525781ec1235c4171503016274a">DHCP_OPTION_VENDOR_CLASS_IDENTIFIER</a> = 60, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa3e876a9fd83a98e6900f517311a8458a">DHCP_OPTION_CLIENT_IDENTIFIER</a> = 61, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa61e5f19d4cb6c5dbeecc85958104f94e">DHCP_OPTION_NETWORK_TIME_SERVER</a> = 62, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa55b1f8195d4b26bf33508bf24e662187">DHCP_OPTION_END</a> = 255
+<br />
+ }</td></tr>
+<tr class="separator:a42afac4eee371cb0e894d6d68da1181a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23496c1315a5b90e844b83fe4342290d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290d">DHCPMessageType</a> { <br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da7d70f23def771e9c16d070be5b64fbf1">DHCP_MESSAGE_TYPE_DISCOVER</a> = 1, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290daf5ae920c7337ebd22adae6c4833d75e2">DHCP_MESSAGE_TYPE_OFFER</a> = 2, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da0fe74ed8bfdd3964e717b2b9194b1d85">DHCP_MESSAGE_TYPE_REQUEST</a> = 3, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da26a73320fd379440353aaf63b1816725">DHCP_MESSAGE_TYPE_DECLINE</a> = 4, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da4e06ff6023221b947ad7fcf35ee1be64">DHCP_MESSAGE_TYPE_ACK</a> = 5, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da8d0f8d398494a95d8cc0fafd91ed63bd">DHCP_MESSAGE_TYPE_NAK</a> = 6, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da59dca8f5e544059e840a53517b88e1bb">DHCP_MESSAGE_TYPE_RELEASE</a> = 7, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da265ed5d4078da3e8d6d25ba90dd88f61">DHCP_MESSAGE_TYPE_INFORM</a> = 8, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290dafb30b54faeae7468e82fb48c6ef6affc">DHCP_MESSAGE_TYPE_FORCERENEW</a> = 9, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da6504ec2105fddf87a1d1d64ea13daeb7">DHCP_MESSAGE_TYPE_LEASEQUERY</a> = 10, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290daf8bd493ace65b66d32542c58be16923c">DHCP_MESSAGE_TYPE_LEASEUNASSIGNED</a> = 11, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da1e3e09276460af33e3edfe42ec819c8f">DHCP_MESSAGE_TYPE_LEASEUNKNOWN</a> = 12, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da15763f7a2705b221a748a6d0ac25681a">DHCP_MESSAGE_TYPE_LEASEACTIVE</a> = 13, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290daac3f468ca51b94d3284ba730031c5406">DHCP_MESSAGE_TYPE_BULKLEASEQUERY</a> = 14, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da2a92a1a901d73011c5f4c66f7d4a0e3d">DHCP_MESSAGE_TYPE_LEASEQUERYDONE</a> = 15, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da0a1bee696e211f1444f857125329d14c">DHCP_MESSAGE_TYPE_ACTIVELEASEQUERY</a> = 16, 
+<br />
+&#160;&#160;<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290daf1050810f40502519c4130a4363f1d08">DHCP_MESSAGE_TYPE_LEASEQUERYSTATUS</a> = 17, 
+<a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290dadfeee245bb0cdc435a679dc55884c8c7">DHCP_MESSAGE_TYPE_DHCPTLS</a> = 18
+<br />
+ }</td></tr>
+<tr class="separator:a23496c1315a5b90e844b83fe4342290d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a88ef0840b63b5bec100f159b04ca78ef"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#d4/dde/structNetworkDHCP_1_1DHCPHeader">NetworkDHCP::DHCPHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a88ef0840b63b5bec100f159b04ca78ef">__attribute__</a> ((packed))</td></tr>
+<tr class="separator:a88ef0840b63b5bec100f159b04ca78ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a31fd9a65f2f32ea30859692dcacfaa20"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a9a6e69d30835fac1c460b04ad0f894d2">NetworkDHCP::DHCPOperation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a31fd9a65f2f32ea30859692dcacfaa20">__attribute__</a></td></tr>
+<tr class="separator:a31fd9a65f2f32ea30859692dcacfaa20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
-<a name="d1/deb/structNetworkDHCP_1_1DHCPData" id="d1/deb/structNetworkDHCP_1_1DHCPData"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#d1/deb/structNetworkDHCP_1_1DHCPData">&#9670;&nbsp;</a></span>NetworkDHCP::DHCPData</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct NetworkDHCP::DHCPData</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00164">164</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
-</div><table class="fieldtable">
-<tr><th colspan="3">Data Fields</th></tr>
-<tr><td class="fieldtype">
-<a id="aeca38dcd8180850b4246a6e9777bf909"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
-<td class="fieldname">
-DomainNameSystem</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="ad376d6cfee594d4bd41b68d0198610dc"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
-<td class="fieldname">
-Gateway</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a25b7c2c3fbf7c349c1cf2b0e301188f5"></a><a class="el" href="../../dc/de6/NetworkController_8hpp.html#d8/d38/structInternetProtocol">InternetProtocol</a></td>
-<td class="fieldname">
-IP</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a188b3b1eae6066da1249c15b3a02850d"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
-<td class="fieldname">
-Subnetwork</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
 <a name="d4/dde/structNetworkDHCP_1_1DHCPHeader" id="d4/dde/structNetworkDHCP_1_1DHCPHeader"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#d4/dde/structNetworkDHCP_1_1DHCPHeader">&#9670;&nbsp;</a></span>NetworkDHCP::DHCPHeader</h2>
 
@@ -157,7 +241,7 @@ Subnetwork</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00145">145</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00666">666</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -215,7 +299,7 @@ Opcode</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a84d529d3b48ea8cabe9e48c1d7436923"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="af517d75bb90a1ac36073496b8b09393d"></a><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
 <td class="fieldname">
 Options[64]</td>
 <td class="fielddoc">
@@ -254,8 +338,363 @@ YourIP</td>
 
 </div>
 </div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a23496c1315a5b90e844b83fe4342290d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23496c1315a5b90e844b83fe4342290d">&#9670;&nbsp;</a></span>DHCPMessageType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290d">NetworkDHCP::DHCPMessageType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290da7d70f23def771e9c16d070be5b64fbf1"></a>DHCP_MESSAGE_TYPE_DISCOVER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290daf5ae920c7337ebd22adae6c4833d75e2"></a>DHCP_MESSAGE_TYPE_OFFER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290da0fe74ed8bfdd3964e717b2b9194b1d85"></a>DHCP_MESSAGE_TYPE_REQUEST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290da26a73320fd379440353aaf63b1816725"></a>DHCP_MESSAGE_TYPE_DECLINE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290da4e06ff6023221b947ad7fcf35ee1be64"></a>DHCP_MESSAGE_TYPE_ACK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290da8d0f8d398494a95d8cc0fafd91ed63bd"></a>DHCP_MESSAGE_TYPE_NAK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290da59dca8f5e544059e840a53517b88e1bb"></a>DHCP_MESSAGE_TYPE_RELEASE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290da265ed5d4078da3e8d6d25ba90dd88f61"></a>DHCP_MESSAGE_TYPE_INFORM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290dafb30b54faeae7468e82fb48c6ef6affc"></a>DHCP_MESSAGE_TYPE_FORCERENEW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290da6504ec2105fddf87a1d1d64ea13daeb7"></a>DHCP_MESSAGE_TYPE_LEASEQUERY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290daf8bd493ace65b66d32542c58be16923c"></a>DHCP_MESSAGE_TYPE_LEASEUNASSIGNED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290da1e3e09276460af33e3edfe42ec819c8f"></a>DHCP_MESSAGE_TYPE_LEASEUNKNOWN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290da15763f7a2705b221a748a6d0ac25681a"></a>DHCP_MESSAGE_TYPE_LEASEACTIVE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290daac3f468ca51b94d3284ba730031c5406"></a>DHCP_MESSAGE_TYPE_BULKLEASEQUERY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290da2a92a1a901d73011c5f4c66f7d4a0e3d"></a>DHCP_MESSAGE_TYPE_LEASEQUERYDONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290da0a1bee696e211f1444f857125329d14c"></a>DHCP_MESSAGE_TYPE_ACTIVELEASEQUERY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290daf1050810f40502519c4130a4363f1d08"></a>DHCP_MESSAGE_TYPE_LEASEQUERYSTATUS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a23496c1315a5b90e844b83fe4342290dadfeee245bb0cdc435a679dc55884c8c7"></a>DHCP_MESSAGE_TYPE_DHCPTLS&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00768">768</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    {</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da7d70f23def771e9c16d070be5b64fbf1">DHCP_MESSAGE_TYPE_DISCOVER</a> = 1,</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290daf5ae920c7337ebd22adae6c4833d75e2">DHCP_MESSAGE_TYPE_OFFER</a> = 2,</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da0fe74ed8bfdd3964e717b2b9194b1d85">DHCP_MESSAGE_TYPE_REQUEST</a> = 3,</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da26a73320fd379440353aaf63b1816725">DHCP_MESSAGE_TYPE_DECLINE</a> = 4,</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da4e06ff6023221b947ad7fcf35ee1be64">DHCP_MESSAGE_TYPE_ACK</a> = 5,</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da8d0f8d398494a95d8cc0fafd91ed63bd">DHCP_MESSAGE_TYPE_NAK</a> = 6,</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da59dca8f5e544059e840a53517b88e1bb">DHCP_MESSAGE_TYPE_RELEASE</a> = 7,</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da265ed5d4078da3e8d6d25ba90dd88f61">DHCP_MESSAGE_TYPE_INFORM</a> = 8,</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290dafb30b54faeae7468e82fb48c6ef6affc">DHCP_MESSAGE_TYPE_FORCERENEW</a> = 9,</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da6504ec2105fddf87a1d1d64ea13daeb7">DHCP_MESSAGE_TYPE_LEASEQUERY</a> = 10,</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290daf8bd493ace65b66d32542c58be16923c">DHCP_MESSAGE_TYPE_LEASEUNASSIGNED</a> = 11,</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da1e3e09276460af33e3edfe42ec819c8f">DHCP_MESSAGE_TYPE_LEASEUNKNOWN</a> = 12,</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da15763f7a2705b221a748a6d0ac25681a">DHCP_MESSAGE_TYPE_LEASEACTIVE</a> = 13,</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290daac3f468ca51b94d3284ba730031c5406">DHCP_MESSAGE_TYPE_BULKLEASEQUERY</a> = 14,</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da2a92a1a901d73011c5f4c66f7d4a0e3d">DHCP_MESSAGE_TYPE_LEASEQUERYDONE</a> = 15,</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da0a1bee696e211f1444f857125329d14c">DHCP_MESSAGE_TYPE_ACTIVELEASEQUERY</a> = 16,</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290daf1050810f40502519c4130a4363f1d08">DHCP_MESSAGE_TYPE_LEASEQUERYSTATUS</a> = 17,</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290dadfeee245bb0cdc435a679dc55884c8c7">DHCP_MESSAGE_TYPE_DHCPTLS</a> = 18</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    };</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9a6e69d30835fac1c460b04ad0f894d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a6e69d30835fac1c460b04ad0f894d2">&#9670;&nbsp;</a></span>DHCPOperation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a9a6e69d30835fac1c460b04ad0f894d2">NetworkDHCP::DHCPOperation</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9a6e69d30835fac1c460b04ad0f894d2ab456f31342ce9ace24f2c17f1a2ce84f"></a>DHCP_OP_BOOTREQUEST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9a6e69d30835fac1c460b04ad0f894d2ac567d21f8e817731b5fa5fbf6a0bee30"></a>DHCP_OP_BOOTREPLY&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00685">685</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    {</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a9a6e69d30835fac1c460b04ad0f894d2ab456f31342ce9ace24f2c17f1a2ce84f">DHCP_OP_BOOTREQUEST</a> = 1,</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a9a6e69d30835fac1c460b04ad0f894d2ac567d21f8e817731b5fa5fbf6a0bee30">DHCP_OP_BOOTREPLY</a> = 2</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    };</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a42afac4eee371cb0e894d6d68da1181a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42afac4eee371cb0e894d6d68da1181a">&#9670;&nbsp;</a></span>DHCPOption</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181a">NetworkDHCP::DHCPOption</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa79c6d1a43386f4dfbf3a6b81074d1a21"></a>DHCP_OPTION_PAD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aaa72849786ab0b644232e6f0e261deb8f"></a>DHCP_OPTION_SUBNETMASK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aac8a748aff36dce5fc1897ad313f45776"></a>DHCP_OPTION_TIME_OFFSET&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa93591bc3ae2485a2c15d1b8b1e85603b"></a>DHCP_OPTION_ROUTER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aab2f94a8e45fc0ac1d8011b4384255685"></a>DHCP_OPTION_TIME_SERVER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aaad34a9bbe8d34ab947cd1e315fd5353c"></a>DHCP_OPTION_NAME_SERVER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa02bbc6275308d906ac6ec8a71eebd894"></a>DHCP_OPTION_DOMAIN_NAME_SERVER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aae3a24599fc343a8da07b45db99406159"></a>DHCP_OPTION_LOG_SERVER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa5bd6bd2a690b0726437877a09adfec85"></a>DHCP_OPTION_COOKIE_SERVER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aaabf947d08f325cf6f2822e01199eddb6"></a>DHCP_OPTION_LPR_SERVER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa1fbb8e4e8615509b6e6cd96f4ffc31fc"></a>DHCP_OPTION_IMPRESS_SERVER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa1f5d08abb3230648691f7a283fe5efbb"></a>DHCP_OPTION_RESOURCE_LOCATION_SERVER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa9172f3aa509af4a85f271cab5516fcfa"></a>DHCP_OPTION_HOST_NAME&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aad33f58f3393a6ff2d97fe0dc579ddcc7"></a>DHCP_OPTION_BOOT_FILE_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa699cd1c93369817212ef975dbbdefa1c"></a>DHCP_OPTION_MERIT_DUMP_FILE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa36c8c5ea40cb64a47756ec9b02d2bf63"></a>DHCP_OPTION_DOMAIN_NAME&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aaaad4b0ee81f9179e39c22223338b7c6d"></a>DHCP_OPTION_SWAP_SERVER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa08463a65f1359100fc1ee426d14c75a6"></a>DHCP_OPTION_ROOT_PATH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa6935939170f428718e4ab144c5ad4744"></a>DHCP_OPTION_EXTENSION_PATH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa45cf769c8c56f505a130239ac2177541"></a>DHCP_OPTION_IP_FORWARDING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa64184499635031f69a630d177fb0f568"></a>DHCP_OPTION_NON_LOCAL_SOURCE_ROUTING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aae4cd3bdfe887ac16a63c1fdaeceeb978"></a>DHCP_OPTION_POLICY_FILTER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa0867d1b2339851556f305531942b09ac"></a>DHCP_OPTION_MAX_DATAGRAM_REASSEMBLY_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aacb17efd98ee2613a6d018702fd24fc33"></a>DHCP_OPTION_DEFAULT_IP_TTL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa34fe42343cf5c6b9527b3ee0ac926023"></a>DHCP_OPTION_PATH_MTU_AGING_TIMEOUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa8f2cf01e9bfce56e710f721810943df9"></a>DHCP_OPTION_PATH_MTU_PLATEAU_TABLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa6fb08577185fd660a886fdccc955abc7"></a>DHCP_OPTION_INTERFACE_MTU&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aacba30d96036c9c8858dcf4fc6018853c"></a>DHCP_OPTION_ALL_SUBNETS_ARE_LOCAL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa68a72968153ae4a2f5f3d66f1d2fabf2"></a>DHCP_OPTION_BROADCAST_ADDRESS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aafde70687d636a3b4ad5420c59076331d"></a>DHCP_OPTION_PERFORM_MASK_DISCOVERY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa173f0cf97df22811e38a0d8c41baa908"></a>DHCP_OPTION_MASK_SUPPLIER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa44502f1a59733deb8061fedaad5523f2"></a>DHCP_OPTION_ROUTER_DISCOVERY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa2202aa3100714e0a0872f02ee41cac6a"></a>DHCP_OPTION_ROUTER_SOLICITATION_ADDRESS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aad38372b3df38925b5b40f4388bbe1cfd"></a>DHCP_OPTION_STATIC_ROUTE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aabc8c40a05fe19779ee9d850a00fd201e"></a>DHCP_OPTION_TRAILER_ENCAPSULATION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa25b9a0a92cb57eefad29950bd2837ffd"></a>DHCP_OPTION_ARP_CACHE_TIMEOUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa9c960eff6d545cbe2c11a873b3e2badb"></a>DHCP_OPTION_ETHERNET_ENCAPSULATION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aadba0deb1c260ffc82f451d1ba3e4b7b0"></a>DHCP_OPTION_DEFAULT_TCP_TTL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aae8597f125a36e9832cd84ee01bdeff42"></a>DHCP_OPTION_TCP_KEEPALIVE_INTERVAL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa07e5a8cccb33fd3562f12ff8a9bf16cd"></a>DHCP_OPTION_TCP_KEEPALIVE_GARBAGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aac2a6967aeba78749bcdc13900d71b12f"></a>DHCP_OPTION_NIS_DOMAIN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aaa151708e8b370a935f6188ac94bf07c5"></a>DHCP_OPTION_NIS_SERVERS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aad956b00448b0dce64467a55b92de0d85"></a>DHCP_OPTION_NTP_SERVERS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aac34e8e949b1d7f3c994dc50208b7a5ed"></a>DHCP_OPTION_VENDOR_SPECIFIC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa30490eeb20e7210467474e26e06e4bb8"></a>DHCP_OPTION_NETBIOS_NAME_SERVERS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa5443cec6ca2abcc0b96c7c3612880621"></a>DHCP_OPTION_NETBIOS_DD_SERVER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa010556dbed908782f209227e475fc1b0"></a>DHCP_OPTION_NETBIOS_NODE_TYPE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aaf91bcfeeb5d156cb220f6a0d8152e5a0"></a>DHCP_OPTION_NETBIOS_SCOPE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa4d48aecaa33f6ed88e71ef70f2c0c079"></a>DHCP_OPTION_X_FONT_SERVERS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa2e3eaaf6fb04d23cbdcbda8401c9a2f6"></a>DHCP_OPTION_X_DISPLAY_MANAGER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa91da8efa8f93a45793844d3e3b0c5056"></a>DHCP_OPTION_REQUESTED_IP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aacc9b750ec190dd6351d3ce9930ae7dea"></a>DHCP_OPTION_IP_LEASE_TIME&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aaf54383fb8a3366c09baa5805f5b028d5"></a>DHCP_OPTION_OPTION_OVERLOAD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aac632824b3dd4edc0713c71bbd8aaf431"></a>DHCP_OPTION_MESSAGE_TYPE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa3428b122ec421e4f4aee26cfcd5caf51"></a>DHCP_OPTION_SERVER_IDENTIFIER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa0a39d53cd1778263f36ddd0870d847e9"></a>DHCP_OPTION_PARAMETER_REQUEST_LIST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa0e508d2e20c008d9330cb7950dbdb549"></a>DHCP_OPTION_MESSAGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa8ba00e7b443d168299d4dfdb3cb0a910"></a>DHCP_OPTION_MAX_MESSAGE_SIZE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aad6a63dbdf421623f0e5d0b3a4e5d2f3f"></a>DHCP_OPTION_T1_TIMEOUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aae8f23f080407fdafc19d7acb009d68b6"></a>DHCP_OPTION_T2_TIMEOUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa54486525781ec1235c4171503016274a"></a>DHCP_OPTION_VENDOR_CLASS_IDENTIFIER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa3e876a9fd83a98e6900f517311a8458a"></a>DHCP_OPTION_CLIENT_IDENTIFIER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa61e5f19d4cb6c5dbeecc85958104f94e"></a>DHCP_OPTION_NETWORK_TIME_SERVER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a42afac4eee371cb0e894d6d68da1181aa55b1f8195d4b26bf33508bf24e662187"></a>DHCP_OPTION_END&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00692">692</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    {</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa79c6d1a43386f4dfbf3a6b81074d1a21">DHCP_OPTION_PAD</a> = 0,</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaa72849786ab0b644232e6f0e261deb8f">DHCP_OPTION_SUBNETMASK</a> = 1,</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aac8a748aff36dce5fc1897ad313f45776">DHCP_OPTION_TIME_OFFSET</a> = 2,</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa93591bc3ae2485a2c15d1b8b1e85603b">DHCP_OPTION_ROUTER</a> = 3,</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aab2f94a8e45fc0ac1d8011b4384255685">DHCP_OPTION_TIME_SERVER</a> = 4,</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaad34a9bbe8d34ab947cd1e315fd5353c">DHCP_OPTION_NAME_SERVER</a> = 5,</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa02bbc6275308d906ac6ec8a71eebd894">DHCP_OPTION_DOMAIN_NAME_SERVER</a> = 6,</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aae3a24599fc343a8da07b45db99406159">DHCP_OPTION_LOG_SERVER</a> = 7,</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa5bd6bd2a690b0726437877a09adfec85">DHCP_OPTION_COOKIE_SERVER</a> = 8,</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaabf947d08f325cf6f2822e01199eddb6">DHCP_OPTION_LPR_SERVER</a> = 9,</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa1fbb8e4e8615509b6e6cd96f4ffc31fc">DHCP_OPTION_IMPRESS_SERVER</a> = 10,</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa1f5d08abb3230648691f7a283fe5efbb">DHCP_OPTION_RESOURCE_LOCATION_SERVER</a> = 11,</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa9172f3aa509af4a85f271cab5516fcfa">DHCP_OPTION_HOST_NAME</a> = 12,</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aad33f58f3393a6ff2d97fe0dc579ddcc7">DHCP_OPTION_BOOT_FILE_SIZE</a> = 13,</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa699cd1c93369817212ef975dbbdefa1c">DHCP_OPTION_MERIT_DUMP_FILE</a> = 14,</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa36c8c5ea40cb64a47756ec9b02d2bf63">DHCP_OPTION_DOMAIN_NAME</a> = 15,</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaaad4b0ee81f9179e39c22223338b7c6d">DHCP_OPTION_SWAP_SERVER</a> = 16,</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa08463a65f1359100fc1ee426d14c75a6">DHCP_OPTION_ROOT_PATH</a> = 17,</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa6935939170f428718e4ab144c5ad4744">DHCP_OPTION_EXTENSION_PATH</a> = 18,</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; </div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa45cf769c8c56f505a130239ac2177541">DHCP_OPTION_IP_FORWARDING</a> = 19,</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa64184499635031f69a630d177fb0f568">DHCP_OPTION_NON_LOCAL_SOURCE_ROUTING</a> = 20,</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aae4cd3bdfe887ac16a63c1fdaeceeb978">DHCP_OPTION_POLICY_FILTER</a> = 21,</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa0867d1b2339851556f305531942b09ac">DHCP_OPTION_MAX_DATAGRAM_REASSEMBLY_SIZE</a> = 22,</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aacb17efd98ee2613a6d018702fd24fc33">DHCP_OPTION_DEFAULT_IP_TTL</a> = 23,</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa34fe42343cf5c6b9527b3ee0ac926023">DHCP_OPTION_PATH_MTU_AGING_TIMEOUT</a> = 24,</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa8f2cf01e9bfce56e710f721810943df9">DHCP_OPTION_PATH_MTU_PLATEAU_TABLE</a> = 25,</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160; </div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa6fb08577185fd660a886fdccc955abc7">DHCP_OPTION_INTERFACE_MTU</a> = 26,</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aacba30d96036c9c8858dcf4fc6018853c">DHCP_OPTION_ALL_SUBNETS_ARE_LOCAL</a> = 27,</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa68a72968153ae4a2f5f3d66f1d2fabf2">DHCP_OPTION_BROADCAST_ADDRESS</a> = 28,</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aafde70687d636a3b4ad5420c59076331d">DHCP_OPTION_PERFORM_MASK_DISCOVERY</a> = 29,</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa173f0cf97df22811e38a0d8c41baa908">DHCP_OPTION_MASK_SUPPLIER</a> = 30,</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa44502f1a59733deb8061fedaad5523f2">DHCP_OPTION_ROUTER_DISCOVERY</a> = 31,</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa2202aa3100714e0a0872f02ee41cac6a">DHCP_OPTION_ROUTER_SOLICITATION_ADDRESS</a> = 32,</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aad38372b3df38925b5b40f4388bbe1cfd">DHCP_OPTION_STATIC_ROUTE</a> = 33,</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160; </div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aabc8c40a05fe19779ee9d850a00fd201e">DHCP_OPTION_TRAILER_ENCAPSULATION</a> = 34,</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa25b9a0a92cb57eefad29950bd2837ffd">DHCP_OPTION_ARP_CACHE_TIMEOUT</a> = 35,</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa9c960eff6d545cbe2c11a873b3e2badb">DHCP_OPTION_ETHERNET_ENCAPSULATION</a> = 36,</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160; </div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aadba0deb1c260ffc82f451d1ba3e4b7b0">DHCP_OPTION_DEFAULT_TCP_TTL</a> = 37,</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aae8597f125a36e9832cd84ee01bdeff42">DHCP_OPTION_TCP_KEEPALIVE_INTERVAL</a> = 38,</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa07e5a8cccb33fd3562f12ff8a9bf16cd">DHCP_OPTION_TCP_KEEPALIVE_GARBAGE</a> = 39,</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160; </div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aac2a6967aeba78749bcdc13900d71b12f">DHCP_OPTION_NIS_DOMAIN</a> = 40,</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaa151708e8b370a935f6188ac94bf07c5">DHCP_OPTION_NIS_SERVERS</a> = 41,</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aad956b00448b0dce64467a55b92de0d85">DHCP_OPTION_NTP_SERVERS</a> = 42,</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aac34e8e949b1d7f3c994dc50208b7a5ed">DHCP_OPTION_VENDOR_SPECIFIC</a> = 43,</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa30490eeb20e7210467474e26e06e4bb8">DHCP_OPTION_NETBIOS_NAME_SERVERS</a> = 44,</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa5443cec6ca2abcc0b96c7c3612880621">DHCP_OPTION_NETBIOS_DD_SERVER</a> = 45,</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa010556dbed908782f209227e475fc1b0">DHCP_OPTION_NETBIOS_NODE_TYPE</a> = 46,</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaf91bcfeeb5d156cb220f6a0d8152e5a0">DHCP_OPTION_NETBIOS_SCOPE</a> = 47,</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa4d48aecaa33f6ed88e71ef70f2c0c079">DHCP_OPTION_X_FONT_SERVERS</a> = 48,</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa2e3eaaf6fb04d23cbdcbda8401c9a2f6">DHCP_OPTION_X_DISPLAY_MANAGER</a> = 49,</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160; </div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa91da8efa8f93a45793844d3e3b0c5056">DHCP_OPTION_REQUESTED_IP</a> = 50,</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aacc9b750ec190dd6351d3ce9930ae7dea">DHCP_OPTION_IP_LEASE_TIME</a> = 51,</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaf54383fb8a3366c09baa5805f5b028d5">DHCP_OPTION_OPTION_OVERLOAD</a> = 52,</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aac632824b3dd4edc0713c71bbd8aaf431">DHCP_OPTION_MESSAGE_TYPE</a> = 53,</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa3428b122ec421e4f4aee26cfcd5caf51">DHCP_OPTION_SERVER_IDENTIFIER</a> = 54,</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa0a39d53cd1778263f36ddd0870d847e9">DHCP_OPTION_PARAMETER_REQUEST_LIST</a> = 55,</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa0e508d2e20c008d9330cb7950dbdb549">DHCP_OPTION_MESSAGE</a> = 56,</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa8ba00e7b443d168299d4dfdb3cb0a910">DHCP_OPTION_MAX_MESSAGE_SIZE</a> = 57,</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aad6a63dbdf421623f0e5d0b3a4e5d2f3f">DHCP_OPTION_T1_TIMEOUT</a> = 58,</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aae8f23f080407fdafc19d7acb009d68b6">DHCP_OPTION_T2_TIMEOUT</a> = 59,</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa54486525781ec1235c4171503016274a">DHCP_OPTION_VENDOR_CLASS_IDENTIFIER</a> = 60,</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa3e876a9fd83a98e6900f517311a8458a">DHCP_OPTION_CLIENT_IDENTIFIER</a> = 61,</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160; </div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa61e5f19d4cb6c5dbeecc85958104f94e">DHCP_OPTION_NETWORK_TIME_SERVER</a> = 62,</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160; </div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;        <a class="code" href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa55b1f8195d4b26bf33508bf24e662187">DHCP_OPTION_END</a> = 255</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    };</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a88ef0840b63b5bec100f159b04ca78ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88ef0840b63b5bec100f159b04ca78ef">&#9670;&nbsp;</a></span>__attribute__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#d4/dde/structNetworkDHCP_1_1DHCPHeader">NetworkDHCP::DHCPHeader</a> NetworkDHCP::__attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(packed)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a31fd9a65f2f32ea30859692dcacfaa20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31fd9a65f2f32ea30859692dcacfaa20">&#9670;&nbsp;</a></span>__attribute__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../dd/d53/namespaceNetworkDHCP.html#a9a6e69d30835fac1c460b04ad0f894d2">NetworkDHCP::DHCPOperation</a> NetworkDHCP::__attribute__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa5443cec6ca2abcc0b96c7c3612880621"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa5443cec6ca2abcc0b96c7c3612880621">NetworkDHCP::DHCP_OPTION_NETBIOS_DD_SERVER</a></div><div class="ttdeci">@ DHCP_OPTION_NETBIOS_DD_SERVER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00744">NetworkController.hpp:744</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290da15763f7a2705b221a748a6d0ac25681a"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da15763f7a2705b221a748a6d0ac25681a">NetworkDHCP::DHCP_MESSAGE_TYPE_LEASEACTIVE</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_LEASEACTIVE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00782">NetworkController.hpp:782</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa36c8c5ea40cb64a47756ec9b02d2bf63"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa36c8c5ea40cb64a47756ec9b02d2bf63">NetworkDHCP::DHCP_OPTION_DOMAIN_NAME</a></div><div class="ttdeci">@ DHCP_OPTION_DOMAIN_NAME</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00709">NetworkController.hpp:709</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa68a72968153ae4a2f5f3d66f1d2fabf2"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa68a72968153ae4a2f5f3d66f1d2fabf2">NetworkDHCP::DHCP_OPTION_BROADCAST_ADDRESS</a></div><div class="ttdeci">@ DHCP_OPTION_BROADCAST_ADDRESS</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00724">NetworkController.hpp:724</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa6935939170f428718e4ab144c5ad4744"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa6935939170f428718e4ab144c5ad4744">NetworkDHCP::DHCP_OPTION_EXTENSION_PATH</a></div><div class="ttdeci">@ DHCP_OPTION_EXTENSION_PATH</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00712">NetworkController.hpp:712</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa30490eeb20e7210467474e26e06e4bb8"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa30490eeb20e7210467474e26e06e4bb8">NetworkDHCP::DHCP_OPTION_NETBIOS_NAME_SERVERS</a></div><div class="ttdeci">@ DHCP_OPTION_NETBIOS_NAME_SERVERS</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00743">NetworkController.hpp:743</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aab2f94a8e45fc0ac1d8011b4384255685"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aab2f94a8e45fc0ac1d8011b4384255685">NetworkDHCP::DHCP_OPTION_TIME_SERVER</a></div><div class="ttdeci">@ DHCP_OPTION_TIME_SERVER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00698">NetworkController.hpp:698</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa54486525781ec1235c4171503016274a"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa54486525781ec1235c4171503016274a">NetworkDHCP::DHCP_OPTION_VENDOR_CLASS_IDENTIFIER</a></div><div class="ttdeci">@ DHCP_OPTION_VENDOR_CLASS_IDENTIFIER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00760">NetworkController.hpp:760</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290da26a73320fd379440353aaf63b1816725"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da26a73320fd379440353aaf63b1816725">NetworkDHCP::DHCP_MESSAGE_TYPE_DECLINE</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_DECLINE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00773">NetworkController.hpp:773</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa02bbc6275308d906ac6ec8a71eebd894"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa02bbc6275308d906ac6ec8a71eebd894">NetworkDHCP::DHCP_OPTION_DOMAIN_NAME_SERVER</a></div><div class="ttdeci">@ DHCP_OPTION_DOMAIN_NAME_SERVER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00700">NetworkController.hpp:700</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aacba30d96036c9c8858dcf4fc6018853c"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aacba30d96036c9c8858dcf4fc6018853c">NetworkDHCP::DHCP_OPTION_ALL_SUBNETS_ARE_LOCAL</a></div><div class="ttdeci">@ DHCP_OPTION_ALL_SUBNETS_ARE_LOCAL</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00723">NetworkController.hpp:723</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a9a6e69d30835fac1c460b04ad0f894d2ab456f31342ce9ace24f2c17f1a2ce84f"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a9a6e69d30835fac1c460b04ad0f894d2ab456f31342ce9ace24f2c17f1a2ce84f">NetworkDHCP::DHCP_OP_BOOTREQUEST</a></div><div class="ttdeci">@ DHCP_OP_BOOTREQUEST</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00687">NetworkController.hpp:687</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa0e508d2e20c008d9330cb7950dbdb549"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa0e508d2e20c008d9330cb7950dbdb549">NetworkDHCP::DHCP_OPTION_MESSAGE</a></div><div class="ttdeci">@ DHCP_OPTION_MESSAGE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00756">NetworkController.hpp:756</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa8ba00e7b443d168299d4dfdb3cb0a910"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa8ba00e7b443d168299d4dfdb3cb0a910">NetworkDHCP::DHCP_OPTION_MAX_MESSAGE_SIZE</a></div><div class="ttdeci">@ DHCP_OPTION_MAX_MESSAGE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00757">NetworkController.hpp:757</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa44502f1a59733deb8061fedaad5523f2"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa44502f1a59733deb8061fedaad5523f2">NetworkDHCP::DHCP_OPTION_ROUTER_DISCOVERY</a></div><div class="ttdeci">@ DHCP_OPTION_ROUTER_DISCOVERY</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00727">NetworkController.hpp:727</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290daf5ae920c7337ebd22adae6c4833d75e2"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290daf5ae920c7337ebd22adae6c4833d75e2">NetworkDHCP::DHCP_MESSAGE_TYPE_OFFER</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_OFFER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00771">NetworkController.hpp:771</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa173f0cf97df22811e38a0d8c41baa908"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa173f0cf97df22811e38a0d8c41baa908">NetworkDHCP::DHCP_OPTION_MASK_SUPPLIER</a></div><div class="ttdeci">@ DHCP_OPTION_MASK_SUPPLIER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00726">NetworkController.hpp:726</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa91da8efa8f93a45793844d3e3b0c5056"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa91da8efa8f93a45793844d3e3b0c5056">NetworkDHCP::DHCP_OPTION_REQUESTED_IP</a></div><div class="ttdeci">@ DHCP_OPTION_REQUESTED_IP</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00750">NetworkController.hpp:750</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aae8f23f080407fdafc19d7acb009d68b6"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aae8f23f080407fdafc19d7acb009d68b6">NetworkDHCP::DHCP_OPTION_T2_TIMEOUT</a></div><div class="ttdeci">@ DHCP_OPTION_T2_TIMEOUT</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00759">NetworkController.hpp:759</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aac632824b3dd4edc0713c71bbd8aaf431"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aac632824b3dd4edc0713c71bbd8aaf431">NetworkDHCP::DHCP_OPTION_MESSAGE_TYPE</a></div><div class="ttdeci">@ DHCP_OPTION_MESSAGE_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00753">NetworkController.hpp:753</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aad38372b3df38925b5b40f4388bbe1cfd"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aad38372b3df38925b5b40f4388bbe1cfd">NetworkDHCP::DHCP_OPTION_STATIC_ROUTE</a></div><div class="ttdeci">@ DHCP_OPTION_STATIC_ROUTE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00729">NetworkController.hpp:729</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aadba0deb1c260ffc82f451d1ba3e4b7b0"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aadba0deb1c260ffc82f451d1ba3e4b7b0">NetworkDHCP::DHCP_OPTION_DEFAULT_TCP_TTL</a></div><div class="ttdeci">@ DHCP_OPTION_DEFAULT_TCP_TTL</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00735">NetworkController.hpp:735</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aaabf947d08f325cf6f2822e01199eddb6"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaabf947d08f325cf6f2822e01199eddb6">NetworkDHCP::DHCP_OPTION_LPR_SERVER</a></div><div class="ttdeci">@ DHCP_OPTION_LPR_SERVER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00703">NetworkController.hpp:703</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290daf8bd493ace65b66d32542c58be16923c"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290daf8bd493ace65b66d32542c58be16923c">NetworkDHCP::DHCP_MESSAGE_TYPE_LEASEUNASSIGNED</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_LEASEUNASSIGNED</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00780">NetworkController.hpp:780</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa0867d1b2339851556f305531942b09ac"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa0867d1b2339851556f305531942b09ac">NetworkDHCP::DHCP_OPTION_MAX_DATAGRAM_REASSEMBLY_SIZE</a></div><div class="ttdeci">@ DHCP_OPTION_MAX_DATAGRAM_REASSEMBLY_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00717">NetworkController.hpp:717</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290da4e06ff6023221b947ad7fcf35ee1be64"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da4e06ff6023221b947ad7fcf35ee1be64">NetworkDHCP::DHCP_MESSAGE_TYPE_ACK</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_ACK</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00774">NetworkController.hpp:774</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290da7d70f23def771e9c16d070be5b64fbf1"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da7d70f23def771e9c16d070be5b64fbf1">NetworkDHCP::DHCP_MESSAGE_TYPE_DISCOVER</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_DISCOVER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00770">NetworkController.hpp:770</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa2e3eaaf6fb04d23cbdcbda8401c9a2f6"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa2e3eaaf6fb04d23cbdcbda8401c9a2f6">NetworkDHCP::DHCP_OPTION_X_DISPLAY_MANAGER</a></div><div class="ttdeci">@ DHCP_OPTION_X_DISPLAY_MANAGER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00748">NetworkController.hpp:748</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa08463a65f1359100fc1ee426d14c75a6"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa08463a65f1359100fc1ee426d14c75a6">NetworkDHCP::DHCP_OPTION_ROOT_PATH</a></div><div class="ttdeci">@ DHCP_OPTION_ROOT_PATH</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00711">NetworkController.hpp:711</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa5bd6bd2a690b0726437877a09adfec85"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa5bd6bd2a690b0726437877a09adfec85">NetworkDHCP::DHCP_OPTION_COOKIE_SERVER</a></div><div class="ttdeci">@ DHCP_OPTION_COOKIE_SERVER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00702">NetworkController.hpp:702</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aaad34a9bbe8d34ab947cd1e315fd5353c"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaad34a9bbe8d34ab947cd1e315fd5353c">NetworkDHCP::DHCP_OPTION_NAME_SERVER</a></div><div class="ttdeci">@ DHCP_OPTION_NAME_SERVER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00699">NetworkController.hpp:699</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aaaad4b0ee81f9179e39c22223338b7c6d"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaaad4b0ee81f9179e39c22223338b7c6d">NetworkDHCP::DHCP_OPTION_SWAP_SERVER</a></div><div class="ttdeci">@ DHCP_OPTION_SWAP_SERVER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00710">NetworkController.hpp:710</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aaa72849786ab0b644232e6f0e261deb8f"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaa72849786ab0b644232e6f0e261deb8f">NetworkDHCP::DHCP_OPTION_SUBNETMASK</a></div><div class="ttdeci">@ DHCP_OPTION_SUBNETMASK</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00695">NetworkController.hpp:695</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290dafb30b54faeae7468e82fb48c6ef6affc"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290dafb30b54faeae7468e82fb48c6ef6affc">NetworkDHCP::DHCP_MESSAGE_TYPE_FORCERENEW</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_FORCERENEW</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00778">NetworkController.hpp:778</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aad956b00448b0dce64467a55b92de0d85"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aad956b00448b0dce64467a55b92de0d85">NetworkDHCP::DHCP_OPTION_NTP_SERVERS</a></div><div class="ttdeci">@ DHCP_OPTION_NTP_SERVERS</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00741">NetworkController.hpp:741</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa34fe42343cf5c6b9527b3ee0ac926023"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa34fe42343cf5c6b9527b3ee0ac926023">NetworkDHCP::DHCP_OPTION_PATH_MTU_AGING_TIMEOUT</a></div><div class="ttdeci">@ DHCP_OPTION_PATH_MTU_AGING_TIMEOUT</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00719">NetworkController.hpp:719</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aac34e8e949b1d7f3c994dc50208b7a5ed"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aac34e8e949b1d7f3c994dc50208b7a5ed">NetworkDHCP::DHCP_OPTION_VENDOR_SPECIFIC</a></div><div class="ttdeci">@ DHCP_OPTION_VENDOR_SPECIFIC</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00742">NetworkController.hpp:742</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290da265ed5d4078da3e8d6d25ba90dd88f61"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da265ed5d4078da3e8d6d25ba90dd88f61">NetworkDHCP::DHCP_MESSAGE_TYPE_INFORM</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_INFORM</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00777">NetworkController.hpp:777</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290da59dca8f5e544059e840a53517b88e1bb"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da59dca8f5e544059e840a53517b88e1bb">NetworkDHCP::DHCP_MESSAGE_TYPE_RELEASE</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_RELEASE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00776">NetworkController.hpp:776</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa61e5f19d4cb6c5dbeecc85958104f94e"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa61e5f19d4cb6c5dbeecc85958104f94e">NetworkDHCP::DHCP_OPTION_NETWORK_TIME_SERVER</a></div><div class="ttdeci">@ DHCP_OPTION_NETWORK_TIME_SERVER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00763">NetworkController.hpp:763</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a9a6e69d30835fac1c460b04ad0f894d2ac567d21f8e817731b5fa5fbf6a0bee30"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a9a6e69d30835fac1c460b04ad0f894d2ac567d21f8e817731b5fa5fbf6a0bee30">NetworkDHCP::DHCP_OP_BOOTREPLY</a></div><div class="ttdeci">@ DHCP_OP_BOOTREPLY</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00688">NetworkController.hpp:688</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aad6a63dbdf421623f0e5d0b3a4e5d2f3f"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aad6a63dbdf421623f0e5d0b3a4e5d2f3f">NetworkDHCP::DHCP_OPTION_T1_TIMEOUT</a></div><div class="ttdeci">@ DHCP_OPTION_T1_TIMEOUT</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00758">NetworkController.hpp:758</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa3e876a9fd83a98e6900f517311a8458a"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa3e876a9fd83a98e6900f517311a8458a">NetworkDHCP::DHCP_OPTION_CLIENT_IDENTIFIER</a></div><div class="ttdeci">@ DHCP_OPTION_CLIENT_IDENTIFIER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00761">NetworkController.hpp:761</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa3428b122ec421e4f4aee26cfcd5caf51"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa3428b122ec421e4f4aee26cfcd5caf51">NetworkDHCP::DHCP_OPTION_SERVER_IDENTIFIER</a></div><div class="ttdeci">@ DHCP_OPTION_SERVER_IDENTIFIER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00754">NetworkController.hpp:754</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aae3a24599fc343a8da07b45db99406159"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aae3a24599fc343a8da07b45db99406159">NetworkDHCP::DHCP_OPTION_LOG_SERVER</a></div><div class="ttdeci">@ DHCP_OPTION_LOG_SERVER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00701">NetworkController.hpp:701</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa4d48aecaa33f6ed88e71ef70f2c0c079"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa4d48aecaa33f6ed88e71ef70f2c0c079">NetworkDHCP::DHCP_OPTION_X_FONT_SERVERS</a></div><div class="ttdeci">@ DHCP_OPTION_X_FONT_SERVERS</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00747">NetworkController.hpp:747</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa9172f3aa509af4a85f271cab5516fcfa"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa9172f3aa509af4a85f271cab5516fcfa">NetworkDHCP::DHCP_OPTION_HOST_NAME</a></div><div class="ttdeci">@ DHCP_OPTION_HOST_NAME</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00706">NetworkController.hpp:706</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aae4cd3bdfe887ac16a63c1fdaeceeb978"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aae4cd3bdfe887ac16a63c1fdaeceeb978">NetworkDHCP::DHCP_OPTION_POLICY_FILTER</a></div><div class="ttdeci">@ DHCP_OPTION_POLICY_FILTER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00716">NetworkController.hpp:716</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aae8597f125a36e9832cd84ee01bdeff42"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aae8597f125a36e9832cd84ee01bdeff42">NetworkDHCP::DHCP_OPTION_TCP_KEEPALIVE_INTERVAL</a></div><div class="ttdeci">@ DHCP_OPTION_TCP_KEEPALIVE_INTERVAL</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00736">NetworkController.hpp:736</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa699cd1c93369817212ef975dbbdefa1c"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa699cd1c93369817212ef975dbbdefa1c">NetworkDHCP::DHCP_OPTION_MERIT_DUMP_FILE</a></div><div class="ttdeci">@ DHCP_OPTION_MERIT_DUMP_FILE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00708">NetworkController.hpp:708</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290da6504ec2105fddf87a1d1d64ea13daeb7"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da6504ec2105fddf87a1d1d64ea13daeb7">NetworkDHCP::DHCP_MESSAGE_TYPE_LEASEQUERY</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_LEASEQUERY</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00779">NetworkController.hpp:779</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aacb17efd98ee2613a6d018702fd24fc33"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aacb17efd98ee2613a6d018702fd24fc33">NetworkDHCP::DHCP_OPTION_DEFAULT_IP_TTL</a></div><div class="ttdeci">@ DHCP_OPTION_DEFAULT_IP_TTL</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00718">NetworkController.hpp:718</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa2202aa3100714e0a0872f02ee41cac6a"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa2202aa3100714e0a0872f02ee41cac6a">NetworkDHCP::DHCP_OPTION_ROUTER_SOLICITATION_ADDRESS</a></div><div class="ttdeci">@ DHCP_OPTION_ROUTER_SOLICITATION_ADDRESS</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00728">NetworkController.hpp:728</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aac8a748aff36dce5fc1897ad313f45776"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aac8a748aff36dce5fc1897ad313f45776">NetworkDHCP::DHCP_OPTION_TIME_OFFSET</a></div><div class="ttdeci">@ DHCP_OPTION_TIME_OFFSET</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00696">NetworkController.hpp:696</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290da1e3e09276460af33e3edfe42ec819c8f"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da1e3e09276460af33e3edfe42ec819c8f">NetworkDHCP::DHCP_MESSAGE_TYPE_LEASEUNKNOWN</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_LEASEUNKNOWN</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00781">NetworkController.hpp:781</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa1f5d08abb3230648691f7a283fe5efbb"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa1f5d08abb3230648691f7a283fe5efbb">NetworkDHCP::DHCP_OPTION_RESOURCE_LOCATION_SERVER</a></div><div class="ttdeci">@ DHCP_OPTION_RESOURCE_LOCATION_SERVER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00705">NetworkController.hpp:705</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa6fb08577185fd660a886fdccc955abc7"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa6fb08577185fd660a886fdccc955abc7">NetworkDHCP::DHCP_OPTION_INTERFACE_MTU</a></div><div class="ttdeci">@ DHCP_OPTION_INTERFACE_MTU</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00722">NetworkController.hpp:722</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aafde70687d636a3b4ad5420c59076331d"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aafde70687d636a3b4ad5420c59076331d">NetworkDHCP::DHCP_OPTION_PERFORM_MASK_DISCOVERY</a></div><div class="ttdeci">@ DHCP_OPTION_PERFORM_MASK_DISCOVERY</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00725">NetworkController.hpp:725</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aaf91bcfeeb5d156cb220f6a0d8152e5a0"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaf91bcfeeb5d156cb220f6a0d8152e5a0">NetworkDHCP::DHCP_OPTION_NETBIOS_SCOPE</a></div><div class="ttdeci">@ DHCP_OPTION_NETBIOS_SCOPE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00746">NetworkController.hpp:746</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aacc9b750ec190dd6351d3ce9930ae7dea"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aacc9b750ec190dd6351d3ce9930ae7dea">NetworkDHCP::DHCP_OPTION_IP_LEASE_TIME</a></div><div class="ttdeci">@ DHCP_OPTION_IP_LEASE_TIME</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00751">NetworkController.hpp:751</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa45cf769c8c56f505a130239ac2177541"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa45cf769c8c56f505a130239ac2177541">NetworkDHCP::DHCP_OPTION_IP_FORWARDING</a></div><div class="ttdeci">@ DHCP_OPTION_IP_FORWARDING</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00714">NetworkController.hpp:714</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa010556dbed908782f209227e475fc1b0"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa010556dbed908782f209227e475fc1b0">NetworkDHCP::DHCP_OPTION_NETBIOS_NODE_TYPE</a></div><div class="ttdeci">@ DHCP_OPTION_NETBIOS_NODE_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00745">NetworkController.hpp:745</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa93591bc3ae2485a2c15d1b8b1e85603b"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa93591bc3ae2485a2c15d1b8b1e85603b">NetworkDHCP::DHCP_OPTION_ROUTER</a></div><div class="ttdeci">@ DHCP_OPTION_ROUTER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00697">NetworkController.hpp:697</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290da0a1bee696e211f1444f857125329d14c"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da0a1bee696e211f1444f857125329d14c">NetworkDHCP::DHCP_MESSAGE_TYPE_ACTIVELEASEQUERY</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_ACTIVELEASEQUERY</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00785">NetworkController.hpp:785</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa55b1f8195d4b26bf33508bf24e662187"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa55b1f8195d4b26bf33508bf24e662187">NetworkDHCP::DHCP_OPTION_END</a></div><div class="ttdeci">@ DHCP_OPTION_END</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00765">NetworkController.hpp:765</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aac2a6967aeba78749bcdc13900d71b12f"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aac2a6967aeba78749bcdc13900d71b12f">NetworkDHCP::DHCP_OPTION_NIS_DOMAIN</a></div><div class="ttdeci">@ DHCP_OPTION_NIS_DOMAIN</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00739">NetworkController.hpp:739</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290dadfeee245bb0cdc435a679dc55884c8c7"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290dadfeee245bb0cdc435a679dc55884c8c7">NetworkDHCP::DHCP_MESSAGE_TYPE_DHCPTLS</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_DHCPTLS</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00787">NetworkController.hpp:787</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa25b9a0a92cb57eefad29950bd2837ffd"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa25b9a0a92cb57eefad29950bd2837ffd">NetworkDHCP::DHCP_OPTION_ARP_CACHE_TIMEOUT</a></div><div class="ttdeci">@ DHCP_OPTION_ARP_CACHE_TIMEOUT</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00732">NetworkController.hpp:732</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa1fbb8e4e8615509b6e6cd96f4ffc31fc"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa1fbb8e4e8615509b6e6cd96f4ffc31fc">NetworkDHCP::DHCP_OPTION_IMPRESS_SERVER</a></div><div class="ttdeci">@ DHCP_OPTION_IMPRESS_SERVER</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00704">NetworkController.hpp:704</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa9c960eff6d545cbe2c11a873b3e2badb"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa9c960eff6d545cbe2c11a873b3e2badb">NetworkDHCP::DHCP_OPTION_ETHERNET_ENCAPSULATION</a></div><div class="ttdeci">@ DHCP_OPTION_ETHERNET_ENCAPSULATION</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00733">NetworkController.hpp:733</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa0a39d53cd1778263f36ddd0870d847e9"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa0a39d53cd1778263f36ddd0870d847e9">NetworkDHCP::DHCP_OPTION_PARAMETER_REQUEST_LIST</a></div><div class="ttdeci">@ DHCP_OPTION_PARAMETER_REQUEST_LIST</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00755">NetworkController.hpp:755</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290da8d0f8d398494a95d8cc0fafd91ed63bd"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da8d0f8d398494a95d8cc0fafd91ed63bd">NetworkDHCP::DHCP_MESSAGE_TYPE_NAK</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_NAK</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00775">NetworkController.hpp:775</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290daf1050810f40502519c4130a4363f1d08"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290daf1050810f40502519c4130a4363f1d08">NetworkDHCP::DHCP_MESSAGE_TYPE_LEASEQUERYSTATUS</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_LEASEQUERYSTATUS</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00786">NetworkController.hpp:786</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa8f2cf01e9bfce56e710f721810943df9"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa8f2cf01e9bfce56e710f721810943df9">NetworkDHCP::DHCP_OPTION_PATH_MTU_PLATEAU_TABLE</a></div><div class="ttdeci">@ DHCP_OPTION_PATH_MTU_PLATEAU_TABLE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00720">NetworkController.hpp:720</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290daac3f468ca51b94d3284ba730031c5406"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290daac3f468ca51b94d3284ba730031c5406">NetworkDHCP::DHCP_MESSAGE_TYPE_BULKLEASEQUERY</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_BULKLEASEQUERY</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00783">NetworkController.hpp:783</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa07e5a8cccb33fd3562f12ff8a9bf16cd"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa07e5a8cccb33fd3562f12ff8a9bf16cd">NetworkDHCP::DHCP_OPTION_TCP_KEEPALIVE_GARBAGE</a></div><div class="ttdeci">@ DHCP_OPTION_TCP_KEEPALIVE_GARBAGE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00737">NetworkController.hpp:737</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aaf54383fb8a3366c09baa5805f5b028d5"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaf54383fb8a3366c09baa5805f5b028d5">NetworkDHCP::DHCP_OPTION_OPTION_OVERLOAD</a></div><div class="ttdeci">@ DHCP_OPTION_OPTION_OVERLOAD</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00752">NetworkController.hpp:752</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa79c6d1a43386f4dfbf3a6b81074d1a21"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa79c6d1a43386f4dfbf3a6b81074d1a21">NetworkDHCP::DHCP_OPTION_PAD</a></div><div class="ttdeci">@ DHCP_OPTION_PAD</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00694">NetworkController.hpp:694</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290da2a92a1a901d73011c5f4c66f7d4a0e3d"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da2a92a1a901d73011c5f4c66f7d4a0e3d">NetworkDHCP::DHCP_MESSAGE_TYPE_LEASEQUERYDONE</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_LEASEQUERYDONE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00784">NetworkController.hpp:784</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aaa151708e8b370a935f6188ac94bf07c5"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aaa151708e8b370a935f6188ac94bf07c5">NetworkDHCP::DHCP_OPTION_NIS_SERVERS</a></div><div class="ttdeci">@ DHCP_OPTION_NIS_SERVERS</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00740">NetworkController.hpp:740</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aad33f58f3393a6ff2d97fe0dc579ddcc7"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aad33f58f3393a6ff2d97fe0dc579ddcc7">NetworkDHCP::DHCP_OPTION_BOOT_FILE_SIZE</a></div><div class="ttdeci">@ DHCP_OPTION_BOOT_FILE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00707">NetworkController.hpp:707</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aabc8c40a05fe19779ee9d850a00fd201e"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aabc8c40a05fe19779ee9d850a00fd201e">NetworkDHCP::DHCP_OPTION_TRAILER_ENCAPSULATION</a></div><div class="ttdeci">@ DHCP_OPTION_TRAILER_ENCAPSULATION</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00731">NetworkController.hpp:731</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a23496c1315a5b90e844b83fe4342290da0fe74ed8bfdd3964e717b2b9194b1d85"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290da0fe74ed8bfdd3964e717b2b9194b1d85">NetworkDHCP::DHCP_MESSAGE_TYPE_REQUEST</a></div><div class="ttdeci">@ DHCP_MESSAGE_TYPE_REQUEST</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00772">NetworkController.hpp:772</a></div></div>
+<div class="ttc" id="anamespaceNetworkDHCP_html_a42afac4eee371cb0e894d6d68da1181aa64184499635031f69a630d177fb0f568"><div class="ttname"><a href="../../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181aa64184499635031f69a630d177fb0f568">NetworkDHCP::DHCP_OPTION_NON_LOCAL_SOURCE_ROUTING</a></div><div class="ttdeci">@ DHCP_OPTION_NON_LOCAL_SOURCE_ROUTING</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00715">NetworkController.hpp:715</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

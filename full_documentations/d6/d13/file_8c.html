@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('d6/d13/file_8c.html','../../'); initRe
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9855bda714042ee3ae9b45a5e415a65a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d4d/file_8h.html#a175abb747ea3b78aa8da87355dcec473">FILE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d13/file_8c.html#a9855bda714042ee3ae9b45a5e415a65a">FileOpen</a> (const char *Filename, const char *Mode)</td></tr>
+<tr class="memitem:a9855bda714042ee3ae9b45a5e415a65a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d4d/file_8h.html#a175abb747ea3b78aa8da87355dcec473">FILE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d13/file_8c.html#a9855bda714042ee3ae9b45a5e415a65a">FileOpen</a> (const char *Filename, const char *<a class="el" href="../../dc/de6/NetworkController_8hpp.html#ad11c3137711cc547aa65686fa2c98fc9">Mode</a>)</td></tr>
 <tr class="memdesc:a9855bda714042ee3ae9b45a5e415a65a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a file specified by filename and mode.  <a href="../../d6/d13/file_8c.html#a9855bda714042ee3ae9b45a5e415a65a">More...</a><br /></td></tr>
 <tr class="separator:a9855bda714042ee3ae9b45a5e415a65a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d4238bd53ea0fcd9ec3648527cc7172"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d13/file_8c.html#a1d4238bd53ea0fcd9ec3648527cc7172">FileRead</a> (void *Buffer, size_t Size, size_t Count, <a class="el" href="../../d2/d4d/file_8h.html#a175abb747ea3b78aa8da87355dcec473">FILE</a> *Stream)</td></tr>
@@ -113,7 +113,7 @@ Functions</h2></td></tr>
 <tr class="separator:a5694fab7c9562c56a5af7a57fc31444a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e0d355e018923ef69cb21faf8452eb7"><td class="memItemLeft" align="right" valign="top">long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d13/file_8c.html#a8e0d355e018923ef69cb21faf8452eb7">FileTell</a> (<a class="el" href="../../d2/d4d/file_8h.html#a175abb747ea3b78aa8da87355dcec473">FILE</a> *Stream)</td></tr>
 <tr class="separator:a8e0d355e018923ef69cb21faf8452eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c4a7e95345f13a8933253f0926e7086"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d13/file_8c.html#a3c4a7e95345f13a8933253f0926e7086">MakeDirectory</a> (const char *Path, int Mode)</td></tr>
+<tr class="memitem:a3c4a7e95345f13a8933253f0926e7086"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d13/file_8c.html#a3c4a7e95345f13a8933253f0926e7086">MakeDirectory</a> (const char *Path, int <a class="el" href="../../dc/de6/NetworkController_8hpp.html#ad11c3137711cc547aa65686fa2c98fc9">Mode</a>)</td></tr>
 <tr class="separator:a3c4a7e95345f13a8933253f0926e7086"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83f63aa55ac2294dd8c5d2916dde8f6c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d13/file_8c.html#a83f63aa55ac2294dd8c5d2916dde8f6c">RenameFile</a> (const char *OldFileName, const char *NewFileName)</td></tr>
 <tr class="separator:a83f63aa55ac2294dd8c5d2916dde8f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -424,11 +424,11 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d13/file_8c_source.html#l00040">40</a> of file <a class="el" href="../../d6/d13/file_8c_source.html">file.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="../../dc/db2/system_8h.html#a6fda8683b098e50994ca10038d3774c5">WriteSysDebugger</a>(<span class="stringliteral">&quot;MakeDirectory( %s %d ) stub\n&quot;</span>, Path, Mode);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="../../dc/db2/system_8h.html#a6fda8683b098e50994ca10038d3774c5">WriteSysDebugger</a>(<span class="stringliteral">&quot;MakeDirectory( %s %d ) stub\n&quot;</span>, Path, <a class="code" href="../../dc/de6/NetworkController_8hpp.html#ad11c3137711cc547aa65686fa2c98fc9">Mode</a>);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d4/dfd/system_8c_source.html#l00025">WriteSysDebugger()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00820">Mode</a>, and <a class="el" href="../../d4/dfd/system_8c_source.html#l00025">WriteSysDebugger()</a>.</p>
 
 </div>
 </div>
@@ -497,6 +497,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="adefaultalloc_8cpp_html_a40ff64f9640ceb558616d1129f4e1f76"><div class="ttname"><a href="../../d9/d8c/defaultalloc_8cpp.html#a40ff64f9640ceb558616d1129f4e1f76">malloc</a></div><div class="ttdeci">void *defPREFIX() malloc(uint64_t Size)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d8c/defaultalloc_8cpp_source.html#l00112">defaultalloc.cpp:112</a></div></div>
+<div class="ttc" id="aNetworkController_8hpp_html_ad11c3137711cc547aa65686fa2c98fc9"><div class="ttname"><a href="../../dc/de6/NetworkController_8hpp.html#ad11c3137711cc547aa65686fa2c98fc9">Mode</a></div><div class="ttdeci">uint8_t Mode</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00820">NetworkController.hpp:820</a></div></div>
 <div class="ttc" id="afile_8h_html_a2e53acc0efa28c4609c4313b51ce127d"><div class="ttname"><a href="../../d2/d4d/file_8h.html#a2e53acc0efa28c4609c4313b51ce127d">_FILE::Khnd</a></div><div class="ttdeci">void * Khnd</div><div class="ttdoc">Kernel internal file handle. Trying to access it will cause a page fault.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d4d/file_8h_source.html#l00010">file.h:10</a></div></div>
 <div class="ttc" id="afile_8h_html_de/d3c/struct__FILE"><div class="ttname"><a href="../../d2/d4d/file_8h.html#de/d3c/struct__FILE">_FILE</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d4d/file_8h_source.html#l00007">file.h:7</a></div></div>
 <div class="ttc" id="adefaultalloc_8cpp_html_a872d217faaa3f7b9546298af016b6d25"><div class="ttname"><a href="../../d9/d8c/defaultalloc_8cpp.html#a872d217faaa3f7b9546298af016b6d25">free</a></div><div class="ttdeci">void defPREFIX() free(void *Address)</div><div class="ttdoc">The standard function.</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d8c/defaultalloc_8cpp_source.html#l00099">defaultalloc.cpp:99</a></div></div>

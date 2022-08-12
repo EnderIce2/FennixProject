@@ -87,17 +87,14 @@ $(document).ready(function(){initNavTree('d3/d3b/AddressResolutionProtocol_8cpp.
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">AddressResolutionProtocol.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/dd0/timer_8h_source.html">../timer.h</a>&quot;</code><br />
 <code>#include &lt;<a class="el" href="../../db/d16/debug_8h_source.html">debug.h</a>&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
-<code>#include &lt;vector.hpp&gt;</code><br />
 </div>
 <p><a href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -106,46 +103,15 @@ Namespaces</h2></td></tr>
 <tr class="memitem:d2/df9/namespaceNetworkARP"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html">NetworkARP</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:ac0a4f1592f6a2b87489742ad94310c60"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60">NetworkARP::DAType</a> { <a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60aa20500d98166e02a22feb144e26939da">NetworkARP::DA_ADD</a> = 1, 
-<a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60a016f96b8189c3d24f321b659a449544e">NetworkARP::DA_DEL</a> = 2, 
-<a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60a9ecc48d0e1335768701d5867e8ca1f37">NetworkARP::DA_SEARCH</a> = 3, 
-<a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60aefef2b632465b5fb92c378e4f51ebfa1">NetworkARP::DA_UPDATE</a> = 4
- }</td></tr>
-<tr class="separator:ac0a4f1592f6a2b87489742ad94310c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a346d8ecaa7beeb22c6584080a7dcaff9"><td class="memItemLeft" align="right" valign="top">DiscoveredAddress *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#a346d8ecaa7beeb22c6584080a7dcaff9">NetworkARP::ManageDA</a> (DAType <a class="el" href="../../d2/d50/disk_8h.html#aeff746a68ed515a1d9f0c40a38dd200b">Type</a>, <a class="el" href="../../dc/de6/NetworkController_8hpp.html#d8/d38/structInternetProtocol">InternetProtocol</a> IP, <a class="el" href="../../dc/de6/NetworkController_8hpp.html#d0/d48/structMediaAccessControl">MediaAccessControl</a> MAC)</td></tr>
-<tr class="separator:a346d8ecaa7beeb22c6584080a7dcaff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aec880ec5c00bc28e6355c81ad5697f6c"><td class="memItemLeft" align="right" valign="top">Vector&lt; <a class="el" href="../../d2/df9/namespaceNetworkARP.html#d7/d56/structNetworkARP_1_1DiscoveredAddress">NetworkARP::DiscoveredAddress</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp.html#aec880ec5c00bc28e6355c81ad5697f6c">DiscoveredAddresses</a></td></tr>
-<tr class="separator:aec880ec5c00bc28e6355c81ad5697f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5350876db1b3a5becc7738ba74cb4e46"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="../../d2/df9/namespaceNetworkARP.html#ac0a4f1592f6a2b87489742ad94310c60">NetworkARP::DAType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#a5350876db1b3a5becc7738ba74cb4e46">NetworkARP::__attribute__</a></td></tr>
-<tr class="separator:a5350876db1b3a5becc7738ba74cb4e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aca9e566091f1cf920995cf612e328d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d48/structMediaAccessControl.html">MediaAccessControl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#a5aca9e566091f1cf920995cf612e328d">NetworkARP::InvalidMAC</a> = {.<a class="el" href="../../da/d3f/E1000_8hpp.html#a6fc2b8ed8be1aa26731a45000f43b8cc">Address</a> = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}}</td></tr>
+<tr class="separator:a5aca9e566091f1cf920995cf612e328d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7bad1a5f789936decb5663017e2bfbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d1e/structInternetProtocol4.html">InternetProtocol4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#af7bad1a5f789936decb5663017e2bfbe">NetworkARP::InvalidIP</a> = {.<a class="el" href="../../da/d3f/E1000_8hpp.html#a6fc2b8ed8be1aa26731a45000f43b8cc">Address</a> = {0xFF, 0xFF, 0xFF, 0xFF}}</td></tr>
+<tr class="separator:af7bad1a5f789936decb5663017e2bfbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc52637e86e4e5625907cfeb20a3c62b"><td class="memItemLeft" align="right" valign="top">DiscoveredAddress&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df9/namespaceNetworkARP.html#adc52637e86e4e5625907cfeb20a3c62b">NetworkARP::InvalidRet</a> = {.MAC = InvalidMAC, .IP = InvalidIP}</td></tr>
+<tr class="separator:adc52637e86e4e5625907cfeb20a3c62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="aec880ec5c00bc28e6355c81ad5697f6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec880ec5c00bc28e6355c81ad5697f6c">&#9670;&nbsp;</a></span>DiscoveredAddresses</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Vector&lt;<a class="el" href="../../d2/df9/namespaceNetworkARP.html#d7/d56/structNetworkARP_1_1DiscoveredAddress">NetworkARP::DiscoveredAddress</a> *&gt; DiscoveredAddresses</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00007">7</a> of file <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html">AddressResolutionProtocol.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d3/d3b/AddressResolutionProtocol_8cpp_source.html#l00019">NetworkARP::ManageDA()</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

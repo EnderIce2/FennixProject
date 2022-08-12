@@ -87,7 +87,9 @@ $(document).ready(function(){initNavTree('da/dcd/namespaceNetworkEthernet.html',
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">NetworkEthernet Namespace Reference</div>  </div>
 </div><!--header-->
@@ -97,6 +99,10 @@ $(document).ready(function(){initNavTree('da/dcd/namespaceNetworkEthernet.html',
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d50/classNetworkEthernet_1_1Ethernet.html">Ethernet</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:d3/dad/structNetworkEthernet_1_1EthernetEventHelperStruct"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#d3/dad/structNetworkEthernet_1_1EthernetEventHelperStruct">EthernetEventHelperStruct</a></td></tr>
+<tr class="separator:d3/dad/structNetworkEthernet_1_1EthernetEventHelperStruct"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/de9/classNetworkEthernet_1_1EthernetEvents.html">EthernetEvents</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:d6/df6/structNetworkEthernet_1_1EthernetHeader"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#d6/df6/structNetworkEthernet_1_1EthernetHeader">EthernetHeader</a></td></tr>
 <tr class="separator:d6/df6/structNetworkEthernet_1_1EthernetHeader"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:d5/d7a/structNetworkEthernet_1_1EthernetPacket"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#d5/d7a/structNetworkEthernet_1_1EthernetPacket">EthernetPacket</a></td></tr>
@@ -104,14 +110,57 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:adbe3a0a6b58142a5032384ac0008620b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#adbe3a0a6b58142a5032384ac0008620b">ProtocolType</a> { <a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#adbe3a0a6b58142a5032384ac0008620ba693123e814b6e36c7b0fe5d96409cc20">ETYPE_IPV4</a> = 0x0800, 
-<a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#adbe3a0a6b58142a5032384ac0008620baa84cc1de9dbe1e0810d1bd97e193691f">ETYPE_ARP</a> = 0x0806, 
-<a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#adbe3a0a6b58142a5032384ac0008620bad19a2308c4f282f116738ec62340af45">ETYPE_RARP</a> = 0x8035, 
-<a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#adbe3a0a6b58142a5032384ac0008620bacd0a68fee4ec0e6a2160daa9ddc5b510">ETYPE_IPV6</a> = 0x86DD
+<tr class="memitem:a0d9fe4b9c76bccc0ced7ea04986eb5e1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#a0d9fe4b9c76bccc0ced7ea04986eb5e1">FrameType</a> { <a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#a0d9fe4b9c76bccc0ced7ea04986eb5e1aa4e5fa96e7f83864c45999fce5fe9ae4">TYPE_IPV4</a> = 0x0800, 
+<a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#a0d9fe4b9c76bccc0ced7ea04986eb5e1a03964e7babcc73c78c612efc99607f87">TYPE_ARP</a> = 0x0806, 
+<a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#a0d9fe4b9c76bccc0ced7ea04986eb5e1a9967afdc259da0a91d19ad6011971055">TYPE_RARP</a> = 0x8035, 
+<a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#a0d9fe4b9c76bccc0ced7ea04986eb5e1a887417948d2cc84ef991bf1f87ecb068">TYPE_IPV6</a> = 0x86DD
  }</td></tr>
-<tr class="separator:adbe3a0a6b58142a5032384ac0008620b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a0d9fe4b9c76bccc0ced7ea04986eb5e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a7883f42f69407a93a08ab45b6d41fe48"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#d6/df6/structNetworkEthernet_1_1EthernetHeader">NetworkEthernet::EthernetHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#a7883f42f69407a93a08ab45b6d41fe48">__attribute__</a> ((packed))</td></tr>
+<tr class="separator:a7883f42f69407a93a08ab45b6d41fe48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a1550d6ba61a77e0e50a6f7898fe55693"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#d3/dad/structNetworkEthernet_1_1EthernetEventHelperStruct">NetworkEthernet::EthernetEventHelperStruct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#a1550d6ba61a77e0e50a6f7898fe55693">__attribute__</a></td></tr>
+<tr class="separator:a1550d6ba61a77e0e50a6f7898fe55693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afac491e4d9925cd33911fe66f7cc36c0"><td class="memItemLeft" align="right" valign="top">Vector&lt; <a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#d3/dad/structNetworkEthernet_1_1EthernetEventHelperStruct">EthernetEventHelperStruct</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#afac491e4d9925cd33911fe66f7cc36c0">RegisteredEvents</a></td></tr>
+<tr class="separator:afac491e4d9925cd33911fe66f7cc36c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
+<a name="d3/dad/structNetworkEthernet_1_1EthernetEventHelperStruct" id="d3/dad/structNetworkEthernet_1_1EthernetEventHelperStruct"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#d3/dad/structNetworkEthernet_1_1EthernetEventHelperStruct">&#9670;&nbsp;</a></span>NetworkEthernet::EthernetEventHelperStruct</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct NetworkEthernet::EthernetEventHelperStruct</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="../../d9/d3b/Ethernet_8cpp_source.html#l00028">28</a> of file <a class="el" href="../../d9/d3b/Ethernet_8cpp_source.html">Ethernet.cpp</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Data Fields</th></tr>
+<tr><td class="fieldtype">
+<a id="a5ea72a0c176b4a78589668a551840517"></a><a class="el" href="../../de/de9/classNetworkEthernet_1_1EthernetEvents.html">EthernetEvents</a> *</td>
+<td class="fieldname">
+Ptr</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a3dbadb84ea497799e47d59e71c2e1497"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<td class="fieldname">
+Type</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 <a name="d6/df6/structNetworkEthernet_1_1EthernetHeader" id="d6/df6/structNetworkEthernet_1_1EthernetHeader"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#d6/df6/structNetworkEthernet_1_1EthernetHeader">&#9670;&nbsp;</a></span>NetworkEthernet::EthernetHeader</h2>
 
@@ -124,23 +173,23 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00111">111</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00246">246</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="a4471814ff80302d7cb970dc4ec9905fd"></a><a class="el" href="../../dc/de6/NetworkController_8hpp.html#d0/d48/structMediaAccessControl">MediaAccessControl</a></td>
+<a id="affa81c9ebe3e460ea4c695ea14b1a657"></a><a class="el" href="../../dc/de6/NetworkController_8hpp.html#a25baf26b50bc73c25d21005f30ca33b6">uint48_t</a></td>
 <td class="fieldname">
-DestinationMAC</td>
+DestinationMAC: 48</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a705cefdb2a96bce768e032002f215914"></a><a class="el" href="../../dc/de6/NetworkController_8hpp.html#d0/d48/structMediaAccessControl">MediaAccessControl</a></td>
+<a id="ae98de8d73d44a46b4e660bdf32f60350"></a><a class="el" href="../../dc/de6/NetworkController_8hpp.html#a25baf26b50bc73c25d21005f30ca33b6">uint48_t</a></td>
 <td class="fieldname">
-SourceMAC</td>
+SourceMAC: 48</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="af55672d418ff7fa5988764fcd6d789b7"></a><a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#adbe3a0a6b58142a5032384ac0008620b">ProtocolType</a></td>
+<a id="ad0d93089ea72a49f3ae4eb3067dc0be1"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 Type</td>
 <td class="fielddoc">
@@ -161,7 +210,7 @@ Type</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00118">118</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00253">253</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -181,40 +230,92 @@ Header</td>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="adbe3a0a6b58142a5032384ac0008620b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbe3a0a6b58142a5032384ac0008620b">&#9670;&nbsp;</a></span>ProtocolType</h2>
+<a id="a0d9fe4b9c76bccc0ced7ea04986eb5e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d9fe4b9c76bccc0ced7ea04986eb5e1">&#9670;&nbsp;</a></span>FrameType</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#adbe3a0a6b58142a5032384ac0008620b">NetworkEthernet::ProtocolType</a></td>
+          <td class="memname">enum <a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#a0d9fe4b9c76bccc0ced7ea04986eb5e1">NetworkEthernet::FrameType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="adbe3a0a6b58142a5032384ac0008620ba693123e814b6e36c7b0fe5d96409cc20"></a>ETYPE_IPV4&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="adbe3a0a6b58142a5032384ac0008620baa84cc1de9dbe1e0810d1bd97e193691f"></a>ETYPE_ARP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="adbe3a0a6b58142a5032384ac0008620bad19a2308c4f282f116738ec62340af45"></a>ETYPE_RARP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="adbe3a0a6b58142a5032384ac0008620bacd0a68fee4ec0e6a2160daa9ddc5b510"></a>ETYPE_IPV6&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0d9fe4b9c76bccc0ced7ea04986eb5e1aa4e5fa96e7f83864c45999fce5fe9ae4"></a>TYPE_IPV4&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0d9fe4b9c76bccc0ced7ea04986eb5e1a03964e7babcc73c78c612efc99607f87"></a>TYPE_ARP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0d9fe4b9c76bccc0ced7ea04986eb5e1a9967afdc259da0a91d19ad6011971055"></a>TYPE_RARP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0d9fe4b9c76bccc0ced7ea04986eb5e1a887417948d2cc84ef991bf1f87ecb068"></a>TYPE_IPV6&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00103">103</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="../../da/dcd/namespaceNetworkEthernet.html#adbe3a0a6b58142a5032384ac0008620ba693123e814b6e36c7b0fe5d96409cc20">ETYPE_IPV4</a> = 0x0800,</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="../../da/dcd/namespaceNetworkEthernet.html#adbe3a0a6b58142a5032384ac0008620baa84cc1de9dbe1e0810d1bd97e193691f">ETYPE_ARP</a> = 0x0806,</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="../../da/dcd/namespaceNetworkEthernet.html#adbe3a0a6b58142a5032384ac0008620bad19a2308c4f282f116738ec62340af45">ETYPE_RARP</a> = 0x8035,</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="../../da/dcd/namespaceNetworkEthernet.html#adbe3a0a6b58142a5032384ac0008620bacd0a68fee4ec0e6a2160daa9ddc5b510">ETYPE_IPV6</a> = 0x86DD</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    };</div>
+<p class="definition">Definition at line <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html#l00238">238</a> of file <a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <a class="code" href="../../da/dcd/namespaceNetworkEthernet.html#a0d9fe4b9c76bccc0ced7ea04986eb5e1aa4e5fa96e7f83864c45999fce5fe9ae4">TYPE_IPV4</a> = 0x0800,</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="code" href="../../da/dcd/namespaceNetworkEthernet.html#a0d9fe4b9c76bccc0ced7ea04986eb5e1a03964e7babcc73c78c612efc99607f87">TYPE_ARP</a> = 0x0806,</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <a class="code" href="../../da/dcd/namespaceNetworkEthernet.html#a0d9fe4b9c76bccc0ced7ea04986eb5e1a9967afdc259da0a91d19ad6011971055">TYPE_RARP</a> = 0x8035,</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <a class="code" href="../../da/dcd/namespaceNetworkEthernet.html#a0d9fe4b9c76bccc0ced7ea04986eb5e1a887417948d2cc84ef991bf1f87ecb068">TYPE_IPV6</a> = 0x86DD</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    };</div>
 </div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a7883f42f69407a93a08ab45b6d41fe48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7883f42f69407a93a08ab45b6d41fe48">&#9670;&nbsp;</a></span>__attribute__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#d6/df6/structNetworkEthernet_1_1EthernetHeader">NetworkEthernet::EthernetHeader</a> NetworkEthernet::__attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(packed)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a1550d6ba61a77e0e50a6f7898fe55693"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1550d6ba61a77e0e50a6f7898fe55693">&#9670;&nbsp;</a></span>__attribute__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#d5/d7a/structNetworkEthernet_1_1EthernetPacket">NetworkEthernet::EthernetPacket</a> NetworkEthernet::__attribute__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afac491e4d9925cd33911fe66f7cc36c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afac491e4d9925cd33911fe66f7cc36c0">&#9670;&nbsp;</a></span>RegisteredEvents</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector&lt;<a class="el" href="../../da/dcd/namespaceNetworkEthernet.html#d3/dad/structNetworkEthernet_1_1EthernetEventHelperStruct">EthernetEventHelperStruct</a>&gt; NetworkEthernet::RegisteredEvents</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/d3b/Ethernet_8cpp_source.html#l00034">34</a> of file <a class="el" href="../../d9/d3b/Ethernet_8cpp_source.html">Ethernet.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d3b/Ethernet_8cpp_source.html#l00102">NetworkEthernet::EthernetEvents::EthernetEvents()</a>, <a class="el" href="../../d9/d3b/Ethernet_8cpp_source.html#l00036">NetworkEthernet::Ethernet::Receive()</a>, and <a class="el" href="../../d9/d3b/Ethernet_8cpp_source.html#l00108">NetworkEthernet::EthernetEvents::~EthernetEvents()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespaceNetworkEthernet_html_adbe3a0a6b58142a5032384ac0008620ba693123e814b6e36c7b0fe5d96409cc20"><div class="ttname"><a href="../../da/dcd/namespaceNetworkEthernet.html#adbe3a0a6b58142a5032384ac0008620ba693123e814b6e36c7b0fe5d96409cc20">NetworkEthernet::ETYPE_IPV4</a></div><div class="ttdeci">@ ETYPE_IPV4</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00105">NetworkController.hpp:105</a></div></div>
-<div class="ttc" id="anamespaceNetworkEthernet_html_adbe3a0a6b58142a5032384ac0008620bad19a2308c4f282f116738ec62340af45"><div class="ttname"><a href="../../da/dcd/namespaceNetworkEthernet.html#adbe3a0a6b58142a5032384ac0008620bad19a2308c4f282f116738ec62340af45">NetworkEthernet::ETYPE_RARP</a></div><div class="ttdeci">@ ETYPE_RARP</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00107">NetworkController.hpp:107</a></div></div>
-<div class="ttc" id="anamespaceNetworkEthernet_html_adbe3a0a6b58142a5032384ac0008620baa84cc1de9dbe1e0810d1bd97e193691f"><div class="ttname"><a href="../../da/dcd/namespaceNetworkEthernet.html#adbe3a0a6b58142a5032384ac0008620baa84cc1de9dbe1e0810d1bd97e193691f">NetworkEthernet::ETYPE_ARP</a></div><div class="ttdeci">@ ETYPE_ARP</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00106">NetworkController.hpp:106</a></div></div>
-<div class="ttc" id="anamespaceNetworkEthernet_html_adbe3a0a6b58142a5032384ac0008620bacd0a68fee4ec0e6a2160daa9ddc5b510"><div class="ttname"><a href="../../da/dcd/namespaceNetworkEthernet.html#adbe3a0a6b58142a5032384ac0008620bacd0a68fee4ec0e6a2160daa9ddc5b510">NetworkEthernet::ETYPE_IPV6</a></div><div class="ttdeci">@ ETYPE_IPV6</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00108">NetworkController.hpp:108</a></div></div>
+<div class="ttc" id="anamespaceNetworkEthernet_html_a0d9fe4b9c76bccc0ced7ea04986eb5e1aa4e5fa96e7f83864c45999fce5fe9ae4"><div class="ttname"><a href="../../da/dcd/namespaceNetworkEthernet.html#a0d9fe4b9c76bccc0ced7ea04986eb5e1aa4e5fa96e7f83864c45999fce5fe9ae4">NetworkEthernet::TYPE_IPV4</a></div><div class="ttdeci">@ TYPE_IPV4</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00240">NetworkController.hpp:240</a></div></div>
+<div class="ttc" id="anamespaceNetworkEthernet_html_a0d9fe4b9c76bccc0ced7ea04986eb5e1a9967afdc259da0a91d19ad6011971055"><div class="ttname"><a href="../../da/dcd/namespaceNetworkEthernet.html#a0d9fe4b9c76bccc0ced7ea04986eb5e1a9967afdc259da0a91d19ad6011971055">NetworkEthernet::TYPE_RARP</a></div><div class="ttdeci">@ TYPE_RARP</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00242">NetworkController.hpp:242</a></div></div>
+<div class="ttc" id="anamespaceNetworkEthernet_html_a0d9fe4b9c76bccc0ced7ea04986eb5e1a03964e7babcc73c78c612efc99607f87"><div class="ttname"><a href="../../da/dcd/namespaceNetworkEthernet.html#a0d9fe4b9c76bccc0ced7ea04986eb5e1a03964e7babcc73c78c612efc99607f87">NetworkEthernet::TYPE_ARP</a></div><div class="ttdeci">@ TYPE_ARP</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00241">NetworkController.hpp:241</a></div></div>
+<div class="ttc" id="anamespaceNetworkEthernet_html_a0d9fe4b9c76bccc0ced7ea04986eb5e1a887417948d2cc84ef991bf1f87ecb068"><div class="ttname"><a href="../../da/dcd/namespaceNetworkEthernet.html#a0d9fe4b9c76bccc0ced7ea04986eb5e1a887417948d2cc84ef991bf1f87ecb068">NetworkEthernet::TYPE_IPV6</a></div><div class="ttdeci">@ TYPE_IPV6</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de6/NetworkController_8hpp_source.html#l00243">NetworkController.hpp:243</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

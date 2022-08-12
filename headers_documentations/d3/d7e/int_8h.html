@@ -110,10 +110,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a4ee4551ab63edbfcc20602c9c287051e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a95e1d92b2619a326b2e86600f3d23100">EXTERNC</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7e/int_8h.html#a4ee4551ab63edbfcc20602c9c287051e">EndOfInterrupt</a> (int interrupt)</td></tr>
 <tr class="separator:a4ee4551ab63edbfcc20602c9c287051e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82ff29be9b9e427e81dac56660d946c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d7e/int_8h.html#a533db0d027aa02c25e2336a603941fab">InterruptVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7e/int_8h.html#a82ff29be9b9e427e81dac56660d946c8">RegisterInterrupt</a> (<a class="el" href="../../d3/d7e/int_8h.html#a46d9431511b0767b74e06ed231035fd4">INTERRUPT_HANDLER</a> Handler)</td></tr>
+<tr class="memdesc:a82ff29be9b9e427e81dac56660d946c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register interrupt to an interrupt handler.  <a href="../../d3/d7e/int_8h.html#a82ff29be9b9e427e81dac56660d946c8">More...</a><br /></td></tr>
 <tr class="separator:a82ff29be9b9e427e81dac56660d946c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6922babf1704eede0d03864a2322bb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7e/int_8h.html#ac6922babf1704eede0d03864a2322bb8">CRegisterInterrupt</a> (<a class="el" href="../../d3/d7e/int_8h.html#a46d9431511b0767b74e06ed231035fd4">INTERRUPT_HANDLER</a> Handler, <a class="el" href="../../d3/d7e/int_8h.html#a533db0d027aa02c25e2336a603941fab">InterruptVector</a> <a class="el" href="../../d6/da1/classVector.html">Vector</a>, <a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> Override)</td></tr>
+<tr class="memdesc:ac6922babf1704eede0d03864a2322bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register interrupt to an interrupt handler.  <a href="../../d3/d7e/int_8h.html#ac6922babf1704eede0d03864a2322bb8">More...</a><br /></td></tr>
 <tr class="separator:ac6922babf1704eede0d03864a2322bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67cf9ad996acf355aa2fd0f2d4dc6007"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7e/int_8h.html#a67cf9ad996acf355aa2fd0f2d4dc6007">UnregisterInterrupt</a> (<a class="el" href="../../d3/d7e/int_8h.html#a533db0d027aa02c25e2336a603941fab">InterruptVector</a> vector)</td></tr>
+<tr class="memdesc:a67cf9ad996acf355aa2fd0f2d4dc6007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregister interrupt from an interrupt handler.  <a href="../../d3/d7e/int_8h.html#a67cf9ad996acf355aa2fd0f2d4dc6007">More...</a><br /></td></tr>
 <tr class="separator:a67cf9ad996acf355aa2fd0f2d4dc6007"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -182,6 +185,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Register interrupt to an interrupt handler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Handler</td><td>Handler </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d6/da1/classVector.html">Vector</a></td><td><a class="el" href="../../d6/da1/classVector.html">Vector</a> to register </td></tr>
+    <tr><td class="paramname">Override</td><td>Override if already registered (Some interrupts are unable to be registered even if this is set to true) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise </dd></dl>
+
 </div>
 </div>
 <a id="a4ee4551ab63edbfcc20602c9c287051e"></a>
@@ -218,6 +232,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Register interrupt to an interrupt handler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Handler</td><td>Handler </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Interrupt vector </dd></dl>
+
 </div>
 </div>
 <a id="a67cf9ad996acf355aa2fd0f2d4dc6007"></a>
@@ -235,6 +258,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Unregister interrupt from an interrupt handler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="../../d6/da1/classVector.html">Vector</a></td><td><a class="el" href="../../d6/da1/classVector.html">Vector</a> to unregister </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise </dd></dl>
 
 </div>
 </div>

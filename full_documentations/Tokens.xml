@@ -4930,36 +4930,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>IDTInterruptHandler</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>da/d11/IDT_8c.html</Path>
-    <Anchor>a29297117a3a4ac8340abb5bd6d5605d8</Anchor>
-    <DeclaredIn>IDT.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>register_interrupt_handler</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>da/d11/IDT_8c.html</Path>
-    <Anchor>a69d8f1fbf39714db28369bd410410867</Anchor>
-    <DeclaredIn>IDT.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>unregister_interrupt_handler</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>da/d11/IDT_8c.html</Path>
-    <Anchor>a83135d314c4063e187c7d42b7847dc2d</Anchor>
-    <DeclaredIn>IDT.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>set_idt_entry</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -5310,16 +5280,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>interrupt_handlers</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>da/d11/IDT_8c.html</Path>
-    <Anchor>a71fc4f440b7ae2c9a301ad72ab18fa5f</Anchor>
-    <DeclaredIn>IDT.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>idt_entries</Name>
       <APILanguage>c</APILanguage>
       <Type>data</Type>
@@ -5356,26 +5316,6 @@
     </TokenIdentifier>
     <Path>d4/d35/idt_8h.html</Path>
     <Anchor>aacc8cf78461c5f81928c6b5eb6d772b1</Anchor>
-    <DeclaredIn>idt.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>register_interrupt_handler</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>d4/d35/idt_8h.html</Path>
-    <Anchor>a9f51f96c8f91b3599e4a10f1a459f2fa</Anchor>
-    <DeclaredIn>idt.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>unregister_interrupt_handler</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>d4/d35/idt_8h.html</Path>
-    <Anchor>addba35d8d6f5dad0e9ea77f86ba0053b</Anchor>
     <DeclaredIn>idt.h</DeclaredIn>
   </Token>
   <Token>
@@ -18075,6 +18015,7 @@
     </TokenIdentifier>
     <Path>d3/d7e/int_8h.html</Path>
     <Anchor>a82ff29be9b9e427e81dac56660d946c8</Anchor>
+    <Abstract>Register interrupt to an interrupt handler.</Abstract>
     <DeclaredIn>int.h</DeclaredIn>
   </Token>
   <Token>
@@ -18085,6 +18026,7 @@
     </TokenIdentifier>
     <Path>d3/d7e/int_8h.html</Path>
     <Anchor>ac6922babf1704eede0d03864a2322bb8</Anchor>
+    <Abstract>Register interrupt to an interrupt handler.</Abstract>
     <DeclaredIn>int.h</DeclaredIn>
   </Token>
   <Token>
@@ -18095,6 +18037,7 @@
     </TokenIdentifier>
     <Path>d3/d7e/int_8h.html</Path>
     <Anchor>a67cf9ad996acf355aa2fd0f2d4dc6007</Anchor>
+    <Abstract>Unregister interrupt from an interrupt handler.</Abstract>
     <DeclaredIn>int.h</DeclaredIn>
   </Token>
   <Token>
@@ -20334,6 +20277,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>do_network_test</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d2/ddc/test_8h.html</Path>
+    <Anchor>a243275cbd117e1a526223ed36099e291</Anchor>
+    <DeclaredIn>test.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>asm</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -20825,12 +20778,43 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>MainInterruptHandler</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d6/dae/Interrputs_8cpp.html</Path>
+    <Anchor>ab9085a927b0918940d4dd026d9920ac4</Anchor>
+    <DeclaredIn>Interrputs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MainRegisterInterrupt</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d6/dae/Interrputs_8cpp.html</Path>
+    <Anchor>ab11054ffabdd5332702c57d96af54bf3</Anchor>
+    <DeclaredIn>Interrputs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MainUnregisterInterrupt</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d6/dae/Interrputs_8cpp.html</Path>
+    <Anchor>a6e368482c15517c98a125f45675c8352</Anchor>
+    <DeclaredIn>Interrputs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>RegisterInterrupt</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d6/dae/Interrputs_8cpp.html</Path>
     <Anchor>a82ff29be9b9e427e81dac56660d946c8</Anchor>
+    <Abstract>Register interrupt to an interrupt handler.</Abstract>
     <DeclaredIn>Interrputs.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -20851,6 +20835,7 @@
     </TokenIdentifier>
     <Path>d6/dae/Interrputs_8cpp.html</Path>
     <Anchor>ac6922babf1704eede0d03864a2322bb8</Anchor>
+    <Abstract>Register interrupt to an interrupt handler.</Abstract>
     <DeclaredIn>Interrputs.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -20861,6 +20846,27 @@
     </TokenIdentifier>
     <Path>d6/dae/Interrputs_8cpp.html</Path>
     <Anchor>a00dd9145583ea43efa36a9c2f96402d1</Anchor>
+    <Abstract>Unregister interrupt from an interrupt handler.</Abstract>
+    <DeclaredIn>Interrputs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MainRegisteredInterrupts</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d6/dae/Interrputs_8cpp.html</Path>
+    <Anchor>a0dbf03fbeffa720005fbb478ac99d81a</Anchor>
+    <DeclaredIn>Interrputs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MainDriverRegisteredInterrupts</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d6/dae/Interrputs_8cpp.html</Path>
+    <Anchor>adcd428b1f29d78431a70aed888cf7a26</Anchor>
     <DeclaredIn>Interrputs.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -26989,23 +26995,35 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ManageDA</Name>
+      <Name>InvalidMAC</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
+      <Type>data</Type>
       <Scope>NetworkARP</Scope>
     </TokenIdentifier>
     <Path>d2/df9/namespaceNetworkARP.html</Path>
-    <Anchor>a346d8ecaa7beeb22c6584080a7dcaff9</Anchor>
+    <Anchor>a5aca9e566091f1cf920995cf612e328d</Anchor>
     <DeclaredIn>AddressResolutionProtocol.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>DiscoveredAddresses</Name>
-      <APILanguage>c</APILanguage>
+      <Name>InvalidIP</Name>
+      <APILanguage>cpp</APILanguage>
       <Type>data</Type>
+      <Scope>NetworkARP</Scope>
     </TokenIdentifier>
-    <Path>d3/d3b/AddressResolutionProtocol_8cpp.html</Path>
-    <Anchor>aec880ec5c00bc28e6355c81ad5697f6c</Anchor>
+    <Path>d2/df9/namespaceNetworkARP.html</Path>
+    <Anchor>af7bad1a5f789936decb5663017e2bfbe</Anchor>
+    <DeclaredIn>AddressResolutionProtocol.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>InvalidRet</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkARP</Scope>
+    </TokenIdentifier>
+    <Path>d2/df9/namespaceNetworkARP.html</Path>
+    <Anchor>adc52637e86e4e5625907cfeb20a3c62b</Anchor>
     <DeclaredIn>AddressResolutionProtocol.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -27013,41 +27031,33 @@
       <Name>__attribute__</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>NetworkARP</Scope>
+      <Scope>NetworkEthernet</Scope>
     </TokenIdentifier>
-    <Path>d2/df9/namespaceNetworkARP.html</Path>
-    <Anchor>a5350876db1b3a5becc7738ba74cb4e46</Anchor>
-    <DeclaredIn>AddressResolutionProtocol.cpp</DeclaredIn>
+    <Path>da/dcd/namespaceNetworkEthernet.html</Path>
+    <Anchor>a1550d6ba61a77e0e50a6f7898fe55693</Anchor>
+    <DeclaredIn>Ethernet.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>TRANSACTION_IDENTIFIER</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
+      <Name>RegisteredEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkEthernet</Scope>
     </TokenIdentifier>
-    <Path>d8/d38/DynamicHostConfigurationProtocol_8cpp.html</Path>
-    <Anchor>ad586bbfedc3c7dbb4d22ae249e1694f3</Anchor>
-    <DeclaredIn>DynamicHostConfigurationProtocol.cpp</DeclaredIn>
+    <Path>da/dcd/namespaceNetworkEthernet.html</Path>
+    <Anchor>afac491e4d9925cd33911fe66f7cc36c0</Anchor>
+    <DeclaredIn>Ethernet.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>InterruptHandler</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
+      <Name>RegisteredEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkIPv4</Scope>
     </TokenIdentifier>
-    <Path>d8/d3a/NetworkController_8cpp.html</Path>
-    <Anchor>a12fbeee87a2d0edb1f88f221d80f563f</Anchor>
-    <DeclaredIn>NetworkController.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TraceCards</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>d8/d3a/NetworkController_8cpp.html</Path>
-    <Anchor>aa405c0d98a4c8b61923a863875884462</Anchor>
-    <DeclaredIn>NetworkController.cpp</DeclaredIn>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>a98464b51d0dfd7dee08eb92f31680e8c</Anchor>
+    <DeclaredIn>InternetProtocol.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -27057,16 +27067,6 @@
     </TokenIdentifier>
     <Path>d8/d3a/NetworkController_8cpp.html</Path>
     <Anchor>a2d4bde208a6e8b2b23da3fda2a2d6984</Anchor>
-    <DeclaredIn>NetworkController.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>rtl8139</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d8/d3a/NetworkController_8cpp.html</Path>
-    <Anchor>a0d4d3aa8734b49ce79495b235d2a06ba</Anchor>
     <DeclaredIn>NetworkController.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -27081,12 +27081,12 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>rtl8169</Name>
+      <Name>rtl8139</Name>
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
     <Path>d8/d3a/NetworkController_8cpp.html</Path>
-    <Anchor>af4df04aa8c7e8c5f1b5cb964196de638</Anchor>
+    <Anchor>a0d4d3aa8734b49ce79495b235d2a06ba</Anchor>
     <DeclaredIn>NetworkController.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -27101,12 +27101,12 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>e1000</Name>
+      <Name>rtl8169</Name>
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
     <Path>d8/d3a/NetworkController_8cpp.html</Path>
-    <Anchor>a675246d564ac8d209d54b404a7d2f534</Anchor>
+    <Anchor>af4df04aa8c7e8c5f1b5cb964196de638</Anchor>
     <DeclaredIn>NetworkController.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -27121,13 +27121,84 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>DEBUG_NETWORK</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
+      <Name>e1000</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
     </TokenIdentifier>
-    <Path>dc/de6/NetworkController_8hpp.html</Path>
-    <Anchor>afe0d2f9515b8f26104e5784ffa7c3e09</Anchor>
-    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+    <Path>d8/d3a/NetworkController_8cpp.html</Path>
+    <Anchor>a675246d564ac8d209d54b404a7d2f534</Anchor>
+    <DeclaredIn>NetworkController.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>i8254xCount</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d8/d3a/NetworkController_8cpp.html</Path>
+    <Anchor>a1a79804fc06ae2941f44e9fa0883795d</Anchor>
+    <DeclaredIn>NetworkController.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>i8254x</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d8/d3a/NetworkController_8cpp.html</Path>
+    <Anchor>a2f267ee21a27be69ac40ecf182a37e1e</Anchor>
+    <DeclaredIn>NetworkController.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>pcnetCount</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d8/d3a/NetworkController_8cpp.html</Path>
+    <Anchor>a709fbd5950a27c73bca75b2c2914ebc4</Anchor>
+    <DeclaredIn>NetworkController.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>pcnet</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d8/d3a/NetworkController_8cpp.html</Path>
+    <Anchor>a08adccdedbf82b2b4551ce05868930ed</Anchor>
+    <DeclaredIn>NetworkController.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>virtioCount</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d8/d3a/NetworkController_8cpp.html</Path>
+    <Anchor>a2679f80139f349ea07375cd3485985c9</Anchor>
+    <DeclaredIn>NetworkController.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>virtio</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d8/d3a/NetworkController_8cpp.html</Path>
+    <Anchor>ac6a06a7958e5e564802e4d75f5056995</Anchor>
+    <DeclaredIn>NetworkController.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RegisteredEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkInterfaceManager</Scope>
+    </TokenIdentifier>
+    <Path>d9/d4c/namespaceNetworkInterfaceManager.html</Path>
+    <Anchor>a65e8e89d5e1616d3a4f0742979d0a379</Anchor>
+    <DeclaredIn>NetworkController.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -27141,32 +27212,651 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>CompareIP</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
+      <Name>b4</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
     </TokenIdentifier>
     <Path>dc/de6/NetworkController_8hpp.html</Path>
-    <Anchor>a42794af3a607e0a9b415b6ee550b31e9</Anchor>
+    <Anchor>a16c33c4cb331d0de82f7033252f6801c</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>CompareMAC</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
+      <Name>b8</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
     </TokenIdentifier>
     <Path>dc/de6/NetworkController_8hpp.html</Path>
-    <Anchor>ac96f1dccdad0c637c3f801f1fcd65dc2</Anchor>
+    <Anchor>a94eac8d9cd20ccc4c673e8f907253679</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ValidMAC</Name>
+      <Name>b16</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a88da023a73ece4eb02fd14231ba1718b</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>b32</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>ae6339ff3644650c6bb6416c9afd8bf5d</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>b48</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a9e129c4f168e2503e45cf0ab2fb1994d</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>b64</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>aa40826e19ab43b143542d0a80a175bad</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MAX_INTERFACES</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a10bf2917a6a4297e21e03f60c487f591</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_TRANSACTION_ID</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a74bf772424eaf4b1d5711735476b3ac6</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>uint48_t</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a25baf26b50bc73c25d21005f30ca33b6</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DbgNetwork</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>dc/de6/NetworkController_8hpp.html</Path>
-    <Anchor>a231064dc1d9d152943735fe878ea97e6</Anchor>
+    <Anchor>ad84880b6b8e83379a51553bc8e87b10a</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DbgDumpData</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a67d478073e5dd1f8a50f4d9d3baa3fed</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CalculateChecksum</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a54c7f9f9b3861633850f0103bd3dee18</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>NetworkEthernet</Scope>
+    </TokenIdentifier>
+    <Path>da/dcd/namespaceNetworkEthernet.html</Path>
+    <Anchor>a7883f42f69407a93a08ab45b6d41fe48</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>NetworkARP</Scope>
+    </TokenIdentifier>
+    <Path>d2/df9/namespaceNetworkARP.html</Path>
+    <Anchor>ab6186215ca5c5c07ae454a12ddb40035</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>NetworkUDP</Scope>
+    </TokenIdentifier>
+    <Path>dd/df9/namespaceNetworkUDP.html</Path>
+    <Anchor>a63a3ad1806ce630c1256b03c116feddc</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a88ef0840b63b5bec100f159b04ca78ef</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>NetworkNTP</Scope>
+    </TokenIdentifier>
+    <Path>db/dfe/namespaceNetworkNTP.html</Path>
+    <Anchor>a02d39716b9a572c2c393ab9e5e85e22d</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DestinationMAC</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>ad96a2a51f26180cea1857368a8982611</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SourceMAC</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>aa547b52641e54f3f9ce116d837a63ec7</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Type</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a8e28e365723338285d89f0bb12bb0056</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HardwareType</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>acae22a9de35df9143185627b7a01d75a</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ProtocolType</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a3b6c6dfedf1a11e58416ba8b9ff9d682</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HardwareSize</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a4f92a1ad75e05f1cf3601b9a38429a31</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ProtocolSize</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a5591f79ec1a19dd8b6cb096ec27c24c4</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Operation</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>aeada6b6345b80cdc054856e28008b0fd</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SenderMAC</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>ae835300f8613f954c38a0ee466643f21</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SenderIP</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>aaffd8b88587690b0fa0086290258ee57</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TargetMAC</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a353fb8b84bee92d6e2c27bc4e1ce16ec</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TargetIP</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>ab6c5f3c8d0977b15ad7c2e729c3caee9</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkARP</Scope>
+    </TokenIdentifier>
+    <Path>d2/df9/namespaceNetworkARP.html</Path>
+    <Anchor>a37c42968503419cfbf3214eb33899fe6</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SourcePort</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a9d013d7a4b9e3c7c0d8cb9e205fbacab</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DestinationPort</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a655a1e987f68d13cf8fd5a9fb89dc58a</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Length</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a930e5a4d8414c0427fe5c636062579db</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Checksum</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a11d6a6e48d9a69e351aa56868c16b5b1</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkUDP</Scope>
+    </TokenIdentifier>
+    <Path>dd/df9/namespaceNetworkUDP.html</Path>
+    <Anchor>aa366b5ceec544b6efbd635098f223459</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Opcode</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>aae73b2e7584b87acb54fd7cb3d0253e7</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HardwareAddressLength</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>ac0e3164055cd64a65ab82d3e1ff2b900</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Hops</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a8e49d4265b723fb9064f92c44fb5caea</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TransactionID</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a0fdeb3da967c72b3710ed37c9f9aa003</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Seconds</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>af94b72f77e19f3b2fa844f72ffce9a88</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Flags</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>af2800c799892d286bd4a937d93fff2d2</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ClientIP</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>afff0382ddcdac15eb436f33f1e0bd69e</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>YourIP</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a5294934fce43b7e38b88cbbb467e9f1d</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ServerIP</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>ae29596569c257076542bf119a131d8ba</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GatewayIP</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>adfcdb0a13270490eb4d76f6f1b91f237</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ClientHardwareAddress</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>aedb5fd151bb9fd15c00cadf7d25ab17d</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ServerHostName</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a6a16463e3dd4c91c6e6275a808e28168</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>BootFileName</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>ae497b5ad52dc5087e6a0d3a46691df5e</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Options</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>ad4312c35a515bf5e611d48f2311c7983</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a31fd9a65f2f32ea30859692dcacfaa20</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LIv</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>aebdb1ebdb976e2974d827615c9035568</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>VN</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>adeab350e24a01a6d9577ee68b6911df9</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Mode</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>ad11c3137711cc547aa65686fa2c98fc9</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Stratum</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>aa7e12c9b138d3db2364da9042d616bc8</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Poll</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a91f3575e3459fb73cd335891024ce2fc</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Precision</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>ae5e4f29c5061cfd6dc147461ae541ef8</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RootDelay</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a3e6ca1738451fa4f7e977c4a85de2bce</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RootDispersion</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>ae5106dec9d0b71e8054c732b0af32d49</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReferenceID</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a775666f030f6f83a1159563dfe8c5967</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReferenceTimestamp</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a9a6f64ec0b1684c74a88c12a6ae3a6db</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OriginateTimestamp</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>ad928c383b8b24d73125ecc2ec8629540</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReceiveTimestamp</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>af6c4cb564cbdce13ad3c4bb432e708e1</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TransmitTimestamp</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/de6/NetworkController_8hpp.html</Path>
+    <Anchor>a088b4e0cce4e3cf1ccbe36a513a2c598</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkNTP</Scope>
+    </TokenIdentifier>
+    <Path>db/dfe/namespaceNetworkNTP.html</Path>
+    <Anchor>aa3b3aa8058891fb07907c3e1ab882ee6</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -27181,43 +27871,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>CompareIPv4</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
+      <Name>ReadTime</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>NetworkNTP</Scope>
     </TokenIdentifier>
-    <Path>dc/de6/NetworkController_8hpp.html</Path>
-    <Anchor>a9d6da551632f30b9fc5b6904a7cf51a1a61f6eb6619f946066a077f723454effb</Anchor>
-    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+    <Path>db/dfe/namespaceNetworkNTP.html</Path>
+    <Anchor>a7c5f6ceec6f74aa9f676971d3a2496d3</Anchor>
+    <DeclaredIn>NetworkTimeProtocol.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>CompareIPv6</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
+      <Name>RegisteredEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkUDP</Scope>
     </TokenIdentifier>
-    <Path>dc/de6/NetworkController_8hpp.html</Path>
-    <Anchor>a9d6da551632f30b9fc5b6904a7cf51a1ad8c87188c6666b7058d46c6df1894757</Anchor>
-    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+    <Path>dd/df9/namespaceNetworkUDP.html</Path>
+    <Anchor>a2e3e344f40a31d355b9f12617aaf9ea3</Anchor>
+    <DeclaredIn>UserDatagramProtocol.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>REQUEST</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
+      <Name>UsuablePort</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkUDP</Scope>
     </TokenIdentifier>
-    <Path>dc/de6/NetworkController_8hpp.html</Path>
-    <Anchor>ab1b009d1c18214fd7d4703eadba9c1e3abaf6b8e08edf0e9d2eb38551fed1fb39</Anchor>
-    <DeclaredIn>NetworkController.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>REPLY</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>dc/de6/NetworkController_8hpp.html</Path>
-    <Anchor>ab1b009d1c18214fd7d4703eadba9c1e3a6bd05ac0fc10609a9dae953dc42a7a76</Anchor>
-    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+    <Path>dd/df9/namespaceNetworkUDP.html</Path>
+    <Anchor>abfc36c61e12f2be40d818d2b29837bb7</Anchor>
+    <DeclaredIn>UserDatagramProtocol.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -31960,6 +32643,16 @@
     </TokenIdentifier>
     <Path>df/dac/test_8cpp.html</Path>
     <Anchor>a15ea75fde99a6cfbb92ed11a60180be0</Anchor>
+    <DeclaredIn>test.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>do_network_test</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>df/dac/test_8cpp.html</Path>
+    <Anchor>a243275cbd117e1a526223ed36099e291</Anchor>
     <DeclaredIn>test.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -37836,6 +38529,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>DumpData</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d2/dbb/dumper_8cpp.html</Path>
+    <Anchor>a0fc66b31c24d157f0d3f5cc901f9d8cd</Anchor>
+    <DeclaredIn>dumper.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DumperPrint</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d5/dd9/dumper_8hpp.html</Path>
+    <Anchor>a97eaecd6fc4b6789035f222c48b5eea3</Anchor>
+    <DeclaredIn>dumper.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DumpData</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d5/dd9/dumper_8hpp.html</Path>
+    <Anchor>a0fc66b31c24d157f0d3f5cc901f9d8cd</Anchor>
+    <DeclaredIn>dumper.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>usr</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -40614,6 +41337,92 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>InternetProtocol4</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>InternetProtocol4</Scope>
+    </TokenIdentifier>
+    <Path>d0/d1e/structInternetProtocol4.html</Path>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator==</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>InternetProtocol4</Scope>
+    </TokenIdentifier>
+    <Path>d0/d1e/structInternetProtocol4.html</Path>
+    <Anchor>a1c23d3168b67ae4585caf42642a51027</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator==</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>InternetProtocol4</Scope>
+    </TokenIdentifier>
+    <Path>d0/d1e/structInternetProtocol4.html</Path>
+    <Anchor>ad44b796a6f10c19d604b3bf039092f06</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator!=</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>InternetProtocol4</Scope>
+    </TokenIdentifier>
+    <Path>d0/d1e/structInternetProtocol4.html</Path>
+    <Anchor>a7b3af8599540627c631277582099c980</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator!=</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>InternetProtocol4</Scope>
+    </TokenIdentifier>
+    <Path>d0/d1e/structInternetProtocol4.html</Path>
+    <Anchor>a8fb3c907685c6aa2099faaf9ce44c578</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ToHex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>InternetProtocol4</Scope>
+    </TokenIdentifier>
+    <Path>d0/d1e/structInternetProtocol4.html</Path>
+    <Anchor>aab16df2c824e3eaedfc7046b7d5eb504</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FromHex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>InternetProtocol4</Scope>
+    </TokenIdentifier>
+    <Path>d0/d1e/structInternetProtocol4.html</Path>
+    <Anchor>aa305cd513b07118da8e8f6db137e981a</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Address</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>InternetProtocol4</Scope>
+    </TokenIdentifier>
+    <Path>d0/d1e/structInternetProtocol4.html</Path>
+    <Anchor>af89bbda61dd44b6e32612c062242137e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>limine_5_level_paging_request</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -42142,6 +42951,103 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>MediaAccessControl</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>MediaAccessControl</Scope>
+    </TokenIdentifier>
+    <Path>d0/d48/structMediaAccessControl.html</Path>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator==</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>MediaAccessControl</Scope>
+    </TokenIdentifier>
+    <Path>d0/d48/structMediaAccessControl.html</Path>
+    <Anchor>a8fd305cec2bd78011639d2e48b71787e</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator==</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>MediaAccessControl</Scope>
+    </TokenIdentifier>
+    <Path>d0/d48/structMediaAccessControl.html</Path>
+    <Anchor>afadcd2e3319a21561187a9902fa0e0e6</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator!=</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>MediaAccessControl</Scope>
+    </TokenIdentifier>
+    <Path>d0/d48/structMediaAccessControl.html</Path>
+    <Anchor>a12cfcd8ef59f9283d0a6c00451e3c581</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator!=</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>MediaAccessControl</Scope>
+    </TokenIdentifier>
+    <Path>d0/d48/structMediaAccessControl.html</Path>
+    <Anchor>af2df1406c4a29b2b296d0edf2c4c280b</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ToHex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>MediaAccessControl</Scope>
+    </TokenIdentifier>
+    <Path>d0/d48/structMediaAccessControl.html</Path>
+    <Anchor>a4cf9ccbbbf72aea411f50447928ec943</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FromHex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>MediaAccessControl</Scope>
+    </TokenIdentifier>
+    <Path>d0/d48/structMediaAccessControl.html</Path>
+    <Anchor>ad70b73a11984dfd6dc2210b2c9466a3b</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Valid</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>MediaAccessControl</Scope>
+    </TokenIdentifier>
+    <Path>d0/d48/structMediaAccessControl.html</Path>
+    <Anchor>ad2f33be9751c82d3caa569e1feb285cc</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Address</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>MediaAccessControl</Scope>
+    </TokenIdentifier>
+    <Path>d0/d48/structMediaAccessControl.html</Path>
+    <Anchor>ab42932aa5b4587de763b9bd88429752f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>output_gadget_t</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -43104,6 +44010,284 @@
     <Path>d6/d7c/namespaceAHCI.html</Path>
     <Anchor>addf2c0f3f452c9bc7e7f175f0c5d33be</Anchor>
     <DeclaredIn>ahci.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>AMDPCNET</Name>
+      <APILanguage>c</APILanguage>
+      <Type>ns</Type>
+      <Scope>AMDPCNET</Scope>
+    </TokenIdentifier>
+    <Path>d1/dbb/namespaceAMDPCNET.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>AMDPCNET::NetworkInterfaceController</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <DeclaredIn>AMDPCNET.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetMAC</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a0302a562c3a7825eaa67803f2c1b2f70</Anchor>
+    <DeclaredIn>AMDPCNET.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetIP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a5ae23d2b9c15174247da35493cd6d616</Anchor>
+    <DeclaredIn>AMDPCNET.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetIP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a02ac41ff3be06c6f8132a25dd933806f</Anchor>
+    <DeclaredIn>AMDPCNET.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NetworkInterfaceController</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>afe7e430cf49b4e2beee4a072f406a775</Anchor>
+    <DeclaredIn>AMDPCNET.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~NetworkInterfaceController</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>ad97ccb2ce3efae5f3f2301f2ceb4a219</Anchor>
+    <DeclaredIn>AMDPCNET.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Send</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>aeeee98532cfddd401c76abddcc80e988</Anchor>
+    <DeclaredIn>AMDPCNET.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Receive</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a711a24f323c21b7d89982d3d82cbddef</Anchor>
+    <DeclaredIn>AMDPCNET.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HandleInterrupt</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a5a38c4e6fe439f30f869032e1c470c60</Anchor>
+    <DeclaredIn>AMDPCNET.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Send</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>a122d4f0a9ea4465637f998106c30e57c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>WriteRAP32</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a501cbad5e2c17c599c66a5c9a383fa36</Anchor>
+    <DeclaredIn>AMDPCNET.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>WriteRAP16</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>aec99b65213b2d5c3efb7c5bcfff73e3b</Anchor>
+    <DeclaredIn>AMDPCNET.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadCSR32</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a3ea9a0802c3d51416667a1ed63693d05</Anchor>
+    <DeclaredIn>AMDPCNET.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadCSR16</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>ad6865afa369975804cf074c66c8aa925</Anchor>
+    <DeclaredIn>AMDPCNET.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>WriteCSR32</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a92f6e039ae20c7b6b40fd6a0254026df</Anchor>
+    <DeclaredIn>AMDPCNET.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>WriteCSR16</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a27fd8ef0a21e4958863f430bdbea169c</Anchor>
+    <DeclaredIn>AMDPCNET.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RXBuffer</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>aea99da3b07b673047eb1d1e6777d417f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TXCurrent</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a93419130196729df66918e16328dc51c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a3eb4e6b38b7eb59fb9a55448e8e37ed5</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CurrentPacket</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a893e4f2eed9647cbc608e4c224b9fc01</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>BAR</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>AMDPCNET::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>de/d64/classAMDPCNET_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a070399ca265c67045563593c9329683e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Name</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>abfe5ae07db1ab19aa0d0fe4c3f5f4b92</Anchor>
+    <Abstract>Device interface name.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ID</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>ab32286e557e6b9b9792d2e885041dea0</Anchor>
+    <Abstract>Device interface index.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MAC</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>a394d72e662bbdb8d6597c7212db562ea</Anchor>
+    <Abstract>Device interface MAC address (Big-endian)</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>a73b666a1e3867962dcd12e690ce92c4e</Anchor>
+    <Abstract>Device interface IP address (Big-endian)</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -44497,6 +45681,15 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>DriverInterrupts</Name>
+      <APILanguage>c</APILanguage>
+      <Type>ns</Type>
+      <Scope>DriverInterrupts</Scope>
+    </TokenIdentifier>
+    <Path>d0/d35/namespaceDriverInterrupts.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>E1000</Name>
       <APILanguage>c</APILanguage>
       <Type>ns</Type>
@@ -44533,7 +45726,7 @@
       <Scope>E1000::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>da/d6e/classE1000_1_1NetworkInterfaceController.html</Path>
-    <Anchor>a1e09ab30f4560823c47760e81de07009</Anchor>
+    <Anchor>afdca8789e45a8a9a54d41f59f7e0b740</Anchor>
     <DeclaredIn>E1000.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -44544,7 +45737,7 @@
       <Scope>E1000::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>da/d6e/classE1000_1_1NetworkInterfaceController.html</Path>
-    <Anchor>aa7d5c3df9bfcc266f5cd3a13db18a20f</Anchor>
+    <Anchor>a0a32dab84a693e3dec646cac8a082315</Anchor>
     <DeclaredIn>E1000.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -44555,7 +45748,7 @@
       <Scope>E1000::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>da/d6e/classE1000_1_1NetworkInterfaceController.html</Path>
-    <Anchor>ad40a69260032cd36219ccb767cd89c5d</Anchor>
+    <Anchor>ace5490713698011b737dbb4c3ab5ac93</Anchor>
     <DeclaredIn>E1000.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -44604,25 +45797,14 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>E1000InterruptHandler</Name>
+      <Name>HandleInterrupt</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>E1000::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>da/d6e/classE1000_1_1NetworkInterfaceController.html</Path>
-    <Anchor>adbd1696b6a592679059ad27683ac1931</Anchor>
+    <Anchor>a78c4de4c71d903fd2d30f77b39a2ad1e</Anchor>
     <DeclaredIn>E1000.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>Receive</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
-    </TokenIdentifier>
-    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
-    <Anchor>a9a316192b9069757e57b4f171eb9f93a</Anchor>
-    <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -44648,24 +45830,24 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>writeCommand</Name>
+      <Name>OutCMD</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>E1000::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>da/d6e/classE1000_1_1NetworkInterfaceController.html</Path>
-    <Anchor>abbda85d1e1f2ad8ad92411038367f189</Anchor>
+    <Anchor>a952536e78d2c7513eb02e7c467000c7f</Anchor>
     <DeclaredIn>E1000.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>readCommand</Name>
+      <Name>InCMD</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>E1000::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>da/d6e/classE1000_1_1NetworkInterfaceController.html</Path>
-    <Anchor>aeb1961fdd59553cb3ca74330fd990e59</Anchor>
+    <Anchor>ae8df68c055a72d7ac95a851a85b6bd86</Anchor>
     <DeclaredIn>E1000.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -44698,7 +45880,7 @@
       <Scope>E1000::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>da/d6e/classE1000_1_1NetworkInterfaceController.html</Path>
-    <Anchor>a6f9452f826807175a9c0bdee6ffa1f8e</Anchor>
+    <Anchor>a22c807e1d564127c55d24ee0a245cf5e</Anchor>
     <DeclaredIn>E1000.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -44741,7 +45923,7 @@
       <Scope>E1000::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>da/d6e/classE1000_1_1NetworkInterfaceController.html</Path>
-    <Anchor>a969fcaf39d10d28fe59a01c8ba270fe0</Anchor>
+    <Anchor>a490a6a16e42e2d9dfcc210a297ef55c0</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -44832,6 +46014,7 @@
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
     <Anchor>abfe5ae07db1ab19aa0d0fe4c3f5f4b92</Anchor>
+    <Abstract>Device interface name.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -44842,6 +46025,7 @@
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
     <Anchor>ab32286e557e6b9b9792d2e885041dea0</Anchor>
+    <Abstract>Device interface index.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -44852,6 +46036,7 @@
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
     <Anchor>a394d72e662bbdb8d6597c7212db562ea</Anchor>
+    <Abstract>Device interface MAC address (Big-endian)</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -44861,7 +46046,8 @@
       <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
-    <Anchor>a1e4b0d377734f0e2773260c0ecaf9aae</Anchor>
+    <Anchor>a73b666a1e3867962dcd12e690ce92c4e</Anchor>
+    <Abstract>Device interface IP address (Big-endian)</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -47872,6 +49058,188 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>Intel8254x</Name>
+      <APILanguage>c</APILanguage>
+      <Type>ns</Type>
+      <Scope>Intel8254x</Scope>
+    </TokenIdentifier>
+    <Path>d2/db9/namespaceIntel8254x.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Intel8254x::NetworkInterfaceController</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>Intel8254x::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>dc/d14/classIntel8254x_1_1NetworkInterfaceController.html</Path>
+    <DeclaredIn>Intel8254x.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetMAC</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Intel8254x::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>dc/d14/classIntel8254x_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a961a11a90f141e707ec8e3ff4bf04065</Anchor>
+    <DeclaredIn>Intel8254x.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetIP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Intel8254x::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>dc/d14/classIntel8254x_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a434fab85baa104b509bced761adc55f2</Anchor>
+    <DeclaredIn>Intel8254x.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetIP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Intel8254x::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>dc/d14/classIntel8254x_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a61f39b2d6549e8bf094aec6cfa5a1e33</Anchor>
+    <DeclaredIn>Intel8254x.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NetworkInterfaceController</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Intel8254x::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>dc/d14/classIntel8254x_1_1NetworkInterfaceController.html</Path>
+    <Anchor>abd17b52fa5b41cdb9248acdd2d3a2be2</Anchor>
+    <DeclaredIn>Intel8254x.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~NetworkInterfaceController</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Intel8254x::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>dc/d14/classIntel8254x_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a7aba53be3cc5f10b1c6c757e3e162281</Anchor>
+    <DeclaredIn>Intel8254x.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Send</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Intel8254x::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>dc/d14/classIntel8254x_1_1NetworkInterfaceController.html</Path>
+    <Anchor>af71bc21f21cba090cc2dc8a55060dfde</Anchor>
+    <DeclaredIn>Intel8254x.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Receive</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Intel8254x::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>dc/d14/classIntel8254x_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a0831420b87b69277c73ac62265cbc32d</Anchor>
+    <DeclaredIn>Intel8254x.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HandleInterrupt</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Intel8254x::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>dc/d14/classIntel8254x_1_1NetworkInterfaceController.html</Path>
+    <Anchor>af728eee9fef1ab42965829c880d47f57</Anchor>
+    <DeclaredIn>Intel8254x.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Send</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>a122d4f0a9ea4465637f998106c30e57c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>Intel8254x::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>dc/d14/classIntel8254x_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a1d9c9339efd678586a9f3ed0863a2ab6</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>BAR</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>Intel8254x::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>dc/d14/classIntel8254x_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a00525694cc6c3fbd7cf1347495c755d7</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Name</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>abfe5ae07db1ab19aa0d0fe4c3f5f4b92</Anchor>
+    <Abstract>Device interface name.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ID</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>ab32286e557e6b9b9792d2e885041dea0</Anchor>
+    <Abstract>Device interface index.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MAC</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>a394d72e662bbdb8d6597c7212db562ea</Anchor>
+    <Abstract>Device interface MAC address (Big-endian)</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>a73b666a1e3867962dcd12e690ce92c4e</Anchor>
+    <Abstract>Device interface IP address (Big-endian)</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>KernelSymbols</Name>
       <APILanguage>c</APILanguage>
       <Type>ns</Type>
@@ -48198,13 +49566,46 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ManageDA</Name>
+      <Name>__attribute__</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
       <Scope>NetworkARP</Scope>
     </TokenIdentifier>
     <Path>d2/df9/namespaceNetworkARP.html</Path>
-    <Anchor>a346d8ecaa7beeb22c6584080a7dcaff9</Anchor>
+    <Anchor>ab6186215ca5c5c07ae454a12ddb40035</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>InvalidMAC</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkARP</Scope>
+    </TokenIdentifier>
+    <Path>d2/df9/namespaceNetworkARP.html</Path>
+    <Anchor>a5aca9e566091f1cf920995cf612e328d</Anchor>
+    <DeclaredIn>AddressResolutionProtocol.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>InvalidIP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkARP</Scope>
+    </TokenIdentifier>
+    <Path>d2/df9/namespaceNetworkARP.html</Path>
+    <Anchor>af7bad1a5f789936decb5663017e2bfbe</Anchor>
+    <DeclaredIn>AddressResolutionProtocol.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>InvalidRet</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkARP</Scope>
+    </TokenIdentifier>
+    <Path>d2/df9/namespaceNetworkARP.html</Path>
+    <Anchor>adc52637e86e4e5625907cfeb20a3c62b</Anchor>
     <DeclaredIn>AddressResolutionProtocol.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -48215,8 +49616,8 @@
       <Scope>NetworkARP</Scope>
     </TokenIdentifier>
     <Path>d2/df9/namespaceNetworkARP.html</Path>
-    <Anchor>a5350876db1b3a5becc7738ba74cb4e46</Anchor>
-    <DeclaredIn>AddressResolutionProtocol.cpp</DeclaredIn>
+    <Anchor>a37c42968503419cfbf3214eb33899fe6</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48319,47 +49720,25 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>DA_ADD</Name>
+      <Name>REQUEST</Name>
       <APILanguage>cpp</APILanguage>
       <Type>econst</Type>
       <Scope>NetworkARP</Scope>
     </TokenIdentifier>
     <Path>d2/df9/namespaceNetworkARP.html</Path>
-    <Anchor>ac0a4f1592f6a2b87489742ad94310c60aa20500d98166e02a22feb144e26939da</Anchor>
-    <DeclaredIn>AddressResolutionProtocol.cpp</DeclaredIn>
+    <Anchor>aeb09ccefe69677574f3e16c6ff2c375ba6d76f6fa7a69b2a1ab2cbf061e8ec4ec</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>DA_DEL</Name>
+      <Name>REPLY</Name>
       <APILanguage>cpp</APILanguage>
       <Type>econst</Type>
       <Scope>NetworkARP</Scope>
     </TokenIdentifier>
     <Path>d2/df9/namespaceNetworkARP.html</Path>
-    <Anchor>ac0a4f1592f6a2b87489742ad94310c60a016f96b8189c3d24f321b659a449544e</Anchor>
-    <DeclaredIn>AddressResolutionProtocol.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DA_SEARCH</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>econst</Type>
-      <Scope>NetworkARP</Scope>
-    </TokenIdentifier>
-    <Path>d2/df9/namespaceNetworkARP.html</Path>
-    <Anchor>ac0a4f1592f6a2b87489742ad94310c60a9ecc48d0e1335768701d5867e8ca1f37</Anchor>
-    <DeclaredIn>AddressResolutionProtocol.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DA_UPDATE</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>econst</Type>
-      <Scope>NetworkARP</Scope>
-    </TokenIdentifier>
-    <Path>d2/df9/namespaceNetworkARP.html</Path>
-    <Anchor>ac0a4f1592f6a2b87489742ad94310c60aefef2b632465b5fb92c378e4f51ebfa1</Anchor>
-    <DeclaredIn>AddressResolutionProtocol.cpp</DeclaredIn>
+    <Anchor>aeb09ccefe69677574f3e16c6ff2c375bafad19e0558b612421b8234f6649eef6e</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48379,7 +49758,7 @@
       <Scope>NetworkARP::ARP</Scope>
     </TokenIdentifier>
     <Path>d9/d9b/classNetworkARP_1_1ARP.html</Path>
-    <Anchor>af23408bb2ed0d6f4f56779599cbf0746</Anchor>
+    <Anchor>aa5d3994c61c65ff869e219b7ced53670</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -48395,13 +49774,70 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>Resolve</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkARP::ARP</Scope>
+    </TokenIdentifier>
+    <Path>d9/d9b/classNetworkARP_1_1ARP.html</Path>
+    <Anchor>a302449f4dcd319e3a37dd28307c0e500</Anchor>
+    <Abstract>Resolve an IP address to a MAC address.</Abstract>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Broadcast</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkARP::ARP</Scope>
+    </TokenIdentifier>
+    <Path>d9/d9b/classNetworkARP_1_1ARP.html</Path>
+    <Anchor>a73078afb4b608fccb3a2f89ffdbea9c3</Anchor>
+    <Abstract>Broadcast an ARP packet.</Abstract>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetFrameType</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkEthernet::EthernetEvents</Scope>
+    </TokenIdentifier>
+    <Path>de/de9/classNetworkEthernet_1_1EthernetEvents.html</Path>
+    <Anchor>a72ffd002884880e8ae592cde820a36df</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnEthernetPacketSent</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkEthernet::EthernetEvents</Scope>
+    </TokenIdentifier>
+    <Path>de/de9/classNetworkEthernet_1_1EthernetEvents.html</Path>
+    <Anchor>aa967a17c505d482242c71a27f2332119</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ManageDA</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkARP::ARP</Scope>
+    </TokenIdentifier>
+    <Path>d9/d9b/classNetworkARP_1_1ARP.html</Path>
+    <Anchor>a8ca9759fa7bd2269aefaef6d4d1c2b4f</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>Search</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>NetworkARP::ARP</Scope>
     </TokenIdentifier>
     <Path>d9/d9b/classNetworkARP_1_1ARP.html</Path>
-    <Anchor>afd2f2f436226e54fdc798184c3d32ed2</Anchor>
+    <Anchor>abe8f2787cbae08b3f9ef60dea3cd66e9</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -48412,40 +49848,101 @@
       <Scope>NetworkARP::ARP</Scope>
     </TokenIdentifier>
     <Path>d9/d9b/classNetworkARP_1_1ARP.html</Path>
-    <Anchor>ad4303d97f74adb3be32963be11ef67e2</Anchor>
+    <Anchor>af34abf62df32fd66d54d23557bcaeda5</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>Send</Name>
+      <Name>OnEthernetPacketReceived</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>NetworkARP::ARP</Scope>
     </TokenIdentifier>
     <Path>d9/d9b/classNetworkARP_1_1ARP.html</Path>
-    <Anchor>aba502185243b13a5c39f3b406fefeaa7</Anchor>
+    <Anchor>a28d3c1490f804aa4568e995bfbcc51dd</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>Receive</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>NetworkARP::ARP</Scope>
-    </TokenIdentifier>
-    <Path>d9/d9b/classNetworkARP_1_1ARP.html</Path>
-    <Anchor>a0b6bd9b6cb926518203ed294620abcc8</Anchor>
-    <DeclaredIn>NetworkController.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>Interface</Name>
+      <Name>Ethernet</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>NetworkARP::ARP</Scope>
     </TokenIdentifier>
     <Path>d9/d9b/classNetworkARP_1_1ARP.html</Path>
-    <Anchor>a8a276bce120ae02a14d7361ab70879b0</Anchor>
+    <Anchor>a955a27600a36e5585d4e921b502df0e1</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DiscoveredAddresses</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkARP::ARP</Scope>
+    </TokenIdentifier>
+    <Path>d9/d9b/classNetworkARP_1_1ARP.html</Path>
+    <Anchor>ab7c878a7d7344917679041756093e03d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EthernetEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkEthernet::EthernetEvents</Scope>
+    </TokenIdentifier>
+    <Path>de/de9/classNetworkEthernet_1_1EthernetEvents.html</Path>
+    <Anchor>a8b64490880997f0f9e0933dc064e1d57</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~EthernetEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkEthernet::EthernetEvents</Scope>
+    </TokenIdentifier>
+    <Path>de/de9/classNetworkEthernet_1_1EthernetEvents.html</Path>
+    <Anchor>a655503a15d54db480460f2e11bf4c9b5</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DA_ADD</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkARP::ARP</Scope>
+    </TokenIdentifier>
+    <Path>d9/d9b/classNetworkARP_1_1ARP.html</Path>
+    <Anchor>abfc1f97375ecea25d7cd627559af2cc9acb9c9f91c9a0b8a409288c5d21bc762a</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DA_DEL</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkARP::ARP</Scope>
+    </TokenIdentifier>
+    <Path>d9/d9b/classNetworkARP_1_1ARP.html</Path>
+    <Anchor>abfc1f97375ecea25d7cd627559af2cc9ac415d9cef59b01f04ec22826c27381fd</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DA_SEARCH</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkARP::ARP</Scope>
+    </TokenIdentifier>
+    <Path>d9/d9b/classNetworkARP_1_1ARP.html</Path>
+    <Anchor>abfc1f97375ecea25d7cd627559af2cc9a567c80ef37d9cdc5467e528ede357d32</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DA_UPDATE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkARP::ARP</Scope>
+    </TokenIdentifier>
+    <Path>d9/d9b/classNetworkARP_1_1ARP.html</Path>
+    <Anchor>abfc1f97375ecea25d7cd627559af2cc9afde6b30c4bd3e3658a22bfe8c8df8dd5</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48455,6 +49952,952 @@
       <Scope>NetworkDHCP</Scope>
     </TokenIdentifier>
     <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a88ef0840b63b5bec100f159b04ca78ef</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a31fd9a65f2f32ea30859692dcacfaa20</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_DISCOVER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290da7d70f23def771e9c16d070be5b64fbf1</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_OFFER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290daf5ae920c7337ebd22adae6c4833d75e2</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_REQUEST</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290da0fe74ed8bfdd3964e717b2b9194b1d85</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_DECLINE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290da26a73320fd379440353aaf63b1816725</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_ACK</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290da4e06ff6023221b947ad7fcf35ee1be64</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_NAK</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290da8d0f8d398494a95d8cc0fafd91ed63bd</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_RELEASE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290da59dca8f5e544059e840a53517b88e1bb</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_INFORM</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290da265ed5d4078da3e8d6d25ba90dd88f61</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_FORCERENEW</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290dafb30b54faeae7468e82fb48c6ef6affc</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_LEASEQUERY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290da6504ec2105fddf87a1d1d64ea13daeb7</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_LEASEUNASSIGNED</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290daf8bd493ace65b66d32542c58be16923c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_LEASEUNKNOWN</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290da1e3e09276460af33e3edfe42ec819c8f</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_LEASEACTIVE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290da15763f7a2705b221a748a6d0ac25681a</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_BULKLEASEQUERY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290daac3f468ca51b94d3284ba730031c5406</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_LEASEQUERYDONE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290da2a92a1a901d73011c5f4c66f7d4a0e3d</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_ACTIVELEASEQUERY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290da0a1bee696e211f1444f857125329d14c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_LEASEQUERYSTATUS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290daf1050810f40502519c4130a4363f1d08</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_MESSAGE_TYPE_DHCPTLS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a23496c1315a5b90e844b83fe4342290dadfeee245bb0cdc435a679dc55884c8c7</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OP_BOOTREQUEST</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a9a6e69d30835fac1c460b04ad0f894d2ab456f31342ce9ace24f2c17f1a2ce84f</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OP_BOOTREPLY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a9a6e69d30835fac1c460b04ad0f894d2ac567d21f8e817731b5fa5fbf6a0bee30</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_PAD</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa79c6d1a43386f4dfbf3a6b81074d1a21</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_SUBNETMASK</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aaa72849786ab0b644232e6f0e261deb8f</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_TIME_OFFSET</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aac8a748aff36dce5fc1897ad313f45776</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_ROUTER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa93591bc3ae2485a2c15d1b8b1e85603b</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_TIME_SERVER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aab2f94a8e45fc0ac1d8011b4384255685</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_NAME_SERVER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aaad34a9bbe8d34ab947cd1e315fd5353c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_DOMAIN_NAME_SERVER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa02bbc6275308d906ac6ec8a71eebd894</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_LOG_SERVER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aae3a24599fc343a8da07b45db99406159</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_COOKIE_SERVER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa5bd6bd2a690b0726437877a09adfec85</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_LPR_SERVER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aaabf947d08f325cf6f2822e01199eddb6</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_IMPRESS_SERVER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa1fbb8e4e8615509b6e6cd96f4ffc31fc</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_RESOURCE_LOCATION_SERVER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa1f5d08abb3230648691f7a283fe5efbb</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_HOST_NAME</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa9172f3aa509af4a85f271cab5516fcfa</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_BOOT_FILE_SIZE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aad33f58f3393a6ff2d97fe0dc579ddcc7</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_MERIT_DUMP_FILE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa699cd1c93369817212ef975dbbdefa1c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_DOMAIN_NAME</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa36c8c5ea40cb64a47756ec9b02d2bf63</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_SWAP_SERVER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aaaad4b0ee81f9179e39c22223338b7c6d</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_ROOT_PATH</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa08463a65f1359100fc1ee426d14c75a6</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_EXTENSION_PATH</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa6935939170f428718e4ab144c5ad4744</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_IP_FORWARDING</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa45cf769c8c56f505a130239ac2177541</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_NON_LOCAL_SOURCE_ROUTING</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa64184499635031f69a630d177fb0f568</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_POLICY_FILTER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aae4cd3bdfe887ac16a63c1fdaeceeb978</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_MAX_DATAGRAM_REASSEMBLY_SIZE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa0867d1b2339851556f305531942b09ac</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_DEFAULT_IP_TTL</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aacb17efd98ee2613a6d018702fd24fc33</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_PATH_MTU_AGING_TIMEOUT</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa34fe42343cf5c6b9527b3ee0ac926023</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_PATH_MTU_PLATEAU_TABLE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa8f2cf01e9bfce56e710f721810943df9</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_INTERFACE_MTU</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa6fb08577185fd660a886fdccc955abc7</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_ALL_SUBNETS_ARE_LOCAL</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aacba30d96036c9c8858dcf4fc6018853c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_BROADCAST_ADDRESS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa68a72968153ae4a2f5f3d66f1d2fabf2</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_PERFORM_MASK_DISCOVERY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aafde70687d636a3b4ad5420c59076331d</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_MASK_SUPPLIER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa173f0cf97df22811e38a0d8c41baa908</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_ROUTER_DISCOVERY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa44502f1a59733deb8061fedaad5523f2</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_ROUTER_SOLICITATION_ADDRESS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa2202aa3100714e0a0872f02ee41cac6a</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_STATIC_ROUTE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aad38372b3df38925b5b40f4388bbe1cfd</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_TRAILER_ENCAPSULATION</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aabc8c40a05fe19779ee9d850a00fd201e</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_ARP_CACHE_TIMEOUT</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa25b9a0a92cb57eefad29950bd2837ffd</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_ETHERNET_ENCAPSULATION</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa9c960eff6d545cbe2c11a873b3e2badb</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_DEFAULT_TCP_TTL</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aadba0deb1c260ffc82f451d1ba3e4b7b0</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_TCP_KEEPALIVE_INTERVAL</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aae8597f125a36e9832cd84ee01bdeff42</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_TCP_KEEPALIVE_GARBAGE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa07e5a8cccb33fd3562f12ff8a9bf16cd</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_NIS_DOMAIN</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aac2a6967aeba78749bcdc13900d71b12f</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_NIS_SERVERS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aaa151708e8b370a935f6188ac94bf07c5</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_NTP_SERVERS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aad956b00448b0dce64467a55b92de0d85</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_VENDOR_SPECIFIC</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aac34e8e949b1d7f3c994dc50208b7a5ed</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_NETBIOS_NAME_SERVERS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa30490eeb20e7210467474e26e06e4bb8</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_NETBIOS_DD_SERVER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa5443cec6ca2abcc0b96c7c3612880621</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_NETBIOS_NODE_TYPE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa010556dbed908782f209227e475fc1b0</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_NETBIOS_SCOPE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aaf91bcfeeb5d156cb220f6a0d8152e5a0</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_X_FONT_SERVERS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa4d48aecaa33f6ed88e71ef70f2c0c079</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_X_DISPLAY_MANAGER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa2e3eaaf6fb04d23cbdcbda8401c9a2f6</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_REQUESTED_IP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa91da8efa8f93a45793844d3e3b0c5056</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_IP_LEASE_TIME</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aacc9b750ec190dd6351d3ce9930ae7dea</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_OPTION_OVERLOAD</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aaf54383fb8a3366c09baa5805f5b028d5</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_MESSAGE_TYPE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aac632824b3dd4edc0713c71bbd8aaf431</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_SERVER_IDENTIFIER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa3428b122ec421e4f4aee26cfcd5caf51</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_PARAMETER_REQUEST_LIST</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa0a39d53cd1778263f36ddd0870d847e9</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_MESSAGE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa0e508d2e20c008d9330cb7950dbdb549</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_MAX_MESSAGE_SIZE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa8ba00e7b443d168299d4dfdb3cb0a910</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_T1_TIMEOUT</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aad6a63dbdf421623f0e5d0b3a4e5d2f3f</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_T2_TIMEOUT</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aae8f23f080407fdafc19d7acb009d68b6</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_VENDOR_CLASS_IDENTIFIER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa54486525781ec1235c4171503016274a</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_CLIENT_IDENTIFIER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa3e876a9fd83a98e6900f517311a8458a</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_NETWORK_TIME_SERVER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa61e5f19d4cb6c5dbeecc85958104f94e</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DHCP_OPTION_END</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkDHCP</Scope>
+    </TokenIdentifier>
+    <Path>dd/d53/namespaceNetworkDHCP.html</Path>
+    <Anchor>a42afac4eee371cb0e894d6d68da1181aa55b1f8195d4b26bf33508bf24e662187</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48474,7 +50917,7 @@
       <Scope>NetworkDHCP::DHCP</Scope>
     </TokenIdentifier>
     <Path>db/dd7/classNetworkDHCP_1_1DHCP.html</Path>
-    <Anchor>a5208e98f2d5a748a911b285dfc4db718</Anchor>
+    <Anchor>a82d367e9de8e3c99f0cde55e16853e08</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -48507,7 +50950,136 @@
       <Scope>NetworkDHCP::DHCP</Scope>
     </TokenIdentifier>
     <Path>db/dd7/classNetworkDHCP_1_1DHCP.html</Path>
-    <Anchor>ad6cc62dc64a4e823b42f3f75383e2656</Anchor>
+    <Anchor>a30a90883e2dab88f6a2d660359fc4163</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnUDPPacketReceived</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkDHCP::DHCP</Scope>
+    </TokenIdentifier>
+    <Path>db/dd7/classNetworkDHCP_1_1DHCP.html</Path>
+    <Anchor>a6dbf7f25200131939b5685c65d79acb4</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkDHCP::DHCP</Scope>
+    </TokenIdentifier>
+    <Path>db/dd7/classNetworkDHCP_1_1DHCP.html</Path>
+    <Anchor>a128dd4eb5a1e460d9205c41d16bc2d42</Anchor>
+    <Abstract>IP address (Little-endian)</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Gateway</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkDHCP::DHCP</Scope>
+    </TokenIdentifier>
+    <Path>db/dd7/classNetworkDHCP_1_1DHCP.html</Path>
+    <Anchor>a6f5948bea304ce0cc43d544e0ea3343e</Anchor>
+    <Abstract>Gateway address (Little-endian)</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SubnetworkMask</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkDHCP::DHCP</Scope>
+    </TokenIdentifier>
+    <Path>db/dd7/classNetworkDHCP_1_1DHCP.html</Path>
+    <Anchor>acfea91c7ce676efe8d33a0007a75b5ee</Anchor>
+    <Abstract>Subnet mask (Little-endian)</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DomainNameSystem</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkDHCP::DHCP</Scope>
+    </TokenIdentifier>
+    <Path>db/dd7/classNetworkDHCP_1_1DHCP.html</Path>
+    <Anchor>aa2c4d8dcbcb46c391dba174de4a0be19</Anchor>
+    <Abstract>DNS server address (Little-endian)</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CreatePacket</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkDHCP::DHCP</Scope>
+    </TokenIdentifier>
+    <Path>db/dd7/classNetworkDHCP_1_1DHCP.html</Path>
+    <Anchor>a9096088b28614235144aff69ebe5629b</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetOption</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkDHCP::DHCP</Scope>
+    </TokenIdentifier>
+    <Path>db/dd7/classNetworkDHCP_1_1DHCP.html</Path>
+    <Anchor>ac92d633e2b80863b91fd4ab9f8035dfb</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>UDPSocket</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkDHCP::DHCP</Scope>
+    </TokenIdentifier>
+    <Path>db/dd7/classNetworkDHCP_1_1DHCP.html</Path>
+    <Anchor>a939c5d23e0416d2dbd0a2648da91588a</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Interface</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkDHCP::DHCP</Scope>
+    </TokenIdentifier>
+    <Path>db/dd7/classNetworkDHCP_1_1DHCP.html</Path>
+    <Anchor>a04621b9aacafc5df95405f70a854ea00</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Received</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkDHCP::DHCP</Scope>
+    </TokenIdentifier>
+    <Path>db/dd7/classNetworkDHCP_1_1DHCP.html</Path>
+    <Anchor>a1e1b2f5ccddf97a117082da38ba4e824</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>UDPEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDPEvents</Scope>
+    </TokenIdentifier>
+    <Path>d9/d4a/classNetworkUDP_1_1UDPEvents.html</Path>
+    <Anchor>ab6c20d480d56d0dac1e837c1f660272c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~UDPEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDPEvents</Scope>
+    </TokenIdentifier>
+    <Path>d9/d4a/classNetworkUDP_1_1UDPEvents.html</Path>
+    <Anchor>a0ffd2646638d25bd1c72942062951550</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -48521,46 +51093,79 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ETYPE_IPV4</Name>
+      <Name>__attribute__</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>econst</Type>
+      <Type>func</Type>
       <Scope>NetworkEthernet</Scope>
     </TokenIdentifier>
     <Path>da/dcd/namespaceNetworkEthernet.html</Path>
-    <Anchor>adbe3a0a6b58142a5032384ac0008620ba693123e814b6e36c7b0fe5d96409cc20</Anchor>
+    <Anchor>a7883f42f69407a93a08ab45b6d41fe48</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ETYPE_ARP</Name>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkEthernet</Scope>
+    </TokenIdentifier>
+    <Path>da/dcd/namespaceNetworkEthernet.html</Path>
+    <Anchor>a1550d6ba61a77e0e50a6f7898fe55693</Anchor>
+    <DeclaredIn>Ethernet.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RegisteredEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkEthernet</Scope>
+    </TokenIdentifier>
+    <Path>da/dcd/namespaceNetworkEthernet.html</Path>
+    <Anchor>afac491e4d9925cd33911fe66f7cc36c0</Anchor>
+    <DeclaredIn>Ethernet.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TYPE_IPV4</Name>
       <APILanguage>cpp</APILanguage>
       <Type>econst</Type>
       <Scope>NetworkEthernet</Scope>
     </TokenIdentifier>
     <Path>da/dcd/namespaceNetworkEthernet.html</Path>
-    <Anchor>adbe3a0a6b58142a5032384ac0008620baa84cc1de9dbe1e0810d1bd97e193691f</Anchor>
+    <Anchor>a0d9fe4b9c76bccc0ced7ea04986eb5e1aa4e5fa96e7f83864c45999fce5fe9ae4</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ETYPE_RARP</Name>
+      <Name>TYPE_ARP</Name>
       <APILanguage>cpp</APILanguage>
       <Type>econst</Type>
       <Scope>NetworkEthernet</Scope>
     </TokenIdentifier>
     <Path>da/dcd/namespaceNetworkEthernet.html</Path>
-    <Anchor>adbe3a0a6b58142a5032384ac0008620bad19a2308c4f282f116738ec62340af45</Anchor>
+    <Anchor>a0d9fe4b9c76bccc0ced7ea04986eb5e1a03964e7babcc73c78c612efc99607f87</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ETYPE_IPV6</Name>
+      <Name>TYPE_RARP</Name>
       <APILanguage>cpp</APILanguage>
       <Type>econst</Type>
       <Scope>NetworkEthernet</Scope>
     </TokenIdentifier>
     <Path>da/dcd/namespaceNetworkEthernet.html</Path>
-    <Anchor>adbe3a0a6b58142a5032384ac0008620bacd0a68fee4ec0e6a2160daa9ddc5b510</Anchor>
+    <Anchor>a0d9fe4b9c76bccc0ced7ea04986eb5e1a9967afdc259da0a91d19ad6011971055</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TYPE_IPV6</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkEthernet</Scope>
+    </TokenIdentifier>
+    <Path>da/dcd/namespaceNetworkEthernet.html</Path>
+    <Anchor>a0d9fe4b9c76bccc0ced7ea04986eb5e1a887417948d2cc84ef991bf1f87ecb068</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -48571,6 +51176,18 @@
       <Scope>NetworkEthernet::Ethernet</Scope>
     </TokenIdentifier>
     <Path>d7/d50/classNetworkEthernet_1_1Ethernet.html</Path>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetInterface</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkEthernet::Ethernet</Scope>
+    </TokenIdentifier>
+    <Path>d7/d50/classNetworkEthernet_1_1Ethernet.html</Path>
+    <Anchor>a004d3362590bb491fef0fc7855e7bd1a</Anchor>
+    <Abstract>Get driver interface.</Abstract>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -48603,7 +51220,52 @@
       <Scope>NetworkEthernet::Ethernet</Scope>
     </TokenIdentifier>
     <Path>d7/d50/classNetworkEthernet_1_1Ethernet.html</Path>
-    <Anchor>a84555a122394d8b2940c4713296f8629</Anchor>
+    <Anchor>a091df1b4fb91b03a60ffb7761db0edfc</Anchor>
+    <Abstract>Send an Ethernet packet.</Abstract>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnInterfaceAdded</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkInterfaceManager::Events</Scope>
+    </TokenIdentifier>
+    <Path>de/d23/classNetworkInterfaceManager_1_1Events.html</Path>
+    <Anchor>a05707f617b4d326731ea162c5bfc7675</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnInterfaceRemoved</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkInterfaceManager::Events</Scope>
+    </TokenIdentifier>
+    <Path>de/d23/classNetworkInterfaceManager_1_1Events.html</Path>
+    <Anchor>a266ff01a74b5b8da91acc7b49edf4df2</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnInterfaceChanged</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkInterfaceManager::Events</Scope>
+    </TokenIdentifier>
+    <Path>de/d23/classNetworkInterfaceManager_1_1Events.html</Path>
+    <Anchor>ac23b37fdf8d01c7b62e237a3d2f60cba</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnInterfaceSent</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkInterfaceManager::Events</Scope>
+    </TokenIdentifier>
+    <Path>de/d23/classNetworkInterfaceManager_1_1Events.html</Path>
+    <Anchor>afcd74ffa7d21b4c3daaa163c84fcf6ba</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -48614,7 +51276,18 @@
       <Scope>NetworkEthernet::Ethernet</Scope>
     </TokenIdentifier>
     <Path>d7/d50/classNetworkEthernet_1_1Ethernet.html</Path>
-    <Anchor>a747b7019ef06003d4b74fa22af91662a</Anchor>
+    <Anchor>a6ca63b81d42e540d87653cbf9b6227d9</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnInterfaceReceived</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkEthernet::Ethernet</Scope>
+    </TokenIdentifier>
+    <Path>d7/d50/classNetworkEthernet_1_1Ethernet.html</Path>
+    <Anchor>ab249a0b878b871160f982f97d7ad2ebc</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -48629,12 +51302,305 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>Events</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkInterfaceManager::Events</Scope>
+    </TokenIdentifier>
+    <Path>de/d23/classNetworkInterfaceManager_1_1Events.html</Path>
+    <Anchor>a3a84baf2528a7c6b1dbc2b7c3c3bb739</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~Events</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkInterfaceManager::Events</Scope>
+    </TokenIdentifier>
+    <Path>de/d23/classNetworkInterfaceManager_1_1Events.html</Path>
+    <Anchor>a379eb567939ecb5cfa3eea8c73eefc37</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NetworkEthernet::EthernetEvents</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>NetworkEthernet::EthernetEvents</Scope>
+    </TokenIdentifier>
+    <Path>de/de9/classNetworkEthernet_1_1EthernetEvents.html</Path>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetFrameType</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkEthernet::EthernetEvents</Scope>
+    </TokenIdentifier>
+    <Path>de/de9/classNetworkEthernet_1_1EthernetEvents.html</Path>
+    <Anchor>a72ffd002884880e8ae592cde820a36df</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnEthernetPacketSent</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkEthernet::EthernetEvents</Scope>
+    </TokenIdentifier>
+    <Path>de/de9/classNetworkEthernet_1_1EthernetEvents.html</Path>
+    <Anchor>aa967a17c505d482242c71a27f2332119</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnEthernetPacketReceived</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkEthernet::EthernetEvents</Scope>
+    </TokenIdentifier>
+    <Path>de/de9/classNetworkEthernet_1_1EthernetEvents.html</Path>
+    <Anchor>a90b03fe72c573a844d8a24965d112226</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EthernetEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkEthernet::EthernetEvents</Scope>
+    </TokenIdentifier>
+    <Path>de/de9/classNetworkEthernet_1_1EthernetEvents.html</Path>
+    <Anchor>a8b64490880997f0f9e0933dc064e1d57</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~EthernetEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkEthernet::EthernetEvents</Scope>
+    </TokenIdentifier>
+    <Path>de/de9/classNetworkEthernet_1_1EthernetEvents.html</Path>
+    <Anchor>a655503a15d54db480460f2e11bf4c9b5</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FType</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkEthernet::EthernetEvents</Scope>
+    </TokenIdentifier>
+    <Path>de/de9/classNetworkEthernet_1_1EthernetEvents.html</Path>
+    <Anchor>a0e1231763b57d685f2a0cb6490025a78</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>NetworkICMPv4</Name>
       <APILanguage>c</APILanguage>
       <Type>ns</Type>
       <Scope>NetworkICMPv4</Scope>
     </TokenIdentifier>
     <Path>d4/d0b/namespaceNetworkICMPv4.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TYPE_ECHO_REPLY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d4/d0b/namespaceNetworkICMPv4.html</Path>
+    <Anchor>aa6f199ede15a2e9ff5fe837ac49172e8adcb839f16813fea8c9e2a2a001c60eea</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TYPE_DESTINATION_UNREACHABLE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d4/d0b/namespaceNetworkICMPv4.html</Path>
+    <Anchor>aa6f199ede15a2e9ff5fe837ac49172e8a360451b90b4d46d6aa89d2ca43418e0c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TYPE_SOURCE_QUENCH</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d4/d0b/namespaceNetworkICMPv4.html</Path>
+    <Anchor>aa6f199ede15a2e9ff5fe837ac49172e8adf5eef3ec4ec0f13d823b6a76dee1103</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TYPE_REDIRECT</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d4/d0b/namespaceNetworkICMPv4.html</Path>
+    <Anchor>aa6f199ede15a2e9ff5fe837ac49172e8abc4adc69dff3c480f33c607b481c01ce</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TYPE_ECHO</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d4/d0b/namespaceNetworkICMPv4.html</Path>
+    <Anchor>aa6f199ede15a2e9ff5fe837ac49172e8a6aa4dec01832a73b7f2cfcb68e3add33</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TYPE_ROUTER_ADVERTISEMENT</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d4/d0b/namespaceNetworkICMPv4.html</Path>
+    <Anchor>aa6f199ede15a2e9ff5fe837ac49172e8a2d13d792dadae2b7a0fb7f67fc386d38</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TYPE_ROUTER_SELECTION</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d4/d0b/namespaceNetworkICMPv4.html</Path>
+    <Anchor>aa6f199ede15a2e9ff5fe837ac49172e8a65f4b339031664f8d8653fe46f375586</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TYPE_TIME_EXCEEDED</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d4/d0b/namespaceNetworkICMPv4.html</Path>
+    <Anchor>aa6f199ede15a2e9ff5fe837ac49172e8abfb5a74bdaf37ae073c2ce10868df9c4</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TYPE_PARAMETER_PROBLEM</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d4/d0b/namespaceNetworkICMPv4.html</Path>
+    <Anchor>aa6f199ede15a2e9ff5fe837ac49172e8a547e7b66e774e69cfd0416169675112c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TYPE_TIMESTAMP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d4/d0b/namespaceNetworkICMPv4.html</Path>
+    <Anchor>aa6f199ede15a2e9ff5fe837ac49172e8a1c39e8985ca577dd24c977aee11ffc95</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TYPE_TIMESTAMP_REPLY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d4/d0b/namespaceNetworkICMPv4.html</Path>
+    <Anchor>aa6f199ede15a2e9ff5fe837ac49172e8a8f55e49f855127f0a2f2e532994b6193</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NetworkICMPv4::ICMPv4</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>NetworkICMPv4::ICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d5/dfb/classNetworkICMPv4_1_1ICMPv4.html</Path>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetInterface</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkICMPv4::ICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d5/dfb/classNetworkICMPv4_1_1ICMPv4.html</Path>
+    <Anchor>a5db15669d8f0ef8bb7a1c5ac5f207b34</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ICMPv4</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkICMPv4::ICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d5/dfb/classNetworkICMPv4_1_1ICMPv4.html</Path>
+    <Anchor>a24d13ba33baf13a18c30e2ea78e89c39</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~ICMPv4</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkICMPv4::ICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d5/dfb/classNetworkICMPv4_1_1ICMPv4.html</Path>
+    <Anchor>a8438b3a277155f1094d0c61293587096</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Send</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkICMPv4::ICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d5/dfb/classNetworkICMPv4_1_1ICMPv4.html</Path>
+    <Anchor>a872939a0506575f47c3a4fb9dace51d5</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Receive</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkICMPv4::ICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d5/dfb/classNetworkICMPv4_1_1ICMPv4.html</Path>
+    <Anchor>aa09c6bda19254e939b8da739f152185c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Interface</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkICMPv4::ICMPv4</Scope>
+    </TokenIdentifier>
+    <Path>d5/dfb/classNetworkICMPv4_1_1ICMPv4.html</Path>
+    <Anchor>a0eed466549bdf02fd9ac9bd11c680073</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48647,12 +51613,98 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>NetworkICMPv6::ICMPv6</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>NetworkICMPv6::ICMPv6</Scope>
+    </TokenIdentifier>
+    <Path>d6/df1/classNetworkICMPv6_1_1ICMPv6.html</Path>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetInterface</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkICMPv6::ICMPv6</Scope>
+    </TokenIdentifier>
+    <Path>d6/df1/classNetworkICMPv6_1_1ICMPv6.html</Path>
+    <Anchor>ada170fce08d01c07a017de748e430ef8</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ICMPv6</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkICMPv6::ICMPv6</Scope>
+    </TokenIdentifier>
+    <Path>d6/df1/classNetworkICMPv6_1_1ICMPv6.html</Path>
+    <Anchor>aad7e8634b653a7dd71796797111e0a95</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~ICMPv6</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkICMPv6::ICMPv6</Scope>
+    </TokenIdentifier>
+    <Path>d6/df1/classNetworkICMPv6_1_1ICMPv6.html</Path>
+    <Anchor>a2e7cdea1923923568910b458544ba668</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Send</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkICMPv6::ICMPv6</Scope>
+    </TokenIdentifier>
+    <Path>d6/df1/classNetworkICMPv6_1_1ICMPv6.html</Path>
+    <Anchor>ac54061463abaca82c3f88d01a7f4c46a</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Receive</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkICMPv6::ICMPv6</Scope>
+    </TokenIdentifier>
+    <Path>d6/df1/classNetworkICMPv6_1_1ICMPv6.html</Path>
+    <Anchor>a89414e3f9c93b8fa9914be9a01de19ef</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Interface</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkICMPv6::ICMPv6</Scope>
+    </TokenIdentifier>
+    <Path>d6/df1/classNetworkICMPv6_1_1ICMPv6.html</Path>
+    <Anchor>a5ed00933d56fcd76a19b1658bbc47b9a</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>NetworkInterfaceManager</Name>
       <APILanguage>c</APILanguage>
       <Type>ns</Type>
       <Scope>NetworkInterfaceManager</Scope>
     </TokenIdentifier>
     <Path>d9/d4c/namespaceNetworkInterfaceManager.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RegisteredEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkInterfaceManager</Scope>
+    </TokenIdentifier>
+    <Path>d9/d4c/namespaceNetworkInterfaceManager.html</Path>
+    <Anchor>a65e8e89d5e1616d3a4f0742979d0a379</Anchor>
+    <DeclaredIn>NetworkController.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48683,7 +51735,7 @@
       <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
-    <Anchor>a9a316192b9069757e57b4f171eb9f93a</Anchor>
+    <Anchor>a2fac62e77524bb15bacaba848fae9819</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -48695,6 +51747,7 @@
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
     <Anchor>abfe5ae07db1ab19aa0d0fe4c3f5f4b92</Anchor>
+    <Abstract>Device interface name.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48705,6 +51758,7 @@
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
     <Anchor>ab32286e557e6b9b9792d2e885041dea0</Anchor>
+    <Abstract>Device interface index.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48715,6 +51769,7 @@
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
     <Anchor>a394d72e662bbdb8d6597c7212db562ea</Anchor>
+    <Abstract>Device interface MAC address (Big-endian)</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48724,7 +51779,95 @@
       <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
-    <Anchor>a1e4b0d377734f0e2773260c0ecaf9aae</Anchor>
+    <Anchor>a73b666a1e3867962dcd12e690ce92c4e</Anchor>
+    <Abstract>Device interface IP address (Big-endian)</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NetworkInterfaceManager::Events</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>NetworkInterfaceManager::Events</Scope>
+    </TokenIdentifier>
+    <Path>de/d23/classNetworkInterfaceManager_1_1Events.html</Path>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnInterfaceAdded</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkInterfaceManager::Events</Scope>
+    </TokenIdentifier>
+    <Path>de/d23/classNetworkInterfaceManager_1_1Events.html</Path>
+    <Anchor>a05707f617b4d326731ea162c5bfc7675</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnInterfaceRemoved</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkInterfaceManager::Events</Scope>
+    </TokenIdentifier>
+    <Path>de/d23/classNetworkInterfaceManager_1_1Events.html</Path>
+    <Anchor>a266ff01a74b5b8da91acc7b49edf4df2</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnInterfaceChanged</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkInterfaceManager::Events</Scope>
+    </TokenIdentifier>
+    <Path>de/d23/classNetworkInterfaceManager_1_1Events.html</Path>
+    <Anchor>ac23b37fdf8d01c7b62e237a3d2f60cba</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnInterfaceReceived</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkInterfaceManager::Events</Scope>
+    </TokenIdentifier>
+    <Path>de/d23/classNetworkInterfaceManager_1_1Events.html</Path>
+    <Anchor>abc482af1abe2edb49f1ccc2af3a0b48b</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnInterfaceSent</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkInterfaceManager::Events</Scope>
+    </TokenIdentifier>
+    <Path>de/d23/classNetworkInterfaceManager_1_1Events.html</Path>
+    <Anchor>afcd74ffa7d21b4c3daaa163c84fcf6ba</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Events</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkInterfaceManager::Events</Scope>
+    </TokenIdentifier>
+    <Path>de/d23/classNetworkInterfaceManager_1_1Events.html</Path>
+    <Anchor>a3a84baf2528a7c6b1dbc2b7c3c3bb739</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~Events</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkInterfaceManager::Events</Scope>
+    </TokenIdentifier>
+    <Path>de/d23/classNetworkInterfaceManager_1_1Events.html</Path>
+    <Anchor>a379eb567939ecb5cfa3eea8c73eefc37</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48760,13 +51903,24 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>Scan</Name>
+      <Name>StartNetworkStack</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>NetworkInterfaceManager::NetworkInterface</Scope>
     </TokenIdentifier>
     <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
-    <Anchor>a91423e2987459847f15bb914b9149a73</Anchor>
+    <Anchor>ad6632d541583aa39dc22afbc820a5180</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>StopNetworkStack</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkInterfaceManager::NetworkInterface</Scope>
+    </TokenIdentifier>
+    <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
+    <Anchor>adb8ef1e074d096045566a8196f4f4553</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -48777,7 +51931,7 @@
       <Scope>NetworkInterfaceManager::NetworkInterface</Scope>
     </TokenIdentifier>
     <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
-    <Anchor>ad2c62f8e8f20c40c7a742d7b4cde161b</Anchor>
+    <Anchor>ab3dda12341ce28d8a8ea62f599cbce24</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -48788,7 +51942,18 @@
       <Scope>NetworkInterfaceManager::NetworkInterface</Scope>
     </TokenIdentifier>
     <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
-    <Anchor>a11e55f488382c810919711ade0e58264</Anchor>
+    <Anchor>ad988df2e95b5195bde776b6160779f26</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TraceCards</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkInterfaceManager::NetworkInterface</Scope>
+    </TokenIdentifier>
+    <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
+    <Anchor>af9c33e61b550097f26208f748f0a0355</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -48803,12 +51968,445 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>Devices</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkInterfaceManager::NetworkInterface</Scope>
+    </TokenIdentifier>
+    <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
+    <Anchor>a6194dc704e3e2bf0174824867ea7fbf2</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>NetworkIPv4</Name>
       <APILanguage>c</APILanguage>
       <Type>ns</Type>
       <Scope>NetworkIPv4</Scope>
     </TokenIdentifier>
     <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RegisteredEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>a98464b51d0dfd7dee08eb92f31680e8c</Anchor>
+    <DeclaredIn>InternetProtocol.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_ICMP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879a25a71563a14049e9a5f2d956c0e051ce</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_IGMP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879a14a319205c08f56f1825db8a6865e9ab</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_TCP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879aff88d6f85de83cee74e57cdd477e66c2</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_UDP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879a970ca7d63ae14ca82c47f92ba534c5aa</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_IPV6</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879aa7c2a6799443d9283932b132711c014a</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_ROUTING</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879ad3e418659f909dad0729fe82911c93d8</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_FRAGMENT</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879aa0cd3cae4f9ca1286b9358d934eb9a68</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_ESP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879a41bceb10e82186e2006c4baf8d30691e</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_AH</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879afecc6c380cce5c2f5aca93a3cb372dfe</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_ICMPV6</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879ae2502a2138258d93d5a12b99372d42ea</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_NONE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879aae8b52d988b40e96b8dfe2b4fa35f352</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_DSTOPTS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879ad9b56ef44c38658358d3d88b453bf452</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_ND</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879aa7a4087e3f8f688e8fef9e2263840bfe</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_ICLFXBM</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879a78f5fcdba21e7723565559b774df3ce8</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_PIM</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879a3fb033b3511bddc2affaeac2136e3e14</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_COMP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879ad60af36e9c5e5cfc9a29225223d0fd8c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_SCTP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879ae05cc3acb953b3df4b9e31ab40730b23</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_UDPLITE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879acf9eccccfb5cce38f6cb1986ead2ef1c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>PROTOCOL_RAW</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>NetworkIPv4</Scope>
+    </TokenIdentifier>
+    <Path>df/d2a/namespaceNetworkIPv4.html</Path>
+    <Anchor>ac92e7701f3e30b7514632f40e687f879a6ac9a22587e9217005b8d08e74f18cb7</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NetworkIPv4::IPv4</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>NetworkIPv4::IPv4</Scope>
+    </TokenIdentifier>
+    <Path>d3/d07/classNetworkIPv4_1_1IPv4.html</Path>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IPv4</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkIPv4::IPv4</Scope>
+    </TokenIdentifier>
+    <Path>d3/d07/classNetworkIPv4_1_1IPv4.html</Path>
+    <Anchor>ab4b0c4829e050c3d5a5c3805f4aa5970</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~IPv4</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkIPv4::IPv4</Scope>
+    </TokenIdentifier>
+    <Path>d3/d07/classNetworkIPv4_1_1IPv4.html</Path>
+    <Anchor>a8fd22e0d69969ef36c474045a3dfb696</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Send</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkIPv4::IPv4</Scope>
+    </TokenIdentifier>
+    <Path>d3/d07/classNetworkIPv4_1_1IPv4.html</Path>
+    <Anchor>a53ead7d2e0bec95db8d2d50cc352e20b</Anchor>
+    <Abstract>Send an IPv4 packet.</Abstract>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetFrameType</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkEthernet::EthernetEvents</Scope>
+    </TokenIdentifier>
+    <Path>de/de9/classNetworkEthernet_1_1EthernetEvents.html</Path>
+    <Anchor>a72ffd002884880e8ae592cde820a36df</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnEthernetPacketSent</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkEthernet::EthernetEvents</Scope>
+    </TokenIdentifier>
+    <Path>de/de9/classNetworkEthernet_1_1EthernetEvents.html</Path>
+    <Anchor>aa967a17c505d482242c71a27f2332119</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GatewayIP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkIPv4::IPv4</Scope>
+    </TokenIdentifier>
+    <Path>d3/d07/classNetworkIPv4_1_1IPv4.html</Path>
+    <Anchor>a8f69d32ccced20314b0017fe7545550a</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SubnetworkMaskIP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkIPv4::IPv4</Scope>
+    </TokenIdentifier>
+    <Path>d3/d07/classNetworkIPv4_1_1IPv4.html</Path>
+    <Anchor>a12deffaff2e4d15240df44b53e29b7b4</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnEthernetPacketReceived</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkIPv4::IPv4</Scope>
+    </TokenIdentifier>
+    <Path>d3/d07/classNetworkIPv4_1_1IPv4.html</Path>
+    <Anchor>af5d77a52d398c4b84e32ef1131decbc2</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ARP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkIPv4::IPv4</Scope>
+    </TokenIdentifier>
+    <Path>d3/d07/classNetworkIPv4_1_1IPv4.html</Path>
+    <Anchor>aa0f800a497b346a81e82c3d61d4553a4</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Ethernet</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkIPv4::IPv4</Scope>
+    </TokenIdentifier>
+    <Path>d3/d07/classNetworkIPv4_1_1IPv4.html</Path>
+    <Anchor>a8a1f90f3d568f2c1812cc035555611fc</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EthernetEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkEthernet::EthernetEvents</Scope>
+    </TokenIdentifier>
+    <Path>de/de9/classNetworkEthernet_1_1EthernetEvents.html</Path>
+    <Anchor>a8b64490880997f0f9e0933dc064e1d57</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~EthernetEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkEthernet::EthernetEvents</Scope>
+    </TokenIdentifier>
+    <Path>de/de9/classNetworkEthernet_1_1EthernetEvents.html</Path>
+    <Anchor>a655503a15d54db480460f2e11bf4c9b5</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NetworkIPv4::IPv4Events</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>NetworkIPv4::IPv4Events</Scope>
+    </TokenIdentifier>
+    <Path>d1/dd4/classNetworkIPv4_1_1IPv4Events.html</Path>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetProtocol</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkIPv4::IPv4Events</Scope>
+    </TokenIdentifier>
+    <Path>d1/dd4/classNetworkIPv4_1_1IPv4Events.html</Path>
+    <Anchor>ad5fa7aa0ec7aca0f3c3dd677dc7c3f4b</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnIPv4PacketReceived</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkIPv4::IPv4Events</Scope>
+    </TokenIdentifier>
+    <Path>d1/dd4/classNetworkIPv4_1_1IPv4Events.html</Path>
+    <Anchor>acb57017e63c810fa50353afafcf2712c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IPv4Events</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkIPv4::IPv4Events</Scope>
+    </TokenIdentifier>
+    <Path>d1/dd4/classNetworkIPv4_1_1IPv4Events.html</Path>
+    <Anchor>ac38e5d1e824fe04d6e0692816ef70d9e</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~IPv4Events</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkIPv4::IPv4Events</Scope>
+    </TokenIdentifier>
+    <Path>d1/dd4/classNetworkIPv4_1_1IPv4Events.html</Path>
+    <Anchor>a9a2936affabf8016da55b884c70c13fc</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Protocol</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkIPv4::IPv4Events</Scope>
+    </TokenIdentifier>
+    <Path>d1/dd4/classNetworkIPv4_1_1IPv4Events.html</Path>
+    <Anchor>a9d8f5f204e6381735b32cca9e4c33427</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48830,6 +52428,39 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>NetworkNTP</Scope>
+    </TokenIdentifier>
+    <Path>db/dfe/namespaceNetworkNTP.html</Path>
+    <Anchor>a02d39716b9a572c2c393ab9e5e85e22d</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadTime</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>NetworkNTP</Scope>
+    </TokenIdentifier>
+    <Path>db/dfe/namespaceNetworkNTP.html</Path>
+    <Anchor>a7c5f6ceec6f74aa9f676971d3a2496d3</Anchor>
+    <DeclaredIn>NetworkTimeProtocol.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkNTP</Scope>
+    </TokenIdentifier>
+    <Path>db/dfe/namespaceNetworkNTP.html</Path>
+    <Anchor>aa3b3aa8058891fb07907c3e1ab882ee6</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>NetworkNTP::NTP</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -48846,7 +52477,7 @@
       <Scope>NetworkNTP::NTP</Scope>
     </TokenIdentifier>
     <Path>d7/d0d/classNetworkNTP_1_1NTP.html</Path>
-    <Anchor>a5f28f88567302444732a246082cf8726</Anchor>
+    <Anchor>aa2e7c10da7ab53026b1ada8999f14f8c</Anchor>
     <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -48862,13 +52493,57 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>Interface</Name>
+      <Name>ReadTime</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkNTP::NTP</Scope>
+    </TokenIdentifier>
+    <Path>d7/d0d/classNetworkNTP_1_1NTP.html</Path>
+    <Anchor>abafde0145967b1c53732d5df027a4f48</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnUDPPacketReceived</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDPEvents</Scope>
+    </TokenIdentifier>
+    <Path>d9/d4a/classNetworkUDP_1_1UDPEvents.html</Path>
+    <Anchor>a6a9974d4d01044be9dd465ada049b5b5</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Socket</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>NetworkNTP::NTP</Scope>
     </TokenIdentifier>
     <Path>d7/d0d/classNetworkNTP_1_1NTP.html</Path>
-    <Anchor>afa5c8eb0c2824652cf84cb5d262db12d</Anchor>
+    <Anchor>a54bc337ba74cb8b192945ee557d52c86</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>UDPEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDPEvents</Scope>
+    </TokenIdentifier>
+    <Path>d9/d4a/classNetworkUDP_1_1UDPEvents.html</Path>
+    <Anchor>ab6c20d480d56d0dac1e837c1f660272c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~UDPEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDPEvents</Scope>
+    </TokenIdentifier>
+    <Path>d9/d4a/classNetworkUDP_1_1UDPEvents.html</Path>
+    <Anchor>a0ffd2646638d25bd1c72942062951550</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48887,6 +52562,357 @@
       <Scope>NetworkUDP</Scope>
     </TokenIdentifier>
     <Path>dd/df9/namespaceNetworkUDP.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>NetworkUDP</Scope>
+    </TokenIdentifier>
+    <Path>dd/df9/namespaceNetworkUDP.html</Path>
+    <Anchor>a63a3ad1806ce630c1256b03c116feddc</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkUDP</Scope>
+    </TokenIdentifier>
+    <Path>dd/df9/namespaceNetworkUDP.html</Path>
+    <Anchor>aa366b5ceec544b6efbd635098f223459</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RegisteredEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkUDP</Scope>
+    </TokenIdentifier>
+    <Path>dd/df9/namespaceNetworkUDP.html</Path>
+    <Anchor>a2e3e344f40a31d355b9f12617aaf9ea3</Anchor>
+    <DeclaredIn>UserDatagramProtocol.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>UsuablePort</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkUDP</Scope>
+    </TokenIdentifier>
+    <Path>dd/df9/namespaceNetworkUDP.html</Path>
+    <Anchor>abfc36c61e12f2be40d818d2b29837bb7</Anchor>
+    <DeclaredIn>UserDatagramProtocol.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NetworkUDP::Socket</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>NetworkUDP::Socket</Scope>
+    </TokenIdentifier>
+    <Path>d6/dbf/classNetworkUDP_1_1Socket.html</Path>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Socket</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::Socket</Scope>
+    </TokenIdentifier>
+    <Path>d6/dbf/classNetworkUDP_1_1Socket.html</Path>
+    <Anchor>ab26f3e9b47778f89224f08e6937e0fb5</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~Socket</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::Socket</Scope>
+    </TokenIdentifier>
+    <Path>d6/dbf/classNetworkUDP_1_1Socket.html</Path>
+    <Anchor>a58b69ed433501690e96deead91f28bb7</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LocalIP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkUDP::Socket</Scope>
+    </TokenIdentifier>
+    <Path>d6/dbf/classNetworkUDP_1_1Socket.html</Path>
+    <Anchor>a677a072674e3bd8106ce4ddcabd4bd7c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LocalPort</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkUDP::Socket</Scope>
+    </TokenIdentifier>
+    <Path>d6/dbf/classNetworkUDP_1_1Socket.html</Path>
+    <Anchor>a0b69ef696fdd84cca6a68882eebbca55</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RemoteIP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkUDP::Socket</Scope>
+    </TokenIdentifier>
+    <Path>d6/dbf/classNetworkUDP_1_1Socket.html</Path>
+    <Anchor>aedd67ceb561c6dfddddca6240351734d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RemotePort</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkUDP::Socket</Scope>
+    </TokenIdentifier>
+    <Path>d6/dbf/classNetworkUDP_1_1Socket.html</Path>
+    <Anchor>aa4d30bbc9d23c2b3c057a240ab168af0</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Listening</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkUDP::Socket</Scope>
+    </TokenIdentifier>
+    <Path>d6/dbf/classNetworkUDP_1_1Socket.html</Path>
+    <Anchor>af54c745f40335d19a06acdd19f7dd7e7</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EventHandler</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkUDP::Socket</Scope>
+    </TokenIdentifier>
+    <Path>d6/dbf/classNetworkUDP_1_1Socket.html</Path>
+    <Anchor>a95111a9cb1b8b3a116f2590955355d73</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SocketUDP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkUDP::Socket</Scope>
+    </TokenIdentifier>
+    <Path>d6/dbf/classNetworkUDP_1_1Socket.html</Path>
+    <Anchor>ae7b9f20f9aacd6a71662b75b72725a1f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NetworkUDP::UDP</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>NetworkUDP::UDP</Scope>
+    </TokenIdentifier>
+    <Path>d0/d72/classNetworkUDP_1_1UDP.html</Path>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetInterface</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDP</Scope>
+    </TokenIdentifier>
+    <Path>d0/d72/classNetworkUDP_1_1UDP.html</Path>
+    <Anchor>a986d53d5dc00acf9785eb11a0f9daa72</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>UDP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDP</Scope>
+    </TokenIdentifier>
+    <Path>d0/d72/classNetworkUDP_1_1UDP.html</Path>
+    <Anchor>a92742f989f44da9205be71760fbac4d3</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~UDP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDP</Scope>
+    </TokenIdentifier>
+    <Path>d0/d72/classNetworkUDP_1_1UDP.html</Path>
+    <Anchor>a7424b0c8625b7669bcb91f3a9f78e57a</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Connect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDP</Scope>
+    </TokenIdentifier>
+    <Path>d0/d72/classNetworkUDP_1_1UDP.html</Path>
+    <Anchor>a7227fdad5c3d5ae792be344b7fc3674e</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Listen</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDP</Scope>
+    </TokenIdentifier>
+    <Path>d0/d72/classNetworkUDP_1_1UDP.html</Path>
+    <Anchor>a9a92c621a2e6c41b492c8af5e4130548</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Disconnect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDP</Scope>
+    </TokenIdentifier>
+    <Path>d0/d72/classNetworkUDP_1_1UDP.html</Path>
+    <Anchor>a50c2e68288d80d8523f010c657dcd4df</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Send</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDP</Scope>
+    </TokenIdentifier>
+    <Path>d0/d72/classNetworkUDP_1_1UDP.html</Path>
+    <Anchor>a731f5592291061b9be161e1bc971aaae</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Bind</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDP</Scope>
+    </TokenIdentifier>
+    <Path>d0/d72/classNetworkUDP_1_1UDP.html</Path>
+    <Anchor>ae2d0f9e54baec0a8e77260537d8c8117</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnIPv4PacketReceived</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDP</Scope>
+    </TokenIdentifier>
+    <Path>d0/d72/classNetworkUDP_1_1UDP.html</Path>
+    <Anchor>a0741168d84f1be7fd47bc6f86abe1092</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetProtocol</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkIPv4::IPv4Events</Scope>
+    </TokenIdentifier>
+    <Path>d1/dd4/classNetworkIPv4_1_1IPv4Events.html</Path>
+    <Anchor>ad5fa7aa0ec7aca0f3c3dd677dc7c3f4b</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ipv4</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkUDP::UDP</Scope>
+    </TokenIdentifier>
+    <Path>d0/d72/classNetworkUDP_1_1UDP.html</Path>
+    <Anchor>a5e2d7de699c5aca070d7ebbcdc276a7e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Interface</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkUDP::UDP</Scope>
+    </TokenIdentifier>
+    <Path>d0/d72/classNetworkUDP_1_1UDP.html</Path>
+    <Anchor>ac5b70e140f8c0250f44a1bacedebe613</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IPv4Events</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkIPv4::IPv4Events</Scope>
+    </TokenIdentifier>
+    <Path>d1/dd4/classNetworkIPv4_1_1IPv4Events.html</Path>
+    <Anchor>ac38e5d1e824fe04d6e0692816ef70d9e</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~IPv4Events</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkIPv4::IPv4Events</Scope>
+    </TokenIdentifier>
+    <Path>d1/dd4/classNetworkIPv4_1_1IPv4Events.html</Path>
+    <Anchor>a9a2936affabf8016da55b884c70c13fc</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NetworkUDP::UDPEvents</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>NetworkUDP::UDPEvents</Scope>
+    </TokenIdentifier>
+    <Path>d9/d4a/classNetworkUDP_1_1UDPEvents.html</Path>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OnUDPPacketReceived</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDPEvents</Scope>
+    </TokenIdentifier>
+    <Path>d9/d4a/classNetworkUDP_1_1UDPEvents.html</Path>
+    <Anchor>a6a9974d4d01044be9dd465ada049b5b5</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>UDPEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDPEvents</Scope>
+    </TokenIdentifier>
+    <Path>d9/d4a/classNetworkUDP_1_1UDPEvents.html</Path>
+    <Anchor>ab6c20d480d56d0dac1e837c1f660272c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~UDPEvents</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>NetworkUDP::UDPEvents</Scope>
+    </TokenIdentifier>
+    <Path>d9/d4a/classNetworkUDP_1_1UDPEvents.html</Path>
+    <Anchor>a0ffd2646638d25bd1c72942062951550</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -49678,7 +53704,7 @@
       <Scope>RTL8139::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>d5/d32/classRTL8139_1_1NetworkInterfaceController.html</Path>
-    <Anchor>af29592f5779dbf610ec9bc64d1d938c0</Anchor>
+    <Anchor>adda17060fe886a0e5c16a6ba4bc26580</Anchor>
     <DeclaredIn>RTL8139.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -49689,7 +53715,7 @@
       <Scope>RTL8139::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>d5/d32/classRTL8139_1_1NetworkInterfaceController.html</Path>
-    <Anchor>a2ccf13813d48c25319bc70072fc45951</Anchor>
+    <Anchor>aa674955f8665edb80e2a0dec8e5ac636</Anchor>
     <DeclaredIn>RTL8139.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -49700,7 +53726,7 @@
       <Scope>RTL8139::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>d5/d32/classRTL8139_1_1NetworkInterfaceController.html</Path>
-    <Anchor>ad679e3527180c35b0f87c060e7240f17</Anchor>
+    <Anchor>ac6229ff375bf8e7993d0b10fb1dc4800</Anchor>
     <DeclaredIn>RTL8139.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -49738,24 +53764,79 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>Receive</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
-    </TokenIdentifier>
-    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
-    <Anchor>a9a316192b9069757e57b4f171eb9f93a</Anchor>
-    <DeclaredIn>NetworkController.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>RTL8139InterruptHandler</Name>
+      <Name>HandleInterrupt</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>RTL8139::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>d5/d32/classRTL8139_1_1NetworkInterfaceController.html</Path>
-    <Anchor>a39749ab91cadc429f04c7478b448fe7f</Anchor>
+    <Anchor>a8fd50a19949f1a8119d6fe548a3cf2fa</Anchor>
+    <DeclaredIn>RTL8139.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RTLOB</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>RTL8139::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d5/d32/classRTL8139_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a0b785b6be8edffd661e831e193fe5d96</Anchor>
+    <DeclaredIn>RTL8139.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RTLOW</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>RTL8139::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d5/d32/classRTL8139_1_1NetworkInterfaceController.html</Path>
+    <Anchor>ae85088349f5a309d5620f20f6ddd3836</Anchor>
+    <DeclaredIn>RTL8139.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RTLOL</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>RTL8139::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d5/d32/classRTL8139_1_1NetworkInterfaceController.html</Path>
+    <Anchor>acdff48054cc3e18ad86d8eb3e4784ac5</Anchor>
+    <DeclaredIn>RTL8139.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RTLIB</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>RTL8139::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d5/d32/classRTL8139_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a2caf731031296d7a9202eddc002757ca</Anchor>
+    <DeclaredIn>RTL8139.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RTLIW</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>RTL8139::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d5/d32/classRTL8139_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a518096730625f5947d1e0dbd3cabaca9</Anchor>
+    <DeclaredIn>RTL8139.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RTLIL</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>RTL8139::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d5/d32/classRTL8139_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a89dc58d32233844c85021ba52d1f1302</Anchor>
     <DeclaredIn>RTL8139.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -49766,7 +53847,7 @@
       <Scope>RTL8139::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>d5/d32/classRTL8139_1_1NetworkInterfaceController.html</Path>
-    <Anchor>aa3edb27bc6df5d6aaaced3f7fc41a293</Anchor>
+    <Anchor>acfeef77f8f45c06f2c45cfab8272d316</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -49786,7 +53867,7 @@
       <Scope>RTL8139::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>d5/d32/classRTL8139_1_1NetworkInterfaceController.html</Path>
-    <Anchor>a470e972e9bdf8acab3dd2c5d63d000c7</Anchor>
+    <Anchor>a95099fa94a49da980d68a10468bf23f6</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -49817,6 +53898,7 @@
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
     <Anchor>abfe5ae07db1ab19aa0d0fe4c3f5f4b92</Anchor>
+    <Abstract>Device interface name.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -49827,6 +53909,7 @@
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
     <Anchor>ab32286e557e6b9b9792d2e885041dea0</Anchor>
+    <Abstract>Device interface index.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -49837,6 +53920,7 @@
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
     <Anchor>a394d72e662bbdb8d6597c7212db562ea</Anchor>
+    <Abstract>Device interface MAC address (Big-endian)</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -49846,7 +53930,8 @@
       <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
-    <Anchor>a1e4b0d377734f0e2773260c0ecaf9aae</Anchor>
+    <Anchor>a73b666a1e3867962dcd12e690ce92c4e</Anchor>
+    <Abstract>Device interface IP address (Big-endian)</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -49886,7 +53971,7 @@
       <Scope>RTL8169::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>db/d1a/classRTL8169_1_1NetworkInterfaceController.html</Path>
-    <Anchor>a21ef361aa8900ab15526caaaacc85e4b</Anchor>
+    <Anchor>a5b9e66d1eb52d3e7004b2955dc7f16a5</Anchor>
     <DeclaredIn>RTL8169.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -49897,7 +53982,7 @@
       <Scope>RTL8169::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>db/d1a/classRTL8169_1_1NetworkInterfaceController.html</Path>
-    <Anchor>ac0eaadd7ea2e5b70208ed72de0462370</Anchor>
+    <Anchor>ac9949c6a02fcde22034bc4e12fb6df97</Anchor>
     <DeclaredIn>RTL8169.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -49908,7 +53993,7 @@
       <Scope>RTL8169::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>db/d1a/classRTL8169_1_1NetworkInterfaceController.html</Path>
-    <Anchor>a242a5d23c04698f3f3dc2adc9d12ab36</Anchor>
+    <Anchor>af31d29c2e5e455ab37ce3e90669cc7fe</Anchor>
     <DeclaredIn>RTL8169.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -49930,7 +54015,7 @@
       <Scope>RTL8169::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>db/d1a/classRTL8169_1_1NetworkInterfaceController.html</Path>
-    <Anchor>a8dfe6c70047c4a34f48d6eb8342f7257</Anchor>
+    <Anchor>a9aef13e763b0ffe95d790c8bb180ca5b</Anchor>
     <DeclaredIn>RTL8169.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -49946,25 +54031,25 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>Receive</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
-    </TokenIdentifier>
-    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
-    <Anchor>a9a316192b9069757e57b4f171eb9f93a</Anchor>
-    <DeclaredIn>NetworkController.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>RTL8169InterruptHandler</Name>
+      <Name>HandleInterrupt</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>RTL8169::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>db/d1a/classRTL8169_1_1NetworkInterfaceController.html</Path>
-    <Anchor>a49b4fb8299adc77406c686f4b7cdffb7</Anchor>
+    <Anchor>a3b92331f63a0c7949677a5d525e6d7f2</Anchor>
     <DeclaredIn>RTL8169.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Send</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>a122d4f0a9ea4465637f998106c30e57c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -49994,7 +54079,7 @@
       <Scope>RTL8169::NetworkInterfaceController</Scope>
     </TokenIdentifier>
     <Path>db/d1a/classRTL8169_1_1NetworkInterfaceController.html</Path>
-    <Anchor>a1f357d84452097cd1e442bdc19a60f88</Anchor>
+    <Anchor>a444d3bc89ed8137b0091d1e6f77ebdf5</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -50025,6 +54110,7 @@
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
     <Anchor>abfe5ae07db1ab19aa0d0fe4c3f5f4b92</Anchor>
+    <Abstract>Device interface name.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -50035,6 +54121,7 @@
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
     <Anchor>ab32286e557e6b9b9792d2e885041dea0</Anchor>
+    <Abstract>Device interface index.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -50045,6 +54132,7 @@
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
     <Anchor>a394d72e662bbdb8d6597c7212db562ea</Anchor>
+    <Abstract>Device interface MAC address (Big-endian)</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -50054,7 +54142,8 @@
       <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
     </TokenIdentifier>
     <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
-    <Anchor>a1e4b0d377734f0e2773260c0ecaf9aae</Anchor>
+    <Anchor>a73b666a1e3867962dcd12e690ce92c4e</Anchor>
+    <Abstract>Device interface IP address (Big-endian)</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -50737,6 +54826,218 @@
     </TokenIdentifier>
     <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
     <Anchor>a53a796f10d87f67b82ce0f2cc926581a</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>VirtioNetwork</Name>
+      <APILanguage>c</APILanguage>
+      <Type>ns</Type>
+      <Scope>VirtioNetwork</Scope>
+    </TokenIdentifier>
+    <Path>de/da1/namespaceVirtioNetwork.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>VirtioNetwork::NetworkInterfaceController</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>VirtioNetwork::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html</Path>
+    <DeclaredIn>VirtioNetwork.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetMAC</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>VirtioNetwork::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html</Path>
+    <Anchor>aa33470224eb2a778778d6d5870f328b3</Anchor>
+    <DeclaredIn>VirtioNetwork.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetIP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>VirtioNetwork::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html</Path>
+    <Anchor>adafbf285bdca0a1829a90100cecddbb3</Anchor>
+    <DeclaredIn>VirtioNetwork.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetIP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>VirtioNetwork::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html</Path>
+    <Anchor>acb81478ce650c7dd0aebc0decc431464</Anchor>
+    <DeclaredIn>VirtioNetwork.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NetworkInterfaceController</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>VirtioNetwork::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a67ceeee0bfa0a10c2cdda6ab674026ab</Anchor>
+    <DeclaredIn>VirtioNetwork.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~NetworkInterfaceController</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>VirtioNetwork::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a4fcf0a7fe3fc5653cb626ac46badd2d3</Anchor>
+    <DeclaredIn>VirtioNetwork.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Send</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>VirtioNetwork::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a66f9224295169ba57c14c8068a673db3</Anchor>
+    <DeclaredIn>VirtioNetwork.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Receive</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>VirtioNetwork::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html</Path>
+    <Anchor>ac0680e0c0a0a1b7f64c209066730753e</Anchor>
+    <DeclaredIn>VirtioNetwork.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HandleInterrupt</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>VirtioNetwork::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html</Path>
+    <Anchor>aef302a9f7d1cbc8961325300c9989f8a</Anchor>
+    <DeclaredIn>VirtioNetwork.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Send</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>a122d4f0a9ea4465637f998106c30e57c</Anchor>
+    <DeclaredIn>NetworkController.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RXBuffer</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>VirtioNetwork::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a954778f21eb471f2fc44427088364ece</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TXCurrent</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>VirtioNetwork::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a2e28a57bf99008801fb7cab0bcbdb47e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>VirtioNetwork::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a0a0dd7eb182ce0747171fd034a1ac002</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CurrentPacket</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>VirtioNetwork::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a9541de4aec81669c2ba612205851e661</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>BAR</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>VirtioNetwork::NetworkInterfaceController</Scope>
+    </TokenIdentifier>
+    <Path>d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html</Path>
+    <Anchor>a9758d66346c6daf8f1c0d0ebb10895b2</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Name</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>abfe5ae07db1ab19aa0d0fe4c3f5f4b92</Anchor>
+    <Abstract>Device interface name.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ID</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>ab32286e557e6b9b9792d2e885041dea0</Anchor>
+    <Abstract>Device interface index.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MAC</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>a394d72e662bbdb8d6597c7212db562ea</Anchor>
+    <Abstract>Device interface MAC address (Big-endian)</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IP</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>NetworkInterfaceManager::DeviceInterface</Scope>
+    </TokenIdentifier>
+    <Path>d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html</Path>
+    <Anchor>a73b666a1e3867962dcd12e690ce92c4e</Anchor>
+    <Abstract>Device interface IP address (Big-endian)</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
