@@ -1,20 +1,12 @@
 #include "NetworkController.hpp"
 
-#include <debug.h>
+#include "../timer.h"
 
-Vector<NetworkARP::DiscoveredAddress *> DiscoveredAddresses;
+#include <debug.h>
 
 namespace NetworkARP
 {
-    enum DAType
-    {
-        DA_ADD = 1,
-        DA_DEL = 2,
-        DA_SEARCH = 3,
-        DA_UPDATE = 4
-    };
-
-    DiscoveredAddress *ManageDA(DAType Type, InternetProtocol IP, MediaAccessControl MAC)
+    DiscoveredAddress *ARP::ManageDA(DAType Type, InternetProtocol4 IP, MediaAccessControl MAC)
     {
         // TODO: Compare IPv6 too.
         DiscoveredAddress *tmp = new DiscoveredAddress;
@@ -27,7 +19,7 @@ namespace NetworkARP
             return tmp;
         case DA_DEL:
             for (uint64_t i = 0; i < DiscoveredAddresses.size(); i++)
-                if (CompareIP(DiscoveredAddresses[i]->IP, IP, CompareIPv4))
+                if (DiscoveredAddresses[i]->IP == IP)
                 {
                     DiscoveredAddress *tmp = DiscoveredAddresses[i];
                     DiscoveredAddresses.remove(i);
@@ -38,7 +30,7 @@ namespace NetworkARP
         case DA_SEARCH:
             delete tmp;
             for (uint64_t i = 0; i < DiscoveredAddresses.size(); i++)
-                if (CompareIP(DiscoveredAddresses[i]->IP, IP, CompareIPv4))
+                if (DiscoveredAddresses[i]->IP == IP)
                 {
                     return DiscoveredAddresses[i];
                 }
@@ -46,7 +38,7 @@ namespace NetworkARP
         case DA_UPDATE:
             delete tmp;
             for (uint64_t i = 0; i < DiscoveredAddresses.size(); i++)
-                if (CompareIP(DiscoveredAddresses[i]->IP, IP, CompareIPv4))
+                if (DiscoveredAddresses[i]->IP == IP)
                 {
                     DiscoveredAddresses[i]->MAC = MAC;
                     return DiscoveredAddresses[i];
@@ -57,64 +49,141 @@ namespace NetworkARP
         return nullptr;
     }
 
-    ARP::ARP(NetworkInterfaceManager::DeviceInterface *Interface) { this->Interface = Interface; }
-
-    ARP::~ARP() {}
-
-    DiscoveredAddress *ARP::Search(InternetProtocol TargetIP) { return ManageDA(DA_SEARCH, TargetIP, MediaAccessControl()); }
-
-    DiscoveredAddress *ARP::Update(InternetProtocol TargetIP, MediaAccessControl TargetMAC) { return ManageDA(DA_UPDATE, TargetIP, TargetMAC); }
-
-    void ARP::Send(InternetProtocol TargetIP, MediaAccessControl TargetMAC)
+    ARP::ARP(NetworkEthernet::Ethernet *Ethernet) : NetworkEthernet::EthernetEvents(NetworkEthernet::TYPE_ARP)
     {
-        // TODO: delete object after sending
-        ARPHeader *Header = new ARPHeader;
-        Header->HardwareType = ARPHardwareType::HTYPE_ETHERNET;
-        Header->ProtocolType = NetworkEthernet::ProtocolType::ETYPE_IPV4;
-        Header->HardwareSize = 6;
-        Header->ProtocolSize = 4;
-        Header->Operation = NetworkOperation::REQUEST;
-        Header->SenderMAC = Interface->MAC;
-        Header->SenderIP = Interface->IP;
-        Header->TargetMAC = TargetMAC;
-        Header->TargetIP = TargetIP;
-        NetworkEthernet::Ethernet(Interface).Send(Header, sizeof(ARPHeader), {.MAC = TargetMAC, .Type = NetworkEthernet::ProtocolType::ETYPE_ARP});
+        netdbg("ARP: Initializing.");
+        this->Ethernet = Ethernet;
     }
 
-    void ARP::Receive(void *Data)
+    ARP::~ARP()
     {
-        ARPHeader *Header = (ARPHeader *)Data;
-        if (Header->HardwareType != ARPHardwareType::HTYPE_ETHERNET || Header->ProtocolType != NetworkEthernet::ProtocolType::ETYPE_IPV4)
+    }
+
+    MediaAccessControl InvalidMAC = {.Address = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}};
+    InternetProtocol4 InvalidIP = {.Address = {0xFF, 0xFF, 0xFF, 0xFF}};
+    DiscoveredAddress InvalidRet = {.MAC = InvalidMAC, .IP = InvalidIP};
+
+    DiscoveredAddress *ARP::Search(InternetProtocol4 TargetIP)
+    {
+        DiscoveredAddress *ret = ManageDA(DA_SEARCH, TargetIP, MediaAccessControl());
+        if (ret)
+            return ret;
+        netdbg("ARP: [DA] No address found for %d.%d.%d.%d", TargetIP.Address[0], TargetIP.Address[1], TargetIP.Address[2], TargetIP.Address[3]);
+        return &InvalidRet;
+    }
+
+    DiscoveredAddress *ARP::Update(InternetProtocol4 TargetIP, MediaAccessControl TargetMAC)
+    {
+        DiscoveredAddress *ret = ManageDA(DA_UPDATE, TargetIP, TargetMAC);
+        if (ret)
+            return ret;
+        warn("ARP: [DA] No address found for %d.%d.%d.%d", TargetIP.Address[0], TargetIP.Address[1], TargetIP.Address[2], TargetIP.Address[3]);
+        return &InvalidRet;
+    }
+
+    uint48_t ARP::Resolve(InternetProtocol4 IP)
+    {
+        netdbg("ARP: Resolving %d.%d.%d.%d", IP.Address[3], IP.Address[2], IP.Address[1], IP.Address[0]);
+        if (IP == 0xFFFFFFFF)
+            return 0xFFFFFFFFFFFF;
+
+        uint48_t ret = this->Search(IP)->MAC.ToHex();
+        netdbg("ARP: Resolved %d.%d.%d.%d to %x", IP.Address[3], IP.Address[2], IP.Address[1], IP.Address[0], ret);
+
+        if (ret == 0xFFFFFFFFFFFF)
         {
-            warn("ARP: Invalid hardware/protocol type (%d/%d)", Header->HardwareType, Header->ProtocolType);
-            return;
+            ARPHeader *Header = new ARPHeader;
+            Header->HardwareType = ARPHardwareType::HTYPE_ETHERNET;
+            Header->ProtocolType = NetworkEthernet::FrameType::TYPE_IPV4;
+            Header->HardwareSize = 6;
+            Header->ProtocolSize = 4;
+            Header->Operation = ARPOperation::REQUEST;
+            Header->SenderMAC = Ethernet->GetInterface()->MAC.ToHex();
+            Header->SenderIP = Ethernet->GetInterface()->IP.ToHex();
+            Header->TargetMAC = 0xFFFFFFFFFFFF;
+            Header->TargetIP = IP.ToHex();
+            Ethernet->Send({.Address = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}}, NetworkEthernet::FrameType::TYPE_ARP, (uint8_t *)Header, sizeof(ARPHeader));
+            delete Header;
+            netdbg("ARP: Sent request");
         }
 
-        if (ManageDA(DA_SEARCH, Header->SenderIP, Header->SenderMAC) == nullptr)
+        int RequestTimeout = 10;
+        while (ret == 0xFFFFFFFFFFFF)
         {
-            netdbg("ARP: Discovered new address %d.%d.%d.%d", Header->SenderIP.v4Address[0], Header->SenderIP.v4Address[1], Header->SenderIP.v4Address[2], Header->SenderIP.v4Address[3]);
-            ManageDA(DA_ADD, Header->SenderIP, Header->SenderMAC);
+            ret = this->Search(IP)->MAC.ToHex();
+            if (--RequestTimeout == 0)
+            {
+                warn("ARP: Request timeout.");
+                return 0;
+            }
+            sleep(5);
+        }
+
+        return ret;
+    }
+
+    void ARP::Broadcast(InternetProtocol4 IP)
+    {
+        netdbg("ARP: Sending broadcast");
+        uint64_t ResolvedMAC = this->Resolve(IP);
+        ARPHeader *Header = new ARPHeader;
+        Header->HardwareType = b16(ARPHardwareType::HTYPE_ETHERNET);
+        Header->ProtocolType = b16(NetworkEthernet::FrameType::TYPE_IPV4);
+        Header->HardwareSize = b8(0x6);
+        Header->ProtocolSize = b8(0x4);
+        Header->Operation = b16(ARPOperation::REQUEST);
+        Header->SenderMAC = b48(Ethernet->GetInterface()->MAC.ToHex());
+        Header->SenderIP = b32(Ethernet->GetInterface()->IP.ToHex());
+        Header->TargetMAC = ResolvedMAC;
+        Header->TargetIP = IP.ToHex();
+        Ethernet->Send(MediaAccessControl().FromHex(ResolvedMAC), NetworkEthernet::FrameType::TYPE_ARP, (uint8_t *)Header, sizeof(ARPHeader));
+        delete Header;
+    }
+
+    bool ARP::OnEthernetPacketReceived(uint8_t *Data, uint64_t Length)
+    {
+        netdbg("ARP: Received packet");
+        ARPHeader *Header = (ARPHeader *)Data;
+
+        InternetProtocol4 SenderIPv4;
+        SenderIPv4.FromHex(b32(Header->SenderIP));
+
+        if (b16(Header->HardwareType) != ARPHardwareType::HTYPE_ETHERNET || b16(Header->ProtocolType) != NetworkEthernet::FrameType::TYPE_IPV4)
+        {
+            warn("ARP: [DA] Invalid hardware/protocol type (%d/%d)", Header->HardwareType, Header->ProtocolType);
+            return false;
+        }
+
+        if (ManageDA(DA_SEARCH, InternetProtocol4().FromHex(Header->SenderIP), MediaAccessControl().FromHex(Header->SenderMAC)) == nullptr)
+        {
+            netdbg("ARP: [DA] Discovered new address %d.%d.%d.%d", SenderIPv4.Address[3], SenderIPv4.Address[2], SenderIPv4.Address[1], SenderIPv4.Address[0]);
+            ManageDA(DA_ADD, InternetProtocol4().FromHex(Header->SenderIP), MediaAccessControl().FromHex(Header->SenderMAC));
         }
         else
         {
-            netdbg("ARP: Updated address %d.%d.%d.%d", Header->SenderIP.v4Address[0], Header->SenderIP.v4Address[1], Header->SenderIP.v4Address[2], Header->SenderIP.v4Address[3]);
-            ManageDA(DA_UPDATE, Header->SenderIP, Header->SenderMAC);
+            netdbg("ARP: [DA] Updated address %d.%d.%d.%d", SenderIPv4.Address[3], SenderIPv4.Address[2], SenderIPv4.Address[1], SenderIPv4.Address[0]);
+            ManageDA(DA_UPDATE, InternetProtocol4().FromHex(Header->SenderIP), MediaAccessControl().FromHex(Header->SenderMAC));
         }
 
-        switch (Header->Operation)
+        switch (b16(Header->Operation))
         {
-        case NetworkOperation::REQUEST:
-            netdbg("ARP: Received request for %d.%d.%d.%d", Header->TargetIP.v4Address[0], Header->TargetIP.v4Address[1], Header->TargetIP.v4Address[2], Header->TargetIP.v4Address[3]);
+        case ARPOperation::REQUEST:
+            netdbg("ARP: Received request from %d.%d.%d.%d", SenderIPv4.Address[3], SenderIPv4.Address[2], SenderIPv4.Address[1], SenderIPv4.Address[0]);
             Header->TargetMAC = Header->SenderMAC;
             Header->TargetIP = Header->SenderIP;
-            Header->SenderMAC = Interface->MAC;
-            Header->SenderIP = Interface->IP;
-            Header->Operation = NetworkOperation::REPLY;
-            NetworkEthernet::Ethernet(Interface).Send(Header, sizeof(ARPHeader), {.MAC = Header->TargetMAC, .Type = NetworkEthernet::ProtocolType::ETYPE_ARP});
+            Header->SenderMAC = b48(Ethernet->GetInterface()->MAC.ToHex());
+            Header->SenderIP = b32(Ethernet->GetInterface()->IP.ToHex());
+            Header->Operation = b16(ARPOperation::REPLY);
+            Ethernet->Send(MediaAccessControl().FromHex(Header->TargetMAC), NetworkEthernet::FrameType::TYPE_ARP, (uint8_t *)Header, sizeof(ARPHeader));
+            netdbg("ARP: Sent request for %d.%d.%d.%d", SenderIPv4.Address[0], SenderIPv4.Address[1], SenderIPv4.Address[2], SenderIPv4.Address[3]);
             break;
-        case NetworkOperation::REPLY:
-            fixme("ARP: Received reply for %d.%d.%d.%d", Header->TargetIP.v4Address[0], Header->TargetIP.v4Address[1], Header->TargetIP.v4Address[2], Header->TargetIP.v4Address[3]);
+        case ARPOperation::REPLY:
+            fixme("ARP: Received reply from %d.%d.%d.%d", SenderIPv4.Address[0], SenderIPv4.Address[1], SenderIPv4.Address[2], SenderIPv4.Address[3]);
+            break;
+        default:
+            warn("ARP: Invalid operation (%d)", Header->Operation);
             break;
         }
+        return false;
     }
 }
