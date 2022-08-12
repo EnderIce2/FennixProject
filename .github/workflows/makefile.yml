@@ -31,7 +31,7 @@ jobs:
       run: sudo apt-get install build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo -y
 
     - name: Tools
-      run: make tools
+      run: make tools_workflow
 
     - name: Build
       run: make build

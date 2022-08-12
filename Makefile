@@ -59,6 +59,9 @@ fonts:
 tools: fonts
 	make -C tools all
 
+tools_workflow: tools
+	make -C tools workflow
+
 build: build_kernel build_libc build_userspace build_image
 
 build_kernel:
