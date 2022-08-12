@@ -98,7 +98,6 @@ cpu/IDT.o: cpu/IDT.c $(HEADERS) $(HEADERS2)
 %.o: %.S
 	$(AS) -o $@ $<
 
-# I don't understand how incbin works but, I can use this, is not very efficient but works.
 %.o: %.psf
 	$(OBJCOPY) -O elf64-x86-64 -I binary $< $@
 	nm $@

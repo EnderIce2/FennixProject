@@ -1,0 +1,43 @@
+name: MULTITASKING-TEST BRANCH
+
+on:
+  push:
+    branches: [ multitasking-test ]
+  pull_request:
+    branches: [ multitasking-test ]
+
+jobs:
+  compile:
+    name: Compile OS
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Update System
+      run: sudo apt-get update
+
+    - name: Install Dependencies
+      run: sudo apt-get install xorriso mtools genisoimage ovmf nasm doxygen -y
+
+    - name: Cache cross Folder
+      id: cache-cross
+      uses: actions/cache@v3
+      with:
+        path: tools/cross
+        key: ${{ runner.os }}-cross-${{ hashFiles('tools/Makefile') }}
+
+    - name: Install GNU Binutils & GNU Compiler Collection
+      if: steps.cache-cross.outputs.cache-hit != 'true'
+      run: sudo apt-get install build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo -y
+
+    - name: Tools
+      run: make tools
+
+    - name: Build
+      run: make build
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        name: FennixProject-Multitasking-Test
+        path: FennixProject.iso

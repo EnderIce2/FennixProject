@@ -12,11 +12,6 @@
 #endif
 #include "../drivers/serial.h"
 #include "liballoc/liballoc_1_1.h"
-#include "liballoc/liballoc.h"
-#include "defaultalloc/defaultalloc.hpp"
-#define BUDDY_ALLOC_IMPLEMENTATION
-#include "buddyalloc/buddy_alloc.h"
-#include "xalloc/Xalloc.hpp"
 
 using namespace PMM;
 
@@ -24,7 +19,6 @@ NEWLOCK(heap_lock);
 
 static AllocationAlgorithm AlgorithmToUse = AllocationAlgorithm::NoAllocationAlgorithm;
 static struct buddy *buddy = nullptr;
-static Xalloc::AllocatorV1 *xalloc = nullptr;
 
 void init_heap(AllocationAlgorithm Type)
 {
@@ -32,27 +26,15 @@ void init_heap(AllocationAlgorithm Type)
     switch (Type)
     {
     case AllocationAlgorithm::Default:
-        InitHeap((void *)KERNEL_HEAP_BASE, 0x20);
         break;
     case AllocationAlgorithm::LibAlloc:
         break;
     case AllocationAlgorithm::LibAlloc11:
         break;
     case AllocationAlgorithm::BuddyAlloc:
-    {
-        alignas(max_align_t) unsigned char buddy_buf[buddy_sizeof(4096)];
-        alignas(max_align_t) unsigned char data_buf[4096];
-        {
-            buddy = buddy_init(buddy_buf, data_buf, 4096);
-            assert(buddy != NULL);
-        }
         break;
-    }
     case AllocationAlgorithm::XallocV1:
-    {
-        xalloc = new Xalloc::AllocatorV1((void *)KERNEL_HEAP_BASE, false, false);
         break;
-    }
     default:
         panic("Unknown allocation algorithm!", true);
     }
@@ -67,20 +49,8 @@ void HeapFree(void *Address)
     CLI;
     switch (AlgorithmToUse)
     {
-    case AllocationAlgorithm::Default:
-        defPREFIX(free)(Address);
-        break;
-    case AllocationAlgorithm::LibAlloc:
-        liballoc_free(Address);
-        break;
     case AllocationAlgorithm::LibAlloc11:
         libPREFIX(free)(Address);
-        break;
-    case AllocationAlgorithm::BuddyAlloc:
-        buddy_free(buddy, Address);
-        break;
-    case AllocationAlgorithm::XallocV1:
-        xalloc->Free(Address);
         break;
     case AllocationAlgorithm::NoAllocationAlgorithm:
         panic("HeapFree called before heap initialized!", true);
@@ -103,20 +73,8 @@ void *HeapMalloc(size_t Size)
 
     switch (AlgorithmToUse)
     {
-    case AllocationAlgorithm::Default:
-        ret = defPREFIX(malloc)(Size);
-        break;
-    case AllocationAlgorithm::LibAlloc:
-        ret = liballoc_malloc(Size);
-        break;
     case AllocationAlgorithm::LibAlloc11: // TODO: Make that the Liballoc 1.1 start at KERNEL_HEAP_BASE
         ret = libPREFIX(malloc)(Size);
-        break;
-    case AllocationAlgorithm::BuddyAlloc:
-        ret = buddy_malloc(buddy, Size);
-        break;
-    case AllocationAlgorithm::XallocV1:
-        ret = xalloc->Malloc(Size);
         break;
     case AllocationAlgorithm::NoAllocationAlgorithm:
         panic("HeapFree called before heap initialized!", true);
@@ -143,20 +101,8 @@ void *HeapCalloc(size_t n, size_t Size)
 
     switch (AlgorithmToUse)
     {
-    case AllocationAlgorithm::Default:
-        ret = defPREFIX(calloc)(n, Size);
-        break;
-    case AllocationAlgorithm::LibAlloc:
-        ret = liballoc_calloc(n, Size);
-        break;
     case AllocationAlgorithm::LibAlloc11:
         ret = libPREFIX(calloc)(n, Size);
-        break;
-    case AllocationAlgorithm::BuddyAlloc:
-        ret = buddy_calloc(buddy, n, Size);
-        break;
-    case AllocationAlgorithm::XallocV1:
-        ret = xalloc->Calloc(n, Size);
         break;
     case AllocationAlgorithm::NoAllocationAlgorithm:
         panic("HeapFree called before heap initialized!", true);
@@ -183,20 +129,8 @@ void *HeapRealloc(void *Address, size_t Size)
 
     switch (AlgorithmToUse)
     {
-    case AllocationAlgorithm::Default:
-        ret = defPREFIX(realloc)(Address, Size);
-        break;
-    case AllocationAlgorithm::LibAlloc:
-        ret = liballoc_realloc(Address, Size);
-        break;
     case AllocationAlgorithm::LibAlloc11:
         ret = libPREFIX(realloc)(Address, Size);
-        break;
-    case AllocationAlgorithm::BuddyAlloc:
-        ret = buddy_realloc(buddy, Address, Size);
-        break;
-    case AllocationAlgorithm::XallocV1:
-        ret = xalloc->Realloc(Address, Size);
         break;
     case AllocationAlgorithm::NoAllocationAlgorithm:
         panic("HeapFree called before heap initialized!", true);

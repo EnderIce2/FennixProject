@@ -44,7 +44,8 @@
 			"fileloader.h": "c",
 			"assert.h": "c",
 			"printf.h": "c",
-			"convert.h": "c"
+			"convert.h": "c",
+			"vm.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}

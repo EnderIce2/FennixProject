@@ -98,15 +98,8 @@ extern "C" void syscall_handle();
 
 void init_syscalls()
 {
-    // TODO: not tested enough
-    // EFER efer;
-    // efer.raw = rdmsr(MSR_EFER);
-    // efer.SCE = 1;
-    // wrmsr(MSR_EFER, efer.raw);
-
     wrmsr(MSR_EFER, rdmsr(MSR_EFER) | 1);
     wrmsr(MSR_STAR, ((uint64_t)(GDT_KERNEL_CODE) << 32) | ((uint64_t)(GDT_KERNEL_DATA | 3) << 48));
     wrmsr(MSR_LSTAR, (uint64_t)syscall_handle);
     wrmsr(MSR_SYSCALL_MASK, 0);
-    // debug("Syscalls has been initialized");
 }

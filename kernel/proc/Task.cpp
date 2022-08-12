@@ -3,7 +3,6 @@
 #include <debug.h>
 #include <asm.h>
 #include <cputables.h>
-#include <bootscreen.h>
 #include "../drivers/serial.h"
 
 using namespace Tasking;
@@ -13,14 +12,12 @@ void StartTasking(uint64_t Address, TaskingMode Mode)
     CLI;
     trace("Initializing Syscalls...");
     init_syscalls();
-    BS->IncreaseProgres();
     trace("Starting tasking mode %d", Mode);
     switch (Mode)
     {
     case TaskingMode::Mono:
     {
         monot = new Monotasking(Address);
-        BS->IncreaseProgres();
         break;
     }
     case TaskingMode::Multi:
@@ -28,7 +25,6 @@ void StartTasking(uint64_t Address, TaskingMode Mode)
         mt = new Multitasking;
         mt->CreateThread(mt->CreateProcess(nullptr, (char *)"kernel", ELEVATION::Kernel), Address, 0, 0);
         MultitaskingSchedulerEnabled = true;
-        BS->IncreaseProgres();
         break;
     }
     default:

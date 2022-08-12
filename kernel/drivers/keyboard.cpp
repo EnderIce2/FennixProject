@@ -18,8 +18,6 @@ namespace PS2Keyboard
         {
             uint8_t scanCode = inb(0x60);
             LastSC = scanCode;
-            if (scanCode == 0x3B)
-                ShowRecoveryScreen = true;
         }
     }
 

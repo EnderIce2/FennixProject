@@ -3,9 +3,7 @@
 #include <cwalk.h>
 #include <lock.h>
 #include <printf.h>
-#include <bootscreen.h>
 #include "kernel.h"
-#include "drivers/disk.h"
 
 // show debug messages
 // #define DEBUG_FILESYSTEM 1
@@ -420,7 +418,6 @@ namespace FileSystem
         FileSystemRoot->Parent = nullptr;
         strcpy(FileSystemRoot->Name, "root");
         cwk_path_set_style(CWK_STYLE_UNIX);
-        BS->IncreaseProgres();
     }
 
     Virtual::~Virtual()
@@ -448,7 +445,6 @@ namespace FileSystem
         DeviceRootNode = vfs->Create(nullptr, "/system/dev");
         DeviceRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
         DeviceRootNode->Mode = 0755;
-        BS->IncreaseProgres();
     }
 
     Device::~Device()
@@ -478,13 +474,6 @@ namespace FileSystem
 
     void Mount::DetectAndMountFS(void *drive)
     {
-        foreach (auto partition in((DiskManager::Partition::Drive *)drive)->Partitions)
-        {
-            debug("Mounting File Systems for Partition %d...", partition->Index);
-            new EXT2(partition);
-            new FAT(partition);
-            /* ... */
-        }
     }
 
     Mount::Mount()
@@ -493,7 +482,6 @@ namespace FileSystem
         MountRootNode = vfs->Create(nullptr, "/system/mnt");
         MountRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
         MountRootNode->Mode = 0755;
-        BS->IncreaseProgres();
     }
 
     Mount::~Mount()
@@ -510,7 +498,6 @@ namespace FileSystem
         ProcessRootNode = vfs->Create(nullptr, "/system/proc");
         ProcessRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
         ProcessRootNode->Mode = 0755;
-        BS->IncreaseProgres();
     }
 
     Process::~Process()

@@ -1,6 +1,5 @@
 #include <test.h>
 
-#include "network/NetworkController.hpp"
 #include "cpu/apic.hpp"
 #include "cpu/smp.hpp"
 #include "../timer.h"
@@ -500,33 +499,5 @@ void do_stacktrace_test()
 void do_network_test()
 {
     TEST_DBG("Network test started.\n");
-    InternetProtocol4 IP1 = {.Address = {0xFF, 0xFF, 0xFF, 0xFF}};
-    InternetProtocol4 IP2 = {.Address = {0xFF, 0xFF, 0xFF, 0xFF}};
-
-    InternetProtocol4 IPN1 = {.Address = {127, 0, 0, 1}};
-    InternetProtocol4 IPN2 = {.Address = {192, 168, 0, 1}};
-
-    MediaAccessControl MAC1 = {.Address = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}};
-    MediaAccessControl MAC2 = {.Address = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}};
-    MediaAccessControl MACN1 = {.Address = {0xF0, 0x2F, 0x6F, 0xF7, 0x1F, 0xFF}};
-    MediaAccessControl MACN2 = {.Address = {0xF2, 0xAF, 0x02, 0xF1, 0x1C, 0xFA}};
-
-    MediaAccessControl MACV1 = {.Address = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}};
-    MediaAccessControl MACV2 = {.Address = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0}};
-
-    TEST_ASSERT(IP1 == IP2);
-    TEST_ASSERT(IPN1 != IPN2);
-    TEST_ASSERT(IP1.ToHex() == 0xFFFFFFFF)
-    TEST_ASSERT(IP1.FromHex(0xFFFFFFFF) == IP2);
-
-    TEST_ASSERT(MAC1 == MAC2);
-    TEST_ASSERT(MACN1 != MACN2);
-    TEST_ASSERT(MAC1.ToHex() == 0xFFFFFFFFFFFF);
-    TEST_ASSERT(MAC1.FromHex(0xFFFFFFFFFFFF) == MAC2);
-    TEST_ASSERT(MACV1.Valid() == false);
-    TEST_ASSERT(MACV2.Valid() == false);
-    TEST_ASSERT(MACN1.Valid() == true);
-    TEST_ASSERT(MACN2.Valid() == true);
-
     TEST_DBG("Network test finished.\n");
 }

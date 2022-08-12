@@ -2,7 +2,6 @@
 #include <heap.h>
 #include <string.h>
 #include <elf.h>
-#include <bootscreen.h>
 
 #include "kernel.h"
 
@@ -77,7 +76,6 @@ namespace KernelSymbols
                 SymTable[i].FunctionName = &strtab[ElfSymbols[i].st_name];
             }
         }
-        BS->IncreaseProgres();
     }
 
     Symbols::~Symbols()

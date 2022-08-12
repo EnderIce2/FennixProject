@@ -1,20 +1,6 @@
 
 include Makefile.conf
 
-# Available display devices
-# None:       -vga none
-# Standard:   -device VGA
-# Bochs:      -device bochs-display
-# VirtIO VGA: -device virtio-vga
-# VirtIO GPU: -device virtio-gpu-pci
-# QXL VGA:    -device qxl-vga
-# QXL:        -device qxl
-# Cirrus VGA: -device cirrus-vga
-# ATI VGA:    -device ati-vga
-# RAMFB:      -device ramfb
-
-# For tap0
-# -netdev tap,id=usernet0,ifname=tap0,script=no,downscript=no
 QEMUFLAGS = -device bochs-display -M q35 \
 			-usb -no-reboot \
 			-usbdevice mouse \
@@ -35,8 +21,6 @@ QEMUFLAGS = -device bochs-display -M q35 \
 
 QEMUHWACCELERATION = -machine q35 -enable-kvm
 
-# SYSTEM_MEM = $(shell grep 'MemTotal' /proc/meminfo | sed -e 's/MemTotal://' -e 's/ kB//')
-# I could use $(shell echo ${SYSTEM_MEM}/1024/4 | bc) to specify a small amount (1/4) of memory for the qemu.
 QEMUMEMORY = -m 4G
 
 QEMU = ./${QEMU_PATH}
@@ -73,64 +57,30 @@ fonts:
 
 # Install necessary packages, build cross-compiler etc...
 tools: fonts
-	make --quiet -C tools all
-	make --quiet -C boot gnuefi
+	make -C tools all
 
-tools_workflow0: fonts
-	make --quiet -C tools do_initrd
-
-tools_workflow1:
-	make --quiet -C tools do_limine
-
-tools_workflow2:
-	make --quiet -C tools do_binutils
-
-tools_workflow3:
-	make --quiet -C tools do_gcc
-
-tools_workflow4:
-	make --quiet -C boot gnuefi
-
-build: build_bootloader build_kernel build_libc build_userspace build_image
-
-rebuild: clean build
-
-# Quickly build the operating system (it won't create the ISO file and doxygen documentation)
-build_bootloader:
-ifeq ($(BOOTLOADER), lynx)
-	make --quiet -C boot build
-endif
+build: build_kernel build_libc build_userspace build_image
 
 build_kernel:
-	make -j$(shell nproc) --quiet -C kernel build GIT_COMMIT=$(shell git rev-parse HEAD) GIT_COMMIT_SHORT=$(shell git rev-parse --short HEAD)
+	make -j$(shell nproc) -C kernel build GIT_COMMIT=$(shell git rev-parse HEAD) GIT_COMMIT_SHORT=$(shell git rev-parse --short HEAD)
 
 build_userspace:
-	make --quiet -C userspace build
+	make -C userspace build
 
 build_libc:
-	make --quiet -C libc build
+	make -C libc build
 
 build_image:
 	mkdir -p iso_tmp_data
 	tar cf initrd.tar.gz -C resources/initrd/ ./ --format=ustar
 	cp kernel/kernel.fsys initrd.tar.gz startup.nsh \
 		iso_tmp_data/
-ifeq ($(BOOTLOADER), lynx)
-	cp lynx.cfg boot/BIOS/loader.bin boot/UEFI/efi-loader.bin iso_tmp_data/
-	xorriso -as mkisofs -b loader.bin \
-		-no-emul-boot -boot-load-size 4 -boot-info-table \
-		--efi-boot efi-loader.bin \
-		-efi-boot-part --efi-boot-image --protective-msdos-label \
-		iso_tmp_data -o $(OSNAME).iso
-endif
-ifeq ($(BOOTLOADER), limine)
 	cp limine.cfg ${LIMINE_FOLDER}/limine.sys ${LIMINE_FOLDER}/limine-cd.bin ${LIMINE_FOLDER}/limine-cd-efi.bin iso_tmp_data/
 	xorriso -as mkisofs -b limine-cd.bin \
 		-no-emul-boot -boot-load-size 4 -boot-info-table \
 		--efi-boot limine-cd-efi.bin \
 		-efi-boot-part --efi-boot-image --protective-msdos-label \
 		iso_tmp_data -o $(OSNAME).iso
-endif
 
 vscode_debug: build_kernel build_libc build_userspace build_image
 	rm -f serial.log network.log
@@ -140,19 +90,12 @@ qemu: qemu_vdisk
 	rm -f serial.log network.log
 	${QEMU} -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
 
-qemubios: qemu_vdisk
-	rm -f serial.log network.log
-	${QEMU} -drive file=$(OSNAME).iso -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
-
 # build the os and run it
 run: build qemu_vdisk qemu
 
 # clean
 clean:
-	rm -rf doxygen-doc iso_tmp_data initrd.tar.gz *.iso
-ifeq ($(BOOTLOADER), lynx)
-	make --quiet -C boot clean
-endif
-	make --quiet -C kernel clean
-	make --quiet -C userspace clean
-	make --quiet -C libc clean
+	rm -rf iso_tmp_data initrd.tar.gz *.iso
+	make -C kernel clean
+	make -C userspace clean
+	make -C libc clean

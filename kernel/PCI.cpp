@@ -3,7 +3,6 @@
 #include <string.h>
 #include "drivers/serial.h"
 #include <debug.h>
-#include <bootscreen.h>
 
 using namespace VMM;
 
@@ -119,5 +118,4 @@ void init_pci()
     {
         err("No PCI support!"); // TODO: add legacy support if MCFG is not available
     }
-    BS->IncreaseProgres();
 }

@@ -107,26 +107,6 @@ bool init_stivale2(struct stivale2_struct *bootloaderdata, GlobalBootParams *par
     if (!second)
     {
         trace("Bootloader: %s %s", bootloaderdata->bootloader_brand, bootloaderdata->bootloader_version);
-        if (strstr((string)cmdline->cmdline, "no4gbcap"))
-        {
-            debug("Ignoring 4GB memory cap...");
-        }
-        else
-        {
-            struct stivale2_struct_tag_memmap *memmap = (struct stivale2_struct_tag_memmap *)tag_memmap;
-            uint64_t tmpmemsize = 0;
-            for (uint64_t i = 0; i < memmap->entries; i++)
-                tmpmemsize += memmap->memmap[i].length;
-
-            if (TO_GB(tmpmemsize) < 4)
-            {
-                // The system can run with less than 4GB memory but I didn't test that enough.
-                term_write("Minimum memory requirement is 4GB! System Halted.", 42);
-                while (1)
-                    __asm__ __volatile__("hlt" ::
-                                             : "memory");
-            }
-        }
         term_write("Please wait... ", 15);
     }
 

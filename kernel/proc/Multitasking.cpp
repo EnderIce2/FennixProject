@@ -1,6 +1,5 @@
 #include <internal_task.h>
 
-#include "../security/security.hpp"
 #include "../cpu/apic.hpp"
 #include "../cpu/smp.hpp"
 #include "../cpu/gdt.h"
@@ -238,10 +237,6 @@ namespace Tasking
         process->Info.Platform = Platform::UnknownPlatform;
         process->ID = this->NextPID++;
         process->Offset = 0;
-        process->Security.Token = CreateToken();
-        trace("New security token created %p", process->Security.Token);
-        if (Elevation == ELEVATION::Idle || Elevation == ELEVATION::Kernel || Elevation == ELEVATION::System)
-            TrustToken(process->Security.Token, true, process->ID, TokenTrustLevel::TrustedByKernel);
         process->Elevation = Elevation;
         process->Status = STATUS::Ready;
         memcpy(process->Name, Name, sizeof(process->Name));
@@ -278,7 +273,6 @@ namespace Tasking
 
         thread->ID = this->NextTID++;
         thread->Status = STATUS::Ready;
-        thread->Security.Token = CreateToken();
         thread->Parent = Parent;
         memcpy(thread->Name, Parent->Name, sizeof(Parent->Name));
         memset(&thread->Registers, 0, sizeof(TrapFrame));
@@ -292,7 +286,6 @@ namespace Tasking
             [[fallthrough]];
         case ELEVATION::Idle:
         case ELEVATION::Kernel:
-            TrustToken(thread->Security.Token, false, thread->ID, TokenTrustLevel::TrustedByKernel);
             thread->gs = (uint64_t)thread;
             thread->fs = rdmsr(MSR_FS_BASE);
             thread->Registers.cs = GDT_KERNEL_CODE;
@@ -305,7 +298,6 @@ namespace Tasking
             POKE(uint64_t, thread->Registers.rsp) = (uint64_t)ProcessDoExit;
             break;
         case ELEVATION::User:
-            TrustToken(thread->Security.Token, false, thread->ID, TokenTrustLevel::Untrusted);
             thread->gs = 0;
             thread->fs = rdmsr(MSR_FS_BASE);
             thread->Registers.cs = GDT_USER_CODE;
