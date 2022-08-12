@@ -62,8 +62,8 @@ namespace NetDbg
 
         NETWORK_DEBUG() : NetworkInterfaceManager::Events(nullptr) { netdbg("NetworkDebugger initialized."); }
         ~NETWORK_DEBUG() { netdbg("NetworkDebugger destroyed."); }
-        virtual void OnInterfaceReceived(NetworkInterfaceManager::DeviceInterface *Interface, uint8_t *Data, uint64_t Length) { DumpData("Received", Data, Length); }
-        virtual void OnInterfaceSent(NetworkInterfaceManager::DeviceInterface *Interface, uint8_t *Data, uint64_t Length) { DumpData("Sent", Data, Length); }
+        void OnInterfaceReceived(NetworkInterfaceManager::DeviceInterface *Interface, uint8_t *Data, uint64_t Length) { DumpData("Received", Data, Length); }
+        void OnInterfaceSent(NetworkInterfaceManager::DeviceInterface *Interface, uint8_t *Data, uint64_t Length) { DumpData("Sent", Data, Length); }
     };
 }
 
