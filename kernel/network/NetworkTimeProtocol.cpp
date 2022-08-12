@@ -2,18 +2,13 @@
 
 namespace NetworkNTP
 {
-    // NTP::NTP(NetworkUDP::Socket *Socket)
-    // {
-    //     this->Socket = Socket;
-    // }
-
-    // NTP::~NTP()
-    // {
-    // }
-
-    void OnReceive(NetworkUDP::Socket *Socket, uint8_t *Data, uint64_t Length)
+    NTP::NTP(NetworkUDP::Socket *Socket) : NetworkUDP::UDPEvents()
     {
-        fixme("OnReceive( %p %p %ld )", Socket, Data, Length);
+        this->Socket = Socket;
+    }
+
+    NTP::~NTP()
+    {
     }
 
     void ReadTime()
