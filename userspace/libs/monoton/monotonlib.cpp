@@ -21,7 +21,6 @@ namespace MonotonLib
         syscall_FileRead(FontBinary, 0, FontAllocatedData, FontFileSize);
 
         PSF2Font = new PSF2_FONT;
-        uint16_t glyph2 = 0;
         PSF2_HEADER *font2 = (PSF2_HEADER *)FontAllocatedData;
         if (font2->magic[0] != PSF2_MAGIC0 || font2->magic[1] != PSF2_MAGIC1 || font2->magic[2] != PSF2_MAGIC2 || font2->magic[3] != PSF2_MAGIC3)
         {
@@ -50,15 +49,9 @@ namespace MonotonLib
         delete PSF2Font;
     }
 
-    void mtl::SetBackgroundColor(uint32_t Color)
-    {
-        this->Background = Color;
-    }
+    void mtl::SetBackgroundColor(uint32_t Color) { this->Background = Color; }
 
-    void mtl::SetForegroundColor(uint32_t Color)
-    {
-        this->Foreground = Color;
-    }
+    void mtl::SetForegroundColor(uint32_t Color) { this->Foreground = Color; }
 
     void mtl::SetPrintPosition(PrintPos Position)
     {
@@ -86,10 +79,7 @@ namespace MonotonLib
         Ypos = Position.y;
     }
 
-    PrintPos mtl::GetPrintPosition()
-    {
-        return {Xpos, Ypos};
-    }
+    PrintPos mtl::GetPrintPosition() { return {Xpos, Ypos}; }
 
     void mtl::Clear()
     {
@@ -238,8 +228,5 @@ namespace MonotonLib
         this->SetPrintPosition({Xi, Yi});
     }
 
-    void mtl::print(const char *Text)
-    {
-        this->print(Text, {Xpos, Ypos});
-    }
+    void mtl::print(const char *Text) { this->print(Text, {Xpos, Ypos}); }
 }
