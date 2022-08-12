@@ -7,6 +7,8 @@ QEMU_VERSION = qemu-7.0.0
 
 all: do_initrd do_readethernet do_e do_limine do_binutils do_gcc do_qemu
 
+workflow_all: do_initrd do_readethernet do_e do_limine do_binutils do_gcc
+
 workflow: do_limine
 
 clean:

@@ -32,7 +32,7 @@ jobs:
 
     - name: Tools
       if: steps.cache-cross-mttest.outputs.cache-hit != 'true'
-      run: make tools
+      run: make tools_workflow_all
 
     - name: Tools Workflow
       if: steps.cache-cross-mttest.outputs.cache-hit != 'false'
