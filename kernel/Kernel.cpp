@@ -30,7 +30,6 @@
 #include "test.h"
 #include "pci.h"
 
-// Early params are used only for the most basic functions. After that it may be overwritten with other data.
 GlobalBootParams earlyparams;
 GlobalBootParams *bootparams = nullptr;
 SysFlags *sysflags = nullptr;
@@ -43,11 +42,6 @@ void KernelInit();
 EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
 {
     init_stivale2(bootloaderdata, &earlyparams, false);
-    // asm volatile("andq $-16, %rsp");
-    // asm volatile("movw $0, %ax");
-    // asm volatile("movw %ax, %fs");
-    // wrmsr(MSR_FS_BASE, 0);
-
     init_pmm();
     init_vmm();
     init_kernelpml();
@@ -73,7 +67,6 @@ EXTERNC void limine_initializator()
 
 EXTERNC void kernel_entry(void *data)
 {
-    // unknown boot protocol.
     err("Bootloader initialized the kernel with unknown protocol! Trying to figure out what protocol is used.");
     // TODO: detect boot protocol. make it more safe. it can trigger a triple fault.
     if (detect_limine())
@@ -228,9 +221,6 @@ void CheckSystemRequirements()
 #endif
 }
 
-/* I should make everything in C++ but I use code from older (failed) projects.
-   I will probably move the old C code to C++ in the future. */
-
 void KernelInit()
 {
     trace("Early initialization completed.");
@@ -380,11 +370,9 @@ void KernelInit()
     // do_mem_test();
     // do_tasking_test();
 
-    // #ifndef TESTING
     if (sysflags->monotasking)
         StartTasking((uint64_t)KernelTask, TaskingMode::Mono);
     else
         StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
-    // #endif
     CPU_STOP;
 }
