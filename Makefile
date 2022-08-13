@@ -4,7 +4,7 @@ include Makefile.conf
 QEMUFLAGS = -device bochs-display -M q35 \
 			-usb -no-reboot \
 			-usbdevice mouse \
-			-smp $(shell nproc) \
+			-smp 1 \
     		-netdev user,id=usernet0 \
     		-device e1000,netdev=usernet0,mac=00:69:96:00:42:00 \
 			-object filter-dump,id=usernet0,netdev=usernet0,file=network.log,maxlen=1024 \
@@ -90,7 +90,7 @@ build_image:
 
 vscode_debug: build_kernel build_libc build_userspace build_image
 	rm -f serial.log network.log
-	${QEMU} -S -gdb tcp::1234 -d int -no-shutdown -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -m 4G ${QEMUFLAGS}
+	${QEMU} -S -gdb tcp::1234 -d int -no-shutdown -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -m 512M ${QEMUFLAGS}
 
 qemu: qemu_vdisk
 	rm -f serial.log network.log

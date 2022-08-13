@@ -183,10 +183,10 @@ namespace SymmetricMultiprocessing
 
         // TODO: VBox doesn't like this.
 
-        for (size_t i = 0; i < madt->CPUCores; i++)
-            if ((apic->Read(APIC::APIC::APIC_ID) >> 24) != madt->lapic[i]->ACPIProcessorId)
-                InitializeCPU(madt->lapic[i]);
-            else
+        // for (size_t i = 0; i < madt->CPUCores; i++)
+        //     if ((apic->Read(APIC::APIC::APIC_ID) >> 24) != madt->lapic[i]->ACPIProcessorId)
+        //         InitializeCPU(madt->lapic[i]);
+        //     else
                 EnableCPUFeatures();
     }
 

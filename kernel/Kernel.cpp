@@ -76,7 +76,7 @@ void KernelTask()
     SysCreateProcessFromFile("/system/test3", 0, 0, User);
     SysCreateProcessFromFile("/system/test4", 0, 0, User);
     trace("End Of Kernel Task");
-    CPU_STOP;
+    // CPU_STOP;
 }
 
 void KernelInit()

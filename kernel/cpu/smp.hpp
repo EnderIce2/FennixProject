@@ -53,7 +53,7 @@ static CPUData *GetCurrentCPU()
     if ((&CPUs[ret])->Checksum != CPU_DATA_CHECKSUM)
     {
         // TODO: i think somehow i messed this up somehere... i'll figure it out later... but now i will return the first cpu
-        err("CPU %d data are corrupted!", ret);
+        // err("CPU %d data are corrupted!", ret);
         return &CPUs[0];
     }
 

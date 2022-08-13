@@ -15,8 +15,6 @@
 
 #define SchedulerInterrupt IRQ16
 
-
-
 #ifdef DEBUG_SCHEDULER
 #define schedbg(m, ...) debug(m, ##__VA_ARGS__)
 #else
@@ -464,12 +462,17 @@ namespace Tasking
 
         static void MakeOneShot() { TriggerOneShot(SchedulerInterrupt, 100); }
 
-        __attribute__((naked, used)) static void IdleProcessLoop()
+        static void IdleProcessLoop()
         {
-            asm volatile("idleloop:\n"
-                         "call MakeOneShot\n"
-                         "hlt\n"
-                         "jmp idleloop\n");
+            while (1)
+            {
+                schedbg("IDLE");
+                // asm("hlt");
+            }
+            // asm volatile("idleloop:\n"
+            //              "call MakeOneShot\n"
+            //              "hlt\n"
+            //              "jmp idleloop\n");
         }
 
         static void MultiTaskingSchedulerHandler(ThreadRegisters *regs)
