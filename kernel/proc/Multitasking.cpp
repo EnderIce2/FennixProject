@@ -15,7 +15,7 @@
 
 #define SchedulerInterrupt IRQ16
 
-#define DEBUG_SCHEDULER 1
+
 
 #ifdef DEBUG_SCHEDULER
 #define schedbg(m, ...) debug(m, ##__VA_ARGS__)

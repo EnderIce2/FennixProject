@@ -3,6 +3,7 @@
 #include "../interrupts/pic.h"
 #include "smp.hpp"
 
+#include <internal_task.h>
 #include <critical.hpp>
 #include <symbols.hpp>
 #include <int.h>
@@ -59,12 +60,14 @@ namespace APIC
 
     void APIC::Write(uint32_t Register, uint32_t Value)
     {
-        // Too repetitive
+// Too repetitive
+#ifndef DEBUG_SCHEDULER
         if (Register != APIC_EOI &&
             Register != APIC_TIMER &&
             Register != APIC_TDCR &&
             Register != APIC_TICR &&
             Register != APIC_TCCR)
+#endif
             debug("APIC::Write(%#lx, %#lx)", Register, Value);
         if (x2APICSupported)
         {
