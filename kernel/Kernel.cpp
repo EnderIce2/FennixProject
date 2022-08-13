@@ -73,7 +73,6 @@ void KernelTask()
 #endif
 
     // for now i'll not load this.
-    // if (CurrentTaskingMode != TaskingMode::Mono)
     if (0 != 0)
     {
         kdrv = new Driver::KernelDriver;
@@ -119,8 +118,7 @@ void KernelTask()
         CPU_HALT;
     }
     trace("End Of Kernel Task");
-    if (CurrentTaskingMode != TaskingMode::Mono)
-        CPU_STOP;
+    CPU_STOP;
 }
 
 void KernelInit()
@@ -168,6 +166,6 @@ void KernelInit()
     new FileSystem::Null;
     new FileSystem::Zero;
     ps2mouse = new PS2Mouse::PS2MouseDriver;
-        StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
+    StartTasking((uint64_t)KernelTask);
     CPU_STOP;
 }

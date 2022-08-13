@@ -7,32 +7,14 @@
 
 using namespace Tasking;
 
-void StartTasking(uint64_t Address, TaskingMode Mode)
+void StartTasking(uint64_t Address)
 {
     CLI;
     trace("Initializing Syscalls...");
     init_syscalls();
-    trace("Starting tasking mode %d", Mode);
-    switch (Mode)
-    {
-    case TaskingMode::Mono:
-    {
-        monot = new Monotasking(Address);
-        break;
-    }
-    case TaskingMode::Multi:
-    {
-        mt = new Multitasking;
-        mt->CreateThread(mt->CreateProcess(nullptr, (char *)"kernel", ELEVATION::Kernel), Address, 0, 0);
-        MultitaskingSchedulerEnabled = true;
-        break;
-    }
-    default:
-    {
-        STI;
-        throw;
-        break;
-    }
-    }
+
+    mt = new Multitasking;
+    mt->CreateThread(mt->CreateProcess(nullptr, (char *)"kernel", ELEVATION::Kernel), Address, 0, 0);
+    MultitaskingSchedulerEnabled = true;
     STI;
 }

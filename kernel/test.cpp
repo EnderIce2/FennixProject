@@ -465,7 +465,6 @@ void do_tasking_test()
 {
 #ifdef UNIT_TESTS
     // test_safescheduler();
-    StartTasking((uint64_t)test_kernelmultitasking, TaskingMode::Multi);
     CPU_STOP;
 #endif
 }

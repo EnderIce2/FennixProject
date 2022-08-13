@@ -65,25 +65,22 @@ static uint64_t internal_getcurrentthreadid(SyscallsRegs *regs)
 static int internal_getschedulemode(SyscallsRegs *regs)
 {
     syscldbg("syscall: getschedulemode()");
-    return CurrentTaskingMode;
+    return 0;
 }
 
-static Tasking::TaskControlBlock *internal_createtask(SyscallsRegs *regs, uint64_t rip, uint64_t arg0, uint64_t arg1, char *name)
+static void *internal_createtask(SyscallsRegs *regs, uint64_t rip, uint64_t arg0, uint64_t arg1, char *name)
 {
-    syscldbg("syscall: createtask( %#llx %#llx %#llx %s )", rip, arg0, arg1, name);
-    return Tasking::monot->CreateTask(rip, arg0, arg1, name, true);
+    err("syscall: createtask( %#llx %#llx %#llx %s )", rip, arg0, arg1, name);
 }
 
 static void internal_pushtask(SyscallsRegs *regs, uint64_t jumpbackIP)
 {
-    syscldbg("syscall: pushtask( %#llx )", jumpbackIP);
-    Tasking::monot->PushTask(jumpbackIP);
+    err("syscall: pushtask( %#llx )", jumpbackIP);
 }
 
 static void internal_poptask(SyscallsRegs *regs)
 {
-    syscldbg("syscall: poptask()");
-    Tasking::monot->PopTask();
+    err("syscall: poptask()");
 }
 
 static void *internal_requestpage(SyscallsRegs *regs)
@@ -327,16 +324,8 @@ static File *internal_filegetchildren(SyscallsRegs *regs, File *F, uint64_t Inde
 static void internal_usleep(SyscallsRegs *regs, uint64_t us)
 {
     syscldbg("syscall: usleep( %#llx )", us);
-    if (CurrentTaskingMode == TaskingMode::Mono)
-    {
-        usleep(us);
-        return;
-    }
-    else if (CurrentTaskingMode == TaskingMode::Multi)
-    {
-        warn("Sleeping in multi-tasking mode is not implemented yet!");
-        return;
-    }
+    warn("Sleeping in multi-tasking mode is not implemented yet!");
+    return;
 }
 
 static uint64_t internal_dbg(SyscallsRegs *regs, int port, char *message)

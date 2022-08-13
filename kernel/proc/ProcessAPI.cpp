@@ -12,176 +12,70 @@
 using namespace Tasking;
 using namespace FileSystem;
 
-int CurrentTaskingMode = TaskingMode::None;
-
 PCB *nullpcb = nullptr;
 TCB *nulltcb = nullptr;
 
-// TODO: add actual support for this
-void fillemptycbs()
-{
-    static int once;
-    if (!once++)
-    {
-        if (CurrentTaskingMode == TaskingMode::Multi)
-            return;
-        string StubName = "Mono Task";
-        nullpcb = new PCB;
-        nullpcb->ID = 0;
-        nullpcb->Parent = nullptr;
-        memcpy(nullpcb->Name, StubName, sizeof(nullpcb->Name));
-
-        nulltcb = new TCB;
-        nulltcb->ID = 0;
-        nulltcb->Parent = nullpcb;
-        memcpy(nulltcb->Name, StubName, sizeof(nulltcb->Name));
-    }
-}
-
 PCB *SysGetProcessByPID(uint64_t ID)
 {
-    switch (CurrentTaskingMode)
+    EnterCriticalSection;
+    foreach (PCB *pcb in mt->ListProcess)
     {
-    case TaskingMode::Mono:
-    {
-        static int once = 0;
-        if (!once++)
-            err("The current tasking mode does not support the request.");
-        return nullpcb;
-    }
-    case TaskingMode::Multi:
-    {
-        EnterCriticalSection;
-        foreach (PCB *pcb in mt->ListProcess)
+        if (pcb == nullptr || pcb->Checksum != Checksum::PROCESS_CHECKSUM || pcb->Elevation == ELEVATION::Idle)
+            continue;
+        if (pcb->ID == ID)
         {
-            if (pcb == nullptr || pcb->Checksum != Checksum::PROCESS_CHECKSUM || pcb->Elevation == ELEVATION::Idle)
-                continue;
-            if (pcb->ID == ID)
-            {
-                LeaveCriticalSection;
-                return pcb;
-            }
+            LeaveCriticalSection;
+            return pcb;
         }
-        LeaveCriticalSection;
-        return nullptr;
     }
-    default:
-        return nullptr;
-    }
+    LeaveCriticalSection;
+    return nullptr;
 }
 
 TCB *SysGetThreadByTID(uint64_t ID)
 {
-    switch (CurrentTaskingMode)
+    EnterCriticalSection;
+    foreach (PCB *pcb in mt->ListProcess)
     {
-    case TaskingMode::Mono:
-    {
-        static int once = 0;
-        if (!once++)
-            err("The current tasking mode does not support the request.");
-        return nulltcb;
-    }
-    case TaskingMode::Multi:
-    {
-        EnterCriticalSection;
-        foreach (PCB *pcb in mt->ListProcess)
-        {
-            if (pcb == nullptr || pcb->Checksum != Checksum::PROCESS_CHECKSUM || pcb->Elevation == ELEVATION::Idle)
-                continue;
+        if (pcb == nullptr || pcb->Checksum != Checksum::PROCESS_CHECKSUM || pcb->Elevation == ELEVATION::Idle)
+            continue;
 
-            foreach (TCB *tcb in pcb->Threads)
+        foreach (TCB *tcb in pcb->Threads)
+        {
+            if (tcb->ID == ID)
             {
-                if (tcb->ID == ID)
-                {
-                    LeaveCriticalSection;
-                    return tcb;
-                }
+                LeaveCriticalSection;
+                return tcb;
             }
         }
-        LeaveCriticalSection;
-        return nullptr;
     }
-    default:
-        return nullptr;
-    }
+    LeaveCriticalSection;
+    return nullptr;
 }
 
 PCB *SysGetCurrentProcess()
 {
-    switch (CurrentTaskingMode)
-    {
-    case TaskingMode::Mono:
-    {
-        static int once = 0;
-        if (!once++)
-            err("The current tasking mode does not support the request.");
-        return nullpcb;
-    }
-    case TaskingMode::Multi:
-        return CurrentCPU->CurrentProcess;
-    default:
-        return nullptr;
-    }
+    return CurrentCPU->CurrentProcess;
 }
 
 TCB *SysGetCurrentThread()
 {
-    switch (CurrentTaskingMode)
-    {
-    case TaskingMode::Mono:
-    {
-        static int once = 0;
-        if (!once++)
-            err("The current tasking mode does not support the request.");
-        return nulltcb;
-    }
-    case TaskingMode::Multi:
-        return CurrentCPU->CurrentThread;
-    default:
-        return nullptr;
-    }
+    return CurrentCPU->CurrentThread;
 }
 
 PCB *SysCreateProcess(const char *Name, ELEVATION Elevation)
 {
-    switch (CurrentTaskingMode)
-    {
-    case TaskingMode::Mono:
-    {
-        static int once = 0;
-        if (!once++)
-            err("The current tasking mode does not support the request.");
-        return nullpcb;
-    }
-    case TaskingMode::Multi:
-        return mt->CreateProcess(SysGetCurrentProcess(), (char *)Name, Elevation);
-    default:
-        return nullptr;
-    }
+    return mt->CreateProcess(SysGetCurrentProcess(), (char *)Name, Elevation);
 }
 
 TCB *SysCreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t arg0, uint64_t arg1)
 {
-    switch (CurrentTaskingMode)
-    {
-    case TaskingMode::Mono:
-    {
-        static int once = 0;
-        if (!once++)
-            err("The current tasking mode does not support the request.");
-        return nulltcb;
-    }
-    case TaskingMode::Multi:
-        return mt->CreateThread(Parent, InstructionPointer, arg0, arg1);
-    default:
-        return nullptr;
-    }
+    return mt->CreateThread(Parent, InstructionPointer, arg0, arg1);
 }
 
 // TODO: implement for primitive tasking if enabled to suspend the current task and run the created one
 PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, ELEVATION Elevation)
 {
-    fillemptycbs();
     /* ... Open file ... Parse file ... map elf file ... get rip etc ... */
     EnterCriticalSection;
     FILE *file = vfs->Open(File);
@@ -277,19 +171,10 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
                     debug("%s Entry Point: %#llx", File, (uint64_t)(ELFHeader->e_entry + (uint64_t)offset));
                     vfs->Close(file);
                     LeaveCriticalSection;
-                    if (CurrentTaskingMode == TaskingMode::Mono)
-                    {
-                        bool user = false;
-                        if (Elevation == ELEVATION::User)
-                            user = true;
-                        return (/* data will be invalid but not null */ PCB *)monot->CreateTask(ELFHeader->e_entry + (uint64_t)offset, arg0, arg1, (char *)file->Name, user);
-                    }
-                    else
-                    {
-                        PCB *pcb = SysCreateProcess(file->Name, Elevation);
-                        pcb->Offset = (uint64_t)offset;
-                        return SysCreateThread(pcb, (uint64_t)ELFHeader->e_entry, arg0, arg1)->Parent;
-                    }
+
+                    PCB *pcb = SysCreateProcess(file->Name, Elevation);
+                    pcb->Offset = (uint64_t)offset;
+                    return SysCreateThread(pcb, (uint64_t)ELFHeader->e_entry, arg0, arg1)->Parent;
                 }
                 else if (ELFHeader->e_type == ET_DYN)
                 {
