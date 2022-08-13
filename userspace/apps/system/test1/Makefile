@@ -1,6 +1,6 @@
 include ../../../../Makefile.conf
 
-NAME=init
+NAME=test1
 OUTPUT_DIR=../../../../resources/initrd/system/
 
 CC = ../../../../$(COMPILER_PATH)/$(COMPILER_ARCH)gcc

@@ -71,52 +71,10 @@ void KernelTask()
     printf("C++ Language Version (__cplusplus) :%ld\n", __cplusplus);
     printf("%s", cpu_get_info());
 #endif
-
-    // for now i'll not load this.
-    if (0 != 0)
-    {
-        kdrv = new Driver::KernelDriver;
-        FileSystem::FILE *driverDirectory = vfs->Open("/system/drivers");
-        if (driverDirectory->Status == FileSystem::FILESTATUS::OK)
-        {
-            foreach (auto driver in driverDirectory->Node->Children)
-            {
-                if (driver->Flags == FileSystem::NodeFlags::FS_FILE)
-                    if (cwk_path_has_extension(driver->Name))
-                    {
-                        const char *extension;
-                        cwk_path_get_extension(driver->Name, &extension, nullptr);
-
-                        if (!strcmp(extension, ".drv"))
-                        {
-                            CurrentDisplay->SetPrintColor(0xCCCCCC);
-                            printf("Loading driver %s... ", driver->Name);
-                            uint64_t ret = kdrv->LoadKernelDriverFromFile(driver);
-                            if (ret == 0)
-                            {
-                                CurrentDisplay->SetPrintColor(0x058C19);
-                                printf("OK\n");
-                            }
-                            else
-                            {
-                                CurrentDisplay->SetPrintColor(0xE85230);
-                                printf("FAILED (%#lx)\n", ret);
-                            }
-                            CurrentDisplay->ResetPrintColor();
-                            // TODO: get instruction pointer of the elf entry point.
-                        }
-                    }
-            }
-        }
-        vfs->Close(driverDirectory);
-    }
-
-    if (!SysCreateProcessFromFile("/system/init", 0, 0, User))
-    {
-        CurrentDisplay->SetPrintColor(0xFC4444);
-        printf("Failed to load /system/init process. The file is missing or corrupted.\n");
-        CPU_HALT;
-    }
+    SysCreateProcessFromFile("/system/test1", 0, 0, User);
+    SysCreateProcessFromFile("/system/test2", 0, 0, User);
+    SysCreateProcessFromFile("/system/test3", 0, 0, User);
+    SysCreateProcessFromFile("/system/test4", 0, 0, User);
     trace("End Of Kernel Task");
     CPU_STOP;
 }

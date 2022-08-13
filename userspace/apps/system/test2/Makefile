@@ -1,6 +1,6 @@
 include ../../../../Makefile.conf
 
-NAME=wm
+NAME=test2
 OUTPUT_DIR=../../../../resources/initrd/system/
 
 CC = ../../../../$(COMPILER_PATH)/$(COMPILER_ARCH)gcc

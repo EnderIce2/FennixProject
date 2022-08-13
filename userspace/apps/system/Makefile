@@ -1,17 +1,11 @@
 build:
-	make -C init build
-	make -C monoton build
-	make -C uiserver build
-	make -C wm build
-	make -C fesktop build
-	make -C shutdown build
-	make -C reboot build
+	make -C test1 build
+	make -C test2 build
+	make -C test3 build
+	make -C test4 build
 
 clean:
-	make -C init clean
-	make -C monoton clean
-	make -C uiserver clean
-	make -C wm clean
-	make -C fesktop clean
-	make -C shutdown clean
-	make -C reboot clean
+	make -C test1 clean
+	make -C test2 clean
+	make -C test3 clean
+	make -C test4 clean

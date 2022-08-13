@@ -48,24 +48,4 @@ bool CRegisterInterrupt(INTERRUPT_HANDLER Handler, InterruptVector Vector, bool 
  */
 bool UnregisterInterrupt(InterruptVector vector);
 
-#ifdef __cplusplus
-
-namespace DriverInterrupts
-{
-    class Register
-    {
-    private:
-        InterruptVector IVector;
-
-    protected:
-        Register(InterruptVector Vector);
-        ~Register();
-
-    public:
-        virtual void HandleInterrupt(TrapFrame *regs);
-    };
-}
-
-#endif // __cplusplus
-
 #endif // !__FENNIX_KERNEL_INTERRUPTS_H__
