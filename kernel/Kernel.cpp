@@ -135,7 +135,6 @@ void KernelInit()
     init_tss();
     acpi = new ACPI::ACPI;
     madt = new ACPI::MADT;
-    dsdt = new ACPI::DSDT;
     init_pci();
     apic = new APIC::APIC;
     smp = new SymmetricMultiprocessing::SMP;
@@ -149,7 +148,6 @@ void KernelInit()
         outb(PIC2_DATA, 0b11101111);
     }
     STI;
-    dsdt->InitSCI();
     ps2keyboard = new PS2Keyboard::PS2KeyboardDriver;
     vfs = new FileSystem::Virtual;
     for (int i = 0; i < bootparams->modules.num; i++)

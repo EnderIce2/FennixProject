@@ -742,7 +742,6 @@ namespace Tasking
 
     Multitasking::Multitasking()
     {
-        CurrentTaskingMode = TaskingMode::Multi;
         CriticalSectionData = new Critical::CriticalSectionData;
         apic->RedirectIRQ(CurrentCPU->ID, SchedulerInterrupt - IRQ0, 1);
         TriggerOneShot(SchedulerInterrupt, 100);
@@ -751,7 +750,6 @@ namespace Tasking
     Multitasking::~Multitasking()
     {
         debug("Multitasking destructor called.");
-        CurrentTaskingMode = TaskingMode::None;
         MultitaskingSchedulerEnabled = false;
         delete CriticalSectionData;
         foreach (PCB *pcb in mt->ListProcess)

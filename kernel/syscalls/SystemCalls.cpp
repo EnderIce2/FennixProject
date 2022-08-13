@@ -81,7 +81,7 @@ extern "C" uint64_t syscall_handler(SyscallsRegs *regs)
     case Platform::POSIX: // TODO: add support for POSIX
     case Platform::Linux:
     {
-        return HandleLinuxSyscalls(regs);
+        return 0;
     }
     case Platform::Windows:
     {

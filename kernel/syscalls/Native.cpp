@@ -121,14 +121,12 @@ static void internal_freepages(SyscallsRegs *regs, void *page, uint64_t pages)
 
 static void internal_shutdown(SyscallsRegs *regs)
 {
-    syscldbg("syscall: shutdown()");
-    dsdt->shutdown();
+    warn("syscall: shutdown()");
 }
 
 static void internal_reboot(SyscallsRegs *regs)
 {
-    syscldbg("syscall: reboot()");
-    dsdt->reboot();
+    warn("syscall: reboot()");
 }
 
 static uint64_t internal_fbaddress(SyscallsRegs *regs)

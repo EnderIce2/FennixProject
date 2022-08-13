@@ -288,8 +288,7 @@ INTERRUPT_HANDLER(0x2f)
 
 __attribute__((naked, used, no_stack_protector)) void interrupt_handler_0x30() { asm("pushq $0\npushq $0x30\n"
                                                                                      "jmp MultiTaskingSchedulerHelper"); }
-__attribute__((naked, used, no_stack_protector)) void interrupt_handler_0x31() { asm("pushq $0\npushq $0x31\n"
-                                                                                     "jmp MonoTaskingSchedulerHelper"); }
+INTERRUPT_HANDLER(0x31)
 INTERRUPT_HANDLER(0x32)
 INTERRUPT_HANDLER(0x33)
 INTERRUPT_HANDLER(0x34)
