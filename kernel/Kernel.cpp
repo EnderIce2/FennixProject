@@ -86,19 +86,28 @@ void KernelInit()
     do_libs_test();
     SymTbl = new KernelSymbols::Symbols;
     CurrentDisplay = new DisplayDriver::Display;
+    CurrentDisplay->Clear();
+    printf("- KERNEL  %s\n", KERNEL_NAME);
+    printf("- VERSION %s\n", KERNEL_VERSION);
+    printf("- GIT     %s\n", GIT_COMMIT);
+    printf("Kernel is starting up");
     KernelPageTableAllocator = new PageTableHeap::PageTableHeap;
     KernelStackAllocator = new StackHeap::StackHeap;
+    CurrentDisplay->KernelPrint('.');
     init_gdt();
     init_idt();
     init_tss();
+    CurrentDisplay->KernelPrint('.');
     acpi = new ACPI::ACPI;
     madt = new ACPI::MADT;
     init_pci();
     apic = new APIC::APIC;
+    CurrentDisplay->KernelPrint('.');
     smp = new SymmetricMultiprocessing::SMP;
     apic->RedirectIRQs();
     init_timer();
     do_stacktrace_test();
+    CurrentDisplay->KernelPrint('.');
     if (!apic->APICSupported())
     {
         panic("APIC is not supported!", true);
@@ -108,6 +117,7 @@ void KernelInit()
     STI;
     ps2keyboard = new PS2Keyboard::PS2KeyboardDriver;
     vfs = new FileSystem::Virtual;
+    CurrentDisplay->KernelPrint('.');
     for (int i = 0; i < bootparams->modules.num; i++)
         if (bootparams->modules.ramdisks[i].type == initrdType::USTAR)
         {
@@ -117,11 +127,14 @@ void KernelInit()
     devfs = new FileSystem::Device;
     mountfs = new FileSystem::Mount;
     procfs = new FileSystem::Process;
+    CurrentDisplay->KernelPrint('.');
     new FileSystem::Serial;
     new FileSystem::Random;
     new FileSystem::Null;
     new FileSystem::Zero;
     ps2mouse = new PS2Mouse::PS2MouseDriver;
+    CurrentDisplay->KernelPrint('.');
+    printf("\nKERNEL EARLY INITIALIZATION COMPLETE\nRUNNING KERNEL TASK...\n");
     StartTasking((uint64_t)KernelTask);
     CPU_STOP;
 }
