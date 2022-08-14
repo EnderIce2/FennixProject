@@ -30,6 +30,9 @@ jobs:
       if: steps.cache-cross-bootloader-test.outputs.cache-hit != 'true'
       run: sudo apt-get install build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo -y
 
+    - name: Install MinGW compiler
+      run: sudo apt-get install make gcc-mingw-w64-x86-64 gcc-mingw-w64-i686 mingw-w64 -y
+
     - name: Tools
       if: steps.cache-cross-bootloader-test.outputs.cache-hit != 'true'
       run: make tools_workflow_all
@@ -44,5 +47,5 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v3.0.0
       with:
-        name: FennixProject-Multitasking-Test
+        name: FennixProject-Bootloader-Test
         path: FennixProject.iso
