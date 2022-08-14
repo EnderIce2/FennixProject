@@ -1,4 +1,4 @@
-name: Makefile CI
+name: Build x86_64
 
 on:
   push:
