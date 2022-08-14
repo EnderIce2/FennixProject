@@ -5,18 +5,7 @@ QEMUFLAGS = -device bochs-display -M q35 \
 			-usb -no-reboot \
 			-usbdevice mouse \
 			-smp 1 \
-    		-netdev user,id=usernet0 \
-    		-device e1000,netdev=usernet0,mac=00:69:96:00:42:00 \
-			-object filter-dump,id=usernet0,netdev=usernet0,file=network.log,maxlen=1024 \
 			-serial file:serial.log \
-			-net user \
-			-drive id=disk,file=qemu-disk.img,if=none \
-			-device ahci,id=ahci \
-			-device ide-hd,drive=disk,bus=ahci.0 \
-			-device AC97 \
-			-device sb16 \
-			-device ES1370 \
-			-device intel-hda -device hda-duplex \
 			-soundhw pcspk \
 
 QEMUHWACCELERATION = -machine q35 -enable-kvm
@@ -39,13 +28,6 @@ doxygen:
 	doxygen Doxyfile
 	doxygen Doxyfile_headers
 
-qemu_vdisk:
-ifneq (,$(wildcard ./qemu-disk.img))
-	$(info qemu-disk.img Already exists)
-else
-	dd if=/dev/zero of=qemu-disk.img bs=1024K count=4000
-endif
-
 # Download fonts for the kernel.
 fonts:
 	rm -f ./kernel/files/zap-ext-light20.psf ./kernel/files/zap-ext-light24.psf ./kernel/files/zap-light16.psf ./kernel/files/ter-powerline-v12n.psf
@@ -65,26 +47,23 @@ tools_workflow: fonts
 tools_workflow_all: fonts
 	make -C tools workflow_all
 
-build: build_kernel build_libc build_userspace build_image
+build: build_bootloader build_kernel build_image
+
+build_bootloader:
+	make --quiet -C boot build
 
 build_kernel:
 	make -j$(shell nproc) -C kernel build GIT_COMMIT=$(shell git rev-parse HEAD) GIT_COMMIT_SHORT=$(shell git rev-parse --short HEAD)
-
-build_userspace:
-	make -C userspace build
-
-build_libc:
-	make -C libc build
 
 build_image:
 	mkdir -p iso_tmp_data
 	tar cf initrd.tar.gz -C resources/initrd/ ./ --format=ustar
 	cp kernel/kernel.fsys initrd.tar.gz startup.nsh \
 		iso_tmp_data/
-	cp limine.cfg ${LIMINE_FOLDER}/limine.sys ${LIMINE_FOLDER}/limine-cd.bin ${LIMINE_FOLDER}/limine-cd-efi.bin iso_tmp_data/
-	xorriso -as mkisofs -b limine-cd.bin \
+	cp lynx.cfg boot/BIOS/loader.bin boot/UEFI/efi-loader.bin iso_tmp_data/
+	xorriso -as mkisofs -b loader.bin \
 		-no-emul-boot -boot-load-size 4 -boot-info-table \
-		--efi-boot limine-cd-efi.bin \
+		--efi-boot efi-loader.bin \
 		-efi-boot-part --efi-boot-image --protective-msdos-label \
 		iso_tmp_data -o $(OSNAME).iso
 
@@ -92,16 +71,15 @@ vscode_debug: build_kernel build_libc build_userspace build_image
 	rm -f serial.log network.log
 	${QEMU} -S -gdb tcp::1234 -d int -no-shutdown -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -m 512M ${QEMUFLAGS}
 
-qemu: qemu_vdisk
+qemu:
 	rm -f serial.log network.log
 	${QEMU} -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
 
 # build the os and run it
-run: build qemu_vdisk qemu
+run: build qemu
 
 # clean
 clean:
-	rm -rf iso_tmp_data initrd.tar.gz *.iso
+	rm -rf iso_tmp_data *.iso
+	make --quiet -C boot clean
 	make -C kernel clean
-	make -C userspace clean
-	make -C libc clean

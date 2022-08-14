@@ -5,11 +5,9 @@ export PATH := $(CROSS_DIR):$(PATH)
 GCC_CROSS_TARGET=x86_64-elf
 QEMU_VERSION = qemu-7.0.0
 
-all: do_initrd do_readethernet do_e do_limine do_binutils do_gcc do_qemu
+all: do_initrd do_readethernet do_e do_binutils do_gcc do_qemu
 
 workflow_all: do_initrd do_readethernet do_e do_binutils do_gcc
-
-workflow: do_limine
 
 clean:
 	rm -f initrd.elf readethernet.elf e.elf
@@ -34,9 +32,6 @@ do_qemu:
 	cd qemu && \
 	bash ./configure --target-list=x86_64-softmmu && \
 	make -j$(shell nproc)
-
-do_limine:
-	git clone https://github.com/limine-bootloader/limine.git --branch=v3.0-branch-binary --depth=1
 
 do_binutils:
 	git clone https://sourceware.org/git/binutils-gdb.git binutils-gdb && \
