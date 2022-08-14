@@ -20,5 +20,5 @@ static void __attribute__((constructor, no_stack_protector)) __construct_stk_chk
 __attribute__((weak, noreturn)) void __stack_chk_fail(void)
 {
     while (1)
-        asm volatile("hlt");
+        __asm__ volatile("hlt");
 }
