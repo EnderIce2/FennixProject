@@ -1,0 +1,48 @@
+name: Bootloader Test Branch
+
+on:
+  push:
+    branches: [ bootloader-test ]
+  pull_request:
+    branches: [ bootloader-test ]
+
+jobs:
+  compile:
+    name: Compile OS
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Update System
+      run: sudo apt-get update
+
+    - name: Install Dependencies
+      run: sudo apt-get install xorriso mtools genisoimage ovmf nasm doxygen -y
+
+    - name: Cache cross Folder
+      id: cache-cross-bootloader-test
+      uses: actions/cache@v3
+      with:
+        path: tools/cross
+        key: ${{ runner.os }}-cross-bootloader-test-${{ hashFiles('tools/Makefile') }}
+
+    - name: Install GNU Binutils & GNU Compiler Collection
+      if: steps.cache-cross-bootloader-test.outputs.cache-hit != 'true'
+      run: sudo apt-get install build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo -y
+
+    - name: Tools
+      if: steps.cache-cross-bootloader-test.outputs.cache-hit != 'true'
+      run: make tools_workflow_all
+
+    - name: Tools Workflow
+      if: steps.cache-cross-bootloader-test.outputs.cache-hit != 'false'
+      run: make tools_workflow
+
+    - name: Build
+      run: make build
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        name: FennixProject-Multitasking-Test
+        path: FennixProject.iso
