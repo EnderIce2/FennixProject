@@ -43,21 +43,11 @@ extern SymmetricMultiprocessing::SMP *smp;
 #define MAX_CPU 256
 extern CPUData CPUs[];
 
-// TODO: a better approach is to get lapic id instead of storing the ID in the FS register
 static CPUData *GetCurrentCPU()
 {
-    uint64_t ret = 0;
-    // asm volatile("movq %%fs, %0\n"
-    //              : "=r"(ret));
-
-    if ((&CPUs[ret])->Checksum != CPU_DATA_CHECKSUM)
-    {
-        // TODO: i think somehow i messed this up somehere... i'll figure it out later... but now i will return the first cpu
-        // err("CPU %d data are corrupted!", ret);
-        return &CPUs[0];
-    }
-
-    return &CPUs[ret];
+    if ((&CPUs[0])->Checksum != CPU_DATA_CHECKSUM)
+        err("CPU %d data are corrupted!", 0);
+    return &CPUs[0];
 }
 
 static CPUData *GetCPU(uint64_t id) { return &CPUs[id]; }

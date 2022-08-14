@@ -40,12 +40,14 @@ namespace APIC
 
     uint32_t APIC::Read(uint32_t Register)
     {
-        // Too repetitive
+// Too repetitive
+#ifndef DEBUG_SCHEDULER
         if (Register != APIC_EOI &&
             Register != APIC_TIMER &&
             Register != APIC_TDCR &&
             Register != APIC_TICR &&
             Register != APIC_TCCR)
+#endif
             debug("APIC::Read(%#lx)", Register);
         if (x2APICSupported)
         {

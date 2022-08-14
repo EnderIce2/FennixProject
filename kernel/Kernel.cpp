@@ -39,6 +39,7 @@ EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
     init_kernelpml();
     init_heap(AllocationAlgorithm::LibAlloc11);
     bootparams = new GlobalBootParams;
+    CPUs[0].Checksum = CPU_DATA_CHECKSUM;
     debug("bootparams is allocated at %p", bootparams);
     debug("bootparams framebuffer is allocated at %p", bootparams->Framebuffer);
     debug("bootparams rsdp is allocated at %p", bootparams->rsdp);
