@@ -40,12 +40,11 @@ fonts:
 # Install necessary packages, build cross-compiler etc...
 tools: fonts
 	make -C tools all
-
-tools_workflow: fonts
-	make -C tools workflow
+	make --quiet -C boot gnuefi
 
 tools_workflow_all: fonts
 	make -C tools workflow_all
+	make --quiet -C boot gnuefi
 
 build: build_bootloader build_kernel build_image
 
