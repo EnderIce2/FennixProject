@@ -56,7 +56,6 @@ build_kernel:
 
 build_image:
 	mkdir -p iso_tmp_data
-	tar cf initrd.tar.gz -C resources/initrd/ ./ --format=ustar
 	cp kernel/kernel.fsys initrd.tar.gz startup.nsh \
 		iso_tmp_data/
 	cp lynx.cfg boot/BIOS/loader.bin boot/UEFI/efi-loader.bin iso_tmp_data/

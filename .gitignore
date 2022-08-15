@@ -5,7 +5,6 @@ tools/*
 !tools/Makefile
 !tools/*.c
 !tools/*.cpp
-initrd.tar.gz
 kernel/files/ter-powerline-v12n.psf
 kernel/files/zap-ext-light20.psf
 kernel/files/zap-ext-light24.psf
