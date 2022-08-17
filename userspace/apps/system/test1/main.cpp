@@ -17,10 +17,7 @@ void drawrectangle(uint64_t X, uint64_t Y, uint64_t W, uint64_t H, uint32_t C)
 
 int main(int argc, char *argv[])
 {
-
-    drawrectangle(0, 0, 20, 100, 0xFFFFFF);
     while (1)
-    {
-    }
+        drawrectangle(0, 0, 20, 100, 0xFFFFFF);
     return 0;
 }
