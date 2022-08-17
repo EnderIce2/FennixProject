@@ -720,6 +720,21 @@ namespace Tasking
             CurrentCPU->CurrentThread->Status = STATUS::Running;
 
             *regs = CurrentCPU->CurrentThread->Registers;
+            regs->r8 = 0;
+            regs->r9 = 0;
+            regs->r10 = 0;
+            regs->r11 = 0;
+            regs->r12 = 0;
+            regs->r13 = 0;
+            regs->r14 = 0;
+            regs->r15 = 0;
+            regs->rsi = 0;
+            regs->int_num = 0;
+            if (regs->ss == 0x1b)
+            {
+                regs->ss = 0x23;
+                regs->cs = 0x1b;
+            }
             UpdatePageTable(CurrentCPU->CurrentProcess->PageTable);
 
             wrmsr(MSR_FS_BASE, CurrentCPU->CurrentThread->fs);
