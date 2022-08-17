@@ -337,6 +337,9 @@ namespace Tasking
     {
         if (pcb == nullptr)
             return true;
+        debug("P structure data %p", pcb);
+        if ((unsigned long)pcb >= (unsigned long)0x1000000000000000) // what?
+            return true;
         else if (pcb->Checksum != Checksum::PROCESS_CHECKSUM)
             return true;
         else if (pcb->Elevation == ELEVATION::Idle)
@@ -348,7 +351,8 @@ namespace Tasking
     {
         if (tcb == nullptr)
             return true;
-        else if (tcb->Checksum != Checksum::THREAD_CHECKSUM)
+        debug("T structure data %p", tcb);
+        if (tcb->Checksum != Checksum::THREAD_CHECKSUM)
             return true;
         else if (tcb->Parent->Elevation == ELEVATION::Idle)
             return true;
@@ -365,6 +369,7 @@ namespace Tasking
                 tcb->Parent->Threads[i]->Checksum = badfennec;
                 kfree(tcb->Parent->Threads[i]);
                 tcb->Parent->Threads.remove(i);
+                delete tcb;
                 break;
             }
     }
@@ -395,6 +400,7 @@ namespace Tasking
                     mt->ListProcess[i]->Checksum = badfennec;
                     kfree(mt->ListProcess[i]);
                     mt->ListProcess.remove(i);
+                    delete pcb;
                     break;
                 }
             }
@@ -505,6 +511,13 @@ namespace Tasking
             TraceSchedOnScreen();
 #endif
             schedbg("Status: 0-ukn | 1-rdy | 2-run | 3-wait | 4-term");
+            schedbg("Technical Informations on regs %#lx", regs->int_num);
+            schedbg("FS=%#lx  GS=%#lx  SS=%#lx  CS=%#lx", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
+            schedbg("R8=%#lx  R9=%#lx  R10=%#lx  R11=%#lx", R8, R9, R10, R11);
+            schedbg("R12=%#lx  R13=%#lx  R14=%#lx  R15=%#lx", R12, R13, R14, R15);
+            schedbg("RAX=%#lx  RBX=%#lx  RCX=%#lx  RDX=%#lx", RAX, RBX, RCX, RDX);
+            schedbg("RSI=%#lx  RDI=%#lx  RBP=%#lx  RSP=%#lx", RSI, RDI, RBP, RSP);
+            schedbg("RIP=%#lx  RFL=%#lx  INT=%#lx  ERR=%#lx", RIP, FLAGS.raw, INT_NUM, ERROR_CODE);
             // Null or invalid process/thread? Let's find a new one to execute.
             if (InvalidPCB(CurrentCPU->CurrentProcess) || InvalidTCB(CurrentCPU->CurrentThread))
             {
@@ -559,7 +572,7 @@ namespace Tasking
                 CurrentCPU->CurrentThread->Registers = *regs;
                 CurrentCPU->CurrentThread->gs = rdmsr(MSR_SHADOW_GS_BASE);
                 CurrentCPU->CurrentThread->fs = rdmsr(MSR_FS_BASE);
-                CurrentCPU->fxsave(CurrentCPU->CurrentThread->FXRegion);
+                // CurrentCPU->fxsave(CurrentCPU->CurrentThread->FXRegion);
 
                 // Set the process & thread as ready if it's running.
                 if (CurrentCPU->CurrentProcess->Status == STATUS::Running)
@@ -692,7 +705,7 @@ namespace Tasking
             wrmsr(MSR_FS_BASE, CurrentCPU->CurrentThread->fs);
             wrmsr(MSR_GS_BASE, (uint64_t)CurrentCPU->CurrentThread);
             wrmsr(MSR_SHADOW_GS_BASE, (uint64_t)CurrentCPU->CurrentThread);
-            CurrentCPU->fxrstor(CurrentCPU->CurrentThread->FXRegion);
+            // CurrentCPU->fxrstor(CurrentCPU->CurrentThread->FXRegion);
             goto End;
         }
 
@@ -725,7 +738,7 @@ namespace Tasking
                 err("Unknown elevation %d.", CurrentCPU->CurrentProcess->Elevation);
                 break;
             }
-            CurrentCPU->fxrstor(CurrentCPU->CurrentThread->FXRegion);
+            // CurrentCPU->fxrstor(CurrentCPU->CurrentThread->FXRegion);
         }
         End:
         {
@@ -740,6 +753,15 @@ namespace Tasking
             schedbg("Scheduler end");
             EndOfInterrupt(INT_NUM); // apic->IPI(CurrentCPU->ID, SchedulerInterrupt);
         }
+            schedbg("Technical Informations on Thread %s[%ld]:", CurrentCPU->CurrentThread->Name, CurrentCPU->CurrentThread->ID);
+            schedbg("FS=%#lx  GS=%#lx  SS=%#lx  CS=%#lx", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
+            schedbg("R8=%#lx  R9=%#lx  R10=%#lx  R11=%#lx", R8, R9, R10, R11);
+            schedbg("R12=%#lx  R13=%#lx  R14=%#lx  R15=%#lx", R12, R13, R14, R15);
+            schedbg("RAX=%#lx  RBX=%#lx  RCX=%#lx  RDX=%#lx", RAX, RBX, RCX, RDX);
+            schedbg("RSI=%#lx  RDI=%#lx  RBP=%#lx  RSP=%#lx", RSI, RDI, RBP, RSP);
+            schedbg("RIP=%#lx  RFL=%#lx  INT=%#lx  ERR=%#lx", RIP, FLAGS.raw, INT_NUM, ERROR_CODE);
+
+            schedbg("SCHEDULER FUNCTION END");
         }
     }
 

@@ -125,11 +125,11 @@ namespace APIC
 
     void APIC::OneShot(uint32_t Vector, uint64_t Miliseconds)
     {
-        apic->Write(APIC::APIC::APIC_TIMER, apic->Read(APIC::APIC::APIC_TIMER) & ~(1 << 0x10));
+        // apic->Write(APIC::APIC::APIC_TIMER, apic->Read(APIC::APIC::APIC_TIMER) & ~(1 << 0x10));
         this->Write(APIC_TDCR, 0x03);
         this->Write(APIC_TIMER, (APIC::APIC::APICRegisters::APIC_ONESHOT | Vector));
-        this->Write(APIC_TICR, apic_timer_ticks * Miliseconds);
-        apic->Write(APIC::APIC::APIC_TIMER, apic->Read(APIC::APIC::APIC_TIMER) | (1 << 0x10));
+        this->Write(APIC_TICR, apic_timer_ticks * (Miliseconds + 0x200)); // SLOW DOWN SO WE CAN DEBUG
+        // apic->Write(APIC::APIC::APIC_TIMER, apic->Read(APIC::APIC::APIC_TIMER) | (1 << 0x10));
     }
 
     bool APIC::APICSupported()
