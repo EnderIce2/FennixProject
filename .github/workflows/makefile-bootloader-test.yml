@@ -19,6 +19,17 @@ jobs:
     - name: Install Dependencies
       run: sudo apt-get install xorriso mtools genisoimage ovmf nasm doxygen -y
 
+    - name: Cache gnu-efi Folder
+      id: cache-gnuefi-bootloader-test
+      uses: actions/cache@v3
+      with:
+        path: boot/UEFI/gnu-efi
+        key: ${{ runner.os }}-gnuefi-bootloader-test-${{ hashFiles('boot/Makefile') }}
+
+    - name: Get GNU-EFI source code and compile it
+      if: steps.cache-gnuefi-bootloader-test.outputs.cache-hit != 'true'
+      run: make -C boot gnuefi
+
     - name: Cache cross Folder
       id: cache-cross-bootloader-test
       uses: actions/cache@v3
