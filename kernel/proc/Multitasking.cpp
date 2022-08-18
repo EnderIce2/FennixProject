@@ -338,7 +338,7 @@ namespace Tasking
         if (pcb == nullptr)
             return true;
         schedbg("P structure data %p", pcb);
-        if ((unsigned long)pcb >= (unsigned long)0x1000000000000000) // what?
+        if ((unsigned long)pcb >= (unsigned long)0x100000000000000) // what?
             return true;
         else if (pcb->Checksum != Checksum::PROCESS_CHECKSUM)
             return true;
@@ -352,6 +352,8 @@ namespace Tasking
         if (tcb == nullptr)
             return true;
         schedbg("T structure data %p", tcb);
+        if ((unsigned long)tcb >= (unsigned long)0x100000000000000) // what?
+            return true;
         if (tcb->Checksum != Checksum::THREAD_CHECKSUM)
             return true;
         else if (tcb->Parent->Elevation == ELEVATION::Idle)
