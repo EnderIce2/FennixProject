@@ -53,6 +53,105 @@ EXTERNC void kernel_entry(void *data)
     CPU_HALT;
 }
 
+void drawrectangle(uint64_t X, uint64_t Y, uint64_t W, uint64_t H, uint32_t C)
+{
+    uint64_t address = CurrentDisplay->GetFramebuffer()->Address;
+    uint64_t width = CurrentDisplay->GetFramebuffer()->Width;
+    uint64_t height = CurrentDisplay->GetFramebuffer()->Height;
+    uint64_t ppsl = CurrentDisplay->GetFramebuffer()->PixelsPerScanLine;
+    for (int y = Y; y < Y + H; y++)
+        for (int x = X; x < X + W; x++)
+        {
+            if (x >= width || y >= height)
+                continue;
+            ((uint32_t *)address)[x + (y * ppsl)] = C;
+        }
+}
+
+void testkapp1()
+{
+    while (1)
+        drawrectangle(0, 0, 20, 100, 0xFFFFFF);
+    return;
+}
+
+void testkapp2()
+{
+    while (1)
+        drawrectangle(20, 0, 20, 100, 0xFFFF00);
+    return;
+}
+
+void testkapp3()
+{
+    while (1)
+        drawrectangle(40, 0, 20, 100, 0xFF00FF);
+    return;
+}
+
+void testkapp4()
+{
+    while (1)
+        drawrectangle(60, 0, 20, 100, 0x00FFFF);
+    return;
+}
+
+void testkapp5()
+{
+    while (1)
+        drawrectangle(80, 0, 20, 100, 0x00FF00);
+    return;
+}
+
+void testkapp6()
+{
+    while (1)
+        drawrectangle(100, 0, 20, 100, 0xFF0000);
+    return;
+}
+
+void testkapp21()
+{
+    while (1)
+        drawrectangle(0, 100, 20, 100, 0xFFFFFF);
+    return;
+}
+
+void testkapp22()
+{
+    while (1)
+        drawrectangle(20, 100, 20, 100, 0xFFFF00);
+    return;
+}
+
+void testkapp23()
+{
+    while (1)
+        drawrectangle(40, 100, 20, 100, 0xFF00FF);
+    return;
+}
+
+void testkapp24()
+{
+    while (1)
+        drawrectangle(60, 100, 20, 100, 0x00FFFF);
+    return;
+}
+
+void testkapp25()
+{
+    while (1)
+        drawrectangle(80, 100, 20, 100, 0x00FF00);
+    return;
+}
+
+void testkapp26()
+{
+    while (1)
+        drawrectangle(100, 100, 20, 100, 0xFF0000);
+    return;
+}
+
 void KernelTask()
 {
 #ifdef DEBUG
@@ -72,11 +171,30 @@ void KernelTask()
     printf("C++ Language Version (__cplusplus) :%ld\n", __cplusplus);
     printf("%s", cpu_get_info());
 #endif
-    SysCreateProcessFromFile("/system/test1", 0, 0, User);
-    SysCreateProcessFromFile("/system/test2", 0, 0, User);
-    SysCreateProcessFromFile("/system/test3", 0, 0, User);
-    SysCreateProcessFromFile("/system/test4", 0, 0, User);
+
+    PCB *kapp = SysCreateProcess("KernelTaskingTest1", Kernel);
+    SysCreateThread(kapp, (uint64_t)testkapp1, 0, 0);
+    SysCreateThread(kapp, (uint64_t)testkapp2, 0, 0);
+    SysCreateThread(kapp, (uint64_t)testkapp3, 0, 0);
+    SysCreateThread(kapp, (uint64_t)testkapp4, 0, 0);
+    SysCreateThread(kapp, (uint64_t)testkapp5, 0, 0);
+    SysCreateThread(kapp, (uint64_t)testkapp6, 0, 0);
+
+    PCB *kapp100 = SysCreateProcess("KernelTaskingTest2", Kernel);
+    SysCreateThread(kapp100, (uint64_t)testkapp21, 0, 0);
+    SysCreateThread(kapp100, (uint64_t)testkapp22, 0, 0);
+    SysCreateThread(kapp100, (uint64_t)testkapp23, 0, 0);
+    SysCreateThread(kapp100, (uint64_t)testkapp24, 0, 0);
+    SysCreateThread(kapp100, (uint64_t)testkapp25, 0, 0);
+    SysCreateThread(kapp100, (uint64_t)testkapp26, 0, 0);
+
+    // SysCreateProcessFromFile("/system/test1", 0, 0, User);
+    // SysCreateProcessFromFile("/system/test2", 0, 0, User);
+    // SysCreateProcessFromFile("/system/test3", 0, 0, User);
+    // SysCreateProcessFromFile("/system/test4", 0, 0, User);
     trace("End Of Kernel Task");
+    while (1)
+        drawrectangle(0, 0, 120, 200, 0x000000);
     CPU_STOP;
 }
 

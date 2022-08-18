@@ -43,7 +43,7 @@ namespace Tasking
     void TraceSchedOnScreen()
     {
         CurrentDisplay->ResetPrintPosition();
-        drawrectangle(0, 0, 222, CurrentDisplay->GetFramebuffer()->Height / 2, 0x282828);
+        drawrectangle(0, 0, 250, CurrentDisplay->GetFramebuffer()->Height / 2, 0x282828);
         bool showarrow = false;
 
         CurrentDisplay->SetPrintColor(0xF222F2);
@@ -175,12 +175,12 @@ namespace Tasking
         uint64_t CurrentCount = counter();
         if (Info->LastUsedTicks == 0)
         {
-            Info->UsedTicks += CurrentCount - Info->SpawnTick;
+            Info->UsedTicks += CurrentCount + Info->SpawnTick;
             Info->LastUsedTicks = CurrentCount;
         }
         else
         {
-            Info->UsedTicks += CurrentCount - Info->LastUsedTicks;
+            Info->UsedTicks += CurrentCount + Info->LastUsedTicks;
             Info->LastUsedTicks = CurrentCount;
         }
     }
@@ -337,7 +337,7 @@ namespace Tasking
     {
         if (pcb == nullptr)
             return true;
-        debug("P structure data %p", pcb);
+        schedbg("P structure data %p", pcb);
         if ((unsigned long)pcb >= (unsigned long)0x1000000000000000) // what?
             return true;
         else if (pcb->Checksum != Checksum::PROCESS_CHECKSUM)
@@ -351,7 +351,7 @@ namespace Tasking
     {
         if (tcb == nullptr)
             return true;
-        debug("T structure data %p", tcb);
+        schedbg("T structure data %p", tcb);
         if (tcb->Checksum != Checksum::THREAD_CHECKSUM)
             return true;
         else if (tcb->Parent->Elevation == ELEVATION::Idle)
@@ -417,10 +417,10 @@ namespace Tasking
 
     void UpdatePageTable(CR3 pt)
     {
-        if (pt.raw == 0)
-            return;
-        if (pt.raw != readcr3().raw)
-            writecr3(pt);
+        // if (pt.raw == 0)
+        //     return;
+        // if (pt.raw != readcr3().raw)
+        //     writecr3(pt);
     }
 
     Critical::CriticalSectionData *CriticalSectionData = nullptr;

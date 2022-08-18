@@ -3,7 +3,7 @@
 #include <heap.h>
 #include <task.h>
 
-#define DEBUG_SCHEDULER 1
+// #define DEBUG_SCHEDULER 1
 
 namespace Tasking
 {
