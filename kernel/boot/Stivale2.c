@@ -118,7 +118,7 @@ bool init_stivale2(struct stivale2_struct *bootloaderdata, GlobalBootParams *par
 
     params->HigherHalf = true;
     struct stivale2_struct_tag_framebuffer *fb = (struct stivale2_struct_tag_framebuffer *)tag_framebuffer;
-    params->Framebuffer.BaseAddress = fb->framebuffer_addr;
+    params->Framebuffer.BaseAddress = fb->framebuffer_addr - NORMAL_VMA_OFFSET;
     params->Framebuffer.BufferSize = (uint64_t)fb->framebuffer_pitch * fb->framebuffer_height;
     params->Framebuffer.Width = fb->framebuffer_width;
     params->Framebuffer.Height = fb->framebuffer_height;
@@ -289,10 +289,10 @@ bool init_stivale2(struct stivale2_struct *bootloaderdata, GlobalBootParams *par
         //     __asm__ __volatile__("hlt" ::
         //                              : "memory");
     }
-    if (fb->framebuffer_addr != params->Framebuffer.BaseAddress)
+    if (fb->framebuffer_addr - NORMAL_VMA_OFFSET != params->Framebuffer.BaseAddress)
     {
         err("Framebuffer base address mismatch. %016p != %016p",
-            fb->framebuffer_addr,
+            fb->framebuffer_addr - NORMAL_VMA_OFFSET,
             params->Framebuffer.BaseAddress);
         term_write("Framebuffer base address mismatch.", 34);
         while (1)
