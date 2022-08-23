@@ -31,7 +31,7 @@ namespace ACPI
                 }
             }
         }
-        // warn("%s not found!", Signature);
+        warn("%s not found!", Signature);
         return 0;
     }
 
@@ -50,55 +50,6 @@ namespace ACPI
         WAET = (WAETHeader *)FindTable(XSDT, (char *)"WAET");
         MADT = (MADTHeader *)FindTable(XSDT, (char *)"APIC");
         HEST = (HESTHeader *)FindTable(XSDT, (char *)"HEST");
-        FindTable(XSDT, (char *)"BERT");
-        FindTable(XSDT, (char *)"CPEP");
-        FindTable(XSDT, (char *)"DSDT");
-        FindTable(XSDT, (char *)"ECDT");
-        FindTable(XSDT, (char *)"EINJ");
-        FindTable(XSDT, (char *)"ERST");
-        FindTable(XSDT, (char *)"FACS");
-        FindTable(XSDT, (char *)"MSCT");
-        FindTable(XSDT, (char *)"MPST");
-        FindTable(XSDT, (char *)"OEMx");
-        FindTable(XSDT, (char *)"PMTT");
-        FindTable(XSDT, (char *)"PSDT");
-        FindTable(XSDT, (char *)"RASF");
-        FindTable(XSDT, (char *)"RSDT");
-        FindTable(XSDT, (char *)"SBST");
-        FindTable(XSDT, (char *)"SLIT");
-        FindTable(XSDT, (char *)"SSDT");
-        FindTable(XSDT, (char *)"XSDT");
-        FindTable(XSDT, (char *)"DRTM");
-        FindTable(XSDT, (char *)"FPDT");
-        FindTable(XSDT, (char *)"GTDT");
-        FindTable(XSDT, (char *)"PCCT");
-        FindTable(XSDT, (char *)"S3PT");
-        FindTable(XSDT, (char *)"MATR");
-        FindTable(XSDT, (char *)"MSDM");
-        FindTable(XSDT, (char *)"WPBT");
-        FindTable(XSDT, (char *)"OSDT");
-        FindTable(XSDT, (char *)"RSDP");
-        FindTable(XSDT, (char *)"NFIT");
-        FindTable(XSDT, (char *)"ASF!");
-        FindTable(XSDT, (char *)"BOOT");
-        FindTable(XSDT, (char *)"CSRT");
-        FindTable(XSDT, (char *)"DBG2");
-        FindTable(XSDT, (char *)"DBGP");
-        FindTable(XSDT, (char *)"DMAR");
-        FindTable(XSDT, (char *)"IBFT");
-        FindTable(XSDT, (char *)"IORT");
-        FindTable(XSDT, (char *)"IVRS");
-        FindTable(XSDT, (char *)"LPIT");
-        FindTable(XSDT, (char *)"MCHI");
-        FindTable(XSDT, (char *)"MTMR");
-        FindTable(XSDT, (char *)"SLIC");
-        FindTable(XSDT, (char *)"SPCR");
-        FindTable(XSDT, (char *)"SPMI");
-        FindTable(XSDT, (char *)"UEFI");
-        FindTable(XSDT, (char *)"VRTC");
-        FindTable(XSDT, (char *)"WDAT");
-        FindTable(XSDT, (char *)"WDDT");
-        FindTable(XSDT, (char *)"WDRT");
     }
 
     ACPI::ACPI()

@@ -46,6 +46,8 @@ namespace APIC
             APIC_TDCR = 0x3e0,    // Divide Configuration (for Timer)
         };
 
+        int APIC_ONESHOT_MULTIPLIER = 1;
+
         uint32_t Read(uint32_t Register);
         void Write(uint32_t Register, uint32_t Value);
         void IOWrite(uint64_t Base, uint32_t Register, uint32_t Value);

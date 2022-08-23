@@ -2,7 +2,10 @@
 
 #include "../kernel.h"
 
+#include "../cpu/apic.hpp"
+
 #include <interrupts.h>
+#include <critical.hpp>
 #include <int.h>
 #include <io.h>
 
@@ -16,8 +19,22 @@ namespace PS2Keyboard
     {
         InterruptHandler(PS2KeyboardInterruptHandler)
         {
+            EnterCriticalSection;
             uint8_t scanCode = inb(0x60);
             LastSC = scanCode;
+
+            if (scanCode == 0x50)
+            {
+                if (apic->APIC_ONESHOT_MULTIPLIER <= 1)
+                {
+                    LeaveCriticalSection;
+                    return;
+                }
+                apic->APIC_ONESHOT_MULTIPLIER--;
+            }
+            if (scanCode == 0x48)
+                apic->APIC_ONESHOT_MULTIPLIER++;
+            LeaveCriticalSection;
         }
     }
 

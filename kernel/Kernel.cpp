@@ -260,10 +260,14 @@ void KernelTask()
     trace("End Of Kernel Task");
     uint64_t rwdth = CurrentDisplay->GetFramebuffer()->Width;
     uint64_t rhght = CurrentDisplay->GetFramebuffer()->Height;
+    CurrentDisplay->SetPrintColor(0x22AAFF);
     while (1)
     {
         drawrectangle(0, bh, 120, 200, 0x000000);
+        drawrectangle(0, 0, 120, 15, 0x282828);
         drawrectangle(0, rhght - 20, rwdth, 20, 0x662222);
+        CurrentDisplay->ResetPrintPosition();
+        printf("CURRENT SPEED: %d", apic->APIC_ONESHOT_MULTIPLIER);
     }
     CPU_STOP;
 }

@@ -128,7 +128,7 @@ namespace APIC
         // apic->Write(APIC::APIC::APIC_TIMER, apic->Read(APIC::APIC::APIC_TIMER) & ~(1 << 0x10));
         this->Write(APIC_TDCR, 0x03);
         this->Write(APIC_TIMER, (APIC::APIC::APICRegisters::APIC_ONESHOT | Vector));
-        this->Write(APIC_TICR, apic_timer_ticks * (1 /* Miliseconds + 0x200 */)); // SLOW DOWN SO WE CAN DEBUG
+        this->Write(APIC_TICR, apic_timer_ticks * (APIC_ONESHOT_MULTIPLIER /* Miliseconds + 0x200 */)); // SLOW DOWN SO WE CAN DEBUG
         // apic->Write(APIC::APIC::APIC_TIMER, apic->Read(APIC::APIC::APIC_TIMER) | (1 << 0x10));
     }
 
