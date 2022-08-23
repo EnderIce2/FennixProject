@@ -37,4 +37,3 @@ static inline int cpuid_string(int code, int where[4])
  * @return bool
  */
 EXTERNC bool cpu_feature(enum CPU_FEATURE feature);
-EXTERNC char *cpu_get_info();

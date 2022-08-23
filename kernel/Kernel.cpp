@@ -7,24 +7,20 @@
 #include <display.h>
 #include <string.h>
 #include <cwalk.h>
-#include <test.h>
 #include <lock.h>
 #include <asm.h>
 #include <sys.h>
 #include <io.h>
 
 #include "drivers/keyboard.hpp"
-#include "drivers/mouse.hpp"
 #include "interrupts/pic.h"
 #include "cpu/acpi.hpp"
 #include "cpu/apic.hpp"
 #include "cpu/smp.hpp"
 #include "cpu/cpuid.h"
-#include "driver.hpp"
 #include "cpu/gdt.h"
 #include "cpu/idt.h"
 #include "timer.h"
-#include "test.h"
 #include "pci.h"
 
 GlobalBootParams earlyparams;
@@ -218,23 +214,8 @@ void testmovetest()
 
 void KernelTask()
 {
-#ifdef DEBUG
-    debug("Hello World!");
-    printf("This is a text to test if the OS is working properly.\n");
-    uint32_t test = 0x00FF00;
-    CurrentDisplay->SetPrintColor(test);
-    for (size_t i = 0; i < 128; i++)
-    {
-        if (i != '\n')
-            CurrentDisplay->KernelPrint(i);
-        CurrentDisplay->SetPrintColor(test + i * 2);
-    }
-    CurrentDisplay->ResetPrintColor();
-    CurrentDisplay->KernelPrint('\n');
     printf("Kernel Compiled at: %s %s with C++ Standard: %d\n", __DATE__, __TIME__, CPP_LANGUAGE_STANDARD);
     printf("C++ Language Version (__cplusplus) :%ld\n", __cplusplus);
-    printf("%s", cpu_get_info());
-#endif
 
     bh = CurrentDisplay->GetFramebuffer()->Height / 2;
 
@@ -290,8 +271,6 @@ void KernelTask()
 void KernelInit()
 {
     trace("Early initialization completed.");
-    TEST_TEST();
-    do_libs_test();
     SymTbl = new KernelSymbols::Symbols;
     CurrentDisplay = new DisplayDriver::Display;
     CurrentDisplay->Clear();
@@ -314,7 +293,6 @@ void KernelInit()
     smp = new SymmetricMultiprocessing::SMP;
     apic->RedirectIRQs();
     init_timer();
-    do_stacktrace_test();
     CurrentDisplay->KernelPrint('.');
     if (!apic->APICSupported())
     {
@@ -340,7 +318,6 @@ void KernelInit()
     new FileSystem::Random;
     new FileSystem::Null;
     new FileSystem::Zero;
-    ps2mouse = new PS2Mouse::PS2MouseDriver;
     CurrentDisplay->KernelPrint('.');
     printf("\nKERNEL EARLY INITIALIZATION COMPLETE\nRUNNING KERNEL TASK...\n");
     StartTasking((uint64_t)KernelTask);

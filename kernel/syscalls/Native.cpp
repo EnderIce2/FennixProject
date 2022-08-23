@@ -2,7 +2,6 @@
 
 #include "../../libc/include/syscalls.h"
 #include "../drivers/keyboard.hpp"
-#include "../drivers/mouse.hpp"
 #include "../drivers/serial.h"
 #include "../cpu/acpi.hpp"
 #include "../kernel.h"

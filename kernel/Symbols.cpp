@@ -5,8 +5,6 @@
 
 #include "kernel.h"
 
-#include "test.h"
-
 #pragma GCC diagnostic ignored "-Wignored-qualifiers"
 
 KernelSymbols::Symbols *SymTbl = nullptr;
