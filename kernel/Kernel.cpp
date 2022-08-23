@@ -318,11 +318,6 @@ void KernelInit()
     mountfs = new FileSystem::Mount;
     procfs = new FileSystem::Process;
     CurrentDisplay->KernelPrint('.');
-    new FileSystem::Serial;
-    new FileSystem::Random;
-    new FileSystem::Null;
-    new FileSystem::Zero;
-    CurrentDisplay->KernelPrint('.');
     printf("\nKERNEL EARLY INITIALIZATION COMPLETE\nRUNNING KERNEL TASK...\n");
     StartTasking((uint64_t)KernelTask);
     CPU_STOP;
