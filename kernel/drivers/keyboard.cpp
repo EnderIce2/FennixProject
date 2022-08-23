@@ -6,6 +6,7 @@
 
 #include <interrupts.h>
 #include <critical.hpp>
+#include <display.h>
 #include <int.h>
 #include <io.h>
 
@@ -34,6 +35,8 @@ namespace PS2Keyboard
             }
             if (scanCode == 0x48)
                 apic->APIC_ONESHOT_MULTIPLIER++;
+            if (scanCode == 0x1C)
+                CurrentDisplay->Clear();
             LeaveCriticalSection;
         }
     }
