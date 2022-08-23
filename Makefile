@@ -2,7 +2,7 @@
 include Makefile.conf
 
 QEMUFLAGS = -device bochs-display -M q35 \
-			-usb -no-reboot \
+			-usb \
 			-usbdevice mouse \
 			-smp 1 \
     		-netdev user,id=usernet0 \
