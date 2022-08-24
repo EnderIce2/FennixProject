@@ -45,7 +45,8 @@
 			"assert.h": "c",
 			"printf.h": "c",
 			"convert.h": "c",
-			"vm.h": "c"
+			"vm.h": "c",
+			"graphicsoutputprotocol.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}

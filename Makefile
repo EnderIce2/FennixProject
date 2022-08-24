@@ -40,16 +40,16 @@ fonts:
 # Install necessary packages, build cross-compiler etc...
 tools: fonts
 	make -C tools all
-	make --quiet -C boot gnuefi
+	make -C boot gnuefi
 
 tools_workflow_all: fonts
 	make -C tools workflow_all
-	make --quiet -C boot gnuefi
+	make -C boot gnuefi
 
 build: build_bootloader build_kernel build_image
 
 build_bootloader:
-	make --quiet -C boot build
+	make -C boot build
 
 build_kernel:
 	make -j$(shell nproc) -C kernel build GIT_COMMIT=$(shell git rev-parse HEAD) GIT_COMMIT_SHORT=$(shell git rev-parse --short HEAD)
@@ -79,5 +79,5 @@ run: build qemu
 # clean
 clean:
 	rm -rf iso_tmp_data *.iso
-	make --quiet -C boot clean
+	make -C boot clean
 	make -C kernel clean
