@@ -56,16 +56,26 @@ uint64_t width = 0;
 uint64_t height = 0;
 uint64_t ppsl = 0;
 
-inline void drawrectangle(uint64_t X, uint64_t Y, uint64_t W, uint64_t H, uint32_t C)
-{
-    for (int y = Y; y < Y + H; y++)
-        for (int x = X; x < X + W; x++)
-        {
-            if (x >= width || y >= height)
-                continue;
-            ((uint32_t *)address)[x + (y * ppsl)] = C;
+
+// inline void drawrectangle(uint64_t X, uint64_t Y, uint64_t W, uint64_t H, uint32_t C)
+// {
+//     for (int y = Y; y < Y + H; y++)
+//         for (int x = X; x < X + W; x++)
+//         {
+//             if (x >= width || y >= height)
+//                 continue;
+//             ((uint32_t *)address)[x + (y * ppsl)] = C;
+//         }
+// }
+
+#define drawrectangle(X, Y, W, H, C) \
+    for (int y = Y; y < Y + H; y++) \
+        for (int x = X; x < X + W; x++) \
+        { \
+            if (x >= width || y >= height) \
+                continue; \
+            ((uint32_t *)address)[x + (y * ppsl)] = C; \
         }
-}
 
 uint64_t bh = 0;
 
