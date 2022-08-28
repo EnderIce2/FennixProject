@@ -87,12 +87,14 @@ $(document).ready(function(){initNavTree('d8/d3a/NetworkController_8cpp.html','.
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">NetworkController.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../dc/de6/NetworkController_8hpp_source.html">NetworkController.hpp</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d7/d86/VirtioNetwork_8hpp_source.html">../drivers/network/VirtioNetwork/VirtioNetwork.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d7/d10/Intel8254x_8hpp_source.html">../drivers/network/Intel8254x/Intel8254x.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../dd/d3e/AMDPCNET_8hpp_source.html">../drivers/network/AMDPCNET/AMDPCNET.hpp</a>&quot;</code><br />
@@ -107,6 +109,15 @@ $(document).ready(function(){initNavTree('d8/d3a/NetworkController_8cpp.html','.
 Namespaces</h2></td></tr>
 <tr class="memitem:d9/d4c/namespaceNetworkInterfaceManager"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4c/namespaceNetworkInterfaceManager.html">NetworkInterfaceManager</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a2b85a2cebe84cc2f4cc66b85afc613d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4c/namespaceNetworkInterfaceManager.html#a2b85a2cebe84cc2f4cc66b85afc613d6">NetworkInterfaceManager::ReadFSFunction</a> (NetRead)</td></tr>
+<tr class="separator:a2b85a2cebe84cc2f4cc66b85afc613d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0ddc7260839486847ff1f635e3970c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4c/namespaceNetworkInterfaceManager.html#ad0ddc7260839486847ff1f635e3970c5">NetworkInterfaceManager::WriteFSFunction</a> (NetWrite)</td></tr>
+<tr class="separator:ad0ddc7260839486847ff1f635e3970c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a254956dad6fa6a4a379b95f3bdaf449c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4c/namespaceNetworkInterfaceManager.html#a254956dad6fa6a4a379b95f3bdaf449c">NetworkInterfaceManager::CallStartNetworkStackWrapper</a> ()</td></tr>
+<tr class="separator:a254956dad6fa6a4a379b95f3bdaf449c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -136,6 +147,8 @@ Variables</h2></td></tr>
 <tr class="separator:a2679f80139f349ea07375cd3485985c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6a06a7958e5e564802e4d75f5056995"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html">VirtioNetwork::NetworkInterfaceController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d3a/NetworkController_8cpp.html#ac6a06a7958e5e564802e4d75f5056995">virtio</a> [8]</td></tr>
 <tr class="separator:ac6a06a7958e5e564802e4d75f5056995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4876bf833d0392318d19f2b01fcae157"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/df5/namespaceFileSystem.html#dd/d34/structFileSystem_1_1FileSystemOpeations">FileSystem::FileSystemOpeations</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4c/namespaceNetworkInterfaceManager.html#a4876bf833d0392318d19f2b01fcae157">NetworkInterfaceManager::netsvcfs</a></td></tr>
+<tr class="separator:a4876bf833d0392318d19f2b01fcae157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65e8e89d5e1616d3a4f0742979d0a379"><td class="memItemLeft" align="right" valign="top">Vector&lt; Events * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4c/namespaceNetworkInterfaceManager.html#a65e8e89d5e1616d3a4f0742979d0a379">NetworkInterfaceManager::RegisteredEvents</a></td></tr>
 <tr class="separator:a65e8e89d5e1616d3a4f0742979d0a379"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -152,9 +165,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00020">20</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00022">22</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00126">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>, and <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00033">NetworkInterfaceManager::NetworkInterface::TraceCards()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00128">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>, and <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00035">NetworkInterfaceManager::NetworkInterface::TraceCards()</a>.</p>
 
 </div>
 </div>
@@ -170,9 +183,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00019">19</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00021">21</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00126">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00128">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>.</p>
 
 </div>
 </div>
@@ -188,9 +201,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00023">23</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00025">25</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00126">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>, and <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00033">NetworkInterfaceManager::NetworkInterface::TraceCards()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00128">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>, and <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00035">NetworkInterfaceManager::NetworkInterface::TraceCards()</a>.</p>
 
 </div>
 </div>
@@ -206,9 +219,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00022">22</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00024">24</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00126">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00128">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>.</p>
 
 </div>
 </div>
@@ -224,9 +237,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00011">11</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00013">13</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00224">KernelInit()</a>, <a class="el" href="../../da/d9e/RTL8139_8cpp_source.html#l00077">RTL8139::NetworkInterfaceController::Receive()</a>, <a class="el" href="../../d7/d2d/E1000_8cpp_source.html#l00223">E1000::NetworkInterfaceController::Receive()</a>, and <a class="el" href="../../d9/d3b/Ethernet_8cpp_source.html#l00011">NetworkEthernet::Ethernet::Send()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00251">NetworkInterfaceManager::CallStartNetworkStackWrapper()</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00192">KernelInit()</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00119">KernelTask()</a>, <a class="el" href="../../da/d9e/RTL8139_8cpp_source.html#l00077">RTL8139::NetworkInterfaceController::Receive()</a>, <a class="el" href="../../d7/d2d/E1000_8cpp_source.html#l00223">E1000::NetworkInterfaceController::Receive()</a>, and <a class="el" href="../../d9/d3b/Ethernet_8cpp_source.html#l00011">NetworkEthernet::Ethernet::Send()</a>.</p>
 
 </div>
 </div>
@@ -242,9 +255,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00026">26</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00028">28</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00126">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>, and <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00033">NetworkInterfaceManager::NetworkInterface::TraceCards()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00128">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>, and <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00035">NetworkInterfaceManager::NetworkInterface::TraceCards()</a>.</p>
 
 </div>
 </div>
@@ -260,9 +273,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00025">25</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00027">27</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00126">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00128">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>.</p>
 
 </div>
 </div>
@@ -278,9 +291,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00014">14</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00016">16</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00126">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>, and <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00033">NetworkInterfaceManager::NetworkInterface::TraceCards()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00128">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>, and <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00035">NetworkInterfaceManager::NetworkInterface::TraceCards()</a>.</p>
 
 </div>
 </div>
@@ -296,9 +309,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00013">13</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00015">15</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00126">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00128">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>.</p>
 
 </div>
 </div>
@@ -314,9 +327,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00017">17</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00019">19</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00126">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>, and <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00033">NetworkInterfaceManager::NetworkInterface::TraceCards()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00128">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>, and <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00035">NetworkInterfaceManager::NetworkInterface::TraceCards()</a>.</p>
 
 </div>
 </div>
@@ -332,9 +345,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00016">16</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00018">18</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00126">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00128">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>.</p>
 
 </div>
 </div>
@@ -350,9 +363,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00029">29</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00031">31</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00126">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>, and <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00033">NetworkInterfaceManager::NetworkInterface::TraceCards()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00128">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>, and <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00035">NetworkInterfaceManager::NetworkInterface::TraceCards()</a>.</p>
 
 </div>
 </div>
@@ -368,9 +381,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00028">28</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00030">30</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00126">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00128">NetworkInterfaceManager::NetworkInterface::NetworkInterface()</a>.</p>
 
 </div>
 </div>

@@ -7,7 +7,11 @@ var ProcessAPI_8cpp =
     [ "SysGetCurrentProcess", "df/d27/ProcessAPI_8cpp.html#aba344b9066be19457df7e936aca3351c", null ],
     [ "SysGetCurrentThread", "df/d27/ProcessAPI_8cpp.html#a249c9d235bdb42f4e30cc660ab205659", null ],
     [ "SysGetProcessByPID", "df/d27/ProcessAPI_8cpp.html#a2a491f1a532ac1f6d9340c71d26b5032", null ],
+    [ "SysGetProcessPriority", "df/d27/ProcessAPI_8cpp.html#a434dcc9dcbbc1ec4398c69a186015133", null ],
     [ "SysGetThreadByTID", "df/d27/ProcessAPI_8cpp.html#a7b0f955f9fa94893a1ec57f0d9049517", null ],
+    [ "SysGetThreadPriority", "df/d27/ProcessAPI_8cpp.html#a1c17c514f567c13497baa40a38cd7ebb", null ],
+    [ "SysSetProcessPriority", "df/d27/ProcessAPI_8cpp.html#a3f799d4b91fa957d310a16ca0a389942", null ],
+    [ "SysSetThreadPriority", "df/d27/ProcessAPI_8cpp.html#a53b22c6e9cfa4bd5081d329bdeaf7a2c", null ],
     [ "CurrentTaskingMode", "df/d27/ProcessAPI_8cpp.html#a24b42fd6c165e22f3c4cc751efee137b", null ],
     [ "nullpcb", "df/d27/ProcessAPI_8cpp.html#a61b3596f0f2a29541ac45938dcc282f7", null ],
     [ "nulltcb", "df/d27/ProcessAPI_8cpp.html#a4e7aa1a5341b9ddcfeb05bce3849c6ef", null ]

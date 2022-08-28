@@ -1,9 +1,13 @@
 var NetworkController_8cpp =
 [
+    [ "CallStartNetworkStackWrapper", "d8/d3a/NetworkController_8cpp.html#a254956dad6fa6a4a379b95f3bdaf449c", null ],
+    [ "ReadFSFunction", "d8/d3a/NetworkController_8cpp.html#a2b85a2cebe84cc2f4cc66b85afc613d6", null ],
+    [ "WriteFSFunction", "d8/d3a/NetworkController_8cpp.html#ad0ddc7260839486847ff1f635e3970c5", null ],
     [ "e1000", "d8/d3a/NetworkController_8cpp.html#a675246d564ac8d209d54b404a7d2f534", null ],
     [ "e1000Count", "d8/d3a/NetworkController_8cpp.html#a92b0e7a62965b0b0fa0ff10cd891f15e", null ],
     [ "i8254x", "d8/d3a/NetworkController_8cpp.html#a2f267ee21a27be69ac40ecf182a37e1e", null ],
     [ "i8254xCount", "d8/d3a/NetworkController_8cpp.html#a1a79804fc06ae2941f44e9fa0883795d", null ],
+    [ "netsvcfs", "d8/d3a/NetworkController_8cpp.html#a4876bf833d0392318d19f2b01fcae157", null ],
     [ "nimgr", "d8/d3a/NetworkController_8cpp.html#a2d4bde208a6e8b2b23da3fda2a2d6984", null ],
     [ "pcnet", "d8/d3a/NetworkController_8cpp.html#a08adccdedbf82b2b4551ce05868930ed", null ],
     [ "pcnetCount", "d8/d3a/NetworkController_8cpp.html#a709fbd5950a27c73bca75b2c2914ebc4", null ],

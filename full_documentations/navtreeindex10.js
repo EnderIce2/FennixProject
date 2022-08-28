@@ -1,5 +1,16 @@
 var NAVTREEINDEX10 =
 {
+"d5/dba/multiboot2_8h.html#a0d19797e8a049353c2ba98e04df089bc":[5,0,0,5,0,0,3,6,0],
+"d5/dba/multiboot2_8h.html#a0d868424e2b703471e3d73c0a72bc75c":[5,0,0,5,0,0,3,36,5],
+"d5/dba/multiboot2_8h.html#a0eb857966790a1f24fa260b381561510":[5,0,0,5,0,0,3,53],
+"d5/dba/multiboot2_8h.html#a0f1c3469d5ef39bff66a690f65c51a6c":[5,0,0,5,0,0,3,60],
+"d5/dba/multiboot2_8h.html#a0f8ff7cd97ae788d8afcd7dee881367a":[5,0,0,5,0,0,3,23,4],
+"d5/dba/multiboot2_8h.html#a105a58eef8f4c2a848375c6808eefa42":[5,0,0,5,0,0,3,13,4],
+"d5/dba/multiboot2_8h.html#a10b78479319b8790657f13414cf34736":[5,0,0,5,0,0,3,89],
+"d5/dba/multiboot2_8h.html#a116c9b57307b74f86920e14c9ec89575":[5,0,0,5,0,0,2,0,0],
+"d5/dba/multiboot2_8h.html#a116c9b57307b74f86920e14c9ec89575":[5,0,0,5,0,0,3,0,0],
+"d5/dba/multiboot2_8h.html#a11e246a75cfb2a98a79568f29236c1fa":[5,0,0,5,0,0,3,13,3],
+"d5/dba/multiboot2_8h.html#a12327fcbac594a8d93c18a2870998bcf":[5,0,0,5,0,0,3,90],
 "d5/dba/multiboot2_8h.html#a12aaae52c5b77e24f28cf7bed2c41468":[5,0,0,5,0,0,3,48],
 "d5/dba/multiboot2_8h.html#a12fa5ee88e4ebcfef0a42bbdf4608941":[5,0,0,5,0,0,3,33,2],
 "d5/dba/multiboot2_8h.html#a1370d764136d9cde9132c71ebf54bc3e":[5,0,0,5,0,0,3,19,4],
@@ -238,16 +249,5 @@ var NAVTREEINDEX10 =
 "d5/dba/multiboot2_8h.html#d7/d2b/structmultiboot__color":[5,0,0,5,0,0,2,4],
 "d5/dba/multiboot2_8h.html#d7/d2b/structmultiboot__color":[5,0,0,5,0,0,3,9],
 "d5/dba/multiboot2_8h.html#d7/d4c/structmultiboot__tag__new__acpi":[5,0,0,5,0,0,3,28],
-"d5/dba/multiboot2_8h.html#d7/d71/structmultiboot__tag__mmap":[5,0,0,5,0,0,3,16],
-"d5/dba/multiboot2_8h.html#d7/de5/structmultiboot__tag__apm":[5,0,0,5,0,0,3,23],
-"d5/dba/multiboot2_8h.html#d8/d53/structmultiboot__tag__elf__sections":[5,0,0,5,0,0,3,22],
-"d5/dba/multiboot2_8h.html#d8/da1/structmultiboot__tag__bootdev":[5,0,0,5,0,0,3,15],
-"d5/dba/multiboot2_8h.html#d8/db7/structmultiboot__tag__smbios":[5,0,0,5,0,0,3,26],
-"d5/dba/multiboot2_8h.html#d8/db8/structmultiboot__tag__framebuffer__common":[5,0,0,5,0,0,3,20],
-"d5/dba/multiboot2_8h.html#d8/de7/unionmultiboot__tag__framebuffer_8____unnamed____":[5,0,0,5,0,0,3,34],
-"d5/dba/multiboot2_8h.html#d9/d5d/structmultiboot__tag__old__acpi":[5,0,0,5,0,0,3,27],
-"d5/dba/multiboot2_8h.html#d9/d69/structmultiboot__vbe__info__block":[5,0,0,5,0,0,3,17],
-"d5/dba/multiboot2_8h.html#da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____":[5,0,0,5,0,0,3,35],
-"d5/dba/multiboot2_8h.html#da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____":[5,0,0,5,0,0,3,36],
-"d5/dba/multiboot2_8h.html#db/d10/structmultiboot__tag__efi32":[5,0,0,5,0,0,3,24]
+"d5/dba/multiboot2_8h.html#d7/d71/structmultiboot__tag__mmap":[5,0,0,5,0,0,3,16]
 };

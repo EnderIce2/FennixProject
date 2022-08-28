@@ -94,13 +94,17 @@ $(document).ready(function(){initNavTree('df/dd9/Driver_8cpp.html','../../'); in
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d7/d7e/driver_8hpp_source.html">driver.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d0/daa/kernel_8h_source.html">kernel.h</a>&quot;</code><br />
-<code>#include &lt;<a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d1/d2d/stdarg_8h_source.html">stdarg.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d6/d75/internal__task_8h_source.html">internal_task.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d4/d68/display_8h_source.html">display.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d1/d2d/stdarg_8h_source.html">stdarg.h</a>&gt;</code><br />
+<code>#include &lt;cwalk.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../da/ddb/heap_8h_source.html">heap.h</a>&gt;</code><br />
 <code>#include &lt;elf.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d3/d7e/int_8h_source.html">int.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/dc0/security_8hpp_source.html">security/security.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d0/daa/kernel_8h_source.html">kernel.h</a>&quot;</code><br />
 </div>
 <p><a href="../../df/dd9/Driver_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -117,6 +121,8 @@ Functions</h2></td></tr>
 <tr class="separator:a2efab3b185b1cb6ee0dbf1220051dee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d424b6f425a05751638283fd3f06616"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d48/namespaceDriver.html#a9d424b6f425a05751638283fd3f06616">Driver::WriteFSFunction</a> (DriverWrite)</td></tr>
 <tr class="separator:a9d424b6f425a05751638283fd3f06616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e1b3a98cea452685af705dd8996a828"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d48/namespaceDriver.html#a6e1b3a98cea452685af705dd8996a828">Driver::DriverManagerMainLoop</a> ()</td></tr>
+<tr class="separator:a6e1b3a98cea452685af705dd8996a828"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -156,74 +162,74 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00016">16</a> of file <a class="el" href="../../df/dd9/Driver_8cpp_source.html">Driver.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> maxargs = 16;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> argsn = 0;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> ArgList[maxargs];</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../d1/d2d/stdarg_8h.html#af53f622e3b6c080daeb167c1955d7ec1">va_list</a> args;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="../../d1/d2d/stdarg_8h.html#aa0628ab596c3d7e78f5e08c2d98e24da">va_start</a>(args, maxargs);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">while</span> (argsn &lt; maxargs)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        ArgList[argsn] = <a class="code" href="../../d1/d2d/stdarg_8h.html#a9cfd655f1203c9a345ddd90446f0bcee">va_arg</a>(args, <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        argsn++;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="../../d1/d2d/stdarg_8h.html#a823b205416e9129825841b74c3bf8484">va_end</a>(args);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">switch</span> (<a class="code" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a>)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">case</span> KCALL_REQ_PAGE:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/ddc/PageFrameAllocator_8cpp.html#a27f255129e7d068084cc717639b02837">KernelAllocator</a>.RequestPage();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">case</span> KCALL_FREE_PAGE:</div>
+<p class="definition">Definition at line <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00020">20</a> of file <a class="el" href="../../df/dd9/Driver_8cpp_source.html">Driver.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> maxargs = 16;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> argsn = 0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> ArgList[maxargs];</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="../../d1/d2d/stdarg_8h.html#af53f622e3b6c080daeb167c1955d7ec1">va_list</a> args;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../d1/d2d/stdarg_8h.html#aa0628ab596c3d7e78f5e08c2d98e24da">va_start</a>(args, maxargs);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">while</span> (argsn &lt; maxargs)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        ArgList[argsn] = <a class="code" href="../../d1/d2d/stdarg_8h.html#a9cfd655f1203c9a345ddd90446f0bcee">va_arg</a>(args, <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        argsn++;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="../../d1/d2d/stdarg_8h.html#a823b205416e9129825841b74c3bf8484">va_end</a>(args);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">switch</span> (<a class="code" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a>)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">case</span> KCALL_REQ_PAGE:</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="../../d2/ddc/PageFrameAllocator_8cpp.html#a27f255129e7d068084cc717639b02837">KernelAllocator</a>.FreePage((<span class="keywordtype">void</span> *)ArgList[0]);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">case</span> KCALL_KMALLOC:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../da/ddb/heap_8h.html#aa700d7a085f4fa2439650b7675228b88">kmalloc</a>(ArgList[0]);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/ddc/PageFrameAllocator_8cpp.html#a27f255129e7d068084cc717639b02837">KernelAllocator</a>.RequestPage();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">case</span> KCALL_FREE_PAGE:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="../../d2/ddc/PageFrameAllocator_8cpp.html#a27f255129e7d068084cc717639b02837">KernelAllocator</a>.FreePage((<span class="keywordtype">void</span> *)ArgList[0]);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">case</span> KCALL_KFREE:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">case</span> KCALL_KMALLOC:</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="../../da/ddb/heap_8h.html#aef27615e6561e63428541f98e7e60b88">kfree</a>((<span class="keywordtype">void</span> *)ArgList[0]);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">case</span> KCALL_KCALLOC:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../da/ddb/heap_8h.html#a778ebd1959202ffd1073f89a446caf8b">kcalloc</a>(ArgList[0], ArgList[1]);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../da/ddb/heap_8h.html#aa700d7a085f4fa2439650b7675228b88">kmalloc</a>(ArgList[0]);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">case</span> KCALL_KFREE:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="../../da/ddb/heap_8h.html#aef27615e6561e63428541f98e7e60b88">kfree</a>((<span class="keywordtype">void</span> *)ArgList[0]);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">case</span> KCALL_KCREALLOC:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">case</span> KCALL_KCALLOC:</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../da/ddb/heap_8h.html#a2c1f3b7e5e4c2c928206834a68a75b6c">krealloc</a>((<span class="keywordtype">void</span> *)ArgList[0], ArgList[1]);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../da/ddb/heap_8h.html#a778ebd1959202ffd1073f89a446caf8b">kcalloc</a>(ArgList[0], ArgList[1]);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">case</span> KCALL_GET_BOOTPARAMS:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">case</span> KCALL_KCREALLOC:</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">void</span> *)&amp;<a class="code" href="../../d2/d00/Kernel_8cpp.html#ad840a881d3808ffc8989ef1d14f9e06c">bootparams</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../da/ddb/heap_8h.html#a2c1f3b7e5e4c2c928206834a68a75b6c">krealloc</a>((<span class="keywordtype">void</span> *)ArgList[0], ArgList[1]);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">case</span> KCALL_HOOK_INTERRUPT:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">case</span> KCALL_GET_BOOTPARAMS:</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">void</span> *)<a class="code" href="../../d3/d7e/int_8h.html#a82ff29be9b9e427e81dac56660d946c8">RegisterInterrupt</a>((<a class="code" href="../../d3/d7e/int_8h.html#a46d9431511b0767b74e06ed231035fd4">INTERRUPT_HANDLER</a>)ArgList[1], (<a class="code" href="../../d3/d7e/int_8h.html#a533db0d027aa02c25e2336a603941fab">InterruptVector</a>)ArgList[0], <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">void</span> *)&amp;<a class="code" href="../../d2/d00/Kernel_8cpp.html#ad840a881d3808ffc8989ef1d14f9e06c">bootparams</a>;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">case</span> KCALL_UNHOOK_INTERRUPT:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">case</span> KCALL_END_OF_INTERRUPT:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="../../d3/d7e/int_8h.html#a4ee4551ab63edbfcc20602c9c287051e">EndOfInterrupt</a>(ArgList[0]);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="../../d2/dca/cxa_8cpp.html#af11296e79c8839a302f71294836c91cc">fixme</a>(<span class="stringliteral">&quot;Call %d not implemented.&quot;</span>, <a class="code" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">void</span> *)<a class="code" href="../../d7/dfc/kernel_2include_2types_8h.html#a59f33d535169ca3a0f1c84df74636807">deadbeef</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">case</span> KCALL_HOOK_INTERRUPT:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">void</span> *)<a class="code" href="../../d3/d7e/int_8h.html#a82ff29be9b9e427e81dac56660d946c8">RegisterInterrupt</a>((<a class="code" href="../../d3/d7e/int_8h.html#a46d9431511b0767b74e06ed231035fd4">INTERRUPT_HANDLER</a>)ArgList[1], (<a class="code" href="../../d3/d7e/int_8h.html#a533db0d027aa02c25e2336a603941fab">InterruptVector</a>)ArgList[0], <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">case</span> KCALL_UNHOOK_INTERRUPT:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">case</span> KCALL_END_OF_INTERRUPT:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="../../d3/d7e/int_8h.html#a4ee4551ab63edbfcc20602c9c287051e">EndOfInterrupt</a>(ArgList[0]);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> (<span class="keywordtype">void</span> *)<a class="code" href="../../d7/dfc/kernel_2include_2types_8h.html#a63ad1a77fdbbb1fd7ea552534c55bf50">badfennec</a>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="../../d2/dca/cxa_8cpp.html#af11296e79c8839a302f71294836c91cc">fixme</a>(<span class="stringliteral">&quot;Call %d not implemented.&quot;</span>, <a class="code" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">void</span> *)<a class="code" href="../../d7/dfc/kernel_2include_2types_8h.html#a59f33d535169ca3a0f1c84df74636807">deadbeef</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> (<span class="keywordtype">void</span> *)<a class="code" href="../../d7/dfc/kernel_2include_2types_8h.html#a63ad1a77fdbbb1fd7ea552534c55bf50">badfennec</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00032">badfennec</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00034">bootparams</a>, <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00034">deadbeef</a>, <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00007">EndOfInterrupt()</a>, <a class="el" href="../../d2/dca/cxa_8cpp_source.html#l00054">fixme()</a>, <a class="el" href="../../da/ddb/heap_8h_source.html#l00271">kcalloc</a>, <a class="el" href="../../d2/ddc/PageFrameAllocator_8cpp_source.html#l00016">KernelAllocator</a>, <a class="el" href="../../da/ddb/heap_8h_source.html#l00273">kfree</a>, <a class="el" href="../../da/ddb/heap_8h_source.html#l00270">kmalloc</a>, <a class="el" href="../../da/ddb/heap_8h_source.html#l00272">krealloc</a>, <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00093">RegisterInterrupt()</a>, <a class="el" href="../../d1/dc0/multiboot_8h_source.html#l00106">type</a>, <a class="el" href="../../d1/d2d/stdarg_8h_source.html#l00017">va_arg</a>, <a class="el" href="../../d1/d2d/stdarg_8h_source.html#l00016">va_end</a>, and <a class="el" href="../../d1/d2d/stdarg_8h_source.html#l00015">va_start</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00086">Driver::KernelDriver::LoadKernelDriverFromFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00090">Driver::KernelDriver::LoadKernelDriverFromFile()</a>.</p>
 
 </div>
 </div>
@@ -240,9 +246,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00014">14</a> of file <a class="el" href="../../df/dd9/Driver_8cpp_source.html">Driver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00018">18</a> of file <a class="el" href="../../df/dd9/Driver_8cpp_source.html">Driver.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00119">KernelTask()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00206">Driver::DriverManagerMainLoop()</a>, and <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00119">KernelTask()</a>.</p>
 
 </div>
 </div>

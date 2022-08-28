@@ -100,6 +100,8 @@ $(document).ready(function(){initNavTree('d6/df5/namespaceFileSystem.html','../.
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d00/classFileSystem_1_1Device.html">Device</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d05/classFileSystem_1_1Driver.html">Driver</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/db8/classFileSystem_1_1EXT2.html">EXT2</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d19/classFileSystem_1_1FAT.html">FAT</a></td></tr>
@@ -113,6 +115,8 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d12/classFileSystem_1_1Initrd.html">Initrd</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d19/classFileSystem_1_1Mount.html">Mount</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd3/classFileSystem_1_1Network.html">Network</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc3/classFileSystem_1_1Null.html">Null</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -272,6 +276,10 @@ Variables</h2></td></tr>
 <tr class="separator:ae5a637d364a1c2609df2bc8c73c1510a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98849b8c7eccec7ad212eddb4bd2b62d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a98849b8c7eccec7ad212eddb4bd2b62d">ProcessRootNode</a> = nullptr</td></tr>
 <tr class="separator:a98849b8c7eccec7ad212eddb4bd2b62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c8f2f35453d791d6df8c684708a9cf8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a8c8f2f35453d791d6df8c684708a9cf8">DriverRootNode</a> = nullptr</td></tr>
+<tr class="separator:a8c8f2f35453d791d6df8c684708a9cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a98fdbcfc675e28120282b534a1213"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#ad1a98fdbcfc675e28120282b534a1213">NetworkRootNode</a> = nullptr</td></tr>
+<tr class="separator:ad1a98fdbcfc675e28120282b534a1213"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae907f1c903bb1799f1402d81cf9255e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/db8/classFileSystem_1_1EXT2.html#d9/d30/structFileSystem_1_1EXT2_1_1SuperBlock">EXT2::SuperBlock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#ae907f1c903bb1799f1402d81cf9255e4">sb</a></td></tr>
 <tr class="separator:ae907f1c903bb1799f1402d81cf9255e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1e041ad59d3d7832a9566e71b12cb47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/df5/namespaceFileSystem.html#dd/d34/structFileSystem_1_1FileSystemOpeations">FileSystemOpeations</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#ab1e041ad59d3d7832a9566e71b12cb47">ext2</a></td></tr>
@@ -790,21 +798,21 @@ Write</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00112">112</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;AddNewChild( \&quot;%s\&quot; \&quot;%s\&quot; )&quot;</span>, Parent-&gt;Name, Name);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        FileSystemNode *newNode = <span class="keyword">new</span> FileSystemNode;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        newNode-&gt;Parent = Parent;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="../../d1/d69/kernel_2include_2string_8h.html#ac137d536ff0037b3856083cb8a1c19a7">strcpy</a>(newNode-&gt;Name, Name);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        newNode-&gt;Operator = Parent-&gt;Operator;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        Parent-&gt;Children.push_back(newNode);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;AddNewChild()-&gt;\&quot;%s\&quot;&quot;</span>, newNode-&gt;Name);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">return</span> newNode;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00114">114</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;AddNewChild( \&quot;%s\&quot; \&quot;%s\&quot; )&quot;</span>, Parent-&gt;Name, Name);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        FileSystemNode *newNode = <span class="keyword">new</span> FileSystemNode;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        newNode-&gt;Parent = Parent;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="../../d1/d69/kernel_2include_2string_8h.html#ac137d536ff0037b3856083cb8a1c19a7">strcpy</a>(newNode-&gt;Name, Name);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        newNode-&gt;Operator = Parent-&gt;Operator;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        Parent-&gt;Children.push_back(newNode);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;AddNewChild()-&gt;\&quot;%s\&quot;&quot;</span>, newNode-&gt;Name);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">return</span> newNode;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00110">FileSystem::FileSystemNode::Children</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00095">FileSystem::FileSystemNode::Name</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00104">FileSystem::FileSystemNode::Operator</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00103">FileSystem::FileSystemNode::Parent</a>, <a class="el" href="../../d4/db5/String_8c_source.html#l00085">strcpy()</a>, and <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00016">vfsdbg</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00186">FileSystem::Virtual::Create()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00188">FileSystem::Virtual::Create()</a>.</p>
 
 </div>
 </div>
@@ -834,20 +842,20 @@ Write</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00175">175</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="comment">// vfsdbg(&quot;FileExists( \&quot;%s\&quot; \&quot;%s\&quot; )&quot;, Parent-&gt;Name, Path);</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">// TODO: implement FileExists()</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d1/d69/kernel_2include_2string_8h.html#a75b852b562036f85800f7e155266bd58">isempty</a>((<span class="keywordtype">char</span> *)Path))</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca65c8ffdd83b744c8685263689ab8043e">FILESTATUS::INVALID_PATH</a>;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">if</span> (Parent == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            Parent = <a class="code" href="../../d6/df5/namespaceFileSystem.html#aae5511c8e6bade602158f8dcbec0f620">FileSystemRoot</a>;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40cacdaa2919bac56fe1090eb3dbb9526472">FILESTATUS::NOT_FOUND</a>;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00177">177</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="comment">// vfsdbg(&quot;FileExists( \&quot;%s\&quot; \&quot;%s\&quot; )&quot;, Parent-&gt;Name, Path);</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="comment">// TODO: implement FileExists()</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d1/d69/kernel_2include_2string_8h.html#a75b852b562036f85800f7e155266bd58">isempty</a>((<span class="keywordtype">char</span> *)Path))</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca65c8ffdd83b744c8685263689ab8043e">FILESTATUS::INVALID_PATH</a>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">if</span> (Parent == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            Parent = <a class="code" href="../../d6/df5/namespaceFileSystem.html#aae5511c8e6bade602158f8dcbec0f620">FileSystemRoot</a>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40cacdaa2919bac56fe1090eb3dbb9526472">FILESTATUS::NOT_FOUND</a>;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00028">FileSystemRoot</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00160">INVALID_PATH</a>, <a class="el" href="../../d4/db5/String_8c_source.html#l00149">isempty()</a>, and <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00155">NOT_FOUND</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00030">FileSystemRoot</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00160">INVALID_PATH</a>, <a class="el" href="../../d4/db5/String_8c_source.html#l00149">isempty()</a>, and <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00155">NOT_FOUND</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00186">FileSystem::Virtual::Create()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00188">FileSystem::Virtual::Create()</a>.</p>
 
 </div>
 </div>
@@ -877,22 +885,22 @@ Write</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00124">124</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;GetChild( \&quot;%s\&quot; \&quot;%s\&quot; )&quot;</span>, Parent-&gt;Name, Name);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">foreach</span> (<span class="keyword">auto</span> var <span class="keywordflow">in</span> Parent-&gt;Children)</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="../../d1/d69/kernel_2include_2string_8h.html#a5206cb6f52495066146ae3a41d166eb7">strcmp</a>(var-&gt;Name, Name) == 0)</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;GetChild()-&gt;\&quot;%s\&quot;&quot;</span>, var-&gt;Name);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordflow">return</span> var;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;GetChild()-&gt;nullptr&quot;</span>);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00126">126</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;GetChild( \&quot;%s\&quot; \&quot;%s\&quot; )&quot;</span>, Parent-&gt;Name, Name);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">foreach</span> (<span class="keyword">auto</span> var <span class="keywordflow">in</span> Parent-&gt;Children)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="../../d1/d69/kernel_2include_2string_8h.html#a5206cb6f52495066146ae3a41d166eb7">strcmp</a>(var-&gt;Name, Name) == 0)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;GetChild()-&gt;\&quot;%s\&quot;&quot;</span>, var-&gt;Name);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <span class="keywordflow">return</span> var;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;GetChild()-&gt;nullptr&quot;</span>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00095">FileSystem::FileSystemNode::Name</a>, <a class="el" href="../../d4/db5/String_8c_source.html#l00115">strcmp()</a>, and <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00016">vfsdbg</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00186">FileSystem::Virtual::Create()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00188">FileSystem::Virtual::Create()</a>.</p>
 
 </div>
 </div>
@@ -1245,19 +1253,19 @@ Write</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00137">137</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    {</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;RemoveChild( \&quot;%s\&quot; \&quot;%s\&quot; )&quot;</span>, Parent-&gt;Name, Name);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> i = 0; i &lt; Parent-&gt;Children.size(); i++)</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="../../d1/d69/kernel_2include_2string_8h.html#a5206cb6f52495066146ae3a41d166eb7">strcmp</a>(Parent-&gt;Children[i]-&gt;Name, Name) == 0)</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                Parent-&gt;Children.remove(i);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;RemoveChild()-&gt;OK&quot;</span>);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca2bc49ec37d6a5715dd23e85f1ff5bb59">FILESTATUS::OK</a>;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            }</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;RemoveChild()-&gt;NOT_FOUND&quot;</span>);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40cacdaa2919bac56fe1090eb3dbb9526472">FILESTATUS::NOT_FOUND</a>;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00139">139</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;RemoveChild( \&quot;%s\&quot; \&quot;%s\&quot; )&quot;</span>, Parent-&gt;Name, Name);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> i = 0; i &lt; Parent-&gt;Children.size(); i++)</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="../../d1/d69/kernel_2include_2string_8h.html#a5206cb6f52495066146ae3a41d166eb7">strcmp</a>(Parent-&gt;Children[i]-&gt;Name, Name) == 0)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                Parent-&gt;Children.remove(i);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;RemoveChild()-&gt;OK&quot;</span>);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca2bc49ec37d6a5715dd23e85f1ff5bb59">FILESTATUS::OK</a>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <a class="code" href="../../d3/d50/FileSystem_8cpp.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(<span class="stringliteral">&quot;RemoveChild()-&gt;NOT_FOUND&quot;</span>);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40cacdaa2919bac56fe1090eb3dbb9526472">FILESTATUS::NOT_FOUND</a>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00110">FileSystem::FileSystemNode::Children</a>, <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00095">FileSystem::FileSystemNode::Name</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00155">NOT_FOUND</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00154">OK</a>, <a class="el" href="../../d4/db5/String_8c_source.html#l00115">strcmp()</a>, and <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00016">vfsdbg</a>.</p>
 
@@ -1509,9 +1517,27 @@ Write</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00433">433</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00435">435</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00435">FileSystem::Device::AddFileSystem()</a>, and <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00445">FileSystem::Device::Device()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00526">FileSystem::Driver::AddDriver()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00437">FileSystem::Device::AddFileSystem()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00553">FileSystem::Network::AddNetworkCard()</a>, and <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00447">FileSystem::Device::Device()</a>.</p>
+
+</div>
+</div>
+<a id="a8c8f2f35453d791d6df8c684708a9cf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c8f2f35453d791d6df8c684708a9cf8">&#9670;&nbsp;</a></span>DriverRootNode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a>* FileSystem::DriverRootNode = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00524">524</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00536">FileSystem::Driver::Driver()</a>.</p>
 
 </div>
 </div>
@@ -1571,9 +1597,9 @@ Write</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00028">28</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00030">30</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00186">FileSystem::Virtual::Create()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00265">FileSystem::Virtual::CreateRoot()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00175">FileExists()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00030">FileSystem::Virtual::GetPathFromNode()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00310">FileSystem::Virtual::Open()</a>, and <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00414">FileSystem::Virtual::Virtual()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00188">FileSystem::Virtual::Create()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00267">FileSystem::Virtual::CreateRoot()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00177">FileExists()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00032">FileSystem::Virtual::GetPathFromNode()</a>, <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00312">FileSystem::Virtual::Open()</a>, and <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00416">FileSystem::Virtual::Virtual()</a>.</p>
 
 </div>
 </div>
@@ -1597,9 +1623,9 @@ Write</td>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00462">462</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00464">464</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00464">FileSystem::Mount::MountFileSystem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00466">FileSystem::Mount::MountFileSystem()</a>.</p>
 
 </div>
 </div>
@@ -1615,9 +1641,27 @@ Write</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00461">461</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00463">463</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00490">FileSystem::Mount::Mount()</a>, and <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00464">FileSystem::Mount::MountFileSystem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00492">FileSystem::Mount::Mount()</a>, and <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00466">FileSystem::Mount::MountFileSystem()</a>.</p>
+
+</div>
+</div>
+<a id="ad1a98fdbcfc675e28120282b534a1213"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a98fdbcfc675e28120282b534a1213">&#9670;&nbsp;</a></span>NetworkRootNode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a>* FileSystem::NetworkRootNode = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00551">551</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00563">FileSystem::Network::Network()</a>.</p>
 
 </div>
 </div>
@@ -1653,9 +1697,9 @@ Write</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00505">505</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00507">507</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00507">FileSystem::Process::Process()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00509">FileSystem::Process::Process()</a>.</p>
 
 </div>
 </div>
@@ -1833,7 +1877,7 @@ Write</td>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespaceFileSystem_html_aae5511c8e6bade602158f8dcbec0f620"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#aae5511c8e6bade602158f8dcbec0f620">FileSystem::FileSystemRoot</a></div><div class="ttdeci">FileSystemNode * FileSystemRoot</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d50/FileSystem_8cpp_source.html#l00028">FileSystem.cpp:28</a></div></div>
+<div class="ttc" id="anamespaceFileSystem_html_aae5511c8e6bade602158f8dcbec0f620"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#aae5511c8e6bade602158f8dcbec0f620">FileSystem::FileSystemRoot</a></div><div class="ttdeci">FileSystemNode * FileSystemRoot</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d50/FileSystem_8cpp_source.html#l00030">FileSystem.cpp:30</a></div></div>
 <div class="ttc" id="akernel_2include_2string_8h_html_a992514d25cc10baafaac987c5852680c"><div class="ttname"><a href="../../d1/d69/kernel_2include_2string_8h.html#a992514d25cc10baafaac987c5852680c">memcpy</a></div><div class="ttdeci">void * memcpy(void *__restrict__ dest, const void *__restrict__ src, size_t n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00005">String.c:5</a></div></div>
 <div class="ttc" id="asyscalls_8h_html_a0a785734a2e4d29ff32532d92a03b40ca6c8e758b44a0efa92902186d5e3303ca"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca6c8e758b44a0efa92902186d5e3303ca">MORE_ENTRIES</a></div><div class="ttdeci">@ MORE_ENTRIES</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00176">syscalls.h:176</a></div></div>
 <div class="ttc" id="asyscalls_8h_html_a0a785734a2e4d29ff32532d92a03b40ca3d769051335b6ef710cd84957c328690"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca3d769051335b6ef710cd84957c328690">DIRECTORY_NOT_EMPTY</a></div><div class="ttdeci">@ DIRECTORY_NOT_EMPTY</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d6e/syscalls_8h_source.html#l00177">syscalls.h:177</a></div></div>

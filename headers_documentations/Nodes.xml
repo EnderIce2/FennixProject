@@ -207,6 +207,27 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>Driver</Name>
+              <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>Driver</Name>
+                <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+                <Anchor>a37feb2e0a29bcdb1550319878489392d</Anchor>
+               </Node>
+               <Node>
+                <Name>~Driver</Name>
+                <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+                <Anchor>acd239b0b4ba6a42986de065ff2aca38b</Anchor>
+               </Node>
+               <Node>
+                <Name>AddDriver</Name>
+                <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+                <Anchor>aad8b48381204cb4190dcfbce5e008bc8</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>EXT2</Name>
               <Path>d1/db8/classFileSystem_1_1EXT2.html</Path>
               <Subnodes>
@@ -827,6 +848,27 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>Network</Name>
+              <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>Network</Name>
+                <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+                <Anchor>ac9162f197fa3988d0814e43ef5068d5d</Anchor>
+               </Node>
+               <Node>
+                <Name>~Network</Name>
+                <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+                <Anchor>a22277c33f514a5ce95df40290db66a3a</Anchor>
+               </Node>
+               <Node>
+                <Name>AddNetworkCard</Name>
+                <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+                <Anchor>a2758492c1ff5ea9fe98c1f527d747f23</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>Null</Name>
               <Path>de/dc3/classFileSystem_1_1Null.html</Path>
               <Subnodes>
@@ -1245,12 +1287,12 @@
                <Node>
                 <Name>CreateProcess</Name>
                 <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                <Anchor>a609cf5a3fcf514cc4b4c7bd4735ec9bc</Anchor>
+                <Anchor>aed88adb4bc0a4c32203280fce2b94fd6</Anchor>
                </Node>
                <Node>
                 <Name>CreateThread</Name>
                 <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                <Anchor>a18500ce418f6eb53b9dc94d4ef826ed5</Anchor>
+                <Anchor>aa3142eac55e865809cbe4579b6ae0df9</Anchor>
                </Node>
                <Node>
                 <Name>IdleProcess</Name>
@@ -5900,6 +5942,23 @@
             <Anchor>d2/d1b/structmultiboot__info_8____unnamed_____8____unnamed____</Anchor>
             <Subnodes>
              <Node>
+              <Name>framebuffer_palette_addr</Name>
+              <Path>d1/dc0/multiboot_8h.html</Path>
+              <Anchor>ab4a160c025f0db5470ddced0d2c99de3</Anchor>
+             </Node>
+             <Node>
+              <Name>framebuffer_palette_num_colors</Name>
+              <Path>d1/dc0/multiboot_8h.html</Path>
+              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>multiboot_info.__unnamed__.__unnamed__</Name>
+            <Path>d1/dc0/multiboot_8h.html</Path>
+            <Anchor>d2/d1b/structmultiboot__info_8____unnamed_____8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
               <Name>framebuffer_blue_field_position</Name>
               <Path>d1/dc0/multiboot_8h.html</Path>
               <Anchor>ace107d23f7f4af6fd8d969926c5c9d16</Anchor>
@@ -5928,23 +5987,6 @@
               <Name>framebuffer_red_mask_size</Name>
               <Path>d1/dc0/multiboot_8h.html</Path>
               <Anchor>a0d868424e2b703471e3d73c0a72bc75c</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>multiboot_info.__unnamed__.__unnamed__</Name>
-            <Path>d1/dc0/multiboot_8h.html</Path>
-            <Anchor>d2/d1b/structmultiboot__info_8____unnamed_____8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
-              <Name>framebuffer_palette_addr</Name>
-              <Path>d1/dc0/multiboot_8h.html</Path>
-              <Anchor>ab4a160c025f0db5470ddced0d2c99de3</Anchor>
-             </Node>
-             <Node>
-              <Name>framebuffer_palette_num_colors</Name>
-              <Path>d1/dc0/multiboot_8h.html</Path>
-              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -6344,23 +6386,6 @@
             <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
             <Subnodes>
              <Node>
-              <Name>framebuffer_palette</Name>
-              <Path>d5/dba/multiboot2_8h.html</Path>
-              <Anchor>ac7df1fdfee327da3c205ba9086e4802a</Anchor>
-             </Node>
-             <Node>
-              <Name>framebuffer_palette_num_colors</Name>
-              <Path>d5/dba/multiboot2_8h.html</Path>
-              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>multiboot_tag_framebuffer.__unnamed__.__unnamed__</Name>
-            <Path>d5/dba/multiboot2_8h.html</Path>
-            <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
               <Name>framebuffer_blue_field_position</Name>
               <Path>d5/dba/multiboot2_8h.html</Path>
               <Anchor>ace107d23f7f4af6fd8d969926c5c9d16</Anchor>
@@ -6389,6 +6414,23 @@
               <Name>framebuffer_red_mask_size</Name>
               <Path>d5/dba/multiboot2_8h.html</Path>
               <Anchor>a0d868424e2b703471e3d73c0a72bc75c</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>multiboot_tag_framebuffer.__unnamed__.__unnamed__</Name>
+            <Path>d5/dba/multiboot2_8h.html</Path>
+            <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>framebuffer_palette</Name>
+              <Path>d5/dba/multiboot2_8h.html</Path>
+              <Anchor>ac7df1fdfee327da3c205ba9086e4802a</Anchor>
+             </Node>
+             <Node>
+              <Name>framebuffer_palette_num_colors</Name>
+              <Path>d5/dba/multiboot2_8h.html</Path>
+              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -24391,6 +24433,48 @@
                   </Subnodes>
                  </Node>
                  <Node>
+                  <Name>Driver</Name>
+                  <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>Driver</Name>
+                    <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+                    <Anchor>a37feb2e0a29bcdb1550319878489392d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>~Driver</Name>
+                    <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+                    <Anchor>acd239b0b4ba6a42986de065ff2aca38b</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>AddDriver</Name>
+                    <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+                    <Anchor>aad8b48381204cb4190dcfbce5e008bc8</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>Network</Name>
+                  <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>Network</Name>
+                    <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+                    <Anchor>ac9162f197fa3988d0814e43ef5068d5d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>~Network</Name>
+                    <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+                    <Anchor>a22277c33f514a5ce95df40290db66a3a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>AddNetworkCard</Name>
+                    <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+                    <Anchor>a2758492c1ff5ea9fe98c1f527d747f23</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
                   <Name>USTAR</Name>
                   <Path>d0/df0/classFileSystem_1_1USTAR.html</Path>
                   <Subnodes>
@@ -25847,6 +25931,11 @@
                   <Anchor>a60d49784066fe3a8c836568f9683617b</Anchor>
                  </Node>
                  <Node>
+                  <Name>drvfs</Name>
+                  <Path>dd/dd8/filesystem_8h.html</Path>
+                  <Anchor>abe012e5d72ae65402ef8fe3de1a7bb3e</Anchor>
+                 </Node>
+                 <Node>
                   <Name>HiddenSectors</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
                   <Anchor>aa4ea822b86d7dd078364c6d192c62dbb</Anchor>
@@ -25865,6 +25954,11 @@
                   <Name>mountfs</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
                   <Anchor>a26a35588e5151a977eac3968909fadb5</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>netfs</Name>
+                  <Path>dd/dd8/filesystem_8h.html</Path>
+                  <Anchor>a90637c28cacc79945d6f7af58d314bfb</Anchor>
                  </Node>
                  <Node>
                   <Name>NumberOfFATs</Name>
@@ -26488,12 +26582,12 @@
                    <Node>
                     <Name>CreateProcess</Name>
                     <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                    <Anchor>a609cf5a3fcf514cc4b4c7bd4735ec9bc</Anchor>
+                    <Anchor>aed88adb4bc0a4c32203280fce2b94fd6</Anchor>
                    </Node>
                    <Node>
                     <Name>CreateThread</Name>
                     <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                    <Anchor>a18500ce418f6eb53b9dc94d4ef826ed5</Anchor>
+                    <Anchor>aa3142eac55e865809cbe4579b6ae0df9</Anchor>
                    </Node>
                    <Node>
                     <Name>IdleProcess</Name>
@@ -26632,9 +26726,29 @@
                   <Anchor>ac6a74c618ca111afd64a911b3b3f24ee</Anchor>
                  </Node>
                  <Node>
+                  <Name>SysGetProcessPriority</Name>
+                  <Path>d6/d75/internal__task_8h.html</Path>
+                  <Anchor>a434dcc9dcbbc1ec4398c69a186015133</Anchor>
+                 </Node>
+                 <Node>
                   <Name>SysGetThreadByTID</Name>
                   <Path>d6/d75/internal__task_8h.html</Path>
                   <Anchor>a7b0f955f9fa94893a1ec57f0d9049517</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>SysGetThreadPriority</Name>
+                  <Path>d6/d75/internal__task_8h.html</Path>
+                  <Anchor>a1c17c514f567c13497baa40a38cd7ebb</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>SysSetProcessPriority</Name>
+                  <Path>d6/d75/internal__task_8h.html</Path>
+                  <Anchor>a3f799d4b91fa957d310a16ca0a389942</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>SysSetThreadPriority</Name>
+                  <Path>d6/d75/internal__task_8h.html</Path>
+                  <Anchor>a53b22c6e9cfa4bd5081d329bdeaf7a2c</Anchor>
                  </Node>
                  <Node>
                   <Name>CurrentTaskingMode</Name>

@@ -156,6 +156,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a249c9d235bdb42f4e30cc660ab205659"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d72/structTCB.html">TCB</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">SysGetCurrentThread</a> ()</td></tr>
 <tr class="memdesc:a249c9d235bdb42f4e30cc660ab205659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current thread.  <a href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">More...</a><br /></td></tr>
 <tr class="separator:a249c9d235bdb42f4e30cc660ab205659"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f799d4b91fa957d310a16ca0a389942"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d75/internal__task_8h.html#a3f799d4b91fa957d310a16ca0a389942">SysSetProcessPriority</a> (int Priority)</td></tr>
+<tr class="memdesc:a3f799d4b91fa957d310a16ca0a389942"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set current process priority.  <a href="../../d6/d75/internal__task_8h.html#a3f799d4b91fa957d310a16ca0a389942">More...</a><br /></td></tr>
+<tr class="separator:a3f799d4b91fa957d310a16ca0a389942"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a434dcc9dcbbc1ec4398c69a186015133"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d75/internal__task_8h.html#a434dcc9dcbbc1ec4398c69a186015133">SysGetProcessPriority</a> ()</td></tr>
+<tr class="memdesc:a434dcc9dcbbc1ec4398c69a186015133"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current process priority.  <a href="../../d6/d75/internal__task_8h.html#a434dcc9dcbbc1ec4398c69a186015133">More...</a><br /></td></tr>
+<tr class="separator:a434dcc9dcbbc1ec4398c69a186015133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53b22c6e9cfa4bd5081d329bdeaf7a2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d75/internal__task_8h.html#a53b22c6e9cfa4bd5081d329bdeaf7a2c">SysSetThreadPriority</a> (int Priority)</td></tr>
+<tr class="memdesc:a53b22c6e9cfa4bd5081d329bdeaf7a2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current thread priority.  <a href="../../d6/d75/internal__task_8h.html#a53b22c6e9cfa4bd5081d329bdeaf7a2c">More...</a><br /></td></tr>
+<tr class="separator:a53b22c6e9cfa4bd5081d329bdeaf7a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c17c514f567c13497baa40a38cd7ebb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d75/internal__task_8h.html#a1c17c514f567c13497baa40a38cd7ebb">SysGetThreadPriority</a> ()</td></tr>
+<tr class="memdesc:a1c17c514f567c13497baa40a38cd7ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current thread priority.  <a href="../../d6/d75/internal__task_8h.html#a1c17c514f567c13497baa40a38cd7ebb">More...</a><br /></td></tr>
+<tr class="separator:a1c17c514f567c13497baa40a38cd7ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaaed5189c104c1e8b6acf162a61d3db8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/da4/task_8h.html#d7/d51/structPCB">PCB</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d75/internal__task_8h.html#aaaed5189c104c1e8b6acf162a61d3db8">SysCreateProcessFromFile</a> (const char *<a class="el" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a>, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> arg0, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> arg1, <a class="el" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29b">ELEVATION</a> Elevation)</td></tr>
 <tr class="memdesc:aaaed5189c104c1e8b6acf162a61d3db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new process from a file.  <a href="../../d6/d75/internal__task_8h.html#aaaed5189c104c1e8b6acf162a61d3db8">More...</a><br /></td></tr>
 <tr class="separator:aaaed5189c104c1e8b6acf162a61d3db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,7 +206,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d6/d75/internal__task_8h_source.html#l00029">29</a> of file <a class="el" href="../../d6/d75/internal__task_8h_source.html">internal_task.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d75/internal__task_8h_source.html#l00030">30</a> of file <a class="el" href="../../d6/d75/internal__task_8h_source.html">internal_task.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -328,7 +340,7 @@ Year</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d75/internal__task_8h_source.html#l00028">28</a> of file <a class="el" href="../../d6/d75/internal__task_8h_source.html">internal_task.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d75/internal__task_8h_source.html#l00029">29</a> of file <a class="el" href="../../d6/d75/internal__task_8h_source.html">internal_task.h</a>.</p>
 
 </div>
 </div>
@@ -350,12 +362,12 @@ Year</td>
 <tr><td class="fieldname"><a id="a429ab8a23f23061fc5ef9ff05f14749fa6d3272154843979d20e3004a5db07df3"></a>Multi&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d75/internal__task_8h_source.html#l00006">6</a> of file <a class="el" href="../../d6/d75/internal__task_8h_source.html">internal_task.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fac9d3e887722f2bc482bcca9d41c512af">None</a>,</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fa1b6b2929659177f6e04cdebdb6c80dab">Mono</a>,</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fa6d3272154843979d20e3004a5db07df3">Multi</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;};</div>
+<p class="definition">Definition at line <a class="el" href="../../d6/d75/internal__task_8h_source.html#l00007">7</a> of file <a class="el" href="../../d6/d75/internal__task_8h_source.html">internal_task.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fac9d3e887722f2bc482bcca9d41c512af">None</a>,</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fa1b6b2929659177f6e04cdebdb6c80dab">Mono</a>,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fa6d3272154843979d20e3004a5db07df3">Multi</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -609,6 +621,26 @@ Year</td>
 
 </div>
 </div>
+<a id="a434dcc9dcbbc1ec4398c69a186015133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a434dcc9dcbbc1ec4398c69a186015133">&#9670;&nbsp;</a></span>SysGetProcessPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SysGetProcessPriority </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get current process priority. </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+</div>
+</div>
 <a id="a7b0f955f9fa94893a1ec57f0d9049517"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7b0f955f9fa94893a1ec57f0d9049517">&#9670;&nbsp;</a></span>SysGetThreadByTID()</h2>
 
@@ -636,6 +668,78 @@ Year</td>
 
 </div>
 </div>
+<a id="a1c17c514f567c13497baa40a38cd7ebb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c17c514f567c13497baa40a38cd7ebb">&#9670;&nbsp;</a></span>SysGetThreadPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SysGetThreadPriority </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get current thread priority. </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a id="a3f799d4b91fa957d310a16ca0a389942"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f799d4b91fa957d310a16ca0a389942">&#9670;&nbsp;</a></span>SysSetProcessPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SysSetProcessPriority </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Priority</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set current process priority. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Priority</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a53b22c6e9cfa4bd5081d329bdeaf7a2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53b22c6e9cfa4bd5081d329bdeaf7a2c">&#9670;&nbsp;</a></span>SysSetThreadPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SysSetThreadPriority </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Priority</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get current thread priority. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Priority</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a24b42fd6c165e22f3c4cc751efee137b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24b42fd6c165e22f3c4cc751efee137b">&#9670;&nbsp;</a></span>CurrentTaskingMode</h2>
@@ -653,9 +757,9 @@ Year</td>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="ainternal__task_8h_html_a429ab8a23f23061fc5ef9ff05f14749fa6d3272154843979d20e3004a5db07df3"><div class="ttname"><a href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fa6d3272154843979d20e3004a5db07df3">Multi</a></div><div class="ttdeci">@ Multi</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d75/internal__task_8h_source.html#l00010">internal_task.h:10</a></div></div>
-<div class="ttc" id="ainternal__task_8h_html_a429ab8a23f23061fc5ef9ff05f14749fac9d3e887722f2bc482bcca9d41c512af"><div class="ttname"><a href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fac9d3e887722f2bc482bcca9d41c512af">None</a></div><div class="ttdeci">@ None</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d75/internal__task_8h_source.html#l00008">internal_task.h:8</a></div></div>
-<div class="ttc" id="ainternal__task_8h_html_a429ab8a23f23061fc5ef9ff05f14749fa1b6b2929659177f6e04cdebdb6c80dab"><div class="ttname"><a href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fa1b6b2929659177f6e04cdebdb6c80dab">Mono</a></div><div class="ttdeci">@ Mono</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d75/internal__task_8h_source.html#l00009">internal_task.h:9</a></div></div>
+<div class="ttc" id="ainternal__task_8h_html_a429ab8a23f23061fc5ef9ff05f14749fa6d3272154843979d20e3004a5db07df3"><div class="ttname"><a href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fa6d3272154843979d20e3004a5db07df3">Multi</a></div><div class="ttdeci">@ Multi</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d75/internal__task_8h_source.html#l00011">internal_task.h:11</a></div></div>
+<div class="ttc" id="ainternal__task_8h_html_a429ab8a23f23061fc5ef9ff05f14749fac9d3e887722f2bc482bcca9d41c512af"><div class="ttname"><a href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fac9d3e887722f2bc482bcca9d41c512af">None</a></div><div class="ttdeci">@ None</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d75/internal__task_8h_source.html#l00009">internal_task.h:9</a></div></div>
+<div class="ttc" id="ainternal__task_8h_html_a429ab8a23f23061fc5ef9ff05f14749fa1b6b2929659177f6e04cdebdb6c80dab"><div class="ttname"><a href="../../d6/d75/internal__task_8h.html#a429ab8a23f23061fc5ef9ff05f14749fa1b6b2929659177f6e04cdebdb6c80dab">Mono</a></div><div class="ttdeci">@ Mono</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d75/internal__task_8h_source.html#l00010">internal_task.h:10</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

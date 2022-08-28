@@ -87,6 +87,7 @@ $(document).ready(function(){initNavTree('d9/d4c/namespaceNetworkInterfaceManage
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">NetworkInterfaceManager Namespace Reference</div>  </div>
@@ -102,12 +103,122 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html">NetworkInterface</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a2b85a2cebe84cc2f4cc66b85afc613d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4c/namespaceNetworkInterfaceManager.html#a2b85a2cebe84cc2f4cc66b85afc613d6">ReadFSFunction</a> (NetRead)</td></tr>
+<tr class="separator:a2b85a2cebe84cc2f4cc66b85afc613d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0ddc7260839486847ff1f635e3970c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4c/namespaceNetworkInterfaceManager.html#ad0ddc7260839486847ff1f635e3970c5">WriteFSFunction</a> (NetWrite)</td></tr>
+<tr class="separator:ad0ddc7260839486847ff1f635e3970c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a254956dad6fa6a4a379b95f3bdaf449c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4c/namespaceNetworkInterfaceManager.html#a254956dad6fa6a4a379b95f3bdaf449c">CallStartNetworkStackWrapper</a> ()</td></tr>
+<tr class="separator:a254956dad6fa6a4a379b95f3bdaf449c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a4876bf833d0392318d19f2b01fcae157"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/df5/namespaceFileSystem.html#dd/d34/structFileSystem_1_1FileSystemOpeations">FileSystem::FileSystemOpeations</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4c/namespaceNetworkInterfaceManager.html#a4876bf833d0392318d19f2b01fcae157">netsvcfs</a></td></tr>
+<tr class="separator:a4876bf833d0392318d19f2b01fcae157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65e8e89d5e1616d3a4f0742979d0a379"><td class="memItemLeft" align="right" valign="top">Vector&lt; <a class="el" href="../../de/d23/classNetworkInterfaceManager_1_1Events.html">Events</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4c/namespaceNetworkInterfaceManager.html#a65e8e89d5e1616d3a4f0742979d0a379">RegisteredEvents</a></td></tr>
 <tr class="separator:a65e8e89d5e1616d3a4f0742979d0a379"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a254956dad6fa6a4a379b95f3bdaf449c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a254956dad6fa6a4a379b95f3bdaf449c">&#9670;&nbsp;</a></span>CallStartNetworkStackWrapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkInterfaceManager::CallStartNetworkStackWrapper </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00251">251</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;{ <a class="code" href="../../d8/d3a/NetworkController_8cpp.html#a2d4bde208a6e8b2b23da3fda2a2d6984">nimgr</a>-&gt;<a class="code" href="../../d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html#ad6632d541583aa39dc22afbc820a5180">StartNetworkStack</a>(); }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00013">nimgr</a>, and <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00189">NetworkInterfaceManager::NetworkInterface::StartNetworkStack()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00253">NetworkInterfaceManager::NetworkInterface::StartService()</a>.</p>
+
+</div>
+</div>
+<a id="a2b85a2cebe84cc2f4cc66b85afc613d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b85a2cebe84cc2f4cc66b85afc613d6">&#9670;&nbsp;</a></span>ReadFSFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NetworkInterfaceManager::ReadFSFunction </td>
+          <td>(</td>
+          <td class="paramtype">NetRead&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00234">234</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <a class="code" href="../../d2/dca/cxa_8cpp.html#af11296e79c8839a302f71294836c91cc">fixme</a>(<span class="stringliteral">&quot;Not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="keywordflow">return</span> Size;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/dca/cxa_8cpp_source.html#l00054">fixme()</a>.</p>
+
+</div>
+</div>
+<a id="ad0ddc7260839486847ff1f635e3970c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0ddc7260839486847ff1f635e3970c5">&#9670;&nbsp;</a></span>WriteFSFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NetworkInterfaceManager::WriteFSFunction </td>
+          <td>(</td>
+          <td class="paramtype">NetWrite&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00240">240</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <a class="code" href="../../d2/dca/cxa_8cpp.html#af11296e79c8839a302f71294836c91cc">fixme</a>(<span class="stringliteral">&quot;Not implemented.&quot;</span>);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">return</span> Size;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/dca/cxa_8cpp_source.html#l00054">fixme()</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a4876bf833d0392318d19f2b01fcae157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4876bf833d0392318d19f2b01fcae157">&#9670;&nbsp;</a></span>netsvcfs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/df5/namespaceFileSystem.html#dd/d34/structFileSystem_1_1FileSystemOpeations">FileSystem::FileSystemOpeations</a> NetworkInterfaceManager::netsvcfs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">        .Name = <span class="stringliteral">&quot;Network Service&quot;</span>,</div>
+<div class="line">        .Read = NetRead,</div>
+<div class="line">        .Write = NetWrite}</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00246">246</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00253">NetworkInterfaceManager::NetworkInterface::StartService()</a>.</p>
+
+</div>
+</div>
 <a id="a65e8e89d5e1616d3a4f0742979d0a379"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a65e8e89d5e1616d3a4f0742979d0a379">&#9670;&nbsp;</a></span>RegisteredEvents</h2>
 
@@ -120,14 +231,17 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00226">226</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00262">262</a> of file <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html">NetworkController.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00244">NetworkInterfaceManager::Events::Events()</a>, <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00238">NetworkInterfaceManager::NetworkInterface::Receive()</a>, <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00228">NetworkInterfaceManager::NetworkInterface::Send()</a>, and <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00245">NetworkInterfaceManager::Events::~Events()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00280">NetworkInterfaceManager::Events::Events()</a>, <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00274">NetworkInterfaceManager::NetworkInterface::Receive()</a>, <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00264">NetworkInterfaceManager::NetworkInterface::Send()</a>, and <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00281">NetworkInterfaceManager::Events::~Events()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="acxa_8cpp_html_af11296e79c8839a302f71294836c91cc"><div class="ttname"><a href="../../d2/dca/cxa_8cpp.html#af11296e79c8839a302f71294836c91cc">fixme</a></div><div class="ttdeci">void fixme(char *m)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dca/cxa_8cpp_source.html#l00054">cxa.cpp:54</a></div></div>
+<div class="ttc" id="aNetworkController_8cpp_html_a2d4bde208a6e8b2b23da3fda2a2d6984"><div class="ttname"><a href="../../d8/d3a/NetworkController_8cpp.html#a2d4bde208a6e8b2b23da3fda2a2d6984">nimgr</a></div><div class="ttdeci">NetworkInterfaceManager::NetworkInterface * nimgr</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3a/NetworkController_8cpp_source.html#l00013">NetworkController.cpp:13</a></div></div>
+<div class="ttc" id="aclassNetworkInterfaceManager_1_1NetworkInterface_html_ad6632d541583aa39dc22afbc820a5180"><div class="ttname"><a href="../../d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html#ad6632d541583aa39dc22afbc820a5180">NetworkInterfaceManager::NetworkInterface::StartNetworkStack</a></div><div class="ttdeci">void StartNetworkStack()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3a/NetworkController_8cpp_source.html#l00189">NetworkController.cpp:189</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

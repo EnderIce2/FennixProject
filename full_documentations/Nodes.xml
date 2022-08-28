@@ -2482,14 +2482,14 @@
                 <Anchor>adda57b840f0ee2950a5786584d45f43a</Anchor>
                </Node>
                <Node>
-                <Name>DriverNode</Name>
-                <Path>d8/d33/classDriver_1_1KernelDriver.html</Path>
-                <Anchor>a80cd0d10d7addc139fb749948f9a71a2</Anchor>
-               </Node>
-               <Node>
                 <Name>DrvMgrProc</Name>
                 <Path>d8/d33/classDriver_1_1KernelDriver.html</Path>
                 <Anchor>a23fe1ed533960a066ea953f4f0ecb200</Anchor>
+               </Node>
+               <Node>
+                <Name>DrvMgrThrd</Name>
+                <Path>d8/d33/classDriver_1_1KernelDriver.html</Path>
+                <Anchor>a5048993cd6ad3e9bfa4612ab6462d471</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -3170,6 +3170,27 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>Driver</Name>
+              <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>Driver</Name>
+                <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+                <Anchor>a37feb2e0a29bcdb1550319878489392d</Anchor>
+               </Node>
+               <Node>
+                <Name>~Driver</Name>
+                <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+                <Anchor>acd239b0b4ba6a42986de065ff2aca38b</Anchor>
+               </Node>
+               <Node>
+                <Name>AddDriver</Name>
+                <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+                <Anchor>af3d470443994390aa7a83a4fef8b32c5</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>EXT2</Name>
               <Path>d1/db8/classFileSystem_1_1EXT2.html</Path>
               <Subnodes>
@@ -3786,6 +3807,27 @@
                 <Name>MountFileSystem</Name>
                 <Path>dc/d19/classFileSystem_1_1Mount.html</Path>
                 <Anchor>a6c3e54ed3cb0e42d6ed5b03af3740904</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>Network</Name>
+              <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>Network</Name>
+                <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+                <Anchor>ac9162f197fa3988d0814e43ef5068d5d</Anchor>
+               </Node>
+               <Node>
+                <Name>~Network</Name>
+                <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+                <Anchor>a22277c33f514a5ce95df40290db66a3a</Anchor>
+               </Node>
+               <Node>
+                <Name>AddNetworkCard</Name>
+                <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+                <Anchor>a95339ffec9017c94a0d7fd261961ec0c</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -5354,6 +5396,11 @@
                 <Anchor>ad6632d541583aa39dc22afbc820a5180</Anchor>
                </Node>
                <Node>
+                <Name>StartService</Name>
+                <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
+                <Anchor>a4cc2d210a86c53e066fddaeaabf323bc</Anchor>
+               </Node>
+               <Node>
                 <Name>StopNetworkStack</Name>
                 <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
                 <Anchor>adb8ef1e074d096045566a8196f4f4553</Anchor>
@@ -5372,6 +5419,16 @@
                 <Name>Devices</Name>
                 <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
                 <Anchor>a6194dc704e3e2bf0174824867ea7fbf2</Anchor>
+               </Node>
+               <Node>
+                <Name>NetSvcProc</Name>
+                <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
+                <Anchor>ac6adbc2fc50320d492183f3cb2166bc5</Anchor>
+               </Node>
+               <Node>
+                <Name>NetSvcThrd</Name>
+                <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
+                <Anchor>abb24b04cf33e3fc8f62d673c64b6ebb3</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -6394,12 +6451,12 @@
                <Node>
                 <Name>CreateProcess</Name>
                 <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                <Anchor>ad4ce0061ee848d55dc79bed29bd14855</Anchor>
+                <Anchor>a9a93bac7840cb5c63688f7cbac1e3188</Anchor>
                </Node>
                <Node>
                 <Name>CreateThread</Name>
                 <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                <Anchor>a86027998ae7c9442cbbe2821b2c3423d</Anchor>
+                <Anchor>a380ab641149ce8766708d352e6a5e0af</Anchor>
                </Node>
                <Node>
                 <Name>IdleProcess</Name>
@@ -11310,6 +11367,23 @@
             <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
             <Subnodes>
              <Node>
+              <Name>framebuffer_palette</Name>
+              <Path>d5/dba/multiboot2_8h.html</Path>
+              <Anchor>ac7df1fdfee327da3c205ba9086e4802a</Anchor>
+             </Node>
+             <Node>
+              <Name>framebuffer_palette_num_colors</Name>
+              <Path>d5/dba/multiboot2_8h.html</Path>
+              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>multiboot_tag_framebuffer.__unnamed__.__unnamed__</Name>
+            <Path>d5/dba/multiboot2_8h.html</Path>
+            <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
               <Name>framebuffer_blue_field_position</Name>
               <Path>d5/dba/multiboot2_8h.html</Path>
               <Anchor>ace107d23f7f4af6fd8d969926c5c9d16</Anchor>
@@ -11338,23 +11412,6 @@
               <Name>framebuffer_red_mask_size</Name>
               <Path>d5/dba/multiboot2_8h.html</Path>
               <Anchor>a0d868424e2b703471e3d73c0a72bc75c</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>multiboot_tag_framebuffer.__unnamed__.__unnamed__</Name>
-            <Path>d5/dba/multiboot2_8h.html</Path>
-            <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
-              <Name>framebuffer_palette</Name>
-              <Path>d5/dba/multiboot2_8h.html</Path>
-              <Anchor>ac7df1fdfee327da3c205ba9086e4802a</Anchor>
-             </Node>
-             <Node>
-              <Name>framebuffer_palette_num_colors</Name>
-              <Path>d5/dba/multiboot2_8h.html</Path>
-              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -13352,23 +13409,6 @@
             <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
             <Subnodes>
              <Node>
-              <Name>dx</Name>
-              <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>aacd2b09d39705a84bff035c18c9faea9</Anchor>
-             </Node>
-             <Node>
-              <Name>port</Name>
-              <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>a901555fb06e346cb065ceb9808dcfc25</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>VMwareCMD.__unnamed__</Name>
-            <Path>d1/dac/VMDetect_8c.html</Path>
-            <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
               <Name>command</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
               <Anchor>a1dccadfed7bcbb036c56a4afb97e906f</Anchor>
@@ -13411,6 +13451,23 @@
               <Name>magic</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
               <Anchor>a2f3a4fccca6406e35bcf33e92dd93135</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>VMwareCMD.__unnamed__</Name>
+            <Path>d1/dac/VMDetect_8c.html</Path>
+            <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>dx</Name>
+              <Path>d1/dac/VMDetect_8c.html</Path>
+              <Anchor>aacd2b09d39705a84bff035c18c9faea9</Anchor>
+             </Node>
+             <Node>
+              <Name>port</Name>
+              <Path>d1/dac/VMDetect_8c.html</Path>
+              <Anchor>a901555fb06e346cb065ceb9808dcfc25</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -13713,6 +13770,10 @@
             <Name>DiskManager::Partition::Drive</Name>
             <Path>de/df4/classDiskManager_1_1Partition.html</Path>
             <Anchor>dc/d59/classDiskManager_1_1Partition_1_1Drive</Anchor>
+           </Node>
+           <Node>
+            <Name>FileSystem::Driver</Name>
+            <Path>da/d05/classFileSystem_1_1Driver.html</Path>
            </Node>
            <Node>
             <Name>ACPI::DSDT</Name>
@@ -14529,6 +14590,10 @@
             <Name>negative_vla_data</Name>
             <Path>d0/d1f/ubsan_8h.html</Path>
             <Anchor>de/d49/structnegative__vla__data</Anchor>
+           </Node>
+           <Node>
+            <Name>FileSystem::Network</Name>
+            <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
            </Node>
            <Node>
             <Name>NetworkInterfaceManager::NetworkInterface</Name>
@@ -33754,6 +33819,48 @@
                   </Subnodes>
                  </Node>
                  <Node>
+                  <Name>Driver</Name>
+                  <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>Driver</Name>
+                    <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+                    <Anchor>a37feb2e0a29bcdb1550319878489392d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>~Driver</Name>
+                    <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+                    <Anchor>acd239b0b4ba6a42986de065ff2aca38b</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>AddDriver</Name>
+                    <Path>da/d05/classFileSystem_1_1Driver.html</Path>
+                    <Anchor>af3d470443994390aa7a83a4fef8b32c5</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>Network</Name>
+                  <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>Network</Name>
+                    <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+                    <Anchor>ac9162f197fa3988d0814e43ef5068d5d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>~Network</Name>
+                    <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+                    <Anchor>a22277c33f514a5ce95df40290db66a3a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>AddNetworkCard</Name>
+                    <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
+                    <Anchor>a95339ffec9017c94a0d7fd261961ec0c</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
                   <Name>USTAR</Name>
                   <Path>d0/df0/classFileSystem_1_1USTAR.html</Path>
                   <Subnodes>
@@ -35210,6 +35317,11 @@
                   <Anchor>a60d49784066fe3a8c836568f9683617b</Anchor>
                  </Node>
                  <Node>
+                  <Name>drvfs</Name>
+                  <Path>dd/dd8/filesystem_8h.html</Path>
+                  <Anchor>abe012e5d72ae65402ef8fe3de1a7bb3e</Anchor>
+                 </Node>
+                 <Node>
                   <Name>HiddenSectors</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
                   <Anchor>aa4ea822b86d7dd078364c6d192c62dbb</Anchor>
@@ -35228,6 +35340,11 @@
                   <Name>mountfs</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
                   <Anchor>a26a35588e5151a977eac3968909fadb5</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>netfs</Name>
+                  <Path>dd/dd8/filesystem_8h.html</Path>
+                  <Anchor>a90637c28cacc79945d6f7af58d314bfb</Anchor>
                  </Node>
                  <Node>
                   <Name>NumberOfFATs</Name>
@@ -35851,12 +35968,12 @@
                    <Node>
                     <Name>CreateProcess</Name>
                     <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                    <Anchor>ad4ce0061ee848d55dc79bed29bd14855</Anchor>
+                    <Anchor>a9a93bac7840cb5c63688f7cbac1e3188</Anchor>
                    </Node>
                    <Node>
                     <Name>CreateThread</Name>
                     <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                    <Anchor>a86027998ae7c9442cbbe2821b2c3423d</Anchor>
+                    <Anchor>a380ab641149ce8766708d352e6a5e0af</Anchor>
                    </Node>
                    <Node>
                     <Name>IdleProcess</Name>
@@ -35995,9 +36112,29 @@
                   <Anchor>ac6a74c618ca111afd64a911b3b3f24ee</Anchor>
                  </Node>
                  <Node>
+                  <Name>SysGetProcessPriority</Name>
+                  <Path>d6/d75/internal__task_8h.html</Path>
+                  <Anchor>a434dcc9dcbbc1ec4398c69a186015133</Anchor>
+                 </Node>
+                 <Node>
                   <Name>SysGetThreadByTID</Name>
                   <Path>d6/d75/internal__task_8h.html</Path>
                   <Anchor>a7b0f955f9fa94893a1ec57f0d9049517</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>SysGetThreadPriority</Name>
+                  <Path>d6/d75/internal__task_8h.html</Path>
+                  <Anchor>a1c17c514f567c13497baa40a38cd7ebb</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>SysSetProcessPriority</Name>
+                  <Path>d6/d75/internal__task_8h.html</Path>
+                  <Anchor>a3f799d4b91fa957d310a16ca0a389942</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>SysSetThreadPriority</Name>
+                  <Path>d6/d75/internal__task_8h.html</Path>
+                  <Anchor>a53b22c6e9cfa4bd5081d329bdeaf7a2c</Anchor>
                  </Node>
                  <Node>
                   <Name>CurrentTaskingMode</Name>
@@ -40748,6 +40885,21 @@
                 <Path>d8/d3a/NetworkController_8cpp.html</Path>
                 <Subnodes>
                  <Node>
+                  <Name>CallStartNetworkStackWrapper</Name>
+                  <Path>d8/d3a/NetworkController_8cpp.html</Path>
+                  <Anchor>a254956dad6fa6a4a379b95f3bdaf449c</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>ReadFSFunction</Name>
+                  <Path>d8/d3a/NetworkController_8cpp.html</Path>
+                  <Anchor>a2b85a2cebe84cc2f4cc66b85afc613d6</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>WriteFSFunction</Name>
+                  <Path>d8/d3a/NetworkController_8cpp.html</Path>
+                  <Anchor>ad0ddc7260839486847ff1f635e3970c5</Anchor>
+                 </Node>
+                 <Node>
                   <Name>e1000</Name>
                   <Path>d8/d3a/NetworkController_8cpp.html</Path>
                   <Anchor>a675246d564ac8d209d54b404a7d2f534</Anchor>
@@ -40766,6 +40918,11 @@
                   <Name>i8254xCount</Name>
                   <Path>d8/d3a/NetworkController_8cpp.html</Path>
                   <Anchor>a1a79804fc06ae2941f44e9fa0883795d</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>netsvcfs</Name>
+                  <Path>d8/d3a/NetworkController_8cpp.html</Path>
+                  <Anchor>a4876bf833d0392318d19f2b01fcae157</Anchor>
                  </Node>
                  <Node>
                   <Name>nimgr</Name>
@@ -41017,6 +41174,11 @@
                     <Anchor>ad6632d541583aa39dc22afbc820a5180</Anchor>
                    </Node>
                    <Node>
+                    <Name>StartService</Name>
+                    <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
+                    <Anchor>a4cc2d210a86c53e066fddaeaabf323bc</Anchor>
+                   </Node>
+                   <Node>
                     <Name>StopNetworkStack</Name>
                     <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
                     <Anchor>adb8ef1e074d096045566a8196f4f4553</Anchor>
@@ -41035,6 +41197,16 @@
                     <Name>Devices</Name>
                     <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
                     <Anchor>a6194dc704e3e2bf0174824867ea7fbf2</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>NetSvcProc</Name>
+                    <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
+                    <Anchor>ac6adbc2fc50320d492183f3cb2166bc5</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>NetSvcThrd</Name>
+                    <Path>d0/d99/classNetworkInterfaceManager_1_1NetworkInterface.html</Path>
+                    <Anchor>abb24b04cf33e3fc8f62d673c64b6ebb3</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -43422,9 +43594,29 @@
                   <Anchor>a2a491f1a532ac1f6d9340c71d26b5032</Anchor>
                  </Node>
                  <Node>
+                  <Name>SysGetProcessPriority</Name>
+                  <Path>df/d27/ProcessAPI_8cpp.html</Path>
+                  <Anchor>a434dcc9dcbbc1ec4398c69a186015133</Anchor>
+                 </Node>
+                 <Node>
                   <Name>SysGetThreadByTID</Name>
                   <Path>df/d27/ProcessAPI_8cpp.html</Path>
                   <Anchor>a7b0f955f9fa94893a1ec57f0d9049517</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>SysGetThreadPriority</Name>
+                  <Path>df/d27/ProcessAPI_8cpp.html</Path>
+                  <Anchor>a1c17c514f567c13497baa40a38cd7ebb</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>SysSetProcessPriority</Name>
+                  <Path>df/d27/ProcessAPI_8cpp.html</Path>
+                  <Anchor>a3f799d4b91fa957d310a16ca0a389942</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>SysSetThreadPriority</Name>
+                  <Path>df/d27/ProcessAPI_8cpp.html</Path>
+                  <Anchor>a53b22c6e9cfa4bd5081d329bdeaf7a2c</Anchor>
                  </Node>
                  <Node>
                   <Name>CurrentTaskingMode</Name>
@@ -46350,6 +46542,11 @@
               <Path>df/dd9/Driver_8cpp.html</Path>
               <Subnodes>
                <Node>
+                <Name>DriverManagerMainLoop</Name>
+                <Path>df/dd9/Driver_8cpp.html</Path>
+                <Anchor>a6e1b3a98cea452685af705dd8996a828</Anchor>
+               </Node>
+               <Node>
                 <Name>FunctionCallHandler</Name>
                 <Path>df/dd9/Driver_8cpp.html</Path>
                 <Anchor>a8c8e318f4434993638e7b55a1822e681</Anchor>
@@ -46410,14 +46607,14 @@
                   <Anchor>adda57b840f0ee2950a5786584d45f43a</Anchor>
                  </Node>
                  <Node>
-                  <Name>DriverNode</Name>
-                  <Path>d8/d33/classDriver_1_1KernelDriver.html</Path>
-                  <Anchor>a80cd0d10d7addc139fb749948f9a71a2</Anchor>
-                 </Node>
-                 <Node>
                   <Name>DrvMgrProc</Name>
                   <Path>d8/d33/classDriver_1_1KernelDriver.html</Path>
                   <Anchor>a23fe1ed533960a066ea953f4f0ecb200</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>DrvMgrThrd</Name>
+                  <Path>d8/d33/classDriver_1_1KernelDriver.html</Path>
+                  <Anchor>a5048993cd6ad3e9bfa4612ab6462d471</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -46473,6 +46670,16 @@
                 <Anchor>a1fa18a092def46b44f18b5ccc94b53a2</Anchor>
                </Node>
                <Node>
+                <Name>DriverRootNode</Name>
+                <Path>d3/d50/FileSystem_8cpp.html</Path>
+                <Anchor>a8c8f2f35453d791d6df8c684708a9cf8</Anchor>
+               </Node>
+               <Node>
+                <Name>drvfs</Name>
+                <Path>d3/d50/FileSystem_8cpp.html</Path>
+                <Anchor>abe012e5d72ae65402ef8fe3de1a7bb3e</Anchor>
+               </Node>
+               <Node>
                 <Name>FileSystemRoot</Name>
                 <Path>d3/d50/FileSystem_8cpp.html</Path>
                 <Anchor>aae5511c8e6bade602158f8dcbec0f620</Anchor>
@@ -46491,6 +46698,16 @@
                 <Name>MountRootNode</Name>
                 <Path>d3/d50/FileSystem_8cpp.html</Path>
                 <Anchor>ac3e2c3c485cfe2cf0114665be4359eec</Anchor>
+               </Node>
+               <Node>
+                <Name>netfs</Name>
+                <Path>d3/d50/FileSystem_8cpp.html</Path>
+                <Anchor>a90637c28cacc79945d6f7af58d314bfb</Anchor>
+               </Node>
+               <Node>
+                <Name>NetworkRootNode</Name>
+                <Path>d3/d50/FileSystem_8cpp.html</Path>
+                <Anchor>ad1a98fdbcfc675e28120282b534a1213</Anchor>
                </Node>
                <Node>
                 <Name>ProcessRootNode</Name>
@@ -51105,6 +51322,27 @@
                 <Name>system</Name>
                 <Path>dir_943004f45d321f880cc7c7db01b4b71e.html</Path>
                 <Subnodes>
+                 <Node>
+                  <Name>drvmgr</Name>
+                  <Path>dir_05c17026a51313c75fcb97213f3b6962.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>drvmgr.cpp</Name>
+                    <Path>d6/d88/drvmgr_8cpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>main</Name>
+                      <Path>d6/d88/drvmgr_8cpp.html</Path>
+                      <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>Makefile</Name>
+                    <Path>d9/d48/userspace_2apps_2system_2drvmgr_2Makefile.html</Path>
+                   </Node>
+                  </Subnodes>
+                 </Node>
                  <Node>
                   <Name>fesktop</Name>
                   <Path>dir_15832304b267ed0d7b4229697987eb15.html</Path>
