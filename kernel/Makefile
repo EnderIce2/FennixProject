@@ -58,8 +58,9 @@ CFLAGS :=																\
 	-march=nehalem -pipe												\
 	-mcmodel=kernel -msoft-float -fno-builtin
 
+# -fsanitize=undefined is causing tasking issues
 ifeq ($(DEBUG), 1)
-	CFLAGS += -DDEBUG -ggdb -O0 -fdiagnostics-color=always -fsanitize=undefined
+	CFLAGS += -DDEBUG -ggdb -O0 -fdiagnostics-color=always
 	LDFLAGS += -ggdb -O0 -O2 -g
 	CFLAGS += -DTRACING
 	NASMFLAGS += -F dwarf -g
@@ -82,8 +83,8 @@ $(KERNEL): $(OBJ)
 %.o: %.c $(HEADERS) $(HEADERS2)
 	$(CC) $(CFLAGS) $(CFLAG_STACK_PROTECTOR) $(WARNCFLAG) -std=c17 -c $< -o $@
 
-cpu/IDT.o: cpu/IDT.c $(HEADERS) $(HEADERS2)
-	$(CC) $(CFLAGS) $(WARNCFLAG) -fno-stack-protector -std=c17 -c $< -o $@
+# cpu/IDT.o: cpu/IDT.c $(HEADERS) $(HEADERS2)
+# 	$(CC) $(CFLAGS) $(WARNCFLAG) -fno-stack-protector -std=c17 -c $< -o $@
 
 # https://gcc.gnu.org/projects/cxx-status.html
 %.o: %.cpp $(HEADERS) $(HEADERS2)
