@@ -59,7 +59,8 @@ void init_tss()
     (&tss[0])->InterruptStackTable[2] = (uint64_t)RequestPage(); // page fault, double fault, general protection fault, etc...
 
     ltr(GDT_TSS);
-    asm volatile("mov %%rsp, %0" : "=r"((&tss[0])->StackPointer[0]));
+    asm volatile("mov %%rsp, %0"
+                 : "=r"((&tss[0])->StackPointer[0]));
 }
 
 NEWLOCK(tss_lock);
