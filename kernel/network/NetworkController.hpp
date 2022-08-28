@@ -22,9 +22,11 @@
 - https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml
 */
 
-#include <debug.h>
-#include <string.h>
+#include <internal_task.h>
+#include <filesystem.h>
 #include <vector.hpp>
+#include <string.h>
+#include <debug.h>
 
 // #define DEBUG_NETWORK 1
 
@@ -221,15 +223,22 @@ namespace NetworkInterfaceManager
         DeviceInterface *Devices[MAX_INTERFACES];
         void TraceCards();
 
+        PCB *NetSvcProc;
+        TCB *NetSvcThrd;
+        void StopNetworkStack();
+
     public:
         NetworkInterface();
         ~NetworkInterface();
 
-        void StartNetworkStack();
-        void StopNetworkStack();
+        void StartService();
+
 
         void Send(DeviceInterface *Interface, uint8_t *Data, uint64_t Length);
         void Receive(DeviceInterface *Interface, uint8_t *Data, uint64_t Length);
+
+        /* Do not use it! */
+        void StartNetworkStack();
     };
 }
 

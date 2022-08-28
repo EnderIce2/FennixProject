@@ -145,60 +145,28 @@ void KernelTask()
 #endif
 
     // for now i'll not load this.
-    // if (CurrentTaskingMode != TaskingMode::Mono)
-    if (0 != 0)
-    {
+    if (CurrentTaskingMode != TaskingMode::Mono)
         kdrv = new Driver::KernelDriver;
-        FileSystem::FILE *driverDirectory = vfs->Open("/system/drivers");
-        if (driverDirectory->Status == FileSystem::FILESTATUS::OK)
-        {
-            foreach (auto driver in driverDirectory->Node->Children)
-            {
-                if (driver->Flags == FileSystem::NodeFlags::FS_FILE)
-                    if (cwk_path_has_extension(driver->Name))
-                    {
-                        const char *extension;
-                        cwk_path_get_extension(driver->Name, &extension, nullptr);
 
-                        if (!strcmp(extension, ".drv"))
-                        {
-                            CurrentDisplay->SetPrintColor(0xCCCCCC);
-                            printf("Loading driver %s... ", driver->Name);
-                            uint64_t ret = kdrv->LoadKernelDriverFromFile(driver);
-                            if (ret == 0)
-                            {
-                                CurrentDisplay->SetPrintColor(0x058C19);
-                                printf("OK\n");
-                            }
-                            else
-                            {
-                                CurrentDisplay->SetPrintColor(0xE85230);
-                                printf("FAILED (%#lx)\n", ret);
-                            }
-                            CurrentDisplay->ResetPrintColor();
-                            // TODO: get instruction pointer of the elf entry point.
-                            BS->IncreaseProgres();
-                        }
-                    }
-            }
-        }
-        vfs->Close(driverDirectory);
-    }
+    nimgr->StartService();
 
     BS->Progress(100);
 
     if (ShowRecoveryScreen)
         new SystemRecovery::Recovery;
 
-    if (!SysCreateProcessFromFile("/system/init", 0, 0, User))
-    {
-        CurrentDisplay->SetPrintColor(0xFC4444);
-        printf("Failed to load /system/init process. The file is missing or corrupted.\n");
-        CPU_HALT;
-    }
+    // if (!SysCreateProcessFromFile("/system/init", 0, 0, ELEVATION::User))
+    // {
+    //     CurrentDisplay->SetPrintColor(0xFC4444);
+    //     printf("Failed to load /system/init process. The file is missing or corrupted.\n");
+    //     CPU_HALT;
+    // }
     trace("End Of Kernel Task");
     if (CurrentTaskingMode != TaskingMode::Mono)
+    {
+        SysGetCurrentThread()->Info.Priority = 1;
         CPU_STOP;
+    }
 }
 
 void CheckSystemRequirements()
@@ -356,7 +324,6 @@ void KernelInit()
     BS->Progress(70);
     do_network_test();
     nimgr = new NetworkInterfaceManager::NetworkInterface;
-    nimgr->StartNetworkStack();
     BS->Progress(75);
 
     new FileSystem::Serial;

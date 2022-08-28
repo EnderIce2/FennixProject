@@ -1,5 +1,7 @@
 #include "NetworkController.hpp"
 
+#include <asm.h>
+
 #include "../drivers/network/VirtioNetwork/VirtioNetwork.hpp"
 #include "../drivers/network/Intel8254x/Intel8254x.hpp"
 #include "../drivers/network/AMDPCNET/AMDPCNET.hpp"
@@ -186,6 +188,7 @@ namespace NetworkInterfaceManager
 
     void NetworkInterface::StartNetworkStack()
     {
+        SysGetCurrentThread()->Info.Priority = 100;
         DeviceInterface *DefaultDevice = nullptr;
         foreach (auto var in Devices)
             if (var)
@@ -216,11 +219,44 @@ namespace NetworkInterfaceManager
 
             /* TODO: Store everything in an vector and initialize all network cards */
         }
+
+        SysGetCurrentThread()->Info.Priority = 5;
+
+        while (1)
+            PAUSE;
     }
 
     void NetworkInterface::StopNetworkStack()
     {
         fixme("Stop network stack");
+    }
+
+    ReadFSFunction(NetRead)
+    {
+        fixme("Not implemented.");
+        return Size;
+    }
+
+    WriteFSFunction(NetWrite)
+    {
+        fixme("Not implemented.");
+        return Size;
+    }
+
+    FileSystem::FileSystemOpeations netsvcfs = {
+        .Name = "Network Service",
+        .Read = NetRead,
+        .Write = NetWrite};
+
+    void CallStartNetworkStackWrapper() { nimgr->StartNetworkStack(); }
+
+    void NetworkInterface::StartService()
+    {
+        // TODO: on kill call StopNetworkStack
+        netfs = new FileSystem::Network;
+        netfs->AddNetworkCard(&netsvcfs, 0666, "default", FileSystem::NodeFlags::FS_PIPE);
+        NetSvcProc = SysCreateProcess("Network Service", ELEVATION::System);
+        NetSvcThrd = SysCreateThread((PCB *)NetSvcProc, (uint64_t)CallStartNetworkStackWrapper, 0, 0);
     }
 
     Vector<Events *> RegisteredEvents;

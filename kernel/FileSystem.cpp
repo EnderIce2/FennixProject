@@ -22,6 +22,8 @@ FileSystem::Virtual *vfs = nullptr;
 FileSystem::Device *devfs = nullptr;
 FileSystem::Mount *mountfs = nullptr;
 FileSystem::Process *procfs = nullptr;
+FileSystem::Driver *drvfs = nullptr;
+FileSystem::Network *netfs = nullptr;
 
 namespace FileSystem
 {
@@ -413,7 +415,7 @@ namespace FileSystem
 
     Virtual::Virtual()
     {
-        trace("Initializing virtual file system");
+        trace("Initializing virtual file system...");
         FileSystemRoot = new FileSystemNode;
         FileSystemRoot->Flags = NodeFlags::FS_MOUNTPOINT;
         FileSystemRoot->Operator = nullptr;
@@ -444,7 +446,7 @@ namespace FileSystem
 
     Device::Device()
     {
-        trace("Initializing device file system");
+        trace("Initializing device file system...");
         DeviceRootNode = vfs->Create(nullptr, "/system/dev");
         DeviceRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
         DeviceRootNode->Mode = 0755;
@@ -506,8 +508,8 @@ namespace FileSystem
 
     Process::Process()
     {
-        trace("Mounting file systems...");
-        ProcessRootNode = vfs->Create(nullptr, "/system/proc");
+        trace("Initializing process file system");
+        ProcessRootNode = vfs->Create(nullptr, "/system/prc");
         ProcessRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
         ProcessRootNode->Mode = 0755;
         BS->IncreaseProgres();
@@ -517,4 +519,57 @@ namespace FileSystem
     {
     }
 
+    /* -------------------------------------------------------------------------------------------------------------------------------- */
+
+    FileSystemNode *DriverRootNode = nullptr;
+
+    FileSystemNode *Driver::AddDriver(struct FileSystemOpeations *Operator, uint64_t Mode, string Name, int Flags)
+    {
+        trace("Adding %s to file system", Name);
+        FileSystemNode *newNode = vfs->Create(DeviceRootNode, Name);
+        newNode->Mode = Mode;
+        newNode->Operator = Operator;
+        newNode->Flags = Flags;
+        return newNode;
+    }
+
+    Driver::Driver()
+    {
+        trace("Initializing driver file system...");
+        DriverRootNode = vfs->Create(nullptr, "/system/drv");
+        DriverRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
+        DriverRootNode->Mode = 0755;
+        BS->IncreaseProgres();
+    }
+
+    Driver::~Driver()
+    {
+    }
+
+    /* -------------------------------------------------------------------------------------------------------------------------------- */
+
+    FileSystemNode *NetworkRootNode = nullptr;
+
+    FileSystemNode *Network::AddNetworkCard(struct FileSystemOpeations *Operator, uint64_t Mode, string Name, int Flags)
+    {
+        trace("Adding %s to file system", Name);
+        FileSystemNode *newNode = vfs->Create(DeviceRootNode, Name);
+        newNode->Mode = Mode;
+        newNode->Operator = Operator;
+        newNode->Flags = Flags;
+        return newNode;
+    }
+
+    Network::Network()
+    {
+        trace("Initializing network file system...");
+        NetworkRootNode = vfs->Create(nullptr, "/system/net");
+        NetworkRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
+        NetworkRootNode->Mode = 0755;
+        BS->IncreaseProgres();
+    }
+
+    Network::~Network()
+    {
+    }
 }

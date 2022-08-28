@@ -1,3 +1,4 @@
+#pragma once
 #include <types.h>
 #include <interrupts.h>
 #include <heap.h>
@@ -97,9 +98,9 @@ namespace Tasking
         PCB *IdleProcess = nullptr;
         TCB *IdleThread = nullptr;
 
-        PCB *CreateProcess(PCB *Parent, char *Name, ELEVATION Elevation, int Priority = 100);
+        PCB *CreateProcess(PCB *Parent, char *Name, ELEVATION Elevation, int Priority = 1);
         TCB *CreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t Arg0, uint64_t Arg1,
-                          int Priority = 100, enum Architecture Architecture = Architecture::x64, enum Platform Platform = Platform::Native);
+                          int Priority = 1, enum Architecture Architecture = Architecture::x64, enum Platform Platform = Platform::Native);
 
         Multitasking();
         ~Multitasking();

@@ -165,12 +165,30 @@ namespace FileSystem
         ~Mount();
     };
 
-    /* Manage /system/proc */
+    /* Manage /system/prc */
     class Process
     {
     public:
         Process();
         ~Process();
+    };
+
+    /* Manage /system/drv */
+    class Driver
+    {
+    public:
+        FileSystemNode *AddDriver(struct FileSystemOpeations *Operator, uint64_t Mode, string Name, int Flags);
+        Driver();
+        ~Driver();
+    };
+
+    /* Manage /system/net */
+    class Network
+    {
+    public:
+        FileSystemNode *AddNetworkCard(struct FileSystemOpeations *Operator, uint64_t Mode, string Name, int Flags);
+        Network();
+        ~Network();
     };
 
     class USTAR
@@ -398,3 +416,5 @@ extern FileSystem::Virtual *vfs;
 extern FileSystem::Device *devfs;
 extern FileSystem::Mount *mountfs;
 extern FileSystem::Process *procfs;
+extern FileSystem::Driver *drvfs;
+extern FileSystem::Network *netfs;

@@ -9,7 +9,7 @@ namespace Driver
     {
     private:
         void *DrvMgrProc;
-        FileSystem::FileSystemNode *DriverNode;
+        void *DrvMgrThrd;
 
     public:
         uint64_t LoadKernelDriverFromFile(FileSystem::FileSystemNode *Node);

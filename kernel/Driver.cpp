@@ -1,13 +1,17 @@
 #include "driver.hpp"
 
-#include "kernel.h"
-
-#include <filesystem.h>
-#include <stdarg.h>
 #include <internal_task.h>
+#include <filesystem.h>
+#include <display.h>
+#include <stdarg.h>
+#include <cwalk.h>
 #include <heap.h>
 #include <elf.h>
 #include <int.h>
+#include <asm.h>
+
+#include "security/security.hpp"
+#include "kernel.h"
 
 #pragma GCC diagnostic ignored "-Wvarargs"
 
@@ -157,7 +161,8 @@ namespace Driver
                     void *DriverStartFunction = (void *)(header->e_entry + (Elf64_Addr)offset);
                     debug("Driver Name: %s", def.Name);
                     debug("Entry:%#llx + Offset:%#llx -> %#llx", header->e_entry, offset, DriverStartFunction);
-                    uint64_t ret = ((uint64_t(*)(DriverKernelMainData *))(DriverStartFunction))(&kerndata);
+                    uint64_t ret = DRIVER_SUCCESS; // ((uint64_t(*)(DriverKernelMainData *))(DriverStartFunction))(&kerndata);
+                    fixme("Driver will not be loaded.");
                     if (ret == DRIVER_SUCCESS)
                     {
                         // TODO: unloaded drivers need to be removed
@@ -183,11 +188,13 @@ namespace Driver
 
     ReadFSFunction(DriverRead)
     {
+        fixme("Not implemented.");
         return Size;
     }
 
     WriteFSFunction(DriverWrite)
     {
+        fixme("Not implemented.");
         return Size;
     }
 
@@ -196,10 +203,67 @@ namespace Driver
         .Read = DriverRead,
         .Write = DriverWrite};
 
+    void DriverManagerMainLoop()
+    {
+        SysGetCurrentThread()->Info.Priority = 100;
+        // PCB *drvpcb = SysCreateProcessFromFile("/system/drvmgr", 0, 0, ELEVATION::User);
+        // if (!drvpcb)
+        // {
+        //     CurrentDisplay->SetPrintColor(0xFC4444);
+        //     printf("Failed to load /system/drvmgr process. The file is missing or corrupted.\n");
+        //     delete kdrv;
+        //     CPU_HALT;
+        // }
+
+        // TrustToken(drvpcb->Security.Token, true, drvpcb->ID, TokenTrustLevel::TrustedByKernel);
+
+        FileSystem::FILE *driverDirectory = vfs->Open("/system/drivers");
+        if (driverDirectory->Status == FileSystem::FILESTATUS::OK)
+        {
+            foreach (auto driver in driverDirectory->Node->Children)
+            {
+                if (driver->Flags == FileSystem::NodeFlags::FS_FILE)
+                    if (cwk_path_has_extension(driver->Name))
+                    {
+                        const char *extension;
+                        cwk_path_get_extension(driver->Name, &extension, nullptr);
+
+                        if (!strcmp(extension, ".drv"))
+                        {
+                            CurrentDisplay->SetPrintColor(0xCCCCCC);
+                            printf("Loading driver %s... ", driver->Name);
+                            uint64_t ret = kdrv->LoadKernelDriverFromFile(driver);
+                            if (ret == 0)
+                            {
+                                CurrentDisplay->SetPrintColor(0x058C19);
+                                printf("OK\n");
+                            }
+                            else
+                            {
+                                CurrentDisplay->SetPrintColor(0xE85230);
+                                printf("FAILED (%#lx)\n", ret);
+                            }
+                            CurrentDisplay->ResetPrintColor();
+                            // TODO: get instruction pointer of the elf entry point.
+                        }
+                    }
+            }
+        }
+        vfs->Close(driverDirectory);
+        SysGetCurrentThread()->Info.Priority = 5;
+        while (1)
+        {
+            // do IPC here.
+            PAUSE;
+        }
+    }
+
     KernelDriver::KernelDriver()
     {
-        DrvMgrProc = SysCreateProcess("Driver Manager", System);
-        DriverNode = vfs->CreateRoot(&kdrvfs, "driver");
+        drvfs = new FileSystem::Driver;
+        drvfs->AddDriver(&kdrvfs, 0666, "default", FileSystem::NodeFlags::FS_PIPE);
+        DrvMgrProc = SysCreateProcess("Driver Manager", ELEVATION::System);
+        DrvMgrThrd = SysCreateThread((PCB *)DrvMgrProc, (uint64_t)DriverManagerMainLoop, 0, 0);
     }
 
     KernelDriver::~KernelDriver()
