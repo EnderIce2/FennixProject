@@ -178,12 +178,12 @@ namespace Tasking
         uint64_t CurrentCount = counter();
         if (Info->LastUsedTicks == 0)
         {
-            Info->UsedTicks += CurrentCount - Info->SpawnTick;
+            Info->UsedTicks += CurrentCount + Info->SpawnTick;
             Info->LastUsedTicks = CurrentCount;
         }
         else
         {
-            Info->UsedTicks += CurrentCount - Info->LastUsedTicks;
+            Info->UsedTicks += CurrentCount + Info->LastUsedTicks;
             Info->LastUsedTicks = CurrentCount;
         }
     }
@@ -347,6 +347,8 @@ namespace Tasking
     {
         if (pcb == nullptr)
             return true;
+        if ((unsigned long)pcb >= (unsigned long)0x10000000) // FIXME: this is a workaround.
+            return true;
         else if (pcb->Checksum != Checksum::PROCESS_CHECKSUM)
             return true;
         else if (pcb->Elevation == ELEVATION::Idle)
@@ -357,6 +359,8 @@ namespace Tasking
     inline bool InvalidTCB(TCB *tcb)
     {
         if (tcb == nullptr)
+            return true;
+        if ((unsigned long)tcb >= (unsigned long)0x10000000) // FIXME: this is a workaround.
             return true;
         else if (tcb->Checksum != Checksum::THREAD_CHECKSUM)
             return true;
@@ -510,6 +514,14 @@ namespace Tasking
             TraceSchedOnScreen();
 #endif
             schedbg("Status: 0-ukn | 1-rdy | 2-run | 3-wait | 4-term");
+            schedbg("Technical Informations on regs %#lx", regs->int_num);
+            schedbg("FS=%#lx  GS=%#lx  SS=%#lx  CS=%#lx", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
+            schedbg("R8=%#lx  R9=%#lx  R10=%#lx  R11=%#lx", R8, R9, R10, R11);
+            schedbg("R12=%#lx  R13=%#lx  R14=%#lx  R15=%#lx", R12, R13, R14, R15);
+            schedbg("RAX=%#lx  RBX=%#lx  RCX=%#lx  RDX=%#lx", RAX, RBX, RCX, RDX);
+            schedbg("RSI=%#lx  RDI=%#lx  RBP=%#lx  RSP=%#lx", RSI, RDI, RBP, RSP);
+            schedbg("RIP=%#lx  RFL=%#lx  INT=%#lx  ERR=%#lx", RIP, FLAGS.raw, INT_NUM, ERROR_CODE);
+
             // Null or invalid process/thread? Let's find a new one to execute.
             if (InvalidPCB(CurrentCPU->CurrentProcess) || InvalidTCB(CurrentCPU->CurrentThread))
             {
@@ -745,6 +757,15 @@ namespace Tasking
             schedbg("Scheduler end");
             EndOfInterrupt(INT_NUM); // apic->IPI(CurrentCPU->ID, SchedulerInterrupt);
         }
+            schedbg("Technical Informations on Thread %s[%ld]:", CurrentCPU->CurrentThread->Name, CurrentCPU->CurrentThread->ID);
+            schedbg("FS=%#lx  GS=%#lx  SS=%#lx  CS=%#lx", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
+            schedbg("R8=%#lx  R9=%#lx  R10=%#lx  R11=%#lx", R8, R9, R10, R11);
+            schedbg("R12=%#lx  R13=%#lx  R14=%#lx  R15=%#lx", R12, R13, R14, R15);
+            schedbg("RAX=%#lx  RBX=%#lx  RCX=%#lx  RDX=%#lx", RAX, RBX, RCX, RDX);
+            schedbg("RSI=%#lx  RDI=%#lx  RBP=%#lx  RSP=%#lx", RSI, RDI, RBP, RSP);
+            schedbg("RIP=%#lx  RFL=%#lx  INT=%#lx  ERR=%#lx", RIP, FLAGS.raw, INT_NUM, ERROR_CODE);
+
+            schedbg("SCHEDULER FUNCTION END");
         }
     }
 
