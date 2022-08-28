@@ -1,5 +1,6 @@
 iso_tmp_data
 boot/UEFI/gnu-efi
+boot/UEFI/include
 tools/*
 !tools/website
 !tools/Makefile
