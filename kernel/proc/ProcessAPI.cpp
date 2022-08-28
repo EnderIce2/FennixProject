@@ -142,6 +142,80 @@ TCB *SysGetCurrentThread()
     }
 }
 
+void SysSetProcessPriority(int Priority)
+{
+    switch (CurrentTaskingMode)
+    {
+    case TaskingMode::Mono:
+    {
+        static int once = 0;
+        if (!once++)
+            err("The current tasking mode does not support the request.");
+        return;
+    }
+    case TaskingMode::Multi:
+        CurrentCPU->CurrentProcess->Info.Priority = Priority;
+        return;
+    default:
+        return;
+    }
+}
+
+int SysGetProcessPriority()
+{
+    switch (CurrentTaskingMode)
+    {
+    case TaskingMode::Mono:
+    {
+        static int once = 0;
+        if (!once++)
+            err("The current tasking mode does not support the request.");
+        return 0;
+    }
+    case TaskingMode::Multi:
+        return CurrentCPU->CurrentProcess->Info.Priority;
+    default:
+        return 0;
+    }
+}
+
+void SysSetThreadPriority(int Priority)
+{
+    switch (CurrentTaskingMode)
+    {
+    case TaskingMode::Mono:
+    {
+        static int once = 0;
+        if (!once++)
+            err("The current tasking mode does not support the request.");
+        return;
+    }
+    case TaskingMode::Multi:
+        CurrentCPU->CurrentThread->Info.Priority = Priority;
+        return;
+    default:
+        return;
+    }
+}
+
+int SysGetThreadPriority()
+{
+    switch (CurrentTaskingMode)
+    {
+    case TaskingMode::Mono:
+    {
+        static int once = 0;
+        if (!once++)
+            err("The current tasking mode does not support the request.");
+        return 0;
+    }
+    case TaskingMode::Multi:
+        return CurrentCPU->CurrentThread->Info.Priority;
+    default:
+        return 0;
+    }
+}
+
 PCB *SysCreateProcess(const char *Name, ELEVATION Elevation)
 {
     switch (CurrentTaskingMode)

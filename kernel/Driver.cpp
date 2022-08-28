@@ -205,7 +205,7 @@ namespace Driver
 
     void DriverManagerMainLoop()
     {
-        SysGetCurrentThread()->Info.Priority = 100;
+        SysSetThreadPriority(100);
         // PCB *drvpcb = SysCreateProcessFromFile("/system/drvmgr", 0, 0, ELEVATION::User);
         // if (!drvpcb)
         // {
@@ -250,7 +250,7 @@ namespace Driver
             }
         }
         vfs->Close(driverDirectory);
-        SysGetCurrentThread()->Info.Priority = 5;
+        SysSetThreadPriority(5);
         while (1)
         {
             // do IPC here.

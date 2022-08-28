@@ -188,7 +188,7 @@ namespace NetworkInterfaceManager
 
     void NetworkInterface::StartNetworkStack()
     {
-        SysGetCurrentThread()->Info.Priority = 100;
+        SysSetThreadPriority(100);
         DeviceInterface *DefaultDevice = nullptr;
         foreach (auto var in Devices)
             if (var)
@@ -220,7 +220,7 @@ namespace NetworkInterfaceManager
             /* TODO: Store everything in an vector and initialize all network cards */
         }
 
-        SysGetCurrentThread()->Info.Priority = 5;
+        SysSetThreadPriority(5);
 
         while (1)
             PAUSE;

@@ -144,6 +144,34 @@ PCB *SysGetCurrentProcess();
 TCB *SysGetCurrentThread();
 
 /**
+ * @brief Set current process priority
+ * 
+ * @param Priority 
+ */
+void SysSetProcessPriority(int Priority);
+
+/**
+ * @brief Get current process priority
+ * 
+ * @return int 
+ */
+int SysGetProcessPriority();
+
+/**
+ * @brief Get current thread priority
+ * 
+ * @param Priority 
+ */
+void SysSetThreadPriority(int Priority);
+
+/**
+ * @brief Get current thread priority
+ * 
+ * @return int 
+ */
+int SysGetThreadPriority();
+
+/**
  * @brief Create a new process from a file
  *
  * @param File TODO: more

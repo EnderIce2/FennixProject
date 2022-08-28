@@ -164,7 +164,7 @@ void KernelTask()
     trace("End Of Kernel Task");
     if (CurrentTaskingMode != TaskingMode::Mono)
     {
-        SysGetCurrentThread()->Info.Priority = 1;
+        SysSetThreadPriority(1);
         CPU_STOP;
     }
 }
