@@ -56,7 +56,7 @@ uint64_t width = 0;
 uint64_t height = 0;
 uint64_t ppsl = 0;
 
-// inline void drawrectangle(uint64_t X, uint64_t Y, uint64_t W, uint64_t H, uint32_t C)
+// static inline void drawrectangle(uint64_t X, uint64_t Y, uint64_t W, uint64_t H, uint32_t C)
 // {
 //     for (int y = Y; y < Y + H; y++)
 //         for (int x = X; x < X + W; x++)
@@ -81,84 +81,156 @@ uint64_t bh = 0;
 void testkapp1()
 {
     while (1)
+    {
+        int g = 256, f = 256;
+        int a = g + f;
+        if (a != 512)
+            err("arithmetic error");
         drawrectangle(0, bh, 20, 100, 0xFFFFFF);
+    }
     return;
 }
 
 void testkapp2()
 {
     while (1)
+    {
+        int g = 256, f = 256;
+        int a = g + f;
+        if (a != 512)
+            err("arithmetic error");
         drawrectangle(20, bh, 20, 100, 0xFFFF00);
+    }
     return;
 }
 
 void testkapp3()
 {
     while (1)
+    {
+        int g = 256, f = 256;
+        int a = g + f;
+        if (a != 512)
+            err("arithmetic error");
         drawrectangle(40, bh, 20, 100, 0xFF00FF);
+    }
     return;
 }
 
 void testkapp4()
 {
     while (1)
+    {
+        int g = 256, f = 256;
+        int a = g + f;
+        if (a != 512)
+            err("arithmetic error");
         drawrectangle(60, bh, 20, 100, 0x00FFFF);
+    }
     return;
 }
 
 void testkapp5()
 {
     while (1)
+    {
+        int g = 256, f = 256;
+        int a = g + f;
+        if (a != 512)
+            err("arithmetic error");
         drawrectangle(80, bh, 20, 100, 0x00FF00);
+    }
     return;
 }
 
 void testkapp6()
 {
     while (1)
+    {
+        int g = 256, f = 256;
+        int a = g + f;
+        if (a != 512)
+            err("arithmetic error");
         drawrectangle(100, bh, 20, 100, 0xFF0000);
+    }
     return;
 }
 
 void testkapp21()
 {
     while (1)
+    {
+        int g = 256, f = 256;
+        int a = g + f;
+        if (a != 512)
+            err("arithmetic error");
         drawrectangle(0, bh + 100, 20, 100, 0xFF0000);
+    }
     return;
 }
 
 void testkapp22()
 {
     while (1)
+    {
+        int g = 256, f = 256;
+        int a = g + f;
+        if (a != 512)
+            err("arithmetic error");
         drawrectangle(20, bh + 100, 20, 100, 0x00FF00);
+    }
     return;
 }
 
 void testkapp23()
 {
     while (1)
+    {
+        int g = 256, f = 256;
+        int a = g + f;
+        if (a != 512)
+            err("arithmetic error");
         drawrectangle(40, bh + 100, 20, 100, 0x00FFFF);
+    }
     return;
 }
 
 void testkapp24()
 {
     while (1)
+    {
+        int g = 256, f = 256;
+        int a = g + f;
+        if (a != 512)
+            err("arithmetic error");
         drawrectangle(60, bh + 100, 20, 100, 0xFF00FF);
+    }
     return;
 }
 
 void testkapp25()
 {
     while (1)
+    {
+        int g = 256, f = 256;
+        int a = g + f;
+        if (a != 512)
+            err("arithmetic error");
         drawrectangle(80, bh + 100, 20, 100, 0xFFFF00);
+    }
     return;
 }
 
 void testkapp26()
 {
     while (1)
+    {
+        int g = 256, f = 256;
+        int a = g + f;
+        if (a != 512)
+            err("arithmetic error");
         drawrectangle(100, bh + 100, 20, 100, 0xFFFFFF);
+    }
     return;
 }
 

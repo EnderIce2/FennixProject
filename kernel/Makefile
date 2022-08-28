@@ -37,14 +37,14 @@ LDFLAGS := 									\
 	-Wl,-static,--no-dynamic-linker,-ztext 	\
 	-nostdlib -nodefaultlibs -nolibc  		\
 	-zmax-page-size=0x1000					\
-	-Wl,-Map kernel.map -Tlinker.ld -shared
+	-Wl,-Map kernel.map -Tlinker.ld -shared -fno-stack-protector
 
 NASMFLAGS := -f elf64
 
 # Disable all warnings by adding "-w" in WARNCFLAG and if you want to treat the warnings as errors, add "-Werror"
 WARNCFLAG = -Wall -Wextra -Wno-comment
 
-CFLAG_STACK_PROTECTOR := -fstack-protector-all
+CFLAG_STACK_PROTECTOR := -fno-stack-protector
 
 # Change march with minimum supported cpu // https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html
 CFLAGS :=																\
@@ -56,10 +56,10 @@ CFLAGS :=																\
 	-fno-pic -fno-pie -mno-80387										\
 	-mno-80387 -mno-mmx -mno-3dnow -mno-red-zone -mno-sse -mno-sse2		\
 	-march=nehalem -pipe												\
-	-mcmodel=kernel -msoft-float -fno-builtin
+	-mcmodel=kernel -msoft-float -fno-builtin -fno-stack-protector
 
 ifeq ($(DEBUG), 1)
-	CFLAGS += -DDEBUG -ggdb -O0 -fdiagnostics-color=always -fsanitize=undefined
+	CFLAGS += -DDEBUG -ggdb -O0 -fdiagnostics-color=always
 	LDFLAGS += -ggdb -O0 -O2 -g
 	CFLAGS += -DTRACING
 	NASMFLAGS += -F dwarf -g
@@ -80,14 +80,11 @@ $(KERNEL): $(OBJ)
 	$(CC) $(LDFLAGS) $(OBJ) -o $@
 
 %.o: %.c $(HEADERS) $(HEADERS2)
-	$(CC) $(CFLAGS) $(CFLAG_STACK_PROTECTOR) $(WARNCFLAG) -std=c17 -c $< -o $@
-
-cpu/IDT.o: cpu/IDT.c $(HEADERS) $(HEADERS2)
-	$(CC) $(CFLAGS) $(WARNCFLAG) -fno-stack-protector -std=c17 -c $< -o $@
+	$(CC) $(CFLAGS) $(WARNCFLAG) -std=c17 -c $< -o $@
 
 # https://gcc.gnu.org/projects/cxx-status.html
 %.o: %.cpp $(HEADERS) $(HEADERS2)
-	$(CPP) $(CFLAGS) $(CFLAG_STACK_PROTECTOR) $(WARNCFLAG) -std=c++20 -fexceptions -c $< -o $@ -fno-rtti
+	$(CPP) $(CFLAGS) $(WARNCFLAG) -std=c++20 -fexceptions -c $< -o $@ -fno-rtti
 
 %.o: %.asm
 	$(NASM) $< $(NASMFLAGS) -o $@
