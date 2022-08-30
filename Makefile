@@ -16,7 +16,7 @@ include Makefile.conf
 # For tap0
 # -netdev tap,id=usernet0,ifname=tap0,script=no,downscript=no
 QEMUFLAGS = -device bochs-display -M q35 \
-			-usb -no-reboot \
+			-usb \
 			-usbdevice mouse \
 			-smp $(shell nproc) \
     		-netdev user,id=usernet0 \
