@@ -116,9 +116,10 @@ void initializeKernelFlags()
         sysflags->monotasking = false;
 }
 
+// void FadeBootLogo() { BS->FadeLogo();}
+
 void KernelTask()
 {
-    BS->Progress(100);
 #ifdef DEBUG
     debug("Hello World!");
     printf("This is a text to test if the OS is working properly.\n");
@@ -150,23 +151,27 @@ void KernelTask()
 
     nimgr->StartService();
 
+    // if (CurrentTaskingMode != TaskingMode::Mono)
+    // SysCreateThread((PCB *)SysGetCurrentProcess(), (uint64_t)FadeBootLogo, 0, 0);
     BS->FadeLogo();
 
     if (ShowRecoveryScreen)
         new SystemRecovery::Recovery;
 
-    // if (!SysCreateProcessFromFile("/system/init", 0, 0, ELEVATION::User))
-    // {
-    //     CurrentDisplay->SetPrintColor(0xFC4444);
-    //     printf("Failed to load /system/init process. The file is missing or corrupted.\n");
-    //     CPU_HALT;
-    // }
+    // FIXME: sometimes ss is 0x1b and cs is 0x23 which is causing an exception.
+
+    if (CurrentTaskingMode == TaskingMode::Mono)
+        if (!SysCreateProcessFromFile("/system/init", 0, 0, ELEVATION::User))
+        {
+            CurrentDisplay->SetPrintColor(0xFC4444);
+            printf("Failed to load /system/init process. The file is missing or corrupted.\n");
+            CPU_HALT;
+        }
     trace("End Of Kernel Task");
+
+    SysSetThreadPriority(1);
     if (CurrentTaskingMode != TaskingMode::Mono)
-    {
-        SysSetThreadPriority(1);
         CPU_STOP;
-    }
 }
 
 void CheckSystemRequirements()
@@ -336,6 +341,8 @@ void KernelInit()
 
     // do_mem_test();
     // do_tasking_test();
+
+    BS->Progress(100);
 
     if (sysflags->monotasking)
         StartTasking((uint64_t)KernelTask, TaskingMode::Mono);

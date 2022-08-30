@@ -391,8 +391,9 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
                 if (NEHeader->ne_magic == IMAGE_OS2_SIGNATURE)
                 {
                     trace("File %s is a NE file", File);
+                    goto error_exit;
                 }
-                if (PEHeader->Signature == IMAGE_NT_SIGNATURE)
+                else if (PEHeader->Signature == IMAGE_NT_SIGNATURE)
                 {
                     trace("File %s is a PE file", File);
                     if (PEHeader->FileHeader.Machine == IMAGE_FILE_MACHINE_I386)
@@ -425,7 +426,8 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
                         IMAGE_SECTION_HEADER *section = (IMAGE_SECTION_HEADER *)(((char *)PEHeader) + sizeof(IMAGE_NT_HEADERS));
                         for (int i = 0; i < PEHeader->FileHeader.NumberOfSections; i++, section++)
                         {
-                            fixme("there are %ld cocks in your area and %ld bitches away from you", PEHeader->FileHeader.NumberOfSections, section->SizeOfRawData);
+                            fixme("NumOfSections: %ld | SizeOfRawData: %ld",
+                                  PEHeader->FileHeader.NumberOfSections, section->SizeOfRawData);
                             if (section->SizeOfRawData == 0)
                                 continue;
                             void *addr = (void *)((uint64_t)section->VirtualAddress + (uint64_t)FileBuffer);

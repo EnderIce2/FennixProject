@@ -24,7 +24,7 @@
 #define schedbg(m, ...)
 #endif
 
-#define DEBUG_TASK_MANAGER 1
+// #define DEBUG_TASK_MANAGER 1
 
 #ifdef DEBUG_TASK_MANAGER
 #include <display.h>
