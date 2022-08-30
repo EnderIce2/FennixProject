@@ -1,7 +1,10 @@
 var NAVTREEINDEX5 =
 {
-"d4/dfa/classBootScreen_1_1Screen.html#ac4a8948b5b2c4e738cf51b06ccab65c0":[1,0,1,0,4],
+"d4/dfa/classBootScreen_1_1Screen.html#a6359e553a9001d5fc09ce2cddec7f04d":[1,0,1,0,2],
+"d4/dfa/classBootScreen_1_1Screen.html#ac4a8948b5b2c4e738cf51b06ccab65c0":[1,0,1,0,5],
+"d4/dfa/classBootScreen_1_1Screen.html#adaf2d2313201b66eda899a6460ea55cb":[1,0,1,0,3],
 "d4/dfa/classBootScreen_1_1Screen.html#aeb9450f1403f357d4ab200cb3527dcaf":[1,0,1,0,0],
+"d4/dfa/classBootScreen_1_1Screen.html#aebdadb79af2f0957543aa40ce1d6d941":[1,0,1,0,7],
 "d5/d66/rand_8h.html":[2,0,1,0,22],
 "d5/d66/rand_8h.html#a0c75f7b154c17d7a1631c3a886bb1450":[2,0,1,0,22,0],
 "d5/d66/rand_8h.html#a67c2e61f77f3cc38e78ee987126bf241":[2,0,1,0,22,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX5 =
 "d5/dba/multiboot2_8h.html#a6926c6109c0a64cc119f1ed3bd45ad64":[2,0,1,0,0,0,3,8,5],
 "d5/dba/multiboot2_8h.html#a69fe4fea8b43aa36b72d532dea27142e":[2,0,1,0,0,0,3,31,1],
 "d5/dba/multiboot2_8h.html#a6a63463eac1d04605c71727a63b150f7":[2,0,1,0,0,0,3,8,6],
-"d5/dba/multiboot2_8h.html#a6bfa44919a328492fa4e3d6239a23352":[2,0,1,0,0,0,2,5,1],
-"d5/dba/multiboot2_8h.html#a6bfa44919a328492fa4e3d6239a23352":[2,0,1,0,0,0,3,10,1],
-"d5/dba/multiboot2_8h.html#a6c7093954cb981ff9431dccc1f7c7aa9":[2,0,1,0,0,0,3,7,0],
-"d5/dba/multiboot2_8h.html#a6ccb4d7d52f004c3e7e3a583dd525ebb":[2,0,1,0,0,0,3,18,0]
+"d5/dba/multiboot2_8h.html#a6bfa44919a328492fa4e3d6239a23352":[2,0,1,0,0,0,2,5,1]
 };

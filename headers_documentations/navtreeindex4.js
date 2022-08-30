@@ -248,6 +248,6 @@ var NAVTREEINDEX4 =
 "d4/df0/libc_2include_2inttypes_8h_source.html":[2,0,2,0,9],
 "d4/dfa/classBootScreen_1_1Screen.html":[1,0,1,0],
 "d4/dfa/classBootScreen_1_1Screen.html#a45a9dd346c1817a1e6438e86da4ca469":[1,0,1,0,1],
-"d4/dfa/classBootScreen_1_1Screen.html#a4d7a5aac71f5b39f065d2984bb493ed6":[1,0,1,0,3],
-"d4/dfa/classBootScreen_1_1Screen.html#a6359e553a9001d5fc09ce2cddec7f04d":[1,0,1,0,2]
+"d4/dfa/classBootScreen_1_1Screen.html#a4d7a5aac71f5b39f065d2984bb493ed6":[1,0,1,0,4],
+"d4/dfa/classBootScreen_1_1Screen.html#a582b16813a7717947fc8b5336b347083":[1,0,1,0,6]
 };

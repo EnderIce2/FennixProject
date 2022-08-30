@@ -1,9 +1,5 @@
 var NAVTREEINDEX21 =
 {
-"db/d6e/buddy__alloc_8h.html#ae97a09ecafa143128e0110cdbdc904af":[5,0,0,8,0,0,9],
-"db/d6e/buddy__alloc_8h.html#aed78042d7c33e0c100fad308030cc676":[5,0,0,8,0,0,12],
-"db/d6e/buddy__alloc_8h.html#af11c1dab965531958c9d423c9473f5fb":[5,0,0,8,0,0,13],
-"db/d6e/buddy__alloc_8h.html#afad58454b714ac91b0421c5adfb9fba2":[5,0,0,8,0,0,8],
 "db/d6e/buddy__alloc_8h_source.html":[5,0,0,8,0,0],
 "db/d6f/zero_8cpp.html":[5,0,0,4,7],
 "db/d6f/zero_8cpp.html#a511c118e13b1413d408a66eba589c0ad":[5,0,0,4,7,2],
@@ -249,5 +245,9 @@ var NAVTREEINDEX21 =
 "db/d9e/Linux_8cpp.html#a98aa6c9a704187a5110b9da722bea971":[5,0,0,12,0,265],
 "db/d9e/Linux_8cpp.html#a99a4eb41bf9d9d5fbd12c0fda5d7218b":[5,0,0,12,0,326],
 "db/d9e/Linux_8cpp.html#a99a505d63db6d2d8f5c33a2816ba4e4c":[5,0,0,12,0,70],
-"db/d9e/Linux_8cpp.html#a9dbe9a44f18cf96c28803048995b510b":[5,0,0,12,0,234]
+"db/d9e/Linux_8cpp.html#a9dbe9a44f18cf96c28803048995b510b":[5,0,0,12,0,234],
+"db/d9e/Linux_8cpp.html#a9dc42c81be1832a4c5271618d1c6d3f4":[5,0,0,12,0,81],
+"db/d9e/Linux_8cpp.html#a9f195185b015ceaf615aa0763f1fdcca":[5,0,0,12,0,186],
+"db/d9e/Linux_8cpp.html#a9f9821eb3c1a3fd3ea0ad684a1a536a7":[5,0,0,12,0,106],
+"db/d9e/Linux_8cpp.html#aa013b8d239dcfee8c30acf9a1a46b779":[5,0,0,12,0,198]
 };

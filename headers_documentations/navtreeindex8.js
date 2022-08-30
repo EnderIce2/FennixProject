@@ -1,5 +1,8 @@
 var NAVTREEINDEX8 =
 {
+"d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a8a962121f2395b83d65030710b85b284":[2,0,0,6,33,68],
+"d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a8b2faa3c54fd55b4e12d2db5c4a454f0":[2,0,0,6,33,209],
+"d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a8c5762dce4c42a3c2917848acc60b685":[2,0,0,6,33,126],
 "d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a8d8bff15bdca09bb16d7a1141e14187b":[2,0,0,6,33,171],
 "d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a8e24f51d1aa982ed5763aa97cc4560b6":[2,0,0,6,33,167],
 "d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a8e607fceb655123fe5372f4d7cc4eeed":[2,0,0,6,33,119],
@@ -246,8 +249,5 @@ var NAVTREEINDEX8 =
 "d7/d94/symbols_8hpp_source.html":[2,0,1,0,25],
 "d7/d9a/classFileSystem_1_1Zero.html":[1,0,3,16],
 "d7/d9a/classFileSystem_1_1Zero.html#a25e805b88a9e34164e01bfb6d5b6bc78":[1,0,3,16,0],
-"d7/d9a/classFileSystem_1_1Zero.html#ac077811f3744db8192b103b3addeb0be":[1,0,3,16,1],
-"d7/d9f/fcntl_8h.html":[2,0,2,0,7],
-"d7/d9f/fcntl_8h_source.html":[2,0,2,0,7],
-"d7/dab/structstivale2__header__tag__slide__hhdm.html":[1,0,174]
+"d7/d9a/classFileSystem_1_1Zero.html#ac077811f3744db8192b103b3addeb0be":[1,0,3,16,1]
 };

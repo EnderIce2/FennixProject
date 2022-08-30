@@ -1,5 +1,8 @@
 var NAVTREEINDEX16 =
 {
+"de/d63/msexec_8h.html#afb1150c7008d392e0545ead63682fb81":[2,0,1,0,20,5,25],
+"de/d63/msexec_8h.html#afb4b59970ba3e0a5f651675c455ea3ad":[2,0,1,0,20,59],
+"de/d63/msexec_8h.html#afcdcf3b0a7d120cbe519293c45b8082b":[2,0,1,0,20,5,2],
 "de/d63/msexec_8h.html#afd06967b9a647a5ea49715e1c6eabd17":[2,0,1,0,20,20],
 "de/d63/msexec_8h.html#afd5b7be2d7ed2e54f523dc853a3af888":[2,0,1,0,20,40],
 "de/d63/msexec_8h.html#d0/d8f/struct__IMAGE__SECTION__HEADER":[2,0,1,0,20,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX16 =
 "df/d17/stivale2_8h.html#d4/d14/structstivale2__struct__tag__kernel__slide":[2,0,1,0,0,0,5,29],
 "df/d17/stivale2_8h.html#d4/d35/structstivale2__struct__tag__modules":[2,0,1,0,0,0,5,20],
 "df/d17/stivale2_8h.html#d4/d59/structstivale2__struct__tag__rsdp":[2,0,1,0,0,0,5,21],
-"df/d17/stivale2_8h.html#d4/dbe/structstivale2__struct__tag__kernel__file":[2,0,1,0,0,0,5,25],
-"df/d17/stivale2_8h.html#d5/d6c/structstivale2__struct__tag__firmware":[2,0,1,0,0,0,5,23],
-"df/d17/stivale2_8h.html#d5/dcd/structstivale2__struct__tag__terminal":[2,0,1,0,0,0,5,18],
-"df/d17/stivale2_8h.html#d7/d15/structstivale2__mmap__entry":[2,0,1,0,0,0,5,13]
+"df/d17/stivale2_8h.html#d4/dbe/structstivale2__struct__tag__kernel__file":[2,0,1,0,0,0,5,25]
 };

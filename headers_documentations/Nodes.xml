@@ -145,6 +145,11 @@
                 <Anchor>a6359e553a9001d5fc09ce2cddec7f04d</Anchor>
                </Node>
                <Node>
+                <Name>FadeLogo</Name>
+                <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+                <Anchor>adaf2d2313201b66eda899a6460ea55cb</Anchor>
+               </Node>
+               <Node>
                 <Name>IncreaseProgres</Name>
                 <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
                 <Anchor>a4d7a5aac71f5b39f065d2984bb493ed6</Anchor>
@@ -153,6 +158,16 @@
                 <Name>Progress</Name>
                 <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
                 <Anchor>ac4a8948b5b2c4e738cf51b06ccab65c0</Anchor>
+               </Node>
+               <Node>
+                <Name>curProg</Name>
+                <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+                <Anchor>a582b16813a7717947fc8b5336b347083</Anchor>
+               </Node>
+               <Node>
+                <Name>KernelLogo</Name>
+                <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+                <Anchor>aebdadb79af2f0957543aa40ce1d6d941</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -21885,6 +21900,11 @@
                     <Anchor>a6359e553a9001d5fc09ce2cddec7f04d</Anchor>
                    </Node>
                    <Node>
+                    <Name>FadeLogo</Name>
+                    <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+                    <Anchor>adaf2d2313201b66eda899a6460ea55cb</Anchor>
+                   </Node>
+                   <Node>
                     <Name>IncreaseProgres</Name>
                     <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
                     <Anchor>a4d7a5aac71f5b39f065d2984bb493ed6</Anchor>
@@ -21893,6 +21913,16 @@
                     <Name>Progress</Name>
                     <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
                     <Anchor>ac4a8948b5b2c4e738cf51b06ccab65c0</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>curProg</Name>
+                    <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+                    <Anchor>a582b16813a7717947fc8b5336b347083</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>KernelLogo</Name>
+                    <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+                    <Anchor>aebdadb79af2f0957543aa40ce1d6d941</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>

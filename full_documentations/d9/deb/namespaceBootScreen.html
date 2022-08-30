@@ -112,8 +112,6 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:ad99b64782ef168967462c3d4070ddd03"><td class="memItemLeft" align="right" valign="top">Display *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/deb/namespaceBootScreen.html#ad99b64782ef168967462c3d4070ddd03">BootDisplay</a> = nullptr</td></tr>
 <tr class="separator:ad99b64782ef168967462c3d4070ddd03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16a261fae277ccee27d9ea72af254ec5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/deb/namespaceBootScreen.html#a16a261fae277ccee27d9ea72af254ec5">curProg</a> = 0</td></tr>
-<tr class="separator:a16a261fae277ccee27d9ea72af254ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a2d49e289210e85385baa91c7a45caf9f"></a>
@@ -142,12 +140,12 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00109">109</a> of file <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html">BootScreen.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="../../d8/d01/kernel_2include_2printf_8h.html#a47c8d7b7f2120352c780f49b0212a13d">vfctprintf</a>(<a class="code" href="../../d9/deb/namespaceBootScreen.html#a0e892befad7bc5872531b9dc80be8313">bootscreenprint_wrapper</a>, NULL, format, list); }</div>
+<p class="definition">Definition at line <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00106">106</a> of file <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html">BootScreen.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="../../d8/d01/kernel_2include_2printf_8h.html#a47c8d7b7f2120352c780f49b0212a13d">vfctprintf</a>(<a class="code" href="../../d9/deb/namespaceBootScreen.html#a0e892befad7bc5872531b9dc80be8313">bootscreenprint_wrapper</a>, NULL, format, list); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00103">bootscreenprint_wrapper()</a>, and <a class="el" href="../../d0/d02/kernel_2libs_2printf_8c_source.html#l01367">vfctprintf()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00100">bootscreenprint_wrapper()</a>, and <a class="el" href="../../d0/d02/kernel_2libs_2printf_8c_source.html#l01367">vfctprintf()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00111">bootscreenprint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00108">bootscreenprint()</a>.</p>
 
 </div>
 </div>
@@ -177,15 +175,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00111">111</a> of file <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html">BootScreen.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="../../d1/d2d/stdarg_8h.html#af53f622e3b6c080daeb167c1955d7ec1">va_list</a> args;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="../../d1/d2d/stdarg_8h.html#aa0628ab596c3d7e78f5e08c2d98e24da">va_start</a>(args, format);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="../../d9/deb/namespaceBootScreen.html#a2d49e289210e85385baa91c7a45caf9f">bootscreenhelper_vprintf</a>(format, args);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="../../d1/d2d/stdarg_8h.html#a823b205416e9129825841b74c3bf8484">va_end</a>(args);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00108">108</a> of file <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html">BootScreen.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="../../d1/d2d/stdarg_8h.html#af53f622e3b6c080daeb167c1955d7ec1">va_list</a> args;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="../../d1/d2d/stdarg_8h.html#aa0628ab596c3d7e78f5e08c2d98e24da">va_start</a>(args, format);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="../../d9/deb/namespaceBootScreen.html#a2d49e289210e85385baa91c7a45caf9f">bootscreenhelper_vprintf</a>(format, args);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="../../d1/d2d/stdarg_8h.html#a823b205416e9129825841b74c3bf8484">va_end</a>(args);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00109">bootscreenhelper_vprintf()</a>, <a class="el" href="../../d1/d2d/stdarg_8h_source.html#l00016">va_end</a>, and <a class="el" href="../../d1/d2d/stdarg_8h_source.html#l00015">va_start</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00106">bootscreenhelper_vprintf()</a>, <a class="el" href="../../d1/d2d/stdarg_8h_source.html#l00016">va_end</a>, and <a class="el" href="../../d1/d2d/stdarg_8h_source.html#l00015">va_start</a>.</p>
 
 </div>
 </div>
@@ -223,15 +221,15 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00103">103</a> of file <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html">BootScreen.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        (void)unused;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="../../d9/deb/namespaceBootScreen.html#ad99b64782ef168967462c3d4070ddd03">BootDisplay</a>-&gt;KernelPrint(c);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00100">100</a> of file <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html">BootScreen.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        (void)unused;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <a class="code" href="../../d9/deb/namespaceBootScreen.html#ad99b64782ef168967462c3d4070ddd03">BootDisplay</a>-&gt;KernelPrint(c);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00101">BootDisplay</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00098">BootDisplay</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00109">bootscreenhelper_vprintf()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00106">bootscreenhelper_vprintf()</a>.</p>
 
 </div>
 </div>
@@ -248,36 +246,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00101">101</a> of file <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html">BootScreen.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00098">98</a> of file <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html">BootScreen.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00103">bootscreenprint_wrapper()</a>, <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00129">BootScreen::Screen::DrawVendorLogo()</a>, <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00317">BootScreen::Screen::Progress()</a>, and <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00345">BootScreen::Screen::Screen()</a>.</p>
-
-</div>
-</div>
-<a id="a16a261fae277ccee27d9ea72af254ec5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16a261fae277ccee27d9ea72af254ec5">&#9670;&nbsp;</a></span>curProg</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int BootScreen::curProg = 0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00338">338</a> of file <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html">BootScreen.cpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00339">BootScreen::Screen::IncreaseProgres()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00100">bootscreenprint_wrapper()</a>, <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00126">BootScreen::Screen::DrawVendorLogo()</a>, <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00318">BootScreen::Screen::FadeLogo()</a>, <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00291">BootScreen::Screen::Progress()</a>, and <a class="el" href="../../d6/db3/BootScreen_8cpp_source.html#l00428">BootScreen::Screen::Screen()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespaceBootScreen_html_ad99b64782ef168967462c3d4070ddd03"><div class="ttname"><a href="../../d9/deb/namespaceBootScreen.html#ad99b64782ef168967462c3d4070ddd03">BootScreen::BootDisplay</a></div><div class="ttdeci">Display * BootDisplay</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/db3/BootScreen_8cpp_source.html#l00101">BootScreen.cpp:101</a></div></div>
-<div class="ttc" id="anamespaceBootScreen_html_a2d49e289210e85385baa91c7a45caf9f"><div class="ttname"><a href="../../d9/deb/namespaceBootScreen.html#a2d49e289210e85385baa91c7a45caf9f">BootScreen::bootscreenhelper_vprintf</a></div><div class="ttdeci">int bootscreenhelper_vprintf(const char *format, va_list list)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/db3/BootScreen_8cpp_source.html#l00109">BootScreen.cpp:109</a></div></div>
+<div class="ttc" id="anamespaceBootScreen_html_ad99b64782ef168967462c3d4070ddd03"><div class="ttname"><a href="../../d9/deb/namespaceBootScreen.html#ad99b64782ef168967462c3d4070ddd03">BootScreen::BootDisplay</a></div><div class="ttdeci">Display * BootDisplay</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/db3/BootScreen_8cpp_source.html#l00098">BootScreen.cpp:98</a></div></div>
+<div class="ttc" id="anamespaceBootScreen_html_a2d49e289210e85385baa91c7a45caf9f"><div class="ttname"><a href="../../d9/deb/namespaceBootScreen.html#a2d49e289210e85385baa91c7a45caf9f">BootScreen::bootscreenhelper_vprintf</a></div><div class="ttdeci">int bootscreenhelper_vprintf(const char *format, va_list list)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/db3/BootScreen_8cpp_source.html#l00106">BootScreen.cpp:106</a></div></div>
 <div class="ttc" id="akernel_2include_2printf_8h_html_a47c8d7b7f2120352c780f49b0212a13d"><div class="ttname"><a href="../../d8/d01/kernel_2include_2printf_8h.html#a47c8d7b7f2120352c780f49b0212a13d">vfctprintf</a></div><div class="ttdeci">PRINTF_VISIBILITY int PRINTF_VISIBILITY int vfctprintf(void(*out)(char c, void *extra_arg), void *extra_arg, const char *format, va_list arg) ATTR_VPRINTF(3)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d02/kernel_2libs_2printf_8c_source.html#l01367">printf.c:1367</a></div></div>
-<div class="ttc" id="anamespaceBootScreen_html_a0e892befad7bc5872531b9dc80be8313"><div class="ttname"><a href="../../d9/deb/namespaceBootScreen.html#a0e892befad7bc5872531b9dc80be8313">BootScreen::bootscreenprint_wrapper</a></div><div class="ttdeci">static void bootscreenprint_wrapper(char c, void *unused)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/db3/BootScreen_8cpp_source.html#l00103">BootScreen.cpp:103</a></div></div>
+<div class="ttc" id="anamespaceBootScreen_html_a0e892befad7bc5872531b9dc80be8313"><div class="ttname"><a href="../../d9/deb/namespaceBootScreen.html#a0e892befad7bc5872531b9dc80be8313">BootScreen::bootscreenprint_wrapper</a></div><div class="ttdeci">static void bootscreenprint_wrapper(char c, void *unused)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/db3/BootScreen_8cpp_source.html#l00100">BootScreen.cpp:100</a></div></div>
 <div class="ttc" id="astdarg_8h_html_af53f622e3b6c080daeb167c1955d7ec1"><div class="ttname"><a href="../../d1/d2d/stdarg_8h.html#af53f622e3b6c080daeb167c1955d7ec1">va_list</a></div><div class="ttdeci">__builtin_va_list va_list</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d2d/stdarg_8h_source.html#l00012">stdarg.h:12</a></div></div>
 <div class="ttc" id="astdarg_8h_html_a823b205416e9129825841b74c3bf8484"><div class="ttname"><a href="../../d1/d2d/stdarg_8h.html#a823b205416e9129825841b74c3bf8484">va_end</a></div><div class="ttdeci">#define va_end(v)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d2d/stdarg_8h_source.html#l00016">stdarg.h:16</a></div></div>
 <div class="ttc" id="astdarg_8h_html_aa0628ab596c3d7e78f5e08c2d98e24da"><div class="ttname"><a href="../../d1/d2d/stdarg_8h.html#aa0628ab596c3d7e78f5e08c2d98e24da">va_start</a></div><div class="ttdeci">#define va_start(v, l)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d2d/stdarg_8h_source.html#l00015">stdarg.h:15</a></div></div>

@@ -1,9 +1,5 @@
 var NAVTREEINDEX19 =
 {
-"da/d6e/classE1000_1_1NetworkInterfaceController.html#ab0eb4fe0b47b863caee4e889a31df4bfae5f252867767c5f918d52275f6a7de59":[4,0,9,0,7,7],
-"da/d6e/classE1000_1_1NetworkInterfaceController.html#ab0eb4fe0b47b863caee4e889a31df4bfae65af3d54ce7cbdcb4e6aa0013203446":[4,0,9,0,7,14],
-"da/d6e/classE1000_1_1NetworkInterfaceController.html#ab0eb4fe0b47b863caee4e889a31df4bfae9e9b0701d6b4b563f763aed4709cb56":[4,0,9,0,7,17],
-"da/d6e/classE1000_1_1NetworkInterfaceController.html#ab0eb4fe0b47b863caee4e889a31df4bfaf5a879ae28017676ca028eaabfe057ef":[4,0,9,0,7,11],
 "da/d6e/classE1000_1_1NetworkInterfaceController.html#ac7a1f9aa97d045e2ecf23ef531b5536d":[4,0,9,0,34],
 "da/d6e/classE1000_1_1NetworkInterfaceController.html#ac9fc9a69f82397094aaef864eda882dd":[4,0,9,0,12],
 "da/d6e/classE1000_1_1NetworkInterfaceController.html#ace5490713698011b737dbb4c3ab5ac93":[4,0,9,0,11],
@@ -19,8 +15,8 @@ var NAVTREEINDEX19 =
 "da/d6e/classE1000_1_1NetworkInterfaceController.html#d3/d5c/structE1000_1_1NetworkInterfaceController_1_1BARData":[4,0,9,0,0],
 "da/d6e/classE1000_1_1NetworkInterfaceController.html#d3/ddf/structE1000_1_1NetworkInterfaceController_1_1TXDescriptor":[5,0,0,2,0,1,1,2],
 "da/d6e/classE1000_1_1NetworkInterfaceController.html#d3/ddf/structE1000_1_1NetworkInterfaceController_1_1TXDescriptor":[4,0,9,0,2],
-"da/d6e/classE1000_1_1NetworkInterfaceController.html#d7/d56/structE1000_1_1NetworkInterfaceController_1_1RXDescriptor":[5,0,0,2,0,1,1,1],
 "da/d6e/classE1000_1_1NetworkInterfaceController.html#d7/d56/structE1000_1_1NetworkInterfaceController_1_1RXDescriptor":[4,0,9,0,1],
+"da/d6e/classE1000_1_1NetworkInterfaceController.html#d7/d56/structE1000_1_1NetworkInterfaceController_1_1RXDescriptor":[5,0,0,2,0,1,1,1],
 "da/d8b/include_2boot_2protocols_2limine_8h.html":[5,0,0,5,0,0,1],
 "da/d8b/include_2boot_2protocols_2limine_8h.html#a17e61bc1823f6d748506800d404e8a2d":[5,0,0,5,0,0,1,68],
 "da/d8b/include_2boot_2protocols_2limine_8h.html#a1b0cb81b148837b25e0f47f402022c8a":[5,0,0,5,0,0,1,59],
@@ -167,8 +163,8 @@ var NAVTREEINDEX19 =
 "da/db9/classACPI_1_1MADT.html#af1d83b4b92df09a9ec73c44543050b33":[5,0,0,1,1,15,0],
 "da/db9/classACPI_1_1MADT.html#af91b914886f1afdb1c8b96dc15160600":[4,0,0,2,9],
 "da/db9/classACPI_1_1MADT.html#afefecea3b7ea4905d8260c60ce2dca0f":[4,0,0,2,8],
-"da/db9/classACPI_1_1MADT.html#d2/d24/structACPI_1_1MADT_1_1MADTIso":[4,0,0,2,4],
 "da/db9/classACPI_1_1MADT.html#d2/d24/structACPI_1_1MADT_1_1MADTIso":[5,0,0,1,1,16],
+"da/db9/classACPI_1_1MADT.html#d2/d24/structACPI_1_1MADT_1_1MADTIso":[4,0,0,2,4],
 "da/db9/classACPI_1_1MADT.html#d7/da2/structACPI_1_1MADT_1_1MADTNmi":[4,0,0,2,5],
 "da/db9/classACPI_1_1MADT.html#d7/da2/structACPI_1_1MADT_1_1MADTNmi":[5,0,0,1,1,17],
 "da/db9/classACPI_1_1MADT.html#d9/d48/structACPI_1_1MADT_1_1APICHeader":[4,0,0,2,0],
@@ -179,8 +175,8 @@ var NAVTREEINDEX19 =
 "da/db9/classACPI_1_1MADT.html#dc/d88/structACPI_1_1MADT_1_1LocalAPIC":[5,0,0,1,1,18],
 "da/db9/classACPI_1_1MADT.html#dc/de8/structACPI_1_1MADT_1_1LAPIC":[4,0,0,2,1],
 "da/db9/classACPI_1_1MADT.html#dc/de8/structACPI_1_1MADT_1_1LAPIC":[5,0,0,1,1,19],
-"da/dcd/namespaceNetworkEthernet.html":[3,0,21],
 "da/dcd/namespaceNetworkEthernet.html":[4,0,18],
+"da/dcd/namespaceNetworkEthernet.html":[3,0,21],
 "da/dcd/namespaceNetworkEthernet.html#a225acdb519c8c45554aa06dfa7c46577":[5,0,0,9,6,6,1],
 "da/dcd/namespaceNetworkEthernet.html#a3dbadb84ea497799e47d59e71c2e1497":[5,0,0,9,2,0,1],
 "da/dcd/namespaceNetworkEthernet.html#a5ea72a0c176b4a78589668a551840517":[5,0,0,9,2,0,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX19 =
 "da/ddb/heap_8h.html#aa6230aa45893d5603217f0ef19a605bc":[5,0,0,5,14,22],
 "da/ddb/heap_8h.html#aa6e99f855eb906d87180d7c66506ba49":[5,0,0,5,14,12],
 "da/ddb/heap_8h.html#aa700d7a085f4fa2439650b7675228b88":[5,0,0,5,14,7],
-"da/ddb/heap_8h.html#aa71772967d4ef1da48968f79ff4558c9":[5,0,0,5,14,15]
+"da/ddb/heap_8h.html#aa71772967d4ef1da48968f79ff4558c9":[5,0,0,5,14,15],
+"da/ddb/heap_8h.html#ab2ed1581af9d674b98f3aa559cba18ac":[5,0,0,5,14,9],
+"da/ddb/heap_8h.html#ab3c4f7b5adf8de5217fda42d486cee50":[5,0,0,5,14,35],
+"da/ddb/heap_8h.html#ac41e9aa9301d794ea6ef4e093e15ffb3":[5,0,0,5,14,21],
+"da/ddb/heap_8h.html#ac577ffd8b946906da2fea92d449672ec":[5,0,0,5,14,18]
 };

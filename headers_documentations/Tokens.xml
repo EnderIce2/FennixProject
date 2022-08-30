@@ -26026,6 +26026,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>FadeLogo</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>BootScreen::Screen</Scope>
+    </TokenIdentifier>
+    <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+    <Anchor>adaf2d2313201b66eda899a6460ea55cb</Anchor>
+    <DeclaredIn>bootscreen.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>Screen</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -26045,6 +26056,26 @@
     <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
     <Anchor>a45a9dd346c1817a1e6438e86da4ca469</Anchor>
     <DeclaredIn>bootscreen.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>KernelLogo</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>BootScreen::Screen</Scope>
+    </TokenIdentifier>
+    <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+    <Anchor>aebdadb79af2f0957543aa40ce1d6d941</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>curProg</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>BootScreen::Screen</Scope>
+    </TokenIdentifier>
+    <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+    <Anchor>a582b16813a7717947fc8b5336b347083</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>

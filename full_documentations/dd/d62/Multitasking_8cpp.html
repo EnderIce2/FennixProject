@@ -107,7 +107,6 @@ $(document).ready(function(){initNavTree('dd/d62/Multitasking_8cpp.html','../../
 <code>#include &lt;<a class="el" href="../../d3/d7e/int_8h_source.html">int.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dc/dac/io_8h_source.html">io.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d4/d68/display_8h_source.html">display.h</a>&gt;</code><br />
 </div>
 <p><a href="../../dd/d62/Multitasking_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -122,19 +121,13 @@ Macros</h2></td></tr>
 <tr class="separator:a79173cb020c4dafa4ff23f9a093473ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69e88d2644af903e00cc5fb802bdd125"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/Multitasking_8cpp.html#a69e88d2644af903e00cc5fb802bdd125">schedbg</a>(m, ...)</td></tr>
 <tr class="separator:a69e88d2644af903e00cc5fb802bdd125"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81d10fdd9f7f013739291b631a4ab7d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/Multitasking_8cpp.html#a81d10fdd9f7f013739291b631a4ab7d9">DEBUG_TASK_MANAGER</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a81d10fdd9f7f013739291b631a4ab7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5e55da733f5dac716d070b92f35ceb14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a5e55da733f5dac716d070b92f35ceb14">Tasking::drawrectangle</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> X, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Y, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> W, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> H, <a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> C)</td></tr>
-<tr class="separator:a5e55da733f5dac716d070b92f35ceb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ca68e4bf87dafdf497f4122a17faaba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a7ca68e4bf87dafdf497f4122a17faaba">Tasking::TraceSchedOnScreen</a> ()</td></tr>
-<tr class="separator:a7ca68e4bf87dafdf497f4122a17faaba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa180f7d65c125e518af93b0952cd4330"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#aa180f7d65c125e518af93b0952cd4330">Tasking::TriggerOneShot</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> Vector, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Miliseconds)</td></tr>
 <tr class="separator:aa180f7d65c125e518af93b0952cd4330"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1068dc83b255a87fe7835b4cd56f58e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a1068dc83b255a87fe7835b4cd56f58e8">Tasking::ProcessDoExit</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Code)</td></tr>
-<tr class="separator:a1068dc83b255a87fe7835b4cd56f58e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac4672b7cc823d1c581bdb99093a4c13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#aac4672b7cc823d1c581bdb99093a4c13">Tasking::ThreadDoExit</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Code)</td></tr>
+<tr class="separator:aac4672b7cc823d1c581bdb99093a4c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43274cb852029802400aaa076cdfb23c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a43274cb852029802400aaa076cdfb23c">Tasking::UpdateTimeUsed</a> (GeneralProcessInfo *Info)</td></tr>
 <tr class="separator:a43274cb852029802400aaa076cdfb23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d9857402fba270bda6b1334019eadb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a7d9857402fba270bda6b1334019eadb2">Tasking::UpdateCPUUsage</a> (GeneralProcessInfo *Info)</td></tr>
@@ -164,22 +157,6 @@ Variables</h2></td></tr>
 <tr class="separator:a390d088e178afc3b017d9a577e4e7a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a81d10fdd9f7f013739291b631a4ab7d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81d10fdd9f7f013739291b631a4ab7d9">&#9670;&nbsp;</a></span>DEBUG_TASK_MANAGER</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_TASK_MANAGER&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../dd/d62/Multitasking_8cpp_source.html#l00027">27</a> of file <a class="el" href="../../dd/d62/Multitasking_8cpp_source.html">Multitasking.cpp</a>.</p>
-
-</div>
-</div>
 <a id="a69e88d2644af903e00cc5fb802bdd125"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a69e88d2644af903e00cc5fb802bdd125">&#9670;&nbsp;</a></span>schedbg</h2>
 

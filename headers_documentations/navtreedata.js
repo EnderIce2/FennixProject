@@ -68,19 +68,19 @@ var NAVTREEINDEX =
 "d1/d9e/elf_8h.html#abb068619f9fae94dc5cd7ec6eacd4c42",
 "d1/dc0/multiboot_8h.html#a87bed62f532b2e2e73ab41df40069e2a",
 "d3/d41/gbp_8h.html#a1c3d8663240617fef38c703f38c0bc0f",
-"d4/dfa/classBootScreen_1_1Screen.html#ac4a8948b5b2c4e738cf51b06ccab65c0",
-"d5/dba/multiboot2_8h.html#a6ebc069917f2924e1fd3dd794a90d048",
-"d6/d75/internal__task_8h.html#a24b42fd6c165e22f3c4cc751efee137b",
-"d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a8d8bff15bdca09bb16d7a1141e14187b",
-"d7/dab/structstivale2__header__tag__slide__hhdm.html#a21296aaf61ac36df8c567c5e74211e5c",
-"d9/d86/limits_8h.html#a4066e640ee269d5d8f83ff6643b7af5f",
-"da/ddd/cpuid_8h.html#ad0ae9d4658eb6c019efbb66384005dab",
-"db/dc7/bootboot_8h.html#a19f3b3bc0e5e84fa90546183b4a4b724",
-"dc/da4/libc_2include_2string_8h.html",
-"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa20420b937c7290f14bc643cc8f2832a7",
-"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fad281e5e099175366dce4bcd80b1271d1",
-"de/d63/msexec_8h.html#afd06967b9a647a5ea49715e1c6eabd17",
-"df/d17/stivale2_8h.html#d7/d33/structstivale2__guid"
+"d4/dfa/classBootScreen_1_1Screen.html#a6359e553a9001d5fc09ce2cddec7f04d",
+"d5/dba/multiboot2_8h.html#a6bfa44919a328492fa4e3d6239a23352",
+"d6/d75/internal__task_8h.html#a00289efa26c53a4f364869db5b41a414",
+"d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a8a962121f2395b83d65030710b85b284",
+"d7/d9f/fcntl_8h.html",
+"d9/d86/limits_8h.html#a308d9dd2c0028ddb184b455bbd7865de",
+"da/ddd/cpuid_8h.html#abdba51324d715cbdcddafe7e0634f112",
+"db/dc7/bootboot_8h.html#a12ba24a7f1df7cff8743dcb578f30d3b",
+"dc/d69/include_2stdint_8h.html#af77373faf472a16283aad2014724192d",
+"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa1f7294c4156fb0f8a25e33a055ec5e07",
+"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fad1182f5746c70800a222c233ccd31dc3",
+"de/d63/msexec_8h.html#afb1150c7008d392e0545ead63682fb81",
+"df/d17/stivale2_8h.html#d5/d6c/structstivale2__struct__tag__firmware"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -105,6 +105,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>_binary_files_fennix000_bmp_end</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d6/db3/BootScreen_8cpp.html</Path>
+    <Anchor>a5c5b5b1cfbc4158b56c0b302c0d780bb</Anchor>
+    <DeclaredIn>BootScreen.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_binary_files_fennix000_bmp_size</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d6/db3/BootScreen_8cpp.html</Path>
+    <Anchor>a70564c2fe0b8050305f7d080e8268dcf</Anchor>
+    <DeclaredIn>BootScreen.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_binary_files_fennix000_bmp_start</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d6/db3/BootScreen_8cpp.html</Path>
+    <Anchor>a155e7f155544e313edb2190fcdc50d78</Anchor>
+    <DeclaredIn>BootScreen.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>_binary_files_fennix001_bmp_end</Name>
       <APILanguage>c</APILanguage>
       <Type>data</Type>
@@ -765,96 +795,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>_binary_files_fennix023_bmp_end</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d6/db3/BootScreen_8cpp.html</Path>
-    <Anchor>a902d9da9d88e99ec95b3fba6f30a0b94</Anchor>
-    <DeclaredIn>BootScreen.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_binary_files_fennix023_bmp_size</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d6/db3/BootScreen_8cpp.html</Path>
-    <Anchor>a6829c50878519b222077bd063f6a1f68</Anchor>
-    <DeclaredIn>BootScreen.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_binary_files_fennix023_bmp_start</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d6/db3/BootScreen_8cpp.html</Path>
-    <Anchor>a198d6a1d3f8ebcf1c56b71a1f5426829</Anchor>
-    <DeclaredIn>BootScreen.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_binary_files_fennix024_bmp_end</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d6/db3/BootScreen_8cpp.html</Path>
-    <Anchor>a0d0a654761dcde60c2b0da006812ab83</Anchor>
-    <DeclaredIn>BootScreen.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_binary_files_fennix024_bmp_size</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d6/db3/BootScreen_8cpp.html</Path>
-    <Anchor>ab595e55a3bf991844bf5fcde9744aa41</Anchor>
-    <DeclaredIn>BootScreen.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_binary_files_fennix024_bmp_start</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d6/db3/BootScreen_8cpp.html</Path>
-    <Anchor>a798e2fa2ecd47c8b03cf60883ed301af</Anchor>
-    <DeclaredIn>BootScreen.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_binary_files_fennix025_bmp_end</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d6/db3/BootScreen_8cpp.html</Path>
-    <Anchor>a765205f42172ee2f48e92d6e159a3f13</Anchor>
-    <DeclaredIn>BootScreen.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_binary_files_fennix025_bmp_size</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d6/db3/BootScreen_8cpp.html</Path>
-    <Anchor>a679b9c1825b928c5add5043435a2e49b</Anchor>
-    <DeclaredIn>BootScreen.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_binary_files_fennix025_bmp_start</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d6/db3/BootScreen_8cpp.html</Path>
-    <Anchor>a968ca34b9c47c6b2232eb88f173bf3cf</Anchor>
-    <DeclaredIn>BootScreen.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>BootDisplay</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -862,17 +802,6 @@
     </TokenIdentifier>
     <Path>d9/deb/namespaceBootScreen.html</Path>
     <Anchor>ad99b64782ef168967462c3d4070ddd03</Anchor>
-    <DeclaredIn>BootScreen.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>curProg</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>BootScreen</Scope>
-    </TokenIdentifier>
-    <Path>d9/deb/namespaceBootScreen.html</Path>
-    <Anchor>a16a261fae277ccee27d9ea72af254ec5</Anchor>
     <DeclaredIn>BootScreen.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -21378,22 +21307,22 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>UserAllocator</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d2/d00/Kernel_8cpp.html</Path>
-    <Anchor>a4c013cc30022e7dd29dca340c6740648</Anchor>
-    <DeclaredIn>Kernel.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>ShowRecoveryScreen</Name>
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
     <Path>d2/d00/Kernel_8cpp.html</Path>
     <Anchor>a78de668afe436bb1e16edb9954a5b0da</Anchor>
+    <DeclaredIn>Kernel.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>UserAllocator</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d2/d00/Kernel_8cpp.html</Path>
+    <Anchor>a4c013cc30022e7dd29dca340c6740648</Anchor>
     <DeclaredIn>Kernel.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -28453,38 +28382,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>DEBUG_TASK_MANAGER</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>dd/d62/Multitasking_8cpp.html</Path>
-    <Anchor>a81d10fdd9f7f013739291b631a4ab7d9</Anchor>
-    <DeclaredIn>Multitasking.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>drawrectangle</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>a5e55da733f5dac716d070b92f35ceb14</Anchor>
-    <DeclaredIn>Multitasking.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TraceSchedOnScreen</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>a7ca68e4bf87dafdf497f4122a17faaba</Anchor>
-    <DeclaredIn>Multitasking.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>TriggerOneShot</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
@@ -28496,13 +28393,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ProcessDoExit</Name>
+      <Name>ThreadDoExit</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
       <Scope>Tasking</Scope>
     </TokenIdentifier>
     <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>a1068dc83b255a87fe7835b4cd56f58e8</Anchor>
+    <Anchor>aac4672b7cc823d1c581bdb99093a4c13</Anchor>
     <DeclaredIn>Multitasking.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -45195,17 +45092,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>curProg</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>BootScreen</Scope>
-    </TokenIdentifier>
-    <Path>d9/deb/namespaceBootScreen.html</Path>
-    <Anchor>a16a261fae277ccee27d9ea72af254ec5</Anchor>
-    <DeclaredIn>BootScreen.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>BootScreen::Screen</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -45249,6 +45135,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>FadeLogo</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>BootScreen::Screen</Scope>
+    </TokenIdentifier>
+    <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+    <Anchor>adaf2d2313201b66eda899a6460ea55cb</Anchor>
+    <DeclaredIn>bootscreen.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>Screen</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -45268,6 +45165,26 @@
     <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
     <Anchor>a45a9dd346c1817a1e6438e86da4ca469</Anchor>
     <DeclaredIn>bootscreen.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>KernelLogo</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>BootScreen::Screen</Scope>
+    </TokenIdentifier>
+    <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+    <Anchor>aebdadb79af2f0957543aa40ce1d6d941</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>curProg</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>BootScreen::Screen</Scope>
+    </TokenIdentifier>
+    <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+    <Anchor>a582b16813a7717947fc8b5336b347083</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -54744,28 +54661,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>drawrectangle</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>a5e55da733f5dac716d070b92f35ceb14</Anchor>
-    <DeclaredIn>Multitasking.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TraceSchedOnScreen</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>a7ca68e4bf87dafdf497f4122a17faaba</Anchor>
-    <DeclaredIn>Multitasking.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>TriggerOneShot</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
@@ -54777,13 +54672,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ProcessDoExit</Name>
+      <Name>ThreadDoExit</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
       <Scope>Tasking</Scope>
     </TokenIdentifier>
     <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>a1068dc83b255a87fe7835b4cd56f58e8</Anchor>
+    <Anchor>aac4672b7cc823d1c581bdb99093a4c13</Anchor>
     <DeclaredIn>Multitasking.cpp</DeclaredIn>
   </Token>
   <Token>

@@ -1,5 +1,8 @@
 var NAVTREEINDEX12 =
 {
+"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#dc/d5c/structstivale2__struct__tag__cmdline":[5,0,0,5,0,0,5,12],
+"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#dc/df2/structstivale2__header__tag__any__video":[5,0,0,5,0,0,5,3],
+"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#dd/d87/structstivale2__struct__tag__smbios":[5,0,0,5,0,0,5,30],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#de/daa/structstivale2__struct__tag__pxe__server__info":[5,0,0,5,0,0,5,33],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#df/d80/structstivale2__struct__tag__framebuffer":[5,0,0,5,0,0,5,15],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#df/db0/structstivale2__struct__tag__boot__volume":[5,0,0,5,0,0,5,28],
@@ -152,8 +155,8 @@ var NAVTREEINDEX12 =
 "d6/d7e/bootscreen_8h.html":[5,0,0,5,4],
 "d6/d7e/bootscreen_8h.html#ad82da8195cc1c57cd9ed0e935707f7fe":[5,0,0,5,4,1],
 "d6/d7e/bootscreen_8h_source.html":[5,0,0,5,4],
-"d6/d86/namespaceCritical.html":[4,0,6],
 "d6/d86/namespaceCritical.html":[3,0,7],
+"d6/d86/namespaceCritical.html":[4,0,6],
 "d6/d86/namespaceCritical.html#a40b6eb1e9173652e6d5227c7ceec4116":[5,0,0,5,6,0,0],
 "d6/d86/namespaceCritical.html#add3e38a2af9c1d53423fbe0d467306e7":[5,0,0,5,6,0,1],
 "d6/d86/namespaceCritical.html#d6/dda/structCritical_1_1CriticalSectionData":[5,0,0,5,6,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX12 =
 "d6/db1/print_8c.html#a6c8ef8bd683c46d3107a62249bf37d81":[5,0,1,3,1,3,17],
 "d6/db1/print_8c.html#a7b84041e435163fe8993c91b705606b9":[5,0,1,3,1,3,7],
 "d6/db1/print_8c.html#a85506e78fccdce14704efd21f894e425":[5,0,1,3,1,3,2],
-"d6/db1/print_8c.html#a89ef106643e54925e01e214c1bdb9423":[5,0,1,3,1,3,10],
-"d6/db1/print_8c.html#a969c78bbb88dbeec76fe459802bd2bad":[5,0,1,3,1,3,15],
-"d6/db1/print_8c.html#a98fbdf7c49dbcd8d6045f4a5da38ff59":[5,0,1,3,1,3,0],
-"d6/db1/print_8c.html#a9cafd44c2e1bfa384f71d56949e3b3fc":[5,0,1,3,1,3,9]
+"d6/db1/print_8c.html#a89ef106643e54925e01e214c1bdb9423":[5,0,1,3,1,3,10]
 };

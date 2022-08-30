@@ -1,5 +1,8 @@
 var NAVTREEINDEX10 =
 {
+"d5/dba/multiboot2_8h.html#a0b53e2de91aa7498c4b476776b27e5f3":[5,0,0,5,0,0,3,69],
+"d5/dba/multiboot2_8h.html#a0c01936f867fa598194eca54a03cf7c8":[5,0,0,5,0,0,3,17,0],
+"d5/dba/multiboot2_8h.html#a0cd6fd3c9f2de7ee9bb8354589bd3545":[5,0,0,5,0,0,3,14,3],
 "d5/dba/multiboot2_8h.html#a0d19797e8a049353c2ba98e04df089bc":[5,0,0,5,0,0,3,6,0],
 "d5/dba/multiboot2_8h.html#a0d868424e2b703471e3d73c0a72bc75c":[5,0,0,5,0,0,3,36,5],
 "d5/dba/multiboot2_8h.html#a0eb857966790a1f24fa260b381561510":[5,0,0,5,0,0,3,53],
@@ -246,8 +249,5 @@ var NAVTREEINDEX10 =
 "d5/dba/multiboot2_8h.html#d6/d6f/structmultiboot__vbe__mode__info__block":[5,0,0,5,0,0,3,18],
 "d5/dba/multiboot2_8h.html#d6/dbd/structmultiboot__header__tag__framebuffer":[5,0,0,5,0,0,3,6],
 "d5/dba/multiboot2_8h.html#d7/d16/structmultiboot__tag":[5,0,0,5,0,0,3,11],
-"d5/dba/multiboot2_8h.html#d7/d2b/structmultiboot__color":[5,0,0,5,0,0,2,4],
-"d5/dba/multiboot2_8h.html#d7/d2b/structmultiboot__color":[5,0,0,5,0,0,3,9],
-"d5/dba/multiboot2_8h.html#d7/d4c/structmultiboot__tag__new__acpi":[5,0,0,5,0,0,3,28],
-"d5/dba/multiboot2_8h.html#d7/d71/structmultiboot__tag__mmap":[5,0,0,5,0,0,3,16]
+"d5/dba/multiboot2_8h.html#d7/d2b/structmultiboot__color":[5,0,0,5,0,0,2,4]
 };

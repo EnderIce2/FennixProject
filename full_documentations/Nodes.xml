@@ -1945,6 +1945,11 @@
                 <Anchor>a6359e553a9001d5fc09ce2cddec7f04d</Anchor>
                </Node>
                <Node>
+                <Name>FadeLogo</Name>
+                <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+                <Anchor>adaf2d2313201b66eda899a6460ea55cb</Anchor>
+               </Node>
+               <Node>
                 <Name>IncreaseProgres</Name>
                 <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
                 <Anchor>a4d7a5aac71f5b39f065d2984bb493ed6</Anchor>
@@ -1953,6 +1958,16 @@
                 <Name>Progress</Name>
                 <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
                 <Anchor>ac4a8948b5b2c4e738cf51b06ccab65c0</Anchor>
+               </Node>
+               <Node>
+                <Name>curProg</Name>
+                <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+                <Anchor>a582b16813a7717947fc8b5336b347083</Anchor>
+               </Node>
+               <Node>
+                <Name>KernelLogo</Name>
+                <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+                <Anchor>aebdadb79af2f0957543aa40ce1d6d941</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -15499,6 +15514,21 @@
                   <Anchor>a0e892befad7bc5872531b9dc80be8313</Anchor>
                  </Node>
                  <Node>
+                  <Name>_binary_files_fennix000_bmp_end</Name>
+                  <Path>d6/db3/BootScreen_8cpp.html</Path>
+                  <Anchor>a5c5b5b1cfbc4158b56c0b302c0d780bb</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>_binary_files_fennix000_bmp_size</Name>
+                  <Path>d6/db3/BootScreen_8cpp.html</Path>
+                  <Anchor>a70564c2fe0b8050305f7d080e8268dcf</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>_binary_files_fennix000_bmp_start</Name>
+                  <Path>d6/db3/BootScreen_8cpp.html</Path>
+                  <Anchor>a155e7f155544e313edb2190fcdc50d78</Anchor>
+                 </Node>
+                 <Node>
                   <Name>_binary_files_fennix001_bmp_end</Name>
                   <Path>d6/db3/BootScreen_8cpp.html</Path>
                   <Anchor>a40e54d2d853e3036dd7ea58f26ae4c75</Anchor>
@@ -15829,51 +15859,6 @@
                   <Anchor>ab59f1a25bae6e453d4aa499c6e053098</Anchor>
                  </Node>
                  <Node>
-                  <Name>_binary_files_fennix023_bmp_end</Name>
-                  <Path>d6/db3/BootScreen_8cpp.html</Path>
-                  <Anchor>a902d9da9d88e99ec95b3fba6f30a0b94</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>_binary_files_fennix023_bmp_size</Name>
-                  <Path>d6/db3/BootScreen_8cpp.html</Path>
-                  <Anchor>a6829c50878519b222077bd063f6a1f68</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>_binary_files_fennix023_bmp_start</Name>
-                  <Path>d6/db3/BootScreen_8cpp.html</Path>
-                  <Anchor>a198d6a1d3f8ebcf1c56b71a1f5426829</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>_binary_files_fennix024_bmp_end</Name>
-                  <Path>d6/db3/BootScreen_8cpp.html</Path>
-                  <Anchor>a0d0a654761dcde60c2b0da006812ab83</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>_binary_files_fennix024_bmp_size</Name>
-                  <Path>d6/db3/BootScreen_8cpp.html</Path>
-                  <Anchor>ab595e55a3bf991844bf5fcde9744aa41</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>_binary_files_fennix024_bmp_start</Name>
-                  <Path>d6/db3/BootScreen_8cpp.html</Path>
-                  <Anchor>a798e2fa2ecd47c8b03cf60883ed301af</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>_binary_files_fennix025_bmp_end</Name>
-                  <Path>d6/db3/BootScreen_8cpp.html</Path>
-                  <Anchor>a765205f42172ee2f48e92d6e159a3f13</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>_binary_files_fennix025_bmp_size</Name>
-                  <Path>d6/db3/BootScreen_8cpp.html</Path>
-                  <Anchor>a679b9c1825b928c5add5043435a2e49b</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>_binary_files_fennix025_bmp_start</Name>
-                  <Path>d6/db3/BootScreen_8cpp.html</Path>
-                  <Anchor>a968ca34b9c47c6b2232eb88f173bf3cf</Anchor>
-                 </Node>
-                 <Node>
                   <Name>_binary_files_zap_ext_light20_psf_end</Name>
                   <Path>d6/db3/BootScreen_8cpp.html</Path>
                   <Anchor>aa172c447f302ac0e4d23c3106b158216</Anchor>
@@ -15892,11 +15877,6 @@
                   <Name>BS</Name>
                   <Path>d6/db3/BootScreen_8cpp.html</Path>
                   <Anchor>ad82da8195cc1c57cd9ed0e935707f7fe</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>curProg</Name>
-                  <Path>d6/db3/BootScreen_8cpp.html</Path>
-                  <Anchor>a16a261fae277ccee27d9ea72af254ec5</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -31221,6 +31201,11 @@
                     <Anchor>a6359e553a9001d5fc09ce2cddec7f04d</Anchor>
                    </Node>
                    <Node>
+                    <Name>FadeLogo</Name>
+                    <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+                    <Anchor>adaf2d2313201b66eda899a6460ea55cb</Anchor>
+                   </Node>
+                   <Node>
                     <Name>IncreaseProgres</Name>
                     <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
                     <Anchor>a4d7a5aac71f5b39f065d2984bb493ed6</Anchor>
@@ -31229,6 +31214,16 @@
                     <Name>Progress</Name>
                     <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
                     <Anchor>ac4a8948b5b2c4e738cf51b06ccab65c0</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>curProg</Name>
+                    <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+                    <Anchor>a582b16813a7717947fc8b5336b347083</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>KernelLogo</Name>
+                    <Path>d4/dfa/classBootScreen_1_1Screen.html</Path>
+                    <Anchor>aebdadb79af2f0957543aa40ce1d6d941</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -43458,11 +43453,6 @@
                 <Path>dd/d62/Multitasking_8cpp.html</Path>
                 <Subnodes>
                  <Node>
-                  <Name>DEBUG_TASK_MANAGER</Name>
-                  <Path>dd/d62/Multitasking_8cpp.html</Path>
-                  <Anchor>a81d10fdd9f7f013739291b631a4ab7d9</Anchor>
-                 </Node>
-                 <Node>
                   <Name>schedbg</Name>
                   <Path>dd/d62/Multitasking_8cpp.html</Path>
                   <Anchor>a69e88d2644af903e00cc5fb802bdd125</Anchor>
@@ -43476,11 +43466,6 @@
                   <Name>__attribute__</Name>
                   <Path>dd/d62/Multitasking_8cpp.html</Path>
                   <Anchor>ab84aaaa32c2361f6c6a3d238244cce37</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>drawrectangle</Name>
-                  <Path>dd/d62/Multitasking_8cpp.html</Path>
-                  <Anchor>a5e55da733f5dac716d070b92f35ceb14</Anchor>
                  </Node>
                  <Node>
                   <Name>InvalidPCB</Name>
@@ -43503,11 +43488,6 @@
                   <Anchor>ad1a18cb7efea016c609d88926010490b</Anchor>
                  </Node>
                  <Node>
-                  <Name>ProcessDoExit</Name>
-                  <Path>dd/d62/Multitasking_8cpp.html</Path>
-                  <Anchor>a1068dc83b255a87fe7835b4cd56f58e8</Anchor>
-                 </Node>
-                 <Node>
                   <Name>RemoveProcess</Name>
                   <Path>dd/d62/Multitasking_8cpp.html</Path>
                   <Anchor>a8627badb67b9973f07ff93b566cc6c78</Anchor>
@@ -43523,9 +43503,9 @@
                   <Anchor>a92331944bcf2772f9549596804a7b3c9</Anchor>
                  </Node>
                  <Node>
-                  <Name>TraceSchedOnScreen</Name>
+                  <Name>ThreadDoExit</Name>
                   <Path>dd/d62/Multitasking_8cpp.html</Path>
-                  <Anchor>a7ca68e4bf87dafdf497f4122a17faaba</Anchor>
+                  <Anchor>aac4672b7cc823d1c581bdb99093a4c13</Anchor>
                  </Node>
                  <Node>
                   <Name>TriggerOneShot</Name>
