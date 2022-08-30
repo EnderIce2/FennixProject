@@ -1,8 +1,11 @@
 #include <bootscreen.h>
+
+#include <critical.hpp>
 #include <display.h>
 #include <printf.h>
-#include <heap.h>
 #include <debug.h>
+#include <heap.h>
+
 #include "../cpu/acpi.hpp"
 #include "../timer.h"
 
@@ -128,6 +131,7 @@ namespace BootScreen
 
     void Screen::DrawVendorLogo(void *BGRT, bool DrawKernelLogo)
     {
+        KernelLogo = DrawKernelLogo;
         ACPI::ACPI::BGRTHeader *bgrt = (ACPI::ACPI::BGRTHeader *)BGRT;
         uint64_t FBAddress = BootDisplay->GetFramebuffer()->Address;
         uint64_t FBWidth = BootDisplay->GetFramebuffer()->Width;
@@ -217,6 +221,16 @@ namespace BootScreen
             debug("bmp 013 %#lx", &_binary_files_fennix013_bmp_start);
             debug("bmp 014 %#lx", &_binary_files_fennix014_bmp_start);
             debug("bmp 015 %#lx", &_binary_files_fennix015_bmp_start);
+            debug("bmp 016 %#lx", &_binary_files_fennix016_bmp_start);
+            debug("bmp 017 %#lx", &_binary_files_fennix017_bmp_start);
+            debug("bmp 018 %#lx", &_binary_files_fennix018_bmp_start);
+            debug("bmp 019 %#lx", &_binary_files_fennix019_bmp_start);
+            debug("bmp 020 %#lx", &_binary_files_fennix020_bmp_start);
+            debug("bmp 021 %#lx", &_binary_files_fennix021_bmp_start);
+            debug("bmp 022 %#lx", &_binary_files_fennix022_bmp_start);
+            debug("bmp 023 %#lx", &_binary_files_fennix023_bmp_start);
+            debug("bmp 024 %#lx", &_binary_files_fennix024_bmp_start);
+            debug("bmp 025 %#lx", &_binary_files_fennix025_bmp_start);
 
         RedrawLogo:
             trace("Drawing logo %d", LogoID);
@@ -327,19 +341,128 @@ namespace BootScreen
 
         for (int y = BootBarYSize - 10; y < BootBarYSize; y++)
             for (int x = BootBarStart; x < BarPosition; x++)
-                BootDisplay->SetPixel(x, y, 0xFFFFFFFF);
+                BootDisplay->SetPixel(x, y, 0xFFFFFF);
 
         for (int i = BootBarStart; i <= BootBarEnd; i++)
             for (int j = BootBarYSize - 10; j <= BootBarYSize; j++)
                 if (i == BootBarStart || i == BootBarEnd || j == (BootBarYSize - 10) || j == BootBarYSize)
-                    BootDisplay->SetPixel(i, j, 0xFFFFFFFF);
+                    BootDisplay->SetPixel(i, j, 0xFFFFFF);
     }
 
-    int curProg = 0;
     void Screen::IncreaseProgres()
     {
         this->Progress(curProg);
         curProg++;
+    }
+
+    void Screen::FadeLogo()
+    {
+        if (!KernelLogo)
+            return;
+        EnterCriticalSection;
+        uint64_t LogoAddress = (uint64_t)&_binary_files_fennix001_bmp_start;
+        int LogoID = 1;
+
+        uint64_t FBAddress = BootDisplay->GetFramebuffer()->Address;
+        uint64_t FBWidth = BootDisplay->GetFramebuffer()->Width;
+        uint64_t FBHeight = BootDisplay->GetFramebuffer()->Height;
+
+        int BootBarStart = FBWidth / 2 - 100;
+        int BootBarEnd = FBWidth / 2 + 100;
+        int BootBarYSize = FBHeight / 2 + 60;
+        int PBColor = 0xFFFFFF;
+
+    RedrawLogo:
+    {
+        trace("Drawing logo %d", LogoID);
+        msleep(50);
+
+        uint8_t ImageHeader[54];
+        int BufferRead = 54;
+        int BufferIndex = 0;
+        uint8_t *ImageBuffer = (uint8_t *)LogoAddress;
+
+        while (BufferRead > 0)
+        {
+            ImageHeader[BufferIndex] = *ImageBuffer;
+            ImageBuffer++;
+            BufferIndex++;
+            BufferRead--;
+        }
+
+        int ImageWidth = *(int *)&ImageHeader[18];
+        int ImageHeight = *(int *)&ImageHeader[22];
+
+        uint8_t *ImageData = (uint8_t *)LogoAddress;
+        ImageData += *(int *)&ImageHeader[10];
+
+        for (int i = ImageHeight; 0 < i; i--)
+            for (int j = 0; j < (ImageWidth * ImageHeight / ImageHeight); j++)
+                for (int g = 2; 0 <= g; g--)
+                    ((uint8_t *)FBAddress)[((j + (i * FBWidth)) * 4 + ((((FBWidth / 2) - ImageWidth / 2) + ((FBHeight / 2) - ImageHeight) * FBWidth) * 4)) + g] = ImageData[((j * ImageWidth) / (ImageWidth * ImageHeight / ImageHeight) + (((ImageHeight - i) * ImageHeight) / ImageHeight) * ImageWidth) * ((*(short *)&ImageHeader[28]) / 8) + g];
+
+        switch (LogoID)
+        {
+        case 1:
+            LogoAddress = (uint64_t)&_binary_files_fennix016_bmp_start;
+            LogoID = 2;
+            goto RedrawLogo;
+        case 2:
+            LogoAddress = (uint64_t)&_binary_files_fennix017_bmp_start;
+            LogoID = 3;
+            goto RedrawLogo;
+        case 3:
+            LogoAddress = (uint64_t)&_binary_files_fennix018_bmp_start;
+            LogoID = 4;
+            goto RedrawLogo;
+        case 4:
+            LogoAddress = (uint64_t)&_binary_files_fennix019_bmp_start;
+            LogoID = 5;
+            goto RedrawLogo;
+        case 5:
+            LogoAddress = (uint64_t)&_binary_files_fennix020_bmp_start;
+            LogoID = 6;
+            goto RedrawLogo;
+        case 6:
+            LogoAddress = (uint64_t)&_binary_files_fennix021_bmp_start;
+            LogoID = 7;
+            goto RedrawLogo;
+        case 7:
+            LogoAddress = (uint64_t)&_binary_files_fennix022_bmp_start;
+            LogoID = 8;
+            goto RedrawLogo;
+        case 8:
+            LogoAddress = (uint64_t)&_binary_files_fennix023_bmp_start;
+            LogoID = 9;
+            goto RedrawLogo;
+        case 9:
+            LogoAddress = (uint64_t)&_binary_files_fennix024_bmp_start;
+            LogoID = 10;
+            goto RedrawLogo;
+        case 10:
+            LogoAddress = (uint64_t)&_binary_files_fennix025_bmp_start;
+            LogoID = 11;
+            goto RedrawLogo;
+        case 11:
+            break;
+        }
+    }
+
+    RedrawProgressBar:
+    {
+        msleep(50);
+        for (int y = BootBarYSize - 10; y < BootBarYSize + 1; y++)
+            for (int x = BootBarStart; x < BootBarEnd + 1; x++)
+                BootDisplay->SetPixel(x, y, PBColor);
+
+        if (PBColor > 0x0)
+        {
+            PBColor -= 0x111111;
+            goto RedrawProgressBar;
+        }
+    }
+
+        LeaveCriticalSection;
     }
 
     Screen::Screen()

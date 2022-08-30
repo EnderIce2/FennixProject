@@ -35,6 +35,8 @@ GlobalBootParams *bootparams = nullptr;
 SysFlags *sysflags = nullptr;
 uint8_t kernel_stack[STACK_SIZE];
 
+bool ShowRecoveryScreen = false;
+
 Xalloc::AllocatorV1 *UserAllocator = nullptr; // TODO: Fix this allocator or modify liballoc11
 
 void KernelInit();
@@ -114,10 +116,9 @@ void initializeKernelFlags()
         sysflags->monotasking = false;
 }
 
-bool ShowRecoveryScreen = false;
-
 void KernelTask()
 {
+    BS->Progress(100);
 #ifdef DEBUG
     debug("Hello World!");
     printf("This is a text to test if the OS is working properly.\n");
@@ -144,13 +145,12 @@ void KernelTask()
     printf("%s", cpu_get_info());
 #endif
 
-    // for now i'll not load this.
     if (CurrentTaskingMode != TaskingMode::Mono)
         kdrv = new Driver::KernelDriver;
 
     nimgr->StartService();
 
-    BS->Progress(100);
+    BS->FadeLogo();
 
     if (ShowRecoveryScreen)
         new SystemRecovery::Recovery;
