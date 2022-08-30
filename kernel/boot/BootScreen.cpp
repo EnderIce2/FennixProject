@@ -17,14 +17,17 @@ using namespace DisplayDriver;
 BootScreen::Screen *BS = nullptr;
 
 // black
+extern uint64_t _binary_files_fennix000_bmp_end;
+extern uint64_t _binary_files_fennix000_bmp_size;
+extern uint64_t _binary_files_fennix000_bmp_start;
+
+// slide animation
 extern uint64_t _binary_files_fennix001_bmp_end;
 extern uint64_t _binary_files_fennix001_bmp_size;
 extern uint64_t _binary_files_fennix001_bmp_start;
 extern uint64_t _binary_files_fennix002_bmp_end;
 extern uint64_t _binary_files_fennix002_bmp_size;
 extern uint64_t _binary_files_fennix002_bmp_start;
-
-// slide animation
 extern uint64_t _binary_files_fennix003_bmp_end;
 extern uint64_t _binary_files_fennix003_bmp_size;
 extern uint64_t _binary_files_fennix003_bmp_start;
@@ -55,19 +58,19 @@ extern uint64_t _binary_files_fennix011_bmp_start;
 extern uint64_t _binary_files_fennix012_bmp_end;
 extern uint64_t _binary_files_fennix012_bmp_size;
 extern uint64_t _binary_files_fennix012_bmp_start;
+
+// logo
 extern uint64_t _binary_files_fennix013_bmp_end;
 extern uint64_t _binary_files_fennix013_bmp_size;
 extern uint64_t _binary_files_fennix013_bmp_start;
+
+// fade
 extern uint64_t _binary_files_fennix014_bmp_end;
 extern uint64_t _binary_files_fennix014_bmp_size;
 extern uint64_t _binary_files_fennix014_bmp_start;
-
-// logo
 extern uint64_t _binary_files_fennix015_bmp_end;
 extern uint64_t _binary_files_fennix015_bmp_size;
 extern uint64_t _binary_files_fennix015_bmp_start;
-
-// fade
 extern uint64_t _binary_files_fennix016_bmp_end;
 extern uint64_t _binary_files_fennix016_bmp_size;
 extern uint64_t _binary_files_fennix016_bmp_start;
@@ -89,15 +92,6 @@ extern uint64_t _binary_files_fennix021_bmp_start;
 extern uint64_t _binary_files_fennix022_bmp_end;
 extern uint64_t _binary_files_fennix022_bmp_size;
 extern uint64_t _binary_files_fennix022_bmp_start;
-extern uint64_t _binary_files_fennix023_bmp_end;
-extern uint64_t _binary_files_fennix023_bmp_size;
-extern uint64_t _binary_files_fennix023_bmp_start;
-extern uint64_t _binary_files_fennix024_bmp_end;
-extern uint64_t _binary_files_fennix024_bmp_size;
-extern uint64_t _binary_files_fennix024_bmp_start;
-extern uint64_t _binary_files_fennix025_bmp_end;
-extern uint64_t _binary_files_fennix025_bmp_size;
-extern uint64_t _binary_files_fennix025_bmp_start;
 
 namespace BootScreen
 {
@@ -206,32 +200,6 @@ namespace BootScreen
             int LogoID = 1;
             trace("Displaying kernel logo...");
 
-            debug("bmp 001 %#lx", &_binary_files_fennix001_bmp_start);
-            debug("bmp 002 %#lx", &_binary_files_fennix002_bmp_start);
-            debug("bmp 003 %#lx", &_binary_files_fennix003_bmp_start);
-            debug("bmp 004 %#lx", &_binary_files_fennix004_bmp_start);
-            debug("bmp 005 %#lx", &_binary_files_fennix005_bmp_start);
-            debug("bmp 006 %#lx", &_binary_files_fennix006_bmp_start);
-            debug("bmp 007 %#lx", &_binary_files_fennix007_bmp_start);
-            debug("bmp 008 %#lx", &_binary_files_fennix008_bmp_start);
-            debug("bmp 009 %#lx", &_binary_files_fennix009_bmp_start);
-            debug("bmp 010 %#lx", &_binary_files_fennix010_bmp_start);
-            debug("bmp 011 %#lx", &_binary_files_fennix011_bmp_start);
-            debug("bmp 012 %#lx", &_binary_files_fennix012_bmp_start);
-            debug("bmp 013 %#lx", &_binary_files_fennix013_bmp_start);
-            debug("bmp 014 %#lx", &_binary_files_fennix014_bmp_start);
-            debug("bmp 015 %#lx", &_binary_files_fennix015_bmp_start);
-            debug("bmp 016 %#lx", &_binary_files_fennix016_bmp_start);
-            debug("bmp 017 %#lx", &_binary_files_fennix017_bmp_start);
-            debug("bmp 018 %#lx", &_binary_files_fennix018_bmp_start);
-            debug("bmp 019 %#lx", &_binary_files_fennix019_bmp_start);
-            debug("bmp 020 %#lx", &_binary_files_fennix020_bmp_start);
-            debug("bmp 021 %#lx", &_binary_files_fennix021_bmp_start);
-            debug("bmp 022 %#lx", &_binary_files_fennix022_bmp_start);
-            debug("bmp 023 %#lx", &_binary_files_fennix023_bmp_start);
-            debug("bmp 024 %#lx", &_binary_files_fennix024_bmp_start);
-            debug("bmp 025 %#lx", &_binary_files_fennix025_bmp_start);
-
         RedrawLogo:
             trace("Drawing logo %d", LogoID);
             msleep(50);
@@ -315,14 +283,6 @@ namespace BootScreen
                 LogoID = 14;
                 goto RedrawLogo;
             case 14:
-                LogoAddress = (uint64_t)&_binary_files_fennix014_bmp_start;
-                LogoID = 15;
-                goto RedrawLogo;
-            case 15:
-                LogoAddress = (uint64_t)&_binary_files_fennix015_bmp_start;
-                LogoID = 16;
-                goto RedrawLogo;
-            case 16:
                 break;
             }
         }
@@ -404,43 +364,43 @@ namespace BootScreen
         switch (LogoID)
         {
         case 1:
-            LogoAddress = (uint64_t)&_binary_files_fennix016_bmp_start;
+            LogoAddress = (uint64_t)&_binary_files_fennix014_bmp_start;
             LogoID = 2;
             goto RedrawLogo;
         case 2:
-            LogoAddress = (uint64_t)&_binary_files_fennix017_bmp_start;
+            LogoAddress = (uint64_t)&_binary_files_fennix015_bmp_start;
             LogoID = 3;
             goto RedrawLogo;
         case 3:
-            LogoAddress = (uint64_t)&_binary_files_fennix018_bmp_start;
+            LogoAddress = (uint64_t)&_binary_files_fennix016_bmp_start;
             LogoID = 4;
             goto RedrawLogo;
         case 4:
-            LogoAddress = (uint64_t)&_binary_files_fennix019_bmp_start;
+            LogoAddress = (uint64_t)&_binary_files_fennix017_bmp_start;
             LogoID = 5;
             goto RedrawLogo;
         case 5:
-            LogoAddress = (uint64_t)&_binary_files_fennix020_bmp_start;
+            LogoAddress = (uint64_t)&_binary_files_fennix018_bmp_start;
             LogoID = 6;
             goto RedrawLogo;
         case 6:
-            LogoAddress = (uint64_t)&_binary_files_fennix021_bmp_start;
+            LogoAddress = (uint64_t)&_binary_files_fennix019_bmp_start;
             LogoID = 7;
             goto RedrawLogo;
         case 7:
-            LogoAddress = (uint64_t)&_binary_files_fennix022_bmp_start;
+            LogoAddress = (uint64_t)&_binary_files_fennix020_bmp_start;
             LogoID = 8;
             goto RedrawLogo;
         case 8:
-            LogoAddress = (uint64_t)&_binary_files_fennix023_bmp_start;
+            LogoAddress = (uint64_t)&_binary_files_fennix021_bmp_start;
             LogoID = 9;
             goto RedrawLogo;
         case 9:
-            LogoAddress = (uint64_t)&_binary_files_fennix024_bmp_start;
+            LogoAddress = (uint64_t)&_binary_files_fennix022_bmp_start;
             LogoID = 10;
             goto RedrawLogo;
         case 10:
-            LogoAddress = (uint64_t)&_binary_files_fennix025_bmp_start;
+            LogoAddress = (uint64_t)&_binary_files_fennix000_bmp_start;
             LogoID = 11;
             goto RedrawLogo;
         case 11:
