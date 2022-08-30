@@ -161,7 +161,7 @@ namespace Tasking
         TimerOneShot(Vector, Miliseconds);
     }
 
-    extern "C" void ProcessDoExit(uint64_t Code)
+    extern "C" void ThreadDoExit(uint64_t Code)
     {
         EnterCriticalSection;
         CurrentCPU->CurrentThread->Status = STATUS::Terminated;
@@ -302,7 +302,7 @@ namespace Tasking
             thread->Registers.rflags.ID = 1;
             thread->Stack = KernelStackAllocator->AllocateStack();
             thread->Registers.STACK = (uint64_t)thread->Stack;
-            POKE(uint64_t, thread->Registers.rsp) = (uint64_t)ProcessDoExit;
+            POKE(uint64_t, thread->Registers.rsp) = (uint64_t)ThreadDoExit;
             break;
         case ELEVATION::User:
             TrustToken(thread->Security.Token, false, thread->ID, TokenTrustLevel::Untrusted);
@@ -316,7 +316,7 @@ namespace Tasking
             thread->Stack = KernelStackAllocator->AllocateStack(true);
             thread->Registers.STACK = (uint64_t)thread->Stack;
             /*
-                We can't add ProcessDoExit at the end of the stack because it will
+                We can't add ThreadDoExit at the end of the stack because it will
                 trigger a page fault or invalid general protection fault exception (because
                 it will execute kernel code ofc).
                 We need to leave the libc's crt to make a syscall when the thread is exited.
