@@ -2,10 +2,10 @@
 
 #include <filesystem.h>
 #include <critical.hpp>
+#include <msexec.h>
 #include <debug.h>
 #include <heap.h>
 #include <elf.h>
-#include <msexec.h>
 
 #include "../cpu/smp.hpp"
 
@@ -14,28 +14,48 @@ using namespace FileSystem;
 
 int CurrentTaskingMode = TaskingMode::None;
 
-PCB *nullpcb = nullptr;
-TCB *nulltcb = nullptr;
-
-// TODO: add actual support for this
-void fillemptycbs()
+PCB *ConvertTaskCBToPCB(TaskControlBlock *task)
 {
-    static int once;
-    if (!once++)
-    {
-        if (CurrentTaskingMode == TaskingMode::Multi)
-            return;
-        string StubName = "Mono Task";
-        nullpcb = new PCB;
-        nullpcb->ID = 0;
-        nullpcb->Parent = nullptr;
-        memcpy(nullpcb->Name, StubName, sizeof(nullpcb->Name));
+    static PCB pcb = {
+        .ID = task->id,
+        .Name = {'\0'},
+        .Status = STATUS::UnknownStatus,
+        .Elevation = task->UserMode ? ELEVATION::User : ELEVATION::Kernel,
+        .ExitCode = 0,
+        .Offset = 0,
+        .Parent = nullptr,
+        .PageTable = task->pml4,
+        .Info = {},
+        .Security = {},
+        .Threads = {},
+        .Children = {},
+        .Checksum = PROCESS_CHECKSUM};
+    memcpy(pcb.Name, task->name, sizeof(pcb.Name));
+    return &pcb;
+}
 
-        nulltcb = new TCB;
-        nulltcb->ID = 0;
-        nulltcb->Parent = nullpcb;
-        memcpy(nulltcb->Name, StubName, sizeof(nulltcb->Name));
-    }
+TCB *ConvertTaskCBToTCB(TaskControlBlock *task)
+{
+    static TCB tcb = {
+        .ID = task->id,
+        .Name = {'\0'},
+        .Status = STATUS::UnknownStatus,
+        .ExitCode = 0,
+        .Parent = nullptr,
+        .Stack = 0x0,
+        .FXRegion = 0,
+        .Registers = {},
+        .fs = 0,
+        .gs = 0,
+        .cs = 0,
+        .ss = 0,
+        .ds = 0,
+        .es = 0,
+        .Info = {},
+        .Security = {},
+        .Checksum = THREAD_CHECKSUM};
+    memcpy(tcb.Name, task->name, sizeof(tcb.Name));
+    return &tcb;
 }
 
 PCB *SysGetProcessByPID(uint64_t ID)
@@ -47,7 +67,22 @@ PCB *SysGetProcessByPID(uint64_t ID)
         static int once = 0;
         if (!once++)
             err("The current tasking mode does not support the request.");
-        return nullpcb;
+        static PCB pcb = {
+            .ID = 0,
+            .Name = {'\0'},
+            .Status = STATUS::UnknownStatus,
+            .Elevation = ELEVATION::UnknownElevation,
+            .ExitCode = 0,
+            .Offset = 0,
+            .Parent = nullptr,
+            .PageTable = {},
+            .Info = {},
+            .Security = {},
+            .Threads = {},
+            .Children = {},
+            .Checksum = PROCESS_CHECKSUM};
+        memcpy(pcb.Name, "Unknown Task", sizeof(pcb.Name));
+        return &pcb;
     }
     case TaskingMode::Multi:
     {
@@ -79,7 +114,26 @@ TCB *SysGetThreadByTID(uint64_t ID)
         static int once = 0;
         if (!once++)
             err("The current tasking mode does not support the request.");
-        return nulltcb;
+        static TCB tcb = {
+            .ID = 0,
+            .Name = {'\0'},
+            .Status = STATUS::UnknownStatus,
+            .ExitCode = 0,
+            .Parent = nullptr,
+            .Stack = 0x0,
+            .FXRegion = 0,
+            .Registers = {},
+            .fs = 0,
+            .gs = 0,
+            .cs = 0,
+            .ss = 0,
+            .ds = 0,
+            .es = 0,
+            .Info = {},
+            .Security = {},
+            .Checksum = THREAD_CHECKSUM};
+        memcpy(tcb.Name, "Unknown Task", sizeof(tcb.Name));
+        return &tcb;
     }
     case TaskingMode::Multi:
     {
@@ -111,12 +165,7 @@ PCB *SysGetCurrentProcess()
     switch (CurrentTaskingMode)
     {
     case TaskingMode::Mono:
-    {
-        static int once = 0;
-        if (!once++)
-            err("The current tasking mode does not support the request.");
-        return nullpcb;
-    }
+        return ConvertTaskCBToPCB(monot->GetCurrentTask());
     case TaskingMode::Multi:
         return CurrentCPU->CurrentProcess;
     default:
@@ -129,12 +178,7 @@ TCB *SysGetCurrentThread()
     switch (CurrentTaskingMode)
     {
     case TaskingMode::Mono:
-    {
-        static int once = 0;
-        if (!once++)
-            err("The current tasking mode does not support the request.");
-        return nulltcb;
-    }
+        return ConvertTaskCBToTCB(monot->GetCurrentTask());
     case TaskingMode::Multi:
         return CurrentCPU->CurrentThread;
     default:
@@ -148,9 +192,7 @@ void SysSetProcessPriority(int Priority)
     {
     case TaskingMode::Mono:
     {
-        static int once = 0;
-        if (!once++)
-            err("The current tasking mode does not support the request.");
+        trace("Priority change not supported in current tasking mode. Ignoring...");
         return;
     }
     case TaskingMode::Multi:
@@ -167,9 +209,7 @@ int SysGetProcessPriority()
     {
     case TaskingMode::Mono:
     {
-        static int once = 0;
-        if (!once++)
-            err("The current tasking mode does not support the request.");
+        trace("Priority get not supported in current tasking mode. Ignoring...");
         return 0;
     }
     case TaskingMode::Multi:
@@ -185,9 +225,7 @@ void SysSetThreadPriority(int Priority)
     {
     case TaskingMode::Mono:
     {
-        static int once = 0;
-        if (!once++)
-            err("The current tasking mode does not support the request.");
+        trace("Priority change not supported in current tasking mode. Ignoring...");
         return;
     }
     case TaskingMode::Multi:
@@ -204,9 +242,7 @@ int SysGetThreadPriority()
     {
     case TaskingMode::Mono:
     {
-        static int once = 0;
-        if (!once++)
-            err("The current tasking mode does not support the request.");
+        trace("Priority get not supported in current tasking mode. Ignoring...");
         return 0;
     }
     case TaskingMode::Multi:
@@ -225,7 +261,22 @@ PCB *SysCreateProcess(const char *Name, ELEVATION Elevation)
         static int once = 0;
         if (!once++)
             err("The current tasking mode does not support the request.");
-        return nullpcb;
+        static PCB pcb = {
+            .ID = 0,
+            .Name = {'\0'},
+            .Status = STATUS::UnknownStatus,
+            .Elevation = ELEVATION::UnknownElevation,
+            .ExitCode = 0,
+            .Offset = 0,
+            .Parent = nullptr,
+            .PageTable = {},
+            .Info = {},
+            .Security = {},
+            .Threads = {},
+            .Children = {},
+            .Checksum = PROCESS_CHECKSUM};
+        memcpy(pcb.Name, "Unknown Task", sizeof(pcb.Name));
+        return &pcb;
     }
     case TaskingMode::Multi:
         return mt->CreateProcess(SysGetCurrentProcess(), (char *)Name, Elevation);
@@ -243,7 +294,26 @@ TCB *SysCreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t arg0, ui
         static int once = 0;
         if (!once++)
             err("The current tasking mode does not support the request.");
-        return nulltcb;
+        static TCB tcb = {
+            .ID = 0,
+            .Name = {'\0'},
+            .Status = STATUS::UnknownStatus,
+            .ExitCode = 0,
+            .Parent = nullptr,
+            .Stack = 0x0,
+            .FXRegion = 0,
+            .Registers = {},
+            .fs = 0,
+            .gs = 0,
+            .cs = 0,
+            .ss = 0,
+            .ds = 0,
+            .es = 0,
+            .Info = {},
+            .Security = {},
+            .Checksum = THREAD_CHECKSUM};
+        memcpy(tcb.Name, "Unknown Task", sizeof(tcb.Name));
+        return &tcb;
     }
     case TaskingMode::Multi:
         return mt->CreateThread(Parent, InstructionPointer, arg0, arg1);
@@ -255,7 +325,6 @@ TCB *SysCreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t arg0, ui
 // TODO: implement for primitive tasking if enabled to suspend the current task and run the created one
 PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, ELEVATION Elevation)
 {
-    fillemptycbs();
     /* ... Open file ... Parse file ... map elf file ... get rip etc ... */
     EnterCriticalSection;
     FILE *file = vfs->Open(File);
