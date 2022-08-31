@@ -9,61 +9,15 @@
 #include <task.h>
 #include <asm.h>
 
-// TODO: fully port the syscall handler to inline assembly
-__attribute__((naked, used, aligned(0x1000))) void syscall_handler_helper()
-{
-    EnterCriticalSection;
-    asm("swapgs\n");
-    asm("movq %rsp, %gs:0x8\n");
-    // asm("movq %gs:0x0, %rsp\n");
+/*
+    If this is going to support multiple operating systems,
+    fristly we need to rewrite "SystemCallsHelper.asm" file.
 
-    asm("pushq $0x1b\n");
-    asm("pushq %gs:0x8\n");
-    asm("pushq %r11\n");
-    asm("pushq $0x23\n");
-    asm("pushq %rcx\n");
-    asm("cld\n");
-
-    asm("pushq %rax\n");
-    asm("pushq %rbx\n");
-    asm("pushq %rcx\n");
-    asm("pushq %rdx\n");
-    asm("pushq %rsi\n");
-    asm("pushq %rdi\n");
-    asm("pushq %rbp\n");
-    asm("pushq %r8\n");
-    asm("pushq %r9\n");
-    asm("pushq %r10\n");
-    asm("pushq %r11\n");
-    asm("pushq %r12\n");
-    asm("pushq %r13\n");
-    asm("pushq %r14\n");
-    asm("pushq %r15\n");
-
-    asm("movq %rsp, %rdi\n");
-    asm("movq $0, %rbp\n");
-    asm("call syscall_handler\n");
-
-    asm("popq %r15\n");
-    asm("popq %r14\n");
-    asm("popq %r13\n");
-    asm("popq %r12\n");
-    asm("popq %r11\n");
-    asm("popq %r10\n");
-    asm("popq %r9\n");
-    asm("popq %r8\n");
-    asm("popq %rbp\n");
-    asm("popq %rdi\n");
-    asm("popq %rsi\n");
-    asm("popq %rdx\n");
-    asm("popq %rcx\n");
-    asm("popq %rbx\n");
-
-    asm("mov %gs:0x8, %rsp\n");
-    asm("swapgs\n");
-    asm("sysretq\n");
-    LeaveCriticalSection;
-}
+    How syscalls are called: https://github.com/torvalds/linux/blob/master/tools/include/nolibc/arch-x86_64.h#L68
+    Syscalls assembly entry: https://github.com/torvalds/linux/blob/master/arch/x86/entry/entry_64.S#L87
+    Syscalls C entry: https://github.com/torvalds/linux/blob/master/arch/x86/entry/common.c#L73
+    And then how it calls the function: https://github.com/torvalds/linux/blob/master/arch/x86/entry/common.c#L40
+*/
 
 extern "C" uint64_t syscall_handler(SyscallsRegs *regs)
 {
