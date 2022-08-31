@@ -146,6 +146,32 @@ enum Elf_Ident
     EI_PAD = 9         // Padding
 };
 
+enum Elf_OSABI
+{
+    ELFOSABI_NONE = 0,
+    ELFOSABI_HPUX = 1,
+    ELFOSABI_NETBSD = 2,
+    ELFOSABI_LINUX = 3,
+    ELFOSABI_HURD = 4,
+    ELFOSABI_SOLARIS = 6,
+    ELFOSABI_AIX = 7,
+    ELFOSABI_IRIX = 8,
+    ELFOSABI_FREEBSD = 9,
+    ELFOSABI_TRU64 = 10,
+    ELFOSABI_MODESTO = 11,
+    ELFOSABI_OPENBSD = 12,
+    ELFOSABI_OPENVMS = 13,
+    ELFOSABI_NSK = 14,
+    ELFOSABI_AROS = 15,
+    ELFOSABI_FENIXOS = 16, /* Wait... what? */
+    ELFOSABI_CLOUDABI = 17,
+    ELFOSABI_OPENVOS = 18,
+    ELFOSABI_C6000_ELFABI = 64,
+    ELFOSABI_C6000_LINUX = 65,
+    ELFOSABI_ARM = 97,
+    ELFOSABI_STANDALONE = 255
+};
+
 enum Elf_Type
 {
     ET_NONE = 0,        // Unknown Type
