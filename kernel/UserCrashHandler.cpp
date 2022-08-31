@@ -1,10 +1,11 @@
 #include <sys.h>
-#include <types.h>
+
+#include <internal_task.h>
 #include <display.h>
 #include <string.h>
-#include <asm.h>
+#include <types.h>
 #include <heap.h>
-#include <internal_task.h>
+#include <asm.h>
 
 static const char *pagefault_message[] = {
     "Supervisory process tried to read a non-present page entry",
@@ -177,4 +178,6 @@ void TriggerUserModeCrash(TrapFrame *regs)
     printf_("Usermode thread %s(%ld) crashed! Check the serial port (COM1) for more info.\n", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID);
 #endif
     STI;
+    if (CurrentTaskingMode == TaskingMode::Mono)
+        Tasking::monot->PopTask();
 }
