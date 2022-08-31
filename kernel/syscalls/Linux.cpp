@@ -4,348 +4,2026 @@
 
 #include "../../libc/include/syscalls.h"
 
-static uint64_t internal_unimpl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+#define internal_unimpl(a, b, c, d, e, f, g)                                       \
+    {                                                                              \
+        fixme("Unimplemented Syscall: %lld %lld %lld %lld %lld %lld %lld", a, b, c, d, e, f, g); \
+    }
+
+static uint64_t sys_read(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
 {
-    fixme("Unimplemented Syscall: %d %d %d %d %d %d %d", a, b, c, d, e, f, g);
+    internal_unimpl(a, b, c, d, e, f, g);
     return -1;
 }
 
-static uint64_t sys_read(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_write(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_open(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_close(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_stat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fstat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_lstat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_poll(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_lseek(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mmap(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mprotect(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_munmap(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_brk(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_rt_sigaction(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_rt_sigprocmask(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_rt_sigreturn(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_ioctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_pread64(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_pwrite64(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_readv(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_writev(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_access(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_pipe(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_select(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sched_yield(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mremap(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_msync(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mincore(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_madvise(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_shmget(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_shmat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_shmctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_dup(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_dup2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_pause(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_nanosleep(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getitimer(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_alarm(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setitimer(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getpid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sendfile(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_socket(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_connect(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_accept(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sendto(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_recvfrom(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sendmsg(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_recvmsg(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_shutdown(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_bind(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_listen(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getsockname(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getpeername(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_socketpair(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setsockopt(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getsockopt(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_clone(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fork(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_vfork(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_execve(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_exit(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_wait4(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_kill(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_uname(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_semget(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_semop(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_semctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_shmdt(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_msgget(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_msgsnd(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_msgrcv(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_msgctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fcntl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_flock(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fsync(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fdatasync(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_truncate(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_ftruncate(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getdents(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getcwd(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_chdir(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fchdir(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_rename(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mkdir(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_rmdir(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_creat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_link(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_unlink(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_symlink(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_readlink(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_chmod(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fchmod(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_chown(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fchown(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_lchown(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_umask(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_gettimeofday(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getrlimit(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getrusage(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sysinfo(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_times(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_ptrace(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getuid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_syslog(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getgid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setuid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setgid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_geteuid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getegid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setpgid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getppid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getpgrp(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setsid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setreuid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setregid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getgroups(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setgroups(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setresuid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getresuid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setresgid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getresgid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getpgid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setfsuid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setfsgid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getsid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_capget(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_capset(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_rt_sigpending(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_rt_sigtimedwait(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_rt_sigqueueinfo(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_rt_sigsuspend(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sigaltstack(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_utime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mknod(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_uselib(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_personality(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_ustat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_statfs(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fstatfs(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sysfs(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getpriority(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setpriority(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sched_setparam(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sched_getparam(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sched_setscheduler(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sched_getscheduler(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sched_get_priority_max(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sched_get_priority_min(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sched_rr_get_interval(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mlock(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_munlock(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mlockall(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_munlockall(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_vhangup(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_modify_ldt(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_pivot_root(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys__sysctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_prctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_arch_prctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_adjtimex(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setrlimit(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_chroot(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sync(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_acct(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_settimeofday(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mount(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_umount2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_swapon(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_swapoff(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_reboot(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sethostname(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setdomainname(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_iopl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_ioperm(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_create_module(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_init_module(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_delete_module(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_get_kernel_syms(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_query_module(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_quotactl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_nfsservctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getpmsg(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_putpmsg(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_afs_syscall(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_tuxcall(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_security(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_gettid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_readahead(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_lsetxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fsetxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_lgetxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fgetxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_listxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_llistxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_flistxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_removexattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_lremovexattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fremovexattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_tkill(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_time(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_futex(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sched_setaffinity(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sched_getaffinity(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_set_thread_area(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_io_setup(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_io_destroy(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_io_getevents(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_io_submit(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_io_cancel(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_get_thread_area(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_lookup_dcookie(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_epoll_create(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_epoll_ctl_old(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_epoll_wait_old(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_remap_file_pages(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getdents64(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_set_tid_address(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_restart_syscall(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_semtimedop(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fadvise64(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_timer_create(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_timer_settime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_timer_gettime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_timer_getoverrun(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_timer_delete(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_clock_settime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_clock_gettime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_clock_getres(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_clock_nanosleep(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_exit_group(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_epoll_wait(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_epoll_ctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_tgkill(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_utimes(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_vserver(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mbind(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_set_mempolicy(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_get_mempolicy(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mq_open(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mq_unlink(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mq_timedsend(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mq_timedreceive(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mq_notify(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mq_getsetattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_kexec_load(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_waitid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_add_key(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_request_key(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_keyctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_ioprio_set(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_ioprio_get(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_inotify_init(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_inotify_add_watch(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_inotify_rm_watch(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_migrate_pages(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_openat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mkdirat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_mknodat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fchownat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_futimesat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_newfstatat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_unlinkat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_renameat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_linkat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_symlinkat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_readlinkat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fchmodat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_faccessat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_pselect6(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_ppoll(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_unshare(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_set_robust_list(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_get_robust_list(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_splice(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_tee(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sync_file_range(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_vmsplice(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_move_pages(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_utimensat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_epoll_pwait(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_signalfd(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_timerfd_create(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_eventfd(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fallocate(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_timerfd_settime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_timerfd_gettime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_accept4(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_signalfd4(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_eventfd2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_epoll_create1(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_dup3(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_pipe2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_inotify_init1(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_preadv(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_pwritev(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_rt_tgsigqueueinfo(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_perf_event_open(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_recvmmsg(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fanotify_init(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_fanotify_mark(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_prlimit64(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_name_to_handle_at(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_open_by_handle_at(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_clock_adjtime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_syncfs(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sendmmsg(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_setns(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getcpu(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_process_vm_readv(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_process_vm_writev(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_kcmp(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_finit_module(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sched_setattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_sched_getattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_renameat2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_seccomp(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_getrandom(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_memfd_create(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_kexec_file_load(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t sys_bpf(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t stub_execveat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t userfaultfd(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t membarrier(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t mlock2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t copy_file_range(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t preadv2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t pwritev2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t pkey_mprotect(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t pkey_alloc(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t pkey_free(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t statx(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t io_pgetevents(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t rseq(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
-static uint64_t pkey_mprotect_(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g) { return internal_unimpl(a, b, c, d, e, f, g); }
+static uint64_t sys_write(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_open(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_close(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_stat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fstat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_lstat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_poll(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_lseek(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mmap(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mprotect(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_munmap(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_brk(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_rt_sigaction(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_rt_sigprocmask(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_rt_sigreturn(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_ioctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_pread64(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_pwrite64(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_readv(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_writev(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_access(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_pipe(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_select(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sched_yield(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mremap(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_msync(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mincore(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_madvise(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_shmget(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_shmat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_shmctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_dup(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_dup2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_pause(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_nanosleep(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getitimer(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_alarm(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setitimer(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getpid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sendfile(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_socket(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_connect(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_accept(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sendto(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_recvfrom(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sendmsg(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_recvmsg(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_shutdown(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_bind(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_listen(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getsockname(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getpeername(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_socketpair(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setsockopt(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getsockopt(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_clone(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fork(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_vfork(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static int sys_execve(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_exit(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_wait4(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_kill(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_uname(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_semget(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_semop(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_semctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_shmdt(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_msgget(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_msgsnd(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_msgrcv(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_msgctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fcntl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_flock(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fsync(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fdatasync(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_truncate(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_ftruncate(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getdents(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getcwd(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_chdir(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fchdir(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_rename(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mkdir(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_rmdir(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_creat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_link(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_unlink(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_symlink(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_readlink(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_chmod(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fchmod(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_chown(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fchown(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_lchown(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_umask(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_gettimeofday(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getrlimit(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getrusage(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sysinfo(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_times(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_ptrace(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getuid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_syslog(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getgid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setuid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setgid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_geteuid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getegid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setpgid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getppid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getpgrp(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setsid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setreuid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setregid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getgroups(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setgroups(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setresuid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getresuid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setresgid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getresgid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getpgid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setfsuid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setfsgid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getsid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_capget(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_capset(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_rt_sigpending(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_rt_sigtimedwait(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_rt_sigqueueinfo(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_rt_sigsuspend(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sigaltstack(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_utime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mknod(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_uselib(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_personality(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_ustat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_statfs(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fstatfs(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sysfs(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getpriority(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setpriority(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sched_setparam(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sched_getparam(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sched_setscheduler(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sched_getscheduler(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sched_get_priority_max(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sched_get_priority_min(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sched_rr_get_interval(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mlock(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_munlock(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mlockall(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_munlockall(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_vhangup(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_modify_ldt(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_pivot_root(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys__sysctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_prctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_arch_prctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_adjtimex(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setrlimit(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_chroot(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sync(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_acct(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_settimeofday(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mount(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_umount2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_swapon(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_swapoff(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_reboot(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sethostname(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setdomainname(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_iopl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_ioperm(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_create_module(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_init_module(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_delete_module(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_get_kernel_syms(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_query_module(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_quotactl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_nfsservctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getpmsg(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_putpmsg(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_afs_syscall(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_tuxcall(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_security(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_gettid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_readahead(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_lsetxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fsetxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_lgetxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fgetxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_listxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_llistxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_flistxattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_removexattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_lremovexattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fremovexattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_tkill(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_time(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_futex(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sched_setaffinity(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sched_getaffinity(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_set_thread_area(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_io_setup(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_io_destroy(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_io_getevents(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_io_submit(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_io_cancel(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_get_thread_area(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_lookup_dcookie(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_epoll_create(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_epoll_ctl_old(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_epoll_wait_old(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_remap_file_pages(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getdents64(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_set_tid_address(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_restart_syscall(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_semtimedop(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fadvise64(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_timer_create(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_timer_settime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_timer_gettime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_timer_getoverrun(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_timer_delete(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_clock_settime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_clock_gettime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_clock_getres(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_clock_nanosleep(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_exit_group(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_epoll_wait(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_epoll_ctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_tgkill(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_utimes(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_vserver(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mbind(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_set_mempolicy(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_get_mempolicy(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mq_open(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mq_unlink(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mq_timedsend(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mq_timedreceive(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mq_notify(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mq_getsetattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_kexec_load(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_waitid(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_add_key(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_request_key(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_keyctl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_ioprio_set(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_ioprio_get(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_inotify_init(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_inotify_add_watch(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_inotify_rm_watch(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_migrate_pages(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_openat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mkdirat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_mknodat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fchownat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_futimesat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_newfstatat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_unlinkat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_renameat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_linkat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_symlinkat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_readlinkat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fchmodat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_faccessat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_pselect6(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_ppoll(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_unshare(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_set_robust_list(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_get_robust_list(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_splice(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_tee(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sync_file_range(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_vmsplice(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_move_pages(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_utimensat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_epoll_pwait(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_signalfd(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_timerfd_create(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_eventfd(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fallocate(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_timerfd_settime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_timerfd_gettime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_accept4(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_signalfd4(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_eventfd2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_epoll_create1(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_dup3(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_pipe2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_inotify_init1(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_preadv(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_pwritev(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_rt_tgsigqueueinfo(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_perf_event_open(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_recvmmsg(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fanotify_init(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_fanotify_mark(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_prlimit64(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_name_to_handle_at(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_open_by_handle_at(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_clock_adjtime(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_syncfs(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sendmmsg(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_setns(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getcpu(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_process_vm_readv(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_process_vm_writev(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_kcmp(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_finit_module(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sched_setattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_sched_getattr(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_renameat2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_seccomp(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_getrandom(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_memfd_create(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_kexec_file_load(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t sys_bpf(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t stub_execveat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t userfaultfd(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t membarrier(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t mlock2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t copy_file_range(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t preadv2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t pwritev2(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t pkey_mprotect(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t pkey_alloc(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t pkey_free(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t statx(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t io_pgetevents(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t rseq(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
+
+static uint64_t pkey_mprotect_(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+{
+    internal_unimpl(a, b, c, d, e, f, g);
+    return -1;
+}
 
 // Syscalls list: https://filippo.io/linux-syscall-table/ https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/
 
@@ -692,7 +2370,8 @@ uint64_t HandleLinuxSyscalls(SyscallsRegs *regs)
 {
     if (RAX > sizeof(LinuxSyscallsTable))
     {
-        return internal_unimpl(regs->rax, regs->rbx, regs->rcx, regs->rdx, regs->rsi, regs->rdi, regs->rbp);
+        fixme("syscall %lld not implemented", RAX);
+        return -1;
     }
 
     uint64_t (*call)(uint64_t, ...) = reinterpret_cast<uint64_t (*)(uint64_t, ...)>(LinuxSyscallsTable[RAX]);
