@@ -1,6 +1,6 @@
 #pragma once
-#include <types.h>
 #include <interrupts.h>
+#include <types.h>
 #include <heap.h>
 #include <task.h>
 
@@ -39,8 +39,6 @@ namespace Tasking
         enum TaskState state;
         uint64_t SpawnTick;
         uint64_t Year, Month, Day, Hour, Minute, Second;
-        PCB *CompatibiltyProcess;
-        TCB *CompatibiltyThread;
         unsigned int checksum;
     };
 
@@ -73,6 +71,13 @@ namespace Tasking
          * @brief Move to the previous Task and suspending the current
          */
         void PopTask();
+
+        /**
+         * @brief Get the current Task
+         *
+         * @return The current Task
+         */
+        TaskControlBlock *GetCurrentTask();
 
         /**
          * @brief Construct a new Mono Tasking object

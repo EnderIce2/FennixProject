@@ -334,6 +334,8 @@ namespace Tasking
         err("Cannot move to the previous task.");
     }
 
+    TaskControlBlock *Monotasking::GetCurrentTask() { return CurrentTask; }
+
     Monotasking::Monotasking(uint64_t FirstTask)
     {
         for (uint64_t i = 0; i < MAX_TASKS; i++)
