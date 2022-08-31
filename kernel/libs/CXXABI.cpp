@@ -58,9 +58,7 @@ extern "C" int __cxa_atexit(void (*f)(void *), void *objptr, void *dso)
 {
     fixme("__cxa_atexit( %p %p %p ) triggered.", f, objptr, dso);
     if (__atexit_func_count >= ATEXIT_MAX_FUNCS)
-    {
         return -1;
-    }
     __atexit_funcs[__atexit_func_count].destructor_func = f;
     __atexit_funcs[__atexit_func_count].obj_ptr = objptr;
     __atexit_funcs[__atexit_func_count].dso_handle = dso;
@@ -75,23 +73,18 @@ extern "C" void __cxa_finalize(void *f)
     if (!f)
     {
         while (i--)
-        {
             if (__atexit_funcs[i].destructor_func)
-            {
                 (*__atexit_funcs[i].destructor_func)(__atexit_funcs[i].obj_ptr);
-            }
-        }
+
         return;
     }
 
     while (i--)
-    {
         if (__atexit_funcs[i].destructor_func == f)
         {
             (*__atexit_funcs[i].destructor_func)(__atexit_funcs[i].obj_ptr);
             __atexit_funcs[i].destructor_func = 0;
         }
-    }
 }
 
 extern "C" _Unwind_Reason_Code __gxx_personality_v0(int version, _Unwind_Action actions, _Unwind_Exception_Class exception_class, _Unwind_Exception *ue_header, _Unwind_Context *context)
@@ -100,10 +93,7 @@ extern "C" _Unwind_Reason_Code __gxx_personality_v0(int version, _Unwind_Action 
     return _URC_NO_REASON;
 }
 
-extern "C" void _Unwind_Resume(struct _Unwind_Exception *exc)
-{
-    fixme("_Unwind_Resume( %p ) triggered.", exc);
-}
+extern "C" void _Unwind_Resume(struct _Unwind_Exception *exc) { fixme("_Unwind_Resume( %p ) triggered.", exc); }
 
 extern "C" void *__cxa_allocate_exception(uint64_t thrown_size) throw()
 {
@@ -111,30 +101,15 @@ extern "C" void *__cxa_allocate_exception(uint64_t thrown_size) throw()
     return (void *)0;
 }
 
-extern "C" void __cxa_throw(void *thrown_object, void *tinfo, void (*dest)(void *))
-{
-    fixme("__cxa_throw( %p %p %p ) triggered.", thrown_object, tinfo, dest);
-}
+extern "C" void __cxa_throw(void *thrown_object, void *tinfo, void (*dest)(void *)) { fixme("__cxa_throw( %p %p %p ) triggered.", thrown_object, tinfo, dest); }
 
-extern "C" void __cxa_rethrow()
-{
-    fixme("__cxa_rethrow() triggered.");
-}
+extern "C" void __cxa_rethrow() { fixme("__cxa_rethrow() triggered."); }
 
-extern "C" void __cxa_pure_virtual()
-{
-    fixme("__cxa_pure_virtual() triggered.");
-}
+extern "C" void __cxa_pure_virtual() { fixme("__cxa_pure_virtual() triggered."); }
 
-extern "C" void __cxa_throw_bad_array_new_length()
-{
-    fixme("__cxa_throw_bad_array_new_length() triggered.");
-}
+extern "C" void __cxa_throw_bad_array_new_length() { fixme("__cxa_throw_bad_array_new_length() triggered."); }
 
-extern "C" void __cxa_free_exception(void *thrown_exception)
-{
-    fixme("__cxa_free_exception( %p ) triggered.", thrown_exception);
-}
+extern "C" void __cxa_free_exception(void *thrown_exception) { fixme("__cxa_free_exception( %p ) triggered.", thrown_exception); }
 
 #if __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 4)
 extern "C" void *__cxa_begin_catch(void *e) throw()
@@ -146,7 +121,24 @@ extern "C" void *__cxa_begin_catch(void *e)
     return (void *)0;
 }
 
-extern "C" void __cxa_end_catch()
+extern "C" void __cxa_end_catch() { fixme("__cxa_end_catch() triggered."); }
+
+__extension__ typedef int __guard __attribute__((mode(__DI__)));
+
+extern "C" int __cxa_guard_acquire(__guard *);
+extern "C" void __cxa_guard_release(__guard *);
+extern "C" void __cxa_guard_abort(__guard *);
+
+extern "C" int __cxa_guard_acquire(__guard *g)
 {
-    fixme("__cxa_end_catch() triggered.");
+    fixme("__cxa_guard_acquire( %p ) triggered.", g);
+    return !*(char *)(g);
 }
+
+extern "C" void __cxa_guard_release(__guard *g)
+{
+    fixme("__cxa_guard_release( %p ) triggered.", g);
+    *(char *)g = 1;
+}
+
+extern "C" void __cxa_guard_abort(__guard *) { fixme("__cxa_guard_abort( ) triggered."); }
