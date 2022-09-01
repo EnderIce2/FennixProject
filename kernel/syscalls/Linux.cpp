@@ -9,33 +9,33 @@
         fixme("Unimplemented Syscall: %lld %lld %lld %lld %lld %lld %lld", a, b, c, d, e, f, g); \
     }
 
-static uint64_t sys_read(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+static uint64_t sys_read(unsigned int fd, char *buf, size_t count)
 {
-    internal_unimpl(a, b, c, d, e, f, g);
+    fixme("read( %p %p %ld )", fd, buf, count);
     return -1;
 }
 
-static uint64_t sys_write(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+static uint64_t sys_write(unsigned int fd, const char *buf, size_t count)
 {
-    internal_unimpl(a, b, c, d, e, f, g);
+    fixme("write( %p %p %ld )", fd, buf, count);
     return -1;
 }
 
-static uint64_t sys_open(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+static uint64_t sys_open(const char *filename, int flags, unsigned short mode)
 {
-    internal_unimpl(a, b, c, d, e, f, g);
+    fixme("open( %s %d %d )", filename, flags, mode);
     return -1;
 }
 
-static uint64_t sys_close(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+static uint64_t sys_close(unsigned int fd)
 {
-    internal_unimpl(a, b, c, d, e, f, g);
+    fixme("close( %d )", fd);
     return -1;
 }
 
-static uint64_t sys_stat(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
+static uint64_t sys_stat(const char *filename, void *statbuf)
 {
-    internal_unimpl(a, b, c, d, e, f, g);
+    fixme("stat( %s %p )", filename, statbuf);
     return -1;
 }
 
