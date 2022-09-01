@@ -14,6 +14,7 @@ extern GlobalBootParams earlyparams;
 extern GlobalBootParams *bootparams;
 extern SysFlags *sysflags;
 extern bool ShowRecoveryScreen;
+extern bool FadeScreenNow;
 #ifdef __cplusplus
 extern Xalloc::AllocatorV1 *UserAllocator;
 #endif

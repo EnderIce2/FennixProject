@@ -36,6 +36,7 @@ SysFlags *sysflags = nullptr;
 uint8_t kernel_stack[STACK_SIZE];
 
 bool ShowRecoveryScreen = false;
+bool FadeScreenNow = false;
 
 Xalloc::AllocatorV1 *UserAllocator = nullptr; // TODO: Fix this allocator or modify liballoc11
 
@@ -116,8 +117,6 @@ void initializeKernelFlags()
         sysflags->monotasking = false;
 }
 
-// void FadeBootLogo() { BS->FadeLogo();}
-
 void KernelTask()
 {
 #ifdef DEBUG
@@ -151,10 +150,6 @@ void KernelTask()
 
     nimgr->StartService();
 
-    // if (CurrentTaskingMode != TaskingMode::Mono)
-    // SysCreateThread((PCB *)SysGetCurrentProcess(), (uint64_t)FadeBootLogo, 0, 0);
-    BS->FadeLogo();
-
     if (ShowRecoveryScreen)
         new SystemRecovery::Recovery;
 
@@ -167,11 +162,16 @@ void KernelTask()
             printf("Failed to load /system/init process. The file is missing or corrupted.\n");
             CPU_HALT;
         }
-    trace("End Of Kernel Task");
 
-    SysSetThreadPriority(1);
+    trace("End Of Kernel Task");
     if (CurrentTaskingMode != TaskingMode::Mono)
+    {
+        SysSetThreadPriority(1);
+        while (!FadeScreenNow)
+            asm volatile("hlt");
+        BS->FadeLogo();
         CPU_STOP;
+    }
 }
 
 void CheckSystemRequirements()
@@ -244,6 +244,9 @@ void KernelInit()
         smap = true;
     UserAllocator = new Xalloc::AllocatorV1((void *)USER_HEAP_BASE, true, smap);
     STI;
+#ifdef DEBUG
+    printf("STI\n");
+#endif
     dsdt->InitSCI();
 
     ps2keyboard = new PS2Keyboard::PS2KeyboardDriver;

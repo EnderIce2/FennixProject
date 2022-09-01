@@ -495,6 +495,7 @@ static bool AlreadyInitialized = false;
 
 int main(int argc, char *argv[])
 {
+    syscall_fadeBootLogo();
     if (AlreadyInitialized)
     {
         WriteSysDebugger("[MonotonShell] Restored.\n");

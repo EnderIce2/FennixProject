@@ -116,6 +116,7 @@ enum SystemCalls
     _SystemTimeSet,
     _Shutdown,
     _Reboot,
+    _FadeBootLogo,
 
     _GetFramebufferAddress,
     _GetFramebufferSize,
@@ -240,6 +241,7 @@ DEFINE_SYSCALL0(systemTime, _SystemTime)
 DEFINE_SYSCALL1(systemTimeSet, _SystemTimeSet, uint64_t)
 DEFINE_SYSCALL0(shutdown, _Shutdown)
 DEFINE_SYSCALL0(reboot, _Reboot)
+DEFINE_SYSCALL0(fadeBootLogo, _FadeBootLogo)
 
 DEFINE_SYSCALL0(displayAddress, _GetFramebufferAddress)
 DEFINE_SYSCALL0(displaySize, _GetFramebufferSize)

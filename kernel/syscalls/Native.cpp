@@ -11,6 +11,7 @@
 
 #include <internal_task.h>
 #include <filesystem.h>
+#include <bootscreen.h>
 #include <display.h>
 
 static uint64_t internal_unimpl(uint64_t a, uint64_t b, uint64_t c, uint64_t d, uint64_t e, uint64_t f, uint64_t g)
@@ -168,6 +169,17 @@ static void internal_reboot(SyscallsRegs *regs)
     if (!CanSyscall(regs))
         return;
     dsdt->reboot();
+}
+
+static void internal_fadebootlogo(SyscallsRegs *regs)
+{
+    syscldbg("syscall: fadebootlogo()");
+    if (!CanSyscall(regs))
+        return;
+    if (CurrentTaskingMode != TaskingMode::Mono)
+        FadeScreenNow = true;
+    else
+        BS->FadeLogo();
 }
 
 static uint64_t internal_fbaddress(SyscallsRegs *regs)
@@ -445,6 +457,7 @@ static void *FennixSyscallsTable[] = {
     [_SystemTimeSet] = (void *)internal_unimpl,
     [_Shutdown] = (void *)internal_shutdown,
     [_Reboot] = (void *)internal_reboot,
+    [_FadeBootLogo] = (void *)internal_fadebootlogo,
 
     [_GetFramebufferAddress] = (void *)internal_fbaddress,
     [_GetFramebufferSize] = (void *)internal_fbsize,
