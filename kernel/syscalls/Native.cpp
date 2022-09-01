@@ -226,6 +226,7 @@ static File *internal_fileOpen(SyscallsRegs *regs, char *Path)
     FileSystem::FILE *fo = vfs->Open(Path, nullptr);
 
     UserAllocator->Xstac();
+
     f->Status = static_cast<FileStatus>(fo->Status);
     memcpy(f->Name, fo->Name, sizeof(f->Name));
     if (fo)
@@ -291,10 +292,14 @@ static void internal_fileClose(SyscallsRegs *regs, File *F)
     syscldbg("syscall: fileClose( %p )", F);
     if (!CanSyscall(regs))
         return;
+
     UserAllocator->Xstac();
+
     if (static_cast<FileSystem::FILE *>(F->Handle) != (void *)deadbeef)
         vfs->Close(static_cast<FileSystem::FILE *>(F->Handle));
+
     UserAllocator->Xclac();
+    UserAllocator->Free(F);
 }
 
 static uint64_t internal_fileRead(SyscallsRegs *regs, File *F, uint64_t Offset, uint8_t *Buffer, uint64_t Size)
