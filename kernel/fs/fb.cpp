@@ -25,7 +25,7 @@ namespace FileSystem
         .Read = FB_Read,
         .Write = FB_Write};
 
-    FB::FB() { mountfs->MountFileSystem(&fb, 0666, "fb"); }
+    FB::FB() { devfs->AddFileSystem(&fb, 0666, "fb", FileSystem::NodeFlags::FS_PIPE); }
 
     FB::~FB() { warn("Destroyed"); }
 }
