@@ -239,10 +239,7 @@ void KernelInit()
         outb(PIC1_DATA, 0b11111000);
         outb(PIC2_DATA, 0b11101111);
     }
-    bool smap = false;
-    if (cpu_feature(CPUID_FEAT_RDX_SMAP))
-        smap = true;
-    UserAllocator = new Xalloc::AllocatorV1((void *)USER_HEAP_BASE, true, smap);
+    UserAllocator = new Xalloc::AllocatorV1((void *)USER_HEAP_BASE, true, cpu_feature(CPUID_FEAT_RDX_SMAP));
     STI;
 #ifdef DEBUG
     printf("STI\n");
