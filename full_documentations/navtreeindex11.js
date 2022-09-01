@@ -1,5 +1,9 @@
 var NAVTREEINDEX11 =
 {
+"d5/dba/multiboot2_8h.html#d6/d6f/structmultiboot__vbe__mode__info__block":[5,0,0,5,0,0,3,18],
+"d5/dba/multiboot2_8h.html#d6/dbd/structmultiboot__header__tag__framebuffer":[5,0,0,5,0,0,3,6],
+"d5/dba/multiboot2_8h.html#d7/d16/structmultiboot__tag":[5,0,0,5,0,0,3,11],
+"d5/dba/multiboot2_8h.html#d7/d2b/structmultiboot__color":[5,0,0,5,0,0,2,4],
 "d5/dba/multiboot2_8h.html#d7/d2b/structmultiboot__color":[5,0,0,5,0,0,3,9],
 "d5/dba/multiboot2_8h.html#d7/d4c/structmultiboot__tag__new__acpi":[5,0,0,5,0,0,3,28],
 "d5/dba/multiboot2_8h.html#d7/d71/structmultiboot__tag__mmap":[5,0,0,5,0,0,3,16],
@@ -245,9 +249,5 @@ var NAVTREEINDEX11 =
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d8/d69/structstivale2__struct__tag__pmrs":[5,0,0,5,0,0,5,10],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d8/dd1/structstivale2__smp__info":[5,0,0,5,0,0,5,31],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d9/d97/structstivale2__struct__tag__kernel__file__v2":[5,0,0,5,0,0,5,26],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d9/d9c/structstivale2__struct__tag__efi__system__table":[5,0,0,5,0,0,5,24],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d9/dd6/structstivale2__struct__tag__kernel__base__address":[5,0,0,5,0,0,5,11],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#db/d5a/structstivale2__struct":[5,0,0,5,0,0,5,8],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#db/d65/structstivale2__struct__tag__epoch":[5,0,0,5,0,0,5,22],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#db/d92/structstivale2__struct__tag__smp":[5,0,0,5,0,0,5,32]
+"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d9/d9c/structstivale2__struct__tag__efi__system__table":[5,0,0,5,0,0,5,24]
 };

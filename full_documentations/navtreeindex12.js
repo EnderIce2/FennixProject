@@ -1,5 +1,9 @@
 var NAVTREEINDEX12 =
 {
+"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d9/dd6/structstivale2__struct__tag__kernel__base__address":[5,0,0,5,0,0,5,11],
+"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#db/d5a/structstivale2__struct":[5,0,0,5,0,0,5,8],
+"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#db/d65/structstivale2__struct__tag__epoch":[5,0,0,5,0,0,5,22],
+"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#db/d92/structstivale2__struct__tag__smp":[5,0,0,5,0,0,5,32],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#dc/d5c/structstivale2__struct__tag__cmdline":[5,0,0,5,0,0,5,12],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#dc/df2/structstivale2__header__tag__any__video":[5,0,0,5,0,0,5,3],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#dd/d87/structstivale2__struct__tag__smbios":[5,0,0,5,0,0,5,30],
@@ -155,8 +159,8 @@ var NAVTREEINDEX12 =
 "d6/d7e/bootscreen_8h.html":[5,0,0,5,4],
 "d6/d7e/bootscreen_8h.html#ad82da8195cc1c57cd9ed0e935707f7fe":[5,0,0,5,4,1],
 "d6/d7e/bootscreen_8h_source.html":[5,0,0,5,4],
-"d6/d86/namespaceCritical.html":[3,0,7],
 "d6/d86/namespaceCritical.html":[4,0,6],
+"d6/d86/namespaceCritical.html":[3,0,7],
 "d6/d86/namespaceCritical.html#a40b6eb1e9173652e6d5227c7ceec4116":[5,0,0,5,6,0,0],
 "d6/d86/namespaceCritical.html#add3e38a2af9c1d53423fbe0d467306e7":[5,0,0,5,6,0,1],
 "d6/d86/namespaceCritical.html#d6/dda/structCritical_1_1CriticalSectionData":[5,0,0,5,6,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX12 =
 "d6/db1/print_8c.html#a3290c13c484cb14454764ae0108a8b58":[5,0,1,3,1,3,3],
 "d6/db1/print_8c.html#a43427d0e31428026fc210bd96bd28d1e":[5,0,1,3,1,3,18],
 "d6/db1/print_8c.html#a43ab6ded82e85d1cfb9e21f898f9ed76":[5,0,1,3,1,3,5],
-"d6/db1/print_8c.html#a5026dd2cd1d2dfadce9aa4d843fabfaa":[5,0,1,3,1,3,11],
-"d6/db1/print_8c.html#a6c8ef8bd683c46d3107a62249bf37d81":[5,0,1,3,1,3,17],
-"d6/db1/print_8c.html#a7b84041e435163fe8993c91b705606b9":[5,0,1,3,1,3,7],
-"d6/db1/print_8c.html#a85506e78fccdce14704efd21f894e425":[5,0,1,3,1,3,2],
-"d6/db1/print_8c.html#a89ef106643e54925e01e214c1bdb9423":[5,0,1,3,1,3,10]
+"d6/db1/print_8c.html#a5026dd2cd1d2dfadce9aa4d843fabfaa":[5,0,1,3,1,3,11]
 };

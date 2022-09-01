@@ -1,5 +1,9 @@
 var NAVTREEINDEX10 =
 {
+"d5/dba/multiboot2_8h.html#a08e1c8bc977b39015c9043645e79713d":[5,0,0,5,0,0,2,4,1],
+"d5/dba/multiboot2_8h.html#a08e1c8bc977b39015c9043645e79713d":[5,0,0,5,0,0,3,9,1],
+"d5/dba/multiboot2_8h.html#a09293d54b2741dde5be5f7206860b669":[5,0,0,5,0,0,3,22,2],
+"d5/dba/multiboot2_8h.html#a0b4b7423e6f13e364cd1b40d4c251a22":[5,0,0,5,0,0,3,29,2],
 "d5/dba/multiboot2_8h.html#a0b53e2de91aa7498c4b476776b27e5f3":[5,0,0,5,0,0,3,69],
 "d5/dba/multiboot2_8h.html#a0c01936f867fa598194eca54a03cf7c8":[5,0,0,5,0,0,3,17,0],
 "d5/dba/multiboot2_8h.html#a0cd6fd3c9f2de7ee9bb8354589bd3545":[5,0,0,5,0,0,3,14,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX10 =
 "d5/dba/multiboot2_8h.html#d4/def/structmultiboot__tag__load__base__addr":[5,0,0,5,0,0,3,33],
 "d5/dba/multiboot2_8h.html#d5/d23/structmultiboot__header__tag__address":[5,0,0,5,0,0,3,3],
 "d5/dba/multiboot2_8h.html#d5/de2/structmultiboot__mmap__entry":[5,0,0,5,0,0,2,5],
-"d5/dba/multiboot2_8h.html#d5/de2/structmultiboot__mmap__entry":[5,0,0,5,0,0,3,10],
-"d5/dba/multiboot2_8h.html#d6/d6f/structmultiboot__vbe__mode__info__block":[5,0,0,5,0,0,3,18],
-"d5/dba/multiboot2_8h.html#d6/dbd/structmultiboot__header__tag__framebuffer":[5,0,0,5,0,0,3,6],
-"d5/dba/multiboot2_8h.html#d7/d16/structmultiboot__tag":[5,0,0,5,0,0,3,11],
-"d5/dba/multiboot2_8h.html#d7/d2b/structmultiboot__color":[5,0,0,5,0,0,2,4]
+"d5/dba/multiboot2_8h.html#d5/de2/structmultiboot__mmap__entry":[5,0,0,5,0,0,3,10]
 };

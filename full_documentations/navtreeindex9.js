@@ -1,5 +1,8 @@
 var NAVTREEINDEX9 =
 {
+"d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bcab7f9ec19ffa0b677dd226200d171d7f3":[5,0,2,2,7,2,0,56],
+"d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bcabb609e693388144ca4c71fba9e8db2bb":[5,0,2,2,7,2,0,60],
+"d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bcabc1050ea301a158488c748dd6c530dfc":[5,0,2,2,7,2,0,73],
 "d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bcabce64132cdffd6d275a63b8ca65500be":[5,0,2,2,7,2,0,65],
 "d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bcabe5ba51acd67a90c75e7f8258afbf05c":[5,0,2,2,7,2,0,97],
 "d4/dad/scparse_8h.html#a0ada92b8263d776ca3c779d2a0e031bcabe5c0b4c5f814af97bc45f95ea78e9c9":[5,0,2,2,7,2,0,91],
@@ -163,8 +166,8 @@ var NAVTREEINDEX9 =
 "d5/d32/classRTL8139_1_1NetworkInterfaceController.html#af3d6ceb9e8bfc14429732e0ca1c6d4da":[4,0,28,0,13],
 "d5/d32/classRTL8139_1_1NetworkInterfaceController.html#af6b78f537448d294b258e16df3a61b0e":[5,0,0,2,0,3,1,1,1],
 "d5/d32/classRTL8139_1_1NetworkInterfaceController.html#af6b78f537448d294b258e16df3a61b0e":[4,0,28,0,0,1],
-"d5/d32/classRTL8139_1_1NetworkInterfaceController.html#da/de5/structRTL8139_1_1NetworkInterfaceController_1_1BARData":[5,0,0,2,0,3,1,1],
 "d5/d32/classRTL8139_1_1NetworkInterfaceController.html#da/de5/structRTL8139_1_1NetworkInterfaceController_1_1BARData":[4,0,28,0,0],
+"d5/d32/classRTL8139_1_1NetworkInterfaceController.html#da/de5/structRTL8139_1_1NetworkInterfaceController_1_1BARData":[5,0,0,2,0,3,1,1],
 "d5/d4a/gdt_8h.html":[5,0,0,1,10],
 "d5/d4a/gdt_8h.html#a1b5a711dc01ab783bb986902240f1cce":[5,0,0,1,10,1],
 "d5/d4a/gdt_8h.html#a263ede50deff86cb7b6bf618f3dd26e7":[5,0,0,1,10,6],
@@ -226,12 +229,13 @@ var NAVTREEINDEX9 =
 "d5/d9d/userspace_2apps_2games_2Makefile.html":[5,0,2,0,0,1],
 "d5/d9d/userspace_2apps_2games_2Makefile_source.html":[5,0,2,0,0,1],
 "d5/da2/classTasking_1_1Monotasking.html":[4,0,32,0],
-"d5/da2/classTasking_1_1Monotasking.html#a01eff614d7dd323993411104c1a49a0a":[4,0,32,0,4],
+"d5/da2/classTasking_1_1Monotasking.html#a01eff614d7dd323993411104c1a49a0a":[4,0,32,0,5],
 "d5/da2/classTasking_1_1Monotasking.html#a2965449607884b02f7fce3d70df38aca":[4,0,32,0,0],
 "d5/da2/classTasking_1_1Monotasking.html#a6b74d9c9ed758dbddef61ef3ff497ef0":[4,0,32,0,2],
 "d5/da2/classTasking_1_1Monotasking.html#a93549809197997c36acccb3220d1103a":[4,0,32,0,1],
-"d5/da2/classTasking_1_1Monotasking.html#aca278385dfe53ca1b3e3bcdd82df0add":[4,0,32,0,3],
-"d5/da2/classTasking_1_1Monotasking.html#aeb6adb83431c526d1914bf9eba3cf030":[4,0,32,0,5],
+"d5/da2/classTasking_1_1Monotasking.html#aca278385dfe53ca1b3e3bcdd82df0add":[4,0,32,0,4],
+"d5/da2/classTasking_1_1Monotasking.html#aeb6adb83431c526d1914bf9eba3cf030":[4,0,32,0,6],
+"d5/da2/classTasking_1_1Monotasking.html#aed596e2bd92b5ad658a3a7a83eef4f2a":[4,0,32,0,3],
 "d5/db7/namespaceNetworkTCP.html":[3,0,28],
 "d5/dba/multiboot2_8h.html":[5,0,0,5,0,0,3],
 "d5/dba/multiboot2_8h.html#a001f3bf1c38e837fe3e1e0653aac2848":[5,0,0,5,0,0,3,5,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX9 =
 "d5/dba/multiboot2_8h.html#a057304e943e881731680e06472c4bf1e":[5,0,0,5,0,0,3,19,2],
 "d5/dba/multiboot2_8h.html#a0663e47406ed5799d5bd55ccf2d4fa95":[5,0,0,5,0,0,3,16,3],
 "d5/dba/multiboot2_8h.html#a079f7f841628eb85cffc6dead1074474":[5,0,0,5,0,0,3,31,0],
-"d5/dba/multiboot2_8h.html#a07b852bb1b157fddbd35be881f9213c6":[5,0,0,5,0,0,3,57],
-"d5/dba/multiboot2_8h.html#a08e1c8bc977b39015c9043645e79713d":[5,0,0,5,0,0,2,4,1],
-"d5/dba/multiboot2_8h.html#a08e1c8bc977b39015c9043645e79713d":[5,0,0,5,0,0,3,9,1],
-"d5/dba/multiboot2_8h.html#a09293d54b2741dde5be5f7206860b669":[5,0,0,5,0,0,3,22,2],
-"d5/dba/multiboot2_8h.html#a0b4b7423e6f13e364cd1b40d4c251a22":[5,0,0,5,0,0,3,29,2]
+"d5/dba/multiboot2_8h.html#a07b852bb1b157fddbd35be881f9213c6":[5,0,0,5,0,0,3,57]
 };

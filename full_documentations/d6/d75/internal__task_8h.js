@@ -2,8 +2,6 @@ var internal__task_8h =
 [
     [ "TaskControlBlock", "d9/d3e/namespaceTasking.html#da/d21/structTasking_1_1TaskControlBlock", [
       [ "checksum", "d9/d3e/namespaceTasking.html#a9e1a344342d61dbc88f8b7f1718b4aca", null ],
-      [ "CompatibiltyProcess", "d9/d3e/namespaceTasking.html#a5fae68b3798230c06b4e2deaff479845", null ],
-      [ "CompatibiltyThread", "d9/d3e/namespaceTasking.html#a22bf4cfc01a8c9fdbe86b403f3986ca2", null ],
       [ "Day", "d9/d3e/namespaceTasking.html#a830b923e5ef36dd3dfe78248b8d1defe", null ],
       [ "fs", "d9/d3e/namespaceTasking.html#ab02a6f9e3f7b8ad913c7da2d77a035bb", null ],
       [ "gs", "d9/d3e/namespaceTasking.html#a16b576738e828e834c158ff4654cbf4d", null ],

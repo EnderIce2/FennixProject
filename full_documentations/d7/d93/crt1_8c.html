@@ -128,31 +128,26 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d82/CXXABI_8cpp_source.html#l00071">71</a> of file <a class="el" href="../../d1/d82/CXXABI_8cpp_source.html">CXXABI.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../d2/dca/cxa_8cpp.html#af11296e79c8839a302f71294836c91cc">fixme</a>(<span class="stringliteral">&quot;__cxa_finalize( %p ) triggered.&quot;</span>, f);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="../../d1/d82/CXXABI_8cpp.html#a35fc01d4eba01f3f2ec636bd6b5ff34f">uarch_t</a> i = <a class="code" href="../../d1/d82/CXXABI_8cpp.html#a0f75f529cf75cf0a9cd266f8d67675dc">__atexit_func_count</a>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> (!f)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">while</span> (i--)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a>[i].destructor_func)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                (*<a class="code" href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a>[i].<a class="code" href="../../df/d34/structatexit__func__entry__t.html#a7b404fd43dd4109ba19546e707cf1228">destructor_func</a>)(<a class="code" href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a>[i].obj_ptr);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">while</span> (i--)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a>[i].destructor_func == f)</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            (*<a class="code" href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a>[i].<a class="code" href="../../df/d34/structatexit__func__entry__t.html#a7b404fd43dd4109ba19546e707cf1228">destructor_func</a>)(<a class="code" href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a>[i].obj_ptr);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a>[i].<a class="code" href="../../df/d34/structatexit__func__entry__t.html#a7b404fd43dd4109ba19546e707cf1228">destructor_func</a> = 0;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d1/d82/CXXABI_8cpp_source.html#l00069">69</a> of file <a class="el" href="../../d1/d82/CXXABI_8cpp_source.html">CXXABI.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="../../d2/dca/cxa_8cpp.html#af11296e79c8839a302f71294836c91cc">fixme</a>(<span class="stringliteral">&quot;__cxa_finalize( %p ) triggered.&quot;</span>, f);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="../../d1/d82/CXXABI_8cpp.html#a35fc01d4eba01f3f2ec636bd6b5ff34f">uarch_t</a> i = <a class="code" href="../../d1/d82/CXXABI_8cpp.html#a0f75f529cf75cf0a9cd266f8d67675dc">__atexit_func_count</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (!f)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">while</span> (i--)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a>[i].destructor_func)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                (*<a class="code" href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a>[i].<a class="code" href="../../df/d34/structatexit__func__entry__t.html#a7b404fd43dd4109ba19546e707cf1228">destructor_func</a>)(<a class="code" href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a>[i].obj_ptr);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">while</span> (i--)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a>[i].destructor_func == f)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            (*<a class="code" href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a>[i].<a class="code" href="../../df/d34/structatexit__func__entry__t.html#a7b404fd43dd4109ba19546e707cf1228">destructor_func</a>)(<a class="code" href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a>[i].obj_ptr);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <a class="code" href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a>[i].<a class="code" href="../../df/d34/structatexit__func__entry__t.html#a7b404fd43dd4109ba19546e707cf1228">destructor_func</a> = 0;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d82/CXXABI_8cpp_source.html#l00055">__atexit_func_count</a>, <a class="el" href="../../d1/d82/CXXABI_8cpp_source.html#l00054">__atexit_funcs</a>, <a class="el" href="../../d1/d82/CXXABI_8cpp_source.html#l00017">atexit_func_entry_t::destructor_func</a>, and <a class="el" href="../../d2/dca/cxa_8cpp_source.html#l00054">fixme()</a>.</p>
 
@@ -207,7 +202,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        ;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d1/d82/CXXABI_8cpp_source.html#l00071">__cxa_finalize()</a>, <a class="el" href="../../d7/d93/crt1_8c_source.html#l00004">argv</a>, <a class="el" href="../../df/d7b/tictactoe_8cpp_source.html#l00003">main()</a>, and <a class="el" href="../../d7/d93/crt1_8c_source.html#l00003">stckptr</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d82/CXXABI_8cpp_source.html#l00069">__cxa_finalize()</a>, <a class="el" href="../../d7/d93/crt1_8c_source.html#l00004">argv</a>, <a class="el" href="../../df/d7b/tictactoe_8cpp_source.html#l00003">main()</a>, and <a class="el" href="../../d7/d93/crt1_8c_source.html#l00003">stckptr</a>.</p>
 
 </div>
 </div>
@@ -303,7 +298,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="aCXXABI_8cpp_html_a0f75f529cf75cf0a9cd266f8d67675dc"><div class="ttname"><a href="../../d1/d82/CXXABI_8cpp.html#a0f75f529cf75cf0a9cd266f8d67675dc">__atexit_func_count</a></div><div class="ttdeci">uarch_t __atexit_func_count</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d82/CXXABI_8cpp_source.html#l00055">CXXABI.cpp:55</a></div></div>
 <div class="ttc" id="acrt1_8c_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="../../d7/d93/crt1_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d7b/tictactoe_8cpp_source.html#l00003">tictactoe.cpp:3</a></div></div>
 <div class="ttc" id="aCXXABI_8cpp_html_a8068edf906451857b4f6c7be313bec94"><div class="ttname"><a href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a></div><div class="ttdeci">atexit_func_entry_t __atexit_funcs[ATEXIT_MAX_FUNCS]</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d82/CXXABI_8cpp_source.html#l00054">CXXABI.cpp:54</a></div></div>
-<div class="ttc" id="acrt1_8c_html_aa8622fa1c28f360ea05bc97063d192b3"><div class="ttname"><a href="../../d7/d93/crt1_8c.html#aa8622fa1c28f360ea05bc97063d192b3">__cxa_finalize</a></div><div class="ttdeci">void __cxa_finalize(void *f)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d82/CXXABI_8cpp_source.html#l00071">CXXABI.cpp:71</a></div></div>
+<div class="ttc" id="acrt1_8c_html_aa8622fa1c28f360ea05bc97063d192b3"><div class="ttname"><a href="../../d7/d93/crt1_8c.html#aa8622fa1c28f360ea05bc97063d192b3">__cxa_finalize</a></div><div class="ttdeci">void __cxa_finalize(void *f)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d82/CXXABI_8cpp_source.html#l00069">CXXABI.cpp:69</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
