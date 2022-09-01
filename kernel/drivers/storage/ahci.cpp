@@ -128,7 +128,7 @@ namespace AHCI
         HBAPortPtr->CommandStatus |= HBA_PxCMD_ST;
     }
 
-    bool Port::ReadWrite(uint64_t Sector, uint32_t SectorCount, void *Buffer, bool Write)
+    bool Port::ReadWrite(uint64_t Sector, uint32_t SectorCount, uint8_t *Buffer, bool Write)
     {
         if (this->PortNumber == PortType::SATAPI && Write)
         {

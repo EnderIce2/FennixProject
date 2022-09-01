@@ -145,7 +145,7 @@ namespace AHCI
         void Configure();
         void StartCMD();
         void StopCMD();
-        bool ReadWrite(uint64_t Sector, uint32_t SectorCount, void *Buffer, bool Write);
+        bool ReadWrite(uint64_t Sector, uint32_t SectorCount, uint8_t *Buffer, bool Write);
     };
     class AHCIDriver
     {

@@ -335,6 +335,7 @@ void KernelInit()
     new FileSystem::Random;
     new FileSystem::Null;
     new FileSystem::Zero;
+    new FileSystem::FB;
 
     ps2mouse = new PS2Mouse::PS2MouseDriver;
     BS->IncreaseProgres();

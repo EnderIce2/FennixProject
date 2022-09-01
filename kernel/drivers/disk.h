@@ -121,8 +121,8 @@ namespace DiskManager
             size_t Index = 0;
             AHCI::Port *Port = nullptr;
 
-            uint64_t Read(uint64_t Offset, uint64_t Count, void *Buffer);
-            uint64_t Write(uint64_t Offset, uint64_t Count, void *Buffer);
+            uint64_t Read(uint64_t Offset, uint64_t Count, uint8_t *Buffer);
+            uint64_t Write(uint64_t Offset, uint64_t Count, uint8_t *Buffer);
         };
 
         void AddPartition(AHCI::Port *Port);

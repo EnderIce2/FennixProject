@@ -145,7 +145,7 @@ namespace DiskManager
         mountfs->DetectAndMountFS(drive);
     }
 
-    uint64_t Partition::Part::Read(uint64_t Offset, uint64_t Count, void *Buffer)
+    uint64_t Partition::Part::Read(uint64_t Offset, uint64_t Count, uint8_t *Buffer)
     {
         if (Port->HBAPortPtr == nullptr)
         {
@@ -162,7 +162,7 @@ namespace DiskManager
         return Count;
     }
 
-    uint64_t Partition::Part::Write(uint64_t Offset, uint64_t Count, void *Buffer)
+    uint64_t Partition::Part::Write(uint64_t Offset, uint64_t Count, uint8_t *Buffer)
     {
         if (Port->HBAPortPtr == nullptr)
         {

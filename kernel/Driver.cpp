@@ -91,7 +91,7 @@ namespace Driver
     {
         void *DriverBuffer = KernelAllocator.RequestPages(Node->Length / 0x1000 + 1);
         FileSystem::FILE *driverfile = vfs->ConvertNodeToFILE(Node);
-        vfs->Read(driverfile, 0, DriverBuffer, Node->Length);
+        vfs->Read(driverfile, 0, (uint8_t *)DriverBuffer, Node->Length);
         delete driverfile;
         Elf64_Ehdr *header = (Elf64_Ehdr *)DriverBuffer;
         if (header->e_ident[EI_MAG0] != ELFMAG0)

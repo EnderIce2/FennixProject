@@ -28,7 +28,7 @@ namespace FileSystem
 
         // Partition->Read(1024, 2, (unsigned char *)&sb);
 
-        void *buffer = RequestPage();
+        uint8_t *buffer = (uint8_t *)RequestPage();
         Partition->Read(2, 2, buffer);
         memcpy(&sb, buffer, sizeof(SuperBlock));
         FreePage(buffer);
@@ -37,7 +37,7 @@ namespace FileSystem
         {
             debug("EXT2 Name: \"%s\" Last Mounted In: \"%s\"", sb.VolumeName, sb.LastMounted);
             // TODO: Implement reading and writing files
-            
+
             char CleandVolumeName[16] = {'\0'};
             for (size_t i = 0; i < strlen(sb.VolumeName); i++)
                 if (sb.VolumeName[i] == '/')

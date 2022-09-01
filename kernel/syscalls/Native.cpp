@@ -297,7 +297,7 @@ static void internal_fileClose(SyscallsRegs *regs, File *F)
     UserAllocator->Xclac();
 }
 
-static uint64_t internal_fileRead(SyscallsRegs *regs, File *F, uint64_t Offset, void *Buffer, uint64_t Size)
+static uint64_t internal_fileRead(SyscallsRegs *regs, File *F, uint64_t Offset, uint8_t *Buffer, uint64_t Size)
 {
     syscldbg("syscall: fileRead( %p, %#llx, %p, %#llx )", F, Offset, Buffer, Size);
     if (!CanSyscall(regs))
@@ -308,7 +308,7 @@ static uint64_t internal_fileRead(SyscallsRegs *regs, File *F, uint64_t Offset, 
     return ret;
 }
 
-static uint64_t internal_fileWrite(SyscallsRegs *regs, File *F, uint64_t Offset, void *Buffer, uint64_t Size)
+static uint64_t internal_fileWrite(SyscallsRegs *regs, File *F, uint64_t Offset, uint8_t *Buffer, uint64_t Size)
 {
     syscldbg("syscall: fileWrite( %p, %#llx, %p, %#llx )", F, Offset, Buffer, Size);
     if (!CanSyscall(regs))

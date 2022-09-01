@@ -48,7 +48,7 @@ namespace Floppy
     struct FloppyDrive
     {
         string Name;
-        virtual uint8_t read(uint8_t Sector, uint16_t SectorCount, void *Buffer)
+        virtual uint8_t read(uint8_t Sector, uint16_t SectorCount, uint8_t *Buffer)
         {
             fixme("Unimplmented function");
             Buffer = 0;
@@ -56,7 +56,7 @@ namespace Floppy
             return false;
         }
 
-        virtual void write(uint8_t Sector, uint16_t SectorCount, void *Buffer)
+        virtual void write(uint8_t Sector, uint16_t SectorCount, uint8_t *Buffer)
         {
             fixme("Unimplmented function");
             Buffer = 0;

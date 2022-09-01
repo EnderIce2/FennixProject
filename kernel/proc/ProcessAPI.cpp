@@ -338,7 +338,7 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
     {
         void *FileBuffer = KernelAllocator.RequestPages(file->Node->Length / 0x1000 + 1);
 
-        vfs->Read(file, 0, FileBuffer, file->Node->Length);
+        vfs->Read(file, 0, (uint8_t *)FileBuffer, file->Node->Length);
         Elf64_Ehdr *ELFHeader = (Elf64_Ehdr *)FileBuffer;
 
         if (ELFHeader->e_ident[EI_MAG0] == ELFMAG0 &&
