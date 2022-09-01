@@ -108,7 +108,7 @@ namespace DiskManager
                         drive->Partitions.push_back(partition);
 
                         char *PartitionName = (char *)kmalloc(sizeof(char));
-                        sprintf_(PartitionName, "dsk%ldpart%ld", drives.size() - 1, partition->Index);
+                        sprintf_(PartitionName, "dsk%ldp%ld", drives.size() - 1, partition->Index);
                         devfs->AddFileSystem(&sata_disk, 0666, PartitionName, FileSystem::NodeFlags::FS_BLOCKDEVICE);
                     }
                 }
@@ -134,7 +134,7 @@ namespace DiskManager
                     drive->Partitions.push_back(partition);
 
                     char *PartitionName = (char *)kmalloc(sizeof(char));
-                    sprintf_(PartitionName, "dsk%ldpart%ld", drives.size() - 1, partition->Index);
+                    sprintf_(PartitionName, "dsk%ldp%ld", drives.size() - 1, partition->Index);
                     devfs->AddFileSystem(&sata_disk, 0666, PartitionName, FileSystem::NodeFlags::FS_BLOCKDEVICE);
                 }
             trace("%d MBR partitions found.", drive->Partitions.size());
