@@ -36,7 +36,7 @@ E FILE *FileOpen(const char *Filename, const char *Mode);
  * @param Stream The stream to read from (obtained from @ref FileOpen).
  * @return The number of bytes read into the array.
  */
-E size_t FileRead(void *Buffer, size_t Size, size_t Count, FILE *Stream);
+E size_t FileRead(unsigned char *Buffer, size_t Size, size_t Count, FILE *Stream);
 
 /**
  * @brief Write data from the array pointed to by @ref Buffer to the given stream.
@@ -47,7 +47,7 @@ E size_t FileRead(void *Buffer, size_t Size, size_t Count, FILE *Stream);
  * @param Stream The stream to write to (obtained from @ref FileOpen).
  * @return The number of bytes written to the stream.
  */
-E size_t FileWrite(const void *Buffer, size_t Size, size_t Count, FILE *Stream);
+E size_t FileWrite(const unsigned char *Buffer, size_t Size, size_t Count, FILE *Stream);
 
 E int FileSeek(FILE *Stream, long int Offset, enum Seek Whence);
 

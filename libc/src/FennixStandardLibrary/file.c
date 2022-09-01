@@ -15,12 +15,12 @@ FILE *FileOpen(const char *Filename, const char *Mode)
     return file;
 }
 
-size_t FileRead(void *Buffer, size_t Size, size_t Count, FILE *Stream)
+size_t FileRead(uint8_t *Buffer, size_t Size, size_t Count, FILE *Stream)
 {
     return syscall_FileRead(Stream->Khnd, 0 /*offset*/, Buffer, Size);
 }
 
-size_t FileWrite(const void *Buffer, size_t Size, size_t Count, FILE *Stream)
+size_t FileWrite(const uint8_t *Buffer, size_t Size, size_t Count, FILE *Stream)
 {
     return syscall_FileWrite(Stream->Khnd, 0 /*offset*/, (void *)Buffer, Size);
 }
