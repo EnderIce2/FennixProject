@@ -257,7 +257,7 @@ void ParseBuffer(char *Buffer)
                 uint64_t size = 50;
                 if (node->Length)
                     size = node->Length;
-                char *txt = (char *)(calloc(size, sizeof(char)));
+                uint8_t *txt = (uint8_t *)(calloc(size, sizeof(uint8_t)));
                 syscall_FileRead(node, 0, txt, size);
                 for (uint64_t i = 0; i < size; i++)
                     mono->printchar(txt[i]);
@@ -408,7 +408,7 @@ void ParseBuffer(char *Buffer)
         }
         else
         {
-            void *Buffer = malloc(node->Length);
+            uint8_t *Buffer = (uint8_t *)malloc(node->Length);
             syscall_FileRead(node, 0, Buffer, node->Length);
             DumpData(node->Name, Buffer, node->Length);
             free(Buffer);

@@ -18,7 +18,7 @@ namespace MonotonLib
         syscall_dbg(0x3F8, (char *)"[LoadFont] File opened.\n");
         uint64_t FontFileSize = FontBinary->Length;
         void *FontAllocatedData = malloc(FontFileSize);
-        syscall_FileRead(FontBinary, 0, FontAllocatedData, FontFileSize);
+        syscall_FileRead(FontBinary, 0, (uint8_t *)FontAllocatedData, FontFileSize);
 
         PSF2Font = new PSF2_FONT;
         PSF2_HEADER *font2 = (PSF2_HEADER *)FontAllocatedData;

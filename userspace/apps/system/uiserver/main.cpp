@@ -19,7 +19,7 @@ MouseInfo ReadMouseBuffer()
 {
     File *mousefile = (File *)syscall_FileOpen((char *)"/dev/mouse");
     MouseInfo info = {MouseNone, 0, 0};
-    syscall_FileRead(mousefile, 0, &info, sizeof(MouseInfo));
+    syscall_FileRead(mousefile, 0, (uint8_t *)&info, sizeof(MouseInfo));
     syscall_FileClose(mousefile);
     return info;
 }
