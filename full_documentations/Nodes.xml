@@ -2314,12 +2314,12 @@
                  <Node>
                   <Name>Read</Name>
                   <Path>d0/d52/structDiskManager_1_1Partition_1_1Part.html</Path>
-                  <Anchor>a165138aa2358c93a7d5de46fd6b8fa85</Anchor>
+                  <Anchor>aa2364ecab92713043d4f0fa3f9366ba1</Anchor>
                  </Node>
                  <Node>
                   <Name>Write</Name>
                   <Path>d0/d52/structDiskManager_1_1Partition_1_1Part.html</Path>
-                  <Anchor>a5baef99c20ea07fb02cf5d2aa46a83e2</Anchor>
+                  <Anchor>a5fe7389953b5710c82222132fca9d76d</Anchor>
                  </Node>
                  <Node>
                   <Name>EndLBA</Name>
@@ -3604,6 +3604,22 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>FB</Name>
+              <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>FB</Name>
+                <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+                <Anchor>a2412de5f54f00ee2645e9c5e7166b50d</Anchor>
+               </Node>
+               <Node>
+                <Name>~FB</Name>
+                <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+                <Anchor>a73a7b20cb53097985e12daf14f716d30</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>FILE</Name>
               <Path>d6/df5/namespaceFileSystem.html</Path>
               <Anchor>d0/d13/structFileSystem_1_1FILE</Anchor>
@@ -4132,7 +4148,7 @@
                <Node>
                 <Name>Read</Name>
                 <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
-                <Anchor>a892dd91880c8a471c3b2d2ed21c3c42c</Anchor>
+                <Anchor>a5ed337f091d636662f4646b18c2454d9</Anchor>
                </Node>
                <Node>
                 <Name>Unmount</Name>
@@ -4142,7 +4158,7 @@
                <Node>
                 <Name>Write</Name>
                 <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
-                <Anchor>a358be68a0a9062318506347a3d2f8613</Anchor>
+                <Anchor>a0c58ed367cda8ba73587c496ea31619f</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -4175,12 +4191,12 @@
                <Node>
                 <Name>read</Name>
                 <Path>dd/d67/structFloppy_1_1FloppyDrive.html</Path>
-                <Anchor>a376fe739ac39c7f9375af929a7165e98</Anchor>
+                <Anchor>ae9e025471aeb2490d7d2ab39cb1b6066</Anchor>
                </Node>
                <Node>
                 <Name>write</Name>
                 <Path>dd/d67/structFloppy_1_1FloppyDrive.html</Path>
-                <Anchor>a76cb2d4f9e0597e3e9f8b41eebca6912</Anchor>
+                <Anchor>a9d7d76d481f620eab426767f48ba7920</Anchor>
                </Node>
                <Node>
                 <Name>Name</Name>
@@ -13419,23 +13435,6 @@
             <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
             <Subnodes>
              <Node>
-              <Name>command</Name>
-              <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>a1dccadfed7bcbb036c56a4afb97e906f</Anchor>
-             </Node>
-             <Node>
-              <Name>cx</Name>
-              <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>a0bdff8095c8bf1b38775bf35547a1317</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>VMwareCMD.__unnamed__</Name>
-            <Path>d1/dac/VMDetect_8c.html</Path>
-            <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
               <Name>bx</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
               <Anchor>a6f5770d50b01a0abbce803768d3592b0</Anchor>
@@ -13453,14 +13452,14 @@
             <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
             <Subnodes>
              <Node>
-              <Name>ax</Name>
+              <Name>command</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>a9cea1e2473aaf49955fa34faac95b3e7</Anchor>
+              <Anchor>a1dccadfed7bcbb036c56a4afb97e906f</Anchor>
              </Node>
              <Node>
-              <Name>magic</Name>
+              <Name>cx</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>a2f3a4fccca6406e35bcf33e92dd93135</Anchor>
+              <Anchor>a0bdff8095c8bf1b38775bf35547a1317</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -13478,6 +13477,23 @@
               <Name>port</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
               <Anchor>a901555fb06e346cb065ceb9808dcfc25</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>VMwareCMD.__unnamed__</Name>
+            <Path>d1/dac/VMDetect_8c.html</Path>
+            <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>ax</Name>
+              <Path>d1/dac/VMDetect_8c.html</Path>
+              <Anchor>a9cea1e2473aaf49955fa34faac95b3e7</Anchor>
+             </Node>
+             <Node>
+              <Name>magic</Name>
+              <Path>d1/dac/VMDetect_8c.html</Path>
+              <Anchor>a2f3a4fccca6406e35bcf33e92dd93135</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -13890,6 +13906,10 @@
            <Node>
             <Name>FileSystem::FAT</Name>
             <Path>df/d19/classFileSystem_1_1FAT.html</Path>
+           </Node>
+           <Node>
+            <Name>FileSystem::FB</Name>
+            <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
            </Node>
            <Node>
             <Name>FileSystem::FILE</Name>
@@ -21270,12 +21290,12 @@
                      <Node>
                       <Name>read</Name>
                       <Path>dd/d67/structFloppy_1_1FloppyDrive.html</Path>
-                      <Anchor>a376fe739ac39c7f9375af929a7165e98</Anchor>
+                      <Anchor>ae9e025471aeb2490d7d2ab39cb1b6066</Anchor>
                      </Node>
                      <Node>
                       <Name>write</Name>
                       <Path>dd/d67/structFloppy_1_1FloppyDrive.html</Path>
-                      <Anchor>a76cb2d4f9e0597e3e9f8b41eebca6912</Anchor>
+                      <Anchor>a9d7d76d481f620eab426767f48ba7920</Anchor>
                      </Node>
                      <Node>
                       <Name>Name</Name>
@@ -21835,12 +21855,12 @@
                      <Node>
                       <Name>Read</Name>
                       <Path>d0/d52/structDiskManager_1_1Partition_1_1Part.html</Path>
-                      <Anchor>a165138aa2358c93a7d5de46fd6b8fa85</Anchor>
+                      <Anchor>aa2364ecab92713043d4f0fa3f9366ba1</Anchor>
                      </Node>
                      <Node>
                       <Name>Write</Name>
                       <Path>d0/d52/structDiskManager_1_1Partition_1_1Part.html</Path>
-                      <Anchor>a5baef99c20ea07fb02cf5d2aa46a83e2</Anchor>
+                      <Anchor>a5fe7389953b5710c82222132fca9d76d</Anchor>
                      </Node>
                      <Node>
                       <Name>EndLBA</Name>
@@ -22256,12 +22276,12 @@
                    <Node>
                     <Name>Read</Name>
                     <Path>d0/d52/structDiskManager_1_1Partition_1_1Part.html</Path>
-                    <Anchor>a165138aa2358c93a7d5de46fd6b8fa85</Anchor>
+                    <Anchor>aa2364ecab92713043d4f0fa3f9366ba1</Anchor>
                    </Node>
                    <Node>
                     <Name>Write</Name>
                     <Path>d0/d52/structDiskManager_1_1Partition_1_1Part.html</Path>
-                    <Anchor>a5baef99c20ea07fb02cf5d2aa46a83e2</Anchor>
+                    <Anchor>a5fe7389953b5710c82222132fca9d76d</Anchor>
                    </Node>
                    <Node>
                     <Name>EndLBA</Name>
@@ -23080,6 +23100,27 @@
                   <Name>fat</Name>
                   <Path>d6/d04/fat_8cpp.html</Path>
                   <Anchor>a51f6e62d3fe45588adf917be1d83fa8c</Anchor>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>fb.cpp</Name>
+                <Path>dc/d75/fb_8cpp.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>ReadFSFunction</Name>
+                  <Path>dc/d75/fb_8cpp.html</Path>
+                  <Anchor>a26c090bf8c63c7d033e3356686c71e8e</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>WriteFSFunction</Name>
+                  <Path>dc/d75/fb_8cpp.html</Path>
+                  <Anchor>a643b605c24e12f0e8e69a66aa0118b70</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>fb</Name>
+                  <Path>dc/d75/fb_8cpp.html</Path>
+                  <Anchor>afcf7cf6baa46b93e231681dc5e085e6c</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -33848,7 +33889,7 @@
                    <Node>
                     <Name>Read</Name>
                     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
-                    <Anchor>a892dd91880c8a471c3b2d2ed21c3c42c</Anchor>
+                    <Anchor>a5ed337f091d636662f4646b18c2454d9</Anchor>
                    </Node>
                    <Node>
                     <Name>Unmount</Name>
@@ -33858,7 +33899,7 @@
                    <Node>
                     <Name>Write</Name>
                     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
-                    <Anchor>a358be68a0a9062318506347a3d2f8613</Anchor>
+                    <Anchor>a0c58ed367cda8ba73587c496ea31619f</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -34374,6 +34415,22 @@
                     <Name>~Zero</Name>
                     <Path>d7/d9a/classFileSystem_1_1Zero.html</Path>
                     <Anchor>ac077811f3744db8192b103b3addeb0be</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>FB</Name>
+                  <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>FB</Name>
+                    <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+                    <Anchor>a2412de5f54f00ee2645e9c5e7166b50d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>~FB</Name>
+                    <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+                    <Anchor>a73a7b20cb53097985e12daf14f716d30</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -35182,7 +35239,7 @@
                  <Node>
                   <Name>OperationRead</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
-                  <Anchor>acb26d0cb8541766823e8d76e4271d2d4</Anchor>
+                  <Anchor>a0e1b3ca5f4c84fe1e42dd88ad8ab0f17</Anchor>
                  </Node>
                  <Node>
                   <Name>OperationSync</Name>
@@ -35197,7 +35254,7 @@
                  <Node>
                   <Name>OperationWrite</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
-                  <Anchor>a5a90ff0b905273187be5bae7bc1a1ef9</Anchor>
+                  <Anchor>a0e2f12cc93625188f0ce24eff315e7ce</Anchor>
                  </Node>
                  <Node>
                   <Name>FILESTATUS</Name>
@@ -44041,7 +44098,7 @@
                  <Node>
                   <Name>sys_close</Name>
                   <Path>db/d9e/Linux_8cpp.html</Path>
-                  <Anchor>a4ef827dcd13d1ae4d6ed8cda9fa16f61</Anchor>
+                  <Anchor>a8e85e23e7438c7a6c90d9e0f60b3c825</Anchor>
                  </Node>
                  <Node>
                   <Name>sys_connect</Name>
@@ -44761,7 +44818,7 @@
                  <Node>
                   <Name>sys_open</Name>
                   <Path>db/d9e/Linux_8cpp.html</Path>
-                  <Anchor>af84556956fed9246c1cbe53fc4013210</Anchor>
+                  <Anchor>a13a2072935ac4e26bb78ac6b76f63a6a</Anchor>
                  </Node>
                  <Node>
                   <Name>sys_open_by_handle_at</Name>
@@ -44881,7 +44938,7 @@
                  <Node>
                   <Name>sys_read</Name>
                   <Path>db/d9e/Linux_8cpp.html</Path>
-                  <Anchor>a7b6310205519968fcb65667aaf694f03</Anchor>
+                  <Anchor>a6d469002a772ef95bc1e2706e9f86310</Anchor>
                  </Node>
                  <Node>
                   <Name>sys_readahead</Name>
@@ -45296,7 +45353,7 @@
                  <Node>
                   <Name>sys_stat</Name>
                   <Path>db/d9e/Linux_8cpp.html</Path>
-                  <Anchor>ae660561bd910ec4532e6c1aee9a485e6</Anchor>
+                  <Anchor>af632b2b070c74b2857138b9637f5419c</Anchor>
                  </Node>
                  <Node>
                   <Name>sys_statfs</Name>
@@ -45516,7 +45573,7 @@
                  <Node>
                   <Name>sys_write</Name>
                   <Path>db/d9e/Linux_8cpp.html</Path>
-                  <Anchor>afa4cc7997c754ec0bca61c7eb1af3e89</Anchor>
+                  <Anchor>ae5b15e233fa36f2274c3f545c519c9f3</Anchor>
                  </Node>
                  <Node>
                   <Name>sys_writev</Name>
@@ -45568,6 +45625,11 @@
                   <Name>internal_exit</Name>
                   <Path>d9/d76/Native_8cpp.html</Path>
                   <Anchor>a84051af87cfadcc385ea314eb0bc4e59</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>internal_fadebootlogo</Name>
+                  <Path>d9/d76/Native_8cpp.html</Path>
+                  <Anchor>aba69e3d5d9ae70c92eb6718811f949aa</Anchor>
                  </Node>
                  <Node>
                   <Name>internal_fbaddress</Name>
@@ -45627,7 +45689,7 @@
                  <Node>
                   <Name>internal_fileRead</Name>
                   <Path>d9/d76/Native_8cpp.html</Path>
-                  <Anchor>adae6bc1b61959cc3c3852101debe9701</Anchor>
+                  <Anchor>acd18a6720d0aa2980be73013e8f2c94a</Anchor>
                  </Node>
                  <Node>
                   <Name>internal_filesize</Name>
@@ -45637,7 +45699,7 @@
                  <Node>
                   <Name>internal_fileWrite</Name>
                   <Path>d9/d76/Native_8cpp.html</Path>
-                  <Anchor>a2edfc0199406bdab89c230ba79183052</Anchor>
+                  <Anchor>abdc98347ae2f2c0e3225492759023dbc</Anchor>
                  </Node>
                  <Node>
                   <Name>internal_freepage</Name>
@@ -46873,6 +46935,11 @@
                 <Anchor>ae7b517f08e3d7e7ef71af810e3cab1a8</Anchor>
                </Node>
                <Node>
+                <Name>FadeScreenNow</Name>
+                <Path>d2/d00/Kernel_8cpp.html</Path>
+                <Anchor>a8cc3993baddc8e37bd32407ff3b7c196</Anchor>
+               </Node>
+               <Node>
                 <Name>kernel_stack</Name>
                 <Path>d2/d00/Kernel_8cpp.html</Path>
                 <Anchor>a83fa9cb1fe251bf1ad79f45fcd15877d</Anchor>
@@ -46917,6 +46984,11 @@
                 <Name>earlyparams</Name>
                 <Path>d0/daa/kernel_8h.html</Path>
                 <Anchor>ae7b517f08e3d7e7ef71af810e3cab1a8</Anchor>
+               </Node>
+               <Node>
+                <Name>FadeScreenNow</Name>
+                <Path>d0/daa/kernel_8h.html</Path>
+                <Anchor>a8cc3993baddc8e37bd32407ff3b7c196</Anchor>
                </Node>
                <Node>
                 <Name>kernel_stack</Name>
@@ -48322,7 +48394,7 @@
                  <Node>
                   <Name>FileRead</Name>
                   <Path>d2/d4d/file_8h.html</Path>
-                  <Anchor>aef2c9e8a2a72780ab52e7249477520b8</Anchor>
+                  <Anchor>a04a7269b2a968bf332f36af2ea5ea33a</Anchor>
                  </Node>
                  <Node>
                   <Name>FileSeek</Name>
@@ -48337,7 +48409,7 @@
                  <Node>
                   <Name>FileWrite</Name>
                   <Path>d2/d4d/file_8h.html</Path>
-                  <Anchor>a7a231d085fbec73ed8131382939520c1</Anchor>
+                  <Anchor>aef712ea11ed5a57d9b06ff246d3da6c7</Anchor>
                  </Node>
                  <Node>
                   <Name>MakeDirectory</Name>
@@ -49630,6 +49702,11 @@
                     <Anchor>a16c10255fbc3692d24e41969a899c7dda3f438c11799cb45916538d5e26efe139</Anchor>
                    </Node>
                    <Node>
+                    <Name>_FadeBootLogo</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7dda85f3e0d2f766f960127169b34f86e4fb</Anchor>
+                   </Node>
+                   <Node>
                     <Name>_GetFramebufferAddress</Name>
                     <Path>d2/d6e/syscalls_8h.html</Path>
                     <Anchor>a16c10255fbc3692d24e41969a899c7dda72b65500f499a61fa0e0dad34ba35fea</Anchor>
@@ -49783,6 +49860,20 @@
                   <Anchor>a6fda8683b098e50994ca10038d3774c5</Anchor>
                  </Node>
                 </Subnodes>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>libg</Name>
+              <Path>dir_f583f2a7844a94d7b13b5e0bdb2ba5fd.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>libgstub.cpp</Name>
+                <Path>d7/df2/libgstub_8cpp.html</Path>
+               </Node>
+               <Node>
+                <Name>Makefile</Name>
+                <Path>da/d38/libc_2libg_2Makefile.html</Path>
                </Node>
               </Subnodes>
              </Node>
@@ -50465,7 +50556,7 @@
                    <Node>
                     <Name>FileRead</Name>
                     <Path>d6/d13/file_8c.html</Path>
-                    <Anchor>a1d4238bd53ea0fcd9ec3648527cc7172</Anchor>
+                    <Anchor>af21d707164d17b785a26f5c305ae0f4f</Anchor>
                    </Node>
                    <Node>
                     <Name>FileSeek</Name>
@@ -50480,7 +50571,7 @@
                    <Node>
                     <Name>FileWrite</Name>
                     <Path>d6/d13/file_8c.html</Path>
-                    <Anchor>aeee4aea98bca12e622c2e44007f98577</Anchor>
+                    <Anchor>a4f7433d4080f036fa79afb621b91ef16</Anchor>
                    </Node>
                    <Node>
                     <Name>MakeDirectory</Name>
@@ -52299,6 +52390,27 @@
                    <Node>
                     <Name>Makefile</Name>
                     <Path>df/d39/userspace_2apps_2user_2brainfuckcompiler_2Makefile.html</Path>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>texteditor</Name>
+                  <Path>dir_9cb78f7458be22dbe9df2d6314eb414e.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>Makefile</Name>
+                    <Path>d6/df1/userspace_2apps_2user_2texteditor_2Makefile.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>texteditor.c</Name>
+                    <Path>d3/d7e/texteditor_8c.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>main</Name>
+                      <Path>d3/d7e/texteditor_8c.html</Path>
+                      <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
+                     </Node>
+                    </Subnodes>
                    </Node>
                   </Subnodes>
                  </Node>

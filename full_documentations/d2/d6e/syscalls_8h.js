@@ -90,6 +90,7 @@ var syscalls_8h =
       [ "_SystemTimeSet", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddadbc3be2aa1cc426806cfcc9403bfa61e", null ],
       [ "_Shutdown", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda52224be4e4cdc0b58f11e57e065311da", null ],
       [ "_Reboot", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda3f438c11799cb45916538d5e26efe139", null ],
+      [ "_FadeBootLogo", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda85f3e0d2f766f960127169b34f86e4fb", null ],
       [ "_GetFramebufferAddress", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda72b65500f499a61fa0e0dad34ba35fea", null ],
       [ "_GetFramebufferSize", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddaf3dc1134e56360e52d8641147c168913", null ],
       [ "_GetFramebufferWidth", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda7aec3f3eb0e6f29747d782eca11a0a16", null ],

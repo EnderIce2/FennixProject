@@ -11,7 +11,7 @@ var classFileSystem_1_1Virtual =
     [ "Mount", "d0/d99/classFileSystem_1_1Virtual.html#a0f5fde2f47d3002087613ca6ee9c817e", null ],
     [ "NormalizePath", "d0/d99/classFileSystem_1_1Virtual.html#a6d3bcafa44ad2e8db3d47a5d115d08ad", null ],
     [ "Open", "d0/d99/classFileSystem_1_1Virtual.html#a462e81b93784da517ef808b4c4a1cc6d", null ],
-    [ "Read", "d0/d99/classFileSystem_1_1Virtual.html#a892dd91880c8a471c3b2d2ed21c3c42c", null ],
+    [ "Read", "d0/d99/classFileSystem_1_1Virtual.html#a5ed337f091d636662f4646b18c2454d9", null ],
     [ "Unmount", "d0/d99/classFileSystem_1_1Virtual.html#a7f06108378c9e0fd35490faf3ad06b49", null ],
-    [ "Write", "d0/d99/classFileSystem_1_1Virtual.html#a358be68a0a9062318506347a3d2f8613", null ]
+    [ "Write", "d0/d99/classFileSystem_1_1Virtual.html#a0c58ed367cda8ba73587c496ea31619f", null ]
 ];

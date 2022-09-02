@@ -18966,7 +18966,7 @@
       <Scope>FileSystem</Scope>
     </TokenIdentifier>
     <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>acb26d0cb8541766823e8d76e4271d2d4</Anchor>
+    <Anchor>a0e1b3ca5f4c84fe1e42dd88ad8ab0f17</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>
@@ -18977,7 +18977,7 @@
       <Scope>FileSystem</Scope>
     </TokenIdentifier>
     <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>a5a90ff0b905273187be5bae7bc1a1ef9</Anchor>
+    <Anchor>a0e2f12cc93625188f0ce24eff315e7ce</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>
@@ -22439,7 +22439,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d2/d4d/file_8h.html</Path>
-    <Anchor>aef2c9e8a2a72780ab52e7249477520b8</Anchor>
+    <Anchor>a04a7269b2a968bf332f36af2ea5ea33a</Anchor>
     <Abstract>Read data from the given stream into the array pointed to, by Buffer.</Abstract>
     <DeclaredIn>file.h</DeclaredIn>
   </Token>
@@ -22450,7 +22450,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d2/d4d/file_8h.html</Path>
-    <Anchor>a7a231d085fbec73ed8131382939520c1</Anchor>
+    <Anchor>aef712ea11ed5a57d9b06ff246d3da6c7</Anchor>
     <Abstract>Write data from the array pointed to by Buffer to the given stream.</Abstract>
     <DeclaredIn>file.h</DeclaredIn>
   </Token>
@@ -23403,6 +23403,16 @@
     </TokenIdentifier>
     <Path>d2/d6e/syscalls_8h.html</Path>
     <Anchor>a16c10255fbc3692d24e41969a899c7dda3f438c11799cb45916538d5e26efe139</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_FadeBootLogo</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7dda85f3e0d2f766f960127169b34f86e4fb</Anchor>
     <DeclaredIn>syscalls.h</DeclaredIn>
   </Token>
   <Token>
@@ -26367,7 +26377,7 @@
       <Scope>FileSystem</Scope>
     </TokenIdentifier>
     <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>acb26d0cb8541766823e8d76e4271d2d4</Anchor>
+    <Anchor>a0e1b3ca5f4c84fe1e42dd88ad8ab0f17</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>
@@ -26378,7 +26388,7 @@
       <Scope>FileSystem</Scope>
     </TokenIdentifier>
     <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>a5a90ff0b905273187be5bae7bc1a1ef9</Anchor>
+    <Anchor>a0e2f12cc93625188f0ce24eff315e7ce</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>
@@ -27090,6 +27100,38 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>FileSystem::FB</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>FileSystem::FB</Scope>
+    </TokenIdentifier>
+    <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FB</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::FB</Scope>
+    </TokenIdentifier>
+    <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+    <Anchor>a2412de5f54f00ee2645e9c5e7166b50d</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~FB</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::FB</Scope>
+    </TokenIdentifier>
+    <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+    <Anchor>a73a7b20cb53097985e12daf14f716d30</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>FileSystem::Initrd</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -27564,7 +27606,7 @@
       <Scope>FileSystem::Virtual</Scope>
     </TokenIdentifier>
     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
-    <Anchor>a892dd91880c8a471c3b2d2ed21c3c42c</Anchor>
+    <Anchor>a5ed337f091d636662f4646b18c2454d9</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>
@@ -27575,7 +27617,7 @@
       <Scope>FileSystem::Virtual</Scope>
     </TokenIdentifier>
     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
-    <Anchor>a358be68a0a9062318506347a3d2f8613</Anchor>
+    <Anchor>a0c58ed367cda8ba73587c496ea31619f</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>

@@ -9282,6 +9282,39 @@
       <Scope>FileSystem</Scope>
     </TokenIdentifier>
     <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a26c090bf8c63c7d033e3356686c71e8e</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>WriteFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a643b605c24e12f0e8e69a66aa0118b70</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fb</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>afcf7cf6baa46b93e231681dc5e085e6c</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
     <Anchor>a1b7e7eed0f929229007e663c840e982a</Anchor>
     <DeclaredIn>initrd.cpp</DeclaredIn>
   </Token>
@@ -17201,7 +17234,7 @@
       <Scope>FileSystem</Scope>
     </TokenIdentifier>
     <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>acb26d0cb8541766823e8d76e4271d2d4</Anchor>
+    <Anchor>a0e1b3ca5f4c84fe1e42dd88ad8ab0f17</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>
@@ -17212,7 +17245,7 @@
       <Scope>FileSystem</Scope>
     </TokenIdentifier>
     <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>a5a90ff0b905273187be5bae7bc1a1ef9</Anchor>
+    <Anchor>a0e2f12cc93625188f0ce24eff315e7ce</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>
@@ -21537,6 +21570,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>FadeScreenNow</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d2/d00/Kernel_8cpp.html</Path>
+    <Anchor>a8cc3993baddc8e37bd32407ff3b7c196</Anchor>
+    <DeclaredIn>Kernel.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>UserAllocator</Name>
       <APILanguage>c</APILanguage>
       <Type>data</Type>
@@ -21613,6 +21656,16 @@
     </TokenIdentifier>
     <Path>d0/daa/kernel_8h.html</Path>
     <Anchor>a78de668afe436bb1e16edb9954a5b0da</Anchor>
+    <DeclaredIn>kernel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FadeScreenNow</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d0/daa/kernel_8h.html</Path>
+    <Anchor>a8cc3993baddc8e37bd32407ff3b7c196</Anchor>
     <DeclaredIn>kernel.h</DeclaredIn>
   </Token>
   <Token>
@@ -29114,7 +29167,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>db/d9e/Linux_8cpp.html</Path>
-    <Anchor>a7b6310205519968fcb65667aaf694f03</Anchor>
+    <Anchor>a6d469002a772ef95bc1e2706e9f86310</Anchor>
     <DeclaredIn>Linux.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -29124,7 +29177,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>db/d9e/Linux_8cpp.html</Path>
-    <Anchor>afa4cc7997c754ec0bca61c7eb1af3e89</Anchor>
+    <Anchor>ae5b15e233fa36f2274c3f545c519c9f3</Anchor>
     <DeclaredIn>Linux.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -29134,7 +29187,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>db/d9e/Linux_8cpp.html</Path>
-    <Anchor>af84556956fed9246c1cbe53fc4013210</Anchor>
+    <Anchor>a13a2072935ac4e26bb78ac6b76f63a6a</Anchor>
     <DeclaredIn>Linux.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -29144,7 +29197,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>db/d9e/Linux_8cpp.html</Path>
-    <Anchor>a4ef827dcd13d1ae4d6ed8cda9fa16f61</Anchor>
+    <Anchor>a8e85e23e7438c7a6c90d9e0f60b3c825</Anchor>
     <DeclaredIn>Linux.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -29154,7 +29207,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>db/d9e/Linux_8cpp.html</Path>
-    <Anchor>ae660561bd910ec4532e6c1aee9a485e6</Anchor>
+    <Anchor>af632b2b070c74b2857138b9637f5419c</Anchor>
     <DeclaredIn>Linux.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -32669,6 +32722,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>internal_fadebootlogo</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d9/d76/Native_8cpp.html</Path>
+    <Anchor>aba69e3d5d9ae70c92eb6718811f949aa</Anchor>
+    <DeclaredIn>Native.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>internal_fbaddress</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -32764,7 +32827,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d9/d76/Native_8cpp.html</Path>
-    <Anchor>adae6bc1b61959cc3c3852101debe9701</Anchor>
+    <Anchor>acd18a6720d0aa2980be73013e8f2c94a</Anchor>
     <DeclaredIn>Native.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -32774,7 +32837,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d9/d76/Native_8cpp.html</Path>
-    <Anchor>a2edfc0199406bdab89c230ba79183052</Anchor>
+    <Anchor>abdc98347ae2f2c0e3225492759023dbc</Anchor>
     <DeclaredIn>Native.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -33889,22 +33952,22 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>InterruptHandler</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>de/dcd/Timer_8c.html</Path>
-    <Anchor>afef814be56108c73e8d650f8df72c67b</Anchor>
-    <DeclaredIn>Timer.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>TimerOneShot</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>de/dcd/Timer_8c.html</Path>
     <Anchor>a36b5e5f8d6acb1aa7fc953b4d2886ffa</Anchor>
+    <DeclaredIn>Timer.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>InterruptHandler</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>de/dcd/Timer_8c.html</Path>
+    <Anchor>afef814be56108c73e8d650f8df72c67b</Anchor>
     <DeclaredIn>Timer.c</DeclaredIn>
   </Token>
   <Token>
@@ -34715,7 +34778,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d2/d4d/file_8h.html</Path>
-    <Anchor>aef2c9e8a2a72780ab52e7249477520b8</Anchor>
+    <Anchor>a04a7269b2a968bf332f36af2ea5ea33a</Anchor>
     <Abstract>Read data from the given stream into the array pointed to, by Buffer.</Abstract>
     <DeclaredIn>file.h</DeclaredIn>
   </Token>
@@ -34726,7 +34789,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d2/d4d/file_8h.html</Path>
-    <Anchor>a7a231d085fbec73ed8131382939520c1</Anchor>
+    <Anchor>aef712ea11ed5a57d9b06ff246d3da6c7</Anchor>
     <Abstract>Write data from the array pointed to by Buffer to the given stream.</Abstract>
     <DeclaredIn>file.h</DeclaredIn>
   </Token>
@@ -36923,6 +36986,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>_FadeBootLogo</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7dda85f3e0d2f766f960127169b34f86e4fb</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>_GetFramebufferAddress</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -37839,8 +37912,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d6/d13/file_8c.html</Path>
-    <Anchor>a1d4238bd53ea0fcd9ec3648527cc7172</Anchor>
-    <Abstract>Read data from the given stream into the array pointed to, by Buffer.</Abstract>
+    <Anchor>af21d707164d17b785a26f5c305ae0f4f</Anchor>
     <DeclaredIn>file.c</DeclaredIn>
   </Token>
   <Token>
@@ -37850,8 +37922,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d6/d13/file_8c.html</Path>
-    <Anchor>aeee4aea98bca12e622c2e44007f98577</Anchor>
-    <Abstract>Write data from the array pointed to by Buffer to the given stream.</Abstract>
+    <Anchor>a4f7433d4080f036fa79afb621b91ef16</Anchor>
     <DeclaredIn>file.c</DeclaredIn>
   </Token>
   <Token>
@@ -39208,6 +39279,16 @@
     <Path>d0/d2b/brainfuck_8c.html</Path>
     <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
     <DeclaredIn>brainfuck.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>main</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d3/d7e/texteditor_8c.html</Path>
+    <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
+    <DeclaredIn>texteditor.c</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -45811,7 +45892,7 @@
       <Scope>DiskManager::Partition::Part</Scope>
     </TokenIdentifier>
     <Path>d0/d52/structDiskManager_1_1Partition_1_1Part.html</Path>
-    <Anchor>a165138aa2358c93a7d5de46fd6b8fa85</Anchor>
+    <Anchor>aa2364ecab92713043d4f0fa3f9366ba1</Anchor>
     <DeclaredIn>disk.h</DeclaredIn>
   </Token>
   <Token>
@@ -45822,7 +45903,7 @@
       <Scope>DiskManager::Partition::Part</Scope>
     </TokenIdentifier>
     <Path>d0/d52/structDiskManager_1_1Partition_1_1Part.html</Path>
-    <Anchor>a5baef99c20ea07fb02cf5d2aa46a83e2</Anchor>
+    <Anchor>a5fe7389953b5710c82222132fca9d76d</Anchor>
     <DeclaredIn>disk.h</DeclaredIn>
   </Token>
   <Token>
@@ -47151,7 +47232,7 @@
       <Scope>FileSystem</Scope>
     </TokenIdentifier>
     <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>acb26d0cb8541766823e8d76e4271d2d4</Anchor>
+    <Anchor>a0e1b3ca5f4c84fe1e42dd88ad8ab0f17</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>
@@ -47162,7 +47243,7 @@
       <Scope>FileSystem</Scope>
     </TokenIdentifier>
     <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>a5a90ff0b905273187be5bae7bc1a1ef9</Anchor>
+    <Anchor>a0e2f12cc93625188f0ce24eff315e7ce</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>
@@ -47307,6 +47388,28 @@
     <Path>d6/df5/namespaceFileSystem.html</Path>
     <Anchor>a8b1d87a0c00997cf768ed31071ac7adb</Anchor>
     <DeclaredIn>fat.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a26c090bf8c63c7d033e3356686c71e8e</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>WriteFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a643b605c24e12f0e8e69a66aa0118b70</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -47593,6 +47696,17 @@
     <Path>d6/df5/namespaceFileSystem.html</Path>
     <Anchor>a51f6e62d3fe45588adf917be1d83fa8c</Anchor>
     <DeclaredIn>fat.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fb</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>afcf7cf6baa46b93e231681dc5e085e6c</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48336,6 +48450,38 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>FileSystem::FB</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>FileSystem::FB</Scope>
+    </TokenIdentifier>
+    <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FB</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::FB</Scope>
+    </TokenIdentifier>
+    <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+    <Anchor>a2412de5f54f00ee2645e9c5e7166b50d</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~FB</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::FB</Scope>
+    </TokenIdentifier>
+    <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+    <Anchor>a73a7b20cb53097985e12daf14f716d30</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>FileSystem::Initrd</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -48810,7 +48956,7 @@
       <Scope>FileSystem::Virtual</Scope>
     </TokenIdentifier>
     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
-    <Anchor>a892dd91880c8a471c3b2d2ed21c3c42c</Anchor>
+    <Anchor>a5ed337f091d636662f4646b18c2454d9</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>
@@ -48821,7 +48967,7 @@
       <Scope>FileSystem::Virtual</Scope>
     </TokenIdentifier>
     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
-    <Anchor>a358be68a0a9062318506347a3d2f8613</Anchor>
+    <Anchor>a0c58ed367cda8ba73587c496ea31619f</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>
@@ -49279,7 +49425,7 @@
       <Scope>Floppy::FloppyDrive</Scope>
     </TokenIdentifier>
     <Path>dd/d67/structFloppy_1_1FloppyDrive.html</Path>
-    <Anchor>a376fe739ac39c7f9375af929a7165e98</Anchor>
+    <Anchor>ae9e025471aeb2490d7d2ab39cb1b6066</Anchor>
     <DeclaredIn>floppy.h</DeclaredIn>
   </Token>
   <Token>
@@ -49290,7 +49436,7 @@
       <Scope>Floppy::FloppyDrive</Scope>
     </TokenIdentifier>
     <Path>dd/d67/structFloppy_1_1FloppyDrive.html</Path>
-    <Anchor>a76cb2d4f9e0597e3e9f8b41eebca6912</Anchor>
+    <Anchor>a9d7d76d481f620eab426767f48ba7920</Anchor>
     <DeclaredIn>floppy.h</DeclaredIn>
   </Token>
   <Token>

@@ -1,7 +1,7 @@
 var structDiskManager_1_1Partition_1_1Part =
 [
-    [ "Read", "d0/d52/structDiskManager_1_1Partition_1_1Part.html#a165138aa2358c93a7d5de46fd6b8fa85", null ],
-    [ "Write", "d0/d52/structDiskManager_1_1Partition_1_1Part.html#a5baef99c20ea07fb02cf5d2aa46a83e2", null ],
+    [ "Read", "d0/d52/structDiskManager_1_1Partition_1_1Part.html#aa2364ecab92713043d4f0fa3f9366ba1", null ],
+    [ "Write", "d0/d52/structDiskManager_1_1Partition_1_1Part.html#a5fe7389953b5710c82222132fca9d76d", null ],
     [ "EndLBA", "d0/d52/structDiskManager_1_1Partition_1_1Part.html#a92150fdba3fd60fa65a8774b1a7d6fef", null ],
     [ "Flags", "d0/d52/structDiskManager_1_1Partition_1_1Part.html#a2f9bb68b925e6d1f2e29226780d44940", null ],
     [ "Index", "d0/d52/structDiskManager_1_1Partition_1_1Part.html#a54caef18b75144d0ba113dbe339402f6", null ],

@@ -4,6 +4,7 @@ var namespaceFileSystem =
     [ "Driver", "da/d05/classFileSystem_1_1Driver.html", "da/d05/classFileSystem_1_1Driver" ],
     [ "EXT2", "d1/db8/classFileSystem_1_1EXT2.html", "d1/db8/classFileSystem_1_1EXT2" ],
     [ "FAT", "df/d19/classFileSystem_1_1FAT.html", "df/d19/classFileSystem_1_1FAT" ],
+    [ "FB", "d3/d4a/classFileSystem_1_1FB.html", "d3/d4a/classFileSystem_1_1FB" ],
     [ "FILE", "d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE", "d6/df5/namespaceFileSystem_d0/d13/structFileSystem_1_1FILE_dup" ],
     [ "FileSystemNode", "d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode", "d6/df5/namespaceFileSystem_df/d0b/structFileSystem_1_1FileSystemNode_dup" ],
     [ "FileSystemOpeations", "d6/df5/namespaceFileSystem.html#dd/d34/structFileSystem_1_1FileSystemOpeations", "d6/df5/namespaceFileSystem_dd/d34/structFileSystem_1_1FileSystemOpeations_dup" ],

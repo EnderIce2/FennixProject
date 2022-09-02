@@ -1,5 +1,14 @@
 var NAVTREEINDEX11 =
 {
+"d5/dba/multiboot2_8h.html#d1/d69/structmultiboot__tag__efi64":[5,0,0,5,0,0,3,25],
+"d5/dba/multiboot2_8h.html#d1/db3/structmultiboot__tag__efi32__ih":[5,0,0,5,0,0,3,31],
+"d5/dba/multiboot2_8h.html#d2/da0/structmultiboot__tag__basic__meminfo":[5,0,0,5,0,0,3,14],
+"d5/dba/multiboot2_8h.html#d4/daf/structmultiboot__header__tag__relocatable":[5,0,0,5,0,0,3,8],
+"d5/dba/multiboot2_8h.html#d4/dbd/structmultiboot__header__tag__information__request":[5,0,0,5,0,0,3,2],
+"d5/dba/multiboot2_8h.html#d4/def/structmultiboot__tag__load__base__addr":[5,0,0,5,0,0,3,33],
+"d5/dba/multiboot2_8h.html#d5/d23/structmultiboot__header__tag__address":[5,0,0,5,0,0,3,3],
+"d5/dba/multiboot2_8h.html#d5/de2/structmultiboot__mmap__entry":[5,0,0,5,0,0,2,5],
+"d5/dba/multiboot2_8h.html#d5/de2/structmultiboot__mmap__entry":[5,0,0,5,0,0,3,10],
 "d5/dba/multiboot2_8h.html#d6/d6f/structmultiboot__vbe__mode__info__block":[5,0,0,5,0,0,3,18],
 "d5/dba/multiboot2_8h.html#d6/dbd/structmultiboot__header__tag__framebuffer":[5,0,0,5,0,0,3,6],
 "d5/dba/multiboot2_8h.html#d7/d16/structmultiboot__tag":[5,0,0,5,0,0,3,11],
@@ -240,14 +249,5 @@ var NAVTREEINDEX11 =
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d4/d14/structstivale2__struct__tag__kernel__slide":[5,0,0,5,0,0,5,29],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d4/d35/structstivale2__struct__tag__modules":[5,0,0,5,0,0,5,20],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d4/d59/structstivale2__struct__tag__rsdp":[5,0,0,5,0,0,5,21],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d4/dbe/structstivale2__struct__tag__kernel__file":[5,0,0,5,0,0,5,25],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d5/d6c/structstivale2__struct__tag__firmware":[5,0,0,5,0,0,5,23],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d5/dcd/structstivale2__struct__tag__terminal":[5,0,0,5,0,0,5,18],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d7/d15/structstivale2__mmap__entry":[5,0,0,5,0,0,5,13],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d7/d33/structstivale2__guid":[5,0,0,5,0,0,5,27],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d7/dd5/structstivale2__header__tag__framebuffer":[5,0,0,5,0,0,5,4],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d8/d69/structstivale2__struct__tag__pmrs":[5,0,0,5,0,0,5,10],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d8/dd1/structstivale2__smp__info":[5,0,0,5,0,0,5,31],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d9/d97/structstivale2__struct__tag__kernel__file__v2":[5,0,0,5,0,0,5,26],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d9/d9c/structstivale2__struct__tag__efi__system__table":[5,0,0,5,0,0,5,24]
+"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d4/dbe/structstivale2__struct__tag__kernel__file":[5,0,0,5,0,0,5,25]
 };

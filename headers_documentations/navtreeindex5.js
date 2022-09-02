@@ -1,5 +1,9 @@
 var NAVTREEINDEX5 =
 {
+"d4/d56/namespaceanonymous__namespace_02atomic_8hpp_03.html":[0,0,0],
+"d4/d5d/structlimine__smbios__request.html":[1,0,101],
+"d4/d5d/structlimine__smbios__request.html#a1496e79a097c94028481ffd0d85181a1":[1,0,101,2],
+"d4/d5d/structlimine__smbios__request.html#aa7c13457c2b7c343763d07d8718af0e6":[1,0,101,0],
 "d4/d5d/structlimine__smbios__request.html#ab641e7902e52742d38784a72c39d6fd0":[1,0,101,1],
 "d4/d68/display_8h.html":[2,0,1,0,10],
 "d4/d68/display_8h.html#a0f459d16901ef591acaafa4b67fd4be5":[2,0,1,0,10,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX5 =
 "d5/dba/multiboot2_8h.html#a46cf9e061b4000644be5810844430afc":[2,0,1,0,0,0,3,83],
 "d5/dba/multiboot2_8h.html#a4b1ffdc97a86618a45839931345edca4":[2,0,1,0,0,0,3,24,0],
 "d5/dba/multiboot2_8h.html#a4c8a91229f40c06c3c63b4c37e83d219":[2,0,1,0,0,0,2,4,2],
-"d5/dba/multiboot2_8h.html#a4c8a91229f40c06c3c63b4c37e83d219":[2,0,1,0,0,0,3,9,2],
-"d5/dba/multiboot2_8h.html#a4c90b7929342dd5aab7d08afa0906d28":[2,0,1,0,0,0,2,0,12],
-"d5/dba/multiboot2_8h.html#a4c90b7929342dd5aab7d08afa0906d28":[2,0,1,0,0,0,3,0,12],
-"d5/dba/multiboot2_8h.html#a4dd2fad32ee3a2ce5379d7bf0a23dabe":[2,0,1,0,0,0,3,36,4],
-"d5/dba/multiboot2_8h.html#a50125b332242abd0051cd348fd2d9b68":[2,0,1,0,0,0,3,12,1]
+"d5/dba/multiboot2_8h.html#a4c8a91229f40c06c3c63b4c37e83d219":[2,0,1,0,0,0,3,9,2]
 };

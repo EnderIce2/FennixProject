@@ -1460,8 +1460,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    <a class="code" href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa6e2f35b404c5ac7a8486cc58b09d2f97">MSR_TSC_AUX</a> = 0xC0000103,</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <a class="code" href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa54a1368332f27aaa87e144717085743c">MSR_CR_PAT</a> = 0x00000277,</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <a class="code" href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731faebf5916c9293882401b809fa4b77b061">MSR_CR_PAT_RESET</a> = 0x0007040600070406ULL</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160; </div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;};</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1489,13 +1488,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00644">644</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;{</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;clac&quot;</span></div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00643">643</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;{</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;clac&quot;</span></div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;                 :</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;                 :</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;                 :</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;                 : <span class="stringliteral">&quot;cc&quot;</span>);</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;}</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;                 : <span class="stringliteral">&quot;cc&quot;</span>);</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2064,12 +2063,12 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00629">629</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;{</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;monitor&quot;</span></div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                 :</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                 : <span class="stringliteral">&quot;a&quot;</span>(rax), <span class="stringliteral">&quot;c&quot;</span>(rcx), <span class="stringliteral">&quot;d&quot;</span>(rdx));</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00628">628</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;{</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;monitor&quot;</span></div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                 :</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                 : <span class="stringliteral">&quot;a&quot;</span>(rax), <span class="stringliteral">&quot;c&quot;</span>(rcx), <span class="stringliteral">&quot;d&quot;</span>(rdx));</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2107,12 +2106,12 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00622">622</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;{</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mwait&quot;</span></div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                 :</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                 : <span class="stringliteral">&quot;a&quot;</span>(rax), <span class="stringliteral">&quot;c&quot;</span>(rcx));</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00621">621</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;{</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mwait&quot;</span></div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                 :</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                 : <span class="stringliteral">&quot;a&quot;</span>(rax), <span class="stringliteral">&quot;c&quot;</span>(rcx));</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2140,15 +2139,15 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00523">523</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;{</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> low, high;</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;rdmsr&quot;</span></div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                 : <span class="stringliteral">&quot;=a&quot;</span>(low), <span class="stringliteral">&quot;=d&quot;</span>(high)</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;                 : <span class="stringliteral">&quot;c&quot;</span>(msr)</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keywordflow">return</span> ((<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)low) | (((<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)high) &lt;&lt; 32);</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00522">522</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;{</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> low, high;</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;rdmsr&quot;</span></div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                 : <span class="stringliteral">&quot;=a&quot;</span>(low), <span class="stringliteral">&quot;=d&quot;</span>(high)</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                 : <span class="stringliteral">&quot;c&quot;</span>(msr)</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <span class="keywordflow">return</span> ((<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)low) | (((<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)high) &lt;&lt; 32);</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2175,13 +2174,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00542">542</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;{</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %%cr0, %[Result]&quot;</span></div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                 : [Result] <span class="stringliteral">&quot;=q&quot;</span>(Result));</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d57/cputables_8h.html#df/d42/unionCR0">CR0</a>){.raw = Result};</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00541">541</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;{</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %%cr0, %[Result]&quot;</span></div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                 : [Result] <span class="stringliteral">&quot;=q&quot;</span>(Result));</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d57/cputables_8h.html#df/d42/unionCR0">CR0</a>){.raw = Result};</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00174">CR0::raw</a>.</p>
 
@@ -2210,13 +2209,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00550">550</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;{</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %%cr2, %[Result]&quot;</span></div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;                 : [Result] <span class="stringliteral">&quot;=q&quot;</span>(Result));</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d57/cputables_8h.html#d4/dbd/unionCR2">CR2</a>){.raw = Result};</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00549">549</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;{</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %%cr2, %[Result]&quot;</span></div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;                 : [Result] <span class="stringliteral">&quot;=q&quot;</span>(Result));</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d57/cputables_8h.html#d4/dbd/unionCR2">CR2</a>){.raw = Result};</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00184">CR2::raw</a>.</p>
 
@@ -2245,13 +2244,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00558">558</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;{</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %%cr3, %[Result]&quot;</span></div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                 : [Result] <span class="stringliteral">&quot;=q&quot;</span>(Result));</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d57/cputables_8h.html#d2/dc5/unionCR3">CR3</a>){.raw = Result};</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00557">557</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;{</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %%cr3, %[Result]&quot;</span></div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                 : [Result] <span class="stringliteral">&quot;=q&quot;</span>(Result));</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d57/cputables_8h.html#d2/dc5/unionCR3">CR3</a>){.raw = Result};</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00198">CR3::raw</a>.</p>
 
@@ -2280,13 +2279,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00566">566</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;{</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %%cr4, %[Result]&quot;</span></div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                 : [Result] <span class="stringliteral">&quot;=q&quot;</span>(Result));</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d57/cputables_8h.html#d5/d36/unionCR4">CR4</a>){.raw = Result};</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00565">565</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;{</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %%cr4, %[Result]&quot;</span></div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                 : [Result] <span class="stringliteral">&quot;=q&quot;</span>(Result));</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d57/cputables_8h.html#d5/d36/unionCR4">CR4</a>){.raw = Result};</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00254">CR4::raw</a>.</p>
 
@@ -2315,13 +2314,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00574">574</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;{</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %%cr8, %[Result]&quot;</span></div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                 : [Result] <span class="stringliteral">&quot;=q&quot;</span>(Result));</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d57/cputables_8h.html#d9/d15/unionCR8">CR8</a>){.raw = Result};</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00573">573</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;{</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %%cr8, %[Result]&quot;</span></div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                 : [Result] <span class="stringliteral">&quot;=q&quot;</span>(Result));</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d57/cputables_8h.html#d9/d15/unionCR8">CR8</a>){.raw = Result};</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00264">CR8::raw</a>.</p>
 
@@ -2350,13 +2349,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00636">636</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;{</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;stac&quot;</span></div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00635">635</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;{</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;stac&quot;</span></div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;                 :</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                 :</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;                 :</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                 : <span class="stringliteral">&quot;cc&quot;</span>);</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;}</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;                 : <span class="stringliteral">&quot;cc&quot;</span>);</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2414,13 +2413,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00652">652</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;{</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> rax, rdx;</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;rdtsc&quot;</span></div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                 : <span class="stringliteral">&quot;=a&quot;</span>(rax), <span class="stringliteral">&quot;=d&quot;</span>(rdx));</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    <span class="keywordflow">return</span> (rdx &lt;&lt; 32) | rax;</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00651">651</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;{</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> rax, rdx;</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;rdtsc&quot;</span></div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                 : <span class="stringliteral">&quot;=a&quot;</span>(rax), <span class="stringliteral">&quot;=d&quot;</span>(rdx));</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    <span class="keywordflow">return</span> (rdx &lt;&lt; 32) | rax;</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2448,13 +2447,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00582">582</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;{</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[ControlRegister], %%cr0&quot;</span></div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                 :</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.<a class="code" href="../../d1/d57/cputables_8h.html#a1d6214a0c49deba765aec2407fe0e40a">raw</a>)</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00581">581</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;{</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[ControlRegister], %%cr0&quot;</span></div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                 :</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.<a class="code" href="../../d1/d57/cputables_8h.html#a1d6214a0c49deba765aec2407fe0e40a">raw</a>)</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00174">CR0::raw</a>.</p>
 
@@ -2484,13 +2483,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00590">590</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;{</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[ControlRegister], %%cr2&quot;</span></div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                 :</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.<a class="code" href="../../d1/d57/cputables_8h.html#a57c92bcb08bb47d220f0019edfc4ee5e">raw</a>)</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00589">589</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;{</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[ControlRegister], %%cr2&quot;</span></div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;                 :</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.<a class="code" href="../../d1/d57/cputables_8h.html#a57c92bcb08bb47d220f0019edfc4ee5e">raw</a>)</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00184">CR2::raw</a>.</p>
 
@@ -2520,13 +2519,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00598">598</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;{</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[ControlRegister], %%cr3&quot;</span></div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                 :</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.<a class="code" href="../../d1/d57/cputables_8h.html#afa7d479bfedb8a44e2d913acc41ad16d">raw</a>)</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00597">597</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;{</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[ControlRegister], %%cr3&quot;</span></div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                 :</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.<a class="code" href="../../d1/d57/cputables_8h.html#afa7d479bfedb8a44e2d913acc41ad16d">raw</a>)</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00198">CR3::raw</a>.</p>
 
@@ -2556,13 +2555,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00606">606</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;{</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[ControlRegister], %%cr4&quot;</span></div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                 :</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.<a class="code" href="../../d1/d57/cputables_8h.html#a02c227c738fac1f28b1a9ceb1aa6e0af">raw</a>)</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00605">605</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;{</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[ControlRegister], %%cr4&quot;</span></div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                 :</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.<a class="code" href="../../d1/d57/cputables_8h.html#a02c227c738fac1f28b1a9ceb1aa6e0af">raw</a>)</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00254">CR4::raw</a>.</p>
 
@@ -2592,13 +2591,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00614">614</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;{</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[ControlRegister], %%cr8&quot;</span></div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                 :</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.<a class="code" href="../../d1/d57/cputables_8h.html#a309e30fa9bbcfc908acba0828ffe2599">raw</a>)</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00613">613</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;{</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[ControlRegister], %%cr8&quot;</span></div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                 :</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.<a class="code" href="../../d1/d57/cputables_8h.html#a309e30fa9bbcfc908acba0828ffe2599">raw</a>)</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00264">CR8::raw</a>.</p>
 
@@ -2638,14 +2637,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00533">533</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;{</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> low = Value, high = Value &gt;&gt; 32;</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;wrmsr&quot;</span></div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                 :</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                 : <span class="stringliteral">&quot;c&quot;</span>(msr), <span class="stringliteral">&quot;a&quot;</span>(low), <span class="stringliteral">&quot;d&quot;</span>(high)</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00532">532</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;{</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> low = Value, high = Value &gt;&gt; 32;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;wrmsr&quot;</span></div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                 :</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                 : <span class="stringliteral">&quot;c&quot;</span>(msr), <span class="stringliteral">&quot;a&quot;</span>(low), <span class="stringliteral">&quot;d&quot;</span>(high)</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

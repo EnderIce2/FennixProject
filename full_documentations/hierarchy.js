@@ -87,6 +87,7 @@ var hierarchy =
     [ "FileSystem::EXT2", "d1/db8/classFileSystem_1_1EXT2.html", null ],
     [ "ACPI::ACPI::FADTHeader", "d3/d21/classACPI_1_1ACPI.html#df/d0c/structACPI_1_1ACPI_1_1FADTHeader", null ],
     [ "FileSystem::FAT", "df/d19/classFileSystem_1_1FAT.html", null ],
+    [ "FileSystem::FB", "d3/d4a/classFileSystem_1_1FB.html", null ],
     [ "FileSystem::FILE", "d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE", null ],
     [ "FileSystem::USTAR::FileHeader", "d0/df0/classFileSystem_1_1USTAR.html#de/d80/structFileSystem_1_1USTAR_1_1FileHeader", null ],
     [ "FileSystem::FileSystemNode", "d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode", null ],

@@ -1,5 +1,9 @@
 var NAVTREEINDEX10 =
 {
+"d9/d3e/namespaceTasking.html#adaf6dddaf1a34eccfa993655071f2bd5":[2,0,1,0,16,0,4],
+"d9/d3e/namespaceTasking.html#da/d21/structTasking_1_1TaskControlBlock":[2,0,1,0,16,0],
+"d9/d45/namespaceKernelSymbols.html":[0,0,4],
+"d9/d45/namespaceKernelSymbols.html":[1,0,4],
 "d9/d58/include_2stdarg_8h.html":[2,0,0,10],
 "d9/d58/include_2stdarg_8h.html#a23a32070bb5595761e7ed3884a84eb4a":[2,0,0,10,2],
 "d9/d58/include_2stdarg_8h.html#a738c42093fee248588075769434481f1":[2,0,0,10,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX10 =
 "da/ddd/cpuid_8h.html#a4ec3657d125dcbc089e85e59c1f203e9":[2,0,1,0,5,52],
 "da/ddd/cpuid_8h.html#a4fd18295e0816fdd1fbfe3baa481764f":[2,0,1,0,5,37],
 "da/ddd/cpuid_8h.html#a500f49e94c2df9199c46fb326fc37eef":[2,0,1,0,5,11],
-"da/ddd/cpuid_8h.html#a53a7a6d14ec17e78ce69c99abc564be3":[2,0,1,0,5,32],
-"da/ddd/cpuid_8h.html#a556df7e262846ed5ec357701441cbc32":[2,0,1,0,5,23],
-"da/ddd/cpuid_8h.html#a5595853ee048dd3bb49b1e1a14fa3879":[2,0,1,0,5,38],
-"da/ddd/cpuid_8h.html#a55a2a1e1e52003f706869af4e71eddc8":[2,0,1,0,5,21],
-"da/ddd/cpuid_8h.html#a572ddf5e23675c457d0775b4413c764c":[2,0,1,0,5,28]
+"da/ddd/cpuid_8h.html#a53a7a6d14ec17e78ce69c99abc564be3":[2,0,1,0,5,32]
 };

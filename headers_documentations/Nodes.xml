@@ -641,6 +641,22 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>FB</Name>
+              <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>FB</Name>
+                <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+                <Anchor>a2412de5f54f00ee2645e9c5e7166b50d</Anchor>
+               </Node>
+               <Node>
+                <Name>~FB</Name>
+                <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+                <Anchor>a73a7b20cb53097985e12daf14f716d30</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>FILE</Name>
               <Path>d6/df5/namespaceFileSystem.html</Path>
               <Anchor>d0/d13/structFileSystem_1_1FILE</Anchor>
@@ -1169,7 +1185,7 @@
                <Node>
                 <Name>Read</Name>
                 <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
-                <Anchor>a892dd91880c8a471c3b2d2ed21c3c42c</Anchor>
+                <Anchor>a5ed337f091d636662f4646b18c2454d9</Anchor>
                </Node>
                <Node>
                 <Name>Unmount</Name>
@@ -1179,7 +1195,7 @@
                <Node>
                 <Name>Write</Name>
                 <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
-                <Anchor>a358be68a0a9062318506347a3d2f8613</Anchor>
+                <Anchor>a0c58ed367cda8ba73587c496ea31619f</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -4242,24 +4258,19 @@
               <Anchor>ae415e257ac62d2624cb448718f5ec69b</Anchor>
              </Node>
              <Node>
+              <Name>CurrentSystemTime</Name>
+              <Path>db/da4/task_8h.html</Path>
+              <Anchor>a3610af3a8893e1a05b7c593f1b445425</Anchor>
+             </Node>
+             <Node>
               <Name>Day</Name>
               <Path>db/da4/task_8h.html</Path>
               <Anchor>a5cf2bb8a598804fc1acf5089e89bfb98</Anchor>
              </Node>
              <Node>
-              <Name>EndUsedTicks</Name>
-              <Path>db/da4/task_8h.html</Path>
-              <Anchor>a3a3414915b058d807265faf792a72875</Anchor>
-             </Node>
-             <Node>
               <Name>Hour</Name>
               <Path>db/da4/task_8h.html</Path>
               <Anchor>ab63a00759ad6c04ac961f1272c7fbd52</Anchor>
-             </Node>
-             <Node>
-              <Name>LastUsedTicks</Name>
-              <Path>db/da4/task_8h.html</Path>
-              <Anchor>a475c49da8b49acd849da7ebad42deb01</Anchor>
              </Node>
              <Node>
               <Name>Minute</Name>
@@ -4270,6 +4281,16 @@
               <Name>Month</Name>
               <Path>db/da4/task_8h.html</Path>
               <Anchor>a83c982a61d2381c2c3697dd7fc921378</Anchor>
+             </Node>
+             <Node>
+              <Name>OldSystemTime</Name>
+              <Path>db/da4/task_8h.html</Path>
+              <Anchor>a748053126995339788f36df4c21d6d7f</Anchor>
+             </Node>
+             <Node>
+              <Name>OldUsedTime</Name>
+              <Path>db/da4/task_8h.html</Path>
+              <Anchor>a1cd9730398e1a4235bfa1796f88419cb</Anchor>
              </Node>
              <Node>
               <Name>Platform</Name>
@@ -4287,14 +4308,9 @@
               <Anchor>a3f2646419a512c1aaf3e6c0c5b262817</Anchor>
              </Node>
              <Node>
-              <Name>SpawnTick</Name>
+              <Name>SpawnTime</Name>
               <Path>db/da4/task_8h.html</Path>
-              <Anchor>af0f3caebe2f6927d71a642a2abdf6638</Anchor>
-             </Node>
-             <Node>
-              <Name>StartUsedTicks</Name>
-              <Path>db/da4/task_8h.html</Path>
-              <Anchor>a80103c36dcc5634162f2976b7c636a84</Anchor>
+              <Anchor>af3f87eeda879a9c5784cb1f622f9a3ed</Anchor>
              </Node>
              <Node>
               <Name>Usage</Name>
@@ -4302,9 +4318,9 @@
               <Anchor>a9555db6d572a613674b830d851e55fdf</Anchor>
              </Node>
              <Node>
-              <Name>UsedTicks</Name>
+              <Name>UsedTime</Name>
               <Path>db/da4/task_8h.html</Path>
-              <Anchor>a8735726b09e222712e2e2baa08983947</Anchor>
+              <Anchor>a273c5136a61cfd2fdf75ff5038463052</Anchor>
              </Node>
              <Node>
               <Name>Year</Name>
@@ -6396,6 +6412,23 @@
             <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
             <Subnodes>
              <Node>
+              <Name>framebuffer_palette</Name>
+              <Path>d5/dba/multiboot2_8h.html</Path>
+              <Anchor>ac7df1fdfee327da3c205ba9086e4802a</Anchor>
+             </Node>
+             <Node>
+              <Name>framebuffer_palette_num_colors</Name>
+              <Path>d5/dba/multiboot2_8h.html</Path>
+              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>multiboot_tag_framebuffer.__unnamed__.__unnamed__</Name>
+            <Path>d5/dba/multiboot2_8h.html</Path>
+            <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
               <Name>framebuffer_blue_field_position</Name>
               <Path>d5/dba/multiboot2_8h.html</Path>
               <Anchor>ace107d23f7f4af6fd8d969926c5c9d16</Anchor>
@@ -6424,23 +6457,6 @@
               <Name>framebuffer_red_mask_size</Name>
               <Path>d5/dba/multiboot2_8h.html</Path>
               <Anchor>a0d868424e2b703471e3d73c0a72bc75c</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>multiboot_tag_framebuffer.__unnamed__.__unnamed__</Name>
-            <Path>d5/dba/multiboot2_8h.html</Path>
-            <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
-              <Name>framebuffer_palette</Name>
-              <Path>d5/dba/multiboot2_8h.html</Path>
-              <Anchor>ac7df1fdfee327da3c205ba9086e4802a</Anchor>
-             </Node>
-             <Node>
-              <Name>framebuffer_palette_num_colors</Name>
-              <Path>d5/dba/multiboot2_8h.html</Path>
-              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -13255,24 +13271,19 @@
                   <Anchor>ae415e257ac62d2624cb448718f5ec69b</Anchor>
                  </Node>
                  <Node>
+                  <Name>CurrentSystemTime</Name>
+                  <Path>db/da4/task_8h.html</Path>
+                  <Anchor>a3610af3a8893e1a05b7c593f1b445425</Anchor>
+                 </Node>
+                 <Node>
                   <Name>Day</Name>
                   <Path>db/da4/task_8h.html</Path>
                   <Anchor>a5cf2bb8a598804fc1acf5089e89bfb98</Anchor>
                  </Node>
                  <Node>
-                  <Name>EndUsedTicks</Name>
-                  <Path>db/da4/task_8h.html</Path>
-                  <Anchor>a3a3414915b058d807265faf792a72875</Anchor>
-                 </Node>
-                 <Node>
                   <Name>Hour</Name>
                   <Path>db/da4/task_8h.html</Path>
                   <Anchor>ab63a00759ad6c04ac961f1272c7fbd52</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>LastUsedTicks</Name>
-                  <Path>db/da4/task_8h.html</Path>
-                  <Anchor>a475c49da8b49acd849da7ebad42deb01</Anchor>
                  </Node>
                  <Node>
                   <Name>Minute</Name>
@@ -13283,6 +13294,16 @@
                   <Name>Month</Name>
                   <Path>db/da4/task_8h.html</Path>
                   <Anchor>a83c982a61d2381c2c3697dd7fc921378</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>OldSystemTime</Name>
+                  <Path>db/da4/task_8h.html</Path>
+                  <Anchor>a748053126995339788f36df4c21d6d7f</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>OldUsedTime</Name>
+                  <Path>db/da4/task_8h.html</Path>
+                  <Anchor>a1cd9730398e1a4235bfa1796f88419cb</Anchor>
                  </Node>
                  <Node>
                   <Name>Platform</Name>
@@ -13300,14 +13321,9 @@
                   <Anchor>a3f2646419a512c1aaf3e6c0c5b262817</Anchor>
                  </Node>
                  <Node>
-                  <Name>SpawnTick</Name>
+                  <Name>SpawnTime</Name>
                   <Path>db/da4/task_8h.html</Path>
-                  <Anchor>af0f3caebe2f6927d71a642a2abdf6638</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>StartUsedTicks</Name>
-                  <Path>db/da4/task_8h.html</Path>
-                  <Anchor>a80103c36dcc5634162f2976b7c636a84</Anchor>
+                  <Anchor>af3f87eeda879a9c5784cb1f622f9a3ed</Anchor>
                  </Node>
                  <Node>
                   <Name>Usage</Name>
@@ -13315,9 +13331,9 @@
                   <Anchor>a9555db6d572a613674b830d851e55fdf</Anchor>
                  </Node>
                  <Node>
-                  <Name>UsedTicks</Name>
+                  <Name>UsedTime</Name>
                   <Path>db/da4/task_8h.html</Path>
-                  <Anchor>a8735726b09e222712e2e2baa08983947</Anchor>
+                  <Anchor>a273c5136a61cfd2fdf75ff5038463052</Anchor>
                  </Node>
                  <Node>
                   <Name>Year</Name>
@@ -24497,7 +24513,7 @@
                    <Node>
                     <Name>Read</Name>
                     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
-                    <Anchor>a892dd91880c8a471c3b2d2ed21c3c42c</Anchor>
+                    <Anchor>a5ed337f091d636662f4646b18c2454d9</Anchor>
                    </Node>
                    <Node>
                     <Name>Unmount</Name>
@@ -24507,7 +24523,7 @@
                    <Node>
                     <Name>Write</Name>
                     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
-                    <Anchor>a358be68a0a9062318506347a3d2f8613</Anchor>
+                    <Anchor>a0c58ed367cda8ba73587c496ea31619f</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -25023,6 +25039,22 @@
                     <Name>~Zero</Name>
                     <Path>d7/d9a/classFileSystem_1_1Zero.html</Path>
                     <Anchor>ac077811f3744db8192b103b3addeb0be</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>FB</Name>
+                  <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>FB</Name>
+                    <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+                    <Anchor>a2412de5f54f00ee2645e9c5e7166b50d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>~FB</Name>
+                    <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+                    <Anchor>a73a7b20cb53097985e12daf14f716d30</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -25831,7 +25863,7 @@
                  <Node>
                   <Name>OperationRead</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
-                  <Anchor>acb26d0cb8541766823e8d76e4271d2d4</Anchor>
+                  <Anchor>a0e1b3ca5f4c84fe1e42dd88ad8ab0f17</Anchor>
                  </Node>
                  <Node>
                   <Name>OperationSync</Name>
@@ -25846,7 +25878,7 @@
                  <Node>
                   <Name>OperationWrite</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
-                  <Anchor>a5a90ff0b905273187be5bae7bc1a1ef9</Anchor>
+                  <Anchor>a0e2f12cc93625188f0ce24eff315e7ce</Anchor>
                  </Node>
                  <Node>
                   <Name>FILESTATUS</Name>
@@ -29169,7 +29201,7 @@
                  <Node>
                   <Name>FileRead</Name>
                   <Path>d2/d4d/file_8h.html</Path>
-                  <Anchor>aef2c9e8a2a72780ab52e7249477520b8</Anchor>
+                  <Anchor>a04a7269b2a968bf332f36af2ea5ea33a</Anchor>
                  </Node>
                  <Node>
                   <Name>FileSeek</Name>
@@ -29184,7 +29216,7 @@
                  <Node>
                   <Name>FileWrite</Name>
                   <Path>d2/d4d/file_8h.html</Path>
-                  <Anchor>a7a231d085fbec73ed8131382939520c1</Anchor>
+                  <Anchor>aef712ea11ed5a57d9b06ff246d3da6c7</Anchor>
                  </Node>
                  <Node>
                   <Name>MakeDirectory</Name>
@@ -30475,6 +30507,11 @@
                     <Name>_Reboot</Name>
                     <Path>d2/d6e/syscalls_8h.html</Path>
                     <Anchor>a16c10255fbc3692d24e41969a899c7dda3f438c11799cb45916538d5e26efe139</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>_FadeBootLogo</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7dda85f3e0d2f766f960127169b34f86e4fb</Anchor>
                    </Node>
                    <Node>
                     <Name>_GetFramebufferAddress</Name>
