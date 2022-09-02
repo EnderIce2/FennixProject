@@ -97,16 +97,6 @@ uint32_t get_timer_clock()
         return get_freq();
 }
 
-InterruptHandler(timer_interrupt_handler)
-{
-    if (APICTimer_initialized)
-        return;
-    else if (HPET_initialized)
-        return;
-    else if (PIC_initialized)
-        ticks++;
-}
-
 void TimerOneShot(uint32_t Vector, uint64_t Miliseconds)
 {
     if (APICTimer_initialized)
@@ -119,8 +109,11 @@ void TimerOneShot(uint32_t Vector, uint64_t Miliseconds)
         TSC_oneshot(Vector, Miliseconds);
 }
 
+InterruptHandler(timer_interrupt_handler) { ticks++; }
+
 void init_timer()
 {
+    // TODO: apic timer interrupt handler is called only once
     CRegisterInterrupt(timer_interrupt_handler, IRQ0, true);
     init_APICTimer();
     if (!APICTimer_initialized)
@@ -133,21 +126,21 @@ void init_timer()
     if (APICTimer_initialized)
     {
         active_timers.APIC = true;
-        debug("APIC timer is supported.");
+        debug("Timer APIC has been enabled.");
     }
     else if (HPET_initialized)
     {
         active_timers.HPET = true;
-        debug("HPET timer is supported.");
+        debug("Timer HPET has been enabled.");
     }
     else if (PIC_initialized)
     {
         active_timers.PIT = true;
-        debug("PIT timer is supported.");
+        debug("Timer PIT has been enabled.");
     }
     else
     {
         active_timers.TSC = true;
-        debug("TSC timer is supported.");
+        debug("Timer TSC has been enabled.");
     }
 }
