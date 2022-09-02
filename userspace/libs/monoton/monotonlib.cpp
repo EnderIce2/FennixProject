@@ -118,6 +118,18 @@ namespace MonotonLib
     {
         uint32_t Xi = Position.x, Yi = Position.y;
 
+        if (Xi + PSF2Font->Header->width > FB.Width)
+        {
+            Xi = 0;
+            Yi += PSF2Font->Header->height;
+            this->SetPrintPosition({Xi, Yi});
+            if (Yi >= (FB.Height - PSF2Font->Header->height))
+            {
+                this->Scroll();
+                this->SetPrintPosition({Xi, Yi - PSF2Font->Header->height});
+            }
+        }
+
         if (Char == '\n')
         {
             Xi = 0;
@@ -154,6 +166,19 @@ namespace MonotonLib
 
     void mtl::printchar(char Char)
     {
+        uint32_t Xi = Xpos, Yi = Ypos;
+        if (Xi + PSF2Font->Header->width > FB.Width)
+        {
+            Xi = 0;
+            Yi += PSF2Font->Header->height;
+            this->SetPrintPosition({Xi, Yi});
+            if (Yi >= (FB.Height - PSF2Font->Header->height))
+            {
+                this->Scroll();
+                this->SetPrintPosition({Xi, Yi - PSF2Font->Header->height});
+            }
+        }
+
         if (Char == '\n')
         {
             this->SetPrintPosition({0, Ypos + PSF2Font->Header->height});
@@ -195,6 +220,19 @@ namespace MonotonLib
         for (int i = 0; i < textlength; i++)
         {
             char Char = Text[i];
+
+            if (Xi + PSF2Font->Header->width > FB.Width)
+            {
+                Xi = 0;
+                Yi += PSF2Font->Header->height;
+                this->SetPrintPosition({Xi, Yi});
+                if (Yi >= (FB.Height - PSF2Font->Header->height))
+                {
+                    this->Scroll();
+                    this->SetPrintPosition({Xi, Yi - PSF2Font->Header->height});
+                }
+            }
+
             if (Char == '\n')
             {
                 Xi = 0;
