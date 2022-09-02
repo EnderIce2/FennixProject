@@ -74,7 +74,6 @@ namespace Xalloc
                 if (Last != nullptr && Last->IsFree)
                     Last->CombineForward(LastSegment);
             }
-
         } __attribute__((aligned(16)));
 
         void *HeapStart = nullptr;

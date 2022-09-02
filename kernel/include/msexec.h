@@ -129,7 +129,6 @@ typedef struct _IMAGE_SECTION_HEADER
     uint16_t NumberOfRelocations;
     uint16_t NumberOfLinenumbers;
     uint32_t Characteristics;
-
 } IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER;
 
 typedef struct _IMAGE_FILE_HEADER
@@ -189,5 +188,4 @@ typedef struct _IMAGE_NT_HEADERS
     uint32_t Signature;
     IMAGE_FILE_HEADER FileHeader;
     IMAGE_OPTIONAL_HEADER OptionalHeader;
-
 } IMAGE_NT_HEADERS, *PIMAGE_NT_HEADERS;

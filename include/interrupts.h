@@ -30,7 +30,6 @@ typedef enum
 
 typedef enum
 {
-
     ISR0 = 0x0,   // Divide-by-zero Error
     ISR1 = 0x1,   // Debug
     ISR2 = 0x2,   // Non-maskable Interrupt

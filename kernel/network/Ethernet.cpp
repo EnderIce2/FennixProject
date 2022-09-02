@@ -44,7 +44,6 @@ namespace NetworkEthernet
         if (b48(Packet->Header.DestinationMAC) == 0xFFFFFFFFFFFF ||
             b48(Packet->Header.DestinationMAC) == this->Interface->MAC)
         {
-
             netdbg("ETH: Received data from %02x:%02x:%02x:%02x:%02x:%02x [Type %#x]",
                    SourceMAC.Address[0], SourceMAC.Address[1], SourceMAC.Address[2],
                    SourceMAC.Address[3], SourceMAC.Address[4], SourceMAC.Address[5], b16(Packet->Header.Type));

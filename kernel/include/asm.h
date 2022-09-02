@@ -517,7 +517,6 @@ enum MSRID
     MSR_TSC_AUX = 0xC0000103,
     MSR_CR_PAT = 0x00000277,
     MSR_CR_PAT_RESET = 0x0007040600070406ULL
-
 };
 
 static inline uint64_t rdmsr(uint32_t msr)
