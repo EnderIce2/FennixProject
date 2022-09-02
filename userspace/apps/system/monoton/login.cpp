@@ -124,6 +124,13 @@ RetryLoginName:
 
     backspacelimit = 0;
 
+    if (strlen(usrbuf) > 16)
+    {
+        mono->print("\nThe username cannot be over 16 characters long.\n");
+        clearbuffer();
+        goto RetryLoginName;
+    }
+
     if (isempty_1(usrbuf))
     {
         mono->print("\nThe username cannot be empty.\n");
