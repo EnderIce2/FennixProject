@@ -495,7 +495,6 @@ static bool AlreadyInitialized = false;
 
 int main(int argc, char *argv[])
 {
-    syscall_fadeBootLogo();
     if (AlreadyInitialized)
     {
         WriteSysDebugger("[MonotonShell] Restored.\n");
@@ -504,6 +503,7 @@ int main(int argc, char *argv[])
         loop();
     }
     WriteSysDebugger("[MonotonShell] Started.\n");
+    syscall_fadeBootLogo();
     // mono 1 - multi 2
     if (syscall_getScheduleMode() == 2)
     {
