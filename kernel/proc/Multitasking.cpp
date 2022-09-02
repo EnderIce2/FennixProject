@@ -61,14 +61,14 @@ namespace Tasking
             CurrentDisplay->SetPrintColor(0xFF2200);
             if (Proc1 == CurrentCPU->CurrentProcess)
                 showarrow = true;
-            printf("%s(%ld) %s [%ld%%/%ld]\n", Proc1->Name, Proc1->ID, showarrow ? "<-" : "  ", Proc1->Info.Usage[0], Proc1->Info.UsedTicks);
+            printf("%s(%ld) %s [%ld%%/%ld]\n", Proc1->Name, Proc1->ID, showarrow ? "<-" : "  ", Proc1->Info.Usage[0], Proc1->Info.UsedTime);
             foreach (auto thd in Proc1->Threads)
             {
                 showarrow = false;
                 CurrentDisplay->SetPrintColor(0x00FF22);
                 if (thd == CurrentCPU->CurrentThread)
                     showarrow = true;
-                printf(" \\%s(%ld) %s [%ld%%/%ld]\n", Proc1->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTicks);
+                printf(" \\%s(%ld) %s [%ld%%/%ld]\n", Proc1->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTime);
             }
             foreach (auto Proc1Children in Proc1->Children)
             {
@@ -76,14 +76,14 @@ namespace Tasking
                 CurrentDisplay->SetPrintColor(0xFF2200);
                 if (Proc1Children == CurrentCPU->CurrentProcess)
                     showarrow = true;
-                printf(" \\%s(%ld) %s [%ld%%/%ld]\n", Proc1Children->Name, Proc1Children->ID, showarrow ? "<-" : "  ", Proc1Children->Info.Usage[0], Proc1Children->Info.UsedTicks);
+                printf(" \\%s(%ld) %s [%ld%%/%ld]\n", Proc1Children->Name, Proc1Children->ID, showarrow ? "<-" : "  ", Proc1Children->Info.Usage[0], Proc1Children->Info.UsedTime);
                 foreach (auto thd in Proc1Children->Threads)
                 {
                     showarrow = false;
                     CurrentDisplay->SetPrintColor(0x00FF22);
                     if (thd == CurrentCPU->CurrentThread)
                         showarrow = true;
-                    printf("  \\%s(%ld) %s [%ld%%/%ld]\n", Proc1Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTicks);
+                    printf("  \\%s(%ld) %s [%ld%%/%ld]\n", Proc1Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTime);
                 }
                 foreach (auto Proc2Children in Proc1Children->Children)
                 {
@@ -91,14 +91,14 @@ namespace Tasking
                     CurrentDisplay->SetPrintColor(0xFF2200);
                     if (Proc2Children == CurrentCPU->CurrentProcess)
                         showarrow = true;
-                    printf("  \\%s(%ld) %s [%ld%%/%ld]\n", Proc2Children->Name, Proc2Children->ID, showarrow ? "<-" : "  ", Proc2Children->Info.Usage[0], Proc2Children->Info.UsedTicks);
+                    printf("  \\%s(%ld) %s [%ld%%/%ld]\n", Proc2Children->Name, Proc2Children->ID, showarrow ? "<-" : "  ", Proc2Children->Info.Usage[0], Proc2Children->Info.UsedTime);
                     foreach (auto thd in Proc2Children->Threads)
                     {
                         showarrow = false;
                         CurrentDisplay->SetPrintColor(0x00FF22);
                         if (thd == CurrentCPU->CurrentThread)
                             showarrow = true;
-                        printf("   \\%s(%ld) %s [%ld%%/%ld]\n", Proc2Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTicks);
+                        printf("   \\%s(%ld) %s [%ld%%/%ld]\n", Proc2Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTime);
                     }
                     foreach (auto Proc3Children in Proc2Children->Children)
                     {
@@ -106,14 +106,14 @@ namespace Tasking
                         CurrentDisplay->SetPrintColor(0xFF2200);
                         if (Proc3Children == CurrentCPU->CurrentProcess)
                             showarrow = true;
-                        printf("   \\%s(%ld) %s [%ld%%/%ld]\n", Proc3Children->Name, Proc3Children->ID, showarrow ? "<-" : "  ", Proc3Children->Info.Usage[0], Proc3Children->Info.UsedTicks);
+                        printf("   \\%s(%ld) %s [%ld%%/%ld]\n", Proc3Children->Name, Proc3Children->ID, showarrow ? "<-" : "  ", Proc3Children->Info.Usage[0], Proc3Children->Info.UsedTime);
                         foreach (auto thd in Proc3Children->Threads)
                         {
                             showarrow = false;
                             CurrentDisplay->SetPrintColor(0x00FF22);
                             if (thd == CurrentCPU->CurrentThread)
                                 showarrow = true;
-                            printf("     \\%s(%ld) %s [%ld%%/%ld]\n", Proc3Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTicks);
+                            printf("     \\%s(%ld) %s [%ld%%/%ld]\n", Proc3Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTime);
                         }
                         foreach (auto Proc4Children in Proc3Children->Children)
                         {
@@ -121,14 +121,14 @@ namespace Tasking
                             CurrentDisplay->SetPrintColor(0xFF2200);
                             if (Proc4Children == CurrentCPU->CurrentProcess)
                                 showarrow = true;
-                            printf("     \\%s(%ld) %s [%ld%%/%ld]\n", Proc4Children->Name, Proc4Children->ID, showarrow ? "<-" : "  ", Proc4Children->Info.Usage[0], Proc4Children->Info.UsedTicks);
+                            printf("     \\%s(%ld) %s [%ld%%/%ld]\n", Proc4Children->Name, Proc4Children->ID, showarrow ? "<-" : "  ", Proc4Children->Info.Usage[0], Proc4Children->Info.UsedTime);
                             foreach (auto thd in Proc4Children->Threads)
                             {
                                 showarrow = false;
                                 CurrentDisplay->SetPrintColor(0x00FF22);
                                 if (thd == CurrentCPU->CurrentThread)
                                     showarrow = true;
-                                printf("      \\%s(%ld) %s [%ld%%/%ld]\n", Proc4Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTicks);
+                                printf("      \\%s(%ld) %s [%ld%%/%ld]\n", Proc4Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTime);
                             }
                             foreach (auto Proc5Children in Proc4Children->Children)
                             {
@@ -136,14 +136,14 @@ namespace Tasking
                                 CurrentDisplay->SetPrintColor(0xFF2200);
                                 if (Proc5Children == CurrentCPU->CurrentProcess)
                                     showarrow = true;
-                                printf("      \\%s(%ld) %s [%ld%%/%ld]\n", Proc5Children->Name, Proc5Children->ID, showarrow ? "<-" : "  ", Proc5Children->Info.Usage[0], Proc5Children->Info.UsedTicks);
+                                printf("      \\%s(%ld) %s [%ld%%/%ld]\n", Proc5Children->Name, Proc5Children->ID, showarrow ? "<-" : "  ", Proc5Children->Info.Usage[0], Proc5Children->Info.UsedTime);
                                 foreach (auto thd in Proc5Children->Threads)
                                 {
                                     showarrow = false;
                                     CurrentDisplay->SetPrintColor(0x00FF22);
                                     if (thd == CurrentCPU->CurrentThread)
                                         showarrow = true;
-                                    printf("       \\%s(%ld) %s [%ld%%/%ld]\n", Proc5Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTicks);
+                                    printf("       \\%s(%ld) %s [%ld%%/%ld]\n", Proc5Children->Name, thd->ID, showarrow ? "<-" : "  ", thd->Info.Usage[0], thd->Info.UsedTime);
                                 }
                             }
                         }
@@ -175,35 +175,30 @@ namespace Tasking
 
     void UpdateTimeUsed(GeneralProcessInfo *Info)
     {
-        uint64_t CurrentCount = counter();
-        if (Info->LastUsedTicks == 0)
-        {
-            Info->UsedTicks += CurrentCount + Info->SpawnTick;
-            Info->LastUsedTicks = CurrentCount;
-        }
-        else
-        {
-            Info->UsedTicks += CurrentCount + Info->LastUsedTicks;
-            Info->LastUsedTicks = CurrentCount;
-        }
+        uint64_t CurrentSystemTime = counter();
+        if (Info->OldUsedTime == 0)
+            Info->OldUsedTime = Info->SpawnTime;
+
+        Info->UsedTime += CurrentSystemTime - Info->OldUsedTime;
+        Info->OldUsedTime = CurrentSystemTime;
+
+        Info->OldSystemTime = Info->CurrentSystemTime;
+        Info->CurrentSystemTime = CurrentSystemTime;
     }
 
     void UpdateCPUUsage(GeneralProcessInfo *Info)
     {
-        // uint64_t CurrentCount = counter();
-        // TODO: for Info->Usage[cpu_count] = ...
-        // for (size_t i = 0; i < 2; i++)
-        // {
-        // Info->Usage[i] = (uint32_t)((CurrentCount - Info->LastUsedTicks) * 100 / (CurrentCount - Info->SpawnTick));
-
-        // if (Info->Usage[i] > 100)
-        // Info->Usage[i] = 100;
-        // }
+        /* https://forum.osdev.org/viewtopic.php?f=1&t=9461 */
+        // uint64_t CurrentProcessTime = Info->UsedTime;
+        // uint64_t OldProcessTime = Info->OldUsedTime;
+        // uint64_t OldSystemTime = Info->OldSystemTime;
+        // uint64_t ProcessCpuUsage = (CurrentProcessTime - OldProcessTime) / (Info->CurrentSystemTime - OldSystemTime);
+        // Info->Usage[0] = ProcessCpuUsage * 100;
     }
 
     void SetInfo(GeneralProcessInfo *Info)
     {
-        Info->SpawnTick = counter();
+        Info->SpawnTime = counter();
 
         uint32_t t = 0;
         outb(0x70, 0x00);

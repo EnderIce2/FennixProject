@@ -55,7 +55,8 @@ enum Platform
 
 struct GeneralProcessInfo
 {
-    uint64_t SpawnTick = 0, UsedTicks = 0, StartUsedTicks = 0, EndUsedTicks = 0, LastUsedTicks = 0;
+    uint64_t SpawnTime = 0, UsedTime = 0, OldUsedTime = 0;
+    uint64_t OldSystemTime = 0, CurrentSystemTime = 0;
     uint64_t Year, Month, Day, Hour, Minute, Second;
     uint64_t Usage[256];
     enum Architecture Architecture;
