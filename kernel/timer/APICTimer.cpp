@@ -14,7 +14,13 @@
 bool APICTimer_initialized = false;
 uint64_t apic_timer_ticks = 32000;
 
-uint64_t apictimer_read_counter() { return apic->Read(APIC::APIC::APIC_TCCR); }
+uint64_t apictimer_read_counter()
+{
+    if (cpu_feature(CPUID_FEAT_RDX_TSC))
+        return tsc();
+    else
+        return apic->Read(APIC::APIC::APIC_TCCR);
+}
 uint64_t apictimer_read_clock() { return apic_timer_ticks; }
 void apictimer_nwait(uint64_t Nanoseconds) { TSC_sleep(Nanoseconds); }
 void apictimer_uwait(uint64_t Microseconds) { apictimer_nwait(Microseconds * 1000); }
