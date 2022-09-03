@@ -16,23 +16,23 @@ include Makefile.conf
 # For tap0
 # -netdev tap,id=usernet0,ifname=tap0,script=no,downscript=no
 QEMUFLAGS = -device bochs-display -M q35 \
+			-display gtk \
 			-usb \
 			-usbdevice mouse \
 			-smp $(shell nproc) \
+			-net user \
     		-netdev user,id=usernet0 \
     		-device e1000,netdev=usernet0,mac=00:69:96:00:42:00 \
 			-object filter-dump,id=usernet0,netdev=usernet0,file=network.log,maxlen=1024 \
 			-serial file:serial.log \
-			-net user \
-			-drive id=disk,file=qemu-disk.img,if=none \
 			-device ahci,id=ahci \
-			-device ide-hd,drive=disk,bus=ahci.0 \
-			-audiodev coreaudio,id=audio0 \
-			-device AC97 \
-			-device sb16 \
-			-device ES1370 \
-			-device intel-hda -device hda-duplex \
+			-drive id=bootdsk,file=$(OSNAME).iso,format=raw,if=none \
+			-device ide-hd,drive=bootdsk,bus=ahci.0 \
+			-drive id=disk,file=qemu-disk.img,format=raw,if=none \
+			-device ide-hd,drive=disk,bus=ahci.1 \
+			-audiodev pa,id=audio0 \
 			-machine pcspk-audiodev=audio0 \
+			-device AC97,audiodev=audio0 \
 
 QEMUHWACCELERATION = -machine q35 -enable-kvm
 
@@ -135,15 +135,15 @@ endif
 
 vscode_debug: build_kernel build_libc build_userspace build_image
 	rm -f serial.log network.log
-	${QEMU} -S -gdb tcp::1234 -d int -no-shutdown -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -m 4G ${QEMUFLAGS}
+	${QEMU} -S -gdb tcp::1234 -d int -no-shutdown -bios /usr/share/qemu/OVMF.fd -m 4G ${QEMUFLAGS}
 
 qemu: qemu_vdisk
 	rm -f serial.log network.log
-	${QEMU} -drive file=$(OSNAME).iso -bios /usr/share/qemu/OVMF.fd -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
+	${QEMU} -bios /usr/share/qemu/OVMF.fd -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
 
 qemubios: qemu_vdisk
 	rm -f serial.log network.log
-	${QEMU} -drive file=$(OSNAME).iso -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
+	${QEMU} -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
 
 # build the os and run it
 run: build qemu_vdisk qemu

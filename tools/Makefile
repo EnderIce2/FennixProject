@@ -28,7 +28,7 @@ do_qemu:
 	rm -f ${QEMU_VERSION}.tar.xz && \
 	mv ${QEMU_VERSION} qemu && \
 	cd qemu && \
-	bash ./configure --target-list=x86_64-softmmu && \
+	bash ./configure --target-list=x86_64-softmmu --enable-gtk && \
 	make -j$(shell nproc)
 
 do_limine:
