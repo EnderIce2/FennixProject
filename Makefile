@@ -27,11 +27,12 @@ QEMUFLAGS = -device bochs-display -M q35 \
 			-drive id=disk,file=qemu-disk.img,if=none \
 			-device ahci,id=ahci \
 			-device ide-hd,drive=disk,bus=ahci.0 \
+			-audiodev coreaudio,id=audio0 \
 			-device AC97 \
 			-device sb16 \
 			-device ES1370 \
 			-device intel-hda -device hda-duplex \
-			-soundhw pcspk \
+			-machine pcspk-audiodev=audio0 \
 
 QEMUHWACCELERATION = -machine q35 -enable-kvm
 
