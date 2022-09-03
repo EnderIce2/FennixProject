@@ -2,6 +2,15 @@
 #include <types.h>
 #include <vector.hpp>
 
+// show debug messages
+#define DEBUG_FILESYSTEM 1
+
+#ifdef DEBUG_FILESYSTEM
+#define vfsdbg(m, ...) debug(m, ##__VA_ARGS__)
+#else
+#define vfsdbg(m, ...)
+#endif
+
 namespace FileSystem
 {
 #define FILENAME_LENGTH 256
@@ -133,6 +142,7 @@ namespace FileSystem
         FileSystemNode *GetNodeFromPath(FileSystemNode *Parent, string Path);
         char *NormalizePath(FileSystemNode *Parent, string Path);
 
+        FILESTATUS FileExists(FileSystemNode *Parent, string Path);
         FILE *Mount(FileSystemOpeations *Operator, string Path);
         FILESTATUS Unmount(FILE *File);
         FILE *Open(string Path, FileSystemNode *Parent = nullptr);

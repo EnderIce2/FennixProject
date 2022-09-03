@@ -1,20 +1,13 @@
 #include <filesystem.h>
+
+#include <bootscreen.h>
 #include <string.h>
+#include <printf.h>
 #include <cwalk.h>
 #include <lock.h>
-#include <printf.h>
-#include <bootscreen.h>
-#include "kernel.h"
-#include "drivers/disk.h"
 
-// show debug messages
-// #define DEBUG_FILESYSTEM 1
-
-#ifdef DEBUG_FILESYSTEM
-#define vfsdbg(m, ...) debug(m, ##__VA_ARGS__)
-#else
-#define vfsdbg(m, ...)
-#endif
+#include "../kernel.h"
+#include "../drivers/disk.h"
 
 NEWLOCK(VFSLock);
 
@@ -31,7 +24,7 @@ namespace FileSystem
 
     char *Virtual::GetPathFromNode(FileSystemNode *Node)
     {
-        vfsdbg("GetPathFromNode( \"%s\" )", Node->Name);
+        vfsdbg("GetPathFromNode( Node: \"%s\" )", Node->Name);
         FileSystemNode *Parent = Node;
         Vector<char *> Path;
         size_t Size = 1;
@@ -68,7 +61,7 @@ namespace FileSystem
 
     FileSystemNode *Virtual::GetNodeFromPath(FileSystemNode *Parent, string Path)
     {
-        vfsdbg("GetNodeFromPath( \"%s\" \"%s\" )", Parent->Name, Path);
+        vfsdbg("GetNodeFromPath( Parent: \"%s\" Path: \"%s\" )", Parent->Name, Path);
 
         if (strcmp(Parent->Name, Path))
         {
@@ -113,7 +106,7 @@ namespace FileSystem
 
     FileSystemNode *AddNewChild(FileSystemNode *Parent, string Name)
     {
-        vfsdbg("AddNewChild( \"%s\" \"%s\" )", Parent->Name, Name);
+        vfsdbg("AddNewChild( Parent: \"%s\" Name: \"%s\" )", Parent->Name, Name);
         FileSystemNode *newNode = new FileSystemNode;
         newNode->Parent = Parent;
         strcpy(newNode->Name, Name);
@@ -125,7 +118,7 @@ namespace FileSystem
 
     FileSystemNode *GetChild(FileSystemNode *Parent, string Name)
     {
-        vfsdbg("GetChild( \"%s\" \"%s\" )", Parent->Name, Name);
+        vfsdbg("GetChild( Parent: \"%s\" Name: \"%s\" )", Parent->Name, Name);
         foreach (auto var in Parent->Children)
             if (strcmp(var->Name, Name) == 0)
             {
@@ -138,7 +131,7 @@ namespace FileSystem
 
     FILESTATUS RemoveChild(FileSystemNode *Parent, string Name)
     {
-        vfsdbg("RemoveChild( \"%s\" \"%s\" )", Parent->Name, Name);
+        vfsdbg("RemoveChild( Parent: \"%s\" Name: \"%s\" )", Parent->Name, Name);
         for (uint64_t i = 0; i < Parent->Children.size(); i++)
             if (strcmp(Parent->Children[i]->Name, Name) == 0)
             {
@@ -152,7 +145,7 @@ namespace FileSystem
 
     char *Virtual::NormalizePath(FileSystemNode *Parent, string Path)
     {
-        vfsdbg("NormalizePath( \"%s\" \"%s\" )", Parent->Name, Path);
+        vfsdbg("NormalizePath( Parent: \"%s\" Path: \"%s\" )", Parent->Name, Path);
         char *NormalizedPath = new char[strlen((char *)Path) + 1];
         char *RelativePath = nullptr;
 
@@ -174,15 +167,27 @@ namespace FileSystem
         return RelativePath;
     }
 
-    FILESTATUS FileExists(FileSystemNode *Parent, string Path)
+    FILESTATUS Virtual::FileExists(FileSystemNode *Parent, string Path)
     {
-        // vfsdbg("FileExists( \"%s\" \"%s\" )", Parent->Name, Path);
-        // TODO: implement FileExists()
+        vfsdbg("FileExists( Parent: \"%s\" Path: \"%s\" )", Parent->Name, Path);
         if (isempty((char *)Path))
             return FILESTATUS::INVALID_PATH;
         if (Parent == nullptr)
             Parent = FileSystemRoot;
-        return FILESTATUS::NOT_FOUND;
+
+        char *NormalizedPath = NormalizePath(Parent, Path);
+        FileSystemNode *Node = GetNodeFromPath(Parent, NormalizedPath);
+
+        if (Node == nullptr)
+        {
+            vfsdbg("FileExists()->NOT_FOUND");
+            return FILESTATUS::NOT_FOUND;
+        }
+        else
+        {
+            vfsdbg("FileExists()->OK");
+            return FILESTATUS::OK;
+        }
     }
 
     FileSystemNode *Virtual::Create(FileSystemNode *Parent, string Path)
@@ -191,7 +196,7 @@ namespace FileSystem
             return nullptr;
 
         LOCK(VFSLock);
-        vfsdbg("Virtual::Create( \"%s\" \"%s\" )", Parent->Name, Path);
+        vfsdbg("Virtual::Create( Parent: \"%s\" Path: \"%s\" )", Parent->Name, Path);
 
         if (Parent == nullptr)
         {
@@ -243,11 +248,19 @@ namespace FileSystem
             if (!strcmp(SegmentName, Parent->Name) && !parentcheck)
             {
                 parentcheck = true;
+                vfsdbg("Parent check [Segment:%s] [Parent Name:%s].", SegmentName, Parent->Name);
                 delete[] SegmentName;
                 continue;
             }
             if (GetChild(Parent, SegmentName) == nullptr)
-                AddNewChild(Parent, SegmentName);
+            {
+                if (FileExists(Parent, CleanPath) == FILESTATUS::NOT_FOUND)
+                    FileSystemNode *cnode = AddNewChild(Parent, SegmentName);
+#ifdef DEBUG_FILESYSTEM
+                foreach (auto var in Parent->Children)
+                    vfsdbg("Parent %s has %s", Parent->Name, var->Name);
+#endif
+            }
             Parent = GetChild(Parent, SegmentName);
             delete[] SegmentName;
         } while (cwk_path_get_next_segment(&segment));
@@ -428,148 +441,5 @@ namespace FileSystem
     Virtual::~Virtual()
     {
         warn("Tried to uninitialize Virtual File System!");
-    }
-
-    /* -------------------------------------------------------------------------------------------------------------------------------- */
-
-    FileSystemNode *DeviceRootNode;
-
-    FileSystemNode *Device::AddFileSystem(struct FileSystemOpeations *Operator, uint64_t Mode, string Name, int Flags)
-    {
-        trace("Adding %s to file system", Name);
-        FileSystemNode *newNode = vfs->Create(DeviceRootNode, Name);
-        newNode->Mode = Mode;
-        newNode->Operator = Operator;
-        newNode->Flags = Flags;
-        return newNode;
-    }
-
-    Device::Device()
-    {
-        trace("Initializing device file system...");
-        DeviceRootNode = vfs->Create(nullptr, "/system/dev");
-        DeviceRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
-        DeviceRootNode->Mode = 0755;
-        BS->IncreaseProgres();
-    }
-
-    Device::~Device()
-    {
-        warn("Tried to uninitialize Device File System!");
-    }
-
-    /* -------------------------------------------------------------------------------------------------------------------------------- */
-
-    FileSystemNode *MountRootNode = nullptr;
-    static uint64_t MountNodeIndexNodeCount = 0;
-
-    FileSystemNode *Mount::MountFileSystem(FileSystemOpeations *Operator, uint64_t Mode, string Name)
-    {
-        if (isempty((char *)Name))
-        {
-            warn("Tried to mount file system with empty name!");
-            sprintf_((char *)Name, "mount_%lu", MountNodeIndexNodeCount);
-        }
-        trace("Adding %s to mounted file systems", Name);
-        FileSystemNode *newNode = vfs->Create(MountRootNode, Name);
-        newNode->Mode = Mode;
-        newNode->Operator = Operator;
-        newNode->Flags = NodeFlags::FS_MOUNTPOINT;
-        return newNode;
-    }
-
-    void Mount::DetectAndMountFS(void *drive)
-    {
-        foreach (auto partition in((DiskManager::Partition::Drive *)drive)->Partitions)
-        {
-            debug("Mounting File Systems for Partition %d...", partition->Index);
-            new EXT2(partition);
-            new FAT(partition);
-            /* ... */
-        }
-    }
-
-    Mount::Mount()
-    {
-        trace("Mounting file systems...");
-        MountRootNode = vfs->Create(nullptr, "/system/mnt");
-        MountRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
-        MountRootNode->Mode = 0755;
-        BS->IncreaseProgres();
-    }
-
-    Mount::~Mount()
-    {
-    }
-
-    /* -------------------------------------------------------------------------------------------------------------------------------- */
-
-    FileSystemNode *ProcessRootNode = nullptr;
-
-    Process::Process()
-    {
-        trace("Initializing process file system");
-        ProcessRootNode = vfs->Create(nullptr, "/system/prc");
-        ProcessRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
-        ProcessRootNode->Mode = 0755;
-        BS->IncreaseProgres();
-    }
-
-    Process::~Process()
-    {
-    }
-
-    /* -------------------------------------------------------------------------------------------------------------------------------- */
-
-    FileSystemNode *DriverRootNode = nullptr;
-
-    FileSystemNode *Driver::AddDriver(struct FileSystemOpeations *Operator, uint64_t Mode, string Name, int Flags)
-    {
-        trace("Adding %s to file system", Name);
-        FileSystemNode *newNode = vfs->Create(DeviceRootNode, Name);
-        newNode->Mode = Mode;
-        newNode->Operator = Operator;
-        newNode->Flags = Flags;
-        return newNode;
-    }
-
-    Driver::Driver()
-    {
-        trace("Initializing driver file system...");
-        DriverRootNode = vfs->Create(nullptr, "/system/drv");
-        DriverRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
-        DriverRootNode->Mode = 0755;
-        BS->IncreaseProgres();
-    }
-
-    Driver::~Driver()
-    {
-    }
-
-    /* -------------------------------------------------------------------------------------------------------------------------------- */
-
-    FileSystemNode *NetworkRootNode = nullptr;
-
-    FileSystemNode *Network::AddNetworkCard(struct FileSystemOpeations *Operator, uint64_t Mode, string Name, int Flags)
-    {
-        trace("Adding %s to file system", Name);
-        FileSystemNode *newNode = vfs->Create(DeviceRootNode, Name);
-        newNode->Mode = Mode;
-        newNode->Operator = Operator;
-        newNode->Flags = Flags;
-        return newNode;
-    }
-
-    Network::Network()
-    {
-        trace("Initializing network file system...");
-        NetworkRootNode = vfs->Create(nullptr, "/system/net");
-        NetworkRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
-        NetworkRootNode->Mode = 0755;
-        BS->IncreaseProgres();
-    }
-
-    Network::~Network()
-    {
     }
 }
