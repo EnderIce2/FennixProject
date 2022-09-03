@@ -104,6 +104,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a64f281b2983459dca561576fca5048cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac49b3d90cd905c1c1b620ec10206ae52"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d99/classFileSystem_1_1Virtual.html#ac49b3d90cd905c1c1b620ec10206ae52">NormalizePath</a> (<a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a> *Parent, <a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a> Path)</td></tr>
 <tr class="separator:ac49b3d90cd905c1c1b620ec10206ae52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b97f085b24faf83a3e228f9bf6400e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a0e4b3ce70b25bbac7d9be4eb6a328e66">FILESTATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d99/classFileSystem_1_1Virtual.html#a6b97f085b24faf83a3e228f9bf6400e5">FileExists</a> (<a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a> *Parent, <a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a> Path)</td></tr>
+<tr class="separator:a6b97f085b24faf83a3e228f9bf6400e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39b256bf1a13a8df9293485419140454"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FILE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d99/classFileSystem_1_1Virtual.html#a39b256bf1a13a8df9293485419140454">Mount</a> (<a class="el" href="../../d6/df5/namespaceFileSystem.html#dd/d34/structFileSystem_1_1FileSystemOpeations">FileSystemOpeations</a> *Operator, <a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a> Path)</td></tr>
 <tr class="separator:a39b256bf1a13a8df9293485419140454"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f06108378c9e0fd35490faf3ad06b49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a0e4b3ce70b25bbac7d9be4eb6a328e66">FILESTATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d99/classFileSystem_1_1Virtual.html#a7f06108378c9e0fd35490faf3ad06b49">Unmount</a> (<a class="el" href="../../d6/df5/namespaceFileSystem.html#d0/d13/structFileSystem_1_1FILE">FILE</a> *<a class="el" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a>)</td></tr>
@@ -127,7 +129,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00121">121</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00130">130</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0deb4e756ba4f6c567232a274edee254"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0deb4e756ba4f6c567232a274edee254">&#9670;&nbsp;</a></span>Virtual()</h2>
@@ -206,16 +208,16 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00124">124</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <a class="code" href="../../d2/d4d/file_8h.html#de/d3c/struct__FILE">FILE</a> *<a class="code" href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">File</a> = <span class="keyword">new</span> <a class="code" href="../../d2/d4d/file_8h.html#a175abb747ea3b78aa8da87355dcec473">FILE</a>();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <a class="code" href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">File</a>-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#a5f0c99bd95971306ea3bfc4f90556741">Name</a> = Node-&gt;Name;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <a class="code" href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">File</a>-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#ae07fb6f39a6bef7b383042d06ec2144a">Status</a> = <a class="code" href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca2bc49ec37d6a5715dd23e85f1ff5bb59">FILESTATUS::OK</a>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <a class="code" href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">File</a>-&gt;Node = Node;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00133">133</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <a class="code" href="../../d2/d4d/file_8h.html#de/d3c/struct__FILE">FILE</a> *<a class="code" href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">File</a> = <span class="keyword">new</span> <a class="code" href="../../d2/d4d/file_8h.html#a175abb747ea3b78aa8da87355dcec473">FILE</a>();</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <a class="code" href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">File</a>-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#a5f0c99bd95971306ea3bfc4f90556741">Name</a> = Node-&gt;Name;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <a class="code" href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">File</a>-&gt;<a class="code" href="../../d2/d6e/syscalls_8h.html#ae07fb6f39a6bef7b383042d06ec2144a">Status</a> = <a class="code" href="../../d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca2bc49ec37d6a5715dd23e85f1ff5bb59">FILESTATUS::OK</a>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <a class="code" href="../../d2/d6e/syscalls_8h.html#d6/dbc/struct__File">File</a>-&gt;Node = Node;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e">File</a>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00095">FileSystem::FileSystemNode::Name</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00204">_File::Name</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00155">OK</a>, and <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00205">_File::Status</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00104">FileSystem::FileSystemNode::Name</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00204">_File::Name</a>, <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00155">OK</a>, and <a class="el" href="../../d2/d6e/syscalls_8h_source.html#l00205">_File::Status</a>.</p>
 
 </div>
 </div>
@@ -264,6 +266,34 @@ Public Member Functions</h2></td></tr>
           <td></td>
           <td class="paramtype"><a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a>&#160;</td>
           <td class="paramname"><em>RootName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6b97f085b24faf83a3e228f9bf6400e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b97f085b24faf83a3e228f9bf6400e5">&#9670;&nbsp;</a></span>FileExists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a0e4b3ce70b25bbac7d9be4eb6a328e66">FILESTATUS</a> FileSystem::Virtual::FileExists </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/df5/namespaceFileSystem.html#df/d0b/structFileSystem_1_1FileSystemNode">FileSystemNode</a> *&#160;</td>
+          <td class="paramname"><em>Parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a037886b0e863287921a4bf20d0902965">string</a>&#160;</td>
+          <td class="paramname"><em>Path</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

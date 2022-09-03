@@ -1,12 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"d5/dba/multiboot2_8h.html#a028c31ca8aaf99167265efe064311e98":[5,0,0,5,0,0,3,19,0],
-"d5/dba/multiboot2_8h.html#a0299aedc71e1f6707181471bafb18e7c":[5,0,0,5,0,0,3,67],
-"d5/dba/multiboot2_8h.html#a037f602538fccf97e90021c19fdfc047":[5,0,0,5,0,0,3,97],
-"d5/dba/multiboot2_8h.html#a055c5e6553ea032897ad50a12f998a17":[5,0,0,5,0,0,2,0,8],
-"d5/dba/multiboot2_8h.html#a055c5e6553ea032897ad50a12f998a17":[5,0,0,5,0,0,3,0,8],
-"d5/dba/multiboot2_8h.html#a057304e943e881731680e06472c4bf1e":[5,0,0,5,0,0,3,19,2],
-"d5/dba/multiboot2_8h.html#a0663e47406ed5799d5bd55ccf2d4fa95":[5,0,0,5,0,0,3,16,3],
 "d5/dba/multiboot2_8h.html#a079f7f841628eb85cffc6dead1074474":[5,0,0,5,0,0,3,31,0],
 "d5/dba/multiboot2_8h.html#a07b852bb1b157fddbd35be881f9213c6":[5,0,0,5,0,0,3,57],
 "d5/dba/multiboot2_8h.html#a08e1c8bc977b39015c9043645e79713d":[5,0,0,5,0,0,2,4,1],
@@ -249,5 +242,12 @@ var NAVTREEINDEX10 =
 "d5/dba/multiboot2_8h.html#d0/d5c/structmultiboot__header__tag__console__flags":[5,0,0,5,0,0,3,5],
 "d5/dba/multiboot2_8h.html#d1/d07/structmultiboot__tag__framebuffer":[5,0,0,5,0,0,3,21],
 "d5/dba/multiboot2_8h.html#d1/d28/structmultiboot__header__tag":[5,0,0,5,0,0,3,1],
-"d5/dba/multiboot2_8h.html#d1/d54/structmultiboot__header__tag__module__align":[5,0,0,5,0,0,3,7]
+"d5/dba/multiboot2_8h.html#d1/d54/structmultiboot__header__tag__module__align":[5,0,0,5,0,0,3,7],
+"d5/dba/multiboot2_8h.html#d1/d69/structmultiboot__tag__efi64":[5,0,0,5,0,0,3,25],
+"d5/dba/multiboot2_8h.html#d1/db3/structmultiboot__tag__efi32__ih":[5,0,0,5,0,0,3,31],
+"d5/dba/multiboot2_8h.html#d2/da0/structmultiboot__tag__basic__meminfo":[5,0,0,5,0,0,3,14],
+"d5/dba/multiboot2_8h.html#d4/daf/structmultiboot__header__tag__relocatable":[5,0,0,5,0,0,3,8],
+"d5/dba/multiboot2_8h.html#d4/dbd/structmultiboot__header__tag__information__request":[5,0,0,5,0,0,3,2],
+"d5/dba/multiboot2_8h.html#d4/def/structmultiboot__tag__load__base__addr":[5,0,0,5,0,0,3,33],
+"d5/dba/multiboot2_8h.html#d5/d23/structmultiboot__header__tag__address":[5,0,0,5,0,0,3,3]
 };

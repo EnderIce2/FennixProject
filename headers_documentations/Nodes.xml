@@ -1158,6 +1158,11 @@
                 <Anchor>a8cfd4e2543f352b94beefa3121255102</Anchor>
                </Node>
                <Node>
+                <Name>FileExists</Name>
+                <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                <Anchor>a6b97f085b24faf83a3e228f9bf6400e5</Anchor>
+               </Node>
+               <Node>
                 <Name>GetNodeFromPath</Name>
                 <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
                 <Anchor>a64f281b2983459dca561576fca5048cf</Anchor>
@@ -24486,6 +24491,11 @@
                     <Anchor>a8cfd4e2543f352b94beefa3121255102</Anchor>
                    </Node>
                    <Node>
+                    <Name>FileExists</Name>
+                    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                    <Anchor>a6b97f085b24faf83a3e228f9bf6400e5</Anchor>
+                   </Node>
+                   <Node>
                     <Name>GetNodeFromPath</Name>
                     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
                     <Anchor>a64f281b2983459dca561576fca5048cf</Anchor>
@@ -25796,6 +25806,11 @@
                   <Anchor>ab5fe0d9f05321a1e464164873af53feb</Anchor>
                  </Node>
                  <Node>
+                  <Name>DEBUG_FILESYSTEM</Name>
+                  <Path>dd/dd8/filesystem_8h.html</Path>
+                  <Anchor>a75abb2d93c692b8b977d91a5b6c113b7</Anchor>
+                 </Node>
+                 <Node>
                   <Name>FILENAME_LENGTH</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
                   <Anchor>a610ce22de673afc7b1e8b0e7b3c9fe7a</Anchor>
@@ -25829,6 +25844,11 @@
                   <Name>UMountFSFunction</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
                   <Anchor>a48557587e623c32b8bd6623e5f88261a</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>vfsdbg</Name>
+                  <Path>dd/dd8/filesystem_8h.html</Path>
+                  <Anchor>a47d194f70ad5f06b3343aef4eb235442</Anchor>
                  </Node>
                  <Node>
                   <Name>WriteFSFunction</Name>

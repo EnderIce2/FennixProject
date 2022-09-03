@@ -8968,16 +8968,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>vfsdbg</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d3/d50/FileSystem_8cpp.html</Path>
-    <Anchor>a47d194f70ad5f06b3343aef4eb235442</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>NEWLOCK</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -9017,17 +9007,6 @@
     </TokenIdentifier>
     <Path>d6/df5/namespaceFileSystem.html</Path>
     <Anchor>aca394c7c50562fc4cddd6cd8922d6186</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>FileExists</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>FileSystem</Scope>
-    </TokenIdentifier>
-    <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>a362da94b2a7853d328aaf0fedd9851a3</Anchor>
     <DeclaredIn>FileSystem.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -9099,72 +9078,6 @@
     </TokenIdentifier>
     <Path>d6/df5/namespaceFileSystem.html</Path>
     <Anchor>aae5511c8e6bade602158f8dcbec0f620</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DeviceRootNode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>FileSystem</Scope>
-    </TokenIdentifier>
-    <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>a1fa18a092def46b44f18b5ccc94b53a2</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MountRootNode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>FileSystem</Scope>
-    </TokenIdentifier>
-    <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>ac3e2c3c485cfe2cf0114665be4359eec</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MountNodeIndexNodeCount</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>FileSystem</Scope>
-    </TokenIdentifier>
-    <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>ae5a637d364a1c2609df2bc8c73c1510a</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>ProcessRootNode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>FileSystem</Scope>
-    </TokenIdentifier>
-    <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>a98849b8c7eccec7ad212eddb4bd2b62d</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DriverRootNode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>FileSystem</Scope>
-    </TokenIdentifier>
-    <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>a8c8f2f35453d791d6df8c684708a9cf8</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>NetworkRootNode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>FileSystem</Scope>
-    </TokenIdentifier>
-    <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>ad1a98fdbcfc675e28120282b534a1213</Anchor>
     <DeclaredIn>FileSystem.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -9570,6 +9483,72 @@
     <Path>d6/df5/namespaceFileSystem.html</Path>
     <Anchor>a511c118e13b1413d408a66eba589c0ad</Anchor>
     <DeclaredIn>zero.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DeviceRootNode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a1fa18a092def46b44f18b5ccc94b53a2</Anchor>
+    <DeclaredIn>devfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DriverRootNode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a8c8f2f35453d791d6df8c684708a9cf8</Anchor>
+    <DeclaredIn>drvfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MountRootNode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>ac3e2c3c485cfe2cf0114665be4359eec</Anchor>
+    <DeclaredIn>mountfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MountNodeIndexNodeCount</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>ae5a637d364a1c2609df2bc8c73c1510a</Anchor>
+    <DeclaredIn>mountfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NetworkRootNode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>ad1a98fdbcfc675e28120282b534a1213</Anchor>
+    <DeclaredIn>netfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ProcessRootNode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a98849b8c7eccec7ad212eddb4bd2b62d</Anchor>
+    <DeclaredIn>procfs.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -17103,6 +17082,26 @@
     <Path>d4/d68/display_8h.html</Path>
     <Anchor>a1b06231b19d40d9fc311973e9bc3b25f</Anchor>
     <DeclaredIn>display.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DEBUG_FILESYSTEM</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>dd/dd8/filesystem_8h.html</Path>
+    <Anchor>a75abb2d93c692b8b977d91a5b6c113b7</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>vfsdbg</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>dd/dd8/filesystem_8h.html</Path>
+    <Anchor>a47d194f70ad5f06b3343aef4eb235442</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -47336,17 +47335,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>FileExists</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>FileSystem</Scope>
-    </TokenIdentifier>
-    <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>a362da94b2a7853d328aaf0fedd9851a3</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>ReadFSFunction</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
@@ -47600,72 +47588,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>DeviceRootNode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>FileSystem</Scope>
-    </TokenIdentifier>
-    <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>a1fa18a092def46b44f18b5ccc94b53a2</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MountRootNode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>FileSystem</Scope>
-    </TokenIdentifier>
-    <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>ac3e2c3c485cfe2cf0114665be4359eec</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MountNodeIndexNodeCount</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>FileSystem</Scope>
-    </TokenIdentifier>
-    <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>ae5a637d364a1c2609df2bc8c73c1510a</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>ProcessRootNode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>FileSystem</Scope>
-    </TokenIdentifier>
-    <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>a98849b8c7eccec7ad212eddb4bd2b62d</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DriverRootNode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>FileSystem</Scope>
-    </TokenIdentifier>
-    <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>a8c8f2f35453d791d6df8c684708a9cf8</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>NetworkRootNode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>FileSystem</Scope>
-    </TokenIdentifier>
-    <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>ad1a98fdbcfc675e28120282b534a1213</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>sb</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -47795,6 +47717,72 @@
     <Path>d6/df5/namespaceFileSystem.html</Path>
     <Anchor>a511c118e13b1413d408a66eba589c0ad</Anchor>
     <DeclaredIn>zero.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DeviceRootNode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a1fa18a092def46b44f18b5ccc94b53a2</Anchor>
+    <DeclaredIn>devfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DriverRootNode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a8c8f2f35453d791d6df8c684708a9cf8</Anchor>
+    <DeclaredIn>drvfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MountRootNode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>ac3e2c3c485cfe2cf0114665be4359eec</Anchor>
+    <DeclaredIn>mountfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MountNodeIndexNodeCount</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>ae5a637d364a1c2609df2bc8c73c1510a</Anchor>
+    <DeclaredIn>mountfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NetworkRootNode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>ad1a98fdbcfc675e28120282b534a1213</Anchor>
+    <DeclaredIn>netfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ProcessRootNode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a98849b8c7eccec7ad212eddb4bd2b62d</Anchor>
+    <DeclaredIn>procfs.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48913,6 +48901,17 @@
     </TokenIdentifier>
     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
     <Anchor>a6d3bcafa44ad2e8db3d47a5d115d08ad</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FileExists</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::Virtual</Scope>
+    </TokenIdentifier>
+    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+    <Anchor>a6b97f085b24faf83a3e228f9bf6400e5</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>

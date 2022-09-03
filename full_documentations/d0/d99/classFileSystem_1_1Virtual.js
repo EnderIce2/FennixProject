@@ -6,6 +6,7 @@ var classFileSystem_1_1Virtual =
     [ "ConvertNodeToFILE", "d0/d99/classFileSystem_1_1Virtual.html#a9e2f2fb6df5e515098df312024c3de44", null ],
     [ "Create", "d0/d99/classFileSystem_1_1Virtual.html#a2a39ec0440f7b41b558485bd2479cf5e", null ],
     [ "CreateRoot", "d0/d99/classFileSystem_1_1Virtual.html#ad3aba1b2941bed48d02257c6befcd61b", null ],
+    [ "FileExists", "d0/d99/classFileSystem_1_1Virtual.html#a6b97f085b24faf83a3e228f9bf6400e5", null ],
     [ "GetNodeFromPath", "d0/d99/classFileSystem_1_1Virtual.html#a3b201953752ddf5837c5620576417998", null ],
     [ "GetPathFromNode", "d0/d99/classFileSystem_1_1Virtual.html#a2d383e2254c1bde70f9f9f2032ca97fb", null ],
     [ "Mount", "d0/d99/classFileSystem_1_1Virtual.html#a0f5fde2f47d3002087613ca6ee9c817e", null ],

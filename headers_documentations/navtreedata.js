@@ -64,24 +64,24 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d1/d57/cputables_8h.html#ac50c14c160d060d192cd1db30603d086",
-"d1/d9e/elf_8h.html#aa0269f148b09419d27be6289b4ce026f",
-"d1/dc0/multiboot_8h.html#a3a036f6ca64ccdf46d92f68318fa7b19",
-"d2/ddc/test_8h.html#a1eda931e3a6c49c1e5b361a88f6c35eb",
+"d1/d57/cputables_8h.html#ac3ee2af7ca7bbe492f11cf36a6a7cea7",
+"d1/d9e/elf_8h.html#a9ee66b59be5c78ea1f1eea8a36f2c291",
+"d1/dc0/multiboot_8h.html#a34d90ffaaf58124095cb17de9c3b1515",
+"d2/ddc/test_8h.html#a1e9531f5b693269660d767cf76eaf1f7",
 "d4/d56/namespaceanonymous__namespace_02atomic_8hpp_03.html",
-"d5/dba/multiboot2_8h.html#a4c90b7929342dd5aab7d08afa0906d28",
-"d6/d40/stb__image_8h.html#a990e0e38ab6e600bd9cbf5d30abd2f8f",
-"d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a722035b4fe2fd973c4aa13bfa3f6183d",
-"d7/d8c/libc_2include_2errno_8h.html#a5f8d33deb08fa27c04897b278ac7f965",
-"d9/d3e/namespaceTasking.html#adaf6dddaf1a34eccfa993655071f2bd5",
-"da/ddd/cpuid_8h.html#a556df7e262846ed5ec357701441cbc32",
-"db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29ba32638eee93ff4cac6e4acd05f1e8ef9b",
-"dc/d69/include_2stdint_8h.html#aaf7f29f45f1a513b4748a4e5014ddf6a",
-"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa0d4955e74360ab216e6a78e898940570",
-"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fab8d11891075f02eab200689dd921419a",
-"de/d63/msexec_8h.html#acffbc8e39bf16ea35bf2d67b66a21427",
-"df/d17/stivale2_8h.html#ae9469daf24b5ba494174f0f062b6ee59",
-"globals_r.html"
+"d5/dba/multiboot2_8h.html#a4c8a91229f40c06c3c63b4c37e83d219",
+"d6/d40/stb__image_8h.html#a95ebc5c42c1a753200be8d465e933af7",
+"d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a70079d07046a311be04618d733c780f4",
+"d7/d8c/libc_2include_2errno_8h.html#a5554094b3fb4bb6ebeb0157cb3f82a55",
+"d9/d3e/namespaceTasking.html#ad5ac4f96e962f4dbdf5f7cf1df51769a",
+"da/ddd/cpuid_8h.html#a53a7a6d14ec17e78ce69c99abc564be3",
+"db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29ba23801e90266f48fb7ea09acf6540aa78",
+"dc/d69/include_2stdint_8h.html#aadcf2a81af243df333b31efa6461ab8e",
+"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa0a14566d03bc7e8e0528409fbb7a79f2",
+"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fab62529ba7f5dd8f871a2747bd5264d68",
+"de/d63/msexec_8h.html#ac8746b86b2b74266e9e0b6b89ed249bc",
+"df/d17/stivale2_8h.html#ae82921e52d1326d778bae549ad7e5591",
+"globals_n.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

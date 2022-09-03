@@ -18838,6 +18838,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>DEBUG_FILESYSTEM</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>dd/dd8/filesystem_8h.html</Path>
+    <Anchor>a75abb2d93c692b8b977d91a5b6c113b7</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>vfsdbg</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>dd/dd8/filesystem_8h.html</Path>
+    <Anchor>a47d194f70ad5f06b3343aef4eb235442</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>FILENAME_LENGTH</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -27563,6 +27583,17 @@
     </TokenIdentifier>
     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
     <Anchor>ac49b3d90cd905c1c1b620ec10206ae52</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FileExists</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::Virtual</Scope>
+    </TokenIdentifier>
+    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+    <Anchor>a6b97f085b24faf83a3e228f9bf6400e5</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>

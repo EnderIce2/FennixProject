@@ -4121,6 +4121,11 @@
                 <Anchor>ad3aba1b2941bed48d02257c6befcd61b</Anchor>
                </Node>
                <Node>
+                <Name>FileExists</Name>
+                <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                <Anchor>a6b97f085b24faf83a3e228f9bf6400e5</Anchor>
+               </Node>
+               <Node>
                 <Name>GetNodeFromPath</Name>
                 <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
                 <Anchor>a3b201953752ddf5837c5620576417998</Anchor>
@@ -23038,245 +23043,378 @@
               </Subnodes>
              </Node>
              <Node>
-              <Name>fs</Name>
-              <Path>dir_8d4fa0f4a82327c9ebbcec4f28c3f560.html</Path>
+              <Name>filesystem</Name>
+              <Path>dir_47137516fac9bbfcfb92979c7ae0cf92.html</Path>
               <Subnodes>
                <Node>
-                <Name>ext2.cpp</Name>
-                <Path>db/dc4/ext2_8cpp.html</Path>
+                <Name>fs</Name>
+                <Path>dir_1e2273da4b390d60c87307fbbdbbf041.html</Path>
                 <Subnodes>
                  <Node>
-                  <Name>EXT2_MAGIC</Name>
+                  <Name>ext2.cpp</Name>
                   <Path>db/dc4/ext2_8cpp.html</Path>
-                  <Anchor>aa20416820a06c5d65373830cb78bb029</Anchor>
+                  <Subnodes>
+                   <Node>
+                    <Name>EXT2_MAGIC</Name>
+                    <Path>db/dc4/ext2_8cpp.html</Path>
+                    <Anchor>aa20416820a06c5d65373830cb78bb029</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>db/dc4/ext2_8cpp.html</Path>
+                    <Anchor>af990e2c88aa8aa73db3c24492a422785</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>WriteFSFunction</Name>
+                    <Path>db/dc4/ext2_8cpp.html</Path>
+                    <Anchor>a622d5a7f4bcffd0b9affb5046fc453e7</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>ext2</Name>
+                    <Path>db/dc4/ext2_8cpp.html</Path>
+                    <Anchor>ab1e041ad59d3d7832a9566e71b12cb47</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>sb</Name>
+                    <Path>db/dc4/ext2_8cpp.html</Path>
+                    <Anchor>ae907f1c903bb1799f1402d81cf9255e4</Anchor>
+                   </Node>
+                  </Subnodes>
                  </Node>
                  <Node>
-                  <Name>ReadFSFunction</Name>
-                  <Path>db/dc4/ext2_8cpp.html</Path>
-                  <Anchor>af990e2c88aa8aa73db3c24492a422785</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>WriteFSFunction</Name>
-                  <Path>db/dc4/ext2_8cpp.html</Path>
-                  <Anchor>a622d5a7f4bcffd0b9affb5046fc453e7</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>ext2</Name>
-                  <Path>db/dc4/ext2_8cpp.html</Path>
-                  <Anchor>ab1e041ad59d3d7832a9566e71b12cb47</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>sb</Name>
-                  <Path>db/dc4/ext2_8cpp.html</Path>
-                  <Anchor>ae907f1c903bb1799f1402d81cf9255e4</Anchor>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>fat.cpp</Name>
-                <Path>d6/d04/fat_8cpp.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>FAT_MAGIC1</Name>
+                  <Name>fat.cpp</Name>
                   <Path>d6/d04/fat_8cpp.html</Path>
-                  <Anchor>a1fc49f036da2cbae16f23e984d8f085b</Anchor>
+                  <Subnodes>
+                   <Node>
+                    <Name>FAT_MAGIC1</Name>
+                    <Path>d6/d04/fat_8cpp.html</Path>
+                    <Anchor>a1fc49f036da2cbae16f23e984d8f085b</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>FAT_MAGIC2</Name>
+                    <Path>d6/d04/fat_8cpp.html</Path>
+                    <Anchor>a4fa98f2bf3952824f5fb144067e6e52f</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>d6/d04/fat_8cpp.html</Path>
+                    <Anchor>a5da535c18a7454a68eb73825f5983b90</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>WriteFSFunction</Name>
+                    <Path>d6/d04/fat_8cpp.html</Path>
+                    <Anchor>a8b1d87a0c00997cf768ed31071ac7adb</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>fat</Name>
+                    <Path>d6/d04/fat_8cpp.html</Path>
+                    <Anchor>a51f6e62d3fe45588adf917be1d83fa8c</Anchor>
+                   </Node>
+                  </Subnodes>
                  </Node>
                  <Node>
-                  <Name>FAT_MAGIC2</Name>
-                  <Path>d6/d04/fat_8cpp.html</Path>
-                  <Anchor>a4fa98f2bf3952824f5fb144067e6e52f</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>ReadFSFunction</Name>
-                  <Path>d6/d04/fat_8cpp.html</Path>
-                  <Anchor>a5da535c18a7454a68eb73825f5983b90</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>WriteFSFunction</Name>
-                  <Path>d6/d04/fat_8cpp.html</Path>
-                  <Anchor>a8b1d87a0c00997cf768ed31071ac7adb</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>fat</Name>
-                  <Path>d6/d04/fat_8cpp.html</Path>
-                  <Anchor>a51f6e62d3fe45588adf917be1d83fa8c</Anchor>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>fb.cpp</Name>
-                <Path>dc/d75/fb_8cpp.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>ReadFSFunction</Name>
+                  <Name>fb.cpp</Name>
                   <Path>dc/d75/fb_8cpp.html</Path>
-                  <Anchor>a26c090bf8c63c7d033e3356686c71e8e</Anchor>
+                  <Subnodes>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>dc/d75/fb_8cpp.html</Path>
+                    <Anchor>a26c090bf8c63c7d033e3356686c71e8e</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>WriteFSFunction</Name>
+                    <Path>dc/d75/fb_8cpp.html</Path>
+                    <Anchor>a643b605c24e12f0e8e69a66aa0118b70</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>fb</Name>
+                    <Path>dc/d75/fb_8cpp.html</Path>
+                    <Anchor>afcf7cf6baa46b93e231681dc5e085e6c</Anchor>
+                   </Node>
+                  </Subnodes>
                  </Node>
                  <Node>
-                  <Name>WriteFSFunction</Name>
-                  <Path>dc/d75/fb_8cpp.html</Path>
-                  <Anchor>a643b605c24e12f0e8e69a66aa0118b70</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>fb</Name>
-                  <Path>dc/d75/fb_8cpp.html</Path>
-                  <Anchor>afcf7cf6baa46b93e231681dc5e085e6c</Anchor>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>initrd.cpp</Name>
-                <Path>d9/d9f/initrd_8cpp.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>ReadFSFunction</Name>
+                  <Name>initrd.cpp</Name>
                   <Path>d9/d9f/initrd_8cpp.html</Path>
-                  <Anchor>a1b7e7eed0f929229007e663c840e982a</Anchor>
+                  <Subnodes>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>d9/d9f/initrd_8cpp.html</Path>
+                    <Anchor>a1b7e7eed0f929229007e663c840e982a</Anchor>
+                   </Node>
+                  </Subnodes>
                  </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>null.cpp</Name>
-                <Path>d3/dfe/null_8cpp.html</Path>
-                <Subnodes>
                  <Node>
-                  <Name>ReadFSFunction</Name>
+                  <Name>null.cpp</Name>
                   <Path>d3/dfe/null_8cpp.html</Path>
-                  <Anchor>ab2832126802a61e4c20f5a57140b96c0</Anchor>
+                  <Subnodes>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>d3/dfe/null_8cpp.html</Path>
+                    <Anchor>ab2832126802a61e4c20f5a57140b96c0</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>WriteFSFunction</Name>
+                    <Path>d3/dfe/null_8cpp.html</Path>
+                    <Anchor>aa29e823f3fbd9414c55e758d677e7379</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>null</Name>
+                    <Path>d3/dfe/null_8cpp.html</Path>
+                    <Anchor>a534ce408115e0299d0a0c45fb1639d6d</Anchor>
+                   </Node>
+                  </Subnodes>
                  </Node>
                  <Node>
-                  <Name>WriteFSFunction</Name>
-                  <Path>d3/dfe/null_8cpp.html</Path>
-                  <Anchor>aa29e823f3fbd9414c55e758d677e7379</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>null</Name>
-                  <Path>d3/dfe/null_8cpp.html</Path>
-                  <Anchor>a534ce408115e0299d0a0c45fb1639d6d</Anchor>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>random.cpp</Name>
-                <Path>de/daa/random_8cpp.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>ReadFSFunction</Name>
+                  <Name>random.cpp</Name>
                   <Path>de/daa/random_8cpp.html</Path>
-                  <Anchor>ad68b25311cfcb00e6d1c8a4189534d15</Anchor>
+                  <Subnodes>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>de/daa/random_8cpp.html</Path>
+                    <Anchor>ad68b25311cfcb00e6d1c8a4189534d15</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>WriteFSFunction</Name>
+                    <Path>de/daa/random_8cpp.html</Path>
+                    <Anchor>a8d9b4a0aaa0be726c72dbcc608441e97</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>random</Name>
+                    <Path>de/daa/random_8cpp.html</Path>
+                    <Anchor>a007457ae12dec4dbcf6bcff06612d77a</Anchor>
+                   </Node>
+                  </Subnodes>
                  </Node>
                  <Node>
-                  <Name>WriteFSFunction</Name>
-                  <Path>de/daa/random_8cpp.html</Path>
-                  <Anchor>a8d9b4a0aaa0be726c72dbcc608441e97</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>random</Name>
-                  <Path>de/daa/random_8cpp.html</Path>
-                  <Anchor>a007457ae12dec4dbcf6bcff06612d77a</Anchor>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>serial.cpp</Name>
-                <Path>de/d25/serial_8cpp.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>ReadFSFunction</Name>
+                  <Name>serial.cpp</Name>
                   <Path>de/d25/serial_8cpp.html</Path>
-                  <Anchor>a21d3f60f7bdc372efcb2355699b19c0c</Anchor>
+                  <Subnodes>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>de/d25/serial_8cpp.html</Path>
+                    <Anchor>a21d3f60f7bdc372efcb2355699b19c0c</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>de/d25/serial_8cpp.html</Path>
+                    <Anchor>a1ad7a1543fe194fe3bcc5680f16a6747</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>de/d25/serial_8cpp.html</Path>
+                    <Anchor>ae85ebb8ba53374f6755129f915c46cf4</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>de/d25/serial_8cpp.html</Path>
+                    <Anchor>a0b25c0e3ca39f67e76c68210bdc5852e</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>WriteFSFunction</Name>
+                    <Path>de/d25/serial_8cpp.html</Path>
+                    <Anchor>ae642e46249f17e56175cbafd5861ca09</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>WriteFSFunction</Name>
+                    <Path>de/d25/serial_8cpp.html</Path>
+                    <Anchor>a30a980b670b952790bd14c57fa191907</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>WriteFSFunction</Name>
+                    <Path>de/d25/serial_8cpp.html</Path>
+                    <Anchor>abc08a0a70189c78fd2e5ebd67eae1434</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>WriteFSFunction</Name>
+                    <Path>de/d25/serial_8cpp.html</Path>
+                    <Anchor>a78b25ee85edbbc5ffdfc481fbeac0a82</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>serial1</Name>
+                    <Path>de/d25/serial_8cpp.html</Path>
+                    <Anchor>acab3e269baf2c65e41a84d499639dbb6</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>serial2</Name>
+                    <Path>de/d25/serial_8cpp.html</Path>
+                    <Anchor>a9fbf676deaa015d362ff843ca79b84eb</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>serial3</Name>
+                    <Path>de/d25/serial_8cpp.html</Path>
+                    <Anchor>a066d749b9849f59094aba184202e0f76</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>serial4</Name>
+                    <Path>de/d25/serial_8cpp.html</Path>
+                    <Anchor>afa316c1a4cc50d317965ffc2bc0192ee</Anchor>
+                   </Node>
+                  </Subnodes>
                  </Node>
                  <Node>
-                  <Name>ReadFSFunction</Name>
-                  <Path>de/d25/serial_8cpp.html</Path>
-                  <Anchor>a1ad7a1543fe194fe3bcc5680f16a6747</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>ReadFSFunction</Name>
-                  <Path>de/d25/serial_8cpp.html</Path>
-                  <Anchor>ae85ebb8ba53374f6755129f915c46cf4</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>ReadFSFunction</Name>
-                  <Path>de/d25/serial_8cpp.html</Path>
-                  <Anchor>a0b25c0e3ca39f67e76c68210bdc5852e</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>WriteFSFunction</Name>
-                  <Path>de/d25/serial_8cpp.html</Path>
-                  <Anchor>ae642e46249f17e56175cbafd5861ca09</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>WriteFSFunction</Name>
-                  <Path>de/d25/serial_8cpp.html</Path>
-                  <Anchor>a30a980b670b952790bd14c57fa191907</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>WriteFSFunction</Name>
-                  <Path>de/d25/serial_8cpp.html</Path>
-                  <Anchor>abc08a0a70189c78fd2e5ebd67eae1434</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>WriteFSFunction</Name>
-                  <Path>de/d25/serial_8cpp.html</Path>
-                  <Anchor>a78b25ee85edbbc5ffdfc481fbeac0a82</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>serial1</Name>
-                  <Path>de/d25/serial_8cpp.html</Path>
-                  <Anchor>acab3e269baf2c65e41a84d499639dbb6</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>serial2</Name>
-                  <Path>de/d25/serial_8cpp.html</Path>
-                  <Anchor>a9fbf676deaa015d362ff843ca79b84eb</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>serial3</Name>
-                  <Path>de/d25/serial_8cpp.html</Path>
-                  <Anchor>a066d749b9849f59094aba184202e0f76</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>serial4</Name>
-                  <Path>de/d25/serial_8cpp.html</Path>
-                  <Anchor>afa316c1a4cc50d317965ffc2bc0192ee</Anchor>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>ustar.cpp</Name>
-                <Path>d9/db9/ustar_8cpp.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>ReadFSFunction</Name>
+                  <Name>ustar.cpp</Name>
                   <Path>d9/db9/ustar_8cpp.html</Path>
-                  <Anchor>a6b9f8e23ec74d2a964b5dacb9688ae1e</Anchor>
+                  <Subnodes>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>d9/db9/ustar_8cpp.html</Path>
+                    <Anchor>a6b9f8e23ec74d2a964b5dacb9688ae1e</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>ustar</Name>
+                    <Path>d9/db9/ustar_8cpp.html</Path>
+                    <Anchor>af4d3978db599cfefc1a14d77b6626bf5</Anchor>
+                   </Node>
+                  </Subnodes>
                  </Node>
                  <Node>
-                  <Name>ustar</Name>
-                  <Path>d9/db9/ustar_8cpp.html</Path>
-                  <Anchor>af4d3978db599cfefc1a14d77b6626bf5</Anchor>
+                  <Name>zero.cpp</Name>
+                  <Path>db/d6f/zero_8cpp.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>db/d6f/zero_8cpp.html</Path>
+                    <Anchor>a65379c3c33545b676dbbd6bcfa8abb65</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>WriteFSFunction</Name>
+                    <Path>db/d6f/zero_8cpp.html</Path>
+                    <Anchor>ae6d290792818ff28838df6aeddc6cde1</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>zero</Name>
+                    <Path>db/d6f/zero_8cpp.html</Path>
+                    <Anchor>a511c118e13b1413d408a66eba589c0ad</Anchor>
+                   </Node>
+                  </Subnodes>
                  </Node>
                 </Subnodes>
                </Node>
                <Node>
-                <Name>zero.cpp</Name>
-                <Path>db/d6f/zero_8cpp.html</Path>
+                <Name>mountpoints</Name>
+                <Path>dir_34f63ff383ec087ed824699b222de91c.html</Path>
                 <Subnodes>
                  <Node>
-                  <Name>ReadFSFunction</Name>
-                  <Path>db/d6f/zero_8cpp.html</Path>
-                  <Anchor>a65379c3c33545b676dbbd6bcfa8abb65</Anchor>
+                  <Name>devfs.cpp</Name>
+                  <Path>df/d9a/devfs_8cpp.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>DeviceRootNode</Name>
+                    <Path>df/d9a/devfs_8cpp.html</Path>
+                    <Anchor>a1fa18a092def46b44f18b5ccc94b53a2</Anchor>
+                   </Node>
+                  </Subnodes>
                  </Node>
                  <Node>
-                  <Name>WriteFSFunction</Name>
-                  <Path>db/d6f/zero_8cpp.html</Path>
-                  <Anchor>ae6d290792818ff28838df6aeddc6cde1</Anchor>
+                  <Name>drvfs.cpp</Name>
+                  <Path>db/d3e/drvfs_8cpp.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>DriverRootNode</Name>
+                    <Path>db/d3e/drvfs_8cpp.html</Path>
+                    <Anchor>a8c8f2f35453d791d6df8c684708a9cf8</Anchor>
+                   </Node>
+                  </Subnodes>
                  </Node>
                  <Node>
-                  <Name>zero</Name>
-                  <Path>db/d6f/zero_8cpp.html</Path>
-                  <Anchor>a511c118e13b1413d408a66eba589c0ad</Anchor>
+                  <Name>mountfs.cpp</Name>
+                  <Path>de/de9/mountfs_8cpp.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>MountNodeIndexNodeCount</Name>
+                    <Path>de/de9/mountfs_8cpp.html</Path>
+                    <Anchor>ae5a637d364a1c2609df2bc8c73c1510a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>MountRootNode</Name>
+                    <Path>de/de9/mountfs_8cpp.html</Path>
+                    <Anchor>ac3e2c3c485cfe2cf0114665be4359eec</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>netfs.cpp</Name>
+                  <Path>dc/de2/netfs_8cpp.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>NetworkRootNode</Name>
+                    <Path>dc/de2/netfs_8cpp.html</Path>
+                    <Anchor>ad1a98fdbcfc675e28120282b534a1213</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>procfs.cpp</Name>
+                  <Path>d8/d0f/procfs_8cpp.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>ProcessRootNode</Name>
+                    <Path>d8/d0f/procfs_8cpp.html</Path>
+                    <Anchor>a98849b8c7eccec7ad212eddb4bd2b62d</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>FileSystem.cpp</Name>
+                <Path>d3/d50/FileSystem_8cpp.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>AddNewChild</Name>
+                  <Path>d3/d50/FileSystem_8cpp.html</Path>
+                  <Anchor>ae21db18a1dd4359b807a76f4e166890b</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>GetChild</Name>
+                  <Path>d3/d50/FileSystem_8cpp.html</Path>
+                  <Anchor>ae0fe5c96dcf502d8c7992a51d714c1c0</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>NEWLOCK</Name>
+                  <Path>d3/d50/FileSystem_8cpp.html</Path>
+                  <Anchor>a126ae3ebc1440b0298351dfeeb1ded08</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>RemoveChild</Name>
+                  <Path>d3/d50/FileSystem_8cpp.html</Path>
+                  <Anchor>aca394c7c50562fc4cddd6cd8922d6186</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>devfs</Name>
+                  <Path>d3/d50/FileSystem_8cpp.html</Path>
+                  <Anchor>a60d49784066fe3a8c836568f9683617b</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>drvfs</Name>
+                  <Path>d3/d50/FileSystem_8cpp.html</Path>
+                  <Anchor>abe012e5d72ae65402ef8fe3de1a7bb3e</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>FileSystemRoot</Name>
+                  <Path>d3/d50/FileSystem_8cpp.html</Path>
+                  <Anchor>aae5511c8e6bade602158f8dcbec0f620</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>mountfs</Name>
+                  <Path>d3/d50/FileSystem_8cpp.html</Path>
+                  <Anchor>a26a35588e5151a977eac3968909fadb5</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>netfs</Name>
+                  <Path>d3/d50/FileSystem_8cpp.html</Path>
+                  <Anchor>a90637c28cacc79945d6f7af58d314bfb</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>procfs</Name>
+                  <Path>d3/d50/FileSystem_8cpp.html</Path>
+                  <Anchor>a591e7b9ac0327c7dee746d266fc09b29</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>vfs</Name>
+                  <Path>d3/d50/FileSystem_8cpp.html</Path>
+                  <Anchor>aace8e8569f67aa3e86be6cefa47a71f7</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -33862,6 +34000,11 @@
                     <Anchor>ad3aba1b2941bed48d02257c6befcd61b</Anchor>
                    </Node>
                    <Node>
+                    <Name>FileExists</Name>
+                    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                    <Anchor>a6b97f085b24faf83a3e228f9bf6400e5</Anchor>
+                   </Node>
+                   <Node>
                     <Name>GetNodeFromPath</Name>
                     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
                     <Anchor>a3b201953752ddf5837c5620576417998</Anchor>
@@ -35172,6 +35315,11 @@
                   <Anchor>ab5fe0d9f05321a1e464164873af53feb</Anchor>
                  </Node>
                  <Node>
+                  <Name>DEBUG_FILESYSTEM</Name>
+                  <Path>dd/dd8/filesystem_8h.html</Path>
+                  <Anchor>a75abb2d93c692b8b977d91a5b6c113b7</Anchor>
+                 </Node>
+                 <Node>
                   <Name>FILENAME_LENGTH</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
                   <Anchor>a610ce22de673afc7b1e8b0e7b3c9fe7a</Anchor>
@@ -35205,6 +35353,11 @@
                   <Name>UMountFSFunction</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
                   <Anchor>a48557587e623c32b8bd6623e5f88261a</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>vfsdbg</Name>
+                  <Path>dd/dd8/filesystem_8h.html</Path>
+                  <Anchor>a47d194f70ad5f06b3343aef4eb235442</Anchor>
                  </Node>
                  <Node>
                   <Name>WriteFSFunction</Name>
@@ -46781,107 +46934,6 @@
                 <Name>kdrv</Name>
                 <Path>d7/d7e/driver_8hpp.html</Path>
                 <Anchor>ad04971191f569678d1e155bd3c7324c1</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>FileSystem.cpp</Name>
-              <Path>d3/d50/FileSystem_8cpp.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>vfsdbg</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>a47d194f70ad5f06b3343aef4eb235442</Anchor>
-               </Node>
-               <Node>
-                <Name>AddNewChild</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>ae21db18a1dd4359b807a76f4e166890b</Anchor>
-               </Node>
-               <Node>
-                <Name>FileExists</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>a362da94b2a7853d328aaf0fedd9851a3</Anchor>
-               </Node>
-               <Node>
-                <Name>GetChild</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>ae0fe5c96dcf502d8c7992a51d714c1c0</Anchor>
-               </Node>
-               <Node>
-                <Name>NEWLOCK</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>a126ae3ebc1440b0298351dfeeb1ded08</Anchor>
-               </Node>
-               <Node>
-                <Name>RemoveChild</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>aca394c7c50562fc4cddd6cd8922d6186</Anchor>
-               </Node>
-               <Node>
-                <Name>devfs</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>a60d49784066fe3a8c836568f9683617b</Anchor>
-               </Node>
-               <Node>
-                <Name>DeviceRootNode</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>a1fa18a092def46b44f18b5ccc94b53a2</Anchor>
-               </Node>
-               <Node>
-                <Name>DriverRootNode</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>a8c8f2f35453d791d6df8c684708a9cf8</Anchor>
-               </Node>
-               <Node>
-                <Name>drvfs</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>abe012e5d72ae65402ef8fe3de1a7bb3e</Anchor>
-               </Node>
-               <Node>
-                <Name>FileSystemRoot</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>aae5511c8e6bade602158f8dcbec0f620</Anchor>
-               </Node>
-               <Node>
-                <Name>mountfs</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>a26a35588e5151a977eac3968909fadb5</Anchor>
-               </Node>
-               <Node>
-                <Name>MountNodeIndexNodeCount</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>ae5a637d364a1c2609df2bc8c73c1510a</Anchor>
-               </Node>
-               <Node>
-                <Name>MountRootNode</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>ac3e2c3c485cfe2cf0114665be4359eec</Anchor>
-               </Node>
-               <Node>
-                <Name>netfs</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>a90637c28cacc79945d6f7af58d314bfb</Anchor>
-               </Node>
-               <Node>
-                <Name>NetworkRootNode</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>ad1a98fdbcfc675e28120282b534a1213</Anchor>
-               </Node>
-               <Node>
-                <Name>ProcessRootNode</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>a98849b8c7eccec7ad212eddb4bd2b62d</Anchor>
-               </Node>
-               <Node>
-                <Name>procfs</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>a591e7b9ac0327c7dee746d266fc09b29</Anchor>
-               </Node>
-               <Node>
-                <Name>vfs</Name>
-                <Path>d3/d50/FileSystem_8cpp.html</Path>
-                <Anchor>aace8e8569f67aa3e86be6cefa47a71f7</Anchor>
                </Node>
               </Subnodes>
              </Node>

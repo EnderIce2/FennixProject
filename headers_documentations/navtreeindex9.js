@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"d7/d8c/libc_2include_2errno_8h.html#a5554094b3fb4bb6ebeb0157cb3f82a55":[2,0,2,0,6,16],
 "d7/d8c/libc_2include_2errno_8h.html#a5f8d33deb08fa27c04897b278ac7f965":[2,0,2,0,6,27],
 "d7/d8c/libc_2include_2errno_8h.html#a5fe247e079b591a68e0fdbf7caec5b70":[2,0,2,0,6,6],
 "d7/d8c/libc_2include_2errno_8h.html#a64a75c174882ddbfa726c7fd040f87a1":[2,0,2,0,6,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "d9/d3e/namespaceTasking.html#a9f33e893a96342e1db6dd3314e35518c":[2,0,1,0,16,0,13],
 "d9/d3e/namespaceTasking.html#ab02a6f9e3f7b8ad913c7da2d77a035bb":[2,0,1,0,16,0,2],
 "d9/d3e/namespaceTasking.html#abbb55c7fbdb4ec1093ddfdc5868c1b8d":[2,0,1,0,16,0,16],
-"d9/d3e/namespaceTasking.html#ad413335b44a1d18dcc54b1c620122ca5":[2,0,1,0,16,0,15],
-"d9/d3e/namespaceTasking.html#ad5ac4f96e962f4dbdf5f7cf1df51769a":[2,0,1,0,16,0,8]
+"d9/d3e/namespaceTasking.html#ad413335b44a1d18dcc54b1c620122ca5":[2,0,1,0,16,0,15]
 };
