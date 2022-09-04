@@ -422,6 +422,47 @@ static void internal_usleep(SyscallsRegs *regs, uint64_t us)
     }
 }
 
+static void internal_beep(SyscallsRegs *regs, BeepState state, uint64_t Frequency)
+{
+    syscldbg("syscall: beep( %d, %#llx )", state, Frequency);
+    if (!CanSyscall(regs))
+        return;
+    /* https://wiki.osdev.org/PC_Speaker */
+    static bool isBeeping = false;
+    switch (state)
+    {
+    case BEEP_OFF:
+    {
+        outportb(0x61, inportb(0x61) & 0xFC);
+        isBeeping = false;
+        break;
+    }
+    case BEEP_ON:
+    {
+        uint64_t div = 1193180 / Frequency;
+        outportb(0x43, 0xB6);
+        outportb(0x42, (uint8_t)div);
+        outportb(0x42, (uint8_t)(div >> 8));
+        outportb(0x61, inportb(0x61) | 0x3);
+        // uint8_t tmp = inportb(0x61);
+        // if (tmp != (tmp | 3))
+        //     outportb(0x61, tmp | 3);
+        isBeeping = true;
+        break;
+    }
+    case BEEP_TOGGLE:
+    {
+        if (isBeeping)
+            internal_beep(regs, BEEP_OFF, 0);
+        else
+            internal_beep(regs, BEEP_ON, Frequency);
+        break;
+    }
+    default:
+        break;
+    }
+}
+
 static uint64_t internal_dbg(SyscallsRegs *regs, int port, char *message)
 {
     syscldbg("syscall: dbg( %d, %s )", port, message);
@@ -487,6 +528,8 @@ static void *FennixSyscallsTable[] = {
     [_FileGetChildren] = (void *)internal_filegetchildren,
 
     [_usleep] = (void *)internal_usleep,
+
+    [_Beep] = (void *)internal_beep,
 
     [_DebugMessage] = (void *)internal_dbg,
 };

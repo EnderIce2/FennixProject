@@ -147,6 +147,8 @@ enum SystemCalls
 
     _usleep,
 
+    _Beep,
+
     _DebugMessage,
 };
 
@@ -218,6 +220,13 @@ typedef struct _File
     void *Handle;
 } File;
 
+enum BeepState
+{
+    BEEP_OFF = 0,
+    BEEP_ON = 1,
+    BEEP_TOGGLE = 2
+};
+
 DEFINE_SYSCALL1(exit, _ProcessExit, int)
 DEFINE_SYSCALL3(createProcess, _ProcessCreate, char *, uint64_t, uint64_t)
 DEFINE_SYSCALL3(createThread, _ThreadCreate, uint64_t, uint64_t, uint64_t)
@@ -265,5 +274,7 @@ DEFINE_SYSCALL1(FileChildrenSize, _FileChildrenSize, File *)
 DEFINE_SYSCALL2(FileGetChildren, _FileGetChildren, File *, uint64_t)
 
 DEFINE_SYSCALL1(usleep, _usleep, unsigned long)
+
+DEFINE_SYSCALL2(beep, _Beep, BeepState, unsigned long)
 
 DEFINE_SYSCALL2(dbg, _DebugMessage, int, char *)
