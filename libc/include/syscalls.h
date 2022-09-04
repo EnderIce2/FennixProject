@@ -275,6 +275,6 @@ DEFINE_SYSCALL2(FileGetChildren, _FileGetChildren, File *, uint64_t)
 
 DEFINE_SYSCALL1(usleep, _usleep, unsigned long)
 
-DEFINE_SYSCALL2(beep, _Beep, BeepState, unsigned long)
+DEFINE_SYSCALL2(beep, _Beep, enum BeepState, unsigned long)
 
 DEFINE_SYSCALL2(dbg, _DebugMessage, int, char *)
