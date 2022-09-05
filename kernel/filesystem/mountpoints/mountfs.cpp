@@ -15,7 +15,7 @@ namespace FileSystem
         if (isempty((char *)Name))
         {
             warn("Tried to mount file system with empty name!");
-            sprintf_((char *)Name, "mount_%lu", MountNodeIndexNodeCount);
+            sprintf_((char *)Name, "mount%lu", MountNodeIndexNodeCount);
         }
         trace("Adding %s to mounted file systems", Name);
         FileSystemNode *newNode = vfs->Create(MountRootNode, Name);

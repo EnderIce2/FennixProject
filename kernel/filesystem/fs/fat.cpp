@@ -107,25 +107,40 @@ namespace FileSystem
 
         uint8_t *buffer = (uint8_t *)RequestPage();
         Partition->Read(0, 1, buffer);
+
+        char namebuf[8];
+        BIOSParameterBlock *bpb = (BIOSParameterBlock *)buffer;
+
         switch (GetFATType((BIOSParameterBlock *)buffer))
         {
         case FAT12:
+        {
             // TODO: Implement reading and writing files
             debug("FAT12");
-            mountfs->MountFileSystem(&fat, 0666, "stubfat12");
+            memcpy(namebuf, bpb->OEM, 8);
+            mountfs->MountFileSystem(&fat, 0666, namebuf);
             break;
+        }
         case FAT16:
+        {
             // TODO: Implement reading and writing files
             debug("FAT16");
-            mountfs->MountFileSystem(&fat, 0666, "stubfat16");
+            memcpy(namebuf, bpb->OEM, 8);
+            mountfs->MountFileSystem(&fat, 0666, namebuf);
             break;
+        }
         case FAT32:
-            debug("FAT32");
+        {
             // TODO: Implement reading and writing files
-            mountfs->MountFileSystem(&fat, 0666, "stubfat32");
+            debug("FAT32");
+            memcpy(namebuf, bpb->OEM, 8);
+            mountfs->MountFileSystem(&fat, 0666, namebuf);
             break;
+        }
         default:
+        {
             break;
+        }
         }
 
         FreePage(buffer);

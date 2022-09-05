@@ -2,6 +2,15 @@
 #include "../../drivers/disk.h"
 #include "../../drivers/serial.h"
 
+uint32_t _ext2_lite_min(uint32_t a, uint32_t b)
+{
+    if (a < b)
+    {
+        return a;
+    }
+    return b;
+}
+
 namespace FileSystem
 {
 #define EXT2_MAGIC 0xEF53
@@ -25,9 +34,6 @@ namespace FileSystem
     EXT2::EXT2(void *partition)
     {
         DiskManager::Partition::Part *Partition = (DiskManager::Partition::Part *)partition;
-
-        // Partition->Read(1024, 2, (unsigned char *)&sb);
-
         uint8_t *buffer = (uint8_t *)RequestPage();
         Partition->Read(2, 2, buffer);
         memcpy(&sb, buffer, sizeof(SuperBlock));
@@ -37,7 +43,6 @@ namespace FileSystem
         {
             debug("EXT2 Name: \"%s\" Last Mounted In: \"%s\"", sb.VolumeName, sb.LastMounted);
             // TODO: Implement reading and writing files
-
             char CleandVolumeName[16] = {'\0'};
             for (size_t i = 0; i < strlen(sb.VolumeName); i++)
                 if (sb.VolumeName[i] == '/')

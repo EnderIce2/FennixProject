@@ -10,9 +10,9 @@ namespace FileSystem
     {
         trace("Adding %s to device file system", Name);
         // char *FullPath = new char[256];
-        // strcpy(FullPath, "/system/dev");
+        // strcpy(FullPath, "/system/dev/");
         // strcat(FullPath, Name);
-        FileSystemNode *newNode = /* vfs->Create(nullptr, "/system/dev"); */ vfs->Create(DeviceRootNode, Name);
+        FileSystemNode *newNode = /* vfs->Create(nullptr, FullPath); */ vfs->Create(DeviceRootNode, Name);
         // delete[] FullPath;
         newNode->Mode = Mode;
         newNode->Operator = Operator;
