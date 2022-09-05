@@ -165,7 +165,7 @@ void ParseBuffer(char *Buffer)
             mono->print("Node failed.");
             success = false;
         }
-        if (!node)
+        if (node->Status != FileStatus::OK)
         {
             mono->print("No such file or directory!");
             free(path);
@@ -232,12 +232,12 @@ void ParseBuffer(char *Buffer)
     }
     else if (strncmp(Buffer, "cat", 3) == 0)
     {
-        char *arg = trimwhitespace(Buffer + 2);
+        char *arg = trimwhitespace(Buffer + 3);
         char *path = (char *)malloc(strlen(arg) + 1);
         cwk_path_normalize(arg, path, strlen(arg) + 1);
         bool success = true;
         File *node = (File *)syscall_FileOpenWithParent(path, CurrentPath);
-        if (!node)
+        if (node->Status != FileStatus::OK)
         {
             mono->print("No such file or directory!");
             success = false;
@@ -261,6 +261,16 @@ void ParseBuffer(char *Buffer)
                 uint8_t *txt = (uint8_t *)(calloc(size, sizeof(uint8_t)));
                 syscall_FileRead(node, 0, txt, size);
                 for (uint64_t i = 0; i < size; i++)
+                    mono->printchar(txt[i]);
+                free(txt);
+                break;
+            }
+            case FS_PIPE:
+            case FS_BLOCKDEVICE:
+            {
+                uint8_t *txt = (uint8_t *)(calloc(32, sizeof(uint8_t)));
+                syscall_FileRead(node, 0, txt, 32);
+                for (uint64_t i = 0; i < 32; i++)
                     mono->printchar(txt[i]);
                 free(txt);
                 break;
@@ -336,7 +346,7 @@ void ParseBuffer(char *Buffer)
         char *path = (char *)malloc(strlen(arg) + 1);
         cwk_path_normalize(arg, path, strlen(arg) + 1);
         File *node = (File *)syscall_FileOpenWithParent(path, CurrentPath);
-        if (!node)
+        if (node->Status != FileStatus::OK)
         {
             mono->print("No such file or directory!");
         }
@@ -382,11 +392,11 @@ void ParseBuffer(char *Buffer)
     }
     else if (strncmp(Buffer, "elfinfo", 7) == 0)
     {
-        char *arg = trimwhitespace(Buffer + 2);
+        char *arg = trimwhitespace(Buffer + 7);
         char *path = (char *)malloc(strlen(arg) + 1);
         cwk_path_normalize(arg, path, strlen(arg) + 1);
         File *node = (File *)syscall_FileOpenWithParent(path, CurrentPath);
-        if (!node)
+        if (node->Status != FileStatus::OK)
         {
             mono->print("No such file or directory!");
         }
@@ -399,11 +409,11 @@ void ParseBuffer(char *Buffer)
     }
     else if (strncmp(Buffer, "dump", 4) == 0)
     {
-        char *arg = trimwhitespace(Buffer + 2);
+        char *arg = trimwhitespace(Buffer + 4);
         char *path = (char *)malloc(strlen(arg) + 1);
         cwk_path_normalize(arg, path, strlen(arg) + 1);
         File *node = (File *)syscall_FileOpenWithParent(path, CurrentPath);
-        if (!node)
+        if (node->Status != FileStatus::OK)
         {
             mono->print("No such file or directory!");
         }

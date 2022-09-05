@@ -1,8 +1,14 @@
 #include "dumper.hpp"
 
+#include "../../../libs/monoton/monotonlib.h"
+
+extern MonotonLib::mtl *mono;
+
+#define DumperPrint(m, ...) mono->printf(m, ##__VA_ARGS__)
+
 void DumpData(const char *Description, void *Address, unsigned long Length)
 {
-    DumperPrint("-------------------------------------------------------------------------\n");
+    mono->print("-------------------------------------------------------------------------\n");
     unsigned char *AddressChar = (unsigned char *)Address;
     unsigned char Buffer[17];
     unsigned long Iterate;
@@ -36,5 +42,5 @@ void DumpData(const char *Description, void *Address, unsigned long Length)
     }
 
     DumperPrint("  %s\n", Buffer);
-    DumperPrint("-------------------------------------------------------------------------\n");
+    mono->print("-------------------------------------------------------------------------\n");
 }

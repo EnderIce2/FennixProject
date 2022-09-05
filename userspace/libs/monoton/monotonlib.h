@@ -64,5 +64,6 @@ namespace MonotonLib
         void printchar(char Char, PrintPos Position);
         void print(const char *Text, PrintPos Position);
         void print(const char *Text);
+        void printf(const char *Text, ...);
     };
 }
