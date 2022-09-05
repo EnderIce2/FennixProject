@@ -331,7 +331,7 @@ void ParseBuffer(char *Buffer)
     }
     else if (strncmp(Buffer, "finfo", 5) == 0)
     {
-        char *arg = trimwhitespace(Buffer + 2);
+        char *arg = trimwhitespace(Buffer + 5);
         char *path = (char *)malloc(strlen(arg) + 1);
         cwk_path_normalize(arg, path, strlen(arg) + 1);
         File *node = (File *)syscall_FileOpenWithParent(path, CurrentPath);
@@ -528,6 +528,17 @@ int main(int argc, char *argv[])
     CurrentPath = (File *)syscall_FileOpen((char *)"/");
 
     InitLogin();
+    mono->print((char *)"\n");
+    mono->SetForegroundColor(0xAA22FF);
+    mono->print((char *)" _____             _              _____ _       _ _ \n");
+    mono->SetForegroundColor(0xAA22F5);
+    mono->print((char *)"|     |___ ___ ___| |_ ___ ___   |   __| |_ ___| | |\n");
+    mono->SetForegroundColor(0xAA22D5);
+    mono->print((char *)"| | | | . |   | . |  _| . |   |  |__   |   | -_| | |\n");
+    mono->SetForegroundColor(0xAA22C5);
+    mono->print((char *)"|_|_|_|___|_|_|___|_| |___|_|_|  |_____|_|_|___|_|_|\n");
+    mono->SetForegroundColor(0x4020F0);
+    mono->print((char *)"  Monoton Shell v0.0.1\n");
     mono->SetForegroundColor(0xDE2A39);
     mono->print((char *)"\n-- This shell is not fully implemented! --\n");
     PrintShellPrefix();
