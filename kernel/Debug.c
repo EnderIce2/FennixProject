@@ -1,10 +1,12 @@
 #include <debug.h>
-#include <stdarg.h>
+
 #include <interrupts.h>
 #include <cputables.h>
-#include <asm.h>
+#include <stdarg.h>
 #include <printf.h>
 #include <lock.h>
+#include <asm.h>
+
 #include "drivers/serial.h"
 
 void dbg_showregs(void *r, const char *file, int line, const char *function)

@@ -8,11 +8,11 @@ namespace Critical
     {
         CriticalSectionData *Data = new CriticalSectionData;
         Data->EnableInterrupts = InterruptsEnabled();
-        Data->CriticalLock.attempting_to_get = 0;
-        Data->CriticalLock.count = 0;
-        Data->CriticalLock.current_holder = 0;
-        Data->CriticalLock.lock_dat = 0;
-        Data->CriticalLock.lock_name = 0;
+        Data->CriticalLock.AttemptingToGet = 0;
+        Data->CriticalLock.Count = 0;
+        Data->CriticalLock.CurrentHolder = 0;
+        Data->CriticalLock.LockData = 0;
+        Data->CriticalLock.LockName = 0;
         LOCK(Data->CriticalLock);
         CLI;
         return Data;
