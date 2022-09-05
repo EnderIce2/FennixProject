@@ -135,7 +135,8 @@ void loop()
 
 void ParseBuffer(char *Buffer)
 {
-    mono->printchar('\n');
+    if (strlen(Buffer) > 0)
+        mono->printchar('\n');
     if (strcmp(Buffer, "help") == 0)
     {
         mono->print("Monoton Shell for Fennix\n");
@@ -416,61 +417,70 @@ void ParseBuffer(char *Buffer)
     }
     else
     {
-        int tried = 0;
-    FilesSearch:
-        const char *searchpath[] = {
-            "/",
-            "/system/",
-            "/home/default/Apps/",
-            "/home/default/Games/",
-        };
-        char filepath[256] = {'\0'};
-        switch (tried)
+        if (strlen(Buffer) > 0)
         {
-        case 0:
-            strcpy(filepath, searchpath[0]);
-            break;
-        case 1:
-            strcpy(filepath, searchpath[1]);
-            break;
-        case 2:
-            strcpy(filepath, searchpath[2]);
-            break;
-        case 3:
-            strcpy(filepath, searchpath[3]);
-            break;
-        case 4:
-            strcat(filepath, "/home/");
-            strcat(filepath, usr());
-            strcat(filepath, "/Apps/");
-            break;
-        case 5:
-            strcat(filepath, "/home/");
-            strcat(filepath, usr());
-            strcat(filepath, "/Games/");
-            break;
-        default:
-            break;
-        }
-        tried++;
-        strcat(filepath, Buffer);
-        WriteSysDebugger("[MonotonShell] Searching file %s...\n", filepath);
-        File *f = (File *)syscall_FileOpen(filepath);
-        if (f->Status != FileStatus::OK)
-        {
-            syscall_FileClose(f);
-            if (tried < 5)
-                goto FilesSearch;
-            else
-                f = (File *)syscall_FileOpenWithParent(Buffer, CurrentPath);
-        }
-
-        if (f->Status == FileStatus::OK)
-        {
-            if (!isempty_1(Buffer))
+            int tried = 0;
+        FilesSearch:
+            const char *searchpath[] = {
+                "/",
+                "/system/",
+                "/home/default/Apps/",
+                "/home/default/Games/",
+            };
+            char filepath[256] = {'\0'};
+            switch (tried)
             {
-                syscall_createProcess((char *)filepath, 0, 0);
-                syscall_pushTask((uint64_t)&loop);
+            case 0:
+                strcpy(filepath, searchpath[0]);
+                break;
+            case 1:
+                strcpy(filepath, searchpath[1]);
+                break;
+            case 2:
+                strcpy(filepath, searchpath[2]);
+                break;
+            case 3:
+                strcpy(filepath, searchpath[3]);
+                break;
+            case 4:
+                strcat(filepath, "/home/");
+                strcat(filepath, usr());
+                strcat(filepath, "/Apps/");
+                break;
+            case 5:
+                strcat(filepath, "/home/");
+                strcat(filepath, usr());
+                strcat(filepath, "/Games/");
+                break;
+            default:
+                break;
+            }
+            tried++;
+            strcat(filepath, Buffer);
+            WriteSysDebugger("[MonotonShell] Searching file %s...\n", filepath);
+            File *f = (File *)syscall_FileOpen(filepath);
+            if (f->Status != FileStatus::OK)
+            {
+                syscall_FileClose(f);
+                if (tried < 5)
+                    goto FilesSearch;
+                else
+                    f = (File *)syscall_FileOpenWithParent(Buffer, CurrentPath);
+            }
+
+            if (f->Status == FileStatus::OK)
+            {
+                if (!isempty_1(Buffer))
+                {
+                    syscall_createProcess((char *)filepath, 0, 0);
+                    syscall_pushTask((uint64_t)&loop);
+                }
+                else
+                {
+                    mono->print(Buffer);
+                    if (strlen(Buffer) > 1)
+                        mono->print(": Command not found.");
+                }
             }
             else
             {
@@ -478,14 +488,8 @@ void ParseBuffer(char *Buffer)
                 if (strlen(Buffer) > 1)
                     mono->print(": Command not found.");
             }
+            syscall_FileClose(f);
         }
-        else
-        {
-            mono->print(Buffer);
-            if (strlen(Buffer) > 1)
-                mono->print(": Command not found.");
-        }
-        syscall_FileClose(f);
     }
     mono->printchar('\n');
     PrintShellPrefix();
