@@ -13,6 +13,8 @@ enum TaskingMode
 
 extern int CurrentTaskingMode;
 
+#ifdef __cplusplus
+
 namespace Tasking
 {
     enum TaskState
@@ -115,6 +117,8 @@ namespace Tasking
     extern Monotasking *monot;
     extern Multitasking *mt;
 }
+
+#endif
 
 START_EXTERNC
 
