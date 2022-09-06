@@ -1,13 +1,15 @@
 #include <filesystem.h>
 
 #include <bootscreen.h>
+#include <smartptr.hpp>
 #include <string.h>
 #include <printf.h>
 #include <cwalk.h>
 #include <lock.h>
+#include <sys.h>
 
-#include "../kernel.h"
 #include "../drivers/disk.h"
+#include "../kernel.h"
 
 NEWLOCK(VFSLock);
 
@@ -17,11 +19,10 @@ FileSystem::Mount *mountfs = nullptr;
 FileSystem::Process *procfs = nullptr;
 FileSystem::Driver *drvfs = nullptr;
 FileSystem::Network *netfs = nullptr;
+FileSystem::SysInfo *sysfs = nullptr;
 
 namespace FileSystem
 {
-    FileSystemNode *FileSystemRoot = nullptr;
-
     char *Virtual::GetPathFromNode(FileSystemNode *Node)
     {
         vfsdbg("GetPathFromNode( Node: \"%s\" )", Node->Name);
@@ -85,6 +86,7 @@ namespace FileSystem
                         goto GetNodeFromPathNextParent;
                     }
                 }
+                delete[] SegmentName;
             } while (cwk_path_get_next_segment(&segment));
             const char *basename;
             cwk_path_get_basename(Path, &basename, nullptr);
@@ -93,15 +95,15 @@ namespace FileSystem
                 vfsdbg("GetNodeFromPath()->\"%s\"", Parent->Name);
                 return Parent;
             }
+
+            vfsdbg("GetNodeFromPath()->\"%s\"", nullptr);
+            return nullptr;
         }
         else
         {
             vfsdbg("GetNodeFromPath()->\"%s\"", Parent->Name);
             return Parent;
         }
-
-        vfsdbg("GetNodeFromPath()->\"%s\"", nullptr);
-        return nullptr;
     }
 
     FileSystemNode *AddNewChild(FileSystemNode *Parent, string Name)
@@ -153,9 +155,11 @@ namespace FileSystem
 
         if (cwk_path_is_relative(NormalizedPath))
         {
-            size_t PathSize = cwk_path_get_absolute(GetPathFromNode(Parent), NormalizedPath, nullptr, 0);
+            char *ParentPath = GetPathFromNode(Parent);
+            size_t PathSize = cwk_path_get_absolute(ParentPath, NormalizedPath, nullptr, 0);
             RelativePath = new char[PathSize + 1];
-            cwk_path_get_absolute(GetPathFromNode(Parent), NormalizedPath, RelativePath, PathSize + 1);
+            cwk_path_get_absolute(ParentPath, NormalizedPath, RelativePath, PathSize + 1);
+            delete[] ParentPath;
         }
         else
         {
@@ -192,21 +196,23 @@ namespace FileSystem
 
     FileSystemNode *Virtual::Create(FileSystemNode *Parent, string Path)
     {
+        SMART_LOCK(VFSLock);
+
         if (isempty((char *)Path))
             return nullptr;
 
-        LOCK(VFSLock);
         vfsdbg("Virtual::Create( Parent: \"%s\" Path: \"%s\" )", Parent->Name, Path);
+
+        FileSystemNode *CurrentParent = nullptr;
 
         if (Parent == nullptr)
         {
             if (FileSystemRoot->Children.size() >= 1)
             {
                 if (FileSystemRoot->Children[0] == nullptr)
-                {
-                    err("What?");
-                }
-                Parent = FileSystemRoot->Children[0]; // 0 - filesystem root
+                    panic("Root node is null!", true);
+
+                CurrentParent = FileSystemRoot->Children[0]; // 0 - filesystem root
             }
             else
             {
@@ -218,18 +224,19 @@ namespace FileSystem
                 foreach (auto var in FileSystemRoot->Children)
                     if (!strcmp(var->Name, PathCopy))
                     {
-                        Parent = var;
+                        CurrentParent = var;
                         break;
                     }
             }
         }
+        else
+            CurrentParent = Parent;
 
-        char *CleanPath = NormalizePath(Parent, Path);
-        bool parentcheck = false;
+        char *CleanPath = NormalizePath(CurrentParent, Path);
 
-        if (FileExists(Parent, CleanPath) != FILESTATUS::NOT_FOUND)
+        if (FileExists(CurrentParent, CleanPath) != FILESTATUS::NOT_FOUND)
         {
-            err("File already exists.");
+            err("File %s already exists.", CleanPath);
             goto CreatePathError;
         }
 
@@ -240,40 +247,27 @@ namespace FileSystem
             goto CreatePathError;
         }
 
+        warn("Virtual::Create( ) is not working properly.");
         do
         {
-            // TODO: check if this is working properly.
             char *SegmentName = new char[segment.end - segment.begin + 1];
             memcpy(SegmentName, segment.begin, segment.end - segment.begin);
-            if (!strcmp(SegmentName, Parent->Name) && !parentcheck)
-            {
-                parentcheck = true;
-                vfsdbg("Parent check [Segment:%s] [Parent Name:%s].", SegmentName, Parent->Name);
-                delete[] SegmentName;
-                continue;
-            }
-            if (GetChild(Parent, SegmentName) == nullptr)
-            {
-                if (FileExists(Parent, CleanPath) == FILESTATUS::NOT_FOUND)
-                    FileSystemNode *cnode = AddNewChild(Parent, SegmentName);
-#ifdef DEBUG_FILESYSTEM
-                foreach (auto var in Parent->Children)
-                    vfsdbg("Parent %s has %s", Parent->Name, var->Name);
-#endif
-            }
-            Parent = GetChild(Parent, SegmentName);
+
+            if (GetChild(CurrentParent, SegmentName) == nullptr)
+                CurrentParent = AddNewChild(CurrentParent, SegmentName);
+            else
+                CurrentParent = GetChild(CurrentParent, SegmentName);
+
             delete[] SegmentName;
         } while (cwk_path_get_next_segment(&segment));
 
         delete CleanPath;
-        vfsdbg("Virtual::Create()->\"%s\"", Parent->Name);
-        UNLOCK(VFSLock);
-        return Parent;
+        vfsdbg("Virtual::Create()->\"%s\"", CurrentParent->Name);
+        return CurrentParent;
 
     CreatePathError:
-        vfsdbg("Virtual::Create return: nullptr");
+        vfsdbg("Virtual::Create()->nullptr");
         delete CleanPath;
-        UNLOCK(VFSLock);
         return nullptr;
     }
 
@@ -292,13 +286,14 @@ namespace FileSystem
 
     FILE *Virtual::Mount(FileSystemOpeations *Operator, string Path)
     {
+        SMART_LOCK(VFSLock);
+
         if (Operator == nullptr)
             return nullptr;
 
         if (isempty((char *)Path))
             return nullptr;
 
-        LOCK(VFSLock);
         vfsdbg("Mounting %s", Path);
         FILE *file = new FILE;
         cwk_path_get_basename(Path, &file->Name, 0);
@@ -306,25 +301,51 @@ namespace FileSystem
         file->Node = Create(nullptr, Path);
         file->Node->Operator = Operator;
         file->Node->Flags = NodeFlags::FS_MOUNTPOINT;
-
-        UNLOCK(VFSLock);
         return file;
     }
 
     FILESTATUS Virtual::Unmount(FILE *File)
     {
+        SMART_LOCK(VFSLock);
         if (File == nullptr)
             return FILESTATUS::INVALID_PARAMETER;
-
-        LOCK(VFSLock);
         vfsdbg("Unmounting %s", File->Name);
-        UNLOCK(VFSLock);
         return FILESTATUS::OK;
     }
 
     FILE *Virtual::Open(string Path, FileSystemNode *Parent)
     {
+        SMART_LOCK(VFSLock);
         vfsdbg("Opening %s with parent %s", Path, Parent->Name);
+
+        if (strcmp(Path, ".") == 0)
+        {
+            FILE *file = new FILE;
+            FILESTATUS filestatus = FILESTATUS::OK;
+            file->Node = Parent;
+            if (file->Node == nullptr)
+                file->Status = FILESTATUS::NOT_FOUND;
+            const char *basename;
+            cwk_path_get_basename(GetPathFromNode(Parent), &basename, nullptr);
+            file->Name = basename;
+            return file;
+        }
+
+        if (strcmp(Path, "..") == 0)
+        {
+            if (Parent->Parent != nullptr)
+                Parent = Parent->Parent;
+
+            FILE *file = new FILE;
+            FILESTATUS filestatus = FILESTATUS::OK;
+            file->Node = Parent;
+            if (file->Node == nullptr)
+                file->Status = FILESTATUS::NOT_FOUND;
+            const char *basename;
+            cwk_path_get_basename(GetPathFromNode(Parent), &basename, nullptr);
+            file->Name = basename;
+            return file;
+        }
 
         if (Parent == nullptr)
         {
@@ -350,12 +371,33 @@ namespace FileSystem
 
         FILE *file = new FILE;
         FILESTATUS filestatus = FILESTATUS::OK;
-        // TODO: NOT IMPLEMENTED YET
-        // filestatus = FileExists(Parent, CleanPath);
+        filestatus = FileExists(Parent, CleanPath);
         /* TODO: Check for other errors */
 
         if (filestatus != FILESTATUS::OK)
         {
+            foreach (auto var in FileSystemRoot->Children)
+                if (!strcmp(var->Name, CleanPath))
+                {
+                    file->Node = var;
+                    if (file->Node == nullptr)
+                        goto OpenNodeFail;
+                    const char *basename;
+                    cwk_path_get_basename(GetPathFromNode(var), &basename, nullptr);
+                    file->Name = basename;
+                    goto OpenNodeExit;
+                }
+
+            file->Node = GetNodeFromPath(FileSystemRoot->Children[0], CleanPath);
+            if (file->Node != nullptr)
+            {
+                const char *basename;
+                cwk_path_get_basename(GetPathFromNode(file->Node), &basename, nullptr);
+                file->Name = basename;
+                goto OpenNodeExit;
+            }
+
+        OpenNodeFail:
             file->Status = filestatus;
             file->Node = nullptr;
         }
@@ -369,11 +411,13 @@ namespace FileSystem
             file->Name = basename;
             return file;
         }
+    OpenNodeExit:
         return file;
     }
 
     uint64_t Virtual::Read(FILE *File, uint64_t Offset, uint8_t *Buffer, uint64_t Size)
     {
+        SMART_LOCK(VFSLock);
         if (File == nullptr)
             return 0;
 
@@ -396,6 +440,7 @@ namespace FileSystem
 
     uint64_t Virtual::Write(FILE *File, uint64_t Offset, uint8_t *Buffer, uint64_t Size)
     {
+        SMART_LOCK(VFSLock);
         if (File == nullptr)
             return 0;
 
@@ -418,11 +463,11 @@ namespace FileSystem
 
     FILESTATUS Virtual::Close(FILE *File)
     {
+        SMART_LOCK(VFSLock);
         if (File == nullptr)
             return FILESTATUS::INVALID_HANDLE;
         vfsdbg("Closing %s", File->Name);
         delete File;
-
         return FILESTATUS::OK;
     }
 

@@ -63,7 +63,7 @@ namespace DiskManager
 
         Drive *drive = new Drive;
         drives.push_back(drive);
-        sprintf_(drive->Name, "dsk%ld", drives.size() - 1);
+        sprintf_(drive->Name, "sd%ld", sizeof(drive->Name));
         // TODO: Implement disk type detection. Very useful in the future.
         drive->MechanicalDisk = true;
 
@@ -107,9 +107,10 @@ namespace DiskManager
                         trace("GPT partition \"%s\" found with %lld sectors", PartName, partition->Sectors);
                         drive->Partitions.push_back(partition);
 
-                        char *PartitionName = (char *)kmalloc(sizeof(char));
-                        sprintf_(PartitionName, "dsk%ldp%ld", drives.size() - 1, partition->Index);
+                        char *PartitionName = new char[64];
+                        sprintf_(PartitionName, "sd%ldp%ld", drives.size() - 1, partition->Index);
                         devfs->AddFileSystem(&sata_disk, 0666, PartitionName, FileSystem::NodeFlags::FS_BLOCKDEVICE);
+                        delete[] PartitionName;
                     }
                 }
             }
@@ -133,9 +134,10 @@ namespace DiskManager
                     trace("Partition \"%#llx\" found with %lld sectors.", drive->Table.MBR.UniqueID, partition->Sectors);
                     drive->Partitions.push_back(partition);
 
-                    char *PartitionName = (char *)kmalloc(sizeof(char));
-                    sprintf_(PartitionName, "dsk%ldp%ld", drives.size() - 1, partition->Index);
+                    char *PartitionName = new char[64];
+                    sprintf_(PartitionName, "sd%ldp%ld", drives.size() - 1, partition->Index);
                     devfs->AddFileSystem(&sata_disk, 0666, PartitionName, FileSystem::NodeFlags::FS_BLOCKDEVICE);
+                    delete[] PartitionName;
                 }
             trace("%d MBR partitions found.", drive->Partitions.size());
         }

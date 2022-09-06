@@ -3,7 +3,7 @@
 #include <vector.hpp>
 
 // show debug messages
-#define DEBUG_FILESYSTEM 1
+// #define DEBUG_FILESYSTEM 1
 
 #ifdef DEBUG_FILESYSTEM
 #define vfsdbg(m, ...) debug(m, ##__VA_ARGS__)
@@ -129,10 +129,14 @@ namespace FileSystem
     /* Manage / etc.. */
     class Virtual
     {
+    private:
+        FileSystemNode *FileSystemRoot = nullptr;
+
     public:
+        FileSystemNode *GetRootNode() { return FileSystemRoot; }
         FILE *ConvertNodeToFILE(FileSystemNode *Node)
         {
-            FILE *File = new FILE();
+            FILE *File = new FILE;
             File->Name = Node->Name;
             File->Status = FILESTATUS::OK;
             File->Node = Node;
@@ -199,6 +203,15 @@ namespace FileSystem
         FileSystemNode *AddNetworkCard(struct FileSystemOpeations *Operator, uint64_t Mode, string Name, int Flags);
         Network();
         ~Network();
+    };
+
+    /* Manage /system/sys */
+    class SysInfo
+    {
+    public:
+        FileSystemNode *AddInfo(FileSystemOpeations *Operator, string Name);
+        SysInfo();
+        ~SysInfo();
     };
 
     class USTAR
@@ -312,6 +325,7 @@ namespace FileSystem
     class FB
     {
     public:
+        void SetFrameBufferData(uint64_t Address, uint64_t Size, uint32_t Width, uint32_t Height, uint32_t PixelsPerScanLine);
         FB();
         ~FB();
     };
@@ -435,3 +449,4 @@ extern FileSystem::Mount *mountfs;
 extern FileSystem::Process *procfs;
 extern FileSystem::Driver *drvfs;
 extern FileSystem::Network *netfs;
+extern FileSystem::SysInfo *sysfs;

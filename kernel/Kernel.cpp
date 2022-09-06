@@ -326,6 +326,7 @@ void KernelInit()
     procfs = new FileSystem::Process;
     diskmgr = new DiskManager::Disk;
     partmgr = new DiskManager::Partition;
+    sysfs = new FileSystem::SysInfo;
     BS->Progress(70);
     do_network_test();
     nimgr = new NetworkInterfaceManager::NetworkInterface;
@@ -335,7 +336,12 @@ void KernelInit()
     new FileSystem::Random;
     new FileSystem::Null;
     new FileSystem::Zero;
-    new FileSystem::FB;
+    FileSystem::FB *fb = new FileSystem::FB;
+    fb->SetFrameBufferData(bootparams->Framebuffer.BaseAddress,
+                           bootparams->Framebuffer.BufferSize,
+                           bootparams->Framebuffer.Width,
+                           bootparams->Framebuffer.Height,
+                           bootparams->Framebuffer.PixelsPerScanLine);
 
     ps2mouse = new PS2Mouse::PS2MouseDriver;
     BS->IncreaseProgres();
