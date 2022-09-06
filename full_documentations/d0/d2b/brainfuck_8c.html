@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('d0/d2b/brainfuck_8c.html','../../'); i
 Functions</h2></td></tr>
 <tr class="memitem:a92dc3f71fd6adfd1bb72778ba0ad272c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2b/brainfuck_8c.html#a92dc3f71fd6adfd1bb72778ba0ad272c">brainfuck</a> (char *Data, char *Input)</td></tr>
 <tr class="separator:a92dc3f71fd6adfd1bb72778ba0ad272c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2b/brainfuck_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *<a class="el" href="../../d7/d93/crt1_8c.html#a8c6923b50b593219f778bcaa56306446">argv</a>[])</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2b/brainfuck_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -238,16 +238,16 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">char</span> *Input;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (argc != 3)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="../../d4/d68/display_8h.html#a0f459d16901ef591acaafa4b67fd4be5">printf</a>(<span class="stringliteral">&quot;Usage: %s &lt;Code&gt; &lt;Input&gt;\n&quot;</span>, <a class="code" href="../../d8/def/crt0_8c.html#a8c6923b50b593219f778bcaa56306446">argv</a>[0]);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="../../d4/d68/display_8h.html#a0f459d16901ef591acaafa4b67fd4be5">printf</a>(<span class="stringliteral">&quot;Usage: %s &lt;Code&gt; &lt;Input&gt;\n&quot;</span>, argv[0]);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    Data = <a class="code" href="../../d8/def/crt0_8c.html#a8c6923b50b593219f778bcaa56306446">argv</a>[1];</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    Input = <a class="code" href="../../d8/def/crt0_8c.html#a8c6923b50b593219f778bcaa56306446">argv</a>[2];</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    Data = argv[1];</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    Input = argv[2];</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="../../d0/d2b/brainfuck_8c.html#a92dc3f71fd6adfd1bb72778ba0ad272c">brainfuck</a>(Data, Input);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d8/def/crt0_8c_source.html#l00002">argv</a>, <a class="el" href="../../d0/d2b/brainfuck_8c_source.html#l00003">brainfuck()</a>, and <a class="el" href="../../d4/d68/display_8h_source.html#l00208">printf</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d2b/brainfuck_8c_source.html#l00003">brainfuck()</a>, and <a class="el" href="../../d4/d68/display_8h_source.html#l00208">printf</a>.</p>
 
 </div>
 </div>
@@ -255,7 +255,6 @@ Functions</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="abrainfuck_8c_html_a92dc3f71fd6adfd1bb72778ba0ad272c"><div class="ttname"><a href="../../d0/d2b/brainfuck_8c.html#a92dc3f71fd6adfd1bb72778ba0ad272c">brainfuck</a></div><div class="ttdeci">void brainfuck(char *Data, char *Input)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2b/brainfuck_8c_source.html#l00003">brainfuck.c:3</a></div></div>
 <div class="ttc" id="aE1000_8hpp_html_acb11b7f64dca443c2d6fcaeca8f5c17d"><div class="ttname"><a href="../../da/d3f/E1000_8hpp.html#acb11b7f64dca443c2d6fcaeca8f5c17d">Command</a></div><div class="ttdeci">volatile uint8_t Command</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d3f/E1000_8hpp_source.html#l00005">E1000.hpp:5</a></div></div>
-<div class="ttc" id="acrt0_8c_html_a8c6923b50b593219f778bcaa56306446"><div class="ttname"><a href="../../d8/def/crt0_8c.html#a8c6923b50b593219f778bcaa56306446">argv</a></div><div class="ttdeci">static char * argv[20]</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/def/crt0_8c_source.html#l00002">crt0.c:2</a></div></div>
 <div class="ttc" id="adisplay_8h_html_a0f459d16901ef591acaafa4b67fd4be5"><div class="ttname"><a href="../../d4/d68/display_8h.html#a0f459d16901ef591acaafa4b67fd4be5">printf</a></div><div class="ttdeci">#define printf(format,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d68/display_8h_source.html#l00208">display.h:208</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

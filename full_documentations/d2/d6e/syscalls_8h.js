@@ -24,6 +24,11 @@ var syscalls_8h =
     [ "deniedcall", "d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc", null ],
     [ "failedcall", "d2/d6e/syscalls_8h.html#ace10381511c391a6154671a5360ad795", null ],
     [ "File", "d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e", null ],
+    [ "BeepState", "d2/d6e/syscalls_8h.html#ad8f7fc2be7f2208d6acce098162f38e0", [
+      [ "BEEP_OFF", "d2/d6e/syscalls_8h.html#ad8f7fc2be7f2208d6acce098162f38e0a838f13dc6a8a628065e253e16228156a", null ],
+      [ "BEEP_ON", "d2/d6e/syscalls_8h.html#ad8f7fc2be7f2208d6acce098162f38e0a289051b75f6bf72f3536f3bde8f06ee9", null ],
+      [ "BEEP_TOGGLE", "d2/d6e/syscalls_8h.html#ad8f7fc2be7f2208d6acce098162f38e0a5ba7f04d82a69c4740c765341dfa2917", null ]
+    ] ],
     [ "FileStatus", "d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40c", [
       [ "OK", "d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca2bc49ec37d6a5715dd23e85f1ff5bb59", null ],
       [ "NOT_FOUND", "d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40cacdaa2919bac56fe1090eb3dbb9526472", null ],
@@ -77,6 +82,9 @@ var syscalls_8h =
       [ "_GetCurrentThread", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda720547958e6e6bb0b51ec8193d627e06", null ],
       [ "_GetCurrentProcessID", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda5f25e90914026f8ea409a67461c7ddd1", null ],
       [ "_GetCurrentThreadID", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddacc9b1d7135b20db0c0369cf9fb4f3d4b", null ],
+      [ "_GetARGC", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda38d92a52a63a7dcb128793a3dcc6ae9f", null ],
+      [ "_GetARGV", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda96e680f54dd91492355c76b2edbc8c1a", null ],
+      [ "_GetENVP", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddacdaf761dd83654847385e37a6609d025", null ],
       [ "_GetScheduleMode", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddad37fdeff9eb9fe97f16f089ad878248d", null ],
       [ "_CreateTask", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda12b60ce1dce6606342437ce238296444", null ],
       [ "_PushTask", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddaa867a7509e88601041eb584a4711ba19", null ],
@@ -115,6 +123,7 @@ var syscalls_8h =
       [ "_FileChildrenSize", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddaa4247e8634a3e0d6e5c1ac38da229ce8", null ],
       [ "_FileGetChildren", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda6dbd4a9831f4cac80882f991f4bfb97b", null ],
       [ "_usleep", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda75975d7f4982d52e685b7a4a1ef48ac6", null ],
+      [ "_Beep", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddac9fff3ad1eb63c1867c760346d8d01cc", null ],
       [ "_DebugMessage", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda72d74f32cb7226e96b077d3873cd7912", null ]
     ] ]
 ];

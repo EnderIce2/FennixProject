@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['platform_4437',['Platform',['../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9',1,'task.h']]],
-  ['ptflag_4438',['PTFlag',['../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5',1,'heap.h']]]
+  ['nodeflags_4445',['NodeFlags',['../d6/df5/namespaceFileSystem.html#a86d499b931be318b2231244eba122cbc',1,'FileSystem::NodeFlags()'],['../d2/d6e/syscalls_8h.html#ae925b777d12c58434a689cce258b57c0',1,'NodeFlags():&#160;syscalls.h']]]
 ];

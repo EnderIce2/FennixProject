@@ -1,6 +1,7 @@
 var ext2_8cpp =
 [
     [ "EXT2_MAGIC", "db/dc4/ext2_8cpp.html#aa20416820a06c5d65373830cb78bb029", null ],
+    [ "_ext2_lite_min", "db/dc4/ext2_8cpp.html#a236abfb3419655b629952eb72cd6114b", null ],
     [ "ReadFSFunction", "db/dc4/ext2_8cpp.html#af990e2c88aa8aa73db3c24492a422785", null ],
     [ "WriteFSFunction", "db/dc4/ext2_8cpp.html#a622d5a7f4bcffd0b9affb5046fc453e7", null ],
     [ "ext2", "db/dc4/ext2_8cpp.html#ab1e041ad59d3d7832a9566e71b12cb47", null ],

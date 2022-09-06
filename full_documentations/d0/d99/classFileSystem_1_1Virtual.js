@@ -9,10 +9,12 @@ var classFileSystem_1_1Virtual =
     [ "FileExists", "d0/d99/classFileSystem_1_1Virtual.html#a6b97f085b24faf83a3e228f9bf6400e5", null ],
     [ "GetNodeFromPath", "d0/d99/classFileSystem_1_1Virtual.html#a3b201953752ddf5837c5620576417998", null ],
     [ "GetPathFromNode", "d0/d99/classFileSystem_1_1Virtual.html#a2d383e2254c1bde70f9f9f2032ca97fb", null ],
+    [ "GetRootNode", "d0/d99/classFileSystem_1_1Virtual.html#a46ae343f031228bc6183bccbc44e6dc2", null ],
     [ "Mount", "d0/d99/classFileSystem_1_1Virtual.html#a0f5fde2f47d3002087613ca6ee9c817e", null ],
     [ "NormalizePath", "d0/d99/classFileSystem_1_1Virtual.html#a6d3bcafa44ad2e8db3d47a5d115d08ad", null ],
     [ "Open", "d0/d99/classFileSystem_1_1Virtual.html#a462e81b93784da517ef808b4c4a1cc6d", null ],
     [ "Read", "d0/d99/classFileSystem_1_1Virtual.html#a5ed337f091d636662f4646b18c2454d9", null ],
     [ "Unmount", "d0/d99/classFileSystem_1_1Virtual.html#a7f06108378c9e0fd35490faf3ad06b49", null ],
-    [ "Write", "d0/d99/classFileSystem_1_1Virtual.html#a0c58ed367cda8ba73587c496ea31619f", null ]
+    [ "Write", "d0/d99/classFileSystem_1_1Virtual.html#a0c58ed367cda8ba73587c496ea31619f", null ],
+    [ "FileSystemRoot", "d0/d99/classFileSystem_1_1Virtual.html#a349828f30b5aacec91378e750ecc9dc2", null ]
 ];

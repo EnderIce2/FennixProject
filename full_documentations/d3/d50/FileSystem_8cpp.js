@@ -6,9 +6,9 @@ var FileSystem_8cpp =
     [ "RemoveChild", "d3/d50/FileSystem_8cpp.html#aca394c7c50562fc4cddd6cd8922d6186", null ],
     [ "devfs", "d3/d50/FileSystem_8cpp.html#a60d49784066fe3a8c836568f9683617b", null ],
     [ "drvfs", "d3/d50/FileSystem_8cpp.html#abe012e5d72ae65402ef8fe3de1a7bb3e", null ],
-    [ "FileSystemRoot", "d3/d50/FileSystem_8cpp.html#aae5511c8e6bade602158f8dcbec0f620", null ],
     [ "mountfs", "d3/d50/FileSystem_8cpp.html#a26a35588e5151a977eac3968909fadb5", null ],
     [ "netfs", "d3/d50/FileSystem_8cpp.html#a90637c28cacc79945d6f7af58d314bfb", null ],
     [ "procfs", "d3/d50/FileSystem_8cpp.html#a591e7b9ac0327c7dee746d266fc09b29", null ],
+    [ "sysfs", "d3/d50/FileSystem_8cpp.html#afa17c9063c9b62481b9392e97f78912f", null ],
     [ "vfs", "d3/d50/FileSystem_8cpp.html#aace8e8569f67aa3e86be6cefa47a71f7", null ]
 ];

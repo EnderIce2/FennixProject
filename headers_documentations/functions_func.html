@@ -112,6 +112,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>AddFileSystem()
 : <a class="el" href="db/d00/classFileSystem_1_1Device.html#af2c813f4513b42879232353441e12c87">FileSystem::Device</a>
 </li>
+<li>AddInfo()
+: <a class="el" href="db/d84/classFileSystem_1_1SysInfo.html#ad39ad6a0d0dacd4815ebc2c4c36ed080">FileSystem::SysInfo</a>
+</li>
 <li>AddNetworkCard()
 : <a class="el" href="d2/dd3/classFileSystem_1_1Network.html#a2758492c1ff5ea9fe98c1f527d747f23">FileSystem::Network</a>
 </li>
@@ -147,20 +150,14 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>ConvertNodeToFILE()
 : <a class="el" href="d0/d99/classFileSystem_1_1Virtual.html#a9e2f2fb6df5e515098df312024c3de44">FileSystem::Virtual</a>
 </li>
+<li>Counter()
+: <a class="el" href="da/de2/classshared__ptr_1_1Counter.html#a422a1b3cd9651460f5c4efbb0bd835b0">shared_ptr&lt; T &gt;::Counter</a>
+</li>
 <li>Create()
 : <a class="el" href="d0/d99/classFileSystem_1_1Virtual.html#a28352d99687ea2c4c6dd3c45173263d9">FileSystem::Virtual</a>
 </li>
-<li>CreateProcess()
-: <a class="el" href="d0/d5b/classTasking_1_1Multitasking.html#aed88adb4bc0a4c32203280fce2b94fd6">Tasking::Multitasking</a>
-</li>
 <li>CreateRoot()
 : <a class="el" href="d0/d99/classFileSystem_1_1Virtual.html#a8cfd4e2543f352b94beefa3121255102">FileSystem::Virtual</a>
-</li>
-<li>CreateTask()
-: <a class="el" href="d5/da2/classTasking_1_1Monotasking.html#acf2834df9aea900cc02c9fe1647dedc2">Tasking::Monotasking</a>
-</li>
-<li>CreateThread()
-: <a class="el" href="d0/d5b/classTasking_1_1Multitasking.html#aa3142eac55e865809cbe4579b6ae0df9">Tasking::Multitasking</a>
 </li>
 </ul>
 
@@ -219,9 +216,11 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>Get()
 : <a class="el" href="d3/d19/classBitmap.html#a9f96c621ef1f5b2217d6c63b20af246e">Bitmap</a>
+, <a class="el" href="da/de2/classshared__ptr_1_1Counter.html#ab3f1eedbc674fc7a576c6c9005a3b306">shared_ptr&lt; T &gt;::Counter</a>
+, <a class="el" href="d4/d67/classshared__ptr.html#abf370348b8c58eee7b657f5460e31d8e">shared_ptr&lt; T &gt;</a>
 </li>
-<li>GetCurrentTask()
-: <a class="el" href="d5/da2/classTasking_1_1Monotasking.html#aaa491cb36214dd273002614c309f16e8">Tasking::Monotasking</a>
+<li>GetCount()
+: <a class="el" href="d4/d67/classshared__ptr.html#a47f5c4a0a349af9a6c9ba5f4060e619c">shared_ptr&lt; T &gt;</a>
 </li>
 <li>GetFATType()
 : <a class="el" href="df/d19/classFileSystem_1_1FAT.html#af9fc90437ce8bba950b83b2c6cbf5dca">FileSystem::FAT</a>
@@ -231,6 +230,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 </li>
 <li>GetPathFromNode()
 : <a class="el" href="d0/d99/classFileSystem_1_1Virtual.html#aaab2e2228d10f6286d33ec397c3b438b">FileSystem::Virtual</a>
+</li>
+<li>GetRootNode()
+: <a class="el" href="d0/d99/classFileSystem_1_1Virtual.html#a46ae343f031228bc6183bccbc44e6dc2">FileSystem::Virtual</a>
 </li>
 <li>getsize()
 : <a class="el" href="d0/df0/classFileSystem_1_1USTAR.html#a33068586585434a9ea30d363fd1186dd">FileSystem::USTAR</a>
@@ -247,13 +249,6 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 </li>
 <li>Initrd()
 : <a class="el" href="d9/d12/classFileSystem_1_1Initrd.html#a9d1fc129464c84c22f5462642bd6ab5b">FileSystem::Initrd</a>
-</li>
-</ul>
-
-
-<h3><a id="index_k"></a>- k -</h3><ul>
-<li>KillMe()
-: <a class="el" href="d5/da2/classTasking_1_1Monotasking.html#aca278385dfe53ca1b3e3bcdd82df0add">Tasking::Monotasking</a>
 </li>
 </ul>
 
@@ -282,14 +277,14 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 , <a class="el" href="d1/dbc/structlimine__rsdp__request.html#a4725cd14f363afb2d120b9424d3e085c">limine_rsdp_request</a>
 , <a class="el" href="d8/d8a/structlimine__rsdp__response.html#a870dc4b2a49fede004964795f0e655a9">limine_rsdp_response</a>
 , <a class="el" href="d4/d5d/structlimine__smbios__request.html#aa7c13457c2b7c343763d07d8718af0e6">limine_smbios_request</a>
-, <a class="el" href="de/d7e/structlimine__smbios__response.html#a9ff6bb040785f4fe3d44ae43c13e7c27">limine_smbios_response</a>
+, <a class="el" href="de/d7e/structlimine__smbios__response.html#a9d235dbecaad4be81342b75b682cf77c">limine_smbios_response</a>
 , <a class="el" href="d2/d7d/structlimine__smp__info.html#aaff7aebb12746b15cd601785a4a6bdd8">limine_smp_info</a>
 , <a class="el" href="d1/db0/structlimine__smp__request.html#ae466030d6488106f78627b17e4cf59d5">limine_smp_request</a>
 , <a class="el" href="d5/d99/structlimine__smp__response.html#a2fa24f8d909e9a1579331328dafb4e8f">limine_smp_response</a>
 , <a class="el" href="df/dee/structlimine__stack__size__request.html#afbf3eaf26c0da4af74fd85cc25898a9a">limine_stack_size_request</a>
 , <a class="el" href="d1/df5/structlimine__terminal.html#a71fec78f0cae222ea4af90a5dd172852">limine_terminal</a>
-, <a class="el" href="d7/d5c/structlimine__terminal__request.html#a5d986270c61dced10ffd14f845d890d6">limine_terminal_request</a>
-, <a class="el" href="da/da8/structlimine__terminal__response.html#ada1c4200fe9ee103fdde4fc6b7fd9d2e">limine_terminal_response</a>
+, <a class="el" href="d7/d5c/structlimine__terminal__request.html#a2cbaecfedeec966e847e47580f80eb7f">limine_terminal_request</a>
+, <a class="el" href="da/da8/structlimine__terminal__response.html#aaaa4d83a9ecfd023a18ac19202691247">limine_terminal_response</a>
 </li>
 <li>load()
 : <a class="el" href="dc/d2e/classanonymous__namespace_02atomic_8hpp_03_1_1atomic.html#acec533f85d005ac44421db85ba62ac46">anonymous_namespace{atomic.hpp}::atomic&lt; T &gt;</a>
@@ -298,18 +293,12 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 
 <h3><a id="index_m"></a>- m -</h3><ul>
-<li>Monotasking()
-: <a class="el" href="d5/da2/classTasking_1_1Monotasking.html#a2965449607884b02f7fce3d70df38aca">Tasking::Monotasking</a>
-</li>
 <li>Mount()
 : <a class="el" href="dc/d19/classFileSystem_1_1Mount.html#af8111543743bf2c9b5bebb98ef259002">FileSystem::Mount</a>
 , <a class="el" href="d0/d99/classFileSystem_1_1Virtual.html#a39b256bf1a13a8df9293485419140454">FileSystem::Virtual</a>
 </li>
 <li>MountFileSystem()
 : <a class="el" href="dc/d19/classFileSystem_1_1Mount.html#a9b71a5fa01a4cb470a46bff7df16f474">FileSystem::Mount</a>
-</li>
-<li>Multitasking()
-: <a class="el" href="d0/d5b/classTasking_1_1Multitasking.html#aaffa38521c8583930f6393efcbba512d">Tasking::Multitasking</a>
 </li>
 </ul>
 
@@ -331,8 +320,23 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>Open()
 : <a class="el" href="d0/d99/classFileSystem_1_1Virtual.html#a9af79565a88acf124ef12f8bbe612109">FileSystem::Virtual</a>
 </li>
+<li>operator*()
+: <a class="el" href="d4/d67/classshared__ptr.html#a55f90fd9ec9c1dbf02187bceb924c803">shared_ptr&lt; T &gt;</a>
+, <a class="el" href="dc/d42/classsmart__ptr.html#a2c6a11de1d90efd3393b041ec29f3129">smart_ptr&lt; T &gt;</a>
+</li>
+<li>operator++()
+: <a class="el" href="da/de2/classshared__ptr_1_1Counter.html#ab5b666b86b54a8a439fdc60c7de37358">shared_ptr&lt; T &gt;::Counter</a>
+</li>
+<li>operator--()
+: <a class="el" href="da/de2/classshared__ptr_1_1Counter.html#ab857b91ba165db69ec03ab7c0d6605b3">shared_ptr&lt; T &gt;::Counter</a>
+</li>
+<li>operator-&gt;()
+: <a class="el" href="d4/d67/classshared__ptr.html#a08c3c1ca9e0418a79e3bf1d9a4809caa">shared_ptr&lt; T &gt;</a>
+, <a class="el" href="dc/d42/classsmart__ptr.html#ab47f38a06c0b83c189198e7b2d054270">smart_ptr&lt; T &gt;</a>
+</li>
 <li>operator=()
-: <a class="el" href="d6/da1/classVector.html#a5fef4b64e5a526de663c2895049e8fce">Vector&lt; T &gt;</a>
+: <a class="el" href="da/de2/classshared__ptr_1_1Counter.html#abb977371357a97f50df7feeaccc2cd50">shared_ptr&lt; T &gt;::Counter</a>
+, <a class="el" href="d6/da1/classVector.html#a5fef4b64e5a526de663c2895049e8fce">Vector&lt; T &gt;</a>
 </li>
 <li>operator[]()
 : <a class="el" href="d3/d19/classBitmap.html#a9a1973a002c6c5b749d640b48d01fcd1">Bitmap</a>
@@ -345,9 +349,6 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>pop_back()
 : <a class="el" href="d6/da1/classVector.html#adcba035109febbe55cba2a25f8483ba6">Vector&lt; T &gt;</a>
 </li>
-<li>PopTask()
-: <a class="el" href="d5/da2/classTasking_1_1Monotasking.html#a01eff614d7dd323993411104c1a49a0a">Tasking::Monotasking</a>
-</li>
 <li>Process()
 : <a class="el" href="d8/dfc/classFileSystem_1_1Process.html#a57e86b3419d9f66953ae22c69838e154">FileSystem::Process</a>
 </li>
@@ -356,9 +357,6 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 </li>
 <li>push_back()
 : <a class="el" href="d6/da1/classVector.html#a7ca2a2412a91446b70d6540e1a4f6260">Vector&lt; T &gt;</a>
-</li>
-<li>PushTask()
-: <a class="el" href="d5/da2/classTasking_1_1Monotasking.html#aeb6adb83431c526d1914bf9eba3cf030">Tasking::Monotasking</a>
 </li>
 </ul>
 
@@ -375,6 +373,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 </li>
 <li>reserve()
 : <a class="el" href="d6/da1/classVector.html#ac1200fc09bde0bf35bd40fcd1ff291a6">Vector&lt; T &gt;</a>
+</li>
+<li>Reset()
+: <a class="el" href="da/de2/classshared__ptr_1_1Counter.html#a50beb98b99693f3ca47403144888b49f">shared_ptr&lt; T &gt;::Counter</a>
 </li>
 <li>resize()
 : <a class="el" href="d6/da1/classVector.html#ab172f473bb4f6f001e3ddf4d96471e9e">Vector&lt; T &gt;</a>
@@ -395,8 +396,17 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>Set()
 : <a class="el" href="d3/d19/classBitmap.html#a4bf4b9b0c64d38c90825fb2c23aebb8a">Bitmap</a>
 </li>
+<li>SetFrameBufferData()
+: <a class="el" href="d3/d4a/classFileSystem_1_1FB.html#ad4dbc7c60622eabe7e84ff2c67e66d7b">FileSystem::FB</a>
+</li>
+<li>shared_ptr()
+: <a class="el" href="d4/d67/classshared__ptr.html#a03a7a6823a1131d99c6d12b17cc1018a">shared_ptr&lt; T &gt;</a>
+</li>
 <li>size()
 : <a class="el" href="d6/da1/classVector.html#ae65794ffdcafead495150df393895c7c">Vector&lt; T &gt;</a>
+</li>
+<li>smart_ptr()
+: <a class="el" href="dc/d42/classsmart__ptr.html#a23d0d1c5f56d5c6ddca16a38272de5f5">smart_ptr&lt; T &gt;</a>
 </li>
 <li>store()
 : <a class="el" href="dc/d2e/classanonymous__namespace_02atomic_8hpp_03_1_1atomic.html#ab6caed79b81f05bf7920da0c6f24f999">anonymous_namespace{atomic.hpp}::atomic&lt; T &gt;</a>
@@ -406,6 +416,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 </li>
 <li>Symbols()
 : <a class="el" href="dd/dcb/classKernelSymbols_1_1Symbols.html#ae1da51bf12af9f3de3d21acf542f78d5">KernelSymbols::Symbols</a>
+</li>
+<li>SysInfo()
+: <a class="el" href="db/d84/classFileSystem_1_1SysInfo.html#a5c255c28c1271746a2549295e94e239c">FileSystem::SysInfo</a>
 </li>
 </ul>
 
@@ -445,6 +458,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 
 <h3><a id="index__7E"></a>- ~ -</h3><ul>
+<li>~Counter()
+: <a class="el" href="da/de2/classshared__ptr_1_1Counter.html#a9cd9467c6f62db381d4cd4e08011e526">shared_ptr&lt; T &gt;::Counter</a>
+</li>
 <li>~Device()
 : <a class="el" href="db/d00/classFileSystem_1_1Device.html#a483be36914d2833ed2ab8e6918231771">FileSystem::Device</a>
 </li>
@@ -463,14 +479,8 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>~Initrd()
 : <a class="el" href="d9/d12/classFileSystem_1_1Initrd.html#a418bb7ca5d0b8e25982c2ce09cba737c">FileSystem::Initrd</a>
 </li>
-<li>~Monotasking()
-: <a class="el" href="d5/da2/classTasking_1_1Monotasking.html#a93549809197997c36acccb3220d1103a">Tasking::Monotasking</a>
-</li>
 <li>~Mount()
 : <a class="el" href="dc/d19/classFileSystem_1_1Mount.html#a62fe6906cb60bf06fa5c74e6971def42">FileSystem::Mount</a>
-</li>
-<li>~Multitasking()
-: <a class="el" href="d0/d5b/classTasking_1_1Multitasking.html#a41b3576b70950c764c23b56c200d4c32">Tasking::Multitasking</a>
 </li>
 <li>~Network()
 : <a class="el" href="d2/dd3/classFileSystem_1_1Network.html#a22277c33f514a5ce95df40290db66a3a">FileSystem::Network</a>
@@ -490,8 +500,17 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>~Serial()
 : <a class="el" href="dd/dd0/classFileSystem_1_1Serial.html#a9c2daff22fc6e7d23b18e70e87a378b7">FileSystem::Serial</a>
 </li>
+<li>~shared_ptr()
+: <a class="el" href="d4/d67/classshared__ptr.html#a6de732759f480c4e7d2425244561592b">shared_ptr&lt; T &gt;</a>
+</li>
+<li>~smart_ptr()
+: <a class="el" href="dc/d42/classsmart__ptr.html#a43518f1c6d475b5d462599780f07b769">smart_ptr&lt; T &gt;</a>
+</li>
 <li>~Symbols()
 : <a class="el" href="dd/dcb/classKernelSymbols_1_1Symbols.html#ac2f615392eaee129c2e5e9cbe9d7720f">KernelSymbols::Symbols</a>
+</li>
+<li>~SysInfo()
+: <a class="el" href="db/d84/classFileSystem_1_1SysInfo.html#a54a6767eb7680037d0491a2cc4214fd6">FileSystem::SysInfo</a>
 </li>
 <li>~USTAR()
 : <a class="el" href="d0/df0/classFileSystem_1_1USTAR.html#ab3665f40cd46565c909e7ed76ae3fa6f">FileSystem::USTAR</a>

@@ -1,11 +1,11 @@
 var lock_8h =
 [
     [ "LOCK", "dd/d42/lock_8h.html#d9/da6/structLOCK", [
-      [ "attempting_to_get", "dd/d42/lock_8h.html#af5f06af773b41a685d5aafcb026c07b5", null ],
-      [ "count", "dd/d42/lock_8h.html#a285712e4118035a84dcda79ec4e5908e", null ],
-      [ "current_holder", "dd/d42/lock_8h.html#a4e4f5fe91552586f00dd40e65ff3cbbd", null ],
-      [ "lock_dat", "dd/d42/lock_8h.html#ab5932a25403522f444c1591fc6909248", null ],
-      [ "lock_name", "dd/d42/lock_8h.html#a853f4519177c11569da28035441a26fb", null ]
+      [ "AttemptingToGet", "dd/d42/lock_8h.html#a3c21b3e293549b5fbd7702a28a2daaac", null ],
+      [ "Count", "dd/d42/lock_8h.html#a4999d67d24b449b0401014d8f274dc28", null ],
+      [ "CurrentHolder", "dd/d42/lock_8h.html#aecdb57ee756e5e54341c40c0dd1c4c88", null ],
+      [ "LockData", "dd/d42/lock_8h.html#a679dc16c397428ac7cd040e942af50c4", null ],
+      [ "LockName", "dd/d42/lock_8h.html#afb5babaa5d992b9e6aca255b5959215d", null ]
     ] ],
     [ "DBG_LOCK", "dd/d42/lock_8h.html#a50c9a7a2756f9a94bc68dc4682f68b5d", null ],
     [ "DBG_UNLOCK", "dd/d42/lock_8h.html#a86a71d34e03677db9d2ae54e0a20b9c3", null ],

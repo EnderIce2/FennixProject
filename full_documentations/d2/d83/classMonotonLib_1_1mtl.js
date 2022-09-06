@@ -29,6 +29,7 @@ var classMonotonLib_1_1mtl =
     [ "print", "d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779", null ],
     [ "printchar", "d2/d83/classMonotonLib_1_1mtl.html#a7b5f8b9ab35837163d460a886b7dd21f", null ],
     [ "printchar", "d2/d83/classMonotonLib_1_1mtl.html#a3428f61ff132618044be4c71ad61706a", null ],
+    [ "printf", "d2/d83/classMonotonLib_1_1mtl.html#a49076ce45e6272a2f1def442a7eff89f", null ],
     [ "RemoveChar", "d2/d83/classMonotonLib_1_1mtl.html#a4ea0c96d573a7fca9a6dc722f709d2aa", null ],
     [ "RemoveChar", "d2/d83/classMonotonLib_1_1mtl.html#abc039e08ba96f88de940c9a608df795c", null ],
     [ "Scroll", "d2/d83/classMonotonLib_1_1mtl.html#a50bca5a37f9ccb392986b750d76d0399", null ],

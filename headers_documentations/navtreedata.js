@@ -28,7 +28,6 @@ var NAVTREE =
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ],
         [ "Enumerator", "namespacemembers_eval.html", null ]
@@ -64,24 +63,24 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d1/d57/cputables_8h.html#ac3ee2af7ca7bbe492f11cf36a6a7cea7",
-"d1/d9e/elf_8h.html#a9ee66b59be5c78ea1f1eea8a36f2c291",
-"d1/dc0/multiboot_8h.html#a34d90ffaaf58124095cb17de9c3b1515",
-"d2/ddc/test_8h.html#a1e9531f5b693269660d767cf76eaf1f7",
-"d4/d56/namespaceanonymous__namespace_02atomic_8hpp_03.html",
-"d5/dba/multiboot2_8h.html#a4c8a91229f40c06c3c63b4c37e83d219",
-"d6/d40/stb__image_8h.html#a95ebc5c42c1a753200be8d465e933af7",
-"d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a70079d07046a311be04618d733c780f4",
-"d7/d8c/libc_2include_2errno_8h.html#a5554094b3fb4bb6ebeb0157cb3f82a55",
-"d9/d3e/namespaceTasking.html#ad5ac4f96e962f4dbdf5f7cf1df51769a",
-"da/ddd/cpuid_8h.html#a53a7a6d14ec17e78ce69c99abc564be3",
-"db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29ba23801e90266f48fb7ea09acf6540aa78",
-"dc/d69/include_2stdint_8h.html#aadcf2a81af243df333b31efa6461ab8e",
-"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa0a14566d03bc7e8e0528409fbb7a79f2",
-"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fab62529ba7f5dd8f871a2747bd5264d68",
-"de/d63/msexec_8h.html#ac8746b86b2b74266e9e0b6b89ed249bc",
-"df/d17/stivale2_8h.html#ae82921e52d1326d778bae549ad7e5591",
-"globals_n.html"
+"d1/d57/cputables_8h.html#ad0869be0b7a1d7b3a568bb9bd3ba7f3b",
+"d1/d9e/elf_8h.html#aa6b66d617b12c38fbe8cc9709e39d374a30498ff146f0ffefa404d05a93da9bba",
+"d1/dc0/multiboot_8h.html#a63d98e6d313098a4d35b828e204a4e0c",
+"d2/dc5/structlimine__boot__time__request.html#aed4a3ea21df499fdcfc270dbdf2c2a1d",
+"d3/df0/limine_8h.html#d7/d10/structlimine__stack__size__response",
+"d5/dba/multiboot2_8h.html#a3d8f77830f0e010b34939f4eeb24e64d",
+"d6/d40/stb__image_8h.html#a7fbd65c83495f13f22469fe493775739",
+"d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a72d2b4f133deb06d0b520a9568db7ecd",
+"d7/d8c/libc_2include_2errno_8h.html#a64a75c174882ddbfa726c7fd040f87a1",
+"d9/d77/structstivale2__header__tag__terminal.html#ae9d892ce0ce1cf6d844c677a1a13699b",
+"da/ddd/cpuid_8h.html#aa9930e915ef882a42ce2fa1974b63abe",
+"db/da4/task_8h.html#ab63a00759ad6c04ac961f1272c7fbd52",
+"dc/d69/include_2stdint_8h.html#aaf7f29f45f1a513b4748a4e5014ddf6a",
+"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa0bfa6cd786bc6e7b6a6ed17a8c1717fe",
+"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fab64c13249bf1d38999f5ce365a68bb4c",
+"de/d63/msexec_8h.html#acd7c90273207e7c4067989e7cf3569f8",
+"df/d17/stivale2_8h.html#ae4521a1757e09767db1294f2040b8d57",
+"globals_l.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

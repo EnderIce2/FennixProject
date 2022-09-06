@@ -15,5 +15,7 @@ var Multitasking_8cpp =
     [ "UpdateCPUUsage", "dd/d62/Multitasking_8cpp.html#a7d9857402fba270bda6b1334019eadb2", null ],
     [ "UpdatePageTable", "dd/d62/Multitasking_8cpp.html#a3da3dd13200f194acb02bf1988a9ed4d", null ],
     [ "UpdateTimeUsed", "dd/d62/Multitasking_8cpp.html#a43274cb852029802400aaa076cdfb23c", null ],
-    [ "CriticalSectionData", "dd/d62/Multitasking_8cpp.html#a390d088e178afc3b017d9a577e4e7a86", null ]
+    [ "CriticalSectionData", "dd/d62/Multitasking_8cpp.html#a390d088e178afc3b017d9a577e4e7a86", null ],
+    [ "mt", "dd/d62/Multitasking_8cpp.html#afa39895793547ce88d34065ac7c20929", null ],
+    [ "MultitaskingSchedulerEnabled", "dd/d62/Multitasking_8cpp.html#a52e60861a043aa74e382a708d44a831b", null ]
 ];

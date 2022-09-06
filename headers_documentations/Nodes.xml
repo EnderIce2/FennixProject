@@ -33,10 +33,6 @@
             <Name>KernelSymbols</Name>
             <Path>d9/d45/namespaceKernelSymbols.html</Path>
            </Node>
-           <Node>
-            <Name>Tasking</Name>
-            <Path>d9/d3e/namespaceTasking.html</Path>
-           </Node>
           </Subnodes>
          </Node>
          <Node>
@@ -50,10 +46,6 @@
            <Node>
             <Name>Functions</Name>
             <Path>namespacemembers_func.html</Path>
-           </Node>
-           <Node>
-            <Name>Variables</Name>
-            <Path>namespacemembers_vars.html</Path>
            </Node>
            <Node>
             <Name>Typedefs</Name>
@@ -654,6 +646,11 @@
                 <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
                 <Anchor>a73a7b20cb53097985e12daf14f716d30</Anchor>
                </Node>
+               <Node>
+                <Name>SetFrameBufferData</Name>
+                <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+                <Anchor>ad4dbc7c60622eabe7e84ff2c67e66d7b</Anchor>
+               </Node>
               </Subnodes>
              </Node>
              <Node>
@@ -964,6 +961,27 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>SysInfo</Name>
+              <Path>db/d84/classFileSystem_1_1SysInfo.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>SysInfo</Name>
+                <Path>db/d84/classFileSystem_1_1SysInfo.html</Path>
+                <Anchor>a5c255c28c1271746a2549295e94e239c</Anchor>
+               </Node>
+               <Node>
+                <Name>~SysInfo</Name>
+                <Path>db/d84/classFileSystem_1_1SysInfo.html</Path>
+                <Anchor>a54a6767eb7680037d0491a2cc4214fd6</Anchor>
+               </Node>
+               <Node>
+                <Name>AddInfo</Name>
+                <Path>db/d84/classFileSystem_1_1SysInfo.html</Path>
+                <Anchor>ad39ad6a0d0dacd4815ebc2c4c36ed080</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>USTAR</Name>
               <Path>d0/df0/classFileSystem_1_1USTAR.html</Path>
               <Subnodes>
@@ -1173,6 +1191,11 @@
                 <Anchor>aaab2e2228d10f6286d33ec397c3b438b</Anchor>
                </Node>
                <Node>
+                <Name>GetRootNode</Name>
+                <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                <Anchor>a46ae343f031228bc6183bccbc44e6dc2</Anchor>
+               </Node>
+               <Node>
                 <Name>Mount</Name>
                 <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
                 <Anchor>a39b256bf1a13a8df9293485419140454</Anchor>
@@ -1201,6 +1224,11 @@
                 <Name>Write</Name>
                 <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
                 <Anchor>a0c58ed367cda8ba73587c496ea31619f</Anchor>
+               </Node>
+               <Node>
+                <Name>FileSystemRoot</Name>
+                <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                <Anchor>a349828f30b5aacec91378e750ecc9dc2</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1261,196 +1289,6 @@
                 <Name>GetSymbolFromAddress</Name>
                 <Path>dd/dcb/classKernelSymbols_1_1Symbols.html</Path>
                 <Anchor>a1055f68b87533c7ab230c982f6beb503</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>Tasking</Name>
-            <Path>d9/d3e/namespaceTasking.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>Monotasking</Name>
-              <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>Monotasking</Name>
-                <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-                <Anchor>a2965449607884b02f7fce3d70df38aca</Anchor>
-               </Node>
-               <Node>
-                <Name>~Monotasking</Name>
-                <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-                <Anchor>a93549809197997c36acccb3220d1103a</Anchor>
-               </Node>
-               <Node>
-                <Name>CreateTask</Name>
-                <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-                <Anchor>acf2834df9aea900cc02c9fe1647dedc2</Anchor>
-               </Node>
-               <Node>
-                <Name>GetCurrentTask</Name>
-                <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-                <Anchor>aaa491cb36214dd273002614c309f16e8</Anchor>
-               </Node>
-               <Node>
-                <Name>KillMe</Name>
-                <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-                <Anchor>aca278385dfe53ca1b3e3bcdd82df0add</Anchor>
-               </Node>
-               <Node>
-                <Name>PopTask</Name>
-                <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-                <Anchor>a01eff614d7dd323993411104c1a49a0a</Anchor>
-               </Node>
-               <Node>
-                <Name>PushTask</Name>
-                <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-                <Anchor>aeb6adb83431c526d1914bf9eba3cf030</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>Multitasking</Name>
-              <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>Multitasking</Name>
-                <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                <Anchor>aaffa38521c8583930f6393efcbba512d</Anchor>
-               </Node>
-               <Node>
-                <Name>~Multitasking</Name>
-                <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                <Anchor>a41b3576b70950c764c23b56c200d4c32</Anchor>
-               </Node>
-               <Node>
-                <Name>CreateProcess</Name>
-                <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                <Anchor>aed88adb4bc0a4c32203280fce2b94fd6</Anchor>
-               </Node>
-               <Node>
-                <Name>CreateThread</Name>
-                <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                <Anchor>aa3142eac55e865809cbe4579b6ae0df9</Anchor>
-               </Node>
-               <Node>
-                <Name>IdleProcess</Name>
-                <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                <Anchor>aa966f94f119b70bb9e03c690ca42e90f</Anchor>
-               </Node>
-               <Node>
-                <Name>IdleThread</Name>
-                <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                <Anchor>a53a796f10d87f67b82ce0f2cc926581a</Anchor>
-               </Node>
-               <Node>
-                <Name>ListProcess</Name>
-                <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                <Anchor>a22ec6d39a29c923f088f9b0e079aec4c</Anchor>
-               </Node>
-               <Node>
-                <Name>NextPID</Name>
-                <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                <Anchor>a06b6d3817fd5cbadd7cec218edfea33d</Anchor>
-               </Node>
-               <Node>
-                <Name>NextTID</Name>
-                <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                <Anchor>aead406145a038dd3ccd0363b0adda83a</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>TaskControlBlock</Name>
-              <Path>d9/d3e/namespaceTasking.html</Path>
-              <Anchor>da/d21/structTasking_1_1TaskControlBlock</Anchor>
-              <Subnodes>
-               <Node>
-                <Name>checksum</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>a9e1a344342d61dbc88f8b7f1718b4aca</Anchor>
-               </Node>
-               <Node>
-                <Name>Day</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>a830b923e5ef36dd3dfe78248b8d1defe</Anchor>
-               </Node>
-               <Node>
-                <Name>fs</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>ab02a6f9e3f7b8ad913c7da2d77a035bb</Anchor>
-               </Node>
-               <Node>
-                <Name>gs</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>a16b576738e828e834c158ff4654cbf4d</Anchor>
-               </Node>
-               <Node>
-                <Name>Hour</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>adaf6dddaf1a34eccfa993655071f2bd5</Anchor>
-               </Node>
-               <Node>
-                <Name>id</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>a421105ffe89668303be37f2b64a0b748</Anchor>
-               </Node>
-               <Node>
-                <Name>Minute</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>a6251df9f7a0ae25c17d63bc189c6b0aa</Anchor>
-               </Node>
-               <Node>
-                <Name>Month</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>a0bf9262c3ef5310b744bbd5b18c08255</Anchor>
-               </Node>
-               <Node>
-                <Name>name</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>ad5ac4f96e962f4dbdf5f7cf1df51769a</Anchor>
-               </Node>
-               <Node>
-                <Name>pml4</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>a1faa55a1d6d4b6ee9cbe9b870d637e9c</Anchor>
-               </Node>
-               <Node>
-                <Name>regs</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>a9dd599c7d44a1022326eb50f8ae8a082</Anchor>
-               </Node>
-               <Node>
-                <Name>Second</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>a45d898ad60449841c386e15638aaf410</Anchor>
-               </Node>
-               <Node>
-                <Name>SpawnTick</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>a2e0c3210aac25551eebf061b8822e883</Anchor>
-               </Node>
-               <Node>
-                <Name>stack</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>a9f33e893a96342e1db6dd3314e35518c</Anchor>
-               </Node>
-               <Node>
-                <Name>state</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>a7ef7bffdaaa0983b878b87d5cbbd4142</Anchor>
-               </Node>
-               <Node>
-                <Name>UserMode</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>ad413335b44a1d18dcc54b1c620122ca5</Anchor>
-               </Node>
-               <Node>
-                <Name>Year</Name>
-                <Path>d9/d3e/namespaceTasking.html</Path>
-                <Anchor>abbb55c7fbdb4ec1093ddfdc5868c1b8d</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -3074,6 +2912,11 @@
               <Anchor>ad9cfafe78c7ae36acb562194fa8f0f85</Anchor>
              </Node>
             </Subnodes>
+           </Node>
+           <Node>
+            <Name>auto_ptr</Name>
+            <Path>d2/d34/smartptr_8hpp.html</Path>
+            <Anchor>d2/d72/classauto__ptr</Anchor>
            </Node>
            <Node>
             <Name>Bitmap</Name>
@@ -5324,29 +5167,29 @@
             <Anchor>d9/da6/structLOCK</Anchor>
             <Subnodes>
              <Node>
-              <Name>attempting_to_get</Name>
+              <Name>AttemptingToGet</Name>
               <Path>dd/d42/lock_8h.html</Path>
-              <Anchor>af5f06af773b41a685d5aafcb026c07b5</Anchor>
+              <Anchor>a3c21b3e293549b5fbd7702a28a2daaac</Anchor>
              </Node>
              <Node>
-              <Name>count</Name>
+              <Name>Count</Name>
               <Path>dd/d42/lock_8h.html</Path>
-              <Anchor>a285712e4118035a84dcda79ec4e5908e</Anchor>
+              <Anchor>a4999d67d24b449b0401014d8f274dc28</Anchor>
              </Node>
              <Node>
-              <Name>current_holder</Name>
+              <Name>CurrentHolder</Name>
               <Path>dd/d42/lock_8h.html</Path>
-              <Anchor>a4e4f5fe91552586f00dd40e65ff3cbbd</Anchor>
+              <Anchor>aecdb57ee756e5e54341c40c0dd1c4c88</Anchor>
              </Node>
              <Node>
-              <Name>lock_dat</Name>
+              <Name>LockData</Name>
               <Path>dd/d42/lock_8h.html</Path>
-              <Anchor>ab5932a25403522f444c1591fc6909248</Anchor>
+              <Anchor>a679dc16c397428ac7cd040e942af50c4</Anchor>
              </Node>
              <Node>
-              <Name>lock_name</Name>
+              <Name>LockName</Name>
               <Path>dd/d42/lock_8h.html</Path>
-              <Anchor>a853f4519177c11569da28035441a26fb</Anchor>
+              <Anchor>afb5babaa5d992b9e6aca255b5959215d</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -7114,6 +6957,149 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>shared_ptr</Name>
+            <Path>d4/d67/classshared__ptr.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>Counter</Name>
+              <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>Counter</Name>
+                <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                <Anchor>a79b29023b1bd60eab99fdc27abf04f2d</Anchor>
+               </Node>
+               <Node>
+                <Name>Counter</Name>
+                <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                <Anchor>a422a1b3cd9651460f5c4efbb0bd835b0</Anchor>
+               </Node>
+               <Node>
+                <Name>~Counter</Name>
+                <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                <Anchor>a9cd9467c6f62db381d4cd4e08011e526</Anchor>
+               </Node>
+               <Node>
+                <Name>Get</Name>
+                <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                <Anchor>ab3f1eedbc674fc7a576c6c9005a3b306</Anchor>
+               </Node>
+               <Node>
+                <Name>operator++</Name>
+                <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                <Anchor>ab5b666b86b54a8a439fdc60c7de37358</Anchor>
+               </Node>
+               <Node>
+                <Name>operator++</Name>
+                <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                <Anchor>a03db8b9b6488b896d893e23fa0d0f14d</Anchor>
+               </Node>
+               <Node>
+                <Name>operator--</Name>
+                <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                <Anchor>ab857b91ba165db69ec03ab7c0d6605b3</Anchor>
+               </Node>
+               <Node>
+                <Name>operator--</Name>
+                <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                <Anchor>a8d9fc0dbf64e1450b013ba26f2a805d9</Anchor>
+               </Node>
+               <Node>
+                <Name>operator=</Name>
+                <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                <Anchor>abb977371357a97f50df7feeaccc2cd50</Anchor>
+               </Node>
+               <Node>
+                <Name>Reset</Name>
+                <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                <Anchor>a50beb98b99693f3ca47403144888b49f</Anchor>
+               </Node>
+               <Node>
+                <Name>RefCount</Name>
+                <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                <Anchor>a744b5d48a2e374b29501889881fc3143</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>shared_ptr</Name>
+              <Path>d4/d67/classshared__ptr.html</Path>
+              <Anchor>a03a7a6823a1131d99c6d12b17cc1018a</Anchor>
+             </Node>
+             <Node>
+              <Name>shared_ptr</Name>
+              <Path>d4/d67/classshared__ptr.html</Path>
+              <Anchor>af317b328a00b9c9b3a6761287ba17055</Anchor>
+             </Node>
+             <Node>
+              <Name>~shared_ptr</Name>
+              <Path>d4/d67/classshared__ptr.html</Path>
+              <Anchor>a6de732759f480c4e7d2425244561592b</Anchor>
+             </Node>
+             <Node>
+              <Name>Get</Name>
+              <Path>d4/d67/classshared__ptr.html</Path>
+              <Anchor>abf370348b8c58eee7b657f5460e31d8e</Anchor>
+             </Node>
+             <Node>
+              <Name>GetCount</Name>
+              <Path>d4/d67/classshared__ptr.html</Path>
+              <Anchor>a47f5c4a0a349af9a6c9ba5f4060e619c</Anchor>
+             </Node>
+             <Node>
+              <Name>operator*</Name>
+              <Path>d4/d67/classshared__ptr.html</Path>
+              <Anchor>a55f90fd9ec9c1dbf02187bceb924c803</Anchor>
+             </Node>
+             <Node>
+              <Name>operator-&gt;</Name>
+              <Path>d4/d67/classshared__ptr.html</Path>
+              <Anchor>a08c3c1ca9e0418a79e3bf1d9a4809caa</Anchor>
+             </Node>
+             <Node>
+              <Name>RealPointer</Name>
+              <Path>d4/d67/classshared__ptr.html</Path>
+              <Anchor>a3877a4d7d9c2437f81cec3fbb7711095</Anchor>
+             </Node>
+             <Node>
+              <Name>ReferenceCounter</Name>
+              <Path>d4/d67/classshared__ptr.html</Path>
+              <Anchor>affe70f0681417e97fff0031cf972ac01</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>smart_ptr</Name>
+            <Path>dc/d42/classsmart__ptr.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>smart_ptr</Name>
+              <Path>dc/d42/classsmart__ptr.html</Path>
+              <Anchor>a23d0d1c5f56d5c6ddca16a38272de5f5</Anchor>
+             </Node>
+             <Node>
+              <Name>~smart_ptr</Name>
+              <Path>dc/d42/classsmart__ptr.html</Path>
+              <Anchor>a43518f1c6d475b5d462599780f07b769</Anchor>
+             </Node>
+             <Node>
+              <Name>operator*</Name>
+              <Path>dc/d42/classsmart__ptr.html</Path>
+              <Anchor>a2c6a11de1d90efd3393b041ec29f3129</Anchor>
+             </Node>
+             <Node>
+              <Name>operator-&gt;</Name>
+              <Path>dc/d42/classsmart__ptr.html</Path>
+              <Anchor>ab47f38a06c0b83c189198e7b2d054270</Anchor>
+             </Node>
+             <Node>
+              <Name>RealPointer</Name>
+              <Path>dc/d42/classsmart__ptr.html</Path>
+              <Anchor>aa0241e2db38b04043b05a702e351555a</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>stbi_io_callbacks</Name>
             <Path>da/d02/structstbi__io__callbacks.html</Path>
             <Subnodes>
@@ -8298,6 +8284,16 @@
               <Anchor>a57f057b08e04675f0203a4bae9bb128f</Anchor>
              </Node>
              <Node>
+              <Name>argc</Name>
+              <Path>de/d72/structTCB.html</Path>
+              <Anchor>a3ffc58e3e9eedc2a733e4d77dfc410f2</Anchor>
+             </Node>
+             <Node>
+              <Name>argv</Name>
+              <Path>de/d72/structTCB.html</Path>
+              <Anchor>aa3e9b14112decbb1d96af2b535a1f0cd</Anchor>
+             </Node>
+             <Node>
               <Name>Checksum</Name>
               <Path>de/d72/structTCB.html</Path>
               <Anchor>a403d960d6d738b60ece6c3caee56cfd9</Anchor>
@@ -8311,6 +8307,11 @@
               <Name>ds</Name>
               <Path>de/d72/structTCB.html</Path>
               <Anchor>ae355b4f640d61df143ad29565af7562d</Anchor>
+             </Node>
+             <Node>
+              <Name>envp</Name>
+              <Path>de/d72/structTCB.html</Path>
+              <Anchor>afb39f1738972aee7f2fa4732763645a1</Anchor>
              </Node>
              <Node>
               <Name>es</Name>
@@ -8378,6 +8379,11 @@
               <Anchor>adfaec4b04096209a6bca40fc315181f8</Anchor>
              </Node>
             </Subnodes>
+           </Node>
+           <Node>
+            <Name>unique_ptr</Name>
+            <Path>d2/d34/smartptr_8hpp.html</Path>
+            <Anchor>dd/d67/classunique__ptr</Anchor>
            </Node>
            <Node>
             <Name>Vector</Name>
@@ -8509,6 +8515,11 @@
               <Anchor>a2c88b7d1f70491b5e723d281edcbd47c</Anchor>
              </Node>
             </Subnodes>
+           </Node>
+           <Node>
+            <Name>weak_ptr</Name>
+            <Path>d2/d34/smartptr_8hpp.html</Path>
+            <Anchor>d9/d9b/classweak__ptr</Anchor>
            </Node>
           </Subnodes>
          </Node>
@@ -13486,6 +13497,16 @@
                   <Anchor>a57f057b08e04675f0203a4bae9bb128f</Anchor>
                  </Node>
                  <Node>
+                  <Name>argc</Name>
+                  <Path>de/d72/structTCB.html</Path>
+                  <Anchor>a3ffc58e3e9eedc2a733e4d77dfc410f2</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>argv</Name>
+                  <Path>de/d72/structTCB.html</Path>
+                  <Anchor>aa3e9b14112decbb1d96af2b535a1f0cd</Anchor>
+                 </Node>
+                 <Node>
                   <Name>Checksum</Name>
                   <Path>de/d72/structTCB.html</Path>
                   <Anchor>a403d960d6d738b60ece6c3caee56cfd9</Anchor>
@@ -13499,6 +13520,11 @@
                   <Name>ds</Name>
                   <Path>de/d72/structTCB.html</Path>
                   <Anchor>ae355b4f640d61df143ad29565af7562d</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>envp</Name>
+                  <Path>de/d72/structTCB.html</Path>
+                  <Anchor>afb39f1738972aee7f2fa4732763645a1</Anchor>
                  </Node>
                  <Node>
                   <Name>es</Name>
@@ -24506,6 +24532,11 @@
                     <Anchor>aaab2e2228d10f6286d33ec397c3b438b</Anchor>
                    </Node>
                    <Node>
+                    <Name>GetRootNode</Name>
+                    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                    <Anchor>a46ae343f031228bc6183bccbc44e6dc2</Anchor>
+                   </Node>
+                   <Node>
                     <Name>Mount</Name>
                     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
                     <Anchor>a39b256bf1a13a8df9293485419140454</Anchor>
@@ -24534,6 +24565,11 @@
                     <Name>Write</Name>
                     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
                     <Anchor>a0c58ed367cda8ba73587c496ea31619f</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>FileSystemRoot</Name>
+                    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+                    <Anchor>a349828f30b5aacec91378e750ecc9dc2</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -24639,6 +24675,27 @@
                     <Name>AddNetworkCard</Name>
                     <Path>d2/dd3/classFileSystem_1_1Network.html</Path>
                     <Anchor>a2758492c1ff5ea9fe98c1f527d747f23</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>SysInfo</Name>
+                  <Path>db/d84/classFileSystem_1_1SysInfo.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>SysInfo</Name>
+                    <Path>db/d84/classFileSystem_1_1SysInfo.html</Path>
+                    <Anchor>a5c255c28c1271746a2549295e94e239c</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>~SysInfo</Name>
+                    <Path>db/d84/classFileSystem_1_1SysInfo.html</Path>
+                    <Anchor>a54a6767eb7680037d0491a2cc4214fd6</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>AddInfo</Name>
+                    <Path>db/d84/classFileSystem_1_1SysInfo.html</Path>
+                    <Anchor>ad39ad6a0d0dacd4815ebc2c4c36ed080</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -25065,6 +25122,11 @@
                     <Name>~FB</Name>
                     <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
                     <Anchor>a73a7b20cb53097985e12daf14f716d30</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>SetFrameBufferData</Name>
+                    <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+                    <Anchor>ad4dbc7c60622eabe7e84ff2c67e66d7b</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -25806,11 +25868,6 @@
                   <Anchor>ab5fe0d9f05321a1e464164873af53feb</Anchor>
                  </Node>
                  <Node>
-                  <Name>DEBUG_FILESYSTEM</Name>
-                  <Path>dd/dd8/filesystem_8h.html</Path>
-                  <Anchor>a75abb2d93c692b8b977d91a5b6c113b7</Anchor>
-                 </Node>
-                 <Node>
                   <Name>FILENAME_LENGTH</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
                   <Anchor>a610ce22de673afc7b1e8b0e7b3c9fe7a</Anchor>
@@ -26208,6 +26265,11 @@
                   <Name>SectorsPerTrack</Name>
                   <Path>dd/dd8/filesystem_8h.html</Path>
                   <Anchor>a15c1464fcc238365cd0d9c83a1a27480</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>sysfs</Name>
+                  <Path>dd/dd8/filesystem_8h.html</Path>
+                  <Anchor>afa17c9063c9b62481b9392e97f78912f</Anchor>
                  </Node>
                  <Node>
                   <Name>vfs</Name>
@@ -26622,195 +26684,6 @@
                 <Path>d6/d75/internal__task_8h.html</Path>
                 <Subnodes>
                  <Node>
-                  <Name>TaskControlBlock</Name>
-                  <Path>d9/d3e/namespaceTasking.html</Path>
-                  <Anchor>da/d21/structTasking_1_1TaskControlBlock</Anchor>
-                  <Subnodes>
-                   <Node>
-                    <Name>checksum</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>a9e1a344342d61dbc88f8b7f1718b4aca</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Day</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>a830b923e5ef36dd3dfe78248b8d1defe</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>fs</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>ab02a6f9e3f7b8ad913c7da2d77a035bb</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>gs</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>a16b576738e828e834c158ff4654cbf4d</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Hour</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>adaf6dddaf1a34eccfa993655071f2bd5</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>id</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>a421105ffe89668303be37f2b64a0b748</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Minute</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>a6251df9f7a0ae25c17d63bc189c6b0aa</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Month</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>a0bf9262c3ef5310b744bbd5b18c08255</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>name</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>ad5ac4f96e962f4dbdf5f7cf1df51769a</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>pml4</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>a1faa55a1d6d4b6ee9cbe9b870d637e9c</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>regs</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>a9dd599c7d44a1022326eb50f8ae8a082</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Second</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>a45d898ad60449841c386e15638aaf410</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>SpawnTick</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>a2e0c3210aac25551eebf061b8822e883</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>stack</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>a9f33e893a96342e1db6dd3314e35518c</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>state</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>a7ef7bffdaaa0983b878b87d5cbbd4142</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>UserMode</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>ad413335b44a1d18dcc54b1c620122ca5</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Year</Name>
-                    <Path>d9/d3e/namespaceTasking.html</Path>
-                    <Anchor>abbb55c7fbdb4ec1093ddfdc5868c1b8d</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Monotasking</Name>
-                  <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>Monotasking</Name>
-                    <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-                    <Anchor>a2965449607884b02f7fce3d70df38aca</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>~Monotasking</Name>
-                    <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-                    <Anchor>a93549809197997c36acccb3220d1103a</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>CreateTask</Name>
-                    <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-                    <Anchor>acf2834df9aea900cc02c9fe1647dedc2</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>GetCurrentTask</Name>
-                    <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-                    <Anchor>aaa491cb36214dd273002614c309f16e8</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>KillMe</Name>
-                    <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-                    <Anchor>aca278385dfe53ca1b3e3bcdd82df0add</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>PopTask</Name>
-                    <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-                    <Anchor>a01eff614d7dd323993411104c1a49a0a</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>PushTask</Name>
-                    <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-                    <Anchor>aeb6adb83431c526d1914bf9eba3cf030</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Multitasking</Name>
-                  <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>Multitasking</Name>
-                    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                    <Anchor>aaffa38521c8583930f6393efcbba512d</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>~Multitasking</Name>
-                    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                    <Anchor>a41b3576b70950c764c23b56c200d4c32</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>CreateProcess</Name>
-                    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                    <Anchor>aed88adb4bc0a4c32203280fce2b94fd6</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>CreateThread</Name>
-                    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                    <Anchor>aa3142eac55e865809cbe4579b6ae0df9</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>IdleProcess</Name>
-                    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                    <Anchor>aa966f94f119b70bb9e03c690ca42e90f</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>IdleThread</Name>
-                    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                    <Anchor>a53a796f10d87f67b82ce0f2cc926581a</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>ListProcess</Name>
-                    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                    <Anchor>a22ec6d39a29c923f088f9b0e079aec4c</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>NextPID</Name>
-                    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                    <Anchor>a06b6d3817fd5cbadd7cec218edfea33d</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>NextTID</Name>
-                    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-                    <Anchor>aead406145a038dd3ccd0363b0adda83a</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>TASK_CHECKSUM</Name>
-                  <Path>d6/d75/internal__task_8h.html</Path>
-                  <Anchor>ae5f3c601bb8b46a743f0e7074f14614e</Anchor>
-                 </Node>
-                 <Node>
                   <Name>TaskingMode</Name>
                   <Path>d6/d75/internal__task_8h.html</Path>
                   <Anchor>a429ab8a23f23061fc5ef9ff05f14749f</Anchor>
@@ -26829,48 +26702,6 @@
                     <Name>Multi</Name>
                     <Path>d6/d75/internal__task_8h.html</Path>
                     <Anchor>a429ab8a23f23061fc5ef9ff05f14749fa6d3272154843979d20e3004a5db07df3</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>TaskState</Name>
-                  <Path>d6/d75/internal__task_8h.html</Path>
-                  <Anchor>a92e43f9a21bae91a5e28d78160fa0386</Anchor>
-                  <Subnodes>
-                   <Node>
-                    <Name>TaskStateNull</Name>
-                    <Path>d6/d75/internal__task_8h.html</Path>
-                    <Anchor>a92e43f9a21bae91a5e28d78160fa0386ae50f4df7ad0f9eedeb1f75898531c198</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>TaskStateReady</Name>
-                    <Path>d6/d75/internal__task_8h.html</Path>
-                    <Anchor>a92e43f9a21bae91a5e28d78160fa0386ae093c468257c00fea7c22da0f5d622bc</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>TaskStateRunning</Name>
-                    <Path>d6/d75/internal__task_8h.html</Path>
-                    <Anchor>a92e43f9a21bae91a5e28d78160fa0386a4e69a0f5d09a480b77d54d6289acd635</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>TaskStateWaiting</Name>
-                    <Path>d6/d75/internal__task_8h.html</Path>
-                    <Anchor>a92e43f9a21bae91a5e28d78160fa0386a4219dfb1ef2319a820ef4bcd8aa31554</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>TaskStateTerminated</Name>
-                    <Path>d6/d75/internal__task_8h.html</Path>
-                    <Anchor>a92e43f9a21bae91a5e28d78160fa0386aebf19e83e22f21f8f12d7bad381cd239</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>TaskPushed</Name>
-                    <Path>d6/d75/internal__task_8h.html</Path>
-                    <Anchor>a92e43f9a21bae91a5e28d78160fa0386a99924616f772189e50d62aa99c13547a</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>TaskPoped</Name>
-                    <Path>d6/d75/internal__task_8h.html</Path>
-                    <Anchor>a92e43f9a21bae91a5e28d78160fa0386a5bf1dd17112118e51a225b4e3e464d9e</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -26943,21 +26774,6 @@
                   <Name>CurrentTaskingMode</Name>
                   <Path>d6/d75/internal__task_8h.html</Path>
                   <Anchor>a24b42fd6c165e22f3c4cc751efee137b</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>monot</Name>
-                  <Path>d6/d75/internal__task_8h.html</Path>
-                  <Anchor>ac34b2c8e18eecd7e5c3216ada366dfb8</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>mt</Name>
-                  <Path>d6/d75/internal__task_8h.html</Path>
-                  <Anchor>afa39895793547ce88d34065ac7c20929</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>MultitaskingSchedulerEnabled</Name>
-                  <Path>d6/d75/internal__task_8h.html</Path>
-                  <Anchor>a52e60861a043aa74e382a708d44a831b</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -27210,29 +27026,29 @@
                   <Anchor>d9/da6/structLOCK</Anchor>
                   <Subnodes>
                    <Node>
-                    <Name>attempting_to_get</Name>
+                    <Name>AttemptingToGet</Name>
                     <Path>dd/d42/lock_8h.html</Path>
-                    <Anchor>af5f06af773b41a685d5aafcb026c07b5</Anchor>
+                    <Anchor>a3c21b3e293549b5fbd7702a28a2daaac</Anchor>
                    </Node>
                    <Node>
-                    <Name>count</Name>
+                    <Name>Count</Name>
                     <Path>dd/d42/lock_8h.html</Path>
-                    <Anchor>a285712e4118035a84dcda79ec4e5908e</Anchor>
+                    <Anchor>a4999d67d24b449b0401014d8f274dc28</Anchor>
                    </Node>
                    <Node>
-                    <Name>current_holder</Name>
+                    <Name>CurrentHolder</Name>
                     <Path>dd/d42/lock_8h.html</Path>
-                    <Anchor>a4e4f5fe91552586f00dd40e65ff3cbbd</Anchor>
+                    <Anchor>aecdb57ee756e5e54341c40c0dd1c4c88</Anchor>
                    </Node>
                    <Node>
-                    <Name>lock_dat</Name>
+                    <Name>LockData</Name>
                     <Path>dd/d42/lock_8h.html</Path>
-                    <Anchor>ab5932a25403522f444c1591fc6909248</Anchor>
+                    <Anchor>a679dc16c397428ac7cd040e942af50c4</Anchor>
                    </Node>
                    <Node>
-                    <Name>lock_name</Name>
+                    <Name>LockName</Name>
                     <Path>dd/d42/lock_8h.html</Path>
-                    <Anchor>a853f4519177c11569da28035441a26fb</Anchor>
+                    <Anchor>afb5babaa5d992b9e6aca255b5959215d</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -28289,6 +28105,236 @@
                   <Name>rand64</Name>
                   <Path>d5/d66/rand_8h.html</Path>
                   <Anchor>a67c2e61f77f3cc38e78ee987126bf241</Anchor>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>smartptr.hpp</Name>
+                <Path>d2/d34/smartptr_8hpp.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>smart_ptr</Name>
+                  <Path>dc/d42/classsmart__ptr.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>smart_ptr</Name>
+                    <Path>dc/d42/classsmart__ptr.html</Path>
+                    <Anchor>a23d0d1c5f56d5c6ddca16a38272de5f5</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>~smart_ptr</Name>
+                    <Path>dc/d42/classsmart__ptr.html</Path>
+                    <Anchor>a43518f1c6d475b5d462599780f07b769</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>operator*</Name>
+                    <Path>dc/d42/classsmart__ptr.html</Path>
+                    <Anchor>a2c6a11de1d90efd3393b041ec29f3129</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>operator-&gt;</Name>
+                    <Path>dc/d42/classsmart__ptr.html</Path>
+                    <Anchor>ab47f38a06c0b83c189198e7b2d054270</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>RealPointer</Name>
+                    <Path>dc/d42/classsmart__ptr.html</Path>
+                    <Anchor>aa0241e2db38b04043b05a702e351555a</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>auto_ptr</Name>
+                  <Path>d2/d34/smartptr_8hpp.html</Path>
+                  <Anchor>d2/d72/classauto__ptr</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>unique_ptr</Name>
+                  <Path>d2/d34/smartptr_8hpp.html</Path>
+                  <Anchor>dd/d67/classunique__ptr</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>shared_ptr</Name>
+                  <Path>d4/d67/classshared__ptr.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>Counter</Name>
+                    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>Counter</Name>
+                      <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                      <Anchor>a79b29023b1bd60eab99fdc27abf04f2d</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>Counter</Name>
+                      <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                      <Anchor>a422a1b3cd9651460f5c4efbb0bd835b0</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>~Counter</Name>
+                      <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                      <Anchor>a9cd9467c6f62db381d4cd4e08011e526</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>Get</Name>
+                      <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                      <Anchor>ab3f1eedbc674fc7a576c6c9005a3b306</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>operator++</Name>
+                      <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                      <Anchor>ab5b666b86b54a8a439fdc60c7de37358</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>operator++</Name>
+                      <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                      <Anchor>a03db8b9b6488b896d893e23fa0d0f14d</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>operator--</Name>
+                      <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                      <Anchor>ab857b91ba165db69ec03ab7c0d6605b3</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>operator--</Name>
+                      <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                      <Anchor>a8d9fc0dbf64e1450b013ba26f2a805d9</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>operator=</Name>
+                      <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                      <Anchor>abb977371357a97f50df7feeaccc2cd50</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>Reset</Name>
+                      <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                      <Anchor>a50beb98b99693f3ca47403144888b49f</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>RefCount</Name>
+                      <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                      <Anchor>a744b5d48a2e374b29501889881fc3143</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>shared_ptr</Name>
+                    <Path>d4/d67/classshared__ptr.html</Path>
+                    <Anchor>a03a7a6823a1131d99c6d12b17cc1018a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>shared_ptr</Name>
+                    <Path>d4/d67/classshared__ptr.html</Path>
+                    <Anchor>af317b328a00b9c9b3a6761287ba17055</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>~shared_ptr</Name>
+                    <Path>d4/d67/classshared__ptr.html</Path>
+                    <Anchor>a6de732759f480c4e7d2425244561592b</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>Get</Name>
+                    <Path>d4/d67/classshared__ptr.html</Path>
+                    <Anchor>abf370348b8c58eee7b657f5460e31d8e</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>GetCount</Name>
+                    <Path>d4/d67/classshared__ptr.html</Path>
+                    <Anchor>a47f5c4a0a349af9a6c9ba5f4060e619c</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>operator*</Name>
+                    <Path>d4/d67/classshared__ptr.html</Path>
+                    <Anchor>a55f90fd9ec9c1dbf02187bceb924c803</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>operator-&gt;</Name>
+                    <Path>d4/d67/classshared__ptr.html</Path>
+                    <Anchor>a08c3c1ca9e0418a79e3bf1d9a4809caa</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>RealPointer</Name>
+                    <Path>d4/d67/classshared__ptr.html</Path>
+                    <Anchor>a3877a4d7d9c2437f81cec3fbb7711095</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>ReferenceCounter</Name>
+                    <Path>d4/d67/classshared__ptr.html</Path>
+                    <Anchor>affe70f0681417e97fff0031cf972ac01</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>Counter</Name>
+                  <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>Counter</Name>
+                    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                    <Anchor>a79b29023b1bd60eab99fdc27abf04f2d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>Counter</Name>
+                    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                    <Anchor>a422a1b3cd9651460f5c4efbb0bd835b0</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>~Counter</Name>
+                    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                    <Anchor>a9cd9467c6f62db381d4cd4e08011e526</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>Get</Name>
+                    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                    <Anchor>ab3f1eedbc674fc7a576c6c9005a3b306</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>operator++</Name>
+                    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                    <Anchor>ab5b666b86b54a8a439fdc60c7de37358</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>operator++</Name>
+                    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                    <Anchor>a03db8b9b6488b896d893e23fa0d0f14d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>operator--</Name>
+                    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                    <Anchor>ab857b91ba165db69ec03ab7c0d6605b3</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>operator--</Name>
+                    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                    <Anchor>a8d9fc0dbf64e1450b013ba26f2a805d9</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>operator=</Name>
+                    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                    <Anchor>abb977371357a97f50df7feeaccc2cd50</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>Reset</Name>
+                    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                    <Anchor>a50beb98b99693f3ca47403144888b49f</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>RefCount</Name>
+                    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+                    <Anchor>a744b5d48a2e374b29501889881fc3143</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>weak_ptr</Name>
+                  <Path>d2/d34/smartptr_8hpp.html</Path>
+                  <Anchor>d9/d9b/classweak__ptr</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>spdbg</Name>
+                  <Path>d2/d34/smartptr_8hpp.html</Path>
+                  <Anchor>a281a891b6957dd7765d08d0ee8cba9da</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -30205,6 +30251,28 @@
                   <Anchor>ac4a14a70488d04bbaea65b252b4fc71e</Anchor>
                  </Node>
                  <Node>
+                  <Name>BeepState</Name>
+                  <Path>d2/d6e/syscalls_8h.html</Path>
+                  <Anchor>ad8f7fc2be7f2208d6acce098162f38e0</Anchor>
+                  <Subnodes>
+                   <Node>
+                    <Name>BEEP_OFF</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>ad8f7fc2be7f2208d6acce098162f38e0a838f13dc6a8a628065e253e16228156a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>BEEP_ON</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>ad8f7fc2be7f2208d6acce098162f38e0a289051b75f6bf72f3536f3bde8f06ee9</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>BEEP_TOGGLE</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>ad8f7fc2be7f2208d6acce098162f38e0a5ba7f04d82a69c4740c765341dfa2917</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
                   <Name>FileStatus</Name>
                   <Path>d2/d6e/syscalls_8h.html</Path>
                   <Anchor>a0a785734a2e4d29ff32532d92a03b40c</Anchor>
@@ -30464,6 +30532,21 @@
                     <Anchor>a16c10255fbc3692d24e41969a899c7ddacc9b1d7135b20db0c0369cf9fb4f3d4b</Anchor>
                    </Node>
                    <Node>
+                    <Name>_GetARGC</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7dda38d92a52a63a7dcb128793a3dcc6ae9f</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>_GetARGV</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7dda96e680f54dd91492355c76b2edbc8c1a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>_GetENVP</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7ddacdaf761dd83654847385e37a6609d025</Anchor>
+                   </Node>
+                   <Node>
                     <Name>_GetScheduleMode</Name>
                     <Path>d2/d6e/syscalls_8h.html</Path>
                     <Anchor>a16c10255fbc3692d24e41969a899c7ddad37fdeff9eb9fe97f16f089ad878248d</Anchor>
@@ -30652,6 +30735,11 @@
                     <Name>_usleep</Name>
                     <Path>d2/d6e/syscalls_8h.html</Path>
                     <Anchor>a16c10255fbc3692d24e41969a899c7dda75975d7f4982d52e685b7a4a1ef48ac6</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>_Beep</Name>
+                    <Path>d2/d6e/syscalls_8h.html</Path>
+                    <Anchor>a16c10255fbc3692d24e41969a899c7ddac9fff3ad1eb63c1867c760346d8d01cc</Anchor>
                    </Node>
                    <Node>
                     <Name>_DebugMessage</Name>

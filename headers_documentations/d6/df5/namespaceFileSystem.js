@@ -15,6 +15,7 @@ var namespaceFileSystem =
     [ "Process", "d8/dfc/classFileSystem_1_1Process.html", "d8/dfc/classFileSystem_1_1Process" ],
     [ "Random", "d2/d47/classFileSystem_1_1Random.html", "d2/d47/classFileSystem_1_1Random" ],
     [ "Serial", "dd/dd0/classFileSystem_1_1Serial.html", "dd/dd0/classFileSystem_1_1Serial" ],
+    [ "SysInfo", "db/d84/classFileSystem_1_1SysInfo.html", "db/d84/classFileSystem_1_1SysInfo" ],
     [ "USTAR", "d0/df0/classFileSystem_1_1USTAR.html", "d0/df0/classFileSystem_1_1USTAR" ],
     [ "Virtual", "d0/d99/classFileSystem_1_1Virtual.html", "d0/d99/classFileSystem_1_1Virtual" ],
     [ "Zero", "d7/d9a/classFileSystem_1_1Zero.html", "d7/d9a/classFileSystem_1_1Zero" ]

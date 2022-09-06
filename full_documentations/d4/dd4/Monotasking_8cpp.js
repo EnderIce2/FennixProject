@@ -9,6 +9,7 @@ var Monotasking_8cpp =
     [ "FreeTask", "d4/dd4/Monotasking_8cpp.html#a22adbfd1c57568ba6b1eaec88318fe99", null ],
     [ "InterruptHandler", "d4/dd4/Monotasking_8cpp.html#aa49119bb489f5c0f972cce2bd32d17fe", null ],
     [ "CurrentTask", "d4/dd4/Monotasking_8cpp.html#acc7aeeac1147986e4e6db156dc9d45bb", null ],
+    [ "monot", "d4/dd4/Monotasking_8cpp.html#ac34b2c8e18eecd7e5c3216ada366dfb8", null ],
     [ "TaskIDs", "d4/dd4/Monotasking_8cpp.html#a4a15876a9cd58c88ba3a9bc0b59e47e5", null ],
     [ "TaskQueue", "d4/dd4/Monotasking_8cpp.html#a10cc3a5d95cd70f9ca93a6ae29da77fa", null ]
 ];

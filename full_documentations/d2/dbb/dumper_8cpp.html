@@ -86,20 +86,64 @@ $(document).ready(function(){initNavTree('d2/dbb/dumper_8cpp.html','../../'); in
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">dumper.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d5/dd9/dumper_8hpp_source.html">dumper.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/d9a/monotonlib_8h_source.html">../../../libs/monoton/monotonlib.h</a>&quot;</code><br />
 </div>
 <p><a href="../../d2/dbb/dumper_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a2e810a754bb8d6b5a8023817dbf724cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dbb/dumper_8cpp.html#a2e810a754bb8d6b5a8023817dbf724cd">DumperPrint</a>(m, ...)&#160;&#160;&#160;<a class="el" href="../../d6/da7/monoton_8hpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="el" href="../../d6/db1/print_8c.html#a43ab6ded82e85d1cfb9e21f898f9ed76">printf</a>(m, ##__VA_ARGS__)</td></tr>
+<tr class="separator:a2e810a754bb8d6b5a8023817dbf724cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a0fc66b31c24d157f0d3f5cc901f9d8cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dbb/dumper_8cpp.html#a0fc66b31c24d157f0d3f5cc901f9d8cd">DumpData</a> (const char *Description, void *<a class="el" href="../../da/d3f/E1000_8hpp.html#a6fc2b8ed8be1aa26731a45000f43b8cc">Address</a>, unsigned long <a class="el" href="../../dc/de6/NetworkController_8hpp.html#a930e5a4d8414c0427fe5c636062579db">Length</a>)</td></tr>
 <tr class="separator:a0fc66b31c24d157f0d3f5cc901f9d8cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a8d6989dc736b678d41dc8a58446fab96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d83/classMonotonLib_1_1mtl.html">MonotonLib::mtl</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dbb/dumper_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a></td></tr>
+<tr class="separator:a8d6989dc736b678d41dc8a58446fab96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a2e810a754bb8d6b5a8023817dbf724cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e810a754bb8d6b5a8023817dbf724cd">&#9670;&nbsp;</a></span>DumperPrint</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DumperPrint</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">m, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="../../d6/da7/monoton_8hpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="el" href="../../d6/db1/print_8c.html#a43ab6ded82e85d1cfb9e21f898f9ed76">printf</a>(m, ##__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/dbb/dumper_8cpp_source.html#l00007">7</a> of file <a class="el" href="../../d2/dbb/dumper_8cpp_source.html">dumper.cpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a0fc66b31c24d157f0d3f5cc901f9d8cd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0fc66b31c24d157f0d3f5cc901f9d8cd">&#9670;&nbsp;</a></span>DumpData()</h2>
@@ -133,56 +177,77 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/dbb/dumper_8cpp_source.html#l00003">3</a> of file <a class="el" href="../../d2/dbb/dumper_8cpp_source.html">dumper.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="../../d5/dd9/dumper_8hpp.html#a97eaecd6fc4b6789035f222c48b5eea3">DumperPrint</a>(<span class="stringliteral">&quot;-------------------------------------------------------------------------\n&quot;</span>);</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *AddressChar = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)<a class="code" href="../../d1/d90/acpi_8hpp.html#a6fc2b8ed8be1aa26731a45000f43b8cc">Address</a>;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> Buffer[17];</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> Iterate;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">if</span> (Description != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="../../d5/dd9/dumper_8hpp.html#a97eaecd6fc4b6789035f222c48b5eea3">DumperPrint</a>(<span class="stringliteral">&quot;%s:\n&quot;</span>, Description);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">for</span> (Iterate = 0; Iterate &lt; <a class="code" href="../../d1/d90/acpi_8hpp.html#a975543b90f799d299886f54993f36b3b">Length</a>; Iterate++)</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">if</span> ((Iterate % 16) == 0)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">if</span> (Iterate != 0)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <a class="code" href="../../d5/dd9/dumper_8hpp.html#a97eaecd6fc4b6789035f222c48b5eea3">DumperPrint</a>(<span class="stringliteral">&quot;  %s\n&quot;</span>, Buffer);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="../../d5/dd9/dumper_8hpp.html#a97eaecd6fc4b6789035f222c48b5eea3">DumperPrint</a>(<span class="stringliteral">&quot;  %04x &quot;</span>, Iterate);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="../../d5/dd9/dumper_8hpp.html#a97eaecd6fc4b6789035f222c48b5eea3">DumperPrint</a>(<span class="stringliteral">&quot; %02x&quot;</span>, AddressChar[Iterate]);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> ((AddressChar[Iterate] &lt; 0x20) || (AddressChar[Iterate] &gt; 0x7e))</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            Buffer[Iterate % 16] = <span class="charliteral">&#39;.&#39;</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            Buffer[Iterate % 16] = AddressChar[Iterate];</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        Buffer[(Iterate % 16) + 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">while</span> ((Iterate % 16) != 0)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="../../d5/dd9/dumper_8hpp.html#a97eaecd6fc4b6789035f222c48b5eea3">DumperPrint</a>(<span class="stringliteral">&quot;   &quot;</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        Iterate++;</div>
+<p class="definition">Definition at line <a class="el" href="../../d2/dbb/dumper_8cpp_source.html#l00009">9</a> of file <a class="el" href="../../d2/dbb/dumper_8cpp_source.html">dumper.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../d2/dbb/dumper_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<span class="stringliteral">&quot;-------------------------------------------------------------------------\n&quot;</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *AddressChar = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)<a class="code" href="../../d1/d90/acpi_8hpp.html#a6fc2b8ed8be1aa26731a45000f43b8cc">Address</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> Buffer[17];</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> Iterate;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">if</span> (Description != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="../../d2/dbb/dumper_8cpp.html#a2e810a754bb8d6b5a8023817dbf724cd">DumperPrint</a>(<span class="stringliteral">&quot;%s:\n&quot;</span>, Description);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">for</span> (Iterate = 0; Iterate &lt; <a class="code" href="../../d1/d90/acpi_8hpp.html#a975543b90f799d299886f54993f36b3b">Length</a>; Iterate++)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">if</span> ((Iterate % 16) == 0)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">if</span> (Iterate != 0)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <a class="code" href="../../d2/dbb/dumper_8cpp.html#a2e810a754bb8d6b5a8023817dbf724cd">DumperPrint</a>(<span class="stringliteral">&quot;  %s\n&quot;</span>, Buffer);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="../../d2/dbb/dumper_8cpp.html#a2e810a754bb8d6b5a8023817dbf724cd">DumperPrint</a>(<span class="stringliteral">&quot;  %04x &quot;</span>, Iterate);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="../../d2/dbb/dumper_8cpp.html#a2e810a754bb8d6b5a8023817dbf724cd">DumperPrint</a>(<span class="stringliteral">&quot; %02x&quot;</span>, AddressChar[Iterate]);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span> ((AddressChar[Iterate] &lt; 0x20) || (AddressChar[Iterate] &gt; 0x7e))</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            Buffer[Iterate % 16] = <span class="charliteral">&#39;.&#39;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            Buffer[Iterate % 16] = AddressChar[Iterate];</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        Buffer[(Iterate % 16) + 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="../../d5/dd9/dumper_8hpp.html#a97eaecd6fc4b6789035f222c48b5eea3">DumperPrint</a>(<span class="stringliteral">&quot;  %s\n&quot;</span>, Buffer);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../d5/dd9/dumper_8hpp.html#a97eaecd6fc4b6789035f222c48b5eea3">DumperPrint</a>(<span class="stringliteral">&quot;-------------------------------------------------------------------------\n&quot;</span>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">while</span> ((Iterate % 16) != 0)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="../../d2/dbb/dumper_8cpp.html#a2e810a754bb8d6b5a8023817dbf724cd">DumperPrint</a>(<span class="stringliteral">&quot;   &quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        Iterate++;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="../../d2/dbb/dumper_8cpp.html#a2e810a754bb8d6b5a8023817dbf724cd">DumperPrint</a>(<span class="stringliteral">&quot;  %s\n&quot;</span>, Buffer);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../d2/dbb/dumper_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a>-&gt;<a class="code" href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">print</a>(<span class="stringliteral">&quot;-------------------------------------------------------------------------\n&quot;</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d1/d90/acpi_8hpp_source.html#l00285">Address</a>, <a class="el" href="../../d5/dd9/dumper_8hpp_source.html#l00003">DumperPrint</a>, and <a class="el" href="../../d1/d90/acpi_8hpp_source.html#l00282">Length</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d90/acpi_8hpp_source.html#l00285">Address</a>, <a class="el" href="../../d2/dbb/dumper_8cpp_source.html#l00007">DumperPrint</a>, <a class="el" href="../../d1/d90/acpi_8hpp_source.html#l00282">Length</a>, <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00012">mono</a>, and <a class="el" href="../../d6/d9a/monotonlib_8cpp_source.html#l00216">MonotonLib::mtl::print()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00136">ParseBuffer()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a8d6989dc736b678d41dc8a58446fab96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d6989dc736b678d41dc8a58446fab96">&#9670;&nbsp;</a></span>mono</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d83/classMonotonLib_1_1mtl.html">MonotonLib::mtl</a>* mono</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00012">12</a> of file <a class="el" href="../../dd/dda/monoton_8cpp_source.html">monoton.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/dbb/dumper_8cpp_source.html#l00009">DumpData()</a>, and <a class="el" href="../../db/d50/login_8cpp_source.html#l00091">InitLogin()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aacpi_8hpp_html_a6fc2b8ed8be1aa26731a45000f43b8cc"><div class="ttname"><a href="../../d1/d90/acpi_8hpp.html#a6fc2b8ed8be1aa26731a45000f43b8cc">Address</a></div><div class="ttdeci">uint64_t Address</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d90/acpi_8hpp_source.html#l00285">acpi.hpp:285</a></div></div>
-<div class="ttc" id="adumper_8hpp_html_a97eaecd6fc4b6789035f222c48b5eea3"><div class="ttname"><a href="../../d5/dd9/dumper_8hpp.html#a97eaecd6fc4b6789035f222c48b5eea3">DumperPrint</a></div><div class="ttdeci">#define DumperPrint(...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dd9/dumper_8hpp_source.html#l00003">dumper.hpp:3</a></div></div>
+<div class="ttc" id="adumper_8cpp_html_a8d6989dc736b678d41dc8a58446fab96"><div class="ttname"><a href="../../d2/dbb/dumper_8cpp.html#a8d6989dc736b678d41dc8a58446fab96">mono</a></div><div class="ttdeci">MonotonLib::mtl * mono</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dda/monoton_8cpp_source.html#l00012">monoton.cpp:12</a></div></div>
+<div class="ttc" id="adumper_8cpp_html_a2e810a754bb8d6b5a8023817dbf724cd"><div class="ttname"><a href="../../d2/dbb/dumper_8cpp.html#a2e810a754bb8d6b5a8023817dbf724cd">DumperPrint</a></div><div class="ttdeci">#define DumperPrint(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dbb/dumper_8cpp_source.html#l00007">dumper.cpp:7</a></div></div>
 <div class="ttc" id="aacpi_8hpp_html_a975543b90f799d299886f54993f36b3b"><div class="ttname"><a href="../../d1/d90/acpi_8hpp.html#a975543b90f799d299886f54993f36b3b">Length</a></div><div class="ttdeci">uint32_t Length</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d90/acpi_8hpp_source.html#l00282">acpi.hpp:282</a></div></div>
+<div class="ttc" id="aclassMonotonLib_1_1mtl_html_a861669a95df7305785b45e242278c779"><div class="ttname"><a href="../../d2/d83/classMonotonLib_1_1mtl.html#a861669a95df7305785b45e242278c779">MonotonLib::mtl::print</a></div><div class="ttdeci">void print(const char *Text, PrintPos Position)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d9a/monotonlib_8cpp_source.html#l00216">monotonlib.cpp:216</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

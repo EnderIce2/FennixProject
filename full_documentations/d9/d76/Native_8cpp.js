@@ -1,6 +1,7 @@
 var Native_8cpp =
 [
     [ "HandleFennixSyscalls", "d9/d76/Native_8cpp.html#a972108fde2e0c6c1d69c92212189db8c", null ],
+    [ "internal_beep", "d9/d76/Native_8cpp.html#a8224f9cbb9aaf85c30a640ebd0cf17ea", null ],
     [ "internal_createprocess", "d9/d76/Native_8cpp.html#ad179c7f5e648affc70d02c23bcec4dc8", null ],
     [ "internal_createtask", "d9/d76/Native_8cpp.html#acc3b9ec029f6dd7739b96f92e6100c89", null ],
     [ "internal_createthread", "d9/d76/Native_8cpp.html#ab83bfdb4ddfe178820dba8abafae7d8d", null ],
@@ -23,10 +24,13 @@ var Native_8cpp =
     [ "internal_fileWrite", "d9/d76/Native_8cpp.html#abdc98347ae2f2c0e3225492759023dbc", null ],
     [ "internal_freepage", "d9/d76/Native_8cpp.html#a0dc7dec44a1860fe1712710cbb7f7221", null ],
     [ "internal_freepages", "d9/d76/Native_8cpp.html#a3888a66725f882ad089f4616bc2a44a9", null ],
+    [ "internal_getargc", "d9/d76/Native_8cpp.html#a77f76939e5a2c3a6c15c09ab00d52e49", null ],
+    [ "internal_getargv", "d9/d76/Native_8cpp.html#a320f4dedef8885894b2cbfdf4df5f843", null ],
     [ "internal_getcurrentprocess", "d9/d76/Native_8cpp.html#af391bb404c73f3623fc526690e7cc96d", null ],
     [ "internal_getcurrentprocessid", "d9/d76/Native_8cpp.html#abc1a987f9104967c34cc1e27e318d8df", null ],
     [ "internal_getcurrentthread", "d9/d76/Native_8cpp.html#a83da72cbd2687d8ab9b5c6229abbee94", null ],
     [ "internal_getcurrentthreadid", "d9/d76/Native_8cpp.html#af35799907469a14abe36fcbf1a0976fe", null ],
+    [ "internal_getenvp", "d9/d76/Native_8cpp.html#a769fefaa6f718a169bc2eedd97263150", null ],
     [ "internal_getlastkeyboardscancode", "d9/d76/Native_8cpp.html#a016399d3deea146c4d9931954bfb9195", null ],
     [ "internal_getschedulemode", "d9/d76/Native_8cpp.html#a0c9d8b00a7dca3ae05f4f4927a358323", null ],
     [ "internal_poptask", "d9/d76/Native_8cpp.html#a81cc279dd175694c10479057e708a55a", null ],

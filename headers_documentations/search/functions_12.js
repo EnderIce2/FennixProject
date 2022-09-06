@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['triggerusermodecrash_3657',['TriggerUserModeCrash',['../d9/d87/sys_8h.html#a398cc7eb9242509878d658cf3169d1ca',1,'sys.h']]],
-  ['tsc_3658',['tsc',['../de/d21/asm_8h.html#a03d0f35e9e0c2c286a3adbfa793171c4',1,'asm.h']]]
+  ['unmount_3669',['Unmount',['../d0/d99/classFileSystem_1_1Virtual.html#a7f06108378c9e0fd35490faf3ad06b49',1,'FileSystem::Virtual']]],
+  ['unregisterinterrupt_3670',['UnregisterInterrupt',['../d3/d7e/int_8h.html#a67cf9ad996acf355aa2fd0f2d4dc6007',1,'int.h']]],
+  ['usleep_3671',['usleep',['../dc/db2/system_8h.html#a3eecf5da1acd77794647dcb56c506fa7',1,'system.h']]],
+  ['ustar_3672',['USTAR',['../d0/df0/classFileSystem_1_1USTAR.html#a82dfdb779785d0d7483927d5086b72f4',1,'FileSystem::USTAR']]]
 ];

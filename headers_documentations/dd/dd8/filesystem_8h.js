@@ -36,6 +36,7 @@ var filesystem_8h =
     [ "Process", "d8/dfc/classFileSystem_1_1Process.html", "d8/dfc/classFileSystem_1_1Process" ],
     [ "Driver", "da/d05/classFileSystem_1_1Driver.html", "da/d05/classFileSystem_1_1Driver" ],
     [ "Network", "d2/dd3/classFileSystem_1_1Network.html", "d2/dd3/classFileSystem_1_1Network" ],
+    [ "SysInfo", "db/d84/classFileSystem_1_1SysInfo.html", "db/d84/classFileSystem_1_1SysInfo" ],
     [ "USTAR", "d0/df0/classFileSystem_1_1USTAR.html", "d0/df0/classFileSystem_1_1USTAR" ],
     [ "FileHeader", "d0/df0/classFileSystem_1_1USTAR.html#de/d80/structFileSystem_1_1USTAR_1_1FileHeader", [
       [ "chksum", "d0/df0/classFileSystem_1_1USTAR.html#a99dc642f2a1ac4717ed3430d3ddb9b4b", null ],
@@ -142,7 +143,6 @@ var filesystem_8h =
     ] ],
     [ "CloseFSFunction", "dd/dd8/filesystem_8h.html#ac707dee0f84de96388a8850b61ec26d9", null ],
     [ "CreateFSFunction", "dd/dd8/filesystem_8h.html#ab5fe0d9f05321a1e464164873af53feb", null ],
-    [ "DEBUG_FILESYSTEM", "dd/dd8/filesystem_8h.html#a75abb2d93c692b8b977d91a5b6c113b7", null ],
     [ "FILENAME_LENGTH", "dd/dd8/filesystem_8h.html#a610ce22de673afc7b1e8b0e7b3c9fe7a", null ],
     [ "MkdirFSFunction", "dd/dd8/filesystem_8h.html#af134171719090a9158bc0398ff1cfd96", null ],
     [ "MountFSFunction", "dd/dd8/filesystem_8h.html#aca5cdd2d2c8b4635fe5ff75657f67d75", null ],
@@ -224,5 +224,6 @@ var filesystem_8h =
     [ "SectorsPerCluster", "dd/dd8/filesystem_8h.html#a02bc500ff2fc573495d3545919f06eb6", null ],
     [ "SectorsPerFAT", "dd/dd8/filesystem_8h.html#add4486a610bd7f40360273d42506a6df", null ],
     [ "SectorsPerTrack", "dd/dd8/filesystem_8h.html#a15c1464fcc238365cd0d9c83a1a27480", null ],
+    [ "sysfs", "dd/dd8/filesystem_8h.html#afa17c9063c9b62481b9392e97f78912f", null ],
     [ "vfs", "dd/dd8/filesystem_8h.html#aace8e8569f67aa3e86be6cefa47a71f7", null ]
 ];

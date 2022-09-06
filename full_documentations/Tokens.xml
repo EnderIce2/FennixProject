@@ -9071,13 +9071,12 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>FileSystemRoot</Name>
-      <APILanguage>cpp</APILanguage>
+      <Name>sysfs</Name>
+      <APILanguage>c</APILanguage>
       <Type>data</Type>
-      <Scope>FileSystem</Scope>
     </TokenIdentifier>
-    <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>aae5511c8e6bade602158f8dcbec0f620</Anchor>
+    <Path>d3/d50/FileSystem_8cpp.html</Path>
+    <Anchor>afa17c9063c9b62481b9392e97f78912f</Anchor>
     <DeclaredIn>FileSystem.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -9088,6 +9087,16 @@
     </TokenIdentifier>
     <Path>db/dc4/ext2_8cpp.html</Path>
     <Anchor>aa20416820a06c5d65373830cb78bb029</Anchor>
+    <DeclaredIn>ext2.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_ext2_lite_min</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>db/dc4/ext2_8cpp.html</Path>
+    <Anchor>a236abfb3419655b629952eb72cd6114b</Anchor>
     <DeclaredIn>ext2.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -9207,6 +9216,61 @@
     </TokenIdentifier>
     <Path>d6/df5/namespaceFileSystem.html</Path>
     <Anchor>a643b605c24e12f0e8e69a66aa0118b70</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fbAddress</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>ae3285a2cc468b6691d10fad7e30c0196</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fbSize</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a274bc70b1bc7ceb4446ffa32840d36c8</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fbWidth</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>adaf20b688e474a37e013a8a575956f4a</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fbHeight</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a2e3905689204c7b8555a3ecc513daf93</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fbPixelsPerScanLine</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a7e1b87e44c36850a0e41b3797ad1ab1d</Anchor>
     <DeclaredIn>fb.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -9497,6 +9561,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>DeviceNodeIndexNodeCount</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a55323f5b099ada07f7e0b8d3189a3480</Anchor>
+    <DeclaredIn>devfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>DriverRootNode</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -9504,6 +9579,17 @@
     </TokenIdentifier>
     <Path>d6/df5/namespaceFileSystem.html</Path>
     <Anchor>a8c8f2f35453d791d6df8c684708a9cf8</Anchor>
+    <DeclaredIn>drvfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DriverNodeIndexNodeCount</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a0afb20535e7367d8e23fc240a7105678</Anchor>
     <DeclaredIn>drvfs.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -9541,6 +9627,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>NetworkNodeIndexNodeCount</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>abbdd45d6074c2b594b919f9e8f7a6067</Anchor>
+    <DeclaredIn>netfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ProcessRootNode</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -9549,6 +9646,204 @@
     <Path>d6/df5/namespaceFileSystem.html</Path>
     <Anchor>a98849b8c7eccec7ad212eddb4bd2b62d</Anchor>
     <DeclaredIn>procfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>ad549ecf64704d15cf52cfecfdd4a33d2</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a4c3096148afd87013d231df89a95b86b</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a278bf32afa17ec9f300acdd0eec1ec5f</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>afc8ae923a96c17fe029d70276001ff93</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>afee566e91493ad0485a348bf697c43f8</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a9bcdce006aec2f8edd30abfa1aa4f5e4</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a68cc13ac6cba32f7daad359b28efb522</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a418758df389a560f64b3b45cfcfc3276</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SysInfoRootNode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a64af82855a315dc0723c9534fa0a71d1</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SysInfoNodeIndexNodeCount</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a0b3daa2e616bdd943039abc4120b463a</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_fb_address</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>ab0d891fae9e88c104dbadcef0ff008f6</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_fb_width</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a20613332778e13fac99c63b0dcd3c2d4</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_fb_height</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a09b91df0d4d45329558be613f40e6975</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_fb_ppsl</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>afc890a7e91ac44519a51ff4dd37d249f</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_fb_size</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>af950dde4266f3b8bc7234acfd41aa5ce</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_cpu_vendor</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>ad4111441e4fc2f17e8b028f10a49a277</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_cpu_name</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>ae7d3b710dc07b7e50fa70d48bde19d23</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_cpu_hyper</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>aaadf730e4a585eb3fa0f1b3b8fc84760</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -17085,16 +17380,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>DEBUG_FILESYSTEM</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>dd/dd8/filesystem_8h.html</Path>
-    <Anchor>a75abb2d93c692b8b977d91a5b6c113b7</Anchor>
-    <DeclaredIn>filesystem.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>vfsdbg</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -17514,6 +17799,16 @@
     </TokenIdentifier>
     <Path>dd/dd8/filesystem_8h.html</Path>
     <Anchor>a90637c28cacc79945d6f7af58d314bfb</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysfs</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dd/dd8/filesystem_8h.html</Path>
+    <Anchor>afa17c9063c9b62481b9392e97f78912f</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>
@@ -18296,16 +18591,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>TASK_CHECKSUM</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d6/d75/internal__task_8h.html</Path>
-    <Anchor>ae5f3c601bb8b46a743f0e7074f14614e</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>SysGetProcessByPID</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -18453,39 +18738,6 @@
     </TokenIdentifier>
     <Path>d6/d75/internal__task_8h.html</Path>
     <Anchor>a24b42fd6c165e22f3c4cc751efee137b</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultitaskingSchedulerEnabled</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>a52e60861a043aa74e382a708d44a831b</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>monot</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>af11988ae5ac332837099db072aa486e7</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>mt</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>ac63d8a82f4be2328b618d75b862ab874</Anchor>
     <DeclaredIn>internal_task.h</DeclaredIn>
   </Token>
   <Token>
@@ -19992,6 +20244,16 @@
     <Path>d5/d66/rand_8h.html</Path>
     <Anchor>a0c75f7b154c17d7a1631c3a886bb1450</Anchor>
     <DeclaredIn>rand.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>spdbg</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d2/d34/smartptr_8hpp.html</Path>
+    <Anchor>a281a891b6957dd7765d08d0ee8cba9da</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -21575,6 +21837,16 @@
     </TokenIdentifier>
     <Path>d2/d00/Kernel_8cpp.html</Path>
     <Anchor>a8cc3993baddc8e37bd32407ff3b7c196</Anchor>
+    <DeclaredIn>Kernel.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>KernelTaskStarted</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d2/d00/Kernel_8cpp.html</Path>
+    <Anchor>ae649601e580b93fdd331a0a66b6a94b6</Anchor>
     <DeclaredIn>Kernel.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -28641,6 +28913,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>monot</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>Tasking</Scope>
+    </TokenIdentifier>
+    <Path>d9/d3e/namespaceTasking.html</Path>
+    <Anchor>ac34b2c8e18eecd7e5c3216ada366dfb8</Anchor>
+    <DeclaredIn>Monotasking.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>CurrentTask</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -28833,6 +29116,28 @@
     </TokenIdentifier>
     <Path>d9/d3e/namespaceTasking.html</Path>
     <Anchor>ad1a18cb7efea016c609d88926010490b</Anchor>
+    <DeclaredIn>Multitasking.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MultitaskingSchedulerEnabled</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>Tasking</Scope>
+    </TokenIdentifier>
+    <Path>d9/d3e/namespaceTasking.html</Path>
+    <Anchor>a52e60861a043aa74e382a708d44a831b</Anchor>
+    <DeclaredIn>Multitasking.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>mt</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>Tasking</Scope>
+    </TokenIdentifier>
+    <Path>d9/d3e/namespaceTasking.html</Path>
+    <Anchor>afa39895793547ce88d34065ac7c20929</Anchor>
     <DeclaredIn>Multitasking.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -32621,6 +32926,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>internal_getargc</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d9/d76/Native_8cpp.html</Path>
+    <Anchor>a77f76939e5a2c3a6c15c09ab00d52e49</Anchor>
+    <DeclaredIn>Native.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>internal_getargv</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d9/d76/Native_8cpp.html</Path>
+    <Anchor>a320f4dedef8885894b2cbfdf4df5f843</Anchor>
+    <DeclaredIn>Native.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>internal_getenvp</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d9/d76/Native_8cpp.html</Path>
+    <Anchor>a769fefaa6f718a169bc2eedd97263150</Anchor>
+    <DeclaredIn>Native.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>internal_getschedulemode</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -32887,6 +33222,16 @@
     </TokenIdentifier>
     <Path>d9/d76/Native_8cpp.html</Path>
     <Anchor>a68377bf36f19185f5351e037432f977d</Anchor>
+    <DeclaredIn>Native.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>internal_beep</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d9/d76/Native_8cpp.html</Path>
+    <Anchor>a8224f9cbb9aaf85c30a640ebd0cf17ea</Anchor>
     <DeclaredIn>Native.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -34086,7 +34431,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d8/def/crt0_8c.html</Path>
-    <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
+    <Anchor>adedb285b02c41bde2158ded9cc9fd7ac</Anchor>
     <DeclaredIn>crt0.c</DeclaredIn>
   </Token>
   <Token>
@@ -34101,32 +34446,12 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>stckptr</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d8/def/crt0_8c.html</Path>
-    <Anchor>a40e9c3212048e8ea85a1c5fedf6be395</Anchor>
-    <DeclaredIn>crt0.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>argv</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d8/def/crt0_8c.html</Path>
-    <Anchor>a8c6923b50b593219f778bcaa56306446</Anchor>
-    <DeclaredIn>crt0.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>main</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d7/d93/crt1_8c.html</Path>
-    <Anchor>a0ddf1224851353fc92bfbff6f499fa97</Anchor>
+    <Anchor>adedb285b02c41bde2158ded9cc9fd7ac</Anchor>
     <DeclaredIn>crt1.c</DeclaredIn>
   </Token>
   <Token>
@@ -34147,26 +34472,6 @@
     </TokenIdentifier>
     <Path>d7/d93/crt1_8c.html</Path>
     <Anchor>a078e7d7a89207ea1c3575850e0fff462</Anchor>
-    <DeclaredIn>crt1.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>stckptr</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d7/d93/crt1_8c.html</Path>
-    <Anchor>a40e9c3212048e8ea85a1c5fedf6be395</Anchor>
-    <DeclaredIn>crt1.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>argv</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d7/d93/crt1_8c.html</Path>
-    <Anchor>a8c6923b50b593219f778bcaa56306446</Anchor>
     <DeclaredIn>crt1.c</DeclaredIn>
   </Token>
   <Token>
@@ -36375,6 +36680,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>BEEP_OFF</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>ad8f7fc2be7f2208d6acce098162f38e0a838f13dc6a8a628065e253e16228156a</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>BEEP_ON</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>ad8f7fc2be7f2208d6acce098162f38e0a289051b75f6bf72f3536f3bde8f06ee9</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>BEEP_TOGGLE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>ad8f7fc2be7f2208d6acce098162f38e0a5ba7f04d82a69c4740c765341dfa2917</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>OK</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -36855,6 +37190,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>_GetARGC</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7dda38d92a52a63a7dcb128793a3dcc6ae9f</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_GetARGV</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7dda96e680f54dd91492355c76b2edbc8c1a</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_GetENVP</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7ddacdaf761dd83654847385e37a6609d025</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>_GetScheduleMode</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -37231,6 +37596,16 @@
     </TokenIdentifier>
     <Path>d2/d6e/syscalls_8h.html</Path>
     <Anchor>a16c10255fbc3692d24e41969a899c7dda75975d7f4982d52e685b7a4a1ef48ac6</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_Beep</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7ddac9fff3ad1eb63c1867c760346d8d01cc</Anchor>
     <DeclaredIn>syscalls.h</DeclaredIn>
   </Token>
   <Token>
@@ -38951,6 +39326,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>DumperPrint</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d2/dbb/dumper_8cpp.html</Path>
+    <Anchor>a2e810a754bb8d6b5a8023817dbf724cd</Anchor>
+    <DeclaredIn>dumper.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>DumpData</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -38961,13 +39346,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>DumperPrint</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
+      <Name>mono</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
     </TokenIdentifier>
-    <Path>d5/dd9/dumper_8hpp.html</Path>
-    <Anchor>a97eaecd6fc4b6789035f222c48b5eea3</Anchor>
-    <DeclaredIn>dumper.hpp</DeclaredIn>
+    <Path>d2/dbb/dumper_8cpp.html</Path>
+    <Anchor>a8d6989dc736b678d41dc8a58446fab96</Anchor>
+    <DeclaredIn>dumper.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -39663,6 +40048,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>NANOPRINTF_IMPLEMENTATION</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d6/d9a/monotonlib_8cpp.html</Path>
+    <Anchor>aa21f2b24d121f913f1b8b0e1befcc800</Anchor>
+    <DeclaredIn>monotonlib.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>PSF2_MAGIC0</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -39700,6 +40095,76 @@
     <Path>d4/d9a/monotonlib_8h.html</Path>
     <Anchor>ac8bd12447ffadf6aaec6c9e293516783</Anchor>
     <DeclaredIn>monotonlib.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NPF_VISIBILITY</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>dc/d1e/nanoprintf_8h.html</Path>
+    <Anchor>ab7c63ed4d9f034ad9a652a665041e81c</Anchor>
+    <DeclaredIn>nanoprintf.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NPF_PRINTF_ATTR</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>dc/d1e/nanoprintf_8h.html</Path>
+    <Anchor>a1986b00fc417ddd63c01aa453d4feaef</Anchor>
+    <DeclaredIn>nanoprintf.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>npf_snprintf</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>dc/d1e/nanoprintf_8h.html</Path>
+    <Anchor>a065298808b8cf87303ba8be3fef4fda0</Anchor>
+    <DeclaredIn>nanoprintf.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>npf_vsnprintf</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>dc/d1e/nanoprintf_8h.html</Path>
+    <Anchor>a2f4f72141f9ee4312b8b98241378d889</Anchor>
+    <DeclaredIn>nanoprintf.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>npf_pprintf</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>dc/d1e/nanoprintf_8h.html</Path>
+    <Anchor>a0bd55ca4df9b4d4f8473ef855b42f3d1</Anchor>
+    <DeclaredIn>nanoprintf.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>npf_vpprintf</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>dc/d1e/nanoprintf_8h.html</Path>
+    <Anchor>a2f2b93f377557ed37d433c674f9d7c2a</Anchor>
+    <DeclaredIn>nanoprintf.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>npf_putc</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>dc/d1e/nanoprintf_8h.html</Path>
+    <Anchor>a37e791634f304cf8754b83d039cf2622</Anchor>
+    <DeclaredIn>nanoprintf.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -43536,6 +44001,307 @@
     </TokenIdentifier>
     <Path>d0/d3e/structoutput__gadget__t.html</Path>
     <Anchor>a0cd7104610b3f06fa140e68c1c9d9e73</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>shared_ptr</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tmplt</Type>
+      <Scope>shared_ptr</Scope>
+    </TokenIdentifier>
+    <Path>d4/d67/classshared__ptr.html</Path>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>shared_ptr</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr</Scope>
+    </TokenIdentifier>
+    <Path>d4/d67/classshared__ptr.html</Path>
+    <Anchor>a03a7a6823a1131d99c6d12b17cc1018a</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>shared_ptr</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr</Scope>
+    </TokenIdentifier>
+    <Path>d4/d67/classshared__ptr.html</Path>
+    <Anchor>af317b328a00b9c9b3a6761287ba17055</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~shared_ptr</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr</Scope>
+    </TokenIdentifier>
+    <Path>d4/d67/classshared__ptr.html</Path>
+    <Anchor>a6de732759f480c4e7d2425244561592b</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetCount</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr</Scope>
+    </TokenIdentifier>
+    <Path>d4/d67/classshared__ptr.html</Path>
+    <Anchor>a47f5c4a0a349af9a6c9ba5f4060e619c</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Get</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr</Scope>
+    </TokenIdentifier>
+    <Path>d4/d67/classshared__ptr.html</Path>
+    <Anchor>abf370348b8c58eee7b657f5460e31d8e</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator*</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr</Scope>
+    </TokenIdentifier>
+    <Path>d4/d67/classshared__ptr.html</Path>
+    <Anchor>a55f90fd9ec9c1dbf02187bceb924c803</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator-&gt;</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr</Scope>
+    </TokenIdentifier>
+    <Path>d4/d67/classshared__ptr.html</Path>
+    <Anchor>a08c3c1ca9e0418a79e3bf1d9a4809caa</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReferenceCounter</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>shared_ptr</Scope>
+    </TokenIdentifier>
+    <Path>d4/d67/classshared__ptr.html</Path>
+    <Anchor>affe70f0681417e97fff0031cf972ac01</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RealPointer</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>shared_ptr</Scope>
+    </TokenIdentifier>
+    <Path>d4/d67/classshared__ptr.html</Path>
+    <Anchor>a3877a4d7d9c2437f81cec3fbb7711095</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>shared_ptr::Counter</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>shared_ptr::Counter</Scope>
+    </TokenIdentifier>
+    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Counter</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr::Counter</Scope>
+    </TokenIdentifier>
+    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+    <Anchor>a79b29023b1bd60eab99fdc27abf04f2d</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Counter</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr::Counter</Scope>
+    </TokenIdentifier>
+    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+    <Anchor>a422a1b3cd9651460f5c4efbb0bd835b0</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator=</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr::Counter</Scope>
+    </TokenIdentifier>
+    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+    <Anchor>abb977371357a97f50df7feeaccc2cd50</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~Counter</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr::Counter</Scope>
+    </TokenIdentifier>
+    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+    <Anchor>a9cd9467c6f62db381d4cd4e08011e526</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Reset</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr::Counter</Scope>
+    </TokenIdentifier>
+    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+    <Anchor>a50beb98b99693f3ca47403144888b49f</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Get</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr::Counter</Scope>
+    </TokenIdentifier>
+    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+    <Anchor>ab3f1eedbc674fc7a576c6c9005a3b306</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator++</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr::Counter</Scope>
+    </TokenIdentifier>
+    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+    <Anchor>ab5b666b86b54a8a439fdc60c7de37358</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator++</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr::Counter</Scope>
+    </TokenIdentifier>
+    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+    <Anchor>a03db8b9b6488b896d893e23fa0d0f14d</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator--</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr::Counter</Scope>
+    </TokenIdentifier>
+    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+    <Anchor>ab857b91ba165db69ec03ab7c0d6605b3</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator--</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>shared_ptr::Counter</Scope>
+    </TokenIdentifier>
+    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+    <Anchor>a8d9fc0dbf64e1450b013ba26f2a805d9</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RefCount</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>shared_ptr::Counter</Scope>
+    </TokenIdentifier>
+    <Path>da/de2/classshared__ptr_1_1Counter.html</Path>
+    <Anchor>a744b5d48a2e374b29501889881fc3143</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>smart_ptr</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tmplt</Type>
+      <Scope>smart_ptr</Scope>
+    </TokenIdentifier>
+    <Path>dc/d42/classsmart__ptr.html</Path>
+    <Abstract>A smart pointer class.</Abstract>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>smart_ptr</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>smart_ptr</Scope>
+    </TokenIdentifier>
+    <Path>dc/d42/classsmart__ptr.html</Path>
+    <Anchor>a23d0d1c5f56d5c6ddca16a38272de5f5</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~smart_ptr</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>smart_ptr</Scope>
+    </TokenIdentifier>
+    <Path>dc/d42/classsmart__ptr.html</Path>
+    <Anchor>a43518f1c6d475b5d462599780f07b769</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator*</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>smart_ptr</Scope>
+    </TokenIdentifier>
+    <Path>dc/d42/classsmart__ptr.html</Path>
+    <Anchor>a2c6a11de1d90efd3393b041ec29f3129</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator-&gt;</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>smart_ptr</Scope>
+    </TokenIdentifier>
+    <Path>dc/d42/classsmart__ptr.html</Path>
+    <Anchor>ab47f38a06c0b83c189198e7b2d054270</Anchor>
+    <DeclaredIn>smartptr.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RealPointer</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>smart_ptr</Scope>
+    </TokenIdentifier>
+    <Path>dc/d42/classsmart__ptr.html</Path>
+    <Anchor>aa0241e2db38b04043b05a702e351555a</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -47577,14 +48343,91 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>FileSystemRoot</Name>
+      <Name>ReadFSFunction</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
+      <Type>func</Type>
       <Scope>FileSystem</Scope>
     </TokenIdentifier>
     <Path>d6/df5/namespaceFileSystem.html</Path>
-    <Anchor>aae5511c8e6bade602158f8dcbec0f620</Anchor>
-    <DeclaredIn>FileSystem.cpp</DeclaredIn>
+    <Anchor>ad549ecf64704d15cf52cfecfdd4a33d2</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a4c3096148afd87013d231df89a95b86b</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a278bf32afa17ec9f300acdd0eec1ec5f</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>afc8ae923a96c17fe029d70276001ff93</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>afee566e91493ad0485a348bf697c43f8</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a9bcdce006aec2f8edd30abfa1aa4f5e4</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a68cc13ac6cba32f7daad359b28efb522</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ReadFSFunction</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a418758df389a560f64b3b45cfcfc3276</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -47618,6 +48461,61 @@
     <Path>d6/df5/namespaceFileSystem.html</Path>
     <Anchor>a51f6e62d3fe45588adf917be1d83fa8c</Anchor>
     <DeclaredIn>fat.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fbAddress</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>ae3285a2cc468b6691d10fad7e30c0196</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fbSize</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a274bc70b1bc7ceb4446ffa32840d36c8</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fbWidth</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>adaf20b688e474a37e013a8a575956f4a</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fbHeight</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a2e3905689204c7b8555a3ecc513daf93</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fbPixelsPerScanLine</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a7e1b87e44c36850a0e41b3797ad1ab1d</Anchor>
+    <DeclaredIn>fb.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -47731,6 +48629,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>DeviceNodeIndexNodeCount</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a55323f5b099ada07f7e0b8d3189a3480</Anchor>
+    <DeclaredIn>devfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>DriverRootNode</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -47738,6 +48647,17 @@
     </TokenIdentifier>
     <Path>d6/df5/namespaceFileSystem.html</Path>
     <Anchor>a8c8f2f35453d791d6df8c684708a9cf8</Anchor>
+    <DeclaredIn>drvfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DriverNodeIndexNodeCount</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a0afb20535e7367d8e23fc240a7105678</Anchor>
     <DeclaredIn>drvfs.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -47775,6 +48695,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>NetworkNodeIndexNodeCount</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>abbdd45d6074c2b594b919f9e8f7a6067</Anchor>
+    <DeclaredIn>netfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ProcessRootNode</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -47783,6 +48714,116 @@
     <Path>d6/df5/namespaceFileSystem.html</Path>
     <Anchor>a98849b8c7eccec7ad212eddb4bd2b62d</Anchor>
     <DeclaredIn>procfs.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SysInfoRootNode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a64af82855a315dc0723c9534fa0a71d1</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SysInfoNodeIndexNodeCount</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a0b3daa2e616bdd943039abc4120b463a</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_fb_address</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>ab0d891fae9e88c104dbadcef0ff008f6</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_fb_width</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a20613332778e13fac99c63b0dcd3c2d4</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_fb_height</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>a09b91df0d4d45329558be613f40e6975</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_fb_ppsl</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>afc890a7e91ac44519a51ff4dd37d249f</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_fb_size</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>af950dde4266f3b8bc7234acfd41aa5ce</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_cpu_vendor</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>ad4111441e4fc2f17e8b028f10a49a277</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_cpu_name</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>ae7d3b710dc07b7e50fa70d48bde19d23</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sysinfo_cpu_hyper</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem</Scope>
+    </TokenIdentifier>
+    <Path>d6/df5/namespaceFileSystem.html</Path>
+    <Anchor>aaadf730e4a585eb3fa0f1b3b8fc84760</Anchor>
+    <DeclaredIn>sysinfo.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -48448,6 +49489,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>SetFrameBufferData</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::FB</Scope>
+    </TokenIdentifier>
+    <Path>d3/d4a/classFileSystem_1_1FB.html</Path>
+    <Anchor>ad4dbc7c60622eabe7e84ff2c67e66d7b</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>FB</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -48727,6 +49779,49 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>FileSystem::SysInfo</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>FileSystem::SysInfo</Scope>
+    </TokenIdentifier>
+    <Path>db/d84/classFileSystem_1_1SysInfo.html</Path>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>AddInfo</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::SysInfo</Scope>
+    </TokenIdentifier>
+    <Path>db/d84/classFileSystem_1_1SysInfo.html</Path>
+    <Anchor>a3716eab91871580fc6b52c05144862cb</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SysInfo</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::SysInfo</Scope>
+    </TokenIdentifier>
+    <Path>db/d84/classFileSystem_1_1SysInfo.html</Path>
+    <Anchor>a5c255c28c1271746a2549295e94e239c</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~SysInfo</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::SysInfo</Scope>
+    </TokenIdentifier>
+    <Path>db/d84/classFileSystem_1_1SysInfo.html</Path>
+    <Anchor>a54a6767eb7680037d0491a2cc4214fd6</Anchor>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>FileSystem::USTAR</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -48857,6 +49952,17 @@
       <Scope>FileSystem::Virtual</Scope>
     </TokenIdentifier>
     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+    <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetRootNode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>FileSystem::Virtual</Scope>
+    </TokenIdentifier>
+    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+    <Anchor>a46ae343f031228bc6183bccbc44e6dc2</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
   </Token>
   <Token>
@@ -49023,6 +50129,16 @@
     <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
     <Anchor>a0c888617de7ef3dfd23c1ea0f4a26918</Anchor>
     <DeclaredIn>filesystem.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FileSystemRoot</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>FileSystem::Virtual</Scope>
+    </TokenIdentifier>
+    <Path>d0/d99/classFileSystem_1_1Virtual.html</Path>
+    <Anchor>a349828f30b5aacec91378e750ecc9dc2</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -50119,6 +51235,17 @@
     </TokenIdentifier>
     <Path>d2/d83/classMonotonLib_1_1mtl.html</Path>
     <Anchor>a6837ec5fcffe57c1f049dca01e4e15fc</Anchor>
+    <DeclaredIn>monotonlib.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>printf</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>MonotonLib::mtl</Scope>
+    </TokenIdentifier>
+    <Path>d2/d83/classMonotonLib_1_1mtl.html</Path>
+    <Anchor>a49076ce45e6272a2f1def442a7eff89f</Anchor>
     <DeclaredIn>monotonlib.h</DeclaredIn>
   </Token>
   <Token>
@@ -55178,36 +56305,14 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>MultitaskingSchedulerEnabled</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>a52e60861a043aa74e382a708d44a831b</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>monot</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>Tasking</Scope>
     </TokenIdentifier>
     <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>af11988ae5ac332837099db072aa486e7</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>mt</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>ac63d8a82f4be2328b618d75b862ab874</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
+    <Anchor>ac34b2c8e18eecd7e5c3216ada366dfb8</Anchor>
+    <DeclaredIn>Monotasking.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -55244,6 +56349,28 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>MultitaskingSchedulerEnabled</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>Tasking</Scope>
+    </TokenIdentifier>
+    <Path>d9/d3e/namespaceTasking.html</Path>
+    <Anchor>a52e60861a043aa74e382a708d44a831b</Anchor>
+    <DeclaredIn>Multitasking.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>mt</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>Tasking</Scope>
+    </TokenIdentifier>
+    <Path>d9/d3e/namespaceTasking.html</Path>
+    <Anchor>afa39895793547ce88d34065ac7c20929</Anchor>
+    <DeclaredIn>Multitasking.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>CriticalSectionData</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -55252,281 +56379,6 @@
     <Path>d9/d3e/namespaceTasking.html</Path>
     <Anchor>a390d088e178afc3b017d9a577e4e7a86</Anchor>
     <DeclaredIn>Multitasking.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TaskStateNull</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>econst</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>a92e43f9a21bae91a5e28d78160fa0386ae50f4df7ad0f9eedeb1f75898531c198</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TaskStateReady</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>econst</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>a92e43f9a21bae91a5e28d78160fa0386ae093c468257c00fea7c22da0f5d622bc</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TaskStateRunning</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>econst</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>a92e43f9a21bae91a5e28d78160fa0386a4e69a0f5d09a480b77d54d6289acd635</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TaskStateWaiting</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>econst</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>a92e43f9a21bae91a5e28d78160fa0386a4219dfb1ef2319a820ef4bcd8aa31554</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TaskStateTerminated</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>econst</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>a92e43f9a21bae91a5e28d78160fa0386aebf19e83e22f21f8f12d7bad381cd239</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TaskPushed</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>econst</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>a92e43f9a21bae91a5e28d78160fa0386a99924616f772189e50d62aa99c13547a</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>TaskPoped</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>econst</Type>
-      <Scope>Tasking</Scope>
-    </TokenIdentifier>
-    <Path>d9/d3e/namespaceTasking.html</Path>
-    <Anchor>a92e43f9a21bae91a5e28d78160fa0386a5bf1dd17112118e51a225b4e3e464d9e</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>Tasking::Monotasking</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>Tasking::Monotasking</Scope>
-    </TokenIdentifier>
-    <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CreateTask</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Tasking::Monotasking</Scope>
-    </TokenIdentifier>
-    <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-    <Anchor>a6b74d9c9ed758dbddef61ef3ff497ef0</Anchor>
-    <Abstract>Create a new Task.</Abstract>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>KillMe</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Tasking::Monotasking</Scope>
-    </TokenIdentifier>
-    <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-    <Anchor>aca278385dfe53ca1b3e3bcdd82df0add</Anchor>
-    <Abstract>Kill the current Task.</Abstract>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>PushTask</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Tasking::Monotasking</Scope>
-    </TokenIdentifier>
-    <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-    <Anchor>aeb6adb83431c526d1914bf9eba3cf030</Anchor>
-    <Abstract>Move to the next Task and suspending the current.</Abstract>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>PopTask</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Tasking::Monotasking</Scope>
-    </TokenIdentifier>
-    <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-    <Anchor>a01eff614d7dd323993411104c1a49a0a</Anchor>
-    <Abstract>Move to the previous Task and suspending the current.</Abstract>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>GetCurrentTask</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Tasking::Monotasking</Scope>
-    </TokenIdentifier>
-    <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-    <Anchor>aed596e2bd92b5ad658a3a7a83eef4f2a</Anchor>
-    <Abstract>Get the current Task.</Abstract>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>Monotasking</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Tasking::Monotasking</Scope>
-    </TokenIdentifier>
-    <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-    <Anchor>a2965449607884b02f7fce3d70df38aca</Anchor>
-    <Abstract>Construct a new Mono Tasking object.</Abstract>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>~Monotasking</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Tasking::Monotasking</Scope>
-    </TokenIdentifier>
-    <Path>d5/da2/classTasking_1_1Monotasking.html</Path>
-    <Anchor>a93549809197997c36acccb3220d1103a</Anchor>
-    <Abstract>Destroy the Mono Tasking object (Make sure that all other processes are destroyed and no stack is use...</Abstract>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>Tasking::Multitasking</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>Tasking::Multitasking</Scope>
-    </TokenIdentifier>
-    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CreateProcess</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Tasking::Multitasking</Scope>
-    </TokenIdentifier>
-    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-    <Anchor>a9a93bac7840cb5c63688f7cbac1e3188</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CreateThread</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Tasking::Multitasking</Scope>
-    </TokenIdentifier>
-    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-    <Anchor>a380ab641149ce8766708d352e6a5e0af</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>Multitasking</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Tasking::Multitasking</Scope>
-    </TokenIdentifier>
-    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-    <Anchor>aaffa38521c8583930f6393efcbba512d</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>~Multitasking</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Tasking::Multitasking</Scope>
-    </TokenIdentifier>
-    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-    <Anchor>a41b3576b70950c764c23b56c200d4c32</Anchor>
-    <DeclaredIn>internal_task.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>ListProcess</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>Tasking::Multitasking</Scope>
-    </TokenIdentifier>
-    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-    <Anchor>a22ec6d39a29c923f088f9b0e079aec4c</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>NextPID</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>Tasking::Multitasking</Scope>
-    </TokenIdentifier>
-    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-    <Anchor>a06b6d3817fd5cbadd7cec218edfea33d</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>NextTID</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>Tasking::Multitasking</Scope>
-    </TokenIdentifier>
-    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-    <Anchor>aead406145a038dd3ccd0363b0adda83a</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>IdleProcess</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>Tasking::Multitasking</Scope>
-    </TokenIdentifier>
-    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-    <Anchor>aa966f94f119b70bb9e03c690ca42e90f</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>IdleThread</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>Tasking::Multitasking</Scope>
-    </TokenIdentifier>
-    <Path>d0/d5b/classTasking_1_1Multitasking.html</Path>
-    <Anchor>a53a796f10d87f67b82ce0f2cc926581a</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>

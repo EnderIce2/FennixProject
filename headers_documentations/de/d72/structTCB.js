@@ -1,9 +1,12 @@
 var structTCB =
 [
     [ "__attribute__", "de/d72/structTCB.html#a57f057b08e04675f0203a4bae9bb128f", null ],
+    [ "argc", "de/d72/structTCB.html#a3ffc58e3e9eedc2a733e4d77dfc410f2", null ],
+    [ "argv", "de/d72/structTCB.html#aa3e9b14112decbb1d96af2b535a1f0cd", null ],
     [ "Checksum", "de/d72/structTCB.html#a403d960d6d738b60ece6c3caee56cfd9", null ],
     [ "cs", "de/d72/structTCB.html#a4bd5611c937e879f5b03153ee0870de0", null ],
     [ "ds", "de/d72/structTCB.html#ae355b4f640d61df143ad29565af7562d", null ],
+    [ "envp", "de/d72/structTCB.html#afb39f1738972aee7f2fa4732763645a1", null ],
     [ "es", "de/d72/structTCB.html#a22b44eb1dc1d502f0d53304d0b1fc490", null ],
     [ "ExitCode", "de/d72/structTCB.html#add1071a8b14ebc8e1968313831a82044", null ],
     [ "fs", "de/d72/structTCB.html#a5805b696d4b9b48008cfcf1ff6ff89d1", null ],

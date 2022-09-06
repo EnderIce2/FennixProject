@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rtt_5ftypes_4439',['RtT_Types',['../d1/d9e/elf_8h.html#a99019c567a914f79a4c488ecf2305834',1,'elf.h']]]
+  ['platform_4446',['Platform',['../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9',1,'task.h']]],
+  ['ptflag_4447',['PTFlag',['../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5',1,'heap.h']]]
 ];

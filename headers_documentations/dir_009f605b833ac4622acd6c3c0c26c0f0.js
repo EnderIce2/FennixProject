@@ -25,6 +25,7 @@ var dir_009f605b833ac4622acd6c3c0c26c0f0 =
     [ "msexec.h", "de/d63/msexec_8h.html", "de/d63/msexec_8h" ],
     [ "printf.h", "d3/d6b/printf_8h.html", "d3/d6b/printf_8h" ],
     [ "rand.h", "d5/d66/rand_8h.html", "d5/d66/rand_8h" ],
+    [ "smartptr.hpp", "d2/d34/smartptr_8hpp.html", "d2/d34/smartptr_8hpp" ],
     [ "stdalign.h", "df/d3e/stdalign_8h.html", "df/d3e/stdalign_8h" ],
     [ "string.h", "d1/d69/kernel_2include_2string_8h.html", "d1/d69/kernel_2include_2string_8h" ],
     [ "symbols.hpp", "d7/d94/symbols_8hpp.html", "d7/d94/symbols_8hpp" ],

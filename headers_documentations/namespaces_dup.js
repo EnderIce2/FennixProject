@@ -4,6 +4,5 @@ var namespaces_dup =
     [ "BootScreen", "d9/deb/namespaceBootScreen.html", null ],
     [ "Critical", "d6/d86/namespaceCritical.html", null ],
     [ "FileSystem", "d6/df5/namespaceFileSystem.html", null ],
-    [ "KernelSymbols", "d9/d45/namespaceKernelSymbols.html", null ],
-    [ "Tasking", "d9/d3e/namespaceTasking.html", null ]
+    [ "KernelSymbols", "d9/d45/namespaceKernelSymbols.html", null ]
 ];

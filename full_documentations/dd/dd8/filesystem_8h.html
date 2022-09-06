@@ -121,6 +121,8 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd3/classFileSystem_1_1Network.html">FileSystem::Network</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d84/classFileSystem_1_1SysInfo.html">FileSystem::SysInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df0/classFileSystem_1_1USTAR.html">FileSystem::USTAR</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:de/d80/structFileSystem_1_1USTAR_1_1FileHeader"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df0/classFileSystem_1_1USTAR.html#de/d80/structFileSystem_1_1USTAR_1_1FileHeader">FileSystem::USTAR::FileHeader</a></td></tr>
@@ -157,9 +159,7 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a75abb2d93c692b8b977d91a5b6c113b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/filesystem_8h.html#a75abb2d93c692b8b977d91a5b6c113b7">DEBUG_FILESYSTEM</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a75abb2d93c692b8b977d91a5b6c113b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47d194f70ad5f06b3343aef4eb235442"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/filesystem_8h.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(m, ...)&#160;&#160;&#160;<a class="el" href="../../db/d16/debug_8h.html#a7ad5641dbc2b4cdb4d83352a62ce2f41">debug</a>(m, ##__VA_ARGS__)</td></tr>
+<tr class="memitem:a47d194f70ad5f06b3343aef4eb235442"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/filesystem_8h.html#a47d194f70ad5f06b3343aef4eb235442">vfsdbg</a>(m, ...)</td></tr>
 <tr class="separator:a47d194f70ad5f06b3343aef4eb235442"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a610ce22de673afc7b1e8b0e7b3c9fe7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/filesystem_8h.html#a610ce22de673afc7b1e8b0e7b3c9fe7a">FILENAME_LENGTH</a>&#160;&#160;&#160;256</td></tr>
 <tr class="separator:a610ce22de673afc7b1e8b0e7b3c9fe7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -318,6 +318,8 @@ Variables</h2></td></tr>
 <tr class="separator:abe012e5d72ae65402ef8fe3de1a7bb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90637c28cacc79945d6f7af58d314bfb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/dd3/classFileSystem_1_1Network.html">FileSystem::Network</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/filesystem_8h.html#a90637c28cacc79945d6f7af58d314bfb">netfs</a></td></tr>
 <tr class="separator:a90637c28cacc79945d6f7af58d314bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa17c9063c9b62481b9392e97f78912f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d84/classFileSystem_1_1SysInfo.html">FileSystem::SysInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dd8/filesystem_8h.html#afa17c9063c9b62481b9392e97f78912f">sysfs</a></td></tr>
+<tr class="separator:afa17c9063c9b62481b9392e97f78912f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="dd/d34/structFileSystem_1_1FileSystemOpeations" id="dd/d34/structFileSystem_1_1FileSystemOpeations"></a>
@@ -533,7 +535,7 @@ Status</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00217">217</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00230">230</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -654,7 +656,7 @@ version[2]</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00267">267</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00280">280</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -679,7 +681,7 @@ nfiles</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00272">272</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00285">285</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -722,7 +724,7 @@ offset</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00322">322</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00336">336</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -1035,7 +1037,7 @@ VolumeName[16]</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00394">394</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00408">408</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -1164,22 +1166,6 @@ Number of sectors per track. </td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00038">38</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
-
-</div>
-</div>
-<a id="a75abb2d93c692b8b977d91a5b6c113b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75abb2d93c692b8b977d91a5b6c113b7">&#9670;&nbsp;</a></span>DEBUG_FILESYSTEM</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_FILESYSTEM&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00006">6</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 
 </div>
 </div>
@@ -1340,12 +1326,12 @@ Number of sectors per track. </td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="../../db/d16/debug_8h.html#a7ad5641dbc2b4cdb4d83352a62ce2f41">debug</a>(m, ##__VA_ARGS__)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00009">9</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00011">11</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 
 </div>
 </div>
@@ -1384,7 +1370,7 @@ Number of sectors per track. </td></tr>
 
 <p>The number of Bytes per sector (remember, all numbers are in the little-endian format). </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00381">381</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00395">395</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 
 </div>
 </div>
@@ -1400,9 +1386,9 @@ Number of sectors per track. </td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00015">15</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00017">17</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00056">DiskManager::Partition::AddPartition()</a>, <a class="el" href="../../dc/d75/fb_8cpp_source.html#l00028">FileSystem::FB::FB()</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00197">KernelInit()</a>, <a class="el" href="../../d3/dfe/null_8cpp_source.html#l00020">FileSystem::Null::Null()</a>, <a class="el" href="../../d1/d75/mouse_8cpp_source.html#l00165">PS2Mouse::PS2MouseDriver::PS2MouseDriver()</a>, <a class="el" href="../../de/daa/random_8cpp_source.html#l00025">FileSystem::Random::Random()</a>, <a class="el" href="../../de/d25/serial_8cpp_source.html#l00126">FileSystem::Serial::Serial()</a>, and <a class="el" href="../../db/d6f/zero_8cpp_source.html#l00018">FileSystem::Zero::Zero()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00056">DiskManager::Partition::AddPartition()</a>, <a class="el" href="../../dc/d75/fb_8cpp_source.html#l00049">FileSystem::FB::FB()</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00208">KernelInit()</a>, <a class="el" href="../../d3/dfe/null_8cpp_source.html#l00020">FileSystem::Null::Null()</a>, <a class="el" href="../../d1/d75/mouse_8cpp_source.html#l00165">PS2Mouse::PS2MouseDriver::PS2MouseDriver()</a>, <a class="el" href="../../de/daa/random_8cpp_source.html#l00025">FileSystem::Random::Random()</a>, <a class="el" href="../../de/d25/serial_8cpp_source.html#l00126">FileSystem::Serial::Serial()</a>, and <a class="el" href="../../db/d6f/zero_8cpp_source.html#l00018">FileSystem::Zero::Zero()</a>.</p>
 
 </div>
 </div>
@@ -1418,7 +1404,7 @@ Number of sectors per track. </td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00018">18</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00020">20</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00261">Driver::KernelDriver::KernelDriver()</a>.</p>
 
@@ -1438,7 +1424,7 @@ Number of sectors per track. </td></tr>
 
 <p>Number of hidden sectors. (i.e. the LBA of the beginning of the partition). </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00401">401</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00415">415</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 
 </div>
 </div>
@@ -1456,7 +1442,7 @@ Number of sectors per track. </td></tr>
 
 <p>The first three bytes EB 3C 90 disassemble to JMP SHORT 3C NOP. (The 3C value may be different.) The reason for this is to jump over the disk format information (the BPB and EBPB). Since the first sector of the disk is loaded into ram at location 0x0000:0x7c00 and executed, without this jump, the processor would attempt to execute data that isn't code. Even for non-bootable volumes, code matching this pattern (or using the E9 jump opcode) is required to be present by both Windows and OS X. To fulfil this requirement, an infinite loop can be placed here with the bytes EB FE 90. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00377">377</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00391">391</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 
 </div>
 </div>
@@ -1474,7 +1460,7 @@ Number of sectors per track. </td></tr>
 
 <p>This Byte indicates the media descriptor type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00393">393</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00407">407</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 
 </div>
 </div>
@@ -1490,9 +1476,9 @@ Number of sectors per track. </td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00016">16</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00018">18</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00056">DiskManager::Partition::AddPartition()</a>, <a class="el" href="../../db/dc4/ext2_8cpp_source.html#l00025">FileSystem::EXT2::EXT2()</a>, <a class="el" href="../../d6/d04/fat_8cpp_source.html#l00104">FileSystem::FAT::FAT()</a>, and <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00197">KernelInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00056">DiskManager::Partition::AddPartition()</a>, <a class="el" href="../../db/dc4/ext2_8cpp_source.html#l00034">FileSystem::EXT2::EXT2()</a>, <a class="el" href="../../d6/d04/fat_8cpp_source.html#l00104">FileSystem::FAT::FAT()</a>, and <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00208">KernelInit()</a>.</p>
 
 </div>
 </div>
@@ -1508,7 +1494,7 @@ Number of sectors per track. </td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00019">19</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00021">21</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/d3a/NetworkController_8cpp_source.html#l00253">NetworkInterfaceManager::NetworkInterface::StartService()</a>.</p>
 
@@ -1528,7 +1514,7 @@ Number of sectors per track. </td></tr>
 
 <p>Number of File Allocation Tables (FAT's) on the storage media. Often this value is 2. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00387">387</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00401">401</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 
 </div>
 </div>
@@ -1546,7 +1532,7 @@ Number of sectors per track. </td></tr>
 
 <p>Number of heads or sides on the storage media. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00399">399</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00413">413</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 
 </div>
 </div>
@@ -1564,7 +1550,7 @@ Number of sectors per track. </td></tr>
 
 <p>OEM identifier. The first 8 Bytes (3 - 10) is the version of DOS being used. The next eight Bytes 29 3A 63 7E 2D 49 48 and 43 read out the name of the version. The official FAT Specification from Microsoft says that this field is really meaningless and is ignored by MS FAT Drivers, however it does recommend the value "MSWIN4.1" as some 3rd party drivers supposedly check it and expect it to have that value. Older versions of dos also report MSDOS5.1, linux-formatted floppy will likely to carry "mkdosfs" here, and FreeDOS formatted disks have been observed to have "FRDOS5.1" here. If the string is less than 8 bytes, it is padded with spaces. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00379">379</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00393">393</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 
 </div>
 </div>
@@ -1580,9 +1566,9 @@ Number of sectors per track. </td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00017">17</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00019">19</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00197">KernelInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00208">KernelInit()</a>.</p>
 
 </div>
 </div>
@@ -1600,7 +1586,7 @@ Number of sectors per track. </td></tr>
 
 <p>Number of reserved sectors. The boot record sectors are included in this value. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00385">385</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00399">399</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 
 </div>
 </div>
@@ -1618,7 +1604,7 @@ Number of sectors per track. </td></tr>
 
 <p>Number of root directory entries (must be set so that the root directory occupies entire sectors). </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00389">389</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00403">403</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 
 </div>
 </div>
@@ -1636,7 +1622,7 @@ Number of sectors per track. </td></tr>
 
 <p>The total sectors in the logical volume. If this value is 0, it means there are more than 65535 sectors in the volume, and the actual count is stored in the Large Sector Count entry at 0x20. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00391">391</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00405">405</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 
 </div>
 </div>
@@ -1654,7 +1640,7 @@ Number of sectors per track. </td></tr>
 
 <p>Large sector count. This field is set if there are more than 65535 sectors in the volume, resulting in a value which does not fit in the Number of Sectors entry at 0x13. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00403">403</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00417">417</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 
 </div>
 </div>
@@ -1672,7 +1658,7 @@ Number of sectors per track. </td></tr>
 
 <p>Number of sectors per cluster. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00383">383</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00397">397</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 
 </div>
 </div>
@@ -1690,7 +1676,7 @@ Number of sectors per track. </td></tr>
 
 <p>Number of sectors per FAT. FAT12/FAT16 only. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00395">395</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00409">409</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
 
 </div>
 </div>
@@ -1708,7 +1694,25 @@ Number of sectors per track. </td></tr>
 
 <p>Number of sectors per track. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00397">397</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/dd8/filesystem_8h_source.html#l00411">411</a> of file <a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>.</p>
+
+</div>
+</div>
+<a id="afa17c9063c9b62481b9392e97f78912f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa17c9063c9b62481b9392e97f78912f">&#9670;&nbsp;</a></span>sysfs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d84/classFileSystem_1_1SysInfo.html">FileSystem::SysInfo</a>* sysfs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00022">22</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00208">KernelInit()</a>.</p>
 
 </div>
 </div>
@@ -1724,9 +1728,9 @@ Number of sectors per track. </td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00014">14</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html#l00016">16</a> of file <a class="el" href="../../d3/d50/FileSystem_8cpp_source.html">FileSystem.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../db/d3e/drvfs_8cpp_source.html#l00009">FileSystem::Driver::AddDriver()</a>, <a class="el" href="../../df/d9a/devfs_8cpp_source.html#l00009">FileSystem::Device::AddFileSystem()</a>, <a class="el" href="../../dc/de2/netfs_8cpp_source.html#l00009">FileSystem::Network::AddNetworkCard()</a>, <a class="el" href="../../df/d9a/devfs_8cpp_source.html#l00031">FileSystem::Device::Device()</a>, <a class="el" href="../../db/d3e/drvfs_8cpp_source.html#l00019">FileSystem::Driver::Driver()</a>, <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00206">Driver::DriverManagerMainLoop()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00302">internal_fileClose()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00350">internal_filefullpath()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00231">internal_fileOpen()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00267">internal_fileOpenWithParent()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00317">internal_fileRead()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00328">internal_fileWrite()</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00197">KernelInit()</a>, <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00090">Driver::KernelDriver::LoadKernelDriverFromFile()</a>, <a class="el" href="../../de/de9/mountfs_8cpp_source.html#l00039">FileSystem::Mount::Mount()</a>, <a class="el" href="../../de/de9/mountfs_8cpp_source.html#l00013">FileSystem::Mount::MountFileSystem()</a>, <a class="el" href="../../dc/de2/netfs_8cpp_source.html#l00019">FileSystem::Network::Network()</a>, <a class="el" href="../../d8/d0f/procfs_8cpp_source.html#l00009">FileSystem::Process::Process()</a>, <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00326">SysCreateProcessFromFile()</a>, and <a class="el" href="../../d9/db9/ustar_8cpp_source.html#l00023">FileSystem::USTAR::USTAR()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d9a/devfs_8cpp_source.html#l00031">FileSystem::Device::Device()</a>, <a class="el" href="../../db/d3e/drvfs_8cpp_source.html#l00024">FileSystem::Driver::Driver()</a>, <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00206">Driver::DriverManagerMainLoop()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00326">internal_fileClose()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00374">internal_filefullpath()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00255">internal_fileOpen()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00291">internal_fileOpenWithParent()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00341">internal_fileRead()</a>, <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00352">internal_fileWrite()</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00208">KernelInit()</a>, <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00090">Driver::KernelDriver::LoadKernelDriverFromFile()</a>, <a class="el" href="../../de/de9/mountfs_8cpp_source.html#l00044">FileSystem::Mount::Mount()</a>, <a class="el" href="../../dc/de2/netfs_8cpp_source.html#l00025">FileSystem::Network::Network()</a>, <a class="el" href="../../d8/d0f/procfs_8cpp_source.html#l00009">FileSystem::Process::Process()</a>, <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00329">SysCreateProcessFromFile()</a>, <a class="el" href="../../da/dee/sysinfo_8cpp_source.html#l00121">FileSystem::SysInfo::SysInfo()</a>, and <a class="el" href="../../d9/db9/ustar_8cpp_source.html#l00023">FileSystem::USTAR::USTAR()</a>.</p>
 
 </div>
 </div>

@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['ectrl_7970',['ECTRL',['../da/d6e/classE1000_1_1NetworkInterfaceController.html#a94f0c237774f815bdfee88373935600d',1,'E1000::NetworkInterfaceController']]],
-  ['elf_5fident_7971',['Elf_Ident',['../d7/db0/include_2elf_8h.html#a2fa86abbe87441e6d171e961f65e3f47',1,'elf.h']]],
-  ['elf_5fosabi_7972',['Elf_OSABI',['../d7/db0/include_2elf_8h.html#a6e3e71538da0fd130aef1aac6446e7fa',1,'elf.h']]],
-  ['elf_5ftype_7973',['Elf_Type',['../d7/db0/include_2elf_8h.html#ae705110a6320d7ca1cd35cf11ecabde3',1,'elf.h']]]
+  ['datype_8023',['DAType',['../d9/d9b/classNetworkARP_1_1ARP.html#abfc1f97375ecea25d7cd627559af2cc9',1,'NetworkARP::ARP']]],
+  ['debug_5ftype_8024',['debug_type',['../db/d16/debug_8h.html#afa15f519d43f35f35676db4d1adee122',1,'debug.h']]],
+  ['dhcpmessagetype_8025',['DHCPMessageType',['../dd/d53/namespaceNetworkDHCP.html#a23496c1315a5b90e844b83fe4342290d',1,'NetworkDHCP']]],
+  ['dhcpoperation_8026',['DHCPOperation',['../dd/d53/namespaceNetworkDHCP.html#a9a6e69d30835fac1c460b04ad0f894d2',1,'NetworkDHCP']]],
+  ['dhcpoption_8027',['DHCPOption',['../dd/d53/namespaceNetworkDHCP.html#a42afac4eee371cb0e894d6d68da1181a',1,'NetworkDHCP']]]
 ];

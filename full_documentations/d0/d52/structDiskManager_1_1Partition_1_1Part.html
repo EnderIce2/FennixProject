@@ -159,26 +159,26 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00148">148</a> of file <a class="el" href="../../d4/db6/disk_8cpp_source.html">disk.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#aa5e0580548ddde7d180611642450a8f9">Port</a>-&gt;HBAPortPtr == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;Port is not initialized&quot;</span>);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">if</span> (Offset + Count &gt; <a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#aaa30bbed8011f7827e9d7d6907b1cfc2">Sectors</a>)</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;Attempted to read past end of partition&quot;</span>);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="comment">// debug(&quot;Reading %lld bytes from sector Start LBA:%lld Offset:%lld(%lld)&quot;, Count, StartLBA, Offset, StartLBA + Offset);</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        this-&gt;<a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#aa5e0580548ddde7d180611642450a8f9">Port</a>-&gt;ReadWrite(<a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#a9b20a76a6838d9c63f767cd955aa11dd">StartLBA</a> + Offset, Count, Buffer, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">return</span> Count;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00150">150</a> of file <a class="el" href="../../d4/db6/disk_8cpp_source.html">disk.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#aa5e0580548ddde7d180611642450a8f9">Port</a>-&gt;HBAPortPtr == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;Port is not initialized&quot;</span>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">if</span> (Offset + Count &gt; <a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#aaa30bbed8011f7827e9d7d6907b1cfc2">Sectors</a>)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;Attempted to read past end of partition&quot;</span>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="comment">// debug(&quot;Reading %lld bytes from sector Start LBA:%lld Offset:%lld(%lld)&quot;, Count, StartLBA, Offset, StartLBA + Offset);</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        this-&gt;<a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#aa5e0580548ddde7d180611642450a8f9">Port</a>-&gt;ReadWrite(<a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#a9b20a76a6838d9c63f767cd955aa11dd">StartLBA</a> + Offset, Count, Buffer, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">return</span> Count;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../db/d16/debug_8h_source.html#l00068">err</a>, <a class="el" href="../../d2/d50/disk_8h_source.html#l00122">Port</a>, <a class="el" href="../../d2/d50/disk_8h_source.html#l00117">Sectors</a>, and <a class="el" href="../../d2/d50/disk_8h_source.html#l00115">StartLBA</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../db/dc4/ext2_8cpp_source.html#l00025">FileSystem::EXT2::EXT2()</a>, and <a class="el" href="../../d6/d04/fat_8cpp_source.html#l00104">FileSystem::FAT::FAT()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../db/dc4/ext2_8cpp_source.html#l00034">FileSystem::EXT2::EXT2()</a>, and <a class="el" href="../../d6/d04/fat_8cpp_source.html#l00104">FileSystem::FAT::FAT()</a>.</p>
 
 </div>
 </div>
@@ -214,22 +214,22 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00165">165</a> of file <a class="el" href="../../d4/db6/disk_8cpp_source.html">disk.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#aa5e0580548ddde7d180611642450a8f9">Port</a>-&gt;HBAPortPtr == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;Port is not initialized&quot;</span>);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        }</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">if</span> (Offset + Count &gt; <a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#aaa30bbed8011f7827e9d7d6907b1cfc2">Sectors</a>)</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;Attempted to write past end of partition&quot;</span>);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="comment">// debug(&quot;Writing %lld bytes to sector Start LBA:%lld Offset:%lld(%lld)&quot;, Count, StartLBA, Offset, StartLBA + Offset);</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        this-&gt;<a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#aa5e0580548ddde7d180611642450a8f9">Port</a>-&gt;ReadWrite(<a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#a9b20a76a6838d9c63f767cd955aa11dd">StartLBA</a> + Offset, Count, Buffer, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">return</span> Count;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00167">167</a> of file <a class="el" href="../../d4/db6/disk_8cpp_source.html">disk.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#aa5e0580548ddde7d180611642450a8f9">Port</a>-&gt;HBAPortPtr == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;Port is not initialized&quot;</span>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">if</span> (Offset + Count &gt; <a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#aaa30bbed8011f7827e9d7d6907b1cfc2">Sectors</a>)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;Attempted to write past end of partition&quot;</span>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="comment">// debug(&quot;Writing %lld bytes to sector Start LBA:%lld Offset:%lld(%lld)&quot;, Count, StartLBA, Offset, StartLBA + Offset);</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        this-&gt;<a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#aa5e0580548ddde7d180611642450a8f9">Port</a>-&gt;ReadWrite(<a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#a9b20a76a6838d9c63f767cd955aa11dd">StartLBA</a> + Offset, Count, Buffer, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">return</span> Count;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../db/d16/debug_8h_source.html#l00068">err</a>, <a class="el" href="../../d2/d50/disk_8h_source.html#l00022">Sectors</a>, and <a class="el" href="../../d2/d50/disk_8h_source.html#l00021">StartLBA</a>.</p>
 
@@ -340,7 +340,7 @@ Data Fields</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d50/disk_8h_source.html#l00122">122</a> of file <a class="el" href="../../d2/d50/disk_8h_source.html">disk.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00056">DiskManager::Partition::AddPartition()</a>, and <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00148">Read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00056">DiskManager::Partition::AddPartition()</a>, and <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00150">Read()</a>.</p>
 
 </div>
 </div>
@@ -358,7 +358,7 @@ Data Fields</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d50/disk_8h_source.html#l00117">117</a> of file <a class="el" href="../../d2/d50/disk_8h_source.html">disk.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00056">DiskManager::Partition::AddPartition()</a>, and <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00148">Read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00056">DiskManager::Partition::AddPartition()</a>, and <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00150">Read()</a>.</p>
 
 </div>
 </div>
@@ -376,7 +376,7 @@ Data Fields</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d50/disk_8h_source.html#l00115">115</a> of file <a class="el" href="../../d2/d50/disk_8h_source.html">disk.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00056">DiskManager::Partition::AddPartition()</a>, and <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00148">Read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00056">DiskManager::Partition::AddPartition()</a>, and <a class="el" href="../../d4/db6/disk_8cpp_source.html#l00150">Read()</a>.</p>
 
 </div>
 </div>

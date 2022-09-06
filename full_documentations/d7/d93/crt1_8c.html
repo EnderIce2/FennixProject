@@ -86,8 +86,7 @@ $(document).ready(function(){initNavTree('d7/d93/crt1_8c.html','../../'); initRe
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">crt1.c File Reference</div>  </div>
 </div><!--header-->
@@ -97,19 +96,12 @@ $(document).ready(function(){initNavTree('d7/d93/crt1_8c.html','../../'); initRe
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d93/crt1_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *<a class="el" href="../../d7/d93/crt1_8c.html#a8c6923b50b593219f778bcaa56306446">argv</a>[])</td></tr>
-<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adedb285b02c41bde2158ded9cc9fd7ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d93/crt1_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a> (int argc, char *argv[], char *envp[])</td></tr>
+<tr class="separator:adedb285b02c41bde2158ded9cc9fd7ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8622fa1c28f360ea05bc97063d192b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d93/crt1_8c.html#aa8622fa1c28f360ea05bc97063d192b3">__cxa_finalize</a> (void *f)</td></tr>
 <tr class="separator:aa8622fa1c28f360ea05bc97063d192b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a078e7d7a89207ea1c3575850e0fff462"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d93/crt1_8c.html#a078e7d7a89207ea1c3575850e0fff462">_start</a> ()</td></tr>
 <tr class="separator:a078e7d7a89207ea1c3575850e0fff462"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a40e9c3212048e8ea85a1c5fedf6be395"><td class="memItemLeft" align="right" valign="top">long *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d93/crt1_8c.html#a40e9c3212048e8ea85a1c5fedf6be395">stckptr</a></td></tr>
-<tr class="separator:a40e9c3212048e8ea85a1c5fedf6be395"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c6923b50b593219f778bcaa56306446"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d93/crt1_8c.html#a8c6923b50b593219f778bcaa56306446">argv</a> [20]</td></tr>
-<tr class="separator:a8c6923b50b593219f778bcaa56306446"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aa8622fa1c28f360ea05bc97063d192b3"></a>
@@ -151,7 +143,7 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d1/d82/CXXABI_8cpp_source.html#l00055">__atexit_func_count</a>, <a class="el" href="../../d1/d82/CXXABI_8cpp_source.html#l00054">__atexit_funcs</a>, <a class="el" href="../../d1/d82/CXXABI_8cpp_source.html#l00017">atexit_func_entry_t::destructor_func</a>, and <a class="el" href="../../d2/dca/cxa_8cpp_source.html#l00054">fixme()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d93/crt1_8c_source.html#l00008">_start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d93/crt1_8c_source.html#l00006">_start()</a>.</p>
 
 </div>
 </div>
@@ -170,44 +162,67 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d93/crt1_8c_source.html#l00008">8</a> of file <a class="el" href="../../d7/d93/crt1_8c_source.html">crt1.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    __asm__(<span class="stringliteral">&quot;mov %%rsp, %%rcx&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            : <span class="stringliteral">&quot;=c&quot;</span>(<a class="code" href="../../d7/d93/crt1_8c.html#a40e9c3212048e8ea85a1c5fedf6be395">stckptr</a>)</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            :);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">int</span> argc = *((<span class="keywordtype">int</span> *)(<a class="code" href="../../d7/d93/crt1_8c.html#a40e9c3212048e8ea85a1c5fedf6be395">stckptr</a> + 1));</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> mainret = 0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span> (argc &gt; 0 &amp;&amp; argc &lt; 5)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; argc; i++)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <a class="code" href="../../d7/d93/crt1_8c.html#a8c6923b50b593219f778bcaa56306446">argv</a>[i] = ((<span class="keywordtype">char</span> *)(<a class="code" href="../../d7/d93/crt1_8c.html#a40e9c3212048e8ea85a1c5fedf6be395">stckptr</a> + 2 + 8 * i));</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        mainret = <a class="code" href="../../d7/d93/crt1_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(argc, <a class="code" href="../../d7/d93/crt1_8c.html#a8c6923b50b593219f778bcaa56306446">argv</a>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        mainret = <a class="code" href="../../d7/d93/crt1_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(0, (<span class="keywordtype">void</span> *)0);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../d7/d93/crt1_8c.html#aa8622fa1c28f360ea05bc97063d192b3">__cxa_finalize</a>(0);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> syscall_return = 0;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    __asm__ __volatile__(</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="stringliteral">&quot;pushq %%r11\n&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="stringliteral">&quot;pushq %%rcx\n&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="stringliteral">&quot;syscall\n&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="stringliteral">&quot;popq %%rcx\n&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="stringliteral">&quot;popq %%r11\n&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        : <span class="stringliteral">&quot;=a&quot;</span>(syscall_return)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        : <span class="stringliteral">&quot;a&quot;</span>(1), <span class="stringliteral">&quot;b&quot;</span>(mainret)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        : <span class="stringliteral">&quot;memory&quot;</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">while</span> (1)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        ;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/d93/crt1_8c_source.html#l00006">6</a> of file <a class="el" href="../../d7/d93/crt1_8c_source.html">crt1.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">long</span> argc = 0;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">long</span> argv = 0;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">long</span> envp = 0;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    __asm__ __volatile__(</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="stringliteral">&quot;pushq %%r11\n&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="stringliteral">&quot;pushq %%rcx\n&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="stringliteral">&quot;syscall\n&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="stringliteral">&quot;popq %%rcx\n&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="stringliteral">&quot;popq %%r11\n&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        : <span class="stringliteral">&quot;=a&quot;</span>(argc)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        : <span class="stringliteral">&quot;a&quot;</span>(8)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    __asm__ __volatile__(</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="stringliteral">&quot;pushq %%r11\n&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="stringliteral">&quot;pushq %%rcx\n&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="stringliteral">&quot;syscall\n&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="stringliteral">&quot;popq %%rcx\n&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="stringliteral">&quot;popq %%r11\n&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        : <span class="stringliteral">&quot;=a&quot;</span>(argv)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        : <span class="stringliteral">&quot;a&quot;</span>(9)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    __asm__ __volatile__(</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="stringliteral">&quot;pushq %%r11\n&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="stringliteral">&quot;pushq %%rcx\n&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="stringliteral">&quot;syscall\n&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="stringliteral">&quot;popq %%rcx\n&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="stringliteral">&quot;popq %%r11\n&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        : <span class="stringliteral">&quot;=a&quot;</span>(envp)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        : <span class="stringliteral">&quot;a&quot;</span>(10)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// register long argc __asm__(&quot;rdi&quot;);</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// register long argv __asm__(&quot;rsi&quot;);</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> mainret = <a class="code" href="../../d7/d93/crt1_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a>((<span class="keywordtype">int</span>)argc, (<span class="keywordtype">char</span> **)argv, (<span class="keywordtype">char</span> **)envp);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../d7/d93/crt1_8c.html#aa8622fa1c28f360ea05bc97063d192b3">__cxa_finalize</a>(0);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> syscall_return = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    __asm__ __volatile__(</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="stringliteral">&quot;pushq %%r11\n&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="stringliteral">&quot;pushq %%rcx\n&quot;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="stringliteral">&quot;syscall\n&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="stringliteral">&quot;popq %%rcx\n&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="stringliteral">&quot;popq %%r11\n&quot;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        : <span class="stringliteral">&quot;=a&quot;</span>(syscall_return)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        : <span class="stringliteral">&quot;a&quot;</span>(1), <span class="stringliteral">&quot;b&quot;</span>(mainret)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        : <span class="stringliteral">&quot;memory&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">while</span> (1)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        ;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d1/d82/CXXABI_8cpp_source.html#l00069">__cxa_finalize()</a>, <a class="el" href="../../d7/d93/crt1_8c_source.html#l00004">argv</a>, <a class="el" href="../../df/d7b/tictactoe_8cpp_source.html#l00003">main()</a>, and <a class="el" href="../../d7/d93/crt1_8c_source.html#l00003">stckptr</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d82/CXXABI_8cpp_source.html#l00069">__cxa_finalize()</a>, and <a class="el" href="../../d7/d93/crt1_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main()</a>.</p>
 
 </div>
 </div>
-<a id="a0ddf1224851353fc92bfbff6f499fa97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&nbsp;</a></span>main()</h2>
+<a id="adedb285b02c41bde2158ded9cc9fd7ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adedb285b02c41bde2158ded9cc9fd7ac">&#9670;&nbsp;</a></span>main()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,7 +237,13 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>argv</em>[]&#160;</td>
+          <td class="paramname"><em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>envp</em>[]&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -232,71 +253,17 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7b/tictactoe_8cpp_source.html#l00003">3</a> of file <a class="el" href="../../df/d7b/tictactoe_8cpp_source.html">tictactoe.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d1/d90/acpi_8hpp_source.html#l00288">address</a>, <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00494">AlreadyInitialized</a>, <a class="el" href="../../d8/def/crt0_8c_source.html#l00002">argv</a>, <a class="el" href="../../d0/d2b/brainfuck_8c_source.html#l00003">brainfuck()</a>, <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00013">CurrentPath</a>, <a class="el" href="../../de/d87/apps_2system_2fesktop_2main_8cpp_source.html#l00018">Desktop()</a>, <a class="el" href="../../de/d87/apps_2system_2fesktop_2main_8cpp_source.html#l00028">Dock()</a>, <a class="el" href="../../d7/de2/apps_2system_2uiserver_2main_8cpp_source.html#l00028">EventListener()</a>, <a class="el" href="../../df/daa/apps_2system_2wm_2main_8cpp_source.html#l00029">scren::Height</a>, <a class="el" href="../../db/d50/login_8cpp_source.html#l00091">InitLogin()</a>, <a class="el" href="../../df/daa/apps_2system_2wm_2main_8cpp_source.html#l00107">InitScreen()</a>, <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00015">key_buffer</a>, <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00053">loop()</a>, <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00012">mono</a>, <a class="el" href="../../d0/dc9/init_8cpp_source.html#l00004">monotasking_shell_exit()</a>, <a class="el" href="../../d6/d9a/monotonlib_8cpp_source.html#l00212">MonotonLib::mtl::print()</a>, <a class="el" href="../../d4/d68/display_8h_source.html#l00208">printf</a>, <a class="el" href="../../dd/dda/monoton_8cpp_source.html#l00020">PrintShellPrefix()</a>, <a class="el" href="../../df/daa/apps_2system_2wm_2main_8cpp_source.html#l00005">PutRect()</a>, <a class="el" href="../../df/daa/apps_2system_2wm_2main_8cpp_source.html#l00034">Screen</a>, <a class="el" href="../../d6/d9a/monotonlib_8cpp_source.html#l00054">MonotonLib::mtl::SetForegroundColor()</a>, <a class="el" href="../../df/daa/apps_2system_2wm_2main_8cpp_source.html#l00029">scren::Width</a>, and <a class="el" href="../../d4/dfd/system_8c_source.html#l00025">WriteSysDebugger()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d7/d93/crt1_8c_source.html#l00008">_start()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a8c6923b50b593219f778bcaa56306446"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c6923b50b593219f778bcaa56306446">&#9670;&nbsp;</a></span>argv</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* argv[20]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d7/d93/crt1_8c_source.html#l00004">4</a> of file <a class="el" href="../../d7/d93/crt1_8c_source.html">crt1.c</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d7/d93/crt1_8c_source.html#l00008">_start()</a>.</p>
-
-</div>
-</div>
-<a id="a40e9c3212048e8ea85a1c5fedf6be395"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40e9c3212048e8ea85a1c5fedf6be395">&#9670;&nbsp;</a></span>stckptr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">long* stckptr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d7/d93/crt1_8c_source.html#l00003">3</a> of file <a class="el" href="../../d7/d93/crt1_8c_source.html">crt1.c</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d7/d93/crt1_8c_source.html#l00008">_start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d93/crt1_8c_source.html#l00006">_start()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="acrt1_8c_html_a8c6923b50b593219f778bcaa56306446"><div class="ttname"><a href="../../d7/d93/crt1_8c.html#a8c6923b50b593219f778bcaa56306446">argv</a></div><div class="ttdeci">static char * argv[20]</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d93/crt1_8c_source.html#l00004">crt1.c:4</a></div></div>
-<div class="ttc" id="acrt1_8c_html_a40e9c3212048e8ea85a1c5fedf6be395"><div class="ttname"><a href="../../d7/d93/crt1_8c.html#a40e9c3212048e8ea85a1c5fedf6be395">stckptr</a></div><div class="ttdeci">long * stckptr</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d93/crt1_8c_source.html#l00003">crt1.c:3</a></div></div>
+<div class="ttc" id="acrt1_8c_html_adedb285b02c41bde2158ded9cc9fd7ac"><div class="ttname"><a href="../../d7/d93/crt1_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a></div><div class="ttdeci">int main(int argc, char *argv[], char *envp[])</div></div>
 <div class="ttc" id="acxa_8cpp_html_af11296e79c8839a302f71294836c91cc"><div class="ttname"><a href="../../d2/dca/cxa_8cpp.html#af11296e79c8839a302f71294836c91cc">fixme</a></div><div class="ttdeci">void fixme(char *m)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dca/cxa_8cpp_source.html#l00054">cxa.cpp:54</a></div></div>
 <div class="ttc" id="astructatexit__func__entry__t_html_a7b404fd43dd4109ba19546e707cf1228"><div class="ttname"><a href="../../df/d34/structatexit__func__entry__t.html#a7b404fd43dd4109ba19546e707cf1228">atexit_func_entry_t::destructor_func</a></div><div class="ttdeci">void(* destructor_func)(void *)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d82/CXXABI_8cpp_source.html#l00017">CXXABI.cpp:17</a></div></div>
 <div class="ttc" id="aCXXABI_8cpp_html_a35fc01d4eba01f3f2ec636bd6b5ff34f"><div class="ttname"><a href="../../d1/d82/CXXABI_8cpp.html#a35fc01d4eba01f3f2ec636bd6b5ff34f">uarch_t</a></div><div class="ttdeci">unsigned uarch_t</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d82/CXXABI_8cpp_source.html#l00009">CXXABI.cpp:9</a></div></div>
 <div class="ttc" id="aCXXABI_8cpp_html_a0f75f529cf75cf0a9cd266f8d67675dc"><div class="ttname"><a href="../../d1/d82/CXXABI_8cpp.html#a0f75f529cf75cf0a9cd266f8d67675dc">__atexit_func_count</a></div><div class="ttdeci">uarch_t __atexit_func_count</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d82/CXXABI_8cpp_source.html#l00055">CXXABI.cpp:55</a></div></div>
-<div class="ttc" id="acrt1_8c_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="../../d7/d93/crt1_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d7b/tictactoe_8cpp_source.html#l00003">tictactoe.cpp:3</a></div></div>
 <div class="ttc" id="aCXXABI_8cpp_html_a8068edf906451857b4f6c7be313bec94"><div class="ttname"><a href="../../d1/d82/CXXABI_8cpp.html#a8068edf906451857b4f6c7be313bec94">__atexit_funcs</a></div><div class="ttdeci">atexit_func_entry_t __atexit_funcs[ATEXIT_MAX_FUNCS]</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d82/CXXABI_8cpp_source.html#l00054">CXXABI.cpp:54</a></div></div>
 <div class="ttc" id="acrt1_8c_html_aa8622fa1c28f360ea05bc97063d192b3"><div class="ttname"><a href="../../d7/d93/crt1_8c.html#aa8622fa1c28f360ea05bc97063d192b3">__cxa_finalize</a></div><div class="ttdeci">void __cxa_finalize(void *f)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d82/CXXABI_8cpp_source.html#l00069">CXXABI.cpp:69</a></div></div>
 <!-- start footer part -->

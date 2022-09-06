@@ -5,7 +5,6 @@ var annotated_dup =
     [ "Critical", "d6/d86/namespaceCritical.html", "d6/d86/namespaceCritical" ],
     [ "FileSystem", "d6/df5/namespaceFileSystem.html", "d6/df5/namespaceFileSystem" ],
     [ "KernelSymbols", "d9/d45/namespaceKernelSymbols.html", "d9/d45/namespaceKernelSymbols" ],
-    [ "Tasking", "d9/d3e/namespaceTasking.html", "d9/d3e/namespaceTasking" ],
     [ "_DriverBind", "db/de4/driver_8h.html#df/d50/struct__DriverBind", "db/de4/driver_8h_df/d50/struct__DriverBind" ],
     [ "_DriverBind.__unnamed__", "db/de4/driver_8h.html#d9/d36/union__DriverBind_8____unnamed____", "db/de4/driver_8h_d9/d36/union__DriverBind_8____unnamed____" ],
     [ "_DriverBind.__unnamed__.Interrupt", "db/de4/driver_8h.html#d8/d21/struct__DriverBind_8____unnamed_____8Interrupt", "db/de4/driver_8h_d8/d21/struct__DriverBind_8____unnamed_____8Interrupt" ],
@@ -38,6 +37,7 @@ var annotated_dup =
     [ "_TaskStateSegmentEntry", "d1/d57/cputables_8h.html#d8/d53/struct__TaskStateSegmentEntry", "d1/d57/cputables_8h_d8/d53/struct__TaskStateSegmentEntry" ],
     [ "_ThreadRegisters", "db/da4/task_8h.html#db/db2/struct__ThreadRegisters", "db/da4/task_8h_db/db2/struct__ThreadRegisters" ],
     [ "_TrapFrame", "d6/ded/interrupts_8h.html#da/d98/struct__TrapFrame", "d6/ded/interrupts_8h_da/d98/struct__TrapFrame" ],
+    [ "auto_ptr", "d2/d34/smartptr_8hpp.html#d2/d72/classauto__ptr", null ],
     [ "Bitmap", "d3/d19/classBitmap.html", "d3/d19/classBitmap" ],
     [ "CR0", "d1/d57/cputables_8h.html#df/d42/unionCR0", "d1/d57/cputables_8h_df/d42/unionCR0" ],
     [ "CR0.__unnamed__", "d1/d57/cputables_8h.html#d8/d03/structCR0_8____unnamed____", "d1/d57/cputables_8h_d8/d03/structCR0_8____unnamed____" ],
@@ -168,6 +168,8 @@ var annotated_dup =
     [ "RFLAGS.__attribute__", "d1/d57/cputables_8h.html#dd/dd5/structRFLAGS_8____attribute____", "d1/d57/cputables_8h_dd/dd5/structRFLAGS_8____attribute____" ],
     [ "SelectorErrorCode", "d1/d57/cputables_8h.html#d9/db8/unionSelectorErrorCode", "d1/d57/cputables_8h_d9/db8/unionSelectorErrorCode" ],
     [ "SelectorErrorCode.__unnamed__", "d1/d57/cputables_8h.html#d6/de2/structSelectorErrorCode_8____unnamed____", "d1/d57/cputables_8h_d6/de2/structSelectorErrorCode_8____unnamed____" ],
+    [ "shared_ptr", "d4/d67/classshared__ptr.html", "d4/d67/classshared__ptr" ],
+    [ "smart_ptr", "dc/d42/classsmart__ptr.html", "dc/d42/classsmart__ptr" ],
     [ "stbi_io_callbacks", "da/d02/structstbi__io__callbacks.html", "da/d02/structstbi__io__callbacks" ],
     [ "stivale2_anchor", "d6/da6/structstivale2__anchor.html", "d6/da6/structstivale2__anchor" ],
     [ "stivale2_guid", "df/d17/stivale2_8h.html#d7/d33/structstivale2__guid", "df/d17/stivale2_8h_d7/d33/structstivale2__guid" ],
@@ -212,5 +214,7 @@ var annotated_dup =
     [ "stivale_module", "d8/dc7/stivale_8h.html#dc/deb/structstivale__module", "d8/dc7/stivale_8h_dc/deb/structstivale__module" ],
     [ "stivale_struct", "d8/dc7/stivale_8h.html#d6/dbe/structstivale__struct", "d8/dc7/stivale_8h_d6/dbe/structstivale__struct" ],
     [ "TCB", "de/d72/structTCB.html", "de/d72/structTCB" ],
-    [ "Vector", "d6/da1/classVector.html", "d6/da1/classVector" ]
+    [ "unique_ptr", "d2/d34/smartptr_8hpp.html#dd/d67/classunique__ptr", null ],
+    [ "Vector", "d6/da1/classVector.html", "d6/da1/classVector" ],
+    [ "weak_ptr", "d2/d34/smartptr_8hpp.html#d9/d9b/classweak__ptr", null ]
 ];
