@@ -10,7 +10,7 @@ namespace FileSystem
     {
         trace("Initializing process file system");
         ProcessRootNode = vfs->Create(nullptr, "/system/prc");
-        ProcessRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
+        ProcessRootNode->Flags = NodeFlags::FS_DIRECTORY;
         ProcessRootNode->Mode = 0755;
         BS->IncreaseProgres();
     }

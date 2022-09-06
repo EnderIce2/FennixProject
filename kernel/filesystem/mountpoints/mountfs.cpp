@@ -18,10 +18,15 @@ namespace FileSystem
             sprintf_((char *)Name, "mount%lu", MountNodeIndexNodeCount);
         }
         trace("Adding %s to mounted file systems", Name);
-        FileSystemNode *newNode = vfs->Create(MountRootNode, Name);
+        // FileSystemNode *newNode = vfs->Create(MountRootNode, Name);
+
+        FileSystemNode *newNode = new FileSystemNode;
+        strcpy(newNode->Name, Name);
+        newNode->IndexNode = MountNodeIndexNodeCount++;
         newNode->Mode = Mode;
         newNode->Operator = Operator;
         newNode->Flags = NodeFlags::FS_MOUNTPOINT;
+        MountRootNode->Children.push_back(newNode);
         return newNode;
     }
 
@@ -40,7 +45,7 @@ namespace FileSystem
     {
         trace("Mounting file systems...");
         MountRootNode = vfs->Create(nullptr, "/system/mnt");
-        MountRootNode->Flags = NodeFlags::FS_MOUNTPOINT;
+        MountRootNode->Flags = NodeFlags::FS_DIRECTORY;
         MountRootNode->Mode = 0755;
         BS->IncreaseProgres();
     }
