@@ -37,6 +37,7 @@ uint8_t kernel_stack[STACK_SIZE];
 
 bool ShowRecoveryScreen = false;
 bool FadeScreenNow = false;
+bool KernelTaskStarted = false;
 
 Xalloc::AllocatorV1 *UserAllocator = nullptr; // TODO: Fix this allocator or modify liballoc11
 
@@ -119,6 +120,14 @@ void initializeKernelFlags()
 
 void KernelTask()
 {
+    if (CurrentTaskingMode == TaskingMode::Mono)
+        if (KernelTaskStarted)
+        {
+            CurrentDisplay->SetPrintColor(0xFC4444);
+            printf("Kernel Task restarted! System Halted!\n");
+            CPU_HALT;
+        }
+
 #ifdef DEBUG
     debug("Hello World!");
     printf("This is a text to test if the OS is working properly.\n");
@@ -172,6 +181,8 @@ void KernelTask()
         BS->FadeLogo();
         CPU_STOP;
     }
+    else
+        KernelTaskStarted = true;
 }
 
 void CheckSystemRequirements()

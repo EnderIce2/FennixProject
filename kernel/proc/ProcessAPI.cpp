@@ -422,7 +422,10 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
                         }
                         // process pages -> addr / 0x1000 + 1;
                         // KernelAllocator.FreePages(FileBuffer, file->Node->Length / 0x1000 + 1);
-                        debug("%s Entry Point: %#llx", File, (uint64_t)(ELFHeader->e_entry + (uint64_t)offset));
+                        debug("%s Entry Point: %#lx [%#lx + %#lx]",
+                              File,
+                              (uint64_t)(ELFHeader->e_entry + (uint64_t)offset),
+                              ELFHeader->e_entry, offset);
                         vfs->Close(file);
                         LeaveCriticalSection;
                         if (CurrentTaskingMode == TaskingMode::Mono)
