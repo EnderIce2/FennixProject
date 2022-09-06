@@ -272,20 +272,6 @@ namespace MonotonLib
 
     void mtl::print(const char *Text) { this->print(Text, {Xpos, Ypos}); }
 
-// #ifndef __GNUC_VA_LIST
-// #define __GNUC_VA_LIST
-//     typedef __builtin_va_list __gnuc_va_list;
-// #endif
-// #ifndef __va_list__
-// typedef __builtin_va_list va_list;
-// #endif
-
-// typedef char *va_list;
-
-// #define va_start(v, l) __builtin_va_start(v, l)
-// #define va_end(v) __builtin_va_end(v)
-// #define va_arg(v, l) __builtin_va_arg(v, l)
-
     void mtl::printf(const char *Text, ...)
     {
         va_list args;
