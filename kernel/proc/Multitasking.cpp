@@ -327,6 +327,8 @@ namespace Tasking
         thread->Registers.FUNCTION = (InstructionPointer + Parent->Offset);
         thread->Registers.ARG0 = Arg0; // args0
         thread->Registers.ARG1 = Arg1; // args1
+        thread->argc = Arg0;
+        thread->argv = (char **)Arg1;
 
         SetInfo(&thread->Info);
         thread->Info.Architecture = Architecture;

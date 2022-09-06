@@ -39,6 +39,9 @@ namespace Tasking
         CR3 pml4;
         bool UserMode;
         enum TaskState state;
+        int argc;
+        char **argv;
+        char **envp;
         uint64_t SpawnTick;
         uint64_t Year, Month, Day, Hour, Minute, Second;
         unsigned int checksum;

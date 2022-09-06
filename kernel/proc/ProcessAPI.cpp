@@ -51,6 +51,9 @@ TCB *ConvertTaskCBToTCB(TaskControlBlock *task)
         .ss = 0,
         .ds = 0,
         .es = 0,
+        .argc = task->argc,
+        .argv = task->argv,
+        .envp = task->envp,
         .Info = {},
         .Security = {},
         .Checksum = THREAD_CHECKSUM};

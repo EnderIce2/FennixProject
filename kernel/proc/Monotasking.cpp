@@ -230,6 +230,8 @@ namespace Tasking
         task->regs.FUNCTION = (uint64_t)InstructionPointer;
         task->regs.ARG0 = (uint64_t)FirstArgument;
         task->regs.ARG1 = (uint64_t)SecondArgument;
+        task->argc = FirstArgument;
+        task->argv = (char **)SecondArgument;
 
         task->SpawnTick = counter();
         uint32_t t = 0;

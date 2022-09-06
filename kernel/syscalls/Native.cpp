@@ -81,6 +81,30 @@ static uint64_t internal_getcurrentthreadid(SyscallsRegs *regs)
     return SysGetCurrentThread()->ID;
 }
 
+static uint64_t internal_getargc(SyscallsRegs *regs)
+{
+    syscldbg("syscall: getargc( )");
+    if (!CanSyscall(regs))
+        return deniedcall;
+    return (uint64_t)SysGetCurrentThread()->argc;
+}
+
+static uint64_t internal_getargv(SyscallsRegs *regs)
+{
+    syscldbg("syscall: getargv( )");
+    if (!CanSyscall(regs))
+        return deniedcall;
+    return (uint64_t)SysGetCurrentThread()->argv;
+}
+
+static uint64_t internal_getenvp(SyscallsRegs *regs)
+{
+    syscldbg("syscall: getenvc( )");
+    if (!CanSyscall(regs))
+        return deniedcall;
+    return (uint64_t)SysGetCurrentThread()->envp;
+}
+
 static int internal_getschedulemode(SyscallsRegs *regs)
 {
     syscldbg("syscall: getschedulemode()");
@@ -481,6 +505,9 @@ static void *FennixSyscallsTable[] = {
     [_GetCurrentThread] = (void *)internal_getcurrentthread,
     [_GetCurrentProcessID] = (void *)internal_getcurrentprocessid,
     [_GetCurrentThreadID] = (void *)internal_getcurrentthreadid,
+    [_GetARGC] = (void *)internal_getargc,
+    [_GetARGV] = (void *)internal_getargv,
+    [_GetENVP] = (void *)internal_getenvp,
 
     [_GetScheduleMode] = (void *)internal_getschedulemode,
 

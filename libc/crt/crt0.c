@@ -1,22 +1,43 @@
-long *stckptr;
-static char *argv[20];
-extern int main(int argc, char *argv[]);
+extern int main(int argc, char *argv[], char *envp[]);
 
 void _start()
 {
-    __asm__("mov %%rsp, %%rcx"
-            : "=c"(stckptr)
-            :);
-    int argc = *((int *)(stckptr + 1));
-    int mainret = 0;
-    if (argc > 0 && argc < 5)
-    {
-        for (int i = 0; i < argc; i++)
-            argv[i] = ((char *)(stckptr + 2 + 8 * i));
-        mainret = main(argc, argv);
-    }
-    else
-        mainret = main(0, (void *)0);
+    long argc = 0;
+    long argv = 0;
+    long envp = 0;
+
+    __asm__ __volatile__(
+        "pushq %%r11\n"
+        "pushq %%rcx\n"
+        "syscall\n"
+        "popq %%rcx\n"
+        "popq %%r11\n"
+        : "=a"(argc)
+        : "a"(8)
+        : "memory");
+    __asm__ __volatile__(
+        "pushq %%r11\n"
+        "pushq %%rcx\n"
+        "syscall\n"
+        "popq %%rcx\n"
+        "popq %%r11\n"
+        : "=a"(argv)
+        : "a"(9)
+        : "memory");
+    __asm__ __volatile__(
+        "pushq %%r11\n"
+        "pushq %%rcx\n"
+        "syscall\n"
+        "popq %%rcx\n"
+        "popq %%r11\n"
+        : "=a"(envp)
+        : "a"(10)
+        : "memory");
+
+    // register long argc __asm__("rdi");
+    // register long argv __asm__("rsi");
+
+    int mainret = main((int)argc, (char **)argv, (char **)envp);
 
     unsigned long syscall_return = 0;
     __asm__ __volatile__(

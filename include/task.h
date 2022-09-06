@@ -30,9 +30,9 @@ enum STATUS
 enum TokenTrustLevel
 {
     UnknownTrustLevel, // error
-    Untrusted, // process is not trusted by the kernel
-    Trusted, // trusted but have limits
-    TrustedByKernel // can run all syscalls
+    Untrusted,         // process is not trusted by the kernel
+    Trusted,           // trusted but have limits
+    TrustedByKernel    // can run all syscalls
 };
 
 enum Architecture
@@ -109,6 +109,9 @@ struct TCB
     char FXRegion[512] __attribute__((aligned(16)));
     ThreadRegisters Registers;
     uint64_t fs, gs, cs, ss, ds, es;
+    int argc;
+    char **argv;
+    char **envp;
     GeneralProcessInfo Info;
     GeneralSecurityInfo Security;
     uint32_t Checksum;

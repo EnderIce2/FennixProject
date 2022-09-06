@@ -99,6 +99,9 @@ enum SystemCalls
     _GetCurrentThread,
     _GetCurrentProcessID,
     _GetCurrentThreadID,
+    _GetARGC,
+    _GetARGV,
+    _GetENVP,
 
     _GetScheduleMode,
 
@@ -235,6 +238,9 @@ DEFINE_SYSCALL0(getCurrentThread, _GetCurrentThread)
 DEFINE_SYSCALL0(getCurrentProcessID, _GetCurrentProcessID)
 DEFINE_SYSCALL0(getCurrentThreadID, _GetCurrentThreadID)
 DEFINE_SYSCALL0(getScheduleMode, _GetScheduleMode)
+DEFINE_SYSCALL0(getARGC, _GetARGC)
+DEFINE_SYSCALL0(getARGV, _GetARGV)
+DEFINE_SYSCALL0(getENVP, _GetENVP)
 
 DEFINE_SYSCALL4(createTask, _CreateTask, uint64_t, uint64_t, uint64_t, char *)
 DEFINE_SYSCALL1(pushTask, _PushTask, uint64_t)
