@@ -255,7 +255,7 @@ void ParseBuffer(char *Buffer)
             case FS_FILE:
             case FS_CHARDEVICE:
             {
-                uint64_t size = 50;
+                uint64_t size = 64;
                 if (node->Length)
                     size = node->Length;
                 uint8_t *txt = (uint8_t *)(calloc(size, sizeof(uint8_t)));
@@ -268,9 +268,9 @@ void ParseBuffer(char *Buffer)
             case FS_PIPE:
             case FS_BLOCKDEVICE:
             {
-                uint8_t *txt = (uint8_t *)(calloc(32, sizeof(uint8_t)));
-                syscall_FileRead(node, 0, txt, 32);
-                for (uint64_t i = 0; i < 32; i++)
+                uint8_t *txt = (uint8_t *)(calloc(64, sizeof(uint8_t)));
+                syscall_FileRead(node, 0, txt, 64);
+                for (uint64_t i = 0; i < 64; i++)
                     mono->printchar(txt[i]);
                 free(txt);
                 break;
@@ -373,6 +373,33 @@ void ParseBuffer(char *Buffer)
             mono->print("\nFlags: 0x");
             itoa(node->Flags, str, 16);
             mono->print(str);
+            switch (node->Flags)
+            {
+            case FS_FILE:
+                mono->print(" (File)");
+                break;
+            case FS_DIRECTORY:
+                mono->print(" (Directory)");
+                break;
+            case FS_MOUNTPOINT:
+                mono->print(" (Mountpoint)");
+                break;
+            case FS_PIPE:
+                mono->print(" (Pipe)");
+                break;
+            case FS_SYMLINK:
+                mono->print(" (Symlink)");
+                break;
+            case FS_CHARDEVICE:
+                mono->print(" (Char Device)");
+                break;
+            case FS_BLOCKDEVICE:
+                mono->print(" (Block Device)");
+                break;
+            default:
+                mono->print(" (Unknown)");
+                break;
+            }
             mono->print("\nUserID: ");
             itoa(node->UserIdentifier, str, 10);
             mono->print(str);
