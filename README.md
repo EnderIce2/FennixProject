@@ -11,6 +11,9 @@
 
 ---
 
+![Fennix](Screenshot_Fennix.png "Fennix")
+<sub><sup>Fennix running inside QEMU</sup></sub>
+
 #### The content
 - Fennix Project
     - boot
