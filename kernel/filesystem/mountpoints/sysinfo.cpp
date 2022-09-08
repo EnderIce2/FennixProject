@@ -76,7 +76,7 @@ namespace FileSystem
     ReadFSFunction(CPU_Vendor_Read)
     {
         cpuid_string(0, (int *)(Buffer));
-        return 16;
+        return strlen((char *)Buffer);
     }
     FileSystemOpeations sysinfo_cpu_vendor = {.Name = "SysInfo Data", .Read = CPU_Vendor_Read};
 
