@@ -2,6 +2,7 @@
 
 #include "dumper.hpp"
 #include "cwalk.h"
+#include "cmds.hpp"
 
 #include <convert.h>
 #include <system.h>
@@ -233,55 +234,55 @@ void ParseBuffer(char *Buffer)
     else if (strncmp(Buffer, "cat", 3) == 0)
     {
         char *arg = trimwhitespace(Buffer + 3);
-        char *path = (char *)malloc(strlen(arg) + 1);
-        cwk_path_normalize(arg, path, strlen(arg) + 1);
-        bool success = true;
-        File *node = (File *)syscall_FileOpenWithParent(path, CurrentPath);
-        if (node->Status != FileStatus::OK)
-        {
-            mono->print("No such file or directory!");
-            success = false;
-        }
-        else if (node->Status != FileStatus::OK)
-        {
-            WriteSysDebugger("%s node error %#x", node->Name, node->Flags);
-            mono->print("Could not open file!");
-            success = false;
-        }
-        if (success)
-        {
-            switch (node->Flags)
-            {
-            case FS_FILE:
-            case FS_CHARDEVICE:
-            {
-                uint64_t size = 64;
-                if (node->Length)
-                    size = node->Length;
-                uint8_t *txt = (uint8_t *)(calloc(size, sizeof(uint8_t)));
-                syscall_FileRead(node, 0, txt, size);
-                for (uint64_t i = 0; i < size; i++)
-                    mono->printchar(txt[i]);
-                free(txt);
-                break;
-            }
-            case FS_PIPE:
-            case FS_BLOCKDEVICE:
-            {
-                uint8_t *txt = (uint8_t *)(calloc(64, sizeof(uint8_t)));
-                syscall_FileRead(node, 0, txt, 64);
-                for (uint64_t i = 0; i < 64; i++)
-                    mono->printchar(txt[i]);
-                free(txt);
-                break;
-            }
-            default:
-                mono->print("Cannot read from file.");
-                break;
-            }
-        }
-        syscall_FileClose(node);
-        free(path);
+        Cat(CurrentPath, arg);
+    }
+    else if (strcmp(Buffer, "info") == 0)
+    {
+        char *arg = trimwhitespace(Buffer + 7);
+        mono->SetForegroundColor(0x5865F2);
+        mono->print("System Information for ");
+        mono->SetForegroundColor(0xAAAAAA);
+        mono->print(usr());
+        mono->print("@fennix");
+        mono->SetForegroundColor(0x5865F2);
+        mono->print("\nOS: ");
+        mono->SetForegroundColor(0xAAAAAA);
+        Cat(CurrentPath, "/system/sys/kernel_name");
+        mono->SetForegroundColor(0x5865F2);
+        mono->print("\nKernel Version: ");
+        mono->SetForegroundColor(0xAAAAAA);
+        Cat(CurrentPath, "/system/sys/kernel_version");
+        mono->SetForegroundColor(0x5865F2);
+        mono->print("\nKernel Build Date: ");
+        mono->SetForegroundColor(0xAAAAAA);
+        Cat(CurrentPath, "/system/sys/kernel_build_date");
+        mono->SetForegroundColor(0x5865F2);
+        mono->print("\nCPU Name: ");
+        mono->SetForegroundColor(0xAAAAAA);
+        Cat(CurrentPath, "/system/sys/cpu_name");
+        mono->SetForegroundColor(0x5865F2);
+        mono->print("\nCPU Vendor: ");
+        mono->SetForegroundColor(0xAAAAAA);
+        Cat(CurrentPath, "/system/sys/cpu_vendor");
+        mono->SetForegroundColor(0x5865F2);
+        mono->print("\nCPU Hypervisor: ");
+        mono->SetForegroundColor(0xAAAAAA);
+        Cat(CurrentPath, "/system/sys/cpu_hypervisor");
+        mono->SetForegroundColor(0x5865F2);
+        mono->print("\nMemory: ");
+        mono->SetForegroundColor(0xAAAAAA);
+        Cat(CurrentPath, "/system/sys/mem_used");
+        mono->SetForegroundColor(0x5865F2);
+        mono->print(" / ");
+        mono->SetForegroundColor(0xAAAAAA);
+        Cat(CurrentPath, "/system/sys/mem_total");
+        mono->SetForegroundColor(0x5865F2);
+        mono->print(" (");
+        mono->SetForegroundColor(0xAAAAAA);
+        Cat(CurrentPath, "/system/sys/mem_reserved");
+        mono->SetForegroundColor(0x5865F2);
+        mono->print(" reserved)");
+        mono->SetForegroundColor(0xFFFFFF);
     }
     else if (strncmp(Buffer, "cd", 2) == 0)
     {
