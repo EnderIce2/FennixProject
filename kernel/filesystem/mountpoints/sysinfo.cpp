@@ -2,6 +2,7 @@
 
 #include <bootscreen.h>
 #include <display.h>
+#include <heap.h>
 #include <asm.h>
 
 #include "../../cpu/cpuid.h"
@@ -116,7 +117,56 @@ namespace FileSystem
         memcpy(Buffer, vendor, strlen(vendor));
         return strlen(vendor);
     }
-    FileSystemOpeations sysinfo_cpu_hyper = {.Name = "SysInfo Data", .Read = CPU_Hyper_Read};
+    FileSystemOpeations sysinfo_cpu_hypervisor = {.Name = "SysInfo Data", .Read = CPU_Hyper_Read};
+
+    ReadFSFunction(RAM_Used_Read)
+    {
+        sprintf_((char *)Buffer, "%ld", KernelAllocator.GetUsedRAM());
+        return 0;
+    }
+    FileSystemOpeations sysinfo_mem_used = {.Name = "SysInfo Data", .Read = RAM_Used_Read};
+
+    ReadFSFunction(RAM_Free_Read)
+    {
+        sprintf_((char *)Buffer, "%ld", KernelAllocator.GetFreeRAM());
+        return 0;
+    }
+    FileSystemOpeations sysinfo_mem_free = {.Name = "SysInfo Data", .Read = RAM_Free_Read};
+
+    ReadFSFunction(RAM_Total_Read)
+    {
+        sprintf_((char *)Buffer, "%ld", KernelAllocator.GetTotalRAM());
+        return 0;
+    }
+    FileSystemOpeations sysinfo_mem_total = {.Name = "SysInfo Data", .Read = RAM_Total_Read};
+
+    ReadFSFunction(RAM_Reserved_Read)
+    {
+        sprintf_((char *)Buffer, "%ld", KernelAllocator.GetReservedRAM());
+        return 0;
+    }
+    FileSystemOpeations sysinfo_mem_reserved = {.Name = "SysInfo Data", .Read = RAM_Reserved_Read};
+
+    ReadFSFunction(KERNEL_VERSION_Read)
+    {
+        sprintf_((char *)Buffer, "%s", KERNEL_VERSION);
+        return 0;
+    }
+    FileSystemOpeations sysinfo_kernel_version = {.Name = "SysInfo Data", .Read = KERNEL_VERSION_Read};
+
+    ReadFSFunction(KERNEL_NAME_Read)
+    {
+        sprintf_((char *)Buffer, "%s", KERNEL_NAME);
+        return 0;
+    }
+    FileSystemOpeations sysinfo_kernel_name = {.Name = "SysInfo Data", .Read = KERNEL_NAME_Read};
+
+    ReadFSFunction(KERNEL_BUILD_DATE_Read)
+    {
+        sprintf_((char *)Buffer, "%s %s", __DATE__, __TIME__);
+        return 0;
+    }
+    FileSystemOpeations sysinfo_kernel_build_date = {.Name = "SysInfo Data", .Read = KERNEL_BUILD_DATE_Read};
 
     SysInfo::SysInfo()
     {
@@ -132,7 +182,16 @@ namespace FileSystem
 
         this->AddInfo(&sysinfo_cpu_vendor, "cpu_vendor");
         this->AddInfo(&sysinfo_cpu_name, "cpu_name");
-        this->AddInfo(&sysinfo_cpu_hyper, "cpu_hyper");
+        this->AddInfo(&sysinfo_cpu_hypervisor, "cpu_hypervisor");
+
+        this->AddInfo(&sysinfo_mem_used, "mem_used");
+        this->AddInfo(&sysinfo_mem_free, "mem_free");
+        this->AddInfo(&sysinfo_mem_total, "mem_total");
+        this->AddInfo(&sysinfo_mem_reserved, "mem_reserved");
+
+        this->AddInfo(&sysinfo_kernel_version, "kernel_version");
+        this->AddInfo(&sysinfo_kernel_name, "kernel_name");
+        this->AddInfo(&sysinfo_kernel_build_date, "kernel_build_date");
 
         BS->IncreaseProgres();
     }
