@@ -26557,6 +26557,11 @@
                   <Anchor>aa6230aa45893d5603217f0ef19a605bc</Anchor>
                  </Node>
                  <Node>
+                  <Name>GetTotalMemory</Name>
+                  <Path>da/ddb/heap_8h.html</Path>
+                  <Anchor>a4413f4e15861b94cde0c02d2c9909965</Anchor>
+                 </Node>
+                 <Node>
                   <Name>GetUsedMemory</Name>
                   <Path>da/ddb/heap_8h.html</Path>
                   <Anchor>a011b78e3b746239e234aeae3888f3372</Anchor>

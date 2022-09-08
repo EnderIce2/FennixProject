@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"d3/d21/classACPI_1_1ACPI.html#a22d0bec19d43bab4973459b961ca7c5d":[5,0,0,1,1,5,32],
 "d3/d21/classACPI_1_1ACPI.html#a231bdf6a21d2169d945764a22e10ceee":[4,0,0,0,2,39],
 "d3/d21/classACPI_1_1ACPI.html#a231bdf6a21d2169d945764a22e10ceee":[5,0,0,1,1,5,39],
 "d3/d21/classACPI_1_1ACPI.html#a24995291f4cde4d5ecb31363ac394b0d":[4,0,0,0,2,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "d3/d41/gbp_8h.html#a230e627ec61226772a4524b63608c036":[5,0,0,5,0,1,4,4],
 "d3/d41/gbp_8h.html#a242e86d715a7086b90f62e79205b38cb":[5,0,0,5,0,1,12],
 "d3/d41/gbp_8h.html#a29357ae7c4ea56de1e5bf6d61348f58e":[5,0,0,5,0,1,2,0],
-"d3/d41/gbp_8h.html#a315dbd51e639e854b1b3d55988f31741":[5,0,0,5,0,1,6,0],
-"d3/d41/gbp_8h.html#a31fdc337ca6ffa121f757e2f07766663":[5,0,0,5,0,1,9,8]
+"d3/d41/gbp_8h.html#a315dbd51e639e854b1b3d55988f31741":[5,0,0,5,0,1,6,0]
 };

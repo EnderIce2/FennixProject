@@ -23472,9 +23472,44 @@
                     <Anchor>a4c3096148afd87013d231df89a95b86b</Anchor>
                    </Node>
                    <Node>
-                    <Name>sysinfo_cpu_hyper</Name>
+                    <Name>ReadFSFunction</Name>
                     <Path>da/dee/sysinfo_8cpp.html</Path>
-                    <Anchor>aaadf730e4a585eb3fa0f1b3b8fc84760</Anchor>
+                    <Anchor>a0dc7336957446b9a209bca598030b826</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>da/dee/sysinfo_8cpp.html</Path>
+                    <Anchor>a781f8d2618436ebdf1e0413843ffce7c</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>da/dee/sysinfo_8cpp.html</Path>
+                    <Anchor>afa1498308028885d779ffa38e5b3e99c</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>da/dee/sysinfo_8cpp.html</Path>
+                    <Anchor>aa6675a03ef2343b212661ff5d23a7e1e</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>da/dee/sysinfo_8cpp.html</Path>
+                    <Anchor>ab1e9fabc4d66c5fe83d72924315651a4</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>da/dee/sysinfo_8cpp.html</Path>
+                    <Anchor>a2b292fc6aa3bc793de2b9b1b938e283e</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>ReadFSFunction</Name>
+                    <Path>da/dee/sysinfo_8cpp.html</Path>
+                    <Anchor>a3853bb3413284d2c2314970d67df5bec</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>sysinfo_cpu_hypervisor</Name>
+                    <Path>da/dee/sysinfo_8cpp.html</Path>
+                    <Anchor>aa6fe635c0f239c91272091a88dd93931</Anchor>
                    </Node>
                    <Node>
                     <Name>sysinfo_cpu_name</Name>
@@ -23510,6 +23545,41 @@
                     <Name>sysinfo_fb_width</Name>
                     <Path>da/dee/sysinfo_8cpp.html</Path>
                     <Anchor>a20613332778e13fac99c63b0dcd3c2d4</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>sysinfo_kernel_build_date</Name>
+                    <Path>da/dee/sysinfo_8cpp.html</Path>
+                    <Anchor>af2be805cd2702737ec4264324b1620f6</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>sysinfo_kernel_name</Name>
+                    <Path>da/dee/sysinfo_8cpp.html</Path>
+                    <Anchor>aaf77652e729e5a9d8031f826ae98d93d</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>sysinfo_kernel_version</Name>
+                    <Path>da/dee/sysinfo_8cpp.html</Path>
+                    <Anchor>ae155cb00bcc8366ab0f310c244bfe670</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>sysinfo_mem_free</Name>
+                    <Path>da/dee/sysinfo_8cpp.html</Path>
+                    <Anchor>a5dc8203e83411e9716a34e7107ab3ce8</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>sysinfo_mem_reserved</Name>
+                    <Path>da/dee/sysinfo_8cpp.html</Path>
+                    <Anchor>abad13a6845b6e881a824656d52463f48</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>sysinfo_mem_total</Name>
+                    <Path>da/dee/sysinfo_8cpp.html</Path>
+                    <Anchor>a8d0b1a331d2fb8fff5faab3d785c4ce9</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>sysinfo_mem_used</Name>
+                    <Path>da/dee/sysinfo_8cpp.html</Path>
+                    <Anchor>a8027d6f38ff42335926267f28b2f917c</Anchor>
                    </Node>
                    <Node>
                     <Name>SysInfoNodeIndexNodeCount</Name>
@@ -36208,6 +36278,11 @@
                   <Anchor>aa6230aa45893d5603217f0ef19a605bc</Anchor>
                  </Node>
                  <Node>
+                  <Name>GetTotalMemory</Name>
+                  <Path>da/ddb/heap_8h.html</Path>
+                  <Anchor>a4413f4e15861b94cde0c02d2c9909965</Anchor>
+                 </Node>
+                 <Node>
                   <Name>GetUsedMemory</Name>
                   <Path>da/ddb/heap_8h.html</Path>
                   <Anchor>a011b78e3b746239e234aeae3888f3372</Anchor>
@@ -40325,6 +40400,11 @@
                     <Anchor>a4d5e7dfbf7b66859ffb4e6caf12462a2</Anchor>
                    </Node>
                    <Node>
+                    <Name>TotalMemory</Name>
+                    <Path>d2/ddc/PageFrameAllocator_8cpp.html</Path>
+                    <Anchor>a0fcdee9b99e24bc3ccfe24ce0969b631</Anchor>
+                   </Node>
+                   <Node>
                     <Name>UsedMemory</Name>
                     <Path>d2/ddc/PageFrameAllocator_8cpp.html</Path>
                     <Anchor>a1795a080fe4cf4cbe0a832593f799b79</Anchor>
@@ -41144,6 +41224,11 @@
                   <Name>GetReservedMemory</Name>
                   <Path>df/db8/HeapManager_8cpp.html</Path>
                   <Anchor>aa6230aa45893d5603217f0ef19a605bc</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>GetTotalMemory</Name>
+                  <Path>df/db8/HeapManager_8cpp.html</Path>
+                  <Anchor>a4413f4e15861b94cde0c02d2c9909965</Anchor>
                  </Node>
                  <Node>
                   <Name>GetUsedMemory</Name>
@@ -51899,6 +51984,34 @@
                   <Name>monoton</Name>
                   <Path>dir_8d5e54bfadd42f9251d52d65f3bb1765.html</Path>
                   <Subnodes>
+                   <Node>
+                    <Name>cmds</Name>
+                    <Path>dir_17e3ae71d5bb8384ba52e03a67339f14.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>cat.cpp</Name>
+                      <Path>d9/d63/cat_8cpp.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>Cat</Name>
+                        <Path>d9/d63/cat_8cpp.html</Path>
+                        <Anchor>af066be1059714c3767de73a20c0214a1</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>cmds.hpp</Name>
+                    <Path>db/d47/cmds_8hpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>Cat</Name>
+                      <Path>db/d47/cmds_8hpp.html</Path>
+                      <Anchor>af066be1059714c3767de73a20c0214a1</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
                    <Node>
                     <Name>cwalk.h</Name>
                     <Path>de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html</Path>

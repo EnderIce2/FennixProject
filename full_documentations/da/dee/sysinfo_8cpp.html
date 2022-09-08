@@ -96,6 +96,7 @@ $(document).ready(function(){initNavTree('da/dee/sysinfo_8cpp.html','../../'); i
 <div class="textblock"><code>#include &lt;<a class="el" href="../../dd/dd8/filesystem_8h_source.html">filesystem.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d6/d7e/bootscreen_8h_source.html">bootscreen.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d4/d68/display_8h_source.html">display.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../da/ddb/heap_8h_source.html">heap.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d6/d2d/cpu_2cpuid_8h_source.html">../../cpu/cpuid.h</a>&quot;</code><br />
 </div>
@@ -124,6 +125,20 @@ Functions</h2></td></tr>
 <tr class="separator:a68cc13ac6cba32f7daad359b28efb522"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a418758df389a560f64b3b45cfcfc3276"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a418758df389a560f64b3b45cfcfc3276">FileSystem::ReadFSFunction</a> (CPU_Hyper_Read)</td></tr>
 <tr class="separator:a418758df389a560f64b3b45cfcfc3276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3853bb3413284d2c2314970d67df5bec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a3853bb3413284d2c2314970d67df5bec">FileSystem::ReadFSFunction</a> (RAM_Used_Read)</td></tr>
+<tr class="separator:a3853bb3413284d2c2314970d67df5bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6675a03ef2343b212661ff5d23a7e1e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#aa6675a03ef2343b212661ff5d23a7e1e">FileSystem::ReadFSFunction</a> (RAM_Free_Read)</td></tr>
+<tr class="separator:aa6675a03ef2343b212661ff5d23a7e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b292fc6aa3bc793de2b9b1b938e283e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a2b292fc6aa3bc793de2b9b1b938e283e">FileSystem::ReadFSFunction</a> (RAM_Total_Read)</td></tr>
+<tr class="separator:a2b292fc6aa3bc793de2b9b1b938e283e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1e9fabc4d66c5fe83d72924315651a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#ab1e9fabc4d66c5fe83d72924315651a4">FileSystem::ReadFSFunction</a> (RAM_Reserved_Read)</td></tr>
+<tr class="separator:ab1e9fabc4d66c5fe83d72924315651a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa1498308028885d779ffa38e5b3e99c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#afa1498308028885d779ffa38e5b3e99c">FileSystem::ReadFSFunction</a> (KERNEL_VERSION_Read)</td></tr>
+<tr class="separator:afa1498308028885d779ffa38e5b3e99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a781f8d2618436ebdf1e0413843ffce7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a781f8d2618436ebdf1e0413843ffce7c">FileSystem::ReadFSFunction</a> (KERNEL_NAME_Read)</td></tr>
+<tr class="separator:a781f8d2618436ebdf1e0413843ffce7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dc7336957446b9a209bca598030b826"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a0dc7336957446b9a209bca598030b826">FileSystem::ReadFSFunction</a> (KERNEL_BUILD_DATE_Read)</td></tr>
+<tr class="separator:a0dc7336957446b9a209bca598030b826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -145,8 +160,22 @@ Variables</h2></td></tr>
 <tr class="separator:ad4111441e4fc2f17e8b028f10a49a277"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7d3b710dc07b7e50fa70d48bde19d23"><td class="memItemLeft" align="right" valign="top">FileSystemOpeations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#ae7d3b710dc07b7e50fa70d48bde19d23">FileSystem::sysinfo_cpu_name</a> = {.Name = &quot;SysInfo Data&quot;, .Read = CPU_Name_Read}</td></tr>
 <tr class="separator:ae7d3b710dc07b7e50fa70d48bde19d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaadf730e4a585eb3fa0f1b3b8fc84760"><td class="memItemLeft" align="right" valign="top">FileSystemOpeations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#aaadf730e4a585eb3fa0f1b3b8fc84760">FileSystem::sysinfo_cpu_hyper</a> = {.Name = &quot;SysInfo Data&quot;, .Read = CPU_Hyper_Read}</td></tr>
-<tr class="separator:aaadf730e4a585eb3fa0f1b3b8fc84760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6fe635c0f239c91272091a88dd93931"><td class="memItemLeft" align="right" valign="top">FileSystemOpeations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#aa6fe635c0f239c91272091a88dd93931">FileSystem::sysinfo_cpu_hypervisor</a> = {.Name = &quot;SysInfo Data&quot;, .Read = CPU_Hyper_Read}</td></tr>
+<tr class="separator:aa6fe635c0f239c91272091a88dd93931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8027d6f38ff42335926267f28b2f917c"><td class="memItemLeft" align="right" valign="top">FileSystemOpeations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a8027d6f38ff42335926267f28b2f917c">FileSystem::sysinfo_mem_used</a> = {.Name = &quot;SysInfo Data&quot;, .Read = RAM_Used_Read}</td></tr>
+<tr class="separator:a8027d6f38ff42335926267f28b2f917c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc8203e83411e9716a34e7107ab3ce8"><td class="memItemLeft" align="right" valign="top">FileSystemOpeations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a5dc8203e83411e9716a34e7107ab3ce8">FileSystem::sysinfo_mem_free</a> = {.Name = &quot;SysInfo Data&quot;, .Read = RAM_Free_Read}</td></tr>
+<tr class="separator:a5dc8203e83411e9716a34e7107ab3ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d0b1a331d2fb8fff5faab3d785c4ce9"><td class="memItemLeft" align="right" valign="top">FileSystemOpeations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#a8d0b1a331d2fb8fff5faab3d785c4ce9">FileSystem::sysinfo_mem_total</a> = {.Name = &quot;SysInfo Data&quot;, .Read = RAM_Total_Read}</td></tr>
+<tr class="separator:a8d0b1a331d2fb8fff5faab3d785c4ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abad13a6845b6e881a824656d52463f48"><td class="memItemLeft" align="right" valign="top">FileSystemOpeations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#abad13a6845b6e881a824656d52463f48">FileSystem::sysinfo_mem_reserved</a> = {.Name = &quot;SysInfo Data&quot;, .Read = RAM_Reserved_Read}</td></tr>
+<tr class="separator:abad13a6845b6e881a824656d52463f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae155cb00bcc8366ab0f310c244bfe670"><td class="memItemLeft" align="right" valign="top">FileSystemOpeations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#ae155cb00bcc8366ab0f310c244bfe670">FileSystem::sysinfo_kernel_version</a> = {.Name = &quot;SysInfo Data&quot;, .Read = KERNEL_VERSION_Read}</td></tr>
+<tr class="separator:ae155cb00bcc8366ab0f310c244bfe670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf77652e729e5a9d8031f826ae98d93d"><td class="memItemLeft" align="right" valign="top">FileSystemOpeations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#aaf77652e729e5a9d8031f826ae98d93d">FileSystem::sysinfo_kernel_name</a> = {.Name = &quot;SysInfo Data&quot;, .Read = KERNEL_NAME_Read}</td></tr>
+<tr class="separator:aaf77652e729e5a9d8031f826ae98d93d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2be805cd2702737ec4264324b1620f6"><td class="memItemLeft" align="right" valign="top">FileSystemOpeations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df5/namespaceFileSystem.html#af2be805cd2702737ec4264324b1620f6">FileSystem::sysinfo_kernel_build_date</a> = {.Name = &quot;SysInfo Data&quot;, .Read = KERNEL_BUILD_DATE_Read}</td></tr>
+<tr class="separator:af2be805cd2702737ec4264324b1620f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

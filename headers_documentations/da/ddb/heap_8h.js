@@ -56,6 +56,7 @@ var heap_8h =
     [ "FreePages", "da/ddb/heap_8h.html#a64f0f7a14e40f23244de182186099e3c", null ],
     [ "GetFreeMemory", "da/ddb/heap_8h.html#ac41e9aa9301d794ea6ef4e093e15ffb3", null ],
     [ "GetReservedMemory", "da/ddb/heap_8h.html#aa6230aa45893d5603217f0ef19a605bc", null ],
+    [ "GetTotalMemory", "da/ddb/heap_8h.html#a4413f4e15861b94cde0c02d2c9909965", null ],
     [ "GetUsedMemory", "da/ddb/heap_8h.html#a011b78e3b746239e234aeae3888f3372", null ],
     [ "HeapCalloc", "da/ddb/heap_8h.html#a58c6ee324540d91508135e91335bd5ca", null ],
     [ "HeapFree", "da/ddb/heap_8h.html#a1cf37a0b7bfe09f0bc495d5b141a424e", null ],

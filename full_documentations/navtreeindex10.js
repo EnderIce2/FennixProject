@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"d5/d99/structlimine__smp__response.html#ae4e52c8cc142dca687b623b7764c49a1":[4,0,120,2],
 "d5/d9d/userspace_2apps_2games_2Makefile.html":[5,0,2,0,0,1],
 "d5/d9d/userspace_2apps_2games_2Makefile_source.html":[5,0,2,0,0,1],
 "d5/db7/namespaceNetworkTCP.html":[3,0,28],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "d5/dba/multiboot2_8h.html#af589b0f71833031d3c6c289d3accfab6":[5,0,0,5,0,0,3,92],
 "d5/dba/multiboot2_8h.html#af6005f97267af2cb0ff37fb245284440":[5,0,0,5,0,0,3,43],
 "d5/dba/multiboot2_8h.html#af602f72aea03554c227e39e153dc9e50":[5,0,0,5,0,0,3,73],
-"d5/dba/multiboot2_8h.html#afa32c43ce21ca35f6b0062bddbedf37d":[5,0,0,5,0,0,3,71],
-"d5/dba/multiboot2_8h.html#afc4ddbe4fb058ac167cb8de79861e819":[5,0,0,5,0,0,3,62]
+"d5/dba/multiboot2_8h.html#afa32c43ce21ca35f6b0062bddbedf37d":[5,0,0,5,0,0,3,71]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"d5/dba/multiboot2_8h.html#afc4ddbe4fb058ac167cb8de79861e819":[5,0,0,5,0,0,3,62],
 "d5/dba/multiboot2_8h.html#afe69dc4711fc7f5dc9604977b2393218":[5,0,0,5,0,0,3,75],
 "d5/dba/multiboot2_8h.html#d0/d21/structmultiboot__tag__module":[5,0,0,5,0,0,3,13],
 "d5/dba/multiboot2_8h.html#d0/d40/structmultiboot__tag__network":[5,0,0,5,0,0,3,29],
@@ -66,9 +67,9 @@ var NAVTREEINDEX11 =
 "d5/dd0/timer_8h.html#adb56247b4b18c07c3d1dbfa5dd6f1ca2":[5,0,0,34,9],
 "d5/dd0/timer_8h.html#d2/dcd/structActiveTimers":[5,0,0,34,0],
 "d5/dd0/timer_8h_source.html":[5,0,0,34],
-"d5/dd9/dumper_8hpp.html":[5,0,2,0,1,3,2],
-"d5/dd9/dumper_8hpp.html#a0fc66b31c24d157f0d3f5cc901f9d8cd":[5,0,2,0,1,3,2,0],
-"d5/dd9/dumper_8hpp_source.html":[5,0,2,0,1,3,2],
+"d5/dd9/dumper_8hpp.html":[5,0,2,0,1,3,4],
+"d5/dd9/dumper_8hpp.html#a0fc66b31c24d157f0d3f5cc901f9d8cd":[5,0,2,0,1,3,4,0],
+"d5/dd9/dumper_8hpp_source.html":[5,0,2,0,1,3,4],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html":[5,0,0,5,0,0,5],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#a014dcb69b3def21e8fb4f129fef41821":[5,0,0,5,0,0,5,8,1],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#a023708960f05aeeea72a6f70eefe99af":[5,0,0,5,0,0,5,10,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d1/d23/structstivale2__pmr":[5,0,0,5,0,0,5,9],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d1/d76/structstivale2__header__tag__smp":[5,0,0,5,0,0,5,7],
 "d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d1/d82/structstivale2__struct__tag__hhdm":[5,0,0,5,0,0,5,36],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d1/db6/structstivale2__struct__tag__mmio32__uart":[5,0,0,5,0,0,5,34],
-"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d2/d79/structstivale2__struct__tag__dtb":[5,0,0,5,0,0,5,35]
+"d5/ddf/include_2boot_2protocols_2stivale2_8h.html#d1/db6/structstivale2__struct__tag__mmio32__uart":[5,0,0,5,0,0,5,34]
 };

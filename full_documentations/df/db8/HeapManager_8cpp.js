@@ -6,6 +6,7 @@ var HeapManager_8cpp =
     [ "FreePages", "df/db8/HeapManager_8cpp.html#a64f0f7a14e40f23244de182186099e3c", null ],
     [ "GetFreeMemory", "df/db8/HeapManager_8cpp.html#ac41e9aa9301d794ea6ef4e093e15ffb3", null ],
     [ "GetReservedMemory", "df/db8/HeapManager_8cpp.html#aa6230aa45893d5603217f0ef19a605bc", null ],
+    [ "GetTotalMemory", "df/db8/HeapManager_8cpp.html#a4413f4e15861b94cde0c02d2c9909965", null ],
     [ "GetUsedMemory", "df/db8/HeapManager_8cpp.html#a011b78e3b746239e234aeae3888f3372", null ],
     [ "HeapCalloc", "df/db8/HeapManager_8cpp.html#a58c6ee324540d91508135e91335bd5ca", null ],
     [ "HeapFree", "df/db8/HeapManager_8cpp.html#a1cf37a0b7bfe09f0bc495d5b141a424e", null ],

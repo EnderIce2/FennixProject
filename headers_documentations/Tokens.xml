@@ -19521,6 +19521,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>GetTotalMemory</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>da/ddb/heap_8h.html</Path>
+    <Anchor>a4413f4e15861b94cde0c02d2c9909965</Anchor>
+    <DeclaredIn>heap.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>GetFreeMemory</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
