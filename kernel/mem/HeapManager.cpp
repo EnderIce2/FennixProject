@@ -222,6 +222,8 @@ void *RequestPages(uint64_t pages) { return KernelAllocator.RequestPages(pages);
 
 void FreePages(void *address, uint64_t pages) { KernelAllocator.FreePages(address, pages); }
 
+uint64_t GetTotalMemory() { return KernelAllocator.GetTotalRAM(); }
+
 uint64_t GetFreeMemory() { return KernelAllocator.GetFreeRAM(); }
 
 uint64_t GetUsedMemory() { return KernelAllocator.GetUsedRAM(); }

@@ -9,6 +9,7 @@ using namespace PMM;
 
 NEWLOCK(pfa_lock);
 
+uint64_t TotalMemory;
 uint64_t FreeMemory;
 uint64_t ReservedMemory;
 uint64_t UsedMemory;
@@ -54,6 +55,7 @@ void PageFrameAllocator::ReadMemoryMap()
                       TO_KB(earlyparams.mem.memmap[i].Size));
             }
     uint64_t MemorySize = earlyparams.mem.Size;
+    TotalMemory = MemorySize;
     FreeMemory = MemorySize;
     // uint64_t BitmapSize = MemorySize / 4096 / 8 + 1;
     // InitBitmap(BitmapSize, LargestFreeMemorySegment);
@@ -297,6 +299,8 @@ void PageFrameAllocator::ReservePages(void *Address, uint64_t PageCount)
     for (uint64_t t = 0; t < PageCount; t++)
         ReservePage((void *)((uint64_t)Address + (t * 4096)));
 }
+
+uint64_t PageFrameAllocator::GetTotalRAM() { return TotalMemory; }
 
 uint64_t PageFrameAllocator::GetFreeRAM() { return FreeMemory; }
 

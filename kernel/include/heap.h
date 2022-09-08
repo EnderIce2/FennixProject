@@ -26,6 +26,7 @@ namespace PMM
         void LockPages(void *Address, uint64_t PageCount);
         void *RequestPage();
         void *RequestPages(uint64_t PageCount);
+        uint64_t GetTotalRAM();
         uint64_t GetFreeRAM();
         uint64_t GetUsedRAM();
         uint64_t GetReservedRAM();
@@ -293,6 +294,7 @@ void *CreateNewPML4();
 #endif
 void FreePage(void *address);
 void FreePages(void *address, uint64_t pages);
+uint64_t GetTotalMemory();
 uint64_t GetFreeMemory();
 uint64_t GetUsedMemory();
 uint64_t GetReservedMemory();
