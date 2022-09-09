@@ -25,7 +25,7 @@ jobs:
 
     - name: Install GCC Dependencies
       if: steps.cache-cross.outputs.cache-hit != 'true'
-      run: sudo apt install build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo libzstd-dev libisl-dev autoconf m4 automake gettext gperf dejagnu guile-* expect tcl autogen tex-common sphinx-common git ssh diffutils patch -y
+      run: sudo apt install build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo libzstd-dev libisl-dev autoconf m4 automake gettext gperf dejagnu guile-3.0 guile-3.0-dev expect tcl autogen tex-common sphinx-common git ssh diffutils patch -y
 
     - name: Clone All
       if: steps.cache-cross.outputs.cache-hit != 'true'
