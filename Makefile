@@ -37,10 +37,10 @@ QEMUFLAGS = -device bochs-display -M q35 \
 QEMUHWACCELERATION = -machine q35 -enable-kvm
 
 # SYSTEM_MEM = $(shell grep 'MemTotal' /proc/meminfo | sed -e 's/MemTotal://' -e 's/ kB//')
-# I could use $(shell echo ${SYSTEM_MEM}/1024/4 | bc) to specify a small amount (1/4) of memory for the qemu.
+# I could use $(shell echo $(SYSTEM_MEM)/1024/4 | bc) to specify a small amount (1/4) of memory for the qemu.
 QEMUMEMORY = -m 4G
 
-QEMU = ./${QEMU_PATH}
+QEMU = ./$(QEMU_PATH)$(QEMU_ARCH)
 
 .PHONY: default tools clean
 
@@ -125,7 +125,7 @@ ifeq ($(BOOTLOADER), lynx)
 		iso_tmp_data -o $(OSNAME).iso
 endif
 ifeq ($(BOOTLOADER), limine)
-	cp limine.cfg ${LIMINE_FOLDER}/limine.sys ${LIMINE_FOLDER}/limine-cd.bin ${LIMINE_FOLDER}/limine-cd-efi.bin iso_tmp_data/
+	cp limine.cfg $(LIMINE_FOLDER)/limine.sys $(LIMINE_FOLDER)/limine-cd.bin $(LIMINE_FOLDER)/limine-cd-efi.bin iso_tmp_data/
 	xorriso -as mkisofs -b limine-cd.bin \
 		-no-emul-boot -boot-load-size 4 -boot-info-table \
 		--efi-boot limine-cd-efi.bin \
@@ -135,15 +135,15 @@ endif
 
 vscode_debug: build_kernel build_libc build_userspace build_image
 	rm -f serial.log network.log
-	${QEMU} -S -gdb tcp::1234 -d int -no-shutdown -bios /usr/share/qemu/OVMF.fd -m 4G ${QEMUFLAGS}
+	$(QEMU) -S -gdb tcp::1234 -d int -no-shutdown -bios /usr/share/qemu/OVMF.fd -m 4G $(QEMUFLAGS)
 
 qemu: qemu_vdisk
 	rm -f serial.log network.log
-	${QEMU} -bios /usr/share/qemu/OVMF.fd -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
+	$(QEMU) -bios /usr/share/qemu/OVMF.fd -cpu host $(QEMUFLAGS) $(QEMUHWACCELERATION) $(QEMUMEMORY)
 
 qemubios: qemu_vdisk
 	rm -f serial.log network.log
-	${QEMU} -cpu host ${QEMUFLAGS} ${QEMUHWACCELERATION} ${QEMUMEMORY}
+	$(QEMU) -cpu host $(QEMUFLAGS) $(QEMUHWACCELERATION) $(QEMUMEMORY)
 
 # build the os and run it
 run: build qemu_vdisk qemu

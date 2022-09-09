@@ -53,6 +53,7 @@ CFLAGS :=																\
 	-DKERNEL_VERSION='"$(KERNEL_VERSION)"'								\
 	-DGIT_COMMIT='"$(GIT_COMMIT)"'										\
 	-DGIT_COMMIT_SHORT='"$(GIT_COMMIT_SHORT)"'							\
+	-DOSARCH='"$(OSARCH)"'												\
 	-fno-pic -fno-pie -mno-80387										\
 	-mno-80387 -mno-mmx -mno-3dnow -mno-red-zone -mno-sse -mno-sse2		\
 	-march=nehalem -pipe												\

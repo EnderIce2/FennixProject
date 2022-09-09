@@ -125,10 +125,6 @@ extern "C" void __cxa_end_catch() { fixme("__cxa_end_catch() triggered."); }
 
 __extension__ typedef int __guard __attribute__((mode(__DI__)));
 
-extern "C" int __cxa_guard_acquire(__guard *);
-extern "C" void __cxa_guard_release(__guard *);
-extern "C" void __cxa_guard_abort(__guard *);
-
 extern "C" int __cxa_guard_acquire(__guard *g)
 {
     fixme("__cxa_guard_acquire( %p ) triggered.", g);
@@ -141,4 +137,4 @@ extern "C" void __cxa_guard_release(__guard *g)
     *(char *)g = 1;
 }
 
-extern "C" void __cxa_guard_abort(__guard *) { fixme("__cxa_guard_abort( ) triggered."); }
+extern "C" void __cxa_guard_abort(__guard *g) { fixme("__cxa_guard_abort( %p ) triggered.", g); }
