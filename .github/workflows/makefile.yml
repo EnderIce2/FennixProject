@@ -31,17 +31,29 @@ jobs:
       if: steps.cache-cross.outputs.cache-hit != 'true'
       run: make tools_workflow2
 
-    - name: Compile GCC AMD64
+    - name: Compile Binutils AMD64
       if: steps.cache-cross.outputs.cache-hit != 'true'
       run: make tools_workflow3
 
-    - name: Compile GCC i686
+    - name: Compile Binutils i686
       if: steps.cache-cross.outputs.cache-hit != 'true'
       run: make tools_workflow4
 
-    - name: Compile GCC aarch64
+    - name: Compile Binutils ARM
       if: steps.cache-cross.outputs.cache-hit != 'true'
       run: make tools_workflow5
+
+    - name: Compile GCC AMD64
+      if: steps.cache-cross.outputs.cache-hit != 'true'
+      run: make tools_workflow6
+
+    - name: Compile GCC i686
+      if: steps.cache-cross.outputs.cache-hit != 'true'
+      run: make tools_workflow7
+
+    - name: Compile GCC aarch64
+      if: steps.cache-cross.outputs.cache-hit != 'true'
+      run: make tools_workflow8
 
   compilegnuefi:
     name: Build GNU-EFI
@@ -65,7 +77,7 @@ jobs:
 
     - name: Get GNU-EFI source code and compile it
       if: steps.cache-gnuefi.outputs.cache-hit != 'true'
-      run: make tools_workflow6
+      run: make tools_workflow9
 
   compile64:
     name: Build AMD64

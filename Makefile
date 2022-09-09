@@ -89,15 +89,24 @@ tools_workflow2:
 	make --quiet -C tools clone_all
 
 tools_workflow3:
-	make --quiet -C tools do_gcc64
+	make --quiet -C tools do_binutils64
 
 tools_workflow4:
-	make --quiet -C tools do_gcc32
+	make --quiet -C tools do_binutils32
 
 tools_workflow5:
-	make --quiet -C tools do_gccarm64
+	make --quiet -C tools do_binutilsarm64
 
 tools_workflow6:
+	make --quiet -C tools do_gcc64
+
+tools_workflow7:
+	make --quiet -C tools do_gcc32
+
+tools_workflow8:
+	make --quiet -C tools do_gccarm64
+
+tools_workflow9:
 	make --quiet -C boot gnuefi
 
 build: build_bootloader build_kernel build_libc build_userspace build_image
