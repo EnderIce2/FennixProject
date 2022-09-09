@@ -6,6 +6,7 @@ var structCPUData =
     [ "Checksum", "de/df9/structCPUData.html#a5d467090c63e106edc8c650eb049bd48", null ],
     [ "CurrentProcess", "de/df9/structCPUData.html#a9a4ab329f6857a776028bd3f5190169f", null ],
     [ "CurrentThread", "de/df9/structCPUData.html#a28b068572151d01dbeedacd358ed5021", null ],
+    [ "ErrorCode", "de/df9/structCPUData.html#a590e51ea5f73b23f0a436857588c2e96", null ],
     [ "GDT", "de/df9/structCPUData.html#a13ff8e794ef229d8d9a18788d1ca5db1", null ],
     [ "ID", "de/df9/structCPUData.html#a37bb5180e4e32cae6fb5db74c476fb5b", null ],
     [ "IDT", "de/df9/structCPUData.html#a06cf91fdee15ef0467959aef4d78a800", null ],

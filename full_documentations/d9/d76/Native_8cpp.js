@@ -2,6 +2,7 @@ var Native_8cpp =
 [
     [ "HandleFennixSyscalls", "d9/d76/Native_8cpp.html#a972108fde2e0c6c1d69c92212189db8c", null ],
     [ "internal_beep", "d9/d76/Native_8cpp.html#a8224f9cbb9aaf85c30a640ebd0cf17ea", null ],
+    [ "internal_cli", "d9/d76/Native_8cpp.html#a725c0c609a2fd678e70601ea07551958", null ],
     [ "internal_createprocess", "d9/d76/Native_8cpp.html#ad179c7f5e648affc70d02c23bcec4dc8", null ],
     [ "internal_createtask", "d9/d76/Native_8cpp.html#acc3b9ec029f6dd7739b96f92e6100c89", null ],
     [ "internal_createthread", "d9/d76/Native_8cpp.html#ab83bfdb4ddfe178820dba8abafae7d8d", null ],
@@ -39,6 +40,7 @@ var Native_8cpp =
     [ "internal_requestpage", "d9/d76/Native_8cpp.html#a0f2e486ad80cb0d9ac33389553240e9f", null ],
     [ "internal_requestpages", "d9/d76/Native_8cpp.html#ac8ef39feb4a36eb01167e9af5811c777", null ],
     [ "internal_shutdown", "d9/d76/Native_8cpp.html#a0681e34ebc57354a3bd2fd2235e4bec9", null ],
+    [ "internal_sti", "d9/d76/Native_8cpp.html#a986c9d0c406a800c289fd9807634dbca", null ],
     [ "internal_unimpl", "d9/d76/Native_8cpp.html#af1bc609d5ab66964d0f6a16130846176", null ],
     [ "internal_usleep", "d9/d76/Native_8cpp.html#a68377bf36f19185f5351e037432f977d", null ],
     [ "FennixSyscallsTable", "d9/d76/Native_8cpp.html#ad86490591a2b1dd70b5f10df0a3814f5", null ]

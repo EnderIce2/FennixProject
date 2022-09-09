@@ -22,6 +22,7 @@ var dir_dc43877d82dd332f9fb2071fcca799d6 =
     [ "Debug.c", "d2/da4/Debug_8c.html", "d2/da4/Debug_8c" ],
     [ "Driver.cpp", "df/dd9/Driver_8cpp.html", "df/dd9/Driver_8cpp" ],
     [ "driver.hpp", "d7/d7e/driver_8hpp.html", "d7/d7e/driver_8hpp" ],
+    [ "ErrorHandler.cpp", "d7/d91/ErrorHandler_8cpp.html", "d7/d91/ErrorHandler_8cpp" ],
     [ "Kernel.cpp", "d2/d00/Kernel_8cpp.html", "d2/d00/Kernel_8cpp" ],
     [ "kernel.h", "d0/daa/kernel_8h.html", "d0/daa/kernel_8h" ],
     [ "Lock.cpp", "d4/d90/Lock_8cpp.html", "d4/d90/Lock_8cpp" ],

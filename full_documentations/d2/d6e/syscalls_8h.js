@@ -124,6 +124,8 @@ var syscalls_8h =
       [ "_FileGetChildren", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda6dbd4a9831f4cac80882f991f4bfb97b", null ],
       [ "_usleep", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda75975d7f4982d52e685b7a4a1ef48ac6", null ],
       [ "_Beep", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddac9fff3ad1eb63c1867c760346d8d01cc", null ],
+      [ "_CLI", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7ddab44ccb961671b137af2c3c52db99aa5a", null ],
+      [ "_STI", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda9d9eb94c4a9d48a50e52a74885cbcfb8", null ],
       [ "_DebugMessage", "d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dda72d74f32cb7226e96b077d3873cd7912", null ]
     ] ]
 ];

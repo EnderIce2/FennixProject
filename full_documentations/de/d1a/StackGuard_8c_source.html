@@ -123,9 +123,16 @@ $(document).ready(function(){initNavTree('de/d1a/StackGuard_8c_source.html','../
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../de/d1a/StackGuard_8c.html#a872e1354dd6eed0890159e50ddc46796">   33</a></span>&#160;<a class="code" href="../../de/d1a/StackGuard_8c.html#af9aace1b44b73111e15aa39f06f43456">__attribute__</a>((weak, noreturn)) <span class="keywordtype">void</span> __stack_chk_fail(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../d9/d87/sys_8h.html#a6223e79d1dbac2fc6f74b3bb9bdeb264">panic</a>(<span class="stringliteral">&quot;Stack smashing/overflow detected!&quot;</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../d9/d87/sys_8h.html#a6223e79d1dbac2fc6f74b3bb9bdeb264">panic</a>(<span class="stringliteral">&quot;Stack smashing detected!&quot;</span>, <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../d7/dfc/kernel_2include_2types_8h.html#aaefaf346d5a4d927b41ccb5a19f6fad5">CPU_STOP</a>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// https://github.com/gcc-mirror/gcc/blob/master/libssp/ssp.c</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<a class="code" href="../../de/d1a/StackGuard_8c.html#af9aace1b44b73111e15aa39f06f43456">__attribute__</a>((weak, noreturn)) <span class="keywordtype">void</span> __chk_fail(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="../../d9/d87/sys_8h.html#a6223e79d1dbac2fc6f74b3bb9bdeb264">panic</a>(<span class="stringliteral">&quot;Buffer overflow detected!&quot;</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../d7/dfc/kernel_2include_2types_8h.html#aaefaf346d5a4d927b41ccb5a19f6fad5">CPU_STOP</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="asys_8h_html"><div class="ttname"><a href="../../d9/d87/sys_8h.html">sys.h</a></div></div>

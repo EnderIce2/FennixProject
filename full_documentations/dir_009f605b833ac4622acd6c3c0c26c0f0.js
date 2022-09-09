@@ -15,6 +15,7 @@ var dir_009f605b833ac4622acd6c3c0c26c0f0 =
     [ "display.h", "d4/d68/display_8h.html", "d4/d68/display_8h" ],
     [ "easyc.h", "de/d89/easyc_8h.html", null ],
     [ "elf.h", "d7/db0/include_2elf_8h.html", "d7/db0/include_2elf_8h" ],
+    [ "errorhnd.h", "de/d0f/errorhnd_8h.html", "de/d0f/errorhnd_8h" ],
     [ "filesystem.h", "dd/dd8/filesystem_8h.html", "dd/dd8/filesystem_8h" ],
     [ "heap.h", "da/ddb/heap_8h.html", "da/ddb/heap_8h" ],
     [ "int.h", "d3/d7e/int_8h.html", "d3/d7e/int_8h" ],

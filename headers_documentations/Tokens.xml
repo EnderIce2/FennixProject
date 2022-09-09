@@ -18838,6 +18838,116 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>SetError</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>ac1267e9fc745b80c7dd53569be1a047a</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetError</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>ade327d9940569db3f67607d9b7999013</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_SUCCESS</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3a6d4f18a9728f434ff2d1a64043ebe6e8</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_ARGUMENT</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3ae620c56be6cfef2f3f5af02e79db0260</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_HANDLE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3ac0bfb8e76c929f76d207a8606e9ab498</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_OPERATION</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3a991f48066fec8800274aa87a9c5f50a8</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_ADDRESS</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3a9ea1d47829ab7fd38ed72c3d5c2212f0</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_MEMORY</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3aa7d48a433b36c25e0be2fbc79ddb68cb</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_MEMORY_SIZE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3a5a0310f93270094c8fbae88ed9db5711</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_MEMORY_ACCESS</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3a956f751045729eaf4c83a21feba3cd94</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_MEMORY_OPERATION</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3ad09bde0ab46d6a888f6f219ef522c66c</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>vfsdbg</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -23720,6 +23830,26 @@
     </TokenIdentifier>
     <Path>d2/d6e/syscalls_8h.html</Path>
     <Anchor>a16c10255fbc3692d24e41969a899c7ddac9fff3ad1eb63c1867c760346d8d01cc</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_CLI</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7ddab44ccb961671b137af2c3c52db99aa5a</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_STI</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7dda9d9eb94c4a9d48a50e52a74885cbcfb8</Anchor>
     <DeclaredIn>syscalls.h</DeclaredIn>
   </Token>
   <Token>

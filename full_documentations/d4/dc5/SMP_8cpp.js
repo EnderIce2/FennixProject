@@ -9,6 +9,7 @@ var SMP_8cpp =
       [ "IDT", "d4/dc5/SMP_8cpp.html#a0da375cf966941891fe856ce619fd7f6aaf66ba20bd2c95236cedcd07886926c1", null ]
     ] ],
     [ "EnableCPUFeatures", "d4/dc5/SMP_8cpp.html#a863d17f0668e227d4ab86b7ad5d19b3b", null ],
+    [ "GetCurrentCPUID", "d4/dc5/SMP_8cpp.html#a0f6a26fc56e8dab11a0baad77cbe8c75", null ],
     [ "InitializeCPU", "d4/dc5/SMP_8cpp.html#aa062ac5fe075d6ca20b62ec1efb329f5", null ],
     [ "StartCPU", "d4/dc5/SMP_8cpp.html#ad88aab0241b508d296eb247bb0d77448", null ],
     [ "_trampoline_end", "d4/dc5/SMP_8cpp.html#ae70ade7b09a28a5731dee3d4d3b1407b", null ],

@@ -5369,6 +5369,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>GetCurrentCPUID</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d4/dc5/SMP_8cpp.html</Path>
+    <Anchor>a0f6a26fc56e8dab11a0baad77cbe8c75</Anchor>
+    <DeclaredIn>SMP.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>smp</Name>
       <APILanguage>c</APILanguage>
       <Type>data</Type>
@@ -5549,6 +5559,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>GetCurrentCPUID</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d4/d33/smp_8hpp.html</Path>
+    <Anchor>a0f6a26fc56e8dab11a0baad77cbe8c75</Anchor>
+    <DeclaredIn>smp.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>GetCurrentCPU</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -5645,6 +5665,16 @@
     </TokenIdentifier>
     <Path>d4/d33/smp_8hpp.html</Path>
     <Anchor>a9fb3e8918d107d4dbb0a06ab72fec27b</Anchor>
+    <DeclaredIn>smp.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ErrorCode</Name>
+      <APILanguage>c</APILanguage>
+      <Type>data</Type>
+    </TokenIdentifier>
+    <Path>d4/d33/smp_8hpp.html</Path>
+    <Anchor>a8ec11ac6067b0e4293052a4a39e925f7</Anchor>
     <DeclaredIn>smp.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -7408,6 +7438,26 @@
     <Path>d7/d9e/floppy_8cpp.html</Path>
     <Anchor>aefa88d4dbc9204939bccb9dcb2a41696</Anchor>
     <DeclaredIn>floppy.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SetError</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d7/d91/ErrorHandler_8cpp.html</Path>
+    <Anchor>ac1267e9fc745b80c7dd53569be1a047a</Anchor>
+    <DeclaredIn>ErrorHandler.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetError</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d7/d91/ErrorHandler_8cpp.html</Path>
+    <Anchor>ade327d9940569db3f67607d9b7999013</Anchor>
+    <DeclaredIn>ErrorHandler.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -17534,6 +17584,116 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>SetError</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>ac1267e9fc745b80c7dd53569be1a047a</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>GetError</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>ade327d9940569db3f67607d9b7999013</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_SUCCESS</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3a6d4f18a9728f434ff2d1a64043ebe6e8</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_ARGUMENT</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3ae620c56be6cfef2f3f5af02e79db0260</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_HANDLE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3ac0bfb8e76c929f76d207a8606e9ab498</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_OPERATION</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3a991f48066fec8800274aa87a9c5f50a8</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_ADDRESS</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3a9ea1d47829ab7fd38ed72c3d5c2212f0</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_MEMORY</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3aa7d48a433b36c25e0be2fbc79ddb68cb</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_MEMORY_SIZE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3a5a0310f93270094c8fbae88ed9db5711</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_MEMORY_ACCESS</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3a956f751045729eaf4c83a21feba3cd94</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_MEMORY_OPERATION</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>de/d0f/errorhnd_8h.html</Path>
+    <Anchor>a3878e89dc5c88d823f4f923ef90dbcb3ad09bde0ab46d6a888f6f219ef522c66c</Anchor>
+    <DeclaredIn>errorhnd.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>vfsdbg</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -23401,9 +23561,9 @@
       <APILanguage>c</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>ae07a9ad040d2fbefafcff363b77697ce</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23411,9 +23571,9 @@
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a35fc01d4eba01f3f2ec636bd6b5ff34f</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23421,9 +23581,9 @@
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a7791986f3a23e5e1a01e79b99a5d6329</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23431,9 +23591,9 @@
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>aa315b38b270688a4d979ec71a9f33586</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23441,9 +23601,9 @@
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a09fdc8f727b214f5168e3690b0ddfa21</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23451,9 +23611,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>ac8c21f335bc7c2f0bc6a9ddaee6b9431</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23461,9 +23621,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a6870fb46accc462562647e3d99c0b7c7</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23471,9 +23631,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>aa8622fa1c28f360ea05bc97063d192b3</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23481,9 +23641,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>aebcc976a7993632e8679b287e8f2ff11</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23491,9 +23651,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a333d4d92c55d23e69b5c447d90795b8f</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23501,9 +23661,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a93fda3960d3337ef69b6bf27979dc07d</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23511,9 +23671,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a79efbfe75b9090140cf0b167a7ff7148</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23521,9 +23681,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a08288524be18838cf7b3ebb1dcd1dde7</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23531,9 +23691,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a6be7d9ce80c86f5178635fa86c2dd5e7</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23541,9 +23701,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a15ba264e61d0f9c1fe8565ac6fc3a573</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23551,9 +23711,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a21f5884309cd1bb0936c4574b3580df7</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23561,9 +23721,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a976dfcadcd26b5208e75e025a80e2c71</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23571,9 +23731,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>af7cbcb8bdc97db647056a747fc329255</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23581,9 +23741,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>aa5aa60072f4063655d5283b6d7b7ab44</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23591,9 +23751,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
-    <Anchor>a239ddd7f6e7ee1b05b59b2e56d8afb40</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
+    <Anchor>ad9a42607fb7932f44ba914ac49972e62</Anchor>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23601,9 +23761,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
-    <Anchor>aab72c37f0b3e6fc38d293bd4f8dd61ed</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
+    <Anchor>adef76ddddaddf969efa3bfad968fd430</Anchor>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23611,9 +23771,9 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
-    <Anchor>a357afb2dc20a652447f3a529dbda60e4</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
+    <Anchor>a9201a43070ac25a19a0c0194c09b993d</Anchor>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23621,9 +23781,9 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>ae268038ce44c98f28ba55a4fd593f4e2</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23631,9 +23791,9 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a18303b9dbcb0c16693d43e92eab3f267</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23641,9 +23801,9 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>aa1785f5c87b51d3ad7225379bdbacbc1</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23651,9 +23811,9 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a89ff720a977899def1a05d4eceb64076</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23661,9 +23821,9 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a19df960d2907e9c08a720ae7683e632c</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23671,9 +23831,9 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a8068edf906451857b4f6c7be313bec94</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23681,9 +23841,9 @@
       <APILanguage>c</APILanguage>
       <Type>data</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a0f75f529cf75cf0a9cd266f8d67675dc</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23691,9 +23851,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2a41ad850ae0c5b105dca3d223df38af97</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23701,9 +23861,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2a9fd826377b4f2f85771d886c1a4ce37b</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23711,9 +23871,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2a30528e6b6930b75402dca7f9af05cf9c</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23721,9 +23881,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2a53bf3ead23368c90ad6a0464eb47097a</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23731,9 +23891,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2afb395219565efdeddd6511bd94388586</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23741,9 +23901,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2ad764c4ff93e12350f072e0cbd70398c5</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23751,9 +23911,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2a608f0da2ee309a1c1395063b8b6d028d</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23761,9 +23921,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2a1f57f348816bdd0564bdfd9180e50fc0</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -23771,9 +23931,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2aceacf011e23d791d187b7b10b599bdb6</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -33420,6 +33580,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>internal_cli</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d9/d76/Native_8cpp.html</Path>
+    <Anchor>a725c0c609a2fd678e70601ea07551958</Anchor>
+    <DeclaredIn>Native.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>internal_sti</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d9/d76/Native_8cpp.html</Path>
+    <Anchor>a986c9d0c406a800c289fd9807634dbca</Anchor>
+    <DeclaredIn>Native.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>internal_dbg</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -37794,6 +37974,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>_CLI</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7ddab44ccb961671b137af2c3c52db99aa5a</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>_STI</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>a16c10255fbc3692d24e41969a899c7dda9d9eb94c4a9d48a50e52a74885cbcfb8</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>_DebugMessage</Name>
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
@@ -38213,9 +38413,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2a41ad850ae0c5b105dca3d223df38af97</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -38223,9 +38423,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2a9fd826377b4f2f85771d886c1a4ce37b</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -38233,9 +38433,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2a30528e6b6930b75402dca7f9af05cf9c</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -38243,9 +38443,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2a53bf3ead23368c90ad6a0464eb47097a</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -38253,9 +38453,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2afb395219565efdeddd6511bd94388586</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -38263,9 +38463,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2ad764c4ff93e12350f072e0cbd70398c5</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -38273,9 +38473,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2a608f0da2ee309a1c1395063b8b6d028d</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -38283,9 +38483,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2a1f57f348816bdd0564bdfd9180e50fc0</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -38293,9 +38493,9 @@
       <APILanguage>c</APILanguage>
       <Type>econst</Type>
     </TokenIdentifier>
-    <Path>d1/d82/CXXABI_8cpp.html</Path>
+    <Path>d7/d66/cxxabi_8cpp.html</Path>
     <Anchor>a26f33dc6f6d23dc64517389b6b786ac2aceacf011e23d791d187b7b10b599bdb6</Anchor>
-    <DeclaredIn>CXXABI.cpp</DeclaredIn>
+    <DeclaredIn>cxxabi.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -42425,6 +42625,16 @@
     </TokenIdentifier>
     <Path>de/df9/structCPUData.html</Path>
     <Anchor>a28b068572151d01dbeedacd358ed5021</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ErrorCode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>CPUData</Scope>
+    </TokenIdentifier>
+    <Path>de/df9/structCPUData.html</Path>
+    <Anchor>a590e51ea5f73b23f0a436857588c2e96</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
