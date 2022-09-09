@@ -32,6 +32,13 @@ static void __attribute__((constructor, no_stack_protector)) __construct_stk_chk
 
 __attribute__((weak, noreturn)) void __stack_chk_fail(void)
 {
-    panic("Stack smashing/overflow detected!", false);
+    panic("Stack smashing detected!", false);
+    CPU_STOP;
+}
+
+// https://github.com/gcc-mirror/gcc/blob/master/libssp/ssp.c
+__attribute__((weak, noreturn)) void __chk_fail(void)
+{
+    panic("Buffer overflow detected!", false);
     CPU_STOP;
 }
