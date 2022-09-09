@@ -109,6 +109,9 @@ jobs:
         path: boot/UEFI/gnu-efi
         key: ${{ runner.os }}-gnuefi-${{ hashFiles('boot/Makefile') }}
 
+    - name: Configure Makefile.conf
+      run: sed 's/.*OSARCH.*/OSARCH = amd64/' ./Makefile.conf && cat Makefile.conf | grep OSARCH
+
     - name: Downloading Fonts & Compiling initrd.c, readethernet.c and e.cpp
       run: make tools_workflow0
 
@@ -167,7 +170,7 @@ jobs:
         key: ${{ runner.os }}-gnuefi-${{ hashFiles('boot/Makefile') }}
 
     - name: Configure Makefile.conf
-      run: sed 's/OSARCH = amd64/OSARCH = i686/g' Makefile.conf
+      run: sed 's/.*OSARCH.*/OSARCH = i686/' ./Makefile.conf && cat Makefile.conf | grep OSARCH
 
     - name: Downloading Fonts & Compiling initrd.c, readethernet.c and e.cpp
       run: make tools_workflow0
@@ -227,7 +230,7 @@ jobs:
         key: ${{ runner.os }}-gnuefi-${{ hashFiles('boot/Makefile') }}
 
     - name: Configure Makefile.conf
-      run: sed 's/OSARCH = amd64/OSARCH = aarch64/g' Makefile.conf
+      run: sed 's/.*OSARCH.*/OSARCH = aarch64/' ./Makefile.conf && cat Makefile.conf | grep OSARCH
 
     - name: Downloading Fonts & Compiling initrd.c, readethernet.c and e.cpp
       run: make tools_workflow0
