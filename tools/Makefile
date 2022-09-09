@@ -42,8 +42,8 @@ clone_all:
 
 do_qemu:
 	cd qemu && \
-	bash ./configure --target-list=x86_64-softmmu,i386-softmmu,aarch64-softmmu --enable-gtk && \
-	make -j$(shell nproc)
+	bash ./configure --target-list=x86_64-softmmu,i386-softmmu,aarch64-softmmu --prefix=$(CROSS_DIR) --enable-gtk && \
+	make -j$(shell nproc) && make install
 
 do_binutils64:
 	cd build-binutilsamd64 && \
