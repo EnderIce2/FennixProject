@@ -79,17 +79,25 @@ tools: fonts
 
 tools_workflow0: fonts
 	make --quiet -C tools do_initrd
+	make --quiet -C tools do_readethernet
+	make --quiet -C tools do_e
 
 tools_workflow1:
 	make --quiet -C tools do_limine
 
 tools_workflow2:
-	make --quiet -C tools do_binutils
+	make --quiet -C tools clone_all
 
 tools_workflow3:
-	make --quiet -C tools do_gcc
+	make --quiet -C tools do_gcc64
 
 tools_workflow4:
+	make --quiet -C tools do_gcc32
+
+tools_workflow5:
+	make --quiet -C tools do_gccarm64
+
+tools_workflow6:
 	make --quiet -C boot gnuefi
 
 build: build_bootloader build_kernel build_libc build_userspace build_image

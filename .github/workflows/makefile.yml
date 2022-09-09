@@ -1,4 +1,4 @@
-name: Build x86_64
+name: Build OS
 
 on:
   push:
@@ -7,39 +7,81 @@ on:
     branches: [ main ]
 
 jobs:
-  deploydoc:
-    name: Deploy Documentation to GitHub Pages
+  buildcompiler:
+    name: Build Cross-Compiler (GCC)
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Install Doxygen
-        run: sudo apt-get install doxygen make -y
-
-      - name: Generate Documentation
-        run: make doxygen
-
-      - name: Copy GitHub Pages Website
-        run: cp -r tools/website/* doxygen-doc/
-
-      - name: Deploy documentation
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: doxygen-doc
-
-  compile:
-    name: Compile OS
-    runs-on: ubuntu-latest
-    needs: deploydoc
     steps:
     - uses: actions/checkout@v3
 
     - name: Update System
       run: sudo apt-get update
 
-    - name: Install Dependencies
+    - name: Cache cross Folder
+      id: cache-cross
+      uses: actions/cache@v3
+      with:
+        path: tools/cross
+        key: ${{ runner.os }}-cross-${{ hashFiles('tools/Makefile') }}
+
+    - name: Install GCC Dependencies
+      if: steps.cache-cross.outputs.cache-hit != 'true'
+      run: sudo apt-get install build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo -y
+
+    - name: Clone All
+      if: steps.cache-cross.outputs.cache-hit != 'true'
+      run: make tools_workflow2
+
+    - name: Compile GCC AMD64
+      if: steps.cache-cross.outputs.cache-hit != 'true'
+      run: make tools_workflow3
+
+    - name: Compile GCC i686
+      if: steps.cache-cross.outputs.cache-hit != 'true'
+      run: make tools_workflow4
+
+    - name: Compile GCC aarch64
+      if: steps.cache-cross.outputs.cache-hit != 'true'
+      run: make tools_workflow5
+
+  compilegnuefi:
+    name: Build GNU-EFI
+    runs-on: ubuntu-latest
+    needs: buildcompiler
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Update System
+      run: sudo apt-get update
+
+    - name: Cache gnu-efi Folder
+      id: cache-gnuefi
+      uses: actions/cache@v3
+      with:
+        path: boot/UEFI/gnu-efi
+        key: ${{ runner.os }}-gnuefi-${{ hashFiles('boot/Makefile') }}
+
+    - name: Install MinGW compiler
+      run: sudo apt-get install make gcc-mingw-w64-x86-64 gcc-mingw-w64-i686 mingw-w64 -y
+
+    - name: Get GNU-EFI source code and compile it
+      if: steps.cache-gnuefi.outputs.cache-hit != 'true'
+      run: make tools_workflow6
+
+  compile64:
+    name: Build AMD64
+    runs-on: ubuntu-latest
+    needs: compilegnuefi
+    steps:
+    - uses: actions/checkout@v3
+  
+    - name: Update System
+      run: sudo apt-get update
+
+    - name: Install Required Tools
       run: sudo apt-get install xorriso mtools genisoimage ovmf nasm doxygen -y
+
+    - name: Install MinGW compiler
+      run: sudo apt-get install make gcc-mingw-w64-x86-64 gcc-mingw-w64-i686 mingw-w64 -y
 
     - name: Cache cross Folder
       id: cache-cross
@@ -55,30 +97,11 @@ jobs:
         path: boot/UEFI/gnu-efi
         key: ${{ runner.os }}-gnuefi-${{ hashFiles('boot/Makefile') }}
 
-    - name: Install GNU Binutils & GNU Compiler Collection
-      if: steps.cache-cross.outputs.cache-hit != 'true'
-      run: sudo apt-get install build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo -y
-
-    - name: Downloading Fonts & Compiling initrd.c
+    - name: Downloading Fonts & Compiling initrd.c, readethernet.c and e.cpp
       run: make tools_workflow0
 
     - name: Cloning Limine
       run: make tools_workflow1
-
-    - name: Clone and Compile GNU Binutils
-      if: steps.cache-cross.outputs.cache-hit != 'true'
-      run: make tools_workflow2
-
-    - name: Clone and Compile GNU Compiler Collection
-      if: steps.cache-cross.outputs.cache-hit != 'true'
-      run: make tools_workflow3
-
-    - name: Install MinGW compiler
-      run: sudo apt-get install make gcc-mingw-w64-x86-64 gcc-mingw-w64-i686 mingw-w64 -y
-
-    - name: Get GNU-EFI source code and compile it
-      if: steps.cache-gnuefi.outputs.cache-hit != 'true'
-      run: make tools_workflow4
 
     - name: Build Bootloader
       run: make build_bootloader
@@ -98,81 +121,125 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v3.0.0
       with:
-        name: FennixProject
+        name: FennixProject-amd64
         path: FennixProject.iso
 
-  analyze:
-    name: Analyze
+  compile32:
+    name: Build i686
     runs-on: ubuntu-latest
-    needs: compile
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ 'cpp' ]
-
+    needs: compilegnuefi
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
+  
+    - name: Update System
+      run: sudo apt-get update
 
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-        languages: ${{ matrix.language }}
+    - name: Install Required Tools
+      run: sudo apt-get install xorriso mtools genisoimage ovmf nasm doxygen -y
 
-    - name: Install Packages
-      run: sudo apt-get update && sudo apt-get install xorriso mtools genisoimage ovmf nasm doxygen make gcc-mingw-w64-x86-64 gcc-mingw-w64-i686 mingw-w64 build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo -y
+    - name: Install MinGW compiler
+      run: sudo apt-get install make gcc-mingw-w64-x86-64 gcc-mingw-w64-i686 mingw-w64 -y
 
-    - name: Cache1
+    - name: Cache cross Folder
       id: cache-cross
       uses: actions/cache@v3
       with:
         path: tools/cross
         key: ${{ runner.os }}-cross-${{ hashFiles('tools/Makefile') }}
 
-    - name: Cache2
+    - name: Cache gnu-efi Folder
       id: cache-gnuefi
       uses: actions/cache@v3
       with:
         path: boot/UEFI/gnu-efi
         key: ${{ runner.os }}-gnuefi-${{ hashFiles('boot/Makefile') }}
 
-    - name: Build OS
-      run: |
-        make tools_workflow0
-        make tools_workflow1
-        make build_bootloader
-        make build_kernel
-        make build_libc
-        make build_userspace
-        make build_image
+    - name: Configure Makefile.conf
+      run: sed 's/OSARCH = amd64/OSARCH = i686/g' Makefile.conf
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
+    - name: Downloading Fonts & Compiling initrd.c, readethernet.c and e.cpp
+      run: make tools_workflow0
 
-  flawfinder:
-    name: Flawfinder
+    - name: Cloning Limine
+      run: make tools_workflow1
+
+    - name: Build Bootloader
+      run: make build_bootloader
+
+    - name: Build Kernel
+      run: make build_kernel
+
+    - name: Build LibC
+      run: make build_libc
+
+    - name: Build User-Space Applications
+      run: make build_userspace
+
+    - name: Build ISO Image
+      run: make build_image
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        name: FennixProject-i686
+        path: FennixProject.iso
+
+  compilearm64:
+    name: Build aarch64
     runs-on: ubuntu-latest
-    needs: compile
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
+    needs: compilegnuefi
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - uses: actions/checkout@v3
+  
+    - name: Update System
+      run: sudo apt-get update
 
-      - name: flawfinder_scan
-        uses: david-a-wheeler/flawfinder@8e4a779ad59dbfaee5da586aa9210853b701959c
-        with:
-          arguments: '--sarif ./'
-          output: 'flawfinder_results.sarif'
+    - name: Install Required Tools
+      run: sudo apt-get install xorriso mtools genisoimage ovmf nasm doxygen -y
 
-      - name: Upload analysis results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: ${{github.workspace}}/flawfinder_results.sarif
+    - name: Install MinGW compiler
+      run: sudo apt-get install make gcc-mingw-w64-x86-64 gcc-mingw-w64-i686 mingw-w64 -y
+
+    - name: Cache cross Folder
+      id: cache-cross
+      uses: actions/cache@v3
+      with:
+        path: tools/cross
+        key: ${{ runner.os }}-cross-${{ hashFiles('tools/Makefile') }}
+
+    - name: Cache gnu-efi Folder
+      id: cache-gnuefi
+      uses: actions/cache@v3
+      with:
+        path: boot/UEFI/gnu-efi
+        key: ${{ runner.os }}-gnuefi-${{ hashFiles('boot/Makefile') }}
+
+    - name: Configure Makefile.conf
+      run: sed 's/OSARCH = amd64/OSARCH = aarch64/g' Makefile.conf
+
+    - name: Downloading Fonts & Compiling initrd.c, readethernet.c and e.cpp
+      run: make tools_workflow0
+
+    - name: Cloning Limine
+      run: make tools_workflow1
+
+    - name: Build Bootloader
+      run: make build_bootloader
+
+    - name: Build Kernel
+      run: make build_kernel
+
+    - name: Build LibC
+      run: make build_libc
+
+    - name: Build User-Space Applications
+      run: make build_userspace
+
+    - name: Build ISO Image
+      run: make build_image
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        name: FennixProject-aarch64
+        path: FennixProject.iso
