@@ -434,6 +434,8 @@ static File *internal_filegetchildren(SyscallsRegs *regs, File *F, uint64_t Inde
 static void internal_usleep(SyscallsRegs *regs, uint64_t us)
 {
     syscldbg("syscall: usleep( %#llx )", us);
+    if (!CanSyscall(regs))
+        return;
     if (CurrentTaskingMode == TaskingMode::Mono)
     {
         usleep(us);
@@ -485,6 +487,22 @@ static void internal_beep(SyscallsRegs *regs, BeepState state, uint64_t Frequenc
     default:
         break;
     }
+}
+
+static void internal_cli(SyscallsRegs *regs)
+{
+    syscldbg("syscall: cli()");
+    if (!CanSyscall(regs))
+        return;
+    asm volatile("cli");
+}
+
+static void internal_sti(SyscallsRegs *regs)
+{
+    syscldbg("syscall: sti()");
+    if (!CanSyscall(regs))
+        return;
+    asm volatile("sti");
 }
 
 static uint64_t internal_dbg(SyscallsRegs *regs, int port, char *message)
@@ -557,6 +575,9 @@ static void *FennixSyscallsTable[] = {
     [_usleep] = (void *)internal_usleep,
 
     [_Beep] = (void *)internal_beep,
+
+    [_CLI] = (void *)internal_cli,
+    [_STI] = (void *)internal_sti,
 
     [_DebugMessage] = (void *)internal_dbg,
 };
