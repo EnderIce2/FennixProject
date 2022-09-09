@@ -23,6 +23,7 @@ struct CPUData
     void fxsave(char *Buffer) { _fxsave(Buffer); }
     void fxrstor(char *Buffer) { _fxrstor(Buffer); }
 
+    long ErrorCode;
     unsigned int Checksum;
 
     uint8_t Stack[STACK_SIZE] __attribute__((aligned(PAGE_SIZE)));
@@ -43,12 +44,11 @@ extern SymmetricMultiprocessing::SMP *smp;
 #define MAX_CPU 256
 extern CPUData CPUs[];
 
-// TODO: a better approach is to get lapic id instead of storing the ID in the FS register
+int GetCurrentCPUID();
+
 static CPUData *GetCurrentCPU()
 {
-    uint64_t ret = 0;
-    // asm volatile("movq %%fs, %0\n"
-    //              : "=r"(ret));
+    uint64_t ret = GetCurrentCPUID();
 
     if ((&CPUs[ret])->Checksum != CPU_DATA_CHECKSUM)
     {
@@ -56,7 +56,6 @@ static CPUData *GetCurrentCPU()
         err("CPU %d data are corrupted!", ret);
         return &CPUs[0];
     }
-
     return &CPUs[ret];
 }
 

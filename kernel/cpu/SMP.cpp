@@ -160,6 +160,8 @@ static void InitializeCPU(ACPI::MADT::LocalAPIC *lapic)
     // trace("CPU %d Ready", lapic->APICId);
 }
 
+int GetCurrentCPUID() { return apic->Read(APIC::APIC::APIC_ID) >> 24; }
+
 namespace SymmetricMultiprocessing
 {
     SMP::SMP()
