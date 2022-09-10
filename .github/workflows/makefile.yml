@@ -144,7 +144,7 @@ jobs:
   compile32:
     name: Build i686
     runs-on: ubuntu-latest
-    needs: compilegnuefi
+    needs: [buildcompiler, compilegnuefi]
     steps:
     - uses: actions/checkout@v3
   
@@ -204,7 +204,7 @@ jobs:
   compilearm64:
     name: Build aarch64
     runs-on: ubuntu-latest
-    needs: compilegnuefi
+    needs: [buildcompiler, compilegnuefi]
     steps:
     - uses: actions/checkout@v3
   
