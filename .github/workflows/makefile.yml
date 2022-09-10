@@ -13,15 +13,16 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Update System
-      run: sudo apt-get update
-
     - name: Cache cross Folder
       id: cache-cross
       uses: actions/cache@v3
       with:
         path: tools/cross
         key: ${{ runner.os }}-cross-${{ hashFiles('tools/Makefile') }}
+
+    - name: Update System
+      if: steps.cache-cross.outputs.cache-hit != 'true'
+      run: sudo apt-get update
 
     - name: Install GCC Dependencies
       if: steps.cache-cross.outputs.cache-hit != 'true'
@@ -62,9 +63,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Update System
-      run: sudo apt-get update
-
     - name: Cache gnu-efi Folder
       id: cache-gnuefi
       uses: actions/cache@v3
@@ -72,7 +70,12 @@ jobs:
         path: boot/UEFI/gnu-efi
         key: ${{ runner.os }}-gnuefi-${{ hashFiles('boot/Makefile') }}
 
+    - name: Update System
+      if: steps.cache-gnuefi.outputs.cache-hit != 'true'
+      run: sudo apt-get update
+
     - name: Install MinGW compiler
+      if: steps.cache-gnuefi.outputs.cache-hit != 'true'
       run: sudo apt-get install make gcc-mingw-w64-x86-64 gcc-mingw-w64-i686 mingw-w64 -y
 
     - name: Get GNU-EFI source code and compile it
@@ -110,7 +113,7 @@ jobs:
         key: ${{ runner.os }}-gnuefi-${{ hashFiles('boot/Makefile') }}
 
     - name: Configure Makefile.conf
-      run: sed 's/.*OSARCH.*/OSARCH = amd64/' ./Makefile.conf && cat Makefile.conf | grep OSARCH
+      run: sed -i 's/.*OSARCH.*/OSARCH = amd64/' ./Makefile.conf && cat Makefile.conf | grep OSARCH
 
     - name: Downloading Fonts & Compiling initrd.c, readethernet.c and e.cpp
       run: make tools_workflow0
@@ -170,7 +173,7 @@ jobs:
         key: ${{ runner.os }}-gnuefi-${{ hashFiles('boot/Makefile') }}
 
     - name: Configure Makefile.conf
-      run: sed 's/.*OSARCH.*/OSARCH = i686/' ./Makefile.conf && cat Makefile.conf | grep OSARCH
+      run: sed -i 's/.*OSARCH.*/OSARCH = i686/' ./Makefile.conf && cat Makefile.conf | grep OSARCH
 
     - name: Downloading Fonts & Compiling initrd.c, readethernet.c and e.cpp
       run: make tools_workflow0
@@ -230,7 +233,7 @@ jobs:
         key: ${{ runner.os }}-gnuefi-${{ hashFiles('boot/Makefile') }}
 
     - name: Configure Makefile.conf
-      run: sed 's/.*OSARCH.*/OSARCH = aarch64/' ./Makefile.conf && cat Makefile.conf | grep OSARCH
+      run: sed -i 's/.*OSARCH.*/OSARCH = aarch64/' ./Makefile.conf && cat Makefile.conf | grep OSARCH
 
     - name: Downloading Fonts & Compiling initrd.c, readethernet.c and e.cpp
       run: make tools_workflow0
