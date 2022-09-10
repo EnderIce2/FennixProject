@@ -8,7 +8,7 @@ on:
 
 jobs:
   analyze:
-    name: Analyze
+    name: Analyze with CodeQL
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -60,7 +60,7 @@ jobs:
       uses: github/codeql-action/analyze@v2
 
   flawfinder:
-    name: Flawfinder
+    name: Analyze with Flawfinder
     runs-on: ubuntu-latest
     permissions:
       actions: read
