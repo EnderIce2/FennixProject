@@ -152,11 +152,8 @@ $(document).ready(function(){initNavTree('globals_m.html',''); initResizable(); 
 <li>MAX_MEMORY_ENTRIES
 : <a class="el" href="d3/d41/gbp_8h.html#a242e86d715a7086b90f62e79205b38cb">gbp.h</a>
 </li>
-<li>MAX_RAMDISKS
-: <a class="el" href="d3/d41/gbp_8h.html#a5236832a1c3b3b6a5366c769783f5dfb">gbp.h</a>
-</li>
-<li>MAX_SMP
-: <a class="el" href="d3/d41/gbp_8h.html#a7dbfca8afff451ddd3b929b4e31e0029">gbp.h</a>
+<li>MAX_MODULES
+: <a class="el" href="d3/d41/gbp_8h.html#a6cce4323245f92154efd90478606fe56">gbp.h</a>
 </li>
 <li>MAXCOMPLETE
 : <a class="el" href="d1/ddb/liballoc_8c.html#a08b7f1e029a0c835f3639557d8ad7a36">liballoc.c</a>
@@ -200,6 +197,9 @@ $(document).ready(function(){initNavTree('globals_m.html',''); initResizable(); 
 , <a class="el" href="dc/da4/libc_2include_2string_8h.html#a6fb455f3981065514483d9b27fb52d6e">string.h</a>
 , <a class="el" href="d3/d8f/mem_8c.html#a673f17f9b38f140561b59468d427ce1a">mem.c</a>
 , <a class="el" href="df/daa/apps_2system_2wm_2main_8cpp.html#ae187e20a949f1b54aca881dd82d0bc0e">main.cpp</a>
+</li>
+<li>MemmapRequest
+: <a class="el" href="d3/d1d/Limine_8c.html#a89cf8f39ee87a439c8c9aced7407ac8e">Limine.c</a>
 </li>
 <li>memmove()
 : <a class="el" href="d1/d69/kernel_2include_2string_8h.html#a802c986820d3866639922b6bc9484f90">string.h</a>
@@ -307,17 +307,23 @@ $(document).ready(function(){initNavTree('globals_m.html',''); initResizable(); 
 <li>mmoutw()
 : <a class="el" href="dc/dac/io_8h.html#a4cd2aa61971abcb0ab53f3dae29701ad">io.h</a>
 </li>
-<li>Mode
-: <a class="el" href="dc/de6/NetworkController_8hpp.html#ad11c3137711cc547aa65686fa2c98fc9">NetworkController.hpp</a>
-</li>
 <li>MODE
 : <a class="el" href="d1/ddb/liballoc_8c.html#ab8c52c1b4c021ed3e6b6b677bd2ac019">liballoc.c</a>
+</li>
+<li>Mode
+: <a class="el" href="dc/de6/NetworkController_8hpp.html#ad11c3137711cc547aa65686fa2c98fc9">NetworkController.hpp</a>
 </li>
 <li>MODE_BEST
 : <a class="el" href="d1/ddb/liballoc_8c.html#a881288ad0450ab9858bf01b030e755b0">liballoc.c</a>
 </li>
 <li>MODE_INSTANT
 : <a class="el" href="d1/ddb/liballoc_8c.html#aedc513524290b468e893e1bc4f5cba2f">liballoc.c</a>
+</li>
+<li>ModuleRequest
+: <a class="el" href="d3/d1d/Limine_8c.html#aa67cd4fc965a4eb4a2405ee8a0a52f34">Limine.c</a>
+</li>
+<li>ModuleType
+: <a class="el" href="d3/d41/gbp_8h.html#a224128d35337e2b42cebf846d4d0c6f1">gbp.h</a>
 </li>
 <li>monitor()
 : <a class="el" href="de/d21/asm_8h.html#acd428d632a9ae837560b1203f3fd72f0">asm.h</a>
@@ -1466,20 +1472,11 @@ $(document).ready(function(){initNavTree('globals_m.html',''); initResizable(); 
 <li>MULTIBOOT2_HEADER_MAGIC
 : <a class="el" href="d5/dba/multiboot2_8h.html#a84893ea1f13a57e8990e8d04d0f7b58d">multiboot2.h</a>
 </li>
-<li>MULTIBOOT_AOUT_KLUDGE
-: <a class="el" href="d1/dc0/multiboot_8h.html#a791f0c6a97c36de5388c990503ee4639">multiboot.h</a>
-</li>
-<li>multiboot_aout_symbol_table_t
-: <a class="el" href="d1/dc0/multiboot_8h.html#a2f11acfde9ee0022a999f69d3e972352">multiboot.h</a>
-</li>
 <li>MULTIBOOT_ARCHITECTURE_I386
 : <a class="el" href="d5/dba/multiboot2_8h.html#a6ebc069917f2924e1fd3dd794a90d048">multiboot2.h</a>
 </li>
 <li>MULTIBOOT_ARCHITECTURE_MIPS32
 : <a class="el" href="d5/dba/multiboot2_8h.html#a996ac49476846b7f4396f5a8bd285bed">multiboot2.h</a>
-</li>
-<li>MULTIBOOT_BOOTLOADER_MAGIC
-: <a class="el" href="d1/dc0/multiboot_8h.html#aacd617f4e3daafd6eab95fb6215ccae4">multiboot.h</a>
 </li>
 <li>MULTIBOOT_CONSOLE_FLAGS_CONSOLE_REQUIRED
 : <a class="el" href="d5/dba/multiboot2_8h.html#a7c8faf4e62886dfee5d5b367849d5bc8">multiboot2.h</a>
@@ -1487,27 +1484,17 @@ $(document).ready(function(){initNavTree('globals_m.html',''); initResizable(); 
 <li>MULTIBOOT_CONSOLE_FLAGS_EGA_TEXT_SUPPORTED
 : <a class="el" href="d5/dba/multiboot2_8h.html#ac6b61e3ef940f4f16aa49c91fbb60fc1">multiboot2.h</a>
 </li>
-<li>multiboot_elf_section_header_table_t
-: <a class="el" href="d1/dc0/multiboot_8h.html#a2ea4dd45da23724e95b9fc701b41d1e0">multiboot.h</a>
-</li>
 <li>MULTIBOOT_FRAMEBUFFER_TYPE_EGA_TEXT
 : <a class="el" href="d5/dba/multiboot2_8h.html#af6005f97267af2cb0ff37fb245284440">multiboot2.h</a>
-, <a class="el" href="d1/dc0/multiboot_8h.html#af6005f97267af2cb0ff37fb245284440">multiboot.h</a>
 </li>
 <li>MULTIBOOT_FRAMEBUFFER_TYPE_INDEXED
-: <a class="el" href="d1/dc0/multiboot_8h.html#a8e2af641ff42074bb807c3ec9e33b2e0">multiboot.h</a>
-, <a class="el" href="d5/dba/multiboot2_8h.html#a8e2af641ff42074bb807c3ec9e33b2e0">multiboot2.h</a>
+: <a class="el" href="d5/dba/multiboot2_8h.html#a8e2af641ff42074bb807c3ec9e33b2e0">multiboot2.h</a>
 </li>
 <li>MULTIBOOT_FRAMEBUFFER_TYPE_RGB
-: <a class="el" href="d1/dc0/multiboot_8h.html#a34b2f01226ea42de22e06db7f652fbb1">multiboot.h</a>
-, <a class="el" href="d5/dba/multiboot2_8h.html#a34b2f01226ea42de22e06db7f652fbb1">multiboot2.h</a>
+: <a class="el" href="d5/dba/multiboot2_8h.html#a34b2f01226ea42de22e06db7f652fbb1">multiboot2.h</a>
 </li>
 <li>MULTIBOOT_HEADER_ALIGN
 : <a class="el" href="d5/dba/multiboot2_8h.html#abc554da6e5184d34e039b551177434ba">multiboot2.h</a>
-, <a class="el" href="d1/dc0/multiboot_8h.html#abc554da6e5184d34e039b551177434ba">multiboot.h</a>
-</li>
-<li>MULTIBOOT_HEADER_MAGIC
-: <a class="el" href="d1/dc0/multiboot_8h.html#ab36ad4b4a42c58aac4ad1f2ba13054e9">multiboot.h</a>
 </li>
 <li>MULTIBOOT_HEADER_TAG_ADDRESS
 : <a class="el" href="d5/dba/multiboot2_8h.html#a3e549386717fec2f68b79b9717ff3dab">multiboot2.h</a>
@@ -1546,50 +1533,7 @@ $(document).ready(function(){initNavTree('globals_m.html',''); initResizable(); 
 : <a class="el" href="d5/dba/multiboot2_8h.html#a38c4ddac0884b311fde50c4e71bd0d4b">multiboot2.h</a>
 </li>
 <li>MULTIBOOT_INFO_ALIGN
-: <a class="el" href="d1/dc0/multiboot_8h.html#a7f583196f43e30e93323f5e44554d726">multiboot.h</a>
-, <a class="el" href="d5/dba/multiboot2_8h.html#a7f583196f43e30e93323f5e44554d726">multiboot2.h</a>
-</li>
-<li>MULTIBOOT_INFO_AOUT_SYMS
-: <a class="el" href="d1/dc0/multiboot_8h.html#a186ab9e55c5bc612b9fd7e10b4be5600">multiboot.h</a>
-</li>
-<li>MULTIBOOT_INFO_APM_TABLE
-: <a class="el" href="d1/dc0/multiboot_8h.html#aab73446f0cee2e9dc91f43eb9a0c806b">multiboot.h</a>
-</li>
-<li>MULTIBOOT_INFO_BOOT_LOADER_NAME
-: <a class="el" href="d1/dc0/multiboot_8h.html#a9743476d5f32c9ae22f6254a0e3ba11d">multiboot.h</a>
-</li>
-<li>MULTIBOOT_INFO_BOOTDEV
-: <a class="el" href="d1/dc0/multiboot_8h.html#acfde5ffdd699c023dd8f4b89aa66556f">multiboot.h</a>
-</li>
-<li>MULTIBOOT_INFO_CMDLINE
-: <a class="el" href="d1/dc0/multiboot_8h.html#ae75fb4f821b7ab405d46318d9b90a677">multiboot.h</a>
-</li>
-<li>MULTIBOOT_INFO_CONFIG_TABLE
-: <a class="el" href="d1/dc0/multiboot_8h.html#ad60e5b72325f5752e955879f3fbb44c3">multiboot.h</a>
-</li>
-<li>MULTIBOOT_INFO_DRIVE_INFO
-: <a class="el" href="d1/dc0/multiboot_8h.html#af2c5803d8cc6e1e8c00181ca546e68ab">multiboot.h</a>
-</li>
-<li>MULTIBOOT_INFO_ELF_SHDR
-: <a class="el" href="d1/dc0/multiboot_8h.html#ad7d22ae99c11dc92152acdc8494a71f0">multiboot.h</a>
-</li>
-<li>MULTIBOOT_INFO_FRAMEBUFFER_INFO
-: <a class="el" href="d1/dc0/multiboot_8h.html#a1c07b211ed2c374f5fbcf40c97bce2c0">multiboot.h</a>
-</li>
-<li>MULTIBOOT_INFO_MEM_MAP
-: <a class="el" href="d1/dc0/multiboot_8h.html#a2d16dabdfdee01362c3457d06f0ff850">multiboot.h</a>
-</li>
-<li>MULTIBOOT_INFO_MEMORY
-: <a class="el" href="d1/dc0/multiboot_8h.html#a1cb6047ede9a179b2958048573269d7a">multiboot.h</a>
-</li>
-<li>MULTIBOOT_INFO_MODS
-: <a class="el" href="d1/dc0/multiboot_8h.html#a9a06a0175854cc6af54ddb6bd798c5bc">multiboot.h</a>
-</li>
-<li>multiboot_info_t
-: <a class="el" href="d1/dc0/multiboot_8h.html#a8cb99862e8314c32c007eee9d2481ae1">multiboot.h</a>
-</li>
-<li>MULTIBOOT_INFO_VBE_INFO
-: <a class="el" href="d1/dc0/multiboot_8h.html#abf0a727e2e262407c77d54baf40d2f39">multiboot.h</a>
+: <a class="el" href="d5/dba/multiboot2_8h.html#a7f583196f43e30e93323f5e44554d726">multiboot2.h</a>
 </li>
 <li>MULTIBOOT_LOAD_PREFERENCE_HIGH
 : <a class="el" href="d5/dba/multiboot2_8h.html#a0f1c3469d5ef39bff66a690f65c51a6c">multiboot2.h</a>
@@ -1601,45 +1545,28 @@ $(document).ready(function(){initNavTree('globals_m.html',''); initResizable(); 
 : <a class="el" href="d5/dba/multiboot2_8h.html#afc4ddbe4fb058ac167cb8de79861e819">multiboot2.h</a>
 </li>
 <li>MULTIBOOT_MEMORY_ACPI_RECLAIMABLE
-: <a class="el" href="d1/dc0/multiboot_8h.html#af35be82586f332a561d00207c937ee57">multiboot.h</a>
-, <a class="el" href="d5/dba/multiboot2_8h.html#af35be82586f332a561d00207c937ee57">multiboot2.h</a>
+: <a class="el" href="d5/dba/multiboot2_8h.html#af35be82586f332a561d00207c937ee57">multiboot2.h</a>
 </li>
 <li>MULTIBOOT_MEMORY_AVAILABLE
-: <a class="el" href="d1/dc0/multiboot_8h.html#a7fe141351ebcde0acbd6118ad0ea1a21">multiboot.h</a>
-, <a class="el" href="d5/dba/multiboot2_8h.html#a7fe141351ebcde0acbd6118ad0ea1a21">multiboot2.h</a>
+: <a class="el" href="d5/dba/multiboot2_8h.html#a7fe141351ebcde0acbd6118ad0ea1a21">multiboot2.h</a>
 </li>
 <li>MULTIBOOT_MEMORY_BADRAM
 : <a class="el" href="d5/dba/multiboot2_8h.html#a1604ec18ac949d88dab993904b08c075">multiboot2.h</a>
-, <a class="el" href="d1/dc0/multiboot_8h.html#a1604ec18ac949d88dab993904b08c075">multiboot.h</a>
-</li>
-<li>MULTIBOOT_MEMORY_INFO
-: <a class="el" href="d1/dc0/multiboot_8h.html#afdfca6bbbf4b7dca40e9d43e58201f55">multiboot.h</a>
 </li>
 <li>multiboot_memory_map_t
-: <a class="el" href="d1/dc0/multiboot_8h.html#a2aa16c58ceb6b9548aded205e46e8a3b">multiboot.h</a>
-, <a class="el" href="d5/dba/multiboot2_8h.html#a2aa16c58ceb6b9548aded205e46e8a3b">multiboot2.h</a>
+: <a class="el" href="d5/dba/multiboot2_8h.html#a2aa16c58ceb6b9548aded205e46e8a3b">multiboot2.h</a>
 </li>
 <li>MULTIBOOT_MEMORY_NVS
 : <a class="el" href="d5/dba/multiboot2_8h.html#a68f78286f7434d373a82f1b6f6473c72">multiboot2.h</a>
-, <a class="el" href="d1/dc0/multiboot_8h.html#a68f78286f7434d373a82f1b6f6473c72">multiboot.h</a>
 </li>
 <li>MULTIBOOT_MEMORY_RESERVED
 : <a class="el" href="d5/dba/multiboot2_8h.html#a0299aedc71e1f6707181471bafb18e7c">multiboot2.h</a>
-, <a class="el" href="d1/dc0/multiboot_8h.html#a0299aedc71e1f6707181471bafb18e7c">multiboot.h</a>
 </li>
 <li>MULTIBOOT_MOD_ALIGN
-: <a class="el" href="d1/dc0/multiboot_8h.html#ab3284a28549f2a2f1a2001ca023aaa1e">multiboot.h</a>
-, <a class="el" href="d5/dba/multiboot2_8h.html#ab3284a28549f2a2f1a2001ca023aaa1e">multiboot2.h</a>
-</li>
-<li>multiboot_module_t
-: <a class="el" href="d1/dc0/multiboot_8h.html#a84f7545f2c7b26164fed10a81bd052fd">multiboot.h</a>
-</li>
-<li>MULTIBOOT_PAGE_ALIGN
-: <a class="el" href="d1/dc0/multiboot_8h.html#aab5e5487e858de2a031cd3f1232f7b60">multiboot.h</a>
+: <a class="el" href="d5/dba/multiboot2_8h.html#ab3284a28549f2a2f1a2001ca023aaa1e">multiboot2.h</a>
 </li>
 <li>MULTIBOOT_SEARCH
 : <a class="el" href="d5/dba/multiboot2_8h.html#a0b53e2de91aa7498c4b476776b27e5f3">multiboot2.h</a>
-, <a class="el" href="d1/dc0/multiboot_8h.html#a0b53e2de91aa7498c4b476776b27e5f3">multiboot.h</a>
 </li>
 <li>MULTIBOOT_TAG_ALIGN
 : <a class="el" href="d5/dba/multiboot2_8h.html#ae637162df0ab37a400ab1a038dcc3ae4">multiboot2.h</a>
@@ -1711,23 +1638,16 @@ $(document).ready(function(){initNavTree('globals_m.html',''); initResizable(); 
 : <a class="el" href="d5/dba/multiboot2_8h.html#af589b0f71833031d3c6c289d3accfab6">multiboot2.h</a>
 </li>
 <li>multiboot_uint16_t
-: <a class="el" href="d1/dc0/multiboot_8h.html#a3a11e3c2b5e0617736a05343aa5795b3">multiboot.h</a>
-, <a class="el" href="d5/dba/multiboot2_8h.html#a3a11e3c2b5e0617736a05343aa5795b3">multiboot2.h</a>
+: <a class="el" href="d5/dba/multiboot2_8h.html#a3a11e3c2b5e0617736a05343aa5795b3">multiboot2.h</a>
 </li>
 <li>multiboot_uint32_t
 : <a class="el" href="d5/dba/multiboot2_8h.html#a009f355da41fed4badb8a52d432f5186">multiboot2.h</a>
-, <a class="el" href="d1/dc0/multiboot_8h.html#a009f355da41fed4badb8a52d432f5186">multiboot.h</a>
 </li>
 <li>multiboot_uint64_t
 : <a class="el" href="d5/dba/multiboot2_8h.html#a8dfdd61648b48aa31845db590970e06a">multiboot2.h</a>
-, <a class="el" href="d1/dc0/multiboot_8h.html#a8dfdd61648b48aa31845db590970e06a">multiboot.h</a>
 </li>
 <li>multiboot_uint8_t
-: <a class="el" href="d1/dc0/multiboot_8h.html#a037f602538fccf97e90021c19fdfc047">multiboot.h</a>
-, <a class="el" href="d5/dba/multiboot2_8h.html#a037f602538fccf97e90021c19fdfc047">multiboot2.h</a>
-</li>
-<li>MULTIBOOT_VIDEO_MODE
-: <a class="el" href="d1/dc0/multiboot_8h.html#a74a1da9293ae3835241c60b2d9e65e8d">multiboot.h</a>
+: <a class="el" href="d5/dba/multiboot2_8h.html#a037f602538fccf97e90021c19fdfc047">multiboot2.h</a>
 </li>
 <li>mwait()
 : <a class="el" href="de/d21/asm_8h.html#afca46c607baf7d37837563e5f701c491">asm.h</a>

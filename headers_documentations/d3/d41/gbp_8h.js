@@ -18,18 +18,6 @@ var gbp_8h =
       [ "Signature", "d3/d41/gbp_8h.html#abf356419062ec779c2e6e965c4a7bf22", null ],
       [ "XSDTAddress", "d3/d41/gbp_8h.html#a142006e46e231f10c101448090b46bc0", null ]
     ] ],
-    [ "GBPSMPInfo", "d3/d41/gbp_8h.html#db/d18/structGBPSMPInfo", [
-      [ "ExtraArgument", "d3/d41/gbp_8h.html#a29357ae7c4ea56de1e5bf6d61348f58e", null ],
-      [ "GoToAddress", "d3/d41/gbp_8h.html#ae9b65fe3efcb8a3c7d7a2a144b36f64b", null ],
-      [ "ID", "d3/d41/gbp_8h.html#ac9d417779564005373e3c7f6e6202971", null ],
-      [ "LAPICID", "d3/d41/gbp_8h.html#a48f4bea89f9a63d3a38ca30c64ad4949", null ],
-      [ "TargetStack", "d3/d41/gbp_8h.html#af82ec40bd9cb3a24c1492701d965dacd", null ]
-    ] ],
-    [ "GBPSMP", "d3/d41/gbp_8h.html#d7/d55/structGBPSMP", [
-      [ "BootstrapProcessLAPICID", "d3/d41/gbp_8h.html#a53b4ae13dd3ac7a4ef593adda714dc98", null ],
-      [ "CPUCount", "d3/d41/gbp_8h.html#ae7b9406ea0bc86a0e5d7af55798ce160", null ],
-      [ "smp", "d3/d41/gbp_8h.html#a63704b03b370c41df8c5ff7b89a6e933", null ]
-    ] ],
     [ "GBPMemoryMapEntry", "d3/d41/gbp_8h.html#d8/d66/structGBPMemoryMapEntry", [
       [ "Length", "d3/d41/gbp_8h.html#a81e1a59bce41c436cf31ca46982a99d5", null ],
       [ "Pages", "d3/d41/gbp_8h.html#a61a11c7168a66c7d8ababee9a8f122c4", null ],
@@ -40,59 +28,58 @@ var gbp_8h =
     ] ],
     [ "GBPMemory", "d3/d41/gbp_8h.html#d1/dc0/structGBPMemory", [
       [ "Entries", "d3/d41/gbp_8h.html#a5834c055424f11a548aff288e3663f04", null ],
+      [ "Entry", "d3/d41/gbp_8h.html#a472e4ff34b4a8ecf003f92c2dfa75338", null ],
       [ "KernelBasePhysical", "d3/d41/gbp_8h.html#ac418fcb56c24dd98e372464d4b5cb77a", null ],
       [ "KernelBaseVirtual", "d3/d41/gbp_8h.html#a63ab425cccc82f143646b4184b3b376a", null ],
-      [ "memmap", "d3/d41/gbp_8h.html#af4027ab88ae13eaf13f18d2e91925985", null ],
       [ "Size", "d3/d41/gbp_8h.html#a9df1dfde0afc458bffcca178d4dcbcd4", null ]
     ] ],
-    [ "initrd", "d3/d41/gbp_8h.html#da/d90/structinitrd", [
-      [ "end", "d3/d41/gbp_8h.html#a315dbd51e639e854b1b3d55988f31741", null ],
-      [ "start", "d3/d41/gbp_8h.html#a80dda76ffe5f69031ca5e67bbea5b2ab", null ],
-      [ "type", "d3/d41/gbp_8h.html#a1ec25fd7f3e3b4cb655c1dae412e693e", null ]
-    ] ],
-    [ "modules", "d3/d41/gbp_8h.html#d5/d20/structmodules", [
-      [ "num", "d3/d41/gbp_8h.html#ac101bb95fce2199fc3529ee1293b0846", null ],
-      [ "ramdisks", "d3/d41/gbp_8h.html#afd2a79082bcf578b7e9eb4ac8a8b8f10", null ]
-    ] ],
-    [ "kernel_file", "d3/d41/gbp_8h.html#de/d52/structkernel__file", [
-      [ "file", "d3/d41/gbp_8h.html#ad50f8fd18df0bec08a5b54a3f25498a2", null ],
-      [ "size", "d3/d41/gbp_8h.html#afd00770fff7647bbc838a0c6ca86f2bf", null ]
-    ] ],
     [ "_GlobalBootParams", "d3/d41/gbp_8h.html#da/da6/struct__GlobalBootParams", [
+      [ "KernelFile", "d3/d41/gbp_8h.html#d1/d61/struct__GlobalBootParams_1_1KernelFile", [
+        [ "File", "d3/d41/gbp_8h.html#a766191d427b00d50f77216dbc8fcc15a", null ],
+        [ "Length", "d3/d41/gbp_8h.html#a5a0263698b206dce57b3487cf08f2c9d", null ]
+      ] ],
+      [ "KernelModules", "d3/d41/gbp_8h.html#d3/d44/struct__GlobalBootParams_1_1KernelModules", [
+        [ "KernelModule", "d3/d41/gbp_8h.html#d9/dd0/struct__GlobalBootParams_1_1KernelModules_1_1KernelModule", [
+          [ "Length", "d3/d41/gbp_8h.html#a586087467c1ab3c63054e6bb7cdcfb62", null ],
+          [ "Start", "d3/d41/gbp_8h.html#a894116d0e8afdef96a01f752f1a29acb", null ],
+          [ "Type", "d3/d41/gbp_8h.html#a3f9c8e48c978310fda202eb1c8b83137", null ]
+        ] ],
+        [ "Module", "d3/d41/gbp_8h.html#ae287666bffbf6b2cc012aefb5fda2d82", null ],
+        [ "num", "d3/d41/gbp_8h.html#a96bf7364e370b07a77f15a07d24e90f0", null ]
+      ] ],
       [ "checksum", "d3/d41/gbp_8h.html#a6fadb87993df526d8122884ae656d8f7", null ],
       [ "cmdline", "d3/d41/gbp_8h.html#af3b4a3cc4619908500fc1abedae673e7", null ],
-      [ "epoch", "d3/d41/gbp_8h.html#a045429a92234748758407321d750df0e", null ],
+      [ "CPUCount", "d3/d41/gbp_8h.html#a8aed3c4c3b795bdb9e71617fb2e1597f", null ],
       [ "Framebuffer", "d3/d41/gbp_8h.html#a792a7252019873d6bd1c54e6e7e6ec2a", null ],
-      [ "HigherHalf", "d3/d41/gbp_8h.html#a6ebf97e723a90361b324b42fe4840f4a", null ],
-      [ "kernel", "d3/d41/gbp_8h.html#aee5fef29ee7fc13dfc05220a165a20e5", null ],
+      [ "Kernel", "d3/d41/gbp_8h.html#aee883b073de10605356f16845a641e79", null ],
       [ "mem", "d3/d41/gbp_8h.html#ab9ee300c3d2b8759950a98e5a12e4d60", null ],
-      [ "modules", "d3/d41/gbp_8h.html#a6ccb7a4bc6cc2f6e0fed754be5e8d57f", null ],
-      [ "rsdp", "d3/d41/gbp_8h.html#a31fdc337ca6ffa121f757e2f07766663", null ],
-      [ "smp", "d3/d41/gbp_8h.html#a6af6bb23f9d7960dc0b43a2bb596a8e3", null ]
+      [ "Modules", "d3/d41/gbp_8h.html#a834b7dc5ad33353f003fe40cd1732968", null ],
+      [ "rsdp", "d3/d41/gbp_8h.html#a31fdc337ca6ffa121f757e2f07766663", null ]
     ] ],
-    [ "_SysFlags", "d3/d41/gbp_8h.html#d6/dae/struct__SysFlags", [
-      [ "emergency", "d3/d41/gbp_8h.html#a8a13f59084c9dff677c49548dba87afc", null ],
-      [ "fennecsarethebest", "d3/d41/gbp_8h.html#aa9f14cc6c53211e822c1ee088dcf645d", null ],
-      [ "monotasking", "d3/d41/gbp_8h.html#af1e16e035d71e4108b9760e60f97e95c", null ],
-      [ "nogpu", "d3/d41/gbp_8h.html#a23054211feb2a2fc1676e7b8294d3030", null ],
-      [ "nohpet", "d3/d41/gbp_8h.html#af1ea10289f29ffaefcd51eddc8e80130", null ],
-      [ "noloadingscreen", "d3/d41/gbp_8h.html#a8c9064db0a7a99847e7553f60c69bdab", null ],
-      [ "nomount", "d3/d41/gbp_8h.html#ad45f7fe5939edfc8f4a04a034f3e9202", null ],
-      [ "rootfs", "d3/d41/gbp_8h.html#a8abc2266e585a11835f040fe92b47a31", null ]
+    [ "KernelModules", "d3/d41/gbp_8h.html#d3/d44/struct__GlobalBootParams_1_1KernelModules", [
+      [ "KernelModule", "d3/d41/gbp_8h.html#d9/dd0/struct__GlobalBootParams_1_1KernelModules_1_1KernelModule", [
+        [ "Length", "d3/d41/gbp_8h.html#a586087467c1ab3c63054e6bb7cdcfb62", null ],
+        [ "Start", "d3/d41/gbp_8h.html#a894116d0e8afdef96a01f752f1a29acb", null ],
+        [ "Type", "d3/d41/gbp_8h.html#a3f9c8e48c978310fda202eb1c8b83137", null ]
+      ] ],
+      [ "Module", "d3/d41/gbp_8h.html#ae287666bffbf6b2cc012aefb5fda2d82", null ],
+      [ "num", "d3/d41/gbp_8h.html#a96bf7364e370b07a77f15a07d24e90f0", null ]
+    ] ],
+    [ "KernelModule", "d3/d41/gbp_8h.html#d9/dd0/struct__GlobalBootParams_1_1KernelModules_1_1KernelModule", [
+      [ "Length", "d3/d41/gbp_8h.html#a586087467c1ab3c63054e6bb7cdcfb62", null ],
+      [ "Start", "d3/d41/gbp_8h.html#a894116d0e8afdef96a01f752f1a29acb", null ],
+      [ "Type", "d3/d41/gbp_8h.html#a3f9c8e48c978310fda202eb1c8b83137", null ]
+    ] ],
+    [ "KernelFile", "d3/d41/gbp_8h.html#d1/d61/struct__GlobalBootParams_1_1KernelFile", [
+      [ "File", "d3/d41/gbp_8h.html#a766191d427b00d50f77216dbc8fcc15a", null ],
+      [ "Length", "d3/d41/gbp_8h.html#a5a0263698b206dce57b3487cf08f2c9d", null ]
     ] ],
     [ "GBP_CHECKSUM", "d3/d41/gbp_8h.html#ace80e71b21d409b3a9ccd3e7ba32b3c6", null ],
     [ "MAX_MEMORY_ENTRIES", "d3/d41/gbp_8h.html#a242e86d715a7086b90f62e79205b38cb", null ],
-    [ "MAX_RAMDISKS", "d3/d41/gbp_8h.html#a5236832a1c3b3b6a5366c769783f5dfb", null ],
-    [ "MAX_SMP", "d3/d41/gbp_8h.html#a7dbfca8afff451ddd3b929b4e31e0029", null ],
+    [ "MAX_MODULES", "d3/d41/gbp_8h.html#a6cce4323245f92154efd90478606fe56", null ],
     [ "GlobalBootParams", "d3/d41/gbp_8h.html#aea3961f3b052e42c3f095004f52c6714", null ],
     [ "PHYSICAL_ADDRESS", "d3/d41/gbp_8h.html#a76987bbf04634817f652ba5c97f902b9", null ],
-    [ "SysFlags", "d3/d41/gbp_8h.html#a13c4bc6fe6a88c008c64be30a721b82e", null ],
     [ "VIRTUAL_ADDRESS", "d3/d41/gbp_8h.html#affb7dd8e1d0b4614c163c61f76cc959c", null ],
-    [ "initrdType", "d3/d41/gbp_8h.html#aa4dbe3217e8c52976519515a89c8ce2f", [
-      [ "InvalidRamdisk", "d3/d41/gbp_8h.html#aa4dbe3217e8c52976519515a89c8ce2fa62c843e90141704bb7ee28db8603ea1b", null ],
-      [ "USTAR", "d3/d41/gbp_8h.html#aa4dbe3217e8c52976519515a89c8ce2fae1a867ad5e5b7a0d90cb535521b71509", null ],
-      [ "RAMFS", "d3/d41/gbp_8h.html#aa4dbe3217e8c52976519515a89c8ce2faf401badb4b4e2f59f22a1a079aff8a71", null ]
-    ] ],
     [ "MemType", "d3/d41/gbp_8h.html#abd31f838aefffa46191d0d7dc36a96b2", [
       [ "GBP_Error", "d3/d41/gbp_8h.html#abd31f838aefffa46191d0d7dc36a96b2a0ea81cf7cb549201c780a8f5fc28469e", null ],
       [ "GBP_Free", "d3/d41/gbp_8h.html#abd31f838aefffa46191d0d7dc36a96b2ad26ba0f029c1916ec97474d02f2ff027", null ],
@@ -104,8 +91,13 @@ var gbp_8h =
       [ "GBP_Kernel", "d3/d41/gbp_8h.html#abd31f838aefffa46191d0d7dc36a96b2a49fb8317456b10f126eae0544ea3f457", null ],
       [ "GBP_Unknown", "d3/d41/gbp_8h.html#abd31f838aefffa46191d0d7dc36a96b2a2108e45e14f16ebbaf97e7c07219c665", null ]
     ] ],
+    [ "ModuleType", "d3/d41/gbp_8h.html#a224128d35337e2b42cebf846d4d0c6f1", [
+      [ "InvalidModuleType", "d3/d41/gbp_8h.html#a224128d35337e2b42cebf846d4d0c6f1affcb30c51e416c1b64c8e0bbae3d1734", null ],
+      [ "KernelRamdisk", "d3/d41/gbp_8h.html#a224128d35337e2b42cebf846d4d0c6f1a08a93edca57724a3870f9da7608ae17f", null ],
+      [ "KernelDriver", "d3/d41/gbp_8h.html#a224128d35337e2b42cebf846d4d0c6f1a949dc08053516059c6bc5876026f798e", null ]
+    ] ],
     [ "__attribute__", "d3/d41/gbp_8h.html#aa26028b044074150447f94d929f7f91f", null ],
-    [ "__attribute__", "d3/d41/gbp_8h.html#ad342151a8b1dffb3a6c9a3bd398ae72f", null ],
+    [ "__attribute__", "d3/d41/gbp_8h.html#ae7cd3b8d2b7d8a0585943a90f761c4c4", null ],
     [ "Checksum", "d3/d41/gbp_8h.html#ad98d5051c2e94669e746dd13771daac8", null ],
     [ "ExtendedChecksum", "d3/d41/gbp_8h.html#aaafa048bfd677fb79ce5e6eb8369262f", null ],
     [ "Length", "d3/d41/gbp_8h.html#af8d8a0e464944d6e219e87ef2f33d2e0", null ],

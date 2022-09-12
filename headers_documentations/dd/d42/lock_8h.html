@@ -108,7 +108,7 @@ Macros</h2></td></tr>
 <tr class="separator:aa8fb508081529de85e9a66f3a684ee49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9648dade2dd3191b595e31476ed7dccd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d42/lock_8h.html#a9648dade2dd3191b595e31476ed7dccd">debug_redirect_write</a>(m, ...)&#160;&#160;&#160;<a class="el" href="../../dd/d42/lock_8h.html#a6841bb205149574452098f0c28a3f8f4">api_redirect_debug_write</a>(6, m, __FILE__, __LINE__, __FUNCTION__, ##__VA_ARGS__);</td></tr>
 <tr class="separator:a9648dade2dd3191b595e31476ed7dccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0043f470f539898d04086a87e1b1aab5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d42/lock_8h.html#a0043f470f539898d04086a87e1b1aab5">TPL_LOCK</a>(<a class="el" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a>)&#160;&#160;&#160;((<a class="el" href="../../dd/d42/lock_8h.html#d9/da6/structLOCK">LOCK</a>){.tpl = <a class="el" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a>})</td></tr>
+<tr class="memitem:a0043f470f539898d04086a87e1b1aab5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d42/lock_8h.html#a0043f470f539898d04086a87e1b1aab5">TPL_LOCK</a>(type)&#160;&#160;&#160;((<a class="el" href="../../dd/d42/lock_8h.html#d9/da6/structLOCK">LOCK</a>){.tpl = type})</td></tr>
 <tr class="memdesc:a0043f470f539898d04086a87e1b1aab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not implemented yet.  <a href="../../dd/d42/lock_8h.html#a0043f470f539898d04086a87e1b1aab5">More...</a><br /></td></tr>
 <tr class="separator:a0043f470f539898d04086a87e1b1aab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50c9a7a2756f9a94bc68dc4682f68b5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d42/lock_8h.html#a50c9a7a2756f9a94bc68dc4682f68b5d">DBG_LOCK</a>(name)</td></tr>
@@ -124,7 +124,7 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6841bb205149574452098f0c28a3f8f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a5b8c8066907ab2f14c99eb730b772a79">START_EXTERNC</a> unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d42/lock_8h.html#a6841bb205149574452098f0c28a3f8f4">api_redirect_debug_write</a> (int <a class="el" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a>, char *message, const char *file, int line, const char *function,...)</td></tr>
+<tr class="memitem:a6841bb205149574452098f0c28a3f8f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a5b8c8066907ab2f14c99eb730b772a79">START_EXTERNC</a> unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d42/lock_8h.html#a6841bb205149574452098f0c28a3f8f4">api_redirect_debug_write</a> (int type, char *message, const char *file, int line, const char *function,...)</td></tr>
 <tr class="separator:a6841bb205149574452098f0c28a3f8f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c3421f6a07ccea5d7c410d5fc67c962"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d42/lock_8h.html#a4c3421f6a07ccea5d7c410d5fc67c962">spinlock_lock</a> (volatile <a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *lock)</td></tr>
 <tr class="separator:a4c3421f6a07ccea5d7c410d5fc67c962"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -322,8 +322,8 @@ LockName</td>
           <td class="memname">#define TPL_LOCK</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a></td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="../../dd/d42/lock_8h.html#d9/da6/structLOCK">LOCK</a>){.tpl = <a class="el" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a>})</td>
+          <td class="paramname">type</td><td>)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="../../dd/d42/lock_8h.html#d9/da6/structLOCK">LOCK</a>){.tpl = type})</td>
         </tr>
       </table>
 </div><div class="memdoc">

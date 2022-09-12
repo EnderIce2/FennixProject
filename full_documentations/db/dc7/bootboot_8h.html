@@ -150,11 +150,11 @@ Macros</h2></td></tr>
 <tr class="separator:ab8c1341606ed0d024d128e0b46760f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7eefa9959dbb6c5eb5a3a1e0a1f4f8d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc7/bootboot_8h.html#a7eefa9959dbb6c5eb5a3a1e0a1f4f8d4">MMapEnt_Ptr</a>(a)&#160;&#160;&#160;((a)-&gt;ptr)</td></tr>
 <tr class="separator:a7eefa9959dbb6c5eb5a3a1e0a1f4f8d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42ab65e4949cd0f6fe7225f30ad20fbd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc7/bootboot_8h.html#a42ab65e4949cd0f6fe7225f30ad20fbd">MMapEnt_Size</a>(a)&#160;&#160;&#160;((a)-&gt;<a class="el" href="../../d1/dc0/multiboot_8h.html#a6d813a0f2b5281b18dea3f4cda696c33">size</a> &amp; 0xFFFFFFFFFFFFFFF0)</td></tr>
+<tr class="memitem:a42ab65e4949cd0f6fe7225f30ad20fbd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc7/bootboot_8h.html#a42ab65e4949cd0f6fe7225f30ad20fbd">MMapEnt_Size</a>(a)&#160;&#160;&#160;((a)-&gt;size &amp; 0xFFFFFFFFFFFFFFF0)</td></tr>
 <tr class="separator:a42ab65e4949cd0f6fe7225f30ad20fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0112044156e10b57f272b214e9dc0843"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc7/bootboot_8h.html#a0112044156e10b57f272b214e9dc0843">MMapEnt_Type</a>(a)&#160;&#160;&#160;((a)-&gt;<a class="el" href="../../d1/dc0/multiboot_8h.html#a6d813a0f2b5281b18dea3f4cda696c33">size</a> &amp; 0xF)</td></tr>
+<tr class="memitem:a0112044156e10b57f272b214e9dc0843"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc7/bootboot_8h.html#a0112044156e10b57f272b214e9dc0843">MMapEnt_Type</a>(a)&#160;&#160;&#160;((a)-&gt;size &amp; 0xF)</td></tr>
 <tr class="separator:a0112044156e10b57f272b214e9dc0843"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85ce5580d2280c1722592644736faca5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc7/bootboot_8h.html#a85ce5580d2280c1722592644736faca5">MMapEnt_IsFree</a>(a)&#160;&#160;&#160;(((a)-&gt;<a class="el" href="../../d1/dc0/multiboot_8h.html#a6d813a0f2b5281b18dea3f4cda696c33">size</a>&amp;0xF)==1)</td></tr>
+<tr class="memitem:a85ce5580d2280c1722592644736faca5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc7/bootboot_8h.html#a85ce5580d2280c1722592644736faca5">MMapEnt_IsFree</a>(a)&#160;&#160;&#160;(((a)-&gt;size&amp;0xF)==1)</td></tr>
 <tr class="separator:a85ce5580d2280c1722592644736faca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5945ab0dd6072763b3a11abb5ac5fbb6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc7/bootboot_8h.html#a5945ab0dd6072763b3a11abb5ac5fbb6">MMAP_USED</a>&#160;&#160;&#160;0   /* don't use. <a class="el" href="../../d3/d41/gbp_8h.html#a8d677c99cb3927e0caf257bd189c5a52">Reserved</a> or unknown regions */</td></tr>
 <tr class="separator:a5945ab0dd6072763b3a11abb5ac5fbb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -931,7 +931,7 @@ unused4</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">a</td><td>)</td>
-          <td>&#160;&#160;&#160;(((a)-&gt;<a class="el" href="../../d1/dc0/multiboot_8h.html#a6d813a0f2b5281b18dea3f4cda696c33">size</a>&amp;0xF)==1)</td>
+          <td>&#160;&#160;&#160;(((a)-&gt;size&amp;0xF)==1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -971,7 +971,7 @@ unused4</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">a</td><td>)</td>
-          <td>&#160;&#160;&#160;((a)-&gt;<a class="el" href="../../d1/dc0/multiboot_8h.html#a6d813a0f2b5281b18dea3f4cda696c33">size</a> &amp; 0xFFFFFFFFFFFFFFF0)</td>
+          <td>&#160;&#160;&#160;((a)-&gt;size &amp; 0xFFFFFFFFFFFFFFF0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -991,7 +991,7 @@ unused4</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">a</td><td>)</td>
-          <td>&#160;&#160;&#160;((a)-&gt;<a class="el" href="../../d1/dc0/multiboot_8h.html#a6d813a0f2b5281b18dea3f4cda696c33">size</a> &amp; 0xF)</td>
+          <td>&#160;&#160;&#160;((a)-&gt;size &amp; 0xF)</td>
         </tr>
       </table>
 </div><div class="memdoc">

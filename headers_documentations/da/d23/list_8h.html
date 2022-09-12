@@ -110,7 +110,7 @@ Macros</h2></td></tr>
 <tr class="separator:a42f0e72af970a790b60a740af8c9ecd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ffe9d28c36d7b018a9cfae33bae45c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d23/list_8h.html#a0ffe9d28c36d7b018a9cfae33bae45c0">INIT_LIST_HEAD</a>(ptr)</td></tr>
 <tr class="separator:a0ffe9d28c36d7b018a9cfae33bae45c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26c976b7f654e70df318c1843e5094de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d23/list_8h.html#a26c976b7f654e70df318c1843e5094de">list_entry</a>(ptr,  <a class="el" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a>,  member)&#160;&#160;&#160;((<a class="el" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a> *)((char *)(ptr) - (unsigned long)(&amp;((<a class="el" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a> *)0)-&gt;member)))</td></tr>
+<tr class="memitem:a26c976b7f654e70df318c1843e5094de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d23/list_8h.html#a26c976b7f654e70df318c1843e5094de">list_entry</a>(ptr,  type,  member)&#160;&#160;&#160;((type *)((char *)(ptr) - (unsigned long)(&amp;((type *)0)-&gt;member)))</td></tr>
 <tr class="separator:a26c976b7f654e70df318c1843e5094de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8b24e6660ab3760c923e4b4db3fa502"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d23/list_8h.html#ab8b24e6660ab3760c923e4b4db3fa502">list_for_each</a>(pos,  head)&#160;&#160;&#160;for (pos = (head)-&gt;next; pos != (head); pos = pos-&gt;next)</td></tr>
 <tr class="separator:ab8b24e6660ab3760c923e4b4db3fa502"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,7 +120,7 @@ Macros</h2></td></tr>
 <tr class="separator:ad5a7bbc278609c0fee4536eeeaa1afab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91b31084b4ece72dbd75d2bb1f01d9ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d23/list_8h.html#a91b31084b4ece72dbd75d2bb1f01d9ff">list_for_each_entry_continue</a>(pos,  head,  member)</td></tr>
 <tr class="separator:a91b31084b4ece72dbd75d2bb1f01d9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29b80cf9d55392a4949d2071b7db4d5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d23/list_8h.html#a29b80cf9d55392a4949d2071b7db4d5c">list_first_entry</a>(ptr,  <a class="el" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a>,  member)&#160;&#160;&#160;<a class="el" href="../../da/d23/list_8h.html#a26c976b7f654e70df318c1843e5094de">list_entry</a>((ptr)-&gt;next, <a class="el" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a>, member)</td></tr>
+<tr class="memitem:a29b80cf9d55392a4949d2071b7db4d5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d23/list_8h.html#a29b80cf9d55392a4949d2071b7db4d5c">list_first_entry</a>(ptr,  type,  member)&#160;&#160;&#160;<a class="el" href="../../da/d23/list_8h.html#a26c976b7f654e70df318c1843e5094de">list_entry</a>((ptr)-&gt;next, type, member)</td></tr>
 <tr class="separator:a29b80cf9d55392a4949d2071b7db4d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b782fefb5ab71ce9762182e45a615e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d23/list_8h.html#a9b782fefb5ab71ce9762182e45a615e1">list_for_each_entry</a>(pos,  head,  member)</td></tr>
 <tr class="separator:a9b782fefb5ab71ce9762182e45a615e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -228,7 +228,7 @@ prev</td>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a>, </td>
+          <td class="paramname">type, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -239,7 +239,7 @@ prev</td>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((<a class="el" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a> *)((char *)(ptr) - (unsigned long)(&amp;((<a class="el" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a> *)0)-&gt;member)))</td>
+          <td></td><td>&#160;&#160;&#160;((type *)((char *)(ptr) - (unsigned long)(&amp;((type *)0)-&gt;member)))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -264,7 +264,7 @@ prev</td>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a>, </td>
+          <td class="paramname">type, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -275,7 +275,7 @@ prev</td>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="../../da/d23/list_8h.html#a26c976b7f654e70df318c1843e5094de">list_entry</a>((ptr)-&gt;next, <a class="el" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a>, member)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="../../da/d23/list_8h.html#a26c976b7f654e70df318c1843e5094de">list_entry</a>((ptr)-&gt;next, type, member)</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -12459,16 +12459,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>MAX_SMP</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d3/d41/gbp_8h.html</Path>
-    <Anchor>a7dbfca8afff451ddd3b929b4e31e0029</Anchor>
-    <DeclaredIn>gbp.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>MAX_MEMORY_ENTRIES</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -12489,12 +12479,12 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>MAX_RAMDISKS</Name>
+      <Name>MAX_MODULES</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>d3/d41/gbp_8h.html</Path>
-    <Anchor>a5236832a1c3b3b6a5366c769783f5dfb</Anchor>
+    <Anchor>a6cce4323245f92154efd90478606fe56</Anchor>
     <DeclaredIn>gbp.h</DeclaredIn>
   </Token>
   <Token>
@@ -12527,16 +12517,6 @@
     </TokenIdentifier>
     <Path>d3/d41/gbp_8h.html</Path>
     <Anchor>aea3961f3b052e42c3f095004f52c6714</Anchor>
-    <DeclaredIn>gbp.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SysFlags</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d3/d41/gbp_8h.html</Path>
-    <Anchor>a13c4bc6fe6a88c008c64be30a721b82e</Anchor>
     <DeclaredIn>gbp.h</DeclaredIn>
   </Token>
   <Token>
@@ -12656,37 +12636,7 @@
       <Type>data</Type>
     </TokenIdentifier>
     <Path>d3/d41/gbp_8h.html</Path>
-    <Anchor>ad342151a8b1dffb3a6c9a3bd398ae72f</Anchor>
-    <DeclaredIn>gbp.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>InvalidRamdisk</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>d3/d41/gbp_8h.html</Path>
-    <Anchor>aa4dbe3217e8c52976519515a89c8ce2fa62c843e90141704bb7ee28db8603ea1b</Anchor>
-    <DeclaredIn>gbp.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>USTAR</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>d3/d41/gbp_8h.html</Path>
-    <Anchor>aa4dbe3217e8c52976519515a89c8ce2fae1a867ad5e5b7a0d90cb535521b71509</Anchor>
-    <DeclaredIn>gbp.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>RAMFS</Name>
-      <APILanguage>c</APILanguage>
-      <Type>econst</Type>
-    </TokenIdentifier>
-    <Path>d3/d41/gbp_8h.html</Path>
-    <Anchor>aa4dbe3217e8c52976519515a89c8ce2faf401badb4b4e2f59f22a1a079aff8a71</Anchor>
+    <Anchor>ae7cd3b8d2b7d8a0585943a90f761c4c4</Anchor>
     <DeclaredIn>gbp.h</DeclaredIn>
   </Token>
   <Token>
@@ -12777,6 +12727,36 @@
     </TokenIdentifier>
     <Path>d3/d41/gbp_8h.html</Path>
     <Anchor>abd31f838aefffa46191d0d7dc36a96b2a2108e45e14f16ebbaf97e7c07219c665</Anchor>
+    <DeclaredIn>gbp.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>InvalidModuleType</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d3/d41/gbp_8h.html</Path>
+    <Anchor>a224128d35337e2b42cebf846d4d0c6f1affcb30c51e416c1b64c8e0bbae3d1734</Anchor>
+    <DeclaredIn>gbp.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>KernelRamdisk</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d3/d41/gbp_8h.html</Path>
+    <Anchor>a224128d35337e2b42cebf846d4d0c6f1a08a93edca57724a3870f9da7608ae17f</Anchor>
+    <DeclaredIn>gbp.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>KernelDriver</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>d3/d41/gbp_8h.html</Path>
+    <Anchor>a224128d35337e2b42cebf846d4d0c6f1a949dc08053516059c6bc5876026f798e</Anchor>
     <DeclaredIn>gbp.h</DeclaredIn>
   </Token>
   <Token>
@@ -13311,16 +13291,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>LIMINE_SMP_X2APIC</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d3/df0/limine_8h.html</Path>
-    <Anchor>aab8f478ec6458d943371ac2a12be97d7</Anchor>
-    <DeclaredIn>limine.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>LIMINE_MEMMAP_REQUEST</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -13491,6 +13461,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>LIMINE_DTB_REQUEST</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d3/df0/limine_8h.html</Path>
+    <Anchor>a708e3dc3a32da80a187ac17308b2f758</Anchor>
+    <DeclaredIn>limine.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>limine_terminal_write</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -13532,467 +13512,7 @@
   <Token>
     <TokenIdentifier>
       <Name>MULTIBOOT_SEARCH</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a0b53e2de91aa7498c4b476776b27e5f3</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_HEADER_ALIGN</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>abc554da6e5184d34e039b551177434ba</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_HEADER_MAGIC</Name>
       <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>ab36ad4b4a42c58aac4ad1f2ba13054e9</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_BOOTLOADER_MAGIC</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>aacd617f4e3daafd6eab95fb6215ccae4</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_MOD_ALIGN</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>ab3284a28549f2a2f1a2001ca023aaa1e</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_ALIGN</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a7f583196f43e30e93323f5e44554d726</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_PAGE_ALIGN</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>aab5e5487e858de2a031cd3f1232f7b60</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_MEMORY_INFO</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>afdfca6bbbf4b7dca40e9d43e58201f55</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_VIDEO_MODE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a74a1da9293ae3835241c60b2d9e65e8d</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_AOUT_KLUDGE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a791f0c6a97c36de5388c990503ee4639</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_MEMORY</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a1cb6047ede9a179b2958048573269d7a</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_BOOTDEV</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>acfde5ffdd699c023dd8f4b89aa66556f</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_CMDLINE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>ae75fb4f821b7ab405d46318d9b90a677</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_MODS</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a9a06a0175854cc6af54ddb6bd798c5bc</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_AOUT_SYMS</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a186ab9e55c5bc612b9fd7e10b4be5600</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_ELF_SHDR</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>ad7d22ae99c11dc92152acdc8494a71f0</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_MEM_MAP</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a2d16dabdfdee01362c3457d06f0ff850</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_DRIVE_INFO</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>af2c5803d8cc6e1e8c00181ca546e68ab</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_CONFIG_TABLE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>ad60e5b72325f5752e955879f3fbb44c3</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_BOOT_LOADER_NAME</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a9743476d5f32c9ae22f6254a0e3ba11d</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_APM_TABLE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>aab73446f0cee2e9dc91f43eb9a0c806b</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_VBE_INFO</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>abf0a727e2e262407c77d54baf40d2f39</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_INFO_FRAMEBUFFER_INFO</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a1c07b211ed2c374f5fbcf40c97bce2c0</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_FRAMEBUFFER_TYPE_INDEXED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a8e2af641ff42074bb807c3ec9e33b2e0</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_FRAMEBUFFER_TYPE_RGB</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a34b2f01226ea42de22e06db7f652fbb1</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_FRAMEBUFFER_TYPE_EGA_TEXT</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>af6005f97267af2cb0ff37fb245284440</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_MEMORY_AVAILABLE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a7fe141351ebcde0acbd6118ad0ea1a21</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_MEMORY_RESERVED</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a0299aedc71e1f6707181471bafb18e7c</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_MEMORY_ACPI_RECLAIMABLE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>af35be82586f332a561d00207c937ee57</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_MEMORY_NVS</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a68f78286f7434d373a82f1b6f6473c72</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_MEMORY_BADRAM</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a1604ec18ac949d88dab993904b08c075</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiboot_uint8_t</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a037f602538fccf97e90021c19fdfc047</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiboot_uint16_t</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a3a11e3c2b5e0617736a05343aa5795b3</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiboot_uint32_t</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a009f355da41fed4badb8a52d432f5186</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiboot_uint64_t</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a8dfdd61648b48aa31845db590970e06a</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiboot_aout_symbol_table_t</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a2f11acfde9ee0022a999f69d3e972352</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiboot_elf_section_header_table_t</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a2ea4dd45da23724e95b9fc701b41d1e0</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiboot_info_t</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a8cb99862e8314c32c007eee9d2481ae1</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiboot_memory_map_t</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a2aa16c58ceb6b9548aded205e46e8a3b</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiboot_module_t</Name>
-      <APILanguage>c</APILanguage>
-      <Type>tdef</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a84f7545f2c7b26164fed10a81bd052fd</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>__attribute__</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>aa6b9a7218d544abc2be2bd335681b0a1</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>size</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a6d813a0f2b5281b18dea3f4cda696c33</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>addr</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a8286ae6db03c34c4bb161accbfbfbbcd</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>len</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a6de3a6d27a7e07942958b912d39792e6</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>type</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a8da1a8c7127a0371eec0810a29e30f3c</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>__attribute__</Name>
-      <APILanguage>c</APILanguage>
-      <Type>data</Type>
-    </TokenIdentifier>
-    <Path>d1/dc0/multiboot_8h.html</Path>
-    <Anchor>a4bbf25084dee10ec29f4356cacced463</Anchor>
-    <DeclaredIn>multiboot.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MULTIBOOT_SEARCH</Name>
-      <APILanguage>c</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>d5/dba/multiboot2_8h.html</Path>
@@ -14002,7 +13522,7 @@
   <Token>
     <TokenIdentifier>
       <Name>MULTIBOOT_HEADER_ALIGN</Name>
-      <APILanguage>c</APILanguage>
+      <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>d5/dba/multiboot2_8h.html</Path>
@@ -14032,7 +13552,7 @@
   <Token>
     <TokenIdentifier>
       <Name>MULTIBOOT_MOD_ALIGN</Name>
-      <APILanguage>c</APILanguage>
+      <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>d5/dba/multiboot2_8h.html</Path>
@@ -14042,7 +13562,7 @@
   <Token>
     <TokenIdentifier>
       <Name>MULTIBOOT_INFO_ALIGN</Name>
-      <APILanguage>c</APILanguage>
+      <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>d5/dba/multiboot2_8h.html</Path>
@@ -14472,7 +13992,7 @@
   <Token>
     <TokenIdentifier>
       <Name>MULTIBOOT_MEMORY_AVAILABLE</Name>
-      <APILanguage>c</APILanguage>
+      <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>d5/dba/multiboot2_8h.html</Path>
@@ -14482,7 +14002,7 @@
   <Token>
     <TokenIdentifier>
       <Name>MULTIBOOT_MEMORY_RESERVED</Name>
-      <APILanguage>c</APILanguage>
+      <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>d5/dba/multiboot2_8h.html</Path>
@@ -14492,7 +14012,7 @@
   <Token>
     <TokenIdentifier>
       <Name>MULTIBOOT_MEMORY_ACPI_RECLAIMABLE</Name>
-      <APILanguage>c</APILanguage>
+      <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>d5/dba/multiboot2_8h.html</Path>
@@ -14502,7 +14022,7 @@
   <Token>
     <TokenIdentifier>
       <Name>MULTIBOOT_MEMORY_NVS</Name>
-      <APILanguage>c</APILanguage>
+      <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>d5/dba/multiboot2_8h.html</Path>
@@ -14512,7 +14032,7 @@
   <Token>
     <TokenIdentifier>
       <Name>MULTIBOOT_MEMORY_BADRAM</Name>
-      <APILanguage>c</APILanguage>
+      <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>d5/dba/multiboot2_8h.html</Path>
@@ -14522,7 +14042,7 @@
   <Token>
     <TokenIdentifier>
       <Name>MULTIBOOT_FRAMEBUFFER_TYPE_INDEXED</Name>
-      <APILanguage>c</APILanguage>
+      <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>d5/dba/multiboot2_8h.html</Path>
@@ -14532,7 +14052,7 @@
   <Token>
     <TokenIdentifier>
       <Name>MULTIBOOT_FRAMEBUFFER_TYPE_RGB</Name>
-      <APILanguage>c</APILanguage>
+      <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>d5/dba/multiboot2_8h.html</Path>
@@ -14542,7 +14062,7 @@
   <Token>
     <TokenIdentifier>
       <Name>MULTIBOOT_FRAMEBUFFER_TYPE_EGA_TEXT</Name>
-      <APILanguage>c</APILanguage>
+      <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>d5/dba/multiboot2_8h.html</Path>
@@ -14598,706 +14118,6 @@
     <Path>d5/dba/multiboot2_8h.html</Path>
     <Anchor>a2aa16c58ceb6b9548aded205e46e8a3b</Anchor>
     <DeclaredIn>multiboot2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE_MMAP_USABLE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d8/dc7/stivale_8h.html</Path>
-    <Anchor>aecbb97bca7c92dfff236c8baf3763fbd</Anchor>
-    <DeclaredIn>stivale.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE_MMAP_RESERVED</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d8/dc7/stivale_8h.html</Path>
-    <Anchor>a85eec91371449b99d55f27ee06ae09a0</Anchor>
-    <DeclaredIn>stivale.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE_MMAP_ACPI_RECLAIMABLE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d8/dc7/stivale_8h.html</Path>
-    <Anchor>ab2089f18058d427bc429d459bdc8b624</Anchor>
-    <DeclaredIn>stivale.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE_MMAP_ACPI_NVS</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d8/dc7/stivale_8h.html</Path>
-    <Anchor>a418af1e1eb461fff67b99cdb269d2e1d</Anchor>
-    <DeclaredIn>stivale.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE_MMAP_BAD_MEMORY</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d8/dc7/stivale_8h.html</Path>
-    <Anchor>a2e7a80f36ec1cea6691ddf4780859d11</Anchor>
-    <DeclaredIn>stivale.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE_MMAP_KERNEL_AND_MODULES</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d8/dc7/stivale_8h.html</Path>
-    <Anchor>adf2841e90eefdb00054332a19e4c7b58</Anchor>
-    <DeclaredIn>stivale.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE_MMAP_BOOTLOADER_RECLAIMABLE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d8/dc7/stivale_8h.html</Path>
-    <Anchor>ac155e9fa57c2a868b03d5c238dff7650</Anchor>
-    <DeclaredIn>stivale.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE_MMAP_FRAMEBUFFER</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d8/dc7/stivale_8h.html</Path>
-    <Anchor>a61a82a19dcf11d76a018ac094108e478</Anchor>
-    <DeclaredIn>stivale.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE_FBUF_MMODEL_RGB</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>d8/dc7/stivale_8h.html</Path>
-    <Anchor>a7ba27a09e42d952cb73ffc77081c6b6c</Anchor>
-    <DeclaredIn>stivale.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_stivale2_split64</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a529cb5ab59a40a16553b64c2f9644a1e</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_HEADER_TAG_ANY_VIDEO_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a962057e2db5b4015b5c01e1690907726</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_HEADER_TAG_FRAMEBUFFER_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a0813052a666f2eaa8d76f21fb7f48dcd</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_HEADER_TAG_FB_MTRR_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>ac4a356fdc65c442d3b690af90a8b6c90</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_HEADER_TAG_SLIDE_HHDM_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a831f06e497ea806912ed39b8b9dfcf92</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_HEADER_TAG_TERMINAL_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a68638363a2ce5f52fbd02f1782947c41</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_TERM_CB_DEC</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>aa22b7156dd59e766c708076e27fb10a7</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_TERM_CB_BELL</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>af99f5501a3b2a450ded4b614785a4e60</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_TERM_CB_PRIVATE_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a7ce785f36048ded8c83b4ad6f95716e7</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_TERM_CB_STATUS_REPORT</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>ac355034dfb2846a18e62daf8e922e52d</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_TERM_CB_POS_REPORT</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a7f3e6f5beceb767e867ecb41c32d1bc4</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_TERM_CB_KBD_LEDS</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a4765cdb8b9698dd01e2ecf4cb9f10331</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_TERM_CB_MODE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>acf00ddf59212df9fee1c4331827198ca</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_TERM_CB_LINUX</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a0c0f075c996839f736525adf05924254</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_TERM_CTX_SIZE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a25ec415adc7de17b40f3c969b304e451</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_TERM_CTX_SAVE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a1a7c3bfa1441b7e924f9be33b8c2695a</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_TERM_CTX_RESTORE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a229473f1f64e93992126ee934ad4359a</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_TERM_FULL_REFRESH</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>ac3c9ceb9612537a02b4a9f33c6ea5a38</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_HEADER_TAG_SMP_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a08b005925e1b2d279e2f0dbf4bfb4008</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_HEADER_TAG_5LV_PAGING_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a9750b3f17a95fff24b76bc7eee57a9f6</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_HEADER_TAG_UNMAP_NULL_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a1c17d4d03cdc5519946e07ec577c14d7</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_BOOTLOADER_BRAND_SIZE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a33b2f3df1a4cb5b8d73b17a354d77cbe</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_BOOTLOADER_VERSION_SIZE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>ac5a9ce0d95537f4b5382547118e7185f</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_PMRS_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a3be8c6160aff747b1ab752a0fe70a0ff</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_PMR_EXECUTABLE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>afe4c3263fad4941f19b519c25e6e8c69</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_PMR_WRITABLE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a297308788ccdd7a122d3f56418c5c940</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_PMR_READABLE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>ae82921e52d1326d778bae549ad7e5591</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_KERNEL_BASE_ADDRESS_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>ab2f2defc78f780efef2cfb96a1b184ea</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_CMDLINE_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a279317c5da8b3a3689ab27f287965d1f</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_MEMMAP_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a296142ae537065417a73dacb805ebd7c</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_MMAP_USABLE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a2b595b495772880c8dce88ae401c0159</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_MMAP_RESERVED</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a6bef8ce87be895431669c80af258e04f</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_MMAP_ACPI_RECLAIMABLE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a7b0610ed229ca3db85f0b29dbf822006</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_MMAP_ACPI_NVS</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a6c1809a44cbdace0272adfff7c5b27c8</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_MMAP_BAD_MEMORY</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a09611f4ac049e452260ec0c6a46a1622</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_MMAP_BOOTLOADER_RECLAIMABLE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>ae82b86605844e84bceb8f20113414854</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_MMAP_KERNEL_AND_MODULES</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a9f41ec27f979cd4a447c281d951cdc91</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_MMAP_FRAMEBUFFER</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a42292860dd022e24c7b4d6ed279ff877</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_FRAMEBUFFER_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a2bc9a36f823b924dc8e36fa9a068bcae</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_FBUF_MMODEL_RGB</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>ac82c36987b5bb96a8ff8e095faeded5d</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_EDID_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>afd834db193dcd0006757fe82c80fbd4e</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_TEXTMODE_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>aac95bd55d65c977cfc273a575048df23</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_FB_MTRR_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>accbeff357c6e7f81388331cc4b2597f6</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_TERMINAL_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a7b0eca61923140c16e2ae00ae3ecc51f</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_MODULES_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a7a27d5de40c22cf871109a627bd990ee</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_MODULE_STRING_SIZE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a0904d604a7c72b2e20eab1a40739c3e0</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_RSDP_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>ab0420fe4ab03b0b464c82dddc3d39694</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_EPOCH_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a2f0bff20b0f028530b2650ddd48bd495</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_FIRMWARE_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a9aa4cb647dce43f9b77ffeec1e5b1dd7</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_FIRMWARE_BIOS</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>aebff76a3ae5b90d993c565bb91eac964</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_EFI_SYSTEM_TABLE_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a9a0a5df8a615dbc8ccd50813f3490b18</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_KERNEL_FILE_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>acb798c32859f0e53f32118267e1b2eca</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_KERNEL_FILE_V2_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>aac557fbd56a02ade8712611e115c9760</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_BOOT_VOLUME_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>abbf7d9b13d391939c2aabd19eaad4e65</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_KERNEL_SLIDE_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a1a15a8920a4e5b5efc6ca7457e4a84b6</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_SMBIOS_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a1073e6c3e349b0279ddbf017909d4a7c</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_SMP_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a7db46ddd85a7e5cb52b528727a0b4f22</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_PXE_SERVER_INFO</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>a2187997d538177a5437684fa43765cf3</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_MMIO32_UART</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>af12751e0b976a72cf74f71728cd9c367</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_DTB</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>ac018f3f7656b9f4861b6cdcada3dc785</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>STIVALE2_STRUCT_TAG_HHDM_ID</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>df/d17/stivale2_8h.html</Path>
-    <Anchor>ad677d945c65d3ad505f20a2356405f73</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -24176,6 +22996,78 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>limine_dtb_request</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>limine_dtb_request</Scope>
+    </TokenIdentifier>
+    <Path>df/d9e/structlimine__dtb__request.html</Path>
+    <DeclaredIn>limine.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LIMINE_PTR</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>limine_dtb_request</Scope>
+    </TokenIdentifier>
+    <Path>df/d9e/structlimine__dtb__request.html</Path>
+    <Anchor>ad7a49dcd6ecbfb39a7414f96378b53f9</Anchor>
+    <DeclaredIn>limine.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>id</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>limine_dtb_request</Scope>
+    </TokenIdentifier>
+    <Path>df/d9e/structlimine__dtb__request.html</Path>
+    <Anchor>ad533cb8eb25eca696370c13934324ff4</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>revision</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>limine_dtb_request</Scope>
+    </TokenIdentifier>
+    <Path>df/d9e/structlimine__dtb__request.html</Path>
+    <Anchor>a087c707522e67aa0f27f711c240f2e38</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>limine_dtb_response</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>limine_dtb_response</Scope>
+    </TokenIdentifier>
+    <Path>d9/d4c/structlimine__dtb__response.html</Path>
+    <DeclaredIn>limine.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LIMINE_PTR</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>func</Type>
+      <Scope>limine_dtb_response</Scope>
+    </TokenIdentifier>
+    <Path>d9/d4c/structlimine__dtb__response.html</Path>
+    <Anchor>a4468c0e68fc704bf5875a52317025b04</Anchor>
+    <DeclaredIn>limine.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>revision</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>limine_dtb_response</Scope>
+    </TokenIdentifier>
+    <Path>d9/d4c/structlimine__dtb__response.html</Path>
+    <Anchor>aed32af46b70e6ffd089edf82241365c0</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>limine_efi_system_table_request</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -24491,7 +23383,7 @@
       <Scope>limine_framebuffer</Scope>
     </TokenIdentifier>
     <Path>de/d6b/structlimine__framebuffer.html</Path>
-    <Anchor>a66e6552ee2895701c48394437c9ba4ab</Anchor>
+    <Anchor>ad7e3e9a8a701f5bf814053d4d3628351</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -24501,7 +23393,7 @@
       <Scope>limine_framebuffer</Scope>
     </TokenIdentifier>
     <Path>de/d6b/structlimine__framebuffer.html</Path>
-    <Anchor>a0bf855a775780ab49f66bf6bfc9f6218</Anchor>
+    <Anchor>ab5467ac66f12a6072f1268ade1cef4fe</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -24511,7 +23403,7 @@
       <Scope>limine_framebuffer</Scope>
     </TokenIdentifier>
     <Path>de/d6b/structlimine__framebuffer.html</Path>
-    <Anchor>a802b3209833930596631fd25a95a8e2a</Anchor>
+    <Anchor>aeb59aad798c9422e1ff1eac95f5b1af4</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -24601,7 +23493,7 @@
       <Scope>limine_framebuffer</Scope>
     </TokenIdentifier>
     <Path>de/d6b/structlimine__framebuffer.html</Path>
-    <Anchor>a1d82bd152fd367936d221128df3a9e7f</Anchor>
+    <Anchor>a58a024c31ecddb2a783336b3d83921b6</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -25170,67 +24062,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>limine_smp_info</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>limine_smp_info</Scope>
-    </TokenIdentifier>
-    <Path>d2/d7d/structlimine__smp__info.html</Path>
-    <DeclaredIn>limine.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>LIMINE_PTR</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>limine_smp_info</Scope>
-    </TokenIdentifier>
-    <Path>d2/d7d/structlimine__smp__info.html</Path>
-    <Anchor>aaff7aebb12746b15cd601785a4a6bdd8</Anchor>
-    <DeclaredIn>limine.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>processor_id</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>limine_smp_info</Scope>
-    </TokenIdentifier>
-    <Path>d2/d7d/structlimine__smp__info.html</Path>
-    <Anchor>a953f186504542d199c4f93a853cc8ccf</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>lapic_id</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>limine_smp_info</Scope>
-    </TokenIdentifier>
-    <Path>d2/d7d/structlimine__smp__info.html</Path>
-    <Anchor>a4a3d1559347cb1ab567899d7115d40c8</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>reserved</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>limine_smp_info</Scope>
-    </TokenIdentifier>
-    <Path>d2/d7d/structlimine__smp__info.html</Path>
-    <Anchor>a24a071a949d8870774b32e98df6a628e</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>extra_argument</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>limine_smp_info</Scope>
-    </TokenIdentifier>
-    <Path>d2/d7d/structlimine__smp__info.html</Path>
-    <Anchor>a82945f541d8cf7c69718449151803771</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>limine_smp_request</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -25279,67 +24110,6 @@
     </TokenIdentifier>
     <Path>d1/db0/structlimine__smp__request.html</Path>
     <Anchor>a9d5a22f14cc4bf6458ef07150cb8e86b</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>limine_smp_response</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>limine_smp_response</Scope>
-    </TokenIdentifier>
-    <Path>d5/d99/structlimine__smp__response.html</Path>
-    <DeclaredIn>limine.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>LIMINE_PTR</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>limine_smp_response</Scope>
-    </TokenIdentifier>
-    <Path>d5/d99/structlimine__smp__response.html</Path>
-    <Anchor>a2fa24f8d909e9a1579331328dafb4e8f</Anchor>
-    <DeclaredIn>limine.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>revision</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>limine_smp_response</Scope>
-    </TokenIdentifier>
-    <Path>d5/d99/structlimine__smp__response.html</Path>
-    <Anchor>a6e82f78761b1846f0fb623e5e75d0132</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>flags</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>limine_smp_response</Scope>
-    </TokenIdentifier>
-    <Path>d5/d99/structlimine__smp__response.html</Path>
-    <Anchor>aae246b6cb8c84e45f389dcb0aa6c7fb1</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bsp_lapic_id</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>limine_smp_response</Scope>
-    </TokenIdentifier>
-    <Path>d5/d99/structlimine__smp__response.html</Path>
-    <Anchor>ae3bde9d4bbb662f51948a485401e0117</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>cpu_count</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>limine_smp_response</Scope>
-    </TokenIdentifier>
-    <Path>d5/d99/structlimine__smp__response.html</Path>
-    <Anchor>ae4e52c8cc142dca687b623b7764c49a1</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -25421,7 +24191,7 @@
       <Scope>limine_terminal</Scope>
     </TokenIdentifier>
     <Path>d1/df5/structlimine__terminal.html</Path>
-    <Anchor>a4b525c2e0356835d34f2b7f6a4bed4ba</Anchor>
+    <Anchor>ae6373fe1e31e28e8c509b38866233848</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -25431,7 +24201,7 @@
       <Scope>limine_terminal</Scope>
     </TokenIdentifier>
     <Path>d1/df5/structlimine__terminal.html</Path>
-    <Anchor>ada5ca664ab307e869b1bd3ef4308c933</Anchor>
+    <Anchor>ac02dd103aa77c1cf90a04256661d4901</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -25877,246 +24647,6 @@
     </TokenIdentifier>
     <Path>da/d02/structstbi__io__callbacks.html</Path>
     <Anchor>a319639db2f76e715eed7a7a974136832</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>stivale2_anchor</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>stivale2_anchor</Scope>
-    </TokenIdentifier>
-    <Path>d6/da6/structstivale2__anchor.html</Path>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_stivale2_split64</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>stivale2_anchor</Scope>
-    </TokenIdentifier>
-    <Path>d6/da6/structstivale2__anchor.html</Path>
-    <Anchor>a449d81a7b04e76ce53f49b032252046b</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_stivale2_split64</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>stivale2_anchor</Scope>
-    </TokenIdentifier>
-    <Path>d6/da6/structstivale2__anchor.html</Path>
-    <Anchor>a2661b8454df397431252657ae7edd6d5</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_stivale2_split64</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>stivale2_anchor</Scope>
-    </TokenIdentifier>
-    <Path>d6/da6/structstivale2__anchor.html</Path>
-    <Anchor>ab4f8114d57fb904a1fa0e504c335db48</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_stivale2_split64</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>stivale2_anchor</Scope>
-    </TokenIdentifier>
-    <Path>d6/da6/structstivale2__anchor.html</Path>
-    <Anchor>a6a9d4f406204dfc09384b914d7a20f89</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>anchor</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>stivale2_anchor</Scope>
-    </TokenIdentifier>
-    <Path>d6/da6/structstivale2__anchor.html</Path>
-    <Anchor>a0b1870b87c1353fae972f1ebcd02cc2a</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>bits</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>stivale2_anchor</Scope>
-    </TokenIdentifier>
-    <Path>d6/da6/structstivale2__anchor.html</Path>
-    <Anchor>aead72a48eab540541666e3f83384fba0</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>stivale2_header</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>stivale2_header</Scope>
-    </TokenIdentifier>
-    <Path>da/d43/structstivale2__header.html</Path>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_stivale2_split64</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>stivale2_header</Scope>
-    </TokenIdentifier>
-    <Path>da/d43/structstivale2__header.html</Path>
-    <Anchor>affe71b914ee219459e40fb9a4895137a</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_stivale2_split64</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>stivale2_header</Scope>
-    </TokenIdentifier>
-    <Path>da/d43/structstivale2__header.html</Path>
-    <Anchor>a3e3a1aa8deffe73fdd71d96b42148cc2</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_stivale2_split64</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>stivale2_header</Scope>
-    </TokenIdentifier>
-    <Path>da/d43/structstivale2__header.html</Path>
-    <Anchor>a9a8ef06fd428887534056cb85f97d196</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>flags</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>stivale2_header</Scope>
-    </TokenIdentifier>
-    <Path>da/d43/structstivale2__header.html</Path>
-    <Anchor>a9efb7be031df6475518b6f30c9fb8ad5</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>stivale2_header_tag_slide_hhdm</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>stivale2_header_tag_slide_hhdm</Scope>
-    </TokenIdentifier>
-    <Path>d7/dab/structstivale2__header__tag__slide__hhdm.html</Path>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_stivale2_split64</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>stivale2_header_tag_slide_hhdm</Scope>
-    </TokenIdentifier>
-    <Path>d7/dab/structstivale2__header__tag__slide__hhdm.html</Path>
-    <Anchor>a9c1404dcd952026fea56be6324e44d11</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>tag</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>stivale2_header_tag_slide_hhdm</Scope>
-    </TokenIdentifier>
-    <Path>d7/dab/structstivale2__header__tag__slide__hhdm.html</Path>
-    <Anchor>a21296aaf61ac36df8c567c5e74211e5c</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>flags</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>stivale2_header_tag_slide_hhdm</Scope>
-    </TokenIdentifier>
-    <Path>d7/dab/structstivale2__header__tag__slide__hhdm.html</Path>
-    <Anchor>a2a220b1039543171dfaa945544ff8574</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>stivale2_header_tag_terminal</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>stivale2_header_tag_terminal</Scope>
-    </TokenIdentifier>
-    <Path>d9/d77/structstivale2__header__tag__terminal.html</Path>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_stivale2_split64</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>stivale2_header_tag_terminal</Scope>
-    </TokenIdentifier>
-    <Path>d9/d77/structstivale2__header__tag__terminal.html</Path>
-    <Anchor>ae9d892ce0ce1cf6d844c677a1a13699b</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>tag</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>stivale2_header_tag_terminal</Scope>
-    </TokenIdentifier>
-    <Path>d9/d77/structstivale2__header__tag__terminal.html</Path>
-    <Anchor>a5ba26e596c2788e26eb3a7f1f2fe298c</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>flags</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>stivale2_header_tag_terminal</Scope>
-    </TokenIdentifier>
-    <Path>d9/d77/structstivale2__header__tag__terminal.html</Path>
-    <Anchor>a6866c22f0f33efce5efbb47d0233119f</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>stivale2_tag</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>stivale2_tag</Scope>
-    </TokenIdentifier>
-    <Path>dd/df4/structstivale2__tag.html</Path>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>_stivale2_split64</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>func</Type>
-      <Scope>stivale2_tag</Scope>
-    </TokenIdentifier>
-    <Path>dd/df4/structstivale2__tag.html</Path>
-    <Anchor>a5f9bf35fb3f0b3556e976e16e1d2b45a</Anchor>
-    <DeclaredIn>stivale2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>identifier</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>stivale2_tag</Scope>
-    </TokenIdentifier>
-    <Path>dd/df4/structstivale2__tag.html</Path>
-    <Anchor>a0b90134ebd16a890f99ade3f2066cc2b</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>

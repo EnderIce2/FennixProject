@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['kernel_5ffile_5132',['kernel_file',['../d3/d41/gbp_8h.html#de/d52/structkernel__file',1,'']]],
-  ['kerneldriver_5133',['KernelDriver',['../d8/d33/classDriver_1_1KernelDriver.html',1,'Driver']]]
+  ['kerneldriver_4920',['KernelDriver',['../d8/d33/classDriver_1_1KernelDriver.html',1,'Driver']]],
+  ['kernelfile_4921',['KernelFile',['../d3/d41/gbp_8h.html#d1/d61/struct__GlobalBootParams_1_1KernelFile',1,'_GlobalBootParams']]],
+  ['kernelmodule_4922',['KernelModule',['../d3/d41/gbp_8h.html#d9/dd0/struct__GlobalBootParams_1_1KernelModules_1_1KernelModule',1,'_GlobalBootParams::KernelModules']]],
+  ['kernelmodules_4923',['KernelModules',['../d3/d41/gbp_8h.html#d3/d44/struct__GlobalBootParams_1_1KernelModules',1,'_GlobalBootParams']]]
 ];

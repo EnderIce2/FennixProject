@@ -184,13 +184,11 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> i = 0;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">while</span> (s[i] != <span class="charliteral">&#39;\0&#39;</span>)</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        ++i;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d1/dc0/multiboot_8h.html#a6de3a6d27a7e07942958b912d39792e6">len</a> = i;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    s[<a class="code" href="../../d1/dc0/multiboot_8h.html#a6de3a6d27a7e07942958b912d39792e6">len</a>] = n;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    s[<a class="code" href="../../d1/dc0/multiboot_8h.html#a6de3a6d27a7e07942958b912d39792e6">len</a> + 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> len = i;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    s[len] = n;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    s[len + 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d1/dc0/multiboot_8h_source.html#l00100">len</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="../../d6/db1/print_8c_source.html#l00160">fputc()</a>, <a class="el" href="../../d6/db1/print_8c_source.html#l00145">fputs()</a>, <a class="el" href="../../d6/db1/print_8c_source.html#l00166">putchar()</a>, <a class="el" href="../../d6/db1/print_8c_source.html#l00153">puts()</a>, and <a class="el" href="../../d6/db1/print_8c_source.html#l00023">syswritedbgprint_wrapper()</a>.</p>
 
 </div>
@@ -803,8 +801,8 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            c = *Format++;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordtype">char</span> <a class="code" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a> = c;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">switch</span> (<a class="code" href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a>)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordtype">char</span> type = c;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">switch</span> (type)</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;%&#39;</span>:</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="keywordflow">goto</span> match;</div>
@@ -841,7 +839,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">return</span> count ? count : -1;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d4/db5/String_8c_source.html#l00139">isdigit()</a>, <a class="el" href="../../d4/db5/String_8c_source.html#l00144">isspace()</a>, <a class="el" href="../../d1/dc0/multiboot_8h_source.html#l00106">type</a>, and <a class="el" href="../../d1/d2d/stdarg_8h_source.html#l00017">va_arg</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/db5/String_8c_source.html#l00139">isdigit()</a>, <a class="el" href="../../d4/db5/String_8c_source.html#l00144">isspace()</a>, and <a class="el" href="../../d1/d2d/stdarg_8h_source.html#l00017">va_arg</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d6/db1/print_8c_source.html#l00136">sscanf()</a>.</p>
 
@@ -916,11 +914,9 @@ Variables</h2></td></tr>
 <div class="ttc" id="aprint_8c_html_a98fbdf7c49dbcd8d6045f4a5da38ff59"><div class="ttname"><a href="../../d6/db1/print_8c.html#a98fbdf7c49dbcd8d6045f4a5da38ff59">append_printf</a></div><div class="ttdeci">static void append_printf(char s[], char n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/db1/print_8c_source.html#l00013">print.c:13</a></div></div>
 <div class="ttc" id="asystem_8h_html_a6fda8683b098e50994ca10038d3774c5"><div class="ttname"><a href="../../dc/db2/system_8h.html#a6fda8683b098e50994ca10038d3774c5">WriteSysDebugger</a></div><div class="ttdeci">E void WriteSysDebugger(const char *Format,...)</div><div class="ttdoc">Write to the system debugger.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/system_8c_source.html#l00025">system.c:25</a></div></div>
 <div class="ttc" id="akernel_2include_2printf_8h_html_abbaf9363f36b73a13dfa6b0a792a60c5"><div class="ttname"><a href="../../d8/d01/kernel_2include_2printf_8h.html#abbaf9363f36b73a13dfa6b0a792a60c5">snprintf_</a></div><div class="ttdeci">PRINTF_VISIBILITY int snprintf_(char *s, size_t count, const char *format,...) ATTR_PRINTF(3</div></div>
-<div class="ttc" id="amultiboot_8h_html_a8da1a8c7127a0371eec0810a29e30f3c"><div class="ttname"><a href="../../d1/dc0/multiboot_8h.html#a8da1a8c7127a0371eec0810a29e30f3c">type</a></div><div class="ttdeci">multiboot_uint32_t type</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc0/multiboot_8h_source.html#l00106">multiboot.h:106</a></div></div>
 <div class="ttc" id="astdarg_8h_html_aa0628ab596c3d7e78f5e08c2d98e24da"><div class="ttname"><a href="../../d1/d2d/stdarg_8h.html#aa0628ab596c3d7e78f5e08c2d98e24da">va_start</a></div><div class="ttdeci">#define va_start(v, l)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d2d/stdarg_8h_source.html#l00015">stdarg.h:15</a></div></div>
 <div class="ttc" id="aprint_8c_html_a5026dd2cd1d2dfadce9aa4d843fabfaa"><div class="ttname"><a href="../../d6/db1/print_8c.html#a5026dd2cd1d2dfadce9aa4d843fabfaa">syswritedbgprint_wrapper</a></div><div class="ttdeci">static void syswritedbgprint_wrapper(char c, void *unused)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/db1/print_8c_source.html#l00023">print.c:23</a></div></div>
 <div class="ttc" id="aprint_8c_html_a43427d0e31428026fc210bd96bd28d1e"><div class="ttname"><a href="../../d6/db1/print_8c.html#a43427d0e31428026fc210bd96bd28d1e">fslout</a></div><div class="ttdeci">FILE * fslout</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/db1/print_8c_source.html#l00010">print.c:10</a></div></div>
-<div class="ttc" id="amultiboot_8h_html_a6de3a6d27a7e07942958b912d39792e6"><div class="ttname"><a href="../../d1/dc0/multiboot_8h.html#a6de3a6d27a7e07942958b912d39792e6">len</a></div><div class="ttdeci">multiboot_uint64_t len</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc0/multiboot_8h_source.html#l00100">multiboot.h:100</a></div></div>
 <div class="ttc" id="aacpi_8hpp_html_a975543b90f799d299886f54993f36b3b"><div class="ttname"><a href="../../d1/d90/acpi_8hpp.html#a975543b90f799d299886f54993f36b3b">Length</a></div><div class="ttdeci">uint32_t Length</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d90/acpi_8hpp_source.html#l00282">acpi.hpp:282</a></div></div>
 <div class="ttc" id="akernel_2include_2string_8h_html_a56be4166e4673843042a548a7f513dbc"><div class="ttname"><a href="../../d1/d69/kernel_2include_2string_8h.html#a56be4166e4673843042a548a7f513dbc">isspace</a></div><div class="ttdeci">int isspace(int c)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00144">String.c:144</a></div></div>
 <!-- start footer part -->

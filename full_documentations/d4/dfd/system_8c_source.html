@@ -102,9 +102,9 @@ $(document).ready(function(){initNavTree('d4/dfd/system_8c_source.html','../../'
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">while</span> (s[i] != <span class="charliteral">&#39;\0&#39;</span>)</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        ++i;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d1/dc0/multiboot_8h.html#a6de3a6d27a7e07942958b912d39792e6">len</a> = i;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    s[<a class="code" href="../../d1/dc0/multiboot_8h.html#a6de3a6d27a7e07942958b912d39792e6">len</a>] = n;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    s[<a class="code" href="../../d1/dc0/multiboot_8h.html#a6de3a6d27a7e07942958b912d39792e6">len</a> + 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> len = i;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    s[len] = n;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    s[len + 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d4/dfd/system_8c.html#a5026dd2cd1d2dfadce9aa4d843fabfaa">   19</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../d4/dfd/system_8c.html#a5026dd2cd1d2dfadce9aa4d843fabfaa">syswritedbgprint_wrapper</a>(<span class="keywordtype">char</span> c, <span class="keywordtype">void</span> *unused)</div>
@@ -164,7 +164,6 @@ $(document).ready(function(){initNavTree('d4/dfd/system_8c_source.html','../../'
 <div class="ttc" id="asystem_8h_html"><div class="ttname"><a href="../../dc/db2/system_8h.html">system.h</a></div></div>
 <div class="ttc" id="asystem_8c_html_a183f09d4ee4660c5b4b945cc657a4f95"><div class="ttname"><a href="../../d4/dfd/system_8c.html#a183f09d4ee4660c5b4b945cc657a4f95">append_syswritedbg</a></div><div class="ttdeci">static void append_syswritedbg(char s[], char n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/system_8c_source.html#l00008">system.c:8</a></div></div>
 <div class="ttc" id="astdarg_8h_html_aa0628ab596c3d7e78f5e08c2d98e24da"><div class="ttname"><a href="../../d1/d2d/stdarg_8h.html#aa0628ab596c3d7e78f5e08c2d98e24da">va_start</a></div><div class="ttdeci">#define va_start(v, l)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d2d/stdarg_8h_source.html#l00015">stdarg.h:15</a></div></div>
-<div class="ttc" id="amultiboot_8h_html_a6de3a6d27a7e07942958b912d39792e6"><div class="ttname"><a href="../../d1/dc0/multiboot_8h.html#a6de3a6d27a7e07942958b912d39792e6">len</a></div><div class="ttdeci">multiboot_uint64_t len</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc0/multiboot_8h_source.html#l00100">multiboot.h:100</a></div></div>
 <div class="ttc" id="asystem_8c_html_a73b441a94caad7873bb342021cdd187e"><div class="ttname"><a href="../../d4/dfd/system_8c.html#a73b441a94caad7873bb342021cdd187e">system</a></div><div class="ttdeci">int system(const char *Command)</div><div class="ttdoc">Execute a command in the system shell.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dfd/system_8c_source.html#l00045">system.c:45</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

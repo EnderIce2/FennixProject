@@ -2,11 +2,10 @@ var Kernel_8cpp =
 [
     [ "CheckSystemRequirements", "d2/d00/Kernel_8cpp.html#a2539ffa81ac82e686f7c5f895df1f7b7", null ],
     [ "initializeKernelFlags", "d2/d00/Kernel_8cpp.html#aeb0fc96c939de7a18e00f08b15efcf8a", null ],
-    [ "kernel_entry", "d2/d00/Kernel_8cpp.html#a90b82ad43d64ab425730ce43871969f6", null ],
+    [ "kernel_entry", "d2/d00/Kernel_8cpp.html#ade8b2cf95bcb311d21eff4a59b67f86d", null ],
     [ "KernelInit", "d2/d00/Kernel_8cpp.html#a3ba5d23626883fed428934dd940001c1", null ],
     [ "KernelTask", "d2/d00/Kernel_8cpp.html#a375156ba88847691dea2c8f2fd8dd576", null ],
     [ "limine_initializator", "d2/d00/Kernel_8cpp.html#aa9f9f3e61005342e16bf8b37abd61d2b", null ],
-    [ "stivale2_initializator", "d2/d00/Kernel_8cpp.html#a73dcfa19d7a51cda143377ca79d1301a", null ],
     [ "bootparams", "d2/d00/Kernel_8cpp.html#ad840a881d3808ffc8989ef1d14f9e06c", null ],
     [ "earlyparams", "d2/d00/Kernel_8cpp.html#ae7b517f08e3d7e7ef71af810e3cab1a8", null ],
     [ "FadeScreenNow", "d2/d00/Kernel_8cpp.html#a8cc3993baddc8e37bd32407ff3b7c196", null ],

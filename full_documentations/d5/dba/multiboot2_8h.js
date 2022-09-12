@@ -2,19 +2,9 @@ var multiboot2_8h =
 [
     [ "multiboot_header", "d5/dba/multiboot2_8h.html#dc/dfa/structmultiboot__header", [
       [ "architecture", "d5/dba/multiboot2_8h.html#a116c9b57307b74f86920e14c9ec89575", null ],
-      [ "bss_end_addr", "d5/dba/multiboot2_8h.html#ab4f2496ec9b0d1a95985929d281dfa19", null ],
       [ "checksum", "d5/dba/multiboot2_8h.html#a17e73abddfe8264c254767a20099038d", null ],
-      [ "depth", "d5/dba/multiboot2_8h.html#aba85b53dc3af1bf99c71292a776e9dff", null ],
-      [ "entry_addr", "d5/dba/multiboot2_8h.html#ac3d807775a9d69730e6698dcdcf6491e", null ],
-      [ "flags", "d5/dba/multiboot2_8h.html#ab922f32c179ec7bde91519d19f27d95b", null ],
-      [ "header_addr", "d5/dba/multiboot2_8h.html#a9718b2fc6ce29a37e9a209f92ab856e3", null ],
       [ "header_length", "d5/dba/multiboot2_8h.html#a5356113fb7e9e82c081374a6ab2ae509", null ],
-      [ "height", "d5/dba/multiboot2_8h.html#a055c5e6553ea032897ad50a12f998a17", null ],
-      [ "load_addr", "d5/dba/multiboot2_8h.html#a99de1cf326c46c76c6039f317b7a1ef2", null ],
-      [ "load_end_addr", "d5/dba/multiboot2_8h.html#ac9efc1a4c3cd18f286b2fd50ff052e31", null ],
-      [ "magic", "d5/dba/multiboot2_8h.html#a7fddee92e60ff58e159c6bf2c40bf29b", null ],
-      [ "mode_type", "d5/dba/multiboot2_8h.html#a4c90b7929342dd5aab7d08afa0906d28", null ],
-      [ "width", "d5/dba/multiboot2_8h.html#ad72a1a3dd608e73c818d0c27974def40", null ]
+      [ "magic", "d5/dba/multiboot2_8h.html#a7fddee92e60ff58e159c6bf2c40bf29b", null ]
     ] ],
     [ "multiboot_header_tag", "d5/dba/multiboot2_8h.html#d1/d28/structmultiboot__header__tag", [
       [ "flags", "d5/dba/multiboot2_8h.html#af24fe7df075c5603681a6cbbb26c2e07", null ],
@@ -78,7 +68,6 @@ var multiboot2_8h =
     [ "multiboot_mmap_entry", "d5/dba/multiboot2_8h.html#d5/de2/structmultiboot__mmap__entry", [
       [ "addr", "d5/dba/multiboot2_8h.html#a3f76a637264b83e30967bcd808ff403c", null ],
       [ "len", "d5/dba/multiboot2_8h.html#a6bfa44919a328492fa4e3d6239a23352", null ],
-      [ "size", "d5/dba/multiboot2_8h.html#af10c1835051b4b08bdcdb538c1b4101d", null ],
       [ "type", "d5/dba/multiboot2_8h.html#aa6fc447c57f074d0babfe3bbb7017de9", null ],
       [ "zero", "d5/dba/multiboot2_8h.html#a1e8db52da1ca1c6f5e2e96baec2c9256", null ]
     ] ],

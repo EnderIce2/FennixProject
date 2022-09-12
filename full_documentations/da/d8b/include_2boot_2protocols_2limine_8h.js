@@ -28,8 +28,6 @@ var include_2boot_2protocols_2limine_8h =
       [ "revision", "da/d8b/include_2boot_2protocols_2limine_8h.html#a7517ea7b123dccce114d3b893505e075", null ]
     ] ],
     [ "limine_5_level_paging_request", "d6/d26/structlimine__5__level__paging__request.html", "d6/d26/structlimine__5__level__paging__request" ],
-    [ "limine_smp_info", "d2/d7d/structlimine__smp__info.html", "d2/d7d/structlimine__smp__info" ],
-    [ "limine_smp_response", "d5/d99/structlimine__smp__response.html", "d5/d99/structlimine__smp__response" ],
     [ "limine_smp_request", "d1/db0/structlimine__smp__request.html", "d1/db0/structlimine__smp__request" ],
     [ "limine_memmap_entry", "da/d8b/include_2boot_2protocols_2limine_8h.html#d9/d2f/structlimine__memmap__entry", [
       [ "base", "da/d8b/include_2boot_2protocols_2limine_8h.html#a27ffe8338bdc73b6ae4f491914117af7", null ],
@@ -63,10 +61,13 @@ var include_2boot_2protocols_2limine_8h =
       [ "virtual_base", "da/d8b/include_2boot_2protocols_2limine_8h.html#ade872c60ef827862eb6771acd0a65ce5", null ]
     ] ],
     [ "limine_kernel_address_request", "d4/dd6/structlimine__kernel__address__request.html", "d4/dd6/structlimine__kernel__address__request" ],
+    [ "limine_dtb_response", "d9/d4c/structlimine__dtb__response.html", "d9/d4c/structlimine__dtb__response" ],
+    [ "limine_dtb_request", "df/d9e/structlimine__dtb__request.html", "df/d9e/structlimine__dtb__request" ],
     [ "LIMINE_5_LEVEL_PAGING_REQUEST", "da/d8b/include_2boot_2protocols_2limine_8h.html#a493482c4075e2a73894d82e2b627eccf", null ],
     [ "LIMINE_BOOT_TIME_REQUEST", "da/d8b/include_2boot_2protocols_2limine_8h.html#a56576e64da699ee469e4ff3366ff2357", null ],
     [ "LIMINE_BOOTLOADER_INFO_REQUEST", "da/d8b/include_2boot_2protocols_2limine_8h.html#a40a4f27d03994f4df1204e79c13c0ba2", null ],
     [ "LIMINE_COMMON_MAGIC", "da/d8b/include_2boot_2protocols_2limine_8h.html#a87a9619f1cb8e674a32e7392d4391976", null ],
+    [ "LIMINE_DTB_REQUEST", "da/d8b/include_2boot_2protocols_2limine_8h.html#a708e3dc3a32da80a187ac17308b2f758", null ],
     [ "LIMINE_EFI_SYSTEM_TABLE_REQUEST", "da/d8b/include_2boot_2protocols_2limine_8h.html#a27ed1ad9c13e80946a2b292b95eb458b", null ],
     [ "LIMINE_ENTRY_POINT_REQUEST", "da/d8b/include_2boot_2protocols_2limine_8h.html#a31ce5d415baae9ff1a1bb8963695b73e", null ],
     [ "LIMINE_FRAMEBUFFER_REQUEST", "da/d8b/include_2boot_2protocols_2limine_8h.html#ae000f357567574209f0e51768ab80433", null ],
@@ -91,7 +92,6 @@ var include_2boot_2protocols_2limine_8h =
     [ "LIMINE_RSDP_REQUEST", "da/d8b/include_2boot_2protocols_2limine_8h.html#a9292255548cfac30e78b77444b53822b", null ],
     [ "LIMINE_SMBIOS_REQUEST", "da/d8b/include_2boot_2protocols_2limine_8h.html#a51797e1398c279496630d28854bd688d", null ],
     [ "LIMINE_SMP_REQUEST", "da/d8b/include_2boot_2protocols_2limine_8h.html#aad7cc1bec20aa9a6ffc92a761d8747e1", null ],
-    [ "LIMINE_SMP_X2APIC", "da/d8b/include_2boot_2protocols_2limine_8h.html#aab8f478ec6458d943371ac2a12be97d7", null ],
     [ "LIMINE_STACK_SIZE_REQUEST", "da/d8b/include_2boot_2protocols_2limine_8h.html#a2686c76452b859aba0f77bff0ba6742a", null ],
     [ "LIMINE_TERMINAL_CB_BELL", "da/d8b/include_2boot_2protocols_2limine_8h.html#a17e61bc1823f6d748506800d404e8a2d", null ],
     [ "LIMINE_TERMINAL_CB_DEC", "da/d8b/include_2boot_2protocols_2limine_8h.html#a6ef2c8572f902d9b5b99d9bcd3d143b1", null ],

@@ -8,11 +8,11 @@ var structlimine__framebuffer =
     [ "edid_size", "de/d6b/structlimine__framebuffer.html#a4537b7ec9e3c3c837b327f49b9ceaf04", null ],
     [ "green_mask_shift", "de/d6b/structlimine__framebuffer.html#a3acea0b874c92b46cb2de5b8c8fa9cf1", null ],
     [ "green_mask_size", "de/d6b/structlimine__framebuffer.html#ad2844bcfc736a1a8ea33892d273048e7", null ],
-    [ "height", "de/d6b/structlimine__framebuffer.html#a0bf855a775780ab49f66bf6bfc9f6218", null ],
+    [ "height", "de/d6b/structlimine__framebuffer.html#ab5467ac66f12a6072f1268ade1cef4fe", null ],
     [ "memory_model", "de/d6b/structlimine__framebuffer.html#aaf898b5e5c86c8fb28e79f569112048f", null ],
-    [ "pitch", "de/d6b/structlimine__framebuffer.html#a802b3209833930596631fd25a95a8e2a", null ],
+    [ "pitch", "de/d6b/structlimine__framebuffer.html#aeb59aad798c9422e1ff1eac95f5b1af4", null ],
     [ "red_mask_shift", "de/d6b/structlimine__framebuffer.html#a71011f4f2722af9b3a36063d92e98856", null ],
     [ "red_mask_size", "de/d6b/structlimine__framebuffer.html#a36b1a1a603b64941306b64aab8cde484", null ],
-    [ "unused", "de/d6b/structlimine__framebuffer.html#a1d82bd152fd367936d221128df3a9e7f", null ],
-    [ "width", "de/d6b/structlimine__framebuffer.html#a66e6552ee2895701c48394437c9ba4ab", null ]
+    [ "unused", "de/d6b/structlimine__framebuffer.html#a58a024c31ecddb2a783336b3d83921b6", null ],
+    [ "width", "de/d6b/structlimine__framebuffer.html#ad7e3e9a8a701f5bf814053d4d3628351", null ]
 ];
