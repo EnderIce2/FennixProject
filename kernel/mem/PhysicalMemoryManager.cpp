@@ -1,5 +1,4 @@
 #include <heap.h>
-#include "../boot/stivale2.h"
 #include "../kernel.h"
 
 using namespace PMM;

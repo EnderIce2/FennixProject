@@ -34,7 +34,7 @@ static string MemTypeString[] =
 
 void PageFrameAllocator::ReadMemoryMap()
 {
-    trace("reading memory map %d %d %#llx", earlyparams.mem.Entries, earlyparams.mem.Size, earlyparams.mem.memmap);
+    trace("reading memory map %d %d %#lx", earlyparams.mem.Entries, earlyparams.mem.Size, earlyparams.mem.Entry);
     if (Initialized)
     {
         panic("Memory management was already initialized! Please hard reboot!", true);
@@ -44,15 +44,15 @@ void PageFrameAllocator::ReadMemoryMap()
     void *LargestFreeMemorySegment = NULL;
     size_t LargestFreeMemorySegmentSize = 0;
     for (uint64_t i = 0; i < earlyparams.mem.Entries; i++)
-        if (earlyparams.mem.memmap[i].Type == GBP_Free)
-            if (earlyparams.mem.memmap[i].Size > LargestFreeMemorySegmentSize)
+        if (earlyparams.mem.Entry[i].Type == GBP_Free)
+            if (earlyparams.mem.Entry[i].Size > LargestFreeMemorySegmentSize)
             {
-                LargestFreeMemorySegment = (void *)earlyparams.mem.memmap[i].PhysicalAddress;
-                LargestFreeMemorySegmentSize = earlyparams.mem.memmap[i].Size;
+                LargestFreeMemorySegment = (void *)earlyparams.mem.Entry[i].PhysicalAddress;
+                LargestFreeMemorySegmentSize = earlyparams.mem.Entry[i].Size;
                 debug("Largest free memory segment: %016p | size:%lld (%dKB)",
-                      (void *)earlyparams.mem.memmap[i].PhysicalAddress,
-                      earlyparams.mem.memmap[i].Size,
-                      TO_KB(earlyparams.mem.memmap[i].Size));
+                      (void *)earlyparams.mem.Entry[i].PhysicalAddress,
+                      earlyparams.mem.Entry[i].Size,
+                      TO_KB(earlyparams.mem.Entry[i].Size));
             }
     uint64_t MemorySize = earlyparams.mem.Size;
     TotalMemory = MemorySize;
@@ -63,11 +63,11 @@ void PageFrameAllocator::ReadMemoryMap()
     ReservePages(0, MemorySize / 4096 + 1);
 #ifdef DEBUG
     for (uint64_t i = 0; i < earlyparams.mem.Entries; i++)
-        debug("%p %d\t\t%s", earlyparams.mem.memmap[i].PhysicalAddress, earlyparams.mem.memmap[i].Pages, MemTypeString[earlyparams.mem.memmap[i].Type]);
+        debug("%p %d\t\t%s", earlyparams.mem.Entry[i].PhysicalAddress, earlyparams.mem.Entry[i].Pages, MemTypeString[earlyparams.mem.Entry[i].Type]);
 #endif
     for (uint64_t i = 0; i < earlyparams.mem.Entries; i++)
-        if (earlyparams.mem.memmap[i].Type == GBP_Free)
-            UnreservePages((void *)earlyparams.mem.memmap[i].PhysicalAddress, earlyparams.mem.memmap[i].Pages);
+        if (earlyparams.mem.Entry[i].Type == GBP_Free)
+            UnreservePages((void *)earlyparams.mem.Entry[i].PhysicalAddress, earlyparams.mem.Entry[i].Pages);
     ReservePages(0, 0x100); // Reserve between 0 and 0x100000
     LockPages(PageBitmap.Buffer, PageBitmap.Size / 4096 + 1);
     this->Initalized = true;

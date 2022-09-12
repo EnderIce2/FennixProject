@@ -43,9 +43,14 @@ Xalloc::AllocatorV1 *UserAllocator = nullptr; // TODO: Fix this allocator or mod
 
 void KernelInit();
 
-EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
+EXTERNC void limine_initializator()
 {
-    init_stivale2(bootloaderdata, &earlyparams, false);
+    if (!init_limine(&earlyparams, false))
+    {
+        err("Failed to initialize limine");
+        CPU_HALT;
+    }
+
     init_pmm();
     init_vmm();
     init_kernelpml();
@@ -56,29 +61,15 @@ EXTERNC void stivale2_initializator(stivale2_struct *bootloaderdata)
     debug("bootparams framebuffer is allocated at %p", bootparams->Framebuffer);
     debug("bootparams rsdp is allocated at %p", bootparams->rsdp);
     sysflags = new SysFlags;
-    init_stivale2(bootloaderdata, bootparams, true);
 
+    init_limine(bootparams, true);
     KernelInit();
 }
 
-EXTERNC void limine_initializator()
+EXTERNC void kernel_entry(void *Data)
 {
-    // TODO: support limine boot protocol.
-    init_limine(&earlyparams);
-    CPU_STOP;
-    KernelInit();
-}
-
-EXTERNC void kernel_entry(void *data)
-{
-    err("Bootloader initialized the kernel with unknown protocol! Trying to figure out what protocol is used.");
-    // TODO: detect boot protocol. make it more safe. it can trigger a triple fault.
-    if (detect_limine())
-        limine_initializator();
-    else if (detect_stivale2(data))
-        stivale2_initializator(static_cast<stivale2_struct *>(data));
-    else
-        err("No bootloader protocol found. System Halted.");
+    err("Bootloader initialized the kernel with unknown protocol!");
+    err("System Halted.");
     CPU_HALT;
 }
 
@@ -318,20 +309,7 @@ void KernelInit()
     vfs = new FileSystem::Virtual;
     BS->Progress(50);
 
-    for (int i = 0; i < bootparams->modules.num; i++)
-    {
-        BS->IncreaseProgres();
-        if (bootparams->modules.ramdisks[i].type == initrdType::USTAR)
-        {
-            new FileSystem::USTAR(bootparams->modules.ramdisks[i].start);
-            break;
-        }
-        else if (bootparams->modules.ramdisks[i].type == initrdType::RAMFS)
-        {
-            new FileSystem::Initrd(bootparams->modules.ramdisks[i].start);
-            break;
-        }
-    }
+    new FileSystem::USTAR(bootparams->Modules.Module[0].Start);
     devfs = new FileSystem::Device;
     mountfs = new FileSystem::Mount;
     procfs = new FileSystem::Process;

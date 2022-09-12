@@ -43,7 +43,7 @@ TaskStateSegment *tss = NULL;
 void init_tss()
 {
     trace("initializing tss");
-    tss = (TaskStateSegment *)kcalloc(bootparams->smp.CPUCount, sizeof(TaskStateSegment));
+    tss = (TaskStateSegment *)kcalloc(bootparams->CPUCount, sizeof(TaskStateSegment));
     uint64_t tss_base = (uint64_t)&tss[0];
     gdt.Entries->TaskStateSegment.Length = tss_base + sizeof(tss[0]);
     gdt.Entries->TaskStateSegment.Low = (uint16_t)(tss_base & 0xFFFF);

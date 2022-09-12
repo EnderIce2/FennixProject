@@ -22,7 +22,7 @@ do_e:
 	chmod +x e.elf
 
 do_limine:
-	git clone https://github.com/limine-bootloader/limine.git --branch=v3.0-branch-binary --depth=1
+	git clone https://github.com/limine-bootloader/limine.git --branch=v4.x-branch-binary --depth=1
 
 clone_all:
 	git clone https://sourceware.org/git/binutils-gdb.git binutils-gdb

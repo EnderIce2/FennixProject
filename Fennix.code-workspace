@@ -44,7 +44,11 @@
 			"fileloader.h": "c",
 			"assert.h": "c",
 			"printf.h": "c",
-			"convert.h": "c"
+			"convert.h": "c",
+			"kernel.h": "c",
+			"serial.h": "c",
+			"xalloc.hpp": "c",
+			"limine.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}

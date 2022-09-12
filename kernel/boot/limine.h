@@ -2,5 +2,4 @@
 #include <boot/gbp.h>
 #include <types.h>
 
-EXTERNC bool init_limine(GlobalBootParams *params);
-EXTERNC bool detect_limine();
+EXTERNC bool init_limine(GlobalBootParams *params, bool Second);

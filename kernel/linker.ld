@@ -24,11 +24,6 @@ SECTIONS
     _kernel_text_end = ALIGN(CONSTANT(MAXPAGESIZE));
     . += CONSTANT(MAXPAGESIZE);
 
-    .stivale2hdr :
-    {
-        KEEP(*(.stivale2hdr))
-    } :rodata
-
     .rodata :
     {
         *(.rodata .rodata.*)
@@ -50,4 +45,10 @@ SECTIONS
 
     . += CONSTANT(MAXPAGESIZE);
     _kernel_end = ALIGN(CONSTANT(MAXPAGESIZE));
+
+    /DISCARD/ :
+    {
+        *(.eh_frame)
+        *(.note .note.*)
+    }
 }

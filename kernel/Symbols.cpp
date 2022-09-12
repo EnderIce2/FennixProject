@@ -19,8 +19,8 @@ namespace KernelSymbols
 
     Symbols::Symbols()
     {
-        Elf64_Ehdr *KernelHeader = (Elf64_Ehdr *)bootparams->kernel.file;
-        Elf64_Shdr *ElfSections = (Elf64_Shdr *)(bootparams->kernel.file + KernelHeader->e_shoff);
+        Elf64_Ehdr *KernelHeader = (Elf64_Ehdr *)bootparams->Kernel.File;
+        Elf64_Shdr *ElfSections = (Elf64_Shdr *)(bootparams->Kernel.File + KernelHeader->e_shoff);
         Elf64_Sym *ElfSymbols = nullptr;
         char *strtab = nullptr;
 
@@ -28,7 +28,7 @@ namespace KernelSymbols
             switch (ElfSections[i].sh_type)
             {
             case SHT_SYMTAB:
-                ElfSymbols = (Elf64_Sym *)(bootparams->kernel.file + ElfSections[i].sh_offset);
+                ElfSymbols = (Elf64_Sym *)(bootparams->Kernel.File + ElfSections[i].sh_offset);
                 TotalEntries = ElfSections[i].sh_size / sizeof(Elf64_Sym);
                 debug("Symbol table found, %d entries", TotalEntries);
                 break;
@@ -39,7 +39,7 @@ namespace KernelSymbols
                 }
                 else
                 {
-                    strtab = (char *)bootparams->kernel.file + ElfSections[i].sh_offset;
+                    strtab = (char *)bootparams->Kernel.File + ElfSections[i].sh_offset;
                     debug("String table found, %d entries", ElfSections[i].sh_size);
                 }
                 break;

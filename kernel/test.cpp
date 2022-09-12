@@ -80,7 +80,7 @@ void do_mem_test()
     void *tmpAlloc2 = kmalloc(511);
     void *tmpAlloc3 = kmalloc(1027);
     void *tmpAlloc4 = kmalloc(1569);
-    TEST_DBG("Kernel Address: Start:%p ---- End:%p [%ldKB/%ldKB]\n", bootparams->kernel.file, bootparams->kernel.file + bootparams->kernel.size, TO_KB(KernelAllocator.GetUsedRAM()), TO_KB(KernelAllocator.GetFreeRAM()));
+    TEST_DBG("Kernel Address: Start:%p ---- End:%p [%ldKB/%ldKB]\n", bootparams->Kernel.File, bootparams->Kernel.File + bootparams->Kernel.Length, TO_KB(KernelAllocator.GetUsedRAM()), TO_KB(KernelAllocator.GetFreeRAM()));
     for (int repeat = 0; repeat < 16; repeat++)
     {
         TEST_DBG("---------------[TEST %d]---------------\n", repeat);
