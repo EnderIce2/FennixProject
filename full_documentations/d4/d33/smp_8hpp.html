@@ -161,7 +161,7 @@ Variables</h2></td></tr>
 <tr class="separator:a9fb3e8918d107d4dbb0a06ab72fec27b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ec11ac6067b0e4293052a4a39e925f7"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d33/smp_8hpp.html#a8ec11ac6067b0e4293052a4a39e925f7">ErrorCode</a></td></tr>
 <tr class="separator:a8ec11ac6067b0e4293052a4a39e925f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca4807be15fb54de1e82db8048022322"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d33/smp_8hpp.html#aca4807be15fb54de1e82db8048022322">Checksum</a></td></tr>
+<tr class="memitem:aca4807be15fb54de1e82db8048022322"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d33/smp_8hpp.html#aca4807be15fb54de1e82db8048022322">Checksum</a> = <a class="el" href="../../d4/d33/smp_8hpp.html#a39c988cf13da29ba3d8293d925456ab1">CPU_DATA_CHECKSUM</a></td></tr>
 <tr class="separator:aca4807be15fb54de1e82db8048022322"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9eba590f86f779210736f92f2c0b0ab"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="../../d1/dbb/classSymmetricMultiprocessing_1_1SMP.html">SymmetricMultiprocessing::SMP</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d35/namespaceSymmetricMultiprocessing.html#af9eba590f86f779210736f92f2c0b0ab">SymmetricMultiprocessing::__attribute__</a></td></tr>
 <tr class="separator:af9eba590f86f779210736f92f2c0b0ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -326,7 +326,7 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d4/dc5/SMP_8cpp_source.html#l00008">CPUs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/dc5/SMP_8cpp_source.html#l00099">InitializeCPU()</a>, and <a class="el" href="../../de/d74/APIC_8cpp_source.html#l00145">APIC::APIC::RawRedirectIRQ()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/dc5/SMP_8cpp_source.html#l00098">InitializeCPU()</a>, and <a class="el" href="../../de/d74/APIC_8cpp_source.html#l00145">APIC::APIC::RawRedirectIRQ()</a>.</p>
 
 </div>
 </div>
@@ -357,16 +357,16 @@ Variables</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> ret = <a class="code" href="../../d4/d33/smp_8hpp.html#a0f6a26fc56e8dab11a0baad77cbe8c75">GetCurrentCPUID</a>();</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> ((&amp;<a class="code" href="../../d4/d33/smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>[ret])-&gt;<a class="code" href="../../d4/d33/smp_8hpp.html#aca4807be15fb54de1e82db8048022322">Checksum</a> != <a class="code" href="../../d4/d33/smp_8hpp.html#a39c988cf13da29ba3d8293d925456ab1">CPU_DATA_CHECKSUM</a>)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d4/d33/smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>[ret].<a class="code" href="../../d4/d33/smp_8hpp.html#aca4807be15fb54de1e82db8048022322">Checksum</a> != <a class="code" href="../../d4/d33/smp_8hpp.html#a39c988cf13da29ba3d8293d925456ab1">CPU_DATA_CHECKSUM</a>)</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">// TODO: i think somehow i messed this up somehere... i&#39;ll figure it out later... but now i will return the first cpu</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;CPU %d data are corrupted!&quot;</span>, ret);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;CPU %d data is corrupted!&quot;</span>, ret);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> &amp;<a class="code" href="../../d4/d33/smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>[0];</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> &amp;<a class="code" href="../../d4/d33/smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>[ret];</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d4/d33/smp_8hpp_source.html#l00016">Checksum</a>, <a class="el" href="../../d4/d33/smp_8hpp_source.html#l00009">CPU_DATA_CHECKSUM</a>, <a class="el" href="../../d4/dc5/SMP_8cpp_source.html#l00008">CPUs</a>, <a class="el" href="../../db/d16/debug_8h_source.html#l00068">err</a>, and <a class="el" href="../../d4/dc5/SMP_8cpp_source.html#l00163">GetCurrentCPUID()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d33/smp_8hpp_source.html#l00016">Checksum</a>, <a class="el" href="../../d4/d33/smp_8hpp_source.html#l00009">CPU_DATA_CHECKSUM</a>, <a class="el" href="../../d4/dc5/SMP_8cpp_source.html#l00008">CPUs</a>, <a class="el" href="../../db/d16/debug_8h_source.html#l00068">err</a>, and <a class="el" href="../../d4/dc5/SMP_8cpp_source.html#l00162">GetCurrentCPUID()</a>.</p>
 
 </div>
 </div>
@@ -385,8 +385,13 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dc5/SMP_8cpp_source.html#l00163">163</a> of file <a class="el" href="../../d4/dc5/SMP_8cpp_source.html">SMP.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="../../de/d74/APIC_8cpp.html#a5515048c8fafc809034e21ad1dab28e7">apic</a>-&gt;<a class="code" href="../../d4/da9/classAPIC_1_1APIC.html#a3d0bf25af33395f9706bd3f76009aec8">Read</a>(<a class="code" href="../../d4/da9/classAPIC_1_1APIC.html#a65d6da8a13f6e0dbab5f4b8fd64ae26baefc20a0984c1c73ad6bae8031a575ab9">APIC::APIC::APIC_ID</a>) &gt;&gt; 24; }</div>
+<p class="definition">Definition at line <a class="el" href="../../d4/dc5/SMP_8cpp_source.html#l00162">162</a> of file <a class="el" href="../../d4/dc5/SMP_8cpp_source.html">SMP.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/d74/APIC_8cpp.html#a5515048c8fafc809034e21ad1dab28e7">apic</a>)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../de/d74/APIC_8cpp.html#a5515048c8fafc809034e21ad1dab28e7">apic</a>-&gt;<a class="code" href="../../d4/da9/classAPIC_1_1APIC.html#a3d0bf25af33395f9706bd3f76009aec8">Read</a>(<a class="code" href="../../d4/da9/classAPIC_1_1APIC.html#a65d6da8a13f6e0dbab5f4b8fd64ae26baefc20a0984c1c73ad6bae8031a575ab9">APIC::APIC::APIC_ID</a>) &gt;&gt; 24;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../de/d74/APIC_8cpp_source.html#l00013">apic</a>, <a class="el" href="../../dd/d79/apic_8hpp_source.html#l00022">APIC::APIC::APIC_ID</a>, and <a class="el" href="../../de/d74/APIC_8cpp_source.html#l00040">APIC::APIC::Read()</a>.</p>
 
@@ -402,7 +407,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int Checksum</td>
+          <td class="memname">unsigned int Checksum = <a class="el" href="../../d4/d33/smp_8hpp.html#a39c988cf13da29ba3d8293d925456ab1">CPU_DATA_CHECKSUM</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -511,7 +516,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d33/smp_8hpp_source.html#l00002">2</a> of file <a class="el" href="../../d4/d33/smp_8hpp_source.html">smp.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00023">internal_exit()</a>, <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00064">SysGetProcessByPID()</a>, <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00111">SysGetThreadByTID()</a>, <a class="el" href="../../d6/da2/UserCrashHandler_8cpp_source.html#l00056">TriggerUserModeCrash()</a>, and <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00024">TrustToken()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/d76/Native_8cpp_source.html#l00023">internal_exit()</a>, <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00065">SysGetProcessByPID()</a>, <a class="el" href="../../df/d27/ProcessAPI_8cpp_source.html#l00112">SysGetThreadByTID()</a>, <a class="el" href="../../d6/da2/UserCrashHandler_8cpp_source.html#l00058">TriggerUserModeCrash()</a>, and <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00024">TrustToken()</a>.</p>
 
 </div>
 </div>
@@ -605,7 +610,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="asmp_8hpp_html_aca4807be15fb54de1e82db8048022322"><div class="ttname"><a href="../../d4/d33/smp_8hpp.html#aca4807be15fb54de1e82db8048022322">Checksum</a></div><div class="ttdeci">unsigned int Checksum</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/smp_8hpp_source.html#l00016">smp.hpp:16</a></div></div>
 <div class="ttc" id="astdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
 <div class="ttc" id="aAPIC_8cpp_html_a5515048c8fafc809034e21ad1dab28e7"><div class="ttname"><a href="../../de/d74/APIC_8cpp.html#a5515048c8fafc809034e21ad1dab28e7">apic</a></div><div class="ttdeci">APIC::APIC * apic</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d74/APIC_8cpp_source.html#l00013">APIC.cpp:13</a></div></div>
-<div class="ttc" id="asmp_8hpp_html_a0f6a26fc56e8dab11a0baad77cbe8c75"><div class="ttname"><a href="../../d4/d33/smp_8hpp.html#a0f6a26fc56e8dab11a0baad77cbe8c75">GetCurrentCPUID</a></div><div class="ttdeci">int GetCurrentCPUID()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dc5/SMP_8cpp_source.html#l00163">SMP.cpp:163</a></div></div>
+<div class="ttc" id="asmp_8hpp_html_a0f6a26fc56e8dab11a0baad77cbe8c75"><div class="ttname"><a href="../../d4/d33/smp_8hpp.html#a0f6a26fc56e8dab11a0baad77cbe8c75">GetCurrentCPUID</a></div><div class="ttdeci">int GetCurrentCPUID()</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dc5/SMP_8cpp_source.html#l00162">SMP.cpp:162</a></div></div>
 <div class="ttc" id="asmp_8hpp_html_a39c988cf13da29ba3d8293d925456ab1"><div class="ttname"><a href="../../d4/d33/smp_8hpp.html#a39c988cf13da29ba3d8293d925456ab1">CPU_DATA_CHECKSUM</a></div><div class="ttdeci">#define CPU_DATA_CHECKSUM</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/smp_8hpp_source.html#l00009">smp.hpp:9</a></div></div>
 <div class="ttc" id="adebug_8h_html_aea447f57f81a2f5ee19ef8a1dd9e5d92"><div class="ttname"><a href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a></div><div class="ttdeci">#define err(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/debug_8h_source.html#l00068">debug.h:68</a></div></div>
 <div class="ttc" id="aclassAPIC_1_1APIC_html_a3d0bf25af33395f9706bd3f76009aec8"><div class="ttname"><a href="../../d4/da9/classAPIC_1_1APIC.html#a3d0bf25af33395f9706bd3f76009aec8">APIC::APIC::Read</a></div><div class="ttdeci">uint32_t Read(uint32_t Register)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d74/APIC_8cpp_source.html#l00040">APIC.cpp:40</a></div></div>

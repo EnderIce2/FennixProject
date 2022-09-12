@@ -6472,6 +6472,34 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>Tasking</Name>
+            <Path>d9/d3e/namespaceTasking.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>TaskQueue</Name>
+              <Path>d9/d3e/namespaceTasking.html</Path>
+              <Anchor>db/d6d/structTasking_1_1TaskQueue</Anchor>
+              <Subnodes>
+               <Node>
+                <Name>Next</Name>
+                <Path>d9/d3e/namespaceTasking.html</Path>
+                <Anchor>a37a9bd5a791e5b8a991f6d7570755467</Anchor>
+               </Node>
+               <Node>
+                <Name>Prev</Name>
+                <Path>d9/d3e/namespaceTasking.html</Path>
+                <Anchor>a0f47556de1621899b67ac0a9df9d4eac</Anchor>
+               </Node>
+               <Node>
+                <Name>Task</Name>
+                <Path>d9/d3e/namespaceTasking.html</Path>
+                <Anchor>a189230cb6a718c5023a21fcda7306a5a</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>VirtioNetwork</Name>
             <Path>de/da1/namespaceVirtioNetwork.html</Path>
             <Subnodes>
@@ -7856,6 +7884,123 @@
               <Name>rootfs</Name>
               <Path>d3/d41/gbp_8h.html</Path>
               <Anchor>a8abc2266e585a11835f040fe92b47a31</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>_TrapFrame</Name>
+            <Path>da/da0/usm_8h.html</Path>
+            <Anchor>da/d98/struct__TrapFrame</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>cs</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a32f0d7cabc2778303de4afe026f58f94</Anchor>
+             </Node>
+             <Node>
+              <Name>error_code</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a5e93827147ba90324c5fb8cb83838d3d</Anchor>
+             </Node>
+             <Node>
+              <Name>int_num</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a5e1249d834097aa9dc05b7c2eb0123e4</Anchor>
+             </Node>
+             <Node>
+              <Name>r10</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a6bb308c9f79d2f9b9dd155b4058b8a6c</Anchor>
+             </Node>
+             <Node>
+              <Name>r11</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a8191ccd5111818fe4800abd706ed7c8e</Anchor>
+             </Node>
+             <Node>
+              <Name>r12</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>abae857f224086cd2b647522889fc58a9</Anchor>
+             </Node>
+             <Node>
+              <Name>r13</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a23214cdb17847f111f753f9912a905df</Anchor>
+             </Node>
+             <Node>
+              <Name>r14</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a1f27ba4b6a66ab7bcb69509f8ac0a190</Anchor>
+             </Node>
+             <Node>
+              <Name>r15</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a3f684741a20f0161ce69cf527d441d3c</Anchor>
+             </Node>
+             <Node>
+              <Name>r8</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a180aab55a2cc43cbaab5b7f63be57c31</Anchor>
+             </Node>
+             <Node>
+              <Name>r9</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>af69ba47ac862ecb7b60bb47da66ecdc0</Anchor>
+             </Node>
+             <Node>
+              <Name>rax</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>ab77e9d7025a1c532fa342faf462f7de2</Anchor>
+             </Node>
+             <Node>
+              <Name>rbp</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a15c5404293bbdcea5f13c2c2c8443f90</Anchor>
+             </Node>
+             <Node>
+              <Name>rbx</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>aec6722b44e413974707975ffaf75f3cf</Anchor>
+             </Node>
+             <Node>
+              <Name>rcx</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a0c0902fb7b5919e26f3b32ef48a32e05</Anchor>
+             </Node>
+             <Node>
+              <Name>rdi</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a0701bb3eeb425b9ea4994179c8679049</Anchor>
+             </Node>
+             <Node>
+              <Name>rdx</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>af70772b27b3d2ef2317347f57fd56dd1</Anchor>
+             </Node>
+             <Node>
+              <Name>rflags</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a6b732bbc09748ac74554c3b598504a50</Anchor>
+             </Node>
+             <Node>
+              <Name>rip</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a76dad7d728bd02c3b19375c420f705a6</Anchor>
+             </Node>
+             <Node>
+              <Name>rsi</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a1ad62d15943eec0ae1055b7f418d792a</Anchor>
+             </Node>
+             <Node>
+              <Name>rsp</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>ab46f4421f6e85b6ae824557a19c47c58</Anchor>
+             </Node>
+             <Node>
+              <Name>ss</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a90f434a4494296e28608384ab28a94fc</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -10815,6 +10960,23 @@
             <Anchor>d2/d1b/structmultiboot__info_8____unnamed_____8____unnamed____</Anchor>
             <Subnodes>
              <Node>
+              <Name>framebuffer_palette_addr</Name>
+              <Path>d1/dc0/multiboot_8h.html</Path>
+              <Anchor>ab4a160c025f0db5470ddced0d2c99de3</Anchor>
+             </Node>
+             <Node>
+              <Name>framebuffer_palette_num_colors</Name>
+              <Path>d1/dc0/multiboot_8h.html</Path>
+              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>multiboot_info.__unnamed__.__unnamed__</Name>
+            <Path>d1/dc0/multiboot_8h.html</Path>
+            <Anchor>d2/d1b/structmultiboot__info_8____unnamed_____8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
               <Name>framebuffer_blue_field_position</Name>
               <Path>d1/dc0/multiboot_8h.html</Path>
               <Anchor>ace107d23f7f4af6fd8d969926c5c9d16</Anchor>
@@ -10843,23 +11005,6 @@
               <Name>framebuffer_red_mask_size</Name>
               <Path>d1/dc0/multiboot_8h.html</Path>
               <Anchor>a0d868424e2b703471e3d73c0a72bc75c</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>multiboot_info.__unnamed__.__unnamed__</Name>
-            <Path>d1/dc0/multiboot_8h.html</Path>
-            <Anchor>d2/d1b/structmultiboot__info_8____unnamed_____8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
-              <Name>framebuffer_palette_addr</Name>
-              <Path>d1/dc0/multiboot_8h.html</Path>
-              <Anchor>ab4a160c025f0db5470ddced0d2c99de3</Anchor>
-             </Node>
-             <Node>
-              <Name>framebuffer_palette_num_colors</Name>
-              <Path>d1/dc0/multiboot_8h.html</Path>
-              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -11918,6 +12063,135 @@
               <Name>SubsystemVendorID</Name>
               <Path>d9/d97/pci_8h.html</Path>
               <Anchor>aff859496d929c800d6a85bf362af4b23</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>RFLAGS</Name>
+            <Path>da/da0/usm_8h.html</Path>
+            <Anchor>df/d3f/unionRFLAGS</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>raw</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a5e45ca5da4f849d73521029bc4374e08</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>RFLAGS.__unnamed__</Name>
+            <Path>da/da0/usm_8h.html</Path>
+            <Anchor>d4/d1d/structRFLAGS_8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>_reserved0</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>ad0869be0b7a1d7b3a568bb9bd3ba7f3b</Anchor>
+             </Node>
+             <Node>
+              <Name>_reserved1</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a7596a4fbe4106aba3472b8878a1d164a</Anchor>
+             </Node>
+             <Node>
+              <Name>_reserved2</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>ab9c55d10d6f4e7a1ac875b9c0ff70a93</Anchor>
+             </Node>
+             <Node>
+              <Name>_reserved3</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a1fa0a4b910c845363eb693a2e38f338f</Anchor>
+             </Node>
+             <Node>
+              <Name>AC</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a4144e097d2fa7a491cec2a7a4322f2bc</Anchor>
+             </Node>
+             <Node>
+              <Name>AF</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a06fa567b72d78b7e3ea746973fbbd1d5</Anchor>
+             </Node>
+             <Node>
+              <Name>always_one</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a4e93faecf36562707c2c3b101ef4428a</Anchor>
+             </Node>
+             <Node>
+              <Name>CF</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a758951cac5e62129e654698c8ca0333b</Anchor>
+             </Node>
+             <Node>
+              <Name>DF</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>ab98f83032f6e8ca0c8f5a38bca1e3d75</Anchor>
+             </Node>
+             <Node>
+              <Name>ID</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>ab718adec73e04ce3ec720dd11a06a308</Anchor>
+             </Node>
+             <Node>
+              <Name>IF</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>ade6ee2b5d856295add4d5e3631fbfb93</Anchor>
+             </Node>
+             <Node>
+              <Name>IOPL</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>aea38da0eb6d7ff0f19341087c9dedf0a</Anchor>
+             </Node>
+             <Node>
+              <Name>NT</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>acb48af3e40ab9ec3622c07b8faf27cf3</Anchor>
+             </Node>
+             <Node>
+              <Name>OF</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a7e4137add2dfe45e078e7f076aec84df</Anchor>
+             </Node>
+             <Node>
+              <Name>PF</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a21080924b5d026e4a6011eb987ae1ec8</Anchor>
+             </Node>
+             <Node>
+              <Name>RF</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a3fe3de84275c2edcd95efff999764322</Anchor>
+             </Node>
+             <Node>
+              <Name>SF</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a94a990462684a2fbb5dfc7fab1c8975d</Anchor>
+             </Node>
+             <Node>
+              <Name>TF</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>ac3ee2af7ca7bbe492f11cf36a6a7cea7</Anchor>
+             </Node>
+             <Node>
+              <Name>VIF</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a1312efee6c4f649a8d4abcb41b3d4092</Anchor>
+             </Node>
+             <Node>
+              <Name>VIP</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a5a11e0bd65af42743f1db2f10bcbba8e</Anchor>
+             </Node>
+             <Node>
+              <Name>VM</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a583a65df9db4119165f5ea0abaa50281</Anchor>
+             </Node>
+             <Node>
+              <Name>ZF</Name>
+              <Path>da/da0/usm_8h.html</Path>
+              <Anchor>a8ec66b3387ffaa10d0be63d1a95c280a</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -13466,23 +13740,6 @@
             <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
             <Subnodes>
              <Node>
-              <Name>ax</Name>
-              <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>a9cea1e2473aaf49955fa34faac95b3e7</Anchor>
-             </Node>
-             <Node>
-              <Name>magic</Name>
-              <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>a2f3a4fccca6406e35bcf33e92dd93135</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>VMwareCMD.__unnamed__</Name>
-            <Path>d1/dac/VMDetect_8c.html</Path>
-            <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
               <Name>bx</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
               <Anchor>a6f5770d50b01a0abbce803768d3592b0</Anchor>
@@ -13508,6 +13765,23 @@
               <Name>cx</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
               <Anchor>a0bdff8095c8bf1b38775bf35547a1317</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>VMwareCMD.__unnamed__</Name>
+            <Path>d1/dac/VMDetect_8c.html</Path>
+            <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>ax</Name>
+              <Path>d1/dac/VMDetect_8c.html</Path>
+              <Anchor>a9cea1e2473aaf49955fa34faac95b3e7</Anchor>
+             </Node>
+             <Node>
+              <Name>magic</Name>
+              <Path>d1/dac/VMDetect_8c.html</Path>
+              <Anchor>a2f3a4fccca6406e35bcf33e92dd93135</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -13620,6 +13894,11 @@
             <Name>_SysFlags</Name>
             <Path>d3/d41/gbp_8h.html</Path>
             <Anchor>d6/dae/struct__SysFlags</Anchor>
+           </Node>
+           <Node>
+            <Name>_TrapFrame</Name>
+            <Path>da/da0/usm_8h.html</Path>
+            <Anchor>da/d98/struct__TrapFrame</Anchor>
            </Node>
            <Node>
             <Name>_Unwind_Exception</Name>
@@ -14766,6 +15045,16 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>RFLAGS</Name>
+            <Path>da/da0/usm_8h.html</Path>
+            <Anchor>df/d3f/unionRFLAGS</Anchor>
+           </Node>
+           <Node>
+            <Name>RFLAGS.__unnamed__</Name>
+            <Path>da/da0/usm_8h.html</Path>
+            <Anchor>d4/d1d/structRFLAGS_8____unnamed____</Anchor>
+           </Node>
+           <Node>
             <Name>E1000::NetworkInterfaceController::RXDescriptor</Name>
             <Path>da/d6e/classE1000_1_1NetworkInterfaceController.html</Path>
             <Anchor>d7/d56/structE1000_1_1NetworkInterfaceController_1_1RXDescriptor</Anchor>
@@ -15041,6 +15330,11 @@
            <Node>
             <Name>FileSystem::SysInfo</Name>
             <Path>db/d84/classFileSystem_1_1SysInfo.html</Path>
+           </Node>
+           <Node>
+            <Name>Tasking::TaskQueue</Name>
+            <Path>d9/d3e/namespaceTasking.html</Path>
+            <Anchor>db/d6d/structTasking_1_1TaskQueue</Anchor>
            </Node>
            <Node>
             <Name>ACPI::ACPI::TCPAHeader</Name>
@@ -36525,6 +36819,16 @@
                   </Subnodes>
                  </Node>
                  <Node>
+                  <Name>ConvertTaskCBToPCB</Name>
+                  <Path>d6/d75/internal__task_8h.html</Path>
+                  <Anchor>a6eeeb23740d13dc7232863fe99349d1b</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>ConvertTaskCBToTCB</Name>
+                  <Path>d6/d75/internal__task_8h.html</Path>
+                  <Anchor>a6eb2dc55de069eafa49ac725c7e3162a</Anchor>
+                 </Node>
+                 <Node>
                   <Name>init_syscalls</Name>
                   <Path>d6/d75/internal__task_8h.html</Path>
                   <Anchor>afa95d3abc1c5742339e2303661611ee1</Anchor>
@@ -36562,7 +36866,7 @@
                  <Node>
                   <Name>SysGetProcessByPID</Name>
                   <Path>d6/d75/internal__task_8h.html</Path>
-                  <Anchor>ac6a74c618ca111afd64a911b3b3f24ee</Anchor>
+                  <Anchor>a2a491f1a532ac1f6d9340c71d26b5032</Anchor>
                  </Node>
                  <Node>
                   <Name>SysGetProcessPriority</Name>
@@ -44091,13 +44395,99 @@
               <Path>dir_afe766e3af9a89d485242b31631c9c37.html</Path>
               <Subnodes>
                <Node>
+                <Name>Binary.cpp</Name>
+                <Path>dc/d3c/Binary_8cpp.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>ExecuteBinary</Name>
+                  <Path>dc/d3c/Binary_8cpp.html</Path>
+                  <Anchor>a34e56585b302f03e3d7baf35195c45c5</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>GetBinaryType</Name>
+                  <Path>dc/d3c/Binary_8cpp.html</Path>
+                  <Anchor>a8c6ecc21776815de2233cab9f8fca852</Anchor>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>binary.hpp</Name>
+                <Path>db/d2e/binary_8hpp.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>BinType</Name>
+                  <Path>db/d2e/binary_8hpp.html</Path>
+                  <Anchor>aebebaa3863ab644226e7682250a10549</Anchor>
+                  <Subnodes>
+                   <Node>
+                    <Name>BIN_TYPE_UNKNOWN</Name>
+                    <Path>db/d2e/binary_8hpp.html</Path>
+                    <Anchor>aebebaa3863ab644226e7682250a10549a1a079ef5b0160ca7fc1968a2c2783814</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>BIN_TYPE_ELF</Name>
+                    <Path>db/d2e/binary_8hpp.html</Path>
+                    <Anchor>aebebaa3863ab644226e7682250a10549a06590bd60eefc0bb84abcdcbc8fd4309</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>BIN_TYPE_PE</Name>
+                    <Path>db/d2e/binary_8hpp.html</Path>
+                    <Anchor>aebebaa3863ab644226e7682250a10549aaf559da2b0d4d77cc7bb4c0bf4273d48</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>BIN_TYPE_NE</Name>
+                    <Path>db/d2e/binary_8hpp.html</Path>
+                    <Anchor>aebebaa3863ab644226e7682250a10549a416eb5c1501e55e173b94d7e9c45174e</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>BIN_TYPE_MZ</Name>
+                    <Path>db/d2e/binary_8hpp.html</Path>
+                    <Anchor>aebebaa3863ab644226e7682250a10549a74df4cf915c8bfd20d30267aa6fc58cf</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>ExecuteBinary</Name>
+                  <Path>db/d2e/binary_8hpp.html</Path>
+                  <Anchor>a34e56585b302f03e3d7baf35195c45c5</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>GetBinaryType</Name>
+                  <Path>db/d2e/binary_8hpp.html</Path>
+                  <Anchor>a8c6ecc21776815de2233cab9f8fca852</Anchor>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
                 <Name>Monotasking.cpp</Name>
                 <Path>d4/dd4/Monotasking_8cpp.html</Path>
                 <Subnodes>
                  <Node>
-                  <Name>MAX_TASKS</Name>
+                  <Name>TaskQueue</Name>
+                  <Path>d9/d3e/namespaceTasking.html</Path>
+                  <Anchor>db/d6d/structTasking_1_1TaskQueue</Anchor>
+                  <Subnodes>
+                   <Node>
+                    <Name>Next</Name>
+                    <Path>d9/d3e/namespaceTasking.html</Path>
+                    <Anchor>a37a9bd5a791e5b8a991f6d7570755467</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>Prev</Name>
+                    <Path>d9/d3e/namespaceTasking.html</Path>
+                    <Anchor>a0f47556de1621899b67ac0a9df9d4eac</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>Task</Name>
+                    <Path>d9/d3e/namespaceTasking.html</Path>
+                    <Anchor>a189230cb6a718c5023a21fcda7306a5a</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>DEBUG_TASK_MANAGER</Name>
                   <Path>d4/dd4/Monotasking_8cpp.html</Path>
-                  <Anchor>aac747bed84189f8cfa509b94d488e622</Anchor>
+                  <Anchor>a81d10fdd9f7f013739291b631a4ab7d9</Anchor>
                  </Node>
                  <Node>
                   <Name>SchedulerInterrupt</Name>
@@ -44117,7 +44507,12 @@
                  <Node>
                   <Name>AllocateTask</Name>
                   <Path>d4/dd4/Monotasking_8cpp.html</Path>
-                  <Anchor>a7c9cd6c468bb632e3918a949fe57e8d6</Anchor>
+                  <Anchor>ae0a4cd7251abc07ea2d102e44e67515c</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>drawrectangle</Name>
+                  <Path>d4/dd4/Monotasking_8cpp.html</Path>
+                  <Anchor>a5e55da733f5dac716d070b92f35ceb14</Anchor>
                  </Node>
                  <Node>
                   <Name>FindLastTask</Name>
@@ -44132,7 +44527,12 @@
                  <Node>
                   <Name>InterruptHandler</Name>
                   <Path>d4/dd4/Monotasking_8cpp.html</Path>
-                  <Anchor>aa49119bb489f5c0f972cce2bd32d17fe</Anchor>
+                  <Anchor>a052068b3337b0063437ca56296fd1a28</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>InterruptHandler</Name>
+                  <Path>d4/dd4/Monotasking_8cpp.html</Path>
+                  <Anchor>a6ef417d631221f042c7914b64ee7d366</Anchor>
                  </Node>
                  <Node>
                   <Name>CurrentTask</Name>
@@ -44142,17 +44542,17 @@
                  <Node>
                   <Name>monot</Name>
                   <Path>d4/dd4/Monotasking_8cpp.html</Path>
-                  <Anchor>ac34b2c8e18eecd7e5c3216ada366dfb8</Anchor>
+                  <Anchor>af7f4b6c7f12b9b276985e866eb0a5f27</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>Queue</Name>
+                  <Path>d4/dd4/Monotasking_8cpp.html</Path>
+                  <Anchor>a51366fee89cd233de470bdd4990d5722</Anchor>
                  </Node>
                  <Node>
                   <Name>TaskIDs</Name>
                   <Path>d4/dd4/Monotasking_8cpp.html</Path>
                   <Anchor>a4a15876a9cd58c88ba3a9bc0b59e47e5</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>TaskQueue</Name>
-                  <Path>d4/dd4/Monotasking_8cpp.html</Path>
-                  <Anchor>a10cc3a5d95cd70f9ca93a6ae29da77fa</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -52731,6 +53131,304 @@
                    <Node>
                     <Name>Makefile</Name>
                     <Path>db/d17/userspace_2apps_2system_2uiserver_2Makefile.html</Path>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>usermodecrash_handler</Name>
+                  <Path>dir_d98549cb22dfc5fbe349e0d64d71fa30.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>Makefile</Name>
+                    <Path>db/dce/userspace_2apps_2system_2usermodecrash__handler_2Makefile.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>usermodecrash_handler.cpp</Name>
+                    <Path>d2/dae/usermodecrash__handler_8cpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>main</Name>
+                      <Path>d2/dae/usermodecrash__handler_8cpp.html</Path>
+                      <Anchor>a5887528c5e92781931218f6f3b5bf239</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>usm.h</Name>
+                    <Path>da/da0/usm_8h.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>RFLAGS</Name>
+                      <Path>da/da0/usm_8h.html</Path>
+                      <Anchor>df/d3f/unionRFLAGS</Anchor>
+                      <Subnodes>
+                       <Node>
+                        <Name>raw</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a5e45ca5da4f849d73521029bc4374e08</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>_TrapFrame</Name>
+                      <Path>da/da0/usm_8h.html</Path>
+                      <Anchor>da/d98/struct__TrapFrame</Anchor>
+                      <Subnodes>
+                       <Node>
+                        <Name>cs</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a32f0d7cabc2778303de4afe026f58f94</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>error_code</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a5e93827147ba90324c5fb8cb83838d3d</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>int_num</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a5e1249d834097aa9dc05b7c2eb0123e4</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>r10</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a6bb308c9f79d2f9b9dd155b4058b8a6c</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>r11</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a8191ccd5111818fe4800abd706ed7c8e</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>r12</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>abae857f224086cd2b647522889fc58a9</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>r13</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a23214cdb17847f111f753f9912a905df</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>r14</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a1f27ba4b6a66ab7bcb69509f8ac0a190</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>r15</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a3f684741a20f0161ce69cf527d441d3c</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>r8</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a180aab55a2cc43cbaab5b7f63be57c31</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>r9</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>af69ba47ac862ecb7b60bb47da66ecdc0</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>rax</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>ab77e9d7025a1c532fa342faf462f7de2</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>rbp</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a15c5404293bbdcea5f13c2c2c8443f90</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>rbx</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>aec6722b44e413974707975ffaf75f3cf</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>rcx</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a0c0902fb7b5919e26f3b32ef48a32e05</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>rdi</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a0701bb3eeb425b9ea4994179c8679049</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>rdx</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>af70772b27b3d2ef2317347f57fd56dd1</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>rflags</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a6b732bbc09748ac74554c3b598504a50</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>rip</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a76dad7d728bd02c3b19375c420f705a6</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>rsi</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a1ad62d15943eec0ae1055b7f418d792a</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>rsp</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>ab46f4421f6e85b6ae824557a19c47c58</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>ss</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a90f434a4494296e28608384ab28a94fc</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>RFLAGS.__unnamed__</Name>
+                      <Path>da/da0/usm_8h.html</Path>
+                      <Anchor>d4/d1d/structRFLAGS_8____unnamed____</Anchor>
+                      <Subnodes>
+                       <Node>
+                        <Name>_reserved0</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>ad0869be0b7a1d7b3a568bb9bd3ba7f3b</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>_reserved1</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a7596a4fbe4106aba3472b8878a1d164a</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>_reserved2</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>ab9c55d10d6f4e7a1ac875b9c0ff70a93</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>_reserved3</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a1fa0a4b910c845363eb693a2e38f338f</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>AC</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a4144e097d2fa7a491cec2a7a4322f2bc</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>AF</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a06fa567b72d78b7e3ea746973fbbd1d5</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>always_one</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a4e93faecf36562707c2c3b101ef4428a</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>CF</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a758951cac5e62129e654698c8ca0333b</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>DF</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>ab98f83032f6e8ca0c8f5a38bca1e3d75</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>ID</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>ab718adec73e04ce3ec720dd11a06a308</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>IF</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>ade6ee2b5d856295add4d5e3631fbfb93</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>IOPL</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>aea38da0eb6d7ff0f19341087c9dedf0a</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>NT</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>acb48af3e40ab9ec3622c07b8faf27cf3</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>OF</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a7e4137add2dfe45e078e7f076aec84df</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>PF</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a21080924b5d026e4a6011eb987ae1ec8</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>RF</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a3fe3de84275c2edcd95efff999764322</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>SF</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a94a990462684a2fbb5dfc7fab1c8975d</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>TF</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>ac3ee2af7ca7bbe492f11cf36a6a7cea7</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>VIF</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a1312efee6c4f649a8d4abcb41b3d4092</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>VIP</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a5a11e0bd65af42743f1db2f10bcbba8e</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>VM</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a583a65df9db4119165f5ea0abaa50281</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>ZF</Name>
+                        <Path>da/da0/usm_8h.html</Path>
+                        <Anchor>a8ec66b3387ffaa10d0be63d1a95c280a</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>ARG0</Name>
+                      <Path>da/da0/usm_8h.html</Path>
+                      <Anchor>aa95743000e6e5c8ae05fad19a7822af5</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>ARG1</Name>
+                      <Path>da/da0/usm_8h.html</Path>
+                      <Anchor>a6e9f80720a3b58c16d87ad9fed8147f3</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>FUNCTION</Name>
+                      <Path>da/da0/usm_8h.html</Path>
+                      <Anchor>aee0cf83ee6d754df700e396da8987f1f</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>STACK</Name>
+                      <Path>da/da0/usm_8h.html</Path>
+                      <Anchor>a2cc8f2d83039de1aef6590f9782921ee</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>TrapFrame</Name>
+                      <Path>da/da0/usm_8h.html</Path>
+                      <Anchor>a39314cb3b1d33c1a40ed02b0d66aa456</Anchor>
+                     </Node>
+                    </Subnodes>
                    </Node>
                   </Subnodes>
                  </Node>

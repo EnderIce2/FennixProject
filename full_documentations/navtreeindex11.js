@@ -1,5 +1,10 @@
 var NAVTREEINDEX11 =
 {
+"d5/dba/multiboot2_8h.html#de/d46/structmultiboot__tag__string":[5,0,0,5,0,0,3,12],
+"d5/dba/multiboot2_8h.html#df/d38/structmultiboot__tag__efi64__ih":[5,0,0,5,0,0,3,32],
+"d5/dba/multiboot2_8h_source.html":[5,0,0,5,0,0,3],
+"d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html":[4,0,21,0],
+"d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html#a122d4f0a9ea4465637f998106c30e57c":[4,0,21,0,1],
 "d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html#a2fac62e77524bb15bacaba848fae9819":[4,0,21,0,0],
 "d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html#a394d72e662bbdb8d6597c7212db562ea":[4,0,21,0,4],
 "d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html#a73b666a1e3867962dcd12e690ce92c4e":[4,0,21,0,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX11 =
 "d5/de1/HPETTimer_8cpp.html#a9d3a3bce7a3692602ab680353efbc541":[5,0,0,14,3,4],
 "d5/de1/HPETTimer_8cpp.html#adfd9864c049fc758108d649b7bb8b9c5":[5,0,0,14,3,0],
 "d5/de1/HPETTimer_8cpp.html#ae3af5415d1aa509739f921202d749980":[5,0,0,14,3,2],
-"d5/de1/HPETTimer_8cpp_source.html":[5,0,0,14,3],
-"d5/de5/structlimine__memmap__response.html":[4,0,111],
-"d5/de5/structlimine__memmap__response.html#a3347f9af929619e9b55f0b768090ce12":[4,0,111,0],
-"d5/de5/structlimine__memmap__response.html#a4b7e339a67682337dcc5bbcdd47a1d0e":[4,0,111,1],
-"d5/de5/structlimine__memmap__response.html#a8e8d84f58c219bfd9c9225d42ed4306f":[4,0,111,2],
-"d5/df0/classCPUSpeed_1_1cpuspeed.html":[4,0,5,0]
+"d5/de1/HPETTimer_8cpp_source.html":[5,0,0,14,3]
 };

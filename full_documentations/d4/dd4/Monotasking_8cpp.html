@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('d4/dd4/Monotasking_8cpp.html','../../'
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
@@ -100,13 +101,21 @@ $(document).ready(function(){initNavTree('d4/dd4/Monotasking_8cpp.html','../../'
 <code>#include &lt;<a class="el" href="../../da/ddb/heap_8h_source.html">heap.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d3/d7e/int_8h_source.html">int.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d9/d87/sys_8h_source.html">sys.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dc/dac/io_8h_source.html">io.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../dd/d79/apic_8hpp_source.html">../cpu/apic.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/d4a/gdt_8h_source.html">../cpu/gdt.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/dd0/timer_8h_source.html">../timer.h</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="../../d1/d30/critical_8hpp_source.html">critical.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d4/d68/display_8h_source.html">display.h</a>&gt;</code><br />
 </div>
 <p><a href="../../d4/dd4/Monotasking_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:db/d6d/structTasking_1_1TaskQueue"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#db/d6d/structTasking_1_1TaskQueue">Tasking::TaskQueue</a></td></tr>
+<tr class="separator:db/d6d/structTasking_1_1TaskQueue"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:d9/d3e/namespaceTasking"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html">Tasking</a></td></tr>
@@ -114,51 +123,93 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aac747bed84189f8cfa509b94d488e622"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dd4/Monotasking_8cpp.html#aac747bed84189f8cfa509b94d488e622">MAX_TASKS</a>&#160;&#160;&#160;0x10000</td></tr>
-<tr class="separator:aac747bed84189f8cfa509b94d488e622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81d10fdd9f7f013739291b631a4ab7d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dd4/Monotasking_8cpp.html#a81d10fdd9f7f013739291b631a4ab7d9">DEBUG_TASK_MANAGER</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a81d10fdd9f7f013739291b631a4ab7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79173cb020c4dafa4ff23f9a093473ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dd4/Monotasking_8cpp.html#a79173cb020c4dafa4ff23f9a093473ce">SchedulerInterrupt</a>&#160;&#160;&#160;__asm__ volatile(&quot;int $0x31&quot;)</td></tr>
 <tr class="separator:a79173cb020c4dafa4ff23f9a093473ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab84aaaa32c2361f6c6a3d238244cce37"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#ab84aaaa32c2361f6c6a3d238244cce37">Tasking::__attribute__</a> ((naked, used)) void MonoTaskingSchedulerHelper()</td></tr>
-<tr class="separator:ab84aaaa32c2361f6c6a3d238244cce37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e55da733f5dac716d070b92f35ceb14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a5e55da733f5dac716d070b92f35ceb14">Tasking::drawrectangle</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> X, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Y, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> W, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> H, <a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> C)</td></tr>
+<tr class="separator:a5e55da733f5dac716d070b92f35ceb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ef417d631221f042c7914b64ee7d366"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a6ef417d631221f042c7914b64ee7d366">Tasking::InterruptHandler</a> (TraceSchedOnScreen)</td></tr>
+<tr class="separator:a6ef417d631221f042c7914b64ee7d366"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabcd96c16eda9fa091c5bea1deb44c31"><td class="memItemLeft" align="right" valign="top">TaskControlBlock *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#aabcd96c16eda9fa091c5bea1deb44c31">Tasking::FindLastTask</a> ()</td></tr>
 <tr class="separator:aabcd96c16eda9fa091c5bea1deb44c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c9cd6c468bb632e3918a949fe57e8d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a7c9cd6c468bb632e3918a949fe57e8d6">Tasking::AllocateTask</a> (TaskControlBlock *task)</td></tr>
-<tr class="separator:a7c9cd6c468bb632e3918a949fe57e8d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0a4cd7251abc07ea2d102e44e67515c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#ae0a4cd7251abc07ea2d102e44e67515c">Tasking::AllocateTask</a> (TaskControlBlock *task, bool AfterCurrent)</td></tr>
+<tr class="separator:ae0a4cd7251abc07ea2d102e44e67515c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22adbfd1c57568ba6b1eaec88318fe99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a22adbfd1c57568ba6b1eaec88318fe99">Tasking::FreeTask</a> (TaskControlBlock *task)</td></tr>
 <tr class="separator:a22adbfd1c57568ba6b1eaec88318fe99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa49119bb489f5c0f972cce2bd32d17fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#aa49119bb489f5c0f972cce2bd32d17fe">Tasking::InterruptHandler</a> (mono_schedule_interrupt_handler)</td></tr>
-<tr class="separator:aa49119bb489f5c0f972cce2bd32d17fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab84aaaa32c2361f6c6a3d238244cce37"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#ab84aaaa32c2361f6c6a3d238244cce37">Tasking::__attribute__</a> ((naked, used)) void MonoTaskingSchedulerHelper()</td></tr>
+<tr class="separator:ab84aaaa32c2361f6c6a3d238244cce37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a052068b3337b0063437ca56296fd1a28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a052068b3337b0063437ca56296fd1a28">Tasking::InterruptHandler</a> (MonoSchedulerHelperHandler)</td></tr>
+<tr class="separator:a052068b3337b0063437ca56296fd1a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb62ab0c49b8f76b410251abdfe5fa4c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#acb62ab0c49b8f76b410251abdfe5fa4c">Tasking::__attribute__</a> ((__noreturn__)) void MonoTaskingTaskExit()</td></tr>
 <tr class="separator:acb62ab0c49b8f76b410251abdfe5fa4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ac34b2c8e18eecd7e5c3216ada366dfb8"><td class="memItemLeft" align="right" valign="top">Monotasking *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#ac34b2c8e18eecd7e5c3216ada366dfb8">Tasking::monot</a> = nullptr</td></tr>
-<tr class="separator:ac34b2c8e18eecd7e5c3216ada366dfb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7f4b6c7f12b9b276985e866eb0a5f27"><td class="memItemLeft" align="right" valign="top">MonoTasking *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#af7f4b6c7f12b9b276985e866eb0a5f27">Tasking::monot</a> = nullptr</td></tr>
+<tr class="separator:af7f4b6c7f12b9b276985e866eb0a5f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51366fee89cd233de470bdd4990d5722"><td class="memItemLeft" align="right" valign="top">TaskQueue *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a51366fee89cd233de470bdd4990d5722">Tasking::Queue</a> = nullptr</td></tr>
+<tr class="separator:a51366fee89cd233de470bdd4990d5722"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc7aeeac1147986e4e6db156dc9d45bb"><td class="memItemLeft" align="right" valign="top">TaskControlBlock *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#acc7aeeac1147986e4e6db156dc9d45bb">Tasking::CurrentTask</a> = nullptr</td></tr>
 <tr class="separator:acc7aeeac1147986e4e6db156dc9d45bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10cc3a5d95cd70f9ca93a6ae29da77fa"><td class="memItemLeft" align="right" valign="top">TaskControlBlock *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a10cc3a5d95cd70f9ca93a6ae29da77fa">Tasking::TaskQueue</a> [<a class="el" href="../../d4/dd4/Monotasking_8cpp.html#aac747bed84189f8cfa509b94d488e622">MAX_TASKS</a>]</td></tr>
-<tr class="separator:a10cc3a5d95cd70f9ca93a6ae29da77fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a15876a9cd58c88ba3a9bc0b59e47e5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a4a15876a9cd58c88ba3a9bc0b59e47e5">Tasking::TaskIDs</a> = 0</td></tr>
 <tr class="separator:a4a15876a9cd58c88ba3a9bc0b59e47e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="aac747bed84189f8cfa509b94d488e622"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac747bed84189f8cfa509b94d488e622">&#9670;&nbsp;</a></span>MAX_TASKS</h2>
+<hr/><h2 class="groupheader">Data Structure Documentation</h2>
+<a name="db/d6d/structTasking_1_1TaskQueue" id="db/d6d/structTasking_1_1TaskQueue"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#db/d6d/structTasking_1_1TaskQueue">&#9670;&nbsp;</a></span>Tasking::TaskQueue</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_TASKS&#160;&#160;&#160;0x10000</td>
+          <td class="memname">struct Tasking::TaskQueue</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html#l00029">29</a> of file <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html">Monotasking.cpp</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Data Fields</th></tr>
+<tr><td class="fieldtype">
+<a id="a37a9bd5a791e5b8a991f6d7570755467"></a><a class="el" href="../../d9/d3e/namespaceTasking.html#db/d6d/structTasking_1_1TaskQueue">TaskQueue</a> *</td>
+<td class="fieldname">
+Next</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a0f47556de1621899b67ac0a9df9d4eac"></a><a class="el" href="../../d9/d3e/namespaceTasking.html#db/d6d/structTasking_1_1TaskQueue">TaskQueue</a> *</td>
+<td class="fieldname">
+Prev</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a189230cb6a718c5023a21fcda7306a5a"></a>TaskControlBlock *</td>
+<td class="fieldname">
+Task</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a81d10fdd9f7f013739291b631a4ab7d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81d10fdd9f7f013739291b631a4ab7d9">&#9670;&nbsp;</a></span>DEBUG_TASK_MANAGER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEBUG_TASK_MANAGER&#160;&#160;&#160;1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html#l00018">18</a> of file <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html">Monotasking.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html#l00015">15</a> of file <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html">Monotasking.cpp</a>.</p>
 
 </div>
 </div>
@@ -174,7 +225,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html#l00064">64</a> of file <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html">Monotasking.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html#l00027">27</a> of file <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html">Monotasking.cpp</a>.</p>
 
 </div>
 </div>

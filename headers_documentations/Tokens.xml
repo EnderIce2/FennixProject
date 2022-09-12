@@ -20169,12 +20169,32 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>ConvertTaskCBToPCB</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d6/d75/internal__task_8h.html</Path>
+    <Anchor>a6eeeb23740d13dc7232863fe99349d1b</Anchor>
+    <DeclaredIn>internal_task.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ConvertTaskCBToTCB</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>d6/d75/internal__task_8h.html</Path>
+    <Anchor>a6eb2dc55de069eafa49ac725c7e3162a</Anchor>
+    <DeclaredIn>internal_task.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>SysGetProcessByPID</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
     <Path>d6/d75/internal__task_8h.html</Path>
-    <Anchor>ac6a74c618ca111afd64a911b3b3f24ee</Anchor>
+    <Anchor>a2a491f1a532ac1f6d9340c71d26b5032</Anchor>
     <Abstract>Get a running process by PID.</Abstract>
     <DeclaredIn>internal_task.h</DeclaredIn>
   </Token>

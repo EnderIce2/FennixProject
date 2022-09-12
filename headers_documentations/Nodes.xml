@@ -26779,6 +26779,16 @@
                   </Subnodes>
                  </Node>
                  <Node>
+                  <Name>ConvertTaskCBToPCB</Name>
+                  <Path>d6/d75/internal__task_8h.html</Path>
+                  <Anchor>a6eeeb23740d13dc7232863fe99349d1b</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>ConvertTaskCBToTCB</Name>
+                  <Path>d6/d75/internal__task_8h.html</Path>
+                  <Anchor>a6eb2dc55de069eafa49ac725c7e3162a</Anchor>
+                 </Node>
+                 <Node>
                   <Name>init_syscalls</Name>
                   <Path>d6/d75/internal__task_8h.html</Path>
                   <Anchor>afa95d3abc1c5742339e2303661611ee1</Anchor>
@@ -26816,7 +26826,7 @@
                  <Node>
                   <Name>SysGetProcessByPID</Name>
                   <Path>d6/d75/internal__task_8h.html</Path>
-                  <Anchor>ac6a74c618ca111afd64a911b3b3f24ee</Anchor>
+                  <Anchor>a2a491f1a532ac1f6d9340c71d26b5032</Anchor>
                  </Node>
                  <Node>
                   <Name>SysGetProcessPriority</Name>

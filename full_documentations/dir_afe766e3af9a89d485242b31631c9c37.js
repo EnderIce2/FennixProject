@@ -1,5 +1,7 @@
 var dir_afe766e3af9a89d485242b31631c9c37 =
 [
+    [ "Binary.cpp", "dc/d3c/Binary_8cpp.html", "dc/d3c/Binary_8cpp" ],
+    [ "binary.hpp", "db/d2e/binary_8hpp.html", "db/d2e/binary_8hpp" ],
     [ "Monotasking.cpp", "d4/dd4/Monotasking_8cpp.html", "d4/dd4/Monotasking_8cpp" ],
     [ "Multitasking.cpp", "dd/d62/Multitasking_8cpp.html", "dd/d62/Multitasking_8cpp" ],
     [ "ProcessAPI.cpp", "df/d27/ProcessAPI_8cpp.html", "df/d27/ProcessAPI_8cpp" ],

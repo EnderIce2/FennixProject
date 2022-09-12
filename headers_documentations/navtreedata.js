@@ -70,17 +70,17 @@ var NAVTREEINDEX =
 "d3/df0/limine_8h.html#d3/d7e/structlimine__hhdm__response",
 "d5/dba/multiboot2_8h.html#a3a78959903ddf23a09f22d755fe11ec4",
 "d6/d40/stb__image_8h.html#a6e7fd261af79ecef2208df3a6cc806bb",
-"d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a722035b4fe2fd973c4aa13bfa3f6183d",
-"d7/d8c/libc_2include_2errno_8h.html#a5f8d33deb08fa27c04897b278ac7f965",
-"d9/d77/structstivale2__header__tag__terminal.html#a5ba26e596c2788e26eb3a7f1f2fe298c",
-"da/ddd/cpuid_8h.html#a9f4138dcf9b6ef7c5ecfcead6a93879f",
-"db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29bae168fb880dc0042ac28438e1875e41d3",
-"dc/d69/include_2stdint_8h.html#aab530113fa96e280e49c3c138b0f917d",
-"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731f",
-"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731faaec3e463da31cfa741191cbe95e38084",
-"de/d63/msexec_8h.html#aad61bc3eae1804d8784adebdce0721d3",
-"df/d17/stivale2_8h.html#acb798c32859f0e53f32118267e1b2eca",
-"globals_func_h.html"
+"d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a6f4f37f3ab5f3d80493469a5b252f5d0",
+"d7/d8c/libc_2include_2errno_8h.html#a4d0b1b435ec441e7d50a430b83df5832",
+"d9/d5e/stdbool_8h_source.html",
+"da/ddd/cpuid_8h.html#a8a0c1ded1a7efee6bd75b84425c21bc6",
+"db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29baacd40056f9fbe11dadadeba269eb2034",
+"dc/d69/include_2stdint_8h.html#aa54fd5210434219e9027bfa0f0e325c8",
+"de/d21/asm_8h.html#aa2309148bb17de85e37d9cfe30cb9607",
+"de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731faadc5056d72cc670b910eaa30554a9341",
+"de/d63/msexec_8h.html#aa87af686d8dc7a32af5c2634e450b7e6",
+"df/d17/stivale2_8h.html#ac9a64965d6afbbdeb6596eb8ca079f7c",
+"globals_func_f.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

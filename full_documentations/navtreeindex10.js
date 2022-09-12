@@ -1,5 +1,10 @@
 var NAVTREEINDEX10 =
 {
+"d5/dba/multiboot2_8h.html#a16bbc0a9f4a8bb130189f6dfddf4a12c":[5,0,0,5,0,0,3,55],
+"d5/dba/multiboot2_8h.html#a17e73abddfe8264c254767a20099038d":[5,0,0,5,0,0,2,0,2],
+"d5/dba/multiboot2_8h.html#a17e73abddfe8264c254767a20099038d":[5,0,0,5,0,0,3,0,2],
+"d5/dba/multiboot2_8h.html#a18088e9abdbc843745e5e59973481475":[5,0,0,5,0,0,3,37],
+"d5/dba/multiboot2_8h.html#a1979fc6821ff6ffb79bd95c2794104a0":[5,0,0,5,0,0,3,26,0],
 "d5/dba/multiboot2_8h.html#a1c3ae4792cb53a0a9cf1ae00ef407071":[5,0,0,5,0,0,3,32,1],
 "d5/dba/multiboot2_8h.html#a1e8db52da1ca1c6f5e2e96baec2c9256":[5,0,0,5,0,0,2,5,4],
 "d5/dba/multiboot2_8h.html#a1e8db52da1ca1c6f5e2e96baec2c9256":[5,0,0,5,0,0,3,10,4],
@@ -244,10 +249,5 @@ var NAVTREEINDEX10 =
 "d5/dba/multiboot2_8h.html#db/d3c/structmultiboot__tag__vbe":[5,0,0,5,0,0,3,19],
 "d5/dba/multiboot2_8h.html#dc/d07/structmultiboot__header__tag__entry__address":[5,0,0,5,0,0,3,4],
 "d5/dba/multiboot2_8h.html#dc/dfa/structmultiboot__header":[5,0,0,5,0,0,2,0],
-"d5/dba/multiboot2_8h.html#dc/dfa/structmultiboot__header":[5,0,0,5,0,0,3,0],
-"d5/dba/multiboot2_8h.html#de/d46/structmultiboot__tag__string":[5,0,0,5,0,0,3,12],
-"d5/dba/multiboot2_8h.html#df/d38/structmultiboot__tag__efi64__ih":[5,0,0,5,0,0,3,32],
-"d5/dba/multiboot2_8h_source.html":[5,0,0,5,0,0,3],
-"d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html":[4,0,21,0],
-"d5/dbd/structNetworkInterfaceManager_1_1DeviceInterface.html#a122d4f0a9ea4465637f998106c30e57c":[4,0,21,0,1]
+"d5/dba/multiboot2_8h.html#dc/dfa/structmultiboot__header":[5,0,0,5,0,0,3,0]
 };

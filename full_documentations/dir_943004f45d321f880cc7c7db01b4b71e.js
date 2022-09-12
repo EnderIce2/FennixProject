@@ -7,6 +7,7 @@ var dir_943004f45d321f880cc7c7db01b4b71e =
     [ "reboot", "dir_6e31d17261b2eb0ddb5570a4e114ff71.html", "dir_6e31d17261b2eb0ddb5570a4e114ff71" ],
     [ "shutdown", "dir_3b4bc0dc6c61bc7847ca6e42ba2b4ead.html", "dir_3b4bc0dc6c61bc7847ca6e42ba2b4ead" ],
     [ "uiserver", "dir_2dda5827703ef5c7d4d0ec07f4cb8309.html", "dir_2dda5827703ef5c7d4d0ec07f4cb8309" ],
+    [ "usermodecrash_handler", "dir_d98549cb22dfc5fbe349e0d64d71fa30.html", "dir_d98549cb22dfc5fbe349e0d64d71fa30" ],
     [ "wm", "dir_0260d302de4e40e5a351f44c9391f7cc.html", "dir_0260d302de4e40e5a351f44c9391f7cc" ],
     [ "Makefile", "d9/d00/userspace_2apps_2system_2Makefile.html", null ]
 ];
