@@ -5,19 +5,181 @@
 #include <heap.h>
 #include <asm.h>
 #include <int.h>
+#include <sys.h>
 #include <io.h>
 
 #include "../cpu/apic.hpp"
 #include "../cpu/gdt.h"
 #include "../timer.h"
 
+#define DEBUG_TASK_MANAGER 1
+
+#ifdef DEBUG_TASK_MANAGER
+#include <critical.hpp>
+#include <display.h>
+#endif
+
 namespace Tasking
 {
-    Monotasking *monot = nullptr;
+    MonoTasking *monot = nullptr;
 
-#define MAX_TASKS 0x10000
+// IRQ17 = 0x31
+#define SchedulerInterrupt __asm__ volatile("int $0x31")
+
+    struct TaskQueue
+    {
+        TaskQueue *Prev = nullptr;
+        TaskControlBlock *Task = nullptr;
+        TaskQueue *Next = nullptr;
+    };
+
+    TaskQueue *Queue = nullptr;
     TaskControlBlock *CurrentTask = nullptr;
-    TaskControlBlock *TaskQueue[MAX_TASKS];
+
+#ifdef DEBUG_TASK_MANAGER
+    void drawrectangle(uint64_t X, uint64_t Y, uint64_t W, uint64_t H, uint32_t C)
+    {
+        for (uint64_t y = Y; y < Y + H; y++)
+            for (uint64_t x = X; x < X + W; x++)
+                CurrentDisplay->SetPixel(x, y, C);
+    }
+
+    InterruptHandler(TraceSchedOnScreen)
+    {
+        EnterCriticalSection;
+        inb(0x60);
+        int offset = 0;
+        TaskQueue *current = Queue;
+        CurrentDisplay->ResetPrintColor();
+
+        do
+        {
+            int color = 0x255AFF;
+            switch (current->Task->state)
+            {
+            case TaskState::TaskStateReady:
+                color = 0x0FFFF0;
+                break;
+            case TaskState::TaskStateRunning:
+                color = 0x0AAF00;
+                break;
+            case TaskState::TaskStateWaiting:
+                color = 0xF75F00;
+                break;
+            case TaskState::TaskStateTerminated:
+                color = 0xFF0000;
+                break;
+            case TaskState::TaskPushed:
+                color = 0x5000FF;
+                break;
+            case TaskState::TaskPoped:
+                color = 0xA00AF0;
+                break;
+            default:
+                break;
+            }
+            drawrectangle(0, offset, 50, 10, color);
+            CurrentDisplay->SetPrintLocation(0, offset);
+            printf("%s", current->Task->name);
+            offset += 10;
+            current = current->Next;
+        } while (current);
+        LeaveCriticalSection;
+    }
+#endif
+
+    static uint64_t TaskIDs = 0;
+
+    TaskControlBlock *FindLastTask()
+    {
+        TaskQueue *current = Queue;
+        while (current->Next)
+            current = current->Next;
+        if (!current->Task)
+        {
+            debug("Task is null");
+            return nullptr;
+        }
+        debug("Last task in queue is %s.", current->Task->name);
+        return current->Task;
+    }
+
+    void AllocateTask(TaskControlBlock *task, bool AfterCurrent)
+    {
+        if (!Queue)
+        {
+            Queue = new TaskQueue;
+            Queue->Task = task;
+            Queue->Next = nullptr;
+            Queue->Prev = nullptr;
+            return;
+        }
+
+        TaskQueue *newTask = new TaskQueue;
+        newTask->Task = task;
+
+        if (AfterCurrent)
+        {
+            TaskQueue *current = Queue;
+
+            while (current->Task != CurrentTask)
+            {
+                if (!current)
+                    break;
+                current = current->Next;
+            }
+
+            newTask->Next = current->Next;
+            newTask->Prev = current;
+            current->Next = newTask;
+        }
+        else
+        {
+            TaskQueue *last = Queue;
+            while (last->Next)
+                last = last->Next;
+
+            newTask->Prev = last;
+            newTask->Next = nullptr;
+            last->Next = newTask;
+        }
+    }
+
+    void FreeTask(TaskControlBlock *task)
+    {
+        if (!Queue)
+        {
+            if (task)
+                delete task;
+            return;
+        }
+
+        TaskQueue *current = Queue;
+        while (current)
+        {
+            if (current->Task == task)
+            {
+                if (current->Next)
+                {
+                    TaskQueue *next = current->Next;
+                    current->Task = next->Task;
+                    current->Next = next->Next;
+                    if (next->Next)
+                        next->Next->Prev = current;
+                    delete next;
+                }
+                else
+                {
+                    TaskQueue *prev = current->Prev;
+                    delete current;
+                    prev->Next = nullptr;
+                }
+                break;
+            }
+            current = current->Next;
+        }
+        delete task;
+    }
 
     extern "C"
     {
@@ -40,7 +202,7 @@ namespace Tasking
                 "pushq %r14\n"
                 "pushq %r15\n"
                 "movq %rsp, %rdi\n"
-                "call mono_schedule_interrupt_handler\n"
+                "call MonoSchedulerHelperHandler\n"
                 "popq %r15\n"
                 "popq %r14\n"
                 "popq %r13\n"
@@ -59,127 +221,74 @@ namespace Tasking
                 "addq $16, %rsp\n"
                 "iretq");
         }
-    }
-// IRQ17 = 0x31
-#define SchedulerInterrupt __asm__ volatile("int $0x31")
 
-    static uint64_t TaskIDs = 0;
-
-    TaskControlBlock *FindLastTask()
-    {
-        for (int i = MAX_TASKS; i > -1; i--)
-        {
-            if (TaskQueue[i] == nullptr)
-                continue;
-            if (TaskQueue[i]->checksum != TASK_CHECKSUM)
-                continue;
-            debug("Last task in queue is %s.", TaskQueue[i]->name);
-            return TaskQueue[i];
-        }
-        // debug("No more tasks in queue. Returning null...");
-        return nullptr;
-    }
-
-    void AllocateTask(TaskControlBlock *task)
-    {
-        for (size_t i = 0; i < MAX_TASKS; i++)
-        {
-            if (TaskQueue[i] != nullptr)
-                continue;
-            if (TaskQueue[i]->checksum == TASK_CHECKSUM)
-                continue;
-            TaskQueue[i] = task;
-            debug("Task %s has been added to queue", task->name);
-            break;
-        }
-    }
-
-    void FreeTask(TaskControlBlock *task)
-    {
-        for (size_t i = 0; i < MAX_TASKS; i++)
-        {
-            if (TaskQueue[i] == nullptr)
-                continue;
-            if (TaskQueue[i]->checksum != TASK_CHECKSUM)
-                continue;
-            if (TaskQueue[i] == task)
-            {
-                debug("Task %s will be removed from queue.", task->name);
-                KernelStackAllocator->FreeStack((void *)TaskQueue[i]->stack);
-                // KernelPageTableAllocator->RemovePageTable((VMM::PageTable *)TaskQueue[i]->pml4.raw);
-                delete TaskQueue[i];
-                memset(TaskQueue[i], 0, sizeof(TaskControlBlock));
-                TaskQueue[i] = FindLastTask();
-                debug("Task removed.");
-                break;
-            }
-        }
-    }
-
-    extern "C"
-    {
-        InterruptHandler(mono_schedule_interrupt_handler)
+        InterruptHandler(MonoSchedulerHelperHandler)
         {
             debug("Mono scheduler called.");
-            foreach (auto t in TaskQueue)
+            TaskQueue *current = Queue;
+            do
             {
-                if (t->state == TaskState::TaskPushed)
+                if (current->Task->state == TaskState::TaskPushed)
                 {
-                    t->state = TaskState::TaskStateWaiting;
-                    // t->regs = *regs;
+                    current->Task->state = TaskState::TaskStateWaiting;
+                    // current->Task->regs = *regs;
                 }
-                else if (t->state == TaskState::TaskPoped)
+                else if (current->Task->state == TaskState::TaskPoped)
                 {
-                    t->state = TaskState::TaskStateWaiting;
-                    // *regs = t->regs;
+                    current->Task->state = TaskState::TaskStateWaiting;
+                    // *regs = current->Task->regs;
                 }
-            }
+                current = current->Next;
+            } while (current);
 
-            bool task_changed = false;
-            for (int i = MAX_TASKS; i > -1; i--)
+            current = Queue;
+
+            while (current->Next)
+                current = current->Next;
+
+            bool TaskChanged = false;
+
+            do
             {
-                if (TaskQueue[i] == nullptr)
-                    continue;
-                if (TaskQueue[i]->checksum != TASK_CHECKSUM)
-                    continue;
-                switch (TaskQueue[i]->state)
+                if (current->Task->checksum == TASK_CHECKSUM)
                 {
-                case TaskState::TaskStateReady:
-                {
-                    TaskQueue[i]->state = TaskState::TaskStateRunning;
-                    *regs = TaskQueue[i]->regs;
-                    writecr3(TaskQueue[i]->pml4);
-                    CurrentTask = TaskQueue[i];
-                    trace("Task %s is now running.", TaskQueue[i]->name);
-                    task_changed = true;
-                    goto scheduler_eoi;
-                }
-                case TaskState::TaskStateWaiting:
-                {
-                    debug("Task %s is waiting for another task.", TaskQueue[i]->name);
-                    continue;
-                }
-                case TaskState::TaskStateTerminated:
-                {
-                    FreeTask(TaskQueue[i]);
-                    if (FindLastTask() == nullptr)
+                    switch (current->Task->state)
                     {
-                        err("No more tasks to run! System halted."); // we never want to get here.
-                        CPU_HALT;
+                    case TaskState::TaskStateReady:
+                    {
+                        current->Task->state = TaskState::TaskStateRunning;
+                        *regs = current->Task->regs;
+                        writecr3(current->Task->pml4);
+                        CurrentTask = current->Task;
+                        trace("Task %s is now running.", current->Task->name);
+                        TaskChanged = true;
+                        goto scheduler_eoi;
                     }
-                    continue;
+                    case TaskState::TaskStateWaiting:
+                    {
+                        trace("Task %s is waiting for another task.", current->Task->name);
+                        break;
+                    }
+                    case TaskState::TaskStateTerminated:
+                    {
+                        FreeTask(current->Task);
+                        if (FindLastTask() == nullptr)
+                            panic("No more tasks to run! System halted.", false); // we never want to get here.
+                        break;
+                    }
+                    case TaskState::TaskPushed:
+                    case TaskState::TaskPoped:
+                    case TaskState::TaskStateRunning:
+                    default:
+                        break;
+                    }
                 }
-                case TaskState::TaskPushed:
-                case TaskState::TaskPoped:
-                case TaskState::TaskStateRunning:
-                default:
-                    continue;
-                }
-            }
+                current = current->Prev;
+            } while (current);
 
         scheduler_eoi:
             EndOfInterrupt(INT_NUM);
-            if (!task_changed)
+            if (!TaskChanged)
                 SchedulerInterrupt;
         }
     }
@@ -192,7 +301,31 @@ namespace Tasking
         CPU_STOP;
     }
 
-    TaskControlBlock *Monotasking::CreateTask(uint64_t InstructionPointer, uint64_t FirstArgument, uint64_t SecondArgument, char *Name, bool UserMode)
+    void MonoTasking::SetTaskTimeInfo(TaskControlBlock *task)
+    {
+        task->SpawnTick = counter();
+        uint32_t t = 0;
+        outb(0x70, 0x00);
+        t = inb(0x71);
+        task->Second = ((t & 0x0F) + ((t >> 4) * 10));
+        outb(0x70, 0x02);
+        t = inb(0x71);
+        task->Minute = ((t & 0x0F) + ((t >> 4) * 10));
+        outb(0x70, 0x04);
+        t = inb(0x71);
+        task->Hour = ((t & 0x0F) + ((t >> 4) * 10));
+        outb(0x70, 0x07);
+        t = inb(0x71);
+        task->Day = ((t & 0x0F) + ((t >> 4) * 10));
+        outb(0x70, 0x08);
+        t = inb(0x71);
+        task->Month = ((t & 0x0F) + ((t >> 4) * 10));
+        outb(0x70, 0x09);
+        t = inb(0x71);
+        task->Year = ((t & 0x0F) + ((t >> 4) * 10));
+    }
+
+    TaskControlBlock *MonoTasking::CreateTask(uint64_t InstructionPointer, uint64_t FirstArgument, uint64_t SecondArgument, char *Name, bool UserMode, bool AfterCurrent)
     {
         TaskControlBlock *task = new TaskControlBlock;
         task->id = TaskIDs++;
@@ -232,48 +365,22 @@ namespace Tasking
         task->regs.ARG1 = (uint64_t)SecondArgument;
         task->argc = FirstArgument;
         task->argv = (char **)SecondArgument;
-
-        task->SpawnTick = counter();
-        uint32_t t = 0;
-        outb(0x70, 0x00);
-        t = inb(0x71);
-        task->Second = ((t & 0x0F) + ((t >> 4) * 10));
-        outb(0x70, 0x02);
-        t = inb(0x71);
-        task->Minute = ((t & 0x0F) + ((t >> 4) * 10));
-        outb(0x70, 0x04);
-        t = inb(0x71);
-        task->Hour = ((t & 0x0F) + ((t >> 4) * 10));
-        outb(0x70, 0x07);
-        t = inb(0x71);
-        task->Day = ((t & 0x0F) + ((t >> 4) * 10));
-        outb(0x70, 0x08);
-        t = inb(0x71);
-        task->Month = ((t & 0x0F) + ((t >> 4) * 10));
-        outb(0x70, 0x09);
-        t = inb(0x71);
-        task->Year = ((t & 0x0F) + ((t >> 4) * 10));
+        this->SetTaskTimeInfo(task);
         trace("Task %s has been created. (IP %#llx)", task->name, InstructionPointer);
-        AllocateTask(task);
+        AllocateTask(task, AfterCurrent);
         return task;
     }
 
-    void Monotasking::KillMe()
+    void MonoTasking::KillMe()
     {
         CurrentTask->state = TaskState::TaskStateTerminated;
-        trace("Task %s commited suicide.", CurrentTask->name);
-
-        for (uint64_t i = 0; i < MAX_TASKS; i++)
-            if (CurrentTask == TaskQueue[i])
-                if (TaskQueue[i - 1] != nullptr &&
-                    TaskQueue[i - 1]->checksum == TASK_CHECKSUM)
-                    this->PopTask();
-
+        trace("Task %s killed.", CurrentTask->name);
+        this->PopTask(true);
         SchedulerInterrupt;
         CPU_STOP;
     }
 
-    void Monotasking::PushTask(uint64_t rip)
+    void MonoTasking::PushTask(uint64_t rip)
     {
         if (FindLastTask() == CurrentTask)
         {
@@ -281,85 +388,96 @@ namespace Tasking
             return;
         }
 
-        for (uint64_t i = 0; i < MAX_TASKS; i++)
+        TaskQueue *current = Queue;
+        do
         {
-            if (TaskQueue[i] == nullptr)
-                continue;
-            if (TaskQueue[i]->checksum != TASK_CHECKSUM)
-                continue;
-            if (CurrentTask == TaskQueue[i])
+            if (CurrentTask == current->Task)
             {
-                if (TaskQueue[i + 1] == nullptr)
-                    continue;
-                if (TaskQueue[i + 1]->checksum != TASK_CHECKSUM)
-                    continue;
-                if (TaskQueue[i]->state != TaskState::TaskStateTerminated)
-                    TaskQueue[i]->state = TaskState::TaskPushed;
-                TaskQueue[i + 1]->state = TaskState::TaskStateReady;
-                // CurrentTask->regs.rip = rip; // i need to find anoter way to get the instruction pointer
-                trace("Task pushed to %s with instruction pointer %#llx.", TaskQueue[i + 1]->name, rip);
+                if (current->Task->state != TaskState::TaskStateTerminated)
+                    current->Task->state = TaskState::TaskPushed;
+                if (current->Next)
+                    current->Next->Task->state = TaskState::TaskStateReady;
+
+                // if (rip != 0)
+                //     CurrentTask->regs.rip = rip; // FIXME: i need to find anoter way to get the instruction pointer
+                trace("Task pushed to %s with instruction pointer %#llx.", current->Task->name, rip);
                 SchedulerInterrupt;
-                return;
             }
-        }
+            current = current->Next;
+        } while (current);
         err("Cannot move to the next task.");
     }
 
-    void Monotasking::PopTask()
+    void MonoTasking::PopTask(bool Destroy)
     {
-        if (TaskQueue[0] == CurrentTask)
+        if (Queue->Task == CurrentTask)
         {
             err("The current task is the first task in queue.");
             return;
         }
 
-        for (uint64_t i = 0; i < MAX_TASKS; i++)
+        TaskQueue *current = Queue;
+        do
         {
-            if (TaskQueue[i] == nullptr)
-                continue;
-            if (TaskQueue[i]->checksum != TASK_CHECKSUM)
-                continue;
-            if (CurrentTask == TaskQueue[i])
+            if (CurrentTask == current->Task)
             {
-                if (TaskQueue[i - 1] == nullptr)
-                    continue;
-                if (TaskQueue[i - 1]->checksum != TASK_CHECKSUM)
-                    continue;
-                if (TaskQueue[i]->state != TaskState::TaskStateTerminated)
-                    TaskQueue[i]->state = TaskState::TaskPoped;
-                TaskQueue[i - 1]->state = TaskState::TaskStateReady;
-                trace("Task popped to %s.", TaskQueue[i - 1]->name);
+                if (!current->Prev)
+                {
+                    err("Cannot move to the previous task.");
+                    return;
+                }
+                else
+                    current->Prev->Task->state = TaskState::TaskStateReady;
+
+                if (Destroy)
+                {
+                    FreeTask(current->Task);
+                    trace("Task %s destroyed.", current->Task->name);
+                    return;
+                }
+                else if (current->Task->state != TaskState::TaskStateTerminated)
+                    current->Task->state = TaskState::TaskPoped;
+                else
+                {
+                    err("Cannot move to the previous task.");
+                    return;
+                }
+
+                trace("Task poped from %s.", current->Task->name);
                 SchedulerInterrupt;
-                return;
             }
-        }
-        err("Cannot move to the previous task.");
+            current = current->Next;
+        } while (current);
     }
 
-    TaskControlBlock *Monotasking::GetCurrentTask() { return CurrentTask; }
+    TaskControlBlock *MonoTasking::GetCurrentTask() { return CurrentTask; }
 
-    Monotasking::Monotasking(uint64_t FirstTask)
+    MonoTasking::MonoTasking(uint64_t FirstTask)
     {
-        for (uint64_t i = 0; i < MAX_TASKS; i++)
-            TaskQueue[i] = nullptr; // Make sure that all tasks have value nullptr
-        CreateTask((uint64_t)FirstTask, 0, 0, (char *)"kernel", false);
+        CreateTask((uint64_t)FirstTask, 0, 0, (char *)"kernel", false, true);
         CurrentTaskingMode = TaskingMode::Mono;
         // apic->RedirectIRQ(0, SchedulerInterrupt - 32, 1);
+#ifdef DEBUG_TASK_MANAGER
+        RegisterInterrupt(TraceSchedOnScreen, IRQ12, true); // temporarily workaround
+#endif
         SchedulerInterrupt;
     }
 
-    Monotasking::~Monotasking()
+    MonoTasking::~MonoTasking()
     {
-        for (uint64_t i = 0; i < MAX_TASKS; i++)
+        TaskQueue *current = Queue;
+
+        while (1)
         {
-            if (TaskQueue[i] == nullptr)
+            if (!current)
+                break;
+            if (current->Task == CurrentTask)
                 continue;
-            if (TaskQueue[i] == CurrentTask)
-                continue; // We ignore the current task because it's the task that invoked the unitialization.
-            TaskControlBlock *task = TaskQueue[i];
-            trace("Task %s has been forcibly terminated and removed.", task->name);
-            FreeTask(task);
-            CurrentTaskingMode = TaskingMode::None;
+            trace("Task %s has been forcibly terminated and removed.", current->Task->name);
+            FreeTask(current->Task);
+            delete current;
+            current = current->Next;
         }
+        CurrentTaskingMode = TaskingMode::None;
     }
 };

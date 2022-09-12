@@ -116,7 +116,7 @@ static Tasking::TaskControlBlock *internal_createtask(SyscallsRegs *regs, uint64
     syscldbg("syscall: createtask( %#llx %#llx %#llx %s )", rip, arg0, arg1, name);
     if (!CanSyscall(regs))
         return (Tasking::TaskControlBlock *)deniedcall;
-    return Tasking::monot->CreateTask(rip, arg0, arg1, name, true);
+    return Tasking::monot->CreateTask(rip, arg0, arg1, name, true, true);
 }
 
 static void internal_pushtask(SyscallsRegs *regs, uint64_t jumpbackIP)

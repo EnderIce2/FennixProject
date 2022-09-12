@@ -16,7 +16,7 @@
                 "GIT_COMMIT_SHORT",
                 "UNIT_TESTS"
             ],
-            "compilerPath": "${workspaceFolder}/tools/cross/bin/x86_64-elf-gcc",
+            "compilerPath": "${workspaceFolder}/tools/cross/bin/amd64-elf-gcc",
             "cStandard": "gnu17",
             "cppStandard": "gnu++20",
             "intelliSenseMode": "gcc-x64",

@@ -11,8 +11,8 @@ namespace SystemRecovery
 {
     Recovery::Recovery()
     {
-        CurrentDisplay->Clear(0x282828);
-        printf("TODO");
+        CurrentDisplay->Clear(0x101010);
+        printf("%s - %s | Recovery Mode", KERNEL_NAME, KERNEL_VERSION);
         while (1)
         {
             asm volatile("sti");

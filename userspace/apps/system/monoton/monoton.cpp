@@ -142,12 +142,17 @@ void ParseBuffer(char *Buffer)
     {
         mono->print("Monoton Shell for Fennix\n");
         mono->print("------------------------\n");
-        mono->print("help  clear  echo  ls  cat  cd  finfo elfinfo\n");
+        mono->print("help  crash  clear  echo  ls  cat  cd  finfo elfinfo\n");
+        mono->print("info  dump\n");
         mono->print("For more information, use [command] --help");
     }
     else if (strcmp(Buffer, "clear") == 0)
     {
         mono->Clear();
+    }
+    else if (strcmp(Buffer, "crash") == 0)
+    {
+        asm volatile("int $0x1");
     }
     else if (strncmp(Buffer, "echo", 4) == 0)
     {

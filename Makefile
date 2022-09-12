@@ -15,24 +15,24 @@ include Makefile.conf
 
 # For tap0
 # -netdev tap,id=usernet0,ifname=tap0,script=no,downscript=no
-QEMUFLAGS = -device bochs-display -M q35 \
-			-display gtk \
-			-usb \
-			-usbdevice mouse \
-			-smp $(shell nproc) \
-			-net user \
-    		-netdev user,id=usernet0 \
-    		-device e1000,netdev=usernet0,mac=00:69:96:00:42:00 \
-			-object filter-dump,id=usernet0,netdev=usernet0,file=network.log,maxlen=1024 \
-			-serial file:serial.log \
-			-device ahci,id=ahci \
-			-drive id=bootdsk,file=$(OSNAME).iso,format=raw,if=none \
-			-device ide-hd,drive=bootdsk,bus=ahci.0 \
-			-drive id=disk,file=qemu-disk.img,format=raw,if=none \
-			-device ide-hd,drive=disk,bus=ahci.1 \
-			-audiodev pa,id=audio0 \
-			-machine pcspk-audiodev=audio0 \
-			-device AC97,audiodev=audio0 \
+QEMUFLAGS64 = -device bochs-display -M q35 \
+			  -display gtk \
+			  -usb \
+			  -usbdevice mouse \
+			  -smp $(shell nproc) \
+			  -net user \
+    		  -netdev user,id=usernet0 \
+    		  -device e1000,netdev=usernet0,mac=00:69:96:00:42:00 \
+			  -object filter-dump,id=usernet0,netdev=usernet0,file=network.log,maxlen=1024 \
+			  -serial file:serial.log \
+			  -device ahci,id=ahci \
+			  -drive id=bootdsk,file=$(OSNAME).iso,format=raw,if=none \
+			  -device ide-hd,drive=bootdsk,bus=ahci.0 \
+			  -drive id=disk,file=qemu-disk.img,format=raw,if=none \
+			  -device ide-hd,drive=disk,bus=ahci.1 \
+			  -audiodev pa,id=audio0 \
+			  -machine pcspk-audiodev=audio0 \
+			  -device AC97,audiodev=audio0 \
 
 QEMUHWACCELERATION = -machine q35 -enable-kvm
 
@@ -46,10 +46,7 @@ QEMU = ./$(QEMU_PATH)$(QEMU_ARCH)
 
 # First rule
 default:
-	$(info Hello! If you want to build the ISO & IMG file, please use the following command: make build)
-	$(info If you want to quickly build and run in QEMU, please use the following command: make run)
-	$(info If you want to clean, please use the following command: make clean)
-	$(info Thanks.)
+	$(error Please specify a target)
 
 doxygen:
 	mkdir -p doxygen-doc
@@ -152,15 +149,15 @@ endif
 
 vscode_debug: build_kernel build_libc build_userspace build_image
 	rm -f serial.log network.log
-	$(QEMU) -S -gdb tcp::1234 -d int -no-shutdown -bios /usr/share/qemu/OVMF.fd -m 4G $(QEMUFLAGS)
+	$(QEMU) -S -gdb tcp::1234 -d int -no-shutdown -bios /usr/share/qemu/OVMF.fd -m 4G $(QEMUFLAGS64)
 
 qemu: qemu_vdisk
 	rm -f serial.log network.log
-	$(QEMU) -bios /usr/share/qemu/OVMF.fd -cpu host $(QEMUFLAGS) $(QEMUHWACCELERATION) $(QEMUMEMORY)
+	$(QEMU) -bios /usr/share/qemu/OVMF.fd -cpu host $(QEMUFLAGS64) $(QEMUHWACCELERATION) $(QEMUMEMORY)
 
 qemubios: qemu_vdisk
 	rm -f serial.log network.log
-	$(QEMU) -cpu host $(QEMUFLAGS) $(QEMUHWACCELERATION) $(QEMUMEMORY)
+	$(QEMU) -cpu host $(QEMUFLAGS64) $(QEMUHWACCELERATION) $(QEMUMEMORY)
 
 # build the os and run it
 run: build qemu_vdisk qemu

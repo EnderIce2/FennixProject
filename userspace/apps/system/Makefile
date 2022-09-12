@@ -1,6 +1,7 @@
 build:
 	make -C init build
-	make -C drvmgr
+	make -C drvmgr build
+	make -C usermodecrash_handler build
 	make -C monoton build
 	make -C uiserver build
 	make -C wm build
@@ -11,6 +12,7 @@ build:
 clean:
 	make -C init clean
 	make -C drvmgr clean
+	make -C usermodecrash_handler clean
 	make -C monoton clean
 	make -C uiserver clean
 	make -C wm clean

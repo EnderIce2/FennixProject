@@ -47,9 +47,11 @@ namespace Tasking
         unsigned int checksum;
     };
 
-    class Monotasking
+    class MonoTasking
     {
     private:
+        void SetTaskTimeInfo(TaskControlBlock *task);
+
     public:
         /**
          * @brief Create a new Task
@@ -60,7 +62,7 @@ namespace Tasking
          * @param name The name of the new Task
          * @return The new created Task
          */
-        TaskControlBlock *CreateTask(uint64_t InstructionPointer, uint64_t FirstArgument, uint64_t SecondArgument, char *Name, bool UserMode);
+        TaskControlBlock *CreateTask(uint64_t InstructionPointer, uint64_t FirstArgument, uint64_t SecondArgument, char *Name, bool UserMode, bool AfterCurrent = true);
 
         /**
          * @brief Kill the current Task
@@ -75,7 +77,7 @@ namespace Tasking
         /**
          * @brief Move to the previous Task and suspending the current
          */
-        void PopTask();
+        void PopTask(bool Destroy = false);
 
         /**
          * @brief Get the current Task
@@ -89,13 +91,13 @@ namespace Tasking
          *
          * @param firstThread The first Instruction Pointer to be executed
          */
-        Monotasking(uint64_t FirstTask);
+        MonoTasking(uint64_t FirstTask);
 
         /**
          * @brief Destroy the Mono Tasking object (Make sure that all other processes are destroyed and no stack is used!)
          *
          */
-        ~Monotasking();
+        ~MonoTasking();
     };
 
     class Multitasking
@@ -117,13 +119,16 @@ namespace Tasking
     };
 
     extern bool MultitaskingSchedulerEnabled;
-    extern Monotasking *monot;
+    extern MonoTasking *monot;
     extern Multitasking *mt;
 }
 
 #endif
 
 START_EXTERNC
+
+PCB *ConvertTaskCBToPCB(Tasking::TaskControlBlock *task);
+TCB *ConvertTaskCBToTCB(Tasking::TaskControlBlock *task);
 
 /**
  * @brief Get a running process by PID
@@ -157,29 +162,29 @@ TCB *SysGetCurrentThread();
 
 /**
  * @brief Set current process priority
- * 
- * @param Priority 
+ *
+ * @param Priority
  */
 void SysSetProcessPriority(int Priority);
 
 /**
  * @brief Get current process priority
- * 
- * @return int 
+ *
+ * @return int
  */
 int SysGetProcessPriority();
 
 /**
  * @brief Get current thread priority
- * 
- * @param Priority 
+ *
+ * @param Priority
  */
 void SysSetThreadPriority(int Priority);
 
 /**
  * @brief Get current thread priority
- * 
- * @return int 
+ *
+ * @return int
  */
 int SysGetThreadPriority();
 

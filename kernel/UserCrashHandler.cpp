@@ -7,6 +7,8 @@
 #include <heap.h>
 #include <asm.h>
 
+#include "kernel.h"
+
 static const char *pagefault_message[] = {
     "Supervisory process tried to read a non-present page entry",
     "Supervisory process tried to read a page and caused a protection fault",
@@ -179,5 +181,12 @@ void TriggerUserModeCrash(TrapFrame *regs)
 #endif
     STI;
     if (CurrentTaskingMode == TaskingMode::Mono)
-        Tasking::monot->PopTask();
+    {
+        TrapFrame *tf = (TrapFrame *)UserAllocator->Malloc(sizeof(TrapFrame));
+        memcpy(tf, regs, sizeof(TrapFrame));
+
+        Tasking::monot->PopTask(true);
+        SysCreateProcessFromFile("/system/umc", (uint64_t)tf, 0, ELEVATION::User);
+        Tasking::monot->PushTask(0);
+    }
 }

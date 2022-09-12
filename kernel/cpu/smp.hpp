@@ -24,7 +24,7 @@ struct CPUData
     void fxrstor(char *Buffer) { _fxrstor(Buffer); }
 
     long ErrorCode;
-    unsigned int Checksum;
+    unsigned int Checksum = CPU_DATA_CHECKSUM;
 
     uint8_t Stack[STACK_SIZE] __attribute__((aligned(PAGE_SIZE)));
 } __attribute__((packed));
@@ -50,10 +50,10 @@ static CPUData *GetCurrentCPU()
 {
     uint64_t ret = GetCurrentCPUID();
 
-    if ((&CPUs[ret])->Checksum != CPU_DATA_CHECKSUM)
+    if (CPUs[ret].Checksum != CPU_DATA_CHECKSUM)
     {
         // TODO: i think somehow i messed this up somehere... i'll figure it out later... but now i will return the first cpu
-        err("CPU %d data are corrupted!", ret);
+        err("CPU %d data is corrupted!", ret);
         return &CPUs[0];
     }
     return &CPUs[ret];

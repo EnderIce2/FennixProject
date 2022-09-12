@@ -79,7 +79,6 @@ extern "C" void StartCPU()
 
     /* ... GDT, IDT, APIC, etc... */
 
-    CurrentCPU->Checksum = CPU_DATA_CHECKSUM;
     asm("sti");
     CPUEnabled = true;
     CPU_STOP;
@@ -160,7 +159,13 @@ static void InitializeCPU(ACPI::MADT::LocalAPIC *lapic)
     // trace("CPU %d Ready", lapic->APICId);
 }
 
-int GetCurrentCPUID() { return apic->Read(APIC::APIC::APIC_ID) >> 24; }
+int GetCurrentCPUID()
+{
+    if (!apic)
+        return 0;
+    else
+        return apic->Read(APIC::APIC::APIC_ID) >> 24;
+}
 
 namespace SymmetricMultiprocessing
 {

@@ -19,7 +19,7 @@ void StartTasking(uint64_t Address, TaskingMode Mode)
     {
     case TaskingMode::Mono:
     {
-        monot = new Monotasking(Address);
+        monot = new MonoTasking(Address);
         BS->IncreaseProgres();
         break;
     }

@@ -24,14 +24,14 @@ namespace StackHeap
         void *Address = (void *)((uint64_t)KernelAllocator.RequestPage());
         if (User)
             KernelPageTableManager.MapMemory((void *)(Address), (void *)(Address), PTFlag::RW | PTFlag::US);
-        debug("New stack allocated at %p", Address);
+        debug("New stack allocated at %#lx", Address);
         return Address;
         // }
         // uint64_t ReturnHeap = HeapBase;
         // KernelPageTableManager.MapMemory((void *)(ReturnHeap), KernelAllocator.RequestPage(), RW);
         // memcpy((void *)ReturnHeap, 0, STACK_SIZE);
         // HeapBase += STACK_SIZE;
-        // trace("New stack allocated at %p", (void *)ReturnHeap);
+        // trace("New stack allocated at %#lx", (void *)ReturnHeap);
         // return (PageTable *)ReturnHeap;
     }
 
