@@ -88,12 +88,21 @@ static inline int GetCPUID(uint32_t leaf, uint32_t *rax, uint32_t *rbx, uint32_t
 
 static inline bool InterruptsEnabled()
 {
+#if defined(__amd64__)
     RFLAGS flags;
     asm volatile(
         "pushfq\n"
         "pop %0"
         : "=r"(flags.raw));
     return flags.IF == 1;
+#elif defined(__i386__)
+    uint32_t flags;
+    asm volatile(
+        "pushfl\n"
+        "pop %0"
+        : "=r"(flags));
+    return flags & (1 << 9);
+#endif
 }
 
 #define CLI asm volatile("cli" :: \
@@ -650,8 +659,15 @@ static inline void clac()
 
 static inline uint64_t tsc()
 {
+#if defined(__amd64__)
     uint64_t rax, rdx;
     asm volatile("rdtsc"
                  : "=a"(rax), "=d"(rdx));
     return (rdx << 32) | rax;
+#elif defined(__i386__)
+    uint64_t eax;
+    asm volatile("rdtsc"
+                 : "=A"(eax));
+    return eax;
+#endif
 }

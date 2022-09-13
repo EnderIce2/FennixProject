@@ -9,7 +9,9 @@
 
 typedef char const *string;
 
+// #if defined(__amd64__)
 #define asm __asm__
+// #endif
 
 #define AND &&
 #define AND_EQ &=

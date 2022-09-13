@@ -259,7 +259,11 @@ void dbg_free(void *Address, string file, int line, string function)
 }
 #endif
 
+#if defined(__amd64__)
 void *operator new(size_t Size)
+#elif defined(__i386__)
+void *operator new(uint32_t Size)
+#endif
 {
     if (AlgorithmToUse == AllocationAlgorithm::NoAllocationAlgorithm)
     {
@@ -280,7 +284,7 @@ void *operator new(size_t Size)
         return Pointer;
 
     warn("new( %llx ) failed! [Request by %s] Trying again...", Size, SymTbl->GetSymbolFromAddress((uint64_t)__builtin_return_address(0)));
-    for (size_t i = 0; i < 16; i++)
+    for (uint64_t i = 0; i < 16; i++)
     {
         if (void *Pointer = HeapMalloc(Size))
             return Pointer;
@@ -291,7 +295,11 @@ void *operator new(size_t Size)
     throw;
 }
 
+#if defined(__amd64__)
 void *operator new[](size_t Size)
+#elif defined(__i386__)
+void *operator new[](uint32_t Size)
+#endif
 {
     if (AlgorithmToUse == AllocationAlgorithm::NoAllocationAlgorithm)
     {

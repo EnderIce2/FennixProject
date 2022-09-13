@@ -3,6 +3,7 @@
 #include "../security/security.hpp"
 #include "../cpu/apic.hpp"
 #include "../cpu/smp.hpp"
+#include "../cpu/fxsr.h"
 #include "../cpu/gdt.h"
 #include "../timer.h"
 
@@ -434,6 +435,7 @@ namespace Tasking
     {
         __attribute__((naked, used)) void MultiTaskingSchedulerHelper()
         {
+#if defined(__amd64__)
             asm("cld\n"
                 "pushq %rax\n"
                 "pushq %rbx\n"
@@ -469,6 +471,15 @@ namespace Tasking
                 "popq %rax\n"
                 "addq $16, %rsp\n"
                 "iretq");
+#elif defined(__i386__)
+            asm("cld\n"
+                "pusha\n"
+                "movl %esp, %edi\n"
+                "call MultiTaskingSchedulerHandler\n"
+                "popa\n"
+                "addl $16, %esp\n"
+                "iret");
+#endif
         }
 
         static void MakeOneShot() { TriggerOneShot(SchedulerInterrupt, 100); }
@@ -573,7 +584,7 @@ namespace Tasking
                 CurrentCPU->CurrentThread->Registers = *regs;
                 CurrentCPU->CurrentThread->gs = rdmsr(MSR_SHADOW_GS_BASE);
                 CurrentCPU->CurrentThread->fs = rdmsr(MSR_FS_BASE);
-                CurrentCPU->fxsave(CurrentCPU->CurrentThread->FXRegion);
+                _fxsave(CurrentCPU->CurrentThread->FXRegion);
 
                 // Set the process & thread as ready if it's running.
                 if (CurrentCPU->CurrentProcess->Status == STATUS::Running)
@@ -706,7 +717,7 @@ namespace Tasking
             wrmsr(MSR_FS_BASE, CurrentCPU->CurrentThread->fs);
             wrmsr(MSR_GS_BASE, (uint64_t)CurrentCPU->CurrentThread);
             wrmsr(MSR_SHADOW_GS_BASE, (uint64_t)CurrentCPU->CurrentThread);
-            CurrentCPU->fxrstor(CurrentCPU->CurrentThread->FXRegion);
+            _fxrstor(CurrentCPU->CurrentThread->FXRegion);
             goto End;
         }
 
@@ -739,7 +750,7 @@ namespace Tasking
                 err("Unknown elevation %d.", CurrentCPU->CurrentProcess->Elevation);
                 break;
             }
-            CurrentCPU->fxrstor(CurrentCPU->CurrentThread->FXRegion);
+            _fxrstor(CurrentCPU->CurrentThread->FXRegion);
         }
         End:
         {

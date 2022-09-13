@@ -1,16 +1,9 @@
-#ifndef __FENNIX_KERNEL_IDT_H__
-#define __FENNIX_KERNEL_IDT_H__
+#pragma once
 
-#include <types.h>
-#include <interrupts.h>
-#include <int.h>
-
-#include "cpuid.h"
-
-extern InterruptDescriptorTableDescriptor idtr;
-
-EXTERNC void SetKernelPageTableAddress(void *Address);
-EXTERNC void set_idt_entry(uint8_t idt, void (*handler)(), uint64_t ist, uint64_t ring);
-EXTERNC void init_idt();
-
-#endif // !__FENNIX_KERNEL_IDT_H__
+#if defined(__amd64__)
+#include "../arch/amd64/cpu/idt.h"
+#elif defined(__i386__)
+#include "../arch/i686/cpu/idt.h"
+#elif defined(__aarch64__)
+#include "../arch/aarch64/cpu/idt.h"
+#endif

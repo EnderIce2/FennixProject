@@ -37,9 +37,13 @@ LDFLAGS := 									\
 	-Wl,-static,--no-dynamic-linker,-ztext 	\
 	-nostdlib -nodefaultlibs -nolibc  		\
 	-zmax-page-size=0x1000					\
-	-Wl,-Map kernel.map -Tlinker.ld -shared
+	-Wl,-Map kernel.map -shared
 
-NASMFLAGS := -f elf64
+ifeq ($(OSARCH), amd64)
+NASMFLAGS := -f elf64 -DAMD64
+else ifeq ($(OSARCH), i686)
+NASMFLAGS := -f elf32 -Di686
+endif
 
 # Disable all warnings by adding "-w" in WARNCFLAG and if you want to treat the warnings as errors, add "-Werror"
 WARNCFLAG = -Wall -Wextra -Wno-comment
@@ -47,23 +51,30 @@ WARNCFLAG = -Wall -Wextra -Wno-comment
 CFLAG_STACK_PROTECTOR := -fstack-protector-all
 
 # Change march with minimum supported cpu // https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html
-CFLAGS :=																\
-	-I$(INCLUDE_DIR) -I$(INCLUDE_DIR2)									\
-	-DKERNEL_NAME='"$(OSNAME)"' 										\
-	-DKERNEL_VERSION='"$(KERNEL_VERSION)"'								\
-	-DGIT_COMMIT='"$(GIT_COMMIT)"'										\
-	-DGIT_COMMIT_SHORT='"$(GIT_COMMIT_SHORT)"'							\
-	-DOSARCH='"$(OSARCH)"'												\
-	-fno-pic -fno-pie -mno-80387										\
-	-mno-80387 -mno-mmx -mno-3dnow -mno-red-zone -mno-sse -mno-sse2		\
-	-march=nehalem -pipe												\
-	-mcmodel=kernel -msoft-float -fno-builtin
+CFLAGS :=										\
+	-I$(INCLUDE_DIR) -I$(INCLUDE_DIR2)			\
+	-DKERNEL_NAME='"$(OSNAME)"' 				\
+	-DKERNEL_VERSION='"$(KERNEL_VERSION)"'		\
+	-DGIT_COMMIT='"$(GIT_COMMIT)"'				\
+	-DGIT_COMMIT_SHORT='"$(GIT_COMMIT_SHORT)"'
+
+ifeq ($(OSARCH), amd64)
+CFLAGS += -fno-pic -fno-pie -mno-80387										\
+		  -mno-80387 -mno-mmx -mno-3dnow -mno-red-zone -mno-sse -mno-sse2	\
+		  -march=nehalem -pipe												\
+		  -mcmodel=kernel -msoft-float -fno-builtin
+LDFLAGS += -Tlinker-amd64.ld
+else ifeq ($(OSARCH), i686)
+CFLAGS += -fno-pic -fno-pie -mno-80387										\
+		  -mno-80387 -mno-mmx -mno-3dnow -mno-red-zone -mno-sse -mno-sse2	\
+		  -march=nehalem -pipe -msoft-float -fno-builtin
+LDFLAGS += -Tlinker-i686.ld
+endif
 
 # -fsanitize=undefined is causing tasking issues
 ifeq ($(DEBUG), 1)
-	CFLAGS += -DDEBUG -ggdb -O0 -fdiagnostics-color=always
+	CFLAGS += -DDEBUG -DTRACING -ggdb -O0 -fdiagnostics-color=always
 	LDFLAGS += -ggdb -O0 -O2 -g
-	CFLAGS += -DTRACING
 	NASMFLAGS += -F dwarf -g
 	WARNCFLAG += -Wno-unused-function -Wno-maybe-uninitialized -Wno-builtin-declaration-mismatch -Wno-unknown-pragmas -Wno-unused-parameter -Wno-unused-variable
 endif
@@ -84,9 +95,6 @@ $(KERNEL): $(OBJ)
 %.o: %.c $(HEADERS) $(HEADERS2)
 	$(CC) $(CFLAGS) $(CFLAG_STACK_PROTECTOR) $(WARNCFLAG) -std=c17 -c $< -o $@
 
-# cpu/IDT.o: cpu/IDT.c $(HEADERS) $(HEADERS2)
-# 	$(CC) $(CFLAGS) $(WARNCFLAG) -fno-stack-protector -std=c17 -c $< -o $@
-
 # https://gcc.gnu.org/projects/cxx-status.html
 %.o: %.cpp $(HEADERS) $(HEADERS2)
 	$(CPP) $(CFLAGS) $(CFLAG_STACK_PROTECTOR) $(WARNCFLAG) -std=c++20 -fexceptions -c $< -o $@ -fno-rtti
@@ -100,13 +108,24 @@ $(KERNEL): $(OBJ)
 %.o: %.S
 	$(AS) -o $@ $<
 
-# I don't understand how incbin works but, I can use this, is not very efficient but works.
 %.o: %.psf
+ifeq ($(OSARCH), amd64)
 	$(OBJCOPY) -O elf64-x86-64 -I binary $< $@
+else ifeq ($(OSARCH), i686)
+	$(OBJCOPY) -O elf32-i386 -I binary $< $@
+else ifeq ($(OSARCH), aarch64)
+	$(OBJCOPY) -O elf64-bigaarch64 -I binary $< $@
+endif
 	nm $@
 
 %.o: %.bmp
+ifeq ($(OSARCH), amd64)
 	$(OBJCOPY) -O elf64-x86-64 -I binary $< $@
+else ifeq ($(OSARCH), i686)
+	$(OBJCOPY) -O elf32-i386 -I binary $< $@
+else ifeq ($(OSARCH), aarch64)
+	$(OBJCOPY) -O elf64-bigaarch64 -I binary $< $@
+endif
 	nm $@
 
 clean:

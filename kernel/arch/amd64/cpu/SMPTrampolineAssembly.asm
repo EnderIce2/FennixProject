@@ -1,5 +1,7 @@
 ; From: https://github.com/Supercip971/WingOS/blob/master/kernel/arch/x86_64/smp_start.asm
 
+%ifdef AMD64
+
 [bits 16]
 TRAMPOLINE_BASE equ 0x2000
 
@@ -201,5 +203,7 @@ mov al, 0x0A
 mov dx, 0x3F8
 out dx, al
     call StartCPU
+
+%endif
 
 times 512 - ($-$$) db 0

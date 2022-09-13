@@ -1,3 +1,5 @@
+#if defined(__i386__)
+
 #include "smp.hpp"
 #include "gdt.h"
 #include "apic.hpp"
@@ -97,40 +99,40 @@ enum smpaddresses
 
 static void InitializeCPU(ACPI::MADT::LocalAPIC *lapic)
 {
-    apic->Write(APIC::APIC::APIC_ICRHI, (lapic->APICId << 24));
-    apic->Write(APIC::APIC::APIC_ICRLO, 0x500);
+    // apic->Write(APIC::APIC::APIC_ICRHI, (lapic->APICId << 24));
+    // apic->Write(APIC::APIC::APIC_ICRLO, 0x500);
 
-    KernelPageTableManager.MapMemory(0x0, 0x0, PTFlag::RW | PTFlag::US);
+    // KernelPageTableManager.MapMemory(0x0, 0x0, PTFlag::RW | PTFlag::US);
 
-    uint64_t trampoline_len = (uintptr_t)&_trampoline_end - (uintptr_t)&_trampoline_start;
-    for (uint64_t i = 0; i < (trampoline_len / PAGE_SIZE) + 2; i++)
-        KernelPageTableManager.MapMemory((void *)(TRAMPOLINE_START + (i * PAGE_SIZE)), (void *)(TRAMPOLINE_START + (i * PAGE_SIZE)), PTFlag::RW | PTFlag::US);
+    // uint64_t trampoline_len = (uintptr_t)&_trampoline_end - (uintptr_t)&_trampoline_start;
+    // for (uint64_t i = 0; i < (trampoline_len / PAGE_SIZE) + 2; i++)
+    //     KernelPageTableManager.MapMemory((void *)(TRAMPOLINE_START + (i * PAGE_SIZE)), (void *)(TRAMPOLINE_START + (i * PAGE_SIZE)), PTFlag::RW | PTFlag::US);
 
-    memcpy((void *)TRAMPOLINE_START, &_trampoline_start, trampoline_len);
+    // memcpy((void *)TRAMPOLINE_START, &_trampoline_start, trampoline_len);
 
-    GetCPU(lapic->APICId)->PageTable = CurrentCPU->PageTable;
-    // POKE(volatile uint64_t, PAGE_TABLE) = GetCPU(lapic->APICId)->PageTable.raw;
-    POKE(volatile uint64_t, PAGE_TABLE) = readcr3().raw;
-    memset(GetCPU(lapic->APICId)->Stack, 0, STACK_SIZE);
+    // GetCPU(lapic->APICId)->PageTable = CurrentCPU->PageTable;
+    // // POKE(volatile uint64_t, PAGE_TABLE) = GetCPU(lapic->APICId)->PageTable.raw;
+    // POKE(volatile uint64_t, PAGE_TABLE) = readcr3().raw;
+    // memset(GetCPU(lapic->APICId)->Stack, 0, STACK_SIZE);
 
-    // POKE(volatile uint64_t, _STACK) = (uint64_t)GetCPU(lapic->APICId)->Stack + STACK_SIZE;
-    POKE(volatile uint64_t, _STACK) = (uint64_t)KernelAllocator.RequestPage();
+    // // POKE(volatile uint64_t, _STACK) = (uint64_t)GetCPU(lapic->APICId)->Stack + STACK_SIZE;
+    // POKE(volatile uint64_t, _STACK) = (uint64_t)KernelAllocator.RequestPage();
 
-    asm volatile("sgdt [0x580]\n"
-                 "sidt [0x590]\n");
+    // asm volatile("sgdt [0x580]\n"
+    //              "sidt [0x590]\n");
 
-    // start address at 0x520
-    POKE(volatile uint64_t, START_ADDR) = (uintptr_t)&StartCPU;
+    // // start address at 0x520
+    // POKE(volatile uint64_t, START_ADDR) = (uintptr_t)&StartCPU;
 
-    apic->Write(APIC::APIC::APIC_ICRHI, (lapic->APICId << 24));
-    apic->Write(APIC::APIC::APIC_ICRLO, 0x600 | ((uint32_t)TRAMPOLINE_START / PAGE_SIZE));
+    // apic->Write(APIC::APIC::APIC_ICRHI, (lapic->APICId << 24));
+    // apic->Write(APIC::APIC::APIC_ICRLO, 0x600 | ((uint32_t)TRAMPOLINE_START / PAGE_SIZE));
 
-    while (!CPUEnabled)
-        ;
+    // while (!CPUEnabled)
+    //     ;
 
     trace("CPU %d loaded.", lapic->APICId);
 
-    CPUEnabled = false;
+    // CPUEnabled = false;
 
     // tss = (TaskStateSegment *)kcalloc(bootparams->smp.CPUCount, sizeof(TaskStateSegment));
     // uint64_t tss_base = (uint64_t)&tss[lapic->APICId];
@@ -201,3 +203,5 @@ namespace SymmetricMultiprocessing
     {
     }
 }
+
+#endif

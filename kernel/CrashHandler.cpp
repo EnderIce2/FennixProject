@@ -68,6 +68,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     EFER efer;
     efer.raw = rdmsr(MSR_EFER);
 
+#if defined(__amd64__)
     uint64_t dr0, dr1, dr2, dr3, dr6;
     DR7 dr7;
 
@@ -84,6 +85,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
                  : "=r"(dr6));
     asm volatile("movq %%dr7, %0"
                  : "=r"(dr7));
+#endif
 
     if (CS != 0x23)
         CurrentDisplay->Clear(0x000000);
@@ -491,7 +493,9 @@ EXTERNC void isrcrash(TrapFrame *regs)
     printf("RSI=%#lx  RDI=%#lx  RBP=%#lx  RSP=%#lx\n", RSI, RDI, RBP, RSP);
     printf("RIP=%#lx  RFL=%#lx  INT=%#lx  ERR=%#lx  EFER=%#lx\n", RIP, FLAGS.raw, INT_NUM, ERROR_CODE, efer.raw);
     printf("CR0=%#lx  CR2=%#lx  CR3=%#lx  CR4=%#lx  CR8=%#lx\n", cr0.raw, cr2.raw, cr3.raw, cr4.raw, cr8.raw);
+#if defined(__amd64__)
     printf("DR0=%#lx  DR1=%#lx  DR2=%#lx  DR3=%#lx  DR6=%#lx  DR7=%#lx\n", dr0, dr1, dr2, dr3, dr6, dr7.raw);
+#endif
 
     CurrentDisplay->SetPrintColor(0xFC797B);
     printf("CR0: PE:%s     MP:%s     EM:%s     TS:%s\n     ET:%s     NE:%s     WP:%s     AM:%s\n     NW:%s     CD:%s     PG:%s\n     R0:%#x R1:%#x R2:%#x\n",
@@ -529,6 +533,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
            FLAGS.ID ? "True " : "False", FLAGS.always_one,
            FLAGS._reserved0, FLAGS._reserved1, FLAGS._reserved2, FLAGS._reserved3);
 
+#if defined(__amd64__)
     CurrentDisplay->SetPrintColor(0xA0F0F0);
     printf("DR7: LDR0:%s     GDR0:%s     LDR1:%s     GDR1:%s\n     LDR2:%s     GDR2:%s     LDR3:%s     GDR3:%s\n     CDR0:%s     SDR0:%s     CDR1:%s     SDR1:%s\n     CDR2:%s     SDR2:%s     CDR3:%s     SDR3:%s\n     R:%#x\n",
            dr7.LocalDR0 ? "True " : "False", dr7.GlobalDR0 ? "True " : "False", dr7.LocalDR1 ? "True " : "False", dr7.GlobalDR1 ? "True " : "False",
@@ -536,6 +541,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
            dr7.ConditionsDR0 ? "True " : "False", dr7.SizeDR0 ? "True " : "False", dr7.ConditionsDR1 ? "True " : "False", dr7.SizeDR1 ? "True " : "False",
            dr7.ConditionsDR2 ? "True " : "False", dr7.SizeDR2 ? "True " : "False", dr7.ConditionsDR3 ? "True " : "False", dr7.SizeDR3 ? "True " : "False",
            dr7.Reserved);
+#endif
 
     CurrentDisplay->SetPrintColor(0x009FF0);
     printf("EFER: SCE:%s      LME:%s      LMA:%s      NXE:%s\n     SVME:%s    LMSLE:%s    FFXSR:%s      TCE:%s\n     R0:%#x R1:%#x R2:%#x\n",
@@ -543,7 +549,8 @@ EXTERNC void isrcrash(TrapFrame *regs)
            efer.SVME ? "True " : "False", efer.LMSLE ? "True " : "False", efer.FFXSR ? "True " : "False", efer.TCE ? "True " : "False",
            efer.Reserved0, efer.Reserved1, efer.Reserved2);
 
-    // restore debug registers
+// restore debug registers
+#if defined(__amd64__)
     asm volatile("movq %0, %%dr0"
                  :
                  : "r"(dr0));
@@ -562,6 +569,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     asm volatile("movq %0, %%dr7"
                  :
                  : "r"(dr7));
+#endif
 
     struct StackFrame
     {

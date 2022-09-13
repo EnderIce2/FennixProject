@@ -17,7 +17,6 @@ INCLUDE_DIR = ../../include
 HEADERS2 = $(sort $(dir $(wildcard ../include/*)))
 INCLUDE2_DIR = ../include
 
-LDFLAGS :=
 CFLAGS := -fPIC -I$(INCLUDE_DIR) -I$(INCLUDE2_DIR)
 
 build: $(OBJECT_NAME)

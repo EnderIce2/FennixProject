@@ -1,3 +1,5 @@
+#if defined(__i386__)
+
 #include "acpi.hpp"
 
 #include <io.h>
@@ -215,3 +217,5 @@ namespace ACPI
     {
     }
 }
+
+#endif

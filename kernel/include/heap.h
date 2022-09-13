@@ -141,8 +141,13 @@ extern VMM::PageTableManager KernelPageTableManager;
 extern PageTableHeap::PageTableHeap *KernelPageTableAllocator;
 extern StackHeap::StackHeap *KernelStackAllocator;
 
+#if defined(__amd64__)
 void *operator new(size_t Size);
 void *operator new[](size_t Size);
+#elif defined(__i386__)
+void *operator new(uint32_t Size);
+void *operator new[](uint32_t Size);
+#endif
 void operator delete(void *Pointer);
 void operator delete[](void *Pointer);
 void operator delete(void *Pointer, long unsigned int n);

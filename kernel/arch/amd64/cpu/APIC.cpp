@@ -1,3 +1,5 @@
+#if defined(__amd64__)
+
 #include "apic.hpp"
 
 #include "../interrupts/pic.h"
@@ -250,3 +252,5 @@ namespace APIC
     {
     }
 }
+
+#endif

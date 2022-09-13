@@ -1,3 +1,5 @@
+#if defined(__amd64__)
+
 #include "gdt.h"
 #include "../kernel.h"
 #include <heap.h>
@@ -86,3 +88,5 @@ void CreateNewTSS(int CPUCore)
     (&tss[CPUCore])->InterruptStackTable[2] = (uint64_t)RequestPage(); // page fault, double fault, general protection fault, etc...
     UNLOCK(tss_lock);
 }
+
+#endif

@@ -48,7 +48,13 @@
 			"kernel.h": "c",
 			"serial.h": "c",
 			"xalloc.hpp": "c",
-			"limine.h": "c"
+			"limine.h": "c",
+			"ahci.h": "c",
+			"floppy.h": "c",
+			"pci.h": "c",
+			"lock.h": "c",
+			"pic.h": "c",
+			"gdt.h": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}

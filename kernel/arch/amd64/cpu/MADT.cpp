@@ -1,3 +1,5 @@
+#if defined(__amd64__)
+
 #include "acpi.hpp"
 #include <heap.h>
 
@@ -62,3 +64,5 @@ namespace ACPI
     {
     }
 }
+
+#endif

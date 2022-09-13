@@ -120,7 +120,9 @@ build_kernel:
 	make -j$(shell nproc) --quiet -C kernel build GIT_COMMIT=$(shell git rev-parse HEAD) GIT_COMMIT_SHORT=$(shell git rev-parse --short HEAD)
 
 build_userspace:
+ifeq ($(OSARCH), amd64)
 	make --quiet -C userspace build
+endif
 
 build_libc:
 	make --quiet -C libc build
@@ -147,13 +149,18 @@ ifeq ($(BOOTLOADER), limine)
 		iso_tmp_data -o $(OSNAME).iso
 endif
 
+QEMU_UEFI_BIOS :=
+ifeq ($(OSARCH), amd64)
+QEMU_UEFI_BIOS += -bios /usr/share/qemu/OVMF.fd
+endif
+
 vscode_debug: build_kernel build_libc build_userspace build_image
 	rm -f serial.log network.log
-	$(QEMU) -S -gdb tcp::1234 -d int -no-shutdown -bios /usr/share/qemu/OVMF.fd -m 4G $(QEMUFLAGS64)
+	$(QEMU) -S -gdb tcp::1234 -d int -no-shutdown $(QEMU_UEFI_BIOS) -m 4G $(QEMUFLAGS64)
 
 qemu: qemu_vdisk
 	rm -f serial.log network.log
-	$(QEMU) -bios /usr/share/qemu/OVMF.fd -cpu host $(QEMUFLAGS64) $(QEMUHWACCELERATION) $(QEMUMEMORY)
+	$(QEMU) $(QEMU_UEFI_BIOS) -cpu host $(QEMUFLAGS64) $(QEMUHWACCELERATION) $(QEMUMEMORY)
 
 qemubios: qemu_vdisk
 	rm -f serial.log network.log

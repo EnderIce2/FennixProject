@@ -1,3 +1,5 @@
+#if defined(__i386__)
+
 #include "idt.h"
 
 #include "../interrupts/pic.h"
@@ -25,63 +27,35 @@ __attribute__((naked, used, no_stack_protector)) void exception_handler_helper()
     // TODO: Switching page table if ring 0 is not tested! (source: https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm)
     asm("cld\n" // clear direction flag
 
-        "pushq %rax\n"    // push rax
-        "mov %cs, %rax\n" // move cs to rax
+        "push %eax\n"     // push rax
+        "mov %cs, %eax\n" // move cs to rax
 
-        "cmp %rax, [0x8]\n"        // compare rax with 0x8
+        "cmp %eax, [0x8]\n"        // compare rax with 0x8
         "jne .NoPageTableUpdate\n" // if not, skip to next instruction
-        "push %rax\n");            // push rax
+        "push %eax\n");            // push rax
 
     // "mov $0x100000, %rax\n"    // set rax to kernel pml4 of memory
-    asm volatile("mov %[KPML4Address], %%rax" /* Not sure if it will work but I didn't had any issues. */
+    asm volatile("mov %[KPML4Address], %%eax" /* Not sure if it will work but I didn't had any issues. */
                  :
                  : [KPML4Address] "q"(KPML4Address)
                  : "memory");
 
-    asm("mov %rax, %cr3\n"      // set page directory
-        "pop %rax\n"            // pop rax
+    asm("mov %eax, %cr3\n"      // set page directory
+        "pop %eax\n"            // pop rax
         ".NoPageTableUpdate:\n" // label for jumping to next instruction
-        "popq %rax\n"           // pop rax
+        "pop %eax\n"           // pop rax
 
         // push all registers
-        "pushq %rax\n"
-        "pushq %rbx\n"
-        "pushq %rcx\n"
-        "pushq %rdx\n"
-        "pushq %rsi\n"
-        "pushq %rdi\n"
-        "pushq %rbp\n"
-        "pushq %r8\n"
-        "pushq %r9\n"
-        "pushq %r10\n"
-        "pushq %r11\n"
-        "pushq %r12\n"
-        "pushq %r13\n"
-        "pushq %r14\n"
-        "pushq %r15\n"
+        "pusha\n"
 
-        "movq %rsp, %rdi\n"
+        "mov %esp, %edi\n"
         "call exception_handler\n"
 
         // pop all registers
-        "popq %r15\n"
-        "popq %r14\n"
-        "popq %r13\n"
-        "popq %r12\n"
-        "popq %r11\n"
-        "popq %r10\n"
-        "popq %r9\n"
-        "popq %r8\n"
-        "popq %rbp\n"
-        "popq %rdi\n"
-        "popq %rsi\n"
-        "popq %rdx\n"
-        "popq %rcx\n"
-        "popq %rbx\n"
-        "popq %rax\n"
+        "popa\n"
 
-        "addq $16, %rsp\n"
-        "iretq"); // pop CS RIP RFLAGS SS ESP
+        "addl $16, %esp\n"
+        "iret"); // pop CS RIP RFLAGS SS ESP
 }
 
 __attribute__((used)) void exception_handler(TrapFrame *regs)
@@ -152,14 +126,14 @@ exception_handler_:
 #define EXCEPTION_HANDLER(num)                                                       \
     __attribute__((naked, no_stack_protector)) static void interrupt_handler_##num() \
     {                                                                                \
-        asm("pushq $0\npushq $" #num "\n"                                            \
+        asm("push $0\npush $" #num "\n"                                             \
             "jmp exception_handler_helper");                                         \
     }
 
 #define EXCEPTION_ERROR_HANDLER(num)                             \
     __attribute__((naked)) static void interrupt_handler_##num() \
     {                                                            \
-        asm("pushq $" #num "\n"                                  \
+        asm("push $" #num "\n"                                   \
             "jmp exception_handler_helper");                     \
     }
 
@@ -168,49 +142,20 @@ exception_handler_:
 __attribute__((naked, used, no_stack_protector)) static void InterruptHandlerStub()
 {
     asm("cld\n"
-        "pushq %rax\n"
-        "pushq %rbx\n"
-        "pushq %rcx\n"
-        "pushq %rdx\n"
-        "pushq %rsi\n"
-        "pushq %rdi\n"
-        "pushq %rbp\n"
-        "pushq %r8\n"
-        "pushq %r9\n"
-        "pushq %r10\n"
-        "pushq %r11\n"
-        "pushq %r12\n"
-        "pushq %r13\n"
-        "pushq %r14\n"
-        "pushq %r15\n"
+        "pusha\n"
 
-        "mov %rsp, %rdi\n"
+        "mov %esp, %eax\n"
         "call MainInterruptHandler\n"
 
-        "popq %r15\n"
-        "popq %r14\n"
-        "popq %r13\n"
-        "popq %r12\n"
-        "popq %r11\n"
-        "popq %r10\n"
-        "popq %r9\n"
-        "popq %r8\n"
-        "popq %rbp\n"
-        "popq %rdi\n"
-        "popq %rsi\n"
-        "popq %rdx\n"
-        "popq %rcx\n"
-        "popq %rbx\n"
-        "popq %rax\n"
-
-        "addq $16, %rsp\n"
-        "iretq");
+        "popa\n"
+        "addl $16, %esp\n"
+        "iret");
 }
 
 #define INTERRUPT_HANDLER(num)                                                      \
     __attribute__((naked, used, no_stack_protector)) void interrupt_handler_##num() \
     {                                                                               \
-        asm("pushq $0\npushq $" #num "\n"                                           \
+        asm("push $0\npush $" #num "\n"                                            \
             "jmp InterruptHandlerStub\n");                                          \
     }
 
@@ -286,9 +231,9 @@ INTERRUPT_HANDLER(0x2d)
 INTERRUPT_HANDLER(0x2e)
 INTERRUPT_HANDLER(0x2f)
 
-__attribute__((naked, used, no_stack_protector)) void interrupt_handler_0x30() { asm("pushq $0\npushq $0x30\n"
+__attribute__((naked, used, no_stack_protector)) void interrupt_handler_0x30() { asm("push $0\npush $0x30\n"
                                                                                      "jmp MultiTaskingSchedulerHelper"); }
-__attribute__((naked, used, no_stack_protector)) void interrupt_handler_0x31() { asm("pushq $0\npushq $0x31\n"
+__attribute__((naked, used, no_stack_protector)) void interrupt_handler_0x31() { asm("push $0\npush $0x31\n"
                                                                                      "jmp MonoTaskingSchedulerHelper"); }
 INTERRUPT_HANDLER(0x32)
 INTERRUPT_HANDLER(0x33)
@@ -763,3 +708,5 @@ void init_idt()
     lidt(idtr);
     PIC_remap(0x20, 0x28);
 }
+
+#endif

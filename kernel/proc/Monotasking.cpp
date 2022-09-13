@@ -185,6 +185,7 @@ namespace Tasking
     {
         __attribute__((naked, used)) void MonoTaskingSchedulerHelper()
         {
+#if defined(__amd64__)
             asm("cld\n"
                 "pushq %rax\n"
                 "pushq %rbx\n"
@@ -220,6 +221,15 @@ namespace Tasking
                 "popq %rax\n"
                 "addq $16, %rsp\n"
                 "iretq");
+#elif defined(__i386__)
+            asm("cld\n"
+                "pusha\n"
+                "movl %esp, %edi\n"
+                "call MonoSchedulerHelperHandler\n"
+                "popa\n"
+                "addl $16, %esp\n"
+                "iret");
+#endif
         }
 
         InterruptHandler(MonoSchedulerHelperHandler)
