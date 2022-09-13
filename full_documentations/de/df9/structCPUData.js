@@ -1,11 +1,10 @@
 var structCPUData =
 [
     [ "__attribute__", "de/df9/structCPUData.html#a2f0994156ef525889ecccfe8d3674e3d", null ],
-    [ "fxrstor", "de/df9/structCPUData.html#a137cdd188b3418d413f9e53f1b631753", null ],
-    [ "fxsave", "de/df9/structCPUData.html#a6546ac0f2210c18fbaa761765e2c56cc", null ],
+    [ "__attribute__", "de/df9/structCPUData.html#a2f0994156ef525889ecccfe8d3674e3d", null ],
     [ "Checksum", "de/df9/structCPUData.html#a5d467090c63e106edc8c650eb049bd48", null ],
-    [ "CurrentProcess", "de/df9/structCPUData.html#a9a4ab329f6857a776028bd3f5190169f", null ],
-    [ "CurrentThread", "de/df9/structCPUData.html#a28b068572151d01dbeedacd358ed5021", null ],
+    [ "CurrentProcess", "de/df9/structCPUData.html#ac1c1762084dd222f4b4990f0bfd8dba6", null ],
+    [ "CurrentThread", "de/df9/structCPUData.html#aff031ad6704c03fabf0dea503749bc45", null ],
     [ "ErrorCode", "de/df9/structCPUData.html#a590e51ea5f73b23f0a436857588c2e96", null ],
     [ "GDT", "de/df9/structCPUData.html#a13ff8e794ef229d8d9a18788d1ca5db1", null ],
     [ "ID", "de/df9/structCPUData.html#a37bb5180e4e32cae6fb5db74c476fb5b", null ],

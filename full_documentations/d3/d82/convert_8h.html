@@ -253,10 +253,10 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/dea/convert_8c_source.html#l00022">22</a> of file <a class="el" href="../../db/dea/convert_8c_source.html">convert.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> <a class="code" href="../../d1/d90/acpi_8hpp.html#a975543b90f799d299886f54993f36b3b">Length</a> = <a class="code" href="../../d1/d69/kernel_2include_2string_8h.html#a7dcc610f4b04a8ee418f03a6d9256629">strlen</a>((<span class="keywordtype">char</span> *)String);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> <a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#a975543b90f799d299886f54993f36b3b">Length</a> = <a class="code" href="../../d1/d69/kernel_2include_2string_8h.html#a7dcc610f4b04a8ee418f03a6d9256629">strlen</a>((<span class="keywordtype">char</span> *)String);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> OutBuffer = 0;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Power = 1;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> i = <a class="code" href="../../d1/d90/acpi_8hpp.html#a975543b90f799d299886f54993f36b3b">Length</a>; i &gt; 0; --i)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> i = <a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#a975543b90f799d299886f54993f36b3b">Length</a>; i &gt; 0; --i)</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        OutBuffer += (String[i - 1] - 48) * Power;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        Power *= 10;</div>
@@ -264,7 +264,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> OutBuffer;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d1/d90/acpi_8hpp_source.html#l00282">Length</a>, and <a class="el" href="../../d4/db5/String_8c_source.html#l00060">strlen()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp_source.html#l00282">Length</a>, and <a class="el" href="../../d4/db5/String_8c_source.html#l00060">strlen()</a>.</p>
 
 </div>
 </div>
@@ -452,8 +452,8 @@ Functions</h2></td></tr>
 <div class="ttc" id="akernel_2include_2string_8h_html_a7dcc610f4b04a8ee418f03a6d9256629"><div class="ttname"><a href="../../d1/d69/kernel_2include_2string_8h.html#a7dcc610f4b04a8ee418f03a6d9256629">strlen</a></div><div class="ttdeci">long unsigned strlen(const char s[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00060">String.c:60</a></div></div>
 <div class="ttc" id="akernel_2include_2string_8h_html_a3fa45b35c8abf67a950b6d3d4063dede"><div class="ttname"><a href="../../d1/d69/kernel_2include_2string_8h.html#a3fa45b35c8abf67a950b6d3d4063dede">isdigit</a></div><div class="ttdeci">int isdigit(int c)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00139">String.c:139</a></div></div>
 <div class="ttc" id="astdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
+<div class="ttc" id="aarch_2amd64_2cpu_2acpi_8hpp_html_a975543b90f799d299886f54993f36b3b"><div class="ttname"><a href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#a975543b90f799d299886f54993f36b3b">Length</a></div><div class="ttdeci">uint32_t Length</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp_source.html#l00282">acpi.hpp:282</a></div></div>
 <div class="ttc" id="aconvert_8c_html_af927ee96b41aa243c2191642f1788665"><div class="ttname"><a href="../../db/dea/convert_8c.html#af927ee96b41aa243c2191642f1788665">reverse</a></div><div class="ttdeci">char * reverse(char *Buffer, int i, int j)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dea/convert_8c_source.html#l00015">convert.c:15</a></div></div>
-<div class="ttc" id="aacpi_8hpp_html_a975543b90f799d299886f54993f36b3b"><div class="ttname"><a href="../../d1/d90/acpi_8hpp.html#a975543b90f799d299886f54993f36b3b">Length</a></div><div class="ttdeci">uint32_t Length</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d90/acpi_8hpp_source.html#l00282">acpi.hpp:282</a></div></div>
 <div class="ttc" id="aconvert_8c_html_af15d7205d8d10c4820f997ce5c526279"><div class="ttname"><a href="../../db/dea/convert_8c.html#af15d7205d8d10c4820f997ce5c526279">abs</a></div><div class="ttdeci">int abs(int i)</div><div class="ttdoc">Returns the absolute value of an integer.</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dea/convert_8c_source.html#l00006">convert.c:6</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

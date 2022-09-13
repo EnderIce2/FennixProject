@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['critical_3023',['Critical',['../d6/d86/namespaceCritical.html',1,'']]]
+  ['critical_3024',['Critical',['../d6/d86/namespaceCritical.html',1,'']]]
 ];

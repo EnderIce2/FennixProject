@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('d8/dc0/security_8hpp.html','../../'); 
 Functions</h2></td></tr>
 <tr class="memitem:a1f6910861a0bd15cd353ec7e8c12277f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dc0/security_8hpp.html#a1f6910861a0bd15cd353ec7e8c12277f">CreateToken</a> ()</td></tr>
 <tr class="separator:a1f6910861a0bd15cd353ec7e8c12277f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21fb9f2023e67f4a2f790a4006a0bdce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dc0/security_8hpp.html#a21fb9f2023e67f4a2f790a4006a0bdce">TrustToken</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Token, bool Process, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> <a class="el" href="../../d4/d33/smp_8hpp.html#a3bd97f3df8bfa82b683821eeace4b3d6">ID</a>, int TrustLevel)</td></tr>
+<tr class="memitem:a21fb9f2023e67f4a2f790a4006a0bdce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dc0/security_8hpp.html#a21fb9f2023e67f4a2f790a4006a0bdce">TrustToken</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Token, bool Process, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a3bd97f3df8bfa82b683821eeace4b3d6">ID</a>, int TrustLevel)</td></tr>
 <tr class="separator:a21fb9f2023e67f4a2f790a4006a0bdce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a476bb785c0a4ec8512926a0e43207ab2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dc0/security_8hpp.html#a476bb785c0a4ec8512926a0e43207ab2">CanSyscall</a> (<a class="el" href="../../d0/d35/syscalls_8hpp.html#a7fcf83d24a4d6cac515313d0c4db68a2">SyscallsRegs</a> *regs)</td></tr>
 <tr class="separator:a476bb785c0a4ec8512926a0e43207ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -236,14 +236,14 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span> (var.Token == Token)</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            var.TrustLevel = Level;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            var.OwnerID = <a class="code" href="../../d4/d33/smp_8hpp.html#a3bd97f3df8bfa82b683821eeace4b3d6">ID</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            var.OwnerID = <a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a3bd97f3df8bfa82b683821eeace4b3d6">ID</a>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            var.Process = Process;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d4/d33/smp_8hpp_source.html#l00002">ID</a>, and <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00015">Tokens</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00002">ID</a>, and <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00015">Tokens</a>.</p>
 
 </div>
 </div>
@@ -251,8 +251,8 @@ Functions</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="aSecurity_8cpp_html_a4684e8860098e52eb7d7e78b6984544c"><div class="ttname"><a href="../../de/dc7/Security_8cpp.html#a4684e8860098e52eb7d7e78b6984544c">Tokens</a></div><div class="ttdeci">Vector&lt; TokenData &gt; Tokens</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dc7/Security_8cpp_source.html#l00015">Security.cpp:15</a></div></div>
 <div class="ttc" id="astdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
-<div class="ttc" id="asmp_8hpp_html_a3bd97f3df8bfa82b683821eeace4b3d6"><div class="ttname"><a href="../../d4/d33/smp_8hpp.html#a3bd97f3df8bfa82b683821eeace4b3d6">ID</a></div><div class="ttdeci">uint64_t ID</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/smp_8hpp_source.html#l00002">smp.hpp:2</a></div></div>
 <div class="ttc" id="aRandomNumberGenerator_8c_html_a3416a50aa0842c9afac6e72867b6fcb3"><div class="ttname"><a href="../../da/d63/RandomNumberGenerator_8c.html#a3416a50aa0842c9afac6e72867b6fcb3">rand64</a></div><div class="ttdeci">uint64_t rand64()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d63/RandomNumberGenerator_8c_source.html#l00051">RandomNumberGenerator.c:51</a></div></div>
+<div class="ttc" id="aarch_2amd64_2cpu_2smp_8hpp_html_a3bd97f3df8bfa82b683821eeace4b3d6"><div class="ttname"><a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a3bd97f3df8bfa82b683821eeace4b3d6">ID</a></div><div class="ttdeci">uint64_t ID</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00002">smp.hpp:2</a></div></div>
 <div class="ttc" id="ainternal__task_8h_html_a249c9d235bdb42f4e30cc660ab205659"><div class="ttname"><a href="../../d6/d75/internal__task_8h.html#a249c9d235bdb42f4e30cc660ab205659">SysGetCurrentThread</a></div><div class="ttdeci">TCB * SysGetCurrentThread()</div><div class="ttdoc">Get current thread.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d27/ProcessAPI_8cpp_source.html#l00180">ProcessAPI.cpp:180</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

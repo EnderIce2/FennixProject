@@ -1,5 +1,6 @@
 var dir_dc43877d82dd332f9fb2071fcca799d6 =
 [
+    [ "arch", "dir_4a04b9aac4eefdd334a78e565f4616f2.html", "dir_4a04b9aac4eefdd334a78e565f4616f2" ],
     [ "boot", "dir_ecf7259329ba7794ad7c9558e45771a7.html", "dir_ecf7259329ba7794ad7c9558e45771a7" ],
     [ "cpu", "dir_de6efc35b99b831d558bda0d93c38d37.html", "dir_de6efc35b99b831d558bda0d93c38d37" ],
     [ "drivers", "dir_0de1d64efa6df97eacc8f5b0f9da3e59.html", "dir_0de1d64efa6df97eacc8f5b0f9da3e59" ],

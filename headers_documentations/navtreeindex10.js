@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"da/ddd/cpuid_8h.html#a7cb4132fcdce715e12147f039d6364b7":[2,0,1,0,5,10],
 "da/ddd/cpuid_8h.html#a806c701cdfd46d980c82d91ba5cae436":[2,0,1,0,5,49],
 "da/ddd/cpuid_8h.html#a887c960f636a4dcc41ecaa6624adc59d":[2,0,1,0,5,15],
 "da/ddd/cpuid_8h.html#a8a0c1ded1a7efee6bd75b84425c21bc6":[2,0,1,0,5,34],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "db/da4/task_8h.html#aa80e27490a0637da5a93fdc8496c7d8c":[2,0,0,17,4,5],
 "db/da4/task_8h.html#aa95d126fde002bf8c21733d98191fcf8":[2,0,0,17,4,0],
 "db/da4/task_8h.html#aa9780704c928b379b1193970b840658c":[2,0,0,17,2,2],
-"db/da4/task_8h.html#aaa2599d035b4d88ce556051c09a607e9":[2,0,0,17,2,19],
-"db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29b":[2,0,0,17,8]
+"db/da4/task_8h.html#aaa2599d035b4d88ce556051c09a607e9":[2,0,0,17,2,19]
 };

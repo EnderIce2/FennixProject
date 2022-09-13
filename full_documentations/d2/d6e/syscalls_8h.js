@@ -21,6 +21,7 @@ var syscalls_8h =
     [ "DEFINE_SYSCALL2", "d2/d6e/syscalls_8h.html#aa38a9c61b5483e232b3aaa1bfc26016c", null ],
     [ "DEFINE_SYSCALL3", "d2/d6e/syscalls_8h.html#aac8ae024261d86f69a0306955c8cb0cb", null ],
     [ "DEFINE_SYSCALL4", "d2/d6e/syscalls_8h.html#a5e29937bac5098d0506639da4145d85c", null ],
+    [ "DEFINE_SYSCALL5", "d2/d6e/syscalls_8h.html#ae876a13c3fd8b5eb767a9d895280e8cf", null ],
     [ "deniedcall", "d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc", null ],
     [ "failedcall", "d2/d6e/syscalls_8h.html#ace10381511c391a6154671a5360ad795", null ],
     [ "File", "d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e", null ],

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fennix Project: kernel/cpu/RandomNumberGenerator.c Source File</title>
+<title>Fennix Project: kernel/arch/amd64/cpu/RandomNumberGenerator.c Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('da/d63/RandomNumberGenerator_8c_source
 <div class="contents">
 <a href="../../da/d63/RandomNumberGenerator_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d5/d66/rand_8h.html">rand.h</a>&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../de/d21/asm_8h.html">asm.h</a>&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d6/d2d/cpu_2cpuid_8h.html">cpuid.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d1/dc5/arch_2amd64_2cpu_2cpuid_8h.html">cpuid.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// TODO: True RDRAND usage</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
@@ -164,7 +164,6 @@ $(document).ready(function(){initNavTree('da/d63/RandomNumberGenerator_8c_source
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aRandomNumberGenerator_8c_html_a47fd98ad7fb9682d8e9de6cb39927c52"><div class="ttname"><a href="../../da/d63/RandomNumberGenerator_8c.html#a47fd98ad7fb9682d8e9de6cb39927c52">rand32</a></div><div class="ttdeci">uint32_t rand32()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d63/RandomNumberGenerator_8c_source.html#l00030">RandomNumberGenerator.c:30</a></div></div>
-<div class="ttc" id="acpu_2cpuid_8h_html"><div class="ttname"><a href="../../d6/d2d/cpu_2cpuid_8h.html">cpuid.h</a></div></div>
 <div class="ttc" id="aRandomNumberGenerator_8c_html_a0c75f7b154c17d7a1631c3a886bb1450"><div class="ttname"><a href="../../da/d63/RandomNumberGenerator_8c.html#a0c75f7b154c17d7a1631c3a886bb1450">changeseed</a></div><div class="ttdeci">void changeseed(uint64_t seed)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d63/RandomNumberGenerator_8c_source.html#l00072">RandomNumberGenerator.c:72</a></div></div>
 <div class="ttc" id="astdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
 <div class="ttc" id="aasm_8h_html"><div class="ttname"><a href="../../de/d21/asm_8h.html">asm.h</a></div></div>
@@ -174,11 +173,12 @@ $(document).ready(function(){initNavTree('da/d63/RandomNumberGenerator_8c_source
 <div class="ttc" id="astdint_8h_html_a5debae8b2a1ec20a6694c0c443ee399e"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></div><div class="ttdeci">__UINT16_TYPE__ uint16_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00008">stdint.h:8</a></div></div>
 <div class="ttc" id="arand_8h_html"><div class="ttname"><a href="../../d5/d66/rand_8h.html">rand.h</a></div></div>
 <div class="ttc" id="aRandomNumberGenerator_8c_html_a3416a50aa0842c9afac6e72867b6fcb3"><div class="ttname"><a href="../../da/d63/RandomNumberGenerator_8c.html#a3416a50aa0842c9afac6e72867b6fcb3">rand64</a></div><div class="ttdeci">uint64_t rand64()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d63/RandomNumberGenerator_8c_source.html#l00051">RandomNumberGenerator.c:51</a></div></div>
-<div class="ttc" id="akernel_2include_2types_8h_html_a59f33d535169ca3a0f1c84df74636807"><div class="ttname"><a href="../../d7/dfc/kernel_2include_2types_8h.html#a59f33d535169ca3a0f1c84df74636807">deadbeef</a></div><div class="ttdeci">#define deadbeef</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00034">types.h:34</a></div></div>
+<div class="ttc" id="akernel_2include_2types_8h_html_a59f33d535169ca3a0f1c84df74636807"><div class="ttname"><a href="../../d7/dfc/kernel_2include_2types_8h.html#a59f33d535169ca3a0f1c84df74636807">deadbeef</a></div><div class="ttdeci">#define deadbeef</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00036">types.h:36</a></div></div>
+<div class="ttc" id="aarch_2amd64_2cpu_2cpuid_8h_html"><div class="ttname"><a href="../../d1/dc5/arch_2amd64_2cpu_2cpuid_8h.html">cpuid.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="../../dir_de6efc35b99b831d558bda0d93c38d37.html">cpu</a></li><li class="navelem"><a class="el" href="../../da/d63/RandomNumberGenerator_8c.html">RandomNumberGenerator.c</a></li>
+    <li class="navelem"><a class="el" href="../../dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="../../dir_4a04b9aac4eefdd334a78e565f4616f2.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_daa9cfe7e05ea725d73c8368bae78c4d.html">amd64</a></li><li class="navelem"><a class="el" href="../../dir_afb927060803406c4a9b5e13f2ea617f.html">cpu</a></li><li class="navelem"><a class="el" href="../../da/d63/RandomNumberGenerator_8c.html">RandomNumberGenerator.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

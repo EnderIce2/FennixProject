@@ -485,7 +485,7 @@
       <Type>data</Type>
     </TokenIdentifier>
     <Path>d1/d57/cputables_8h.html</Path>
-    <Anchor>a33656e1e604e9a92fef40e66e3bf036d</Anchor>
+    <Anchor>ac5cbf69cb6241fcbf42d7be53ab5f9ce</Anchor>
     <DeclaredIn>cputables.h</DeclaredIn>
   </Token>
   <Token>
@@ -21700,6 +21700,16 @@
     </TokenIdentifier>
     <Path>d2/d6e/syscalls_8h.html</Path>
     <Anchor>a5e29937bac5098d0506639da4145d85c</Anchor>
+    <DeclaredIn>syscalls.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DEFINE_SYSCALL5</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>d2/d6e/syscalls_8h.html</Path>
+    <Anchor>ae876a13c3fd8b5eb767a9d895280e8cf</Anchor>
     <DeclaredIn>syscalls.h</DeclaredIn>
   </Token>
   <Token>

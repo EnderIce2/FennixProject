@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"d3/d41/gbp_8h.html#da/da6/struct__GlobalBootParams":[2,0,1,0,0,1,4],
 "d3/d41/gbp_8h_source.html":[2,0,1,0,0,1],
 "d3/d4a/classFileSystem_1_1FB.html":[1,0,3,4],
 "d3/d4a/classFileSystem_1_1FB.html#a2412de5f54f00ee2645e9c5e7166b50d":[1,0,3,4,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "d5/da9/libc_2include_2stdint_8h.html#a4788399d1d0b37ccf098a7da82254808":[2,0,2,0,14,88],
 "d5/da9/libc_2include_2stdint_8h.html#a4e5632221b295f0fcdcb2233f3f60515":[2,0,2,0,14,87],
 "d5/da9/libc_2include_2stdint_8h.html#a50f0fdcb00ea2500cec0f3d6d45c36f3":[2,0,2,0,14,17],
-"d5/da9/libc_2include_2stdint_8h.html#a5285bc55170ae1701e599decacc7f001":[2,0,2,0,14,60],
-"d5/da9/libc_2include_2stdint_8h.html#a530ba8ffc89f6393d2d0e2fb2db38b54":[2,0,2,0,14,66]
+"d5/da9/libc_2include_2stdint_8h.html#a5285bc55170ae1701e599decacc7f001":[2,0,2,0,14,60]
 };

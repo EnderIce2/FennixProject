@@ -99,7 +99,6 @@ var menudata={children:[
 {text:"d",url:"namespacemembers_eval_d.html#index_d"},
 {text:"e",url:"namespacemembers_eval_e.html#index_e"},
 {text:"f",url:"namespacemembers_eval_f.html#index_f"},
-{text:"g",url:"namespacemembers_eval_g.html#index_g"},
 {text:"h",url:"namespacemembers_eval_h.html#index_h"},
 {text:"i",url:"namespacemembers_eval_i.html#index_i"},
 {text:"l",url:"namespacemembers_eval_l.html#index_l"},

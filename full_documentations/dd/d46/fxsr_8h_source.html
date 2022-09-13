@@ -91,12 +91,19 @@ $(document).ready(function(){initNavTree('dd/d46/fxsr_8h_source.html','../../');
 <div class="contents">
 <a href="../../dd/d46/fxsr_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d46/fxsr_8h.html#a9d570f4c58b7d8bab65430303edab3d3">_fxsave</a>(<span class="keywordtype">char</span> *Buffer);</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d46/fxsr_8h.html#ac2f6d54b4c1b776ace817ad21c5a6bee">_fxrstor</a>(<span class="keywordtype">char</span> *Buffer);</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#if defined(__amd64__)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span> _amd64_fxsave(<span class="keywordtype">char</span> *Buffer);</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span> _amd64_fxrstor(<span class="keywordtype">char</span> *Buffer);</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordtype">void</span> _fxsave(<span class="keywordtype">char</span> *Buffer) { _amd64_fxsave(Buffer); }</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">void</span> _fxrstor(<span class="keywordtype">char</span> *Buffer) { _amd64_fxrstor(Buffer); }</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#elif defined(__i386__)</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span> _i686_fxsave(<span class="keywordtype">char</span> *Buffer);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span> _i686_fxrstor(<span class="keywordtype">char</span> *Buffer);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> _fxsave(<span class="keywordtype">char</span> *Buffer) { _i686_fxsave(Buffer); }</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">void</span> _fxrstor(<span class="keywordtype">char</span> *Buffer) { _i686_fxrstor(Buffer); }</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="afxsr_8h_html_ac2f6d54b4c1b776ace817ad21c5a6bee"><div class="ttname"><a href="../../dd/d46/fxsr_8h.html#ac2f6d54b4c1b776ace817ad21c5a6bee">_fxrstor</a></div><div class="ttdeci">void _fxrstor(char *Buffer)</div></div>
-<div class="ttc" id="afxsr_8h_html_a9d570f4c58b7d8bab65430303edab3d3"><div class="ttname"><a href="../../dd/d46/fxsr_8h.html#a9d570f4c58b7d8bab65430303edab3d3">_fxsave</a></div><div class="ttdeci">void _fxsave(char *Buffer)</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

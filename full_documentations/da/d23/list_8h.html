@@ -112,9 +112,9 @@ Macros</h2></td></tr>
 <tr class="separator:a0ffe9d28c36d7b018a9cfae33bae45c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26c976b7f654e70df318c1843e5094de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d23/list_8h.html#a26c976b7f654e70df318c1843e5094de">list_entry</a>(ptr,  type,  member)&#160;&#160;&#160;((type *)((char *)(ptr) - (unsigned long)(&amp;((type *)0)-&gt;member)))</td></tr>
 <tr class="separator:a26c976b7f654e70df318c1843e5094de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8b24e6660ab3760c923e4b4db3fa502"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d23/list_8h.html#ab8b24e6660ab3760c923e4b4db3fa502">list_for_each</a>(pos,  head)&#160;&#160;&#160;for (pos = (head)-&gt;next; pos != (head); pos = pos-&gt;next)</td></tr>
+<tr class="memitem:ab8b24e6660ab3760c923e4b4db3fa502"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d23/list_8h.html#ab8b24e6660ab3760c923e4b4db3fa502">list_for_each</a>(pos,  head)&#160;&#160;&#160;<a class="el" href="../../df/db8/HeapManager_8cpp.html#a08d9d7550dab738bdb9ed51c56df7f5b">for</a> (pos = (head)-&gt;next; pos != (head); pos = pos-&gt;next)</td></tr>
 <tr class="separator:ab8b24e6660ab3760c923e4b4db3fa502"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ff1b4fc6ddeec48dc37f1cce4c49ec4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d23/list_8h.html#a4ff1b4fc6ddeec48dc37f1cce4c49ec4">list_for_each_safe</a>(pos,  pnext,  head)&#160;&#160;&#160;for (pos = (head)-&gt;next, pnext = pos-&gt;next; pos != (head); pos = pnext, pnext = pos-&gt;next)</td></tr>
+<tr class="memitem:a4ff1b4fc6ddeec48dc37f1cce4c49ec4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d23/list_8h.html#a4ff1b4fc6ddeec48dc37f1cce4c49ec4">list_for_each_safe</a>(pos,  pnext,  head)&#160;&#160;&#160;<a class="el" href="../../df/db8/HeapManager_8cpp.html#a08d9d7550dab738bdb9ed51c56df7f5b">for</a> (pos = (head)-&gt;next, pnext = pos-&gt;next; pos != (head); pos = pnext, pnext = pos-&gt;next)</td></tr>
 <tr class="separator:a4ff1b4fc6ddeec48dc37f1cce4c49ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5a7bbc278609c0fee4536eeeaa1afab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d23/list_8h.html#ad5a7bbc278609c0fee4536eeeaa1afab">list_next_entry</a>(pos,  member)&#160;&#160;&#160;<a class="el" href="../../da/d23/list_8h.html#a26c976b7f654e70df318c1843e5094de">list_entry</a>((pos)-&gt;member.next, typeof(*(pos)), member)</td></tr>
 <tr class="separator:ad5a7bbc278609c0fee4536eeeaa1afab"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -305,7 +305,7 @@ prev</td>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;for (pos = (head)-&gt;next; pos != (head); pos = pos-&gt;next)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="../../df/db8/HeapManager_8cpp.html#a08d9d7550dab738bdb9ed51c56df7f5b">for</a> (pos = (head)-&gt;next; pos != (head); pos = pos-&gt;next)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -465,7 +465,7 @@ prev</td>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;for (pos = (head)-&gt;next, pnext = pos-&gt;next; pos != (head); pos = pnext, pnext = pos-&gt;next)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="../../df/db8/HeapManager_8cpp.html#a08d9d7550dab738bdb9ed51c56df7f5b">for</a> (pos = (head)-&gt;next, pnext = pos-&gt;next; pos != (head); pos = pnext, pnext = pos-&gt;next)</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -1,7 +1,7 @@
 var hierarchy =
 [
-    [ "_FILE", "d2/d4d/file_8h.html#de/d3c/struct__FILE", null ],
     [ "_File", "d2/d6e/syscalls_8h.html#d6/dbc/struct__File", null ],
+    [ "_FILE", "d2/d4d/file_8h.html#de/d3c/struct__FILE", null ],
     [ "_GBPRSDP", "d3/d41/gbp_8h.html#d4/d44/struct__GBPRSDP", null ],
     [ "_GlobalBootParams", "d3/d41/gbp_8h.html#da/da6/struct__GlobalBootParams", null ],
     [ "_IMAGE_DATA_DIRECTORY", "de/d63/msexec_8h.html#d8/df3/struct__IMAGE__DATA__DIRECTORY", null ],
@@ -122,7 +122,6 @@ var hierarchy =
     [ "InternetProtocol4", "d0/d1e/structInternetProtocol4.html", null ],
     [ "invalid_builtin_data", "d0/d1f/ubsan_8h.html#d6/d1e/structinvalid__builtin__data", null ],
     [ "invalid_value_data", "d0/d1f/ubsan_8h.html#dc/d82/structinvalid__value__data", null ],
-    [ "APIC::IOAPICVersion", "d3/d88/namespaceAPIC.html#db/d20/structAPIC_1_1IOAPICVersion", null ],
     [ "NetworkIPv4::IPv4Events", "d1/dd4/classNetworkIPv4_1_1IPv4Events.html", [
       [ "NetworkUDP::UDP", "d0/d72/classNetworkUDP_1_1UDP.html", null ]
     ] ],

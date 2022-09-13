@@ -92,13 +92,13 @@ $(document).ready(function(){initNavTree('d7/d91/ErrorHandler_8cpp.html','../../
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="../../de/d0f/errorhnd_8h_source.html">errorhnd.h</a>&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../d4/d33/smp_8hpp_source.html">cpu/smp.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d0a/cpu_2smp_8hpp_source.html">cpu/smp.hpp</a>&quot;</code><br />
 </div>
 <p><a href="../../d7/d91/ErrorHandler_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac1267e9fc745b80c7dd53569be1a047a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d91/ErrorHandler_8cpp.html#ac1267e9fc745b80c7dd53569be1a047a">SetError</a> (long <a class="el" href="../../d4/d33/smp_8hpp.html#a8ec11ac6067b0e4293052a4a39e925f7">ErrorCode</a>)</td></tr>
+<tr class="memitem:ac1267e9fc745b80c7dd53569be1a047a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d91/ErrorHandler_8cpp.html#ac1267e9fc745b80c7dd53569be1a047a">SetError</a> (long <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a8ec11ac6067b0e4293052a4a39e925f7">ErrorCode</a>)</td></tr>
 <tr class="separator:ac1267e9fc745b80c7dd53569be1a047a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade327d9940569db3f67607d9b7999013"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d91/ErrorHandler_8cpp.html#ade327d9940569db3f67607d9b7999013">GetError</a> ()</td></tr>
 <tr class="separator:ade327d9940569db3f67607d9b7999013"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,11 +121,11 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d91/ErrorHandler_8cpp_source.html#l00011">11</a> of file <a class="el" href="../../d7/d91/ErrorHandler_8cpp_source.html">ErrorHandler.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#a7ad5641dbc2b4cdb4d83352a62ce2f41">debug</a>(<span class="stringliteral">&quot;Getting error code %d&quot;</span>, <a class="code" href="../../d4/d33/smp_8hpp.html#a30ebbb6269a4df6e98c2428c5564f97d">CurrentCPU</a>-&gt;ErrorCode);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d4/d33/smp_8hpp.html#a30ebbb6269a4df6e98c2428c5564f97d">CurrentCPU</a>-&gt;ErrorCode;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#a7ad5641dbc2b4cdb4d83352a62ce2f41">debug</a>(<span class="stringliteral">&quot;Getting error code %d&quot;</span>, <a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a30ebbb6269a4df6e98c2428c5564f97d">CurrentCPU</a>-&gt;ErrorCode);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a30ebbb6269a4df6e98c2428c5564f97d">CurrentCPU</a>-&gt;ErrorCode;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d4/d33/smp_8hpp_source.html#l00064">CurrentCPU</a>, and <a class="el" href="../../db/d16/debug_8h_source.html#l00069">debug</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00060">CurrentCPU</a>, and <a class="el" href="../../db/d16/debug_8h_source.html#l00069">debug</a>.</p>
 
 </div>
 </div>
@@ -147,19 +147,19 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d91/ErrorHandler_8cpp_source.html#l00005">5</a> of file <a class="el" href="../../d7/d91/ErrorHandler_8cpp_source.html">ErrorHandler.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#a7ad5641dbc2b4cdb4d83352a62ce2f41">debug</a>(<span class="stringliteral">&quot;Setting error code to %d&quot;</span>, <a class="code" href="../../d4/d33/smp_8hpp.html#a8ec11ac6067b0e4293052a4a39e925f7">ErrorCode</a>);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d4/d33/smp_8hpp.html#a30ebbb6269a4df6e98c2428c5564f97d">CurrentCPU</a>-&gt;ErrorCode = <a class="code" href="../../d4/d33/smp_8hpp.html#a8ec11ac6067b0e4293052a4a39e925f7">ErrorCode</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#a7ad5641dbc2b4cdb4d83352a62ce2f41">debug</a>(<span class="stringliteral">&quot;Setting error code to %d&quot;</span>, <a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a8ec11ac6067b0e4293052a4a39e925f7">ErrorCode</a>);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a30ebbb6269a4df6e98c2428c5564f97d">CurrentCPU</a>-&gt;ErrorCode = <a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a8ec11ac6067b0e4293052a4a39e925f7">ErrorCode</a>;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d4/d33/smp_8hpp_source.html#l00064">CurrentCPU</a>, <a class="el" href="../../db/d16/debug_8h_source.html#l00069">debug</a>, and <a class="el" href="../../d4/d33/smp_8hpp_source.html#l00015">ErrorCode</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00060">CurrentCPU</a>, <a class="el" href="../../db/d16/debug_8h_source.html#l00069">debug</a>, and <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00012">ErrorCode</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="asmp_8hpp_html_a8ec11ac6067b0e4293052a4a39e925f7"><div class="ttname"><a href="../../d4/d33/smp_8hpp.html#a8ec11ac6067b0e4293052a4a39e925f7">ErrorCode</a></div><div class="ttdeci">long ErrorCode</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/smp_8hpp_source.html#l00015">smp.hpp:15</a></div></div>
 <div class="ttc" id="adebug_8h_html_a7ad5641dbc2b4cdb4d83352a62ce2f41"><div class="ttname"><a href="../../db/d16/debug_8h.html#a7ad5641dbc2b4cdb4d83352a62ce2f41">debug</a></div><div class="ttdeci">#define debug(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/debug_8h_source.html#l00069">debug.h:69</a></div></div>
-<div class="ttc" id="asmp_8hpp_html_a30ebbb6269a4df6e98c2428c5564f97d"><div class="ttname"><a href="../../d4/d33/smp_8hpp.html#a30ebbb6269a4df6e98c2428c5564f97d">CurrentCPU</a></div><div class="ttdeci">#define CurrentCPU</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d33/smp_8hpp_source.html#l00064">smp.hpp:64</a></div></div>
+<div class="ttc" id="aarch_2amd64_2cpu_2smp_8hpp_html_a30ebbb6269a4df6e98c2428c5564f97d"><div class="ttname"><a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a30ebbb6269a4df6e98c2428c5564f97d">CurrentCPU</a></div><div class="ttdeci">#define CurrentCPU</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00060">smp.hpp:60</a></div></div>
+<div class="ttc" id="aarch_2amd64_2cpu_2smp_8hpp_html_a8ec11ac6067b0e4293052a4a39e925f7"><div class="ttname"><a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a8ec11ac6067b0e4293052a4a39e925f7">ErrorCode</a></div><div class="ttdeci">long ErrorCode</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00012">smp.hpp:12</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fennix Project: kernel/cpu/VMDetect.c Source File</title>
+<title>Fennix Project: kernel/arch/amd64/cpu/VMDetect.c Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('d1/dac/VMDetect_8c_source.html','../..
 <div class="contents">
 <a href="../../d1/dac/VMDetect_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../da/d0a/vm_8h.html">vm.h</a>&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../de/d21/asm_8h.html">asm.h</a>&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d6/d2d/cpu_2cpuid_8h.html">cpuid.h</a>&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d1/dc5/arch_2amd64_2cpu_2cpuid_8h.html">cpuid.h</a>&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d9/d86/limits_8h.html">limits.h</a>&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../d1/dac/VMDetect_8c.html">    6</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
@@ -280,7 +280,6 @@ $(document).ready(function(){initNavTree('d1/dac/VMDetect_8c_source.html','../..
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aVMDetect_8c_html_a83bd25a94b4aa352f7d1afd01886170f"><div class="ttname"><a href="../../d1/dac/VMDetect_8c.html#a83bd25a94b4aa352f7d1afd01886170f">VMWARE_PORT_CMD_GETVERSION</a></div><div class="ttdeci">#define VMWARE_PORT_CMD_GETVERSION</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dac/VMDetect_8c_source.html#l00035">VMDetect.c:35</a></div></div>
-<div class="ttc" id="acpu_2cpuid_8h_html"><div class="ttname"><a href="../../d6/d2d/cpu_2cpuid_8h.html">cpuid.h</a></div></div>
 <div class="ttc" id="akernel_2include_2string_8h_html_a992514d25cc10baafaac987c5852680c"><div class="ttname"><a href="../../d1/d69/kernel_2include_2string_8h.html#a992514d25cc10baafaac987c5852680c">memcpy</a></div><div class="ttdeci">void * memcpy(void *__restrict__ dest, const void *__restrict__ src, size_t n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00005">String.c:5</a></div></div>
 <div class="ttc" id="ainclude_2cpuid_8h_html_a0a60b3297b088d11136eb91a8d87b0ee"><div class="ttname"><a href="../../d7/d70/include_2cpuid_8h.html#a0a60b3297b088d11136eb91a8d87b0ee">__cpuid</a></div><div class="ttdeci">#define __cpuid(level, a, b, c, d)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d70/include_2cpuid_8h_source.html#l00155">cpuid.h:155</a></div></div>
 <div class="ttc" id="ainclude_2cpuid_8h_html_acd5893be73c6284b07f2fca012722dad"><div class="ttname"><a href="../../d7/d70/include_2cpuid_8h.html#acd5893be73c6284b07f2fca012722dad">CPUID_VENDOR_VMWARE</a></div><div class="ttdeci">#define CPUID_VENDOR_VMWARE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d70/include_2cpuid_8h_source.html#l00093">cpuid.h:93</a></div></div>
@@ -305,11 +304,12 @@ $(document).ready(function(){initNavTree('d1/dac/VMDetect_8c_source.html','../..
 <div class="ttc" id="aVMDetect_8c_html_d5/dc2/structVMwareCMD"><div class="ttname"><a href="../../d1/dac/VMDetect_8c.html#d5/dc2/structVMwareCMD">VMwareCMD</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dac/VMDetect_8c_source.html#l00006">VMDetect.c:6</a></div></div>
 <div class="ttc" id="ainclude_2cpuid_8h_html_a4a8f5860c46feefe309f61d2dbc1c417"><div class="ttname"><a href="../../d7/d70/include_2cpuid_8h.html#a4a8f5860c46feefe309f61d2dbc1c417">CPUID_VENDOR_TCG</a></div><div class="ttdeci">#define CPUID_VENDOR_TCG</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d70/include_2cpuid_8h_source.html#l00099">cpuid.h:99</a></div></div>
 <div class="ttc" id="aVMDetect_8c_html_a9f76f1bb6e46e94fe0484b2cb3effdbb"><div class="ttname"><a href="../../d1/dac/VMDetect_8c.html#a9f76f1bb6e46e94fe0484b2cb3effdbb">VMWARE_HYPERVISOR_MAGIC</a></div><div class="ttdeci">#define VMWARE_HYPERVISOR_MAGIC</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dac/VMDetect_8c_source.html#l00032">VMDetect.c:32</a></div></div>
+<div class="ttc" id="aarch_2amd64_2cpu_2cpuid_8h_html"><div class="ttname"><a href="../../d1/dc5/arch_2amd64_2cpu_2cpuid_8h.html">cpuid.h</a></div></div>
 <div class="ttc" id="aVMDetect_8c_html_a9f9cddf4705f78fa4ac0609b8e5d2763"><div class="ttname"><a href="../../d1/dac/VMDetect_8c.html#a9f9cddf4705f78fa4ac0609b8e5d2763">VMwareCMD::si</a></div><div class="ttdeci">uint32_t si</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dac/VMDetect_8c_source.html#l00028">VMDetect.c:28</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="../../dir_de6efc35b99b831d558bda0d93c38d37.html">cpu</a></li><li class="navelem"><a class="el" href="../../d1/dac/VMDetect_8c.html">VMDetect.c</a></li>
+    <li class="navelem"><a class="el" href="../../dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="../../dir_4a04b9aac4eefdd334a78e565f4616f2.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_daa9cfe7e05ea725d73c8368bae78c4d.html">amd64</a></li><li class="navelem"><a class="el" href="../../dir_afb927060803406c4a9b5e13f2ea617f.html">cpu</a></li><li class="navelem"><a class="el" href="../../d1/dac/VMDetect_8c.html">VMDetect.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
