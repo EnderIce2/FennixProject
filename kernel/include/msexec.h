@@ -2,10 +2,47 @@
 
 #include <stdint.h>
 
-typedef unsigned short WORD;
+// some of the code is from: https://github.com/dotnet/llilc/blob/main/include/clr/ntimage.h
+
+#define near /* __near */
+#define far /* __far */
+#define NEAR near
+#define FAR far
+#define CONST const
+
+typedef char CHAR;
+typedef unsigned char UCHAR;
 typedef wchar_t WCHAR;
 typedef unsigned short USHORT;
 typedef long LONG;
+
+typedef unsigned long DWORD;
+typedef int BOOL;
+typedef unsigned char BYTE;
+typedef unsigned short WORD;
+typedef float FLOAT;
+typedef FLOAT *PFLOAT;
+typedef BOOL near *PBOOL;
+typedef BOOL far *LPBOOL;
+typedef BYTE near *PBYTE;
+typedef BYTE far *LPBYTE;
+typedef int near *PINT;
+typedef int far *LPINT;
+typedef WORD near *PWORD;
+typedef WORD far *LPWORD;
+typedef long far *LPLONG;
+typedef DWORD near *PDWORD;
+typedef DWORD far *LPDWORD;
+typedef void far *LPVOID;
+typedef CONST void far *LPCVOID;
+
+typedef int INT;
+typedef unsigned int UINT;
+typedef unsigned int *PUINT;
+
+typedef short SHORT;
+typedef DWORD ULONG;
+typedef double DOUBLE;
 
 #define IMAGE_DOS_SIGNATURE 0x5A4D      /* MZ */
 #define IMAGE_OS2_SIGNATURE 0x454E      /* NE */
@@ -55,61 +92,61 @@ typedef long LONG;
 #define IMAGE_DIRECTORY_ENTRY_DELAY_IMPORT 13
 #define IMAGE_DIRECTORY_ENTRY_COM_DESCRIPTOR 14
 
-typedef struct _IMAGE_DOS_HEADER
+typedef struct _IMAGE_DOS_HEADER // DOS .EXE header
 {
-    WORD e_magic;
-    WORD e_cblp;
-    WORD e_cp;
-    WORD e_crlc;
-    WORD e_cparhdr;
-    WORD e_minalloc;
-    WORD e_maxalloc;
-    WORD e_ss;
-    WORD e_sp;
-    WORD e_csum;
-    WORD e_ip;
-    WORD e_cs;
-    WORD e_lfarlc;
-    WORD e_ovno;
-    WORD e_res[4];
-    WORD e_oemid;
-    WORD e_oeminfo;
-    WORD e_res2[10];
-    WORD e_lfanew;
+    USHORT e_magic;    // Magic number
+    USHORT e_cblp;     // Bytes on last page of file
+    USHORT e_cp;       // Pages in file
+    USHORT e_crlc;     // Relocations
+    USHORT e_cparhdr;  // Size of header in paragraphs
+    USHORT e_minalloc; // Minimum extra paragraphs needed
+    USHORT e_maxalloc; // Maximum extra paragraphs needed
+    USHORT e_ss;       // Initial (relative) SS value
+    USHORT e_sp;       // Initial SP value
+    USHORT e_csum;     // Checksum
+    USHORT e_ip;       // Initial IP value
+    USHORT e_cs;       // Initial (relative) CS value
+    USHORT e_lfarlc;   // File address of relocation table
+    USHORT e_ovno;     // Overlay number
+    USHORT e_res[4];   // Reserved words
+    USHORT e_oemid;    // OEM identifier (for e_oeminfo)
+    USHORT e_oeminfo;  // OEM information; e_oemid specific
+    USHORT e_res2[10]; // Reserved words
+    USHORT e_lfanew;     // File address of new exe header
 } IMAGE_DOS_HEADER, *PIMAGE_DOS_HEADER;
 
-typedef struct _IMAGE_OS2_HEADER
+typedef struct _IMAGE_OS2_HEADER // OS/2 .EXE header
 {
-    uint16_t ne_magic;
-    uint8_t ne_ver;
-    uint8_t ne_rev;
-    uint16_t ne_enttab;
-    uint16_t ne_cbenttab;
-    uint32_t ne_crc;
-    uint16_t ne_flags;
-    uint16_t ne_autodata;
-    uint16_t ne_heap;
-    uint16_t ne_stack;
-    uint32_t ne_csip;
-    uint32_t ne_sssp;
-    uint16_t ne_cseg;
-    uint16_t ne_cmod;
-    uint16_t ne_cbnrestab;
-    uint16_t ne_segtab;
-    uint16_t ne_rsrctab;
-    uint16_t ne_restab;
-    uint16_t ne_modtab;
-    uint16_t ne_imptab;
-    uint32_t ne_nrestab;
-    uint16_t ne_cmovent;
-    uint16_t ne_align;
-    uint16_t ne_cres;
-    uint8_t ne_exetyp;
-    uint8_t ne_flagsothers;
-    uint16_t ne_pretthunks;
-    uint16_t ne_psegrefbytes;
-    uint16_t ne_swaparea;
-    uint16_t ne_expver;
+    USHORT ne_magic;        // Magic number
+    UCHAR ne_ver;            // Version number
+    UCHAR ne_rev;            // Revision number
+    USHORT ne_enttab;       // Offset of Entry Table
+    USHORT ne_cbenttab;     // Number of bytes in Entry Table
+    UINT ne_crc;            // Checksum of whole file
+    USHORT ne_flags;        // Flag word
+    USHORT ne_autodata;     // Automatic data segment number
+    USHORT ne_heap;         // Initial heap allocation
+    USHORT ne_stack;        // Initial stack allocation
+    UINT ne_csip;           // Initial CS:IP setting
+    UINT ne_sssp;           // Initial SS:SP setting
+    USHORT ne_cseg;         // Count of file segments
+    USHORT ne_cmod;         // Entries in Module Reference Table
+    USHORT ne_cbnrestab;    // Size of non-resident name table
+    USHORT ne_segtab;       // Offset of Segment Table
+    USHORT ne_rsrctab;      // Offset of Resource Table
+    USHORT ne_restab;       // Offset of resident name table
+    USHORT ne_modtab;       // Offset of Module Reference Table
+    USHORT ne_imptab;       // Offset of Imported Names Table
+    UINT ne_nrestab;        // Offset of Non-resident Names Table
+    USHORT ne_cmovent;      // Count of movable entries
+    USHORT ne_align;        // Segment alignment shift count
+    USHORT ne_cres;         // Count of resource segments
+    UCHAR ne_exetyp;        // Target Operating system
+    UCHAR ne_flagsothers;   // Other .EXE flags
+    USHORT ne_pretthunks;   // offset to return thunks
+    USHORT ne_psegrefbytes; // offset to segment ref. bytes
+    USHORT ne_swaparea;     // Minimum code swap area size
+    USHORT ne_expver;       // Expected Windows version number
 } IMAGE_OS2_HEADER, *PIMAGE_OS2_HEADER;
 
 typedef struct _IMAGE_SECTION_HEADER

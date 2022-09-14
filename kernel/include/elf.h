@@ -26,13 +26,13 @@ typedef int64_t Elf64_Sxword;
 
 typedef struct elf32_hdr
 {
-    unsigned char e_ident[EI_NIDENT];
+    unsigned char e_ident[EI_NIDENT]; /* ELF "magic number" */
     Elf32_Half e_type;
     Elf32_Half e_machine;
     Elf32_Word e_version;
-    Elf32_Addr e_entry; /* Entry point */
-    Elf32_Off e_phoff;
-    Elf32_Off e_shoff;
+    Elf32_Addr e_entry; /* Entry point virtual address */
+    Elf32_Off e_phoff;  /* Program header table file offset */
+    Elf32_Off e_shoff;  /* Section header table file offset */
     Elf32_Word e_flags;
     Elf32_Half e_ehsize;
     Elf32_Half e_phentsize;

@@ -294,9 +294,9 @@ PCB *ExecuteBinary(const char *Path, uint64_t Arg0, uint64_t Arg1, ELEVATION Ele
         IMAGE_DOS_HEADER *MZHeader = (IMAGE_DOS_HEADER *)FileBuffer;
         IMAGE_OS2_HEADER *NEHeader = (IMAGE_OS2_HEADER *)(((char *)FileBuffer) + MZHeader->e_lfanew);
 
-        if (NEHeader->ne_exetyp == 0x02)
+        if (NEHeader->ne_exetyp == 0x2 || NEHeader->ne_exetyp == 0x5) // 2 is 16 bit?
         {
-            debug("32 bit NE file found.");
+            debug("%s bit NE file found.", NEHeader->ne_exetyp == 0x2 ? "16" : "32");
             if (Elevation == ELEVATION::User)
             {
                 uint64_t MappedAddrs = (uint64_t)FileBuffer;
@@ -316,36 +316,49 @@ PCB *ExecuteBinary(const char *Path, uint64_t Arg0, uint64_t Arg1, ELEVATION Ele
                 }
             }
             IMAGE_SECTION_HEADER *section = (IMAGE_SECTION_HEADER *)(((char *)NEHeader) + sizeof(IMAGE_OS2_HEADER));
-            for (int i = 0; i < NEHeader->ne_cbnrestab; i++, section++)
+            fixme("NumOfSections: %ld | SizeOfRawData: %ld",
+                  NEHeader->ne_cbnrestab, section->SizeOfRawData);
+            // if (section->SizeOfRawData == 0)
+            // continue;
+            void *addr = (void *)((uint64_t)section->VirtualAddress + (uint64_t)FileBuffer);
+            debug("VirtualAddress: %#llx | SizeOfRawData: %#llx",
+                  (uint64_t)addr, section->SizeOfRawData);
+            void *offset = KernelAllocator.RequestPages((uint64_t)addr / 0x1000 + 1);
+            if (Elevation == ELEVATION::User)
             {
-                fixme("NumOfSections: %ld | SizeOfRawData: %ld",
-                      NEHeader->ne_cbnrestab, section->SizeOfRawData);
-                if (section->SizeOfRawData == 0)
-                    continue;
-                void *addr = (void *)((uint64_t)section->VirtualAddress + (uint64_t)FileBuffer);
-                void *offset = KernelAllocator.RequestPages((uint64_t)addr / 0x1000 + 1);
-                if (Elevation == ELEVATION::User)
+                uint64_t MappedAddrs = (uint64_t)offset;
+                for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
                 {
-                    uint64_t MappedAddrs = (uint64_t)offset;
-                    for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
-                    {
-                        KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
-                        MappedAddrs += PAGE_SIZE;
-                    }
+                    KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
+                    MappedAddrs += PAGE_SIZE;
                 }
-                else
-                {
-                    uint64_t MappedAddrs = (uint64_t)offset;
-                    for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
-                    {
-                        KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW);
-                        MappedAddrs += PAGE_SIZE;
-                    }
-                }
-
-                memcpy(addr, ((char *)FileBuffer) + section->PointerToRawData, section->SizeOfRawData);
             }
+            else
+            {
+                uint64_t MappedAddrs = (uint64_t)offset;
+                for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
+                {
+                    KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW);
+                    MappedAddrs += PAGE_SIZE;
+                }
+            }
+
+            // memcpy(addr, ((char *)FileBuffer) + section->PointerToRawData, section->SizeOfRawData);
             debug("%s Entry Point: %#llx", Path, (uint64_t)(NEHeader->ne_enttab + (uint64_t)FileBuffer));
+            LeaveCriticalSection;
+            if (CurrentTaskingMode == TaskingMode::Mono)
+            {
+                bool user = false;
+                if (Elevation == ELEVATION::User)
+                    user = true; // ((uint64_t)NEHeader->ne_enttab + (uint64_t)FileBuffer, user));
+                return ConvertTaskCBToPCB(monot->CreateTask(NEHeader->ne_enttab + (uint64_t)offset, Arg0, Arg1, (char *)file->Name, user, true));
+            }
+            else
+            {
+                PCB *pcb = SysCreateProcess(file->Name, Elevation);
+                pcb->Offset = (uint64_t)offset;
+                return SysCreateThread(pcb, (uint64_t)NEHeader->ne_enttab , Arg0, Arg1)->Parent;
+            }
         }
         else
         {
@@ -380,37 +393,46 @@ PCB *ExecuteBinary(const char *Path, uint64_t Arg0, uint64_t Arg1, ELEVATION Ele
             }
         }
         IMAGE_SECTION_HEADER *section = (IMAGE_SECTION_HEADER *)(((char *)MZHeader) + sizeof(IMAGE_DOS_HEADER));
-        for (int i = 0; i < MZHeader->e_lfanew; i++, section++)
+        fixme("NumOfSections: %ld | SizeOfRawData: %ld",
+              MZHeader->e_lfanew, section->SizeOfRawData);
+        // if (section->SizeOfRawData == 0)
+        //     continue;
+        void *addr = (void *)((uint64_t)section->VirtualAddress + (uint64_t)FileBuffer);
+        void *offset = KernelAllocator.RequestPages((uint64_t)addr / 0x1000 + 1);
+        if (Elevation == ELEVATION::User)
         {
-            fixme("NumOfSections: %ld | SizeOfRawData: %ld",
-                  MZHeader->e_lfanew, section->SizeOfRawData);
-            if (section->SizeOfRawData == 0)
-                continue;
-            void *addr = (void *)((uint64_t)section->VirtualAddress + (uint64_t)FileBuffer);
-            void *offset = KernelAllocator.RequestPages((uint64_t)addr / 0x1000 + 1);
-            if (Elevation == ELEVATION::User)
+            uint64_t MappedAddrs = (uint64_t)offset;
+            for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
             {
-                uint64_t MappedAddrs = (uint64_t)offset;
-                for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
-                {
-                    KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
-                    MappedAddrs += PAGE_SIZE;
-                }
+                KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW | PTFlag::US);
+                MappedAddrs += PAGE_SIZE;
             }
-            else
-            {
-                uint64_t MappedAddrs = (uint64_t)offset;
-                for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
-                {
-                    KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW);
-                    MappedAddrs += PAGE_SIZE;
-                }
-            }
-
-            memcpy(addr, ((char *)FileBuffer) + section->PointerToRawData, section->SizeOfRawData);
         }
+        else
+        {
+            uint64_t MappedAddrs = (uint64_t)offset;
+            for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
+            {
+                KernelPageTableManager.MapMemory((void *)MappedAddrs, (void *)MappedAddrs, PTFlag::RW);
+                MappedAddrs += PAGE_SIZE;
+            }
+        }
+        // memcpy(addr, ((char *)FileBuffer) + section->PointerToRawData, section->SizeOfRawData);
         debug("%s Entry Point: %#llx", Path, (uint64_t)(MZHeader->e_ip + (uint64_t)FileBuffer));
-
+        LeaveCriticalSection;
+        if (CurrentTaskingMode == TaskingMode::Mono)
+        {
+            bool user = false;
+            if (Elevation == ELEVATION::User)
+                user = true;
+            return ConvertTaskCBToPCB(monot->CreateTask(MZHeader->e_ip + (uint64_t)offset, Arg0, Arg1, (char *)file->Name, user, true));
+        }
+        else
+        {
+            PCB *pcb = SysCreateProcess(file->Name, Elevation);
+            pcb->Offset = (uint64_t)offset;
+            return SysCreateThread(pcb, (uint64_t)MZHeader->e_ip, Arg0, Arg1)->Parent;
+        }
         break;
     }
     default:
