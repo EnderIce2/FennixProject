@@ -20,7 +20,6 @@ SECTIONS
     {
         *(.text .text.*)
     } :text
-
     _kernel_text_end = ALIGN(CONSTANT(MAXPAGESIZE));
     . += CONSTANT(MAXPAGESIZE);
 
@@ -28,7 +27,6 @@ SECTIONS
     {
         *(.rodata .rodata.*)
     } :rodata
-
     _kernel_rodata_end = ALIGN(CONSTANT(MAXPAGESIZE));
     . += CONSTANT(MAXPAGESIZE);
 
@@ -42,7 +40,6 @@ SECTIONS
         *(COMMON)
         *(.bss .bss.*)
     } :data
-
     . += CONSTANT(MAXPAGESIZE);
     _kernel_end = ALIGN(CONSTANT(MAXPAGESIZE));
 

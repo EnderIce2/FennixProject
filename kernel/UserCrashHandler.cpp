@@ -117,14 +117,14 @@ void TriggerUserModeCrash(TrapFrame *regs)
     }
     case ISR_StackSegmentFault:
     {
-        err("Stack Segment Fault caused by an user-mode thread %s(%d) at %#lx on CPU %ld.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, rdmsr(MSR_FS_BASE), RIP);
+        err("Stack Segment Fault caused by an user-mode thread %s(%d) at %#lx on CPU %ld.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, RIP, rdmsr(MSR_FS_BASE));
         // TODO: signal the application to stop.
         SysGetCurrentThread()->Status = Terminated;
         break;
     }
     case ISR_GeneralProtectionFault:
     {
-        err("General Protection Fault caused by an user-mode thread %s(%d) at %#lx on CPU %ld.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, rdmsr(MSR_FS_BASE), RIP);
+        err("General Protection Fault caused by an user-mode thread %s(%d) at %#lx on CPU %ld.", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, RIP, rdmsr(MSR_FS_BASE));
         // TODO: signal the application to stop.
         SysGetCurrentThread()->Status = Terminated;
         break;
@@ -177,9 +177,15 @@ void TriggerUserModeCrash(TrapFrame *regs)
     }
 #ifdef DEBUG
     CurrentDisplay->SetPrintColor(0xFF0000);
-    printf_("Usermode thread %s(%ld) crashed! Check the serial port (COM1) for more info.\n", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID);
+
+    if (CurrentTaskingMode == TaskingMode::Mono)
+        printf_("Usermode task ");
+    else
+        printf_("Usermode thread ");
+    printf_("%s(%ld) crashed on CPU %ld! Check the serial port (COM1) for more info.\n", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, rdmsr(MSR_FS_BASE));
 #endif
     STI;
+    err("Launching usermode crash handler...");
     if (CurrentTaskingMode == TaskingMode::Mono)
     {
         TrapFrame *tf = (TrapFrame *)UserAllocator->Malloc(sizeof(TrapFrame));
@@ -188,5 +194,11 @@ void TriggerUserModeCrash(TrapFrame *regs)
         Tasking::monot->PopTask(true);
         SysCreateProcessFromFile("/system/umc", (uint64_t)tf, 0, ELEVATION::User);
         Tasking::monot->PushTask(0);
+    }
+    else
+    {
+        TrapFrame *tf = (TrapFrame *)UserAllocator->Malloc(sizeof(TrapFrame));
+        memcpy(tf, regs, sizeof(TrapFrame));
+        SysCreateProcessFromFile("/system/umc", (uint64_t)tf, 0, ELEVATION::User);
     }
 }

@@ -7,7 +7,7 @@
 #include <internal_task.h>
 
 SymmetricMultiprocessing::SMP *smp = nullptr;
-CPUData CPUs[MAX_CPU];
+static __attribute__((aligned(PAGE_SIZE))) CPUData CPUs[MAX_CPU] = {0};
 
 void EnableCPUFeatures()
 {
@@ -75,9 +75,11 @@ extern "C" void StartCPU()
     asm("cli");
 
     init_syscalls();
-    wrmsr(MSR_GS_BASE, (uintptr_t)CurrentCPU);
     wrmsr(MSR_FS_BASE, apicid);
-    wrmsr(MSR_SHADOW_GS_BASE, (uintptr_t)CurrentCPU);
+    wrmsr(MSR_GS_BASE, (uintptr_t)&CPUs[apicid]);
+    wrmsr(MSR_SHADOW_GS_BASE, (uintptr_t)&CPUs[apicid]);
+    CPUs[apicid].Checksum = CPU_DATA_CHECKSUM;
+    CPUs[apicid].IsActive = true;
 
     /* ... GDT, IDT, APIC, etc... */
 
@@ -110,12 +112,7 @@ static void InitializeCPU(ACPI::MADT::LocalAPIC *lapic)
 
     memcpy((void *)TRAMPOLINE_START, &_trampoline_start, trampoline_len);
 
-    GetCPU(lapic->APICId)->PageTable = CurrentCPU->PageTable;
-    // POKE(volatile uint64_t, PAGE_TABLE) = GetCPU(lapic->APICId)->PageTable.raw;
     POKE(volatile uint64_t, PAGE_TABLE) = readcr3().raw;
-    memset(GetCPU(lapic->APICId)->Stack, 0, STACK_SIZE);
-
-    // POKE(volatile uint64_t, _STACK) = (uint64_t)GetCPU(lapic->APICId)->Stack + STACK_SIZE;
     POKE(volatile uint64_t, _STACK) = (uint64_t)KernelAllocator.RequestPage();
 
     asm volatile("sgdt [0x580]\n"
@@ -131,7 +128,6 @@ static void InitializeCPU(ACPI::MADT::LocalAPIC *lapic)
         ;
 
     trace("CPU %d loaded.", lapic->APICId);
-
     CPUEnabled = false;
 
     // tss = (TaskStateSegment *)kcalloc(bootparams->smp.CPUCount, sizeof(TaskStateSegment));
@@ -161,12 +157,29 @@ static void InitializeCPU(ACPI::MADT::LocalAPIC *lapic)
     // trace("CPU %d Ready", lapic->APICId);
 }
 
-int GetCurrentCPUID()
+int GetCurrentCPUID() { return rdmsr(MSR_FS_BASE); }
+CPUData *GetCPU(uint64_t id) { return &CPUs[id]; }
+
+CPUData *GetCurrentCPU()
 {
-    if (!apic)
-        return 0;
-    else
-        return apic->Read(APIC::APIC::APIC_ID) >> 24;
+    uint64_t ret = GetCurrentCPUID();
+
+    if (ret == 0)
+        return &CPUs[0];
+
+    if (!CPUs[ret].IsActive)
+    {
+        err("CPU %d is not active!", ret);
+        return &CPUs[0];
+    }
+
+    if (CPUs[ret].Checksum != CPU_DATA_CHECKSUM)
+    {
+        // TODO: i think somehow i messed this up somehere... i'll figure it out later... but now i will return the first cpu
+        err("CPU %d data is corrupted!", ret);
+        return &CPUs[0];
+    }
+    return &CPUs[ret];
 }
 
 namespace SymmetricMultiprocessing
@@ -174,7 +187,7 @@ namespace SymmetricMultiprocessing
     SMP::SMP()
     {
         trace("Initializing symmetric multiprocessing (%d Cores)", madt->CPUCores);
-
+        CPUs[0].IsActive = true;
         uint32_t rax, rbx, rcx, rdx;
         char HyperVendor[13];
         cpuid(0x40000000, &rax, &rbx, &rcx, &rdx);

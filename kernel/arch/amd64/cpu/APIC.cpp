@@ -43,6 +43,7 @@ namespace APIC
     {
         // Too repetitive
         if (Register != APIC_EOI &&
+            Register != APIC_ID &&
             Register != APIC_TIMER &&
             Register != APIC_TDCR &&
             Register != APIC_TICR &&

@@ -20,7 +20,8 @@ struct CPUData
     TCB *CurrentThread;
 
     long ErrorCode;
-    unsigned int Checksum = CPU_DATA_CHECKSUM;
+    bool IsActive;
+    long Checksum;
 
     uint8_t Stack[STACK_SIZE] __attribute__((aligned(PAGE_SIZE)));
 } __attribute__((packed));
@@ -38,23 +39,11 @@ namespace SymmetricMultiprocessing
 extern SymmetricMultiprocessing::SMP *smp;
 
 #define MAX_CPU 256
-extern CPUData CPUs[];
 
 int GetCurrentCPUID();
 
-static CPUData *GetCurrentCPU()
-{
-    uint64_t ret = GetCurrentCPUID();
+CPUData *GetCurrentCPU();
 
-    if (CPUs[ret].Checksum != CPU_DATA_CHECKSUM)
-    {
-        // TODO: i think somehow i messed this up somehere... i'll figure it out later... but now i will return the first cpu
-        err("CPU %d data is corrupted!", ret);
-        return &CPUs[0];
-    }
-    return &CPUs[ret];
-}
-
-static CPUData *GetCPU(uint64_t id) { return &CPUs[id]; }
+CPUData *GetCPU(uint64_t id);
 
 #define CurrentCPU GetCurrentCPU()

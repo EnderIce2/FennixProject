@@ -51,6 +51,7 @@ EXTERNC void limine_initializator()
         CPU_HALT;
     }
 
+    wrmsr(MSR_FS_BASE, 0);
     init_pmm();
     init_vmm();
     init_kernelpml();
@@ -111,13 +112,8 @@ void initializeKernelFlags()
 
 void KernelTask()
 {
-    if (CurrentTaskingMode == TaskingMode::Mono)
-        if (KernelTaskStarted)
-        {
-            CurrentDisplay->SetPrintColor(0xFC4444);
-            printf("Kernel Task restarted! System Halted!\n");
-            CPU_HALT;
-        }
+    if (KernelTaskStarted)
+        panic("Kernel Task restarted! System Halted!\n", false);
 
 #ifdef DEBUG
     debug("Hello World!");
