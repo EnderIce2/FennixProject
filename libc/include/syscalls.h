@@ -1,17 +1,5 @@
 #pragma once
 #include <stdint.h>
-#define DEFINE_SYSCALL0(function, n) \
-    static inline long syscall_##function() { return 0; }
-#define DEFINE_SYSCALL1(function, n, a1) \
-    static inline long syscall_##function(a1 _a1) { return 0; }
-#define DEFINE_SYSCALL2(function, n, a1, a2)\
-    static inline long syscall_##function(a1 _a1, a2 _a2) { return 0; }
-#define DEFINE_SYSCALL3(function, n, a1, a2, a3)\
-    static inline long syscall_##function(a1 _a1, a2 _a2, a3 _a3) { return 0; }
-#define DEFINE_SYSCALL4(function, n, a1, a2, a3, a4)\
-    static inline long syscall_##function(a1 _a1, a2 _a2, a3 _a3, a4 _a4) { return 0; }
-#define DEFINE_SYSCALL5(function, n, a1, a2, a3, a4, a5)\
-    static inline long syscall_##function(a1 _a1, a2 _a2, a3 _a3, a4 _a4, a5 _a5) { return 0; }
 
 #ifdef __amd64__
 
@@ -98,6 +86,21 @@
 //                              : "a"(result), "b"((long)(arg1)), "c"((long)(arg2)), "d"((long)(arg3)), "S"((long)(arg4)), "D"((long)(arg4))); \
 //         return result;                                                                                                                      \
 //     }
+
+#elif defined(__i386__)
+
+#define DEFINE_SYSCALL0(function, n) \
+    static inline long syscall_##function() { return 0; }
+#define DEFINE_SYSCALL1(function, n, a1) \
+    static inline long syscall_##function(a1 _a1) { return 0; }
+#define DEFINE_SYSCALL2(function, n, a1, a2) \
+    static inline long syscall_##function(a1 _a1, a2 _a2) { return 0; }
+#define DEFINE_SYSCALL3(function, n, a1, a2, a3) \
+    static inline long syscall_##function(a1 _a1, a2 _a2, a3 _a3) { return 0; }
+#define DEFINE_SYSCALL4(function, n, a1, a2, a3, a4) \
+    static inline long syscall_##function(a1 _a1, a2 _a2, a3 _a3, a4 _a4) { return 0; }
+#define DEFINE_SYSCALL5(function, n, a1, a2, a3, a4, a5) \
+    static inline long syscall_##function(a1 _a1, a2 _a2, a3 _a3, a4 _a4, a5 _a5) { return 0; }
 
 #endif
 
