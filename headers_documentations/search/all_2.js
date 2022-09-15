@@ -36,7 +36,7 @@ var searchData=
   ['blue_198',['blue',['../d5/dba/multiboot2_8h.html#a6f8d17b0f35ff4cbf9c51dcbc3ea7d01',1,'multiboot_color']]],
   ['blue_5fmask_5fshift_199',['blue_mask_shift',['../de/d6b/structlimine__framebuffer.html#aa1fb35dd595815689bac0ea43ef15998',1,'limine_framebuffer']]],
   ['blue_5fmask_5fsize_200',['blue_mask_size',['../de/d6b/structlimine__framebuffer.html#a64962e7919b48842f912724327309fc1',1,'limine_framebuffer']]],
-  ['bool_201',['bool',['../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b',1,'stdbool.h']]],
+  ['bool_201',['bool',['../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b',1,'bool():&#160;stdbool.h'],['../de/d63/msexec_8h.html#a050c65e107f0c828f856a231f4b4e788',1,'BOOL():&#160;msexec.h']]],
   ['boot_5ftime_202',['boot_time',['../d3/df0/limine_8h.html#afd90e4d04eb15b0bdaecc48017e2096b',1,'limine_boot_time_response']]],
   ['bootboot_2eh_203',['bootboot.h',['../db/dc7/bootboot_8h.html',1,'']]],
   ['bootboot_5fcore_204',['BOOTBOOT_CORE',['../db/dc7/bootboot_8h.html#af2801f894ded89107a67ccd822df31ac',1,'bootboot.h']]],
@@ -55,5 +55,6 @@ var searchData=
   ['buffer_217',['Buffer',['../d3/d19/classBitmap.html#a751ccc209d0511ad550350ac31f27f39',1,'Bitmap']]],
   ['buffersize_218',['BufferSize',['../d3/d41/gbp_8h.html#a3447851b3b8249adcf60a0bb3b0fed6c',1,'GBPFramebuffer']]],
   ['builtin_5fatomic_219',['builtin_atomic',['../d5/d6c/atomic_8hpp.html#a5378d8b9f29d597ad63e1415713ac681',1,'atomic.hpp']]],
-  ['bytespersector_220',['BytesPerSector',['../df/d19/classFileSystem_1_1FAT.html#a637b6ad1461e6fd5d032e1e7f7dd9b42',1,'FileSystem::FAT::BIOSParameterBlock::BytesPerSector()'],['../dd/dd8/filesystem_8h.html#a8150302ac60578f80916785444da77aa',1,'BytesPerSector():&#160;filesystem.h']]]
+  ['byte_220',['BYTE',['../de/d63/msexec_8h.html#a4ae1dab0fb4b072a66584546209e7d58',1,'msexec.h']]],
+  ['bytespersector_221',['BytesPerSector',['../df/d19/classFileSystem_1_1FAT.html#a637b6ad1461e6fd5d032e1e7f7dd9b42',1,'FileSystem::FAT::BIOSParameterBlock::BytesPerSector()'],['../dd/dd8/filesystem_8h.html#a8150302ac60578f80916785444da77aa',1,'BytesPerSector():&#160;filesystem.h']]]
 ];

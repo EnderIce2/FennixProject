@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('d0/dc9/init_8cpp.html','../../'); init
 <div class="title">init.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="../../dc/dac/io_8h_source.html">io.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;io.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d2/d6e/syscalls_8h_source.html">syscalls.h</a>&gt;</code><br />
 </div>
 <p><a href="../../d0/dc9/init_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -139,7 +139,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        syscall_dbg(0x3F8, (<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;[INIT] Kernel is running under monotasking mode.\n&quot;</span>);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="comment">/* ... do stuff ... */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        syscall_createProcess((<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;/system/monoton&quot;</span>, 0, 0);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        syscall_pushTask((<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)<a class="code" href="../../d0/dc9/init_8cpp.html#ae652cea119536949677aa58728b70310">monotasking_shell_exit</a>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        syscall_pushTask((<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)<a class="code" href="../../d0/dc9/init_8cpp.html#ae652cea119536949677aa58728b70310">monotasking_shell_exit</a>);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">else</span></div>
@@ -185,8 +185,8 @@ Functions</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
 <div class="ttc" id="ainit_8cpp_html_ae652cea119536949677aa58728b70310"><div class="ttname"><a href="../../d0/dc9/init_8cpp.html#ae652cea119536949677aa58728b70310">monotasking_shell_exit</a></div><div class="ttdeci">void monotasking_shell_exit()</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dc9/init_8cpp_source.html#l00004">init.cpp:4</a></div></div>
+<div class="ttc" id="ainclude_2stdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

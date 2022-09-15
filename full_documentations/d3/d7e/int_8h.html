@@ -93,14 +93,14 @@ $(document).ready(function(){initNavTree('d3/d7e/int_8h.html','../../'); initRes
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>&gt;</code><br />
-<code>#include &lt;interrupts.h&gt;</code><br />
-<code>#include &lt;cputables.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d6/ded/interrupts_8h_source.html">interrupts.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d1/d57/cputables_8h_source.html">cputables.h</a>&gt;</code><br />
 </div>
 <p><a href="../../d3/d7e/int_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a46d9431511b0767b74e06ed231035fd4"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7e/int_8h.html#a46d9431511b0767b74e06ed231035fd4">INTERRUPT_HANDLER</a>) (<a class="el" href="../../da/da0/usm_8h.html#a39314cb3b1d33c1a40ed02b0d66aa456">TrapFrame</a> *)</td></tr>
+<tr class="memitem:a46d9431511b0767b74e06ed231035fd4"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7e/int_8h.html#a46d9431511b0767b74e06ed231035fd4">INTERRUPT_HANDLER</a>) (<a class="el" href="../../d6/ded/interrupts_8h.html#a39314cb3b1d33c1a40ed02b0d66aa456">TrapFrame</a> *)</td></tr>
 <tr class="separator:a46d9431511b0767b74e06ed231035fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a533db0d027aa02c25e2336a603941fab"><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7e/int_8h.html#a533db0d027aa02c25e2336a603941fab">InterruptVector</a></td></tr>
 <tr class="separator:a533db0d027aa02c25e2336a603941fab"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -112,10 +112,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a82ff29be9b9e427e81dac56660d946c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d7e/int_8h.html#a533db0d027aa02c25e2336a603941fab">InterruptVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7e/int_8h.html#a82ff29be9b9e427e81dac56660d946c8">RegisterInterrupt</a> (<a class="el" href="../../d3/d7e/int_8h.html#a46d9431511b0767b74e06ed231035fd4">INTERRUPT_HANDLER</a> Handler)</td></tr>
 <tr class="memdesc:a82ff29be9b9e427e81dac56660d946c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register interrupt to an interrupt handler.  <a href="../../d3/d7e/int_8h.html#a82ff29be9b9e427e81dac56660d946c8">More...</a><br /></td></tr>
 <tr class="separator:a82ff29be9b9e427e81dac56660d946c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6922babf1704eede0d03864a2322bb8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7e/int_8h.html#ac6922babf1704eede0d03864a2322bb8">CRegisterInterrupt</a> (<a class="el" href="../../d3/d7e/int_8h.html#a46d9431511b0767b74e06ed231035fd4">INTERRUPT_HANDLER</a> Handler, <a class="el" href="../../d3/d7e/int_8h.html#a533db0d027aa02c25e2336a603941fab">InterruptVector</a> Vector, bool Override)</td></tr>
+<tr class="memitem:ac6922babf1704eede0d03864a2322bb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7e/int_8h.html#ac6922babf1704eede0d03864a2322bb8">CRegisterInterrupt</a> (<a class="el" href="../../d3/d7e/int_8h.html#a46d9431511b0767b74e06ed231035fd4">INTERRUPT_HANDLER</a> Handler, <a class="el" href="../../d3/d7e/int_8h.html#a533db0d027aa02c25e2336a603941fab">InterruptVector</a> <a class="el" href="../../d6/da1/classVector.html">Vector</a>, <a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> Override)</td></tr>
 <tr class="memdesc:ac6922babf1704eede0d03864a2322bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register interrupt to an interrupt handler.  <a href="../../d3/d7e/int_8h.html#ac6922babf1704eede0d03864a2322bb8">More...</a><br /></td></tr>
 <tr class="separator:ac6922babf1704eede0d03864a2322bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67cf9ad996acf355aa2fd0f2d4dc6007"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7e/int_8h.html#a67cf9ad996acf355aa2fd0f2d4dc6007">UnregisterInterrupt</a> (<a class="el" href="../../d3/d7e/int_8h.html#a533db0d027aa02c25e2336a603941fab">InterruptVector</a> vector)</td></tr>
+<tr class="memitem:a67cf9ad996acf355aa2fd0f2d4dc6007"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7e/int_8h.html#a67cf9ad996acf355aa2fd0f2d4dc6007">UnregisterInterrupt</a> (<a class="el" href="../../d3/d7e/int_8h.html#a533db0d027aa02c25e2336a603941fab">InterruptVector</a> vector)</td></tr>
 <tr class="memdesc:a67cf9ad996acf355aa2fd0f2d4dc6007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregister interrupt from an interrupt handler.  <a href="../../d3/d7e/int_8h.html#a67cf9ad996acf355aa2fd0f2d4dc6007">More...</a><br /></td></tr>
 <tr class="separator:a67cf9ad996acf355aa2fd0f2d4dc6007"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -127,7 +127,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* INTERRUPT_HANDLER) (<a class="el" href="../../da/da0/usm_8h.html#a39314cb3b1d33c1a40ed02b0d66aa456">TrapFrame</a> *)</td>
+          <td class="memname">typedef void(* INTERRUPT_HANDLER) (<a class="el" href="../../d6/ded/interrupts_8h.html#a39314cb3b1d33c1a40ed02b0d66aa456">TrapFrame</a> *)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -160,7 +160,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool CRegisterInterrupt </td>
+          <td class="memname"><a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> CRegisterInterrupt </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d3/d7e/int_8h.html#a46d9431511b0767b74e06ed231035fd4">INTERRUPT_HANDLER</a>&#160;</td>
           <td class="paramname"><em>Handler</em>, </td>
@@ -174,7 +174,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td>
           <td class="paramname"><em>Override</em>&#160;</td>
         </tr>
         <tr>
@@ -189,7 +189,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Handler</td><td>Handler </td></tr>
-    <tr><td class="paramname">Vector</td><td>Vector to register </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d6/da1/classVector.html">Vector</a></td><td><a class="el" href="../../d6/da1/classVector.html">Vector</a> to register </td></tr>
     <tr><td class="paramname">Override</td><td>Override if already registered (Some interrupts are unable to be registered even if this is set to true) </td></tr>
   </table>
   </dd>
@@ -198,7 +198,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00144">144</a> of file <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html">Interrputs.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/dae/Interrputs_8cpp.html#a82ff29be9b9e427e81dac56660d946c8">RegisterInterrupt</a>(Handler, Vector, Override);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d6/dae/Interrputs_8cpp.html#a82ff29be9b9e427e81dac56660d946c8">RegisterInterrupt</a>(Handler, <a class="code" href="../../d6/da1/classVector.html">Vector</a>, Override);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00093">RegisterInterrupt()</a>.</p>
@@ -267,20 +267,20 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00093">93</a> of file <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html">Interrputs.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = IRQ18; i &lt; IRQ223; i++)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <a class="code" href="../../d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532aafb7bee1e974cc7f9299fcbc5d5693b2">IRQ18</a>; i &lt; <a class="code" href="../../d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a6419f5fd2f9458150cccfbf7c02a407c">IRQ223</a>; i++)</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../d6/dae/Interrputs_8cpp.html#ad389d82b0a0544aee9ca77dfb52ffab3">RegisteredInterrupts</a>[i])</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        {</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="../../d6/dae/Interrputs_8cpp.html#ad389d82b0a0544aee9ca77dfb52ffab3">RegisteredInterrupts</a>[i] = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="../../d6/dae/Interrputs_8cpp.html#ab11054ffabdd5332702c57d96af54bf3">MainRegisterInterrupt</a>(i, Handler);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="../../d1/d9c/arch_2amd64_2cpu_2apic_8hpp.html#a5515048c8fafc809034e21ad1dab28e7">apic</a>-&gt;<a class="code" href="../../d4/da9/classAPIC_1_1APIC.html#a5a0237ad5db3ff6e22e0527bf2da1a91">RedirectIRQ</a>(<a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a30ebbb6269a4df6e98c2428c5564f97d">CurrentCPU</a>-&gt;ID, i - IRQ0, 1);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="../../db/d16/debug_8h.html#a87de2fca12ef8f7205584b972c8b1f16">trace</a>(<span class="stringliteral">&quot;Registered interrupt handler for IRQ%d.&quot;</span>, i - IRQ0);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="../../d1/d9c/arch_2amd64_2cpu_2apic_8hpp.html#a5515048c8fafc809034e21ad1dab28e7">apic</a>-&gt;<a class="code" href="../../d4/da9/classAPIC_1_1APIC.html#a5a0237ad5db3ff6e22e0527bf2da1a91">RedirectIRQ</a>(<a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a30ebbb6269a4df6e98c2428c5564f97d">CurrentCPU</a>-&gt;ID, i - <a class="code" href="../../d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532acdb333eeb7aa4b08f250af6b077e1892">IRQ0</a>, 1);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="../../db/d16/debug_8h.html#a87de2fca12ef8f7205584b972c8b1f16">trace</a>(<span class="stringliteral">&quot;Registered interrupt handler for IRQ%d.&quot;</span>, i - <a class="code" href="../../d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532acdb333eeb7aa4b08f250af6b077e1892">IRQ0</a>);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">return</span> i;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;No available interrupt vector found.&quot;</span>);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d1/d9c/arch_2amd64_2cpu_2apic_8hpp.html#a5515048c8fafc809034e21ad1dab28e7">apic</a>, <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00060">CurrentCPU</a>, <a class="el" href="../../db/d16/debug_8h_source.html#l00068">err</a>, <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00049">MainRegisterInterrupt()</a>, <a class="el" href="../../d4/da9/classAPIC_1_1APIC.html#a5a0237ad5db3ff6e22e0527bf2da1a91">APIC::APIC::RedirectIRQ()</a>, <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00091">RegisteredInterrupts</a>, and <a class="el" href="../../db/d16/debug_8h_source.html#l00066">trace</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d9c/arch_2amd64_2cpu_2apic_8hpp.html#a5515048c8fafc809034e21ad1dab28e7">apic</a>, <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00049">CurrentCPU</a>, <a class="el" href="../../db/d16/debug_8h_source.html#l00068">err</a>, <a class="el" href="../../d6/ded/interrupts_8h_source.html#l00066">IRQ0</a>, <a class="el" href="../../d6/ded/interrupts_8h_source.html#l00086">IRQ18</a>, <a class="el" href="../../d6/ded/interrupts_8h_source.html#l00291">IRQ223</a>, <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00049">MainRegisterInterrupt()</a>, <a class="el" href="../../d4/da9/classAPIC_1_1APIC.html#a5a0237ad5db3ff6e22e0527bf2da1a91">APIC::APIC::RedirectIRQ()</a>, <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00091">RegisteredInterrupts</a>, and <a class="el" href="../../db/d16/debug_8h_source.html#l00066">trace</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00144">CRegisterInterrupt()</a>, <a class="el" href="../../df/dac/test_8cpp_source.html#l00226">do_interrupts_mem_test()</a>, <a class="el" href="../../d7/d9e/floppy_8cpp_source.html#l00137">Floppy::FloppyDriver::FloppyDriver()</a>, <a class="el" href="../../df/dd9/Driver_8cpp_source.html#l00020">FunctionCallHandler()</a>, <a class="el" href="../../d7/df5/keyboard_8cpp_source.html#l00034">PS2Keyboard::PS2KeyboardDriver::PS2KeyboardDriver()</a>, and <a class="el" href="../../d1/d75/mouse_8cpp_source.html#l00165">PS2Mouse::PS2MouseDriver::PS2MouseDriver()</a>.</p>
 
@@ -293,7 +293,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool UnregisterInterrupt </td>
+          <td class="memname"><a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> UnregisterInterrupt </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d3/d7e/int_8h.html#a533db0d027aa02c25e2336a603941fab">InterruptVector</a>&#160;</td>
           <td class="paramname"><em>vector</em></td><td>)</td>
@@ -305,7 +305,7 @@ Functions</h2></td></tr>
 <p>Unregister interrupt from an interrupt handler. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Vector</td><td>Vector to unregister </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d6/da1/classVector.html">Vector</a></td><td><a class="el" href="../../d6/da1/classVector.html">Vector</a> to unregister </td></tr>
   </table>
   </dd>
 </dl>
@@ -313,15 +313,15 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00149">149</a> of file <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html">Interrputs.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;{</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">if</span> (Vector &lt; IRQ18 || Vector &gt; IRQ223)</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/da1/classVector.html">Vector &lt; IRQ18 || Vector &gt;</a> <a class="code" href="../../d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a6419f5fd2f9458150cccfbf7c02a407c">IRQ223</a>)</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="../../d6/dae/Interrputs_8cpp.html#ad389d82b0a0544aee9ca77dfb52ffab3">RegisteredInterrupts</a>[Vector] = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="../../d6/dae/Interrputs_8cpp.html#a6e368482c15517c98a125f45675c8352">MainUnregisterInterrupt</a>(Vector);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#a87de2fca12ef8f7205584b972c8b1f16">trace</a>(<span class="stringliteral">&quot;IRQ%d unregistered.&quot;</span>, Vector - IRQ0);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="../../d6/dae/Interrputs_8cpp.html#ad389d82b0a0544aee9ca77dfb52ffab3">RegisteredInterrupts</a>[<a class="code" href="../../d6/da1/classVector.html">Vector</a>] = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="../../d6/dae/Interrputs_8cpp.html#a6e368482c15517c98a125f45675c8352">MainUnregisterInterrupt</a>(<a class="code" href="../../d6/da1/classVector.html">Vector</a>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="../../db/d16/debug_8h.html#a87de2fca12ef8f7205584b972c8b1f16">trace</a>(<span class="stringliteral">&quot;IRQ%d unregistered.&quot;</span>, <a class="code" href="../../d6/da1/classVector.html">Vector</a> - <a class="code" href="../../d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532acdb333eeb7aa4b08f250af6b077e1892">IRQ0</a>);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00055">MainUnregisterInterrupt()</a>, <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00091">RegisteredInterrupts</a>, and <a class="el" href="../../db/d16/debug_8h_source.html#l00066">trace</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/ded/interrupts_8h_source.html#l00066">IRQ0</a>, <a class="el" href="../../d6/ded/interrupts_8h_source.html#l00291">IRQ223</a>, <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00055">MainUnregisterInterrupt()</a>, <a class="el" href="../../d6/dae/Interrputs_8cpp_source.html#l00091">RegisteredInterrupts</a>, and <a class="el" href="../../db/d16/debug_8h_source.html#l00066">trace</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/dac/test_8cpp_source.html#l00226">do_interrupts_mem_test()</a>.</p>
 
@@ -335,12 +335,16 @@ Functions</h2></td></tr>
 <div class="ttc" id="adebug_8h_html_a87de2fca12ef8f7205584b972c8b1f16"><div class="ttname"><a href="../../db/d16/debug_8h.html#a87de2fca12ef8f7205584b972c8b1f16">trace</a></div><div class="ttdeci">#define trace(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/debug_8h_source.html#l00066">debug.h:66</a></div></div>
 <div class="ttc" id="aInterrputs_8cpp_html_ad389d82b0a0544aee9ca77dfb52ffab3"><div class="ttname"><a href="../../d6/dae/Interrputs_8cpp.html#ad389d82b0a0544aee9ca77dfb52ffab3">RegisteredInterrupts</a></div><div class="ttdeci">static bool RegisteredInterrupts[255]</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dae/Interrputs_8cpp_source.html#l00091">Interrputs.cpp:91</a></div></div>
 <div class="ttc" id="aPIC_8c_html_a1119739f7932598c83c3f8ce42a649de"><div class="ttname"><a href="../../de/d4c/PIC_8c.html#a1119739f7932598c83c3f8ce42a649de">PIC_sendEOI</a></div><div class="ttdeci">void PIC_sendEOI(unsigned char irq)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d4c/PIC_8c_source.html#l00042">PIC.c:42</a></div></div>
-<div class="ttc" id="aarch_2amd64_2cpu_2smp_8hpp_html_a30ebbb6269a4df6e98c2428c5564f97d"><div class="ttname"><a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a30ebbb6269a4df6e98c2428c5564f97d">CurrentCPU</a></div><div class="ttdeci">#define CurrentCPU</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00060">smp.hpp:60</a></div></div>
+<div class="ttc" id="aarch_2amd64_2cpu_2smp_8hpp_html_a30ebbb6269a4df6e98c2428c5564f97d"><div class="ttname"><a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a30ebbb6269a4df6e98c2428c5564f97d">CurrentCPU</a></div><div class="ttdeci">#define CurrentCPU</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00049">smp.hpp:49</a></div></div>
 <div class="ttc" id="aclassAPIC_1_1APIC_html_a5a0237ad5db3ff6e22e0527bf2da1a91"><div class="ttname"><a href="../../d4/da9/classAPIC_1_1APIC.html#a5a0237ad5db3ff6e22e0527bf2da1a91">APIC::APIC::RedirectIRQ</a></div><div class="ttdeci">void RedirectIRQ(int CPU, uint8_t IRQ, int Status)</div></div>
 <div class="ttc" id="aclassAPIC_1_1APIC_html_a7450e03745d7092a7a5c154ed7bb2f3b"><div class="ttname"><a href="../../d4/da9/classAPIC_1_1APIC.html#a7450e03745d7092a7a5c154ed7bb2f3b">APIC::APIC::EOI</a></div><div class="ttdeci">void EOI()</div></div>
 <div class="ttc" id="aInterrputs_8cpp_html_ab11054ffabdd5332702c57d96af54bf3"><div class="ttname"><a href="../../d6/dae/Interrputs_8cpp.html#ab11054ffabdd5332702c57d96af54bf3">MainRegisterInterrupt</a></div><div class="ttdeci">void MainRegisterInterrupt(uint8_t vector, INTERRUPT_HANDLER handle)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dae/Interrputs_8cpp_source.html#l00049">Interrputs.cpp:49</a></div></div>
+<div class="ttc" id="ainterrupts_8h_html_a58d3576ab1cdd9fa5eff87f877f0f532aafb7bee1e974cc7f9299fcbc5d5693b2"><div class="ttname"><a href="../../d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532aafb7bee1e974cc7f9299fcbc5d5693b2">IRQ18</a></div><div class="ttdeci">@ IRQ18</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/ded/interrupts_8h_source.html#l00086">interrupts.h:86</a></div></div>
 <div class="ttc" id="adebug_8h_html_aea447f57f81a2f5ee19ef8a1dd9e5d92"><div class="ttname"><a href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a></div><div class="ttdeci">#define err(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/debug_8h_source.html#l00068">debug.h:68</a></div></div>
 <div class="ttc" id="aInterrputs_8cpp_html_a82ff29be9b9e427e81dac56660d946c8"><div class="ttname"><a href="../../d6/dae/Interrputs_8cpp.html#a82ff29be9b9e427e81dac56660d946c8">RegisterInterrupt</a></div><div class="ttdeci">InterruptVector RegisterInterrupt(INTERRUPT_HANDLER Handler)</div><div class="ttdoc">Register interrupt to an interrupt handler.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dae/Interrputs_8cpp_source.html#l00093">Interrputs.cpp:93</a></div></div>
+<div class="ttc" id="ainterrupts_8h_html_a58d3576ab1cdd9fa5eff87f877f0f532acdb333eeb7aa4b08f250af6b077e1892"><div class="ttname"><a href="../../d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532acdb333eeb7aa4b08f250af6b077e1892">IRQ0</a></div><div class="ttdeci">@ IRQ0</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/ded/interrupts_8h_source.html#l00066">interrupts.h:66</a></div></div>
+<div class="ttc" id="aclassVector_html"><div class="ttname"><a href="../../d6/da1/classVector.html">Vector</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d16/vector_8hpp_source.html#l00005">vector.hpp:5</a></div></div>
+<div class="ttc" id="ainterrupts_8h_html_a58d3576ab1cdd9fa5eff87f877f0f532a6419f5fd2f9458150cccfbf7c02a407c"><div class="ttname"><a href="../../d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532a6419f5fd2f9458150cccfbf7c02a407c">IRQ223</a></div><div class="ttdeci">@ IRQ223</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/ded/interrupts_8h_source.html#l00291">interrupts.h:291</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

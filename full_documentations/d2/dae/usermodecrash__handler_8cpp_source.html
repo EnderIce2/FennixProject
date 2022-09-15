@@ -89,12 +89,12 @@ $(document).ready(function(){initNavTree('d2/dae/usermodecrash__handler_8cpp_sou
 <div class="title">usermodecrash_handler.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d2/dae/usermodecrash__handler_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/dac/io_8h.html">io.h</a>&gt;</span></div>
+<a href="../../d2/dae/usermodecrash__handler_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;io.h&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d2/d6e/syscalls_8h.html">syscalls.h</a>&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/da0/usm_8h.html">usm.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../d2/dae/usermodecrash__handler_8cpp.html#a5887528c5e92781931218f6f3b5bf239">    6</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/dae/usermodecrash__handler_8cpp.html#a5887528c5e92781931218f6f3b5bf239">main</a>(<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> *arg1, <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> *arg2)</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../d2/dae/usermodecrash__handler_8cpp.html#a5887528c5e92781931218f6f3b5bf239">    6</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d2/dae/usermodecrash__handler_8cpp.html#a5887528c5e92781931218f6f3b5bf239">main</a>(<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> *arg1, <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> *arg2)</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    syscall_dbg(0x3F8, (<span class="keywordtype">char</span> *)<span class="stringliteral">&quot;[UMC] Crash\n&quot;</span>);</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="../../da/da0/usm_8h.html#da/d98/struct__TrapFrame">TrapFrame</a> *frame = (<a class="code" href="../../da/da0/usm_8h.html#da/d98/struct__TrapFrame">TrapFrame</a>*)arg1;</div>
@@ -117,10 +117,9 @@ $(document).ready(function(){initNavTree('d2/dae/usermodecrash__handler_8cpp_sou
 </div><!-- doc-content -->
 <div class="ttc" id="asyscalls_8h_html"><div class="ttname"><a href="../../d2/d6e/syscalls_8h.html">syscalls.h</a></div></div>
 <div class="ttc" id="ausm_8h_html"><div class="ttname"><a href="../../da/da0/usm_8h.html">usm.h</a></div></div>
-<div class="ttc" id="astdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
-<div class="ttc" id="ausm_8h_html_da/d98/struct__TrapFrame"><div class="ttname"><a href="../../da/da0/usm_8h.html#da/d98/struct__TrapFrame">_TrapFrame</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/da0/usm_8h_source.html#l00055">usm.h:55</a></div></div>
-<div class="ttc" id="aio_8h_html"><div class="ttname"><a href="../../dc/dac/io_8h.html">io.h</a></div></div>
+<div class="ttc" id="ausm_8h_html_da/d98/struct__TrapFrame"><div class="ttname"><a href="../../da/da0/usm_8h.html#da/d98/struct__TrapFrame">_TrapFrame</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/ded/interrupts_8h_source.html#l00294">interrupts.h:294</a></div></div>
 <div class="ttc" id="ausermodecrash__handler_8cpp_html_a5887528c5e92781931218f6f3b5bf239"><div class="ttname"><a href="../../d2/dae/usermodecrash__handler_8cpp.html#a5887528c5e92781931218f6f3b5bf239">main</a></div><div class="ttdeci">int main(uint64_t *arg1, uint64_t *arg2)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dae/usermodecrash__handler_8cpp_source.html#l00006">usermodecrash_handler.cpp:6</a></div></div>
+<div class="ttc" id="ainclude_2stdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

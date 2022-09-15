@@ -101,13 +101,13 @@ $(document).ready(function(){initNavTree('dd/d62/Multitasking_8cpp.html','../../
 <code>#include &quot;<a class="el" href="../../dd/d46/fxsr_8h_source.html">../cpu/fxsr.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/d11/cpu_2gdt_8h_source.html">../cpu/gdt.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/dd0/timer_8h_source.html">../timer.h</a>&quot;</code><br />
-<code>#include &lt;interrupts.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d6/ded/interrupts_8h_source.html">interrupts.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d1/d30/critical_8hpp_source.html">critical.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../db/d16/debug_8h_source.html">debug.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d9/d87/sys_8h_source.html">sys.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d3/d7e/int_8h_source.html">int.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../dc/dac/io_8h_source.html">io.h</a>&gt;</code><br />
+<code>#include &lt;io.h&gt;</code><br />
 </div>
 <p><a href="../../dd/d62/Multitasking_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -118,43 +118,43 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a79173cb020c4dafa4ff23f9a093473ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/Multitasking_8cpp.html#a79173cb020c4dafa4ff23f9a093473ce">SchedulerInterrupt</a>&#160;&#160;&#160;IRQ16</td></tr>
+<tr class="memitem:a79173cb020c4dafa4ff23f9a093473ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/Multitasking_8cpp.html#a79173cb020c4dafa4ff23f9a093473ce">SchedulerInterrupt</a>&#160;&#160;&#160;<a class="el" href="../../d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532aba4f53f24e658cc7831d104622ccede2">IRQ16</a></td></tr>
 <tr class="separator:a79173cb020c4dafa4ff23f9a093473ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69e88d2644af903e00cc5fb802bdd125"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d62/Multitasking_8cpp.html#a69e88d2644af903e00cc5fb802bdd125">schedbg</a>(m, ...)</td></tr>
 <tr class="separator:a69e88d2644af903e00cc5fb802bdd125"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa180f7d65c125e518af93b0952cd4330"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#aa180f7d65c125e518af93b0952cd4330">Tasking::TriggerOneShot</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> Vector, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Miliseconds)</td></tr>
+<tr class="memitem:aa180f7d65c125e518af93b0952cd4330"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#aa180f7d65c125e518af93b0952cd4330">Tasking::TriggerOneShot</a> (<a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> <a class="el" href="../../d6/da1/classVector.html">Vector</a>, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Miliseconds)</td></tr>
 <tr class="separator:aa180f7d65c125e518af93b0952cd4330"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac4672b7cc823d1c581bdb99093a4c13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#aac4672b7cc823d1c581bdb99093a4c13">Tasking::ThreadDoExit</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Code)</td></tr>
+<tr class="memitem:aac4672b7cc823d1c581bdb99093a4c13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#aac4672b7cc823d1c581bdb99093a4c13">Tasking::ThreadDoExit</a> (<a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> <a class="el" href="../../d1/d57/cputables_8h.html#ac678cca2a7d570b7e2dd49c5619f98f7">Code</a>)</td></tr>
 <tr class="separator:aac4672b7cc823d1c581bdb99093a4c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43274cb852029802400aaa076cdfb23c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a43274cb852029802400aaa076cdfb23c">Tasking::UpdateTimeUsed</a> (GeneralProcessInfo *Info)</td></tr>
+<tr class="memitem:a43274cb852029802400aaa076cdfb23c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a43274cb852029802400aaa076cdfb23c">Tasking::UpdateTimeUsed</a> (<a class="el" href="../../db/da4/task_8h.html#d6/d1f/structGeneralProcessInfo">GeneralProcessInfo</a> *Info)</td></tr>
 <tr class="separator:a43274cb852029802400aaa076cdfb23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d9857402fba270bda6b1334019eadb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a7d9857402fba270bda6b1334019eadb2">Tasking::UpdateCPUUsage</a> (GeneralProcessInfo *Info)</td></tr>
+<tr class="memitem:a7d9857402fba270bda6b1334019eadb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a7d9857402fba270bda6b1334019eadb2">Tasking::UpdateCPUUsage</a> (<a class="el" href="../../db/da4/task_8h.html#d6/d1f/structGeneralProcessInfo">GeneralProcessInfo</a> *Info)</td></tr>
 <tr class="separator:a7d9857402fba270bda6b1334019eadb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92331944bcf2772f9549596804a7b3c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a92331944bcf2772f9549596804a7b3c9">Tasking::SetInfo</a> (GeneralProcessInfo *Info)</td></tr>
+<tr class="memitem:a92331944bcf2772f9549596804a7b3c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a92331944bcf2772f9549596804a7b3c9">Tasking::SetInfo</a> (<a class="el" href="../../db/da4/task_8h.html#d6/d1f/structGeneralProcessInfo">GeneralProcessInfo</a> *Info)</td></tr>
 <tr class="separator:a92331944bcf2772f9549596804a7b3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fe010fdb2bc473d0d32e34a9cdfe268"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a9fe010fdb2bc473d0d32e34a9cdfe268">Tasking::InvalidPCB</a> (PCB *pcb)</td></tr>
+<tr class="memitem:a9fe010fdb2bc473d0d32e34a9cdfe268"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a9fe010fdb2bc473d0d32e34a9cdfe268">Tasking::InvalidPCB</a> (<a class="el" href="../../db/da4/task_8h.html#d7/d51/structPCB">PCB</a> *pcb)</td></tr>
 <tr class="separator:a9fe010fdb2bc473d0d32e34a9cdfe268"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a00d718252a456f0247d8b9cf53b364"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a3a00d718252a456f0247d8b9cf53b364">Tasking::InvalidTCB</a> (TCB *tcb)</td></tr>
+<tr class="memitem:a3a00d718252a456f0247d8b9cf53b364"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a3a00d718252a456f0247d8b9cf53b364">Tasking::InvalidTCB</a> (<a class="el" href="../../de/d72/structTCB.html">TCB</a> *tcb)</td></tr>
 <tr class="separator:a3a00d718252a456f0247d8b9cf53b364"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7c126518d448a3afa0a4289e5e33e4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#ae7c126518d448a3afa0a4289e5e33e4e">Tasking::RemoveThread</a> (TCB *tcb)</td></tr>
+<tr class="memitem:ae7c126518d448a3afa0a4289e5e33e4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#ae7c126518d448a3afa0a4289e5e33e4e">Tasking::RemoveThread</a> (<a class="el" href="../../de/d72/structTCB.html">TCB</a> *tcb)</td></tr>
 <tr class="separator:ae7c126518d448a3afa0a4289e5e33e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8627badb67b9973f07ff93b566cc6c78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a8627badb67b9973f07ff93b566cc6c78">Tasking::RemoveProcess</a> (PCB *pcb)</td></tr>
+<tr class="memitem:a8627badb67b9973f07ff93b566cc6c78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a8627badb67b9973f07ff93b566cc6c78">Tasking::RemoveProcess</a> (<a class="el" href="../../db/da4/task_8h.html#d7/d51/structPCB">PCB</a> *pcb)</td></tr>
 <tr class="separator:a8627badb67b9973f07ff93b566cc6c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3da3dd13200f194acb02bf1988a9ed4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a3da3dd13200f194acb02bf1988a9ed4d">Tasking::UpdatePageTable</a> (CR3 pt)</td></tr>
+<tr class="memitem:a3da3dd13200f194acb02bf1988a9ed4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a3da3dd13200f194acb02bf1988a9ed4d">Tasking::UpdatePageTable</a> (<a class="el" href="../../d1/d57/cputables_8h.html#d2/dc5/unionCR3">CR3</a> pt)</td></tr>
 <tr class="separator:a3da3dd13200f194acb02bf1988a9ed4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab84aaaa32c2361f6c6a3d238244cce37"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#ab84aaaa32c2361f6c6a3d238244cce37">Tasking::__attribute__</a> ((naked, used)) void MonoTaskingSchedulerHelper()</td></tr>
 <tr class="separator:ab84aaaa32c2361f6c6a3d238244cce37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc364181274ac4dddd7875ea82316a7d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#adc364181274ac4dddd7875ea82316a7d">Tasking::MakeOneShot</a> ()</td></tr>
 <tr class="separator:adc364181274ac4dddd7875ea82316a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1a18cb7efea016c609d88926010490b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#ad1a18cb7efea016c609d88926010490b">Tasking::MultiTaskingSchedulerHandler</a> (ThreadRegisters *regs)</td></tr>
+<tr class="memitem:ad1a18cb7efea016c609d88926010490b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#ad1a18cb7efea016c609d88926010490b">Tasking::MultiTaskingSchedulerHandler</a> (<a class="el" href="../../db/da4/task_8h.html#a08614a5e6f4967b87b977ad143f1e8d0">ThreadRegisters</a> *regs)</td></tr>
 <tr class="separator:ad1a18cb7efea016c609d88926010490b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a52e60861a043aa74e382a708d44a831b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a52e60861a043aa74e382a708d44a831b">Tasking::MultitaskingSchedulerEnabled</a> = false</td></tr>
+<tr class="memitem:a52e60861a043aa74e382a708d44a831b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a52e60861a043aa74e382a708d44a831b">Tasking::MultitaskingSchedulerEnabled</a> = <a class="el" href="../../d9/d5e/stdbool_8h.html#a65e9886d74aaee76545e83dd09011727">false</a></td></tr>
 <tr class="separator:a52e60861a043aa74e382a708d44a831b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa39895793547ce88d34065ac7c20929"><td class="memItemLeft" align="right" valign="top">Multitasking *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#afa39895793547ce88d34065ac7c20929">Tasking::mt</a> = nullptr</td></tr>
 <tr class="separator:afa39895793547ce88d34065ac7c20929"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,7 +199,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SchedulerInterrupt&#160;&#160;&#160;IRQ16</td>
+          <td class="memname">#define SchedulerInterrupt&#160;&#160;&#160;<a class="el" href="../../d6/ded/interrupts_8h.html#a58d3576ab1cdd9fa5eff87f877f0f532aba4f53f24e658cc7831d104622ccede2">IRQ16</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

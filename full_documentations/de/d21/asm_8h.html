@@ -94,8 +94,8 @@ $(document).ready(function(){initNavTree('de/d21/asm_8h.html','../../'); initRes
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>&gt;</code><br />
-<code>#include &lt;interrupts.h&gt;</code><br />
-<code>#include &lt;cputables.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d6/ded/interrupts_8h_source.html">interrupts.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d1/d57/cputables_8h_source.html">cputables.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d7/d70/include_2cpuid_8h_source.html">cpuid.h</a>&quot;</code><br />
 </div>
 <p><a href="../../de/d21/asm_8h_source.html">Go to the source code of this file.</a></p>
@@ -580,17 +580,17 @@ Functions</h2></td></tr>
 <tr class="separator:a75925f15c897040b08f100998768e9b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10413c641ec7ad2cba180ab7a4860964"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a10413c641ec7ad2cba180ab7a4860964">lidt</a> (InterruptDescriptorTableDescriptor idt)</td></tr>
 <tr class="separator:a10413c641ec7ad2cba180ab7a4860964"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb2cd846bde96f074c6b6c69a9cf6589"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#acb2cd846bde96f074c6b6c69a9cf6589">ltr</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a> segment)</td></tr>
+<tr class="memitem:acb2cd846bde96f074c6b6c69a9cf6589"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#acb2cd846bde96f074c6b6c69a9cf6589">ltr</a> (<a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a> segment)</td></tr>
 <tr class="separator:acb2cd846bde96f074c6b6c69a9cf6589"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a603854948fa46bb53ec885481417412d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a603854948fa46bb53ec885481417412d">invlpg</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> <a class="el" href="../../d4/d04/arch_2i686_2cpu_2acpi_8hpp.html#aa00d9519823f4c24642f4832ddddaa3e">address</a>)</td></tr>
+<tr class="memitem:a603854948fa46bb53ec885481417412d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a603854948fa46bb53ec885481417412d">invlpg</a> (<a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> <a class="el" href="../../d4/d04/arch_2i686_2cpu_2acpi_8hpp.html#aa00d9519823f4c24642f4832ddddaa3e">address</a>)</td></tr>
 <tr class="separator:a603854948fa46bb53ec885481417412d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa51a78fcc364cb53e45423aea7fea8c2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#aa51a78fcc364cb53e45423aea7fea8c2">cpuid</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> val, <a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rax, <a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rbx, <a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rcx, <a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rdx)</td></tr>
+<tr class="memitem:aa51a78fcc364cb53e45423aea7fea8c2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#aa51a78fcc364cb53e45423aea7fea8c2">cpuid</a> (<a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> val, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rax, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rbx, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rcx, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rdx)</td></tr>
 <tr class="separator:aa51a78fcc364cb53e45423aea7fea8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c5e9dcf540a4b57071523620d5aa7cb"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a6c5e9dcf540a4b57071523620d5aa7cb">GetCPUIDMax</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> leaf, <a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *signature)</td></tr>
+<tr class="memitem:a6c5e9dcf540a4b57071523620d5aa7cb"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a6c5e9dcf540a4b57071523620d5aa7cb">GetCPUIDMax</a> (<a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> leaf, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *signature)</td></tr>
 <tr class="separator:a6c5e9dcf540a4b57071523620d5aa7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40505a3833567ff998b603215181563d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a40505a3833567ff998b603215181563d">GetCPUID</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> leaf, <a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rax, <a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rbx, <a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rcx, <a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rdx)</td></tr>
+<tr class="memitem:a40505a3833567ff998b603215181563d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a40505a3833567ff998b603215181563d">GetCPUID</a> (<a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> leaf, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rax, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rbx, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rcx, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *rdx)</td></tr>
 <tr class="separator:a40505a3833567ff998b603215181563d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61c21763ca3761238fce57d0b5e9bfa5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a61c21763ca3761238fce57d0b5e9bfa5">InterruptsEnabled</a> ()</td></tr>
+<tr class="memitem:a61c21763ca3761238fce57d0b5e9bfa5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a61c21763ca3761238fce57d0b5e9bfa5">InterruptsEnabled</a> ()</td></tr>
 <tr class="separator:a61c21763ca3761238fce57d0b5e9bfa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36a6047a627b17d620c712c4df574dd1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a36a6047a627b17d620c712c4df574dd1">mem_barrier</a> ()</td></tr>
 <tr class="separator:a36a6047a627b17d620c712c4df574dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -602,39 +602,39 @@ Functions</h2></td></tr>
 <tr class="separator:af539661e36a13fa37e662083184558f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb0288807f56da5d1cf9da19853fdeb1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#aeb0288807f56da5d1cf9da19853fdeb1">ENABLE_NX</a> ()</td></tr>
 <tr class="separator:aeb0288807f56da5d1cf9da19853fdeb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2309148bb17de85e37d9cfe30cb9607"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#aa2309148bb17de85e37d9cfe30cb9607">rdmsr</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> msr)</td></tr>
+<tr class="memitem:aa2309148bb17de85e37d9cfe30cb9607"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#aa2309148bb17de85e37d9cfe30cb9607">rdmsr</a> (<a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> msr)</td></tr>
 <tr class="separator:aa2309148bb17de85e37d9cfe30cb9607"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a963c52944d38a19deb2d9b24fffa8086"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a963c52944d38a19deb2d9b24fffa8086">wrmsr</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> msr, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Value)</td></tr>
+<tr class="memitem:a963c52944d38a19deb2d9b24fffa8086"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a963c52944d38a19deb2d9b24fffa8086">wrmsr</a> (<a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> msr, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Value)</td></tr>
 <tr class="separator:a963c52944d38a19deb2d9b24fffa8086"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fbaa82f7b04edf37c81b3f1287da013"><td class="memItemLeft" align="right" valign="top">static CR0&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a5fbaa82f7b04edf37c81b3f1287da013">readcr0</a> ()</td></tr>
+<tr class="memitem:a5fbaa82f7b04edf37c81b3f1287da013"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d57/cputables_8h.html#df/d42/unionCR0">CR0</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a5fbaa82f7b04edf37c81b3f1287da013">readcr0</a> ()</td></tr>
 <tr class="separator:a5fbaa82f7b04edf37c81b3f1287da013"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a509c217869d756c37b92170a63a1dc1b"><td class="memItemLeft" align="right" valign="top">static CR2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a509c217869d756c37b92170a63a1dc1b">readcr2</a> ()</td></tr>
+<tr class="memitem:a509c217869d756c37b92170a63a1dc1b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d57/cputables_8h.html#d4/dbd/unionCR2">CR2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a509c217869d756c37b92170a63a1dc1b">readcr2</a> ()</td></tr>
 <tr class="separator:a509c217869d756c37b92170a63a1dc1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebb904fda00c2f9c0244a9fbb48ce69f"><td class="memItemLeft" align="right" valign="top">static CR3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#aebb904fda00c2f9c0244a9fbb48ce69f">readcr3</a> ()</td></tr>
+<tr class="memitem:aebb904fda00c2f9c0244a9fbb48ce69f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d57/cputables_8h.html#d2/dc5/unionCR3">CR3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#aebb904fda00c2f9c0244a9fbb48ce69f">readcr3</a> ()</td></tr>
 <tr class="separator:aebb904fda00c2f9c0244a9fbb48ce69f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a728e21f478939e922f1fd6e1931f49c5"><td class="memItemLeft" align="right" valign="top">static CR4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a728e21f478939e922f1fd6e1931f49c5">readcr4</a> ()</td></tr>
+<tr class="memitem:a728e21f478939e922f1fd6e1931f49c5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d57/cputables_8h.html#d5/d36/unionCR4">CR4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a728e21f478939e922f1fd6e1931f49c5">readcr4</a> ()</td></tr>
 <tr class="separator:a728e21f478939e922f1fd6e1931f49c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2282a4d403ef7342a7e96179ed4889f"><td class="memItemLeft" align="right" valign="top">static CR8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#af2282a4d403ef7342a7e96179ed4889f">readcr8</a> ()</td></tr>
+<tr class="memitem:af2282a4d403ef7342a7e96179ed4889f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d57/cputables_8h.html#d9/d15/unionCR8">CR8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#af2282a4d403ef7342a7e96179ed4889f">readcr8</a> ()</td></tr>
 <tr class="separator:af2282a4d403ef7342a7e96179ed4889f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fbdb5ba92d1c9bcc9ea1cef529c2ce4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a9fbdb5ba92d1c9bcc9ea1cef529c2ce4">writecr0</a> (CR0 ControlRegister)</td></tr>
+<tr class="memitem:a9fbdb5ba92d1c9bcc9ea1cef529c2ce4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a9fbdb5ba92d1c9bcc9ea1cef529c2ce4">writecr0</a> (<a class="el" href="../../d1/d57/cputables_8h.html#df/d42/unionCR0">CR0</a> ControlRegister)</td></tr>
 <tr class="separator:a9fbdb5ba92d1c9bcc9ea1cef529c2ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52d19ad4294030ccca743d8405e059aa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a52d19ad4294030ccca743d8405e059aa">writecr2</a> (CR2 ControlRegister)</td></tr>
+<tr class="memitem:a52d19ad4294030ccca743d8405e059aa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a52d19ad4294030ccca743d8405e059aa">writecr2</a> (<a class="el" href="../../d1/d57/cputables_8h.html#d4/dbd/unionCR2">CR2</a> ControlRegister)</td></tr>
 <tr class="separator:a52d19ad4294030ccca743d8405e059aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e89e1c920366cc23bbcd638ddb51443"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a6e89e1c920366cc23bbcd638ddb51443">writecr3</a> (CR3 ControlRegister)</td></tr>
+<tr class="memitem:a6e89e1c920366cc23bbcd638ddb51443"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a6e89e1c920366cc23bbcd638ddb51443">writecr3</a> (<a class="el" href="../../d1/d57/cputables_8h.html#d2/dc5/unionCR3">CR3</a> ControlRegister)</td></tr>
 <tr class="separator:a6e89e1c920366cc23bbcd638ddb51443"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3818cf2cc2c7db1c463c0de32521f537"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a3818cf2cc2c7db1c463c0de32521f537">writecr4</a> (CR4 ControlRegister)</td></tr>
+<tr class="memitem:a3818cf2cc2c7db1c463c0de32521f537"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a3818cf2cc2c7db1c463c0de32521f537">writecr4</a> (<a class="el" href="../../d1/d57/cputables_8h.html#d5/d36/unionCR4">CR4</a> ControlRegister)</td></tr>
 <tr class="separator:a3818cf2cc2c7db1c463c0de32521f537"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79e36390e9157d4682cfbc26f7e46e45"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a79e36390e9157d4682cfbc26f7e46e45">writecr8</a> (CR8 ControlRegister)</td></tr>
+<tr class="memitem:a79e36390e9157d4682cfbc26f7e46e45"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a79e36390e9157d4682cfbc26f7e46e45">writecr8</a> (<a class="el" href="../../d1/d57/cputables_8h.html#d9/d15/unionCR8">CR8</a> ControlRegister)</td></tr>
 <tr class="separator:a79e36390e9157d4682cfbc26f7e46e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afca46c607baf7d37837563e5f701c491"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#afca46c607baf7d37837563e5f701c491">mwait</a> (size_t rax, size_t rcx)</td></tr>
+<tr class="memitem:afca46c607baf7d37837563e5f701c491"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#afca46c607baf7d37837563e5f701c491">mwait</a> (<a class="el" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a> rax, <a class="el" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a> rcx)</td></tr>
 <tr class="separator:afca46c607baf7d37837563e5f701c491"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd428d632a9ae837560b1203f3fd72f0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#acd428d632a9ae837560b1203f3fd72f0">monitor</a> (size_t rax, size_t rcx, size_t rdx)</td></tr>
+<tr class="memitem:acd428d632a9ae837560b1203f3fd72f0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#acd428d632a9ae837560b1203f3fd72f0">monitor</a> (<a class="el" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a> rax, <a class="el" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a> rcx, <a class="el" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a> rdx)</td></tr>
 <tr class="separator:acd428d632a9ae837560b1203f3fd72f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82cd8f1d06c17eaa343c5e552f82bbf0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a82cd8f1d06c17eaa343c5e552f82bbf0">stac</a> ()</td></tr>
 <tr class="separator:a82cd8f1d06c17eaa343c5e552f82bbf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d5f5318bbcd86c1ff9e2bfc1b733127"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a7d5f5318bbcd86c1ff9e2bfc1b733127">clac</a> ()</td></tr>
 <tr class="separator:a7d5f5318bbcd86c1ff9e2bfc1b733127"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03d0f35e9e0c2c286a3adbfa793171c4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a03d0f35e9e0c2c286a3adbfa793171c4">tsc</a> ()</td></tr>
+<tr class="memitem:a03d0f35e9e0c2c286a3adbfa793171c4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/asm_8h.html#a03d0f35e9e0c2c286a3adbfa793171c4">tsc</a> ()</td></tr>
 <tr class="separator:a03d0f35e9e0c2c286a3adbfa793171c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -1510,31 +1510,31 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void cpuid </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a>&#160;</td>
           <td class="paramname"><em>val</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
           <td class="paramname"><em>rax</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
           <td class="paramname"><em>rbx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
           <td class="paramname"><em>rcx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
           <td class="paramname"><em>rdx</em>&#160;</td>
         </tr>
         <tr>
@@ -1625,31 +1625,31 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static int GetCPUID </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a>&#160;</td>
           <td class="paramname"><em>leaf</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
           <td class="paramname"><em>rax</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
           <td class="paramname"><em>rbx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
           <td class="paramname"><em>rcx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
           <td class="paramname"><em>rdx</em>&#160;</td>
         </tr>
         <tr>
@@ -1667,7 +1667,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00080">80</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> max_leaf = <a class="code" href="../../de/d21/asm_8h.html#a6c5e9dcf540a4b57071523620d5aa7cb">GetCPUIDMax</a>(leaf &amp; 0x80000000, 0);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> max_leaf = <a class="code" href="../../de/d21/asm_8h.html#a6c5e9dcf540a4b57071523620d5aa7cb">GetCPUIDMax</a>(leaf &amp; 0x80000000, 0);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> (max_leaf == 0 || max_leaf &lt; leaf)</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="../../de/d21/asm_8h.html#aa51a78fcc364cb53e45423aea7fea8c2">cpuid</a>(leaf, rax, rbx, rcx, rdx);</div>
@@ -1690,13 +1690,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static int GetCPUIDMax </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a>&#160;</td>
           <td class="paramname"><em>leaf</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> *&#160;</td>
           <td class="paramname"><em>signature</em>&#160;</td>
         </tr>
         <tr>
@@ -1715,7 +1715,7 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00070">70</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// TODO: in 32bit is different?</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> rax, rbx, rcx, rdx;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> rax, rbx, rcx, rdx;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="../../de/d21/asm_8h.html#aa51a78fcc364cb53e45423aea7fea8c2">cpuid</a>(leaf, &amp;rax, &amp;rbx, &amp;rcx, &amp;rdx);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> (signature)</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        *signature = rbx;</div>
@@ -1738,7 +1738,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool InterruptsEnabled </td>
+          <td class="memname">static <a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> InterruptsEnabled </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1761,7 +1761,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        : <span class="stringliteral">&quot;=r&quot;</span>(<a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#a1e87af3c18a2fd36c61faf89949bdc3f">flags</a>.raw));</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#a1e87af3c18a2fd36c61faf89949bdc3f">flags</a>.IF == 1;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#elif defined(__i386__)</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> <a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#a1e87af3c18a2fd36c61faf89949bdc3f">flags</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> <a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#a1e87af3c18a2fd36c61faf89949bdc3f">flags</a>;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="stringliteral">&quot;pushfl\n&quot;</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="stringliteral">&quot;pop %0&quot;</span></div>
@@ -1788,7 +1788,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void invlpg </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td>
           <td class="paramname"><em>address</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1957,7 +1957,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void ltr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a>&#160;</td>
           <td class="paramname"><em>segment</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2052,19 +2052,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void monitor </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a>&#160;</td>
           <td class="paramname"><em>rax</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a>&#160;</td>
           <td class="paramname"><em>rcx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a>&#160;</td>
           <td class="paramname"><em>rdx</em>&#160;</td>
         </tr>
         <tr>
@@ -2101,13 +2101,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void mwait </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a>&#160;</td>
           <td class="paramname"><em>rax</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a>&#160;</td>
           <td class="paramname"><em>rcx</em>&#160;</td>
         </tr>
         <tr>
@@ -2142,9 +2142,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> rdmsr </td>
+          <td class="memname">static <a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> rdmsr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a>&#160;</td>
           <td class="paramname"><em>msr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2158,12 +2158,12 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00531">531</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;{</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> low, high;</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> low, high;</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;rdmsr&quot;</span></div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                 : <span class="stringliteral">&quot;=a&quot;</span>(low), <span class="stringliteral">&quot;=d&quot;</span>(high)</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                 : <span class="stringliteral">&quot;c&quot;</span>(msr)</div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="keywordflow">return</span> ((<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)low) | (((<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)high) &lt;&lt; 32);</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="keywordflow">return</span> ((<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)low) | (((<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)high) &lt;&lt; 32);</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="../../d2/da4/Debug_8c_source.html#l00012">dbg_showregs()</a>, <a class="el" href="../../d1/de6/SystemCalls_8cpp_source.html#l00053">init_syscalls()</a>, <a class="el" href="../../db/de7/CrashHandler_8cpp_source.html#l00060">isrcrash()</a>, <a class="el" href="../../dd/d62/Multitasking_8cpp_source.html#l00495">Tasking::MultiTaskingSchedulerHandler()</a>, and <a class="el" href="../../d6/da2/UserCrashHandler_8cpp_source.html#l00058">TriggerUserModeCrash()</a>.</p>
@@ -2180,7 +2180,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static CR0 readcr0 </td>
+          <td class="memname">static <a class="el" href="../../d1/d57/cputables_8h.html#df/d42/unionCR0">CR0</a> readcr0 </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2195,12 +2195,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00550">550</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;{</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %%cr0, %[Result]&quot;</span></div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;                 : [Result] <span class="stringliteral">&quot;=q&quot;</span>(Result));</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="keywordflow">return</span> (CR0){.raw = Result};</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d57/cputables_8h.html#df/d42/unionCR0">CR0</a>){.raw = Result};</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00183">CR0::raw</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="../../d2/da4/Debug_8c_source.html#l00012">dbg_showregs()</a>, and <a class="el" href="../../db/de7/CrashHandler_8cpp_source.html#l00060">isrcrash()</a>.</p>
 
 </div>
@@ -2215,7 +2217,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static CR2 readcr2 </td>
+          <td class="memname">static <a class="el" href="../../d1/d57/cputables_8h.html#d4/dbd/unionCR2">CR2</a> readcr2 </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2230,12 +2232,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00558">558</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;{</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %%cr2, %[Result]&quot;</span></div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                 : [Result] <span class="stringliteral">&quot;=q&quot;</span>(Result));</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="keywordflow">return</span> (CR2){.raw = Result};</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d57/cputables_8h.html#d4/dbd/unionCR2">CR2</a>){.raw = Result};</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00193">CR2::raw</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="../../d2/da4/Debug_8c_source.html#l00012">dbg_showregs()</a>, <a class="el" href="../../db/de7/CrashHandler_8cpp_source.html#l00060">isrcrash()</a>, and <a class="el" href="../../d6/da2/UserCrashHandler_8cpp_source.html#l00058">TriggerUserModeCrash()</a>.</p>
 
 </div>
@@ -2250,7 +2254,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static CR3 readcr3 </td>
+          <td class="memname">static <a class="el" href="../../d1/d57/cputables_8h.html#d2/dc5/unionCR3">CR3</a> readcr3 </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2265,12 +2269,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00566">566</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;{</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %%cr3, %[Result]&quot;</span></div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                 : [Result] <span class="stringliteral">&quot;=q&quot;</span>(Result));</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    <span class="keywordflow">return</span> (CR3){.raw = Result};</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d57/cputables_8h.html#d2/dc5/unionCR3">CR3</a>){.raw = Result};</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00207">CR3::raw</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="../../d2/da4/Debug_8c_source.html#l00012">dbg_showregs()</a>, <a class="el" href="../../db/de7/CrashHandler_8cpp_source.html#l00060">isrcrash()</a>, and <a class="el" href="../../dd/d62/Multitasking_8cpp_source.html#l00424">Tasking::UpdatePageTable()</a>.</p>
 
 </div>
@@ -2285,7 +2291,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static CR4 readcr4 </td>
+          <td class="memname">static <a class="el" href="../../d1/d57/cputables_8h.html#d5/d36/unionCR4">CR4</a> readcr4 </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2300,12 +2306,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00574">574</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;{</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %%cr4, %[Result]&quot;</span></div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                 : [Result] <span class="stringliteral">&quot;=q&quot;</span>(Result));</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <span class="keywordflow">return</span> (CR4){.raw = Result};</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d57/cputables_8h.html#d5/d36/unionCR4">CR4</a>){.raw = Result};</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00263">CR4::raw</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="../../d2/da4/Debug_8c_source.html#l00012">dbg_showregs()</a>, and <a class="el" href="../../db/de7/CrashHandler_8cpp_source.html#l00060">isrcrash()</a>.</p>
 
 </div>
@@ -2320,7 +2328,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static CR8 readcr8 </td>
+          <td class="memname">static <a class="el" href="../../d1/d57/cputables_8h.html#d9/d15/unionCR8">CR8</a> readcr8 </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2335,12 +2343,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00582">582</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;{</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Result;</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %%cr8, %[Result]&quot;</span></div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                 : [Result] <span class="stringliteral">&quot;=q&quot;</span>(Result));</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <span class="keywordflow">return</span> (CR8){.raw = Result};</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../d1/d57/cputables_8h.html#d9/d15/unionCR8">CR8</a>){.raw = Result};</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00273">CR8::raw</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="../../d2/da4/Debug_8c_source.html#l00012">dbg_showregs()</a>, and <a class="el" href="../../db/de7/CrashHandler_8cpp_source.html#l00060">isrcrash()</a>.</p>
 
 </div>
@@ -2419,7 +2429,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> tsc </td>
+          <td class="memname">static <a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> tsc </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2435,12 +2445,12 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00660">660</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;{</div>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;<span class="preprocessor">#if defined(__amd64__)</span></div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> rax, rdx;</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> rax, rdx;</div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;rdtsc&quot;</span></div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                 : <span class="stringliteral">&quot;=a&quot;</span>(rax), <span class="stringliteral">&quot;=d&quot;</span>(rdx));</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <span class="keywordflow">return</span> (rdx &lt;&lt; 32) | rax;</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;<span class="preprocessor">#elif defined(__i386__)</span></div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> eax;</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> eax;</div>
 <div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;rdtsc&quot;</span></div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                 : <span class="stringliteral">&quot;=A&quot;</span>(eax));</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <span class="keywordflow">return</span> eax;</div>
@@ -2463,7 +2473,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void writecr0 </td>
           <td>(</td>
-          <td class="paramtype">CR0&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d1/d57/cputables_8h.html#df/d42/unionCR0">CR0</a>&#160;</td>
           <td class="paramname"><em>ControlRegister</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2479,10 +2489,12 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;{</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[ControlRegister], %%cr0&quot;</span></div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                 :</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.raw)</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.<a class="code" href="../../d1/d57/cputables_8h.html#a4d48eba06dd4e8e44dff85cde83ca4b3">raw</a>)</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00183">CR0::raw</a>.</p>
+
 </div>
 </div>
 <a id="a52d19ad4294030ccca743d8405e059aa"></a>
@@ -2497,7 +2509,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void writecr2 </td>
           <td>(</td>
-          <td class="paramtype">CR2&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d1/d57/cputables_8h.html#d4/dbd/unionCR2">CR2</a>&#160;</td>
           <td class="paramname"><em>ControlRegister</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2513,10 +2525,12 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;{</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[ControlRegister], %%cr2&quot;</span></div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                 :</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.raw)</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.<a class="code" href="../../d1/d57/cputables_8h.html#a1a36bbc3606648f10142c672e9eb8e75">raw</a>)</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00193">CR2::raw</a>.</p>
+
 </div>
 </div>
 <a id="a6e89e1c920366cc23bbcd638ddb51443"></a>
@@ -2531,7 +2545,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void writecr3 </td>
           <td>(</td>
-          <td class="paramtype">CR3&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d1/d57/cputables_8h.html#d2/dc5/unionCR3">CR3</a>&#160;</td>
           <td class="paramname"><em>ControlRegister</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2547,10 +2561,12 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;{</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[ControlRegister], %%cr3&quot;</span></div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                 :</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.raw)</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.<a class="code" href="../../d1/d57/cputables_8h.html#ac656dd7db2726e2c9106bb85572bc4d8">raw</a>)</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00207">CR3::raw</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="../../db/dac/PageTableHeapManager_8cpp_source.html#l00060">init_kernelpml()</a>, <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html#l00235">Tasking::InterruptHandler()</a>, and <a class="el" href="../../dd/d62/Multitasking_8cpp_source.html#l00424">Tasking::UpdatePageTable()</a>.</p>
 
 </div>
@@ -2567,7 +2583,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void writecr4 </td>
           <td>(</td>
-          <td class="paramtype">CR4&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d1/d57/cputables_8h.html#d5/d36/unionCR4">CR4</a>&#160;</td>
           <td class="paramname"><em>ControlRegister</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2583,10 +2599,12 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;{</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[ControlRegister], %%cr4&quot;</span></div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                 :</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.raw)</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.<a class="code" href="../../d1/d57/cputables_8h.html#abb1e79931aab62942b9d8c2295470c8a">raw</a>)</div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00263">CR4::raw</a>.</p>
+
 </div>
 </div>
 <a id="a79e36390e9157d4682cfbc26f7e46e45"></a>
@@ -2601,7 +2619,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void writecr8 </td>
           <td>(</td>
-          <td class="paramtype">CR8&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d1/d57/cputables_8h.html#d9/d15/unionCR8">CR8</a>&#160;</td>
           <td class="paramname"><em>ControlRegister</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2617,10 +2635,12 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;{</div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[ControlRegister], %%cr8&quot;</span></div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                 :</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.raw)</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                 : [ControlRegister] <span class="stringliteral">&quot;q&quot;</span>(ControlRegister.<a class="code" href="../../d1/d57/cputables_8h.html#abc964dd50996fee2dd44603d57fd6ec0">raw</a>)</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00273">CR8::raw</a>.</p>
+
 </div>
 </div>
 <a id="a963c52944d38a19deb2d9b24fffa8086"></a>
@@ -2635,13 +2655,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static void wrmsr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a>&#160;</td>
           <td class="paramname"><em>msr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td>
           <td class="paramname"><em>Value</em>&#160;</td>
         </tr>
         <tr>
@@ -2659,14 +2679,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d21/asm_8h_source.html#l00541">541</a> of file <a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;{</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> low = Value, high = Value &gt;&gt; 32;</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> low = Value, high = Value &gt;&gt; 32;</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;wrmsr&quot;</span></div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                 :</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                 : <span class="stringliteral">&quot;c&quot;</span>(msr), <span class="stringliteral">&quot;a&quot;</span>(low), <span class="stringliteral">&quot;d&quot;</span>(high)</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="../../d1/de6/SystemCalls_8cpp_source.html#l00053">init_syscalls()</a>, and <a class="el" href="../../dd/d62/Multitasking_8cpp_source.html#l00495">Tasking::MultiTaskingSchedulerHandler()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/de6/SystemCalls_8cpp_source.html#l00053">init_syscalls()</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00046">limine_initializator()</a>, and <a class="el" href="../../dd/d62/Multitasking_8cpp_source.html#l00495">Tasking::MultiTaskingSchedulerHandler()</a>.</p>
 
 </div>
 </div>
@@ -2696,6 +2716,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa8d16fcfaafeada39ad48952baa2a3eda"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa8d16fcfaafeada39ad48952baa2a3eda">MSR_MC11_STATUS</a></div><div class="ttdeci">@ MSR_MC11_STATUS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00332">asm.h:332</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa9babddf97f52d6a2c6eee847938f4f18"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa9babddf97f52d6a2c6eee847938f4f18">MSR_X2APIC_ISR1</a></div><div class="ttdeci">@ MSR_X2APIC_ISR1</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00460">asm.h:460</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa8d7fca5db2c28b9057b24defb3355e77"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa8d7fca5db2c28b9057b24defb3355e77">MSR_MC18_STATUS</a></div><div class="ttdeci">@ MSR_MC18_STATUS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00360">asm.h:360</a></div></div>
+<div class="ttc" id="acputables_8h_html_abc964dd50996fee2dd44603d57fd6ec0"><div class="ttname"><a href="../../d1/d57/cputables_8h.html#abc964dd50996fee2dd44603d57fd6ec0">CR8::raw</a></div><div class="ttdeci">_cpu_raw_uint_t raw</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d57/cputables_8h_source.html#l00273">cputables.h:273</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa956864ae7b3a17eed6f8737fe647e912"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa956864ae7b3a17eed6f8737fe647e912">MSR_VMX_TRUE_PINBASED_CTLS</a></div><div class="ttdeci">@ MSR_VMX_TRUE_PINBASED_CTLS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00416">asm.h:416</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731faf7a5c98459874923a8267af67de1dc4a"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731faf7a5c98459874923a8267af67de1dc4a">MSR_MC27_STATUS</a></div><div class="ttdeci">@ MSR_MC27_STATUS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00396">asm.h:396</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa8df65f495999cb6031efe5c00973fa21"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa8df65f495999cb6031efe5c00973fa21">MSR_MC15_CTL</a></div><div class="ttdeci">@ MSR_MC15_CTL</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00347">asm.h:347</a></div></div>
@@ -2704,10 +2725,12 @@ Functions</h2></td></tr>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa7533407a1bce5a4fb4d61f75d9e6ce65"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa7533407a1bce5a4fb4d61f75d9e6ce65">MSR_MC19_MISC</a></div><div class="ttdeci">@ MSR_MC19_MISC</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00366">asm.h:366</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fae670acfb2c828e22b9f3e761f0daa13a"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fae670acfb2c828e22b9f3e761f0daa13a">MSR_MTRR_PHYSBASE8</a></div><div class="ttdeci">@ MSR_MTRR_PHYSBASE8</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00227">asm.h:227</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa7628568a341926848960083afa31a9ba"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa7628568a341926848960083afa31a9ba">MSR_X2APIC_TMR6</a></div><div class="ttdeci">@ MSR_X2APIC_TMR6</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00473">asm.h:473</a></div></div>
+<div class="ttc" id="acputables_8h_html_a1a36bbc3606648f10142c672e9eb8e75"><div class="ttname"><a href="../../d1/d57/cputables_8h.html#a1a36bbc3606648f10142c672e9eb8e75">CR2::raw</a></div><div class="ttdeci">_cpu_raw_uint_t raw</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d57/cputables_8h_source.html#l00193">cputables.h:193</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa7f52987a08b7beb4451befe5e4c708c3"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa7f52987a08b7beb4451befe5e4c708c3">MSR_MTRR_FIX4K_C8000</a></div><div class="ttdeci">@ MSR_MTRR_FIX4K_C8000</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00235">asm.h:235</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa9a18ec54241f6f194bbb3fb5f265e9f9"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa9a18ec54241f6f194bbb3fb5f265e9f9">MSR_MC19_ADDR</a></div><div class="ttdeci">@ MSR_MC19_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00365">asm.h:365</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa2135f41764db0c9e72e1c93a6d8ed537"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa2135f41764db0c9e72e1c93a6d8ed537">MSR_MTRR_PHYSMASK1</a></div><div class="ttdeci">@ MSR_MTRR_PHYSMASK1</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00214">asm.h:214</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa60edd8d7d3a11155c3b4c3e09fc9d68e"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa60edd8d7d3a11155c3b4c3e09fc9d68e">MSR_A_PMC2</a></div><div class="ttdeci">@ MSR_A_PMC2</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00423">asm.h:423</a></div></div>
+<div class="ttc" id="ainclude_2stdint_8h_html_a0a8582351ac627ee8bde2973c825e47f"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></div><div class="ttdeci">__UINT32_TYPE__ uint32_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00009">stdint.h:9</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa2ceab02e477e348e76b628ea12258f58"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa2ceab02e477e348e76b628ea12258f58">MSR_FIXED_CTR2</a></div><div class="ttdeci">@ MSR_FIXED_CTR2</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00278">asm.h:278</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa6b65727a16ddfa6edc758f3bd5b58c9a"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa6b65727a16ddfa6edc758f3bd5b58c9a">MSR_MTRR_PHYSMASK0</a></div><div class="ttdeci">@ MSR_MTRR_PHYSMASK0</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00212">asm.h:212</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa5400b1c61d9b5906dc0eb08db1323177"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa5400b1c61d9b5906dc0eb08db1323177">MSR_MTRR_FIX16K_A0000</a></div><div class="ttdeci">@ MSR_MTRR_FIX16K_A0000</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00233">asm.h:233</a></div></div>
@@ -2761,6 +2784,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa7d18b63561b5303691392b20a27a4cf0"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa7d18b63561b5303691392b20a27a4cf0">MSR_HWP_REQUEST_PKG</a></div><div class="ttdeci">@ MSR_HWP_REQUEST_PKG</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00448">asm.h:448</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fae005c06fd21ebf239157b5736ed9929c"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fae005c06fd21ebf239157b5736ed9929c">MSR_MC21_MISC</a></div><div class="ttdeci">@ MSR_MC21_MISC</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00374">asm.h:374</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa3ae60462c5307d50ce3f2f13b7ce3b10"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa3ae60462c5307d50ce3f2f13b7ce3b10">MSR_MTRR_FIX4K_C0000</a></div><div class="ttdeci">@ MSR_MTRR_FIX4K_C0000</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00234">asm.h:234</a></div></div>
+<div class="ttc" id="acputables_8h_html_ac656dd7db2726e2c9106bb85572bc4d8"><div class="ttname"><a href="../../d1/d57/cputables_8h.html#ac656dd7db2726e2c9106bb85572bc4d8">CR3::raw</a></div><div class="ttdeci">_cpu_raw_uint_t raw</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d57/cputables_8h_source.html#l00207">cputables.h:207</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731faaec3e463da31cfa741191cbe95e38084"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731faaec3e463da31cfa741191cbe95e38084">MSR_MC0_MISC</a></div><div class="ttdeci">@ MSR_MC0_MISC</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00290">asm.h:290</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fab2dc052fbe3d9ce0caadf8c25b71fb09"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fab2dc052fbe3d9ce0caadf8c25b71fb09">MSR_MC12_ADDR</a></div><div class="ttdeci">@ MSR_MC12_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00337">asm.h:337</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa9afb927abc2cb488598937c096b384ef"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa9afb927abc2cb488598937c096b384ef">MSR_MC5_CTL2</a></div><div class="ttdeci">@ MSR_MC5_CTL2</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00248">asm.h:248</a></div></div>
@@ -2784,6 +2808,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa108953e05538e52ebafcf7b344a45256"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa108953e05538e52ebafcf7b344a45256">MSR_X2APIC_TMR7</a></div><div class="ttdeci">@ MSR_X2APIC_TMR7</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00474">asm.h:474</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa42c483488b1be390f56fd7584ee97d52"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa42c483488b1be390f56fd7584ee97d52">MSR_MC4_ADDR</a></div><div class="ttdeci">@ MSR_MC4_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00305">asm.h:305</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa49aebe4db36de6fc9500f49135018510"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa49aebe4db36de6fc9500f49135018510">MSR_MTRR_FIX4K_E8000</a></div><div class="ttdeci">@ MSR_MTRR_FIX4K_E8000</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00239">asm.h:239</a></div></div>
+<div class="ttc" id="acputables_8h_html_df/d42/unionCR0"><div class="ttname"><a href="../../d1/d57/cputables_8h.html#df/d42/unionCR0">CR0</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d57/cputables_8h_source.html#l00150">cputables.h:150</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa14ab5da9ea59525b3ef32f0fef75287d"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa14ab5da9ea59525b3ef32f0fef75287d">MSR_PERF_CAPABILITIES</a></div><div class="ttdeci">@ MSR_PERF_CAPABILITIES</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00279">asm.h:279</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fafc87df7a35dd905be25d5b6995eb19b9"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fafc87df7a35dd905be25d5b6995eb19b9">MSR_MTRR_FIX4K_F0000</a></div><div class="ttdeci">@ MSR_MTRR_FIX4K_F0000</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00240">asm.h:240</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa795d4180c8349ccdc733dc9a71e2f6f9"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa795d4180c8349ccdc733dc9a71e2f6f9">MSR_MC0_CTL</a></div><div class="ttdeci">@ MSR_MC0_CTL</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00287">asm.h:287</a></div></div>
@@ -2796,6 +2821,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731faa0f1a1d4c9861821ce4a946277945453"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731faa0f1a1d4c9861821ce4a946277945453">MSR_MC6_STATUS</a></div><div class="ttdeci">@ MSR_MC6_STATUS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00312">asm.h:312</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa3addadc3f4e541b882a7119c55b39354"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa3addadc3f4e541b882a7119c55b39354">MSR_SYSENTER_ESP</a></div><div class="ttdeci">@ MSR_SYSENTER_ESP</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00187">asm.h:187</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fafec5140d3d1989c27b901badbaab637e"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fafec5140d3d1989c27b901badbaab637e">MSR_A_PMC3</a></div><div class="ttdeci">@ MSR_A_PMC3</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00424">asm.h:424</a></div></div>
+<div class="ttc" id="acputables_8h_html_d2/dc5/unionCR3"><div class="ttname"><a href="../../d1/d57/cputables_8h.html#d2/dc5/unionCR3">CR3</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d57/cputables_8h_source.html#l00196">cputables.h:196</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731faf52919665bc2f20fbaf5cb18d2209f42"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731faf52919665bc2f20fbaf5cb18d2209f42">MSR_MC14_CTL</a></div><div class="ttdeci">@ MSR_MC14_CTL</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00343">asm.h:343</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa2beae927904f591b854f8e4c1d779096"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa2beae927904f591b854f8e4c1d779096">MSR_PMC4</a></div><div class="ttdeci">@ MSR_PMC4</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00176">asm.h:176</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731faebf5916c9293882401b809fa4b77b061"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731faebf5916c9293882401b809fa4b77b061">MSR_CR_PAT_RESET</a></div><div class="ttdeci">@ MSR_CR_PAT_RESET</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00528">asm.h:528</a></div></div>
@@ -2823,7 +2849,6 @@ Functions</h2></td></tr>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa76fd5cb733aafe28c0eefb78a1ea6f84"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa76fd5cb733aafe28c0eefb78a1ea6f84">MSR_MC21_STATUS</a></div><div class="ttdeci">@ MSR_MC21_STATUS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00372">asm.h:372</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa7631e4666cc0f879928debc5a6bb982f"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa7631e4666cc0f879928debc5a6bb982f">MSR_MC8_STATUS</a></div><div class="ttdeci">@ MSR_MC8_STATUS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00320">asm.h:320</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa76ec5cde3a9f002d12121ac9f4020d6e"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa76ec5cde3a9f002d12121ac9f4020d6e">MSR_MC14_ADDR</a></div><div class="ttdeci">@ MSR_MC14_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00345">asm.h:345</a></div></div>
-<div class="ttc" id="astdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa97f0f51b6b4db38a409d922b858db06e"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa97f0f51b6b4db38a409d922b858db06e">MSR_MC6_CTL</a></div><div class="ttdeci">@ MSR_MC6_CTL</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00311">asm.h:311</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fae2cd68e4ef6744747ebd5f77d3da06a9"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fae2cd68e4ef6744747ebd5f77d3da06a9">MSR_RTIT_ADDR2_A</a></div><div class="ttdeci">@ MSR_RTIT_ADDR2_A</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00440">asm.h:440</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fae528cdb134359fd423030dbda98e8ba5"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fae528cdb134359fd423030dbda98e8ba5">MSR_VMX_TRUE_EXIT_CTLS</a></div><div class="ttdeci">@ MSR_VMX_TRUE_EXIT_CTLS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00418">asm.h:418</a></div></div>
@@ -2841,7 +2866,6 @@ Functions</h2></td></tr>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731faaada3f1c998e8aedefc2c95d6a1a65ac"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731faaada3f1c998e8aedefc2c95d6a1a65ac">MSR_X2APIC_TMR0</a></div><div class="ttdeci">@ MSR_X2APIC_TMR0</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00467">asm.h:467</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fab64c13249bf1d38999f5ce365a68bb4c"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fab64c13249bf1d38999f5ce365a68bb4c">MSR_RTIT_ADDR1_B</a></div><div class="ttdeci">@ MSR_RTIT_ADDR1_B</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00439">asm.h:439</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731faff41199d0abeee368e301eea58eb1b89"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731faff41199d0abeee368e301eea58eb1b89">MSR_MC15_STATUS</a></div><div class="ttdeci">@ MSR_MC15_STATUS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00348">asm.h:348</a></div></div>
-<div class="ttc" id="astdint_8h_html_a0a8582351ac627ee8bde2973c825e47f"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></div><div class="ttdeci">__UINT32_TYPE__ uint32_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00009">stdint.h:9</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731faa2e915538b42a3d7da8e4f29154307a6"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731faa2e915538b42a3d7da8e4f29154307a6">MSR_X2APIC_LDR</a></div><div class="ttdeci">@ MSR_X2APIC_LDR</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00457">asm.h:457</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa7208cf50d913723adc9892294787c21b"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa7208cf50d913723adc9892294787c21b">MSR_MC23_MISC</a></div><div class="ttdeci">@ MSR_MC23_MISC</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00382">asm.h:382</a></div></div>
 <div class="ttc" id="aarch_2amd64_2cpu_2acpi_8hpp_html_aa00d9519823f4c24642f4832ddddaa3e"><div class="ttname"><a href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#aa00d9519823f4c24642f4832ddddaa3e">address</a></div><div class="ttdeci">struct GenericAddressStructure address</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp_source.html#l00288">acpi.hpp:288</a></div></div>
@@ -2850,6 +2874,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa3a47955110030fcf1f219a68b06cd5cf"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa3a47955110030fcf1f219a68b06cd5cf">MSR_MC25_ADDR</a></div><div class="ttdeci">@ MSR_MC25_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00389">asm.h:389</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa9fbbb13d09bd12c4b1775f9a7d083145"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa9fbbb13d09bd12c4b1775f9a7d083145">MSR_VMX_TRUE_ENTRY_CTLS</a></div><div class="ttdeci">@ MSR_VMX_TRUE_ENTRY_CTLS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00419">asm.h:419</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa7616bb194838edcdd24122fe6619cf04"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa7616bb194838edcdd24122fe6619cf04">MSR_X2APIC_TMR2</a></div><div class="ttdeci">@ MSR_X2APIC_TMR2</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00469">asm.h:469</a></div></div>
+<div class="ttc" id="acputables_8h_html_d9/d15/unionCR8"><div class="ttname"><a href="../../d1/d57/cputables_8h.html#d9/d15/unionCR8">CR8</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d57/cputables_8h_source.html#l00266">cputables.h:266</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fad278d9c9e5c36a53312cbc9e4bd4a759"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fad278d9c9e5c36a53312cbc9e4bd4a759">MSR_L2_QOS_CFG</a></div><div class="ttdeci">@ MSR_L2_QOS_CFG</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00498">asm.h:498</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fab055c5a43b13caa388f571d45c3973a6"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fab055c5a43b13caa388f571d45c3973a6">MSR_X2APIC_IRR6</a></div><div class="ttdeci">@ MSR_X2APIC_IRR6</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00481">asm.h:481</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fac2b8944292d0d9f656afee0e6f45bb39"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fac2b8944292d0d9f656afee0e6f45bb39">MSR_MC27_CTL</a></div><div class="ttdeci">@ MSR_MC27_CTL</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00395">asm.h:395</a></div></div>
@@ -2884,7 +2909,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fade9014c5a29ec4193fd508b9afc1418c"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fade9014c5a29ec4193fd508b9afc1418c">MSR_MC22_ADDR</a></div><div class="ttdeci">@ MSR_MC22_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00377">asm.h:377</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa6d52f8b37a60aea1949206a52cdb76d0"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa6d52f8b37a60aea1949206a52cdb76d0">MSR_PKG_HDC_CTL</a></div><div class="ttdeci">@ MSR_PKG_HDC_CTL</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00506">asm.h:506</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa527c95610af48cf58a60bf6bda7e3276"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa527c95610af48cf58a60bf6bda7e3276">MSR_APIC_BASE</a></div><div class="ttdeci">@ MSR_APIC_BASE</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00159">asm.h:159</a></div></div>
-<div class="ttc" id="ausm_8h_html_df/d3f/unionRFLAGS"><div class="ttname"><a href="../../da/da0/usm_8h.html#df/d3f/unionRFLAGS">RFLAGS</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/da0/usm_8h_source.html#l00003">usm.h:3</a></div></div>
+<div class="ttc" id="ausm_8h_html_df/d3f/unionRFLAGS"><div class="ttname"><a href="../../da/da0/usm_8h.html#df/d3f/unionRFLAGS">RFLAGS</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d57/cputables_8h_source.html#l00098">cputables.h:98</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa4e1b18c123a0aee2a263cbc6d4866ad6"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa4e1b18c123a0aee2a263cbc6d4866ad6">MSR_MC11_CTL2</a></div><div class="ttdeci">@ MSR_MC11_CTL2</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00254">asm.h:254</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fae50c4161f7aeb878d3047ea1f74abdd4"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fae50c4161f7aeb878d3047ea1f74abdd4">MSR_MC6_ADDR</a></div><div class="ttdeci">@ MSR_MC6_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00313">asm.h:313</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa0390b6c53b084dc87805742e90910cc8"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa0390b6c53b084dc87805742e90910cc8">MSR_SGX_SVN_STATUS</a></div><div class="ttdeci">@ MSR_SGX_SVN_STATUS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00430">asm.h:430</a></div></div>
@@ -2903,6 +2928,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa6e4b24cfaaa5788bf99ee9f2ebd378ca"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa6e4b24cfaaa5788bf99ee9f2ebd378ca">MSR_PLATFORM_ID</a></div><div class="ttdeci">@ MSR_PLATFORM_ID</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00158">asm.h:158</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731faa79edb70cc7b1258af29abcf1d31ffda"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731faa79edb70cc7b1258af29abcf1d31ffda">MSR_FIXED_CTR_CTRL</a></div><div class="ttdeci">@ MSR_FIXED_CTR_CTRL</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00280">asm.h:280</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa5c93fbe301c0337c4603c1062d80aeea"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa5c93fbe301c0337c4603c1062d80aeea">MSR_MC8_CTL</a></div><div class="ttdeci">@ MSR_MC8_CTL</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00319">asm.h:319</a></div></div>
+<div class="ttc" id="acputables_8h_html_d4/dbd/unionCR2"><div class="ttname"><a href="../../d1/d57/cputables_8h.html#d4/dbd/unionCR2">CR2</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d57/cputables_8h_source.html#l00186">cputables.h:186</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731faf0884ef7a38a79b866946421b8a4c127"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731faf0884ef7a38a79b866946421b8a4c127">MSR_PLATFORM_DCA_CAP</a></div><div class="ttdeci">@ MSR_PLATFORM_DCA_CAP</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00208">asm.h:208</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa8a50d41c32cbf8f7d5e943f6bd0bfe4f"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa8a50d41c32cbf8f7d5e943f6bd0bfe4f">MSR_MC25_STATUS</a></div><div class="ttdeci">@ MSR_MC25_STATUS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00388">asm.h:388</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa33a4c01cbdd9fe23b55dfd1449612f3d"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa33a4c01cbdd9fe23b55dfd1449612f3d">MSR_RTIT_ADDR1_A</a></div><div class="ttdeci">@ MSR_RTIT_ADDR1_A</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00438">asm.h:438</a></div></div>
@@ -2936,6 +2962,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa7ee8c87e228e1b3e97daf1a7c7846b3c"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa7ee8c87e228e1b3e97daf1a7c7846b3c">MSR_A_PMC1</a></div><div class="ttdeci">@ MSR_A_PMC1</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00422">asm.h:422</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa97db3bee0e837afce89dbb670a18b699"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa97db3bee0e837afce89dbb670a18b699">MSR_MC28_ADDR</a></div><div class="ttdeci">@ MSR_MC28_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00401">asm.h:401</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa3c27ea250acec409cd23c6ca3125044f"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa3c27ea250acec409cd23c6ca3125044f">MSR_MC22_STATUS</a></div><div class="ttdeci">@ MSR_MC22_STATUS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00376">asm.h:376</a></div></div>
+<div class="ttc" id="acputables_8h_html_d5/d36/unionCR4"><div class="ttname"><a href="../../d1/d57/cputables_8h.html#d5/d36/unionCR4">CR4</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d57/cputables_8h_source.html#l00210">cputables.h:210</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa2183e4c08e3df75535b7ffe09cd41da0"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa2183e4c08e3df75535b7ffe09cd41da0">MSR_MC12_STATUS</a></div><div class="ttdeci">@ MSR_MC12_STATUS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00336">asm.h:336</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fae61ea491756be33541fefb63ff3f460d"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fae61ea491756be33541fefb63ff3f460d">MSR_MC27_ADDR</a></div><div class="ttdeci">@ MSR_MC27_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00397">asm.h:397</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fade63864f23f4e45e5f6bc207d775b580"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fade63864f23f4e45e5f6bc207d775b580">MSR_X2APIC_IRR1</a></div><div class="ttdeci">@ MSR_X2APIC_IRR1</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00476">asm.h:476</a></div></div>
@@ -2987,9 +3014,11 @@ Functions</h2></td></tr>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fabfc238e468e192033c72acc6a2471252"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fabfc238e468e192033c72acc6a2471252">MSR_DEBUG_INTERFACE</a></div><div class="ttdeci">@ MSR_DEBUG_INTERFACE</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00496">asm.h:496</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa5ea43032b0470462e5594e077186ad8e"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa5ea43032b0470462e5594e077186ad8e">MSR_XSS</a></div><div class="ttdeci">@ MSR_XSS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00505">asm.h:505</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa0d9ccb173866883e4a206d20e4aab1a3"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa0d9ccb173866883e4a206d20e4aab1a3">MSR_SYSCALL_MASK</a></div><div class="ttdeci">@ MSR_SYSCALL_MASK</div><div class="ttdoc">EFLAGS mask for syscall (0xC0000084)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00518">asm.h:518</a></div></div>
+<div class="ttc" id="acputables_8h_html_a4d48eba06dd4e8e44dff85cde83ca4b3"><div class="ttname"><a href="../../d1/d57/cputables_8h.html#a4d48eba06dd4e8e44dff85cde83ca4b3">CR0::raw</a></div><div class="ttdeci">_cpu_raw_uint_t raw</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d57/cputables_8h_source.html#l00183">cputables.h:183</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa9f33c6664e6c6fb027d6676b92094fa5"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa9f33c6664e6c6fb027d6676b92094fa5">MSR_PERFEVTSEL2</a></div><div class="ttdeci">@ MSR_PERFEVTSEL2</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00194">asm.h:194</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fac1cf316c95f5139198ca6afc7b7daf22"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fac1cf316c95f5139198ca6afc7b7daf22">MSR_MC4_MISC</a></div><div class="ttdeci">@ MSR_MC4_MISC</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00306">asm.h:306</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa9add28362ea78868ff3e6b6a89539069"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa9add28362ea78868ff3e6b6a89539069">MSR_QM_CTR</a></div><div class="ttdeci">@ MSR_QM_CTR</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00500">asm.h:500</a></div></div>
+<div class="ttc" id="ainclude_2stdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731faff9e44586224fdbe403a2e50f04bcac5"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731faff9e44586224fdbe403a2e50f04bcac5">MSR_MC23_ADDR</a></div><div class="ttdeci">@ MSR_MC23_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00381">asm.h:381</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa5ad9a90e73edc8429c0f8b55d65a125c"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa5ad9a90e73edc8429c0f8b55d65a125c">MSR_MC29_CTL2</a></div><div class="ttdeci">@ MSR_MC29_CTL2</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00272">asm.h:272</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa03d66c6a398fcc70f8d9d75b5385d79a"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa03d66c6a398fcc70f8d9d75b5385d79a">MSR_MC14_MISC</a></div><div class="ttdeci">@ MSR_MC14_MISC</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00346">asm.h:346</a></div></div>
@@ -3025,6 +3054,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fac9ccdc32d3af0a4e0be0b5e0fc2afa58"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fac9ccdc32d3af0a4e0be0b5e0fc2afa58">MSR_MC24_STATUS</a></div><div class="ttdeci">@ MSR_MC24_STATUS</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00384">asm.h:384</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa20420b937c7290f14bc643cc8f2832a7"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa20420b937c7290f14bc643cc8f2832a7">MSR_VMX_EPT_VPID_CAP</a></div><div class="ttdeci">@ MSR_VMX_EPT_VPID_CAP</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00415">asm.h:415</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa09dad25a0b3eda2dd3356ad9e8b635ec"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa09dad25a0b3eda2dd3356ad9e8b635ec">MSR_MC30_CTL2</a></div><div class="ttdeci">@ MSR_MC30_CTL2</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00273">asm.h:273</a></div></div>
+<div class="ttc" id="acputables_8h_html_abb1e79931aab62942b9d8c2295470c8a"><div class="ttname"><a href="../../d1/d57/cputables_8h.html#abb1e79931aab62942b9d8c2295470c8a">CR4::raw</a></div><div class="ttdeci">_cpu_raw_uint_t raw</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d57/cputables_8h_source.html#l00263">cputables.h:263</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa1dfa31044d799e0eaf4cb9c1b18f5d29"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa1dfa31044d799e0eaf4cb9c1b18f5d29">MSR_MC15_ADDR</a></div><div class="ttdeci">@ MSR_MC15_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00349">asm.h:349</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa73f7ba2a4b202bb3f1da7f870a795512"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa73f7ba2a4b202bb3f1da7f870a795512">MSR_MTRR_PHYSBASE9</a></div><div class="ttdeci">@ MSR_MTRR_PHYSBASE9</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00229">asm.h:229</a></div></div>
 <div class="ttc" id="aasm_8h_html_aa8cb79e17a4c405e5b42a966fa64731fa2a95bfe99781adbecef67d7d28bd55c1"><div class="ttname"><a href="../../de/d21/asm_8h.html#aa8cb79e17a4c405e5b42a966fa64731fa2a95bfe99781adbecef67d7d28bd55c1">MSR_MC17_CTL</a></div><div class="ttdeci">@ MSR_MC17_CTL</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00355">asm.h:355</a></div></div>

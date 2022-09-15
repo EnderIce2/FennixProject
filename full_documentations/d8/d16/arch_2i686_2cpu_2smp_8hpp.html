@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('d8/d16/arch_2i686_2cpu_2smp_8hpp.html'
 <div class="title">smp.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;task.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="../../db/da4/task_8h_source.html">task.h</a>&gt;</code><br />
 <code>#include &quot;../kernel.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d4/d04/arch_2i686_2cpu_2acpi_8hpp_source.html">acpi.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d4/d59/arch_2i686_2cpu_2idt_8h_source.html">idt.h</a>&quot;</code><br />
@@ -127,32 +127,32 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a1906bcc6780f95c35bdcd72d37c42b71"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="../../de/df9/structCPUData.html">CPUData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a1906bcc6780f95c35bdcd72d37c42b71">__attribute__</a> ((packed))</td></tr>
 <tr class="separator:a1906bcc6780f95c35bdcd72d37c42b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad379551023067e305dc57b87bd48dc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> Stack[<a class="el" href="../../da/ddb/heap_8h.html#a6423a880df59733d2d9b509c7718d3a9">STACK_SIZE</a>]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#aad379551023067e305dc57b87bd48dc9">__attribute__</a> ((aligned(<a class="el" href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>)))</td></tr>
+<tr class="memitem:aad379551023067e305dc57b87bd48dc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> Stack[<a class="el" href="../../da/ddb/heap_8h.html#a6423a880df59733d2d9b509c7718d3a9">STACK_SIZE</a>]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#aad379551023067e305dc57b87bd48dc9">__attribute__</a> ((aligned(<a class="el" href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>)))</td></tr>
 <tr class="separator:aad379551023067e305dc57b87bd48dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f6a26fc56e8dab11a0baad77cbe8c75"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a0f6a26fc56e8dab11a0baad77cbe8c75">GetCurrentCPUID</a> ()</td></tr>
 <tr class="separator:a0f6a26fc56e8dab11a0baad77cbe8c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3b82466b3dec0980cac2c1533bb66d4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/df9/structCPUData.html">CPUData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#ae3b82466b3dec0980cac2c1533bb66d4">GetCurrentCPU</a> ()</td></tr>
 <tr class="separator:ae3b82466b3dec0980cac2c1533bb66d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73dc7114c7820572b75930c3df536f5e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/df9/structCPUData.html">CPUData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a73dc7114c7820572b75930c3df536f5e">GetCPU</a> (<a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> id)</td></tr>
+<tr class="memitem:a73dc7114c7820572b75930c3df536f5e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/df9/structCPUData.html">CPUData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a73dc7114c7820572b75930c3df536f5e">GetCPU</a> (<a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> id)</td></tr>
 <tr class="separator:a73dc7114c7820572b75930c3df536f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a3bd97f3df8bfa82b683821eeace4b3d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a3bd97f3df8bfa82b683821eeace4b3d6">ID</a></td></tr>
+<tr class="memitem:a3bd97f3df8bfa82b683821eeace4b3d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a3bd97f3df8bfa82b683821eeace4b3d6">ID</a></td></tr>
 <tr class="separator:a3bd97f3df8bfa82b683821eeace4b3d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5eb5083f62a945228d1454c0e56c807"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/db9/classACPI_1_1MADT.html#dc/d88/structACPI_1_1MADT_1_1LocalAPIC">ACPI::MADT::LocalAPIC</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#ae5eb5083f62a945228d1454c0e56c807">LAPIC</a></td></tr>
 <tr class="separator:ae5eb5083f62a945228d1454c0e56c807"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a217d4311c393eae6832c2a0c319d5b8f"><td class="memItemLeft" align="right" valign="top">CR3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a217d4311c393eae6832c2a0c319d5b8f">PageTable</a></td></tr>
+<tr class="memitem:a217d4311c393eae6832c2a0c319d5b8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d57/cputables_8h.html#d2/dc5/unionCR3">CR3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a217d4311c393eae6832c2a0c319d5b8f">PageTable</a></td></tr>
 <tr class="separator:a217d4311c393eae6832c2a0c319d5b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a053d2c07529011a16699ebe30a79a407"><td class="memItemLeft" align="right" valign="top">GlobalDescriptorTableDescriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a053d2c07529011a16699ebe30a79a407">GDT</a></td></tr>
 <tr class="separator:a053d2c07529011a16699ebe30a79a407"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d433dce9397625448f24b08f87e17fc"><td class="memItemLeft" align="right" valign="top">InterruptDescriptorTableDescriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a1d433dce9397625448f24b08f87e17fc">IDT</a></td></tr>
 <tr class="separator:a1d433dce9397625448f24b08f87e17fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6bd6f154ab69ecc44691bfda635b613"><td class="memItemLeft" align="right" valign="top">TaskStateSegment&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#ab6bd6f154ab69ecc44691bfda635b613">TSS</a></td></tr>
+<tr class="memitem:ab6bd6f154ab69ecc44691bfda635b613"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d57/cputables_8h.html#abc498068b381d117f14e2f08434d4ff4">TaskStateSegment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#ab6bd6f154ab69ecc44691bfda635b613">TSS</a></td></tr>
 <tr class="separator:ab6bd6f154ab69ecc44691bfda635b613"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaca274ceaa3c05638cfb874c60ffe8a7"><td class="memItemLeft" align="right" valign="top">PCB *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#aaca274ceaa3c05638cfb874c60ffe8a7">CurrentProcess</a></td></tr>
+<tr class="memitem:aaca274ceaa3c05638cfb874c60ffe8a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/da4/task_8h.html#d7/d51/structPCB">PCB</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#aaca274ceaa3c05638cfb874c60ffe8a7">CurrentProcess</a></td></tr>
 <tr class="separator:aaca274ceaa3c05638cfb874c60ffe8a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fb3e8918d107d4dbb0a06ab72fec27b"><td class="memItemLeft" align="right" valign="top">TCB *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a9fb3e8918d107d4dbb0a06ab72fec27b">CurrentThread</a></td></tr>
+<tr class="memitem:a9fb3e8918d107d4dbb0a06ab72fec27b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d72/structTCB.html">TCB</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a9fb3e8918d107d4dbb0a06ab72fec27b">CurrentThread</a></td></tr>
 <tr class="separator:a9fb3e8918d107d4dbb0a06ab72fec27b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ec11ac6067b0e4293052a4a39e925f7"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a8ec11ac6067b0e4293052a4a39e925f7">ErrorCode</a></td></tr>
 <tr class="separator:a8ec11ac6067b0e4293052a4a39e925f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,7 +220,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> Stack [<a class="el" href="../../da/ddb/heap_8h.html#a6423a880df59733d2d9b509c7718d3a9">STACK_SIZE</a>] __attribute__::__attribute__ </td>
+          <td class="memname"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> Stack [<a class="el" href="../../da/ddb/heap_8h.html#a6423a880df59733d2d9b509c7718d3a9">STACK_SIZE</a>] __attribute__::__attribute__ </td>
           <td>(</td>
           <td class="paramtype">(aligned(<a class="el" href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>))&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -261,7 +261,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static <a class="el" href="../../de/df9/structCPUData.html">CPUData</a>* GetCPU </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
           <td></td>
         </tr>
@@ -274,9 +274,9 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp_source.html#l00058">58</a> of file <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{ <span class="keywordflow">return</span> &amp;<a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>[id]; }</div>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{ <span class="keywordflow">return</span> &amp;<a class="code" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>[id]; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>.</p>
 
 </div>
 </div>
@@ -305,18 +305,18 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp_source.html#l00045">45</a> of file <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> ret = <a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a0f6a26fc56e8dab11a0baad77cbe8c75">GetCurrentCPUID</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> ret = <a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a0f6a26fc56e8dab11a0baad77cbe8c75">GetCurrentCPUID</a>();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>[ret].<a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#aca4807be15fb54de1e82db8048022322">Checksum</a> != <a class="code" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a39c988cf13da29ba3d8293d925456ab1">CPU_DATA_CHECKSUM</a>)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>[ret].<a class="code" href="../../db/da4/task_8h.html#a06b5e1d0b960a8ac8adb8a4150ad6b50">Checksum</a> != <a class="code" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a39c988cf13da29ba3d8293d925456ab1">CPU_DATA_CHECKSUM</a>)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">// TODO: i think somehow i messed this up somehere... i&#39;ll figure it out later... but now i will return the first cpu</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a>(<span class="stringliteral">&quot;CPU %d data is corrupted!&quot;</span>, ret);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> &amp;<a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>[0];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> &amp;<a class="code" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>[0];</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> &amp;<a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>[ret];</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> &amp;<a class="code" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>[ret];</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00013">Checksum</a>, <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp_source.html#l00008">CPU_DATA_CHECKSUM</a>, <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>, <a class="el" href="../../db/d16/debug_8h_source.html#l00068">err</a>, and <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a0f6a26fc56e8dab11a0baad77cbe8c75">GetCurrentCPUID()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp_source.html#l00008">CPU_DATA_CHECKSUM</a>, <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a>, <a class="el" href="../../db/d16/debug_8h_source.html#l00068">err</a>, and <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a0f6a26fc56e8dab11a0baad77cbe8c75">GetCurrentCPUID()</a>.</p>
 
 </div>
 </div>
@@ -345,7 +345,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int Checksum = <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a39c988cf13da29ba3d8293d925456ab1">CPU_DATA_CHECKSUM</a></td>
+          <td class="memname">unsigned int <a class="el" href="../../db/da4/task_8h.html#a06b5e1d0b960a8ac8adb8a4150ad6b50">Checksum</a> = <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a39c988cf13da29ba3d8293d925456ab1">CPU_DATA_CHECKSUM</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -366,6 +366,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp_source.html#l00058">GetCPU()</a>, and <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp_source.html#l00045">GetCurrentCPU()</a>.</p>
+
 </div>
 </div>
 <a id="aaca274ceaa3c05638cfb874c60ffe8a7"></a>
@@ -375,7 +377,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PCB* CurrentProcess</td>
+          <td class="memname"><a class="el" href="../../db/da4/task_8h.html#d7/d51/structPCB">PCB</a>* CurrentProcess</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -391,7 +393,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TCB* CurrentThread</td>
+          <td class="memname"><a class="el" href="../../de/d72/structTCB.html">TCB</a>* CurrentThread</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -439,7 +441,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> ID</td>
+          <td class="memname"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> ID</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -487,7 +489,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">CR3 PageTable</td>
+          <td class="memname"><a class="el" href="../../d1/d57/cputables_8h.html#d2/dc5/unionCR3">CR3</a> PageTable</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -517,7 +519,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TaskStateSegment TSS</td>
+          <td class="memname"><a class="el" href="../../d1/d57/cputables_8h.html#abc498068b381d117f14e2f08434d4ff4">TaskStateSegment</a> TSS</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -528,12 +530,12 @@ Variables</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aarch_2i686_2cpu_2smp_8hpp_html_afc5dbb2d5fe89bc4f0401587502bf667"><div class="ttname"><a href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a></div><div class="ttdeci">CPUData CPUs[]</div></div>
 <div class="ttc" id="aarch_2i686_2cpu_2smp_8hpp_html_a39c988cf13da29ba3d8293d925456ab1"><div class="ttname"><a href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a39c988cf13da29ba3d8293d925456ab1">CPU_DATA_CHECKSUM</a></div><div class="ttdeci">#define CPU_DATA_CHECKSUM</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp_source.html#l00008">smp.hpp:8</a></div></div>
-<div class="ttc" id="aarch_2amd64_2cpu_2smp_8hpp_html_aca4807be15fb54de1e82db8048022322"><div class="ttname"><a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#aca4807be15fb54de1e82db8048022322">Checksum</a></div><div class="ttdeci">unsigned int Checksum</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00013">smp.hpp:13</a></div></div>
-<div class="ttc" id="astdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
-<div class="ttc" id="aarch_2amd64_2cpu_2smp_8hpp_html_afc5dbb2d5fe89bc4f0401587502bf667"><div class="ttname"><a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#afc5dbb2d5fe89bc4f0401587502bf667">CPUs</a></div><div class="ttdeci">CPUData CPUs[]</div></div>
+<div class="ttc" id="atask_8h_html_a06b5e1d0b960a8ac8adb8a4150ad6b50"><div class="ttname"><a href="../../db/da4/task_8h.html#a06b5e1d0b960a8ac8adb8a4150ad6b50">Checksum</a></div><div class="ttdeci">Checksum</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00006">task.h:6</a></div></div>
 <div class="ttc" id="aarch_2amd64_2cpu_2smp_8hpp_html_a0f6a26fc56e8dab11a0baad77cbe8c75"><div class="ttname"><a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a0f6a26fc56e8dab11a0baad77cbe8c75">GetCurrentCPUID</a></div><div class="ttdeci">int GetCurrentCPUID()</div></div>
 <div class="ttc" id="adebug_8h_html_aea447f57f81a2f5ee19ef8a1dd9e5d92"><div class="ttname"><a href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a></div><div class="ttdeci">#define err(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/debug_8h_source.html#l00068">debug.h:68</a></div></div>
+<div class="ttc" id="ainclude_2stdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

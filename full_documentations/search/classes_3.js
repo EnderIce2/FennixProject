@@ -1,11 +1,21 @@
 var searchData=
 [
-  ['cag_5foption_4809',['cag_option',['../d1/d37/cargs_8h.html#d8/ddb/structcag__option',1,'']]],
-  ['cag_5foption_5fcontext_4810',['cag_option_context',['../d1/d37/cargs_8h.html#d3/df1/structcag__option__context',1,'']]],
-  ['counter_4811',['Counter',['../da/de2/classshared__ptr_1_1Counter.html',1,'shared_ptr']]],
-  ['cpudata_4812',['CPUData',['../de/df9/structCPUData.html',1,'']]],
-  ['cpuspeed_4813',['cpuspeed',['../d5/df0/classCPUSpeed_1_1cpuspeed.html',1,'CPUSpeed']]],
-  ['criticalsectiondata_4814',['CriticalSectionData',['../d6/d86/namespaceCritical.html#d6/dda/structCritical_1_1CriticalSectionData',1,'Critical']]],
-  ['cwk_5fsegment_4815',['cwk_segment',['../d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#d5/daa/structcwk__segment',1,'']]],
-  ['cwk_5fsegment_5fjoined_4816',['cwk_segment_joined',['../de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#d7/d07/structcwk__segment__joined',1,'']]]
+  ['cag_5foption_5423',['cag_option',['../d1/d37/cargs_8h.html#d8/ddb/structcag__option',1,'']]],
+  ['cag_5foption_5fcontext_5424',['cag_option_context',['../d1/d37/cargs_8h.html#d3/df1/structcag__option__context',1,'']]],
+  ['counter_5425',['Counter',['../da/de2/classshared__ptr_1_1Counter.html',1,'shared_ptr']]],
+  ['cpudata_5426',['CPUData',['../de/df9/structCPUData.html',1,'']]],
+  ['cpuspeed_5427',['cpuspeed',['../d5/df0/classCPUSpeed_1_1cpuspeed.html',1,'CPUSpeed']]],
+  ['cr0_5428',['CR0',['../d1/d57/cputables_8h.html#df/d42/unionCR0',1,'']]],
+  ['cr0_2e_5f_5funnamed_5f_5f_5429',['CR0.__unnamed__',['../d1/d57/cputables_8h.html#d8/d03/structCR0_8____unnamed____',1,'']]],
+  ['cr2_5430',['CR2',['../d1/d57/cputables_8h.html#d4/dbd/unionCR2',1,'']]],
+  ['cr2_2e_5f_5funnamed_5f_5f_5431',['CR2.__unnamed__',['../d1/d57/cputables_8h.html#d9/d84/structCR2_8____unnamed____',1,'']]],
+  ['cr3_5432',['CR3',['../d1/d57/cputables_8h.html#d2/dc5/unionCR3',1,'']]],
+  ['cr3_2e_5f_5funnamed_5f_5f_5433',['CR3.__unnamed__',['../d1/d57/cputables_8h.html#de/d63/structCR3_8____unnamed____',1,'']]],
+  ['cr4_5434',['CR4',['../d1/d57/cputables_8h.html#d5/d36/unionCR4',1,'']]],
+  ['cr4_2e_5f_5funnamed_5f_5f_5435',['CR4.__unnamed__',['../d1/d57/cputables_8h.html#d0/d25/structCR4_8____unnamed____',1,'']]],
+  ['cr8_5436',['CR8',['../d1/d57/cputables_8h.html#d9/d15/unionCR8',1,'']]],
+  ['cr8_2e_5f_5funnamed_5f_5f_5437',['CR8.__unnamed__',['../d1/d57/cputables_8h.html#d2/d8a/structCR8_8____unnamed____',1,'']]],
+  ['criticalsectiondata_5438',['CriticalSectionData',['../d6/d86/namespaceCritical.html#d6/dda/structCritical_1_1CriticalSectionData',1,'Critical']]],
+  ['cwk_5fsegment_5439',['cwk_segment',['../d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#d5/daa/structcwk__segment',1,'']]],
+  ['cwk_5fsegment_5fjoined_5440',['cwk_segment_joined',['../de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#d7/d07/structcwk__segment__joined',1,'']]]
 ];

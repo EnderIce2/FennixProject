@@ -222,20 +222,20 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">/* Returns the size of a buddy allocation tree of the desired order*/</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> buddy_tree_sizeof(<a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> order);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> buddy_tree_sizeof(<a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> order);</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">/* Initializes a buddy allocation tree at the specified location */</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_tree *buddy_tree_init(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *at, <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> order);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_tree *buddy_tree_init(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *at, <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> order);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="comment">/* Indicates whether this is a valid position for the tree */</span></div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> buddy_tree_valid(<span class="keyword">struct</span> buddy_tree *t, <span class="keyword">struct</span> buddy_tree_pos pos);</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="comment">/* Returns the order of the specified buddy allocation tree */</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> buddy_tree_order(<span class="keyword">struct</span> buddy_tree *t);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> buddy_tree_order(<span class="keyword">struct</span> buddy_tree *t);</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">/* Resize the tree to the new order. When downsizing the left subtree is picked. */</span></div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">/* Caller must ensure enough space for the new order. */</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buddy_tree_resize(<span class="keyword">struct</span> buddy_tree *t, <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> desired_order);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buddy_tree_resize(<span class="keyword">struct</span> buddy_tree *t, <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> desired_order);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">     * Navigation functions</span></div>
@@ -289,7 +289,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buddy_tree_release(<span class="keyword">struct</span> buddy_tree *t, <span class="keyword">struct</span> buddy_tree_pos pos);</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">/* Returns a free position at the specified depth or an invalid position */</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_tree_pos buddy_tree_find_free(struct buddy_tree *t, <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> depth);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_tree_pos buddy_tree_find_free(struct buddy_tree *t, <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> depth);</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">/* Tests if the incidated position is available for allocation */</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> buddy_tree_is_free(<span class="keyword">struct</span> buddy_tree *t, <span class="keyword">struct</span> buddy_tree_pos pos);</div>
@@ -364,7 +364,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keyword">union</span></div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        {</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code" href="../../d8/def/crt0_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a>;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            ptrdiff_t main_offset;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <a class="code" href="../../d3/dce/stddef_8h.html#a6d26a0475a6d6c897e655cdc5d8019d2">ptrdiff_t</a> main_offset;</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        };</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> relative_mode;</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> buddy_tree[];</div>
@@ -389,7 +389,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *buddy_resize_standard(<span class="keyword">struct</span> <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, <span class="keywordtype">size_t</span> new_memory_size);</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *buddy_resize_embedded(<span class="keyword">struct</span> <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, <span class="keywordtype">size_t</span> new_memory_size);</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> buddy_is_free(<span class="keyword">struct</span> <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, <span class="keywordtype">size_t</span> from);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_embed_check buddy_embed_offset(size_t memory_size);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_embed_check buddy_embed_offset(<a class="code" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a> memory_size);</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_tree_pos deepest_position_for_offset(struct <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, <span class="keywordtype">size_t</span> offset);</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="../../db/d6e/buddy__alloc_8h.html#af11c1dab965531958c9d423c9473f5fb">buddy_sizeof</a>(<span class="keywordtype">size_t</span> memory_size)</div>
@@ -404,27 +404,27 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keyword">struct </span><a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *<a class="code" href="../../db/d6e/buddy__alloc_8h.html#a08a22aa33b45174c22a54180b45fc1c6">buddy_init</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *at, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code" href="../../d8/def/crt0_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a>, <span class="keywordtype">size_t</span> memory_size)</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    {</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">if</span> (at == NULL)</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">if</span> (at == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        }</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d8/def/crt0_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a> == NULL)</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d8/def/crt0_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a> == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        {</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        }</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">if</span> (at == <a class="code" href="../../d8/def/crt0_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a>)</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        }</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordtype">size_t</span> at_alignment = ((<a class="code" href="../../df/dd8/stdint_8h.html#a4788399d1d0b37ccf098a7da82254808">uintptr_t</a>)at) % __alignof__(<span class="keyword">struct</span> <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordtype">size_t</span> at_alignment = ((<a class="code" href="../../dc/d69/include_2stdint_8h.html#a4788399d1d0b37ccf098a7da82254808">uintptr_t</a>)at) % __alignof__(<span class="keyword">struct</span> <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>);</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">if</span> (at_alignment != 0)</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        {</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        }</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordtype">size_t</span> main_alignment = ((<a class="code" href="../../df/dd8/stdint_8h.html#a4788399d1d0b37ccf098a7da82254808">uintptr_t</a>)<a class="code" href="../../d8/def/crt0_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a>) % __alignof__(<span class="keywordtype">size_t</span>);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordtype">size_t</span> main_alignment = ((<a class="code" href="../../dc/d69/include_2stdint_8h.html#a4788399d1d0b37ccf098a7da82254808">uintptr_t</a>)<a class="code" href="../../d8/def/crt0_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a>) % __alignof__(<span class="keywordtype">size_t</span>);</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">if</span> (main_alignment != 0)</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        {</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        }</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="comment">/* Trim down memory to alignment */</span></div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">if</span> (memory_size % BUDDY_ALLOC_ALIGN)</div>
@@ -434,7 +434,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keywordtype">size_t</span> size = <a class="code" href="../../db/d6e/buddy__alloc_8h.html#af11c1dab965531958c9d423c9473f5fb">buddy_sizeof</a>(memory_size);</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordflow">if</span> (size == 0)</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        {</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        }</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordtype">size_t</span> buddy_tree_order = buddy_tree_order_for_memory(memory_size);</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
@@ -452,18 +452,18 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    {</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../d8/def/crt0_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a>)</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        {</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        }</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keyword">struct </span>buddy_embed_check result = buddy_embed_offset(memory_size);</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keywordflow">if</span> (!result.can_fit)</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        {</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        }</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="keyword">struct </span><a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> = <a class="code" href="../../db/d6e/buddy__alloc_8h.html#a08a22aa33b45174c22a54180b45fc1c6">buddy_init</a>(<a class="code" href="../../d8/def/crt0_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a> + result.offset, <a class="code" href="../../d8/def/crt0_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a>, result.offset);</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>)</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        { <span class="comment">/* regular initialization failed */</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        }</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>-&gt;relative_mode = 1;</div>
@@ -499,7 +499,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <span class="comment">/* Account for tree use */</span></div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <span class="keywordflow">if</span> (!buddy_is_free(<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, new_memory_size))</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        {</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        }</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="comment">/* Release the virtual slots */</span></div>
@@ -523,14 +523,14 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        <span class="keyword">struct </span>buddy_embed_check result = buddy_embed_offset(new_memory_size);</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        <span class="keywordflow">if</span> (!result.can_fit)</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        {</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        }</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160; </div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="comment">/* Resize the allocator in the normal way */</span></div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="keyword">struct </span><a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *resized = buddy_resize_standard(<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, result.offset);</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        <span class="keywordflow">if</span> (!resized)</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        {</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        }</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        <span class="comment">/* Get the absolute main address. The relative will be invalid after relocation. */</span></div>
@@ -549,7 +549,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160; </div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../db/d6e/buddy__alloc_8h.html#a8b3592c21b8141331bdccd577b4d5c32">buddy_can_shrink</a>(<span class="keyword">struct</span> <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>)</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    {</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> == NULL)</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        {</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;        }</div>
@@ -558,7 +558,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160; </div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../db/d6e/buddy__alloc_8h.html#aba182609528049c21e356b6b59f42745">buddy_is_empty</a>(<span class="keyword">struct</span> <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>)</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    {</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> == NULL)</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        {</div>
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;            <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        }</div>
@@ -567,7 +567,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160; </div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="../../db/d6e/buddy__alloc_8h.html#a4ed42f8ae64041798ef9941175dff463">buddy_arena_size</a>(<span class="keyword">struct</span> <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>)</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    {</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> == NULL)</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;        {</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;            <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;        }</div>
@@ -582,9 +582,9 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160; </div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    <span class="keywordtype">void</span> *<a class="code" href="../../db/d6e/buddy__alloc_8h.html#afad58454b714ac91b0421c5adfb9fba2">buddy_malloc</a>(<span class="keyword">struct</span> <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, <span class="keywordtype">size_t</span> requested_size)</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    {</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> == NULL)</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        {</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        }</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        <span class="keywordflow">if</span> (requested_size == 0)</div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;        {</div>
@@ -600,7 +600,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        }</div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        <span class="keywordflow">if</span> (requested_size &gt; <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>-&gt;memory_size)</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        {</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        }</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160; </div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        <span class="keywordtype">size_t</span> target_depth = depth_for_size(<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, requested_size);</div>
@@ -609,7 +609,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        <span class="keywordflow">if</span> (!buddy_tree_valid(tree, pos))</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        {</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;            <span class="keywordflow">return</span> NULL; <span class="comment">/* no slot found */</span></div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; <span class="comment">/* no slot found */</span></div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        }</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160; </div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        <span class="comment">/* Allocate the slot */</span></div>
@@ -630,7 +630,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <span class="comment">/* Check for overflow */</span></div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        <span class="keywordflow">if</span> (((members_count * member_size) / members_count) != member_size)</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        {</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        }</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        <span class="keywordtype">size_t</span> total_size = members_count * member_size;</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        <span class="keywordtype">void</span> *result = <a class="code" href="../../db/d6e/buddy__alloc_8h.html#afad58454b714ac91b0421c5adfb9fba2">buddy_malloc</a>(<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, total_size);</div>
@@ -652,18 +652,18 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;<span class="comment">         * - If the new allocation cannot be satisfied NULL is returned BUT the slot is preserved</span></div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;<span class="comment">         * - Larger size than previous *alloc increase tha allocated size with an optional rellocation</span></div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        <span class="keywordflow">if</span> (ptr == NULL)</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        <span class="keywordflow">if</span> (ptr == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        {</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../db/d6e/buddy__alloc_8h.html#afad58454b714ac91b0421c5adfb9fba2">buddy_malloc</a>(<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, requested_size);</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        }</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        <span class="keywordflow">if</span> (requested_size == 0)</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        {</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            <a class="code" href="../../db/d6e/buddy__alloc_8h.html#aa19de39e88db00401bb18a35e0d2ec7a">buddy_free</a>(<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, ptr);</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        }</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;        <span class="keywordflow">if</span> (requested_size &gt; <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>-&gt;memory_size)</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;        {</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        }</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160; </div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        <span class="comment">/* Find the position tracking this address */</span></div>
@@ -671,7 +671,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;        <span class="keyword">struct </span>buddy_tree_pos origin = position_for_address(<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)ptr);</div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;        <span class="keywordflow">if</span> (!buddy_tree_valid(tree, origin))</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        {</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;        }</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;        <span class="keywordtype">size_t</span> current_depth = buddy_tree_depth(origin);</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;        <span class="keywordtype">size_t</span> target_depth = depth_for_size(<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, requested_size);</div>
@@ -684,7 +684,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        {</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;            <span class="comment">/* allocation failure, restore mark and return null */</span></div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;            buddy_tree_mark(tree, origin);</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        }</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        <span class="keywordflow">if</span> (origin.index == new_pos.index)</div>
@@ -713,18 +713,18 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        <span class="comment">/* Check for overflow */</span></div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        <span class="keywordflow">if</span> ((members_count * member_size) / members_count != member_size)</div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        {</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        }</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../db/d6e/buddy__alloc_8h.html#ae97a09ecafa143128e0110cdbdc904af">buddy_realloc</a>(<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, ptr, members_count * member_size);</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    }</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; </div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d6e/buddy__alloc_8h.html#aa19de39e88db00401bb18a35e0d2ec7a">buddy_free</a>(<span class="keyword">struct</span> <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, <span class="keywordtype">void</span> *ptr)</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    {</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> == NULL)</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;        {</div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;        }</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;        <span class="keywordflow">if</span> (ptr == NULL)</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;        <span class="keywordflow">if</span> (ptr == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;        {</div>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        }</div>
@@ -750,11 +750,11 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160; </div>
 <div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d6e/buddy__alloc_8h.html#aed78042d7c33e0c100fad308030cc676">buddy_safe_free</a>(<span class="keyword">struct</span> <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, <span class="keywordtype">void</span> *ptr, <span class="keywordtype">size_t</span> requested_size)</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    {</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> == NULL)</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;        {</div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        }</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        <span class="keywordflow">if</span> (ptr == NULL)</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        <span class="keywordflow">if</span> (ptr == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        {</div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;        }</div>
@@ -795,13 +795,13 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <span class="keywordtype">void</span> *<a class="code" href="../../db/d6e/buddy__alloc_8h.html#ae71ac048f49e99e3fc971ecf6cb600a0">buddy_walk</a>(<span class="keyword">struct</span> <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>,</div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                     <span class="keywordtype">void</span> *(fp)(<span class="keywordtype">void</span> *ctx, <span class="keywordtype">void</span> *<a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#ab439e3a90339e2e8ca8f82d4557a34e5">addr</a>, <span class="keywordtype">size_t</span> slot_size), <span class="keywordtype">void</span> *ctx)</div>
 <div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    {</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> == NULL)</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        {</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        }</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        <span class="keywordflow">if</span> (fp == NULL)</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        <span class="keywordflow">if</span> (fp == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        {</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        }</div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code" href="../../d8/def/crt0_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a> = buddy_main(<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>);</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        <span class="keywordtype">size_t</span> effective_memory_size = buddy_effective_memory_size(<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>);</div>
@@ -824,12 +824,12 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                    <span class="comment">//  if we see a one with the current iteration order this</span></div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                    <span class="comment">//  means that all subsequent slots will be virtual,</span></div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                    <span class="comment">//  hence we can return early.</span></div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                }</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                {</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                    <span class="keywordtype">void</span> *result = (fp)(ctx, <a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#ab439e3a90339e2e8ca8f82d4557a34e5">addr</a>, pos_size);</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                    <span class="keywordflow">if</span> (result != NULL)</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                    <span class="keywordflow">if</span> (result != <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                    {</div>
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                        <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                    }</div>
@@ -905,7 +905,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                }</div>
 <div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;            }</div>
 <div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;        }</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    }</div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160; </div>
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> depth_for_size(<span class="keyword">struct</span> <a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a> *<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>, <span class="keywordtype">size_t</span> requested_size)</div>
@@ -959,7 +959,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    {</div>
 <div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;        <span class="comment">/* Find the deepest position tracking this address */</span></div>
 <div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code" href="../../d8/def/crt0_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a> = buddy_main(<a class="code" href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a>);</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;        ptrdiff_t offset = <a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#ab439e3a90339e2e8ca8f82d4557a34e5">addr</a> - <a class="code" href="../../d8/def/crt0_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a>;</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;        <a class="code" href="../../d3/dce/stddef_8h.html#a6d26a0475a6d6c897e655cdc5d8019d2">ptrdiff_t</a> offset = <a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#ab439e3a90339e2e8ca8f82d4557a34e5">addr</a> - <a class="code" href="../../d8/def/crt0_8c.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a>;</div>
 <div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160; </div>
 <div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;<span class="preprocessor">#ifdef BUDDY_ALLOC_SAFETY</span></div>
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;        <span class="keywordflow">if</span> (offset % BUDDY_ALLOC_ALIGN)</div>
@@ -1089,7 +1089,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;        <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;    }</div>
 <div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160; </div>
-<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_embed_check buddy_embed_offset(size_t memory_size)</div>
+<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_embed_check buddy_embed_offset(<a class="code" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a> memory_size)</div>
 <div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;    {</div>
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;        <span class="keyword">struct </span>buddy_embed_check result = {0};</div>
 <div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;        result.can_fit = 1;</div>
@@ -1137,7 +1137,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160; </div>
 <div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;    <span class="keyword">struct </span>buddy_tree</div>
 <div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;    {</div>
-<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;        <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> order;</div>
+<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;        <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> order;</div>
 <div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;        <span class="keywordtype">size_t</span> upper_pos_bound;</div>
 <div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160;        <span class="keywordtype">size_t</span> size_for_order_offset;</div>
 <div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;        <span class="keywordtype">size_t</span> data[];</div>
@@ -1149,24 +1149,24 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;        <span class="keywordtype">size_t</span> bitset_location;</div>
 <div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;    };</div>
 <div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160; </div>
-<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">size_t</span> size_for_order(<a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> order, <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> to);</div>
+<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">size_t</span> size_for_order(<a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> order, <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> to);</div>
 <div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">size_t</span> buddy_tree_index_internal(<span class="keyword">struct</span> buddy_tree_pos pos);</div>
-<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_tree_pos buddy_tree_leftmost_child_internal(size_t tree_order);</div>
+<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_tree_pos buddy_tree_leftmost_child_internal(<a class="code" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a> tree_order);</div>
 <div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>internal_position buddy_tree_internal_position_order(</div>
-<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;        size_t tree_order, struct buddy_tree_pos pos);</div>
+<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;        <a class="code" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a> tree_order, struct buddy_tree_pos pos);</div>
 <div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>internal_position buddy_tree_internal_position_tree(</div>
 <div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;        struct buddy_tree *t, <span class="keyword">struct </span>buddy_tree_pos pos);</div>
-<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buddy_tree_grow(<span class="keyword">struct</span> buddy_tree *t, <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> desired_order);</div>
-<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buddy_tree_shrink(<span class="keyword">struct</span> buddy_tree *t, <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> desired_order);</div>
+<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buddy_tree_grow(<span class="keyword">struct</span> buddy_tree *t, <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> desired_order);</div>
+<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buddy_tree_shrink(<span class="keyword">struct</span> buddy_tree *t, <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> desired_order);</div>
 <div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> update_parent_chain(<span class="keyword">struct</span> buddy_tree *t, <span class="keyword">struct</span> buddy_tree_pos pos,</div>
 <div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;                                    <span class="keyword">struct</span> internal_position pos_internal, <span class="keywordtype">size_t</span> size_current);</div>
 <div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *buddy_tree_bits(<span class="keyword">struct</span> buddy_tree *t);</div>
 <div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buddy_tree_populate_size_for_order(<span class="keyword">struct</span> buddy_tree *t);</div>
-<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">size_t</span> buddy_tree_size_for_order(<span class="keyword">struct</span> buddy_tree *t, <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> to);</div>
+<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">size_t</span> buddy_tree_size_for_order(<span class="keyword">struct</span> buddy_tree *t, <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> to);</div>
 <div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> write_to_internal_position(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *bitset, <span class="keyword">struct</span> internal_position pos, <span class="keywordtype">size_t</span> value);</div>
 <div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> read_from_internal_position(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *bitset, <span class="keyword">struct</span> internal_position pos);</div>
 <div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160; </div>
-<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">size_t</span> size_for_order(<a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> order, <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> to)</div>
+<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">size_t</span> size_for_order(<a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> order, <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> to)</div>
 <div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;    {</div>
 <div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;        <span class="keywordtype">size_t</span> result = 0;</div>
 <div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;        <span class="keywordtype">size_t</span> multi = 1u;</div>
@@ -1180,7 +1180,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;    }</div>
 <div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160; </div>
 <div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">struct </span>internal_position buddy_tree_internal_position_order(</div>
-<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;        size_t tree_order, struct buddy_tree_pos pos)</div>
+<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;        <a class="code" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a> tree_order, struct buddy_tree_pos pos)</div>
 <div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;    {</div>
 <div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;        <span class="keyword">struct </span>internal_position p = {0};</div>
 <div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;        p.local_offset = tree_order - buddy_tree_depth(pos) + 1;</div>
@@ -1201,21 +1201,21 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;        <span class="keywordflow">return</span> p;</div>
 <div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;    }</div>
 <div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160; </div>
-<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> buddy_tree_sizeof(<a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> order)</div>
+<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> buddy_tree_sizeof(<a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> order)</div>
 <div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;    {</div>
 <div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;        <span class="keywordtype">size_t</span> tree_size = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>buddy_tree);</div>
 <div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;        <span class="comment">/* Account for the bitset */</span></div>
 <div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;        <span class="keywordtype">size_t</span> bitset_size = bitset_sizeof(size_for_order(order, 0));</div>
 <div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;        <span class="keywordflow">if</span> (bitset_size % <span class="keyword">sizeof</span>(<span class="keywordtype">size_t</span>))</div>
 <div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;        {</div>
-<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;            bitset_size += (bitset_size % <span class="keyword">sizeof</span>(size_t));</div>
+<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;            bitset_size += (bitset_size % <span class="keyword">sizeof</span>(<a class="code" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a>));</div>
 <div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;        }</div>
 <div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;        <span class="comment">/* Account for the size_for_order memoization */</span></div>
 <div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;        <span class="keywordtype">size_t</span> size_for_order_size = ((order + 2) * <span class="keyword">sizeof</span>(<span class="keywordtype">size_t</span>));</div>
 <div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;        <span class="keywordflow">return</span> tree_size + bitset_size + size_for_order_size;</div>
 <div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;    }</div>
 <div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160; </div>
-<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_tree *buddy_tree_init(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *at, <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> order)</div>
+<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_tree *buddy_tree_init(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *at, <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> order)</div>
 <div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;    {</div>
 <div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;        <span class="keywordtype">size_t</span> size = buddy_tree_sizeof(order);</div>
 <div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;        <span class="keyword">struct </span>buddy_tree *t = (<span class="keyword">struct </span>buddy_tree *)at;</div>
@@ -1226,7 +1226,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;        <span class="keywordflow">return</span> t;</div>
 <div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;    }</div>
 <div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160; </div>
-<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buddy_tree_resize(<span class="keyword">struct</span> buddy_tree *t, <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> desired_order)</div>
+<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buddy_tree_resize(<span class="keyword">struct</span> buddy_tree *t, <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> desired_order)</div>
 <div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;    {</div>
 <div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;        <span class="keywordflow">if</span> (t-&gt;order == desired_order)</div>
 <div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;        {</div>
@@ -1242,7 +1242,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;        }</div>
 <div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;    }</div>
 <div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160; </div>
-<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buddy_tree_grow(<span class="keyword">struct</span> buddy_tree *t, <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> desired_order)</div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buddy_tree_grow(<span class="keyword">struct</span> buddy_tree *t, <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> desired_order)</div>
 <div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;    {</div>
 <div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;        <span class="keywordflow">while</span> (desired_order &gt; t-&gt;order)</div>
 <div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;        {</div>
@@ -1288,7 +1288,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;        }</div>
 <div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;    }</div>
 <div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160; </div>
-<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buddy_tree_shrink(<span class="keyword">struct</span> buddy_tree *t, <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> desired_order)</div>
+<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buddy_tree_shrink(<span class="keyword">struct</span> buddy_tree *t, <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> desired_order)</div>
 <div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;    {</div>
 <div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;        <span class="keywordflow">while</span> (desired_order &lt; t-&gt;order)</div>
 <div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;        {</div>
@@ -1335,7 +1335,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;        <span class="keywordflow">return</span> pos.index &amp;&amp; (pos.index &lt; t-&gt;upper_pos_bound);</div>
 <div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;    }</div>
 <div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160; </div>
-<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> buddy_tree_order(<span class="keyword">struct</span> buddy_tree *t)</div>
+<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> buddy_tree_order(<span class="keyword">struct</span> buddy_tree *t)</div>
 <div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;    {</div>
 <div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;        <span class="keywordflow">return</span> t-&gt;order;</div>
 <div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;    }</div>
@@ -1350,9 +1350,9 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;        <span class="keywordflow">return</span> buddy_tree_leftmost_child_internal(t-&gt;order);</div>
 <div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;    }</div>
 <div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160; </div>
-<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_tree_pos buddy_tree_leftmost_child_internal(size_t tree_order)</div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_tree_pos buddy_tree_leftmost_child_internal(<a class="code" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a> tree_order)</div>
 <div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;    {</div>
-<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;        <a class="code" href="../../dc/da7/assert_8h.html#af576bf8ffa22a44e53018c67095ffbf0">assert</a>(tree_order);</div>
+<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;        <a class="code" href="../../d1/da3/include_2assert_8h.html#af576bf8ffa22a44e53018c67095ffbf0">assert</a>(tree_order);</div>
 <div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;        <span class="keyword">struct </span>buddy_tree_pos result;</div>
 <div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;        result.index = 1u &lt;&lt; (tree_order - 1u);</div>
 <div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;        result.depth = tree_order;</div>
@@ -1429,9 +1429,9 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;        <span class="keywordtype">size_t</span> bitset_offset = bitset_sizeof(size_for_order(t-&gt;order, 0));</div>
 <div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;        <span class="keywordflow">if</span> (bitset_offset % <span class="keyword">sizeof</span>(<span class="keywordtype">size_t</span>))</div>
 <div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;        {</div>
-<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;            bitset_offset += (bitset_offset % <span class="keyword">sizeof</span>(size_t));</div>
+<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;            bitset_offset += (bitset_offset % <span class="keyword">sizeof</span>(<a class="code" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a>));</div>
 <div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;        }</div>
-<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;        t-&gt;size_for_order_offset = bitset_offset / <span class="keyword">sizeof</span>(size_t);</div>
+<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;        t-&gt;size_for_order_offset = bitset_offset / <span class="keyword">sizeof</span>(<a class="code" href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a>);</div>
 <div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;        t-&gt;size_for_order_offset++;</div>
 <div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt;= t-&gt;order; i++)</div>
 <div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;        {</div>
@@ -1440,7 +1440,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;    }</div>
 <div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160; </div>
 <div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">size_t</span> buddy_tree_size_for_order(<span class="keyword">struct</span> buddy_tree *t,</div>
-<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;                                                   <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> to)</div>
+<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;                                                   <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> to)</div>
 <div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;    {</div>
 <div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;        <span class="keywordflow">return</span> *(t-&gt;data + t-&gt;size_for_order_offset + to);</div>
 <div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;    }</div>
@@ -1549,11 +1549,11 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;        };</div>
 <div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;    }</div>
 <div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160; </div>
-<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_tree_pos buddy_tree_find_free(struct buddy_tree *t, <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> target_depth)</div>
+<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;    <span class="keyword">static</span> <span class="keyword">struct </span>buddy_tree_pos buddy_tree_find_free(struct buddy_tree *t, <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> target_depth)</div>
 <div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;    {</div>
-<div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;        <a class="code" href="../../dc/da7/assert_8h.html#af576bf8ffa22a44e53018c67095ffbf0">assert</a>(target_depth &lt;= t-&gt;order);</div>
+<div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;        <a class="code" href="../../d1/da3/include_2assert_8h.html#af576bf8ffa22a44e53018c67095ffbf0">assert</a>(target_depth &lt;= t-&gt;order);</div>
 <div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160;        <span class="keyword">struct </span>buddy_tree_pos start = buddy_tree_root();</div>
-<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;        <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> target_status = target_depth - 1;</div>
+<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;        <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> target_status = target_depth - 1;</div>
 <div class="line"><a name="l01466"></a><span class="lineno"> 1466</span>&#160;        <span class="keywordtype">size_t</span> current_depth = buddy_tree_depth(start);</div>
 <div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160;        <span class="keywordtype">size_t</span> current_status = buddy_tree_status(t, start);</div>
 <div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;        <span class="keywordflow">while</span> (1)</div>
@@ -1785,7 +1785,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l01694"></a><span class="lineno"> 1694</span>&#160;        <span class="keywordflow">return</span> ((elements) + <a class="code" href="../../d9/d86/limits_8h.html#a308d9dd2c0028ddb184b455bbd7865de">CHAR_BIT</a> - 1u) / <a class="code" href="../../d9/d86/limits_8h.html#a308d9dd2c0028ddb184b455bbd7865de">CHAR_BIT</a>;</div>
 <div class="line"><a name="l01695"></a><span class="lineno"> 1695</span>&#160;    }</div>
 <div class="line"><a name="l01696"></a><span class="lineno"> 1696</span>&#160; </div>
-<div class="line"><a name="l01697"></a><span class="lineno"> 1697</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> bitset_index_mask[8] = {1, 2, 4, 8, 16, 32, 64, 128};</div>
+<div class="line"><a name="l01697"></a><span class="lineno"> 1697</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> bitset_index_mask[8] = {1, 2, 4, 8, 16, 32, 64, 128};</div>
 <div class="line"><a name="l01698"></a><span class="lineno"> 1698</span>&#160; </div>
 <div class="line"><a name="l01699"></a><span class="lineno"> 1699</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> bitset_set(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *bitset, <span class="keywordtype">size_t</span> pos)</div>
 <div class="line"><a name="l01700"></a><span class="lineno"> 1700</span>&#160;    {</div>
@@ -1808,7 +1808,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l01717"></a><span class="lineno"> 1717</span>&#160;        <span class="keywordflow">return</span> bitset[bucket] &amp; bitset_index_mask[index];</div>
 <div class="line"><a name="l01718"></a><span class="lineno"> 1718</span>&#160;    }</div>
 <div class="line"><a name="l01719"></a><span class="lineno"> 1719</span>&#160; </div>
-<div class="line"><a name="l01720"></a><span class="lineno"> 1720</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> bitset_char_mask[8][8] = {</div>
+<div class="line"><a name="l01720"></a><span class="lineno"> 1720</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> bitset_char_mask[8][8] = {</div>
 <div class="line"><a name="l01721"></a><span class="lineno"> 1721</span>&#160;        {1, 3, 7, 15, 31, 63, 127, 255},</div>
 <div class="line"><a name="l01722"></a><span class="lineno"> 1722</span>&#160;        {0, 2, 6, 14, 30, 62, 126, 254},</div>
 <div class="line"><a name="l01723"></a><span class="lineno"> 1723</span>&#160;        {0, 0, 4, 12, 28, 60, 124, 252},</div>
@@ -1906,7 +1906,7 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="line"><a name="l01815"></a><span class="lineno"> 1815</span>&#160; </div>
 <div class="line"><a name="l01816"></a><span class="lineno"> 1816</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> bitset_shift_right(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *bitset, <span class="keywordtype">size_t</span> from_pos, <span class="keywordtype">size_t</span> to_pos, <span class="keywordtype">size_t</span> by)</div>
 <div class="line"><a name="l01817"></a><span class="lineno"> 1817</span>&#160;    {</div>
-<div class="line"><a name="l01818"></a><span class="lineno"> 1818</span>&#160;        ssize_t length = to_pos - from_pos;</div>
+<div class="line"><a name="l01818"></a><span class="lineno"> 1818</span>&#160;        <a class="code" href="../../d3/dce/stddef_8h.html#a831c6b6852c6d34448e30a88c34539fd">ssize_t</a> length = to_pos - from_pos;</div>
 <div class="line"><a name="l01819"></a><span class="lineno"> 1819</span>&#160;        <span class="keywordflow">while</span> (length &gt;= 0)</div>
 <div class="line"><a name="l01820"></a><span class="lineno"> 1820</span>&#160;        {</div>
 <div class="line"><a name="l01821"></a><span class="lineno"> 1821</span>&#160;            <span class="keywordtype">size_t</span> at = from_pos + length;</div>
@@ -1976,16 +1976,18 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="ttc" id="abuddy__alloc_8h_html_a08a22aa33b45174c22a54180b45fc1c6"><div class="ttname"><a href="../../db/d6e/buddy__alloc_8h.html#a08a22aa33b45174c22a54180b45fc1c6">buddy_init</a></div><div class="ttdeci">struct buddy * buddy_init(unsigned char *at, unsigned char *main, size_t memory_size)</div></div>
 <div class="ttc" id="abuddy__alloc_8h_html_ae97a09ecafa143128e0110cdbdc904af"><div class="ttname"><a href="../../db/d6e/buddy__alloc_8h.html#ae97a09ecafa143128e0110cdbdc904af">buddy_realloc</a></div><div class="ttdeci">void * buddy_realloc(struct buddy *buddy, void *ptr, size_t requested_size)</div></div>
 <div class="ttc" id="abuddy__alloc_8h_html_a93bd533b1c97bc8f59bb699f7fac5f05"><div class="ttname"><a href="../../db/d6e/buddy__alloc_8h.html#a93bd533b1c97bc8f59bb699f7fac5f05">buddy_calloc</a></div><div class="ttdeci">void * buddy_calloc(struct buddy *buddy, size_t members_count, size_t member_size)</div></div>
+<div class="ttc" id="astddef_8h_html_aa9d55e2f20e580b7445617d0d12fff6e"><div class="ttname"><a href="../../d3/dce/stddef_8h.html#aa9d55e2f20e580b7445617d0d12fff6e">size_t</a></div><div class="ttdeci">__SIZE_TYPE__ size_t</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dce/stddef_8h_source.html#l00017">stddef.h:17</a></div></div>
 <div class="ttc" id="abuddy__alloc_8h_html_af11c1dab965531958c9d423c9473f5fb"><div class="ttname"><a href="../../db/d6e/buddy__alloc_8h.html#af11c1dab965531958c9d423c9473f5fb">buddy_sizeof</a></div><div class="ttdeci">size_t buddy_sizeof(size_t memory_size)</div></div>
+<div class="ttc" id="astddef_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dce/stddef_8h_source.html#l00008">stddef.h:8</a></div></div>
 <div class="ttc" id="alimits_8h_html_a308d9dd2c0028ddb184b455bbd7865de"><div class="ttname"><a href="../../d9/d86/limits_8h.html#a308d9dd2c0028ddb184b455bbd7865de">CHAR_BIT</a></div><div class="ttdeci">#define CHAR_BIT</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d86/limits_8h_source.html#l00003">limits.h:3</a></div></div>
 <div class="ttc" id="aarch_2amd64_2cpu_2acpi_8hpp_html_ab439e3a90339e2e8ca8f82d4557a34e5"><div class="ttname"><a href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#ab439e3a90339e2e8ca8f82d4557a34e5">addr</a></div><div class="ttdeci">uint32_t addr</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp_source.html#l00288">acpi.hpp:288</a></div></div>
-<div class="ttc" id="astdint_8h_html_a4788399d1d0b37ccf098a7da82254808"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a4788399d1d0b37ccf098a7da82254808">uintptr_t</a></div><div class="ttdeci">__UINTPTR_TYPE__ uintptr_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00031">stdint.h:31</a></div></div>
 <div class="ttc" id="abuddy__alloc_8h_html_aed78042d7c33e0c100fad308030cc676"><div class="ttname"><a href="../../db/d6e/buddy__alloc_8h.html#aed78042d7c33e0c100fad308030cc676">buddy_safe_free</a></div><div class="ttdeci">void buddy_safe_free(struct buddy *buddy, void *ptr, size_t requested_size)</div></div>
-<div class="ttc" id="astdint_8h_html_a3cb4a16b0e8d6af0af86d4fd6ba5fd9d"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></div><div class="ttdeci">__UINT8_TYPE__ uint8_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00007">stdint.h:7</a></div></div>
+<div class="ttc" id="astddef_8h_html_a6d26a0475a6d6c897e655cdc5d8019d2"><div class="ttname"><a href="../../d3/dce/stddef_8h.html#a6d26a0475a6d6c897e655cdc5d8019d2">ptrdiff_t</a></div><div class="ttdeci">__PTRDIFF_TYPE__ ptrdiff_t</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dce/stddef_8h_source.html#l00024">stddef.h:24</a></div></div>
 <div class="ttc" id="abuddy__alloc_8h_html_a67f7e6c167bc09bef707114edadd6e93"><div class="ttname"><a href="../../db/d6e/buddy__alloc_8h.html#a67f7e6c167bc09bef707114edadd6e93">buddy_reallocarray</a></div><div class="ttdeci">void * buddy_reallocarray(struct buddy *buddy, void *ptr, size_t members_count, size_t member_size)</div></div>
-<div class="ttc" id="aassert_8h_html_af576bf8ffa22a44e53018c67095ffbf0"><div class="ttname"><a href="../../dc/da7/assert_8h.html#af576bf8ffa22a44e53018c67095ffbf0">assert</a></div><div class="ttdeci">#define assert(x)</div><div class="ttdoc">Evaluate assertion.</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/da7/assert_8h_source.html#l00009">assert.h:9</a></div></div>
 <div class="ttc" id="alimits_8h_html"><div class="ttname"><a href="../../d9/d86/limits_8h.html">limits.h</a></div></div>
+<div class="ttc" id="astddef_8h_html_a831c6b6852c6d34448e30a88c34539fd"><div class="ttname"><a href="../../d3/dce/stddef_8h.html#a831c6b6852c6d34448e30a88c34539fd">ssize_t</a></div><div class="ttdeci">long ssize_t</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dce/stddef_8h_source.html#l00019">stddef.h:19</a></div></div>
 <div class="ttc" id="abuddy__alloc_8h_html_a8b3592c21b8141331bdccd577b4d5c32"><div class="ttname"><a href="../../db/d6e/buddy__alloc_8h.html#a8b3592c21b8141331bdccd577b4d5c32">buddy_can_shrink</a></div><div class="ttdeci">unsigned int buddy_can_shrink(struct buddy *buddy)</div></div>
+<div class="ttc" id="ainclude_2assert_8h_html_af576bf8ffa22a44e53018c67095ffbf0"><div class="ttname"><a href="../../d1/da3/include_2assert_8h.html#af576bf8ffa22a44e53018c67095ffbf0">assert</a></div><div class="ttdeci">#define assert(x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da3/include_2assert_8h_source.html#l00019">assert.h:19</a></div></div>
 <div class="ttc" id="akernel_2include_2string_8h_html_a1fd0ab453722ae471fc94da8bdc41661"><div class="ttname"><a href="../../d1/d69/kernel_2include_2string_8h.html#a1fd0ab453722ae471fc94da8bdc41661">memset</a></div><div class="ttdeci">void * memset(void *dest, int data, size_t nbytes)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00014">String.c:14</a></div></div>
 <div class="ttc" id="abuddy__alloc_8h_html_ae71ac048f49e99e3fc971ecf6cb600a0"><div class="ttname"><a href="../../db/d6e/buddy__alloc_8h.html#ae71ac048f49e99e3fc971ecf6cb600a0">buddy_walk</a></div><div class="ttdeci">void * buddy_walk(struct buddy *buddy, void *(fp)(void *ctx, void *addr, size_t slot_size), void *ctx)</div></div>
 <div class="ttc" id="abuddy__alloc_8h_html_a4ed42f8ae64041798ef9941175dff463"><div class="ttname"><a href="../../db/d6e/buddy__alloc_8h.html#a4ed42f8ae64041798ef9941175dff463">buddy_arena_size</a></div><div class="ttdeci">size_t buddy_arena_size(struct buddy *buddy)</div></div>
@@ -1994,11 +1996,13 @@ $(document).ready(function(){initNavTree('db/d6e/buddy__alloc_8h_source.html','.
 <div class="ttc" id="abuddy__alloc_8h_html_a7f76a753c86fb72646e0f5c9fcda16ed"><div class="ttname"><a href="../../db/d6e/buddy__alloc_8h.html#a7f76a753c86fb72646e0f5c9fcda16ed">buddy_resize</a></div><div class="ttdeci">struct buddy * buddy_resize(struct buddy *buddy, size_t new_memory_size)</div></div>
 <div class="ttc" id="akernel_2include_2string_8h_html_a802c986820d3866639922b6bc9484f90"><div class="ttname"><a href="../../d1/d69/kernel_2include_2string_8h.html#a802c986820d3866639922b6bc9484f90">memmove</a></div><div class="ttdeci">void * memmove(void *dest, const void *src, size_t n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00022">String.c:22</a></div></div>
 <div class="ttc" id="abuddy__alloc_8h_html_aba182609528049c21e356b6b59f42745"><div class="ttname"><a href="../../db/d6e/buddy__alloc_8h.html#aba182609528049c21e356b6b59f42745">buddy_is_empty</a></div><div class="ttdeci">unsigned int buddy_is_empty(struct buddy *buddy)</div></div>
+<div class="ttc" id="ainclude_2stdint_8h_html_a3cb4a16b0e8d6af0af86d4fd6ba5fd9d"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></div><div class="ttdeci">__UINT8_TYPE__ uint8_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00007">stdint.h:7</a></div></div>
 <div class="ttc" id="aHeapManager_8cpp_html_ab48200581967011588141551635758b4"><div class="ttname"><a href="../../df/db8/HeapManager_8cpp.html#ab48200581967011588141551635758b4">buddy</a></div><div class="ttdeci">static struct buddy * buddy</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db8/HeapManager_8cpp_source.html#l00026">HeapManager.cpp:26</a></div></div>
 <div class="ttc" id="abuddy__alloc_8h_html_afad58454b714ac91b0421c5adfb9fba2"><div class="ttname"><a href="../../db/d6e/buddy__alloc_8h.html#afad58454b714ac91b0421c5adfb9fba2">buddy_malloc</a></div><div class="ttdeci">void * buddy_malloc(struct buddy *buddy, size_t requested_size)</div></div>
 <div class="ttc" id="adebug_8h_html_aea447f57f81a2f5ee19ef8a1dd9e5d92"><div class="ttname"><a href="../../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92">err</a></div><div class="ttdeci">#define err(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/debug_8h_source.html#l00068">debug.h:68</a></div></div>
 <div class="ttc" id="abuddy__alloc_8h_html_aa19de39e88db00401bb18a35e0d2ec7a"><div class="ttname"><a href="../../db/d6e/buddy__alloc_8h.html#aa19de39e88db00401bb18a35e0d2ec7a">buddy_free</a></div><div class="ttdeci">void buddy_free(struct buddy *buddy, void *ptr)</div></div>
 <div class="ttc" id="adebug_8h_html"><div class="ttname"><a href="../../db/d16/debug_8h.html">debug.h</a></div></div>
+<div class="ttc" id="ainclude_2stdint_8h_html_a4788399d1d0b37ccf098a7da82254808"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#a4788399d1d0b37ccf098a7da82254808">uintptr_t</a></div><div class="ttdeci">__UINTPTR_TYPE__ uintptr_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00031">stdint.h:31</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

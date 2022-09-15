@@ -1,11 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"d3/d41/gbp_8h.html#da/da6/struct__GlobalBootParams":[2,0,1,0,0,1,4],
-"d3/d41/gbp_8h_source.html":[2,0,1,0,0,1],
-"d3/d4a/classFileSystem_1_1FB.html":[1,0,3,4],
-"d3/d4a/classFileSystem_1_1FB.html#a2412de5f54f00ee2645e9c5e7166b50d":[1,0,3,4,0],
-"d3/d4a/classFileSystem_1_1FB.html#a73a7b20cb53097985e12daf14f716d30":[1,0,3,4,1],
-"d3/d4a/classFileSystem_1_1FB.html#ad4dbc7c60622eabe7e84ff2c67e66d7b":[1,0,3,4,2],
 "d3/d6b/printf_8h.html":[2,0,1,0,22],
 "d3/d6b/printf_8h.html#a0bf4b55e618023b0a33ec7f5305b6b71":[2,0,1,0,22,1],
 "d3/d6b/printf_8h.html#a25006737444a8712899101e9e89387c3":[2,0,1,0,22,11],
@@ -130,8 +124,8 @@ var NAVTREEINDEX4 =
 "d3/df0/limine_8h.html#d9/d84/structlimine__kernel__address__response":[2,0,1,0,0,0,1,34],
 "d3/df0/limine_8h.html#df/d2c/structlimine__5__level__paging__response":[2,0,1,0,0,0,1,14],
 "d3/df0/limine_8h_source.html":[2,0,1,0,0,0,1],
-"d4/d56/namespaceanonymous__namespace_02atomic_8hpp_03.html":[1,0,0],
 "d4/d56/namespaceanonymous__namespace_02atomic_8hpp_03.html":[0,0,0],
+"d4/d56/namespaceanonymous__namespace_02atomic_8hpp_03.html":[1,0,0],
 "d4/d5d/structlimine__smbios__request.html":[1,0,98],
 "d4/d5d/structlimine__smbios__request.html#a1496e79a097c94028481ffd0d85181a1":[1,0,98,2],
 "d4/d5d/structlimine__smbios__request.html#aa7c13457c2b7c343763d07d8718af0e6":[1,0,98,0],
@@ -249,5 +243,11 @@ var NAVTREEINDEX4 =
 "d5/da9/libc_2include_2stdint_8h.html#a4788399d1d0b37ccf098a7da82254808":[2,0,2,0,14,88],
 "d5/da9/libc_2include_2stdint_8h.html#a4e5632221b295f0fcdcb2233f3f60515":[2,0,2,0,14,87],
 "d5/da9/libc_2include_2stdint_8h.html#a50f0fdcb00ea2500cec0f3d6d45c36f3":[2,0,2,0,14,17],
-"d5/da9/libc_2include_2stdint_8h.html#a5285bc55170ae1701e599decacc7f001":[2,0,2,0,14,60]
+"d5/da9/libc_2include_2stdint_8h.html#a5285bc55170ae1701e599decacc7f001":[2,0,2,0,14,60],
+"d5/da9/libc_2include_2stdint_8h.html#a530ba8ffc89f6393d2d0e2fb2db38b54":[2,0,2,0,14,66],
+"d5/da9/libc_2include_2stdint_8h.html#a5391a63e4d2c8c8a39b3c6f8fdbd8763":[2,0,2,0,14,3],
+"d5/da9/libc_2include_2stdint_8h.html#a5618711a0a54f722190a3a1219e278c2":[2,0,2,0,14,22],
+"d5/da9/libc_2include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e":[2,0,2,0,14,75],
+"d5/da9/libc_2include_2stdint_8h.html#a61d44370ed65907c324edad5e8d34632":[2,0,2,0,14,86],
+"d5/da9/libc_2include_2stdint_8h.html#a62c711f66c6d29c81429aeafdc4bc592":[2,0,2,0,14,81]
 };

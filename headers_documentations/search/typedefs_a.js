@@ -1,13 +1,12 @@
 var searchData=
 [
-  ['pagefaulterrorcode_4045',['PageFaultErrorCode',['../d1/d57/cputables_8h.html#a48bfc45a6271bf381ce2cec700d7fae9',1,'cputables.h']]],
-  ['physical_5faddress_4046',['PHYSICAL_ADDRESS',['../d3/d41/gbp_8h.html#a76987bbf04634817f652ba5c97f902b9',1,'gbp.h']]],
-  ['pimage_5fdata_5fdirectory_4047',['PIMAGE_DATA_DIRECTORY',['../de/d63/msexec_8h.html#ab9bc1f8ca30fb0e2e5cea0ba65b46df4',1,'msexec.h']]],
-  ['pimage_5fdos_5fheader_4048',['PIMAGE_DOS_HEADER',['../de/d63/msexec_8h.html#ae63f59530a5a37fe66d68ce39626993d',1,'msexec.h']]],
-  ['pimage_5ffile_5fheader_4049',['PIMAGE_FILE_HEADER',['../de/d63/msexec_8h.html#af790ae3741bdcfba8d3594a0e2ef87ea',1,'msexec.h']]],
-  ['pimage_5fnt_5fheaders_4050',['PIMAGE_NT_HEADERS',['../de/d63/msexec_8h.html#a3daaa6182378d5afa9ad7a5cd71ad477',1,'msexec.h']]],
-  ['pimage_5foptional_5fheader_4051',['PIMAGE_OPTIONAL_HEADER',['../de/d63/msexec_8h.html#a939c4558968aacae4d73c729a5b3fea0',1,'msexec.h']]],
-  ['pimage_5fos2_5fheader_4052',['PIMAGE_OS2_HEADER',['../de/d63/msexec_8h.html#af57cff24e11a2d4dd7d22267babcc5cd',1,'msexec.h']]],
-  ['pimage_5fsection_5fheader_4053',['PIMAGE_SECTION_HEADER',['../de/d63/msexec_8h.html#a36d2acb88a0d04e494d30e5b5effe318',1,'msexec.h']]],
-  ['ptrdiff_5ft_4054',['ptrdiff_t',['../d3/dce/stddef_8h.html#a6d26a0475a6d6c897e655cdc5d8019d2',1,'stddef.h']]]
+  ['operationclose_4073',['OperationClose',['../d6/df5/namespaceFileSystem.html#a3864e42d07f9ca9d4408513178282028',1,'FileSystem']]],
+  ['operationcreate_4074',['OperationCreate',['../d6/df5/namespaceFileSystem.html#a7bdd03ab62da07aac9d81ad31eb1e3e3',1,'FileSystem']]],
+  ['operationmkdir_4075',['OperationMkdir',['../d6/df5/namespaceFileSystem.html#afb8c9ab6bc3077bab9319d7ff634c68f',1,'FileSystem']]],
+  ['operationmount_4076',['OperationMount',['../d6/df5/namespaceFileSystem.html#a4be43a0b27c85b81053fc6ba8dcb5984',1,'FileSystem']]],
+  ['operationopen_4077',['OperationOpen',['../d6/df5/namespaceFileSystem.html#a0dc639900312e7c8365d36e99452b3fa',1,'FileSystem']]],
+  ['operationread_4078',['OperationRead',['../d6/df5/namespaceFileSystem.html#a0e1b3ca5f4c84fe1e42dd88ad8ab0f17',1,'FileSystem']]],
+  ['operationsync_4079',['OperationSync',['../d6/df5/namespaceFileSystem.html#a609693b3beb8d6c12678f46bfa2a7be7',1,'FileSystem']]],
+  ['operationumount_4080',['OperationUmount',['../d6/df5/namespaceFileSystem.html#a78474b4fa5c3c9e8afe31503b691b63a',1,'FileSystem']]],
+  ['operationwrite_4081',['OperationWrite',['../d6/df5/namespaceFileSystem.html#a0e2f12cc93625188f0ce24eff315e7ce',1,'FileSystem']]]
 ];

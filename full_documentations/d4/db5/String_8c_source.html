@@ -90,8 +90,8 @@ $(document).ready(function(){initNavTree('d4/db5/String_8c_source.html','../../'
 </div><!--header-->
 <div class="contents">
 <a href="../../d4/db5/String_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../df/dd8/stdint_8h.html">stdint.h</a>&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d3/dce/stddef_8h.html">stddef.h</a>&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="../../dc/da4/libc_2include_2string_8h.html#a6fb455f3981065514483d9b27fb52d6e">    5</a></span>&#160;<span class="keywordtype">void</span> *<a class="code" href="../../d4/db5/String_8c.html#a992514d25cc10baafaac987c5852680c">memcpy</a>(<span class="keywordtype">void</span> *__restrict__ dest, <span class="keyword">const</span> <span class="keywordtype">void</span> *__restrict__ src, <span class="keywordtype">size_t</span> n)</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
@@ -158,8 +158,8 @@ $(document).ready(function(){initNavTree('d4/db5/String_8c_source.html','../../'
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../dc/da4/libc_2include_2string_8h.html#a15cd4910daa7548211357eb63100e662">   68</a></span>&#160;<span class="keywordtype">char</span> *<a class="code" href="../../d4/db5/String_8c.html#afca62bf1b7f91b44ba5c2ada54444fc9">strcat</a>(<span class="keywordtype">char</span> *destination, <span class="keyword">const</span> <span class="keywordtype">char</span> *source)</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> ((destination == NULL) &amp;&amp; (source == NULL))</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> ((destination == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) &amp;&amp; (source == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>))</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">char</span> *start = destination;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">while</span> (*start != <span class="charliteral">&#39;\0&#39;</span>)</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
@@ -175,8 +175,8 @@ $(document).ready(function(){initNavTree('d4/db5/String_8c_source.html','../../'
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../dc/da4/libc_2include_2string_8h.html#afc3ea9906e8820afd08f610c8312814e">   85</a></span>&#160;<span class="keywordtype">char</span> *<a class="code" href="../../d4/db5/String_8c.html#ac137d536ff0037b3856083cb8a1c19a7">strcpy</a>(<span class="keywordtype">char</span> *destination, <span class="keyword">const</span> <span class="keywordtype">char</span> *source)</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (destination == NULL)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (destination == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">char</span> *ptr = destination;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">while</span> (*source != <span class="charliteral">&#39;\0&#39;</span>)</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
@@ -190,8 +190,8 @@ $(document).ready(function(){initNavTree('d4/db5/String_8c_source.html','../../'
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../dc/da4/libc_2include_2string_8h.html#afd9ada66a66e849e13a29a5e95e1358c">  100</a></span>&#160;<span class="keywordtype">char</span> *<a class="code" href="../../d4/db5/String_8c.html#a12f4a7953a24e197c8d26bf0493f8225">strncpy</a>(<span class="keywordtype">char</span> *destination, <span class="keyword">const</span> <span class="keywordtype">char</span> *source, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> num)</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span> (destination == NULL)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span> (destination == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">char</span> *ptr = destination;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">while</span> (*source &amp;&amp; num--)</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    {</div>
@@ -218,7 +218,7 @@ $(document).ready(function(){initNavTree('d4/db5/String_8c_source.html','../../'
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">if</span> (!*b)</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">return</span> (<span class="keywordtype">char</span> *)haystack;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">if</span> (!*a)</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">if</span> (*a++ != *b++)</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        {</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            a = ++haystack;</div>
@@ -256,6 +256,7 @@ $(document).ready(function(){initNavTree('d4/db5/String_8c_source.html','../../'
 <div class="ttc" id="aString_8c_html_a992514d25cc10baafaac987c5852680c"><div class="ttname"><a href="../../d4/db5/String_8c.html#a992514d25cc10baafaac987c5852680c">memcpy</a></div><div class="ttdeci">void * memcpy(void *__restrict__ dest, const void *__restrict__ src, size_t n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00005">String.c:5</a></div></div>
 <div class="ttc" id="aString_8c_html_a4a710d86541afc6b7dafddcdb4b1c94f"><div class="ttname"><a href="../../d4/db5/String_8c.html#a4a710d86541afc6b7dafddcdb4b1c94f">strstr</a></div><div class="ttdeci">char * strstr(const char *haystack, const char *needle)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00122">String.c:122</a></div></div>
 <div class="ttc" id="aString_8c_html_a07f4a84c11c106e95c32b6ab509346ef"><div class="ttname"><a href="../../d4/db5/String_8c.html#a07f4a84c11c106e95c32b6ab509346ef">strncmp</a></div><div class="ttdeci">int strncmp(const char *s1, const char *s2, size_t n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00047">String.c:47</a></div></div>
+<div class="ttc" id="astddef_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dce/stddef_8h_source.html#l00008">stddef.h:8</a></div></div>
 <div class="ttc" id="aString_8c_html_a3fa45b35c8abf67a950b6d3d4063dede"><div class="ttname"><a href="../../d4/db5/String_8c.html#a3fa45b35c8abf67a950b6d3d4063dede">isdigit</a></div><div class="ttdeci">int isdigit(int c)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00139">String.c:139</a></div></div>
 <div class="ttc" id="aString_8c_html_afca62bf1b7f91b44ba5c2ada54444fc9"><div class="ttname"><a href="../../d4/db5/String_8c.html#afca62bf1b7f91b44ba5c2ada54444fc9">strcat</a></div><div class="ttdeci">char * strcat(char *destination, const char *source)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00068">String.c:68</a></div></div>
 <div class="ttc" id="aString_8c_html_a75b852b562036f85800f7e155266bd58"><div class="ttname"><a href="../../d4/db5/String_8c.html#a75b852b562036f85800f7e155266bd58">isempty</a></div><div class="ttdeci">int isempty(char *str)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00149">String.c:149</a></div></div>
@@ -263,9 +264,9 @@ $(document).ready(function(){initNavTree('d4/db5/String_8c_source.html','../../'
 <div class="ttc" id="aString_8c_html_a7dcc610f4b04a8ee418f03a6d9256629"><div class="ttname"><a href="../../d4/db5/String_8c.html#a7dcc610f4b04a8ee418f03a6d9256629">strlen</a></div><div class="ttdeci">long unsigned strlen(const char s[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00060">String.c:60</a></div></div>
 <div class="ttc" id="aString_8c_html_a56be4166e4673843042a548a7f513dbc"><div class="ttname"><a href="../../d4/db5/String_8c.html#a56be4166e4673843042a548a7f513dbc">isspace</a></div><div class="ttdeci">int isspace(int c)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00144">String.c:144</a></div></div>
 <div class="ttc" id="aString_8c_html_a5206cb6f52495066146ae3a41d166eb7"><div class="ttname"><a href="../../d4/db5/String_8c.html#a5206cb6f52495066146ae3a41d166eb7">strcmp</a></div><div class="ttdeci">int strcmp(const char *l, const char *r)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00115">String.c:115</a></div></div>
-<div class="ttc" id="astdint_8h_html"><div class="ttname"><a href="../../df/dd8/stdint_8h.html">stdint.h</a></div></div>
 <div class="ttc" id="aString_8c_html_ac376fcece8fcc2d0f8b1cf3de18b10df"><div class="ttname"><a href="../../d4/db5/String_8c.html#ac376fcece8fcc2d0f8b1cf3de18b10df">memcmp</a></div><div class="ttdeci">int memcmp(const void *vl, const void *vr, size_t n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00039">String.c:39</a></div></div>
 <div class="ttc" id="aString_8c_html_a1fd0ab453722ae471fc94da8bdc41661"><div class="ttname"><a href="../../d4/db5/String_8c.html#a1fd0ab453722ae471fc94da8bdc41661">memset</a></div><div class="ttdeci">void * memset(void *dest, int data, size_t nbytes)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00014">String.c:14</a></div></div>
+<div class="ttc" id="astddef_8h_html"><div class="ttname"><a href="../../d3/dce/stddef_8h.html">stddef.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

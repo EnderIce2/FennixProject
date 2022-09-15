@@ -94,21 +94,21 @@ $(document).ready(function(){initNavTree('d4/d54/arch_2amd64_2cpu_2gdt_8h.html',
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;types.h&gt;</code><br />
-<code>#include &lt;cputables.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d1/d57/cputables_8h_source.html">cputables.h</a>&gt;</code><br />
 </div>
 <p><a href="../../d4/d54/arch_2amd64_2cpu_2gdt_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ab0bd808397c97f7db4701ca69009a547"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d54/arch_2amd64_2cpu_2gdt_8h.html#ab0bd808397c97f7db4701ca69009a547">GDT_KERNEL_CODE</a>&#160;&#160;&#160;offsetof(GlobalDescriptorTableEntries, Code)</td></tr>
+<tr class="memitem:ab0bd808397c97f7db4701ca69009a547"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d54/arch_2amd64_2cpu_2gdt_8h.html#ab0bd808397c97f7db4701ca69009a547">GDT_KERNEL_CODE</a>&#160;&#160;&#160;<a class="el" href="../../d3/dce/stddef_8h.html#a276e8a32e0bbf024aadd9420b8f2d3b3">offsetof</a>(GlobalDescriptorTableEntries, <a class="el" href="../../d1/d57/cputables_8h.html#ac678cca2a7d570b7e2dd49c5619f98f7">Code</a>)</td></tr>
 <tr class="separator:ab0bd808397c97f7db4701ca69009a547"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b5a711dc01ab783bb986902240f1cce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d54/arch_2amd64_2cpu_2gdt_8h.html#a1b5a711dc01ab783bb986902240f1cce">GDT_KERNEL_DATA</a>&#160;&#160;&#160;offsetof(GlobalDescriptorTableEntries, Data)</td></tr>
+<tr class="memitem:a1b5a711dc01ab783bb986902240f1cce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d54/arch_2amd64_2cpu_2gdt_8h.html#a1b5a711dc01ab783bb986902240f1cce">GDT_KERNEL_DATA</a>&#160;&#160;&#160;<a class="el" href="../../d3/dce/stddef_8h.html#a276e8a32e0bbf024aadd9420b8f2d3b3">offsetof</a>(GlobalDescriptorTableEntries, <a class="el" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>)</td></tr>
 <tr class="separator:a1b5a711dc01ab783bb986902240f1cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9670040bead28fb1c0b09ea363152cd2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d54/arch_2amd64_2cpu_2gdt_8h.html#a9670040bead28fb1c0b09ea363152cd2">GDT_USER_DATA</a>&#160;&#160;&#160;(offsetof(GlobalDescriptorTableEntries, UserData) | 3)</td></tr>
+<tr class="memitem:a9670040bead28fb1c0b09ea363152cd2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d54/arch_2amd64_2cpu_2gdt_8h.html#a9670040bead28fb1c0b09ea363152cd2">GDT_USER_DATA</a>&#160;&#160;&#160;(<a class="el" href="../../d3/dce/stddef_8h.html#a276e8a32e0bbf024aadd9420b8f2d3b3">offsetof</a>(GlobalDescriptorTableEntries, <a class="el" href="../../d1/d57/cputables_8h.html#aed95da4e7e2e8f3347cb417a3fcd7c28">UserData</a>) | 3)</td></tr>
 <tr class="separator:a9670040bead28fb1c0b09ea363152cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5c033543fb4db7939b4b7587de03867"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d54/arch_2amd64_2cpu_2gdt_8h.html#af5c033543fb4db7939b4b7587de03867">GDT_USER_CODE</a>&#160;&#160;&#160;(offsetof(GlobalDescriptorTableEntries, UserCode) | 3)</td></tr>
+<tr class="memitem:af5c033543fb4db7939b4b7587de03867"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d54/arch_2amd64_2cpu_2gdt_8h.html#af5c033543fb4db7939b4b7587de03867">GDT_USER_CODE</a>&#160;&#160;&#160;(<a class="el" href="../../d3/dce/stddef_8h.html#a276e8a32e0bbf024aadd9420b8f2d3b3">offsetof</a>(GlobalDescriptorTableEntries, <a class="el" href="../../d1/d57/cputables_8h.html#a320a948a3daaf4e9e4bf572432a1c243">UserCode</a>) | 3)</td></tr>
 <tr class="separator:af5c033543fb4db7939b4b7587de03867"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa2f85c6adeea0d29c4852d4cef33d4c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d54/arch_2amd64_2cpu_2gdt_8h.html#afa2f85c6adeea0d29c4852d4cef33d4c">GDT_TSS</a>&#160;&#160;&#160;(offsetof(GlobalDescriptorTableEntries, TaskStateSegment) | 3)</td></tr>
+<tr class="memitem:afa2f85c6adeea0d29c4852d4cef33d4c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d54/arch_2amd64_2cpu_2gdt_8h.html#afa2f85c6adeea0d29c4852d4cef33d4c">GDT_TSS</a>&#160;&#160;&#160;(<a class="el" href="../../d3/dce/stddef_8h.html#a276e8a32e0bbf024aadd9420b8f2d3b3">offsetof</a>(GlobalDescriptorTableEntries, <a class="el" href="../../d1/d57/cputables_8h.html#abc498068b381d117f14e2f08434d4ff4">TaskStateSegment</a>) | 3)</td></tr>
 <tr class="separator:afa2f85c6adeea0d29c4852d4cef33d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -124,7 +124,7 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a91561ba391b103af6678919836269b18"><td class="memItemLeft" align="right" valign="top">GlobalDescriptorTableDescriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d54/arch_2amd64_2cpu_2gdt_8h.html#a91561ba391b103af6678919836269b18">gdt</a></td></tr>
 <tr class="separator:a91561ba391b103af6678919836269b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a569d3411d05485d9dc9bdb75d1c0d870"><td class="memItemLeft" align="right" valign="top">TaskStateSegment *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d54/arch_2amd64_2cpu_2gdt_8h.html#a569d3411d05485d9dc9bdb75d1c0d870">tss</a></td></tr>
+<tr class="memitem:a569d3411d05485d9dc9bdb75d1c0d870"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d57/cputables_8h.html#abc498068b381d117f14e2f08434d4ff4">TaskStateSegment</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d54/arch_2amd64_2cpu_2gdt_8h.html#a569d3411d05485d9dc9bdb75d1c0d870">tss</a></td></tr>
 <tr class="separator:a569d3411d05485d9dc9bdb75d1c0d870"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -135,7 +135,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define GDT_KERNEL_CODE&#160;&#160;&#160;offsetof(GlobalDescriptorTableEntries, Code)</td>
+          <td class="memname">#define GDT_KERNEL_CODE&#160;&#160;&#160;<a class="el" href="../../d3/dce/stddef_8h.html#a276e8a32e0bbf024aadd9420b8f2d3b3">offsetof</a>(GlobalDescriptorTableEntries, <a class="el" href="../../d1/d57/cputables_8h.html#ac678cca2a7d570b7e2dd49c5619f98f7">Code</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -151,7 +151,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define GDT_KERNEL_DATA&#160;&#160;&#160;offsetof(GlobalDescriptorTableEntries, Data)</td>
+          <td class="memname">#define GDT_KERNEL_DATA&#160;&#160;&#160;<a class="el" href="../../d3/dce/stddef_8h.html#a276e8a32e0bbf024aadd9420b8f2d3b3">offsetof</a>(GlobalDescriptorTableEntries, <a class="el" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -167,7 +167,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define GDT_TSS&#160;&#160;&#160;(offsetof(GlobalDescriptorTableEntries, TaskStateSegment) | 3)</td>
+          <td class="memname">#define GDT_TSS&#160;&#160;&#160;(<a class="el" href="../../d3/dce/stddef_8h.html#a276e8a32e0bbf024aadd9420b8f2d3b3">offsetof</a>(GlobalDescriptorTableEntries, <a class="el" href="../../d1/d57/cputables_8h.html#abc498068b381d117f14e2f08434d4ff4">TaskStateSegment</a>) | 3)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -183,7 +183,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define GDT_USER_CODE&#160;&#160;&#160;(offsetof(GlobalDescriptorTableEntries, UserCode) | 3)</td>
+          <td class="memname">#define GDT_USER_CODE&#160;&#160;&#160;(<a class="el" href="../../d3/dce/stddef_8h.html#a276e8a32e0bbf024aadd9420b8f2d3b3">offsetof</a>(GlobalDescriptorTableEntries, <a class="el" href="../../d1/d57/cputables_8h.html#a320a948a3daaf4e9e4bf572432a1c243">UserCode</a>) | 3)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -199,7 +199,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define GDT_USER_DATA&#160;&#160;&#160;(offsetof(GlobalDescriptorTableEntries, UserData) | 3)</td>
+          <td class="memname">#define GDT_USER_DATA&#160;&#160;&#160;(<a class="el" href="../../d3/dce/stddef_8h.html#a276e8a32e0bbf024aadd9420b8f2d3b3">offsetof</a>(GlobalDescriptorTableEntries, <a class="el" href="../../d1/d57/cputables_8h.html#aed95da4e7e2e8f3347cb417a3fcd7c28">UserData</a>) | 3)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -242,7 +242,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00199">KernelInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00195">KernelInit()</a>.</p>
 
 </div>
 </div>
@@ -261,7 +261,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00199">KernelInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00195">KernelInit()</a>.</p>
 
 </div>
 </div>
@@ -289,7 +289,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TaskStateSegment* tss</td>
+          <td class="memname"><a class="el" href="../../d1/d57/cputables_8h.html#abc498068b381d117f14e2f08434d4ff4">TaskStateSegment</a>* tss</td>
         </tr>
       </table>
 </div><div class="memdoc">

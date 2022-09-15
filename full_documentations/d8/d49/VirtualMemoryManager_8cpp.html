@@ -101,14 +101,14 @@ $(document).ready(function(){initNavTree('d8/d49/VirtualMemoryManager_8cpp.html'
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a689b28d7bce04c12c728e2dbb178df84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a689b28d7bce04c12c728e2dbb178df84">MapMemory</a> (void *PML4, void *VirtualMemory, void *PhysicalMemory, <a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> <a class="el" href="../../dc/de6/NetworkController_8hpp.html#af2800c799892d286bd4a937d93fff2d2">Flags</a>)</td></tr>
+<tr class="memitem:a689b28d7bce04c12c728e2dbb178df84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a689b28d7bce04c12c728e2dbb178df84">MapMemory</a> (void *PML4, void *VirtualMemory, void *PhysicalMemory, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> <a class="el" href="../../dc/de6/NetworkController_8hpp.html#af2800c799892d286bd4a937d93fff2d2">Flags</a>)</td></tr>
 <tr class="separator:a689b28d7bce04c12c728e2dbb178df84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd34cb4c1016f8b955c09153679bc1ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d49/VirtualMemoryManager_8cpp.html#acd34cb4c1016f8b955c09153679bc1ec">init_vmm</a> ()</td></tr>
 <tr class="separator:acd34cb4c1016f8b955c09153679bc1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a8ce8e0631e09a82a06670cab06e76f81"><td class="memItemLeft" align="right" valign="top">PageTableManager&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a> = NULL</td></tr>
+<tr class="memitem:a8ce8e0631e09a82a06670cab06e76f81"><td class="memItemLeft" align="right" valign="top">PageTableManager&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a> = <a class="el" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
 <tr class="separator:a8ce8e0631e09a82a06670cab06e76f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -166,7 +166,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td>
           <td class="paramname"><em>Flags</em>&#160;</td>
         </tr>
         <tr>
@@ -179,26 +179,26 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d49/VirtualMemoryManager_8cpp_source.html#l00109">109</a> of file <a class="el" href="../../d8/d49/VirtualMemoryManager_8cpp_source.html">VirtualMemoryManager.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span> (PML4 != NULL)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span> (PML4 != <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    {</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a217d4311c393eae6832c2a0c319d5b8f">PageTable</a> *KernelNewPML = <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.PML4;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.PML4 = (<a class="code" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a217d4311c393eae6832c2a0c319d5b8f">PageTable</a> *)PML4;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#ae91751449932fe1a8fe52092a2851b9e">Flags</a> == 0)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d1/d57/cputables_8h.html#ae91751449932fe1a8fe52092a2851b9e">Flags</a> == 0)</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.MapMemory(VirtualMemory, PhysicalMemory, <a class="code" href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5aec2497e0c8af01c04bec31ec0d1d7847">PTFlag::RW</a>);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.MapMemory(VirtualMemory, PhysicalMemory, <a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#ae91751449932fe1a8fe52092a2851b9e">Flags</a>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.MapMemory(VirtualMemory, PhysicalMemory, <a class="code" href="../../d1/d57/cputables_8h.html#ae91751449932fe1a8fe52092a2851b9e">Flags</a>);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.PML4 = KernelNewPML;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#ae91751449932fe1a8fe52092a2851b9e">Flags</a> == 0)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d1/d57/cputables_8h.html#ae91751449932fe1a8fe52092a2851b9e">Flags</a> == 0)</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.MapMemory(VirtualMemory, PhysicalMemory, <a class="code" href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5aec2497e0c8af01c04bec31ec0d1d7847">PTFlag::RW</a>);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.MapMemory(VirtualMemory, PhysicalMemory, <a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#ae91751449932fe1a8fe52092a2851b9e">Flags</a>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <a class="code" href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a>.MapMemory(VirtualMemory, PhysicalMemory, <a class="code" href="../../d1/d57/cputables_8h.html#ae91751449932fe1a8fe52092a2851b9e">Flags</a>);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp_source.html#l00319">Flags</a>, <a class="el" href="../../d8/d49/VirtualMemoryManager_8cpp_source.html#l00009">KernelPageTableManager</a>, <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00004">PageTable</a>, and <a class="el" href="../../da/ddb/heap_8h_source.html#l00186">RW</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00011">Flags</a>, <a class="el" href="../../d8/d49/VirtualMemoryManager_8cpp_source.html#l00009">KernelPageTableManager</a>, <a class="el" href="../../d3/dce/stddef_8h_source.html#l00008">NULL</a>, <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00004">PageTable</a>, and <a class="el" href="../../da/ddb/heap_8h_source.html#l00186">RW</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d5/de1/HPETTimer_8cpp_source.html#l00037">init_HPET()</a>.</p>
 
@@ -212,7 +212,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PageTableManager KernelPageTableManager = NULL</td>
+          <td class="memname">PageTableManager KernelPageTableManager = <a class="el" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -225,10 +225,11 @@ Variables</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="astddef_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dce/stddef_8h_source.html#l00008">stddef.h:8</a></div></div>
 <div class="ttc" id="adebug_8h_html_a87de2fca12ef8f7205584b972c8b1f16"><div class="ttname"><a href="../../db/d16/debug_8h.html#a87de2fca12ef8f7205584b972c8b1f16">trace</a></div><div class="ttdeci">#define trace(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/debug_8h_source.html#l00066">debug.h:66</a></div></div>
 <div class="ttc" id="aarch_2amd64_2cpu_2smp_8hpp_html_a217d4311c393eae6832c2a0c319d5b8f"><div class="ttname"><a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a217d4311c393eae6832c2a0c319d5b8f">PageTable</a></div><div class="ttdeci">CR3 PageTable</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00004">smp.hpp:4</a></div></div>
 <div class="ttc" id="aVirtualMemoryManager_8cpp_html_a8ce8e0631e09a82a06670cab06e76f81"><div class="ttname"><a href="../../d8/d49/VirtualMemoryManager_8cpp.html#a8ce8e0631e09a82a06670cab06e76f81">KernelPageTableManager</a></div><div class="ttdeci">PageTableManager KernelPageTableManager</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d49/VirtualMemoryManager_8cpp_source.html#l00009">VirtualMemoryManager.cpp:9</a></div></div>
-<div class="ttc" id="aarch_2amd64_2cpu_2acpi_8hpp_html_ae91751449932fe1a8fe52092a2851b9e"><div class="ttname"><a href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#ae91751449932fe1a8fe52092a2851b9e">Flags</a></div><div class="ttdeci">uint32_t Flags</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp_source.html#l00319">acpi.hpp:319</a></div></div>
+<div class="ttc" id="acputables_8h_html_ae91751449932fe1a8fe52092a2851b9e"><div class="ttname"><a href="../../d1/d57/cputables_8h.html#ae91751449932fe1a8fe52092a2851b9e">Flags</a></div><div class="ttdeci">uint8_t Flags</div><div class="ttdoc">Flags [Bits 16-19].</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d57/cputables_8h_source.html#l00011">cputables.h:11</a></div></div>
 <div class="ttc" id="aheap_8h_html_a01615b7fec8f37b8215dda294f13d4a5aec2497e0c8af01c04bec31ec0d1d7847"><div class="ttname"><a href="../../da/ddb/heap_8h.html#a01615b7fec8f37b8215dda294f13d4a5aec2497e0c8af01c04bec31ec0d1d7847">RW</a></div><div class="ttdeci">@ RW</div><div class="ttdoc">Read/Write.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddb/heap_8h_source.html#l00186">heap.h:186</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

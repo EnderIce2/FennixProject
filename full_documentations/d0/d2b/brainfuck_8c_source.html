@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('d0/d2b/brainfuck_8c_source.html','../.
 <div class="contents">
 <a href="../../d0/d2b/brainfuck_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d5/d77/print_8h.html">print.h</a>&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="../../d0/d2b/brainfuck_8c.html#a92dc3f71fd6adfd1bb72778ba0ad272c">    3</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d2b/brainfuck_8c.html#a92dc3f71fd6adfd1bb72778ba0ad272c">brainfuck</a>(<span class="keywordtype">char</span> *Data, <span class="keywordtype">char</span> *Input)</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="../../d0/d2b/brainfuck_8c.html#a92dc3f71fd6adfd1bb72778ba0ad272c">    3</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d2b/brainfuck_8c.html#a92dc3f71fd6adfd1bb72778ba0ad272c">brainfuck</a>(<span class="keywordtype">char</span> *<a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>, <span class="keywordtype">char</span> *Input)</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordtype">int</span> BracketFlag;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">char</span> <a class="code" href="../../da/d3f/E1000_8hpp.html#acb11b7f64dca443c2d6fcaeca8f5c17d">Command</a>;</div>
@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('d0/d2b/brainfuck_8c_source.html','../.
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">char</span> *TempBuffer;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    TempBuffer = &amp;CodeData[500];</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="../../da/d3f/E1000_8hpp.html#acb11b7f64dca443c2d6fcaeca8f5c17d">Command</a> = *Data++)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="../../da/d3f/E1000_8hpp.html#acb11b7f64dca443c2d6fcaeca8f5c17d">Command</a> = *<a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>++)</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">switch</span> (<a class="code" href="../../da/d3f/E1000_8hpp.html#acb11b7f64dca443c2d6fcaeca8f5c17d">Command</a>)</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">case</span> <span class="charliteral">&#39;&gt;&#39;</span>:</div>
@@ -136,10 +136,10 @@ $(document).ready(function(){initNavTree('d0/d2b/brainfuck_8c_source.html','../.
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> (!*TempBuffer)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">for</span> (BracketFlag = 1; BracketFlag; Data++)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    <span class="keywordflow">if</span> (*Data == <span class="charliteral">&#39;[&#39;</span>)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">for</span> (BracketFlag = 1; BracketFlag; <a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>++)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    <span class="keywordflow">if</span> (*<a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a> == <span class="charliteral">&#39;[&#39;</span>)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        BracketFlag++;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (*Data == <span class="charliteral">&#39;]&#39;</span>)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (*<a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a> == <span class="charliteral">&#39;]&#39;</span>)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        BracketFlag--;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">break</span>;</div>
@@ -148,13 +148,13 @@ $(document).ready(function(){initNavTree('d0/d2b/brainfuck_8c_source.html','../.
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (*TempBuffer)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                Data -= 2;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">for</span> (BracketFlag = 1; BracketFlag; Data--)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    <span class="keywordflow">if</span> (*Data == <span class="charliteral">&#39;]&#39;</span>)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a> -= 2;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">for</span> (BracketFlag = 1; BracketFlag; <a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>--)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    <span class="keywordflow">if</span> (*<a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a> == <span class="charliteral">&#39;]&#39;</span>)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                        BracketFlag++;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (*Data == <span class="charliteral">&#39;[&#39;</span>)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (*<a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a> == <span class="charliteral">&#39;[&#39;</span>)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        BracketFlag--;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                Data++;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>++;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
@@ -164,16 +164,16 @@ $(document).ready(function(){initNavTree('d0/d2b/brainfuck_8c_source.html','../.
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../d0/d2b/brainfuck_8c.html#a0ddf1224851353fc92bfbff6f499fa97">   74</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d0/d2b/brainfuck_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">char</span> *Data;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">char</span> *Input;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (argc != 3)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="../../d4/d68/display_8h.html#a0f459d16901ef591acaafa4b67fd4be5">printf</a>(<span class="stringliteral">&quot;Usage: %s &lt;Code&gt; &lt;Input&gt;\n&quot;</span>, argv[0]);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    Data = argv[1];</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a> = argv[1];</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    Input = argv[2];</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="../../d0/d2b/brainfuck_8c.html#a92dc3f71fd6adfd1bb72778ba0ad272c">brainfuck</a>(Data, Input);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="../../d0/d2b/brainfuck_8c.html#a92dc3f71fd6adfd1bb72778ba0ad272c">brainfuck</a>(<a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>, Input);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
@@ -181,6 +181,7 @@ $(document).ready(function(){initNavTree('d0/d2b/brainfuck_8c_source.html','../.
 <div class="ttc" id="abrainfuck_8c_html_a92dc3f71fd6adfd1bb72778ba0ad272c"><div class="ttname"><a href="../../d0/d2b/brainfuck_8c.html#a92dc3f71fd6adfd1bb72778ba0ad272c">brainfuck</a></div><div class="ttdeci">void brainfuck(char *Data, char *Input)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2b/brainfuck_8c_source.html#l00003">brainfuck.c:3</a></div></div>
 <div class="ttc" id="abrainfuck_8c_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="../../d0/d2b/brainfuck_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d2b/brainfuck_8c_source.html#l00074">brainfuck.c:74</a></div></div>
 <div class="ttc" id="aE1000_8hpp_html_acb11b7f64dca443c2d6fcaeca8f5c17d"><div class="ttname"><a href="../../da/d3f/E1000_8hpp.html#acb11b7f64dca443c2d6fcaeca8f5c17d">Command</a></div><div class="ttdeci">volatile uint8_t Command</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d3f/E1000_8hpp_source.html#l00005">E1000.hpp:5</a></div></div>
+<div class="ttc" id="acputables_8h_html_aff2da4c061653164b5cfcc650f742f27"><div class="ttname"><a href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a></div><div class="ttdeci">GlobalDescriptorTableEntry Data</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d57/cputables_8h_source.html#l00004">cputables.h:4</a></div></div>
 <div class="ttc" id="aprint_8h_html"><div class="ttname"><a href="../../d5/d77/print_8h.html">print.h</a></div></div>
 <div class="ttc" id="adisplay_8h_html_a0f459d16901ef591acaafa4b67fd4be5"><div class="ttname"><a href="../../d4/d68/display_8h.html#a0f459d16901ef591acaafa4b67fd4be5">printf</a></div><div class="ttdeci">#define printf(format,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d68/display_8h_source.html#l00208">display.h:208</a></div></div>
 <!-- start footer part -->

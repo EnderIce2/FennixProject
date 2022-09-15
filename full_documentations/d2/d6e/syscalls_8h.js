@@ -16,12 +16,6 @@ var syscalls_8h =
       [ "UserIdentifier", "d2/d6e/syscalls_8h.html#ab01b23adeadbfb02b41317e027867f81", null ]
     ] ],
     [ "deadcall", "d2/d6e/syscalls_8h.html#a88d9d9eed7c093cc18faba716db81af3", null ],
-    [ "DEFINE_SYSCALL0", "d2/d6e/syscalls_8h.html#aec38602208c2e23a6f8473af5950eab1", null ],
-    [ "DEFINE_SYSCALL1", "d2/d6e/syscalls_8h.html#ab79c81255f39f5f278d7035f800f1490", null ],
-    [ "DEFINE_SYSCALL2", "d2/d6e/syscalls_8h.html#aa38a9c61b5483e232b3aaa1bfc26016c", null ],
-    [ "DEFINE_SYSCALL3", "d2/d6e/syscalls_8h.html#aac8ae024261d86f69a0306955c8cb0cb", null ],
-    [ "DEFINE_SYSCALL4", "d2/d6e/syscalls_8h.html#a5e29937bac5098d0506639da4145d85c", null ],
-    [ "DEFINE_SYSCALL5", "d2/d6e/syscalls_8h.html#ae876a13c3fd8b5eb767a9d895280e8cf", null ],
     [ "deniedcall", "d2/d6e/syscalls_8h.html#a568f7df0a8a3fb192f9032413088c6cc", null ],
     [ "failedcall", "d2/d6e/syscalls_8h.html#ace10381511c391a6154671a5360ad795", null ],
     [ "File", "d2/d6e/syscalls_8h.html#ac4a14a70488d04bbaea65b252b4fc71e", null ],

@@ -102,7 +102,7 @@ Data Structures</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:afd9af658c9b70bb85b5d03e8da5699fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d86/namespaceCritical.html#d6/dda/structCritical_1_1CriticalSectionData">CriticalSectionData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d86/namespaceCritical.html#afd9af658c9b70bb85b5d03e8da5699fb">Enter</a> ()</td></tr>
 <tr class="separator:afd9af658c9b70bb85b5d03e8da5699fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57708d9da3769bb23e6863d23e85fcd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d86/namespaceCritical.html#a57708d9da3769bb23e6863d23e85fcd1">Leave</a> (<a class="el" href="../../d6/d86/namespaceCritical.html#d6/dda/structCritical_1_1CriticalSectionData">CriticalSectionData</a> *Data)</td></tr>
+<tr class="memitem:a57708d9da3769bb23e6863d23e85fcd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d86/namespaceCritical.html#a57708d9da3769bb23e6863d23e85fcd1">Leave</a> (<a class="el" href="../../d6/d86/namespaceCritical.html#d6/dda/structCritical_1_1CriticalSectionData">CriticalSectionData</a> *<a class="el" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>)</td></tr>
 <tr class="separator:a57708d9da3769bb23e6863d23e85fcd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
@@ -128,7 +128,7 @@ CriticalLock</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="add3e38a2af9c1d53423fbe0d467306e7"></a>bool</td>
+<a id="add3e38a2af9c1d53423fbe0d467306e7"></a><a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a></td>
 <td class="fieldname">
 EnableInterrupts</td>
 <td class="fielddoc">
@@ -155,19 +155,19 @@ EnableInterrupts</td>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d20/Critical_8cpp_source.html#l00007">7</a> of file <a class="el" href="../../d6/d20/Critical_8cpp_source.html">Critical.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="../../d9/d3e/namespaceTasking.html#a390d088e178afc3b017d9a577e4e7a86">CriticalSectionData</a> *Data = <span class="keyword">new</span> <a class="code" href="../../d9/d3e/namespaceTasking.html#a390d088e178afc3b017d9a577e4e7a86">CriticalSectionData</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        Data-&gt;<a class="code" href="../../d6/d86/namespaceCritical.html#add3e38a2af9c1d53423fbe0d467306e7">EnableInterrupts</a> = <a class="code" href="../../de/d21/asm_8h.html#a61c21763ca3761238fce57d0b5e9bfa5">InterruptsEnabled</a>();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        Data-&gt;CriticalLock.AttemptingToGet = 0;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        Data-&gt;CriticalLock.Count = 0;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        Data-&gt;CriticalLock.CurrentHolder = 0;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        Data-&gt;CriticalLock.LockData = 0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        Data-&gt;CriticalLock.LockName = 0;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="../../dd/d42/lock_8h.html#aa21cada1ce4bcb6bdb9577a855980a88">LOCK</a>(Data-&gt;CriticalLock);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="../../d9/d3e/namespaceTasking.html#a390d088e178afc3b017d9a577e4e7a86">CriticalSectionData</a> *<a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a> = <span class="keyword">new</span> <a class="code" href="../../d9/d3e/namespaceTasking.html#a390d088e178afc3b017d9a577e4e7a86">CriticalSectionData</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>-&gt;EnableInterrupts = <a class="code" href="../../de/d21/asm_8h.html#a61c21763ca3761238fce57d0b5e9bfa5">InterruptsEnabled</a>();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>-&gt;CriticalLock.AttemptingToGet = 0;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>-&gt;CriticalLock.Count = 0;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>-&gt;CriticalLock.CurrentHolder = 0;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>-&gt;CriticalLock.LockData = 0;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>-&gt;CriticalLock.LockName = 0;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="../../dd/d42/lock_8h.html#aa21cada1ce4bcb6bdb9577a855980a88">LOCK</a>(<a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>-&gt;CriticalLock);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="../../de/d21/asm_8h.html#a7806d82cb41c78b6d2a9a236e60bf19c">CLI</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">return</span> Data;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../dd/d42/lock_8h_source.html#l00010">LOCK::AttemptingToGet</a>, <a class="el" href="../../de/d21/asm_8h_source.html#l00108">CLI</a>, <a class="el" href="../../dd/d42/lock_8h_source.html#l00012">LOCK::Count</a>, <a class="el" href="../../d1/d30/critical_8hpp_source.html#l00011">Critical::CriticalSectionData::CriticalLock</a>, <a class="el" href="../../dd/d62/Multitasking_8cpp_source.html#l00432">Tasking::CriticalSectionData</a>, <a class="el" href="../../dd/d42/lock_8h_source.html#l00009">LOCK::CurrentHolder</a>, <a class="el" href="../../d1/d30/critical_8hpp_source.html#l00010">Critical::CriticalSectionData::EnableInterrupts</a>, <a class="el" href="../../de/d21/asm_8h_source.html#l00089">InterruptsEnabled()</a>, <a class="el" href="../../dd/d42/lock_8h_source.html#l00055">LOCK</a>, <a class="el" href="../../dd/d42/lock_8h_source.html#l00008">LOCK::LockData</a>, and <a class="el" href="../../dd/d42/lock_8h_source.html#l00011">LOCK::LockName</a>.</p>
+<p class="reference">References <a class="el" href="../../de/d21/asm_8h_source.html#l00108">CLI</a>, <a class="el" href="../../dd/d62/Multitasking_8cpp_source.html#l00432">Tasking::CriticalSectionData</a>, <a class="el" href="../../d1/d57/cputables_8h_source.html#l00004">Data</a>, <a class="el" href="../../de/d21/asm_8h_source.html#l00089">InterruptsEnabled()</a>, and <a class="el" href="../../dd/d42/lock_8h_source.html#l00055">LOCK</a>.</p>
 
 </div>
 </div>
@@ -189,20 +189,20 @@ EnableInterrupts</td>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d20/Critical_8cpp_source.html#l00021">21</a> of file <a class="el" href="../../d6/d20/Critical_8cpp_source.html">Critical.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="../../dd/d42/lock_8h.html#affc9f8f6dceda17329d853770865dfc6">UNLOCK</a>(Data-&gt;CriticalLock);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> (Data-&gt;EnableInterrupts)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="../../dd/d42/lock_8h.html#affc9f8f6dceda17329d853770865dfc6">UNLOCK</a>(<a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>-&gt;CriticalLock);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>-&gt;EnableInterrupts)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="../../de/d21/asm_8h.html#a1171212a040f76ad9630f030efb1653e">STI</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">delete</span> Data;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d1/d30/critical_8hpp_source.html#l00011">Critical::CriticalSectionData::CriticalLock</a>, <a class="el" href="../../d1/d30/critical_8hpp_source.html#l00010">Critical::CriticalSectionData::EnableInterrupts</a>, <a class="el" href="../../de/d21/asm_8h_source.html#l00110">STI</a>, and <a class="el" href="../../dd/d42/lock_8h_source.html#l00066">UNLOCK</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00004">Data</a>, <a class="el" href="../../de/d21/asm_8h_source.html#l00110">STI</a>, and <a class="el" href="../../dd/d42/lock_8h_source.html#l00066">UNLOCK</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespaceCritical_html_add3e38a2af9c1d53423fbe0d467306e7"><div class="ttname"><a href="../../d6/d86/namespaceCritical.html#add3e38a2af9c1d53423fbe0d467306e7">Critical::CriticalSectionData::EnableInterrupts</a></div><div class="ttdeci">bool EnableInterrupts</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d30/critical_8hpp_source.html#l00010">critical.hpp:10</a></div></div>
 <div class="ttc" id="aasm_8h_html_a1171212a040f76ad9630f030efb1653e"><div class="ttname"><a href="../../de/d21/asm_8h.html#a1171212a040f76ad9630f030efb1653e">STI</a></div><div class="ttdeci">#define STI</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d21/asm_8h_source.html#l00110">asm.h:110</a></div></div>
+<div class="ttc" id="acputables_8h_html_aff2da4c061653164b5cfcc650f742f27"><div class="ttname"><a href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a></div><div class="ttdeci">GlobalDescriptorTableEntry Data</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d57/cputables_8h_source.html#l00004">cputables.h:4</a></div></div>
 <div class="ttc" id="alock_8h_html_affc9f8f6dceda17329d853770865dfc6"><div class="ttname"><a href="../../dd/d42/lock_8h.html#affc9f8f6dceda17329d853770865dfc6">UNLOCK</a></div><div class="ttdeci">#define UNLOCK(name)</div><div class="ttdoc">Spinlock unlock implementation called by assembly.</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d42/lock_8h_source.html#l00066">lock.h:66</a></div></div>
 <div class="ttc" id="anamespaceTasking_html_a390d088e178afc3b017d9a577e4e7a86"><div class="ttname"><a href="../../d9/d3e/namespaceTasking.html#a390d088e178afc3b017d9a577e4e7a86">Tasking::CriticalSectionData</a></div><div class="ttdeci">Critical::CriticalSectionData * CriticalSectionData</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d62/Multitasking_8cpp_source.html#l00432">Multitasking.cpp:432</a></div></div>
 <div class="ttc" id="alock_8h_html_aa21cada1ce4bcb6bdb9577a855980a88"><div class="ttname"><a href="../../dd/d42/lock_8h.html#aa21cada1ce4bcb6bdb9577a855980a88">LOCK</a></div><div class="ttdeci">#define LOCK(name)</div><div class="ttdoc">Spinlock lock implementation called by assembly.</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d42/lock_8h_source.html#l00055">lock.h:55</a></div></div>

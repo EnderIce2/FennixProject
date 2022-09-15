@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('de/d63/msexec_8h.html','../../'); init
 <div class="title">msexec.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="../../df/dd8/stdint_8h_source.html">stdint.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 </div>
 <p><a href="../../de/d63/msexec_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -118,6 +118,16 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a5f8c71de251bfd53efeee45aaf0a8470"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a5f8c71de251bfd53efeee45aaf0a8470">near</a>&#160;&#160;&#160;/* __near */</td></tr>
+<tr class="separator:a5f8c71de251bfd53efeee45aaf0a8470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0996c29b5fdd7baa181e30274b2378b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a>&#160;&#160;&#160;/* __far */</td></tr>
+<tr class="separator:a0996c29b5fdd7baa181e30274b2378b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d0baede67fec569c56e8394694570b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a8d0baede67fec569c56e8394694570b4">NEAR</a>&#160;&#160;&#160;<a class="el" href="../../de/d63/msexec_8h.html#a5f8c71de251bfd53efeee45aaf0a8470">near</a></td></tr>
+<tr class="separator:a8d0baede67fec569c56e8394694570b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef060b3456fdcc093a7210a762d5f2ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#aef060b3456fdcc093a7210a762d5f2ed">FAR</a>&#160;&#160;&#160;<a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a></td></tr>
+<tr class="separator:aef060b3456fdcc093a7210a762d5f2ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c33b494a68ce28497e7ce8e5e95feff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a0c33b494a68ce28497e7ce8e5e95feff">CONST</a>&#160;&#160;&#160;const</td></tr>
+<tr class="separator:a0c33b494a68ce28497e7ce8e5e95feff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acde26d24b0ff46215cbd029d8ae87e4d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#acde26d24b0ff46215cbd029d8ae87e4d">IMAGE_DOS_SIGNATURE</a>&#160;&#160;&#160;0x5A4D      /* MZ */</td></tr>
 <tr class="separator:acde26d24b0ff46215cbd029d8ae87e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d186034e0a154cfc3bcc5ec8e977564"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a9d186034e0a154cfc3bcc5ec8e977564">IMAGE_OS2_SIGNATURE</a>&#160;&#160;&#160;0x454E      /* NE */</td></tr>
@@ -211,14 +221,66 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a197942eefa7db30960ae396d68339b97"><td class="memItemLeft" align="right" valign="top">typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td></tr>
-<tr class="separator:a197942eefa7db30960ae396d68339b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb9e13210d88d43e32e735ada43a425"><td class="memItemLeft" align="right" valign="top">typedef char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a></td></tr>
+<tr class="separator:aebb9e13210d88d43e32e735ada43a425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f4bb67531a9bf6f0b9c6ad76aeba587"><td class="memItemLeft" align="right" valign="top">typedef unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a4f4bb67531a9bf6f0b9c6ad76aeba587">UCHAR</a></td></tr>
+<tr class="separator:a4f4bb67531a9bf6f0b9c6ad76aeba587"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad61bc3eae1804d8784adebdce0721d3"><td class="memItemLeft" align="right" valign="top">typedef wchar_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#aad61bc3eae1804d8784adebdce0721d3">WCHAR</a></td></tr>
 <tr class="separator:aad61bc3eae1804d8784adebdce0721d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5850d5316caf7f4cedd742fdf8cd7c02"><td class="memItemLeft" align="right" valign="top">typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td></tr>
 <tr class="separator:a5850d5316caf7f4cedd742fdf8cd7c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a3e0cda5f1249bef6db47c5eb8e3813"><td class="memItemLeft" align="right" valign="top">typedef long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a></td></tr>
 <tr class="separator:a2a3e0cda5f1249bef6db47c5eb8e3813"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad342ac907eb044443153a22f964bf0af"><td class="memItemLeft" align="right" valign="top">typedef unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#ad342ac907eb044443153a22f964bf0af">DWORD</a></td></tr>
+<tr class="separator:ad342ac907eb044443153a22f964bf0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a050c65e107f0c828f856a231f4b4e788"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a050c65e107f0c828f856a231f4b4e788">BOOL</a></td></tr>
+<tr class="separator:a050c65e107f0c828f856a231f4b4e788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ae1dab0fb4b072a66584546209e7d58"><td class="memItemLeft" align="right" valign="top">typedef unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a></td></tr>
+<tr class="separator:a4ae1dab0fb4b072a66584546209e7d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a197942eefa7db30960ae396d68339b97"><td class="memItemLeft" align="right" valign="top">typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td></tr>
+<tr class="separator:a197942eefa7db30960ae396d68339b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d06b04c04132c6f7c0fcb08c6167455"><td class="memItemLeft" align="right" valign="top">typedef float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a8d06b04c04132c6f7c0fcb08c6167455">FLOAT</a></td></tr>
+<tr class="separator:a8d06b04c04132c6f7c0fcb08c6167455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a659f272f7c6a88a64d3dfc2306384a5a"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../de/d63/msexec_8h.html#a8d06b04c04132c6f7c0fcb08c6167455">FLOAT</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a659f272f7c6a88a64d3dfc2306384a5a">PFLOAT</a></td></tr>
+<tr class="separator:a659f272f7c6a88a64d3dfc2306384a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59cab5714889df0bd009ee3e17b0d547"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../de/d63/msexec_8h.html#a050c65e107f0c828f856a231f4b4e788">BOOL</a> <a class="el" href="../../de/d63/msexec_8h.html#a5f8c71de251bfd53efeee45aaf0a8470">near</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a59cab5714889df0bd009ee3e17b0d547">PBOOL</a></td></tr>
+<tr class="separator:a59cab5714889df0bd009ee3e17b0d547"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe1b03468472e97114e318c5953d0344"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../de/d63/msexec_8h.html#a050c65e107f0c828f856a231f4b4e788">BOOL</a> <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#abe1b03468472e97114e318c5953d0344">LPBOOL</a></td></tr>
+<tr class="separator:abe1b03468472e97114e318c5953d0344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c99d821291ecee42090e74a3abbf6bf"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../de/d63/msexec_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="el" href="../../de/d63/msexec_8h.html#a5f8c71de251bfd53efeee45aaf0a8470">near</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a1c99d821291ecee42090e74a3abbf6bf">PBYTE</a></td></tr>
+<tr class="separator:a1c99d821291ecee42090e74a3abbf6bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ce29ee9290ff1be368b5a134f651f9f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../de/d63/msexec_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a3ce29ee9290ff1be368b5a134f651f9f">LPBYTE</a></td></tr>
+<tr class="separator:a3ce29ee9290ff1be368b5a134f651f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56f32c1fa5160da6e5d386de7b328029"><td class="memItemLeft" align="right" valign="top">typedef int <a class="el" href="../../de/d63/msexec_8h.html#a5f8c71de251bfd53efeee45aaf0a8470">near</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a56f32c1fa5160da6e5d386de7b328029">PINT</a></td></tr>
+<tr class="separator:a56f32c1fa5160da6e5d386de7b328029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa180ccfc9ed99261841afe0d39b2d1e6"><td class="memItemLeft" align="right" valign="top">typedef int <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#aa180ccfc9ed99261841afe0d39b2d1e6">LPINT</a></td></tr>
+<tr class="separator:aa180ccfc9ed99261841afe0d39b2d1e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01168c4f0b61a5e309749343e3b92e19"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a> <a class="el" href="../../de/d63/msexec_8h.html#a5f8c71de251bfd53efeee45aaf0a8470">near</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a01168c4f0b61a5e309749343e3b92e19">PWORD</a></td></tr>
+<tr class="separator:a01168c4f0b61a5e309749343e3b92e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97cb1b47c609954b545155b66fd468f5"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a> <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a97cb1b47c609954b545155b66fd468f5">LPWORD</a></td></tr>
+<tr class="separator:a97cb1b47c609954b545155b66fd468f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a136d01e1de4d8d60f927560bc2c3a3"><td class="memItemLeft" align="right" valign="top">typedef long <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a0a136d01e1de4d8d60f927560bc2c3a3">LPLONG</a></td></tr>
+<tr class="separator:a0a136d01e1de4d8d60f927560bc2c3a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba46a0cb951980198373d18f5e59b13c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../de/d63/msexec_8h.html#ad342ac907eb044443153a22f964bf0af">DWORD</a> <a class="el" href="../../de/d63/msexec_8h.html#a5f8c71de251bfd53efeee45aaf0a8470">near</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#aba46a0cb951980198373d18f5e59b13c">PDWORD</a></td></tr>
+<tr class="separator:aba46a0cb951980198373d18f5e59b13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b504ec9b782e4344952d8518c69f4d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../de/d63/msexec_8h.html#ad342ac907eb044443153a22f964bf0af">DWORD</a> <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#af8b504ec9b782e4344952d8518c69f4d">LPDWORD</a></td></tr>
+<tr class="separator:af8b504ec9b782e4344952d8518c69f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b08b48703a7fd44bb06310932309c85"><td class="memItemLeft" align="right" valign="top">typedef void <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a0b08b48703a7fd44bb06310932309c85">LPVOID</a></td></tr>
+<tr class="separator:a0b08b48703a7fd44bb06310932309c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad67e5812bce3ae238981bb58dfdca76c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../de/d63/msexec_8h.html#a0c33b494a68ce28497e7ce8e5e95feff">CONST</a> void <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#ad67e5812bce3ae238981bb58dfdca76c">LPCVOID</a></td></tr>
+<tr class="separator:ad67e5812bce3ae238981bb58dfdca76c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a392e62da233ed3e2f7c3fd4f487a3896"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a392e62da233ed3e2f7c3fd4f487a3896">INT</a></td></tr>
+<tr class="separator:a392e62da233ed3e2f7c3fd4f487a3896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36cb3b01d81ffd844bbbfb54003e06ec"><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a36cb3b01d81ffd844bbbfb54003e06ec">UINT</a></td></tr>
+<tr class="separator:a36cb3b01d81ffd844bbbfb54003e06ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95ec46875a76f0a87e708dd9cf19fe8a"><td class="memItemLeft" align="right" valign="top">typedef unsigned int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a95ec46875a76f0a87e708dd9cf19fe8a">PUINT</a></td></tr>
+<tr class="separator:a95ec46875a76f0a87e708dd9cf19fe8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9909bd3cf05f0906045f2ee85be4eeac"><td class="memItemLeft" align="right" valign="top">typedef short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a9909bd3cf05f0906045f2ee85be4eeac">SHORT</a></td></tr>
+<tr class="separator:a9909bd3cf05f0906045f2ee85be4eeac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac99e7e2d1394af1d48b0608ee806f6c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../de/d63/msexec_8h.html#ad342ac907eb044443153a22f964bf0af">DWORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#aac99e7e2d1394af1d48b0608ee806f6c">ULONG</a></td></tr>
+<tr class="separator:aac99e7e2d1394af1d48b0608ee806f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb90fd78c942591ef3a935cf98baf4f8"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#aeb90fd78c942591ef3a935cf98baf4f8">DOUBLE</a></td></tr>
+<tr class="separator:aeb90fd78c942591ef3a935cf98baf4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98235f8d9d76750361633477ca4f35e6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="../../de/d63/msexec_8h.html#d2/d81/struct__IMAGE__DOS__HEADER">_IMAGE_DOS_HEADER</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#a98235f8d9d76750361633477ca4f35e6">IMAGE_DOS_HEADER</a></td></tr>
 <tr class="separator:a98235f8d9d76750361633477ca4f35e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae63f59530a5a37fe66d68ce39626993d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="../../de/d63/msexec_8h.html#d2/d81/struct__IMAGE__DOS__HEADER">_IMAGE_DOS_HEADER</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d63/msexec_8h.html#ae63f59530a5a37fe66d68ce39626993d">PIMAGE_DOS_HEADER</a></td></tr>
@@ -261,119 +323,119 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00058">58</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00095">95</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="a1bd42856267579ce345e062eca7545c5"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="aa49f49ba5d0d1d898d23f50ad72916ea"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_cblp</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="aaaa4b40f12deb3c4d6b23d106c3bfbce"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="afccf60d383fd9ccf1850ee3a49d477d1"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_cp</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a880d14ac887440a6859c45a5b6c7db0c"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="ab030097a5a932fc7ab68d1e4199d11a3"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_cparhdr</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a9c7b1e78d0a6491d4fa41363b5aefecc"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="af78dbf52ad328969150454ffda33050a"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_crlc</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a7a8521e4ed5d09008750824d2cf1b4cd"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="a78261f842b5d05316081733e94740cff"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_cs</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a43bd3860e13131189379e878d5ca7052"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="a5179eb3efef18a97cb73c4b88477a32e"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_csum</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="acd7c90273207e7c4067989e7cf3569f8"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="a3ac93590f87797c9dbff3381d343ad15"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_ip</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ad5ba03bdc63b26e67bad2b036c8addf2"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="ac08402468d27b9416d201300f2ce3f7f"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_lfanew</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a5fbd4e1819caa5f1032568eb2def6cb0"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="abf5d4dea466ef6ae4becb8061ca55bf3"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_lfarlc</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a2395379130b4cc7d2d3e6982e6e3fc4c"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="a9cadd0c24aa3dfa4ab362153b45691d4"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_magic</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a65684758e3524a791a7a818322b57eea"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="a2b8ad9cfee33e28a9890ced88d3f60b8"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_maxalloc</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a5a82bb159167fe8e23fbbc06ffb85b2c"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="a3d099f92e1c4b8ee0edb2eefeac82643"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_minalloc</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ab81146b886293ed9937ff88189e87f7e"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="a39e3df8375bffd3050eb08a7ed3cbe74"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_oemid</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a07dfa12b29293ba9cc6b885bce094099"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="ac4b2cb3fc28046c084cbcb673a45f69f"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_oeminfo</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a8aeaa7307372906be09e32dc2b1901d0"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="aea62db9a5aa43594223ebc00b4076001"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_ovno</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a73c26e0cd458c8b94dcb05c8e8597fd9"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="a00e48d1e8e4e72d5f896b0efa0d94b8b"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_res[4]</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="af865555510423e60e04abfd1626d8474"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="ab5eac3179214c18cc8cefc9ba0dbabd5"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_res2[10]</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="abdf58356f1ed49b4e06935a51b8b6063"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="a8dbca6736f6f3cbcbd3fb55fc6f42590"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_sp</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ae8cba7f40bb926f2218808e7bc2a5965"></a><a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a></td>
+<a id="a8552aaf683caabc05334c77be997a272"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 e_ss</td>
 <td class="fielddoc">
@@ -394,185 +456,185 @@ e_ss</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00081">81</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00118">118</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="a596f6b2061f647841b2d3531a53788dc"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="ac8c6c7c51eaf3a7d0c3d0ece4fccac99"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_align</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ad80ff14bda99df5e08429349c0f545ef"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a0e6b61ce144c849fb9d0c8baf90c0eab"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_autodata</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a31ad5966a794099b2563ba4749aaf0f7"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a7a01788c22beb89dee47b427e1a751ca"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_cbenttab</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a2fb2e1e4e1e5a941c4a17693c7830249"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="ad26192eb77d2f0511698e2af09600b87"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_cbnrestab</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a2ab8c040bbc3b1fda3667c60c20b09ed"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a1af688c689dddbc482c275a50245af8c"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_cmod</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a1e0c26dc1c27cc15aebe8bc02502ccfe"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="ac55d09706a796d818de7930959305c75"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_cmovent</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a735a66b4bd5d91214643348a491f260b"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="af06ade8fc80a1c05e453502ebf76f11d"></a><a class="el" href="../../de/d63/msexec_8h.html#a36cb3b01d81ffd844bbbfb54003e06ec">UINT</a></td>
 <td class="fieldname">
 ne_crc</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a6b67f915789f7a8af3e8a52d9e4a4c64"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a1ee7ef60541c9cec2ae40fc62d9cdcc0"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_cres</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a38723bb641e7b109cddf93e6446a54bd"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a5ef9a5c40d30f8f976c03bfba89ed958"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_cseg</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="aea3f35090bb65675d4318daf6ee35fc9"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a36fa03624f5d708a5e83216c4eace96c"></a><a class="el" href="../../de/d63/msexec_8h.html#a36cb3b01d81ffd844bbbfb54003e06ec">UINT</a></td>
 <td class="fieldname">
 ne_csip</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a8f63a99fd5719967fac29062a7ce4215"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="af166eeb14e6e03e82c4f4e73ed261659"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_enttab</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a2c3d74d2a7750eafac47340b5b18cdae"></a><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
+<a id="a178ec1a2a1b4c8a983f1475a3605fb23"></a><a class="el" href="../../de/d63/msexec_8h.html#a4f4bb67531a9bf6f0b9c6ad76aeba587">UCHAR</a></td>
 <td class="fieldname">
 ne_exetyp</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a4bc580a9949abc0dd61b44b610848282"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="ae07fe44afedb60f4c7d4d5ef26d7400d"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_expver</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a5f51170a7fcde8a217713ffc1d5e9d17"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a7ea790a23afa58f3a94dd9ef36123943"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_flags</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ab27bade966cfc311a83cbdb8685b68cf"></a><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
+<a id="ad400702aeb5f52ec1ac5ad1c14c789aa"></a><a class="el" href="../../de/d63/msexec_8h.html#a4f4bb67531a9bf6f0b9c6ad76aeba587">UCHAR</a></td>
 <td class="fieldname">
 ne_flagsothers</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a061391028885111278dba65c76bce2d4"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a5fe0f427cc4e2bc14a7c3a3e506e8974"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_heap</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="aeab22515e19857092a8489a043ec3db0"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a7196ae0adf2197133a8ed9c94b1c1731"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_imptab</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a0e0cd7485f82dd7ad7446e8188cfda8c"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a0c8a746afc5a83c53c23a0b0711a7707"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_magic</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a23e368ca6d579360834ff390676463bd"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="adae3865684060b320f7fe4a0eacf46c8"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_modtab</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ac85e7a50500716bda476ee91b7a5636a"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="af614b4e1e56b5a882117d4882c06d560"></a><a class="el" href="../../de/d63/msexec_8h.html#a36cb3b01d81ffd844bbbfb54003e06ec">UINT</a></td>
 <td class="fieldname">
 ne_nrestab</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a96f4ba9e88648f80cfa10743adc6859e"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="ae6f53bb71ea9594d63b523a49d24c5e9"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_pretthunks</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a8796acd6a431e009d273862992c09b66"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a5da13811dd048cf5ff04148b8a1ca4a1"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_psegrefbytes</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a4efad7dd8c2ab02095c31f4891a662f1"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="ac5e1009c12e71f94e100a33f6057da9f"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_restab</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a506003d2a606439b7cb97f4ba76afb01"></a><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
+<a id="a3eba1eac8b1f4421a755bc0b160649e1"></a><a class="el" href="../../de/d63/msexec_8h.html#a4f4bb67531a9bf6f0b9c6ad76aeba587">UCHAR</a></td>
 <td class="fieldname">
 ne_rev</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a81e31d8bbc5cdee1927bb25d14d30ccb"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a6dafbceaafe5cea14e7b11ec41d01621"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_rsrctab</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a2111667748393b34df61ed44fbe071d0"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a0732152c106389775d8aa4b9f5f2bc93"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_segtab</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a5cfadfb0ada14d3590e7c5b6fe2b192d"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a05e6129aac2c2557593640f9930743e1"></a><a class="el" href="../../de/d63/msexec_8h.html#a36cb3b01d81ffd844bbbfb54003e06ec">UINT</a></td>
 <td class="fieldname">
 ne_sssp</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a5b81df574c7391d1cc79623b4f7a28e5"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a24ba83b7a5069d6da7b48a20fd8717bf"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_stack</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a5f08edde6ca7f92f876c98655cef3cbc"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a42ebb0149c7c37bea8915ff0248c2c16"></a><a class="el" href="../../de/d63/msexec_8h.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
 <td class="fieldname">
 ne_swaparea</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a27a239cbac415fe80bf3afd516c678a0"></a><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
+<a id="aebb4d133bc01551004d48b723981c8b1"></a><a class="el" href="../../de/d63/msexec_8h.html#a4f4bb67531a9bf6f0b9c6ad76aeba587">UCHAR</a></td>
 <td class="fieldname">
 ne_ver</td>
 <td class="fielddoc">
@@ -593,65 +655,65 @@ ne_ver</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00115">115</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00152">152</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="aa3de014617ca164f8b0037f45a181c7c"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="aa3de014617ca164f8b0037f45a181c7c"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 Characteristics</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a923679323c967aa47332a49bc0d22f97"></a>union <a class="el" href="../../de/d63/msexec_8h.html#dd/d61/union__IMAGE__SECTION__HEADER_8Misc">_IMAGE_SECTION_HEADER</a></td>
+<a id="a65feba4dd4fe549108f6682bd83efcc7"></a>union <a class="el" href="../../de/d63/msexec_8h.html#dd/d61/union__IMAGE__SECTION__HEADER_8Misc">_IMAGE_SECTION_HEADER</a></td>
 <td class="fieldname">
 Misc</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a59b61a31de639e8bc2c9f3b8f52ec3f4"></a><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
+<a id="a59b61a31de639e8bc2c9f3b8f52ec3f4"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
 <td class="fieldname">
 Name[<a class="el" href="../../de/d63/msexec_8h.html#a98e3229bbf99bf35eaebf248b173d235">IMAGE_SIZEOF_SHORT_NAME</a>]</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="aee1b10096cc95113b5a4424052140537"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="aee1b10096cc95113b5a4424052140537"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 NumberOfLinenumbers</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ab351c0fd9938702e76ed0bce67310b96"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="ab351c0fd9938702e76ed0bce67310b96"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 NumberOfRelocations</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a29acf0893758af06ba410db663c6f0d9"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a29acf0893758af06ba410db663c6f0d9"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 PointerToLinenumbers</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a96696696e327383705aa1b8024ea0d7b"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a96696696e327383705aa1b8024ea0d7b"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 PointerToRawData</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a92a1cec13e774c6a9e08ab0427aa8e07"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a92a1cec13e774c6a9e08ab0427aa8e07"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 PointerToRelocations</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a197c6eab38c021a9509df79523fdb31b"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a197c6eab38c021a9509df79523fdb31b"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 SizeOfRawData</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ac8746b86b2b74266e9e0b6b89ed249bc"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="ac8746b86b2b74266e9e0b6b89ed249bc"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 VirtualAddress</td>
 <td class="fielddoc">
@@ -672,47 +734,47 @@ VirtualAddress</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00134">134</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00171">171</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="a0efea0d2b0d63ef778be4a57f214833a"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a0efea0d2b0d63ef778be4a57f214833a"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 Characteristics</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a4e5b991ed6ee6f094153f7baa9ca16aa"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a4e5b991ed6ee6f094153f7baa9ca16aa"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 Machine</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="abd08dd191a9f6a5fa9a3e77dbe499ac8"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="abd08dd191a9f6a5fa9a3e77dbe499ac8"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 NumberOfSections</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a5b1176f31253cd3d39411b215ec204ed"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a5b1176f31253cd3d39411b215ec204ed"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 NumberOfSymbols</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a2a560edc5a5be2d27081e6f95046286e"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a2a560edc5a5be2d27081e6f95046286e"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 PointerToSymbolTable</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a63a4d24752fdd43904c4e34246d658de"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a63a4d24752fdd43904c4e34246d658de"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 SizeOfOptionalHeader</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="afacfc23ca4dcac8a9e29794041c380a8"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="afacfc23ca4dcac8a9e29794041c380a8"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 TimeDateStamp</td>
 <td class="fielddoc">
@@ -733,17 +795,17 @@ TimeDateStamp</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00145">145</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00182">182</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="aefb467b80cbb73a26753b07e14f0e6d3"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="aefb467b80cbb73a26753b07e14f0e6d3"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 Size</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a929fb4a0efed01b5ed27e28a92c5e2bd"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a929fb4a0efed01b5ed27e28a92c5e2bd"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 VirtualAddress</td>
 <td class="fielddoc">
@@ -764,29 +826,29 @@ VirtualAddress</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00151">151</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00188">188</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="abf58bce89d8fc8e7ce8b7be1ce4d6dff"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="abf58bce89d8fc8e7ce8b7be1ce4d6dff"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 AddressOfEntryPoint</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a94c706746a381548bba44683d7304176"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a94c706746a381548bba44683d7304176"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 BaseOfCode</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="afcdcf3b0a7d120cbe519293c45b8082b"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="afcdcf3b0a7d120cbe519293c45b8082b"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 BaseOfData</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a4da52507d3157d5236c1d9ebb844b165"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a4da52507d3157d5236c1d9ebb844b165"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 CheckSum</td>
 <td class="fielddoc">
@@ -798,157 +860,157 @@ DataDirectory[<a class="el" href="../../de/d63/msexec_8h.html#a75892b738729f0de6
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a6037d120e40a891e9be7f44eb0688375"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a6037d120e40a891e9be7f44eb0688375"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 DllCharacteristics</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ae1f2a9cffbec7917a910db85e4501f06"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="ae1f2a9cffbec7917a910db85e4501f06"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 FileAlignment</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a9383d2e5bbad090b165297d025b77097"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a9383d2e5bbad090b165297d025b77097"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 ImageBase</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a5fd182ae5f73a673cf4269a780904862"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a5fd182ae5f73a673cf4269a780904862"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 LoaderFlags</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a65eb5dd050add94e308612286f5e9033"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a65eb5dd050add94e308612286f5e9033"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 Magic</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a0e0720fe98c91d13c7d012a5f2f43237"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a0e0720fe98c91d13c7d012a5f2f43237"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 MajorImageVersion</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ac699192af963e96d60a1a8e4ef74209b"></a><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
+<a id="ac699192af963e96d60a1a8e4ef74209b"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
 <td class="fieldname">
 MajorLinkerVersion</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a52687879784f2e82a39bf095fcab60bf"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a52687879784f2e82a39bf095fcab60bf"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 MajorOperatingSystemVersion</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a246f834c7d4a11138a717646a0446277"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a246f834c7d4a11138a717646a0446277"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 MajorSubsystemVersion</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a61fa5f39d10600e4f4e665c977ee8924"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a61fa5f39d10600e4f4e665c977ee8924"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 MinorImageVersion</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ad5e18122c12d03bef67770c71850666e"></a><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
+<a id="ad5e18122c12d03bef67770c71850666e"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
 <td class="fieldname">
 MinorLinkerVersion</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ac033c0a34b9f1a030807b6c186bffbfd"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="ac033c0a34b9f1a030807b6c186bffbfd"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 MinorOperatingSystemVersion</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ab7c45bf1b557c98f6c873e548d905b2b"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="ab7c45bf1b557c98f6c873e548d905b2b"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 MinorSubsystemVersion</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a7bb1e6e3a9954d7eba1efe0782ce63c6"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a7bb1e6e3a9954d7eba1efe0782ce63c6"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 NumberOfRvaAndSizes</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ac36f5c2aab0aa0eb73ae3312f2419280"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="ac36f5c2aab0aa0eb73ae3312f2419280"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 SectionAlignment</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="acffbc8e39bf16ea35bf2d67b66a21427"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="acffbc8e39bf16ea35bf2d67b66a21427"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 SizeOfCode</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a4d18f7a7d258c8aee52e754dd4baf440"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a4d18f7a7d258c8aee52e754dd4baf440"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 SizeOfHeaders</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a02c56ea77fd77a6f4ab2cf7dcb825217"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a02c56ea77fd77a6f4ab2cf7dcb825217"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 SizeOfHeapCommit</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a0bfd2147a31776420b9594952f61343d"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a0bfd2147a31776420b9594952f61343d"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 SizeOfHeapReserve</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="af3700b629e7029fe345aeef4d6188833"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="af3700b629e7029fe345aeef4d6188833"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 SizeOfImage</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="afb1150c7008d392e0545ead63682fb81"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="afb1150c7008d392e0545ead63682fb81"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 SizeOfInitializedData</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a5e68a0f93254a3405b773156f47b912c"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a5e68a0f93254a3405b773156f47b912c"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 SizeOfStackCommit</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a187f3ae221efa6b47dc659603307e606"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a187f3ae221efa6b47dc659603307e606"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 SizeOfStackReserve</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="abf046874b02fc70b1557047669f0c5cb"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="abf046874b02fc70b1557047669f0c5cb"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 SizeOfUninitializedData</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ae604f9f34103984550040f8384105d20"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="ae604f9f34103984550040f8384105d20"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 Subsystem</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a625e7d31f09cd4efd70f56c48de9c6e0"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a625e7d31f09cd4efd70f56c48de9c6e0"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 Win32VersionValue</td>
 <td class="fielddoc">
@@ -969,7 +1031,7 @@ Win32VersionValue</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00186">186</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00223">223</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -985,7 +1047,7 @@ OptionalHeader</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a515a5bd93ec96008f1ac61555ada3cfe"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a515a5bd93ec96008f1ac61555ada3cfe"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 Signature</td>
 <td class="fielddoc">
@@ -1006,17 +1068,17 @@ Signature</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00119">119</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00156">156</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="a769e380b84a4a3ce74dae1350f847060"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a769e380b84a4a3ce74dae1350f847060"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 PhysicalAddress</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="af32a44bd5abfa8c97e7e8e174691d363"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="af32a44bd5abfa8c97e7e8e174691d363"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 VirtualSize</td>
 <td class="fielddoc">
@@ -1026,6 +1088,54 @@ VirtualSize</td>
 </div>
 </div>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a0c33b494a68ce28497e7ce8e5e95feff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c33b494a68ce28497e7ce8e5e95feff">&#9670;&nbsp;</a></span>CONST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONST&#160;&#160;&#160;const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00011">11</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a0996c29b5fdd7baa181e30274b2378b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0996c29b5fdd7baa181e30274b2378b7">&#9670;&nbsp;</a></span>far</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define far&#160;&#160;&#160;/* __far */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00008">8</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="aef060b3456fdcc093a7210a762d5f2ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef060b3456fdcc093a7210a762d5f2ed">&#9670;&nbsp;</a></span>FAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FAR&#160;&#160;&#160;<a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00010">10</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
 <a id="a359633b6295214c9bdf83e28f565cd5c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a359633b6295214c9bdf83e28f565cd5c">&#9670;&nbsp;</a></span>IMAGE_DIRECTORY_ENTRY_ARCHITECTURE</h2>
 
@@ -1038,7 +1148,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00049">49</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00086">86</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1054,7 +1164,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00047">47</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00084">84</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1070,7 +1180,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00053">53</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00090">90</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1086,7 +1196,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00056">56</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00093">93</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1102,7 +1212,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00048">48</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00085">85</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1118,7 +1228,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00055">55</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00092">92</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1134,7 +1244,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00045">45</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00082">82</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1150,7 +1260,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00042">42</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00079">79</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1166,7 +1276,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00050">50</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00087">87</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1182,7 +1292,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00054">54</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00091">91</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1198,7 +1308,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00043">43</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00080">80</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1214,7 +1324,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00052">52</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00089">89</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1230,7 +1340,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00044">44</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00081">81</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1246,7 +1356,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00046">46</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00083">83</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1262,7 +1372,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00051">51</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00088">88</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1278,7 +1388,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00010">10</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00047">47</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1294,7 +1404,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00014">14</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00051">51</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1310,7 +1420,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00024">24</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00061">61</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1326,7 +1436,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00036">36</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00073">73</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1342,7 +1452,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00038">38</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00075">75</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1358,7 +1468,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00030">30</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00067">67</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1374,7 +1484,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00037">37</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00074">74</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1390,7 +1500,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00039">39</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00076">76</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1406,7 +1516,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00020">20</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00057">57</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1422,7 +1532,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00019">19</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00056">56</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1438,7 +1548,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00032">32</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00069">69</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1454,7 +1564,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00033">33</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00070">70</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1470,7 +1580,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00034">34</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00071">71</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1486,7 +1596,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00035">35</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00072">72</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1502,7 +1612,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00025">25</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00062">62</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1518,7 +1628,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00026">26</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00063">63</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1534,7 +1644,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00023">23</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00060">60</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1550,7 +1660,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00021">21</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00058">58</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1566,7 +1676,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00022">22</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00059">59</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1582,7 +1692,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00027">27</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00064">64</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1598,7 +1708,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00028">28</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00065">65</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1614,7 +1724,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00029">29</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00066">66</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1630,7 +1740,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00031">31</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00068">68</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1646,7 +1756,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00018">18</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00055">55</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1662,7 +1772,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00013">13</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00050">50</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1678,7 +1788,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00041">41</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00078">78</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1694,7 +1804,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00011">11</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00048">48</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1710,7 +1820,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00012">12</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00049">49</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1726,7 +1836,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00016">16</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00053">53</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1742,11 +1852,139 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00117">117</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00154">154</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a5f8c71de251bfd53efeee45aaf0a8470"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f8c71de251bfd53efeee45aaf0a8470">&#9670;&nbsp;</a></span>near</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define near&#160;&#160;&#160;/* __near */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00007">7</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a8d0baede67fec569c56e8394694570b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d0baede67fec569c56e8394694570b4">&#9670;&nbsp;</a></span>NEAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NEAR&#160;&#160;&#160;<a class="el" href="../../de/d63/msexec_8h.html#a5f8c71de251bfd53efeee45aaf0a8470">near</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00009">9</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="a050c65e107f0c828f856a231f4b4e788"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a050c65e107f0c828f856a231f4b4e788">&#9670;&nbsp;</a></span>BOOL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int <a class="el" href="../../de/d63/msexec_8h.html#a050c65e107f0c828f856a231f4b4e788">BOOL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00020">20</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a4ae1dab0fb4b072a66584546209e7d58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ae1dab0fb4b072a66584546209e7d58">&#9670;&nbsp;</a></span>BYTE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned char <a class="el" href="../../de/d63/msexec_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00021">21</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="aebb9e13210d88d43e32e735ada43a425"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebb9e13210d88d43e32e735ada43a425">&#9670;&nbsp;</a></span>CHAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef char <a class="el" href="../../de/d63/msexec_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00013">13</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="aeb90fd78c942591ef3a935cf98baf4f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb90fd78c942591ef3a935cf98baf4f8">&#9670;&nbsp;</a></span>DOUBLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef double <a class="el" href="../../de/d63/msexec_8h.html#aeb90fd78c942591ef3a935cf98baf4f8">DOUBLE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00045">45</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="ad342ac907eb044443153a22f964bf0af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad342ac907eb044443153a22f964bf0af">&#9670;&nbsp;</a></span>DWORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned long <a class="el" href="../../de/d63/msexec_8h.html#ad342ac907eb044443153a22f964bf0af">DWORD</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00019">19</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a8d06b04c04132c6f7c0fcb08c6167455"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d06b04c04132c6f7c0fcb08c6167455">&#9670;&nbsp;</a></span>FLOAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef float <a class="el" href="../../de/d63/msexec_8h.html#a8d06b04c04132c6f7c0fcb08c6167455">FLOAT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00023">23</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
 <a id="a4005897e67b08f28f1ef07c0eaca58c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4005897e67b08f28f1ef07c0eaca58c2">&#9670;&nbsp;</a></span>IMAGE_DATA_DIRECTORY</h2>
 
@@ -1845,6 +2083,22 @@ VirtualSize</td>
 
 </div>
 </div>
+<a id="a392e62da233ed3e2f7c3fd4f487a3896"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a392e62da233ed3e2f7c3fd4f487a3896">&#9670;&nbsp;</a></span>INT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int <a class="el" href="../../de/d63/msexec_8h.html#a392e62da233ed3e2f7c3fd4f487a3896">INT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00039">39</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
 <a id="a2a3e0cda5f1249bef6db47c5eb8e3813"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a3e0cda5f1249bef6db47c5eb8e3813">&#9670;&nbsp;</a></span>LONG</h2>
 
@@ -1857,7 +2111,199 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00008">8</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00017">17</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="abe1b03468472e97114e318c5953d0344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe1b03468472e97114e318c5953d0344">&#9670;&nbsp;</a></span>LPBOOL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../de/d63/msexec_8h.html#a050c65e107f0c828f856a231f4b4e788">BOOL</a> <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a>* <a class="el" href="../../de/d63/msexec_8h.html#abe1b03468472e97114e318c5953d0344">LPBOOL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00026">26</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a3ce29ee9290ff1be368b5a134f651f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ce29ee9290ff1be368b5a134f651f9f">&#9670;&nbsp;</a></span>LPBYTE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../de/d63/msexec_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a>* <a class="el" href="../../de/d63/msexec_8h.html#a3ce29ee9290ff1be368b5a134f651f9f">LPBYTE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00028">28</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="ad67e5812bce3ae238981bb58dfdca76c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad67e5812bce3ae238981bb58dfdca76c">&#9670;&nbsp;</a></span>LPCVOID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../de/d63/msexec_8h.html#a0c33b494a68ce28497e7ce8e5e95feff">CONST</a> void <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a>* <a class="el" href="../../de/d63/msexec_8h.html#ad67e5812bce3ae238981bb58dfdca76c">LPCVOID</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00037">37</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="af8b504ec9b782e4344952d8518c69f4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8b504ec9b782e4344952d8518c69f4d">&#9670;&nbsp;</a></span>LPDWORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../de/d63/msexec_8h.html#ad342ac907eb044443153a22f964bf0af">DWORD</a> <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a>* <a class="el" href="../../de/d63/msexec_8h.html#af8b504ec9b782e4344952d8518c69f4d">LPDWORD</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00035">35</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="aa180ccfc9ed99261841afe0d39b2d1e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa180ccfc9ed99261841afe0d39b2d1e6">&#9670;&nbsp;</a></span>LPINT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a>* <a class="el" href="../../de/d63/msexec_8h.html#aa180ccfc9ed99261841afe0d39b2d1e6">LPINT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00030">30</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a0a136d01e1de4d8d60f927560bc2c3a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a136d01e1de4d8d60f927560bc2c3a3">&#9670;&nbsp;</a></span>LPLONG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef long <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a>* <a class="el" href="../../de/d63/msexec_8h.html#a0a136d01e1de4d8d60f927560bc2c3a3">LPLONG</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00033">33</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a0b08b48703a7fd44bb06310932309c85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b08b48703a7fd44bb06310932309c85">&#9670;&nbsp;</a></span>LPVOID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a>* <a class="el" href="../../de/d63/msexec_8h.html#a0b08b48703a7fd44bb06310932309c85">LPVOID</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00036">36</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a97cb1b47c609954b545155b66fd468f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97cb1b47c609954b545155b66fd468f5">&#9670;&nbsp;</a></span>LPWORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a> <a class="el" href="../../de/d63/msexec_8h.html#a0996c29b5fdd7baa181e30274b2378b7">far</a>* <a class="el" href="../../de/d63/msexec_8h.html#a97cb1b47c609954b545155b66fd468f5">LPWORD</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00032">32</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a59cab5714889df0bd009ee3e17b0d547"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59cab5714889df0bd009ee3e17b0d547">&#9670;&nbsp;</a></span>PBOOL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../de/d63/msexec_8h.html#a050c65e107f0c828f856a231f4b4e788">BOOL</a> <a class="el" href="../../de/d63/msexec_8h.html#a5f8c71de251bfd53efeee45aaf0a8470">near</a>* <a class="el" href="../../de/d63/msexec_8h.html#a59cab5714889df0bd009ee3e17b0d547">PBOOL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00025">25</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a1c99d821291ecee42090e74a3abbf6bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c99d821291ecee42090e74a3abbf6bf">&#9670;&nbsp;</a></span>PBYTE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../de/d63/msexec_8h.html#a4ae1dab0fb4b072a66584546209e7d58">BYTE</a> <a class="el" href="../../de/d63/msexec_8h.html#a5f8c71de251bfd53efeee45aaf0a8470">near</a>* <a class="el" href="../../de/d63/msexec_8h.html#a1c99d821291ecee42090e74a3abbf6bf">PBYTE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00027">27</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="aba46a0cb951980198373d18f5e59b13c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba46a0cb951980198373d18f5e59b13c">&#9670;&nbsp;</a></span>PDWORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../de/d63/msexec_8h.html#ad342ac907eb044443153a22f964bf0af">DWORD</a> <a class="el" href="../../de/d63/msexec_8h.html#a5f8c71de251bfd53efeee45aaf0a8470">near</a>* <a class="el" href="../../de/d63/msexec_8h.html#aba46a0cb951980198373d18f5e59b13c">PDWORD</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00034">34</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a659f272f7c6a88a64d3dfc2306384a5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a659f272f7c6a88a64d3dfc2306384a5a">&#9670;&nbsp;</a></span>PFLOAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../de/d63/msexec_8h.html#a8d06b04c04132c6f7c0fcb08c6167455">FLOAT</a>* <a class="el" href="../../de/d63/msexec_8h.html#a659f272f7c6a88a64d3dfc2306384a5a">PFLOAT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00024">24</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1959,6 +2405,118 @@ VirtualSize</td>
 
 </div>
 </div>
+<a id="a56f32c1fa5160da6e5d386de7b328029"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56f32c1fa5160da6e5d386de7b328029">&#9670;&nbsp;</a></span>PINT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int <a class="el" href="../../de/d63/msexec_8h.html#a5f8c71de251bfd53efeee45aaf0a8470">near</a>* <a class="el" href="../../de/d63/msexec_8h.html#a56f32c1fa5160da6e5d386de7b328029">PINT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00029">29</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a95ec46875a76f0a87e708dd9cf19fe8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95ec46875a76f0a87e708dd9cf19fe8a">&#9670;&nbsp;</a></span>PUINT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned int* <a class="el" href="../../de/d63/msexec_8h.html#a95ec46875a76f0a87e708dd9cf19fe8a">PUINT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00041">41</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a01168c4f0b61a5e309749343e3b92e19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01168c4f0b61a5e309749343e3b92e19">&#9670;&nbsp;</a></span>PWORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../de/d63/msexec_8h.html#a197942eefa7db30960ae396d68339b97">WORD</a> <a class="el" href="../../de/d63/msexec_8h.html#a5f8c71de251bfd53efeee45aaf0a8470">near</a>* <a class="el" href="../../de/d63/msexec_8h.html#a01168c4f0b61a5e309749343e3b92e19">PWORD</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00031">31</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a9909bd3cf05f0906045f2ee85be4eeac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9909bd3cf05f0906045f2ee85be4eeac">&#9670;&nbsp;</a></span>SHORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef short <a class="el" href="../../de/d63/msexec_8h.html#a9909bd3cf05f0906045f2ee85be4eeac">SHORT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00043">43</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a4f4bb67531a9bf6f0b9c6ad76aeba587"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f4bb67531a9bf6f0b9c6ad76aeba587">&#9670;&nbsp;</a></span>UCHAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned char <a class="el" href="../../de/d63/msexec_8h.html#a4f4bb67531a9bf6f0b9c6ad76aeba587">UCHAR</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00014">14</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="a36cb3b01d81ffd844bbbfb54003e06ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36cb3b01d81ffd844bbbfb54003e06ec">&#9670;&nbsp;</a></span>UINT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned int <a class="el" href="../../de/d63/msexec_8h.html#a36cb3b01d81ffd844bbbfb54003e06ec">UINT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00040">40</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
+<a id="aac99e7e2d1394af1d48b0608ee806f6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac99e7e2d1394af1d48b0608ee806f6c">&#9670;&nbsp;</a></span>ULONG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../de/d63/msexec_8h.html#ad342ac907eb044443153a22f964bf0af">DWORD</a> <a class="el" href="../../de/d63/msexec_8h.html#aac99e7e2d1394af1d48b0608ee806f6c">ULONG</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00044">44</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+
+</div>
+</div>
 <a id="a5850d5316caf7f4cedd742fdf8cd7c02"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5850d5316caf7f4cedd742fdf8cd7c02">&#9670;&nbsp;</a></span>USHORT</h2>
 
@@ -1971,7 +2529,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00007">7</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00016">16</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -1987,7 +2545,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00006">6</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00015">15</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>
@@ -2003,7 +2561,7 @@ VirtualSize</td>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00005">5</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d63/msexec_8h_source.html#l00022">22</a> of file <a class="el" href="../../de/d63/msexec_8h_source.html">msexec.h</a>.</p>
 
 </div>
 </div>

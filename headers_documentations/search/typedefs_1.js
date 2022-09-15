@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['cr0_3969',['CR0',['../d1/d57/cputables_8h.html#af0d4d2ebee235316c617eaf06ac4a3d8',1,'cputables.h']]],
-  ['cr2_3970',['CR2',['../d1/d57/cputables_8h.html#a71c7722845f3d4fb0a2a8e9fda6d7bba',1,'cputables.h']]],
-  ['cr3_3971',['CR3',['../d1/d57/cputables_8h.html#ac50c14c160d060d192cd1db30603d086',1,'cputables.h']]],
-  ['cr4_3972',['CR4',['../d1/d57/cputables_8h.html#aed03adec2713681d7bbe061fc2a60360',1,'cputables.h']]],
-  ['cr8_3973',['CR8',['../d1/d57/cputables_8h.html#a1e98e3491a90b2dc47e4ea0b3dc3fd3d',1,'cputables.h']]]
+  ['bool_3991',['BOOL',['../de/d63/msexec_8h.html#a050c65e107f0c828f856a231f4b4e788',1,'msexec.h']]],
+  ['byte_3992',['BYTE',['../de/d63/msexec_8h.html#a4ae1dab0fb4b072a66584546209e7d58',1,'msexec.h']]]
 ];

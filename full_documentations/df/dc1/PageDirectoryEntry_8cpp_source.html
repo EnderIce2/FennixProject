@@ -93,26 +93,26 @@ $(document).ready(function(){initNavTree('df/dc1/PageDirectoryEntry_8cpp_source.
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using namespace </span>VMM;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keywordtype">void</span> PageDirectoryEntry::AddFlag(<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Flag) { this-&gt;Value.raw |= Flag; }</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keywordtype">void</span> PageDirectoryEntry::AddFlag(<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Flag) { this-&gt;Value.raw |= Flag; }</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">void</span> PageDirectoryEntry::RemoveFlags(<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Flag) { this-&gt;Value.raw &amp;= ~Flag; }</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">void</span> PageDirectoryEntry::RemoveFlags(<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Flag) { this-&gt;Value.raw &amp;= ~Flag; }</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keywordtype">void</span> PageDirectoryEntry::ClearFlags() { this-&gt;Value.raw = 0; }</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> PageDirectoryEntry::SetFlag(<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Flag, <span class="keywordtype">bool</span> Enabled)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> PageDirectoryEntry::SetFlag(<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Flag, <span class="keywordtype">bool</span> Enabled)</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    this-&gt;Value.raw &amp;= ~Flag;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">if</span> (Enabled)</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        this-&gt;Value.raw |= Flag;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> PageDirectoryEntry::GetFlag() { <span class="keywordflow">return</span> this-&gt;Value.raw; }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> PageDirectoryEntry::GetFlag() { <span class="keywordflow">return</span> this-&gt;Value.raw; }</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">bool</span> PageDirectoryEntry::GetFlag(<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Flag) { <span class="keywordflow">return</span> (this-&gt;Value.raw &amp; Flag) &gt; 0 ? true : <span class="keyword">false</span>; }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">bool</span> PageDirectoryEntry::GetFlag(<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Flag) { <span class="keywordflow">return</span> (this-&gt;Value.raw &amp; Flag) &gt; 0 ? <a class="code" href="../../d9/d5e/stdbool_8h.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a> : <span class="keyword">false</span>; }</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> PageDirectoryEntry::GetAddress() { <span class="keywordflow">return</span> (this-&gt;Value.raw &amp; 0x000FFFFFFFFFF000) &gt;&gt; 12; }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> PageDirectoryEntry::GetAddress() { <span class="keywordflow">return</span> (this-&gt;Value.raw &amp; 0x000FFFFFFFFFF000) &gt;&gt; 12; }</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> PageDirectoryEntry::SetAddress(<a class="code" href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> <a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#a6fc2b8ed8be1aa26731a45000f43b8cc">Address</a>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> PageDirectoryEntry::SetAddress(<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> <a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#a6fc2b8ed8be1aa26731a45000f43b8cc">Address</a>)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#a6fc2b8ed8be1aa26731a45000f43b8cc">Address</a> &amp;= 0x000000FFFFFFFFFF;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    this-&gt;Value.raw &amp;= 0xFFF0000000000FFF;</div>
@@ -120,8 +120,9 @@ $(document).ready(function(){initNavTree('df/dc1/PageDirectoryEntry_8cpp_source.
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
 <div class="ttc" id="aarch_2amd64_2cpu_2acpi_8hpp_html_a6fc2b8ed8be1aa26731a45000f43b8cc"><div class="ttname"><a href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp.html#a6fc2b8ed8be1aa26731a45000f43b8cc">Address</a></div><div class="ttdeci">uint64_t Address</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/dd4/arch_2amd64_2cpu_2acpi_8hpp_source.html#l00285">acpi.hpp:285</a></div></div>
+<div class="ttc" id="ainclude_2stdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
+<div class="ttc" id="astdbool_8h_html_a41f9c5fb8b08eb5dc3edce4dcb37fee7"><div class="ttname"><a href="../../d9/d5e/stdbool_8h.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a></div><div class="ttdeci">#define true</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d5e/stdbool_8h_source.html#l00014">stdbool.h:14</a></div></div>
 <div class="ttc" id="aheap_8h_html"><div class="ttname"><a href="../../da/ddb/heap_8h.html">heap.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

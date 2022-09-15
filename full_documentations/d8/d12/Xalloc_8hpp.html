@@ -161,7 +161,7 @@ Variables</h2></td></tr>
 <tr class="separator:ade3e04c96dd45ce3883d49b47135c0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d813a0c048654dad36779174d5b4597"><td class="memItemLeft" align="right" valign="top">HeapSegment *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d12/Xalloc_8hpp.html#a3d813a0c048654dad36779174d5b4597">Last</a></td></tr>
 <tr class="separator:a3d813a0c048654dad36779174d5b4597"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb388cdb96fcfdac81a08f7ae8f8da84"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d12/Xalloc_8hpp.html#acb388cdb96fcfdac81a08f7ae8f8da84">IsFree</a></td></tr>
+<tr class="memitem:acb388cdb96fcfdac81a08f7ae8f8da84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d12/Xalloc_8hpp.html#acb388cdb96fcfdac81a08f7ae8f8da84">IsFree</a></td></tr>
 <tr class="separator:acb388cdb96fcfdac81a08f7ae8f8da84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -551,7 +551,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">if</span> (SplitLength &lt; 0x10)</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="../../df/dd8/stdint_8h.html#ac714c0d2c1a4adb10e73cab29623314b">int64_t</a> SplitSegmentLength = <a class="code" href="../../d8/d12/Xalloc_8hpp.html#a2e33a2b8093009ed89b4fd620e265f0a">Length</a> - SplitLength - (<span class="keyword">sizeof</span>(HeapSegment));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="../../dc/d69/include_2stdint_8h.html#ac714c0d2c1a4adb10e73cab29623314b">int64_t</a> SplitSegmentLength = <a class="code" href="../../d8/d12/Xalloc_8hpp.html#a2e33a2b8093009ed89b4fd620e265f0a">Length</a> - SplitLength - (<span class="keyword">sizeof</span>(HeapSegment));</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">if</span> (SplitSegmentLength &lt; 0x10)</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                HeapSegment *NewSplitHdr = (HeapSegment *)((<a class="code" href="../../d8/d12/Xalloc_8hpp.html#ad4da0790ce22f3521d4b4653007dd1dd">Xuint64_t</a>)<span class="keyword">this</span> + SplitLength + <span class="keyword">sizeof</span>(HeapSegment));</div>
@@ -569,7 +569,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool IsFree</td>
+          <td class="memname"><a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> IsFree</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -630,13 +630,13 @@ Variables</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="ainclude_2stdint_8h_html_ac714c0d2c1a4adb10e73cab29623314b"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#ac714c0d2c1a4adb10e73cab29623314b">int64_t</a></div><div class="ttdeci">__INT64_TYPE__ int64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00006">stdint.h:6</a></div></div>
 <div class="ttc" id="aXalloc_8hpp_html_ab35af3575914faba3a6ae16f6ba0983c"><div class="ttname"><a href="../../d8/d12/Xalloc_8hpp.html#ab35af3575914faba3a6ae16f6ba0983c">Split</a></div><div class="ttdeci">HeapSegment * Split(Xuint64_t SplitLength, HeapSegment *LastSegment)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d12/Xalloc_8hpp_source.html#l00029">Xalloc.hpp:29</a></div></div>
 <div class="ttc" id="aXalloc_8hpp_html_a3d813a0c048654dad36779174d5b4597"><div class="ttname"><a href="../../d8/d12/Xalloc_8hpp.html#a3d813a0c048654dad36779174d5b4597">Last</a></div><div class="ttdeci">HeapSegment * Last</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d12/Xalloc_8hpp_source.html#l00026">Xalloc.hpp:26</a></div></div>
 <div class="ttc" id="aXalloc_8hpp_html_ad4da0790ce22f3521d4b4653007dd1dd"><div class="ttname"><a href="../../d8/d12/Xalloc_8hpp.html#ad4da0790ce22f3521d4b4653007dd1dd">Xuint64_t</a></div><div class="ttdeci">long unsigned int Xuint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d12/Xalloc_8hpp_source.html#l00023">Xalloc.hpp:23</a></div></div>
 <div class="ttc" id="aXalloc_8hpp_html_ade3e04c96dd45ce3883d49b47135c0ce"><div class="ttname"><a href="../../d8/d12/Xalloc_8hpp.html#ade3e04c96dd45ce3883d49b47135c0ce">Next</a></div><div class="ttdeci">HeapSegment * Next</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d12/Xalloc_8hpp_source.html#l00025">Xalloc.hpp:25</a></div></div>
 <div class="ttc" id="aXalloc_8hpp_html_a2e33a2b8093009ed89b4fd620e265f0a"><div class="ttname"><a href="../../d8/d12/Xalloc_8hpp.html#a2e33a2b8093009ed89b4fd620e265f0a">Length</a></div><div class="ttdeci">Xuint64_t Length</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d12/Xalloc_8hpp_source.html#l00024">Xalloc.hpp:24</a></div></div>
 <div class="ttc" id="aXalloc_8hpp_html_acb388cdb96fcfdac81a08f7ae8f8da84"><div class="ttname"><a href="../../d8/d12/Xalloc_8hpp.html#acb388cdb96fcfdac81a08f7ae8f8da84">IsFree</a></div><div class="ttdeci">bool IsFree</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d12/Xalloc_8hpp_source.html#l00027">Xalloc.hpp:27</a></div></div>
-<div class="ttc" id="astdint_8h_html_ac714c0d2c1a4adb10e73cab29623314b"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#ac714c0d2c1a4adb10e73cab29623314b">int64_t</a></div><div class="ttdeci">__INT64_TYPE__ int64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00006">stdint.h:6</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

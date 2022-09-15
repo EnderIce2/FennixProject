@@ -141,85 +141,85 @@ Public Member Functions</h2></td></tr>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="a637b6ad1461e6fd5d032e1e7f7dd9b42"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a637b6ad1461e6fd5d032e1e7f7dd9b42"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 BytesPerSector</td>
 <td class="fielddoc">
 The number of Bytes per sector (remember, all numbers are in the little-endian format). </td></tr>
 <tr><td class="fieldtype">
-<a id="a83660670086709267a1d559a8e539d10"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a83660670086709267a1d559a8e539d10"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 HiddenSectors</td>
 <td class="fielddoc">
 Number of hidden sectors. (i.e. the LBA of the beginning of the partition). </td></tr>
 <tr><td class="fieldtype">
-<a id="af4382a80f460a26c98de678da9ffeef6"></a><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
+<a id="af4382a80f460a26c98de678da9ffeef6"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
 <td class="fieldname">
 JumpBoot[3]</td>
 <td class="fielddoc">
 The first three bytes EB 3C 90 disassemble to JMP SHORT 3C NOP. (The 3C value may be different.) The reason for this is to jump over the disk format information (the BPB and EBPB). Since the first sector of the disk is loaded into ram at location 0x0000:0x7c00 and executed, without this jump, the processor would attempt to execute data that isn't code. Even for non-bootable volumes, code matching this pattern (or using the E9 jump opcode) is required to be present by both Windows and OS X. To fulfil this requirement, an infinite loop can be placed here with the bytes EB FE 90. </td></tr>
 <tr><td class="fieldtype">
-<a id="ada452d40daf1484d6f936edd62c0c467"></a><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
+<a id="ada452d40daf1484d6f936edd62c0c467"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
 <td class="fieldname">
 Media</td>
 <td class="fielddoc">
 This Byte indicates the media descriptor type. </td></tr>
 <tr><td class="fieldtype">
-<a id="ab9aac594199e3bbf379fa80caed65189"></a><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
+<a id="ab9aac594199e3bbf379fa80caed65189"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
 <td class="fieldname">
 NumberOfFATs</td>
 <td class="fielddoc">
 Number of File Allocation Tables (<a class="el" href="../../df/d19/classFileSystem_1_1FAT.html">FAT</a>'s) on the storage media. Often this value is 2. </td></tr>
 <tr><td class="fieldtype">
-<a id="ab7d7f92013fc9e31381086b48c08c7fe"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="ab7d7f92013fc9e31381086b48c08c7fe"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 NumberOfHeads</td>
 <td class="fielddoc">
 Number of heads or sides on the storage media. </td></tr>
 <tr><td class="fieldtype">
-<a id="ace84ee7ad116c4c9b1aa6589650d2c77"></a><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
+<a id="ace84ee7ad116c4c9b1aa6589650d2c77"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
 <td class="fieldname">
 OEM[8]</td>
 <td class="fielddoc">
 OEM identifier. The first 8 Bytes (3 - 10) is the version of DOS being used. The next eight Bytes 29 3A 63 7E 2D 49 48 and 43 read out the name of the version. The official <a class="el" href="../../df/d19/classFileSystem_1_1FAT.html">FAT</a> Specification from Microsoft says that this field is really meaningless and is ignored by MS <a class="el" href="../../df/d19/classFileSystem_1_1FAT.html">FAT</a> Drivers, however it does recommend the value "MSWIN4.1" as some 3rd party drivers supposedly check it and expect it to have that value. Older versions of dos also report MSDOS5.1, linux-formatted floppy will likely to carry "mkdosfs" here, and FreeDOS formatted disks have been observed to have "FRDOS5.1" here. If the string is less than 8 bytes, it is padded with spaces. </td></tr>
 <tr><td class="fieldtype">
-<a id="a1a2e5e75d024bb772e465ecb07ca9016"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a1a2e5e75d024bb772e465ecb07ca9016"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 ReservedSectors</td>
 <td class="fielddoc">
 Number of reserved sectors. The boot record sectors are included in this value. </td></tr>
 <tr><td class="fieldtype">
-<a id="a70c67ce6df061359ac7c13096761a674"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a70c67ce6df061359ac7c13096761a674"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 RootDirectoryEntries</td>
 <td class="fielddoc">
 Number of root directory entries (must be set so that the root directory occupies entire sectors). </td></tr>
 <tr><td class="fieldtype">
-<a id="a4dd54d7bbea19327f644c15b4ec3de73"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a4dd54d7bbea19327f644c15b4ec3de73"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 Sectors16</td>
 <td class="fielddoc">
 The total sectors in the logical volume. If this value is 0, it means there are more than 65535 sectors in the volume, and the actual count is stored in the Large Sector Count entry at 0x20. </td></tr>
 <tr><td class="fieldtype">
-<a id="a4154383978566c3aa348b0624389ed12"></a><a class="el" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
+<a id="a4154383978566c3aa348b0624389ed12"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></td>
 <td class="fieldname">
 Sectors32</td>
 <td class="fielddoc">
 Large sector count. This field is set if there are more than 65535 sectors in the volume, resulting in a value which does not fit in the Number of Sectors entry at 0x13. </td></tr>
 <tr><td class="fieldtype">
-<a id="aa0ba0335924521d95f4636195f5b5909"></a><a class="el" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
+<a id="aa0ba0335924521d95f4636195f5b5909"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></td>
 <td class="fieldname">
 SectorsPerCluster</td>
 <td class="fielddoc">
 Number of sectors per cluster. </td></tr>
 <tr><td class="fieldtype">
-<a id="a03b2df2e24699c1bdb60a5b1091f1e6e"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="a03b2df2e24699c1bdb60a5b1091f1e6e"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 SectorsPerFAT</td>
 <td class="fielddoc">
 Number of sectors per <a class="el" href="../../df/d19/classFileSystem_1_1FAT.html">FAT</a>. FAT12/FAT16 only. </td></tr>
 <tr><td class="fieldtype">
-<a id="ac7cab6fcf687aca4884fd0eadb12cb69"></a><a class="el" href="../../df/dd8/stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
+<a id="ac7cab6fcf687aca4884fd0eadb12cb69"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></td>
 <td class="fieldname">
 SectorsPerTrack</td>
 <td class="fielddoc">
@@ -278,7 +278,7 @@ Number of sectors per track. </td></tr>
 <div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    {</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html">DiskManager::Partition::Part</a> *Partition = (<a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html">DiskManager::Partition::Part</a> *)partition;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> *buffer = (<a class="code" href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> *)<a class="code" href="../../da/ddb/heap_8h.html#a8f8dd861289f46414e9a32e2be2d9ee6">RequestPage</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> *buffer = (<a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> *)<a class="code" href="../../da/ddb/heap_8h.html#a8f8dd861289f46414e9a32e2be2d9ee6">RequestPage</a>();</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        Partition-&gt;<a class="code" href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#aa2364ecab92713043d4f0fa3f9366ba1">Read</a>(0, 1, buffer);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordtype">char</span> namebuf[8];</div>
@@ -401,8 +401,8 @@ Number of sectors per track. </td></tr>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">if</span> (bpb-&gt;Media != 0xF0 &amp;&amp; bpb-&gt;Media &lt; 0xF8)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../df/d19/classFileSystem_1_1FAT.html#ae541ee830453609718912d62c3828338a58bc1e2812b5576ca4a7d3363b018e9b">Unknown</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> Size;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> <a class="code" href="../../d2/d50/disk_8h.html#ab60e7588f53f8ac507a4c743ef309653">Sectors</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> Size;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> <a class="code" href="../../d2/d50/disk_8h.html#ab60e7588f53f8ac507a4c743ef309653">Sectors</a>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> (bpb-&gt;Sectors16 != 0)</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            Size = bpb-&gt;Sectors16;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">else</span></div>
@@ -424,7 +424,7 @@ Number of sectors per track. </td></tr>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> (bpb-&gt;NumberOfFATs &lt; 2)</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../df/d19/classFileSystem_1_1FAT.html#ae541ee830453609718912d62c3828338a58bc1e2812b5576ca4a7d3363b018e9b">Unknown</a>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> Clusters = (<a class="code" href="../../d2/d50/disk_8h.html#ab60e7588f53f8ac507a4c743ef309653">Sectors</a> - (bpb-&gt;ReservedSectors + (bpb-&gt;NumberOfFATs * Size) + (((bpb-&gt;RootDirectoryEntries * 32) + (bpb-&gt;BytesPerSector - 1)) / bpb-&gt;BytesPerSector))) / bpb-&gt;SectorsPerCluster;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> Clusters = (<a class="code" href="../../d2/d50/disk_8h.html#ab60e7588f53f8ac507a4c743ef309653">Sectors</a> - (bpb-&gt;ReservedSectors + (bpb-&gt;NumberOfFATs * Size) + (((bpb-&gt;RootDirectoryEntries * 32) + (bpb-&gt;BytesPerSector - 1)) / bpb-&gt;BytesPerSector))) / bpb-&gt;SectorsPerCluster;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="../../df/db8/HeapManager_8cpp.html#a2762e975c2a4f22dcb68d3b48b3681f4">if</a> (Clusters &lt; 4085)</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div>
@@ -472,20 +472,20 @@ Number of sectors per track. </td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="akernel_2include_2string_8h_html_a992514d25cc10baafaac987c5852680c"><div class="ttname"><a href="../../d1/d69/kernel_2include_2string_8h.html#a992514d25cc10baafaac987c5852680c">memcpy</a></div><div class="ttdeci">void * memcpy(void *__restrict__ dest, const void *__restrict__ src, size_t n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db5/String_8c_source.html#l00005">String.c:5</a></div></div>
+<div class="ttc" id="ainclude_2stdint_8h_html_a0a8582351ac627ee8bde2973c825e47f"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></div><div class="ttdeci">__UINT32_TYPE__ uint32_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00009">stdint.h:9</a></div></div>
 <div class="ttc" id="anamespaceFileSystem_html_a51f6e62d3fe45588adf917be1d83fa8c"><div class="ttname"><a href="../../d6/df5/namespaceFileSystem.html#a51f6e62d3fe45588adf917be1d83fa8c">FileSystem::fat</a></div><div class="ttdeci">FileSystemOpeations fat</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d04/fat_8cpp_source.html#l00016">fat.cpp:16</a></div></div>
-<div class="ttc" id="astdint_8h_html_a3cb4a16b0e8d6af0af86d4fd6ba5fd9d"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></div><div class="ttdeci">__UINT8_TYPE__ uint8_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00007">stdint.h:7</a></div></div>
 <div class="ttc" id="aclassFileSystem_1_1FAT_html_ae541ee830453609718912d62c3828338a58bc1e2812b5576ca4a7d3363b018e9b"><div class="ttname"><a href="../../df/d19/classFileSystem_1_1FAT.html#ae541ee830453609718912d62c3828338a58bc1e2812b5576ca4a7d3363b018e9b">FileSystem::FAT::Unknown</a></div><div class="ttdeci">@ Unknown</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00401">filesystem.h:401</a></div></div>
 <div class="ttc" id="adebug_8h_html_a7ad5641dbc2b4cdb4d83352a62ce2f41"><div class="ttname"><a href="../../db/d16/debug_8h.html#a7ad5641dbc2b4cdb4d83352a62ce2f41">debug</a></div><div class="ttdeci">#define debug(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/debug_8h_source.html#l00069">debug.h:69</a></div></div>
 <div class="ttc" id="aFileSystem_8cpp_html_a26a35588e5151a977eac3968909fadb5"><div class="ttname"><a href="../../d3/d50/FileSystem_8cpp.html#a26a35588e5151a977eac3968909fadb5">mountfs</a></div><div class="ttdeci">FileSystem::Mount * mountfs</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d50/FileSystem_8cpp_source.html#l00018">FileSystem.cpp:18</a></div></div>
 <div class="ttc" id="adisk_8h_html_ab60e7588f53f8ac507a4c743ef309653"><div class="ttname"><a href="../../d2/d50/disk_8h.html#ab60e7588f53f8ac507a4c743ef309653">Sectors</a></div><div class="ttdeci">uint32_t Sectors</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d50/disk_8h_source.html#l00022">disk.h:22</a></div></div>
 <div class="ttc" id="astructDiskManager_1_1Partition_1_1Part_html_aa2364ecab92713043d4f0fa3f9366ba1"><div class="ttname"><a href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html#aa2364ecab92713043d4f0fa3f9366ba1">DiskManager::Partition::Part::Read</a></div><div class="ttdeci">uint64_t Read(uint64_t Offset, uint64_t Count, uint8_t *Buffer)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/db6/disk_8cpp_source.html#l00150">disk.cpp:150</a></div></div>
-<div class="ttc" id="astdint_8h_html_a0a8582351ac627ee8bde2973c825e47f"><div class="ttname"><a href="../../df/dd8/stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></div><div class="ttdeci">__UINT32_TYPE__ uint32_t</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dd8/stdint_8h_source.html#l00009">stdint.h:9</a></div></div>
 <div class="ttc" id="aheap_8h_html_a586a7911ad0e9b34c6c6a9db063b8162"><div class="ttname"><a href="../../da/ddb/heap_8h.html#a586a7911ad0e9b34c6c6a9db063b8162">FreePage</a></div><div class="ttdeci">void FreePage(void *address)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/ddc/PageFrameAllocator_8cpp_source.html#l00109">PageFrameAllocator.cpp:109</a></div></div>
 <div class="ttc" id="aclassFileSystem_1_1Mount_html_a6c3e54ed3cb0e42d6ed5b03af3740904"><div class="ttname"><a href="../../dc/d19/classFileSystem_1_1Mount.html#a6c3e54ed3cb0e42d6ed5b03af3740904">FileSystem::Mount::MountFileSystem</a></div><div class="ttdeci">FileSystemNode * MountFileSystem(FileSystemOpeations *Operator, uint64_t Mode, string Name)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/de9/mountfs_8cpp_source.html#l00013">mountfs.cpp:13</a></div></div>
 <div class="ttc" id="aclassFileSystem_1_1FAT_html_ae541ee830453609718912d62c3828338a6bc87057465fd1fcdfa1cc5363b281b5"><div class="ttname"><a href="../../df/d19/classFileSystem_1_1FAT.html#ae541ee830453609718912d62c3828338a6bc87057465fd1fcdfa1cc5363b281b5">FileSystem::FAT::FAT32</a></div><div class="ttdeci">@ FAT32</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00404">filesystem.h:404</a></div></div>
 <div class="ttc" id="adebug_8h_html_a188ea7036db9c1d3fc1062750f3cab77"><div class="ttname"><a href="../../db/d16/debug_8h.html#a188ea7036db9c1d3fc1062750f3cab77">warn</a></div><div class="ttdeci">#define warn(m,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/debug_8h_source.html#l00067">debug.h:67</a></div></div>
 <div class="ttc" id="aclassFileSystem_1_1FAT_html_ab9b4e60272937614e23207c8aabf0ad0"><div class="ttname"><a href="../../df/d19/classFileSystem_1_1FAT.html#ab9b4e60272937614e23207c8aabf0ad0">FileSystem::FAT::GetFATType</a></div><div class="ttdeci">FatType GetFATType(BIOSParameterBlock *bpb)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d04/fat_8cpp_source.html#l00025">fat.cpp:25</a></div></div>
 <div class="ttc" id="astructDiskManager_1_1Partition_1_1Part_html"><div class="ttname"><a href="../../d0/d52/structDiskManager_1_1Partition_1_1Part.html">DiskManager::Partition::Part</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d50/disk_8h_source.html#l00112">disk.h:112</a></div></div>
+<div class="ttc" id="ainclude_2stdint_8h_html_a3cb4a16b0e8d6af0af86d4fd6ba5fd9d"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></div><div class="ttdeci">__UINT8_TYPE__ uint8_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00007">stdint.h:7</a></div></div>
 <div class="ttc" id="aclassFileSystem_1_1FAT_html_ae541ee830453609718912d62c3828338a15d52fcd33a22d5d930fa34e6be2bf47"><div class="ttname"><a href="../../df/d19/classFileSystem_1_1FAT.html#ae541ee830453609718912d62c3828338a15d52fcd33a22d5d930fa34e6be2bf47">FileSystem::FAT::FAT16</a></div><div class="ttdeci">@ FAT16</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00403">filesystem.h:403</a></div></div>
 <div class="ttc" id="aclassFileSystem_1_1FAT_html_ae541ee830453609718912d62c3828338aef6fe60a6321d10b9a6b20453063c76b"><div class="ttname"><a href="../../df/d19/classFileSystem_1_1FAT.html#ae541ee830453609718912d62c3828338aef6fe60a6321d10b9a6b20453063c76b">FileSystem::FAT::FAT12</a></div><div class="ttdeci">@ FAT12</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd8/filesystem_8h_source.html#l00402">filesystem.h:402</a></div></div>
 <div class="ttc" id="aHeapManager_8cpp_html_a2762e975c2a4f22dcb68d3b48b3681f4"><div class="ttname"><a href="../../df/db8/HeapManager_8cpp.html#a2762e975c2a4f22dcb68d3b48b3681f4">if</a></div><div class="ttdeci">if(void *Pointer=HeapMalloc(Size)) return Pointer</div></div>

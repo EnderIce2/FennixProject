@@ -1,7 +1,7 @@
 var bootboot_8h =
 [
     [ "_pack", "db/dc7/bootboot_8h.html#d9/d87/struct__pack", [
-      [ "arch", "db/dc7/bootboot_8h.html#a4997bce1e210a1744c384613e9009063", null ],
+      [ "arch", "db/dc7/bootboot_8h.html#a95a6c9bc6d5c891359a3b75fd434b6e0", null ],
       [ "bspid", "db/dc7/bootboot_8h.html#a9454067eb847cab9b91b0211be07a564", null ],
       [ "datetime", "db/dc7/bootboot_8h.html#aa62abda00b9dfd21bb69c24a3e2d6b6c", null ],
       [ "fb_height", "db/dc7/bootboot_8h.html#a81879dac7904f282a6eec20f88e4ec5d", null ],
@@ -22,7 +22,7 @@ var bootboot_8h =
       [ "timezone", "db/dc7/bootboot_8h.html#a80df7da7eb5dd3267fcb0aaa887e9f84", null ]
     ] ],
     [ "_pack", "db/dc7/bootboot_8h.html#d9/d87/struct__pack", [
-      [ "arch", "db/dc7/bootboot_8h.html#a4997bce1e210a1744c384613e9009063", null ],
+      [ "arch", "db/dc7/bootboot_8h.html#a95a6c9bc6d5c891359a3b75fd434b6e0", null ],
       [ "bspid", "db/dc7/bootboot_8h.html#a9454067eb847cab9b91b0211be07a564", null ],
       [ "datetime", "db/dc7/bootboot_8h.html#aa62abda00b9dfd21bb69c24a3e2d6b6c", null ],
       [ "fb_height", "db/dc7/bootboot_8h.html#a81879dac7904f282a6eec20f88e4ec5d", null ],

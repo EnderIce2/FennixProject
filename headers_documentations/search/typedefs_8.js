@@ -1,8 +1,16 @@
 var searchData=
 [
-  ['multiboot_5fmemory_5fmap_5ft_4031',['multiboot_memory_map_t',['../d5/dba/multiboot2_8h.html#a2aa16c58ceb6b9548aded205e46e8a3b',1,'multiboot2.h']]],
-  ['multiboot_5fuint16_5ft_4032',['multiboot_uint16_t',['../d5/dba/multiboot2_8h.html#a3a11e3c2b5e0617736a05343aa5795b3',1,'multiboot2.h']]],
-  ['multiboot_5fuint32_5ft_4033',['multiboot_uint32_t',['../d5/dba/multiboot2_8h.html#a009f355da41fed4badb8a52d432f5186',1,'multiboot2.h']]],
-  ['multiboot_5fuint64_5ft_4034',['multiboot_uint64_t',['../d5/dba/multiboot2_8h.html#a8dfdd61648b48aa31845db590970e06a',1,'multiboot2.h']]],
-  ['multiboot_5fuint8_5ft_4035',['multiboot_uint8_t',['../d5/dba/multiboot2_8h.html#a037f602538fccf97e90021c19fdfc047',1,'multiboot2.h']]]
+  ['limine_5fentry_5fpoint_4055',['limine_entry_point',['../d3/df0/limine_8h.html#a4b9a7070926c40c446ca6252c769fdd7',1,'limine.h']]],
+  ['limine_5fgoto_5faddress_4056',['limine_goto_address',['../d3/df0/limine_8h.html#adebde0ad391eec16f6ddcfbf68293412',1,'limine.h']]],
+  ['limine_5fterminal_5fcallback_4057',['limine_terminal_callback',['../d3/df0/limine_8h.html#a5c93b9d8f76415e192f0058d9db3e8a0',1,'limine.h']]],
+  ['limine_5fterminal_5fwrite_4058',['limine_terminal_write',['../d3/df0/limine_8h.html#ab6fa49376e88c66aa2fee0b90902036d',1,'limine.h']]],
+  ['long_4059',['LONG',['../de/d63/msexec_8h.html#a2a3e0cda5f1249bef6db47c5eb8e3813',1,'msexec.h']]],
+  ['lpbool_4060',['LPBOOL',['../de/d63/msexec_8h.html#abe1b03468472e97114e318c5953d0344',1,'msexec.h']]],
+  ['lpbyte_4061',['LPBYTE',['../de/d63/msexec_8h.html#a3ce29ee9290ff1be368b5a134f651f9f',1,'msexec.h']]],
+  ['lpcvoid_4062',['LPCVOID',['../de/d63/msexec_8h.html#ad67e5812bce3ae238981bb58dfdca76c',1,'msexec.h']]],
+  ['lpdword_4063',['LPDWORD',['../de/d63/msexec_8h.html#af8b504ec9b782e4344952d8518c69f4d',1,'msexec.h']]],
+  ['lpint_4064',['LPINT',['../de/d63/msexec_8h.html#aa180ccfc9ed99261841afe0d39b2d1e6',1,'msexec.h']]],
+  ['lplong_4065',['LPLONG',['../de/d63/msexec_8h.html#a0a136d01e1de4d8d60f927560bc2c3a3',1,'msexec.h']]],
+  ['lpvoid_4066',['LPVOID',['../de/d63/msexec_8h.html#a0b08b48703a7fd44bb06310932309c85',1,'msexec.h']]],
+  ['lpword_4067',['LPWORD',['../de/d63/msexec_8h.html#a97cb1b47c609954b545155b66fd468f5',1,'msexec.h']]]
 ];

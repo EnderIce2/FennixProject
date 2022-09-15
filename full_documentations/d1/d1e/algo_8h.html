@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('d1/d1e/algo_8h.html','../../'); initRe
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0a80be398b3faf4227e925171361fc27"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d1e/algo_8h.html#a0a80be398b3faf4227e925171361fc27">CyclicRedundancyCheck32</a> (unsigned char *Data)</td></tr>
+<tr class="memitem:a0a80be398b3faf4227e925171361fc27"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d1e/algo_8h.html#a0a80be398b3faf4227e925171361fc27">CyclicRedundancyCheck32</a> (unsigned char *<a class="el" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>)</td></tr>
 <tr class="separator:a0a80be398b3faf4227e925171361fc27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -138,7 +138,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    CRC = 0xFFFFFFFF;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">while</span> ((Byte = Data[i]) != 0)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">while</span> ((Byte = <a class="code" href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a>[i]) != 0)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        CRC = (CRC &gt;&gt; 8) ^ Table[(CRC ^ Byte) &amp; 0xFF];</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        i = i + 1;</div>
@@ -146,10 +146,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> ~CRC;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d57/cputables_8h_source.html#l00004">Data</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="acputables_8h_html_aff2da4c061653164b5cfcc650f742f27"><div class="ttname"><a href="../../d1/d57/cputables_8h.html#aff2da4c061653164b5cfcc650f742f27">Data</a></div><div class="ttdeci">GlobalDescriptorTableEntry Data</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d57/cputables_8h_source.html#l00004">cputables.h:4</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

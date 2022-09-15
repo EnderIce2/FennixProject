@@ -1,24 +1,11 @@
 var searchData=
 [
-  ['elf32_5faddr_7605',['Elf32_Addr',['../d7/db0/include_2elf_8h.html#a40c6d4571e6001f443cc6a6474620158',1,'elf.h']]],
-  ['elf32_5fehdr_7606',['Elf32_Ehdr',['../d7/db0/include_2elf_8h.html#a813325dbda814fb708a5c81675be9b36',1,'elf.h']]],
-  ['elf32_5fhalf_7607',['Elf32_Half',['../d7/db0/include_2elf_8h.html#a80c2e7e3babadd5a5a75f5d13cc804ad',1,'elf.h']]],
-  ['elf32_5foff_7608',['Elf32_Off',['../d7/db0/include_2elf_8h.html#a655751f9b317369b93c581ea8ed84516',1,'elf.h']]],
-  ['elf32_5frel_7609',['Elf32_Rel',['../d7/db0/include_2elf_8h.html#a0e283038a29bc7b9055ac33771ac5d78',1,'elf.h']]],
-  ['elf32_5fshdr_7610',['Elf32_Shdr',['../d7/db0/include_2elf_8h.html#a683980a91a52f547398a21c27d7ca30b',1,'elf.h']]],
-  ['elf32_5fsword_7611',['Elf32_Sword',['../d7/db0/include_2elf_8h.html#a30ce6352cf03c667272698ada477da95',1,'elf.h']]],
-  ['elf32_5fsym_7612',['Elf32_Sym',['../d7/db0/include_2elf_8h.html#a66ff4e7f9a5626441f6b1863496408f4',1,'elf.h']]],
-  ['elf32_5fword_7613',['Elf32_Word',['../d7/db0/include_2elf_8h.html#af5924ece606c732e86f8263a19408e45',1,'elf.h']]],
-  ['elf64_5faddr_7614',['Elf64_Addr',['../d7/db0/include_2elf_8h.html#aeed51d08e3a950d637f8ec1f0cd4ef65',1,'elf.h']]],
-  ['elf64_5fehdr_7615',['Elf64_Ehdr',['../d7/db0/include_2elf_8h.html#af59c9cc8cec9316330f757a0fbd79956',1,'elf.h']]],
-  ['elf64_5fhalf_7616',['Elf64_Half',['../d7/db0/include_2elf_8h.html#adb6a5584018b431da3472e7c6a7fd731',1,'elf.h']]],
-  ['elf64_5foff_7617',['Elf64_Off',['../d7/db0/include_2elf_8h.html#a6f7837bc80df7a68291fce54ff088849',1,'elf.h']]],
-  ['elf64_5frel_7618',['Elf64_Rel',['../d7/db0/include_2elf_8h.html#a85e455599c36c4a33413c401c05f61d3',1,'elf.h']]],
-  ['elf64_5fshalf_7619',['Elf64_SHalf',['../d7/db0/include_2elf_8h.html#a935bc665d4776143e8e516d9bdc0ab87',1,'elf.h']]],
-  ['elf64_5fshdr_7620',['Elf64_Shdr',['../d7/db0/include_2elf_8h.html#ae1c4a562108c5d4dbccc19966145a77f',1,'elf.h']]],
-  ['elf64_5fsword_7621',['Elf64_Sword',['../d7/db0/include_2elf_8h.html#a354f1cae9fad774a486444c12a861da5',1,'elf.h']]],
-  ['elf64_5fsxword_7622',['Elf64_Sxword',['../d7/db0/include_2elf_8h.html#a5b450442210b3d21567662fb96ac9a02',1,'elf.h']]],
-  ['elf64_5fsym_7623',['Elf64_Sym',['../d7/db0/include_2elf_8h.html#a444e910ff0ecd13df9478b60951f4eee',1,'elf.h']]],
-  ['elf64_5fword_7624',['Elf64_Word',['../d7/db0/include_2elf_8h.html#aa3aa1920ed115b7ef7e99716fece4401',1,'elf.h']]],
-  ['elf64_5fxword_7625',['Elf64_Xword',['../d7/db0/include_2elf_8h.html#a5447a48a3dae0bd24f606415268c6fe4',1,'elf.h']]]
+  ['cag_5foption_8395',['cag_option',['../d1/d37/cargs_8h.html#af074c7743355aa43d38b209b9f30cdc3',1,'cargs.h']]],
+  ['cag_5foption_5fcontext_8396',['cag_option_context',['../d1/d37/cargs_8h.html#a3807c9e412641303b1a61728751ecf8f',1,'cargs.h']]],
+  ['char_8397',['CHAR',['../de/d63/msexec_8h.html#aebb9e13210d88d43e32e735ada43a425',1,'msexec.h']]],
+  ['cr0_8398',['CR0',['../d1/d57/cputables_8h.html#af0d4d2ebee235316c617eaf06ac4a3d8',1,'cputables.h']]],
+  ['cr2_8399',['CR2',['../d1/d57/cputables_8h.html#a71c7722845f3d4fb0a2a8e9fda6d7bba',1,'cputables.h']]],
+  ['cr3_8400',['CR3',['../d1/d57/cputables_8h.html#ac50c14c160d060d192cd1db30603d086',1,'cputables.h']]],
+  ['cr4_8401',['CR4',['../d1/d57/cputables_8h.html#aed03adec2713681d7bbe061fc2a60360',1,'cputables.h']]],
+  ['cr8_8402',['CR8',['../d1/d57/cputables_8h.html#a1e98e3491a90b2dc47e4ea0b3dc3fd3d',1,'cputables.h']]]
 ];
