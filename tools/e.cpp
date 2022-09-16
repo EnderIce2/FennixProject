@@ -272,7 +272,7 @@ int main(char argc, char *argv[])
         // TODO: support more error types
         uint32_t err_code = 0;
         cout << "[0xe Page Fault] e=";
-        cin >> hex >> err_code;
+        cin >> err_code;
         clear;
         printf("Page Fault e=%04d\n", err_code);
         PageFaultErrorCode params = {.raw = (uint32_t)err_code};
