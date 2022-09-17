@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fennix_20kernel_10972',['Fennix Kernel',['../index.html',1,'']]]
+  ['fennixproject_11004',['FennixProject',['../index.html',1,'']]]
 ];

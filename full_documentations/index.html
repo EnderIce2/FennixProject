@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fennix Project: Fennix Kernel</title>
+<title>Fennix Project: FennixProject</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,10 +86,122 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Fennix Kernel </div>  </div>
+<div class="title">FennixProject </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This is where the kernel is. </p>
+<div class="textblock"><h4><a class="anchor" id="autotoc_md1"></a>
+Opeating System from scratch made in C and C++</h4>
+<p><a href="https://discord.gg/AYhW6N59Wu"><img src="https://img.shields.io/discord/887406812612157451?style=for-the-badge&amp;logo=discord&amp;logoColor=white" alt="Discord" class="inline"/></a> <img src="https://img.shields.io/github/workflow/status/EnderIce2/FennixProject/Makefile%20CI/main?style=for-the-badge" alt="GitHub Workflow Status (branch)" class="inline"/> <a href="https://www.codefactor.io/repository/github/enderice2/fennixproject"><img src="https://www.codefactor.io/repository/github/enderice2/fennixproject/badge?style=for-the-badge" alt="CodeFactor" class="inline"/></a> <a href="https://www.codacy.com/gh/EnderIce2/FennixProject/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EnderIce2/FennixProject&amp;utm_campaign=Badge_Grade"><img src="https://img.shields.io/codacy/grade/d00135a0a6304420a3cd021936f7be50?label=codacy&amp;style=for-the-badge" alt="Codacy Badge" class="inline"/></a> <img src="https://img.shields.io/github/license/EnderIce2/FennixProject?style=for-the-badge" alt="GitHub" class="inline"/> <img src="https://img.shields.io/github/commit-activity/w/EnderIce2/FennixProject?style=for-the-badge" alt="GitHub commit activity" class="inline"/> <a href="https://wakatime.com/badge/user/29fecac7-0d8d-4232-a696-d6f5532c2c2a/project/f73f718c-1223-483f-be6a-b73c5abbe018.svg?style=for-the-badge"><object type="image/svg+xml" data="https://wakatime.com/badge/user/29fecac7-0d8d-4232-a696-d6f5532c2c2a/project/f73f718c-1223-483f-be6a-b73c5abbe018.svg?style=for-the-badge" style="pointer-events: none;">wakatime</object></a></p>
+<hr  />
+<p><img src="Screenshot_Fennix.png" alt="Fennix" title="Fennix" class="inline"/> <sub><sup>Fennix running inside QEMU</sup></sub></p>
+<h3><a class="anchor" id="autotoc_md3"></a>
+The content</h3>
+<ul>
+<li>Fennix Project<ul>
+<li>boot<ul>
+<li>Coming Soon™</li>
+</ul>
+</li>
+<li>kernel<ul>
+<li>The core components of the operating system.</li>
+</ul>
+</li>
+<li>libc<ul>
+<li>The C standard library.</li>
+</ul>
+</li>
+<li>userspace<ul>
+<li>The userland of the operating system.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr  />
+ <h4><a class="anchor" id="autotoc_md5"></a>
+! Warning !</h4>
+<p><code>Before doing anything, remember that this project is in early stages of development. And most of the stuff are very unstable or broken. If you are interested to contribute, please do not hesitate to try it.</code></p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md7"></a>
+Download ISO Image</h1>
+<ul>
+<li>Access <a href="https://github.com/EnderIce2/FennixProject/actions/workflows/makefile.yml">Actions page</a> from the GitHub page.</li>
+<li>Select the latest run and under "Artifacts" you will find the ISO file (it's ZIP compressed).</li>
+<li>Unzip it and add it to a virtual machine as CD-ROM.</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md9"></a>
+Download, compile &amp; run</h1>
+<ul>
+<li>Clone this repository using</li>
+</ul>
+<div class="fragment"><div class="line">git clone --recurse-submodules https://github.com/EnderIce2/FennixProject</div>
+</div><!-- fragment --><p>Before doing anything, you must install the following packages:</p>
+<div class="fragment"><div class="line"># Debian Based Systems</div>
+<div class="line">sudo apt-get install make gcc-mingw-w64-x86-64 gcc-mingw-w64-i686 mingw-w64 qemu qemu-kvm xorriso genisoimage ovmf nasm doxygen build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo mtools</div>
+</div><!-- fragment --><p>And follow this <a href="https://wiki.qemu.org/Hosts/Linux#:~:text=for%20both%20variants.-,Building%20QEMU%20for%20Linux,-Most%20Linux%20distributions">page</a> to install the required packages for QEMU. If you want to use the one that comes with your distribution, go on <code>tools/Makefile</code> and remove <code>do_qemu</code> at line 11 (starts with <code>all:</code>) and update <code>QEMU_PATH</code> variable inside <code>Makefile.conf</code>.</p>
+<ul>
+<li>Go to the local repository and run the following command</li>
+</ul>
+<div class="fragment"><div class="line">make tools</div>
+</div><!-- fragment --><p>This command will download all the required files to compile the operating system.</p>
+<p>After that, you should be able to compile the operating system.</p>
+<ul>
+<li>Currently it was tested <b>only</b> on <b>Ubuntu 20.04</b> and <b>Ubuntu 22.04</b>. I don't guarantee that it will work on other distributions or older versions of Ubuntu.</li>
+</ul>
+<hr  />
+<ul>
+<li>To run the OS:</li>
+</ul>
+<div class="fragment"><div class="line">make run</div>
+</div><!-- fragment --><p><sub><sup>or <code>make build</code> to build it without running.</sup></sub></p>
+<ul>
+<li>To cleanup the code:</li>
+</ul>
+<div class="fragment"><div class="line">make clean</div>
+</div><!-- fragment --><hr  />
+<h1><a class="anchor" id="autotoc_md12"></a>
+Progress</h1>
+<ul>
+<li>[ ] Rolling own bootloader</li>
+<li>[x] Stivale2 Protocol Support</li>
+<li>[ ] Limine Protocol Support</li>
+<li>[x] <a class="el" href="df/d22/namespaceACPI.html">ACPI</a></li>
+<li>[x] <a class="el" href="df/d22/namespaceACPI.html">ACPI</a> Shutdown</li>
+<li>[x] MADT</li>
+<li>[x] DSDT</li>
+<li>[x] <a class="el" href="d3/d88/namespaceAPIC.html">APIC</a></li>
+<li>[x] Paging</li>
+<li>[x] Virtual Memory Manager</li>
+<li>[x] <a class="el" href="db/d18/namespaceHeap.html">Heap</a> Manager</li>
+<li>[x] Stack Manager</li>
+<li>[x] Global Descriptor Table, Interrupt Descriptor Table &amp; Task State Segment</li>
+<li>[x] Timer (<a class="el" href="d3/d88/namespaceAPIC.html">APIC</a> &amp; <a class="el" href="da/d06/hpet_8h.html#dc/d8f/structHPET">HPET</a> &amp; PIC)</li>
+<li>[x] Symmetric Multiprocessing</li>
+<li>[x] <a class="el" href="d0/d8f/namespacePCI.html">PCI</a></li>
+<li>[x] PS2 Keyboard</li>
+<li>[x] PS2 Mouse</li>
+<li>[x] <a class="el" href="d6/d7c/namespaceAHCI.html">AHCI</a> <a class="el" href="d1/d48/namespaceDriver.html">Driver</a></li>
+<li>[ ] ATA <a class="el" href="d1/d48/namespaceDriver.html">Driver</a></li>
+<li>[ ] <a class="el" href="d6/d87/namespaceFloppy.html">Floppy</a> <a class="el" href="d1/d48/namespaceDriver.html">Driver</a></li>
+<li>[ ] IDE <a class="el" href="d1/d48/namespaceDriver.html">Driver</a></li>
+<li>[x] Virtual <a class="el" href="d6/df5/namespaceFileSystem.html">FileSystem</a></li>
+<li>[x] USTAR <a class="el" href="d6/df5/namespaceFileSystem.html">FileSystem</a></li>
+<li>[ ] EXT2 <a class="el" href="d6/df5/namespaceFileSystem.html">FileSystem</a></li>
+<li>[ ] ECHFS <a class="el" href="d6/df5/namespaceFileSystem.html">FileSystem</a></li>
+<li>[ ] INITRD <a class="el" href="d6/df5/namespaceFileSystem.html">FileSystem</a></li>
+<li>[ ] ISO9660 <a class="el" href="d6/df5/namespaceFileSystem.html">FileSystem</a></li>
+<li>[ ] FAT12 <a class="el" href="d6/df5/namespaceFileSystem.html">FileSystem</a></li>
+<li>[ ] FAT16 <a class="el" href="d6/df5/namespaceFileSystem.html">FileSystem</a></li>
+<li>[ ] FAT32 <a class="el" href="d6/df5/namespaceFileSystem.html">FileSystem</a></li>
+<li>[x] <a class="el" href="d9/d3e/namespaceTasking.html">Tasking</a></li>
+<li>[x] Usermode</li>
+<li>[x] Syscalls</li>
+<li>[x] Executing ELF Files</li>
+<li>[ ] Executing PE Files</li>
+<li>[ ] Executing NE Files</li>
+<li>[ ] Executing MZ Files </li>
+</ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

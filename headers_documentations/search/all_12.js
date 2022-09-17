@@ -328,7 +328,7 @@ var searchData=
   ['sysinfo_2622',['SysInfo',['../db/d84/classFileSystem_1_1SysInfo.html',1,'FileSystem::SysInfo'],['../db/d84/classFileSystem_1_1SysInfo.html#a5c255c28c1271746a2549295e94e239c',1,'FileSystem::SysInfo::SysInfo()']]],
   ['syssetprocesspriority_2623',['SysSetProcessPriority',['../d6/d75/internal__task_8h.html#a3f799d4b91fa957d310a16ca0a389942',1,'internal_task.h']]],
   ['syssetthreadpriority_2624',['SysSetThreadPriority',['../d6/d75/internal__task_8h.html#a53b22c6e9cfa4bd5081d329bdeaf7a2c',1,'internal_task.h']]],
-  ['system_2625',['System',['../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29baacd40056f9fbe11dadadeba269eb2034',1,'System():&#160;task.h'],['../dc/db2/system_8h.html#a860b08d4b031173c594554431158a6e7',1,'system(const char *Command):&#160;system.h']]],
+  ['system_2625',['system',['../dc/db2/system_8h.html#a860b08d4b031173c594554431158a6e7',1,'system(const char *Command):&#160;system.h'],['../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29baacd40056f9fbe11dadadeba269eb2034',1,'System():&#160;task.h']]],
   ['system_2eh_2626',['system.h',['../dc/db2/system_8h.html',1,'']]],
   ['systemcalls_2627',['SystemCalls',['../d2/d6e/syscalls_8h.html#a16c10255fbc3692d24e41969a899c7dd',1,'syscalls.h']]],
   ['systemid_2628',['SystemID',['../d1/db8/classFileSystem_1_1EXT2.html#a5ed563c665fc0908510a4394f4ead59a',1,'FileSystem::EXT2::SuperBlock']]]

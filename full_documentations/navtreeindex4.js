@@ -1,5 +1,8 @@
 var NAVTREEINDEX4 =
 {
+"d1/dbb/classSymmetricMultiprocessing_1_1SMP.html":[4,0,30,0],
+"d1/dbb/classSymmetricMultiprocessing_1_1SMP.html#a1b0802f22908c21c7a2f5689e1abdce3":[4,0,30,0,1],
+"d1/dbb/classSymmetricMultiprocessing_1_1SMP.html#a1b0802f22908c21c7a2f5689e1abdce3":[4,0,30,0,3],
 "d1/dbb/classSymmetricMultiprocessing_1_1SMP.html#a79d9707a0717697e01464a0340c01099":[4,0,30,0,0],
 "d1/dbb/classSymmetricMultiprocessing_1_1SMP.html#a79d9707a0717697e01464a0340c01099":[4,0,30,0,2],
 "d1/dbb/kernel_2libs_2cwalk_8c.html":[5,0,2,8,4],
@@ -57,8 +60,8 @@ var NAVTREEINDEX4 =
 "d1/dbb/kernel_2libs_2cwalk_8c.html#aeef7cc01e8dfcb89adcb6f31ac8139e8":[5,0,2,8,4,52],
 "d1/dbb/kernel_2libs_2cwalk_8c.html#afaa21620b71c743a0e59b9f1138bcb7e":[5,0,2,8,4,7],
 "d1/dbb/kernel_2libs_2cwalk_8c_source.html":[5,0,2,8,4],
-"d1/dbb/namespaceAMDPCNET.html":[3,0,2],
 "d1/dbb/namespaceAMDPCNET.html":[4,0,1],
+"d1/dbb/namespaceAMDPCNET.html":[3,0,2],
 "d1/dbc/structlimine__rsdp__request.html":[4,0,145],
 "d1/dbc/structlimine__rsdp__request.html#a3b33458cc2cb49877e1a2a87a6982141":[4,0,145,2],
 "d1/dbc/structlimine__rsdp__request.html#a4725cd14f363afb2d120b9424d3e085c":[4,0,145,0],
@@ -165,6 +168,9 @@ var NAVTREEINDEX4 =
 "d2/d34/smartptr_8hpp.html#d9/d9b/classweak__ptr":[5,0,2,6,24,5],
 "d2/d34/smartptr_8hpp.html#dd/d67/classunique__ptr":[5,0,2,6,24,2],
 "d2/d34/smartptr_8hpp_source.html":[5,0,2,6,24],
+"d2/d3e/elf_8hpp.html":[5,0,2,11,0,1],
+"d2/d3e/elf_8hpp.html#a961ef7260db542dd5162904b2fab7e0f":[5,0,2,11,0,1,0],
+"d2/d3e/elf_8hpp_source.html":[5,0,2,11,0,1],
 "d2/d47/amd64_2cpu_2GDT_8c.html":[5,0,2,0,0,0,7],
 "d2/d47/amd64_2cpu_2GDT_8c_source.html":[5,0,2,0,0,0,7],
 "d2/d47/classFileSystem_1_1Random.html":[4,0,10,13],
@@ -243,11 +249,5 @@ var NAVTREEINDEX4 =
 "d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca3d10ee4ca1907dc4bcc2047c2d90082b":[5,0,3,1,16,6,16],
 "d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca3d769051335b6ef710cd84957c328690":[5,0,3,1,16,6,23],
 "d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca3febb0139d1259341d3e07e79b2a9e2c":[5,0,3,1,16,6,19],
-"d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca43012c1ccf984fc4b4e36df62edc42c4":[5,0,3,1,16,6,14],
-"d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca4a2e8bfa77484f88d943236baaee4e96":[5,0,3,1,16,6,27],
-"d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca4c15bcb5a9038a4dcbb63b62fa88a48b":[5,0,3,1,16,6,17],
-"d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca61443ae75cf6a1c57ebcf0a8e866938e":[5,0,3,1,16,6,28],
-"d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca65c8ffdd83b744c8685263689ab8043e":[5,0,3,1,16,6,6],
-"d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca6c8e758b44a0efa92902186d5e3303ca":[5,0,3,1,16,6,22],
-"d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca70acceabf0596e472ffd21a96aa52615":[5,0,3,1,16,6,7]
+"d2/d6e/syscalls_8h.html#a0a785734a2e4d29ff32532d92a03b40ca43012c1ccf984fc4b4e36df62edc42c4":[5,0,3,1,16,6,14]
 };

@@ -22354,6 +22354,21 @@
                   <Anchor>a6423a880df59733d2d9b509c7718d3a9</Anchor>
                  </Node>
                  <Node>
+                  <Name>TRACE_PML4</Name>
+                  <Path>da/ddb/heap_8h.html</Path>
+                  <Anchor>a550e24d472a88787f0b548243481e838</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>USER_APP_BASE</Name>
+                  <Path>da/ddb/heap_8h.html</Path>
+                  <Anchor>aa2fd03499bf89626d78388fde5a1d24f</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>USER_FILE_BUFFER_BASE</Name>
+                  <Path>da/ddb/heap_8h.html</Path>
+                  <Anchor>a193037b94dec68c1ca0a4bf68b27957d</Anchor>
+                 </Node>
+                 <Node>
                   <Name>USER_HEAP_BASE</Name>
                   <Path>da/ddb/heap_8h.html</Path>
                   <Anchor>aa6e99f855eb906d87180d7c66506ba49</Anchor>
@@ -22362,16 +22377,6 @@
                   <Name>USER_HEAP_END</Name>
                   <Path>da/ddb/heap_8h.html</Path>
                   <Anchor>acce5defaf7cefd6c3c4f6f1cdbca0072</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>USER_STACK_HEAP_BASE</Name>
-                  <Path>da/ddb/heap_8h.html</Path>
-                  <Anchor>a4ab4824bb3b949cb0892b498ee9f331a</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>USER_STACK_HEAP_END</Name>
-                  <Path>da/ddb/heap_8h.html</Path>
-                  <Anchor>aa71772967d4ef1da48968f79ff4558c9</Anchor>
                  </Node>
                  <Node>
                   <Name>AllocationAlgorithm</Name>

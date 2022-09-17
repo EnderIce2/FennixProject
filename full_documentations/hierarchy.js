@@ -292,6 +292,7 @@ var hierarchy =
       [ "RTL8169::NetworkInterfaceController", "db/d1a/classRTL8169_1_1NetworkInterfaceController.html", null ],
       [ "VirtioNetwork::NetworkInterfaceController", "d1/d23/classVirtioNetwork_1_1NetworkInterfaceController.html", null ]
     ] ],
+    [ "RetStructData", "d2/d83/exec_8hpp.html#d2/d90/structRetStructData", null ],
     [ "RFLAGS", "da/da0/usm_8h.html#df/d3f/unionRFLAGS", null ],
     [ "RFLAGS.__attribute__", "d1/d57/cputables_8h.html#dd/dd5/structRFLAGS_8____attribute____", null ],
     [ "RFLAGS.__unnamed__", "da/da0/usm_8h.html#d4/d1d/structRFLAGS_8____unnamed____", null ],

@@ -18261,26 +18261,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>USER_STACK_HEAP_BASE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>da/ddb/heap_8h.html</Path>
-    <Anchor>a4ab4824bb3b949cb0892b498ee9f331a</Anchor>
-    <DeclaredIn>heap.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>USER_STACK_HEAP_END</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>da/ddb/heap_8h.html</Path>
-    <Anchor>aa71772967d4ef1da48968f79ff4558c9</Anchor>
-    <DeclaredIn>heap.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>KERNEL_HEAP_BASE</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -18317,6 +18297,36 @@
     </TokenIdentifier>
     <Path>da/ddb/heap_8h.html</Path>
     <Anchor>acce5defaf7cefd6c3c4f6f1cdbca0072</Anchor>
+    <DeclaredIn>heap.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>USER_FILE_BUFFER_BASE</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>da/ddb/heap_8h.html</Path>
+    <Anchor>a193037b94dec68c1ca0a4bf68b27957d</Anchor>
+    <DeclaredIn>heap.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>USER_APP_BASE</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>da/ddb/heap_8h.html</Path>
+    <Anchor>aa2fd03499bf89626d78388fde5a1d24f</Anchor>
+    <DeclaredIn>heap.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TRACE_PML4</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>da/ddb/heap_8h.html</Path>
+    <Anchor>a550e24d472a88787f0b548243481e838</Anchor>
     <DeclaredIn>heap.h</DeclaredIn>
   </Token>
   <Token>

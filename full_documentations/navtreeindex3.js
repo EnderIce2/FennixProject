@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"d1/d57/cputables_8h.html#d9/da8/struct__TaskStateSegment":[5,0,1,2,1],
+"d1/d57/cputables_8h.html#d9/db8/unionSelectorErrorCode":[5,0,1,2,14],
+"d1/d57/cputables_8h.html#da/dc7/structDR7_8____unnamed____":[5,0,1,2,25],
 "d1/d57/cputables_8h.html#db/d26/unionPageFaultErrorCode":[5,0,1,2,13],
 "d1/d57/cputables_8h.html#db/dfa/struct__InterruptDescriptorTableDescriptor":[5,0,1,2,6],
 "d1/d57/cputables_8h.html#dd/dd5/structRFLAGS_8____attribute____":[5,0,1,2,17],
@@ -246,8 +249,5 @@ var NAVTREEINDEX3 =
 "d1/dba/libc_2include_2stdarg_8h.html#aa0628ab596c3d7e78f5e08c2d98e24da":[5,0,3,1,13,4],
 "d1/dba/libc_2include_2stdarg_8h.html#ab2a2078340888ab219073daba0853b5a":[5,0,3,1,13,5],
 "d1/dba/libc_2include_2stdarg_8h.html#af53f622e3b6c080daeb167c1955d7ec1":[5,0,3,1,13,6],
-"d1/dba/libc_2include_2stdarg_8h_source.html":[5,0,3,1,13],
-"d1/dbb/classSymmetricMultiprocessing_1_1SMP.html":[4,0,30,0],
-"d1/dbb/classSymmetricMultiprocessing_1_1SMP.html#a1b0802f22908c21c7a2f5689e1abdce3":[4,0,30,0,1],
-"d1/dbb/classSymmetricMultiprocessing_1_1SMP.html#a1b0802f22908c21c7a2f5689e1abdce3":[4,0,30,0,3]
+"d1/dba/libc_2include_2stdarg_8h_source.html":[5,0,3,1,13]
 };

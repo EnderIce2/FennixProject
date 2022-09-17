@@ -1,5 +1,9 @@
 var namespacemembers_dup =
 [
+    [ "The content", "index.html#autotoc_md3", [
+      [ "Opeating System from scratch made in C and C++", "index.html#autotoc_md1", null ],
+      [ "! Warning !", "index.html#autotoc_md5", null ]
+    ] ],
     [ "_", "namespacemembers.html", null ],
     [ "a", "namespacemembers_a.html", null ],
     [ "b", "namespacemembers_b.html", null ],

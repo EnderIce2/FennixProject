@@ -232,6 +232,9 @@ $(document).ready(function(){initNavTree('globals_func_c.html',''); initResizabl
 <li>CreateNewTSS()
 : <a class="el" href="d4/d54/arch_2amd64_2cpu_2gdt_8h.html#a274c8baf8fc6f138370405f8c85696ba">gdt.h</a>
 </li>
+<li>CreatePageTableWithKernel()
+: <a class="el" href="dc/d3c/Binary_8cpp.html#a258be097334f29bd892ea3e9585f6328">Binary.cpp</a>
+</li>
 <li>CreateToken()
 : <a class="el" href="de/dc7/Security_8cpp.html#a1f6910861a0bd15cd353ec7e8c12277f">Security.cpp</a>
 , <a class="el" href="d8/dc0/security_8hpp.html#a1f6910861a0bd15cd353ec7e8c12277f">security.hpp</a>
@@ -319,7 +322,8 @@ $(document).ready(function(){initNavTree('globals_func_c.html',''); initResizabl
 : <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#aa1280f7545ff0215f95b65f7ac60155f">cwalk.c</a>
 </li>
 <li>cwk_path_get_intersection()
-: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#ab34ac18259b215d184759bc044aa4832">cwalk.c</a>
+: <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#ab38ede3863e727db5611ce9d23d2e990">cwalk.h</a>
+, <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#ab34ac18259b215d184759bc044aa4832">cwalk.c</a>
 , <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#ab38ede3863e727db5611ce9d23d2e990">cwalk.h</a>
 , <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#ab34ac18259b215d184759bc044aa4832">cwalk.c</a>
 , <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#ab38ede3863e727db5611ce9d23d2e990">cwalk.h</a>
@@ -327,17 +331,16 @@ $(document).ready(function(){initNavTree('globals_func_c.html',''); initResizabl
 <li>cwk_path_get_last_segment()
 : <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#ac2d95a40e07cd4bc3e3af28ae366259b">cwalk.h</a>
 , <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a2268310f7bba59fe263365ab73b74c83">cwalk.c</a>
-, <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#ac2d95a40e07cd4bc3e3af28ae366259b">cwalk.h</a>
-, <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a2268310f7bba59fe263365ab73b74c83">cwalk.c</a>
+, <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#ac2d95a40e07cd4bc3e3af28ae366259b">cwalk.h</a>
 </li>
 <li>cwk_path_get_last_segment_without_root()
 : <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#aaf12f585ced2b3fcfe70531641a6fadd">cwalk.c</a>
 </li>
 <li>cwk_path_get_next_segment()
-: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#acfd833c41dae993e90dba669564a63f4">cwalk.c</a>
+: <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#a5d7659aaa8b1a7f8e9c1097e7b4dc912">cwalk.h</a>
+, <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#acfd833c41dae993e90dba669564a63f4">cwalk.c</a>
 , <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#a5d7659aaa8b1a7f8e9c1097e7b4dc912">cwalk.h</a>
 , <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#acfd833c41dae993e90dba669564a63f4">cwalk.c</a>
-, <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#a5d7659aaa8b1a7f8e9c1097e7b4dc912">cwalk.h</a>
 </li>
 <li>cwk_path_get_next_segment_joined()
 : <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a2ba74980728c6b7c0757fe4ed6491071">cwalk.c</a>
@@ -350,18 +353,19 @@ $(document).ready(function(){initNavTree('globals_func_c.html',''); initResizabl
 , <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#a62cfd570a00de9811417dc8b32bd1465">cwalk.h</a>
 </li>
 <li>cwk_path_get_previous_segment_joined()
-: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a3bda14d20595e25ba1db0bf61c5da1a0">cwalk.c</a>
+: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a3bda14d20595e25ba1db0bf61c5da1a0">cwalk.c</a>
 </li>
 <li>cwk_path_get_relative()
 : <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#a383836841603aad4712029e5f42de6bb">cwalk.h</a>
-, <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#abd1d5366163d7220c6b0891bc90d264a">cwalk.c</a>
+, <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#abd1d5366163d7220c6b0891bc90d264a">cwalk.c</a>
 , <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#a383836841603aad4712029e5f42de6bb">cwalk.h</a>
+, <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#abd1d5366163d7220c6b0891bc90d264a">cwalk.c</a>
 </li>
 <li>cwk_path_get_root()
-: <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#ac5ac1f6c3505a13cf6af679b3e1075ab">cwalk.h</a>
+: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#ab85b1ed4f5b36fd22d1e0f0d65be03a1">cwalk.c</a>
+, <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#ac5ac1f6c3505a13cf6af679b3e1075ab">cwalk.h</a>
 , <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#ab85b1ed4f5b36fd22d1e0f0d65be03a1">cwalk.c</a>
 , <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#ac5ac1f6c3505a13cf6af679b3e1075ab">cwalk.h</a>
-, <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#ab85b1ed4f5b36fd22d1e0f0d65be03a1">cwalk.c</a>
 </li>
 <li>cwk_path_get_root_unix()
 : <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a0b534513ae6fe9f4ec742f161da022c0">cwalk.c</a>
@@ -370,115 +374,113 @@ $(document).ready(function(){initNavTree('globals_func_c.html',''); initResizabl
 : <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a717ab7b9a683fefc6f2038a1c0e2e57b">cwalk.c</a>
 </li>
 <li>cwk_path_get_segment_type()
-: <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#a5779262b292913597c5d5ab2c055b9e7">cwalk.h</a>
+: <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#a5779262b292913597c5d5ab2c055b9e7">cwalk.h</a>
 , <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a9ab5f0bebf3dc5aa6d4780e6002fd9ea">cwalk.c</a>
 , <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#a5779262b292913597c5d5ab2c055b9e7">cwalk.h</a>
 , <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a9ab5f0bebf3dc5aa6d4780e6002fd9ea">cwalk.c</a>
-, <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#a5779262b292913597c5d5ab2c055b9e7">cwalk.h</a>
 </li>
 <li>cwk_path_get_style()
-: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a243dd2bfd37ea28867e893fb4044bf1e">cwalk.c</a>
-, <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#a2ba934a4a37f1d5911faa140e4e2c46c">cwalk.h</a>
-, <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a243dd2bfd37ea28867e893fb4044bf1e">cwalk.c</a>
+: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a243dd2bfd37ea28867e893fb4044bf1e">cwalk.c</a>
+, <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#a2ba934a4a37f1d5911faa140e4e2c46c">cwalk.h</a>
+, <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a243dd2bfd37ea28867e893fb4044bf1e">cwalk.c</a>
 , <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#a2ba934a4a37f1d5911faa140e4e2c46c">cwalk.h</a>
 </li>
 <li>cwk_path_guess_style()
-: <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#a9b4517f492f5d5859f599a963cf1026a">cwalk.h</a>
+: <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#a9b4517f492f5d5859f599a963cf1026a">cwalk.h</a>
+, <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a4eaff34866380542bc682cb76d9742b0">cwalk.c</a>
+, <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#a9b4517f492f5d5859f599a963cf1026a">cwalk.h</a>
 , <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a4eaff34866380542bc682cb76d9742b0">cwalk.c</a>
-, <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#a9b4517f492f5d5859f599a963cf1026a">cwalk.h</a>
 </li>
 <li>cwk_path_has_extension()
-: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a1ece84c0bbe6e950005264de819c9cb0">cwalk.c</a>
+: <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#aa917d03c0659fdefe8575493295e18d1">cwalk.h</a>
+, <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a1ece84c0bbe6e950005264de819c9cb0">cwalk.c</a>
 , <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#aa917d03c0659fdefe8575493295e18d1">cwalk.h</a>
-, <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a1ece84c0bbe6e950005264de819c9cb0">cwalk.c</a>
 </li>
 <li>cwk_path_is_absolute()
-: <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#aae129e02017ddd7ad9c7d7d24f107079">cwalk.h</a>
+: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a805349f9c4f2783187e34a236cedb9b6">cwalk.c</a>
+, <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#aae129e02017ddd7ad9c7d7d24f107079">cwalk.h</a>
 , <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a805349f9c4f2783187e34a236cedb9b6">cwalk.c</a>
 , <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#aae129e02017ddd7ad9c7d7d24f107079">cwalk.h</a>
-, <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a805349f9c4f2783187e34a236cedb9b6">cwalk.c</a>
 </li>
 <li>cwk_path_is_relative()
-: <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#ab734e7277e96ea5d5acec4fbbd2fc402">cwalk.h</a>
-, <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a57a7822bf8af4f0f978579825c24ea33">cwalk.c</a>
-, <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#ab734e7277e96ea5d5acec4fbbd2fc402">cwalk.h</a>
+: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a57a7822bf8af4f0f978579825c24ea33">cwalk.c</a>
+, <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#ab734e7277e96ea5d5acec4fbbd2fc402">cwalk.h</a>
 , <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a57a7822bf8af4f0f978579825c24ea33">cwalk.c</a>
+, <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#ab734e7277e96ea5d5acec4fbbd2fc402">cwalk.h</a>
 </li>
 <li>cwk_path_is_root_absolute()
-: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a7031ed4abfd806cc68acd9ace2d23120">cwalk.c</a>
+: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a7031ed4abfd806cc68acd9ace2d23120">cwalk.c</a>
 </li>
 <li>cwk_path_is_separator()
-: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#abe0da5227916fc94608ab66a92daf59f">cwalk.c</a>
-, <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#a2703a5d58bd1fd5aea8302c413660a27">cwalk.h</a>
+: <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#a2703a5d58bd1fd5aea8302c413660a27">cwalk.h</a>
+, <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#abe0da5227916fc94608ab66a92daf59f">cwalk.c</a>
 </li>
 <li>cwk_path_is_string_equal()
-: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a94681354e2648fec4ce13153a78339b3">cwalk.c</a>
+: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a94681354e2648fec4ce13153a78339b3">cwalk.c</a>
 </li>
 <li>cwk_path_join()
-: <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#a2b0ad7a91b604b5fff516499b84c97d7">cwalk.h</a>
-, <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#ad3590f6588b2461fcf8f3ad84bfc5d42">cwalk.c</a>
-, <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#a2b0ad7a91b604b5fff516499b84c97d7">cwalk.h</a>
+: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#ad3590f6588b2461fcf8f3ad84bfc5d42">cwalk.c</a>
+, <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#a2b0ad7a91b604b5fff516499b84c97d7">cwalk.h</a>
+, <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#ad3590f6588b2461fcf8f3ad84bfc5d42">cwalk.c</a>
+, <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#a2b0ad7a91b604b5fff516499b84c97d7">cwalk.h</a>
 </li>
 <li>cwk_path_join_and_normalize_multiple()
-: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#ac88ffacd0f2aa502b9f67c6d5acc9b65">cwalk.c</a>
+: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#ac88ffacd0f2aa502b9f67c6d5acc9b65">cwalk.c</a>
 </li>
 <li>cwk_path_join_multiple()
-: <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#ac032cd6779d648b793ef66efbb6219d6">cwalk.h</a>
-, <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a940c081e6d90d13c77aa41a3bd36e94f">cwalk.c</a>
-, <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#ac032cd6779d648b793ef66efbb6219d6">cwalk.h</a>
+: <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#ac032cd6779d648b793ef66efbb6219d6">cwalk.h</a>
 , <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a940c081e6d90d13c77aa41a3bd36e94f">cwalk.c</a>
 , <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#ac032cd6779d648b793ef66efbb6219d6">cwalk.h</a>
 </li>
 <li>cwk_path_normalize()
-: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a438b605066e389e36ed368ce85c69604">cwalk.c</a>
-, <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#a670897583339fbff8befc11da880018c">cwalk.h</a>
+: <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#a670897583339fbff8befc11da880018c">cwalk.h</a>
 , <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a438b605066e389e36ed368ce85c69604">cwalk.c</a>
-, <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#a670897583339fbff8befc11da880018c">cwalk.h</a>
 </li>
 <li>cwk_path_output()
-: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#aa69c39acc427954362db13d3f4a726a9">cwalk.c</a>
+: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#aa69c39acc427954362db13d3f4a726a9">cwalk.c</a>
 </li>
 <li>cwk_path_output_back()
 : <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#add919e716831dc9a27b441389d960305">cwalk.c</a>
 </li>
 <li>cwk_path_output_current()
-: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a45f6de9e9493fe9ef2771fcace3b5b4e">cwalk.c</a>
+: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a45f6de9e9493fe9ef2771fcace3b5b4e">cwalk.c</a>
 </li>
 <li>cwk_path_output_dot()
-: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a3092b83cdcf9746b82022873267c9679">cwalk.c</a>
+: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a3092b83cdcf9746b82022873267c9679">cwalk.c</a>
 </li>
 <li>cwk_path_output_separator()
-: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a6bfc63dd7ba77d04a03cb1dbc2d5524a">cwalk.c</a>
+: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a6bfc63dd7ba77d04a03cb1dbc2d5524a">cwalk.c</a>
 </li>
 <li>cwk_path_output_sized()
-: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#ae44a699be828ffe58b636e8c6ab13dc0">cwalk.c</a>
+: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#ae44a699be828ffe58b636e8c6ab13dc0">cwalk.c</a>
 </li>
 <li>cwk_path_segment_back_will_be_removed()
-: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#ac3369d5a83cb4ff98173e3caf6767643">cwalk.c</a>
+: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#ac3369d5a83cb4ff98173e3caf6767643">cwalk.c</a>
 </li>
 <li>cwk_path_segment_joined_skip_invisible()
 : <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a642ae7f0b4af0374c203cbebb03a1ff1">cwalk.c</a>
 </li>
 <li>cwk_path_segment_normal_will_be_removed()
-: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a7e02691026e505e824f250e9b39c68cf">cwalk.c</a>
+: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a7e02691026e505e824f250e9b39c68cf">cwalk.c</a>
 </li>
 <li>cwk_path_segment_will_be_removed()
-: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a27ea86b6d7730a32eec5de82c21429f8">cwalk.c</a>
+: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a27ea86b6d7730a32eec5de82c21429f8">cwalk.c</a>
 </li>
 <li>cwk_path_set_style()
-: <a class="el" href="d7/dc7/userspace_2libs_2cwalk_2cwalk_8h.html#a3e75a1f14754498a0079bb11f9ddca9a">cwalk.h</a>
-, <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a1b5f8f116d5f20ea682feb16f4fa6721">cwalk.c</a>
+: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a1b5f8f116d5f20ea682feb16f4fa6721">cwalk.c</a>
 , <a class="el" href="de/d07/userspace_2apps_2system_2monoton_2cwalk_8h.html#a3e75a1f14754498a0079bb11f9ddca9a">cwalk.h</a>
+, <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a1b5f8f116d5f20ea682feb16f4fa6721">cwalk.c</a>
+, <a class="el" href="dc/d3a/kernel_2include_2cwalk_8h.html#a3e75a1f14754498a0079bb11f9ddca9a">cwalk.h</a>
 </li>
 <li>cwk_path_skip_segments_until_diverge()
-: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#a0af52b6862a6bd25e8678ab004ebf841">cwalk.c</a>
+: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#a0af52b6862a6bd25e8678ab004ebf841">cwalk.c</a>
 </li>
 <li>cwk_path_terminate_output()
-: <a class="el" href="d1/dbb/kernel_2libs_2cwalk_8c.html#aa5d775df33238d8c1dc6c24d577bcfd9">cwalk.c</a>
+: <a class="el" href="de/d75/userspace_2libs_2cwalk_2cwalk_8c.html#aa5d775df33238d8c1dc6c24d577bcfd9">cwalk.c</a>
 </li>
 <li>CyclicRedundancyCheck32()
-: <a class="el" href="d0/d17/algo_8c.html#a0a80be398b3faf4227e925171361fc27">algo.c</a>
-, <a class="el" href="d1/d1e/algo_8h.html#a0a80be398b3faf4227e925171361fc27">algo.h</a>
+: <a class="el" href="d1/d1e/algo_8h.html#a0a80be398b3faf4227e925171361fc27">algo.h</a>
+, <a class="el" href="d0/d17/algo_8c.html#a0a80be398b3faf4227e925171361fc27">algo.c</a>
 </li>
 </ul>
 </div><!-- contents -->

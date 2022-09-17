@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('de/dea/userspace_2apps_2system_2monoto
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;build: $(NAME)</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;$(NAME): $(OBJ)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    $(CC) $(LDFLAGS) $(OBJ) -o $(OUTPUT_DIR)$@ -lmonoton -lscparse -lcwalk</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    $(CC) $(LDFLAGS) $(OBJ) -o $(OUTPUT_DIR)$@ -lmonoton -lscparse -lcwalk -fPIC</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;%.o: %.c $(HEADERS)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    $(CC) $(CFLAGS) -std=c17 -c $&lt; -o $@</div>

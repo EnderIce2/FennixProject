@@ -12,10 +12,11 @@ var heap_8h =
     [ "NORMAL_VMA_OFFSET", "da/ddb/heap_8h.html#ab2ed1581af9d674b98f3aa559cba18ac", null ],
     [ "PAGE_SIZE", "da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e", null ],
     [ "STACK_SIZE", "da/ddb/heap_8h.html#a6423a880df59733d2d9b509c7718d3a9", null ],
+    [ "TRACE_PML4", "da/ddb/heap_8h.html#a550e24d472a88787f0b548243481e838", null ],
+    [ "USER_APP_BASE", "da/ddb/heap_8h.html#aa2fd03499bf89626d78388fde5a1d24f", null ],
+    [ "USER_FILE_BUFFER_BASE", "da/ddb/heap_8h.html#a193037b94dec68c1ca0a4bf68b27957d", null ],
     [ "USER_HEAP_BASE", "da/ddb/heap_8h.html#aa6e99f855eb906d87180d7c66506ba49", null ],
     [ "USER_HEAP_END", "da/ddb/heap_8h.html#acce5defaf7cefd6c3c4f6f1cdbca0072", null ],
-    [ "USER_STACK_HEAP_BASE", "da/ddb/heap_8h.html#a4ab4824bb3b949cb0892b498ee9f331a", null ],
-    [ "USER_STACK_HEAP_END", "da/ddb/heap_8h.html#aa71772967d4ef1da48968f79ff4558c9", null ],
     [ "AllocationAlgorithm", "da/ddb/heap_8h.html#a06dab8412ff5c1ff40b427ded05ef2e9", [
       [ "NoAllocationAlgorithm", "da/ddb/heap_8h.html#a06dab8412ff5c1ff40b427ded05ef2e9aac33f52db1db5ff0c14eeb075b2886f0", null ],
       [ "Default", "da/ddb/heap_8h.html#a06dab8412ff5c1ff40b427ded05ef2e9a79935518a3889663d8688b6b01fff051", null ],

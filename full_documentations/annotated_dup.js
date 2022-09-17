@@ -209,6 +209,7 @@ var annotated_dup =
     [ "PCB", "db/da4/task_8h.html#d7/d51/structPCB", "db/da4/task_8h_d7/d51/structPCB" ],
     [ "PCIDeviceHeader", "d9/d97/pci_8h.html#d8/dbb/structPCIDeviceHeader", "d9/d97/pci_8h_d8/dbb/structPCIDeviceHeader" ],
     [ "PCIHeader0", "d9/d97/pci_8h.html#d2/d75/structPCIHeader0", "d9/d97/pci_8h_d2/d75/structPCIHeader0" ],
+    [ "RetStructData", "d2/d83/exec_8hpp.html#d2/d90/structRetStructData", "d2/d83/exec_8hpp_d2/d90/structRetStructData" ],
     [ "RFLAGS", "da/da0/usm_8h.html#df/d3f/unionRFLAGS", "da/da0/usm_8h_df/d3f/unionRFLAGS" ],
     [ "RFLAGS.__attribute__", "d1/d57/cputables_8h.html#dd/dd5/structRFLAGS_8____attribute____", "d1/d57/cputables_8h_dd/dd5/structRFLAGS_8____attribute____" ],
     [ "RFLAGS.__unnamed__", "da/da0/usm_8h.html#d4/d1d/structRFLAGS_8____unnamed____", "da/da0/usm_8h_d4/d1d/structRFLAGS_8____unnamed____" ],
