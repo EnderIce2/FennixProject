@@ -52,30 +52,30 @@ namespace VMM
         uint64_t P_i;
     };
 
-    typedef union
+    typedef union __attribute__((packed))
     {
-        struct
+        struct __attribute__((packed))
         {
-            uint64_t Present : 1;
-            uint64_t ReadWrite : 1;
-            uint64_t UserSupervisor : 1;
-            uint64_t WriteThrough : 1;
-            uint64_t CacheDisable : 1;
-            uint64_t Accessed : 1;
-            uint64_t Dirty : 1;
-            uint64_t PageSize : 1;
-            uint64_t Global : 1;
-            uint64_t Available1 : 3;
-            uint64_t PageAttributeTable : 1;
+            bool Present : 1;
+            bool ReadWrite : 1;
+            bool UserSupervisor : 1;
+            bool WriteThrough : 1;
+            bool CacheDisable : 1;
+            bool Accessed : 1;
+            bool Dirty : 1;
+            bool PageSize : 1;
+            bool Global : 1;
+            uint8_t Available1 : 3;
+            bool PageAttributeTable : 1;
             uint64_t Reserved : 39;
-            uint64_t Available2 : 7;
-            uint64_t ProtectionKey : 4;
-            uint64_t ExecuteDisable : 1;
+            uint32_t Available2 : 7;
+            uint16_t ProtectionKey : 4;
+            bool ExecuteDisable : 1;
         };
         uint64_t raw;
     } PDEData;
 
-    struct PageDirectoryEntry
+    struct __attribute__((packed)) PageDirectoryEntry
     {
         PDEData Value;
         void AddFlag(uint64_t Flag);
@@ -106,8 +106,8 @@ namespace VMM
         bool Initalized = false;
         PageTable *PML4;
         PageTableManager(PageTable *PML4Address);
-        void MapMemory(void *VirtualAddress, void *PhysicalAddress, uint64_t Flags);
-        void UnmapMemory(void *VirtualAddress);
+        void MapMemory(void *VirtualAddress, void *PhysicalAddress, uint64_t Flags, PageTable *PageTable4 = nullptr);
+        void UnmapMemory(void *VirtualAddress, PageTable *PageTable4 = nullptr);
         void *umemcpy(void *Destination, void *Source, uint64_t Length, enum CopyOperation Operation);
     };
 }
@@ -164,14 +164,14 @@ void operator delete[](void *Pointer, long unsigned int n);
 #define KERNEL_STACK_HEAP_BASE 0xFFFFA00000000000
 #define KERNEL_STACK_HEAP_END 0xFFFFAFFFFFFF0000
 
-#define USER_STACK_HEAP_BASE 0xFFFFB00000000000
-#define USER_STACK_HEAP_END 0xFFFFBFFFFFFF0000
-
 #define KERNEL_HEAP_BASE 0xFFFFC00000000000
 #define KERNEL_HEAP_END 0xFFFFC00080000000
 
 #define USER_HEAP_BASE 0xFFFFD00000000000
 #define USER_HEAP_END 0xFFFFD00080000000
+
+#define USER_FILE_BUFFER_BASE 0xFFFFE00000000000
+#define USER_APP_BASE 0xFFFFF00000000000
 
 /**
  * @brief https://wiki.osdev.org/images/4/41/64-bit_page_tables1.png
@@ -264,6 +264,38 @@ enum AllocationAlgorithm
     BuddyAlloc,
     XallocV1
 };
+
+#ifdef DEBUG
+
+#define TRACE_PML4(pml4)                                              \
+    for (int i = 0; i < 512; i++)                                     \
+    {                                                                 \
+        if (pml4->Entries[i].Value.raw == 0)                          \
+            continue;                                                 \
+        debug("%04ld: %d %d %d %d %d %d %d %d %d %d %d %ld %d %d %d", \
+              i,                                                      \
+              pml4->Entries[i].Value.Present,                         \
+              pml4->Entries[i].Value.ReadWrite,                       \
+              pml4->Entries[i].Value.UserSupervisor,                  \
+              pml4->Entries[i].Value.WriteThrough,                    \
+              pml4->Entries[i].Value.CacheDisable,                    \
+              pml4->Entries[i].Value.Accessed,                        \
+              pml4->Entries[i].Value.Dirty,                           \
+              pml4->Entries[i].Value.PageSize,                        \
+              pml4->Entries[i].Value.Global,                          \
+              pml4->Entries[i].Value.Available1,                      \
+              pml4->Entries[i].Value.PageAttributeTable,              \
+              pml4->Entries[i].Value.Reserved,                        \
+              pml4->Entries[i].Value.Available2,                      \
+              pml4->Entries[i].Value.ProtectionKey,                   \
+              pml4->Entries[i].Value.ExecuteDisable);                 \
+    }
+
+#else
+
+#define TRACE_PML4(pml4)
+
+#endif
 
 START_EXTERNC
 
