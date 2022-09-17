@@ -57,9 +57,10 @@ EXTERNC void crash(string message, bool clear)
     CPU_HALT;
 }
 
-EXTERNC void isrcrash(TrapFrame *regs)
+EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
 {
     CLI;
+
     CR0 cr0 = readcr0();
     CR2 cr2 = readcr2();
     CR3 cr3 = readcr3();
@@ -67,6 +68,18 @@ EXTERNC void isrcrash(TrapFrame *regs)
     CR8 cr8 = readcr8();
     EFER efer;
     efer.raw = rdmsr(MSR_EFER);
+
+    if ((uint64_t)KernelPageTableManager.PML4 != cr3.raw)
+    {
+        err("Page table still not set to kernel one!");
+        CR3 tmpcr3;
+        tmpcr3.raw = (uint64_t)KernelPageTableManager.PML4;
+        writecr3(tmpcr3);
+
+        CR3 Result = readcr3();
+        if (Result.raw != (uint64_t)KernelPageTableManager.PML4)
+            err("Kernel page table failed to be set.");
+    }
 
 #if defined(__amd64__)
     uint64_t dr0, dr1, dr2, dr3, dr6;
@@ -87,13 +100,14 @@ EXTERNC void isrcrash(TrapFrame *regs)
                  : "=r"(dr7));
 #endif
 
-    if (CS != 0x23)
+    if (CS != 0x1b)
         CurrentDisplay->Clear(0x000000);
+
     switch (INT_NUM)
     {
     case ISR_DivideByZero:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -105,7 +119,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_Debug:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -121,7 +135,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_NonMaskableInterrupt:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -133,7 +147,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_Breakpoint:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -145,7 +159,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_Overflow:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -157,7 +171,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_BoundRange:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -169,7 +183,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_InvalidOpcode:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -185,7 +199,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_DeviceNotAvailable:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -197,7 +211,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_DoubleFault:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -209,7 +223,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_CoprocessorSegmentOverrun:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -221,7 +235,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_InvalidTSS:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -234,7 +248,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_SegmentNotPresent:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -247,7 +261,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_StackSegmentFault:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -296,7 +310,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_GeneralProtectionFault:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
         }
@@ -344,7 +358,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_PageFault:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -400,7 +414,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_x87FloatingPoint:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -412,7 +426,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_AlignmentCheck:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -424,7 +438,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_MachineCheck:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -436,7 +450,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_SIMDFloatingPoint:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -448,7 +462,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_Virtualization:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -460,7 +474,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     case ISR_Security:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -472,7 +486,7 @@ EXTERNC void isrcrash(TrapFrame *regs)
     }
     default:
     {
-        if (CS == 0x23)
+        if (CS == 0x1b)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -577,11 +591,8 @@ EXTERNC void isrcrash(TrapFrame *regs)
         uint64_t rip;
     };
 
-    struct StackFrame *frames;
-
     // __builtin_frame_address gets the exception handlers too, which is not useful and can be confusing.
-    frames = (struct StackFrame *)RBP;
-    // frames = (struct StackFrame *)__builtin_frame_address(0);
+    struct StackFrame *frames = (struct StackFrame *)RBP; // (struct StackFrame *)__builtin_frame_address(0);
 
     CurrentDisplay->SetPrintColor(0x7981FC);
     printf("\nStack Trace:\n");
@@ -611,13 +622,16 @@ EXTERNC void isrcrash(TrapFrame *regs)
         CurrentDisplay->SetPrintColor(0x7925CC);
         printf("-");
         CurrentDisplay->SetPrintColor(0xAA25CC);
-        printf("%s", SymTbl->GetSymbolFromAddress(RIP));
+        if (RIP >= 0xFFFFFFFF80000000 && RIP <= (uint64_t)&_kernel_end)
+            printf("%s", SymTbl->GetSymbolFromAddress(RIP));
+        else
+            printf("Outside Kernel");
         CurrentDisplay->SetPrintColor(0x7981FC);
         printf(" <- Exception");
 
         for (uint64_t frame = 0; frame < 20; ++frame)
         {
-            if (frames->rip == 0x0)
+            if (!frames->rip)
                 break;
             printf("\n");
             CurrentDisplay->SetPrintColor(0x2565CC);
@@ -625,9 +639,34 @@ EXTERNC void isrcrash(TrapFrame *regs)
             CurrentDisplay->SetPrintColor(0x7925CC);
             printf("-");
             CurrentDisplay->SetPrintColor(0x25CCC9);
-            printf("%s", SymTbl->GetSymbolFromAddress(frames->rip));
+            if (frames->rip >= 0xFFFFFFFF80000000 && frames->rip <= (uint64_t)&_kernel_end)
+                printf("%s", SymTbl->GetSymbolFromAddress(frames->rip));
+            else
+            {
+                CurrentDisplay->SetPrintColor(0xFF4CA9);
+                printf("Outside Kernel");
+            }
             frames = frames->rbp;
         }
     }
+
+    frames = (struct StackFrame *)RBP;
+
+    if (RIP >= 0xFFFFFFFF80000000 && RIP <= (uint64_t)&_kernel_end)
+        debug("%p-%s <- Exception", (void *)RIP, SymTbl->GetSymbolFromAddress(RIP));
+    else
+        debug("%p-OUTSIDE KERNEL <- Exception", (void *)RIP);
+
+    for (uint64_t frame = 0; frame < 100; ++frame)
+    {
+        if (!frames->rip)
+            break;
+        if (frames->rip >= 0xFFFFFFFF80000000 && frames->rip <= (uint64_t)&_kernel_end)
+            debug("%p-%s", (void *)frames->rip, SymTbl->GetSymbolFromAddress(frames->rip));
+        else
+            debug("%p-OUTSIDE KERNEL", (void *)frames->rip);
+        frames = frames->rbp;
+    }
+
     CPU_HALT;
 }
