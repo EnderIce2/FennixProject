@@ -14,9 +14,9 @@
 #include <asm.h>
 #include <io.h>
 
-void *KPML4Address = NULL;
+static volatile void *KPML4Address = NULL;
 
-void SetKernelPageTableAddress(void *Address)
+__attribute__((no_stack_protector)) void SetKernelPageTableAddress(void *Address)
 {
     KPML4Address = Address;
     trace("Kernel page table address set to %p", KPML4Address);
@@ -24,26 +24,7 @@ void SetKernelPageTableAddress(void *Address)
 
 __attribute__((naked, used, no_stack_protector)) void exception_handler_helper()
 {
-    // TODO: Switching page table if ring 0 is not tested! (source: https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm)
     asm("cld\n" // clear direction flag
-
-        "pushq %rax\n"    // push rax
-        "mov %cs, %rax\n" // move cs to rax
-
-        "cmp %rax, [0x8]\n"        // compare rax with 0x8
-        "jne .NoPageTableUpdate\n" // if not, skip to next instruction
-        "push %rax\n");            // push rax
-
-    // "mov $0x100000, %rax\n"    // set rax to kernel pml4 of memory
-    asm volatile("mov %[KPML4Address], %%rax" /* Not sure if it will work but I didn't had any issues. */
-                 :
-                 : [KPML4Address] "q"(KPML4Address)
-                 : "memory");
-
-    asm("mov %rax, %cr3\n"      // set page directory
-        "pop %rax\n"            // pop rax
-        ".NoPageTableUpdate:\n" // label for jumping to next instruction
-        "popq %rax\n"           // pop rax
 
         // push all registers
         "pushq %rax\n"
@@ -86,12 +67,24 @@ __attribute__((naked, used, no_stack_protector)) void exception_handler_helper()
         "iretq"); // pop CS RIP RFLAGS SS ESP
 }
 
-__attribute__((used)) void exception_handler(TrapFrame *regs)
+__attribute__((used, no_stack_protector)) void exception_handler(TrapFrame *regs)
 {
-    CLI;
+    CLI; // making sure that the interrupts are disabled
     serial_write_text(COM1, "An Internal Exception Occurred\n");
-    // serial_write_text(COM1, to_char(INT_NUM));
-    // serial_write_text(COM1, "\n");
+    asm volatile("mov %[KPML4Address], %%rax"
+                 :
+                 : [KPML4Address] "q"(KPML4Address)
+                 : "memory");
+
+    uint64_t Result;
+    asm volatile("mov %%cr3, %[Result]"
+                 : [Result] "=q"(Result));
+
+    if (Result == (uint64_t)KPML4Address) // checking to be sure
+        serial_write_text(COM1, "Kernel page table set.\n");
+    else
+        serial_write_text(COM1, "Kernel page table failed to be set.\n");
+
     switch (INT_NUM)
     {
     case ISR8:
@@ -158,11 +151,11 @@ exception_handler_:
             "jmp exception_handler_helper");                                         \
     }
 
-#define EXCEPTION_ERROR_HANDLER(num)                             \
-    __attribute__((naked)) static void interrupt_handler_##num() \
-    {                                                            \
-        asm("pushq $" #num "\n"                                  \
-            "jmp exception_handler_helper");                     \
+#define EXCEPTION_ERROR_HANDLER(num)                                                 \
+    __attribute__((naked, no_stack_protector)) static void interrupt_handler_##num() \
+    {                                                                                \
+        asm("pushq $" #num "\n"                                                      \
+            "jmp exception_handler_helper");                                         \
     }
 
 /* =============================================================================================================================================== */
@@ -237,22 +230,22 @@ void set_idt_entry(uint8_t idt, void (*handler)(), uint64_t ist, uint64_t ring)
 /* =============================================================================================================================================== */
 
 // ISR
-EXCEPTION_HANDLER(0x00);
-EXCEPTION_HANDLER(0x01);
-EXCEPTION_HANDLER(0x02);
-EXCEPTION_HANDLER(0x03);
-EXCEPTION_HANDLER(0x04);
-EXCEPTION_HANDLER(0x05);
-EXCEPTION_HANDLER(0x06);
-EXCEPTION_HANDLER(0x07);
-EXCEPTION_ERROR_HANDLER(0x08);
-EXCEPTION_HANDLER(0x09);
-EXCEPTION_ERROR_HANDLER(0x0a);
-EXCEPTION_ERROR_HANDLER(0x0b);
-EXCEPTION_ERROR_HANDLER(0x0c);
-EXCEPTION_ERROR_HANDLER(0x0d);
-EXCEPTION_ERROR_HANDLER(0x0e);
-EXCEPTION_HANDLER(0x0f);
+EXCEPTION_HANDLER(0x0);
+EXCEPTION_HANDLER(0x1);
+EXCEPTION_HANDLER(0x2);
+EXCEPTION_HANDLER(0x3);
+EXCEPTION_HANDLER(0x4);
+EXCEPTION_HANDLER(0x5);
+EXCEPTION_HANDLER(0x6);
+EXCEPTION_HANDLER(0x7);
+EXCEPTION_ERROR_HANDLER(0x8);
+EXCEPTION_HANDLER(0x9);
+EXCEPTION_ERROR_HANDLER(0xa);
+EXCEPTION_ERROR_HANDLER(0xb);
+EXCEPTION_ERROR_HANDLER(0xc);
+EXCEPTION_ERROR_HANDLER(0xd);
+EXCEPTION_ERROR_HANDLER(0xe);
+EXCEPTION_HANDLER(0xf);
 EXCEPTION_ERROR_HANDLER(0x10);
 EXCEPTION_HANDLER(0x11);
 EXCEPTION_HANDLER(0x12);
@@ -504,22 +497,22 @@ INTERRUPT_HANDLER(0xff)
 void init_idt()
 {
     trace("Initializing IDT");
-    set_idt_entry(0x0, interrupt_handler_0x00, 1, 0);
-    set_idt_entry(0x1, interrupt_handler_0x01, 1, 3);
-    set_idt_entry(0x2, interrupt_handler_0x02, 2, 0);
-    set_idt_entry(0x3, interrupt_handler_0x03, 1, 0);
-    set_idt_entry(0x4, interrupt_handler_0x04, 1, 0);
-    set_idt_entry(0x5, interrupt_handler_0x05, 1, 0);
-    set_idt_entry(0x6, interrupt_handler_0x06, 1, 0);
-    set_idt_entry(0x7, interrupt_handler_0x07, 1, 0);
-    set_idt_entry(0x8, interrupt_handler_0x08, 3, 0);
-    set_idt_entry(0x9, interrupt_handler_0x09, 1, 0);
-    set_idt_entry(0xa, interrupt_handler_0x0a, 1, 0);
-    set_idt_entry(0xb, interrupt_handler_0x0b, 1, 0);
-    set_idt_entry(0xc, interrupt_handler_0x0c, 3, 0);
-    set_idt_entry(0xd, interrupt_handler_0x0d, 3, 0);
-    set_idt_entry(0xe, interrupt_handler_0x0e, 3, 0);
-    set_idt_entry(0xf, interrupt_handler_0x0f, 1, 0);
+    set_idt_entry(0x0, interrupt_handler_0x0, 1, 0);
+    set_idt_entry(0x1, interrupt_handler_0x1, 1, 3);
+    set_idt_entry(0x2, interrupt_handler_0x2, 2, 0);
+    set_idt_entry(0x3, interrupt_handler_0x3, 1, 0);
+    set_idt_entry(0x4, interrupt_handler_0x4, 1, 0);
+    set_idt_entry(0x5, interrupt_handler_0x5, 1, 0);
+    set_idt_entry(0x6, interrupt_handler_0x6, 1, 0);
+    set_idt_entry(0x7, interrupt_handler_0x7, 1, 0);
+    set_idt_entry(0x8, interrupt_handler_0x8, 3, 0);
+    set_idt_entry(0x9, interrupt_handler_0x9, 1, 0);
+    set_idt_entry(0xa, interrupt_handler_0xa, 1, 0);
+    set_idt_entry(0xb, interrupt_handler_0xb, 1, 0);
+    set_idt_entry(0xc, interrupt_handler_0xc, 3, 0);
+    set_idt_entry(0xd, interrupt_handler_0xd, 3, 0);
+    set_idt_entry(0xe, interrupt_handler_0xe, 3, 0);
+    set_idt_entry(0xf, interrupt_handler_0xf, 1, 0);
     set_idt_entry(0x10, interrupt_handler_0x10, 1, 0);
     set_idt_entry(0x11, interrupt_handler_0x11, 1, 0);
     set_idt_entry(0x12, interrupt_handler_0x12, 1, 0);

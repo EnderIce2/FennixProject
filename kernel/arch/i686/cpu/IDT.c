@@ -24,26 +24,7 @@ void SetKernelPageTableAddress(void *Address)
 
 __attribute__((naked, used, no_stack_protector)) void exception_handler_helper()
 {
-    // TODO: Switching page table if ring 0 is not tested! (source: https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm)
     asm("cld\n" // clear direction flag
-
-        "push %eax\n"     // push rax
-        "mov %cs, %eax\n" // move cs to rax
-
-        "cmp %eax, [0x8]\n"        // compare rax with 0x8
-        "jne .NoPageTableUpdate\n" // if not, skip to next instruction
-        "push %eax\n");            // push rax
-
-    // "mov $0x100000, %rax\n"    // set rax to kernel pml4 of memory
-    asm volatile("mov %[KPML4Address], %%eax" /* Not sure if it will work but I didn't had any issues. */
-                 :
-                 : [KPML4Address] "q"(KPML4Address)
-                 : "memory");
-
-    asm("mov %eax, %cr3\n"      // set page directory
-        "pop %eax\n"            // pop rax
-        ".NoPageTableUpdate:\n" // label for jumping to next instruction
-        "pop %eax\n"           // pop rax
 
         // push all registers
         "pusha\n"
@@ -62,8 +43,20 @@ __attribute__((used)) void exception_handler(TrapFrame *regs)
 {
     CLI;
     serial_write_text(COM1, "An Internal Exception Occurred\n");
-    // serial_write_text(COM1, to_char(INT_NUM));
-    // serial_write_text(COM1, "\n");
+    asm volatile("mov %[KPML4Address], %%rax"
+                 :
+                 : [KPML4Address] "q"(KPML4Address)
+                 : "memory");
+
+    uint64_t Result;
+    asm volatile("mov %%cr3, %[Result]"
+                 : [Result] "=q"(Result));
+
+    if (Result == (uint64_t)KPML4Address) // checking to be sure
+        serial_write_text(COM1, "Kernel page table set.\n");
+    else
+        serial_write_text(COM1, "Kernel page table failed to be set.\n");
+
     switch (INT_NUM)
     {
     case ISR8:
@@ -126,7 +119,7 @@ exception_handler_:
 #define EXCEPTION_HANDLER(num)                                                       \
     __attribute__((naked, no_stack_protector)) static void interrupt_handler_##num() \
     {                                                                                \
-        asm("push $0\npush $" #num "\n"                                             \
+        asm("push $0\npush $" #num "\n"                                              \
             "jmp exception_handler_helper");                                         \
     }
 
@@ -155,7 +148,7 @@ __attribute__((naked, used, no_stack_protector)) static void InterruptHandlerStu
 #define INTERRUPT_HANDLER(num)                                                      \
     __attribute__((naked, used, no_stack_protector)) void interrupt_handler_##num() \
     {                                                                               \
-        asm("push $0\npush $" #num "\n"                                            \
+        asm("push $0\npush $" #num "\n"                                             \
             "jmp InterruptHandlerStub\n");                                          \
     }
 
