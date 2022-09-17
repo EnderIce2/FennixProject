@@ -17,6 +17,9 @@ int CurrentTaskingMode = TaskingMode::None;
 
 PCB *ConvertTaskCBToPCB(TaskControlBlock *task)
 {
+    CR3 tmpcr3;
+    tmpcr3.raw = (uint64_t)task->pml4;
+
     static PCB pcb = {
         .ID = task->id,
         .Name = {'\0'},
@@ -25,7 +28,7 @@ PCB *ConvertTaskCBToPCB(TaskControlBlock *task)
         .ExitCode = 0,
         .Offset = 0,
         .Parent = nullptr,
-        .PageTable = task->pml4,
+        .PageTable = tmpcr3,
         .Info = {},
         .Security = {},
         .Threads = {},

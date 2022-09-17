@@ -36,7 +36,7 @@ namespace Tasking
         uint64_t fs, gs;
         uint64_t id;
         void *stack;
-        CR3 pml4;
+        VMM::PageTable *pml4;
         bool UserMode;
         enum TaskState state;
         int argc;

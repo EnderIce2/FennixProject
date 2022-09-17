@@ -9,6 +9,7 @@
 #include <io.h>
 
 #include "../cpu/apic.hpp"
+#include "../cpu/smp.hpp"
 #include "../cpu/gdt.h"
 #include "../timer.h"
 
@@ -268,9 +269,14 @@ namespace Tasking
                     {
                         current->Task->state = TaskState::TaskStateRunning;
                         *regs = current->Task->regs;
-                        writecr3(current->Task->pml4);
+                        asm volatile("mov %[ControlRegister], %%cr3"
+                                     :
+                                     : [ControlRegister] "q"(current->Task->pml4)
+                                     : "memory");
+                        CurrentCPU->PageTable.raw = (uint64_t)current->Task->pml4;
                         CurrentTask = current->Task;
-                        trace("Task %s is now running.", current->Task->name);
+                        trace("Task %s is now running. [RIP:%#lx PML:%#lx]",
+                              current->Task->name, current->Task->regs.rip, current->Task->pml4);
                         TaskChanged = true;
                         goto scheduler_eoi;
                     }
@@ -344,7 +350,7 @@ namespace Tasking
         task->UserMode = UserMode;
         task->state = TaskState::TaskStateReady;
         task->stack = KernelStackAllocator->AllocateStack(UserMode);
-        task->pml4 = KernelPageTableAllocator->CreatePageTable(UserMode);
+        task->pml4 = (VMM::PageTable *)KernelPageTableAllocator->CreatePageTable(UserMode).raw;
 
         memset(&task->regs, 0, sizeof(TrapFrame));
         if (!UserMode)
@@ -361,8 +367,8 @@ namespace Tasking
         }
         else
         {
-            task->regs.cs = GDT_USER_CODE;
             task->regs.ss = GDT_USER_DATA;
+            task->regs.cs = GDT_USER_CODE;
             task->gs = 0;
             task->fs = rdmsr(MSR_FS_BASE);
             task->regs.rflags.always_one = 1;
