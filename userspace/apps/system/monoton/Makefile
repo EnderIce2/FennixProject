@@ -18,7 +18,7 @@ CFLAGS := -fPIC -I$(INCLUDE_DIR)
 build: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(LDFLAGS) $(OBJ) -o $(OUTPUT_DIR)$@ -lmonoton -lscparse -lcwalk
+	$(CC) $(LDFLAGS) $(OBJ) -o $(OUTPUT_DIR)$@ -lmonoton -lscparse -lcwalk -fPIC
 
 %.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -std=c17 -c $< -o $@

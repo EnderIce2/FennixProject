@@ -76,7 +76,7 @@ void init_kernelpml()
 
         for (uint64_t t = 0; t < earlyparams.mem.Size; t += PAGE_SIZE)
         {
-            // TODO: remove US flag
+            // FIXME: US flag will be removed in future
             KernelPageTableManager.MapMemory((void *)t, (void *)t, PTFlag::RW | US);
             KernelPageTableManager.MapMemory((void *)VirtualOffsetNormalVMA, (void *)t, PTFlag::RW | US);
             VirtualOffsetNormalVMA += PAGE_SIZE;
@@ -112,6 +112,8 @@ void init_kernelpml()
 
         debug("\nStart: %#llx - Text End: %#llx - RoEnd: %#llx - End: %#llx\nStart Physical: %#llx - End Physical: %#llx",
               KernelStart, KernelTextEnd, KernelRoDataEnd, KernelEnd, earlyparams.mem.KernelBasePhysical, BaseKernelMapAddress);
+
+        TRACE_PML4(KernelPML4);
 
         /*    KernelStart             KernelTextEnd       KernelRoDataEnd                  KernelEnd
         Kernel Start & Text Start ------ Text End ------ Kernel Rodata End ------ Kernel Data End & Kernel End

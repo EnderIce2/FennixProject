@@ -8,16 +8,19 @@ using namespace VMM;
 
 PageTableManager KernelPageTableManager = NULL;
 
-void PageTableManager::MapMemory(void *VirtualAddress, void *PhysicalAddress, uint64_t Flags)
+void PageTableManager::MapMemory(void *VirtualAddress, void *PhysicalAddress, uint64_t Flags, PageTable *PageTable4)
 {
     PageMapIndexer indexer = PageMapIndexer((uint64_t)VirtualAddress);
     PageDirectoryEntry PDE;
-    if (!this->PML4)
+    if (!this->PML4 && !PageTable4)
     {
         err("PML4 is null!");
         CPU_HALT;
     }
-    PDE = this->PML4->Entries[indexer.PDP_i];
+    if (PageTable4)
+        PDE = PageTable4->Entries[indexer.PDP_i];
+    else
+        PDE = this->PML4->Entries[indexer.PDP_i];
     PageTable *PDP;
     if (!PDE.GetFlag(PTFlag::P))
     {
@@ -26,7 +29,10 @@ void PageTableManager::MapMemory(void *VirtualAddress, void *PhysicalAddress, ui
         PDE.SetAddress((uint64_t)PDP >> 12);
         PDE.SetFlag(PTFlag::P, true);
         PDE.AddFlag(Flags);
-        this->PML4->Entries[indexer.PDP_i] = PDE;
+        if (PageTable4)
+            PDE = PageTable4->Entries[indexer.PDP_i];
+        else
+            this->PML4->Entries[indexer.PDP_i] = PDE;
     }
     else
     {
@@ -70,11 +76,14 @@ void PageTableManager::MapMemory(void *VirtualAddress, void *PhysicalAddress, ui
     invlpg((uint64_t)VirtualAddress);
 }
 
-void PageTableManager::UnmapMemory(void *VirtualAddress)
+void PageTableManager::UnmapMemory(void *VirtualAddress, PageTable *PageTable4)
 {
     PageMapIndexer indexer = PageMapIndexer((uint64_t)VirtualAddress);
     PageDirectoryEntry PDE;
-    PDE = this->PML4->Entries[indexer.PDP_i];
+    if (PageTable4)
+        PDE = PageTable4->Entries[indexer.PDP_i];
+    else
+        PDE = this->PML4->Entries[indexer.PDP_i];
     PDE.ClearFlags();
     // TODO: Free the allocated pages
     invlpg((uint64_t)VirtualAddress);
@@ -108,23 +117,10 @@ void *PageTableManager::umemcpy(void *Destination, void *Source, uint64_t Length
 
 void MapMemory(void *PML4, void *VirtualMemory, void *PhysicalMemory, uint64_t Flags)
 {
-    if (PML4 != NULL)
-    {
-        PageTable *KernelNewPML = KernelPageTableManager.PML4;
-        KernelPageTableManager.PML4 = (PageTable *)PML4;
-        if (Flags == 0)
-            KernelPageTableManager.MapMemory(VirtualMemory, PhysicalMemory, PTFlag::RW);
-        else
-            KernelPageTableManager.MapMemory(VirtualMemory, PhysicalMemory, Flags);
-        KernelPageTableManager.PML4 = KernelNewPML;
-    }
+    if (Flags == 0)
+        KernelPageTableManager.MapMemory(VirtualMemory, PhysicalMemory, PTFlag::RW, (PageTable *)PML4);
     else
-    {
-        if (Flags == 0)
-            KernelPageTableManager.MapMemory(VirtualMemory, PhysicalMemory, PTFlag::RW);
-        else
-            KernelPageTableManager.MapMemory(VirtualMemory, PhysicalMemory, Flags);
-    }
+        KernelPageTableManager.MapMemory(VirtualMemory, PhysicalMemory, Flags, (PageTable *)PML4);
 }
 
 void init_vmm()

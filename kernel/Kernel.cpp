@@ -149,15 +149,12 @@ void KernelTask()
     if (ShowRecoveryScreen)
         new SystemRecovery::Recovery;
 
-    // FIXME: sometimes ss is 0x1b and cs is 0x23 which is causing an exception.
-
-    if (CurrentTaskingMode == TaskingMode::Mono)
-        if (!SysCreateProcessFromFile("/system/init", 0, 0, ELEVATION::User))
-        {
-            CurrentDisplay->SetPrintColor(0xFC4444);
-            printf("Failed to load /system/init process. The file is missing or corrupted.\n");
-            CPU_HALT;
-        }
+    if (!SysCreateProcessFromFile("/system/init", 0, 0, ELEVATION::User))
+    {
+        CurrentDisplay->SetPrintColor(0xFC4444);
+        printf("Failed to load /system/init process. The file is missing or corrupted.\n");
+        CPU_HALT;
+    }
 
     trace("End Of Kernel Task");
     if (CurrentTaskingMode != TaskingMode::Mono)
