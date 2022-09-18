@@ -6,6 +6,7 @@ namespace PS2Keyboard
     {
     public:
         unsigned char GetLastScanCode();
+        unsigned char WaitScanCode();
         PS2KeyboardDriver();
         ~PS2KeyboardDriver();
     };

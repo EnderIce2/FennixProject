@@ -6,7 +6,7 @@
 #include <display.h>
 #include <filesystem.h>
 #include <interrupts.h>
-#include <critical.hpp>
+#include <asm.h>
 #include <int.h>
 #include <io.h>
 
@@ -14,21 +14,6 @@ PS2Mouse::PS2MouseDriver *ps2mouse = nullptr;
 
 namespace PS2Mouse
 {
-    enum MouseButton
-    {
-        MouseNone,
-        Right,
-        Middle,
-        Left
-    };
-
-    struct MouseInfo
-    {
-        MouseButton Buttons;
-        long X;
-        long Y;
-    };
-
 #define PS2Leftbutton 0b00000001
 #define PS2Middlebutton 0b00000100
 #define PS2Rightbutton 0b00000010
@@ -120,7 +105,8 @@ namespace PS2Mouse
         uint8_t Cycle = 0;
         InterruptHandler(PS2MouseInterruptHandler)
         {
-            EnterCriticalSection;
+            bool IntOn = InterruptsEnabled();
+            CLI;
             uint8_t Data = inb(0x60);
             ProcessMousePacket();
 
@@ -148,7 +134,8 @@ namespace PS2Mouse
                 break;
             }
             }
-            LeaveCriticalSection;
+            if (IntOn)
+                STI;
         }
     }
 
@@ -161,6 +148,8 @@ namespace PS2Mouse
     FileSystem::FileSystemOpeations mouse = {
         .Name = "PS/2 Mouse",
         .Read = Mouse_Read};
+
+    MouseInfo PS2MouseDriver::GetMouseInfo() { return minfo; }
 
     PS2MouseDriver::PS2MouseDriver()
     {

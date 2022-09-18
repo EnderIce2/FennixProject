@@ -159,7 +159,6 @@ void KernelTask()
     trace("End Of Kernel Task");
     if (CurrentTaskingMode != TaskingMode::Mono)
     {
-        SysSetThreadPriority(1);
         while (!FadeScreenNow)
             asm volatile("hlt");
         BS->FadeLogo();
@@ -256,7 +255,7 @@ void KernelInit()
             {
                 if (done)
                     break;
-                uint8_t c = ps2keyboard->GetLastScanCode();
+                uint8_t c = ps2keyboard->WaitScanCode();
                 if (!(c & 0x80))
                 {
                     switch (c)

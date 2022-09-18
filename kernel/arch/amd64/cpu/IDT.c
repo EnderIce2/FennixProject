@@ -494,7 +494,7 @@ INTERRUPT_HANDLER(0xff)
 
 /* =============================================================================================================================================== */
 
-void init_idt()
+__attribute__((no_stack_protector)) void init_idt()
 {
     trace("Initializing IDT");
     set_idt_entry(0x0, interrupt_handler_0x0, 1, 0);

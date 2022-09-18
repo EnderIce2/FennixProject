@@ -61,6 +61,7 @@ namespace ACPI
 
     void DSDT::shutdown()
     {
+        trace("Shutting down...");
         if (!ACPIShutdownSupported)
         {
             outl(0xB004, 0x2000); // for qemu
@@ -81,12 +82,15 @@ namespace ACPI
 
     void DSDT::reboot()
     {
+        trace("Rebooting...");
         if (!ACPIShutdownSupported)
         {
             uint8_t val = 0x02;
             while (val & 0x02)
                 val = inb(0x64);
             outb(0x64, 0xFE);
+
+            warn("Executing the second attempt to reboot...");
 
             // second attempt to reboot
             // https://wiki.osdev.org/Reboot

@@ -42,6 +42,11 @@ struct GBPFramebuffer
      * @brief Pixels per scan line
      */
     uint32_t PixelsPerScanLine;
+    /**
+     * @brief Bits per pixel
+     * 
+     */
+    uint16_t BitsPerPixel;
 };
 
 /**

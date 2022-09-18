@@ -1,5 +1,6 @@
 #include "recovery.hpp"
 
+#include <internal_task.h>
 #include <display.h>
 #include <asm.h>
 #include <io.h>
@@ -11,15 +12,19 @@ namespace SystemRecovery
 {
     Recovery::Recovery()
     {
+        trace("Recovery mode triggered.");
+        CLI;
         CurrentDisplay->Clear(0x101010);
         printf("%s - %s | Recovery Mode", KERNEL_NAME, KERNEL_VERSION);
-        while (1)
+        /* ... do stuff ... */
+        uint8_t sc = 0;
+        while (sc != 1) // esc
         {
-            asm volatile("sti");
-            uint8_t sc = ps2keyboard->GetLastScanCode();
-            if (sc == 0x1) // esc
-                dsdt->reboot();
+            CLI;
+            sc = ps2keyboard->GetLastScanCode();
+            STI;
         }
+        printf("\nRebooting...");
         dsdt->reboot();
     }
 

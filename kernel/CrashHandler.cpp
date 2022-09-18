@@ -60,7 +60,7 @@ EXTERNC void crash(string message, bool clear)
 EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
 {
     CLI;
-
+    debug("Reading control registers...");
     CR0 cr0 = readcr0();
     CR2 cr2 = readcr2();
     CR3 cr3 = readcr3();
@@ -82,6 +82,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
 
 #if defined(__amd64__)
+    debug("Reading debug registers...");
     uint64_t dr0, dr1, dr2, dr3, dr6;
     DR7 dr7;
 
@@ -565,6 +566,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
 
 // restore debug registers
 #if defined(__amd64__)
+    debug("Restoring debug registers...");
     asm volatile("movq %0, %%dr0"
                  :
                  : "r"(dr0));
@@ -591,18 +593,39 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
         uint64_t rip;
     };
 
-    // __builtin_frame_address gets the exception handlers too, which is not useful and can be confusing.
     struct StackFrame *frames = (struct StackFrame *)RBP; // (struct StackFrame *)__builtin_frame_address(0);
+
+    debug("Stack tracing...");
 
     CurrentDisplay->SetPrintColor(0x7981FC);
     printf("\nStack Trace:\n");
-    // not really working... ubsan is telling me "Null pointer access." and gpf to the code below but here everything is ok... wow...
-    if ((!frames->rip ||
-         !frames->rbp) ||
-        frames->rip == 0x0 ||
-        frames->rbp == 0x0 ||
-        (void *)frames->rip == nullptr ||
-        (void *)frames->rbp == nullptr)
+
+    if (!frames || !frames->rip || !frames->rbp)
+    {
+        CurrentDisplay->SetPrintColor(0xFF0000);
+        printf("\n< No stack trace available. >\n");
+        CPU_HALT;
+    }
+    else
+    {
+        frames = (struct StackFrame *)RBP;
+        if (RIP >= 0xFFFFFFFF80000000 && RIP <= (uint64_t)&_kernel_end)
+            debug("%p-%s <- Exception", (void *)RIP, SymTbl->GetSymbolFromAddress(RIP));
+        else
+            debug("%p-OUTSIDE KERNEL <- Exception", (void *)RIP);
+        for (uint64_t frame = 0; frame < 100; ++frame)
+        {
+            if (!frames->rip)
+                break;
+            if (frames->rip >= 0xFFFFFFFF80000000 && frames->rip <= (uint64_t)&_kernel_end)
+                debug("%p-%s", (void *)frames->rip, SymTbl->GetSymbolFromAddress(frames->rip));
+            else
+                debug("%p-OUTSIDE KERNEL", (void *)frames->rip);
+            frames = frames->rbp;
+        }
+    }
+
+    if (!frames->rip || !frames->rbp)
     {
         CurrentDisplay->SetPrintColor(0x2565CC);
         printf("%p", (void *)RIP);
@@ -614,6 +637,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
         printf(" <- Exception");
         CurrentDisplay->SetPrintColor(0xFF0000);
         printf("\n< No stack trace available. >\n");
+        CPU_HALT;
     }
     else
     {
@@ -628,7 +652,6 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
             printf("Outside Kernel");
         CurrentDisplay->SetPrintColor(0x7981FC);
         printf(" <- Exception");
-
         for (uint64_t frame = 0; frame < 20; ++frame)
         {
             if (!frames->rip)
@@ -648,24 +671,6 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
             }
             frames = frames->rbp;
         }
-    }
-
-    frames = (struct StackFrame *)RBP;
-
-    if (RIP >= 0xFFFFFFFF80000000 && RIP <= (uint64_t)&_kernel_end)
-        debug("%p-%s <- Exception", (void *)RIP, SymTbl->GetSymbolFromAddress(RIP));
-    else
-        debug("%p-OUTSIDE KERNEL <- Exception", (void *)RIP);
-
-    for (uint64_t frame = 0; frame < 100; ++frame)
-    {
-        if (!frames->rip)
-            break;
-        if (frames->rip >= 0xFFFFFFFF80000000 && frames->rip <= (uint64_t)&_kernel_end)
-            debug("%p-%s", (void *)frames->rip, SymTbl->GetSymbolFromAddress(frames->rip));
-        else
-            debug("%p-OUTSIDE KERNEL", (void *)frames->rip);
-        frames = frames->rbp;
     }
 
     CPU_HALT;

@@ -13,7 +13,7 @@
 #include "../cpu/gdt.h"
 #include "../timer.h"
 
-#define DEBUG_TASK_MANAGER 1
+// #define DEBUG_TASK_MANAGER 1
 
 #ifdef DEBUG_TASK_MANAGER
 #include <critical.hpp>

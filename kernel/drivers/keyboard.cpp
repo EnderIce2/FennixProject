@@ -23,7 +23,9 @@ namespace PS2Keyboard
         }
     }
 
-    uint8_t PS2KeyboardDriver::GetLastScanCode()
+    uint8_t PS2KeyboardDriver::GetLastScanCode() { return LastSC; }
+
+    uint8_t PS2KeyboardDriver::WaitScanCode()
     {
         LastSC = 0x0;
         while (!LastSC)

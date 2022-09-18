@@ -3,6 +3,21 @@
 
 namespace PS2Mouse
 {
+    enum MouseButton
+    {
+        MouseNone,
+        Right,
+        Middle,
+        Left
+    };
+
+    struct MouseInfo
+    {
+        MouseButton Buttons;
+        long X;
+        long Y;
+    };
+
     class PS2MouseDriver
     {
     private:
@@ -55,6 +70,7 @@ namespace PS2Mouse
         }
 
     public:
+        MouseInfo GetMouseInfo();
         PS2MouseDriver();
         ~PS2MouseDriver();
     };

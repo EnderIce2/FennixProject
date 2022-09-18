@@ -96,6 +96,7 @@ bool init_limine(GlobalBootParams *params, bool Second)
         params->Framebuffer.Width = FrameBufferResponse->framebuffers[0]->width;
         params->Framebuffer.Height = FrameBufferResponse->framebuffers[0]->height;
         params->Framebuffer.PixelsPerScanLine = FrameBufferResponse->framebuffers[0]->pitch / 4;
+        params->Framebuffer.BitsPerPixel = FrameBufferResponse->framebuffers[0]->bpp;
         trace("Framebuffer: %016p (%d)", FrameBufferResponse->framebuffers[0]->address, FrameBufferResponse->framebuffer_count);
     }
 

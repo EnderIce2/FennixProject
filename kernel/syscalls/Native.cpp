@@ -249,7 +249,7 @@ static uint64_t internal_fbppsl(SyscallsRegs *regs)
 static uint8_t internal_getlastkeyboardscancode(SyscallsRegs *regs)
 {
     syscldbg("syscall: getlastkeyboardscancode()");
-    return ps2keyboard->GetLastScanCode();
+    return ps2keyboard->WaitScanCode();
 }
 
 static File *internal_fileOpen(SyscallsRegs *regs, char *Path)
