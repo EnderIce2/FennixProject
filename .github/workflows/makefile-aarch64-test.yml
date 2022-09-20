@@ -1,0 +1,49 @@
+name: Aarch64 Test Branch
+
+on:
+  push:
+    branches: [ aarch64-test ]
+  pull_request:
+    branches: [ aarch64-test ]
+
+jobs:
+  compile64:
+    name: Compile OS
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+  
+    - name: Update System
+      run: sudo apt-get update
+
+    - name: Install Required Tools
+      run: sudo apt-get install xorriso mtools genisoimage ovmf nasm doxygen -y
+
+    - name: Cache cross Folder
+      id: cache-cross
+      uses: actions/cache@v3
+      with:
+        path: tools/cross
+        key: ${{ runner.os }}-cross-${{ hashFiles('tools/Makefile') }}
+
+    - name: Cache gnu-efi Folder
+      id: cache-gnuefi
+      uses: actions/cache@v3
+      with:
+        path: boot/UEFI/gnu-efi
+        key: ${{ runner.os }}-gnuefi-${{ hashFiles('boot/Makefile') }}
+
+    - name: Downloading Fonts & Compiling initrd.c, readethernet.c and e.cpp
+      run: make tools_workflow0
+
+    - name: Build Kernel
+      run: make build_kernel
+
+    - name: Build ISO Image
+      run: make build_image
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        name: FennixProject-aarch64-test
+        path: FennixProject.iso
