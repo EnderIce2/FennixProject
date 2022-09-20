@@ -107,8 +107,6 @@ $(document).ready(function(){initNavTree('d4/dd4/Monotasking_8cpp.html','../../'
 <code>#include &quot;<a class="el" href="../../d8/d0a/cpu_2smp_8hpp_source.html">../cpu/smp.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/d11/cpu_2gdt_8h_source.html">../cpu/gdt.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/dd0/timer_8h_source.html">../timer.h</a>&quot;</code><br />
-<code>#include &lt;<a class="el" href="../../d1/d30/critical_8hpp_source.html">critical.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d4/d68/display_8h_source.html">display.h</a>&gt;</code><br />
 </div>
 <p><a href="../../d4/dd4/Monotasking_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -124,17 +122,11 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a81d10fdd9f7f013739291b631a4ab7d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dd4/Monotasking_8cpp.html#a81d10fdd9f7f013739291b631a4ab7d9">DEBUG_TASK_MANAGER</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a81d10fdd9f7f013739291b631a4ab7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79173cb020c4dafa4ff23f9a093473ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dd4/Monotasking_8cpp.html#a79173cb020c4dafa4ff23f9a093473ce">SchedulerInterrupt</a>&#160;&#160;&#160;__asm__ volatile(&quot;int $0x31&quot;)</td></tr>
 <tr class="separator:a79173cb020c4dafa4ff23f9a093473ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5e55da733f5dac716d070b92f35ceb14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a5e55da733f5dac716d070b92f35ceb14">Tasking::drawrectangle</a> (<a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> X, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> Y, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> W, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> H, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> C)</td></tr>
-<tr class="separator:a5e55da733f5dac716d070b92f35ceb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ef417d631221f042c7914b64ee7d366"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#a6ef417d631221f042c7914b64ee7d366">Tasking::InterruptHandler</a> (TraceSchedOnScreen)</td></tr>
-<tr class="separator:a6ef417d631221f042c7914b64ee7d366"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabcd96c16eda9fa091c5bea1deb44c31"><td class="memItemLeft" align="right" valign="top">TaskControlBlock *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#aabcd96c16eda9fa091c5bea1deb44c31">Tasking::FindLastTask</a> ()</td></tr>
 <tr class="separator:aabcd96c16eda9fa091c5bea1deb44c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0a4cd7251abc07ea2d102e44e67515c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d3e/namespaceTasking.html#ae0a4cd7251abc07ea2d102e44e67515c">Tasking::AllocateTask</a> (TaskControlBlock *task, <a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> AfterCurrent)</td></tr>
@@ -198,22 +190,6 @@ Task</td>
 </div>
 </div>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a81d10fdd9f7f013739291b631a4ab7d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81d10fdd9f7f013739291b631a4ab7d9">&#9670;&nbsp;</a></span>DEBUG_TASK_MANAGER</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEBUG_TASK_MANAGER&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html#l00016">16</a> of file <a class="el" href="../../d4/dd4/Monotasking_8cpp_source.html">Monotasking.cpp</a>.</p>
-
-</div>
-</div>
 <a id="a79173cb020c4dafa4ff23f9a093473ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a79173cb020c4dafa4ff23f9a093473ce">&#9670;&nbsp;</a></span>SchedulerInterrupt</h2>
 

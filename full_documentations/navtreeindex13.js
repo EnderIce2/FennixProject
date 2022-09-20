@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"d5/dba/multiboot2_8h.html#d1/d07/structmultiboot__tag__framebuffer":[5,0,2,6,0,0,2,21],
 "d5/dba/multiboot2_8h.html#d1/d28/structmultiboot__header__tag":[5,0,2,6,0,0,2,1],
 "d5/dba/multiboot2_8h.html#d1/d54/structmultiboot__header__tag__module__align":[5,0,2,6,0,0,2,7],
 "d5/dba/multiboot2_8h.html#d1/d69/structmultiboot__tag__efi64":[5,0,2,6,0,0,2,25],
@@ -98,8 +99,8 @@ var NAVTREEINDEX13 =
 "d5/df2/APICTimer_8cpp.html#ada4e234bfa6740aec3d574e5a7b67a54":[5,0,2,15,1,0],
 "d5/df2/APICTimer_8cpp.html#afbafa9ee7e79e3d452fff7cbb76c4a61":[5,0,2,15,1,5],
 "d5/df2/APICTimer_8cpp_source.html":[5,0,2,15,1],
-"d5/df8/amd64_2cpu_2ACPI_8cpp.html":[5,0,2,0,0,0,0],
-"d5/df8/amd64_2cpu_2ACPI_8cpp_source.html":[5,0,2,0,0,0,0],
+"d5/df8/amd64_2cpu_2ACPI_8cpp.html":[5,0,2,0,1,0,0],
+"d5/df8/amd64_2cpu_2ACPI_8cpp_source.html":[5,0,2,0,1,0,0],
 "d5/dfb/classNetworkICMPv4_1_1ICMPv4.html":[4,0,19,2],
 "d5/dfb/classNetworkICMPv4_1_1ICMPv4.html#a0eed466549bdf02fd9ac9bd11c680073":[4,0,19,2,5],
 "d5/dfb/classNetworkICMPv4_1_1ICMPv4.html#a24d13ba33baf13a18c30e2ea78e89c39":[4,0,19,2,0],
@@ -146,6 +147,8 @@ var NAVTREEINDEX13 =
 "d6/d26/structlimine__5__level__paging__request.html#abfc614cd9e531898775e2273815f4d86":[4,0,118,2],
 "d6/d2d/cpu_2cpuid_8h.html":[5,0,2,2,2],
 "d6/d2d/cpu_2cpuid_8h_source.html":[5,0,2,2,2],
+"d6/d35/arch_2aarch64_2cpu_2cpuid_8h.html":[5,0,2,0,0,0,2],
+"d6/d35/arch_2aarch64_2cpu_2cpuid_8h_source.html":[5,0,2,0,0,0,2],
 "d6/d3f/apic__timer_8h.html":[5,0,2,15,0],
 "d6/d3f/apic__timer_8h.html#a0a29af8ed74d0e04718f84e5d229ebaa":[5,0,2,15,0,1],
 "d6/d3f/apic__timer_8h.html#a451163c792f2cae1ae4b080177a81c52":[5,0,2,15,0,5],
@@ -246,8 +249,5 @@ var NAVTREEINDEX13 =
 "d6/d86/namespaceCritical.html":[3,0,7],
 "d6/d86/namespaceCritical.html#a40b6eb1e9173652e6d5227c7ceec4116":[5,0,2,6,6,0,0],
 "d6/d86/namespaceCritical.html#add3e38a2af9c1d53423fbe0d467306e7":[5,0,2,6,6,0,1],
-"d6/d86/namespaceCritical.html#d6/dda/structCritical_1_1CriticalSectionData":[5,0,2,6,6,0],
-"d6/d87/namespaceFloppy.html":[3,0,14],
-"d6/d87/namespaceFloppy.html":[4,0,11],
-"d6/d87/userspace_2apps_2Makefile.html":[5,0,4,0,3]
+"d6/d86/namespaceCritical.html#d6/dda/structCritical_1_1CriticalSectionData":[5,0,2,6,6,0]
 };

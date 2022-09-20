@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"d5/da9/libc_2include_2stdint_8h.html#a62c711f66c6d29c81429aeafdc4bc592":[2,0,2,0,14,81],
 "d5/da9/libc_2include_2stdint_8h.html#a678494ae5435d8904e7972c94618e774":[2,0,2,0,14,84],
 "d5/da9/libc_2include_2stdint_8h.html#a688eb21a22db27c2b2bd5836943cdcbe":[2,0,2,0,14,5],
 "d5/da9/libc_2include_2stdint_8h.html#a6b76c8f233c61e6ea05b19b59a6e3549":[2,0,2,0,14,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "d5/dba/multiboot2_8h.html#ae68d9688aa0594e6e1d1538e60106484":[2,0,1,0,0,0,2,3,5],
 "d5/dba/multiboot2_8h.html#ae8b6f5a34f5da7fe1e6c95fd29db7bf2":[2,0,1,0,0,0,2,30,0],
 "d5/dba/multiboot2_8h.html#ae8de19e0b2cb004cc82fd5e1aa54024e":[2,0,1,0,0,0,2,3,2],
-"d5/dba/multiboot2_8h.html#ae9d788171dfbf0f540c37aee20c96eb3":[2,0,1,0,0,0,2,23,7],
-"d5/dba/multiboot2_8h.html#aee0c6ade0df548e612e832ae26a23bae":[2,0,1,0,0,0,2,28,2]
+"d5/dba/multiboot2_8h.html#ae9d788171dfbf0f540c37aee20c96eb3":[2,0,1,0,0,0,2,23,7]
 };

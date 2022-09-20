@@ -16,6 +16,7 @@ var classPS2Mouse_1_1PS2MouseDriver =
     ] ],
     [ "PS2MouseDriver", "db/df7/classPS2Mouse_1_1PS2MouseDriver.html#af3aefdee87db9defd6ff2e01a4b3c981", null ],
     [ "~PS2MouseDriver", "db/df7/classPS2Mouse_1_1PS2MouseDriver.html#af24f1a014085c05d183d970fa3a938d0", null ],
+    [ "GetMouseInfo", "db/df7/classPS2Mouse_1_1PS2MouseDriver.html#adef878031a51b1bd4b219a6a519b6864", null ],
     [ "Read", "db/df7/classPS2Mouse_1_1PS2MouseDriver.html#a765c84da57f3635d37b72859b70a561a", null ],
     [ "WaitRead", "db/df7/classPS2Mouse_1_1PS2MouseDriver.html#a382b8ddbdb4c7655957eb652db2315ac", null ],
     [ "WaitWrite", "db/df7/classPS2Mouse_1_1PS2MouseDriver.html#a4a07920a55f150e2d0b53def147f8793", null ],

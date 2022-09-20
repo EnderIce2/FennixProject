@@ -66,13 +66,11 @@ var searchData=
   ['erange_10385',['ERANGE',['../d7/d8c/libc_2include_2errno_8h.html#aa1591a4f3a86360108de5b9ba34980ca',1,'errno.h']]],
   ['erofs_10386',['EROFS',['../d7/d8c/libc_2include_2errno_8h.html#acb02bb67dddd7ca8cf82634a0781d58d',1,'errno.h']]],
   ['err_10387',['err',['../db/d16/debug_8h.html#aea447f57f81a2f5ee19ef8a1dd9e5d92',1,'debug.h']]],
-  ['error_5fcode_10388',['ERROR_CODE',['../d6/ded/interrupts_8h.html#aca162232980dee2d78056fc244ac84fb',1,'interrupts.h']]],
-  ['es_10389',['ES',['../d6/ded/interrupts_8h.html#a403811204922acc8d200abb94fa62fe4',1,'interrupts.h']]],
-  ['espipe_10390',['ESPIPE',['../d7/d8c/libc_2include_2errno_8h.html#a0e42d4f9fecdcf5fcca2b333252173c3',1,'errno.h']]],
-  ['esrch_10391',['ESRCH',['../d7/d8c/libc_2include_2errno_8h.html#a462e47a8af6288232a5df548221ada4c',1,'errno.h']]],
-  ['etxtbsy_10392',['ETXTBSY',['../d7/d8c/libc_2include_2errno_8h.html#aaed12e82224923d599b6f1939c8e0971',1,'errno.h']]],
-  ['ev_5fcurrent_10393',['EV_CURRENT',['../d7/db0/include_2elf_8h.html#a8085a255e82173046afefd2a1c6de930',1,'elf.h']]],
-  ['exdev_10394',['EXDEV',['../d7/d8c/libc_2include_2errno_8h.html#a3396cf9fb0ff5af3a18dd2a2bbdb21e1',1,'errno.h']]],
-  ['ext2_5fmagic_10395',['EXT2_MAGIC',['../db/dc4/ext2_8cpp.html#aa20416820a06c5d65373830cb78bb029',1,'ext2.cpp']]],
-  ['externc_10396',['EXTERNC',['../d7/dfc/kernel_2include_2types_8h.html#a95e1d92b2619a326b2e86600f3d23100',1,'types.h']]]
+  ['espipe_10388',['ESPIPE',['../d7/d8c/libc_2include_2errno_8h.html#a0e42d4f9fecdcf5fcca2b333252173c3',1,'errno.h']]],
+  ['esrch_10389',['ESRCH',['../d7/d8c/libc_2include_2errno_8h.html#a462e47a8af6288232a5df548221ada4c',1,'errno.h']]],
+  ['etxtbsy_10390',['ETXTBSY',['../d7/d8c/libc_2include_2errno_8h.html#aaed12e82224923d599b6f1939c8e0971',1,'errno.h']]],
+  ['ev_5fcurrent_10391',['EV_CURRENT',['../d7/db0/include_2elf_8h.html#a8085a255e82173046afefd2a1c6de930',1,'elf.h']]],
+  ['exdev_10392',['EXDEV',['../d7/d8c/libc_2include_2errno_8h.html#a3396cf9fb0ff5af3a18dd2a2bbdb21e1',1,'errno.h']]],
+  ['ext2_5fmagic_10393',['EXT2_MAGIC',['../db/dc4/ext2_8cpp.html#aa20416820a06c5d65373830cb78bb029',1,'ext2.cpp']]],
+  ['externc_10394',['EXTERNC',['../d7/dfc/kernel_2include_2types_8h.html#a95e1d92b2619a326b2e86600f3d23100',1,'types.h']]]
 ];

@@ -35,7 +35,7 @@ var annotated_dup =
     [ "_TaskStateSegment", "d1/d57/cputables_8h.html#d9/da8/struct__TaskStateSegment", "d1/d57/cputables_8h_d9/da8/struct__TaskStateSegment" ],
     [ "_TaskStateSegmentEntry", "d1/d57/cputables_8h.html#d8/d53/struct__TaskStateSegmentEntry", "d1/d57/cputables_8h_d8/d53/struct__TaskStateSegmentEntry" ],
     [ "_ThreadRegisters", "db/da4/task_8h.html#db/db2/struct__ThreadRegisters", "db/da4/task_8h_db/db2/struct__ThreadRegisters" ],
-    [ "_TrapFrame", "d6/ded/interrupts_8h.html#da/d98/struct__TrapFrame", "d6/ded/interrupts_8h_da/d98/struct__TrapFrame" ],
+    [ "_TrapFrame", "d6/ded/interrupts_8h.html#da/d98/struct__TrapFrame", null ],
     [ "auto_ptr", "d2/d34/smartptr_8hpp.html#d2/d72/classauto__ptr", null ],
     [ "Bitmap", "d3/d19/classBitmap.html", "d3/d19/classBitmap" ],
     [ "CR0", "d1/d57/cputables_8h.html#df/d42/unionCR0", "d1/d57/cputables_8h_df/d42/unionCR0" ],

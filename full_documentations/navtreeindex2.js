@@ -27,6 +27,7 @@ var NAVTREEINDEX2 =
 "d1/d4e/VirtioNetwork_8cpp.html":[5,0,2,3,0,5,0],
 "d1/d4e/VirtioNetwork_8cpp_source.html":[5,0,2,3,0,5,0],
 "d1/d4e/classPS2Keyboard_1_1PS2KeyboardDriver.html":[4,0,26,0],
+"d1/d4e/classPS2Keyboard_1_1PS2KeyboardDriver.html#a1159b3575e51d350b9ae58ef45243f1a":[4,0,26,0,3],
 "d1/d4e/classPS2Keyboard_1_1PS2KeyboardDriver.html#a17974e47e4b5d4a04c9e80e8dc0caf4e":[4,0,26,0,1],
 "d1/d4e/classPS2Keyboard_1_1PS2KeyboardDriver.html#ac70aaacd685bf90b1f04060983870b5a":[4,0,26,0,2],
 "d1/d4e/classPS2Keyboard_1_1PS2KeyboardDriver.html#ac78c4f330dd85aa1abb8162ee47e6ac3":[4,0,26,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "d1/d57/cputables_8h.html#d8/d53/struct__TaskStateSegmentEntry":[5,0,1,2,0],
 "d1/d57/cputables_8h.html#d8/db1/structPageFaultErrorCode_8____unnamed____":[5,0,1,2,23],
 "d1/d57/cputables_8h.html#d9/d0b/unionEFER":[5,0,1,2,16],
-"d1/d57/cputables_8h.html#d9/d15/unionCR8":[5,0,1,2,12],
-"d1/d57/cputables_8h.html#d9/d84/structCR2_8____unnamed____":[5,0,1,2,19]
+"d1/d57/cputables_8h.html#d9/d15/unionCR8":[5,0,1,2,12]
 };

@@ -2,6 +2,7 @@ var gbp_8h =
 [
     [ "GBPFramebuffer", "d3/d41/gbp_8h.html#d2/daa/structGBPFramebuffer", [
       [ "BaseAddress", "d3/d41/gbp_8h.html#ad5392b6baafc07dcb8e9fb72f93457d1", null ],
+      [ "BitsPerPixel", "d3/d41/gbp_8h.html#a5f1c5de7a3ffc4334af0c17059e65f03", null ],
       [ "BufferSize", "d3/d41/gbp_8h.html#a3447851b3b8249adcf60a0bb3b0fed6c", null ],
       [ "Height", "d3/d41/gbp_8h.html#a8e643f9fed035bff100d8c1d8c2b8138", null ],
       [ "PixelsPerScanLine", "d3/d41/gbp_8h.html#a8e64555536d686fe9973339202edf22d", null ],

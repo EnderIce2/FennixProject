@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"d5/da9/libc_2include_2stdint_8h.html#aad8fb982cb19143efd5ee9a1a7a89390":[5,0,3,1,14,19],
 "d5/da9/libc_2include_2stdint_8h.html#aadcf2a81af243df333b31efa6461ab8e":[5,0,3,1,14,11],
 "d5/da9/libc_2include_2stdint_8h.html#aaf7f29f45f1a513b4748a4e5014ddf6a":[5,0,3,1,14,10],
 "d5/da9/libc_2include_2stdint_8h.html#ab21f12f372f67b8ff0aa3432336ede67":[5,0,3,1,14,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX12 =
 "d5/dba/multiboot2_8h.html#afe69dc4711fc7f5dc9604977b2393218":[5,0,2,6,0,0,2,75],
 "d5/dba/multiboot2_8h.html#d0/d21/structmultiboot__tag__module":[5,0,2,6,0,0,2,13],
 "d5/dba/multiboot2_8h.html#d0/d40/structmultiboot__tag__network":[5,0,2,6,0,0,2,29],
-"d5/dba/multiboot2_8h.html#d0/d5c/structmultiboot__header__tag__console__flags":[5,0,2,6,0,0,2,5],
-"d5/dba/multiboot2_8h.html#d1/d07/structmultiboot__tag__framebuffer":[5,0,2,6,0,0,2,21]
+"d5/dba/multiboot2_8h.html#d0/d5c/structmultiboot__header__tag__console__flags":[5,0,2,6,0,0,2,5]
 };

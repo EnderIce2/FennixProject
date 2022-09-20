@@ -6701,6 +6701,11 @@
                 <Path>d1/d4e/classPS2Keyboard_1_1PS2KeyboardDriver.html</Path>
                 <Anchor>ac70aaacd685bf90b1f04060983870b5a</Anchor>
                </Node>
+               <Node>
+                <Name>WaitScanCode</Name>
+                <Path>d1/d4e/classPS2Keyboard_1_1PS2KeyboardDriver.html</Path>
+                <Anchor>a1159b3575e51d350b9ae58ef45243f1a</Anchor>
+               </Node>
               </Subnodes>
              </Node>
             </Subnodes>
@@ -6805,6 +6810,11 @@
                 <Name>~PS2MouseDriver</Name>
                 <Path>db/df7/classPS2Mouse_1_1PS2MouseDriver.html</Path>
                 <Anchor>af24f1a014085c05d183d970fa3a938d0</Anchor>
+               </Node>
+               <Node>
+                <Name>GetMouseInfo</Name>
+                <Path>db/df7/classPS2Mouse_1_1PS2MouseDriver.html</Path>
+                <Anchor>adef878031a51b1bd4b219a6a519b6864</Anchor>
                </Node>
                <Node>
                 <Name>Read</Name>
@@ -9053,19 +9063,9 @@
               <Anchor>a32f0d7cabc2778303de4afe026f58f94</Anchor>
              </Node>
              <Node>
-              <Name>cs</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a02ed864c360833f6f7b8b8c30598db1f</Anchor>
-             </Node>
-             <Node>
               <Name>error_code</Name>
               <Path>da/da0/usm_8h.html</Path>
               <Anchor>a5e93827147ba90324c5fb8cb83838d3d</Anchor>
-             </Node>
-             <Node>
-              <Name>error_code</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a9f1394eb1957d2b1af88c1d09873fe87</Anchor>
              </Node>
              <Node>
               <Name>int_num</Name>
@@ -9073,19 +9073,9 @@
               <Anchor>a5e1249d834097aa9dc05b7c2eb0123e4</Anchor>
              </Node>
              <Node>
-              <Name>int_num</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a4daa35ef15d56bed5c21db94609879f1</Anchor>
-             </Node>
-             <Node>
               <Name>r10</Name>
               <Path>da/da0/usm_8h.html</Path>
               <Anchor>a6bb308c9f79d2f9b9dd155b4058b8a6c</Anchor>
-             </Node>
-             <Node>
-              <Name>r10</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a60662ed6e2a7ff9d141cf965c135df48</Anchor>
              </Node>
              <Node>
               <Name>r11</Name>
@@ -9093,19 +9083,9 @@
               <Anchor>a8191ccd5111818fe4800abd706ed7c8e</Anchor>
              </Node>
              <Node>
-              <Name>r11</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a99063f2fbc3273b91476271966783fea</Anchor>
-             </Node>
-             <Node>
               <Name>r12</Name>
               <Path>da/da0/usm_8h.html</Path>
               <Anchor>abae857f224086cd2b647522889fc58a9</Anchor>
-             </Node>
-             <Node>
-              <Name>r12</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>adeabccecf31e3ade9e4456b0621b2a52</Anchor>
              </Node>
              <Node>
               <Name>r13</Name>
@@ -9113,19 +9093,9 @@
               <Anchor>a23214cdb17847f111f753f9912a905df</Anchor>
              </Node>
              <Node>
-              <Name>r13</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a04017a6eb3a3fa647c089cb373c12c3a</Anchor>
-             </Node>
-             <Node>
               <Name>r14</Name>
               <Path>da/da0/usm_8h.html</Path>
               <Anchor>a1f27ba4b6a66ab7bcb69509f8ac0a190</Anchor>
-             </Node>
-             <Node>
-              <Name>r14</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a97570186fe98d468dd592d8b1b760ef6</Anchor>
              </Node>
              <Node>
               <Name>r15</Name>
@@ -9133,19 +9103,9 @@
               <Anchor>a3f684741a20f0161ce69cf527d441d3c</Anchor>
              </Node>
              <Node>
-              <Name>r15</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>afd73f1f0b4b5044b934da651b2ae6100</Anchor>
-             </Node>
-             <Node>
               <Name>r8</Name>
               <Path>da/da0/usm_8h.html</Path>
               <Anchor>a180aab55a2cc43cbaab5b7f63be57c31</Anchor>
-             </Node>
-             <Node>
-              <Name>r8</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a834fcd5ee279924b495d5c59244e4ee4</Anchor>
              </Node>
              <Node>
               <Name>r9</Name>
@@ -9153,19 +9113,9 @@
               <Anchor>af69ba47ac862ecb7b60bb47da66ecdc0</Anchor>
              </Node>
              <Node>
-              <Name>r9</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a349deb76bffdbeb0fb1a153a9869ccc8</Anchor>
-             </Node>
-             <Node>
               <Name>rax</Name>
               <Path>da/da0/usm_8h.html</Path>
               <Anchor>ab77e9d7025a1c532fa342faf462f7de2</Anchor>
-             </Node>
-             <Node>
-              <Name>rax</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a27855041dd928598f4551f313f855235</Anchor>
              </Node>
              <Node>
               <Name>rbp</Name>
@@ -9173,19 +9123,9 @@
               <Anchor>a15c5404293bbdcea5f13c2c2c8443f90</Anchor>
              </Node>
              <Node>
-              <Name>rbp</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a53810653aee5e203d9a093e4f143948d</Anchor>
-             </Node>
-             <Node>
               <Name>rbx</Name>
               <Path>da/da0/usm_8h.html</Path>
               <Anchor>aec6722b44e413974707975ffaf75f3cf</Anchor>
-             </Node>
-             <Node>
-              <Name>rbx</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a33506d3b43cfa6a78ec6e64dc42679a4</Anchor>
              </Node>
              <Node>
               <Name>rcx</Name>
@@ -9193,29 +9133,14 @@
               <Anchor>a0c0902fb7b5919e26f3b32ef48a32e05</Anchor>
              </Node>
              <Node>
-              <Name>rcx</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>aa327afafd048338deedbe69df45ea669</Anchor>
-             </Node>
-             <Node>
               <Name>rdi</Name>
               <Path>da/da0/usm_8h.html</Path>
               <Anchor>a0701bb3eeb425b9ea4994179c8679049</Anchor>
              </Node>
              <Node>
-              <Name>rdi</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a16fc6ef2b3cf605553303ae88104e575</Anchor>
-             </Node>
-             <Node>
               <Name>rdx</Name>
               <Path>da/da0/usm_8h.html</Path>
               <Anchor>af70772b27b3d2ef2317347f57fd56dd1</Anchor>
-             </Node>
-             <Node>
-              <Name>rdx</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>adc2a72c9f9c6edcd657baac3211d5296</Anchor>
              </Node>
              <Node>
               <Name>rflags</Name>
@@ -9228,19 +9153,9 @@
               <Anchor>a76dad7d728bd02c3b19375c420f705a6</Anchor>
              </Node>
              <Node>
-              <Name>rip</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a7b1e1cb5746ef6b98bb88f593830132d</Anchor>
-             </Node>
-             <Node>
               <Name>rsi</Name>
               <Path>da/da0/usm_8h.html</Path>
               <Anchor>a1ad62d15943eec0ae1055b7f418d792a</Anchor>
-             </Node>
-             <Node>
-              <Name>rsi</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a5d2b9aeb1531e544409d15c4048a11b6</Anchor>
              </Node>
              <Node>
               <Name>rsp</Name>
@@ -9248,19 +9163,9 @@
               <Anchor>ab46f4421f6e85b6ae824557a19c47c58</Anchor>
              </Node>
              <Node>
-              <Name>rsp</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>a768c6e2a44681d3f538defb49e91557d</Anchor>
-             </Node>
-             <Node>
               <Name>ss</Name>
               <Path>da/da0/usm_8h.html</Path>
               <Anchor>a90f434a4494296e28608384ab28a94fc</Anchor>
-             </Node>
-             <Node>
-              <Name>ss</Name>
-              <Path>da/da0/usm_8h.html</Path>
-              <Anchor>ad9cfafe78c7ae36acb562194fa8f0f85</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -10665,6 +10570,11 @@
               <Name>BaseAddress</Name>
               <Path>d3/d41/gbp_8h.html</Path>
               <Anchor>ad5392b6baafc07dcb8e9fb72f93457d1</Anchor>
+             </Node>
+             <Node>
+              <Name>BitsPerPixel</Name>
+              <Path>d3/d41/gbp_8h.html</Path>
+              <Anchor>a5f1c5de7a3ffc4334af0c17059e65f03</Anchor>
              </Node>
              <Node>
               <Name>BufferSize</Name>
@@ -18710,19 +18620,9 @@
                   <Anchor>a32f0d7cabc2778303de4afe026f58f94</Anchor>
                  </Node>
                  <Node>
-                  <Name>cs</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a02ed864c360833f6f7b8b8c30598db1f</Anchor>
-                 </Node>
-                 <Node>
                   <Name>error_code</Name>
                   <Path>da/da0/usm_8h.html</Path>
                   <Anchor>a5e93827147ba90324c5fb8cb83838d3d</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>error_code</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a9f1394eb1957d2b1af88c1d09873fe87</Anchor>
                  </Node>
                  <Node>
                   <Name>int_num</Name>
@@ -18730,19 +18630,9 @@
                   <Anchor>a5e1249d834097aa9dc05b7c2eb0123e4</Anchor>
                  </Node>
                  <Node>
-                  <Name>int_num</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a4daa35ef15d56bed5c21db94609879f1</Anchor>
-                 </Node>
-                 <Node>
                   <Name>r10</Name>
                   <Path>da/da0/usm_8h.html</Path>
                   <Anchor>a6bb308c9f79d2f9b9dd155b4058b8a6c</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>r10</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a60662ed6e2a7ff9d141cf965c135df48</Anchor>
                  </Node>
                  <Node>
                   <Name>r11</Name>
@@ -18750,19 +18640,9 @@
                   <Anchor>a8191ccd5111818fe4800abd706ed7c8e</Anchor>
                  </Node>
                  <Node>
-                  <Name>r11</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a99063f2fbc3273b91476271966783fea</Anchor>
-                 </Node>
-                 <Node>
                   <Name>r12</Name>
                   <Path>da/da0/usm_8h.html</Path>
                   <Anchor>abae857f224086cd2b647522889fc58a9</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>r12</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>adeabccecf31e3ade9e4456b0621b2a52</Anchor>
                  </Node>
                  <Node>
                   <Name>r13</Name>
@@ -18770,19 +18650,9 @@
                   <Anchor>a23214cdb17847f111f753f9912a905df</Anchor>
                  </Node>
                  <Node>
-                  <Name>r13</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a04017a6eb3a3fa647c089cb373c12c3a</Anchor>
-                 </Node>
-                 <Node>
                   <Name>r14</Name>
                   <Path>da/da0/usm_8h.html</Path>
                   <Anchor>a1f27ba4b6a66ab7bcb69509f8ac0a190</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>r14</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a97570186fe98d468dd592d8b1b760ef6</Anchor>
                  </Node>
                  <Node>
                   <Name>r15</Name>
@@ -18790,19 +18660,9 @@
                   <Anchor>a3f684741a20f0161ce69cf527d441d3c</Anchor>
                  </Node>
                  <Node>
-                  <Name>r15</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>afd73f1f0b4b5044b934da651b2ae6100</Anchor>
-                 </Node>
-                 <Node>
                   <Name>r8</Name>
                   <Path>da/da0/usm_8h.html</Path>
                   <Anchor>a180aab55a2cc43cbaab5b7f63be57c31</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>r8</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a834fcd5ee279924b495d5c59244e4ee4</Anchor>
                  </Node>
                  <Node>
                   <Name>r9</Name>
@@ -18810,19 +18670,9 @@
                   <Anchor>af69ba47ac862ecb7b60bb47da66ecdc0</Anchor>
                  </Node>
                  <Node>
-                  <Name>r9</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a349deb76bffdbeb0fb1a153a9869ccc8</Anchor>
-                 </Node>
-                 <Node>
                   <Name>rax</Name>
                   <Path>da/da0/usm_8h.html</Path>
                   <Anchor>ab77e9d7025a1c532fa342faf462f7de2</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>rax</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a27855041dd928598f4551f313f855235</Anchor>
                  </Node>
                  <Node>
                   <Name>rbp</Name>
@@ -18830,19 +18680,9 @@
                   <Anchor>a15c5404293bbdcea5f13c2c2c8443f90</Anchor>
                  </Node>
                  <Node>
-                  <Name>rbp</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a53810653aee5e203d9a093e4f143948d</Anchor>
-                 </Node>
-                 <Node>
                   <Name>rbx</Name>
                   <Path>da/da0/usm_8h.html</Path>
                   <Anchor>aec6722b44e413974707975ffaf75f3cf</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>rbx</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a33506d3b43cfa6a78ec6e64dc42679a4</Anchor>
                  </Node>
                  <Node>
                   <Name>rcx</Name>
@@ -18850,29 +18690,14 @@
                   <Anchor>a0c0902fb7b5919e26f3b32ef48a32e05</Anchor>
                  </Node>
                  <Node>
-                  <Name>rcx</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>aa327afafd048338deedbe69df45ea669</Anchor>
-                 </Node>
-                 <Node>
                   <Name>rdi</Name>
                   <Path>da/da0/usm_8h.html</Path>
                   <Anchor>a0701bb3eeb425b9ea4994179c8679049</Anchor>
                  </Node>
                  <Node>
-                  <Name>rdi</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a16fc6ef2b3cf605553303ae88104e575</Anchor>
-                 </Node>
-                 <Node>
                   <Name>rdx</Name>
                   <Path>da/da0/usm_8h.html</Path>
                   <Anchor>af70772b27b3d2ef2317347f57fd56dd1</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>rdx</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>adc2a72c9f9c6edcd657baac3211d5296</Anchor>
                  </Node>
                  <Node>
                   <Name>rflags</Name>
@@ -18885,19 +18710,9 @@
                   <Anchor>a76dad7d728bd02c3b19375c420f705a6</Anchor>
                  </Node>
                  <Node>
-                  <Name>rip</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a7b1e1cb5746ef6b98bb88f593830132d</Anchor>
-                 </Node>
-                 <Node>
                   <Name>rsi</Name>
                   <Path>da/da0/usm_8h.html</Path>
                   <Anchor>a1ad62d15943eec0ae1055b7f418d792a</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>rsi</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a5d2b9aeb1531e544409d15c4048a11b6</Anchor>
                  </Node>
                  <Node>
                   <Name>rsp</Name>
@@ -18905,176 +18720,16 @@
                   <Anchor>ab46f4421f6e85b6ae824557a19c47c58</Anchor>
                  </Node>
                  <Node>
-                  <Name>rsp</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>a768c6e2a44681d3f538defb49e91557d</Anchor>
-                 </Node>
-                 <Node>
                   <Name>ss</Name>
                   <Path>da/da0/usm_8h.html</Path>
                   <Anchor>a90f434a4494296e28608384ab28a94fc</Anchor>
                  </Node>
-                 <Node>
-                  <Name>ss</Name>
-                  <Path>da/da0/usm_8h.html</Path>
-                  <Anchor>ad9cfafe78c7ae36acb562194fa8f0f85</Anchor>
-                 </Node>
                 </Subnodes>
-               </Node>
-               <Node>
-                <Name>_SS</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a4cd878dc79b973415abd84458f197634</Anchor>
-               </Node>
-               <Node>
-                <Name>ARG0</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>aa95743000e6e5c8ae05fad19a7822af5</Anchor>
-               </Node>
-               <Node>
-                <Name>ARG1</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a6e9f80720a3b58c16d87ad9fed8147f3</Anchor>
-               </Node>
-               <Node>
-                <Name>CS</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a3780e2fe762dc532df7d0f030b55caa0</Anchor>
-               </Node>
-               <Node>
-                <Name>DS</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a343a817759efae73463660b09a2a898f</Anchor>
-               </Node>
-               <Node>
-                <Name>ERROR_CODE</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>aca162232980dee2d78056fc244ac84fb</Anchor>
-               </Node>
-               <Node>
-                <Name>ES</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a403811204922acc8d200abb94fa62fe4</Anchor>
-               </Node>
-               <Node>
-                <Name>FLAGS</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a6ccad09b4a2a06ae178418fdccf5940d</Anchor>
-               </Node>
-               <Node>
-                <Name>FS</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a30588c5eca7c9cb6ebba02a0236f0119</Anchor>
-               </Node>
-               <Node>
-                <Name>FUNCTION</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>aee0cf83ee6d754df700e396da8987f1f</Anchor>
-               </Node>
-               <Node>
-                <Name>GS</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a9d7be33a951c7d74d3d6b45de8d44729</Anchor>
-               </Node>
-               <Node>
-                <Name>INT_NUM</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>aa96d5096c16af4ea4327b0f2c551fc02</Anchor>
                </Node>
                <Node>
                 <Name>InterruptHandler</Name>
                 <Path>d6/ded/interrupts_8h.html</Path>
                 <Anchor>aa9ca217992569bbbc508d4d4615a1dd1</Anchor>
-               </Node>
-               <Node>
-                <Name>R10</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a48106da52f76c4ac1faceeff79eb1949</Anchor>
-               </Node>
-               <Node>
-                <Name>R11</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>ad5379c7f0680774e2e22420b793fd266</Anchor>
-               </Node>
-               <Node>
-                <Name>R12</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>af197c9be421831ff1c22d3fcdea6cd67</Anchor>
-               </Node>
-               <Node>
-                <Name>R13</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>aeee951cbe93cd04eaaab2042ff20ef42</Anchor>
-               </Node>
-               <Node>
-                <Name>R14</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a2365fd20f7e979e6f13fab7581551a10</Anchor>
-               </Node>
-               <Node>
-                <Name>R15</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a8c50f8275d5248904390fb7133a70511</Anchor>
-               </Node>
-               <Node>
-                <Name>R8</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a9064e002ed4acf8644db2240b9748161</Anchor>
-               </Node>
-               <Node>
-                <Name>R9</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>afc31a131f69149baee673d2e923e17cf</Anchor>
-               </Node>
-               <Node>
-                <Name>RAX</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a21538a757097d3cdbdffdfaf3cb5e570</Anchor>
-               </Node>
-               <Node>
-                <Name>RBP</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a2cf04d6257a099787d4c1ac332ae55b2</Anchor>
-               </Node>
-               <Node>
-                <Name>RBX</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a649ad68faf690bb4e9218dd86aab9b6d</Anchor>
-               </Node>
-               <Node>
-                <Name>RCX</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>adb963a7b6244a68ca77fa36e30c16ee3</Anchor>
-               </Node>
-               <Node>
-                <Name>RDI</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a650f7c1bc406b9136442446f92557e38</Anchor>
-               </Node>
-               <Node>
-                <Name>RDX</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a3e42cec965e928dafeaa8276159e4921</Anchor>
-               </Node>
-               <Node>
-                <Name>RIP</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>aead2eff4d7b86377f577b1ee32eff9f2</Anchor>
-               </Node>
-               <Node>
-                <Name>RSI</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>acf0a1f0a963cbb64565e3af0ef059fb2</Anchor>
-               </Node>
-               <Node>
-                <Name>RSP</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a80176fe29a519320e5c8e62c79f946ad</Anchor>
-               </Node>
-               <Node>
-                <Name>STACK</Name>
-                <Path>d6/ded/interrupts_8h.html</Path>
-                <Anchor>a2cc8f2d83039de1aef6590f9782921ee</Anchor>
                </Node>
                <Node>
                 <Name>TrapFrame</Name>
@@ -21931,6 +21586,42 @@
               <Name>arch</Name>
               <Path>dir_4a04b9aac4eefdd334a78e565f4616f2.html</Path>
               <Subnodes>
+               <Node>
+                <Name>aarch64</Name>
+                <Path>dir_73a0478f8c9cf31a4abab4c1ec77e7b7.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>cpu</Name>
+                  <Path>dir_29027bda0058b0312f5186fc9efd6792.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>acpi.hpp</Name>
+                    <Path>d5/d56/arch_2aarch64_2cpu_2acpi_8hpp.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>apic.hpp</Name>
+                    <Path>da/df9/arch_2aarch64_2cpu_2apic_8hpp.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>cpuid.h</Name>
+                    <Path>d6/d35/arch_2aarch64_2cpu_2cpuid_8h.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>gdt.h</Name>
+                    <Path>d8/d2b/arch_2aarch64_2cpu_2gdt_8h.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>idt.h</Name>
+                    <Path>d1/d73/arch_2aarch64_2cpu_2idt_8h.html</Path>
+                   </Node>
+                   <Node>
+                    <Name>smp.hpp</Name>
+                    <Path>d5/d0d/arch_2aarch64_2cpu_2smp_8hpp.html</Path>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                </Subnodes>
+               </Node>
                <Node>
                 <Name>amd64</Name>
                 <Path>dir_daa9cfe7e05ea725d73c8368bae78c4d.html</Path>
@@ -32902,6 +32593,11 @@
                     <Path>d1/d4e/classPS2Keyboard_1_1PS2KeyboardDriver.html</Path>
                     <Anchor>ac70aaacd685bf90b1f04060983870b5a</Anchor>
                    </Node>
+                   <Node>
+                    <Name>WaitScanCode</Name>
+                    <Path>d1/d4e/classPS2Keyboard_1_1PS2KeyboardDriver.html</Path>
+                    <Anchor>a1159b3575e51d350b9ae58ef45243f1a</Anchor>
+                   </Node>
                   </Subnodes>
                  </Node>
                  <Node>
@@ -32915,28 +32611,6 @@
                 <Name>mouse.cpp</Name>
                 <Path>d1/d75/mouse_8cpp.html</Path>
                 <Subnodes>
-                 <Node>
-                  <Name>MouseInfo</Name>
-                  <Path>d9/dbb/namespacePS2Mouse.html</Path>
-                  <Anchor>dd/d80/structPS2Mouse_1_1MouseInfo</Anchor>
-                  <Subnodes>
-                   <Node>
-                    <Name>Buttons</Name>
-                    <Path>d9/dbb/namespacePS2Mouse.html</Path>
-                    <Anchor>adf0e11796f5b3eb8719e39548ea111c0</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>X</Name>
-                    <Path>d9/dbb/namespacePS2Mouse.html</Path>
-                    <Anchor>a3eabb5221cf6227d920ae0a7aa86757b</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Y</Name>
-                    <Path>d9/dbb/namespacePS2Mouse.html</Path>
-                    <Anchor>abffffa070b939cf0b389fc336794253a</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
                  <Node>
                   <Name>PS2Leftbutton</Name>
                   <Path>d1/d75/mouse_8cpp.html</Path>
@@ -32971,33 +32645,6 @@
                   <Name>PS2YSign</Name>
                   <Path>d1/d75/mouse_8cpp.html</Path>
                   <Anchor>aa2773132b4a9d11f0438f84c5b7389fb</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>MouseButton</Name>
-                  <Path>d1/d75/mouse_8cpp.html</Path>
-                  <Anchor>a23cca52e28a3c304a70b45a951d2ed7d</Anchor>
-                  <Subnodes>
-                   <Node>
-                    <Name>MouseNone</Name>
-                    <Path>d1/d75/mouse_8cpp.html</Path>
-                    <Anchor>a23cca52e28a3c304a70b45a951d2ed7da5254c414b08bcfd2b6ab854725e19859</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Right</Name>
-                    <Path>d1/d75/mouse_8cpp.html</Path>
-                    <Anchor>a23cca52e28a3c304a70b45a951d2ed7da50417b37756f5da09e24927865ab4bbb</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Middle</Name>
-                    <Path>d1/d75/mouse_8cpp.html</Path>
-                    <Anchor>a23cca52e28a3c304a70b45a951d2ed7dade4ce3691740893572dc37c1b6bd794a</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Left</Name>
-                    <Path>d1/d75/mouse_8cpp.html</Path>
-                    <Anchor>a23cca52e28a3c304a70b45a951d2ed7da1f11d88935386736bb8ff8725b8fa9e7</Anchor>
-                   </Node>
-                  </Subnodes>
                  </Node>
                  <Node>
                   <Name>InterruptHandler</Name>
@@ -33050,6 +32697,28 @@
                 <Name>mouse.hpp</Name>
                 <Path>dc/d43/mouse_8hpp.html</Path>
                 <Subnodes>
+                 <Node>
+                  <Name>MouseInfo</Name>
+                  <Path>d9/dbb/namespacePS2Mouse.html</Path>
+                  <Anchor>dd/d80/structPS2Mouse_1_1MouseInfo</Anchor>
+                  <Subnodes>
+                   <Node>
+                    <Name>Buttons</Name>
+                    <Path>d9/dbb/namespacePS2Mouse.html</Path>
+                    <Anchor>adf0e11796f5b3eb8719e39548ea111c0</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>X</Name>
+                    <Path>d9/dbb/namespacePS2Mouse.html</Path>
+                    <Anchor>a3eabb5221cf6227d920ae0a7aa86757b</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>Y</Name>
+                    <Path>d9/dbb/namespacePS2Mouse.html</Path>
+                    <Anchor>abffffa070b939cf0b389fc336794253a</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
                  <Node>
                   <Name>PS2MouseDriver</Name>
                   <Path>db/df7/classPS2Mouse_1_1PS2MouseDriver.html</Path>
@@ -33126,6 +32795,11 @@
                     <Anchor>af24f1a014085c05d183d970fa3a938d0</Anchor>
                    </Node>
                    <Node>
+                    <Name>GetMouseInfo</Name>
+                    <Path>db/df7/classPS2Mouse_1_1PS2MouseDriver.html</Path>
+                    <Anchor>adef878031a51b1bd4b219a6a519b6864</Anchor>
+                   </Node>
+                   <Node>
                     <Name>Read</Name>
                     <Path>db/df7/classPS2Mouse_1_1PS2MouseDriver.html</Path>
                     <Anchor>a765c84da57f3635d37b72859b70a561a</Anchor>
@@ -33144,6 +32818,33 @@
                     <Name>Write</Name>
                     <Path>db/df7/classPS2Mouse_1_1PS2MouseDriver.html</Path>
                     <Anchor>a9364953372be3e29820b7c0c6ced8a4e</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>MouseButton</Name>
+                  <Path>dc/d43/mouse_8hpp.html</Path>
+                  <Anchor>a23cca52e28a3c304a70b45a951d2ed7d</Anchor>
+                  <Subnodes>
+                   <Node>
+                    <Name>MouseNone</Name>
+                    <Path>dc/d43/mouse_8hpp.html</Path>
+                    <Anchor>a23cca52e28a3c304a70b45a951d2ed7da5254c414b08bcfd2b6ab854725e19859</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>Right</Name>
+                    <Path>dc/d43/mouse_8hpp.html</Path>
+                    <Anchor>a23cca52e28a3c304a70b45a951d2ed7da50417b37756f5da09e24927865ab4bbb</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>Middle</Name>
+                    <Path>dc/d43/mouse_8hpp.html</Path>
+                    <Anchor>a23cca52e28a3c304a70b45a951d2ed7dade4ce3691740893572dc37c1b6bd794a</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>Left</Name>
+                    <Path>dc/d43/mouse_8hpp.html</Path>
+                    <Anchor>a23cca52e28a3c304a70b45a951d2ed7da1f11d88935386736bb8ff8725b8fa9e7</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -36831,6 +36532,11 @@
                       <Name>BaseAddress</Name>
                       <Path>d3/d41/gbp_8h.html</Path>
                       <Anchor>ad5392b6baafc07dcb8e9fb72f93457d1</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>BitsPerPixel</Name>
+                      <Path>d3/d41/gbp_8h.html</Path>
+                      <Anchor>a5f1c5de7a3ffc4334af0c17059e65f03</Anchor>
                      </Node>
                      <Node>
                       <Name>BufferSize</Name>
@@ -52336,11 +52042,6 @@
                   </Subnodes>
                  </Node>
                  <Node>
-                  <Name>DEBUG_TASK_MANAGER</Name>
-                  <Path>d4/dd4/Monotasking_8cpp.html</Path>
-                  <Anchor>a81d10fdd9f7f013739291b631a4ab7d9</Anchor>
-                 </Node>
-                 <Node>
                   <Name>SchedulerInterrupt</Name>
                   <Path>d4/dd4/Monotasking_8cpp.html</Path>
                   <Anchor>a79173cb020c4dafa4ff23f9a093473ce</Anchor>
@@ -52361,11 +52062,6 @@
                   <Anchor>ae0a4cd7251abc07ea2d102e44e67515c</Anchor>
                  </Node>
                  <Node>
-                  <Name>drawrectangle</Name>
-                  <Path>d4/dd4/Monotasking_8cpp.html</Path>
-                  <Anchor>a5e55da733f5dac716d070b92f35ceb14</Anchor>
-                 </Node>
-                 <Node>
                   <Name>FindLastTask</Name>
                   <Path>d4/dd4/Monotasking_8cpp.html</Path>
                   <Anchor>aabcd96c16eda9fa091c5bea1deb44c31</Anchor>
@@ -52379,11 +52075,6 @@
                   <Name>InterruptHandler</Name>
                   <Path>d4/dd4/Monotasking_8cpp.html</Path>
                   <Anchor>a052068b3337b0063437ca56296fd1a28</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>InterruptHandler</Name>
-                  <Path>d4/dd4/Monotasking_8cpp.html</Path>
-                  <Anchor>a6ef417d631221f042c7914b64ee7d366</Anchor>
                  </Node>
                  <Node>
                   <Name>CurrentTask</Name>
@@ -55633,6 +55324,11 @@
                 <Name>kernel_entry</Name>
                 <Path>d2/d00/Kernel_8cpp.html</Path>
                 <Anchor>ade8b2cf95bcb311d21eff4a59b67f86d</Anchor>
+               </Node>
+               <Node>
+                <Name>kernel_main_aarch64</Name>
+                <Path>d2/d00/Kernel_8cpp.html</Path>
+                <Anchor>ab8b0f20349c240c37dd5748aff5fe2c7</Anchor>
                </Node>
                <Node>
                 <Name>KernelInit</Name>
@@ -61067,19 +60763,9 @@
                         <Anchor>a32f0d7cabc2778303de4afe026f58f94</Anchor>
                        </Node>
                        <Node>
-                        <Name>cs</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a02ed864c360833f6f7b8b8c30598db1f</Anchor>
-                       </Node>
-                       <Node>
                         <Name>error_code</Name>
                         <Path>da/da0/usm_8h.html</Path>
                         <Anchor>a5e93827147ba90324c5fb8cb83838d3d</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>error_code</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a9f1394eb1957d2b1af88c1d09873fe87</Anchor>
                        </Node>
                        <Node>
                         <Name>int_num</Name>
@@ -61087,19 +60773,9 @@
                         <Anchor>a5e1249d834097aa9dc05b7c2eb0123e4</Anchor>
                        </Node>
                        <Node>
-                        <Name>int_num</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a4daa35ef15d56bed5c21db94609879f1</Anchor>
-                       </Node>
-                       <Node>
                         <Name>r10</Name>
                         <Path>da/da0/usm_8h.html</Path>
                         <Anchor>a6bb308c9f79d2f9b9dd155b4058b8a6c</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>r10</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a60662ed6e2a7ff9d141cf965c135df48</Anchor>
                        </Node>
                        <Node>
                         <Name>r11</Name>
@@ -61107,19 +60783,9 @@
                         <Anchor>a8191ccd5111818fe4800abd706ed7c8e</Anchor>
                        </Node>
                        <Node>
-                        <Name>r11</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a99063f2fbc3273b91476271966783fea</Anchor>
-                       </Node>
-                       <Node>
                         <Name>r12</Name>
                         <Path>da/da0/usm_8h.html</Path>
                         <Anchor>abae857f224086cd2b647522889fc58a9</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>r12</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>adeabccecf31e3ade9e4456b0621b2a52</Anchor>
                        </Node>
                        <Node>
                         <Name>r13</Name>
@@ -61127,19 +60793,9 @@
                         <Anchor>a23214cdb17847f111f753f9912a905df</Anchor>
                        </Node>
                        <Node>
-                        <Name>r13</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a04017a6eb3a3fa647c089cb373c12c3a</Anchor>
-                       </Node>
-                       <Node>
                         <Name>r14</Name>
                         <Path>da/da0/usm_8h.html</Path>
                         <Anchor>a1f27ba4b6a66ab7bcb69509f8ac0a190</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>r14</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a97570186fe98d468dd592d8b1b760ef6</Anchor>
                        </Node>
                        <Node>
                         <Name>r15</Name>
@@ -61147,19 +60803,9 @@
                         <Anchor>a3f684741a20f0161ce69cf527d441d3c</Anchor>
                        </Node>
                        <Node>
-                        <Name>r15</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>afd73f1f0b4b5044b934da651b2ae6100</Anchor>
-                       </Node>
-                       <Node>
                         <Name>r8</Name>
                         <Path>da/da0/usm_8h.html</Path>
                         <Anchor>a180aab55a2cc43cbaab5b7f63be57c31</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>r8</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a834fcd5ee279924b495d5c59244e4ee4</Anchor>
                        </Node>
                        <Node>
                         <Name>r9</Name>
@@ -61167,19 +60813,9 @@
                         <Anchor>af69ba47ac862ecb7b60bb47da66ecdc0</Anchor>
                        </Node>
                        <Node>
-                        <Name>r9</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a349deb76bffdbeb0fb1a153a9869ccc8</Anchor>
-                       </Node>
-                       <Node>
                         <Name>rax</Name>
                         <Path>da/da0/usm_8h.html</Path>
                         <Anchor>ab77e9d7025a1c532fa342faf462f7de2</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>rax</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a27855041dd928598f4551f313f855235</Anchor>
                        </Node>
                        <Node>
                         <Name>rbp</Name>
@@ -61187,19 +60823,9 @@
                         <Anchor>a15c5404293bbdcea5f13c2c2c8443f90</Anchor>
                        </Node>
                        <Node>
-                        <Name>rbp</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a53810653aee5e203d9a093e4f143948d</Anchor>
-                       </Node>
-                       <Node>
                         <Name>rbx</Name>
                         <Path>da/da0/usm_8h.html</Path>
                         <Anchor>aec6722b44e413974707975ffaf75f3cf</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>rbx</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a33506d3b43cfa6a78ec6e64dc42679a4</Anchor>
                        </Node>
                        <Node>
                         <Name>rcx</Name>
@@ -61207,29 +60833,14 @@
                         <Anchor>a0c0902fb7b5919e26f3b32ef48a32e05</Anchor>
                        </Node>
                        <Node>
-                        <Name>rcx</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>aa327afafd048338deedbe69df45ea669</Anchor>
-                       </Node>
-                       <Node>
                         <Name>rdi</Name>
                         <Path>da/da0/usm_8h.html</Path>
                         <Anchor>a0701bb3eeb425b9ea4994179c8679049</Anchor>
                        </Node>
                        <Node>
-                        <Name>rdi</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a16fc6ef2b3cf605553303ae88104e575</Anchor>
-                       </Node>
-                       <Node>
                         <Name>rdx</Name>
                         <Path>da/da0/usm_8h.html</Path>
                         <Anchor>af70772b27b3d2ef2317347f57fd56dd1</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>rdx</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>adc2a72c9f9c6edcd657baac3211d5296</Anchor>
                        </Node>
                        <Node>
                         <Name>rflags</Name>
@@ -61242,19 +60853,9 @@
                         <Anchor>a76dad7d728bd02c3b19375c420f705a6</Anchor>
                        </Node>
                        <Node>
-                        <Name>rip</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a7b1e1cb5746ef6b98bb88f593830132d</Anchor>
-                       </Node>
-                       <Node>
                         <Name>rsi</Name>
                         <Path>da/da0/usm_8h.html</Path>
                         <Anchor>a1ad62d15943eec0ae1055b7f418d792a</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>rsi</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a5d2b9aeb1531e544409d15c4048a11b6</Anchor>
                        </Node>
                        <Node>
                         <Name>rsp</Name>
@@ -61262,19 +60863,9 @@
                         <Anchor>ab46f4421f6e85b6ae824557a19c47c58</Anchor>
                        </Node>
                        <Node>
-                        <Name>rsp</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>a768c6e2a44681d3f538defb49e91557d</Anchor>
-                       </Node>
-                       <Node>
                         <Name>ss</Name>
                         <Path>da/da0/usm_8h.html</Path>
                         <Anchor>a90f434a4494296e28608384ab28a94fc</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>ss</Name>
-                        <Path>da/da0/usm_8h.html</Path>
-                        <Anchor>ad9cfafe78c7ae36acb562194fa8f0f85</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
