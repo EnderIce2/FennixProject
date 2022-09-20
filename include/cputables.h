@@ -1,4 +1,7 @@
 #pragma once
+
+#ifndef __aarch64__
+
 #include <stdint.h>
 
 typedef struct _TaskStateSegmentEntry
@@ -396,3 +399,5 @@ typedef union EFER
     };
     _cpu_raw_uint_t raw;
 } __attribute__((packed)) EFER;
+
+#endif // !__aarch64__

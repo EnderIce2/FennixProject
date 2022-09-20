@@ -1,6 +1,8 @@
 ; This should be at 0x0, 0xdeadbeef, 0xdeadcode, etc... Or there is a better way to handle invalid addresses?
 ; Not tested!
-%ifdef AMD64
+
+%ifidn __OUTPUT_FORMAT__, elf64
+
 global _deadaddress_start
 _deadaddress_start:
     mov rax, qword infinite_loop_deadaddress

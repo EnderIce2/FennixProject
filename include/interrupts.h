@@ -293,6 +293,7 @@ typedef enum
 
 typedef struct _TrapFrame
 {
+#if defined(__amd64__) || defined(__i386__)
     // uint64_t gs;  // General-purpose Segment
     // uint64_t fs;  // General-purpose Segment
     // uint64_t es;  // Extra Segment (used for string operations)
@@ -322,7 +323,20 @@ typedef struct _TrapFrame
     RFLAGS rflags;       // Register Flags
     uint64_t rsp;        // Stack Pointer
     uint64_t ss;         // Stack Segment
+#elif defined(__aarch64__)
+    uint64_t x[29]; // General purpose
+    uint64_t fp;    // Frame Pointer
+    uint64_t lr;    // Link Register
+    uint64_t sp;    // Stack Pointer
+    uint64_t pc;    // Program Counter
+    uint64_t pstate;
+
+    uint64_t esr; // Exception Syndrome Register
+    uint64_t far; // Fault Address Register
+#endif
 } TrapFrame;
+
+#if defined(__amd64__) || defined(__i386__)
 
 #define FUNCTION rip
 #define ARG0 rdi
@@ -355,5 +369,14 @@ typedef struct _TrapFrame
 #define FLAGS regs->rflags          // Register Flags
 #define RSP regs->rsp               // Stack Pointer
 #define _SS regs->ss                // Stack Segment
+
+#elif defined(__aarch64__)
+
+#define FUNCTION pc
+#define ARG0 x0
+#define ARG1 x1
+#define STACK sp
+
+#endif
 
 #define InterruptHandler(name) static void name(TrapFrame *regs)

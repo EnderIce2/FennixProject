@@ -59,16 +59,22 @@ CFLAGS :=										\
 	-DGIT_COMMIT_SHORT='"$(GIT_COMMIT_SHORT)"'
 
 ifeq ($(OSARCH), amd64)
-CFLAGS += -fno-pic -fno-pie -mno-80387										\
-		  -mno-80387 -mno-mmx -mno-3dnow -mno-red-zone -mno-sse -mno-sse2	\
-		  -march=nehalem -pipe												\
+CFLAGS += -fno-pic -fno-pie -mno-80387 -mno-mmx -mno-3dnow	\
+		  -mno-red-zone -mno-sse -mno-sse2					\
+		  -march=nehalem -pipe								\
 		  -mcmodel=kernel -msoft-float -fno-builtin
+
 LDFLAGS += -Tlinker-amd64.ld
 else ifeq ($(OSARCH), i686)
-CFLAGS += -fno-pic -fno-pie -mno-80387										\
-		  -mno-80387 -mno-mmx -mno-3dnow -mno-red-zone -mno-sse -mno-sse2	\
+CFLAGS += -fno-pic -fno-pie -mno-80387 -mno-mmx -mno-3dnow	\
+		  -mno-red-zone -mno-sse -mno-sse2					\
 		  -march=nehalem -pipe -msoft-float -fno-builtin
+
 LDFLAGS += -Tlinker-i686.ld
+else ifeq ($(OSARCH), aarch64)
+CFLAGS += -fno-pic -fno-pie -pipe -fno-builtin
+
+LDFLAGS += -Tlinker-aarch64.ld
 endif
 
 # -fsanitize=undefined is causing tasking issues
@@ -101,9 +107,6 @@ $(KERNEL): $(OBJ)
 
 %.o: %.asm
 	$(NASM) $< $(NASMFLAGS) -o $@
-
-%.o: %.s
-	$(AS) -o $@ $<
 
 %.o: %.S
 	$(AS) -o $@ $<

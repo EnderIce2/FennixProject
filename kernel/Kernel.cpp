@@ -74,6 +74,11 @@ EXTERNC void kernel_entry(void *Data)
     CPU_HALT;
 }
 
+EXTERNC void kernel_main_aarch64()
+{
+    
+}
+
 void initializeKernelFlags()
 {
     if (strstr(bootparams->cmdline, "debug"))

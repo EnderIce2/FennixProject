@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef __aarch64__
+
 #include <types.h>
 #include <interrupts.h>
 #include <cputables.h>
@@ -671,3 +673,5 @@ static inline uint64_t tsc()
     return eax;
 #endif
 }
+
+#endif // !__aarch64__
