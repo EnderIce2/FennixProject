@@ -1,5 +1,7 @@
 // https://wiki.osdev.org/Raspberry_Pi_Bare_Bones
-/*
+
+.ifdef __aarch64__
+
 .section ".text.boot"
 
 .global _start
@@ -19,4 +21,5 @@ _start:
 halt:
     wfe
     b halt
-*/
+
+.endif

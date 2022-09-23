@@ -43,6 +43,8 @@ ifeq ($(OSARCH), amd64)
 NASMFLAGS := -f elf64 -DAMD64
 else ifeq ($(OSARCH), i686)
 NASMFLAGS := -f elf32 -Di686
+else ifeq ($(OSARCH), aarch64)
+NASMFLAGS := -f elf32 -DARM64
 endif
 
 # Disable all warnings by adding "-w" in WARNCFLAG and if you want to treat the warnings as errors, add "-Werror"
@@ -109,7 +111,13 @@ $(KERNEL): $(OBJ)
 	$(NASM) $< $(NASMFLAGS) -o $@
 
 %.o: %.S
-	$(AS) -o $@ $<
+ifeq ($(OSARCH), amd64)
+	$(AS) --defsym __amd64__=1 -o $@ $<
+else ifeq ($(OSARCH), i686)
+	$(AS) --defsym __i386__=1 -o $@ $<
+else ifeq ($(OSARCH), aarch64)
+	$(AS) --defsym __aarch64__=1 -o $@ $<
+endif
 
 %.o: %.psf
 ifeq ($(OSARCH), amd64)

@@ -1,4 +1,7 @@
 /* ---------------------------------------------------------------------------------------------------------------------- */
+
+.ifdef __i386__
+
 .set MAGIC,     0xe85250d6                  // magic number
 .set ARCH,      0                           // architecture
 .set LENGTH,    (HdrEnd - HdrStart)         // header length
@@ -91,3 +94,5 @@ CallHigherHalf:
 1:
     hlt
     jmp 1b
+
+.endif
