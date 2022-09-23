@@ -43,7 +43,7 @@ __attribute__((used)) void exception_handler(TrapFrame *regs)
 {
     CLI;
     serial_write_text(COM1, "An Internal Exception Occurred\n");
-    asm volatile("mov %[KPML4Address], %%rax"
+    asm volatile("mov %[KPML4Address], %%eax"
                  :
                  : [KPML4Address] "q"(KPML4Address)
                  : "memory");

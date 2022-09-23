@@ -26,12 +26,13 @@
         - The userland of the operating system.
 
 ---
-##### ! Warning !
-`Before doing anything, remember that this project is in early stages of development. And most of the stuff are very unstable or broken. If you are interested to contribute, please do not hesitate to try it.`
+##### ❗ Warning
+`Before you do anything, remember that this project is in the early stages of development.`
+`Most things are very unstable or broken.`
 
 ---
 
-## Download ISO Image
+## 💾 Download ISO Image
 
 - Access [Actions page](https://github.com/EnderIce2/FennixProject/actions/workflows/makefile.yml) from the GitHub page.
 - Select the latest run and under "Artifacts" you will find the ISO file (it's ZIP compressed).
@@ -39,7 +40,7 @@
 
 ---
 
-## Download, compile & run
+## 🔽 Download, compile & run
 
 - Clone this repository using
 
@@ -86,7 +87,7 @@ make clean
 
 ---
 
-## Progress
+## ✅ Progress
 
 - [ ] Rolling own bootloader
 - [x] Stivale2 Protocol Support

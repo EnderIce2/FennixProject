@@ -2,7 +2,7 @@
 /*
 .section ".text.boot"
 
-.globl _start
+.global _start
 
     .org 0x80000
 _start:

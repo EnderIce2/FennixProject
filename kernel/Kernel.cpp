@@ -1,5 +1,9 @@
 #include "kernel.h"
 
+#ifdef __linux__
+#error "Cross-compiler not detected."
+#endif
+
 #include <internal_task.h>
 #include <filesystem.h>
 #include <bootscreen.h>
@@ -65,6 +69,12 @@ EXTERNC void limine_initializator()
 
     init_limine(bootparams, true);
     KernelInit();
+}
+
+EXTERNC void multiboot2_initializator()
+{
+    err("stub");
+    CPU_HALT;
 }
 
 EXTERNC void kernel_entry(void *Data)

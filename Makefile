@@ -15,24 +15,41 @@ include Makefile.conf
 
 # For tap0
 # -netdev tap,id=usernet0,ifname=tap0,script=no,downscript=no
-QEMUFLAGS64 = -device bochs-display -M q35 \
-			  -display gtk \
-			  -usb \
-			  -usbdevice mouse \
-			  -smp $(shell nproc) \
-			  -net user \
-    		  -netdev user,id=usernet0 \
-    		  -device e1000,netdev=usernet0,mac=00:69:96:00:42:00 \
-			  -object filter-dump,id=usernet0,netdev=usernet0,file=network.log,maxlen=1024 \
-			  -serial file:serial.log \
-			  -device ahci,id=ahci \
-			  -drive id=bootdsk,file=$(OSNAME).iso,format=raw,if=none \
-			  -device ide-hd,drive=bootdsk,bus=ahci.0 \
-			  -drive id=disk,file=qemu-disk.img,format=raw,if=none \
-			  -device ide-hd,drive=disk,bus=ahci.1 \
-			  -audiodev pa,id=audio0 \
-			  -machine pcspk-audiodev=audio0 \
-			  -device AC97,audiodev=audio0 \
+QEMUFLAGS := -display gtk
+ifeq ($(OSARCH), amd64)
+QEMUFLAGS += -device bochs-display -M q35 \
+			 -usb \
+			 -usbdevice mouse \
+			 -smp $(shell nproc) \
+			 -net user \
+			 -netdev user,id=usernet0 \
+			 -device e1000,netdev=usernet0,mac=00:69:96:00:42:00 \
+			 -object filter-dump,id=usernet0,netdev=usernet0,file=network.log,maxlen=1024 \
+			 -serial file:serial.log \
+			 -device ahci,id=ahci \
+			 -drive id=bootdsk,file=$(OSNAME).iso,format=raw,if=none \
+			 -device ide-hd,drive=bootdsk,bus=ahci.0 \
+			 -drive id=disk,file=qemu-disk.img,format=raw,if=none \
+			 -device ide-hd,drive=disk,bus=ahci.1 \
+			 -audiodev pa,id=audio0 \
+			 -machine pcspk-audiodev=audio0 \
+			 -device AC97,audiodev=audio0
+
+else ifeq ($(OSARCH), i686)
+QEMUFLAGS += -M q35 \
+			 -usb \
+			 -usbdevice mouse \
+			 -smp $(shell nproc) \
+			 -net user \
+			 -netdev user,id=usernet0 \
+			 -device e1000,netdev=usernet0,mac=00:69:96:00:42:00 \
+			 -object filter-dump,id=usernet0,netdev=usernet0,file=network.log,maxlen=1024 \
+			 -serial file:serial.log \
+			 -hda $(OSNAME).iso \
+			 -audiodev pa,id=audio0 \
+			 -machine pcspk-audiodev=audio0 \
+			 -device AC97,audiodev=audio0
+endif
 
 QEMUHWACCELERATION = -machine q35 -enable-kvm
 
@@ -140,13 +157,21 @@ ifeq ($(BOOTLOADER), lynx)
 		-efi-boot-part --efi-boot-image --protective-msdos-label \
 		iso_tmp_data -o $(OSNAME).iso
 endif
-ifeq ($(BOOTLOADER), limine)
+ifeq ($(BOOTLOADER), other)
+ifeq ($(OSARCH), amd64)
 	cp limine.cfg $(LIMINE_FOLDER)/limine.sys $(LIMINE_FOLDER)/limine-cd.bin $(LIMINE_FOLDER)/limine-cd-efi.bin iso_tmp_data/
 	xorriso -as mkisofs -b limine-cd.bin \
 		-no-emul-boot -boot-load-size 4 -boot-info-table \
 		--efi-boot limine-cd-efi.bin \
 		-efi-boot-part --efi-boot-image --protective-msdos-label \
 		iso_tmp_data -o $(OSNAME).iso
+endif
+ifeq ($(OSARCH), i686)
+	mkdir -p iso_tmp_data/boot
+	mkdir -p iso_tmp_data/boot/grub
+	cp grub.cfg iso_tmp_data/boot/grub/
+	grub-mkrescue -o $(OSNAME).iso iso_tmp_data
+endif
 endif
 
 QEMU_UEFI_BIOS :=
@@ -156,15 +181,15 @@ endif
 
 vscode_debug: build_kernel build_libc build_userspace build_image
 	rm -f serial.log network.log
-	$(QEMU) -S -gdb tcp::1234 -d int -no-shutdown $(QEMU_UEFI_BIOS) -m 4G $(QEMUFLAGS64)
+	$(QEMU) -S -gdb tcp::1234 -d int -no-shutdown $(QEMU_UEFI_BIOS) -m 4G $(QEMUFLAGS)
 
 qemu: qemu_vdisk
 	rm -f serial.log network.log
-	$(QEMU) $(QEMU_UEFI_BIOS) -cpu host $(QEMUFLAGS64) $(QEMUHWACCELERATION) $(QEMUMEMORY)
+	$(QEMU) $(QEMU_UEFI_BIOS) -cpu host $(QEMUFLAGS) $(QEMUHWACCELERATION) $(QEMUMEMORY)
 
 qemubios: qemu_vdisk
 	rm -f serial.log network.log
-	$(QEMU) -cpu host $(QEMUFLAGS64) $(QEMUHWACCELERATION) $(QEMUMEMORY)
+	$(QEMU) -cpu host $(QEMUFLAGS) $(QEMUHWACCELERATION) $(QEMUMEMORY)
 
 # build the os and run it
 run: build qemu_vdisk qemu
@@ -172,9 +197,7 @@ run: build qemu_vdisk qemu
 # clean
 clean:
 	rm -rf doxygen-doc iso_tmp_data initrd.tar.gz *.iso
-ifeq ($(BOOTLOADER), lynx)
 	make --quiet -C boot clean
-endif
 	make --quiet -C kernel clean
 	make --quiet -C userspace clean
 	make --quiet -C libc clean
