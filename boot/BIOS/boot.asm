@@ -2,38 +2,57 @@
 [BITS 16]
 
 start:
-    jmp	0x0000:boot
+    jmp	0x0000:Boot
     nop
 
 times 8-($-$$) db 0
-    ; Boot Information Table
-    bi_PrimaryVolumeDescriptor      dd 0 ; LBA of the Primary Volume Descriptor
-    bi_BootFileLocation             dd 0 ; LBA of the Boot File
-    bi_BootFileLength               dd 0 ; Length of the boot file in bytes
-    bi_Checksum                     dd 0 ; 32 bit checksum
-    bi_Reserved            times 40 db 0 ; Reserved 'for future standardization'
+PrimaryVolumeDescriptor dd 0
+BootFileLocation dd 0
+BootFileLength dd 0
+Checksum dd 0
+Reserved times 40 db 0
 times 90-($-$$) db 0
 
-boot:
+%include "print.inc"
+
+Boot:
 	cli
+    mov [BOOT_DISK], dl
 	xor ax, ax
     mov ds, ax
-    mov si, UnsupportedString
+    mov ss, ax
+    mov sp, 0x9C00
+    mov si, BootloaderText
+    call Print
+    call ReadDisk
+    jmp EX_ADDRESS
+    jmp $
+
+ReadDisk:
+    sti
+    mov ah, 0x02
+    mov bx, EX_ADDRESS
+    mov al, 20 ; max 65
+    mov dl, [BOOT_DISK]
+    mov ch, 0x00
+    mov dh, 0x00
+    mov cl, 0x02
+    int 0x13
+    jc DiskError
+    cli
+    ret
+
+DiskError:
+    cli
+    mov si, DiskReadingErrorMessage
     call Print
     jmp $
 
-Print:
-NextChar:
-    mov al, [si]
-    inc si
-    mov ah, 0x0e
-    mov bh, 0x00
-    mov bl, 0x07
-    int 0x10
-    or al, al
-    jz Exit
-    jmp NextChar
-Exit:
-    ret
+BootloaderText db 'Lynx Bootloader', 0
+DiskReadingErrorMessage: db ' Disk Error', 0
+EX_ADDRESS equ 0x8000
+BOOT_DISK: db 0
 
-UnsupportedString db "BIOS boot is not supported.", 0 
+times 510-($-$$) db 0
+db 0x55
+db 0xAA
