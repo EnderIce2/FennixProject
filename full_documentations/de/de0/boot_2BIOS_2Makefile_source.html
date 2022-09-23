@@ -93,10 +93,12 @@ $(document).ready(function(){initNavTree('de/de0/boot_2BIOS_2Makefile_source.htm
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;NASM = /usr/bin/nasm</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;build:</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    $(NASM) boot.asm -f bin -o loader.bin</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;clean:</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    rm -f loader.bin</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    $(NASM) boot.asm -f bin -o boot.bin</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    $(NASM) second.asm -f bin -o second.bin</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    cat boot.bin second.bin &gt; loader.bin</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;clean:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    rm -f boot.bin second.bin loader.bin</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

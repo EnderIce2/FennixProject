@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('d4/d1e/i686_2cpu_2IDT_8c_source.html',
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="../../de/d21/asm_8h.html#a7806d82cb41c78b6d2a9a236e60bf19c">CLI</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../d8/d90/serial_8c.html#a708b346863815b06e3ad626dcf621a0f">serial_write_text</a>(<a class="code" href="../../db/d11/serial_8h.html#a00dbb3ab1c59e14699be9393693e2248">COM1</a>, <span class="stringliteral">&quot;An Internal Exception Occurred\n&quot;</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[KPML4Address], %%rax&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mov %[KPML4Address], %%eax&quot;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                 :</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                 : [KPML4Address] <span class="stringliteral">&quot;q&quot;</span>(KPML4Address)</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                 : <span class="stringliteral">&quot;memory&quot;</span>);</div>

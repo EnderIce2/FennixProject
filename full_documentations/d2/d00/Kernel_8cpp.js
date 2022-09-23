@@ -7,6 +7,7 @@ var Kernel_8cpp =
     [ "KernelInit", "d2/d00/Kernel_8cpp.html#a3ba5d23626883fed428934dd940001c1", null ],
     [ "KernelTask", "d2/d00/Kernel_8cpp.html#a375156ba88847691dea2c8f2fd8dd576", null ],
     [ "limine_initializator", "d2/d00/Kernel_8cpp.html#aa9f9f3e61005342e16bf8b37abd61d2b", null ],
+    [ "multiboot2_initializator", "d2/d00/Kernel_8cpp.html#a41d397057024376cc895aaf4ad9a1790", null ],
     [ "bootparams", "d2/d00/Kernel_8cpp.html#ad840a881d3808ffc8989ef1d14f9e06c", null ],
     [ "earlyparams", "d2/d00/Kernel_8cpp.html#ae7b517f08e3d7e7ef71af810e3cab1a8", null ],
     [ "FadeScreenNow", "d2/d00/Kernel_8cpp.html#a8cc3993baddc8e37bd32407ff3b7c196", null ],

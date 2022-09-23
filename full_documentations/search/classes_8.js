@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['heapseghdr_5509',['HeapSegHdr',['../d6/d13/structHeap_1_1HeapSegHdr.html',1,'Heap']]],
-  ['heapsegment_5510',['HeapSegment',['../d8/da9/structXalloc_1_1AllocatorV1_1_1HeapSegment.html',1,'Xalloc::AllocatorV1']]],
-  ['hestheader_5511',['HESTHeader',['../d3/d21/classACPI_1_1ACPI.html#da/d64/structACPI_1_1ACPI_1_1HESTHeader',1,'ACPI::ACPI']]],
-  ['hpet_5512',['HPET',['../da/d06/hpet_8h.html#dc/d8f/structHPET',1,'']]],
-  ['hpetheader_5513',['HPETHeader',['../d3/d21/classACPI_1_1ACPI.html#da/d4b/structACPI_1_1ACPI_1_1HPETHeader',1,'ACPI::ACPI']]]
+  ['heapseghdr_5464',['HeapSegHdr',['../d6/d13/structHeap_1_1HeapSegHdr.html',1,'Heap']]],
+  ['heapsegment_5465',['HeapSegment',['../d8/da9/structXalloc_1_1AllocatorV1_1_1HeapSegment.html',1,'Xalloc::AllocatorV1']]],
+  ['hestheader_5466',['HESTHeader',['../d3/d21/classACPI_1_1ACPI.html#da/d64/structACPI_1_1ACPI_1_1HESTHeader',1,'ACPI::ACPI']]],
+  ['hpet_5467',['HPET',['../da/d06/hpet_8h.html#dc/d8f/structHPET',1,'']]],
+  ['hpetheader_5468',['HPETHeader',['../d3/d21/classACPI_1_1ACPI.html#da/d4b/structACPI_1_1ACPI_1_1HPETHeader',1,'ACPI::ACPI']]]
 ];

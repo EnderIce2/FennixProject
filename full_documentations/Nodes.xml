@@ -24,7 +24,7 @@
               <Anchor>autotoc_md3</Anchor>
               <Subnodes>
                <Node>
-                <Name>! Warning !</Name>
+                <Name>❗ Warning</Name>
                 <Path>index.html</Path>
                 <Anchor>autotoc_md5</Anchor>
                </Node>
@@ -33,17 +33,17 @@
             </Subnodes>
           </Subnodes>
          <Node>
-          <Name>Download ISO Image</Name>
+          <Name>💾 Download ISO Image</Name>
           <Path>index.html</Path>
           <Anchor>autotoc_md7</Anchor>
          </Node>
          <Node>
-          <Name>Download, compile &amp; run</Name>
+          <Name>🔽 Download, compile &amp; run</Name>
           <Path>index.html</Path>
           <Anchor>autotoc_md9</Anchor>
          </Node>
          <Node>
-          <Name>Progress</Name>
+          <Name>✅ Progress</Name>
           <Path>index.html</Path>
           <Anchor>autotoc_md12</Anchor>
          </Node>
@@ -8339,7 +8339,7 @@
              <Node>
               <Name>Misc</Name>
               <Path>de/d63/msexec_8h.html</Path>
-              <Anchor>a65feba4dd4fe549108f6682bd83efcc7</Anchor>
+              <Anchor>a94ee74a9d9251ee01dbc315392c0a0ae</Anchor>
              </Node>
              <Node>
               <Name>Name</Name>
@@ -8471,219 +8471,6 @@
               <Name>SegmentSelector</Name>
               <Path>d1/d57/cputables_8h.html</Path>
               <Anchor>ab5318fdaef381710a1008cff86d0acfd</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>_pack</Name>
-            <Path>db/dc7/bootboot_8h.html</Path>
-            <Anchor>d9/d87/struct__pack</Anchor>
-            <Subnodes>
-             <Node>
-              <Name>arch</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a95a6c9bc6d5c891359a3b75fd434b6e0</Anchor>
-             </Node>
-             <Node>
-              <Name>bspid</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a9454067eb847cab9b91b0211be07a564</Anchor>
-             </Node>
-             <Node>
-              <Name>datetime</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>aa62abda00b9dfd21bb69c24a3e2d6b6c</Anchor>
-             </Node>
-             <Node>
-              <Name>fb_height</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a81879dac7904f282a6eec20f88e4ec5d</Anchor>
-             </Node>
-             <Node>
-              <Name>fb_ptr</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>add1b8490f298782a2c702806ef8d588f</Anchor>
-             </Node>
-             <Node>
-              <Name>fb_scanline</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>aa6a1858067bfe798b864a64a02a5c446</Anchor>
-             </Node>
-             <Node>
-              <Name>fb_size</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>ad8c644a2d87139018a66ea1b618a1ed0</Anchor>
-             </Node>
-             <Node>
-              <Name>fb_type</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>ac017cb5bd9fd41212d1e7748c8bfa57c</Anchor>
-             </Node>
-             <Node>
-              <Name>fb_width</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a45edf5bb2b97bafc5234b734178d8a4f</Anchor>
-             </Node>
-             <Node>
-              <Name>initrd_ptr</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a40ec16d698554a0b73d17b98d427236a</Anchor>
-             </Node>
-             <Node>
-              <Name>initrd_size</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>affbc95d7d5df09956924ae26307fb930</Anchor>
-             </Node>
-             <Node>
-              <Name>magic</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>ac5786cdde8012de30c6a3b46206681b1</Anchor>
-             </Node>
-             <Node>
-              <Name>mmap</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a72b8a384e5eb420465f8410db039035b</Anchor>
-             </Node>
-             <Node>
-              <Name>numcores</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a7c8f8b9b2263820a8a4f83a2ab5baa2b</Anchor>
-             </Node>
-             <Node>
-              <Name>protocol</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a6c1e6432cf1059540e4479cce866d642</Anchor>
-             </Node>
-             <Node>
-              <Name>ptr</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>ae1788622d03238ffa2f45de015333a35</Anchor>
-             </Node>
-             <Node>
-              <Name>size</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a19f3b3bc0e5e84fa90546183b4a4b724</Anchor>
-             </Node>
-             <Node>
-              <Name>size</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>af2f398f48c32ff397b6cfaef875ddf96</Anchor>
-             </Node>
-             <Node>
-              <Name>timezone</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a80df7da7eb5dd3267fcb0aaa887e9f84</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>_pack.arch</Name>
-            <Path>db/dc7/bootboot_8h.html</Path>
-            <Anchor>d7/d4e/union__pack_8arch</Anchor>
-            <Subnodes>
-             <Node>
-              <Name>aarch64</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>ac62823064c80e769fc3af119cfcdf7cb</Anchor>
-             </Node>
-             <Node>
-              <Name>x86_64</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a0027f42e1e5dfcb4fd5f8f9c6db89af3</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>_pack.arch.aarch64</Name>
-            <Path>db/dc7/bootboot_8h.html</Path>
-            <Anchor>d8/d86/struct__pack_8arch_8aarch64</Anchor>
-            <Subnodes>
-             <Node>
-              <Name>acpi_ptr</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>abbeaa9dea5862a6513403a995d8e52ac</Anchor>
-             </Node>
-             <Node>
-              <Name>efi_ptr</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a835bee32bc779fb9998ca28e8f10e889</Anchor>
-             </Node>
-             <Node>
-              <Name>mmio_ptr</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>af71e9cfa7f43165e0384f73d7ae1b5c7</Anchor>
-             </Node>
-             <Node>
-              <Name>unused0</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a835416695be0ae6db1ac81b7f7d76c11</Anchor>
-             </Node>
-             <Node>
-              <Name>unused1</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a01186a6cb40d46613ff3487a4e8216ba</Anchor>
-             </Node>
-             <Node>
-              <Name>unused2</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a3dedb9d6c16bf09840253c47bcac7928</Anchor>
-             </Node>
-             <Node>
-              <Name>unused3</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a4d504ab262422e01e4e60d6270334f43</Anchor>
-             </Node>
-             <Node>
-              <Name>unused4</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>af964fe048b16807a0a0ff92054334fd2</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>_pack.arch.x86_64</Name>
-            <Path>db/dc7/bootboot_8h.html</Path>
-            <Anchor>d8/d0d/struct__pack_8arch_8x86__64</Anchor>
-            <Subnodes>
-             <Node>
-              <Name>acpi_ptr</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>abbeaa9dea5862a6513403a995d8e52ac</Anchor>
-             </Node>
-             <Node>
-              <Name>efi_ptr</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a835bee32bc779fb9998ca28e8f10e889</Anchor>
-             </Node>
-             <Node>
-              <Name>mp_ptr</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a9df90a8090329b9da40f56a0a2933472</Anchor>
-             </Node>
-             <Node>
-              <Name>smbi_ptr</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a992cb389cb01699730662b1f971299b9</Anchor>
-             </Node>
-             <Node>
-              <Name>unused0</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a835416695be0ae6db1ac81b7f7d76c11</Anchor>
-             </Node>
-             <Node>
-              <Name>unused1</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a01186a6cb40d46613ff3487a4e8216ba</Anchor>
-             </Node>
-             <Node>
-              <Name>unused2</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a3dedb9d6c16bf09840253c47bcac7928</Anchor>
-             </Node>
-             <Node>
-              <Name>unused3</Name>
-              <Path>db/dc7/bootboot_8h.html</Path>
-              <Anchor>a4d504ab262422e01e4e60d6270334f43</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -12634,23 +12421,6 @@
             <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
             <Subnodes>
              <Node>
-              <Name>framebuffer_palette</Name>
-              <Path>d5/dba/multiboot2_8h.html</Path>
-              <Anchor>ac7df1fdfee327da3c205ba9086e4802a</Anchor>
-             </Node>
-             <Node>
-              <Name>framebuffer_palette_num_colors</Name>
-              <Path>d5/dba/multiboot2_8h.html</Path>
-              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>multiboot_tag_framebuffer.__unnamed__.__unnamed__</Name>
-            <Path>d5/dba/multiboot2_8h.html</Path>
-            <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
               <Name>framebuffer_blue_field_position</Name>
               <Path>d5/dba/multiboot2_8h.html</Path>
               <Anchor>ace107d23f7f4af6fd8d969926c5c9d16</Anchor>
@@ -12679,6 +12449,23 @@
               <Name>framebuffer_red_mask_size</Name>
               <Path>d5/dba/multiboot2_8h.html</Path>
               <Anchor>a0d868424e2b703471e3d73c0a72bc75c</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>multiboot_tag_framebuffer.__unnamed__.__unnamed__</Name>
+            <Path>d5/dba/multiboot2_8h.html</Path>
+            <Anchor>da/d6b/structmultiboot__tag__framebuffer_8____unnamed_____8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>framebuffer_palette</Name>
+              <Path>d5/dba/multiboot2_8h.html</Path>
+              <Anchor>ac7df1fdfee327da3c205ba9086e4802a</Anchor>
+             </Node>
+             <Node>
+              <Name>framebuffer_palette_num_colors</Name>
+              <Path>d5/dba/multiboot2_8h.html</Path>
+              <Anchor>a9ea6d9ae58149f37ee098ce870bf07f0</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -14381,31 +14168,14 @@
             <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
             <Subnodes>
              <Node>
-              <Name>bx</Name>
+              <Name>command</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>a6f5770d50b01a0abbce803768d3592b0</Anchor>
+              <Anchor>a1dccadfed7bcbb036c56a4afb97e906f</Anchor>
              </Node>
              <Node>
-              <Name>size</Name>
+              <Name>cx</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>af7bd60b75b29d79b660a2859395c1a24</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>VMwareCMD.__unnamed__</Name>
-            <Path>d1/dac/VMDetect_8c.html</Path>
-            <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
-            <Subnodes>
-             <Node>
-              <Name>dx</Name>
-              <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>aacd2b09d39705a84bff035c18c9faea9</Anchor>
-             </Node>
-             <Node>
-              <Name>port</Name>
-              <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>a901555fb06e346cb065ceb9808dcfc25</Anchor>
+              <Anchor>a0bdff8095c8bf1b38775bf35547a1317</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -14432,14 +14202,31 @@
             <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
             <Subnodes>
              <Node>
-              <Name>command</Name>
+              <Name>bx</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>a1dccadfed7bcbb036c56a4afb97e906f</Anchor>
+              <Anchor>a6f5770d50b01a0abbce803768d3592b0</Anchor>
              </Node>
              <Node>
-              <Name>cx</Name>
+              <Name>size</Name>
               <Path>d1/dac/VMDetect_8c.html</Path>
-              <Anchor>a0bdff8095c8bf1b38775bf35547a1317</Anchor>
+              <Anchor>af7bd60b75b29d79b660a2859395c1a24</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>VMwareCMD.__unnamed__</Name>
+            <Path>d1/dac/VMDetect_8c.html</Path>
+            <Anchor>d8/dc8/unionVMwareCMD_8____unnamed____</Anchor>
+            <Subnodes>
+             <Node>
+              <Name>dx</Name>
+              <Path>d1/dac/VMDetect_8c.html</Path>
+              <Anchor>aacd2b09d39705a84bff035c18c9faea9</Anchor>
+             </Node>
+             <Node>
+              <Name>port</Name>
+              <Path>d1/dac/VMDetect_8c.html</Path>
+              <Anchor>a901555fb06e346cb065ceb9808dcfc25</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -14572,26 +14359,6 @@
             <Name>_InterruptDescriptorTableEntry</Name>
             <Path>d1/d57/cputables_8h.html</Path>
             <Anchor>d1/dea/struct__InterruptDescriptorTableEntry</Anchor>
-           </Node>
-           <Node>
-            <Name>_pack</Name>
-            <Path>db/dc7/bootboot_8h.html</Path>
-            <Anchor>d9/d87/struct__pack</Anchor>
-           </Node>
-           <Node>
-            <Name>_pack.arch</Name>
-            <Path>db/dc7/bootboot_8h.html</Path>
-            <Anchor>d7/d4e/union__pack_8arch</Anchor>
-           </Node>
-           <Node>
-            <Name>_pack.arch.aarch64</Name>
-            <Path>db/dc7/bootboot_8h.html</Path>
-            <Anchor>d8/d86/struct__pack_8arch_8aarch64</Anchor>
-           </Node>
-           <Node>
-            <Name>_pack.arch.x86_64</Name>
-            <Path>db/dc7/bootboot_8h.html</Path>
-            <Anchor>d8/d0d/struct__pack_8arch_8x86__64</Anchor>
            </Node>
            <Node>
             <Name>MonotonLib::mtl::_PSF2_FONT</Name>
@@ -16457,6 +16224,14 @@
                <Node>
                 <Name>Makefile</Name>
                 <Path>de/de0/boot_2BIOS_2Makefile.html</Path>
+               </Node>
+               <Node>
+                <Name>print.inc</Name>
+                <Path>db/d68/print_8inc.html</Path>
+               </Node>
+               <Node>
+                <Name>second.asm</Name>
+                <Path>d7/d92/second_8asm.html</Path>
                </Node>
               </Subnodes>
              </Node>
@@ -29523,6 +29298,10 @@
                  </Node>
                 </Subnodes>
                </Node>
+               <Node>
+                <Name>Multiboot2.c</Name>
+                <Path>d8/db1/Multiboot2_8c.html</Path>
+               </Node>
               </Subnodes>
              </Node>
              <Node>
@@ -33589,467 +33368,6 @@
                   <Name>protocols</Name>
                   <Path>dir_ec71c4fc0291301dc6a1dba7ca4d7ade.html</Path>
                   <Subnodes>
-                   <Node>
-                    <Name>bootboot.h</Name>
-                    <Path>db/dc7/bootboot_8h.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>_pack</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>d9/d87/struct__pack</Anchor>
-                      <Subnodes>
-                       <Node>
-                        <Name>arch</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a95a6c9bc6d5c891359a3b75fd434b6e0</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>bspid</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a9454067eb847cab9b91b0211be07a564</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>datetime</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>aa62abda00b9dfd21bb69c24a3e2d6b6c</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>fb_height</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a81879dac7904f282a6eec20f88e4ec5d</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>fb_ptr</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>add1b8490f298782a2c702806ef8d588f</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>fb_scanline</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>aa6a1858067bfe798b864a64a02a5c446</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>fb_size</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>ad8c644a2d87139018a66ea1b618a1ed0</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>fb_type</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>ac017cb5bd9fd41212d1e7748c8bfa57c</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>fb_width</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a45edf5bb2b97bafc5234b734178d8a4f</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>initrd_ptr</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a40ec16d698554a0b73d17b98d427236a</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>initrd_size</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>affbc95d7d5df09956924ae26307fb930</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>magic</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>ac5786cdde8012de30c6a3b46206681b1</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>mmap</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a72b8a384e5eb420465f8410db039035b</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>numcores</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a7c8f8b9b2263820a8a4f83a2ab5baa2b</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>protocol</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a6c1e6432cf1059540e4479cce866d642</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>ptr</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>ae1788622d03238ffa2f45de015333a35</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>size</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a19f3b3bc0e5e84fa90546183b4a4b724</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>size</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>af2f398f48c32ff397b6cfaef875ddf96</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>timezone</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a80df7da7eb5dd3267fcb0aaa887e9f84</Anchor>
-                       </Node>
-                      </Subnodes>
-                     </Node>
-                     <Node>
-                      <Name>_pack</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>d9/d87/struct__pack</Anchor>
-                      <Subnodes>
-                       <Node>
-                        <Name>arch</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a95a6c9bc6d5c891359a3b75fd434b6e0</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>bspid</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a9454067eb847cab9b91b0211be07a564</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>datetime</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>aa62abda00b9dfd21bb69c24a3e2d6b6c</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>fb_height</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a81879dac7904f282a6eec20f88e4ec5d</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>fb_ptr</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>add1b8490f298782a2c702806ef8d588f</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>fb_scanline</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>aa6a1858067bfe798b864a64a02a5c446</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>fb_size</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>ad8c644a2d87139018a66ea1b618a1ed0</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>fb_type</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>ac017cb5bd9fd41212d1e7748c8bfa57c</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>fb_width</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a45edf5bb2b97bafc5234b734178d8a4f</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>initrd_ptr</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a40ec16d698554a0b73d17b98d427236a</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>initrd_size</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>affbc95d7d5df09956924ae26307fb930</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>magic</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>ac5786cdde8012de30c6a3b46206681b1</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>mmap</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a72b8a384e5eb420465f8410db039035b</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>numcores</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a7c8f8b9b2263820a8a4f83a2ab5baa2b</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>protocol</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a6c1e6432cf1059540e4479cce866d642</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>ptr</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>ae1788622d03238ffa2f45de015333a35</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>size</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a19f3b3bc0e5e84fa90546183b4a4b724</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>size</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>af2f398f48c32ff397b6cfaef875ddf96</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>timezone</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a80df7da7eb5dd3267fcb0aaa887e9f84</Anchor>
-                       </Node>
-                      </Subnodes>
-                     </Node>
-                     <Node>
-                      <Name>_pack.arch</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>d7/d4e/union__pack_8arch</Anchor>
-                      <Subnodes>
-                       <Node>
-                        <Name>aarch64</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>ac62823064c80e769fc3af119cfcdf7cb</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>x86_64</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a0027f42e1e5dfcb4fd5f8f9c6db89af3</Anchor>
-                       </Node>
-                      </Subnodes>
-                     </Node>
-                     <Node>
-                      <Name>_pack.arch.x86_64</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>d8/d0d/struct__pack_8arch_8x86__64</Anchor>
-                      <Subnodes>
-                       <Node>
-                        <Name>acpi_ptr</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>abbeaa9dea5862a6513403a995d8e52ac</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>efi_ptr</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a835bee32bc779fb9998ca28e8f10e889</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>mp_ptr</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a9df90a8090329b9da40f56a0a2933472</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>smbi_ptr</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a992cb389cb01699730662b1f971299b9</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>unused0</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a835416695be0ae6db1ac81b7f7d76c11</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>unused1</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a01186a6cb40d46613ff3487a4e8216ba</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>unused2</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a3dedb9d6c16bf09840253c47bcac7928</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>unused3</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a4d504ab262422e01e4e60d6270334f43</Anchor>
-                       </Node>
-                      </Subnodes>
-                     </Node>
-                     <Node>
-                      <Name>_pack.arch.aarch64</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>d8/d86/struct__pack_8arch_8aarch64</Anchor>
-                      <Subnodes>
-                       <Node>
-                        <Name>acpi_ptr</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>abbeaa9dea5862a6513403a995d8e52ac</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>efi_ptr</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a835bee32bc779fb9998ca28e8f10e889</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>mmio_ptr</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>af71e9cfa7f43165e0384f73d7ae1b5c7</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>unused0</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a835416695be0ae6db1ac81b7f7d76c11</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>unused1</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a01186a6cb40d46613ff3487a4e8216ba</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>unused2</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a3dedb9d6c16bf09840253c47bcac7928</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>unused3</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>a4d504ab262422e01e4e60d6270334f43</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>unused4</Name>
-                        <Path>db/dc7/bootboot_8h.html</Path>
-                        <Anchor>af964fe048b16807a0a0ff92054334fd2</Anchor>
-                       </Node>
-                      </Subnodes>
-                     </Node>
-                     <Node>
-                      <Name>_pack</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a18681bafeae0dc303f84c71d45d512e1</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>BOOTBOOT_CORE</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>af2801f894ded89107a67ccd822df31ac</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>BOOTBOOT_ENV</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a85ef3587a87bfc2e167f3a3bd2964738</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>BOOTBOOT_FB</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a3f4d22d06681434ef2b4b68d0c8d210d</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>BOOTBOOT_INFO</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>ae38fdafff5142a98f778ff6691caddda</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>BOOTBOOT_MAGIC</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>ac58f0cce559bd97b55540f12bdc5df6e</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>BOOTBOOT_MMIO</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>adfcfd6928c3b01d5f57500befc4f9106</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>FB_ABGR</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a1ad7acab418a9cc35cf1826330efbc6d</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>FB_ARGB</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>af629295f0410025add3833cd2da7847e</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>FB_BGRA</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>ab8c1341606ed0d024d128e0b46760f67</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>FB_RGBA</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a93f4b9d67325921c19b11d44c59982ec</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>INITRD_MAXSIZE</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>ac7d34cf283b09b37b83b84270a1f56aa</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>LOADER_BIOS</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a328e52fd34a072056c342489340b06dd</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>LOADER_COREBOOT</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a60d3fa5821886f5ada2011cc5e778dd0</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>LOADER_RPI</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>aec49dc010db8914e6047e04a4e49fff7</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>LOADER_UEFI</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>ac69a002335cc3fa6a6f27fd2f1b2350c</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>MMAP_ACPI</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>aa283e950b79f9d48f03f529548481cb7</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>MMAP_FREE</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a6576009d5fecc9146cc2bf94d193a4d9</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>MMAP_MMIO</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>ad964e86373f77d4df15d188f47315d4c</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>MMAP_USED</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a5945ab0dd6072763b3a11abb5ac5fbb6</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>MMapEnt_IsFree</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a85ce5580d2280c1722592644736faca5</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>MMapEnt_Ptr</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a7eefa9959dbb6c5eb5a3a1e0a1f4f8d4</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>MMapEnt_Size</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a42ab65e4949cd0f6fe7225f30ad20fbd</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>MMapEnt_Type</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a0112044156e10b57f272b214e9dc0843</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>PROTOCOL_BIGENDIAN</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a229dd2a86a8137a2035fcff7b8e22640</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>PROTOCOL_DYNAMIC</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a9dfd1dff5df1bf7150f63f17def67e19</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>PROTOCOL_MINIMAL</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>a59c01017a27f59761fdc35fa0814c68d</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>PROTOCOL_STATIC</Name>
-                      <Path>db/dc7/bootboot_8h.html</Path>
-                      <Anchor>add1e72f3c99750f7a67b2ffbff1ceca0</Anchor>
-                     </Node>
-                    </Subnodes>
-                   </Node>
                    <Node>
                     <Name>limine.h</Name>
                     <Path>da/d8b/include_2boot_2protocols_2limine_8h.html</Path>
@@ -44764,7 +44082,7 @@
                    <Node>
                     <Name>Misc</Name>
                     <Path>de/d63/msexec_8h.html</Path>
-                    <Anchor>a65feba4dd4fe549108f6682bd83efcc7</Anchor>
+                    <Anchor>a94ee74a9d9251ee01dbc315392c0a0ae</Anchor>
                    </Node>
                    <Node>
                     <Name>Name</Name>
@@ -52016,6 +51334,10 @@
                 </Subnodes>
                </Node>
                <Node>
+                <Name>IPC.cpp</Name>
+                <Path>df/dbc/IPC_8cpp.html</Path>
+               </Node>
+               <Node>
                 <Name>Monotasking.cpp</Name>
                 <Path>d4/dd4/Monotasking_8cpp.html</Path>
                 <Subnodes>
@@ -55344,6 +54666,11 @@
                 <Name>limine_initializator</Name>
                 <Path>d2/d00/Kernel_8cpp.html</Path>
                 <Anchor>aa9f9f3e61005342e16bf8b37abd61d2b</Anchor>
+               </Node>
+               <Node>
+                <Name>multiboot2_initializator</Name>
+                <Path>d2/d00/Kernel_8cpp.html</Path>
+                <Anchor>a41d397057024376cc895aaf4ad9a1790</Anchor>
                </Node>
                <Node>
                 <Name>bootparams</Name>

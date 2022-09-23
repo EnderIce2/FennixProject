@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"d2/dca/cxa_8cpp.html#a6870fb46accc462562647e3d99c0b7c7":[5,0,3,3,2,10],
 "d2/dca/cxa_8cpp.html#a6be7d9ce80c86f5178635fa86c2dd5e7":[5,0,3,3,2,15],
 "d2/dca/cxa_8cpp.html#a7791986f3a23e5e1a01e79b99a5d6329":[5,0,3,3,2,3],
 "d2/dca/cxa_8cpp.html#a79efbfe75b9090140cf0b167a7ff7148":[5,0,3,3,2,17],
@@ -94,12 +95,12 @@ var NAVTREEINDEX6 =
 "d3/d07/classNetworkIPv4_1_1IPv4.html#aa0f800a497b346a81e82c3d61d4553a4":[4,0,22,0,4],
 "d3/d07/classNetworkIPv4_1_1IPv4.html#ab4b0c4829e050c3d5a5c3805f4aa5970":[4,0,22,0,0],
 "d3/d07/classNetworkIPv4_1_1IPv4.html#af5d77a52d398c4b84e32ef1131decbc2":[4,0,22,0,2],
-"d3/d19/classBitmap.html":[4,0,73],
-"d3/d19/classBitmap.html#a4bf4b9b0c64d38c90825fb2c23aebb8a":[4,0,73,2],
-"d3/d19/classBitmap.html#a54a793ec56592dcdd8c4d6c8e30df757":[4,0,73,4],
-"d3/d19/classBitmap.html#a751ccc209d0511ad550350ac31f27f39":[4,0,73,3],
-"d3/d19/classBitmap.html#a9a1973a002c6c5b749d640b48d01fcd1":[4,0,73,1],
-"d3/d19/classBitmap.html#a9f96c621ef1f5b2217d6c63b20af246e":[4,0,73,0],
+"d3/d19/classBitmap.html":[4,0,69],
+"d3/d19/classBitmap.html#a4bf4b9b0c64d38c90825fb2c23aebb8a":[4,0,69,2],
+"d3/d19/classBitmap.html#a54a793ec56592dcdd8c4d6c8e30df757":[4,0,69,4],
+"d3/d19/classBitmap.html#a751ccc209d0511ad550350ac31f27f39":[4,0,69,3],
+"d3/d19/classBitmap.html#a9a1973a002c6c5b749d640b48d01fcd1":[4,0,69,1],
+"d3/d19/classBitmap.html#a9f96c621ef1f5b2217d6c63b20af246e":[4,0,69,0],
 "d3/d1d/Limine_8c.html":[5,0,2,1,1],
 "d3/d1d/Limine_8c.html#a0470546b520931ffd609a5eb42647ac7":[5,0,2,1,1,10],
 "d3/d1d/Limine_8c.html#a0d9c849ab73e9b253f402f7e711dd560":[5,0,2,1,1,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "d3/d21/classACPI_1_1ACPI.html#a6461b762eae74a60792087fce973ef9c":[4,0,0,0,2,45],
 "d3/d21/classACPI_1_1ACPI.html#a6461b762eae74a60792087fce973ef9c":[5,0,2,0,2,0,1,5,45],
 "d3/d21/classACPI_1_1ACPI.html#a68f47a3c3fad561eb298b46385cd9ecd":[4,0,0,0,2,13],
-"d3/d21/classACPI_1_1ACPI.html#a68f47a3c3fad561eb298b46385cd9ecd":[5,0,2,0,1,0,1,5,13],
-"d3/d21/classACPI_1_1ACPI.html#a68f47a3c3fad561eb298b46385cd9ecd":[5,0,2,0,2,0,1,5,13]
+"d3/d21/classACPI_1_1ACPI.html#a68f47a3c3fad561eb298b46385cd9ecd":[5,0,2,0,1,0,1,5,13]
 };
