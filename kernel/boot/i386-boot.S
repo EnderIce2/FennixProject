@@ -39,6 +39,44 @@ BootstrapStackTop:
 
 .section .multiboot.text, "a"
 
+.intel_syntax noprefix
+.global CheckCPUID
+CheckCPUID:
+    pushfd
+    pop eax
+    mov ecx, eax
+    xor eax, 1 << 21
+    push eax
+    popfd
+    pushfd
+    pop eax
+    push ecx
+    popfd
+    xor eax, ecx
+    jz .NoCPUID
+    mov eax, 1
+    ret
+.NoCPUID:
+    xor eax, eax
+    ret
+
+.global CheckLongMode
+CheckLongMode:
+    mov eax, 0x80000000
+    cpuid
+    cmp eax, 0x80000001
+    jb .NoLongMode
+    mov eax, 0x80000001
+    cpuid
+    test edx, 1 << 29
+    jz .NoLongMode
+    mov eax, 1
+    ret
+.NoLongMode:
+    xor eax, eax
+    ret
+.att_syntax prefix
+
 .global CallHigherHalf
 CallHigherHalf:
     lea 4f, %ecx

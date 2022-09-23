@@ -1,47 +1,50 @@
 OUTPUT_FORMAT(elf32-i386)
 OUTPUT_ARCH(i386)
 
-ENTRY(kernel_entry)
-
-PHDRS
-{
-    null    PT_NULL    FLAGS(0) ;                   /* Null segment */
-    text    PT_LOAD    FLAGS((1 << 0) | (1 << 2)) ; /* Execute + Read */
-    rodata  PT_LOAD    FLAGS((1 << 2)) ;            /* Read only */
-    data    PT_LOAD    FLAGS((1 << 1) | (1 << 2)) ; /* Write + Read */
-}
+ENTRY(_start)
 
 SECTIONS
 {
     . = 0x100000;
 
+    .multiboot.data :
+    {
+        *(.multiboot.data)
+    }
+
+    .multiboot.text :
+    {
+        *(.multiboot.text)
+    }
+
+    . += 0xC0000000;
     _kernel_start = .;
-    .text :
-    {
-        *(.text .text.*)
-    } :text
-    _kernel_text_end = ALIGN(CONSTANT(MAXPAGESIZE));
-    . += CONSTANT(MAXPAGESIZE);
 
-    .rodata :
+    .text ALIGN(4K) : AT(ADDR(.text) - 0xC0000000)
     {
-        *(.rodata .rodata.*)
-    } :rodata
-    _kernel_rodata_end = ALIGN(CONSTANT(MAXPAGESIZE));
-    . += CONSTANT(MAXPAGESIZE);
+        *(.text)
+    }
+    _kernel_text_end = .;
 
-    .data :
+    .rodata ALIGN(4K) : AT(ADDR(.rodata) - 0xC0000000)
     {
-        *(.data .data.*)
-    } :data
+        *(.rodata)
+    }
+    _kernel_rodata_end = .;
 
-    .bss :
+    .data ALIGN(4K) : AT(ADDR(.data) - 0xC0000000)
+    {
+        *(.data)
+    }
+    _kernel_data_end = .;
+
+    .bss ALIGN(4K) : AT(ADDR(.bss) - 0xC0000000)
     {
         *(COMMON)
-        *(.bss .bss.*)
-    } :data
-    . += CONSTANT(MAXPAGESIZE);
-    _kernel_end = ALIGN(CONSTANT(MAXPAGESIZE));
+        *(.bss)
+        *(.bootstrap_stack)
+    }
+    _kernel_end = .;
 
     /DISCARD/ :
     {
