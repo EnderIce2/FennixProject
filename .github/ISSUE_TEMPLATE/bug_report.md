@@ -1,5 +1,5 @@
 ---
-name: Bug report
+name: Bug report / Crash
 about: Create a report to help find bugs
 title: ''
 labels: bug
@@ -19,9 +19,15 @@ A clear and concise description of what you expected to happen.
 **Screenshot or Video**
 If applicable, add screenshots or videos to help explain your problem.
 
-**Versions:**
- - OS [e.g Ubuntu 20.04]: 
- - Fennix Kernel Version:
+**Serial Port Output**
+Serial port output (file .log or .txt).
+
+**System Information**
+ - CPU: 
+ - RAM: 
+ - GPU: 
+ - Motherboard: 
+ - Virtual Machine: 
 
 **Additional context**
 Add any other context about the problem here.

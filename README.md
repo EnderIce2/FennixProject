@@ -2,7 +2,7 @@
 ##### Opeating System from scratch made in C and C++
 
 [![Discord](https://img.shields.io/discord/887406812612157451?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/AYhW6N59Wu)
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/EnderIce2/FennixProject/Makefile%20CI/main?style=for-the-badge)
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/EnderIce2/FennixProject/Makefile%20CI/main?style=for-the-badge)](https://img.shields.io/github/workflow/status/EnderIce2/FennixProject/Build%20OS?style=for-the-badge)
 [![CodeFactor](https://www.codefactor.io/repository/github/enderice2/fennixproject/badge?style=for-the-badge)](https://www.codefactor.io/repository/github/enderice2/fennixproject)
 [![Codacy Badge](https://img.shields.io/codacy/grade/d00135a0a6304420a3cd021936f7be50?label=codacy&style=for-the-badge)](https://www.codacy.com/gh/EnderIce2/FennixProject/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EnderIce2/FennixProject&amp;utm_campaign=Badge_Grade)
 ![GitHub](https://img.shields.io/github/license/EnderIce2/FennixProject?style=for-the-badge)

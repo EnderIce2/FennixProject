@@ -11,18 +11,113 @@
     <div class="navbar round-border-low" style="backdrop-filter: blur(5px);">
         <li style="float:left"><a class="active_f blur" href="/">Fennix Project</a></li>
         <a href="/full_documentations"><i class="fa-solid fa-book-bookmark"></i> Full Documentation</a>
-        <a href="/headers_documentations"><i class="fa-solid fa-file-code"></i> API</a>
-        <a href="#contribute"><i class="fa-brands fa-git-alt"></i> Contribute</a>
-        <a href="#news"><i class="fa-regular fa-newspaper"></i> News</a>
-        <a style="float:right" href="https://github.com/EnderIce2/FennixProject/actions/workflows/makefile.yml"><i class="fa-solid fa-download"></i> Download</a>
+        <a href="/headers_documentations"><i class="fa-solid fa-file-code"></i> Kernel API</a>
+        <a href="https://github.com/EnderIce2/FennixProject"><i class="fa-brands fa-git-alt"></i> Contribute</a>
+        <a style="float:right" href="https://github.com/EnderIce2/FennixProject/releases/latest"><i class="fa-solid fa-download"></i> Download</a>
     </div>
-    <div class="header" style="background-image: url(assets/Screenshot_Fennix.png);">
+    <div class="header" style="background-image: url(assets/Background.png); background-size: cover; background-position: center center;">
         <br><br><br><br><br><br>
         <h1 class="on-background-text move-to-middle gradienttext">Fennix Project</h1>
         <h4 class="on-background-text move-to-middle">Operating System from scratch made in C and C++</h4>
         <button class="button round-border-med" style="backdrop-filter: blur(5px); cursor: pointer;" onclick="window.location.href='https://github.com/EnderIce2/FennixProject/releases'">Download Stable Version</button>
         <button class="button round-border-med" style="backdrop-filter: blur(5px); cursor: pointer;" onclick="window.location.href='https://github.com/EnderIce2/FennixProject/actions/workflows/makefile.yml'">Download Unstable Version</button>
         <br><br><br><br><br><br><br><br><br>
+    </div>
+
+    <div class="header" style="padding-bottom: 250px;">
+        <div style="padding-top: 40px;">
+            <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/EnderIce2/FennixProject/Build%20OS?style=for-the-badge" onclick="window.location.href='https://github.com/EnderIce2/FennixProject/actions/workflows/makefile.yml'">
+            <img alt="GitHub" src="https://img.shields.io/github/license/EnderIce2/FennixProject?style=for-the-badge">
+            <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/EnderIce2/FennixProject?style=for-the-badge">
+            <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/EnderIce2/FennixProject?label=Repo%20Stars&style=for-the-badge">
+        </div>
+        <h1>About</h1>
+        <table style="float: right;">
+            <tbody>
+                <tr>
+                    <th>
+                        <iframe src="https://discord.com/widget?id=887406812612157451&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            Hello!<br>
+            This is my Operating System from scratch, my goal is to make a fully functional Operating System with a GUI and a lot of features.<br>
+            I'm working on this project alone, but I'm open to any kind of help, if you want to help me, you can contribute to the project on GitHub.<br>
+            I have a Discord server too &#8594<br>
+        </div>
+    </div>
+
+    <div class="header" style="padding-top: 5px; padding-bottom: 450px;">
+        <h1>Compiling Instructions</h1>
+        <div style="text-align: left; margin-left: 10px; margin-right: 10px;">
+            <h2>Requirements</h2>
+            First of all, you need to install the required packages to build the cross-compiler, bootloader, OS, etc.<br>
+            <hr color="#292929">
+            <b>&#x2022; Ubuntu 22.04</b><br>
+            For cross-compiler:<br>
+            <code class="panel">sudo apt install build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo libzstd-dev libisl-dev autoconf m4 automake gettext gperf dejagnu guile-3.0 guile-3.0-dev expect tcl autogen tex-common sphinx-common git ssh diffutils patch</code><br>
+            For bootloader:<br>
+            <code class="panel">sudo apt-get install make gcc-mingw-w64-x86-64 gcc-mingw-w64-i686 mingw-w64</code><br>
+            For QEMU you'll have to follow this page <a href="https://wiki.qemu.org/Hosts/Linux" target="_blank">here</a><br>
+            For OS:<br>
+            <code class="panel">sudo apt-get install xorriso mtools genisoimage ovmf nasm doxygen</code><br>
+        </div>
+
+        <div style="text-align: left; margin-left: 10px; margin-right: 10px;">
+            <h2>Building The Cross-Compiler</h2>
+            The cross-compiler is used to compile the OS, the bootloader and the kernel.<br>
+            <hr color="#292929">
+            All you have to do is to write this command in the terminal:<br>
+            <code class="panel">make tools</code><br>
+            You'll have to wait a while, but when it's done, you can jump to the next step.<br>
+        </div>
+
+        <div style="text-align: left; margin-left: 10px; margin-right: 10px;">
+            <h2>Configuring your kernel</h2>
+            If you want to build different architecture, use other QEMU binary or change kernel name you can find in <code class="panel">Makefile.conf</code> file.<br>
+            <hr color="#292929">
+            <code class="panel">DEBUG</code> &#x2022; If it's set to <code class="panel">1</code>, the kernel will be compiled in debug mode.<br>
+            <code class="panel">OSNAME</code> &#x2022; The name of the kernel. This can be anything.<br>
+            <code class="panel">OSARCH</code> &#x2022; The architecture of the kernel. Supported values are: <code class="panel">amd64</code> <code class="panel">i686</code> <code class="panel">aarch64</code>.<br>
+            <code class="panel">KERNEL_VERSION</code> &#x2022; The version of the kernel. This can be anything.<br>
+            <code class="panel">BOOTLOADER</code> &#x2022; The bootloader to be used. If set to <code class="panel">other</code>, the bootloader will be <a href="https://github.com/limine-bootloader/limine" target="_blank">Limine</a> for 64-bit,
+                                                or with <a href="https://www.gnu.org/software/grub/" target="_blank">GRUB</a> if 32-bit. <code class="panel">lynx</code> it's still under development.<br>
+            <code class="panel">COMPILER_PATH</code> &#x2022; The path of the cross compiler. If you want to use your own cross compiler, change it to the path of the compiler.<br>
+            <code class="panel">LIMINE_FOLDER</code> &#x2022; The path of the Limine bootloader.<br>
+            <code class="panel">QEMU_PATH</code> &#x2022; Qemu path. If you want to use the one you have installed in your system, change it to /usr/bin/qemu-system- (do not include x86_64 or i386, it will be added automatically)<br>
+            <code class="panel">UNIT_TESTS</code> &#x2022; Enable unit testing.<br>
+            That's all you can change in this file.<br>
+        </div>
+
+        <div style="text-align: left; margin-left: 10px; margin-right: 10px;">
+            <h2>Building The Operating System</h2>
+            The fun part!<br>
+            <hr color="#292929">
+            Now that you have the cross-compiler, you can build the OS.<br>
+            There are a few commands that you can use to compile the OS:<br>
+            <code class="panel">make build</code> &#x2022; Builds the entire OS and creates an ISO image.<br>
+            <code class="panel">make run</code> &#x2022; Same as <code class="panel">make build</code> but runs the QEMU too.<br>
+            <code class="panel">make clean</code> &#x2022; Clean all files (object files, ISO, etc...).<br>
+            <code class="panel">make doxygen</code> &#x2022; Generate the documentation in directory <code class="panel">doxygen-doc</code>.<br>
+        </div>
+
+        <h1 style="padding-top: 50px;">Running With Other Virtual Machines</h1>
+        <hr color="#292929">
+        <div style="text-align: left; margin-left: 10px; margin-right: 10px;">
+            &#x2022; On VirtualBox and VMware, you can use the ISO image to run the OS.<br>
+            &#x2022; HDD/SSD are not required.<br>
+            &#x2022; The minimum RAM required is 4G. You can run with lower memory, but sometimes can cause issues (I don't know why).<br>
+            &#x2022; UEFI required. BIOS sometimes doesn't work properly.<br>
+            &#x2022; Serial Port (COM1) is recommended.<br>
+        </div>
+
+        <h1 style="padding-top: 50px;">Reporting Issues</h1>
+        <hr color="#292929">
+        <div style="text-align: left; margin-left: 10px; margin-right: 10px;">
+            You can report bugs or crash issues to <a href="https://github.com/EnderIce2/FennixProject/issues/new?assignees=&labels=bug&template=bug_report.md&title=">Issues tab</a>.<br>
+        </div>
     </div>
 
     <button onclick="topScript()" id="backToTopBtn">Up</button>
