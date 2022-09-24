@@ -18,7 +18,7 @@ void dbg_showregs(void *r, const char *file, int line, const char *function)
     CR4 cr4 = readcr4();
     CR8 cr8 = readcr8();
     RFLAGS rflags = FLAGS;
-    err("\tFS=%#lx  GS=%#lx  SS=%#lx  CS=%#lx", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
+    err("\tFS=%#lx  GS=%#lx  SS=%#lx  CS=%#lx  DS=%#lx", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS, DS);
     err("\tR8=%#lx  R9=%#lx  R10=%#lx  R11=%#lx", R8, R9, R10, R11);
     err("\tR12=%#lx  R13=%#lx  R14=%#lx  R15=%#lx", R12, R13, R14, R15);
     err("\tRAX=%#lx  RBX=%#lx  RCX=%#lx  RDX=%#lx", RAX, RBX, RCX, RDX);

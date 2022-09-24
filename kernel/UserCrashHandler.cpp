@@ -184,8 +184,8 @@ void TriggerUserModeCrash(TrapFrame *regs)
         printf_("Usermode thread ");
     printf_("%s(%ld) crashed on CPU %ld! Check the serial port (COM1) for more info.\n", SysGetCurrentThread()->Name, SysGetCurrentThread()->ID, rdmsr(MSR_FS_BASE));
 #endif
-    STI;
     err("Launching usermode crash handler...");
+    STI;
     if (CurrentTaskingMode == TaskingMode::Mono)
     {
         TrapFrame *tf = (TrapFrame *)UserAllocator->Malloc(sizeof(TrapFrame));

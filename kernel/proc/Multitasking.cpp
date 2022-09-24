@@ -25,7 +25,7 @@
 #define schedbg(m, ...)
 #endif
 
-// #define DEBUG_TASK_MANAGER 1
+#define DEBUG_TASK_MANAGER 1
 
 #ifdef DEBUG_TASK_MANAGER
 #include <display.h>
@@ -292,6 +292,7 @@ namespace Tasking
             thread->gs = (uint64_t)thread;
             thread->fs = rdmsr(MSR_FS_BASE);
             thread->Registers.cs = GDT_KERNEL_CODE;
+            thread->Registers.ds = GDT_KERNEL_DATA;
             thread->Registers.ss = GDT_KERNEL_DATA;
             thread->Registers.rflags.always_one = 1;
             thread->Registers.rflags.IF = 1;
@@ -305,6 +306,7 @@ namespace Tasking
             thread->gs = 0;
             thread->fs = rdmsr(MSR_FS_BASE);
             thread->Registers.cs = GDT_USER_CODE;
+            thread->Registers.ds = GDT_USER_DATA;
             thread->Registers.ss = GDT_USER_DATA;
             thread->Registers.rflags.always_one = 1;
             thread->Registers.rflags.IF = 1;
@@ -452,8 +454,11 @@ namespace Tasking
                 "pushq %r13\n"
                 "pushq %r14\n"
                 "pushq %r15\n"
+                "movq %ds, %rax\n"
+                "pushq %rax\n"
                 "movq %rsp, %rdi\n"
                 "call MultiTaskingSchedulerHandler\n"
+                "popq %rax\n"
                 "popq %r15\n"
                 "popq %r14\n"
                 "popq %r13\n"
@@ -523,7 +528,7 @@ namespace Tasking
 #endif
             schedbg("Status: 0-ukn | 1-rdy | 2-run | 3-wait | 4-term");
             schedbg("Technical Informations on regs %#lx", regs->int_num);
-            schedbg("FS=%#lx  GS=%#lx  SS=%#lx  CS=%#lx", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
+            schedbg("FS=%#lx  GS=%#lx  SS=%#lx  CS=%#lx  DS=%#lx", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS, DS);
             schedbg("R8=%#lx  R9=%#lx  R10=%#lx  R11=%#lx", R8, R9, R10, R11);
             schedbg("R12=%#lx  R13=%#lx  R14=%#lx  R15=%#lx", R12, R13, R14, R15);
             schedbg("RAX=%#lx  RBX=%#lx  RCX=%#lx  RDX=%#lx", RAX, RBX, RCX, RDX);
@@ -766,7 +771,7 @@ namespace Tasking
             EndOfInterrupt(INT_NUM); // apic->IPI(CurrentCPU->ID, SchedulerInterrupt);
         }
             schedbg("Technical Informations on Thread %s[%ld]:", CurrentCPU->CurrentThread->Name, CurrentCPU->CurrentThread->ID);
-            schedbg("FS=%#lx  GS=%#lx  SS=%#lx  CS=%#lx", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
+            schedbg("FS=%#lx  GS=%#lx  SS=%#lx  CS=%#lx  DS=%#lx", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS, DS);
             schedbg("R8=%#lx  R9=%#lx  R10=%#lx  R11=%#lx", R8, R9, R10, R11);
             schedbg("R12=%#lx  R13=%#lx  R14=%#lx  R15=%#lx", R12, R13, R14, R15);
             schedbg("RAX=%#lx  RBX=%#lx  RCX=%#lx  RDX=%#lx", RAX, RBX, RCX, RDX);

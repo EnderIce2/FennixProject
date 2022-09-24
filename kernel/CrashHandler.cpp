@@ -8,6 +8,7 @@
 #include <asm.h>
 
 #include "cpu/smp.hpp"
+#include "cpu/gdt.h"
 
 static const char *pagefault_message[] = {
     "Supervisory process tried to read a non-present page entry",
@@ -101,14 +102,17 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
                  : "=r"(dr7));
 #endif
 
-    if (CS != 0x1b)
+    if (CS != GDT_USER_CODE && CS != GDT_USER_DATA)
         CurrentDisplay->Clear(0x000000);
+
+    if (CS == GDT_USER_DATA)
+        CS = GDT_USER_CODE;
 
     switch (INT_NUM)
     {
     case ISR_DivideByZero:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -120,7 +124,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_Debug:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -136,7 +140,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_NonMaskableInterrupt:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -148,7 +152,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_Breakpoint:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -160,7 +164,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_Overflow:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -172,7 +176,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_BoundRange:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -184,7 +188,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_InvalidOpcode:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -200,7 +204,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_DeviceNotAvailable:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -212,7 +216,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_DoubleFault:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -224,7 +228,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_CoprocessorSegmentOverrun:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -236,7 +240,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_InvalidTSS:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -249,7 +253,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_SegmentNotPresent:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -262,7 +266,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_StackSegmentFault:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -311,7 +315,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_GeneralProtectionFault:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
         }
@@ -359,7 +363,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_PageFault:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -415,7 +419,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_x87FloatingPoint:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -427,7 +431,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_AlignmentCheck:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -439,7 +443,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_MachineCheck:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -451,7 +455,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_SIMDFloatingPoint:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -463,7 +467,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_Virtualization:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -475,7 +479,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     case ISR_Security:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -487,7 +491,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     }
     default:
     {
-        if (CS == 0x1b)
+        if (CS == GDT_USER_CODE)
         {
             TriggerUserModeCrash(regs);
             return;
@@ -501,7 +505,7 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
     CurrentDisplay->ResetPrintPosition();
     CurrentDisplay->SetPrintColor(0x7981FC);
     printf("Technical Informations on CPU %ld:\n", rdmsr(MSR_FS_BASE));
-    printf("FS=%#lx  GS=%#lx  SS=%#lx  CS=%#lx\n", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS);
+    printf("FS=%#lx  GS=%#lx  SS=%#lx  CS=%#lx  DS=%#lx\n", rdmsr(MSR_FS_BASE), rdmsr(MSR_GS_BASE), _SS, CS, DS);
     printf("R8=%#lx  R9=%#lx  R10=%#lx  R11=%#lx\n", R8, R9, R10, R11);
     printf("R12=%#lx  R13=%#lx  R14=%#lx  R15=%#lx\n", R12, R13, R14, R15);
     printf("RAX=%#lx  RBX=%#lx  RCX=%#lx  RDX=%#lx\n", RAX, RBX, RCX, RDX);

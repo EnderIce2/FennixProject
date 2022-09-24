@@ -203,8 +203,11 @@ namespace Tasking
                 "pushq %r13\n"
                 "pushq %r14\n"
                 "pushq %r15\n"
+                "movq %ds, %rax\n"
+                "pushq %rax\n"
                 "movq %rsp, %rdi\n"
                 "call MonoSchedulerHelperHandler\n"
+                "popq %rax\n"
                 "popq %r15\n"
                 "popq %r14\n"
                 "popq %r13\n"
@@ -355,8 +358,9 @@ namespace Tasking
         memset(&task->regs, 0, sizeof(TrapFrame));
         if (!UserMode)
         {
-            task->regs.ss = GDT_KERNEL_DATA;
             task->regs.cs = GDT_KERNEL_CODE;
+            task->regs.ds = GDT_KERNEL_DATA;
+            task->regs.ss = GDT_KERNEL_DATA;
             task->gs = (uint64_t)task;
             task->fs = rdmsr(MSR_FS_BASE);
             task->regs.rflags.always_one = 1;
@@ -367,8 +371,9 @@ namespace Tasking
         }
         else
         {
-            task->regs.ss = GDT_USER_DATA;
             task->regs.cs = GDT_USER_CODE;
+            task->regs.ds = GDT_USER_DATA;
+            task->regs.ss = GDT_USER_DATA;
             task->gs = 0;
             task->fs = rdmsr(MSR_FS_BASE);
             task->regs.rflags.always_one = 1;

@@ -72,6 +72,7 @@ struct GeneralSecurityInfo
 
 typedef struct _ThreadRegisters
 {
+    uint64_t ds;         // Data Segment
     uint64_t r15;        // General purpose
     uint64_t r14;        // General purpose
     uint64_t r13;        // General purpose

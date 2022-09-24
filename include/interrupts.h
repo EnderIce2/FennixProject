@@ -297,7 +297,7 @@ typedef struct _TrapFrame
     // uint64_t gs;  // General-purpose Segment
     // uint64_t fs;  // General-purpose Segment
     // uint64_t es;  // Extra Segment (used for string operations)
-    // uint64_t ds;  // Data Segment
+    uint64_t ds;  // Data Segment
 
     uint64_t r15; // General purpose
     uint64_t r14; // General purpose
@@ -346,7 +346,7 @@ typedef struct _TrapFrame
 #define ES regs->es                 // Extra Segment (used for string operations)
 #define FS regs->fs                 // General-purpose Segment
 #define GS regs->gs                 // General-purpose Segment
-#define DS regs->r15                // Data Segment
+#define DS regs->ds                 // Data Segment
 #define R15 regs->r15               // General purpose
 #define R14 regs->r14               // General purpose
 #define R13 regs->r13               // General purpose
