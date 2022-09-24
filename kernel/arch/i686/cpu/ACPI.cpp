@@ -120,11 +120,7 @@ namespace ACPI
         }
 
         this->SearchTables(XSDT);
-#ifdef UNIT_TESTS
-        BS->DrawVendorLogo(nullptr);
-#else
         BS->DrawVendorLogo(BGRT);
-#endif
 
         outb(FADT->SMI_CommandPort, FADT->AcpiEnable);
         while (!(inw(FADT->PM1aControlBlock) & 1))

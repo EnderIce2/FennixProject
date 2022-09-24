@@ -125,6 +125,7 @@ namespace BootScreen
 
     void Screen::DrawVendorLogo(void *BGRT, bool DrawKernelLogo)
     {
+        debug("DrawVendorLogo: BGRT: %p, DrawKernelLogo: %d", BGRT, DrawKernelLogo);
         KernelLogo = DrawKernelLogo;
         ACPI::ACPI::BGRTHeader *bgrt = (ACPI::ACPI::BGRTHeader *)BGRT;
         uint64_t FBAddress = BootDisplay->GetFramebuffer()->Address;
@@ -181,6 +182,7 @@ namespace BootScreen
                         for (int j = 0; j < (ImageWidth * ImageHeight / ImageHeight); j++)
                             for (int g = 2; 0 <= g; g--)
                                 ((uint8_t *)FBAddress)[((j + (i * FBWidth)) * 4 + ((((FBWidth / 2) - ImageWidth / 2) + ((FBHeight / 2) - ImageHeight) * FBWidth) * 4)) + g] = ImageData[((j * ImageWidth) / (ImageWidth * ImageHeight / ImageHeight) + (((ImageHeight - i) * ImageHeight) / ImageHeight) * ImageWidth) * ((*(short *)&ImageHeader[28]) / 8) + g];
+                    KernelLogo = false;
                     return;
                 }
                 else
