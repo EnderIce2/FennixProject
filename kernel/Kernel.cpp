@@ -262,55 +262,20 @@ void KernelInit()
         if (!CheckRunningUnderVM())
         {
             CurrentDisplay->SetPrintColor(0xFC4444);
-            printf("WARNING!\nThe kernel has detected that you are booting from a real computer!\nBeaware that this project is not in a stable state and will likely cause problems like, overwriting data on disks or even worse, breaking the entire system!\nIf you REALLY want to continue, write \"YES\" and press enter.\nIf you want to disable this warning add \"novmwarn\" in kernel's cmdline.\n\n> ");
-            const char scancodes[] = {'?', '?', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', '?', '?', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '?', '?', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', '\'', '`', '?', '\\', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', '?', '?', '?', ' '};
-            char buffer[16];
-            bool done = false;
-            while (1)
-            {
-                if (done)
-                    break;
-                uint8_t c = ps2keyboard->WaitScanCode();
-                if (!(c & 0x80))
-                {
-                    switch (c)
-                    {
-                    case 0x15: // y
-                        CurrentDisplay->SetPrintColor(0x00FC00);
-                        break;
-                    case 0x12: // e
-                        CurrentDisplay->SetPrintColor(0x00FC00);
-                        break;
-                    case 0x1f: // s
-                        CurrentDisplay->SetPrintColor(0x00FC00);
-                        break;
-                    case 0x1c: // enter
-                        done = true;
-                        [[fallthrough]];
-                    default:
-                        CurrentDisplay->SetPrintColor(0xFC4444);
-                        break;
-                    }
-                    if (c != 0x1c)
-                    {
-                        int len = strlen(buffer);
-                        if (len > 16)
-                            break;
-                        buffer[len] = scancodes[c];
-                        buffer[len + 1] = '\0';
-                        printf("%c", buffer[len]);
-                    }
-                }
-            }
-            if (strcmp("YES", buffer))
+            printf("WARNING!\nThe kernel has detected that you are booting from a real computer!\n");
+            printf("Beaware that this project is not in a stable state and will likely cause problems like, overwriting data on disks or even worse, breaking the entire system!\n");
+            printf("If you REALLY want to continue, press ENTER.\n");
+            CurrentDisplay->SetPrintColor(0x0C8464);
+            printf("\nTo disable this warning add \"novmwarn\" in kernel's cmdline.\n");
+            CurrentDisplay->ResetPrintColor();
+            if (ps2keyboard->WaitScanCode() != 0x45)
             {
                 CurrentDisplay->SetPrintColor(0xFC4444);
-                printf("\n\nWrong word! Shutting down...");
+                printf("\n\nWrong key! Shutting down...");
                 sleep(5);
                 dsdt->shutdown();
-                CPU_STOP;
+                CPU_HALT;
             }
-            CurrentDisplay->ResetPrintColor();
         }
 
     vfs = new FileSystem::Virtual;
