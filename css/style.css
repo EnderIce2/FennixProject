@@ -52,8 +52,6 @@ body {
     padding: 0;
     overflow: hidden;
     background-color: rgb(15, 15, 15, 0.8);
-    position: -webkit-sticky;
-    /* Safari */
     position: sticky;
     top: 0;
     z-index: 101;

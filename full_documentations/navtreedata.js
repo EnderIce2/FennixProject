@@ -25,8 +25,7 @@ var NAVTREE =
   [ "Fennix Project", "index.html", [
     [ "FennixProject", "index.html", [
       [ "💾 Download ISO Image", "index.html#autotoc_md7", null ],
-      [ "🔽 Download, compile & run", "index.html#autotoc_md9", null ],
-      [ "✅ Progress", "index.html#autotoc_md12", null ]
+      [ "🔽 Download, compile & run", "index.html#autotoc_md9", null ]
     ] ],
     [ "LICENSE", "d9/da7/md_userspace_libs_cargs_LICENSE.html", null ],
     [ "LICENSE", "d1/d6c/md_userspace_libs_cwalk_LICENSE.html", null ],
