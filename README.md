@@ -15,6 +15,7 @@
 <sub><sup>Fennix running inside QEMU</sup></sub>
 
 #### The content
+
 - Fennix Project
     - boot
         - Coming Soon™
@@ -27,7 +28,9 @@
 
 ---
 ##### ❗ Warning
+
 `Before you do anything, remember that this project is in the early stages of development.`
+
 `Most things are very unstable or broken.`
 
 ---
@@ -84,46 +87,3 @@ make run
 ```bash
 make clean
 ```
-
----
-
-## ✅ Progress
-
-- [ ] Rolling own bootloader
-- [x] Stivale2 Protocol Support
-- [ ] Limine Protocol Support
-- [x] ACPI
-- [x] ACPI Shutdown
-- [x] MADT
-- [x] DSDT
-- [x] APIC
-- [x] Paging
-- [x] Virtual Memory Manager
-- [x] Heap Manager
-- [x] Stack Manager
-- [x] Global Descriptor Table, Interrupt Descriptor Table & Task State Segment
-- [x] Timer (APIC & HPET & PIC)
-- [x] Symmetric Multiprocessing
-- [x] PCI
-- [x] PS2 Keyboard
-- [x] PS2 Mouse
-- [x] AHCI Driver
-- [ ] ATA Driver
-- [ ] Floppy Driver
-- [ ] IDE Driver
-- [x] Virtual FileSystem
-- [x] USTAR FileSystem
-- [ ] EXT2 FileSystem
-- [ ] ECHFS FileSystem
-- [ ] INITRD FileSystem
-- [ ] ISO9660 FileSystem
-- [ ] FAT12 FileSystem
-- [ ] FAT16 FileSystem
-- [ ] FAT32 FileSystem
-- [x] Tasking
-- [x] Usermode
-- [x] Syscalls
-- [x] Executing ELF Files
-- [ ] Executing PE Files
-- [ ] Executing NE Files
-- [ ] Executing MZ Files
