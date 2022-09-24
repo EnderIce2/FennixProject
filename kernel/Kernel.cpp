@@ -208,7 +208,7 @@ void KernelInit()
     trace("Early initialization completed.");
     TEST_TEST();
     do_libs_test();
-    // do_mem_test();
+    do_mem_test();
     initializeKernelFlags();
     CheckSystemRequirements();
     BS = new BootScreen::Screen;
@@ -342,7 +342,7 @@ void KernelInit()
     ps2mouse = new PS2Mouse::PS2MouseDriver;
     BS->IncreaseProgres();
 
-    // do_mem_test();
+    do_mem_test();
     // do_tasking_test();
 
     BS->Progress(100);

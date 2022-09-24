@@ -499,6 +499,7 @@ void do_stacktrace_test()
 
 void do_network_test()
 {
+#ifdef UNIT_TESTS
     TEST_DBG("Network test started.\n");
     InternetProtocol4 IP1 = {.Address = {0xFF, 0xFF, 0xFF, 0xFF}};
     InternetProtocol4 IP2 = {.Address = {0xFF, 0xFF, 0xFF, 0xFF}};
@@ -529,4 +530,5 @@ void do_network_test()
     TEST_ASSERT(MACN2.Valid() == true);
 
     TEST_DBG("Network test finished.\n");
+#endif
 }
