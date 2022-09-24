@@ -11,6 +11,7 @@
 #include <display.h>
 #include <string.h>
 #include <cwalk.h>
+#include <ipc.hpp>
 #include <test.h>
 #include <asm.h>
 #include <sys.h>
@@ -25,6 +26,7 @@
 #include "drivers/disk.h"
 #include "cpu/acpi.hpp"
 #include "cpu/apic.hpp"
+#include "proc/ipc.hpp"
 #include "cpu/smp.hpp"
 #include "cpu/cpuid.h"
 #include "driver.hpp"
@@ -157,19 +159,22 @@ void KernelTask()
 #endif
 
     if (CurrentTaskingMode != TaskingMode::Mono)
+    {
+        ipc = new InterProcessCommunication::IPC;
         kdrv = new Driver::KernelDriver;
+    }
 
     nimgr->StartService();
 
     if (ShowRecoveryScreen)
         new SystemRecovery::Recovery;
 
-    if (!SysCreateProcessFromFile("/system/init", 0, 0, ELEVATION::User))
-    {
-        CurrentDisplay->SetPrintColor(0xFC4444);
-        printf("Failed to load /system/init process. The file is missing or corrupted.\n");
-        CPU_HALT;
-    }
+    // if (!SysCreateProcessFromFile("/system/init", 0, 0, CBElevation::User))
+    // {
+    //     CurrentDisplay->SetPrintColor(0xFC4444);
+    //     printf("Failed to load /system/init process. The file is missing or corrupted.\n");
+    //     CPU_HALT;
+    // }
 
     trace("End Of Kernel Task");
     if (CurrentTaskingMode != TaskingMode::Mono)

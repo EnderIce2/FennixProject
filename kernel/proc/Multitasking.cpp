@@ -165,7 +165,7 @@ namespace Tasking
     extern "C" void ThreadDoExit(uint64_t Code)
     {
         EnterCriticalSection;
-        CurrentCPU->CurrentThread->Status = STATUS::Terminated;
+        CurrentCPU->CurrentThread->Status = CBStatus::Terminated;
         CurrentCPU->CurrentThread->ExitCode = Code;
         schedbg("parent:%s tid:%d, code:%016p", CurrentCPU->CurrentProcess->Name, CurrentCPU->CurrentThread->ID, Code);
         trace("Exiting thread %d(%s)...", CurrentCPU->CurrentThread->ID, CurrentCPU->CurrentThread->Name);
@@ -222,7 +222,7 @@ namespace Tasking
         Info->Year = ((t & 0x0F) + ((t >> 4) * 10));
     }
 
-    PCB *Multitasking::CreateProcess(PCB *Parent, char *Name, ELEVATION Elevation, int Priority)
+    PCB *Multitasking::CreateProcess(PCB *Parent, char *Name, CBElevation Elevation, int Priority)
     {
         EnterCriticalSection;
         PCB *process = new PCB;
@@ -236,10 +236,11 @@ namespace Tasking
         process->Offset = 0;
         process->Security.Token = CreateToken();
         trace("New security token created %p", process->Security.Token);
-        if (Elevation == ELEVATION::Idle || Elevation == ELEVATION::Kernel || Elevation == ELEVATION::System)
+        if (Elevation == CBElevation::Idle || Elevation == CBElevation::Kernel || Elevation == CBElevation::System)
             TrustToken(process->Security.Token, true, process->ID, TokenTrustLevel::TrustedByKernel);
+        process->IPCHandles = new HashMap<InterProcessCommunication::IPCPort, uint64_t>;
         process->Elevation = Elevation;
-        process->Status = STATUS::Ready;
+        process->Status = CBStatus::Ready;
         memcpy(process->Name, Name, sizeof(process->Name));
         if (Parent)
         {
@@ -247,7 +248,7 @@ namespace Tasking
             process->Parent->Children.push_back(process);
         }
         CR3 cr3;
-        if (Elevation == ELEVATION::User)
+        if (Elevation == CBElevation::User)
             cr3.raw = KernelPageTableAllocator->CreatePageTable(true).raw;
         else
             cr3.raw = KernelPageTableAllocator->CreatePageTable(false).raw;
@@ -273,21 +274,21 @@ namespace Tasking
         thread->Checksum = Checksum::THREAD_CHECKSUM;
 
         thread->ID = this->NextTID++;
-        thread->Status = STATUS::Ready;
+        thread->Status = CBStatus::Ready;
         thread->Security.Token = CreateToken();
         thread->Parent = Parent;
-        memcpy(thread->Name, Parent->Name, sizeof(Parent->Name));
+        strcpy(thread->Name, Parent->Name);
         memset(&thread->Registers, 0, sizeof(TrapFrame));
 
         schedbg("Parent elevation is %d", Parent->Elevation);
 
         switch (Parent->Elevation)
         {
-        case ELEVATION::System:
+        case CBElevation::System:
             err("Elevation not supported. Using kernel elevation.");
             [[fallthrough]];
-        case ELEVATION::Idle:
-        case ELEVATION::Kernel:
+        case CBElevation::Idle:
+        case CBElevation::Kernel:
             TrustToken(thread->Security.Token, false, thread->ID, TokenTrustLevel::TrustedByKernel);
             thread->gs = (uint64_t)thread;
             thread->fs = rdmsr(MSR_FS_BASE);
@@ -301,7 +302,7 @@ namespace Tasking
             thread->Registers.STACK = (uint64_t)thread->Stack;
             POKE(uint64_t, thread->Registers.rsp) = (uint64_t)ThreadDoExit;
             break;
-        case ELEVATION::User:
+        case CBElevation::User:
             TrustToken(thread->Security.Token, false, thread->ID, TokenTrustLevel::Untrusted);
             thread->gs = 0;
             thread->fs = rdmsr(MSR_FS_BASE);
@@ -351,7 +352,7 @@ namespace Tasking
             return true;
         else if (pcb->Checksum != Checksum::PROCESS_CHECKSUM)
             return true;
-        else if (pcb->Elevation == ELEVATION::Idle)
+        else if (pcb->Elevation == CBElevation::Idle)
             return true;
         return false;
     }
@@ -364,7 +365,7 @@ namespace Tasking
             return true;
         else if (tcb->Checksum != Checksum::THREAD_CHECKSUM)
             return true;
-        else if (tcb->Parent->Elevation == ELEVATION::Idle)
+        else if (tcb->Parent->Elevation == CBElevation::Idle)
             return true;
         return false;
     }
@@ -391,20 +392,17 @@ namespace Tasking
         if (pcb->Status == Terminated)
         {
             foreach (TCB *thread in pcb->Threads)
-            {
                 RemoveThread(thread);
-            }
 
             foreach (PCB *process in pcb->Children)
-            {
                 RemoveProcess(process);
-            }
 
             for (size_t i = 0; i < mt->ListProcess.size(); i++)
             {
                 if (mt->ListProcess[i] == pcb)
                 {
                     trace("pcb %d terminated", mt->ListProcess[i]->ID);
+                    delete mt->ListProcess[i]->IPCHandles;
                     KernelPageTableAllocator->RemovePageTable(reinterpret_cast<VMM::PageTable *>(mt->ListProcess[i]->PageTable.raw));
                     mt->ListProcess[i]->Checksum = badfennec;
                     kfree(mt->ListProcess[i]);
@@ -416,10 +414,8 @@ namespace Tasking
         else
         {
             foreach (TCB *thread in pcb->Threads)
-            {
                 if (thread->Status == Terminated)
                     RemoveThread(thread);
-            }
         }
     }
 
@@ -554,7 +550,7 @@ namespace Tasking
                     // Check process status.
                     switch (pcb->Status)
                     {
-                    case STATUS::Ready:
+                    case CBStatus::Ready:
                         schedbg("Ready process (%s)%d", pcb->Name, pcb->ID);
                         break;
                     default:
@@ -569,7 +565,7 @@ namespace Tasking
                         if (InvalidTCB(tcb))
                             continue;
 
-                        if (tcb->Status != STATUS::Ready)
+                        if (tcb->Status != CBStatus::Ready)
                             continue;
 
                         // Set process and thread as the current one's.
@@ -592,10 +588,10 @@ namespace Tasking
                 _fxsave(CurrentCPU->CurrentThread->FXRegion);
 
                 // Set the process & thread as ready if it's running.
-                if (CurrentCPU->CurrentProcess->Status == STATUS::Running)
-                    CurrentCPU->CurrentProcess->Status = STATUS::Ready;
-                if (CurrentCPU->CurrentThread->Status == STATUS::Running)
-                    CurrentCPU->CurrentThread->Status = STATUS::Ready;
+                if (CurrentCPU->CurrentProcess->Status == CBStatus::Running)
+                    CurrentCPU->CurrentProcess->Status = CBStatus::Ready;
+                if (CurrentCPU->CurrentThread->Status == CBStatus::Running)
+                    CurrentCPU->CurrentThread->Status = CBStatus::Ready;
 
                 // Get next available thread from the list.
                 for (uint64_t i = 0; i < CurrentCPU->CurrentProcess->Threads.size(); i++)
@@ -618,7 +614,7 @@ namespace Tasking
                         schedbg("%s(%d) and next thread is %s(%d)", CurrentCPU->CurrentProcess->Threads[i]->Name, CurrentCPU->CurrentProcess->Threads[i]->ID, thread->Name, thread->ID);
 
                         // Check if the thread is ready to be executed.
-                        if (thread->Status != STATUS::Ready)
+                        if (thread->Status != CBStatus::Ready)
                         {
                             schedbg("Thread %d is not ready", thread->ID);
                             goto RetryAnotherThread;
@@ -650,7 +646,7 @@ namespace Tasking
                             goto RetryAnotherProcess;
                         }
 
-                        if (pcb->Status != STATUS::Ready)
+                        if (pcb->Status != CBStatus::Ready)
                             goto RetryAnotherProcess;
 
                         // Everything good, now search for a thread.
@@ -659,7 +655,7 @@ namespace Tasking
                             TCB *tcb = pcb->Threads[j];
                             if (InvalidTCB(tcb))
                                 continue;
-                            if (tcb->Status != STATUS::Ready)
+                            if (tcb->Status != CBStatus::Ready)
                                 continue;
                             // Success! We set as the current one and restore the stuff.
                             CurrentCPU->CurrentProcess = pcb;
@@ -683,7 +679,7 @@ namespace Tasking
                 {
                     if (InvalidPCB(pcb))
                         continue;
-                    if (pcb->Status != STATUS::Ready)
+                    if (pcb->Status != CBStatus::Ready)
                         continue;
 
                     // Now do the thread search!
@@ -691,7 +687,7 @@ namespace Tasking
                     {
                         if (InvalidTCB(tcb))
                             continue;
-                        if (tcb->Status != STATUS::Ready)
+                        if (tcb->Status != CBStatus::Ready)
                             continue;
                         // \o/ We found a new thread to execute.
                         CurrentCPU->CurrentProcess = pcb;
@@ -708,7 +704,7 @@ namespace Tasking
             if (mt->IdleProcess == nullptr)
             {
                 schedbg("Idle process created");
-                mt->IdleProcess = mt->CreateProcess(nullptr, (char *)"idle", ELEVATION::Idle);
+                mt->IdleProcess = mt->CreateProcess(nullptr, (char *)"idle", CBElevation::Idle);
                 mt->IdleThread = mt->CreateThread(mt->IdleProcess, reinterpret_cast<uint64_t>(IdleProcessLoop), 0, 0);
             }
             CurrentCPU->CurrentProcess = mt->IdleProcess;
@@ -733,8 +729,8 @@ namespace Tasking
                     CurrentCPU->CurrentThread->Name, CurrentCPU->CurrentThread->ID,
                     CurrentCPU->CurrentThread->Registers.rip, CurrentCPU->CurrentThread->Registers.rsp, CurrentCPU->CurrentThread->Stack);
 
-            CurrentCPU->CurrentProcess->Status = STATUS::Running;
-            CurrentCPU->CurrentThread->Status = STATUS::Running;
+            CurrentCPU->CurrentProcess->Status = CBStatus::Running;
+            CurrentCPU->CurrentThread->Status = CBStatus::Running;
 
             *regs = CurrentCPU->CurrentThread->Registers;
             UpdatePageTable(CurrentCPU->CurrentProcess->PageTable);
@@ -743,12 +739,12 @@ namespace Tasking
             wrmsr(MSR_GS_BASE, (uint64_t)CurrentCPU->CurrentThread);
             switch (CurrentCPU->CurrentProcess->Elevation)
             {
-            case ELEVATION::System:
-            case ELEVATION::Idle:
-            case ELEVATION::Kernel:
+            case CBElevation::System:
+            case CBElevation::Idle:
+            case CBElevation::Kernel:
                 wrmsr(MSR_SHADOW_GS_BASE, (uint64_t)CurrentCPU->CurrentThread);
                 break;
-            case ELEVATION::User:
+            case CBElevation::User:
                 wrmsr(MSR_SHADOW_GS_BASE, CurrentCPU->CurrentThread->gs);
                 break;
             default:
@@ -800,7 +796,7 @@ namespace Tasking
         {
             if (InvalidPCB(pcb))
                 continue;
-            pcb->Status = STATUS::Terminated;
+            pcb->Status = CBStatus::Terminated;
             debug("Process %s terminated.", pcb->Name);
             RemoveProcess(pcb);
         }

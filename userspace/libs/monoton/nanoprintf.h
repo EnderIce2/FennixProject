@@ -57,7 +57,6 @@ NPF_VISIBILITY int npf_vpprintf(npf_putc pc, void *pc_ctx, char const *format,
 #ifndef NANOPRINTF_IMPLEMENTATION_INCLUDED
 #define NANOPRINTF_IMPLEMENTATION_INCLUDED
 
-#include <inttypes.h>
 #include <stdint.h>
 
 // Pick reasonable defaults if nothing's been configured.

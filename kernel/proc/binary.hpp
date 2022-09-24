@@ -13,4 +13,4 @@ enum BinType
 };
 
 BinType GetBinaryType(const char *Path);
-PCB *ExecuteBinary(const char *Path, uint64_t Arg0, uint64_t Arg1, ELEVATION Elevation);
+PCB *ExecuteBinary(const char *Path, uint64_t Arg0, uint64_t Arg1, CBElevation Elevation);

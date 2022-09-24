@@ -23,14 +23,15 @@ PCB *ConvertTaskCBToPCB(TaskControlBlock *task)
     static PCB pcb = {
         .ID = task->id,
         .Name = {'\0'},
-        .Status = STATUS::UnknownStatus,
-        .Elevation = task->UserMode ? ELEVATION::User : ELEVATION::Kernel,
+        .Status = CBStatus::UnknownStatus,
+        .Elevation = task->UserMode ? CBElevation::User : CBElevation::Kernel,
         .ExitCode = 0,
         .Offset = 0,
         .Parent = nullptr,
         .PageTable = tmpcr3,
         .Info = {},
         .Security = {},
+        .IPCHandles = nullptr,
         .Threads = {},
         .Children = {},
         .Checksum = PROCESS_CHECKSUM};
@@ -43,7 +44,7 @@ TCB *ConvertTaskCBToTCB(TaskControlBlock *task)
     static TCB tcb = {
         .ID = task->id,
         .Name = {'\0'},
-        .Status = STATUS::UnknownStatus,
+        .Status = CBStatus::UnknownStatus,
         .ExitCode = 0,
         .Parent = nullptr,
         .Stack = 0x0,
@@ -77,14 +78,15 @@ PCB *SysGetProcessByPID(uint64_t ID)
         static PCB pcb = {
             .ID = 0,
             .Name = {'\0'},
-            .Status = STATUS::UnknownStatus,
-            .Elevation = ELEVATION::UnknownElevation,
+            .Status = CBStatus::UnknownStatus,
+            .Elevation = CBElevation::UnknownElevation,
             .ExitCode = 0,
             .Offset = 0,
             .Parent = nullptr,
             .PageTable = {},
             .Info = {},
             .Security = {},
+            .IPCHandles = nullptr,
             .Threads = {},
             .Children = {},
             .Checksum = PROCESS_CHECKSUM};
@@ -96,7 +98,7 @@ PCB *SysGetProcessByPID(uint64_t ID)
         EnterCriticalSection;
         foreach (PCB *pcb in mt->ListProcess)
         {
-            if (pcb == nullptr || pcb->Checksum != Checksum::PROCESS_CHECKSUM || pcb->Elevation == ELEVATION::Idle)
+            if (pcb == nullptr || pcb->Checksum != Checksum::PROCESS_CHECKSUM || pcb->Elevation == CBElevation::Idle)
                 continue;
             if (pcb->ID == ID)
             {
@@ -108,6 +110,7 @@ PCB *SysGetProcessByPID(uint64_t ID)
         return nullptr;
     }
     default:
+        err("Tasking mode it's disabled.");
         return nullptr;
     }
 }
@@ -124,7 +127,7 @@ TCB *SysGetThreadByTID(uint64_t ID)
         static TCB tcb = {
             .ID = 0,
             .Name = {'\0'},
-            .Status = STATUS::UnknownStatus,
+            .Status = CBStatus::UnknownStatus,
             .ExitCode = 0,
             .Parent = nullptr,
             .Stack = 0x0,
@@ -147,7 +150,7 @@ TCB *SysGetThreadByTID(uint64_t ID)
         EnterCriticalSection;
         foreach (PCB *pcb in mt->ListProcess)
         {
-            if (pcb == nullptr || pcb->Checksum != Checksum::PROCESS_CHECKSUM || pcb->Elevation == ELEVATION::Idle)
+            if (pcb == nullptr || pcb->Checksum != Checksum::PROCESS_CHECKSUM || pcb->Elevation == CBElevation::Idle)
                 continue;
 
             foreach (TCB *tcb in pcb->Threads)
@@ -163,6 +166,7 @@ TCB *SysGetThreadByTID(uint64_t ID)
         return nullptr;
     }
     default:
+        err("Tasking mode it's disabled.");
         return nullptr;
     }
 }
@@ -176,6 +180,7 @@ PCB *SysGetCurrentProcess()
     case TaskingMode::Multi:
         return CurrentCPU->CurrentProcess;
     default:
+        err("Tasking mode it's disabled.");
         return nullptr;
     }
 }
@@ -189,6 +194,7 @@ TCB *SysGetCurrentThread()
     case TaskingMode::Multi:
         return CurrentCPU->CurrentThread;
     default:
+        err("Tasking mode it's disabled.");
         return nullptr;
     }
 }
@@ -259,7 +265,7 @@ int SysGetThreadPriority()
     }
 }
 
-PCB *SysCreateProcess(const char *Name, ELEVATION Elevation)
+PCB *SysCreateProcess(const char *Name, CBElevation Elevation)
 {
     switch (CurrentTaskingMode)
     {
@@ -271,14 +277,15 @@ PCB *SysCreateProcess(const char *Name, ELEVATION Elevation)
         static PCB pcb = {
             .ID = 0,
             .Name = {'\0'},
-            .Status = STATUS::UnknownStatus,
-            .Elevation = ELEVATION::UnknownElevation,
+            .Status = CBStatus::UnknownStatus,
+            .Elevation = CBElevation::UnknownElevation,
             .ExitCode = 0,
             .Offset = 0,
             .Parent = nullptr,
             .PageTable = {},
             .Info = {},
             .Security = {},
+            .IPCHandles = nullptr,
             .Threads = {},
             .Children = {},
             .Checksum = PROCESS_CHECKSUM};
@@ -288,6 +295,7 @@ PCB *SysCreateProcess(const char *Name, ELEVATION Elevation)
     case TaskingMode::Multi:
         return mt->CreateProcess(SysGetCurrentProcess(), (char *)Name, Elevation);
     default:
+        err("Tasking mode it's disabled.");
         return nullptr;
     }
 }
@@ -304,7 +312,7 @@ TCB *SysCreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t arg0, ui
         static TCB tcb = {
             .ID = 0,
             .Name = {'\0'},
-            .Status = STATUS::UnknownStatus,
+            .Status = CBStatus::UnknownStatus,
             .ExitCode = 0,
             .Parent = nullptr,
             .Stack = 0x0,
@@ -325,12 +333,13 @@ TCB *SysCreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t arg0, ui
     case TaskingMode::Multi:
         return mt->CreateThread(Parent, InstructionPointer, arg0, arg1);
     default:
+        err("Tasking mode it's disabled.");
         return nullptr;
     }
 }
 
 // TODO: implement for primitive tasking if enabled to suspend the current task and run the created one
-PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, ELEVATION Elevation)
+PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, CBElevation Elevation)
 {
     return ExecuteBinary(File, arg0, arg1, Elevation);
 }

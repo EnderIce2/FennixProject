@@ -348,7 +348,7 @@ namespace Tasking
     {
         TaskControlBlock *task = new TaskControlBlock;
         task->id = TaskIDs++;
-        memcpy(((char *)task->name), Name, sizeof(task->name));
+        strcpy(task->name, Name);
         task->checksum = TASK_CHECKSUM;
         task->UserMode = UserMode;
         task->state = TaskState::TaskStateReady;

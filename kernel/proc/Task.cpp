@@ -26,7 +26,7 @@ void StartTasking(uint64_t Address, TaskingMode Mode)
     case TaskingMode::Multi:
     {
         mt = new Multitasking;
-        mt->CreateThread(mt->CreateProcess(nullptr, (char *)"kernel", ELEVATION::Kernel), Address, 0, 0);
+        mt->CreateThread(mt->CreateProcess(nullptr, (char *)"kernel", CBElevation::Kernel), Address, 0, 0);
         MultitaskingSchedulerEnabled = true;
         BS->IncreaseProgres();
         break;

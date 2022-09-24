@@ -206,7 +206,7 @@ namespace Driver
     void DriverManagerMainLoop()
     {
         SysSetThreadPriority(100);
-        // PCB *drvpcb = SysCreateProcessFromFile("/system/drvmgr", 0, 0, ELEVATION::User);
+        // PCB *drvpcb = SysCreateProcessFromFile("/system/drvmgr", 0, 0, CBElevation::User);
         // if (!drvpcb)
         // {
         //     CurrentDisplay->SetPrintColor(0xFC4444);
@@ -262,7 +262,7 @@ namespace Driver
     {
         drvfs = new FileSystem::Driver;
         drvfs->AddDriver(&kdrvfs, 0666, "default", FileSystem::NodeFlags::FS_PIPE);
-        DrvMgrProc = SysCreateProcess("Driver Manager", ELEVATION::System);
+        DrvMgrProc = SysCreateProcess("Driver Manager", CBElevation::System);
         DrvMgrThrd = SysCreateThread((PCB *)DrvMgrProc, (uint64_t)DriverManagerMainLoop, 0, 0);
     }
 

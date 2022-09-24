@@ -4,4 +4,4 @@
 
 #include "exec.hpp"
 
-RetStructData ExecuteMZ(const char *Path, ELEVATION Elevation, VMM::PageTableManager ptm);
+RetStructData ExecuteMZ(const char *Path, CBElevation Elevation, VMM::PageTableManager ptm);

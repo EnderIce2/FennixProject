@@ -192,13 +192,13 @@ void TriggerUserModeCrash(TrapFrame *regs)
         memcpy(tf, regs, sizeof(TrapFrame));
 
         Tasking::monot->PopTask(true);
-        SysCreateProcessFromFile("/system/umc", (uint64_t)tf, 0, ELEVATION::User);
+        SysCreateProcessFromFile("/system/umc", (uint64_t)tf, 0, CBElevation::User);
         Tasking::monot->PushTask(0);
     }
     else
     {
         TrapFrame *tf = (TrapFrame *)UserAllocator->Malloc(sizeof(TrapFrame));
         memcpy(tf, regs, sizeof(TrapFrame));
-        SysCreateProcessFromFile("/system/umc", (uint64_t)tf, 0, ELEVATION::User);
+        SysCreateProcessFromFile("/system/umc", (uint64_t)tf, 0, CBElevation::User);
     }
 }

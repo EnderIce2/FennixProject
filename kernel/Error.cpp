@@ -1,4 +1,4 @@
-#include <errorhnd.h>
+#include <err.h>
 
 #include "cpu/smp.hpp"
 

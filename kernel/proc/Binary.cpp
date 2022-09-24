@@ -126,7 +126,7 @@ void CreatePageTableWithKernel(VMM::PageTableManager ptm)
     }
 }
 
-PCB *ExecuteBinary(const char *Path, uint64_t Arg0, uint64_t Arg1, ELEVATION Elevation)
+PCB *ExecuteBinary(const char *Path, uint64_t Arg0, uint64_t Arg1, CBElevation Elevation)
 {
     EnterCriticalSection;
     BinType type = GetBinaryType(Path);
@@ -194,13 +194,13 @@ Success:
     if (CurrentTaskingMode == TaskingMode::Mono)
     {
         bool user = false;
-        if (Elevation == ELEVATION::User)
+        if (Elevation == CBElevation::User)
             user = true;
         FILE *file = vfs->Open(Path);
         Tasking::TaskControlBlock *task = monot->CreateTask(ret.Entry + ret.Offset, Arg0, Arg1, (char *)file->Name, user, true);
         vfs->Close(file);
 
-        // if (Elevation != ELEVATION::Kernel && Elevation != ELEVATION::Idle)
+        // if (Elevation != CBElevation::Kernel && Elevation != CBElevation::Idle)
         // {
         //     KernelAllocator.FreePage(task->pml4);
         //     task->pml4 = pml4;
@@ -215,7 +215,7 @@ Success:
         PCB *pcb = SysCreateProcess(file->Name, Elevation);
         vfs->Close(file);
         pcb->Offset = ret.Offset;
-        // if (Elevation != ELEVATION::Kernel && Elevation != ELEVATION::Idle)
+        // if (Elevation != CBElevation::Kernel && Elevation != CBElevation::Idle)
         // {
         //     KernelAllocator.FreePage((void *)pcb->PageTable.raw);
         //     pcb->PageTable.raw = (uint64_t)pml4;

@@ -255,7 +255,7 @@ namespace NetworkInterfaceManager
         // TODO: on kill call StopNetworkStack
         netfs = new FileSystem::Network;
         netfs->AddNetworkCard(&netsvcfs, 0666, "default", FileSystem::NodeFlags::FS_PIPE);
-        NetSvcProc = SysCreateProcess("Network Service", ELEVATION::System);
+        NetSvcProc = SysCreateProcess("Network Service", CBElevation::System);
         NetSvcThrd = SysCreateThread((PCB *)NetSvcProc, (uint64_t)CallStartNetworkStackWrapper, 0, 0);
     }
 

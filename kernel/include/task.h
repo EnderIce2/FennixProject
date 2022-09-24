@@ -1,7 +1,9 @@
 #pragma once
-#include <stdint.h>
 #include <interrupts.h>
+#include <hashmap.hpp>
 #include <vector.hpp>
+#include <stdint.h>
+#include <ipc.hpp>
 
 enum Checksum
 {
@@ -9,7 +11,7 @@ enum Checksum
     THREAD_CHECKSUM = 0xDEADCAFE
 };
 
-enum ELEVATION
+enum CBElevation
 {
     UnknownElevation,
     Kernel,
@@ -18,7 +20,7 @@ enum ELEVATION
     User
 };
 
-enum STATUS
+enum CBStatus
 {
     UnknownStatus,
     Ready,
@@ -103,7 +105,7 @@ struct TCB
 {
     uint64_t ID;
     char Name[256];
-    STATUS Status;
+    CBStatus Status;
     uint64_t ExitCode;
     struct PCB *Parent;
     void *Stack;
@@ -122,14 +124,15 @@ struct PCB
 {
     uint64_t ID;
     char Name[256];
-    STATUS Status;
-    ELEVATION Elevation;
+    CBStatus Status;
+    CBElevation Elevation;
     uint64_t ExitCode;
     uint64_t Offset;
     struct PCB *Parent;
     CR3 PageTable;
     GeneralProcessInfo Info;
     GeneralSecurityInfo Security;
+    HashMap<InterProcessCommunication::IPCPort, uint64_t> *IPCHandles;
     Vector<TCB *> Threads;
     Vector<struct PCB *> Children;
     uint32_t Checksum;

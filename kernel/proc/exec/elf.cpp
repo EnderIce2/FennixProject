@@ -10,7 +10,7 @@
 using namespace Tasking;
 using namespace FileSystem;
 
-RetStructData ExecuteELF(const char *Path, ELEVATION Elevation, VMM::PageTableManager ptm)
+RetStructData ExecuteELF(const char *Path, CBElevation Elevation, VMM::PageTableManager ptm)
 {
     FILE *file = vfs->Open(Path);
     if (file->Status != FILESTATUS::OK || file->Node->Flags != NodeFlags::FS_FILE)
@@ -41,7 +41,7 @@ RetStructData ExecuteELF(const char *Path, ELEVATION Elevation, VMM::PageTableMa
 
 //             switch (Elevation)
 //             {
-//             case ELEVATION::User:
+//             case CBElevation::User:
 //             {
 //                 uint64_t BufferAddrs = (uint64_t)FileBuffer;
 //                 uint64_t FileBufferAddress = USER_FILE_BUFFER_BASE;
@@ -56,9 +56,9 @@ RetStructData ExecuteELF(const char *Path, ELEVATION Elevation, VMM::PageTableMa
 //                 }
 //                 break;
 //             }
-//             case ELEVATION::Idle:
-//             case ELEVATION::System:
-//             case ELEVATION::Kernel:
+//             case CBElevation::Idle:
+//             case CBElevation::System:
+//             case CBElevation::Kernel:
 //             {
 //                 uint64_t BufferAddrs = (uint64_t)FileBuffer;
 //                 for (uint64_t i = 0; i < file->Node->Length / PAGE_SIZE + 1; i++)
@@ -104,7 +104,7 @@ RetStructData ExecuteELF(const char *Path, ELEVATION Elevation, VMM::PageTableMa
 //             void *offset = KernelAllocator.RequestPages((uint64_t)addr / PAGE_SIZE + 1);
 //             switch (Elevation)
 //             {
-//             case ELEVATION::User:
+//             case CBElevation::User:
 //             {
 //                 uint64_t Base = USER_APP_BASE;
 //                 uint64_t PhysicalBase = (uint64_t)offset;
@@ -119,9 +119,9 @@ RetStructData ExecuteELF(const char *Path, ELEVATION Elevation, VMM::PageTableMa
 //                 }
 //                 break;
 //             }
-//             case ELEVATION::Idle:
-//             case ELEVATION::System:
-//             case ELEVATION::Kernel:
+//             case CBElevation::Idle:
+//             case CBElevation::System:
+//             case CBElevation::Kernel:
 //             default:
 //             {
 //                 err("Invalid Elevation");
@@ -129,9 +129,9 @@ RetStructData ExecuteELF(const char *Path, ELEVATION Elevation, VMM::PageTableMa
 //             }
 //             }
 //             uint64_t AppBaseOffsetAddress = USER_APP_BASE;
-//             if (Elevation == ELEVATION::Kernel ||
-//                 Elevation == ELEVATION::Kernel ||
-//                 Elevation == ELEVATION::Idle)
+//             if (Elevation == CBElevation::Kernel ||
+//                 Elevation == CBElevation::Kernel ||
+//                 Elevation == CBElevation::Idle)
 //                 AppBaseOffsetAddress = (uint64_t)offset;
 //             pheader = (Elf64_Phdr *)(((char *)FileBuffer) + ELFHeader.e_phoff);
 //             for (Elf64_Half i = 0; i < ELFHeader.e_phnum; i++, pheader++)
@@ -154,7 +154,7 @@ RetStructData ExecuteELF(const char *Path, ELEVATION Elevation, VMM::PageTableMa
             uint64_t MappedAddrs = (uint64_t)FileBuffer;
             switch (Elevation)
             {
-            case ELEVATION::User:
+            case CBElevation::User:
             {
                 for (uint64_t i = 0; i < file->Node->Length / 0x1000 + 1; i++)
                 {
@@ -163,9 +163,9 @@ RetStructData ExecuteELF(const char *Path, ELEVATION Elevation, VMM::PageTableMa
                 }
                 break;
             }
-            case ELEVATION::Idle:
-            case ELEVATION::System:
-            case ELEVATION::Kernel:
+            case CBElevation::Idle:
+            case CBElevation::System:
+            case CBElevation::Kernel:
             {
                 for (uint64_t i = 0; i < file->Node->Length / 0x1000 + 1; i++)
                 {
@@ -191,7 +191,7 @@ RetStructData ExecuteELF(const char *Path, ELEVATION Elevation, VMM::PageTableMa
             MappedAddrs = (uint64_t)offset;
             switch (Elevation)
             {
-            case ELEVATION::User:
+            case CBElevation::User:
             {
                 for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
                 {
@@ -200,9 +200,9 @@ RetStructData ExecuteELF(const char *Path, ELEVATION Elevation, VMM::PageTableMa
                 }
                 break;
             }
-            case ELEVATION::Idle:
-            case ELEVATION::System:
-            case ELEVATION::Kernel:
+            case CBElevation::Idle:
+            case CBElevation::System:
+            case CBElevation::Kernel:
             {
                 for (uint64_t i = 0; i < (uint64_t)addr / 0x1000 + 1; i++)
                 {

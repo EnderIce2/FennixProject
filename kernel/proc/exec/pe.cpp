@@ -11,7 +11,7 @@
 using namespace Tasking;
 using namespace FileSystem;
 
-RetStructData ExecutePE(const char *Path, ELEVATION Elevation, VMM::PageTableManager ptm)
+RetStructData ExecutePE(const char *Path, CBElevation Elevation, VMM::PageTableManager ptm)
 {
     FILE *file = vfs->Open(Path);
     if (file->Status != FILESTATUS::OK || file->Node->Flags != NodeFlags::FS_FILE)
@@ -35,7 +35,7 @@ RetStructData ExecutePE(const char *Path, ELEVATION Elevation, VMM::PageTableMan
     else if (PEHeader->FileHeader.Machine == IMAGE_FILE_MACHINE_AMD64)
     {
         debug("64 bit PE file found.");
-        if (Elevation == ELEVATION::User)
+        if (Elevation == CBElevation::User)
         {
             uint64_t MappedAddrs = (uint64_t)FileBuffer;
             for (uint64_t i = 0; i < file->Node->Length / PAGE_SIZE + 1; i++)
@@ -44,7 +44,7 @@ RetStructData ExecutePE(const char *Path, ELEVATION Elevation, VMM::PageTableMan
                 MappedAddrs += PAGE_SIZE;
             }
         }
-        else if (Elevation == ELEVATION::Kernel)
+        else if (Elevation == CBElevation::Kernel)
         {
             uint64_t MappedAddrs = (uint64_t)FileBuffer;
             for (uint64_t i = 0; i < file->Node->Length / PAGE_SIZE + 1; i++)
@@ -62,7 +62,7 @@ RetStructData ExecutePE(const char *Path, ELEVATION Elevation, VMM::PageTableMan
                 continue;
             void *addr = (void *)((uint64_t)section->VirtualAddress + (uint64_t)FileBuffer);
             void *offset = KernelAllocator.RequestPages((uint64_t)addr / PAGE_SIZE + 1);
-            if (Elevation == ELEVATION::User)
+            if (Elevation == CBElevation::User)
             {
                 uint64_t MappedAddrs = (uint64_t)offset;
                 for (uint64_t i = 0; i < (uint64_t)addr / PAGE_SIZE + 1; i++)
@@ -71,7 +71,7 @@ RetStructData ExecutePE(const char *Path, ELEVATION Elevation, VMM::PageTableMan
                     MappedAddrs += PAGE_SIZE;
                 }
             }
-            else if (Elevation == ELEVATION::Kernel)
+            else if (Elevation == CBElevation::Kernel)
             {
                 uint64_t MappedAddrs = (uint64_t)offset;
                 for (uint64_t i = 0; i < (uint64_t)addr / PAGE_SIZE + 1; i++)

@@ -11,7 +11,7 @@
 using namespace Tasking;
 using namespace FileSystem;
 
-RetStructData ExecuteMZ(const char *Path, ELEVATION Elevation, VMM::PageTableManager ptm)
+RetStructData ExecuteMZ(const char *Path, CBElevation Elevation, VMM::PageTableManager ptm)
 {
     FILE *file = vfs->Open(Path);
     if (file->Status != FILESTATUS::OK || file->Node->Flags != NodeFlags::FS_FILE)
@@ -27,7 +27,7 @@ RetStructData ExecuteMZ(const char *Path, ELEVATION Elevation, VMM::PageTableMan
 
     IMAGE_DOS_HEADER *MZHeader = (IMAGE_DOS_HEADER *)FileBuffer;
     debug("32 bit MZ file found.");
-    if (Elevation == ELEVATION::User)
+    if (Elevation == CBElevation::User)
     {
         uint64_t MappedAddrs = (uint64_t)FileBuffer;
         for (uint64_t i = 0; i < file->Node->Length / PAGE_SIZE + 1; i++)
@@ -36,7 +36,7 @@ RetStructData ExecuteMZ(const char *Path, ELEVATION Elevation, VMM::PageTableMan
             MappedAddrs += PAGE_SIZE;
         }
     }
-    else if (Elevation == ELEVATION::Kernel)
+    else if (Elevation == CBElevation::Kernel)
     {
         uint64_t MappedAddrs = (uint64_t)FileBuffer;
         for (uint64_t i = 0; i < file->Node->Length / PAGE_SIZE + 1; i++)
@@ -52,7 +52,7 @@ RetStructData ExecuteMZ(const char *Path, ELEVATION Elevation, VMM::PageTableMan
     //     continue;
     void *addr = (void *)((uint64_t)section->VirtualAddress + (uint64_t)FileBuffer);
     void *offset = KernelAllocator.RequestPages((uint64_t)addr / PAGE_SIZE + 1);
-    if (Elevation == ELEVATION::User)
+    if (Elevation == CBElevation::User)
     {
         uint64_t MappedAddrs = (uint64_t)offset;
         for (uint64_t i = 0; i < (uint64_t)addr / PAGE_SIZE + 1; i++)

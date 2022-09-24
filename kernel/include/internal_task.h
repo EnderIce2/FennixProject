@@ -110,7 +110,7 @@ namespace Tasking
         PCB *IdleProcess = nullptr;
         TCB *IdleThread = nullptr;
 
-        PCB *CreateProcess(PCB *Parent, char *Name, ELEVATION Elevation, int Priority = 1);
+        PCB *CreateProcess(PCB *Parent, char *Name, CBElevation Elevation, int Priority = 1);
         TCB *CreateThread(PCB *Parent, uint64_t InstructionPointer, uint64_t Arg0, uint64_t Arg1,
                           int Priority = 1, enum Architecture Architecture = Architecture::x64, enum Platform Platform = Platform::Native);
 
@@ -194,7 +194,7 @@ int SysGetThreadPriority();
  * @param File TODO: more
  * @return PCB
  */
-PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, ELEVATION Elevation);
+PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, CBElevation Elevation);
 
 /**
  * @brief Create a new simple process with custom name and address space
@@ -203,7 +203,7 @@ PCB *SysCreateProcessFromFile(const char *File, uint64_t arg0, uint64_t arg1, EL
  * @param PageTable
  * @return PCB*
  */
-PCB *SysCreateProcess(const char *Name, ELEVATION Elevation);
+PCB *SysCreateProcess(const char *Name, CBElevation Elevation);
 
 /**
  * @brief Create a new thread

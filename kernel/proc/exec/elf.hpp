@@ -4,4 +4,4 @@
 
 #include "exec.hpp"
 
-RetStructData ExecuteELF(const char *Path, ELEVATION Elevation, VMM::PageTableManager ptm);
+RetStructData ExecuteELF(const char *Path, CBElevation Elevation, VMM::PageTableManager ptm);

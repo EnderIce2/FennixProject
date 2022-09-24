@@ -11,7 +11,7 @@
 using namespace Tasking;
 using namespace FileSystem;
 
-RetStructData ExecuteNE(const char *Path, ELEVATION Elevation, VMM::PageTableManager ptm)
+RetStructData ExecuteNE(const char *Path, CBElevation Elevation, VMM::PageTableManager ptm)
 {
     FILE *file = vfs->Open(Path);
     if (file->Status != FILESTATUS::OK || file->Node->Flags != NodeFlags::FS_FILE)
@@ -30,7 +30,7 @@ RetStructData ExecuteNE(const char *Path, ELEVATION Elevation, VMM::PageTableMan
     if (NEHeader->ne_exetyp == 0x2 || NEHeader->ne_exetyp == 0x5) // 2 is 16 bit?
     {
         debug("%s bit NE file found.", NEHeader->ne_exetyp == 0x2 ? "16" : "32");
-        if (Elevation == ELEVATION::User)
+        if (Elevation == CBElevation::User)
         {
             uint64_t MappedAddrs = (uint64_t)FileBuffer;
             for (uint64_t i = 0; i < file->Node->Length / PAGE_SIZE + 1; i++)
@@ -39,7 +39,7 @@ RetStructData ExecuteNE(const char *Path, ELEVATION Elevation, VMM::PageTableMan
                 MappedAddrs += PAGE_SIZE;
             }
         }
-        else if (Elevation == ELEVATION::Kernel)
+        else if (Elevation == CBElevation::Kernel)
         {
             uint64_t MappedAddrs = (uint64_t)FileBuffer;
             for (uint64_t i = 0; i < file->Node->Length / PAGE_SIZE + 1; i++)
@@ -57,7 +57,7 @@ RetStructData ExecuteNE(const char *Path, ELEVATION Elevation, VMM::PageTableMan
         debug("VirtualAddress: %#llx | SizeOfRawData: %#llx",
               (uint64_t)addr, section->SizeOfRawData);
         void *offset = KernelAllocator.RequestPages((uint64_t)addr / PAGE_SIZE + 1);
-        if (Elevation == ELEVATION::User)
+        if (Elevation == CBElevation::User)
         {
             uint64_t MappedAddrs = (uint64_t)offset;
             for (uint64_t i = 0; i < (uint64_t)addr / PAGE_SIZE + 1; i++)

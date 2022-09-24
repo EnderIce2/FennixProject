@@ -113,9 +113,9 @@ void InitScreen()
 
 int main(int argc, char *argv[])
 {
-    PutRect(0, 0, Screen.Width, Screen.Height, 0x282828);
+    // PutRect(0, 0, Screen.Width, Screen.Height, 0x282828);
     /* ... show login screen and wait for user input ... */
-    InitScreen();
+    // InitScreen();
     syscall_createProcess((char *)"/system/fesktop", 0, 0);
     while (1)
         ;

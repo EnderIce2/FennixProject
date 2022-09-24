@@ -55,7 +55,9 @@
 			"lock.h": "c",
 			"pic.h": "c",
 			"gdt.h": "c",
-			"asm.h": "c"
+			"asm.h": "c",
+			"task.h": "c",
+			"vector.hpp": "c"
 		},
 		"debug.allowBreakpointsEverywhere": true
 	}

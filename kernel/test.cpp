@@ -433,10 +433,10 @@ void test_kernelmultitasking(int a, int b)
     TEST_EQUAL(a, b);
     TEST_DBG("Multitasking test started.\n");
 
-    PCB *pcb1 = mt->CreateProcess(nullptr, (char *)"test", ELEVATION::Kernel);
-    PCB *pcb2 = mt->CreateProcess(nullptr, (char *)"test", ELEVATION::Kernel);
-    PCB *pcb3 = mt->CreateProcess(nullptr, (char *)"test", ELEVATION::Kernel);
-    PCB *pcb4 = mt->CreateProcess(nullptr, (char *)"test", ELEVATION::Kernel);
+    PCB *pcb1 = mt->CreateProcess(nullptr, (char *)"test", CBElevation::Kernel);
+    PCB *pcb2 = mt->CreateProcess(nullptr, (char *)"test", CBElevation::Kernel);
+    PCB *pcb3 = mt->CreateProcess(nullptr, (char *)"test", CBElevation::Kernel);
+    PCB *pcb4 = mt->CreateProcess(nullptr, (char *)"test", CBElevation::Kernel);
 
     uint64_t threads = 2;
 
