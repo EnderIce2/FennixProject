@@ -7,21 +7,28 @@ namespace InterProcessCommunication
 {
     IPCHandle *IPC::RegisterHandle(IPCPort Port)
     {
+        if (Port == 0)
+            return nullptr;
+
+        PCB *pcb = SysGetCurrentProcess();
+
+        if (pcb->IPCHandles->Get((int)Port) != 0)
+            return nullptr;
+
         IPCHandle *handle = new IPCHandle;
-        handle->PID = -1;
+        handle->ID = -1;
         handle->Buffer = nullptr;
         handle->Length = 0;
         handle->Type = IPCOperationNone;
         handle->Listening = 0;
         handle->Error = IPCUnknown;
-        Handles.push_back(handle);
+        pcb->IPCHandles->AddNode(Port, (uint64_t)handle);
         return handle;
     }
 
     IPCHandle *IPC::Wait(IPCPort port)
     {
-        IPCHandle *handle = Handles[port];
-        return handle;
+        return nullptr;
     }
 
     IPCError IPC::Read(int PID, IPCPort port, void *buf, int size)

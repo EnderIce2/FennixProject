@@ -77,17 +77,15 @@ public:
 
         while (Nodes[Index] != nullptr)
         {
-
             if (Iterate++ > HashMapCapacity)
-                return nullptr;
+                return 0;
 
             if (Nodes[Index]->Key == Key)
                 return Nodes[Index]->Value;
             Index++;
             Index %= HashMapCapacity;
         }
-
-        return nullptr;
+        return 0;
     }
 
     int Size() { return HashMapSize; }

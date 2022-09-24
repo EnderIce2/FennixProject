@@ -26,7 +26,7 @@ namespace InterProcessCommunication
 
     typedef struct
     {
-        int PID;
+        int ID;
         int Length;
         void *Buffer;
         bool Listening;
@@ -37,7 +37,7 @@ namespace InterProcessCommunication
 
     typedef struct
     {
-        int PID;
+        int ID;
         int Length;
         IPCOperationType Type;
         IPCErrorCode Error;

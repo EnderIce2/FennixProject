@@ -6,9 +6,6 @@ namespace InterProcessCommunication
 {    class IPC
     {
     private:
-        IPCHandle *Servers[1024];
-        Vector<IPCHandle *> Handles;
-
         PCB *IPCProc;
 
     public:
