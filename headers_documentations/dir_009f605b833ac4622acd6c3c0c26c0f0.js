@@ -15,11 +15,14 @@ var dir_009f605b833ac4622acd6c3c0c26c0f0 =
     [ "display.h", "d4/d68/display_8h.html", "d4/d68/display_8h" ],
     [ "easyc.h", "de/d89/easyc_8h.html", null ],
     [ "elf.h", "d1/d9e/elf_8h.html", "d1/d9e/elf_8h" ],
-    [ "errorhnd.h", "de/d0f/errorhnd_8h.html", "de/d0f/errorhnd_8h" ],
+    [ "err.h", "d6/d40/err_8h.html", "d6/d40/err_8h" ],
+    [ "events.hpp", "de/d66/events_8hpp.html", null ],
     [ "filesystem.h", "dd/dd8/filesystem_8h.html", "dd/dd8/filesystem_8h" ],
+    [ "hashmap.hpp", "d2/d89/hashmap_8hpp.html", "d2/d89/hashmap_8hpp" ],
     [ "heap.h", "da/ddb/heap_8h.html", "da/ddb/heap_8h" ],
     [ "int.h", "d3/d7e/int_8h.html", "d3/d7e/int_8h" ],
     [ "internal_task.h", "d6/d75/internal__task_8h.html", "d6/d75/internal__task_8h" ],
+    [ "ipc.hpp", "d1/d02/ipc_8hpp.html", "d1/d02/ipc_8hpp" ],
     [ "limits.h", "d9/d86/limits_8h.html", "d9/d86/limits_8h" ],
     [ "list.h", "da/d23/list_8h.html", "da/d23/list_8h" ],
     [ "lock.h", "dd/d42/lock_8h.html", "dd/d42/lock_8h" ],
@@ -31,7 +34,11 @@ var dir_009f605b833ac4622acd6c3c0c26c0f0 =
     [ "string.h", "d1/d69/kernel_2include_2string_8h.html", "d1/d69/kernel_2include_2string_8h" ],
     [ "symbols.hpp", "d7/d94/symbols_8hpp.html", "d7/d94/symbols_8hpp" ],
     [ "sys.h", "d9/d87/sys_8h.html", "d9/d87/sys_8h" ],
+    [ "task.h", "db/da4/task_8h.html", "db/da4/task_8h" ],
     [ "test.h", "d2/ddc/test_8h.html", "d2/ddc/test_8h" ],
     [ "types.h", "d7/dfc/kernel_2include_2types_8h.html", "d7/dfc/kernel_2include_2types_8h" ],
+    [ "vector.hpp", "da/d16/vector_8hpp.html", [
+      [ "Vector", "d6/da1/classVector.html", "d6/da1/classVector" ]
+    ] ],
     [ "vm.h", "da/d0a/vm_8h.html", "da/d0a/vm_8h" ]
 ];

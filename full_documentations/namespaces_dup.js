@@ -17,6 +17,7 @@ var namespaces_dup =
     [ "Floppy", "d6/d87/namespaceFloppy.html", null ],
     [ "Heap", "db/d18/namespaceHeap.html", null ],
     [ "Intel8254x", "d2/db9/namespaceIntel8254x.html", null ],
+    [ "InterProcessCommunication", "d7/d5f/namespaceInterProcessCommunication.html", null ],
     [ "KernelSymbols", "d9/d45/namespaceKernelSymbols.html", null ],
     [ "MonotonLib", "d7/dfa/namespaceMonotonLib.html", null ],
     [ "NetworkARP", "d2/df9/namespaceNetworkARP.html", null ],

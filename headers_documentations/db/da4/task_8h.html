@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fennix Project: include/task.h File Reference</title>
+<title>Fennix Project: kernel/include/task.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -93,9 +93,11 @@ $(document).ready(function(){initNavTree('db/da4/task_8h.html','../../'); initRe
 <div class="title">task.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="../../dc/d69/include_2stdint_8h_source.html">stdint.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d6/ded/interrupts_8h_source.html">interrupts.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d6/ded/interrupts_8h_source.html">interrupts.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d2/d89/hashmap_8hpp_source.html">hashmap.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../da/d16/vector_8hpp_source.html">vector.hpp</a>&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d1/d02/ipc_8hpp_source.html">ipc.hpp</a>&gt;</code><br />
 </div>
 <p><a href="../../db/da4/task_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -123,26 +125,26 @@ Enumerations</h2></td></tr>
 <a class="el" href="../../db/da4/task_8h.html#a06b5e1d0b960a8ac8adb8a4150ad6b50a26bf2748f727a3c29a989408f6424342">THREAD_CHECKSUM</a> = 0xDEADCAFE
  }</td></tr>
 <tr class="separator:a06b5e1d0b960a8ac8adb8a4150ad6b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae861332bc88170140dbb0e17b13a29b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29b">ELEVATION</a> { <br />
-&#160;&#160;<a class="el" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29ba23801e90266f48fb7ea09acf6540aa78">UnknownElevation</a>, 
-<a class="el" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29ba32638eee93ff4cac6e4acd05f1e8ef9b">Kernel</a>, 
-<a class="el" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29baacd40056f9fbe11dadadeba269eb2034">System</a>, 
-<a class="el" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29bad3fa9ae9431d6cb1772f9d9df48cab19">Idle</a>, 
+<tr class="memitem:a6a8bb9e7e75345ed107cddf2438ec7ba"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7ba">CBElevation</a> { <br />
+&#160;&#160;<a class="el" href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baa23801e90266f48fb7ea09acf6540aa78">UnknownElevation</a>, 
+<a class="el" href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baa32638eee93ff4cac6e4acd05f1e8ef9b">Kernel</a>, 
+<a class="el" href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baaacd40056f9fbe11dadadeba269eb2034">System</a>, 
+<a class="el" href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baad3fa9ae9431d6cb1772f9d9df48cab19">Idle</a>, 
 <br />
-&#160;&#160;<a class="el" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29bae168fb880dc0042ac28438e1875e41d3">User</a>
-<br />
- }</td></tr>
-<tr class="separator:aae861332bc88170140dbb0e17b13a29b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32c27cc471df37f4fc818d65de0a56c4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a> { <br />
-&#160;&#160;<a class="el" href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4a7f312b4c3bc1733bf55641ad008fa281">UnknownStatus</a>, 
-<a class="el" href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4a0e73e048b83849a411148a8dddc6dfcb">Ready</a>, 
-<a class="el" href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4a2f5f2c4a8c4f4f0519d503dcdfbf55cb">Running</a>, 
-<a class="el" href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4a7ac9ab6c2e98f6df96b82b175d42747a">Waiting</a>, 
-<br />
-&#160;&#160;<a class="el" href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4a0bd9962868a464e4730ffcf8d3fa798d">Terminated</a>
+&#160;&#160;<a class="el" href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baae168fb880dc0042ac28438e1875e41d3">User</a>
 <br />
  }</td></tr>
-<tr class="separator:a32c27cc471df37f4fc818d65de0a56c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a6a8bb9e7e75345ed107cddf2438ec7ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cf06e781fecc774dabbdffdab45c396"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396">CBStatus</a> { <br />
+&#160;&#160;<a class="el" href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396a7f312b4c3bc1733bf55641ad008fa281">UnknownStatus</a>, 
+<a class="el" href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396a0e73e048b83849a411148a8dddc6dfcb">Ready</a>, 
+<a class="el" href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396a2f5f2c4a8c4f4f0519d503dcdfbf55cb">Running</a>, 
+<a class="el" href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396a7ac9ab6c2e98f6df96b82b175d42747a">Waiting</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396a0bd9962868a464e4730ffcf8d3fa798d">Terminated</a>
+<br />
+ }</td></tr>
+<tr class="separator:a0cf06e781fecc774dabbdffdab45c396"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24b654418b0c21364315d4126976746f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746f">TokenTrustLevel</a> { <a class="el" href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fad32e3ba700cec44818d8308992868453">UnknownTrustLevel</a>, 
 <a class="el" href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fac578be2ed5c4fd82117656d6febff751">Untrusted</a>, 
 <a class="el" href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fa0130e862609de4c76fb88646e373e120">Trusted</a>, 
@@ -183,7 +185,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00056">56</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00058">58</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -298,7 +300,7 @@ Year</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00068">68</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00070">70</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -323,13 +325,19 @@ Token</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00073">73</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00075">75</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
 <a id="a8d32ed750d66d3c3a7c1530b460f7f84"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></td>
 <td class="fieldname">
 cs</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="aef86393fa1e147da64ef2f765987a207"></a><a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></td>
+<td class="fieldname">
+ds</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
@@ -474,7 +482,7 @@ ss</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00120">120</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00123">123</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -490,7 +498,7 @@ Children</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a7cf7bab898fe293cf4fc5ddc134d71cf"></a><a class="el" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29b">ELEVATION</a></td>
+<a id="ab7818ed09eafa113286bfb9f2f350b25"></a><a class="el" href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7ba">CBElevation</a></td>
 <td class="fieldname">
 Elevation</td>
 <td class="fielddoc">
@@ -511,6 +519,12 @@ ID</td>
 <a id="aa80e27490a0637da5a93fdc8496c7d8c"></a><a class="el" href="../../db/da4/task_8h.html#d6/d1f/structGeneralProcessInfo">GeneralProcessInfo</a></td>
 <td class="fieldname">
 Info</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a6d74d84b7b9b3645d8bc0fb8fb0e913f"></a><a class="el" href="../../db/d1a/classHashMap.html">HashMap</a>&lt; IPCPort, <a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> &gt; *</td>
+<td class="fieldname">
+IPCHandles</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
@@ -544,7 +558,7 @@ Security</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a5d2dd3269ee02bee1772abc0c4060fd2"></a><a class="el" href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a></td>
+<a id="ab05c3c0fa45a0593c3e5cee620a1626f"></a><a class="el" href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396">CBStatus</a></td>
 <td class="fieldname">
 Status</td>
 <td class="fielddoc">
@@ -594,14 +608,74 @@ Threads</td>
 <tr><td class="fieldname"><a id="a839343ab50872ef45ab3122c940cbe1aa2112ebfee74f950270453a118851cbe1"></a>ARM64&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00038">38</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aaa5ca6e0a84e4f893a6d73e939d288b1d">UnknownArchitecture</a>,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa89dc77cd0bb26f687e5d9deb08687cda">x86</a>,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa82191d26a48acc37b9827bcb9f4c56af">x64</a>,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa3a92c0053fe92a134da3e6a82ea1adb6">ARM</a>,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa2112ebfee74f950270453a118851cbe1">ARM64</a></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00040">40</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aaa5ca6e0a84e4f893a6d73e939d288b1d">UnknownArchitecture</a>,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa89dc77cd0bb26f687e5d9deb08687cda">x86</a>,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa82191d26a48acc37b9827bcb9f4c56af">x64</a>,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa3a92c0053fe92a134da3e6a82ea1adb6">ARM</a>,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa2112ebfee74f950270453a118851cbe1">ARM64</a></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6a8bb9e7e75345ed107cddf2438ec7ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a8bb9e7e75345ed107cddf2438ec7ba">&#9670;&nbsp;</a></span>CBElevation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7ba">CBElevation</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6a8bb9e7e75345ed107cddf2438ec7baa23801e90266f48fb7ea09acf6540aa78"></a>UnknownElevation&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6a8bb9e7e75345ed107cddf2438ec7baa32638eee93ff4cac6e4acd05f1e8ef9b"></a>Kernel&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6a8bb9e7e75345ed107cddf2438ec7baaacd40056f9fbe11dadadeba269eb2034"></a>System&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6a8bb9e7e75345ed107cddf2438ec7baad3fa9ae9431d6cb1772f9d9df48cab19"></a>Idle&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6a8bb9e7e75345ed107cddf2438ec7baae168fb880dc0042ac28438e1875e41d3"></a>User&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00014">14</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baa23801e90266f48fb7ea09acf6540aa78">UnknownElevation</a>,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baa32638eee93ff4cac6e4acd05f1e8ef9b">Kernel</a>,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baaacd40056f9fbe11dadadeba269eb2034">System</a>,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baad3fa9ae9431d6cb1772f9d9df48cab19">Idle</a>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baae168fb880dc0042ac28438e1875e41d3">User</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0cf06e781fecc774dabbdffdab45c396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cf06e781fecc774dabbdffdab45c396">&#9670;&nbsp;</a></span>CBStatus</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396">CBStatus</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0cf06e781fecc774dabbdffdab45c396a7f312b4c3bc1733bf55641ad008fa281"></a>UnknownStatus&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0cf06e781fecc774dabbdffdab45c396a0e73e048b83849a411148a8dddc6dfcb"></a>Ready&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0cf06e781fecc774dabbdffdab45c396a2f5f2c4a8c4f4f0519d503dcdfbf55cb"></a>Running&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0cf06e781fecc774dabbdffdab45c396a7ac9ab6c2e98f6df96b82b175d42747a"></a>Waiting&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0cf06e781fecc774dabbdffdab45c396a0bd9962868a464e4730ffcf8d3fa798d"></a>Terminated&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00023">23</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396a7f312b4c3bc1733bf55641ad008fa281">UnknownStatus</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396a0e73e048b83849a411148a8dddc6dfcb">Ready</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396a2f5f2c4a8c4f4f0519d503dcdfbf55cb">Running</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396a7ac9ab6c2e98f6df96b82b175d42747a">Waiting</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396a0bd9962868a464e4730ffcf8d3fa798d">Terminated</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -621,41 +695,11 @@ Threads</td>
 <tr><td class="fieldname"><a id="a06b5e1d0b960a8ac8adb8a4150ad6b50a26bf2748f727a3c29a989408f6424342"></a>THREAD_CHECKSUM&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00006">6</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a06b5e1d0b960a8ac8adb8a4150ad6b50a48b4019aa18673343fd1017badf5d7ac">PROCESS_CHECKSUM</a> = 0xCAFEBABE,</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a06b5e1d0b960a8ac8adb8a4150ad6b50a26bf2748f727a3c29a989408f6424342">THREAD_CHECKSUM</a> = 0xDEADCAFE</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;};</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aae861332bc88170140dbb0e17b13a29b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae861332bc88170140dbb0e17b13a29b">&#9670;&nbsp;</a></span>ELEVATION</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29b">ELEVATION</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aae861332bc88170140dbb0e17b13a29ba23801e90266f48fb7ea09acf6540aa78"></a>UnknownElevation&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aae861332bc88170140dbb0e17b13a29ba32638eee93ff4cac6e4acd05f1e8ef9b"></a>Kernel&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aae861332bc88170140dbb0e17b13a29baacd40056f9fbe11dadadeba269eb2034"></a>System&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aae861332bc88170140dbb0e17b13a29bad3fa9ae9431d6cb1772f9d9df48cab19"></a>Idle&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aae861332bc88170140dbb0e17b13a29bae168fb880dc0042ac28438e1875e41d3"></a>User&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00012">12</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29ba23801e90266f48fb7ea09acf6540aa78">UnknownElevation</a>,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29ba32638eee93ff4cac6e4acd05f1e8ef9b">Kernel</a>,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29baacd40056f9fbe11dadadeba269eb2034">System</a>,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29bad3fa9ae9431d6cb1772f9d9df48cab19">Idle</a>,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29bae168fb880dc0042ac28438e1875e41d3">User</a></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00008">8</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a06b5e1d0b960a8ac8adb8a4150ad6b50a48b4019aa18673343fd1017badf5d7ac">PROCESS_CHECKSUM</a> = 0xCAFEBABE,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a06b5e1d0b960a8ac8adb8a4150ad6b50a26bf2748f727a3c29a989408f6424342">THREAD_CHECKSUM</a> = 0xDEADCAFE</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -678,44 +722,14 @@ Threads</td>
 <tr><td class="fieldname"><a id="a5be836f305c9cd8b44ffb7c964f4cbd9af78c72fc2f0964de634510fcc29ee7ad"></a>Windows&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00047">47</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a8a19e9692b8e73ebeb117b2c48342a50">UnknownPlatform</a>,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a9e629293dc98845502e6981802ab0627">Native</a>,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a64aa4a9dfaed169f6326303c56d624c3">Linux</a>,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a3447aa6df6e23ef731f508b276c7cdbc">POSIX</a>,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9af78c72fc2f0964de634510fcc29ee7ad">Windows</a></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a32c27cc471df37f4fc818d65de0a56c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32c27cc471df37f4fc818d65de0a56c4">&#9670;&nbsp;</a></span>STATUS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a32c27cc471df37f4fc818d65de0a56c4a7f312b4c3bc1733bf55641ad008fa281"></a>UnknownStatus&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a32c27cc471df37f4fc818d65de0a56c4a0e73e048b83849a411148a8dddc6dfcb"></a>Ready&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a32c27cc471df37f4fc818d65de0a56c4a2f5f2c4a8c4f4f0519d503dcdfbf55cb"></a>Running&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a32c27cc471df37f4fc818d65de0a56c4a7ac9ab6c2e98f6df96b82b175d42747a"></a>Waiting&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a32c27cc471df37f4fc818d65de0a56c4a0bd9962868a464e4730ffcf8d3fa798d"></a>Terminated&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00021">21</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4a7f312b4c3bc1733bf55641ad008fa281">UnknownStatus</a>,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4a0e73e048b83849a411148a8dddc6dfcb">Ready</a>,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4a2f5f2c4a8c4f4f0519d503dcdfbf55cb">Running</a>,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4a7ac9ab6c2e98f6df96b82b175d42747a">Waiting</a>,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4a0bd9962868a464e4730ffcf8d3fa798d">Terminated</a></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
+<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00049">49</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a8a19e9692b8e73ebeb117b2c48342a50">UnknownPlatform</a>,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a9e629293dc98845502e6981802ab0627">Native</a>,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a64aa4a9dfaed169f6326303c56d624c3">Linux</a>,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a3447aa6df6e23ef731f508b276c7cdbc">POSIX</a>,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9af78c72fc2f0964de634510fcc29ee7ad">Windows</a></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -737,48 +751,48 @@ Threads</td>
 <tr><td class="fieldname"><a id="a24b654418b0c21364315d4126976746fa4efdeca41bd90e6ea995ab78e03ceb65"></a>TrustedByKernel&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00030">30</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fad32e3ba700cec44818d8308992868453">UnknownTrustLevel</a>, <span class="comment">// error</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fac578be2ed5c4fd82117656d6febff751">Untrusted</a>,         <span class="comment">// process is not trusted by the kernel</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fa0130e862609de4c76fb88646e373e120">Trusted</a>,           <span class="comment">// trusted but have limits</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fa4efdeca41bd90e6ea995ab78e03ceb65">TrustedByKernel</a>    <span class="comment">// can run all syscalls</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<p class="definition">Definition at line <a class="el" href="../../db/da4/task_8h_source.html#l00032">32</a> of file <a class="el" href="../../db/da4/task_8h_source.html">task.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fad32e3ba700cec44818d8308992868453">UnknownTrustLevel</a>, <span class="comment">// error</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fac578be2ed5c4fd82117656d6febff751">Untrusted</a>,         <span class="comment">// process is not trusted by the kernel</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fa0130e862609de4c76fb88646e373e120">Trusted</a>,           <span class="comment">// trusted but have limits</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fa4efdeca41bd90e6ea995ab78e03ceb65">TrustedByKernel</a>    <span class="comment">// can run all syscalls</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="atask_8h_html_aae861332bc88170140dbb0e17b13a29ba32638eee93ff4cac6e4acd05f1e8ef9b"><div class="ttname"><a href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29ba32638eee93ff4cac6e4acd05f1e8ef9b">Kernel</a></div><div class="ttdeci">@ Kernel</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00015">task.h:15</a></div></div>
-<div class="ttc" id="atask_8h_html_a24b654418b0c21364315d4126976746fac578be2ed5c4fd82117656d6febff751"><div class="ttname"><a href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fac578be2ed5c4fd82117656d6febff751">Untrusted</a></div><div class="ttdeci">@ Untrusted</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00033">task.h:33</a></div></div>
-<div class="ttc" id="atask_8h_html_a24b654418b0c21364315d4126976746fa0130e862609de4c76fb88646e373e120"><div class="ttname"><a href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fa0130e862609de4c76fb88646e373e120">Trusted</a></div><div class="ttdeci">@ Trusted</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00034">task.h:34</a></div></div>
-<div class="ttc" id="atask_8h_html_a06b5e1d0b960a8ac8adb8a4150ad6b50a26bf2748f727a3c29a989408f6424342"><div class="ttname"><a href="../../db/da4/task_8h.html#a06b5e1d0b960a8ac8adb8a4150ad6b50a26bf2748f727a3c29a989408f6424342">THREAD_CHECKSUM</a></div><div class="ttdeci">@ THREAD_CHECKSUM</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00009">task.h:9</a></div></div>
-<div class="ttc" id="atask_8h_html_aae861332bc88170140dbb0e17b13a29baacd40056f9fbe11dadadeba269eb2034"><div class="ttname"><a href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29baacd40056f9fbe11dadadeba269eb2034">System</a></div><div class="ttdeci">@ System</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00016">task.h:16</a></div></div>
-<div class="ttc" id="atask_8h_html_a32c27cc471df37f4fc818d65de0a56c4a2f5f2c4a8c4f4f0519d503dcdfbf55cb"><div class="ttname"><a href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4a2f5f2c4a8c4f4f0519d503dcdfbf55cb">Running</a></div><div class="ttdeci">@ Running</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00025">task.h:25</a></div></div>
-<div class="ttc" id="atask_8h_html_a5be836f305c9cd8b44ffb7c964f4cbd9a8a19e9692b8e73ebeb117b2c48342a50"><div class="ttname"><a href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a8a19e9692b8e73ebeb117b2c48342a50">UnknownPlatform</a></div><div class="ttdeci">@ UnknownPlatform</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00049">task.h:49</a></div></div>
-<div class="ttc" id="atask_8h_html_a5be836f305c9cd8b44ffb7c964f4cbd9a9e629293dc98845502e6981802ab0627"><div class="ttname"><a href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a9e629293dc98845502e6981802ab0627">Native</a></div><div class="ttdeci">@ Native</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00050">task.h:50</a></div></div>
-<div class="ttc" id="atask_8h_html_a24b654418b0c21364315d4126976746fa4efdeca41bd90e6ea995ab78e03ceb65"><div class="ttname"><a href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fa4efdeca41bd90e6ea995ab78e03ceb65">TrustedByKernel</a></div><div class="ttdeci">@ TrustedByKernel</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00035">task.h:35</a></div></div>
-<div class="ttc" id="atask_8h_html_a839343ab50872ef45ab3122c940cbe1aa3a92c0053fe92a134da3e6a82ea1adb6"><div class="ttname"><a href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa3a92c0053fe92a134da3e6a82ea1adb6">ARM</a></div><div class="ttdeci">@ ARM</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00043">task.h:43</a></div></div>
-<div class="ttc" id="atask_8h_html_a06b5e1d0b960a8ac8adb8a4150ad6b50a48b4019aa18673343fd1017badf5d7ac"><div class="ttname"><a href="../../db/da4/task_8h.html#a06b5e1d0b960a8ac8adb8a4150ad6b50a48b4019aa18673343fd1017badf5d7ac">PROCESS_CHECKSUM</a></div><div class="ttdeci">@ PROCESS_CHECKSUM</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00008">task.h:8</a></div></div>
-<div class="ttc" id="atask_8h_html_a32c27cc471df37f4fc818d65de0a56c4a0bd9962868a464e4730ffcf8d3fa798d"><div class="ttname"><a href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4a0bd9962868a464e4730ffcf8d3fa798d">Terminated</a></div><div class="ttdeci">@ Terminated</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00027">task.h:27</a></div></div>
-<div class="ttc" id="atask_8h_html_a5be836f305c9cd8b44ffb7c964f4cbd9af78c72fc2f0964de634510fcc29ee7ad"><div class="ttname"><a href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9af78c72fc2f0964de634510fcc29ee7ad">Windows</a></div><div class="ttdeci">@ Windows</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00053">task.h:53</a></div></div>
-<div class="ttc" id="atask_8h_html_a839343ab50872ef45ab3122c940cbe1aa82191d26a48acc37b9827bcb9f4c56af"><div class="ttname"><a href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa82191d26a48acc37b9827bcb9f4c56af">x64</a></div><div class="ttdeci">@ x64</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00042">task.h:42</a></div></div>
-<div class="ttc" id="atask_8h_html_a839343ab50872ef45ab3122c940cbe1aa89dc77cd0bb26f687e5d9deb08687cda"><div class="ttname"><a href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa89dc77cd0bb26f687e5d9deb08687cda">x86</a></div><div class="ttdeci">@ x86</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00041">task.h:41</a></div></div>
-<div class="ttc" id="atask_8h_html_a5be836f305c9cd8b44ffb7c964f4cbd9a3447aa6df6e23ef731f508b276c7cdbc"><div class="ttname"><a href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a3447aa6df6e23ef731f508b276c7cdbc">POSIX</a></div><div class="ttdeci">@ POSIX</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00052">task.h:52</a></div></div>
-<div class="ttc" id="atask_8h_html_aae861332bc88170140dbb0e17b13a29bad3fa9ae9431d6cb1772f9d9df48cab19"><div class="ttname"><a href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29bad3fa9ae9431d6cb1772f9d9df48cab19">Idle</a></div><div class="ttdeci">@ Idle</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00017">task.h:17</a></div></div>
-<div class="ttc" id="atask_8h_html_a839343ab50872ef45ab3122c940cbe1aaa5ca6e0a84e4f893a6d73e939d288b1d"><div class="ttname"><a href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aaa5ca6e0a84e4f893a6d73e939d288b1d">UnknownArchitecture</a></div><div class="ttdeci">@ UnknownArchitecture</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00040">task.h:40</a></div></div>
-<div class="ttc" id="atask_8h_html_a32c27cc471df37f4fc818d65de0a56c4a7ac9ab6c2e98f6df96b82b175d42747a"><div class="ttname"><a href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4a7ac9ab6c2e98f6df96b82b175d42747a">Waiting</a></div><div class="ttdeci">@ Waiting</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00026">task.h:26</a></div></div>
-<div class="ttc" id="atask_8h_html_aae861332bc88170140dbb0e17b13a29ba23801e90266f48fb7ea09acf6540aa78"><div class="ttname"><a href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29ba23801e90266f48fb7ea09acf6540aa78">UnknownElevation</a></div><div class="ttdeci">@ UnknownElevation</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00014">task.h:14</a></div></div>
-<div class="ttc" id="atask_8h_html_a839343ab50872ef45ab3122c940cbe1aa2112ebfee74f950270453a118851cbe1"><div class="ttname"><a href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa2112ebfee74f950270453a118851cbe1">ARM64</a></div><div class="ttdeci">@ ARM64</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00044">task.h:44</a></div></div>
-<div class="ttc" id="atask_8h_html_a5be836f305c9cd8b44ffb7c964f4cbd9a64aa4a9dfaed169f6326303c56d624c3"><div class="ttname"><a href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a64aa4a9dfaed169f6326303c56d624c3">Linux</a></div><div class="ttdeci">@ Linux</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00051">task.h:51</a></div></div>
-<div class="ttc" id="atask_8h_html_a32c27cc471df37f4fc818d65de0a56c4a7f312b4c3bc1733bf55641ad008fa281"><div class="ttname"><a href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4a7f312b4c3bc1733bf55641ad008fa281">UnknownStatus</a></div><div class="ttdeci">@ UnknownStatus</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00023">task.h:23</a></div></div>
-<div class="ttc" id="atask_8h_html_a24b654418b0c21364315d4126976746fad32e3ba700cec44818d8308992868453"><div class="ttname"><a href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fad32e3ba700cec44818d8308992868453">UnknownTrustLevel</a></div><div class="ttdeci">@ UnknownTrustLevel</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00032">task.h:32</a></div></div>
-<div class="ttc" id="atask_8h_html_aae861332bc88170140dbb0e17b13a29bae168fb880dc0042ac28438e1875e41d3"><div class="ttname"><a href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29bae168fb880dc0042ac28438e1875e41d3">User</a></div><div class="ttdeci">@ User</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00018">task.h:18</a></div></div>
-<div class="ttc" id="atask_8h_html_a32c27cc471df37f4fc818d65de0a56c4a0e73e048b83849a411148a8dddc6dfcb"><div class="ttname"><a href="../../db/da4/task_8h.html#a32c27cc471df37f4fc818d65de0a56c4a0e73e048b83849a411148a8dddc6dfcb">Ready</a></div><div class="ttdeci">@ Ready</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00024">task.h:24</a></div></div>
+<div class="ttc" id="atask_8h_html_a6a8bb9e7e75345ed107cddf2438ec7baa32638eee93ff4cac6e4acd05f1e8ef9b"><div class="ttname"><a href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baa32638eee93ff4cac6e4acd05f1e8ef9b">Kernel</a></div><div class="ttdeci">@ Kernel</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00017">task.h:17</a></div></div>
+<div class="ttc" id="atask_8h_html_a6a8bb9e7e75345ed107cddf2438ec7baa23801e90266f48fb7ea09acf6540aa78"><div class="ttname"><a href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baa23801e90266f48fb7ea09acf6540aa78">UnknownElevation</a></div><div class="ttdeci">@ UnknownElevation</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00016">task.h:16</a></div></div>
+<div class="ttc" id="atask_8h_html_a0cf06e781fecc774dabbdffdab45c396a2f5f2c4a8c4f4f0519d503dcdfbf55cb"><div class="ttname"><a href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396a2f5f2c4a8c4f4f0519d503dcdfbf55cb">Running</a></div><div class="ttdeci">@ Running</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00027">task.h:27</a></div></div>
+<div class="ttc" id="atask_8h_html_a0cf06e781fecc774dabbdffdab45c396a0e73e048b83849a411148a8dddc6dfcb"><div class="ttname"><a href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396a0e73e048b83849a411148a8dddc6dfcb">Ready</a></div><div class="ttdeci">@ Ready</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00026">task.h:26</a></div></div>
+<div class="ttc" id="atask_8h_html_a24b654418b0c21364315d4126976746fac578be2ed5c4fd82117656d6febff751"><div class="ttname"><a href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fac578be2ed5c4fd82117656d6febff751">Untrusted</a></div><div class="ttdeci">@ Untrusted</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00035">task.h:35</a></div></div>
+<div class="ttc" id="atask_8h_html_a6a8bb9e7e75345ed107cddf2438ec7baae168fb880dc0042ac28438e1875e41d3"><div class="ttname"><a href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baae168fb880dc0042ac28438e1875e41d3">User</a></div><div class="ttdeci">@ User</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00020">task.h:20</a></div></div>
+<div class="ttc" id="atask_8h_html_a24b654418b0c21364315d4126976746fa0130e862609de4c76fb88646e373e120"><div class="ttname"><a href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fa0130e862609de4c76fb88646e373e120">Trusted</a></div><div class="ttdeci">@ Trusted</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00036">task.h:36</a></div></div>
+<div class="ttc" id="atask_8h_html_a06b5e1d0b960a8ac8adb8a4150ad6b50a26bf2748f727a3c29a989408f6424342"><div class="ttname"><a href="../../db/da4/task_8h.html#a06b5e1d0b960a8ac8adb8a4150ad6b50a26bf2748f727a3c29a989408f6424342">THREAD_CHECKSUM</a></div><div class="ttdeci">@ THREAD_CHECKSUM</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00011">task.h:11</a></div></div>
+<div class="ttc" id="atask_8h_html_a0cf06e781fecc774dabbdffdab45c396a0bd9962868a464e4730ffcf8d3fa798d"><div class="ttname"><a href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396a0bd9962868a464e4730ffcf8d3fa798d">Terminated</a></div><div class="ttdeci">@ Terminated</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00029">task.h:29</a></div></div>
+<div class="ttc" id="atask_8h_html_a5be836f305c9cd8b44ffb7c964f4cbd9a8a19e9692b8e73ebeb117b2c48342a50"><div class="ttname"><a href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a8a19e9692b8e73ebeb117b2c48342a50">UnknownPlatform</a></div><div class="ttdeci">@ UnknownPlatform</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00051">task.h:51</a></div></div>
+<div class="ttc" id="atask_8h_html_a5be836f305c9cd8b44ffb7c964f4cbd9a9e629293dc98845502e6981802ab0627"><div class="ttname"><a href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a9e629293dc98845502e6981802ab0627">Native</a></div><div class="ttdeci">@ Native</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00052">task.h:52</a></div></div>
+<div class="ttc" id="atask_8h_html_a24b654418b0c21364315d4126976746fa4efdeca41bd90e6ea995ab78e03ceb65"><div class="ttname"><a href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fa4efdeca41bd90e6ea995ab78e03ceb65">TrustedByKernel</a></div><div class="ttdeci">@ TrustedByKernel</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00037">task.h:37</a></div></div>
+<div class="ttc" id="atask_8h_html_a839343ab50872ef45ab3122c940cbe1aa3a92c0053fe92a134da3e6a82ea1adb6"><div class="ttname"><a href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa3a92c0053fe92a134da3e6a82ea1adb6">ARM</a></div><div class="ttdeci">@ ARM</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00045">task.h:45</a></div></div>
+<div class="ttc" id="atask_8h_html_a06b5e1d0b960a8ac8adb8a4150ad6b50a48b4019aa18673343fd1017badf5d7ac"><div class="ttname"><a href="../../db/da4/task_8h.html#a06b5e1d0b960a8ac8adb8a4150ad6b50a48b4019aa18673343fd1017badf5d7ac">PROCESS_CHECKSUM</a></div><div class="ttdeci">@ PROCESS_CHECKSUM</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00010">task.h:10</a></div></div>
+<div class="ttc" id="atask_8h_html_a5be836f305c9cd8b44ffb7c964f4cbd9af78c72fc2f0964de634510fcc29ee7ad"><div class="ttname"><a href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9af78c72fc2f0964de634510fcc29ee7ad">Windows</a></div><div class="ttdeci">@ Windows</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00055">task.h:55</a></div></div>
+<div class="ttc" id="atask_8h_html_a839343ab50872ef45ab3122c940cbe1aa82191d26a48acc37b9827bcb9f4c56af"><div class="ttname"><a href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa82191d26a48acc37b9827bcb9f4c56af">x64</a></div><div class="ttdeci">@ x64</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00044">task.h:44</a></div></div>
+<div class="ttc" id="atask_8h_html_a6a8bb9e7e75345ed107cddf2438ec7baad3fa9ae9431d6cb1772f9d9df48cab19"><div class="ttname"><a href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baad3fa9ae9431d6cb1772f9d9df48cab19">Idle</a></div><div class="ttdeci">@ Idle</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00019">task.h:19</a></div></div>
+<div class="ttc" id="atask_8h_html_a0cf06e781fecc774dabbdffdab45c396a7ac9ab6c2e98f6df96b82b175d42747a"><div class="ttname"><a href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396a7ac9ab6c2e98f6df96b82b175d42747a">Waiting</a></div><div class="ttdeci">@ Waiting</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00028">task.h:28</a></div></div>
+<div class="ttc" id="atask_8h_html_a839343ab50872ef45ab3122c940cbe1aa89dc77cd0bb26f687e5d9deb08687cda"><div class="ttname"><a href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa89dc77cd0bb26f687e5d9deb08687cda">x86</a></div><div class="ttdeci">@ x86</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00043">task.h:43</a></div></div>
+<div class="ttc" id="atask_8h_html_a5be836f305c9cd8b44ffb7c964f4cbd9a3447aa6df6e23ef731f508b276c7cdbc"><div class="ttname"><a href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a3447aa6df6e23ef731f508b276c7cdbc">POSIX</a></div><div class="ttdeci">@ POSIX</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00054">task.h:54</a></div></div>
+<div class="ttc" id="atask_8h_html_a0cf06e781fecc774dabbdffdab45c396a7f312b4c3bc1733bf55641ad008fa281"><div class="ttname"><a href="../../db/da4/task_8h.html#a0cf06e781fecc774dabbdffdab45c396a7f312b4c3bc1733bf55641ad008fa281">UnknownStatus</a></div><div class="ttdeci">@ UnknownStatus</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00025">task.h:25</a></div></div>
+<div class="ttc" id="atask_8h_html_a839343ab50872ef45ab3122c940cbe1aaa5ca6e0a84e4f893a6d73e939d288b1d"><div class="ttname"><a href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aaa5ca6e0a84e4f893a6d73e939d288b1d">UnknownArchitecture</a></div><div class="ttdeci">@ UnknownArchitecture</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00042">task.h:42</a></div></div>
+<div class="ttc" id="atask_8h_html_a839343ab50872ef45ab3122c940cbe1aa2112ebfee74f950270453a118851cbe1"><div class="ttname"><a href="../../db/da4/task_8h.html#a839343ab50872ef45ab3122c940cbe1aa2112ebfee74f950270453a118851cbe1">ARM64</a></div><div class="ttdeci">@ ARM64</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00046">task.h:46</a></div></div>
+<div class="ttc" id="atask_8h_html_a5be836f305c9cd8b44ffb7c964f4cbd9a64aa4a9dfaed169f6326303c56d624c3"><div class="ttname"><a href="../../db/da4/task_8h.html#a5be836f305c9cd8b44ffb7c964f4cbd9a64aa4a9dfaed169f6326303c56d624c3">Linux</a></div><div class="ttdeci">@ Linux</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00053">task.h:53</a></div></div>
+<div class="ttc" id="atask_8h_html_a24b654418b0c21364315d4126976746fad32e3ba700cec44818d8308992868453"><div class="ttname"><a href="../../db/da4/task_8h.html#a24b654418b0c21364315d4126976746fad32e3ba700cec44818d8308992868453">UnknownTrustLevel</a></div><div class="ttdeci">@ UnknownTrustLevel</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00034">task.h:34</a></div></div>
+<div class="ttc" id="atask_8h_html_a6a8bb9e7e75345ed107cddf2438ec7baaacd40056f9fbe11dadadeba269eb2034"><div class="ttname"><a href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baaacd40056f9fbe11dadadeba269eb2034">System</a></div><div class="ttdeci">@ System</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00018">task.h:18</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../db/da4/task_8h.html">task.h</a></li>
+    <li class="navelem"><a class="el" href="../../dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="../../dir_009f605b833ac4622acd6c3c0c26c0f0.html">include</a></li><li class="navelem"><a class="el" href="../../db/da4/task_8h.html">task.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

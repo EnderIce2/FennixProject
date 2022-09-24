@@ -388,7 +388,7 @@ $(document).ready(function(){initNavTree('d6/ded/interrupts_8h_source.html','../
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="comment">// uint64_t gs;  // General-purpose Segment</span></div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="comment">// uint64_t fs;  // General-purpose Segment</span></div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="comment">// uint64_t es;  // Extra Segment (used for string operations)</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="comment">// uint64_t ds;  // Data Segment</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> ds;  <span class="comment">// Data Segment</span></div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> r15; <span class="comment">// General purpose</span></div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> r14; <span class="comment">// General purpose</span></div>
@@ -437,7 +437,7 @@ $(document).ready(function(){initNavTree('d6/ded/interrupts_8h_source.html','../
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="preprocessor">#define ES regs-&gt;es                 // Extra Segment (used for string operations)</span></div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="preprocessor">#define FS regs-&gt;fs                 // General-purpose Segment</span></div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="preprocessor">#define GS regs-&gt;gs                 // General-purpose Segment</span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor">#define DS regs-&gt;r15                // Data Segment</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor">#define DS regs-&gt;ds                 // Data Segment</span></div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="preprocessor">#define R15 regs-&gt;r15               // General purpose</span></div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="preprocessor">#define R14 regs-&gt;r14               // General purpose</span></div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="preprocessor">#define R13 regs-&gt;r13               // General purpose</span></div>

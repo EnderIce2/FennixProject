@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kernelsymbols_2994',['KernelSymbols',['../d9/d45/namespaceKernelSymbols.html',1,'']]]
+  ['interprocesscommunication_3038',['InterProcessCommunication',['../d7/d5f/namespaceInterProcessCommunication.html',1,'']]]
 ];

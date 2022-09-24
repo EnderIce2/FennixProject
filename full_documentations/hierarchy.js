@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "InterProcessCommunication::__attribute__", "d7/d5f/namespaceInterProcessCommunication.html#d9/dcb/structInterProcessCommunication_1_1____attribute____", null ],
     [ "_DriverBind", "db/de4/driver_8h.html#df/d50/struct__DriverBind", null ],
     [ "_DriverBind.__unnamed__", "db/de4/driver_8h.html#d9/d36/union__DriverBind_8____unnamed____", null ],
     [ "_DriverBind.__unnamed__.Interrupt", "db/de4/driver_8h.html#d8/d21/struct__DriverBind_8____unnamed_____8Interrupt", null ],
@@ -132,6 +133,10 @@ var hierarchy =
     [ "ACPI::ACPI::GenericAddressStructure", "d3/d21/classACPI_1_1ACPI.html#db/df1/structACPI_1_1ACPI_1_1GenericAddressStructure", null ],
     [ "DiskManager::Partition::GUIDPartitionTable", "de/df4/classDiskManager_1_1Partition.html#db/d71/structDiskManager_1_1Partition_1_1GUIDPartitionTable", null ],
     [ "DiskManager::Partition::GUIDPartitionTablePartition", "de/df4/classDiskManager_1_1Partition.html#d7/d5b/structDiskManager_1_1Partition_1_1GUIDPartitionTablePartition", null ],
+    [ "HashMap< K, V >", "db/d1a/classHashMap.html", null ],
+    [ "HashMap< InterProcessCommunication::IPCPort, uint64_t >", "db/d1a/classHashMap.html", null ],
+    [ "HashNode< K, V >", "d7/d56/classHashNode.html", null ],
+    [ "HashNode< InterProcessCommunication::IPCPort, uint64_t >", "d7/d56/classHashNode.html", null ],
     [ "Heap::HeapSegHdr", "d6/d13/structHeap_1_1HeapSegHdr.html", null ],
     [ "Xalloc::AllocatorV1::HeapSegment", "d8/da9/structXalloc_1_1AllocatorV1_1_1HeapSegment.html", null ],
     [ "ACPI::ACPI::HESTHeader", "d3/d21/classACPI_1_1ACPI.html#da/d64/structACPI_1_1ACPI_1_1HESTHeader", null ],
@@ -149,6 +154,9 @@ var hierarchy =
     [ "InternetProtocol4", "d0/d1e/structInternetProtocol4.html", null ],
     [ "invalid_builtin_data", "d0/d1f/ubsan_8h.html#d6/d1e/structinvalid__builtin__data", null ],
     [ "invalid_value_data", "d0/d1f/ubsan_8h.html#dc/d82/structinvalid__value__data", null ],
+    [ "InterProcessCommunication::IPC", "df/d7e/classInterProcessCommunication_1_1IPC.html", null ],
+    [ "InterProcessCommunication::IPCError", "d7/d5f/namespaceInterProcessCommunication.html#df/df1/structInterProcessCommunication_1_1IPCError", null ],
+    [ "InterProcessCommunication::IPCHandle", "d7/d5f/namespaceInterProcessCommunication.html#dc/d6b/structInterProcessCommunication_1_1IPCHandle", null ],
     [ "NetworkIPv4::IPv4Events", "d1/dd4/classNetworkIPv4_1_1IPv4Events.html", [
       [ "NetworkUDP::UDP", "d0/d72/classNetworkUDP_1_1UDP.html", null ]
     ] ],
@@ -214,8 +222,8 @@ var hierarchy =
     [ "ACPI::ACPI::MCFGHeader", "d3/d21/classACPI_1_1ACPI.html#dd/db0/structACPI_1_1ACPI_1_1MCFGHeader", null ],
     [ "MediaAccessControl", "d0/d48/structMediaAccessControl.html", null ],
     [ "FileSystem::Mount", "dc/d19/classFileSystem_1_1Mount.html", null ],
-    [ "MouseInfo", "d7/de2/apps_2system_2uiserver_2main_8cpp.html#df/df2/structMouseInfo", null ],
     [ "PS2Mouse::MouseInfo", "d9/dbb/namespacePS2Mouse.html#dd/d80/structPS2Mouse_1_1MouseInfo", null ],
+    [ "MouseInfo", "d7/de2/apps_2system_2uiserver_2main_8cpp.html#df/df2/structMouseInfo", null ],
     [ "ms", "df/daa/apps_2system_2wm_2main_8cpp.html#d3/d84/structms", null ],
     [ "MonotonLib::mtl", "d2/d83/classMonotonLib_1_1mtl.html", null ],
     [ "multiboot_color", "d5/dba/multiboot2_8h.html#d7/d2b/structmultiboot__color", null ],

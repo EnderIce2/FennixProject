@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['back_3070',['back',['../d6/da1/classVector.html#a7bd4943333f47a49ce8145abcb43fbdc',1,'Vector']]],
-  ['begin_3071',['begin',['../d6/da1/classVector.html#a466e8c045ea10d62c28b689888e9fe5a',1,'Vector']]]
+  ['back_3117',['back',['../d6/da1/classVector.html#a7bd4943333f47a49ce8145abcb43fbdc',1,'Vector']]],
+  ['begin_3118',['begin',['../d6/da1/classVector.html#a466e8c045ea10d62c28b689888e9fe5a',1,'Vector']]]
 ];

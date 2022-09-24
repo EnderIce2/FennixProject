@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['vector_2983',['Vector',['../d6/da1/classVector.html',1,'']]],
-  ['vector_3c_20filesystem_3a_3afilesystemnode_20_2a_20_3e_2984',['Vector&lt; FileSystem::FileSystemNode * &gt;',['../d6/da1/classVector.html',1,'']]],
-  ['vector_3c_20struct_20pcb_20_2a_20_3e_2985',['Vector&lt; struct PCB * &gt;',['../d6/da1/classVector.html',1,'']]],
-  ['vector_3c_20tcb_20_2a_20_3e_2986',['Vector&lt; TCB * &gt;',['../d6/da1/classVector.html',1,'']]],
-  ['virtual_2987',['Virtual',['../d0/d99/classFileSystem_1_1Virtual.html',1,'FileSystem']]]
+  ['unique_5fptr_3025',['unique_ptr',['../d2/d34/smartptr_8hpp.html#dd/d67/classunique__ptr',1,'']]],
+  ['ustar_3026',['USTAR',['../d0/df0/classFileSystem_1_1USTAR.html',1,'FileSystem']]]
 ];

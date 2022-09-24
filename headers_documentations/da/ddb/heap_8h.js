@@ -70,7 +70,6 @@ var heap_8h =
     [ "MapMemory", "da/ddb/heap_8h.html#a689b28d7bce04c12c728e2dbb178df84", null ],
     [ "RequestPage", "da/ddb/heap_8h.html#ad89ec2bec6a6893d46fc00b032aacdc1", null ],
     [ "RequestPages", "da/ddb/heap_8h.html#a1a5d3eb19e5c9222db4f4cd68d58afea", null ],
-    [ "__attribute__", "da/ddb/heap_8h.html#ab3c4f7b5adf8de5217fda42d486cee50", null ],
     [ "_kernel_end", "da/ddb/heap_8h.html#a963a9b86d21e2b5cfdeb947f25826c13", null ],
     [ "_kernel_rodata_end", "da/ddb/heap_8h.html#a4436d804622b0f1d5e1a887fafb8dade", null ],
     [ "_kernel_start", "da/ddb/heap_8h.html#a9aea202f26ca2a1779397d624e7053a1", null ],

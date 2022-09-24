@@ -19,5 +19,5 @@ var structTCB =
     [ "Security", "de/d72/structTCB.html#a76ddff96655c5d198b20457f8fdc85bf", null ],
     [ "ss", "de/d72/structTCB.html#a7a450b91d0c572d7b82d26e4cb2bec83", null ],
     [ "Stack", "de/d72/structTCB.html#a9ef4f9df2e5a0985ddc420e0eae3d18b", null ],
-    [ "Status", "de/d72/structTCB.html#adfaec4b04096209a6bca40fc315181f8", null ]
+    [ "Status", "de/d72/structTCB.html#a2380b7e89b39b3fd44ec30ce17601963", null ]
 ];

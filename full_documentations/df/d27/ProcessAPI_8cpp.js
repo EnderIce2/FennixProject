@@ -2,8 +2,8 @@ var ProcessAPI_8cpp =
 [
     [ "ConvertTaskCBToPCB", "df/d27/ProcessAPI_8cpp.html#ade1271c19fc6707b61f8301faac40243", null ],
     [ "ConvertTaskCBToTCB", "df/d27/ProcessAPI_8cpp.html#ab0f169764f76fbd3e8885f10b88f41ed", null ],
-    [ "SysCreateProcess", "df/d27/ProcessAPI_8cpp.html#a00289efa26c53a4f364869db5b41a414", null ],
-    [ "SysCreateProcessFromFile", "df/d27/ProcessAPI_8cpp.html#aaaed5189c104c1e8b6acf162a61d3db8", null ],
+    [ "SysCreateProcess", "df/d27/ProcessAPI_8cpp.html#a783346555a848ed496a024b1b6265d7f", null ],
+    [ "SysCreateProcessFromFile", "df/d27/ProcessAPI_8cpp.html#af7a9b484041454821438045247bdb927", null ],
     [ "SysCreateThread", "df/d27/ProcessAPI_8cpp.html#a3e9463b4cc18e87fc111e5262f113bc7", null ],
     [ "SysGetCurrentProcess", "df/d27/ProcessAPI_8cpp.html#aba344b9066be19457df7e936aca3351c", null ],
     [ "SysGetCurrentThread", "df/d27/ProcessAPI_8cpp.html#a249c9d235bdb42f4e30cc660ab205659", null ],

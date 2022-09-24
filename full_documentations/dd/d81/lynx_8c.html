@@ -134,9 +134,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    InitializeLib(ImageHandle, SystemTable);</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    SystemTable-&gt;BootServices-&gt;SetWatchdogTimer(0, 0, 0, <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    Print(L<span class="stringliteral">&quot;Lynx Bootloader © EnderIce2 2022\n&quot;</span>);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    EFI_FILE *<a class="code" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29ba32638eee93ff4cac6e4acd05f1e8ef9b">Kernel</a> = <a class="code" href="../../dc/de1/FileLoader_8c.html#a3812867bb556476b6fffab75a847ecee">LoadFile</a>(<a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, L<span class="stringliteral">&quot;kernel.fsys&quot;</span>, ImageHandle, SystemTable);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    EFI_FILE *<a class="code" href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baa32638eee93ff4cac6e4acd05f1e8ef9b">Kernel</a> = <a class="code" href="../../dc/de1/FileLoader_8c.html#a3812867bb556476b6fffab75a847ecee">LoadFile</a>(<a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, L<span class="stringliteral">&quot;kernel.fsys&quot;</span>, ImageHandle, SystemTable);</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29ba32638eee93ff4cac6e4acd05f1e8ef9b">Kernel</a> == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baa32638eee93ff4cac6e4acd05f1e8ef9b">Kernel</a> == <a class="code" href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        Print(L<span class="stringliteral">&quot;Kernel not found\n&quot;</span>);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">while</span> (1)</div>
@@ -148,13 +148,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> EFI_SUCCESS;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../db/da4/task_8h_source.html#l00015">Kernel</a>, <a class="el" href="../../dc/de1/FileLoader_8c_source.html#l00005">LoadFile()</a>, and <a class="el" href="../../d3/dce/stddef_8h_source.html#l00008">NULL</a>.</p>
+<p class="reference">References <a class="el" href="../../db/da4/task_8h_source.html#l00017">Kernel</a>, <a class="el" href="../../dc/de1/FileLoader_8c_source.html#l00005">LoadFile()</a>, and <a class="el" href="../../d3/dce/stddef_8h_source.html#l00008">NULL</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="atask_8h_html_aae861332bc88170140dbb0e17b13a29ba32638eee93ff4cac6e4acd05f1e8ef9b"><div class="ttname"><a href="../../db/da4/task_8h.html#aae861332bc88170140dbb0e17b13a29ba32638eee93ff4cac6e4acd05f1e8ef9b">Kernel</a></div><div class="ttdeci">@ Kernel</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00015">task.h:15</a></div></div>
+<div class="ttc" id="atask_8h_html_a6a8bb9e7e75345ed107cddf2438ec7baa32638eee93ff4cac6e4acd05f1e8ef9b"><div class="ttname"><a href="../../db/da4/task_8h.html#a6a8bb9e7e75345ed107cddf2438ec7baa32638eee93ff4cac6e4acd05f1e8ef9b">Kernel</a></div><div class="ttdeci">@ Kernel</div><div class="ttdef"><b>Definition:</b> <a href="../../db/da4/task_8h_source.html#l00017">task.h:17</a></div></div>
 <div class="ttc" id="aFileLoader_8c_html_a3812867bb556476b6fffab75a847ecee"><div class="ttname"><a href="../../dc/de1/FileLoader_8c.html#a3812867bb556476b6fffab75a847ecee">LoadFile</a></div><div class="ttdeci">EFI_FILE * LoadFile(EFI_FILE *Directory, CHAR16 *Path, EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/de1/FileLoader_8c_source.html#l00005">FileLoader.c:5</a></div></div>
 <div class="ttc" id="astddef_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="../../d3/dce/stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dce/stddef_8h_source.html#l00008">stddef.h:8</a></div></div>
 <!-- start footer part -->
