@@ -6,6 +6,7 @@
 
 void EndOfInterrupt(int interrupt)
 {
+#if defined(__amd64__) || defined(__i386__)
     if (apic)
         if (apic->APICSupported())
         {
@@ -13,6 +14,7 @@ void EndOfInterrupt(int interrupt)
             return;
         }
     PIC_sendEOI(interrupt);
+#endif
 }
 
 /* -------------------------------------------------------------------------------------------------------------------------------- */
@@ -22,6 +24,7 @@ DriverInterrupts::Register *MainDriverRegisteredInterrupts[256];
 
 extern "C" void MainInterruptHandler(TrapFrame *regs)
 {
+#if defined(__amd64__) || defined(__i386__)
     if (((long)((int32_t)regs->int_num)) < ISR0 || regs->int_num > IRQ223)
     {
         err("Invalid interrupt received %#llx", regs->int_num);
@@ -41,6 +44,7 @@ extern "C" void MainInterruptHandler(TrapFrame *regs)
     }
 
     err("IRQ%d is not registered!", regs->int_num - IRQ0);
+#endif
 
 EndOfHandler:
     EndOfInterrupt(regs->int_num);
@@ -97,7 +101,9 @@ InterruptVector RegisterInterrupt(INTERRUPT_HANDLER Handler)
         {
             RegisteredInterrupts[i] = true;
             MainRegisterInterrupt(i, Handler);
+#if defined(__amd64__) || defined(__i386__)
             apic->RedirectIRQ(CurrentCPU->ID, i - IRQ0, 1);
+#endif
             trace("Registered interrupt handler for IRQ%d.", i - IRQ0);
             return i;
         }
@@ -131,10 +137,12 @@ bool RegisterInterrupt(INTERRUPT_HANDLER Handler, InterruptVector Vector, bool O
 Success:
     if (RedirectIRQ)
     {
+#if defined(__amd64__) || defined(__i386__)
         if (RedirectVector == 0xDEADBEEF)
             apic->RedirectIRQ(CurrentCPU->ID, Vector - IRQ0, 1);
         else
             apic->RedirectIRQ(CurrentCPU->ID, RedirectVector, 1);
+#endif
     }
     trace("Registered interrupt handler for IRQ%d.", Vector - IRQ0);
     return true;

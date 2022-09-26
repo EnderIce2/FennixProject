@@ -1,5 +1,3 @@
-#ifdef __i386__
-
 #include <cputables.h>
 
 extern int CheckCPUID();
@@ -57,7 +55,7 @@ __attribute__((no_stack_protector, section(".multiboot.text"))) void _start()
     // TODO: map kernel to higher half memory
     // CallHigherHalf();
 
-    for (int i = 0; i < 14; i++)
+    for (int i = 0; i < 21; i++)
         ((unsigned int *)0xb8000)[i] = (0x7 << 8) | notimplemented[i];
 
     __asm__ volatile("1:\n"
@@ -109,4 +107,3 @@ __attribute__((no_stack_protector, section(".multiboot.text"))) void _start()
     //                  "hlt\n"
     //                  "jmp 1b\n");
 }
-#endif

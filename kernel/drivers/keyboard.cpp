@@ -4,6 +4,7 @@
 
 #include <interrupts.h>
 #include <int.h>
+#include <asm.h>
 #include <io.h>
 
 PS2Keyboard::PS2KeyboardDriver *ps2keyboard = nullptr;
@@ -29,7 +30,7 @@ namespace PS2Keyboard
     {
         LastSC = 0x0;
         while (!LastSC)
-            asm volatile("hlt");
+            HLT;
         return LastSC;
     }
 

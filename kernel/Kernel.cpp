@@ -57,7 +57,9 @@ EXTERNC void limine_initializator()
         CPU_HALT;
     }
 
+#if defined(__amd64__) || defined(__i386__)
     wrmsr(MSR_FS_BASE, 0);
+#endif
     init_pmm();
     init_vmm();
     init_kernelpml();
@@ -88,7 +90,6 @@ EXTERNC void kernel_entry(void *Data)
 
 EXTERNC void kernel_main_aarch64()
 {
-    
 }
 
 void initializeKernelFlags()
@@ -129,6 +130,7 @@ void initializeKernelFlags()
 
 void KernelTask()
 {
+#if defined(__amd64__) || defined(__i386__)
     if (KernelTaskStarted)
         panic("Kernel Task restarted! System Halted!\n", false);
 
@@ -180,12 +182,13 @@ void KernelTask()
     if (CurrentTaskingMode != TaskingMode::Mono)
     {
         while (!FadeScreenNow)
-            asm volatile("hlt");
+            HLT;
         BS->FadeLogo();
         CPU_STOP;
     }
     else
         KernelTaskStarted = true;
+#endif
 }
 
 void CheckSystemRequirements()
@@ -222,6 +225,7 @@ void KernelInit()
     CurrentDisplay = new DisplayDriver::Display;
     KernelPageTableAllocator = new PageTableHeap::PageTableHeap;
     KernelStackAllocator = new StackHeap::StackHeap;
+#if defined(__amd64__) || defined(__i386__)
     init_gdt();
     BS->IncreaseProgres();
     init_idt();
@@ -321,5 +325,6 @@ void KernelInit()
         StartTasking((uint64_t)KernelTask, TaskingMode::Mono);
     else
         StartTasking((uint64_t)KernelTask, TaskingMode::Multi);
+#endif
     CPU_STOP;
 }

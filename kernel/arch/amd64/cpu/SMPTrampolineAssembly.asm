@@ -204,6 +204,6 @@ mov dx, 0x3F8
 out dx, al
     call StartCPU
 
-%endif
-
 times 512 - ($-$$) db 0
+
+%endif

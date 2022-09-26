@@ -1,3 +1,5 @@
+#if defined(__amd64__) || defined(__i386__)
+
 #include "pci.h"
 #include <heap.h>
 #include <string.h>
@@ -121,3 +123,5 @@ void init_pci()
     }
     BS->IncreaseProgres();
 }
+
+#endif

@@ -1,6 +1,7 @@
 #include <heap.h>
 #include <asm.h>
 #include "../kernel.h"
+#include "../cpu/cpuid.h"
 #include "../cpu/smp.hpp"
 
 using namespace PMM;

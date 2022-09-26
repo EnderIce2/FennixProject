@@ -57,6 +57,7 @@ static const char *exception_message[] = {
 
 void TriggerUserModeCrash(TrapFrame *regs)
 {
+#if defined(__amd64__) || defined(__i386__)
     switch (INT_NUM)
     {
     case ISR_DivideByZero:
@@ -201,4 +202,5 @@ void TriggerUserModeCrash(TrapFrame *regs)
         memcpy(tf, regs, sizeof(TrapFrame));
         SysCreateProcessFromFile("/system/umc", (uint64_t)tf, 0, CBElevation::User);
     }
+#endif
 }

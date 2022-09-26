@@ -36,6 +36,7 @@ static const char *pagefault_message[] = {
 
 EXTERNC void crash(string message, bool clear)
 {
+#if defined(__amd64__) || defined(__i386__)
     // TODO: Add more useful information.
     CLI;
     debug("System crashed with message: %s", message);
@@ -676,6 +677,6 @@ EXTERNC __attribute__((no_stack_protector)) void isrcrash(TrapFrame *regs)
             frames = frames->rbp;
         }
     }
-
+#endif
     CPU_HALT;
 }

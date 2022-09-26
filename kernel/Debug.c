@@ -11,6 +11,7 @@
 
 void dbg_showregs(void *r, const char *file, int line, const char *function)
 {
+#if defined(__amd64__) || defined(__i386__)
     TrapFrame *regs = r;
     CR0 cr0 = readcr0();
     CR2 cr2 = readcr2();
@@ -53,6 +54,7 @@ void dbg_showregs(void *r, const char *file, int line, const char *function)
         FLAGS.VM ? "True " : "False", FLAGS.AC ? "True " : "False", FLAGS.VIF ? "True " : "False", FLAGS.VIP ? "True " : "False",
         FLAGS.ID ? "True " : "False", FLAGS.always_one,
         FLAGS._reserved0, FLAGS._reserved1, FLAGS._reserved2, FLAGS._reserved3);
+#endif
 }
 
 static inline void serialwrite_wrapper(char c, void *unused)

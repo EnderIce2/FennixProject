@@ -105,15 +105,23 @@ namespace Xalloc
         inline void Xstac()
         {
             if (this->SMAPUsed)
+            {
+#if defined(__amd64__) || defined(__i386__)
                 asm volatile("stac" ::
                                  : "cc");
+#endif
+            }
         }
 
         inline void Xclac()
         {
             if (this->SMAPUsed)
+            {
+#if defined(__amd64__) || defined(__i386__)
                 asm volatile("clac" ::
                                  : "cc");
+#endif
+            }
         }
 
         /**

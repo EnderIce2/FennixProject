@@ -75,7 +75,11 @@ namespace FileSystem
 
     ReadFSFunction(CPU_Vendor_Read)
     {
+#if defined(__amd64__) || defined(__i386__)
         cpuid_string(0, (int *)(Buffer));
+#else
+        strcpy((char *)Buffer, "Unknown");
+#endif
         return strlen((char *)Buffer);
     }
     FileSystemOpeations sysinfo_cpu_vendor = {.Name = "SysInfo Data", .Read = CPU_Vendor_Read};

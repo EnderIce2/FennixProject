@@ -142,7 +142,9 @@ ifeq ($(OSARCH), amd64)
 endif
 
 build_libc:
+ifeq ($(OSARCH), amd64)
 	make --quiet -C libc build
+endif
 
 build_image:
 	mkdir -p iso_tmp_data

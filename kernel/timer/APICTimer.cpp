@@ -16,10 +16,12 @@ uint64_t apic_timer_ticks = 32000;
 
 uint64_t apictimer_read_counter()
 {
+#if defined(__amd64__) || defined(__i386__)
     if (cpu_feature(CPUID_FEAT_RDX_TSC))
         return tsc();
     else
         return apic->Read(APIC::APIC::APIC_TCCR);
+#endif
 }
 uint64_t apictimer_read_clock() { return apic_timer_ticks; }
 void apictimer_nwait(uint64_t Nanoseconds) { TSC_sleep(Nanoseconds); }
@@ -29,6 +31,7 @@ void apictimer_wait(uint64_t Seconds) { apictimer_mwait(Seconds * 1000); }
 
 void init_APICTimer()
 {
+#if defined(__amd64__) || defined(__i386__)
     trace("Initializing APIC Timer...");
 
     // Initializing the APIC timer corrups the memory? Or something else?
@@ -51,9 +54,12 @@ void init_APICTimer()
     APICTimer_initialized = true;
     trace("APIC timer ticks %lld", apic_timer_ticks);
     apic->Write(APIC::APIC::APIC_TIMER, apic->Read(APIC::APIC::APIC_TIMER) | (1 << 0x10));
+#endif
 }
 
 void APIC_oneshot(uint32_t Vector, uint64_t Miliseconds)
 {
+#if defined(__amd64__) || defined(__i386__)
     apic->OneShot(Vector, Miliseconds);
+#endif
 }

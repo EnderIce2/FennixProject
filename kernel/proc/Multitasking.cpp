@@ -487,10 +487,17 @@ namespace Tasking
 
         __attribute__((naked, used)) static void IdleProcessLoop()
         {
+#if defined(__amd64__) || defined(__i386__)
             asm volatile("idleloop:\n"
                          "call MakeOneShot\n"
                          "hlt\n"
                          "jmp idleloop\n");
+#elif defined(__aarch64__)
+            // arm64
+            asm volatile("idleloop:\n"
+                         "wfe\n"
+                         "b idleloop\n");
+#endif
         }
 
         static void MultiTaskingSchedulerHandler(ThreadRegisters *regs)
@@ -782,7 +789,9 @@ namespace Tasking
     {
         CurrentTaskingMode = TaskingMode::Multi;
         CriticalSectionData = new Critical::CriticalSectionData;
+#if defined(__amd64__) || defined(__i386__)
         apic->RedirectIRQ(CurrentCPU->ID, SchedulerInterrupt - IRQ0, 1);
+#endif
         TriggerOneShot(SchedulerInterrupt, 100);
     }
 

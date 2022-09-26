@@ -259,7 +259,7 @@ void dbg_free(void *Address, string file, int line, string function)
 }
 #endif
 
-#if defined(__amd64__)
+#if defined(__amd64__) || defined(__aarch64__)
 void *operator new(size_t Size)
 #elif defined(__i386__)
 void *operator new(uint32_t Size)
@@ -295,7 +295,7 @@ void *operator new(uint32_t Size)
     throw;
 }
 
-#if defined(__amd64__)
+#if defined(__amd64__) || defined(__aarch64__)
 void *operator new[](size_t Size)
 #elif defined(__i386__)
 void *operator new[](uint32_t Size)

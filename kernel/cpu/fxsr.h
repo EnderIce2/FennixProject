@@ -10,4 +10,7 @@ extern "C" void _i686_fxsave(char *Buffer);
 extern "C" void _i686_fxrstor(char *Buffer);
 void _fxsave(char *Buffer) { _i686_fxsave(Buffer); }
 void _fxrstor(char *Buffer) { _i686_fxrstor(Buffer); }
+#elif defined(__aarch64__)
+void _fxsave(char *Buffer) {}
+void _fxrstor(char *Buffer) {}
 #endif

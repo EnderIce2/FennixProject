@@ -1,10 +1,13 @@
 #pragma once
 #include <stdint.h>
+#include <debug.h>
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
+
+#if defined(__amd64__) || defined(__i386__)
 
     static inline uint8_t inportb(uint16_t Port)
     {
@@ -201,6 +204,90 @@ extern "C"
                      : "memory");
         return ret;
     }
+
+#else // defined(__amd64__) || defined(__i386__)
+// everything above but with "warn("Unsupported for aarch64");"
+
+static inline uint8_t inportb(uint16_t Port)
+{
+    warn("Unsupported for aarch64");
+    return 0;
+}
+
+static inline uint16_t inportw(uint16_t Port)
+{
+    warn("Unsupported for aarch64");
+    return 0;
+}
+
+static inline uint32_t inportl(uint16_t Port)
+{
+    warn("Unsupported for aarch64");
+    return 0;
+}
+
+static inline void outportb(uint16_t Port, uint8_t Data) { warn("Unsupported for aarch64"); }
+static inline void outportw(uint16_t Port, uint16_t Data) { warn("Unsupported for aarch64"); }
+static inline void outportl(uint16_t Port, uint32_t Data) { warn("Unsupported for aarch64"); }
+
+static inline uint8_t mmioin8(uint64_t Address)
+{
+    warn("Unsupported for aarch64");
+    return 0;
+}
+
+static inline uint16_t mmioin16(uint64_t Address)
+{
+    warn("Unsupported for aarch64");
+    return 0;
+}
+
+static inline uint32_t mmioin32(uint64_t Address)
+{
+    warn("Unsupported for aarch64");
+    return 0;
+}
+
+static inline uint64_t mmioin64(uint64_t Address)
+{
+    warn("Unsupported for aarch64");
+    return 0;
+}
+
+static inline void mmioout8(uint64_t Address, uint8_t Data) { warn("Unsupported for aarch64"); }
+static inline void mmioout16(uint64_t Address, uint16_t Data) { warn("Unsupported for aarch64"); }
+static inline void mmioout32(uint64_t Address, uint32_t Data) { warn("Unsupported for aarch64"); }
+static inline void mmioout64(uint64_t Address, uint64_t Data) { warn("Unsupported for aarch64"); }
+static inline void mmoutb(void *Address, uint8_t value) { warn("Unsupported for aarch64"); }
+static inline void mmoutw(void *Address, uint16_t value) { warn("Unsupported for aarch64"); }
+static inline void mmoutl(void *Address, uint32_t value) { warn("Unsupported for aarch64"); }
+static inline void mmoutq(void *Address, uint64_t value) { warn("Unsupported for aarch64"); }
+
+static inline uint8_t mminb(void *Address)
+{
+    warn("Unsupported for aarch64");
+    return 0;
+}
+
+static inline uint16_t mminw(void *Address)
+{
+    warn("Unsupported for aarch64");
+    return 0;
+}
+
+static inline uint32_t mminl(void *Address)
+{
+    warn("Unsupported for aarch64");
+    return 0;
+}
+
+static inline uint64_t mminq(void *Address)
+{
+    warn("Unsupported for aarch64");
+    return 0;
+}
+
+#endif // defined(__amd64__) || defined(__i386__)
 
 #ifdef __cplusplus
 }

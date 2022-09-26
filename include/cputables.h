@@ -1,7 +1,4 @@
 #pragma once
-
-#ifndef __aarch64__
-
 #include <stdint.h>
 
 typedef struct _TaskStateSegmentEntry
@@ -90,7 +87,7 @@ typedef struct _InterruptDescriptorTableDescriptor
 } __attribute__((packed)) InterruptDescriptorTableDescriptor;
 
 
-#if defined(__amd64__)
+#if defined(__amd64__) || defined(__aarch64__)
 typedef __UINT64_TYPE__ _cpu_uint_t;
 typedef __UINT64_TYPE__ _cpu_raw_uint_t;
 #elif defined(__i386__)
@@ -399,5 +396,3 @@ typedef union EFER
     };
     _cpu_raw_uint_t raw;
 } __attribute__((packed)) EFER;
-
-#endif // !__aarch64__

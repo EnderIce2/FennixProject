@@ -23,10 +23,12 @@ enum cpuid_requests
 
 static inline int cpuid_string(int code, int where[4])
 {
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("cpuid"
                  : "=a"(*where), "=b"(*(where + 0)),
                    "=d"(*(where + 1)), "=c"(*(where + 2))
                  : "a"(code));
+#endif
     return (int)where[0];
 }
 

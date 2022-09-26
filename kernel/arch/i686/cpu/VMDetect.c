@@ -1,4 +1,4 @@
-#if defined(__amd64__)
+#if defined(__i386__)
 
 #include <vm.h>
 #include <asm.h>

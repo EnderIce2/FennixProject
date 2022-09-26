@@ -36,6 +36,7 @@ void hpet_wait(uint64_t Seconds)
 
 void init_HPET()
 {
+#if defined(__amd64__) || defined(__i386__)
     trace("Initializing HPET timer");
     if (!acpi->HPET)
     {
@@ -50,6 +51,7 @@ void init_HPET()
     mmoutq(&hpet->main_counter_value, 0);
     mmoutq(&hpet->general_configuration, 1);
     HPET_initialized = true;
+#endif
 }
 
 void HPET_oneshot(uint32_t Vector, uint64_t Miliseconds)

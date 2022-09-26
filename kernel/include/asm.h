@@ -1,7 +1,5 @@
 #pragma once
 
-#ifndef __aarch64__
-
 #include <types.h>
 #include <interrupts.h>
 #include <cputables.h>
@@ -39,14 +37,17 @@ static inline void ltr(uint16_t segment)
 
 static inline void invlpg(uint64_t address)
 {
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("invlpg (%0)"
                  :
                  : "r"(address)
                  : "memory");
+#endif
 }
 
 static inline void cpuid(uint32_t val, uint32_t *rax, uint32_t *rbx, uint32_t *rcx, uint32_t *rdx)
 {
+#if defined(__amd64__) || defined(__i386__)
     int arr[4] = {0};
     asm("cpuid"
         : "=a"(arr[0]), "=b"(arr[1]), "=c"(arr[2]), "=d"(arr[3])
@@ -67,6 +68,7 @@ static inline void cpuid(uint32_t val, uint32_t *rax, uint32_t *rbx, uint32_t *r
     {
         *rdx = arr[3];
     }
+#endif
 }
 
 static inline int GetCPUIDMax(uint32_t leaf, uint32_t *signature)
@@ -107,14 +109,21 @@ static inline bool InterruptsEnabled()
 #endif
 }
 
+#if defined(__amd64__) || defined(__i386__)
 #define CLI asm volatile("cli" :: \
                              : "memory")
 #define STI asm volatile("sti" :: \
                              : "memory")
-
 #define HLT asm volatile("hlt")
-
 #define PAUSE asm volatile("pause")
+#else // defined(__amd64__) || defined(__i386__)
+#define CLI asm volatile("msr daifset, #2" :: \
+                             : "memory")
+#define STI asm volatile("msr daifclr, #2" :: \
+                             : "memory")
+#define HLT asm volatile("wfe")
+#define PAUSE asm volatile("yield")
+#endif
 
 static inline void mem_barrier()
 {
@@ -143,12 +152,14 @@ static inline void load_fence()
 // TODO: Does this actually work?
 static inline void ENABLE_NX()
 {
+#if defined(__amd64__) || defined(__i386__)
     asm volatile(
         "movl $0xc0000080, %%ecx\n\t"
         "rdmsr\n\t"
         "btsl $11, %%eax\n\t"
         "wrmsr\n\t" ::
             : "eax", "ecx", "edx", "memory");
+#endif
 }
 
 // https://github.com/pp3345/sysfs-msrs/blob/master/msrs.h
@@ -533,130 +544,162 @@ enum MSRID
 static inline uint64_t rdmsr(uint32_t msr)
 {
     uint32_t low, high;
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("rdmsr"
                  : "=a"(low), "=d"(high)
                  : "c"(msr)
                  : "memory");
+#endif
     return ((uint64_t)low) | (((uint64_t)high) << 32);
 }
 
 static inline void wrmsr(uint32_t msr, uint64_t Value)
 {
     uint32_t low = Value, high = Value >> 32;
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("wrmsr"
                  :
                  : "c"(msr), "a"(low), "d"(high)
                  : "memory");
+#endif
 }
 
 static inline CR0 readcr0()
 {
     uint64_t Result;
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("mov %%cr0, %[Result]"
                  : [Result] "=q"(Result));
+#endif
     return (CR0){.raw = Result};
 }
 
 static inline CR2 readcr2()
 {
     uint64_t Result;
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("mov %%cr2, %[Result]"
                  : [Result] "=q"(Result));
+#endif
     return (CR2){.raw = Result};
 }
 
 static inline CR3 readcr3()
 {
     uint64_t Result;
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("mov %%cr3, %[Result]"
                  : [Result] "=q"(Result));
+#endif
     return (CR3){.raw = Result};
 }
 
 static inline CR4 readcr4()
 {
     uint64_t Result;
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("mov %%cr4, %[Result]"
                  : [Result] "=q"(Result));
+#endif
     return (CR4){.raw = Result};
 }
 
 static inline CR8 readcr8()
 {
     uint64_t Result;
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("mov %%cr8, %[Result]"
                  : [Result] "=q"(Result));
+#endif
     return (CR8){.raw = Result};
 }
 
 static inline void writecr0(CR0 ControlRegister)
 {
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("mov %[ControlRegister], %%cr0"
                  :
                  : [ControlRegister] "q"(ControlRegister.raw)
                  : "memory");
+#endif
 }
 
 static inline void writecr2(CR2 ControlRegister)
 {
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("mov %[ControlRegister], %%cr2"
                  :
                  : [ControlRegister] "q"(ControlRegister.raw)
                  : "memory");
+#endif
 }
 
 static inline void writecr3(CR3 ControlRegister)
 {
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("mov %[ControlRegister], %%cr3"
                  :
                  : [ControlRegister] "q"(ControlRegister.raw)
                  : "memory");
+#endif
 }
 
 static inline void writecr4(CR4 ControlRegister)
 {
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("mov %[ControlRegister], %%cr4"
                  :
                  : [ControlRegister] "q"(ControlRegister.raw)
                  : "memory");
+#endif
 }
 
 static inline void writecr8(CR8 ControlRegister)
 {
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("mov %[ControlRegister], %%cr8"
                  :
                  : [ControlRegister] "q"(ControlRegister.raw)
                  : "memory");
+#endif
 }
 
 static inline void mwait(size_t rax, size_t rcx)
 {
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("mwait"
                  :
                  : "a"(rax), "c"(rcx));
+#endif
 }
 
 static inline void monitor(size_t rax, size_t rcx, size_t rdx)
 {
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("monitor"
                  :
                  : "a"(rax), "c"(rcx), "d"(rdx));
+#endif
 }
 
 static inline void stac()
 {
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("stac"
                  :
                  :
                  : "cc");
+#endif
 }
 
 static inline void clac()
 {
+#if defined(__amd64__) || defined(__i386__)
     asm volatile("clac"
                  :
                  :
                  : "cc");
+#endif
 }
 
 static inline uint64_t tsc()
@@ -673,5 +716,3 @@ static inline uint64_t tsc()
     return eax;
 #endif
 }
-
-#endif // !__aarch64__

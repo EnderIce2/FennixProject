@@ -2,6 +2,7 @@
 #include "../../cpu/idt.h"
 #include <interrupts.h>
 #include <io.h>
+#include <int.h>
 #include <asm.h>
 
 int ReceivedIRQ = false;

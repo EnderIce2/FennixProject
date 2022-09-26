@@ -41,11 +41,18 @@ typedef char const *string;
 #define defect 0xDEFEC7
 #define dead 0xDEAD
 
+#if defined(__amd64__) || defined(__i386__)
 #define CPU_STOP \
     for (;;)     \
     asm volatile("hlt")
+#else // defined(__amd64__) || defined(__i386__)
+#define CPU_STOP \
+    for (;;)     \
+    asm volatile("wfi")
+#endif // defined(__amd64__) || defined(__i386__)
 
 /** @brief This function halts the CPU for good. Nothing can be done after this. Even the NMI can't do something. */
+#if defined(__amd64__) || defined(__i386__)
 #define CPU_HALT                                    \
     {                                               \
         uint8_t ret;                                \
@@ -70,6 +77,11 @@ typedef char const *string;
         for (;;)                                    \
             asm volatile("cli\nhlt");               \
     }
+#else // defined(__amd64__) || defined(__i386__)
+#define CPU_HALT \
+    for (;;)     \
+    asm volatile("wfe")
+#endif // defined(__amd64__) || defined(__i386__)
 
 #ifdef __cplusplus
 

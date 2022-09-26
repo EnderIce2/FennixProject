@@ -25,7 +25,11 @@ namespace Tasking
     MonoTasking *monot = nullptr;
 
 // IRQ17 = 0x31
+#if defined(__amd64__) || defined(__i386__)
 #define SchedulerInterrupt __asm__ volatile("int $0x31")
+#elif defined(__aarch64__)
+#define SchedulerInterrupt __asm__ volatile("svc #0x31")
+#endif
 
     struct TaskQueue
     {
@@ -272,10 +276,17 @@ namespace Tasking
                     {
                         current->Task->state = TaskState::TaskStateRunning;
                         *regs = current->Task->regs;
+#if defined(__amd64__) || defined(__i386__)
                         asm volatile("mov %[ControlRegister], %%cr3"
                                      :
                                      : [ControlRegister] "q"(current->Task->pml4)
                                      : "memory");
+#elif defined(__aarch64__)
+                        asm volatile("msr ttbr0_el1, %[ControlRegister]"
+                                     :
+                                     : [ControlRegister] "r"(current->Task->pml4)
+                                     : "memory");
+#endif
                         CurrentCPU->PageTable.raw = (uint64_t)current->Task->pml4;
                         CurrentTask = current->Task;
                         trace("Task %s is now running. [RIP:%#lx PML:%#lx]",

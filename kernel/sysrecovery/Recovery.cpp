@@ -25,7 +25,9 @@ namespace SystemRecovery
             STI;
         }
         printf("\nRebooting...");
+#if defined(__amd64__) || defined(__i386__)
         dsdt->reboot();
+#endif
     }
 
     Recovery::~Recovery()

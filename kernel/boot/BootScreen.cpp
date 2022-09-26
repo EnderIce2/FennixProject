@@ -127,10 +127,11 @@ namespace BootScreen
     {
         debug("DrawVendorLogo: BGRT: %p, DrawKernelLogo: %d", BGRT, DrawKernelLogo);
         KernelLogo = DrawKernelLogo;
-        ACPI::ACPI::BGRTHeader *bgrt = (ACPI::ACPI::BGRTHeader *)BGRT;
         uint64_t FBAddress = BootDisplay->GetFramebuffer()->Address;
         uint64_t FBWidth = BootDisplay->GetFramebuffer()->Width;
         uint64_t FBHeight = BootDisplay->GetFramebuffer()->Height;
+#if defined(__amd64__) || defined(__i386__)
+        ACPI::ACPI::BGRTHeader *bgrt = (ACPI::ACPI::BGRTHeader *)BGRT;
 
         if (BGRT != nullptr)
         {
@@ -195,7 +196,7 @@ namespace BootScreen
                 err("Invalid BGRT version");
             }
         }
-
+#endif
         if (DrawKernelLogo)
         {
             uint64_t LogoAddress = (uint64_t)&_binary_files_fennix001_bmp_start;

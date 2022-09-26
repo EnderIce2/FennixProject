@@ -1,5 +1,7 @@
 #include "syscalls.hpp"
 
+#if defined(__amd64__) || defined(__i386__)
+
 #include "../../libc/include/syscalls.h"
 #include "../security/security.hpp"
 #include "../drivers/keyboard.hpp"
@@ -582,8 +584,11 @@ static void *FennixSyscallsTable[] = {
     [_DebugMessage] = (void *)internal_dbg,
 };
 
+#endif
+
 uint64_t HandleFennixSyscalls(SyscallsRegs *regs)
 {
+#if defined(__amd64__) || defined(__i386__)
     if (RAX > sizeof(FennixSyscallsTable))
     {
         return internal_unimpl(regs->rax, regs->rbx, regs->rcx, regs->rdx, regs->rsi, regs->rdi, regs->rbp);
@@ -599,4 +604,5 @@ uint64_t HandleFennixSyscalls(SyscallsRegs *regs)
     uint64_t ret = call((uint64_t)regs, RBX, RDX, RSI, RDI);
     RAX = ret;
     return ret;
+#endif
 }

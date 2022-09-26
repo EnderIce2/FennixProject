@@ -1,7 +1,6 @@
 #include "cpuid.h"
+
 #include <asm.h>
-#include <string.h>
-#include <heap.h>
 
 bool cpu_feature(enum CPU_FEATURE feature)
 {

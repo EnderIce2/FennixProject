@@ -5,6 +5,12 @@ SECTIONS
     . = 0x80000;
 
     _kernel_start = .;
+
+    .text.boot :
+    {
+        *(.text.boot)
+    }
+    
     .text :
     {
         KEEP(*(.text.boot))
@@ -30,7 +36,7 @@ SECTIONS
     {
         bss = .;
         *(.bss)
-    } :bss
+    }
     . = ALIGN(4096);
     _kernel_bss_end = .;
     _kernel_bss_size = _kernel_bss_end - _kernel_data_end;

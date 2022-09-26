@@ -1,3 +1,5 @@
+#if defined(__amd64__) || defined(__i386__)
+
 #include <interrupts.h>
 #include "pic.h"
 #include "../timer/pit.h"
@@ -105,3 +107,5 @@ void IRQ_clear_mask(unsigned char IRQline)
     value = inb(port) & ~(1 << IRQline);
     outb(port, value);
 }
+
+#endif

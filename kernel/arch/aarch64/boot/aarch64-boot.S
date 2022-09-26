@@ -1,11 +1,8 @@
 // https://wiki.osdev.org/Raspberry_Pi_Bare_Bones
 
-.ifdef __aarch64__
-
 .section ".text.boot"
 
 .global _start
-
     .org 0x80000
 _start:
     ldr     x5, =_start
@@ -21,5 +18,3 @@ _start:
 halt:
     wfe
     b halt
-
-.endif
