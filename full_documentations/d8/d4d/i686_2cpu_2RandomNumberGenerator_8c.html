@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fennix Project: kernel/arch/amd64/cpu/RandomNumberGenerator.c File Reference</title>
+<title>Fennix Project: kernel/arch/i686/cpu/RandomNumberGenerator.c File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -66,7 +66,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('da/d63/RandomNumberGenerator_8c.html','../../'); initResizable(); });
+$(document).ready(function(){initNavTree('d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html','../../'); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -94,24 +94,24 @@ $(document).ready(function(){initNavTree('da/d63/RandomNumberGenerator_8c.html',
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="../../d5/d66/rand_8h_source.html">rand.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../de/d21/asm_8h_source.html">asm.h</a>&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../d1/dc5/arch_2amd64_2cpu_2cpuid_8h_source.html">cpuid.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../de/d56/arch_2i686_2cpu_2cpuid_8h_source.html">cpuid.h</a>&quot;</code><br />
 </div>
-<p><a href="../../da/d63/RandomNumberGenerator_8c_source.html">Go to the source code of this file.</a></p>
+<p><a href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a24b5627f969b58fcb1e9b69624c0917c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d63/RandomNumberGenerator_8c.html#a24b5627f969b58fcb1e9b69624c0917c">rand16</a> ()</td></tr>
+<tr class="memitem:a24b5627f969b58fcb1e9b69624c0917c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a24b5627f969b58fcb1e9b69624c0917c">rand16</a> ()</td></tr>
 <tr class="separator:a24b5627f969b58fcb1e9b69624c0917c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47fd98ad7fb9682d8e9de6cb39927c52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d63/RandomNumberGenerator_8c.html#a47fd98ad7fb9682d8e9de6cb39927c52">rand32</a> ()</td></tr>
+<tr class="memitem:a47fd98ad7fb9682d8e9de6cb39927c52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a47fd98ad7fb9682d8e9de6cb39927c52">rand32</a> ()</td></tr>
 <tr class="separator:a47fd98ad7fb9682d8e9de6cb39927c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3416a50aa0842c9afac6e72867b6fcb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d63/RandomNumberGenerator_8c.html#a3416a50aa0842c9afac6e72867b6fcb3">rand64</a> ()</td></tr>
+<tr class="memitem:a3416a50aa0842c9afac6e72867b6fcb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a3416a50aa0842c9afac6e72867b6fcb3">rand64</a> ()</td></tr>
 <tr class="separator:a3416a50aa0842c9afac6e72867b6fcb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c75f7b154c17d7a1631c3a886bb1450"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d63/RandomNumberGenerator_8c.html#a0c75f7b154c17d7a1631c3a886bb1450">changeseed</a> (<a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> seed)</td></tr>
+<tr class="memitem:a0c75f7b154c17d7a1631c3a886bb1450"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a0c75f7b154c17d7a1631c3a886bb1450">changeseed</a> (<a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> seed)</td></tr>
 <tr class="separator:a0c75f7b154c17d7a1631c3a886bb1450"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a68ad94fec1e02cd52c54f7cb0e13029f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d63/RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> = <a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a59f33d535169ca3a0f1c84df74636807">deadbeef</a></td></tr>
+<tr class="memitem:a68ad94fec1e02cd52c54f7cb0e13029f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> = <a class="el" href="../../d7/dfc/kernel_2include_2types_8h.html#a59f33d535169ca3a0f1c84df74636807">deadbeef</a></td></tr>
 <tr class="separator:a68ad94fec1e02cd52c54f7cb0e13029f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -131,10 +131,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html#l00072">72</a> of file <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html">RandomNumberGenerator.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{ <a class="code" href="../../da/d63/RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> = seed; }</div>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html#l00072">72</a> of file <a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html">RandomNumberGenerator.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{ <a class="code" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> = seed; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html#l00007">randseed</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/da4/amd64_2cpu_2RandomNumberGenerator_8c_source.html#l00007">randseed</a>.</p>
 
 </div>
 </div>
@@ -153,10 +153,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html#l00009">9</a> of file <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html">RandomNumberGenerator.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html#l00009">9</a> of file <a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html">RandomNumberGenerator.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../da/d63/RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> = <a class="code" href="../../da/d63/RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> * 1103515245 + 12345;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a>)(<a class="code" href="../../da/d63/RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> / 65536) % __UINT16_MAX__;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> = <a class="code" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> * 1103515245 + 12345;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a>)(<a class="code" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> / 65536) % __UINT16_MAX__;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">// if (cpu_feature(CPUID_FEAT_RCX_RDRAND))</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// {</span></div>
@@ -174,7 +174,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// return 0;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html#l00007">randseed</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/da4/amd64_2cpu_2RandomNumberGenerator_8c_source.html#l00007">randseed</a>.</p>
 
 </div>
 </div>
@@ -193,10 +193,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html#l00030">30</a> of file <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html">RandomNumberGenerator.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html#l00030">30</a> of file <a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html">RandomNumberGenerator.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="../../da/d63/RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> = <a class="code" href="../../da/d63/RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> * 1103515245 + 12345;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a>)(<a class="code" href="../../da/d63/RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> / 65536) % __UINT32_MAX__;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> = <a class="code" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> * 1103515245 + 12345;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a>)(<a class="code" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> / 65536) % __UINT32_MAX__;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// if (cpu_feature(CPUID_FEAT_RCX_RDRAND))</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// {</span></div>
@@ -214,7 +214,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// return 0;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html#l00007">randseed</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/da4/amd64_2cpu_2RandomNumberGenerator_8c_source.html#l00007">randseed</a>.</p>
 
 </div>
 </div>
@@ -233,10 +233,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html#l00051">51</a> of file <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html">RandomNumberGenerator.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html#l00051">51</a> of file <a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html">RandomNumberGenerator.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="../../da/d63/RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> = <a class="code" href="../../da/d63/RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> * 1103515245 + 12345;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)(<a class="code" href="../../da/d63/RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> / 65536) % __UINT64_MAX__;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> = <a class="code" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> * 1103515245 + 12345;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)(<a class="code" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a> / 65536) % __UINT64_MAX__;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// if (cpu_feature(CPUID_FEAT_RCX_RDRAND))</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// {</span></div>
@@ -254,9 +254,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// return 0;</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html#l00007">randseed</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../de/dc7/Security_8cpp_source.html#l00017">CreateToken()</a>, and <a class="el" href="../../de/daa/random_8cpp_source.html#l00006">FileSystem::ReadFSFunction()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/da4/amd64_2cpu_2RandomNumberGenerator_8c_source.html#l00007">randseed</a>.</p>
 
 </div>
 </div>
@@ -281,9 +279,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html#l00007">7</a> of file <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html">RandomNumberGenerator.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html#l00007">7</a> of file <a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html">RandomNumberGenerator.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html#l00072">changeseed()</a>, <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html#l00009">rand16()</a>, <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html#l00030">rand32()</a>, and <a class="el" href="../../da/d63/RandomNumberGenerator_8c_source.html#l00051">rand64()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html#l00072">changeseed()</a>, <a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html#l00009">rand16()</a>, <a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html#l00030">rand32()</a>, and <a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html#l00051">rand64()</a>.</p>
 
 </div>
 </div>
@@ -291,12 +289,12 @@ Variables</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="ainclude_2stdint_8h_html_a0a8582351ac627ee8bde2973c825e47f"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a></div><div class="ttdeci">__UINT32_TYPE__ uint32_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00009">stdint.h:9</a></div></div>
 <div class="ttc" id="ainclude_2stdint_8h_html_a5debae8b2a1ec20a6694c0c443ee399e"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#a5debae8b2a1ec20a6694c0c443ee399e">uint16_t</a></div><div class="ttdeci">__UINT16_TYPE__ uint16_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00008">stdint.h:8</a></div></div>
-<div class="ttc" id="aRandomNumberGenerator_8c_html_a68ad94fec1e02cd52c54f7cb0e13029f"><div class="ttname"><a href="../../da/d63/RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a></div><div class="ttdeci">static uint64_t randseed</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d63/RandomNumberGenerator_8c_source.html#l00007">RandomNumberGenerator.c:7</a></div></div>
+<div class="ttc" id="ai686_2cpu_2RandomNumberGenerator_8c_html_a68ad94fec1e02cd52c54f7cb0e13029f"><div class="ttname"><a href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html#a68ad94fec1e02cd52c54f7cb0e13029f">randseed</a></div><div class="ttdeci">static uint64_t randseed</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c_source.html#l00007">RandomNumberGenerator.c:7</a></div></div>
 <div class="ttc" id="ainclude_2stdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="../../dir_4a04b9aac4eefdd334a78e565f4616f2.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_daa9cfe7e05ea725d73c8368bae78c4d.html">amd64</a></li><li class="navelem"><a class="el" href="../../dir_afb927060803406c4a9b5e13f2ea617f.html">cpu</a></li><li class="navelem"><a class="el" href="../../da/d63/RandomNumberGenerator_8c.html">RandomNumberGenerator.c</a></li>
+    <li class="navelem"><a class="el" href="../../dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="../../dir_4a04b9aac4eefdd334a78e565f4616f2.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_2f75af7b90e18386b84815cf9f122cab.html">i686</a></li><li class="navelem"><a class="el" href="../../dir_7d4df2ee2de0f79e10fceadcb5cdf852.html">cpu</a></li><li class="navelem"><a class="el" href="../../d8/d4d/i686_2cpu_2RandomNumberGenerator_8c.html">RandomNumberGenerator.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

@@ -10,7 +10,6 @@ var arch_2amd64_2cpu_2smp_8hpp =
     [ "GetCPU", "d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#acb4382e3522b10e4fbdabfcebe44023b", null ],
     [ "GetCurrentCPU", "d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#aa53a3783575d262dc378af3a30ca775d", null ],
     [ "GetCurrentCPUID", "d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a0f6a26fc56e8dab11a0baad77cbe8c75", null ],
-    [ "__attribute__", "d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#af9eba590f86f779210736f92f2c0b0ab", null ],
     [ "Checksum", "d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a08f72778d07c71d94d2dd18452b84a31", null ],
     [ "CurrentProcess", "d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#aaca274ceaa3c05638cfb874c60ffe8a7", null ],
     [ "CurrentThread", "d7/d94/arch_2amd64_2cpu_2smp_8hpp.html#a9fb3e8918d107d4dbb0a06ab72fec27b", null ],

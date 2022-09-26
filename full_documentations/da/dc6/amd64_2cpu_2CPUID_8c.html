@@ -66,7 +66,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('db/d2a/CPUID_8c.html','../../'); initResizable(); });
+$(document).ready(function(){initNavTree('da/dc6/amd64_2cpu_2CPUID_8c.html','../../'); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -96,14 +96,14 @@ $(document).ready(function(){initNavTree('db/d2a/CPUID_8c.html','../../'); initR
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../da/ddb/heap_8h_source.html">heap.h</a>&gt;</code><br />
 </div>
-<p><a href="../../db/d2a/CPUID_8c_source.html">Go to the source code of this file.</a></p>
+<p><a href="../../da/dc6/amd64_2cpu_2CPUID_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afca7b4daf3c9d4057a906333d3f0fdff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d2a/CPUID_8c.html#afca7b4daf3c9d4057a906333d3f0fdff">cpu_feature</a> (enum <a class="el" href="../../d7/d70/include_2cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0">CPU_FEATURE</a> feature)</td></tr>
-<tr class="memdesc:afca7b4daf3c9d4057a906333d3f0fdff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the specified CPU feature is supported.  <a href="../../db/d2a/CPUID_8c.html#afca7b4daf3c9d4057a906333d3f0fdff">More...</a><br /></td></tr>
+<tr class="memitem:afca7b4daf3c9d4057a906333d3f0fdff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d5e/stdbool_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc6/amd64_2cpu_2CPUID_8c.html#afca7b4daf3c9d4057a906333d3f0fdff">cpu_feature</a> (enum <a class="el" href="../../d7/d70/include_2cpuid_8h.html#af3f144a4d37d2cfb90c02b82ada0c1f0">CPU_FEATURE</a> feature)</td></tr>
+<tr class="memdesc:afca7b4daf3c9d4057a906333d3f0fdff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the specified CPU feature is supported.  <a href="../../da/dc6/amd64_2cpu_2CPUID_8c.html#afca7b4daf3c9d4057a906333d3f0fdff">More...</a><br /></td></tr>
 <tr class="separator:afca7b4daf3c9d4057a906333d3f0fdff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af41b677d488d822ce064c534acf415fb"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d2a/CPUID_8c.html#af41b677d488d822ce064c534acf415fb">cpu_get_info</a> ()</td></tr>
+<tr class="memitem:af41b677d488d822ce064c534acf415fb"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dc6/amd64_2cpu_2CPUID_8c.html#af41b677d488d822ce064c534acf415fb">cpu_get_info</a> ()</td></tr>
 <tr class="separator:af41b677d488d822ce064c534acf415fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -132,7 +132,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/d2a/CPUID_8c_source.html#l00006">6</a> of file <a class="el" href="../../db/d2a/CPUID_8c_source.html">CPUID.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dc6/amd64_2cpu_2CPUID_8c_source.html#l00006">6</a> of file <a class="el" href="../../da/dc6/amd64_2cpu_2CPUID_8c_source.html">CPUID.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> rax, rbx, rcx, rdx;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="../../de/d21/asm_8h.html#aa51a78fcc364cb53e45423aea7fea8c2">cpuid</a>(0x01, &amp;rax, &amp;rbx, &amp;rcx, &amp;rdx);</div>
@@ -141,10 +141,6 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../de/d21/asm_8h_source.html#l00048">cpuid()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d5/df2/APICTimer_8cpp_source.html#l00017">apictimer_read_counter()</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00191">CheckSystemRequirements()</a>, <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00211">KernelInit()</a>, and <a class="el" href="../../d7/dfc/TSC_8cpp_source.html#l00005">TSC_sleep()</a>.</p>
-
 </div>
 </div>
 <a id="af41b677d488d822ce064c534acf415fb"></a>
@@ -162,7 +158,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d2a/CPUID_8c_source.html#l00015">15</a> of file <a class="el" href="../../db/d2a/CPUID_8c_source.html">CPUID.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dc6/amd64_2cpu_2CPUID_8c_source.html#l00015">15</a> of file <a class="el" href="../../da/dc6/amd64_2cpu_2CPUID_8c_source.html">CPUID.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> res[512] = <span class="stringliteral">&quot;\0&quot;</span>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="../../dc/d69/include_2stdint_8h.html#a0a8582351ac627ee8bde2973c825e47f">uint32_t</a> rax, rbx, rcx, rdx;</div>
@@ -351,9 +347,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">return</span> res;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../de/d21/asm_8h_source.html#l00048">cpuid()</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00072">CPUID_FEAT_LONG_MODE</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00027">CPUID_FEAT_RCX_AES</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00030">CPUID_FEAT_RCX_AVX</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00015">CPUID_FEAT_RCX_CID</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00017">CPUID_FEAT_RCX_CX16</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00021">CPUID_FEAT_RCX_DCA</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00009">CPUID_FEAT_RCX_DS_CPL</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00007">CPUID_FEAT_RCX_DTES64</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00012">CPUID_FEAT_RCX_EST</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00018">CPUID_FEAT_RCX_ETPRD</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00031">CPUID_FEAT_RCX_F16C</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00016">CPUID_FEAT_RCX_FMA</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00008">CPUID_FEAT_RCX_MONITOR</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00025">CPUID_FEAT_RCX_MOVBE</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00029">CPUID_FEAT_RCX_OSXSAVE</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00020">CPUID_FEAT_RCX_PCIDE</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00006">CPUID_FEAT_RCX_PCLMULQDQ</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00019">CPUID_FEAT_RCX_PDCM</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00026">CPUID_FEAT_RCX_POPCNT</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00032">CPUID_FEAT_RCX_RDRAND</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00011">CPUID_FEAT_RCX_SMX</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00005">CPUID_FEAT_RCX_SSE3</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00022">CPUID_FEAT_RCX_SSE4_1</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00023">CPUID_FEAT_RCX_SSE4_2</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00014">CPUID_FEAT_RCX_SSSE3</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00013">CPUID_FEAT_RCX_TM2</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00010">CPUID_FEAT_RCX_VMX</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00024">CPUID_FEAT_RCX_x2APIC</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00028">CPUID_FEAT_RCX_XSAVE</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00054">CPUID_FEAT_RDX_ACPI</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00043">CPUID_FEAT_RDX_APIC</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00052">CPUID_FEAT_RDX_CLF</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00048">CPUID_FEAT_RDX_CMOV</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00042">CPUID_FEAT_RDX_CX8</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00036">CPUID_FEAT_RDX_DE</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00053">CPUID_FEAT_RDX_DTES</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00034">CPUID_FEAT_RDX_FPU</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00056">CPUID_FEAT_RDX_FXSR</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00060">CPUID_FEAT_RDX_HTT</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00062">CPUID_FEAT_RDX_IA64</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00047">CPUID_FEAT_RDX_MCA</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00041">CPUID_FEAT_RDX_MCE</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00055">CPUID_FEAT_RDX_MMX</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00039">CPUID_FEAT_RDX_MSR</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00045">CPUID_FEAT_RDX_MTRR</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00040">CPUID_FEAT_RDX_PAE</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00049">CPUID_FEAT_RDX_PAT</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00063">CPUID_FEAT_RDX_PBE</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00046">CPUID_FEAT_RDX_PGE</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00037">CPUID_FEAT_RDX_PSE</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00050">CPUID_FEAT_RDX_PSE36</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00051">CPUID_FEAT_RDX_PSN</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00044">CPUID_FEAT_RDX_SEP</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00073">CPUID_FEAT_RDX_SMAP</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00066">CPUID_FEAT_RDX_SMEP</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00059">CPUID_FEAT_RDX_SS</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00057">CPUID_FEAT_RDX_SSE</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00058">CPUID_FEAT_RDX_SSE2</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00061">CPUID_FEAT_RDX_TM1</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00038">CPUID_FEAT_RDX_TSC</a>, <a class="el" href="../../d7/d70/include_2cpuid_8h_source.html#l00035">CPUID_FEAT_RDX_VME</a>, <a class="el" href="../../d1/dc5/arch_2amd64_2cpu_2cpuid_8h_source.html#l00024">cpuid_string()</a>, and <a class="el" href="../../d4/db5/String_8c_source.html#l00068">strcat()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00130">KernelTask()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00131">KernelTask()</a>.</p>
 
 </div>
 </div>
@@ -427,7 +421,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="../../dir_4a04b9aac4eefdd334a78e565f4616f2.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_daa9cfe7e05ea725d73c8368bae78c4d.html">amd64</a></li><li class="navelem"><a class="el" href="../../dir_afb927060803406c4a9b5e13f2ea617f.html">cpu</a></li><li class="navelem"><a class="el" href="../../db/d2a/CPUID_8c.html">CPUID.c</a></li>
+    <li class="navelem"><a class="el" href="../../dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="../../dir_4a04b9aac4eefdd334a78e565f4616f2.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_daa9cfe7e05ea725d73c8368bae78c4d.html">amd64</a></li><li class="navelem"><a class="el" href="../../dir_afb927060803406c4a9b5e13f2ea617f.html">cpu</a></li><li class="navelem"><a class="el" href="../../da/dc6/amd64_2cpu_2CPUID_8c.html">CPUID.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

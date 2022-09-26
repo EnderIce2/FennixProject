@@ -108,8 +108,8 @@ Functions</h2></td></tr>
 <tr class="separator:af9aace1b44b73111e15aa39f06f43456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdd7294be38dedc0bf0854651de514ff"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d1a/StackGuard_8c.html#abdd7294be38dedc0bf0854651de514ff">__attribute__</a> ((constructor, no_stack_protector))</td></tr>
 <tr class="separator:abdd7294be38dedc0bf0854651de514ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a872e1354dd6eed0890159e50ddc46796"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d1a/StackGuard_8c.html#a872e1354dd6eed0890159e50ddc46796">__attribute__</a> ((weak, noreturn))</td></tr>
-<tr class="separator:a872e1354dd6eed0890159e50ddc46796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2e9d9bd181fe65f3ea5da350e71459c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d1a/StackGuard_8c.html#ab2e9d9bd181fe65f3ea5da350e71459c">__attribute__</a> ((weak, noreturn, no_stack_protector))</td></tr>
+<tr class="separator:ab2e9d9bd181fe65f3ea5da350e71459c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ae7604d0091293e83fbb68adc9dc332ba"></a>
@@ -186,8 +186,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a872e1354dd6eed0890159e50ddc46796"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a872e1354dd6eed0890159e50ddc46796">&#9670;&nbsp;</a></span>__attribute__() <span class="overload">[3/3]</span></h2>
+<a id="ab2e9d9bd181fe65f3ea5da350e71459c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2e9d9bd181fe65f3ea5da350e71459c">&#9670;&nbsp;</a></span>__attribute__() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -195,7 +195,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">__attribute__ </td>
           <td>(</td>
-          <td class="paramtype">(weak, noreturn)&#160;</td>
+          <td class="paramtype">(weak, noreturn, no_stack_protector)&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -205,9 +205,10 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="../../de/d1a/StackGuard_8c_source.html#l00033">33</a> of file <a class="el" href="../../de/d1a/StackGuard_8c_source.html">StackGuard.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../d9/d87/sys_8h.html#a6223e79d1dbac2fc6f74b3bb9bdeb264">panic</a>(<span class="stringliteral">&quot;Stack smashing detected!&quot;</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../d7/dfc/kernel_2include_2types_8h.html#aaefaf346d5a4d927b41ccb5a19f6fad5">CPU_STOP</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d9/d87/sys_8h_source.html#l00009">panic</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00049">CPU_STOP</a>, and <a class="el" href="../../d9/d87/sys_8h_source.html#l00009">panic</a>.</p>
 
 </div>
 </div>
@@ -215,6 +216,7 @@ Functions</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="asys_8h_html_a6223e79d1dbac2fc6f74b3bb9bdeb264"><div class="ttname"><a href="../../d9/d87/sys_8h.html#a6223e79d1dbac2fc6f74b3bb9bdeb264">panic</a></div><div class="ttdeci">#define panic(m, clear)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d87/sys_8h_source.html#l00009">sys.h:9</a></div></div>
 <div class="ttc" id="aStackGuard_8c_html_ae7604d0091293e83fbb68adc9dc332ba"><div class="ttname"><a href="../../de/d1a/StackGuard_8c.html#ae7604d0091293e83fbb68adc9dc332ba">STACK_CHK_GUARD_VALUE</a></div><div class="ttdeci">#define STACK_CHK_GUARD_VALUE</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d1a/StackGuard_8c_source.html#l00006">StackGuard.c:6</a></div></div>
+<div class="ttc" id="akernel_2include_2types_8h_html_aaefaf346d5a4d927b41ccb5a19f6fad5"><div class="ttname"><a href="../../d7/dfc/kernel_2include_2types_8h.html#aaefaf346d5a4d927b41ccb5a19f6fad5">CPU_STOP</a></div><div class="ttdeci">#define CPU_STOP</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00049">types.h:49</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

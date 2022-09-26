@@ -101,7 +101,10 @@ $(document).ready(function(){initNavTree('dd/d46/fxsr_8h_source.html','../../');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span> _i686_fxrstor(<span class="keywordtype">char</span> *Buffer);</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> _fxsave(<span class="keywordtype">char</span> *Buffer) { _i686_fxsave(Buffer); }</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">void</span> _fxrstor(<span class="keywordtype">char</span> *Buffer) { _i686_fxrstor(Buffer); }</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#elif defined(__aarch64__)</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> _fxsave(<span class="keywordtype">char</span> *Buffer) {}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> _fxrstor(<span class="keywordtype">char</span> *Buffer) {}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

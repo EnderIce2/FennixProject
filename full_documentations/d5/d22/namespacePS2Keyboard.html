@@ -126,15 +126,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/df5/keyboard_8cpp_source.html#l00017">17</a> of file <a class="el" href="../../d7/df5/keyboard_8cpp_source.html">keyboard.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> scanCode = <a class="code" href="../../d8/d61/include_2io_8h.html#a391e9b8bf10e07c26f6db68c10d008cf">inb</a>(0x60);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="../../d5/d22/namespacePS2Keyboard.html#ade75c4beb5c5f79b803c901e7b13510c">LastSC</a> = scanCode;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">if</span> (scanCode == 0x3B)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                <a class="code" href="../../d2/d00/Kernel_8cpp.html#a78de668afe436bb1e16edb9954a5b0da">ShowRecoveryScreen</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="../../d7/df5/keyboard_8cpp_source.html#l00018">18</a> of file <a class="el" href="../../d7/df5/keyboard_8cpp_source.html">keyboard.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> scanCode = <a class="code" href="../../d8/d61/include_2io_8h.html#a391e9b8bf10e07c26f6db68c10d008cf">inb</a>(0x60);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="../../d5/d22/namespacePS2Keyboard.html#ade75c4beb5c5f79b803c901e7b13510c">LastSC</a> = scanCode;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">if</span> (scanCode == 0x3B)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <a class="code" href="../../d2/d00/Kernel_8cpp.html#a78de668afe436bb1e16edb9954a5b0da">ShowRecoveryScreen</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d8/d61/include_2io_8h_source.html#l00209">inb</a>, <a class="el" href="../../d7/df5/keyboard_8cpp_source.html#l00013">LastSC</a>, and <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00044">ShowRecoveryScreen</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d61/include_2io_8h_source.html#l00296">inb</a>, <a class="el" href="../../d7/df5/keyboard_8cpp_source.html#l00014">LastSC</a>, and <a class="el" href="../../d2/d00/Kernel_8cpp_source.html#l00044">ShowRecoveryScreen</a>.</p>
 
 </div>
 </div>
@@ -159,17 +159,17 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/df5/keyboard_8cpp_source.html#l00013">13</a> of file <a class="el" href="../../d7/df5/keyboard_8cpp_source.html">keyboard.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/df5/keyboard_8cpp_source.html#l00014">14</a> of file <a class="el" href="../../d7/df5/keyboard_8cpp_source.html">keyboard.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/df5/keyboard_8cpp_source.html#l00026">PS2Keyboard::PS2KeyboardDriver::GetLastScanCode()</a>, <a class="el" href="../../d7/df5/keyboard_8cpp_source.html#l00017">InterruptHandler()</a>, and <a class="el" href="../../d7/df5/keyboard_8cpp_source.html#l00028">PS2Keyboard::PS2KeyboardDriver::WaitScanCode()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/df5/keyboard_8cpp_source.html#l00027">PS2Keyboard::PS2KeyboardDriver::GetLastScanCode()</a>, <a class="el" href="../../d7/df5/keyboard_8cpp_source.html#l00018">InterruptHandler()</a>, and <a class="el" href="../../d7/df5/keyboard_8cpp_source.html#l00029">PS2Keyboard::PS2KeyboardDriver::WaitScanCode()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="ainclude_2io_8h_html_a391e9b8bf10e07c26f6db68c10d008cf"><div class="ttname"><a href="../../d8/d61/include_2io_8h.html#a391e9b8bf10e07c26f6db68c10d008cf">inb</a></div><div class="ttdeci">#define inb(Port)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d61/include_2io_8h_source.html#l00209">io.h:209</a></div></div>
+<div class="ttc" id="ainclude_2io_8h_html_a391e9b8bf10e07c26f6db68c10d008cf"><div class="ttname"><a href="../../d8/d61/include_2io_8h.html#a391e9b8bf10e07c26f6db68c10d008cf">inb</a></div><div class="ttdeci">#define inb(Port)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d61/include_2io_8h_source.html#l00296">io.h:296</a></div></div>
 <div class="ttc" id="aKernel_8cpp_html_a78de668afe436bb1e16edb9954a5b0da"><div class="ttname"><a href="../../d2/d00/Kernel_8cpp.html#a78de668afe436bb1e16edb9954a5b0da">ShowRecoveryScreen</a></div><div class="ttdeci">bool ShowRecoveryScreen</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d00/Kernel_8cpp_source.html#l00044">Kernel.cpp:44</a></div></div>
-<div class="ttc" id="anamespacePS2Keyboard_html_ade75c4beb5c5f79b803c901e7b13510c"><div class="ttname"><a href="../../d5/d22/namespacePS2Keyboard.html#ade75c4beb5c5f79b803c901e7b13510c">PS2Keyboard::LastSC</a></div><div class="ttdeci">static uint8_t LastSC</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/df5/keyboard_8cpp_source.html#l00013">keyboard.cpp:13</a></div></div>
+<div class="ttc" id="anamespacePS2Keyboard_html_ade75c4beb5c5f79b803c901e7b13510c"><div class="ttname"><a href="../../d5/d22/namespacePS2Keyboard.html#ade75c4beb5c5f79b803c901e7b13510c">PS2Keyboard::LastSC</a></div><div class="ttdeci">static uint8_t LastSC</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/df5/keyboard_8cpp_source.html#l00014">keyboard.cpp:14</a></div></div>
 <div class="ttc" id="ainclude_2stdint_8h_html_a3cb4a16b0e8d6af0af86d4fd6ba5fd9d"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a></div><div class="ttdeci">__UINT8_TYPE__ uint8_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00007">stdint.h:7</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

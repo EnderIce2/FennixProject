@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fennix Project: kernel/boot/Multiboot2.c File Reference</title>
+<title>Fennix Project: kernel/arch/i686/boot/Multiboot2.c File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -85,18 +85,304 @@ $(document).ready(function(){initNavTree('d8/db1/Multiboot2_8c.html','../../'); 
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">Multiboot2.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;<a class="el" href="../../d1/d57/cputables_8h_source.html">cputables.h</a>&gt;</code><br />
+</div>
 <p><a href="../../d8/db1/Multiboot2_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a6d288c531572c08fa18bff975ced160b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db1/Multiboot2_8c.html#a6d288c531572c08fa18bff975ced160b">CheckCPUID</a> ()</td></tr>
+<tr class="separator:a6d288c531572c08fa18bff975ced160b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d3e40f003bac15b4dfc7aaf0ec37dd9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db1/Multiboot2_8c.html#a8d3e40f003bac15b4dfc7aaf0ec37dd9">CheckLongMode</a> ()</td></tr>
+<tr class="separator:a8d3e40f003bac15b4dfc7aaf0ec37dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b187b7f89413f4f7393e8db0cb6df19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db1/Multiboot2_8c.html#a0b187b7f89413f4f7393e8db0cb6df19">CallHigherHalf</a> ()</td></tr>
+<tr class="separator:a0b187b7f89413f4f7393e8db0cb6df19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac70efc5ddc762d904bcaefc971ba30d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db1/Multiboot2_8c.html#ac70efc5ddc762d904bcaefc971ba30d6">LoadPageDirectory</a> (unsigned int[])</td></tr>
+<tr class="separator:ac70efc5ddc762d904bcaefc971ba30d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82419422d87b7561d8cf837ea307dc37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db1/Multiboot2_8c.html#a82419422d87b7561d8cf837ea307dc37">EnablePaging</a> ()</td></tr>
+<tr class="separator:a82419422d87b7561d8cf837ea307dc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d04ea8466d46a96524149f8b12aca71"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db1/Multiboot2_8c.html#a0d04ea8466d46a96524149f8b12aca71">__attribute__</a> ((no_stack_protector, section(&quot;.multiboot.text&quot;)))</td></tr>
+<tr class="separator:a0d04ea8466d46a96524149f8b12aca71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a9aea202f26ca2a1779397d624e7053a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db1/Multiboot2_8c.html#a9aea202f26ca2a1779397d624e7053a1">_kernel_start</a></td></tr>
+<tr class="separator:a9aea202f26ca2a1779397d624e7053a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a963a9b86d21e2b5cfdeb947f25826c13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db1/Multiboot2_8c.html#a963a9b86d21e2b5cfdeb947f25826c13">_kernel_end</a></td></tr>
+<tr class="separator:a963a9b86d21e2b5cfdeb947f25826c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a0d04ea8466d46a96524149f8b12aca71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d04ea8466d46a96524149f8b12aca71">&#9670;&nbsp;</a></span>__attribute__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(no_stack_protector, section(&quot;.multiboot.text&quot;))&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/db1/Multiboot2_8c_source.html#l00010">10</a> of file <a class="el" href="../../d8/db1/Multiboot2_8c_source.html">Multiboot2.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 2000; i++)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        ((<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *)0xb8000)[i * 2] = <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        ((<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *)0xb8000)[i * 2 + 1] = 0;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">char</span> pleasewait[16] = <span class="stringliteral">&quot;Please wait...&quot;</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">char</span> longmodewarn[72] = <span class="stringliteral">&quot;Warning: Long mode it&#39;s available! Consider using the correct OS image.&quot;</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">char</span> notimplemented[21] = <span class="stringliteral">&quot;Not implemented yet!&quot;</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">char</span> error[14] = <span class="stringliteral">&quot;Not Supported.&quot;</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 16; i++)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        ((<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *)0xb8000)[i] = (0x7 &lt;&lt; 8) | pleasewait[i];</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d8/db1/Multiboot2_8c.html#a6d288c531572c08fa18bff975ced160b">CheckCPUID</a>())</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d8/db1/Multiboot2_8c.html#a8d3e40f003bac15b4dfc7aaf0ec37dd9">CheckLongMode</a>())</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 72; i++)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                ((<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *)0xb8000)[i] = (0x7 &lt;&lt; 8) | longmodewarn[i];</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> PD[1024] <a class="code" href="../../d8/db1/Multiboot2_8c.html#a0d04ea8466d46a96524149f8b12aca71">__attribute__</a>((aligned(4096)));</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> PT[1024] <a class="code" href="../../d8/db1/Multiboot2_8c.html#a0d04ea8466d46a96524149f8b12aca71">__attribute__</a>((aligned(4096)));</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> KPT[1024] <a class="code" href="../../d8/db1/Multiboot2_8c.html#a0d04ea8466d46a96524149f8b12aca71">__attribute__</a>((aligned(4096)));</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 1024; i++)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        PD[i] = 0x00000002;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 1024; i++)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        PT[i] = (i * 0x1000) | 3;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> i = &amp;<a class="code" href="../../d8/db1/Multiboot2_8c.html#a9aea202f26ca2a1779397d624e7053a1">_kernel_start</a>; i &lt; (<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)&amp;<a class="code" href="../../d8/db1/Multiboot2_8c.html#a963a9b86d21e2b5cfdeb947f25826c13">_kernel_end</a>; i += 0x1000)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        KPT[(i - (<a class="code" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>)&amp;<a class="code" href="../../d8/db1/Multiboot2_8c.html#a9aea202f26ca2a1779397d624e7053a1">_kernel_start</a>) / 0x1000] = i | 3;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// for (int i = 1024; i &lt; 2048; i++)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// {</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">//     KPT[i &gt;&gt; 12 &amp; 0x03FF] = (i * 0x1000) | 3;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// }</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    PD[0] = ((<span class="keywordtype">unsigned</span> int)PT) | 3;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    PD[1] = ((<span class="keywordtype">unsigned</span> int)KPT) | 3;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="../../d8/db1/Multiboot2_8c.html#ac70efc5ddc762d904bcaefc971ba30d6">LoadPageDirectory</a>(PD);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="../../d8/db1/Multiboot2_8c.html#a82419422d87b7561d8cf837ea307dc37">EnablePaging</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// TODO: map kernel to higher half memory</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// CallHigherHalf();</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 21; i++)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        ((<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *)0xb8000)[i] = (0x7 &lt;&lt; 8) | notimplemented[i];</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    __asm__ <span class="keyword">volatile</span>(<span class="stringliteral">&quot;1:\n&quot;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                     <span class="stringliteral">&quot;cli\n&quot;</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                     <span class="stringliteral">&quot;hlt\n&quot;</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                     <span class="stringliteral">&quot;jmp 1b\n&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    __asm__ <span class="keyword">volatile</span>(<span class="stringliteral">&quot;.section .multiboot.text\n&quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                     <span class="stringliteral">&quot;.global LoadPageDirectory\n&quot;</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                     <span class="stringliteral">&quot;LoadPageDirectory:\n&quot;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                     <span class="stringliteral">&quot;push %ebp\n&quot;</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                     <span class="stringliteral">&quot;mov %esp, %ebp\n&quot;</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                     <span class="stringliteral">&quot;mov 8(%esp), %eax\n&quot;</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                     <span class="stringliteral">&quot;mov %eax, %cr3\n&quot;</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                     <span class="stringliteral">&quot;mov %ebp, %esp\n&quot;</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                     <span class="stringliteral">&quot;pop %ebp\n&quot;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                     <span class="stringliteral">&quot;ret\n&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    __asm__ <span class="keyword">volatile</span>(<span class="stringliteral">&quot;.section .multiboot.text\n&quot;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                     <span class="stringliteral">&quot;.global EnablePaging\n&quot;</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                     <span class="stringliteral">&quot;EnablePaging:\n&quot;</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                     <span class="stringliteral">&quot;push %ebp\n&quot;</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                     <span class="stringliteral">&quot;mov %esp, %ebp\n&quot;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                     <span class="stringliteral">&quot;mov %cr0, %eax\n&quot;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                     <span class="stringliteral">&quot;or $0x80010000, %eax\n&quot;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                     <span class="stringliteral">&quot;mov %eax, %cr0\n&quot;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                     <span class="stringliteral">&quot;mov %ebp, %esp\n&quot;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                     <span class="stringliteral">&quot;pop %ebp\n&quot;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                     <span class="stringliteral">&quot;ret\n&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// __asm__ volatile(&quot;.section .bootstrap_stack, \&quot;aw\&quot;, @nobits\n&quot;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">//                  &quot;BootstrapStackBottom:\n&quot;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">//                  &quot;.skip 16384\n&quot;</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">//                  &quot;BootstrapStackTop:\n&quot;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">//                  &quot;.section .multiboot.text\n&quot;</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">//                  &quot;CallHigherHalf:\n&quot;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">//                  &quot;lea 4f, %ecx\n&quot;</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">//                  &quot;jmp *%ecx\n&quot;</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">//                  &quot;.section .text\n&quot;</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">//                  &quot;4:\n&quot;</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">//                  &quot;movl %cr3, %ecx\n&quot;</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">//                  &quot;movl %ecx, %cr3\n&quot;</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">//                  &quot;mov $BootstrapStackTop, %esp\n&quot;</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">//                  &quot;call kernel_entry\n&quot;</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">//                  &quot;cli\n&quot;</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">//                  &quot;1:\n&quot;</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">//                  &quot;hlt\n&quot;</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">//                  &quot;jmp 1b\n&quot;);</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/db1/Multiboot2_8c_source.html#l00008">_kernel_end</a>, <a class="el" href="../../d8/db1/Multiboot2_8c.html#a9aea202f26ca2a1779397d624e7053a1">_kernel_start</a>, <a class="el" href="../../d8/db1/Multiboot2_8c.html#a6d288c531572c08fa18bff975ced160b">CheckCPUID()</a>, <a class="el" href="../../d8/db1/Multiboot2_8c.html#a8d3e40f003bac15b4dfc7aaf0ec37dd9">CheckLongMode()</a>, <a class="el" href="../../d8/db1/Multiboot2_8c.html#a82419422d87b7561d8cf837ea307dc37">EnablePaging()</a>, and <a class="el" href="../../d8/db1/Multiboot2_8c.html#ac70efc5ddc762d904bcaefc971ba30d6">LoadPageDirectory()</a>.</p>
+
+</div>
+</div>
+<a id="a0b187b7f89413f4f7393e8db0cb6df19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b187b7f89413f4f7393e8db0cb6df19">&#9670;&nbsp;</a></span>CallHigherHalf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CallHigherHalf </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d288c531572c08fa18bff975ced160b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d288c531572c08fa18bff975ced160b">&#9670;&nbsp;</a></span>CheckCPUID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CheckCPUID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d8/db1/Multiboot2_8c_source.html#l00010">__attribute__()</a>.</p>
+
+</div>
+</div>
+<a id="a8d3e40f003bac15b4dfc7aaf0ec37dd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d3e40f003bac15b4dfc7aaf0ec37dd9">&#9670;&nbsp;</a></span>CheckLongMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CheckLongMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d8/db1/Multiboot2_8c_source.html#l00010">__attribute__()</a>.</p>
+
+</div>
+</div>
+<a id="a82419422d87b7561d8cf837ea307dc37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82419422d87b7561d8cf837ea307dc37">&#9670;&nbsp;</a></span>EnablePaging()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnablePaging </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d8/db1/Multiboot2_8c_source.html#l00010">__attribute__()</a>.</p>
+
+</div>
+</div>
+<a id="ac70efc5ddc762d904bcaefc971ba30d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70efc5ddc762d904bcaefc971ba30d6">&#9670;&nbsp;</a></span>LoadPageDirectory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoadPageDirectory </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname">[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d8/db1/Multiboot2_8c_source.html#l00010">__attribute__()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a963a9b86d21e2b5cfdeb947f25826c13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a963a9b86d21e2b5cfdeb947f25826c13">&#9670;&nbsp;</a></span>_kernel_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> _kernel_end</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/db1/Multiboot2_8c_source.html#l00008">8</a> of file <a class="el" href="../../d8/db1/Multiboot2_8c_source.html">Multiboot2.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/db1/Multiboot2_8c_source.html#l00010">__attribute__()</a>, <a class="el" href="../../dc/d3c/Binary_8cpp_source.html#l00078">CreatePageTableWithKernel()</a>, <a class="el" href="../../db/dac/PageTableHeapManager_8cpp_source.html#l00060">init_kernelpml()</a>, and <a class="el" href="../../d4/d60/PhysicalMemoryManager_8cpp_source.html#l00007">init_pmm()</a>.</p>
+
+</div>
+</div>
+<a id="a9aea202f26ca2a1779397d624e7053a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aea202f26ca2a1779397d624e7053a1">&#9670;&nbsp;</a></span>_kernel_start</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a> _kernel_start</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d8/db1/Multiboot2_8c_source.html#l00010">__attribute__()</a>, <a class="el" href="../../dc/d3c/Binary_8cpp_source.html#l00078">CreatePageTableWithKernel()</a>, <a class="el" href="../../db/dac/PageTableHeapManager_8cpp_source.html#l00060">init_kernelpml()</a>, and <a class="el" href="../../d4/d60/PhysicalMemoryManager_8cpp_source.html#l00007">init_pmm()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aMultiboot2_8c_html_a9aea202f26ca2a1779397d624e7053a1"><div class="ttname"><a href="../../d8/db1/Multiboot2_8c.html#a9aea202f26ca2a1779397d624e7053a1">_kernel_start</a></div><div class="ttdeci">uint64_t _kernel_start</div></div>
+<div class="ttc" id="aMultiboot2_8c_html_a0d04ea8466d46a96524149f8b12aca71"><div class="ttname"><a href="../../d8/db1/Multiboot2_8c.html#a0d04ea8466d46a96524149f8b12aca71">__attribute__</a></div><div class="ttdeci">__attribute__((no_stack_protector, section(&quot;.multiboot.text&quot;)))</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/db1/Multiboot2_8c_source.html#l00010">Multiboot2.c:10</a></div></div>
+<div class="ttc" id="aMultiboot2_8c_html_a8d3e40f003bac15b4dfc7aaf0ec37dd9"><div class="ttname"><a href="../../d8/db1/Multiboot2_8c.html#a8d3e40f003bac15b4dfc7aaf0ec37dd9">CheckLongMode</a></div><div class="ttdeci">int CheckLongMode()</div></div>
+<div class="ttc" id="aMultiboot2_8c_html_a6d288c531572c08fa18bff975ced160b"><div class="ttname"><a href="../../d8/db1/Multiboot2_8c.html#a6d288c531572c08fa18bff975ced160b">CheckCPUID</a></div><div class="ttdeci">int CheckCPUID()</div></div>
+<div class="ttc" id="aMultiboot2_8c_html_a963a9b86d21e2b5cfdeb947f25826c13"><div class="ttname"><a href="../../d8/db1/Multiboot2_8c.html#a963a9b86d21e2b5cfdeb947f25826c13">_kernel_end</a></div><div class="ttdeci">uint64_t _kernel_end</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/db1/Multiboot2_8c_source.html#l00008">Multiboot2.c:8</a></div></div>
+<div class="ttc" id="aMultiboot2_8c_html_ac70efc5ddc762d904bcaefc971ba30d6"><div class="ttname"><a href="../../d8/db1/Multiboot2_8c.html#ac70efc5ddc762d904bcaefc971ba30d6">LoadPageDirectory</a></div><div class="ttdeci">void LoadPageDirectory(unsigned int[])</div></div>
+<div class="ttc" id="ainclude_2stdint_8h_html_a2095b9bffea4b2656950c6c0419edbf1"><div class="ttname"><a href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a></div><div class="ttdeci">__UINT64_TYPE__ uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d69/include_2stdint_8h_source.html#l00010">stdint.h:10</a></div></div>
+<div class="ttc" id="aMultiboot2_8c_html_a82419422d87b7561d8cf837ea307dc37"><div class="ttname"><a href="../../d8/db1/Multiboot2_8c.html#a82419422d87b7561d8cf837ea307dc37">EnablePaging</a></div><div class="ttdeci">void EnablePaging()</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="../../dir_ecf7259329ba7794ad7c9558e45771a7.html">boot</a></li><li class="navelem"><a class="el" href="../../d8/db1/Multiboot2_8c.html">Multiboot2.c</a></li>
+    <li class="navelem"><a class="el" href="../../dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="../../dir_4a04b9aac4eefdd334a78e565f4616f2.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_2f75af7b90e18386b84815cf9f122cab.html">i686</a></li><li class="navelem"><a class="el" href="../../dir_be3e98f04780157fc5644c76469259e7.html">boot</a></li><li class="navelem"><a class="el" href="../../d8/db1/Multiboot2_8c.html">Multiboot2.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

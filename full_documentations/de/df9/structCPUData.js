@@ -2,8 +2,9 @@ var structCPUData =
 [
     [ "__attribute__", "de/df9/structCPUData.html#a2f0994156ef525889ecccfe8d3674e3d", null ],
     [ "__attribute__", "de/df9/structCPUData.html#a2f0994156ef525889ecccfe8d3674e3d", null ],
-    [ "Checksum", "de/df9/structCPUData.html#a5d467090c63e106edc8c650eb049bd48", null ],
+    [ "__attribute__", "de/df9/structCPUData.html#a2f0994156ef525889ecccfe8d3674e3d", null ],
     [ "Checksum", "de/df9/structCPUData.html#ac426207078d58b231d2a9acb4ec3c607", null ],
+    [ "Checksum", "de/df9/structCPUData.html#a5d467090c63e106edc8c650eb049bd48", null ],
     [ "CurrentProcess", "de/df9/structCPUData.html#ac1c1762084dd222f4b4990f0bfd8dba6", null ],
     [ "CurrentThread", "de/df9/structCPUData.html#aff031ad6704c03fabf0dea503749bc45", null ],
     [ "ErrorCode", "de/df9/structCPUData.html#a590e51ea5f73b23f0a436857588c2e96", null ],

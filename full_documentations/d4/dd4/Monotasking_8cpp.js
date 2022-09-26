@@ -5,7 +5,6 @@ var Monotasking_8cpp =
       [ "Prev", "d9/d3e/namespaceTasking.html#a0f47556de1621899b67ac0a9df9d4eac", null ],
       [ "Task", "d9/d3e/namespaceTasking.html#a189230cb6a718c5023a21fcda7306a5a", null ]
     ] ],
-    [ "SchedulerInterrupt", "d4/dd4/Monotasking_8cpp.html#a79173cb020c4dafa4ff23f9a093473ce", null ],
     [ "__attribute__", "d4/dd4/Monotasking_8cpp.html#acb62ab0c49b8f76b410251abdfe5fa4c", null ],
     [ "__attribute__", "d4/dd4/Monotasking_8cpp.html#ab84aaaa32c2361f6c6a3d238244cce37", null ],
     [ "AllocateTask", "d4/dd4/Monotasking_8cpp.html#ae0a4cd7251abc07ea2d102e44e67515c", null ],

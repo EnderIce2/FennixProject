@@ -307,7 +307,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00137">137</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00149">149</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -419,7 +419,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00108">108</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00120">120</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -450,33 +450,12 @@ Typedefs</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    {                                               \</div>
-<div class="line">        uint8_t ret;                                \</div>
-<div class="line">        asm(<span class="stringliteral">&quot;in %%dx, %%al&quot;</span>                         \</div>
-<div class="line">            : <span class="stringliteral">&quot;=a&quot;</span>(ret)                             \</div>
-<div class="line">            : <span class="stringliteral">&quot;d&quot;</span>(0x70));                           \</div>
-<div class="line">        asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;outb %%al, $0x80&quot;</span>             \</div>
-<div class="line">                     :                              \</div>
-<div class="line">                     : <span class="stringliteral">&quot;a&quot;</span>(0));                     \</div>
-<div class="line">        asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;out %%al, %%dx&quot;</span>               \</div>
-<div class="line">                     :                              \</div>
-<div class="line">                     : <span class="stringliteral">&quot;a&quot;</span>(ret | 0x80), <span class="stringliteral">&quot;d&quot;</span>(0x70)); \</div>
-<div class="line">        asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;outb %%al, $0x80&quot;</span>             \</div>
-<div class="line">                     :                              \</div>
-<div class="line">                     : <span class="stringliteral">&quot;a&quot;</span>(0));                     \</div>
-<div class="line">        asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;in %%dx, %%al&quot;</span>                \</div>
-<div class="line">                     : <span class="stringliteral">&quot;=a&quot;</span>(ret)                    \</div>
-<div class="line">                     : <span class="stringliteral">&quot;d&quot;</span>(0x71));                  \</div>
-<div class="line">        asm <span class="keyword">volatile</span>(<span class="stringliteral">&quot;outb %%al, $0x80&quot;</span>             \</div>
-<div class="line">                     :                              \</div>
-<div class="line">                     : <span class="stringliteral">&quot;a&quot;</span>(0));                     \</div>
-<div class="line">        for (;;)                                    \</div>
-<div class="line">            <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;cli\nhlt&quot;</span>);               \</div>
-<div class="line">    }</div>
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">for</span> (;;)     \</div>
+<div class="line">    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;wfe&quot;</span>)</div>
 </div><!-- fragment -->
 <p>This function halts the CPU for good. Nothing can be done after this. Even the NMI can't do something. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00049">49</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00081">81</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -492,9 +471,9 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">for</span> (;;)     \</div>
-<div class="line">    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;hlt&quot;</span>)</div>
+<div class="line">    <span class="keyword">asm</span> <span class="keyword">volatile</span>(<span class="stringliteral">&quot;wfi&quot;</span>)</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00044">44</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00049">49</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -606,7 +585,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00087">87</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00099">99</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -638,7 +617,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00085">85</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00097">97</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -668,7 +647,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00140">140</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00152">152</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -698,7 +677,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00139">139</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00151">151</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -792,7 +771,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00143">143</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00155">155</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -808,7 +787,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00086">86</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00098">98</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -828,7 +807,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00162">162</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00174">174</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -848,7 +827,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00156">156</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00168">168</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -868,7 +847,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00150">150</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00162">162</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -888,7 +867,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00164">164</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00176">176</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -908,7 +887,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00146">146</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00158">158</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -928,7 +907,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00148">148</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00160">160</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -948,7 +927,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00154">154</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00166">166</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -968,7 +947,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00152">152</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00164">164</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -988,7 +967,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00160">160</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00172">172</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -1008,7 +987,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00158">158</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00170">170</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -1058,7 +1037,7 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00142">142</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html#l00154">154</a> of file <a class="el" href="../../d7/dfc/kernel_2include_2types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>

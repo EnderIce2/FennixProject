@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"d1/d37/cargs_8h.html#a3807c9e412641303b1a61728751ecf8f":[5,0,4,2,1,1,8],
+"d1/d37/cargs_8h.html#a579ece2d9da71176678c2d1be2091dd2":[5,0,4,2,1,1,1,4],
 "d1/d37/cargs_8h.html#a5cf196ffbde8da22abc44fedf0fada53":[5,0,4,2,1,1,12],
 "d1/d37/cargs_8h.html#a5fb840d6294e740ae97be12dfee745cd":[5,0,4,2,1,1,1,8],
 "d1/d37/cargs_8h.html#a6da2acbee0a830533fc296a0af29c451":[5,0,4,2,1,1,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "d1/d57/cputables_8h.html#d6/de2/structSelectorErrorCode_8____unnamed____":[5,0,1,2,24],
 "d1/d57/cputables_8h.html#d8/d03/structCR0_8____unnamed____":[5,0,1,2,18],
 "d1/d57/cputables_8h.html#d8/d53/struct__TaskStateSegmentEntry":[5,0,1,2,0],
-"d1/d57/cputables_8h.html#d8/db1/structPageFaultErrorCode_8____unnamed____":[5,0,1,2,23],
-"d1/d57/cputables_8h.html#d9/d0b/unionEFER":[5,0,1,2,16],
-"d1/d57/cputables_8h.html#d9/d15/unionCR8":[5,0,1,2,12]
+"d1/d57/cputables_8h.html#d8/db1/structPageFaultErrorCode_8____unnamed____":[5,0,1,2,23]
 };

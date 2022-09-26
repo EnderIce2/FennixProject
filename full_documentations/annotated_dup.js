@@ -229,10 +229,5 @@ var annotated_dup =
     [ "unreachable_data", "d0/d1f/ubsan_8h.html#d7/d2d/structunreachable__data", "d0/d1f/ubsan_8h_d7/d2d/structunreachable__data" ],
     [ "vbe", "df/daa/apps_2system_2wm_2main_8cpp.html#d4/d68/structvbe", "df/daa/apps_2system_2wm_2main_8cpp_d4/d68/structvbe" ],
     [ "Vector", "d6/da1/classVector.html", "d6/da1/classVector" ],
-    [ "VMwareCMD", "d1/dac/VMDetect_8c.html#d5/dc2/structVMwareCMD", "d1/dac/VMDetect_8c_d5/dc2/structVMwareCMD" ],
-    [ "VMwareCMD.__unnamed__", "d1/dac/VMDetect_8c.html#d8/dc8/unionVMwareCMD_8____unnamed____", "d1/dac/VMDetect_8c_d8/dc8/unionVMwareCMD_8____unnamed____" ],
-    [ "VMwareCMD.__unnamed__", "d1/dac/VMDetect_8c.html#d8/dc8/unionVMwareCMD_8____unnamed____", "d1/dac/VMDetect_8c_d8/dc8/unionVMwareCMD_8____unnamed____" ],
-    [ "VMwareCMD.__unnamed__", "d1/dac/VMDetect_8c.html#d8/dc8/unionVMwareCMD_8____unnamed____", "d1/dac/VMDetect_8c_d8/dc8/unionVMwareCMD_8____unnamed____" ],
-    [ "VMwareCMD.__unnamed__", "d1/dac/VMDetect_8c.html#d8/dc8/unionVMwareCMD_8____unnamed____", "d1/dac/VMDetect_8c_d8/dc8/unionVMwareCMD_8____unnamed____" ],
     [ "weak_ptr", "d2/d34/smartptr_8hpp.html#d9/d9b/classweak__ptr", null ]
 ];

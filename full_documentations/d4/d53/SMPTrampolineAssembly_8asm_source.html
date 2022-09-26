@@ -295,9 +295,9 @@ $(document).ready(function(){initNavTree('d4/d53/SMPTrampolineAssembly_8asm_sour
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;out dx, al</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    call StartCPU</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;%endif</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;times 512 - ($-$$) db 0</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;times 512 - ($-$$) db 0</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;%endif</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -93,10 +93,12 @@ $(document).ready(function(){initNavTree('de/df9/structCPUData.html','../../'); 
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html">smp.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html">smp.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a2f0994156ef525889ecccfe8d3674e3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> Stack[<a class="el" href="../../da/ddb/heap_8h.html#a6423a880df59733d2d9b509c7718d3a9">STACK_SIZE</a>]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/structCPUData.html#a2f0994156ef525889ecccfe8d3674e3d">__attribute__</a> ((aligned(<a class="el" href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>)))</td></tr>
+<tr class="separator:a2f0994156ef525889ecccfe8d3674e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f0994156ef525889ecccfe8d3674e3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> Stack[<a class="el" href="../../da/ddb/heap_8h.html#a6423a880df59733d2d9b509c7718d3a9">STACK_SIZE</a>]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/structCPUData.html#a2f0994156ef525889ecccfe8d3674e3d">__attribute__</a> ((aligned(<a class="el" href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>)))</td></tr>
 <tr class="separator:a2f0994156ef525889ecccfe8d3674e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f0994156ef525889ecccfe8d3674e3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> Stack[<a class="el" href="../../da/ddb/heap_8h.html#a6423a880df59733d2d9b509c7718d3a9">STACK_SIZE</a>]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/structCPUData.html#a2f0994156ef525889ecccfe8d3674e3d">__attribute__</a> ((aligned(<a class="el" href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>)))</td></tr>
@@ -106,8 +108,6 @@ Public Member Functions</h2></td></tr>
 Data Fields</h2></td></tr>
 <tr class="memitem:a37bb5180e4e32cae6fb5db74c476fb5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a2095b9bffea4b2656950c6c0419edbf1">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/structCPUData.html#a37bb5180e4e32cae6fb5db74c476fb5b">ID</a></td></tr>
 <tr class="separator:a37bb5180e4e32cae6fb5db74c476fb5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52d07d8224d65288a6dc88b4158b9416"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/db9/classACPI_1_1MADT.html#dc/d88/structACPI_1_1MADT_1_1LocalAPIC">ACPI::MADT::LocalAPIC</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/structCPUData.html#a52d07d8224d65288a6dc88b4158b9416">LAPIC</a></td></tr>
-<tr class="separator:a52d07d8224d65288a6dc88b4158b9416"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefffa4e28df3c8a54e7b00f098d7dbba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d57/cputables_8h.html#d2/dc5/unionCR3">CR3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/structCPUData.html#aefffa4e28df3c8a54e7b00f098d7dbba">PageTable</a></td></tr>
 <tr class="separator:aefffa4e28df3c8a54e7b00f098d7dbba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13ff8e794ef229d8d9a18788d1ca5db1"><td class="memItemLeft" align="right" valign="top">GlobalDescriptorTableDescriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/structCPUData.html#a13ff8e794ef229d8d9a18788d1ca5db1">GDT</a></td></tr>
@@ -126,15 +126,17 @@ Data Fields</h2></td></tr>
 <tr class="separator:a76db22a0f9d9bce50f8b711eaaf5cc41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac426207078d58b231d2a9acb4ec3c607"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/structCPUData.html#ac426207078d58b231d2a9acb4ec3c607">Checksum</a></td></tr>
 <tr class="separator:ac426207078d58b231d2a9acb4ec3c607"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52d07d8224d65288a6dc88b4158b9416"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/db9/classACPI_1_1MADT.html#dc/d88/structACPI_1_1MADT_1_1LocalAPIC">ACPI::MADT::LocalAPIC</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/structCPUData.html#a52d07d8224d65288a6dc88b4158b9416">LAPIC</a></td></tr>
+<tr class="separator:a52d07d8224d65288a6dc88b4158b9416"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d467090c63e106edc8c650eb049bd48"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/structCPUData.html#a5d467090c63e106edc8c650eb049bd48">Checksum</a> = <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp.html#a39c988cf13da29ba3d8293d925456ab1">CPU_DATA_CHECKSUM</a></td></tr>
 <tr class="separator:a5d467090c63e106edc8c650eb049bd48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00010">10</a> of file <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html#l00010">10</a> of file <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2f0994156ef525889ecccfe8d3674e3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f0994156ef525889ecccfe8d3674e3d">&#9670;&nbsp;</a></span>__attribute__() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f0994156ef525889ecccfe8d3674e3d">&#9670;&nbsp;</a></span>__attribute__() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,7 +154,25 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <a id="a2f0994156ef525889ecccfe8d3674e3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f0994156ef525889ecccfe8d3674e3d">&#9670;&nbsp;</a></span>__attribute__() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f0994156ef525889ecccfe8d3674e3d">&#9670;&nbsp;</a></span>__attribute__() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d69/include_2stdint_8h.html#a3cb4a16b0e8d6af0af86d4fd6ba5fd9d">uint8_t</a> Stack [<a class="el" href="../../da/ddb/heap_8h.html#a6423a880df59733d2d9b509c7718d3a9">STACK_SIZE</a>] CPUData::__attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(aligned(<a class="el" href="../../da/ddb/heap_8h.html#a7d467c1d283fdfa1f2081ba1e0d01b6e">PAGE_SIZE</a>))&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2f0994156ef525889ecccfe8d3674e3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f0994156ef525889ecccfe8d3674e3d">&#9670;&nbsp;</a></span>__attribute__() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,8 +190,24 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
+<a id="ac426207078d58b231d2a9acb4ec3c607"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac426207078d58b231d2a9acb4ec3c607">&#9670;&nbsp;</a></span>Checksum <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long CPUData::Checksum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html#l00023">23</a> of file <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a5d467090c63e106edc8c650eb049bd48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d467090c63e106edc8c650eb049bd48">&#9670;&nbsp;</a></span>Checksum <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d467090c63e106edc8c650eb049bd48">&#9670;&nbsp;</a></span>Checksum <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,22 +219,6 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp_source.html#l00023">23</a> of file <a class="el" href="../../d8/d16/arch_2i686_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ac426207078d58b231d2a9acb4ec3c607"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac426207078d58b231d2a9acb4ec3c607">&#9670;&nbsp;</a></span>Checksum <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">long CPUData::Checksum</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00024">24</a> of file <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
 
 </div>
 </div>
@@ -214,7 +234,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00019">19</a> of file <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html#l00018">18</a> of file <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
 
 </div>
 </div>
@@ -230,7 +250,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00020">20</a> of file <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html#l00019">19</a> of file <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
 
 </div>
 </div>
@@ -246,7 +266,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00022">22</a> of file <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html#l00021">21</a> of file <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
 
 </div>
 </div>
@@ -262,7 +282,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00015">15</a> of file <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html#l00014">14</a> of file <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
 
 </div>
 </div>
@@ -278,7 +298,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00012">12</a> of file <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html#l00012">12</a> of file <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
 
 </div>
 </div>
@@ -294,7 +314,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00016">16</a> of file <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html#l00015">15</a> of file <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
 
 </div>
 </div>
@@ -310,7 +330,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00023">23</a> of file <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html#l00022">22</a> of file <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
 
 </div>
 </div>
@@ -342,7 +362,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00014">14</a> of file <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html#l00013">13</a> of file <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
 
 </div>
 </div>
@@ -358,12 +378,12 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html#l00017">17</a> of file <a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html#l00016">16</a> of file <a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html">smp.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>kernel/arch/amd64/cpu/<a class="el" href="../../d7/d94/arch_2amd64_2cpu_2smp_8hpp_source.html">smp.hpp</a></li>
+<li>kernel/arch/aarch64/cpu/<a class="el" href="../../d5/d0d/arch_2aarch64_2cpu_2smp_8hpp_source.html">smp.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
