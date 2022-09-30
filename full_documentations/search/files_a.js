@@ -7,7 +7,7 @@ var searchData=
   ['libgstub_2ecpp_5836',['libgstub.cpp',['../d7/df2/libgstub_8cpp.html',1,'']]],
   ['license_2emd_5837',['LICENSE.md',['../d1/d85/cargs_2LICENSE_8md.html',1,'(Global Namespace)'],['../df/d82/cwalk_2LICENSE_8md.html',1,'(Global Namespace)']]],
   ['limine_2ec_5838',['Limine.c',['../d3/d1d/Limine_8c.html',1,'']]],
-  ['limine_2eh_5839',['limine.h',['../d3/d7a/boot_2limine_8h.html',1,'(Global Namespace)'],['../da/d8b/include_2boot_2protocols_2limine_8h.html',1,'(Global Namespace)']]],
+  ['limine_2eh_5839',['limine.h',['../d3/dfd/arch_2amd64_2boot_2limine_8h.html',1,'(Global Namespace)'],['../da/d8b/include_2boot_2protocols_2limine_8h.html',1,'(Global Namespace)']]],
   ['limits_2eh_5840',['limits.h',['../d9/d86/limits_8h.html',1,'']]],
   ['linux_2ecpp_5841',['Linux.cpp',['../db/d9e/Linux_8cpp.html',1,'']]],
   ['list_2eh_5842',['list.h',['../da/d23/list_8h.html',1,'']]],

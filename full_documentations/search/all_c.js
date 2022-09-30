@@ -60,7 +60,7 @@ var searchData=
   ['license_2emd_2594',['LICENSE.md',['../d1/d85/cargs_2LICENSE_8md.html',1,'(Global Namespace)'],['../df/d82/cwalk_2LICENSE_8md.html',1,'(Global Namespace)']]],
   ['lidt_2595',['lidt',['../de/d21/asm_8h.html#a10413c641ec7ad2cba180ab7a4860964',1,'asm.h']]],
   ['limine_2ec_2596',['Limine.c',['../d3/d1d/Limine_8c.html',1,'']]],
-  ['limine_2eh_2597',['limine.h',['../d3/d7a/boot_2limine_8h.html',1,'(Global Namespace)'],['../da/d8b/include_2boot_2protocols_2limine_8h.html',1,'(Global Namespace)']]],
+  ['limine_2eh_2597',['limine.h',['../d3/dfd/arch_2amd64_2boot_2limine_8h.html',1,'(Global Namespace)'],['../da/d8b/include_2boot_2protocols_2limine_8h.html',1,'(Global Namespace)']]],
   ['limine_5f5_5flevel_5fpaging_5frequest_2598',['limine_5_level_paging_request',['../d6/d26/structlimine__5__level__paging__request.html',1,'limine_5_level_paging_request'],['../da/d8b/include_2boot_2protocols_2limine_8h.html#a493482c4075e2a73894d82e2b627eccf',1,'LIMINE_5_LEVEL_PAGING_REQUEST():&#160;limine.h']]],
   ['limine_5f5_5flevel_5fpaging_5fresponse_2599',['limine_5_level_paging_response',['../da/d8b/include_2boot_2protocols_2limine_8h.html#df/d2c/structlimine__5__level__paging__response',1,'']]],
   ['limine_5fboot_5ftime_5frequest_2600',['limine_boot_time_request',['../d2/dc5/structlimine__boot__time__request.html',1,'limine_boot_time_request'],['../da/d8b/include_2boot_2protocols_2limine_8h.html#a56576e64da699ee469e4ff3366ff2357',1,'LIMINE_BOOT_TIME_REQUEST():&#160;limine.h']]],

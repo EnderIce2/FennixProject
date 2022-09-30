@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Fennix Project: kernel/boot/Limine.c Source File</title>
+<title>Fennix Project: kernel/arch/amd64/boot/Limine.c Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -89,8 +89,8 @@ $(document).ready(function(){initNavTree('d3/d1d/Limine_8c_source.html','../../'
 <div class="title">Limine.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d3/d1d/Limine_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d7a/boot_2limine_8h.html">limine.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;../kernel.h&quot;</span></div>
+<a href="../../d3/d1d/Limine_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/dfd/arch_2amd64_2boot_2limine_8h.html">limine.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;../../../kernel.h&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;../drivers/serial.h&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="../../d3/d1d/Limine_8c.html#ac1d0bb67b7c87d4c00796bc18d1f2e23">    5</a></span>&#160;<span class="preprocessor">#define PHYSICAL_TO_VIRTUAL(addr) ((uint64_t)(addr) + 0xFFFFFFFF80000000)</span></div>
@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('d3/d1d/Limine_8c_source.html','../../'
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    .<a class="code" href="../../d0/de5/structlimine__module__request.html#a5218c1ebb981b83683c4b3560fa7c4b4">id</a> = <a class="code" href="../../da/d8b/include_2boot_2protocols_2limine_8h.html#a7cd9ae29570688e9d7bf7e838021752b">LIMINE_MODULE_REQUEST</a>,</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    .revision = 0};</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../d3/d7a/boot_2limine_8h.html#a99cf7a60eec9c076c410c91de27bfec0">   49</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d3/d1d/Limine_8c.html#aebad11c642dc833d6e2d502daae05532">init_limine</a>(<a class="code" href="../../d3/d41/gbp_8h.html#da/da6/struct__GlobalBootParams">GlobalBootParams</a> *params, <span class="keywordtype">bool</span> Second)</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../d3/dfd/arch_2amd64_2boot_2limine_8h.html#a99cf7a60eec9c076c410c91de27bfec0">   49</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d3/d1d/Limine_8c.html#aebad11c642dc833d6e2d502daae05532">init_limine</a>(<a class="code" href="../../d3/d41/gbp_8h.html#da/da6/struct__GlobalBootParams">GlobalBootParams</a> *params, <span class="keywordtype">bool</span> Second)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    params-&gt;<a class="code" href="../../d3/d41/gbp_8h.html#a6fadb87993df526d8122884ae656d8f7">checksum</a> = <a class="code" href="../../d3/d41/gbp_8h.html#ace80e71b21d409b3a9ccd3e7ba32b3c6">GBP_CHECKSUM</a>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (!Second)</div>
@@ -410,6 +410,7 @@ $(document).ready(function(){initNavTree('d3/d1d/Limine_8c_source.html','../../'
 <div class="ttc" id="agbp_8h_html_ab9ee300c3d2b8759950a98e5a12e4d60"><div class="ttname"><a href="../../d3/d41/gbp_8h.html#ab9ee300c3d2b8759950a98e5a12e4d60">_GlobalBootParams::mem</a></div><div class="ttdeci">struct GBPMemory mem</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d41/gbp_8h_source.html#l00143">gbp.h:143</a></div></div>
 <div class="ttc" id="agbp_8h_html_a8aed3c4c3b795bdb9e71617fb2e1597f"><div class="ttname"><a href="../../d3/d41/gbp_8h.html#a8aed3c4c3b795bdb9e71617fb2e1597f">_GlobalBootParams::CPUCount</a></div><div class="ttdeci">uint64_t CPUCount</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d41/gbp_8h_source.html#l00160">gbp.h:160</a></div></div>
 <div class="ttc" id="agbp_8h_html_a766191d427b00d50f77216dbc8fcc15a"><div class="ttname"><a href="../../d3/d41/gbp_8h.html#a766191d427b00d50f77216dbc8fcc15a">_GlobalBootParams::KernelFile::File</a></div><div class="ttdeci">uint64_t File</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d41/gbp_8h_source.html#l00156">gbp.h:156</a></div></div>
+<div class="ttc" id="aarch_2amd64_2boot_2limine_8h_html"><div class="ttname"><a href="../../d3/dfd/arch_2amd64_2boot_2limine_8h.html">limine.h</a></div></div>
 <div class="ttc" id="agbp_8h_html_abd31f838aefffa46191d0d7dc36a96b2a2108e45e14f16ebbaf97e7c07219c665"><div class="ttname"><a href="../../d3/d41/gbp_8h.html#abd31f838aefffa46191d0d7dc36a96b2a2108e45e14f16ebbaf97e7c07219c665">GBP_Unknown</a></div><div class="ttdeci">@ GBP_Unknown</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d41/gbp_8h_source.html#l00105">gbp.h:105</a></div></div>
 <div class="ttc" id="astructlimine__kernel__file__request_html_a342c6d7c1de49e8e39f82d6167e44ba6"><div class="ttname"><a href="../../dc/d4c/structlimine__kernel__file__request.html#a342c6d7c1de49e8e39f82d6167e44ba6">limine_kernel_file_request::id</a></div><div class="ttdeci">uint64_t id[4]</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d8b/include_2boot_2protocols_2limine_8h_source.html#l00303">limine.h:303</a></div></div>
 <div class="ttc" id="agbp_8h_html_aee883b073de10605356f16845a641e79"><div class="ttname"><a href="../../d3/d41/gbp_8h.html#aee883b073de10605356f16845a641e79">_GlobalBootParams::Kernel</a></div><div class="ttdeci">struct _GlobalBootParams::KernelFile Kernel</div></div>
@@ -447,7 +448,6 @@ $(document).ready(function(){initNavTree('d3/d1d/Limine_8c_source.html','../../'
 <div class="ttc" id="agbp_8h_html_a3f9c8e48c978310fda202eb1c8b83137"><div class="ttname"><a href="../../d3/d41/gbp_8h.html#a3f9c8e48c978310fda202eb1c8b83137">_GlobalBootParams::KernelModules::KernelModule::Type</a></div><div class="ttdeci">enum ModuleType Type</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d41/gbp_8h_source.html#l00148">gbp.h:148</a></div></div>
 <div class="ttc" id="agbp_8h_html_a63ab425cccc82f143646b4184b3b376a"><div class="ttname"><a href="../../d3/d41/gbp_8h.html#a63ab425cccc82f143646b4184b3b376a">GBPMemory::KernelBaseVirtual</a></div><div class="ttdeci">uint64_t KernelBaseVirtual</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d41/gbp_8h_source.html#l00125">gbp.h:125</a></div></div>
 <div class="ttc" id="agbp_8h_html_a8e64555536d686fe9973339202edf22d"><div class="ttname"><a href="../../d3/d41/gbp_8h.html#a8e64555536d686fe9973339202edf22d">GBPFramebuffer::PixelsPerScanLine</a></div><div class="ttdeci">uint32_t PixelsPerScanLine</div><div class="ttdoc">Pixels per scan line.</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d41/gbp_8h_source.html#l00044">gbp.h:44</a></div></div>
-<div class="ttc" id="aboot_2limine_8h_html"><div class="ttname"><a href="../../d3/d7a/boot_2limine_8h.html">limine.h</a></div></div>
 <div class="ttc" id="aserial_8c_html_a708b346863815b06e3ad626dcf621a0f"><div class="ttname"><a href="../../d8/d90/serial_8c.html#a708b346863815b06e3ad626dcf621a0f">serial_write_text</a></div><div class="ttdeci">void serial_write_text(int serial_port, char *text)</div><div class="ttdoc">Sends a text to the serial port (Used by the debug system, don't use this!!)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d90/serial_8c_source.html#l00056">serial.c:56</a></div></div>
 <div class="ttc" id="ainclude_2boot_2protocols_2limine_8h_html_d9/d84/structlimine__kernel__address__response"><div class="ttname"><a href="../../da/d8b/include_2boot_2protocols_2limine_8h.html#d9/d84/structlimine__kernel__address__response">limine_kernel_address_response</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d8b/include_2boot_2protocols_2limine_8h_source.html#l00389">limine.h:389</a></div></div>
 <div class="ttc" id="astructlimine__module__response_html"><div class="ttname"><a href="../../dd/df2/structlimine__module__response.html">limine_module_response</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d8b/include_2boot_2protocols_2limine_8h_source.html#l00312">limine.h:312</a></div></div>
@@ -495,7 +495,7 @@ $(document).ready(function(){initNavTree('d3/d1d/Limine_8c_source.html','../../'
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="../../dir_ecf7259329ba7794ad7c9558e45771a7.html">boot</a></li><li class="navelem"><a class="el" href="../../d3/d1d/Limine_8c.html">Limine.c</a></li>
+    <li class="navelem"><a class="el" href="../../dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="../../dir_4a04b9aac4eefdd334a78e565f4616f2.html">arch</a></li><li class="navelem"><a class="el" href="../../dir_daa9cfe7e05ea725d73c8368bae78c4d.html">amd64</a></li><li class="navelem"><a class="el" href="../../dir_92f25a19e151ace7d5a1ca831f2eeac6.html">boot</a></li><li class="navelem"><a class="el" href="../../d3/d1d/Limine_8c.html">Limine.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
