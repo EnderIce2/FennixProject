@@ -2,7 +2,7 @@
 #include <types.h>
 #include <boot/gbp.h>
 #include <heap.h>
-#include "boot/limine.h"
+#include "arch/amd64/boot/limine.h"
 #ifdef __cplusplus
 #include "mem/xalloc/Xalloc.hpp"
 #endif

@@ -1,5 +1,5 @@
 #include "limine.h"
-#include "../kernel.h"
+#include "../../../kernel.h"
 #include "../drivers/serial.h"
 
 #define PHYSICAL_TO_VIRTUAL(addr) ((uint64_t)(addr) + 0xFFFFFFFF80000000)
