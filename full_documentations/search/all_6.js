@@ -150,6 +150,5 @@ var searchData=
   ['functioncallhandler_1547',['FunctionCallHandler',['../df/dd9/Driver_8cpp.html#a8c8e318f4434993638e7b55a1822e681',1,'Driver.cpp']]],
   ['functionname_1548',['FunctionName',['../dd/dcb/classKernelSymbols_1_1Symbols.html#a9550f81f742191e2a11a7cb1eadfec29',1,'KernelSymbols::Symbols::SymbolTable']]],
   ['fxsr_2easm_1549',['fxsr.asm',['../da/dab/amd64_2cpu_2fxsr_8asm.html',1,'(Global Namespace)'],['../d0/dca/i686_2cpu_2fxsr_8asm.html',1,'(Global Namespace)']]],
-  ['fxsr_2eh_1550',['fxsr.h',['../dd/d46/fxsr_8h.html',1,'']]],
-  ['fennixproject_1551',['FennixProject',['../index.html',1,'']]]
+  ['fxsr_2eh_1550',['fxsr.h',['../dd/d46/fxsr_8h.html',1,'']]]
 ];

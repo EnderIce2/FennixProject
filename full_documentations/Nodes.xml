@@ -6,41 +6,34 @@
       <Path>index.html</Path>
       <Subnodes>
        <Node>
-        <Name>FennixProject</Name>
+        <Name>Project moved &lt;a href=&quot;https://github.com/Fennix-Project/Fennix&quot;&gt;here&lt;/a&gt;</Name>
         <Path>index.html</Path>
         <Subnodes>
+         <Node>
+          <Name>FennixProject</Name>
+          <Path>index.html</Path>
+          <Anchor>autotoc_md2</Anchor>
           <Subnodes>
             <Subnodes>
               <Subnodes>
                <Node>
-                <Name>Opeating System from scratch made in C and C++</Name>
-                <Path>index.html</Path>
-                <Anchor>autotoc_md1</Anchor>
-               </Node>
-              </Subnodes>
-             <Node>
-              <Name>The content</Name>
-              <Path>index.html</Path>
-              <Anchor>autotoc_md3</Anchor>
-              <Subnodes>
-               <Node>
-                <Name>❗ Warning</Name>
+                <Name>The content</Name>
                 <Path>index.html</Path>
                 <Anchor>autotoc_md5</Anchor>
                </Node>
               </Subnodes>
-             </Node>
             </Subnodes>
+           <Node>
+            <Name>💾 Download ISO Image</Name>
+            <Path>index.html</Path>
+            <Anchor>autotoc_md9</Anchor>
+           </Node>
+           <Node>
+            <Name>🔽 Download, compile &amp; run</Name>
+            <Path>index.html</Path>
+            <Anchor>autotoc_md11</Anchor>
+           </Node>
           </Subnodes>
-         <Node>
-          <Name>💾 Download ISO Image</Name>
-          <Path>index.html</Path>
-          <Anchor>autotoc_md7</Anchor>
-         </Node>
-         <Node>
-          <Name>🔽 Download, compile &amp; run</Name>
-          <Path>index.html</Path>
-          <Anchor>autotoc_md9</Anchor>
          </Node>
         </Subnodes>
        </Node>
